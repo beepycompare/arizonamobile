@@ -52,7 +52,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogButton.kt */
-@Metadata(d1 = {"\u00004\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\u001aC\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\u000b\u001a9\u0010\f\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007¢\u0006\u0002\u0010\r\"\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010²\u0006\n\u0010\u0011\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0012\u001a\u00020\u0013X\u008a\u0084\u0002²\u0006\n\u0010\u0011\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0012\u001a\u00020\u0013X\u008a\u0084\u0002"}, d2 = {"DialogButtonYes", "", "onClick", "Lkotlin/Function0;", "isActive", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/BoxScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function0;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "DialogButtonNo", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "path", "Landroidx/compose/ui/graphics/Path;", "design-system", "selected", "scale", ""}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0007\u001aU\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007b\u0002\b\tb\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\u000e¢\u0006\u0002\u0010\u000b\u001aK\u0010\u000f\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\u001c\u0010\u0006\u001a\u0018\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u0007¢\u0006\u0002\b\t¢\u0006\u0002\b\nH\u0007b\u0002\b\tb\f\b\f\u0012\b\b\r\u0012\u0004\b\b(\u000e¢\u0006\u0002\u0010\u0010\"\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0013²\u0006\n\u0010\u0014\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0015\u001a\u00020\u0016X\u008a\u0084\u0002²\u0006\n\u0010\u0014\u001a\u00020\u0005X\u008a\u008e\u0002²\u0006\n\u0010\u0015\u001a\u00020\u0016X\u008a\u0084\u0002"}, d2 = {"DialogButtonYes", "", "onClick", "Lkotlin/Function0;", "isActive", "", FirebaseAnalytics.Param.CONTENT, "Lkotlin/Function1;", "Landroidx/compose/foundation/layout/BoxScope;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Lkotlin/jvm/functions/Function0;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/runtime/ComposableInferredTarget;", "scheme", "[androidx.compose.ui.UiComposable[androidx.compose.ui.UiComposable]]", "DialogButtonNo", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V", "path", "Landroidx/compose/ui/graphics/Path;", "design-system", "selected", "scale", ""}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DialogButtonKt {
     private static final Path path = PathParser.toPath$default(new PathParser().parsePathString("M 56.01 125.71 L 5.52 49.71 C -8.61 28.44 6.64 0 32.17 0 H 419.34 C 430.06 0 440.06 5.37 445.99 14.29 L 496.48 90.29 C 510.61 111.56 495.36 140 469.83 140 H 82.66 C 71.94 140 61.94 134.63 56.01 125.71 Z"), null, 1, null);
@@ -73,8 +73,8 @@ public final class DialogButtonKt {
     /* JADX WARN: Removed duplicated region for block: B:30:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0067  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x02dd  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x02e7  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x02de  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x02e8  */
     /* JADX WARN: Removed duplicated region for block: B:87:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -124,7 +124,7 @@ public final class DialogButtonKt {
                 State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(DialogButtonYes$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22);
                 final long m5347copywmQWz5c$default = Color.m5347copywmQWz5c$default(Color.Companion.m5374getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null);
                 int i5 = i3;
-                Modifier clip = ClipKt.clip(BackgroundKt.m287backgroundbw27NRU(SizeKt.m1103height3ABfNKs(SizeKt.m1122width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonYes$lambda$3(animateFloatAsState)), Dp.m8160constructorimpl(172.0f)), Dp.m8160constructorimpl(45.0f)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2322getPrimary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+                Modifier clip = ClipKt.clip(BackgroundKt.m287backgroundbw27NRU(SizeKt.m1103height3ABfNKs(SizeKt.m1122width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonYes$lambda$3(animateFloatAsState)), Dp.m8160constructorimpl(172.0f)), Dp.m8160constructorimpl(45.0f)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1596201909, "CC(remember):DialogButton.kt#9igjgp");
                 int i6 = i5 & 112;
                 boolean z5 = i6 == 32;
@@ -194,7 +194,7 @@ public final class DialogButtonKt {
                 Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2092945714, "C102@4081L9:DialogButton.kt#x0o0f5");
-                content.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(((i5 >> 3) & 112) | 6));
+                content.invoke(BoxScopeInstance.INSTANCE, startRestartGroup, Integer.valueOf(6 | ((i5 >> 3) & 112)));
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -288,7 +288,7 @@ public final class DialogButtonKt {
             }
             MutableState mutableState = (MutableState) rememberedValue;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            Modifier clip = ClipKt.clip(BackgroundKt.m287backgroundbw27NRU(SizeKt.m1103height3ABfNKs(SizeKt.m1122width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonNo$lambda$3(AnimateAsStateKt.animateFloatAsState(DialogButtonNo$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22))), Dp.m8160constructorimpl(172.0f)), Dp.m8160constructorimpl(45.0f)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2341getTertiary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
+            Modifier clip = ClipKt.clip(BackgroundKt.m287backgroundbw27NRU(SizeKt.m1103height3ABfNKs(SizeKt.m1122width3ABfNKs(ScaleKt.scale(Modifier.Companion, DialogButtonNo$lambda$3(AnimateAsStateKt.animateFloatAsState(DialogButtonNo$lambda$1(mutableState) ? 0.9f : 1.0f, null, 0.0f, "", null, startRestartGroup, 3072, 22))), Dp.m8160constructorimpl(172.0f)), Dp.m8160constructorimpl(45.0f)), MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2341getTertiary0d7_KjU(), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null)), new RoundedParallelogramLeftShape(0.0f, 0.0f, 3, null));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 615040052, "CC(remember):DialogButton.kt#9igjgp");
             Object rememberedValue2 = startRestartGroup.rememberedValue();
             if (rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -407,6 +407,14 @@ public final class DialogButtonKt {
         return Unit.INSTANCE;
     }
 
+    private static final float DialogButtonYes$lambda$3(State<Float> state) {
+        return state.getValue().floatValue();
+    }
+
+    private static final float DialogButtonNo$lambda$3(State<Float> state) {
+        return state.getValue().floatValue();
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit DialogButtonYes$lambda$4$0$0(Brush brush, boolean z, long j, DrawScope onDrawBehind) {
         Intrinsics.checkNotNullParameter(onDrawBehind, "$this$onDrawBehind");
@@ -418,19 +426,11 @@ public final class DialogButtonKt {
         return Unit.INSTANCE;
     }
 
-    private static final float DialogButtonYes$lambda$3(State<Float> state) {
-        return state.getValue().floatValue();
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit DialogButtonNo$lambda$4$0$0(Brush brush, DrawScope onDrawBehind) {
         Intrinsics.checkNotNullParameter(onDrawBehind, "$this$onDrawBehind");
         float f = onDrawBehind.mo434toPx0680j_4(Dp.m8160constructorimpl(10.0f));
         DrawScope.m5917drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m5057constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
         return Unit.INSTANCE;
-    }
-
-    private static final float DialogButtonNo$lambda$3(State<Float> state) {
-        return state.getValue().floatValue();
     }
 }

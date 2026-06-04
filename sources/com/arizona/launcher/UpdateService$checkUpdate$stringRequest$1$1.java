@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.app.NotificationCompat;
 import com.arizona.launcher.UpdateService;
 import com.arizona.launcher.downloader.FilesChek;
+import com.google.android.vending.expansion.downloader.Constants;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -22,8 +24,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {395, 396}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {396, 414}, s = {"L$0"}, v = 2)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {Constants.STATUS_NOT_ACCEPTABLE, 407}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {407, TypedValues.CycleType.TYPE_WAVE_PHASE}, s = {"L$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -92,7 +94,7 @@ public final class UpdateService$checkUpdate$stringRequest$1$1 extends SuspendLa
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1$1", f = "UpdateService.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.UpdateService$checkUpdate$stringRequest$1$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */

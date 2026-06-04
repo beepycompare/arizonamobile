@@ -1,5 +1,6 @@
 package kotlin.jvm;
 
+import com.facebook.internal.NativeProtocol;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -15,7 +16,7 @@ import kotlin.annotation.MustBeDocumented;
 @Retention(RetentionPolicy.CLASS)
 @kotlin.annotation.Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
-@Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0087\u0002\u0018\u00002\u00020\u0001B\f\bF\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003R\u0013\u0010\u0002\u001a\u00020\u0003X\u0086\u0084\b¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0004¨\u0006\u0005"}, d2 = {"Lkotlin/jvm/JvmExposeBoxed;", "", "jvmName", "", "()Ljava/lang/String;", "kotlin-stdlib"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0087\u0002\u0018\u00002\u00020\u0001B\f\bF\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003R\u0013\u0010\u0002\u001a\u00020\u0003X\u0086\u0084\b¢\u0006\u0006\u001a\u0004\b\u0002\u0010\u0004Ê\u0001\u000e\b\u0006\u0012\n\b\u0007\u0012\u0006\b\n0\b8\tÊ\u0001\u0002\b\nÊ\u0001\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\rÊ\u0001\u0002\b\u000eÊ\u00012\b\u000f\u0012.\b\u0010\u0012*\b\fJ\u0006\b\n0\u00118\u0012J\u0006\b\n0\u00118\u0013J\u0006\b\n0\u00118\u0014J\u0006\b\n0\u00118\u0015J\u0006\b\n0\u00118\u0016¨\u0006\u0005"}, d2 = {"Lkotlin/jvm/JvmExposeBoxed;", "", "jvmName", "", "()Ljava/lang/String;", "kotlin-stdlib", "Lkotlin/annotation/Retention;", "value", "Lkotlin/annotation/AnnotationRetention;", "BINARY", "Lkotlin/annotation/MustBeDocumented;", "Lkotlin/SinceKotlin;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "2.2", "Lkotlin/ExperimentalStdlibApi;", "Lkotlin/annotation/Target;", "allowedTargets", "Lkotlin/annotation/AnnotationTarget;", "FUNCTION", "CONSTRUCTOR", "PROPERTY_GETTER", "PROPERTY_SETTER", "CLASS"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @Documented
 /* loaded from: classes5.dex */
 public @interface JvmExposeBoxed {

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MainComponent.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final /* synthetic */ class MainComponent$stackDialog$1 extends FunctionReferenceImpl implements Function2<MainComponent.DialogConfig, ComponentContext, MainComponent.DialogChild> {
     /* JADX INFO: Access modifiers changed from: package-private */

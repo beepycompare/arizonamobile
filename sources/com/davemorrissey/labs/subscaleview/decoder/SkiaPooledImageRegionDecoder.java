@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import java.io.File;
 import java.io.FileFilter;
@@ -92,7 +93,7 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
                             long currentTimeMillis = System.currentTimeMillis();
                             SkiaPooledImageRegionDecoder.this.debug("Starting decoder");
                             SkiaPooledImageRegionDecoder.this.initialiseDecoder();
-                            SkiaPooledImageRegionDecoder.this.debug("Started decoder, took " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+                            SkiaPooledImageRegionDecoder.this.debug("Started decoder, took " + (System.currentTimeMillis() - currentTimeMillis) + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
                         }
                     } catch (Exception e) {
                         SkiaPooledImageRegionDecoder.this.debug("Failed to start decoder: " + e.getMessage());

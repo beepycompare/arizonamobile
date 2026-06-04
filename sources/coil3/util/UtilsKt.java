@@ -105,7 +105,7 @@ public final class UtilsKt {
 
     public static final void closeQuietly(AutoCloseable autoCloseable) {
         try {
-            UByte$$ExternalSyntheticBackport0.m9916m((Object) autoCloseable);
+            UByte$$ExternalSyntheticBackport0.m9969m((Object) autoCloseable);
         } catch (RuntimeException e) {
             throw e;
         } catch (Exception unused) {
@@ -178,7 +178,7 @@ public final class UtilsKt {
     }
 
     public static final boolean isFileUri(Uri uri) {
-        return ((uri.getScheme() != null && !Intrinsics.areEqual(uri.getScheme(), "file")) || uri.getPath() == null || Utils_androidKt.isAssetUri(uri)) ? false : true;
+        return ((uri.getScheme() != null && !Intrinsics.areEqual(uri.getScheme(), SCHEME_FILE)) || uri.getPath() == null || Utils_androidKt.isAssetUri(uri)) ? false : true;
     }
 
     public static final ErrorResult ErrorResult(ImageRequest imageRequest, Throwable th) {

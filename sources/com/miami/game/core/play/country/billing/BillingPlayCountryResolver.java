@@ -33,13 +33,14 @@ import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CancellableContinuationImpl;
 import kotlinx.coroutines.TimeoutKt;
 /* compiled from: BillingPlayCountryResolver.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\u0018\u0000 \u000b2\u00020\u0001:\u0001\u000bB\u0013\b\u0007\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0096@¢\u0006\u0002\u0010\bJ\u0010\u0010\t\u001a\u0004\u0018\u00010\u0007H\u0082@¢\u0006\u0002\u0010\bJ\u0010\u0010\n\u001a\u0004\u0018\u00010\u0007*\u0004\u0018\u00010\u0007H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/miami/game/core/play/country/billing/BillingPlayCountryResolver;", "Lcom/miami/game/core/play/country/api/PlayCountryResolver;", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "getCountryIso", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "requestCountryIso", "toCountryIso", "Companion", "play-country-billing"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\u0018\u0000 \r2\u00020\u0001:\u0001\rB\u001b\b\u0007\u0012\f\b\u0001\u0010\u0002\u001a\u00020\u0003:\u0002\b\u0004\u001a\u0002\b\u0007¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010\b\u001a\u0004\u0018\u00010\tH\u0096@¢\u0006\u0002\u0010\nJ\u0010\u0010\u000b\u001a\u0004\u0018\u00010\tH\u0082@¢\u0006\u0002\u0010\nJ\u0010\u0010\f\u001a\u0004\u0018\u00010\t*\u0004\u0018\u00010\tH\u0002R\u0015\u0010\u0002\u001a\u00020\u00038\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/miami/game/core/play/country/billing/BillingPlayCountryResolver;", "Lcom/miami/game/core/play/country/api/PlayCountryResolver;", "context", "Landroid/content/Context;", "Ldagger/hilt/android/qualifiers/ApplicationContext;", "<init>", "(Landroid/content/Context;)V", "Ljavax/inject/Inject;", "getCountryIso", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "requestCountryIso", "toCountryIso", "Companion", "play-country-billing"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class BillingPlayCountryResolver implements PlayCountryResolver {
     private static final Companion Companion = new Companion(null);
     private static final Regex ISO_COUNTRY_REGEX = new Regex("[A-Z]{2}");
     @Deprecated
     public static final long REQUEST_TIMEOUT_MS = 5000;
+    @ApplicationContext
     private final Context context;
 
     @Inject
@@ -49,16 +50,16 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:3|(7:5|6|7|(1:(2:10|11)(2:20|21))(3:22|23|(1:25))|12|13|(1:18)(2:15|16)))|28|6|7|(0)(0)|12|13|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0063, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x005e, code lost:
         r6 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0064, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x005f, code lost:
         r7 = kotlin.Result.Companion;
-        r6 = kotlin.Result.m9843constructorimpl(kotlin.ResultKt.createFailure(r6));
+        r6 = kotlin.Result.m9896constructorimpl(kotlin.ResultKt.createFailure(r6));
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0070  */
     /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
     @Override // com.miami.game.core.play.country.api.PlayCountryResolver
     /*
@@ -67,7 +68,7 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
     public Object getCountryIso(Continuation<? super String> continuation) {
         BillingPlayCountryResolver$getCountryIso$1 billingPlayCountryResolver$getCountryIso$1;
         int i;
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         if (continuation instanceof BillingPlayCountryResolver$getCountryIso$1) {
             billingPlayCountryResolver$getCountryIso$1 = (BillingPlayCountryResolver$getCountryIso$1) continuation;
             if ((billingPlayCountryResolver$getCountryIso$1.label & Integer.MIN_VALUE) != 0) {
@@ -80,7 +81,6 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
                     Result.Companion companion = Result.Companion;
                     BillingPlayCountryResolver billingPlayCountryResolver = this;
                     billingPlayCountryResolver$getCountryIso$1.L$0 = SpillingKt.nullOutSpilledVariable(this);
-                    billingPlayCountryResolver$getCountryIso$1.I$0 = 0;
                     billingPlayCountryResolver$getCountryIso$1.label = 1;
                     obj = TimeoutKt.withTimeoutOrNull(5000L, new BillingPlayCountryResolver$getCountryIso$2$1(this, null), billingPlayCountryResolver$getCountryIso$1);
                     if (obj == coroutine_suspended) {
@@ -89,13 +89,12 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    int i2 = billingPlayCountryResolver$getCountryIso$1.I$0;
                     BillingPlayCountryResolver billingPlayCountryResolver2 = (BillingPlayCountryResolver) billingPlayCountryResolver$getCountryIso$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                m9843constructorimpl = Result.m9843constructorimpl((String) obj);
-                if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-                    return m9843constructorimpl;
+                m9896constructorimpl = Result.m9896constructorimpl((String) obj);
+                if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+                    return m9896constructorimpl;
                 }
                 return null;
             }
@@ -106,8 +105,8 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
         i = billingPlayCountryResolver$getCountryIso$1.label;
         if (i != 0) {
         }
-        m9843constructorimpl = Result.m9843constructorimpl((String) obj2);
-        if (Result.m9849isFailureimpl(m9843constructorimpl)) {
+        m9896constructorimpl = Result.m9896constructorimpl((String) obj2);
+        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
         }
     }
 
@@ -116,7 +115,7 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
         if (atomicBoolean.compareAndSet(false, true)) {
             billingClient.endConnection();
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9843constructorimpl(str));
+            cancellableContinuation.resumeWith(Result.m9896constructorimpl(str));
         }
     }
 
@@ -138,7 +137,7 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
     }
 
     /* compiled from: BillingPlayCountryResolver.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/miami/game/core/play/country/billing/BillingPlayCountryResolver$Companion;", "", "<init>", "()V", "REQUEST_TIMEOUT_MS", "", "ISO_COUNTRY_REGEX", "Lkotlin/text/Regex;", "getISO_COUNTRY_REGEX", "()Lkotlin/text/Regex;", "play-country-billing"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/miami/game/core/play/country/billing/BillingPlayCountryResolver$Companion;", "", "<init>", "()V", "REQUEST_TIMEOUT_MS", "", "ISO_COUNTRY_REGEX", "Lkotlin/text/Regex;", "getISO_COUNTRY_REGEX", "()Lkotlin/text/Regex;", "play-country-billing"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

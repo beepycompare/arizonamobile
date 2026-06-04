@@ -4,6 +4,7 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.facebook.internal.NativeProtocol;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
@@ -12,7 +13,7 @@ import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
 import kotlinx.datetime.internal.DateCalculationsKt;
 /* compiled from: Duration.kt */
-@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0006\n\u0002\b\t\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b-\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0005\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0007\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\b2\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0002\u0010\t\u001a\u001d\u0010\n\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u000b\u001a\u00020\u0001H\u0087\u008a\u0004¢\u0006\u0004\b\f\u0010\r\u001a\u001d\u0010\n\u001a\u00020\u0001*\u00020\b2\u0006\u0010\u000b\u001a\u00020\u0001H\u0087\u008a\u0004¢\u0006\u0004\b\u000e\u0010\u000f\u001a)\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00142\b\b\u0002\u0010\u0015\u001a\u00020\u0014H\u0082\u0080\u0004¢\u0006\u0002\u0010\u0016\u001a'\u0010\u0017\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00022\u0006\u0010\u0015\u001a\u00020\u0014H\u0082\u0080\u0004¢\u0006\u0002\u0010\u0019\u001a/\u0010\u001a\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00022\u0006\u0010\u001b\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0014H\u0082\u0080\u0004¢\u0006\u0002\u0010\u001c\u001a\u0016\u0010\u001d\u001a\u00020\u0006*\u00020\u00062\u0006\u0010\u001e\u001a\u00020\u0006H\u0082\u0080\u0004\u001a\u000e\u0010\u001f\u001a\u00020\u0014*\u00020\u0006H\u0083\u0088\u0004\u001a\u000e\u0010 \u001a\u00020\u0014*\u00020\u0006H\u0083\u0088\u0004\u001a\u001a\u0010!\u001a\u00020\u00142\u0006\u0010\"\u001a\u00020\u00062\u0006\u0010#\u001a\u00020\u0006H\u0083\u0088\u0004\u001a&\u0010$\u001a\u00020\u0006*\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00022\u0006\u0010%\u001a\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0082\u0080\u0004\u001a\u0016\u0010&\u001a\u00020\u0006*\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u0004H\u0082\u0080\u0004\u001a!\u0010'\u001a\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u00142\b\b\u0002\u0010(\u001a\u00020\u0012H\u0083\u0088\u0004¢\u0006\u0002\u0010)\u001a'\u0010*\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u000e\u0010+\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00010,H\u0082\u0088\u0004¢\u0006\u0004\b-\u0010.\u001a\u0018\u0010/\u001a\u0004\u0018\u00010\u0004*\u00020\u00122\u0006\u00100\u001a\u00020\u0002H\u0082\u0080\u0004\u001a\u0018\u00101\u001a\u0004\u0018\u00010\u0004*\u00020\u00122\u0006\u00100\u001a\u00020\u0002H\u0082\u0080\u0004\u001a\u000e\u0010=\u001a\u00020\u0006*\u00020\u0006H\u0083\u0088\u0004\u001a\u000e\u0010=\u001a\u00020\u0002*\u00020\u0002H\u0083\u0088\u0004\u001a\u0012\u0010J\u001a\u00020\u00062\u0006\u0010K\u001a\u00020\u0006H\u0082\u0080\u0004\u001a\u0012\u0010L\u001a\u00020\u00062\u0006\u0010M\u001a\u00020\u0006H\u0082\u0080\u0004\u001a\u0017\u0010N\u001a\u00020\u00012\u0006\u0010O\u001a\u00020\u0006H\u0082\u0080\u0004¢\u0006\u0002\u0010P\u001a\u0017\u0010Q\u001a\u00020\u00012\u0006\u0010R\u001a\u00020\u0006H\u0082\u0080\u0004¢\u0006\u0002\u0010P\u001a\u001f\u0010S\u001a\u00020\u00012\u0006\u0010T\u001a\u00020\u00062\u0006\u0010U\u001a\u00020\u0002H\u0082\u0080\u0004¢\u0006\u0002\u0010V\u001a\u0017\u0010W\u001a\u00020\u00012\u0006\u0010K\u001a\u00020\u0006H\u0082\u0080\u0004¢\u0006\u0002\u0010P\u001a\u0017\u0010X\u001a\u00020\u00012\u0006\u0010M\u001a\u00020\u0006H\u0082\u0080\u0004¢\u0006\u0002\u0010P\"\u001f\u00102\u001a\u00020\b*\u00020\u00048BX\u0082\u0084\b¢\u0006\f\u0012\u0004\b3\u00104\u001a\u0004\b5\u00106\"\u0019\u00107\u001a\u00020\u0006*\u00020\u00048BX\u0082\u0084\b¢\u0006\u0006\u001a\u0004\b8\u00109\"\u0019\u0010:\u001a\u00020\u0002*\u00020\u00048BX\u0082\u0084\b¢\u0006\u0006\u001a\u0004\b;\u0010<\"\u000f\u0010>\u001a\u00020\u0002X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010?\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010@\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010A\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010B\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010C\u001a\u00020\u0006X\u0082Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010D\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010E\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010F\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010G\u001a\u00020\u0006X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010H\u001a\u00020\u0012X\u0082Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010I\u001a\u00020\u0002X\u0082Ô\b¢\u0006\u0002\n\u0000¨\u0006Y"}, d2 = {"toDuration", "Lkotlin/time/Duration;", "", "unit", "Lkotlin/time/DurationUnit;", "(ILkotlin/time/DurationUnit;)J", "", "(JLkotlin/time/DurationUnit;)J", "", "(DLkotlin/time/DurationUnit;)J", "times", TypedValues.TransitionType.S_DURATION, "times-mvk6XK0", "(IJ)J", "times-kIfJnKk", "(DJ)J", "parseDuration", "value", "", "strictIso", "", "throwException", "(Ljava/lang/String;ZZ)J", "parseIsoStringFormat", "startIndex", "(Ljava/lang/String;IZ)J", "parseDefaultStringFormat", "hasSign", "(Ljava/lang/String;IZZ)J", "addMillisWithoutOverflow", "other", "isInfiniteMillis", "isFiniteMillis", "sameSign", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "parseFractionFallback", "endIndex", "fractionDigitsToNanos", "handleError", "message", "(ZLjava/lang/String;)J", "onInvalid", "block", "Lkotlin/Function0;", "onInvalid-ge6A_vg", "(JLkotlin/jvm/functions/Function0;)Lkotlin/time/Duration;", "defaultDurationUnitByShortNameOrNull", TtmlNode.START, "isoDurationUnitByShortNameOrNull", "fractionMultiplier", "getFractionMultiplier$annotations", "(Lkotlin/time/DurationUnit;)V", "getFractionMultiplier", "(Lkotlin/time/DurationUnit;)D", "fallbackFractionMultiplier", "getFallbackFractionMultiplier", "(Lkotlin/time/DurationUnit;)J", "shortNameLength", "getShortNameLength", "(Lkotlin/time/DurationUnit;)I", "multiplyBy10", "NANOS_IN_MILLIS", "MICROS_IN_MILLIS", "NANOS_IN_MICROS", "MAX_NANOS", "MAX_MILLIS", "MAX_NANOS_IN_MILLIS", "MILLIS_IN_SECOND", "MILLIS_IN_MINUTE", "MILLIS_IN_HOUR", "MILLIS_IN_DAY", "INFINITY_STRING", "FRACTION_LIMIT", "nanosToMillis", "nanos", "millisToNanos", "millis", "durationOfNanos", "normalNanos", "(J)J", "durationOfMillis", "normalMillis", "durationOf", "normalValue", "unitDiscriminator", "(JI)J", "durationOfNanosNormalized", "durationOfMillisNormalized", "kotlin-stdlib"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b-\u001a)\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004b\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b¢\u0006\u0002\u0010\u0005\u001a)\u0010\u0000\u001a\u00020\u0001*\u00020\t2\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004b\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b¢\u0006\u0002\u0010\n\u001a)\u0010\u0000\u001a\u00020\u0001*\u00020\u000b2\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004b\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b¢\u0006\u0002\u0010\f\u001a/\u0010\r\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u0001H\u0087\u008a\u0004b\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\bb\u0002\b\u0011¢\u0006\u0004\b\u000f\u0010\u0010\u001a/\u0010\r\u001a\u00020\u0001*\u00020\u000b2\u0006\u0010\u000e\u001a\u00020\u0001H\u0087\u008a\u0004b\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\bb\u0002\b\u0011¢\u0006\u0004\b\u0012\u0010\u0013\u001a)\u0010\u0014\u001a\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u0018H\u0082\u0080\u0004¢\u0006\u0002\u0010\u001a\u001a'\u0010\u001b\u001a\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u0019\u001a\u00020\u0018H\u0082\u0080\u0004¢\u0006\u0002\u0010\u001d\u001a/\u0010\u001e\u001a\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001f\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0018H\u0082\u0080\u0004¢\u0006\u0002\u0010 \u001a\u0016\u0010!\u001a\u00020\t*\u00020\t2\u0006\u0010\"\u001a\u00020\tH\u0082\u0080\u0004\u001a\u0012\u0010#\u001a\u00020\u0018*\u00020\tH\u0083\u0088\u0004b\u0002\b\u0011\u001a\u0012\u0010$\u001a\u00020\u0018*\u00020\tH\u0083\u0088\u0004b\u0002\b\u0011\u001a\u001e\u0010%\u001a\u00020\u00182\u0006\u0010&\u001a\u00020\t2\u0006\u0010'\u001a\u00020\tH\u0083\u0088\u0004b\u0002\b\u0011\u001a&\u0010(\u001a\u00020\t*\u00020\u00162\u0006\u0010\u001c\u001a\u00020\u00022\u0006\u0010)\u001a\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0082\u0080\u0004\u001a\u0016\u0010*\u001a\u00020\t*\u00020\t2\u0006\u0010\u0003\u001a\u00020\u0004H\u0082\u0080\u0004\u001a%\u0010+\u001a\u00020\u00012\u0006\u0010\u0019\u001a\u00020\u00182\b\b\u0002\u0010,\u001a\u00020\u0016H\u0083\u0088\u0004b\u0002\b\u0011¢\u0006\u0002\u0010-\u001a'\u0010.\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u000e\u0010/\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u000100H\u0082\u0088\u0004¢\u0006\u0004\b1\u00102\u001a\u0018\u00103\u001a\u0004\u0018\u00010\u0004*\u00020\u00162\u0006\u00104\u001a\u00020\u0002H\u0082\u0080\u0004\u001a\u0018\u00105\u001a\u0004\u0018\u00010\u0004*\u00020\u00162\u0006\u00104\u001a\u00020\u0002H\u0082\u0080\u0004\u001a\u0012\u0010A\u001a\u00020\t*\u00020\tH\u0083\u0088\u0004b\u0002\b\u0011\u001a\u0012\u0010A\u001a\u00020\u0002*\u00020\u0002H\u0083\u0088\u0004b\u0002\b\u0011\u001a\u0012\u0010N\u001a\u00020\t2\u0006\u0010O\u001a\u00020\tH\u0082\u0080\u0004\u001a\u0012\u0010P\u001a\u00020\t2\u0006\u0010Q\u001a\u00020\tH\u0082\u0080\u0004\u001a\u0017\u0010R\u001a\u00020\u00012\u0006\u0010S\u001a\u00020\tH\u0082\u0080\u0004¢\u0006\u0002\u0010T\u001a\u0017\u0010U\u001a\u00020\u00012\u0006\u0010V\u001a\u00020\tH\u0082\u0080\u0004¢\u0006\u0002\u0010T\u001a\u001f\u0010W\u001a\u00020\u00012\u0006\u0010X\u001a\u00020\t2\u0006\u0010Y\u001a\u00020\u0002H\u0082\u0080\u0004¢\u0006\u0002\u0010Z\u001a\u0017\u0010[\u001a\u00020\u00012\u0006\u0010O\u001a\u00020\tH\u0082\u0080\u0004¢\u0006\u0002\u0010T\u001a\u0017\u0010\\\u001a\u00020\u00012\u0006\u0010Q\u001a\u00020\tH\u0082\u0080\u0004¢\u0006\u0002\u0010T\"\u001f\u00106\u001a\u00020\u000b*\u00020\u00048BX\u0082\u0084\b¢\u0006\f\u0012\u0004\b7\u00108\u001a\u0004\b9\u0010:\"\u0019\u0010;\u001a\u00020\t*\u00020\u00048BX\u0082\u0084\b¢\u0006\u0006\u001a\u0004\b<\u0010=\"\u0019\u0010>\u001a\u00020\u0002*\u00020\u00048BX\u0082\u0084\b¢\u0006\u0006\u001a\u0004\b?\u0010@\"\u000f\u0010B\u001a\u00020\u0002X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010C\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010D\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010E\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010F\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010G\u001a\u00020\tX\u0082Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010H\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010I\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010J\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010K\u001a\u00020\tX\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010L\u001a\u00020\u0016X\u0082Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010M\u001a\u00020\u0002X\u0082Ô\b¢\u0006\u0002\n\u0000¨\u0006]"}, d2 = {"toDuration", "Lkotlin/time/Duration;", "", "unit", "Lkotlin/time/DurationUnit;", "(ILkotlin/time/DurationUnit;)J", "Lkotlin/SinceKotlin;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "1.6", "", "(JLkotlin/time/DurationUnit;)J", "", "(DLkotlin/time/DurationUnit;)J", "times", TypedValues.TransitionType.S_DURATION, "times-mvk6XK0", "(IJ)J", "Lkotlin/internal/InlineOnly;", "times-kIfJnKk", "(DJ)J", "parseDuration", "value", "", "strictIso", "", "throwException", "(Ljava/lang/String;ZZ)J", "parseIsoStringFormat", "startIndex", "(Ljava/lang/String;IZ)J", "parseDefaultStringFormat", "hasSign", "(Ljava/lang/String;IZZ)J", "addMillisWithoutOverflow", "other", "isInfiniteMillis", "isFiniteMillis", "sameSign", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "parseFractionFallback", "endIndex", "fractionDigitsToNanos", "handleError", "message", "(ZLjava/lang/String;)J", "onInvalid", "block", "Lkotlin/Function0;", "onInvalid-ge6A_vg", "(JLkotlin/jvm/functions/Function0;)Lkotlin/time/Duration;", "defaultDurationUnitByShortNameOrNull", TtmlNode.START, "isoDurationUnitByShortNameOrNull", "fractionMultiplier", "getFractionMultiplier$annotations", "(Lkotlin/time/DurationUnit;)V", "getFractionMultiplier", "(Lkotlin/time/DurationUnit;)D", "fallbackFractionMultiplier", "getFallbackFractionMultiplier", "(Lkotlin/time/DurationUnit;)J", "shortNameLength", "getShortNameLength", "(Lkotlin/time/DurationUnit;)I", "multiplyBy10", "NANOS_IN_MILLIS", "MICROS_IN_MILLIS", "NANOS_IN_MICROS", "MAX_NANOS", "MAX_MILLIS", "MAX_NANOS_IN_MILLIS", "MILLIS_IN_SECOND", "MILLIS_IN_MINUTE", "MILLIS_IN_HOUR", "MILLIS_IN_DAY", "INFINITY_STRING", "FRACTION_LIMIT", "nanosToMillis", "nanos", "millisToNanos", "millis", "durationOfNanos", "normalNanos", "(J)J", "durationOfMillis", "normalMillis", "durationOf", "normalValue", "unitDiscriminator", "(JI)J", "durationOfNanosNormalized", "durationOfMillisNormalized", "kotlin-stdlib"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DurationKt {
     private static final int FRACTION_LIMIT = 15;
@@ -29,7 +30,7 @@ public final class DurationKt {
     public static final int NANOS_IN_MILLIS = 1000000;
 
     /* compiled from: Duration.kt */
-    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -129,13 +130,13 @@ public final class DurationKt {
     }
 
     /* renamed from: times-mvk6XK0 */
-    private static final long m11301timesmvk6XK0(int i, long j) {
-        return Duration.m11230timesUwyO8pc(j, i);
+    private static final long m11375timesmvk6XK0(int i, long j) {
+        return Duration.m11304timesUwyO8pc(j, i);
     }
 
     /* renamed from: times-kIfJnKk */
-    private static final long m11300timeskIfJnKk(double d, long j) {
-        return Duration.m11229timesUwyO8pc(j, d);
+    private static final long m11374timeskIfJnKk(double d, long j) {
+        return Duration.m11303timesUwyO8pc(j, d);
     }
 
     public static /* synthetic */ long parseDuration$default(String str, boolean z, boolean z2, int i, Object obj) {
@@ -153,7 +154,7 @@ public final class DurationKt {
             if (z2) {
                 throw new IllegalArgumentException("The string is empty");
             }
-            return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
         }
         char charAt = str.charAt(0);
         if (charAt != '+') {
@@ -168,7 +169,7 @@ public final class DurationKt {
             if (z2) {
                 throw new IllegalArgumentException("No components");
             }
-            return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
         }
         if (str.charAt(i2) == 'P') {
             parseDefaultStringFormat = parseIsoStringFormat(str, i2 + 1, z2);
@@ -176,13 +177,13 @@ public final class DurationKt {
             if (z2) {
                 throw new IllegalArgumentException("");
             }
-            return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
         } else if (StringsKt.regionMatches(str, i2, INFINITY_STRING, 0, Math.max(str.length() - i2, 8), true)) {
-            parseDefaultStringFormat = Duration.Companion.m11291getINFINITEUwyO8pc();
+            parseDefaultStringFormat = Duration.Companion.m11365getINFINITEUwyO8pc();
         } else {
             parseDefaultStringFormat = parseDefaultStringFormat(str, i2, z3, z2);
         }
-        return (i == 0 || Duration.m11204equalsimpl0(parseDefaultStringFormat, Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib())) ? parseDefaultStringFormat : Duration.m11243unaryMinusUwyO8pc(parseDefaultStringFormat);
+        return (i == 0 || Duration.m11278equalsimpl0(parseDefaultStringFormat, Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib())) ? parseDefaultStringFormat : Duration.m11317unaryMinusUwyO8pc(parseDefaultStringFormat);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:348:0x01c6, code lost:
@@ -231,7 +232,7 @@ public final class DurationKt {
             if (z) {
                 throw new IllegalArgumentException("");
             }
-            return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+            return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
         }
         DurationUnit durationUnit = null;
         long j2 = 0;
@@ -244,7 +245,7 @@ public final class DurationKt {
                     if (z) {
                         throw new IllegalArgumentException(str3);
                     }
-                    return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                    return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                 }
                 z2 = true;
             } else {
@@ -359,7 +360,7 @@ public final class DurationKt {
                                         if (z) {
                                             throw new IllegalArgumentException(str2);
                                         }
-                                        return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                                        return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                                     }
                                     isoDurationUnitByShortNameOrNull = isoDurationUnitByShortNameOrNull(str, i4);
                                     if (isoDurationUnitByShortNameOrNull != null) {
@@ -367,33 +368,33 @@ public final class DurationKt {
                                         if (z) {
                                             throw new IllegalArgumentException(str5);
                                         }
-                                        return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                                        return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                                     } else if (durationUnit != null && durationUnit.compareTo(isoDurationUnitByShortNameOrNull) <= 0) {
                                         if (z) {
                                             throw new IllegalArgumentException("Unexpected order of duration components");
                                         }
-                                        return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                                        return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                                     } else {
                                         if (isoDurationUnitByShortNameOrNull == DurationUnit.DAYS) {
                                             if (z2) {
                                                 if (z) {
                                                     throw new IllegalArgumentException(str2);
                                                 }
-                                                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                                                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                                             }
                                             j2 = i3 * DurationUnitKt.convertDurationUnitToMilliseconds(j4, isoDurationUnitByShortNameOrNull);
                                         } else if (!z2) {
                                             if (z) {
                                                 throw new IllegalArgumentException(str2);
                                             }
-                                            return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                                            return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                                         } else {
                                             long addMillisWithoutOverflow = addMillisWithoutOverflow(j2, i3 * DurationUnitKt.convertDurationUnitToMilliseconds(j4, isoDurationUnitByShortNameOrNull));
                                             if (addMillisWithoutOverflow == Duration.INVALID_RAW_VALUE) {
                                                 if (z) {
                                                     throw new IllegalArgumentException(str2);
                                                 }
-                                                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                                                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                                             }
                                             j2 = addMillisWithoutOverflow;
                                         }
@@ -404,7 +405,7 @@ public final class DurationKt {
                                 }
                             }
                             if (z) {
-                                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                             }
                             throw new IllegalArgumentException(str42);
                         }
@@ -423,7 +424,7 @@ public final class DurationKt {
                         if (z) {
                             throw new IllegalArgumentException(str2);
                         }
-                        return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                        return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                     }
                 }
                 i2 = i6;
@@ -444,7 +445,7 @@ public final class DurationKt {
                 }
             }
         }
-        return Duration.m11228plusLRDsOJo(toDuration(j2, DurationUnit.MILLISECONDS), toDuration(j3, DurationUnit.NANOSECONDS));
+        return Duration.m11302plusLRDsOJo(toDuration(j2, DurationUnit.MILLISECONDS), toDuration(j3, DurationUnit.NANOSECONDS));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:255:0x00d0, code lost:
@@ -466,7 +467,7 @@ public final class DurationKt {
         if (r28 != false) goto L65;
      */
     /* JADX WARN: Code restructure failed: missing block: B:262:0x00e7, code lost:
-        return kotlin.time.Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+        return kotlin.time.Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
      */
     /* JADX WARN: Code restructure failed: missing block: B:264:0x00ed, code lost:
         throw new java.lang.IllegalArgumentException("");
@@ -503,7 +504,7 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException("No components");
                 }
-                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
             }
             z3 = true;
         } else {
@@ -554,7 +555,7 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException("");
                 }
-                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
             }
             boolean z8 = str.charAt(i5) == '.';
             if (z8) {
@@ -608,7 +609,7 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException("");
                 }
-                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
             }
             z5 = z8;
             i3 = -1;
@@ -619,12 +620,12 @@ public final class DurationKt {
                 if (z2) {
                     throw new IllegalArgumentException(str2);
                 }
-                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
             } else if (durationUnit != null && durationUnit.compareTo(defaultDurationUnitByShortNameOrNull) <= 0) {
                 if (z2) {
                     throw new IllegalArgumentException("Unexpected order of duration components");
                 }
-                return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
             } else {
                 int i16 = WhenMappings.$EnumSwitchMapping$0[defaultDurationUnitByShortNameOrNull.ordinal()];
                 if (i16 == 1) {
@@ -651,7 +652,7 @@ public final class DurationKt {
                     if (z2) {
                         throw new IllegalArgumentException("Fractional component must be last");
                     }
-                    return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+                    return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
                 } else {
                     if (defaultDurationUnitByShortNameOrNull.compareTo(DurationUnit.MINUTES) >= 0 && shortNameLength - i3 > 15) {
                         fractionDigitsToNanos = parseFractionFallback(str, i3, shortNameLength - getShortNameLength(defaultDurationUnitByShortNameOrNull), defaultDurationUnitByShortNameOrNull);
@@ -666,7 +667,7 @@ public final class DurationKt {
                 }
             }
         }
-        return Duration.m11228plusLRDsOJo(toDuration(j3, DurationUnit.MILLISECONDS), toDuration(j4, DurationUnit.NANOSECONDS));
+        return Duration.m11302plusLRDsOJo(toDuration(j3, DurationUnit.MILLISECONDS), toDuration(j4, DurationUnit.NANOSECONDS));
     }
 
     public static final long addMillisWithoutOverflow(long j, long j2) {
@@ -691,19 +692,19 @@ public final class DurationKt {
         if (z) {
             throw new IllegalArgumentException(str);
         }
-        return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+        return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
     }
 
     private static final long handleError(boolean z, String str) {
         if (z) {
             throw new IllegalArgumentException(str);
         }
-        return Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib();
+        return Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib();
     }
 
     /* renamed from: onInvalid-ge6A_vg */
-    private static final Duration m11299onInvalidge6A_vg(long j, Function0<Duration> function0) {
-        return Duration.m11204equalsimpl0(j, Duration.Companion.m11292getINVALIDUwyO8pc$kotlin_stdlib()) ? function0.invoke() : Duration.m11197boximpl(j);
+    private static final Duration m11373onInvalidge6A_vg(long j, Function0<Duration> function0) {
+        return Duration.m11278equalsimpl0(j, Duration.Companion.m11366getINVALIDUwyO8pc$kotlin_stdlib()) ? function0.invoke() : Duration.m11271boximpl(j);
     }
 
     private static final DurationUnit defaultDurationUnitByShortNameOrNull(String str, int i) {
@@ -794,15 +795,15 @@ public final class DurationKt {
     }
 
     public static final long durationOfNanos(long j) {
-        return Duration.Companion.m11290fromRawValueUwyO8pc$kotlin_stdlib(j << 1);
+        return Duration.Companion.m11364fromRawValueUwyO8pc$kotlin_stdlib(j << 1);
     }
 
     public static final long durationOfMillis(long j) {
-        return Duration.Companion.m11290fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + 1);
+        return Duration.Companion.m11364fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + 1);
     }
 
     public static final long durationOf(long j, int i) {
-        return Duration.Companion.m11290fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + i);
+        return Duration.Companion.m11364fromRawValueUwyO8pc$kotlin_stdlib((j << 1) + i);
     }
 
     public static final long durationOfNanosNormalized(long j) {

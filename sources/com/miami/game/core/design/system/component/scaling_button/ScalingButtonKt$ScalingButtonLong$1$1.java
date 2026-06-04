@@ -19,7 +19,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function3;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ScalingButton.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInputEventHandler {
     final /* synthetic */ Function0<Unit> $onClick;
@@ -34,7 +34,7 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
     }
 
     /* compiled from: ScalingButton.kt */
-    @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", "it", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/PressGestureScope;", "it", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2", f = "ScalingButton.kt", i = {0}, l = {61}, m = "invokeSuspend", n = {"$this$detectTapGestures"}, nl = {63}, s = {"L$0"}, v = 2)
     /* renamed from: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$2  reason: invalid class name */
     /* loaded from: classes5.dex */
@@ -51,11 +51,11 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m9723invoked4ec7I(pressGestureScope, offset.m5113unboximpl(), continuation);
+            return m9774invoked4ec7I(pressGestureScope, offset.m5113unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m9723invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m9774invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.$selected$delegate, continuation);
             anonymousClass2.L$0 = pressGestureScope;
             return anonymousClass2.invokeSuspend(Unit.INSTANCE);
@@ -96,7 +96,7 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
     public final Object invoke(PointerInputScope pointerInputScope, Continuation<? super Unit> continuation) {
         final Function0<Unit> function0 = this.$onLongClick;
         final Function0<Unit> function02 = this.$onClick;
-        Object detectTapGestures$default = TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, new Function1() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$$ExternalSyntheticLambda0
+        return TapGestureDetectorKt.detectTapGestures$default(pointerInputScope, null, new Function1() { // from class: com.miami.game.core.design.system.component.scaling_button.ScalingButtonKt$ScalingButtonLong$1$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ScalingButtonKt$ScalingButtonLong$1$1.invoke$lambda$0(Function0.this, (Offset) obj);
@@ -107,7 +107,6 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
                 return ScalingButtonKt$ScalingButtonLong$1$1.invoke$lambda$1(Function0.this, (Offset) obj);
             }
         }, continuation, 1, null);
-        return detectTapGestures$default == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? detectTapGestures$default : Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

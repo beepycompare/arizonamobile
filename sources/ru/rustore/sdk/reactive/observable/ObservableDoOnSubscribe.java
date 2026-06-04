@@ -36,7 +36,7 @@ final class ObservableDoOnSubscribe<T> extends Observable<T> {
 
             @Override // ru.rustore.sdk.reactive.observable.ObservableObserver
             public void onSubscribe(Disposable d) {
-                Object m9843constructorimpl;
+                Object m9896constructorimpl;
                 Function1 function1;
                 Intrinsics.checkNotNullParameter(d, "d");
                 ObservableDoOnSubscribe<T> observableDoOnSubscribe = this.this$0;
@@ -45,21 +45,21 @@ final class ObservableDoOnSubscribe<T> extends Observable<T> {
                     ObservableDoOnSubscribe$subscribe$wrappedObserver$1<T> observableDoOnSubscribe$subscribe$wrappedObserver$1 = this;
                     function1 = ((ObservableDoOnSubscribe) observableDoOnSubscribe).onSubscribe;
                     function1.invoke(d);
-                    m9843constructorimpl = Result.m9843constructorimpl(Unit.INSTANCE);
+                    m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+                    m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
                 }
                 ObservableObserver<T> observableObserver = downstream;
-                Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-                if (m9846exceptionOrNullimpl != null) {
+                Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+                if (m9899exceptionOrNullimpl != null) {
                     d.dispose();
                     observableObserver.onSubscribe(d);
-                    observableObserver.onError(m9846exceptionOrNullimpl);
+                    observableObserver.onError(m9899exceptionOrNullimpl);
                 }
                 ObservableObserver<T> observableObserver2 = downstream;
-                if (Result.m9850isSuccessimpl(m9843constructorimpl)) {
-                    Unit unit = (Unit) m9843constructorimpl;
+                if (Result.m9903isSuccessimpl(m9896constructorimpl)) {
+                    Unit unit = (Unit) m9896constructorimpl;
                     observableObserver2.onSubscribe(d);
                 }
             }

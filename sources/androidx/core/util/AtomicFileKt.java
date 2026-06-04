@@ -8,13 +8,16 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 /* compiled from: AtomicFile.kt */
-@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a0\u0010\u0000\u001a\u00020\u0001*\u00020\u00022!\u0010\u0003\u001a\u001d\u0012\u0013\u0012\u00110\u0005¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00010\u0004H\u0086\b\u001a\u0012\u0010\t\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\n\u001a\u00020\u000b\u001a\u001c\u0010\f\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u001a\r\u0010\u0011\u001a\u00020\u000b*\u00020\u0002H\u0086\b\u001a\u0014\u0010\u0012\u001a\u00020\u000e*\u00020\u00022\b\b\u0002\u0010\u000f\u001a\u00020\u0010¨\u0006\u0013"}, d2 = {"tryWrite", "", "Landroid/util/AtomicFile;", "block", "Lkotlin/Function1;", "Ljava/io/FileOutputStream;", "Lkotlin/ParameterName;", "name", "out", "writeBytes", "array", "", "writeText", "text", "", "charset", "Ljava/nio/charset/Charset;", "readBytes", "readText", "core-ktx"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a3\u0010\u0000\u001a\u00020\u0001*\u00020\u00022!\u0010\u0003\u001a\u001d\u0012\u0013\u0012\u00110\u0005¢\u0006\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b\u0012\u0004\u0012\u00020\u00010\u0004H\u0086\bø\u0001\u0000\u001a\u0012\u0010\t\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\n\u001a\u00020\u000b\u001a\u001c\u0010\f\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u001a\r\u0010\u0011\u001a\u00020\u000b*\u00020\u0002H\u0086\b\u001a\u0014\u0010\u0012\u001a\u00020\u000e*\u00020\u00022\b\b\u0002\u0010\u000f\u001a\u00020\u0010\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0013"}, d2 = {"tryWrite", "", "Landroid/util/AtomicFile;", "block", "Lkotlin/Function1;", "Ljava/io/FileOutputStream;", "Lkotlin/ParameterName;", "name", "out", "writeBytes", "array", "", "writeText", "text", "", "charset", "Ljava/nio/charset/Charset;", "readBytes", "readText", "core"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class AtomicFileKt {
-    public static final void tryWrite(android.util.AtomicFile atomicFile, Function1<? super FileOutputStream, Unit> function1) {
+    public static final void tryWrite(android.util.AtomicFile atomicFile, Function1<? super FileOutputStream, Unit> block) {
+        Intrinsics.checkNotNullParameter(atomicFile, "<this>");
+        Intrinsics.checkNotNullParameter(block, "block");
         FileOutputStream startWrite = atomicFile.startWrite();
         try {
-            function1.invoke(startWrite);
+            Intrinsics.checkNotNull(startWrite);
+            block.invoke(startWrite);
             atomicFile.finishWrite(startWrite);
         } catch (Throwable th) {
             atomicFile.failWrite(startWrite);
@@ -29,14 +32,20 @@ public final class AtomicFileKt {
         writeText(atomicFile, str, charset);
     }
 
-    public static final void writeText(android.util.AtomicFile atomicFile, String str, Charset charset) {
-        byte[] bytes = str.getBytes(charset);
+    public static final void writeText(android.util.AtomicFile atomicFile, String text, Charset charset) {
+        Intrinsics.checkNotNullParameter(atomicFile, "<this>");
+        Intrinsics.checkNotNullParameter(text, "text");
+        Intrinsics.checkNotNullParameter(charset, "charset");
+        byte[] bytes = text.getBytes(charset);
         Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
         writeBytes(atomicFile, bytes);
     }
 
     public static final byte[] readBytes(android.util.AtomicFile atomicFile) {
-        return atomicFile.readFully();
+        Intrinsics.checkNotNullParameter(atomicFile, "<this>");
+        byte[] readFully = atomicFile.readFully();
+        Intrinsics.checkNotNullExpressionValue(readFully, "readFully(...)");
+        return readFully;
     }
 
     public static /* synthetic */ String readText$default(android.util.AtomicFile atomicFile, Charset charset, int i, Object obj) {
@@ -47,13 +56,20 @@ public final class AtomicFileKt {
     }
 
     public static final String readText(android.util.AtomicFile atomicFile, Charset charset) {
-        return new String(atomicFile.readFully(), charset);
+        Intrinsics.checkNotNullParameter(atomicFile, "<this>");
+        Intrinsics.checkNotNullParameter(charset, "charset");
+        byte[] readFully = atomicFile.readFully();
+        Intrinsics.checkNotNullExpressionValue(readFully, "readFully(...)");
+        return new String(readFully, charset);
     }
 
-    public static final void writeBytes(android.util.AtomicFile atomicFile, byte[] bArr) {
+    public static final void writeBytes(android.util.AtomicFile atomicFile, byte[] array) {
+        Intrinsics.checkNotNullParameter(atomicFile, "<this>");
+        Intrinsics.checkNotNullParameter(array, "array");
         FileOutputStream startWrite = atomicFile.startWrite();
         try {
-            startWrite.write(bArr);
+            Intrinsics.checkNotNull(startWrite);
+            startWrite.write(array);
             atomicFile.finishWrite(startWrite);
         } catch (Throwable th) {
             atomicFile.failWrite(startWrite);

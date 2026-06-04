@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import timber.log.Timber;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HomeComponent.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/miami/game/feature/home/ui/model/HomeExternalUiState;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/miami/game/feature/home/ui/model/HomeExternalUiState;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent$observeExternal$1", f = "HomeComponent.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class HomeComponent$observeExternal$1 extends SuspendLambda implements Function2<HomeExternalUiState, Continuation<? super Unit>, Object> {

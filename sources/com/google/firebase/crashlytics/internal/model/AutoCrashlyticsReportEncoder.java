@@ -1,6 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import coil3.util.UtilsKt;
 import com.facebook.internal.NativeProtocol;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
@@ -350,7 +351,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         static final CrashlyticsReportSessionEventApplicationExecutionThreadFrameEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionThreadFrameEncoder();
         private static final FieldDescriptor PC_DESCRIPTOR = FieldDescriptor.of("pc");
         private static final FieldDescriptor SYMBOL_DESCRIPTOR = FieldDescriptor.of("symbol");
-        private static final FieldDescriptor FILE_DESCRIPTOR = FieldDescriptor.of("file");
+        private static final FieldDescriptor FILE_DESCRIPTOR = FieldDescriptor.of(UtilsKt.SCHEME_FILE);
         private static final FieldDescriptor OFFSET_DESCRIPTOR = FieldDescriptor.of(TypedValues.CycleType.S_WAVE_OFFSET);
         private static final FieldDescriptor IMPORTANCE_DESCRIPTOR = FieldDescriptor.of("importance");
 

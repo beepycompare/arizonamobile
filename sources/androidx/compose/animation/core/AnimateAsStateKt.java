@@ -356,7 +356,7 @@ public final class AnimateAsStateKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit animateValueAsState$lambda$7$0(Channel channel, Object obj) {
-        channel.mo9005trySendJP2dKIU(obj);
+        channel.mo9057trySendJP2dKIU(obj);
         return Unit.INSTANCE;
     }
 

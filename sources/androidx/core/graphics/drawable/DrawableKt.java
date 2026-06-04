@@ -7,9 +7,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Drawable.kt */
-@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0003\u0010\u0003\u001a\u00020\u00042\b\b\u0003\u0010\u0005\u001a\u00020\u00042\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u001a,\u0010\b\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\b\b\u0003\u0010\u0003\u001a\u00020\u00042\b\b\u0003\u0010\u0005\u001a\u00020\u00042\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u001a2\u0010\t\u001a\u00020\n*\u00020\u00022\b\b\u0003\u0010\u000b\u001a\u00020\u00042\b\b\u0003\u0010\f\u001a\u00020\u00042\b\b\u0003\u0010\r\u001a\u00020\u00042\b\b\u0003\u0010\u000e\u001a\u00020\u0004¨\u0006\u000f"}, d2 = {"toBitmap", "Landroid/graphics/Bitmap;", "Landroid/graphics/drawable/Drawable;", "width", "", "height", "config", "Landroid/graphics/Bitmap$Config;", "toBitmapOrNull", "updateBounds", "", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "core-ktx"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes.dex */
+@Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\u001a*\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0003\u0010\u0003\u001a\u00020\u00042\b\b\u0003\u0010\u0005\u001a\u00020\u00042\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u001a,\u0010\b\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\b\b\u0003\u0010\u0003\u001a\u00020\u00042\b\b\u0003\u0010\u0005\u001a\u00020\u00042\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u001a2\u0010\t\u001a\u00020\n*\u00020\u00022\b\b\u0003\u0010\u000b\u001a\u00020\u00042\b\b\u0003\u0010\f\u001a\u00020\u00042\b\b\u0003\u0010\r\u001a\u00020\u00042\b\b\u0003\u0010\u000e\u001a\u00020\u0004¨\u0006\u000f"}, d2 = {"toBitmap", "Landroid/graphics/Bitmap;", "Landroid/graphics/drawable/Drawable;", "width", "", "height", "config", "Landroid/graphics/Bitmap$Config;", "toBitmapOrNull", "updateBounds", "", TtmlNode.LEFT, "top", TtmlNode.RIGHT, "bottom", "core"}, k = 2, mv = {2, 1, 0}, xi = 48)
+/* loaded from: classes2.dex */
 public final class DrawableKt {
     public static /* synthetic */ Bitmap toBitmap$default(Drawable drawable, int i, int i2, Bitmap.Config config, int i3, Object obj) {
         if ((i3 & 1) != 0) {
@@ -25,6 +26,7 @@ public final class DrawableKt {
     }
 
     public static final Bitmap toBitmap(Drawable drawable, int i, int i2, Bitmap.Config config) {
+        Intrinsics.checkNotNullParameter(drawable, "<this>");
         if (drawable instanceof BitmapDrawable) {
             BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
             if (bitmapDrawable.getBitmap() == null) {
@@ -32,12 +34,17 @@ public final class DrawableKt {
             }
             if (config == null || bitmapDrawable.getBitmap().getConfig() == config) {
                 if (i == bitmapDrawable.getBitmap().getWidth() && i2 == bitmapDrawable.getBitmap().getHeight()) {
-                    return bitmapDrawable.getBitmap();
+                    Bitmap bitmap = bitmapDrawable.getBitmap();
+                    Intrinsics.checkNotNullExpressionValue(bitmap, "getBitmap(...)");
+                    return bitmap;
                 }
-                return Bitmap.createScaledBitmap(bitmapDrawable.getBitmap(), i, i2, true);
+                Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmapDrawable.getBitmap(), i, i2, true);
+                Intrinsics.checkNotNullExpressionValue(createScaledBitmap, "createScaledBitmap(...)");
+                return createScaledBitmap;
             }
         }
         Rect bounds = drawable.getBounds();
+        Intrinsics.checkNotNullExpressionValue(bounds, "getBounds(...)");
         int i3 = bounds.left;
         int i4 = bounds.top;
         int i5 = bounds.right;
@@ -46,6 +53,7 @@ public final class DrawableKt {
             config = Bitmap.Config.ARGB_8888;
         }
         Bitmap createBitmap = Bitmap.createBitmap(i, i2, config);
+        Intrinsics.checkNotNullExpressionValue(createBitmap, "createBitmap(...)");
         drawable.setBounds(0, 0, i, i2);
         drawable.draw(new Canvas(createBitmap));
         drawable.setBounds(i3, i4, i5, i6);
@@ -66,6 +74,7 @@ public final class DrawableKt {
     }
 
     public static final Bitmap toBitmapOrNull(Drawable drawable, int i, int i2, Bitmap.Config config) {
+        Intrinsics.checkNotNullParameter(drawable, "<this>");
         if ((drawable instanceof BitmapDrawable) && ((BitmapDrawable) drawable).getBitmap() == null) {
             return null;
         }
@@ -89,6 +98,7 @@ public final class DrawableKt {
     }
 
     public static final void updateBounds(Drawable drawable, int i, int i2, int i3, int i4) {
+        Intrinsics.checkNotNullParameter(drawable, "<this>");
         drawable.setBounds(i, i2, i3, i4);
     }
 }

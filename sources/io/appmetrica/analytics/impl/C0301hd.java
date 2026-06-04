@@ -1,6 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.util.SparseArray;
+import coil3.util.UtilsKt;
 /* renamed from: io.appmetrica.analytics.impl.hd  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0301hd {
@@ -16,13 +17,13 @@ public final class C0301hd {
         Db db = Db.EVENT_TYPE_UNDEFINED;
         sparseArray.put(5891, new C0301hd("jvm", "binder"));
         Db db2 = Db.EVENT_TYPE_UNDEFINED;
-        sparseArray.put(5890, new C0301hd("jvm", "file"));
+        sparseArray.put(5890, new C0301hd("jvm", UtilsKt.SCHEME_FILE));
         Db db3 = Db.EVENT_TYPE_UNDEFINED;
-        sparseArray.put(5889, new C0301hd("jvm", "file"));
+        sparseArray.put(5889, new C0301hd("jvm", UtilsKt.SCHEME_FILE));
         Db db4 = Db.EVENT_TYPE_UNDEFINED;
-        sparseArray.put(5897, new C0301hd("jni_native", "file"));
+        sparseArray.put(5897, new C0301hd("jni_native", UtilsKt.SCHEME_FILE));
         Db db5 = Db.EVENT_TYPE_UNDEFINED;
-        sparseArray.put(5898, new C0301hd("jni_native", "file"));
+        sparseArray.put(5898, new C0301hd("jni_native", UtilsKt.SCHEME_FILE));
     }
 
     public C0301hd(String str, String str2) {

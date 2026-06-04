@@ -273,7 +273,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                         ProgressiveMediaSource.Factory factory = new ProgressiveMediaSource.Factory(this.dataSourceFactory, new ExtractorsFactory() { // from class: androidx.media3.exoplayer.source.DefaultMediaSourceFactory$$ExternalSyntheticLambda0
                             @Override // androidx.media3.extractor.ExtractorsFactory
                             public final Extractor[] createExtractors() {
-                                return DefaultMediaSourceFactory.this.m8891xeef04c56(build2);
+                                return DefaultMediaSourceFactory.this.m8943xeef04c56(build2);
                             }
                         });
                         if (this.subtitleParserFactory.supportsFormat(build2)) {
@@ -304,7 +304,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createMediaSource$0$androidx-media3-exoplayer-source-DefaultMediaSourceFactory  reason: not valid java name */
-    public /* synthetic */ Extractor[] m8891xeef04c56(Format format) {
+    public /* synthetic */ Extractor[] m8943xeef04c56(Format format) {
         Extractor unknownSubtitlesExtractor;
         Extractor[] extractorArr = new Extractor[1];
         if (this.subtitleParserFactory.supportsFormat(format)) {
@@ -548,7 +548,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                     supplier2 = new Supplier() { // from class: androidx.media3.exoplayer.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4
                         @Override // com.google.common.base.Supplier
                         public final Object get() {
-                            return DefaultMediaSourceFactory.DelegateFactoryLoader.this.m8892xa479647d(factory);
+                            return DefaultMediaSourceFactory.DelegateFactoryLoader.this.m8944xa479647d(factory);
                         }
                     };
                 } else {
@@ -564,7 +564,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$loadSupplier$4$androidx-media3-exoplayer-source-DefaultMediaSourceFactory$DelegateFactoryLoader  reason: not valid java name */
-        public /* synthetic */ MediaSource.Factory m8892xa479647d(DataSource.Factory factory) {
+        public /* synthetic */ MediaSource.Factory m8944xa479647d(DataSource.Factory factory) {
             return new ProgressiveMediaSource.Factory(factory, this.extractorsFactory).setLoadOnlySelectedTracks(this.loadOnlySelectedTracks);
         }
     }

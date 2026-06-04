@@ -75,7 +75,7 @@ public final class WormIndicatorType extends IndicatorType {
 
     @Override // com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType
     /* renamed from: IndicatorTypeComposable--jt2gSs */
-    public void mo9821IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
+    public void mo9872IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
         int i3;
         final int i4;
         final MutableState mutableState;
@@ -360,17 +360,17 @@ public final class WormIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m8158boximpl(m9829invokeD9Ej5fM());
+                            return Dp.m8158boximpl(m9880invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9829invokeD9Ej5fM() {
+                        public final float m9880invokeD9Ej5fM() {
                             DotGraphic dotGraphic;
                             DotGraphic dotGraphic2;
                             dotGraphic = WormIndicatorType.this.dotsGraphic;
-                            float m9820getSizeD9Ej5fM = dotGraphic.m9820getSizeD9Ej5fM();
+                            float m9871getSizeD9Ej5fM = dotGraphic.m9871getSizeD9Ej5fM();
                             dotGraphic2 = WormIndicatorType.this.wormDotGraphic;
-                            return Dp.m8160constructorimpl(Dp.m8160constructorimpl(m9820getSizeD9Ej5fM - dotGraphic2.m9820getSizeD9Ej5fM()) / 2.0f);
+                            return Dp.m8160constructorimpl(Dp.m8160constructorimpl(m9871getSizeD9Ej5fM - dotGraphic2.m9871getSizeD9Ej5fM()) / 2.0f);
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue4);
@@ -393,11 +393,11 @@ public final class WormIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m8158boximpl(m9830invokeD9Ej5fM());
+                            return Dp.m8158boximpl(m9881invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9830invokeD9Ej5fM() {
+                        public final float m9881invokeD9Ej5fM() {
                             float IndicatorTypeComposable__jt2gSs$lambda$4;
                             float IndicatorTypeComposable__jt2gSs$lambda$1;
                             IndicatorTypeComposable__jt2gSs$lambda$4 = WormIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$4(mutableState2);
@@ -424,16 +424,16 @@ public final class WormIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m8158boximpl(m9832invokeD9Ej5fM());
+                            return Dp.m8158boximpl(m9883invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9832invokeD9Ej5fM() {
+                        public final float m9883invokeD9Ej5fM() {
                             float IndicatorTypeComposable__jt2gSs$lambda$17$lambda$10;
                             DotGraphic dotGraphic;
                             IndicatorTypeComposable__jt2gSs$lambda$17$lambda$10 = WormIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$17$lambda$10(state3);
                             dotGraphic = WormIndicatorType.this.wormDotGraphic;
-                            return Dp.m8160constructorimpl(IndicatorTypeComposable__jt2gSs$lambda$17$lambda$10 + dotGraphic.m9820getSizeD9Ej5fM());
+                            return Dp.m8160constructorimpl(IndicatorTypeComposable__jt2gSs$lambda$17$lambda$10 + dotGraphic.m9871getSizeD9Ej5fM());
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue6);
@@ -483,11 +483,11 @@ public final class WormIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m8158boximpl(m9831invokeD9Ej5fM());
+                            return Dp.m8158boximpl(m9882invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m9831invokeD9Ej5fM() {
+                        public final float m9882invokeD9Ej5fM() {
                             float IndicatorTypeComposable__jt2gSs$lambda$12;
                             float IndicatorTypeComposable__jt2gSs$lambda$42;
                             float IndicatorTypeComposable__jt2gSs$lambda$13;
@@ -539,7 +539,7 @@ public final class WormIndicatorType extends IndicatorType {
                 }
 
                 public final void invoke(Composer composer3, int i9) {
-                    WormIndicatorType.this.mo9821IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    WormIndicatorType.this.mo9872IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }

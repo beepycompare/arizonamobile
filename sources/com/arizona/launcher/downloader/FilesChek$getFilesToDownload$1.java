@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FilesChek.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.arizona.launcher.downloader.FilesChek", f = "FilesChek.kt", i = {0, 0, 0, 0, 0}, l = {79}, m = "getFilesToDownload", n = {"sources", "dir", "destDir", "updateFiles", "useManifest"}, nl = {117}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class FilesChek$getFilesToDownload$1 extends ContinuationImpl {

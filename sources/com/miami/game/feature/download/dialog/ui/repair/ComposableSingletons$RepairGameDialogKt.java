@@ -11,7 +11,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RepairGameDialog.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$RepairGameDialogKt {
     public static final ComposableSingletons$RepairGameDialogKt INSTANCE = new ComposableSingletons$RepairGameDialogKt();
@@ -33,12 +33,12 @@ public final class ComposableSingletons$RepairGameDialogKt {
     });
 
     /* renamed from: getLambda$-1796529959$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9742getLambda$1796529959$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9793getLambda$1796529959$dialogs() {
         return f58lambda$1796529959;
     }
 
     /* renamed from: getLambda$-277375600$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9743getLambda$277375600$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9794getLambda$277375600$dialogs() {
         return f59lambda$277375600;
     }
 
@@ -52,7 +52,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1796529959, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt.lambda$-1796529959.<anonymous> (RepairGameDialog.kt:75)");
             }
-            TextKt.m3157TextNvy7gAk("НЕТ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("НЕТ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -70,7 +70,7 @@ public final class ComposableSingletons$RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-277375600, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameDialogKt.lambda$-277375600.<anonymous> (RepairGameDialog.kt:81)");
             }
-            TextKt.m3157TextNvy7gAk("ДА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ДА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

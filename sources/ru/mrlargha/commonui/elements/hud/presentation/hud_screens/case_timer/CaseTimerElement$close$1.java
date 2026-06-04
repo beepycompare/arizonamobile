@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: CaseTimer.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement$close$1", f = "CaseTimer.kt", i = {}, l = {77}, m = "invokeSuspend", n = {}, nl = {MdtaMetadataEntry.TYPE_INDICATOR_UNSIGNED_INT64}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class CaseTimerElement$close$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

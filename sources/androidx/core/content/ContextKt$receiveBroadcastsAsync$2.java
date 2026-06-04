@@ -21,7 +21,7 @@ import kotlinx.coroutines.CoroutineStart;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Context.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0001\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.core.content.ContextKt$receiveBroadcastsAsync$2", f = "Context.kt", i = {}, l = {238}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "androidx.core.content.ContextKt$receiveBroadcastsAsync$2", f = "Context.kt", i = {}, l = {241}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class ContextKt$receiveBroadcastsAsync$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<?>, Object> {
     final /* synthetic */ String $broadcastPermission;

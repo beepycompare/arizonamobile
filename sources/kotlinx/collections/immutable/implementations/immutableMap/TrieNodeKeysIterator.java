@@ -9,7 +9,7 @@ import kotlinx.collections.immutable.internal.CommonFunctionsKt;
 public final class TrieNodeKeysIterator<K, V> extends TrieNodeBaseIterator<K, V, K> {
     @Override // java.util.Iterator
     public K next() {
-        CommonFunctionsKt.m11343assert(hasNextKey());
+        CommonFunctionsKt.m11417assert(hasNextKey());
         setIndex(getIndex() + 2);
         return (K) getBuffer()[getIndex() - 2];
     }

@@ -43,7 +43,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlayContent.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a?\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"PlayContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickGame", "Lkotlin/Function0;", "onClickServer", "onLongClickGame", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "home"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aQ\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001b\u0002\b\tb\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f¢\u0006\u0002\u0010\b¨\u0006\r"}, d2 = {"PlayContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickGame", "Lkotlin/Function0;", "onClickServer", "onLongClickGame", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "home"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class PlayContentKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -157,7 +157,7 @@ public final class PlayContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1066622857, "C64@2561L27,65@2649L339,65@2601L387:PlayContent.kt#dswm0d");
-            AnimatedLoadingKt.m9721AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
+            AnimatedLoadingKt.m9772AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
             ScalingButtonKt.ScalingButtonLong(onClickGame, onLongClickGame, null, ComposableLambdaKt.rememberComposableLambda(775434495, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.PlayContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -175,7 +175,7 @@ public final class PlayContentKt {
             if (isCheckingFiles) {
                 startRestartGroup.startReplaceGroup(-676623729);
                 ComposerKt.sourceInformation(startRestartGroup, "80@3106L10,81@3159L13,82@3203L13,79@3037L392");
-                TextKt.m3157TextNvy7gAk((String) mutableState.getValue(), SizeKt.m1103height3ABfNKs(OffsetKt.m1010offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m8160constructorimpl(62.0f), 0.0f, 2, null), Dp.m8160constructorimpl(24.0f)), ColorKt.Color(4294046193L), null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
+                TextKt.m3157TextNvy7gAk((String) mutableState.getValue(), SizeKt.m1103height3ABfNKs(OffsetKt.m1010offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m8160constructorimpl(62.0f), 0.0f, 2, null), Dp.m8160constructorimpl(24.0f)), ColorKt.Color(4294046193L), null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {

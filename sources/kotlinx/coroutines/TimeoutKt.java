@@ -29,8 +29,8 @@ public final class TimeoutKt {
     }
 
     /* renamed from: withTimeout-KLykuaI  reason: not valid java name */
-    public static final <T> Object m11355withTimeoutKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        return withTimeout(DelayKt.m11347toDelayMillisLRDsOJo(j), function2, continuation);
+    public static final <T> Object m11429withTimeoutKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
+        return withTimeout(DelayKt.m11421toDelayMillisLRDsOJo(j), function2, continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
@@ -104,8 +104,8 @@ public final class TimeoutKt {
     }
 
     /* renamed from: withTimeoutOrNull-KLykuaI  reason: not valid java name */
-    public static final <T> Object m11356withTimeoutOrNullKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        return withTimeoutOrNull(DelayKt.m11347toDelayMillisLRDsOJo(j), function2, continuation);
+    public static final <T> Object m11430withTimeoutOrNullKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
+        return withTimeoutOrNull(DelayKt.m11421toDelayMillisLRDsOJo(j), function2, continuation);
     }
 
     private static final <U, T extends U> Object setupTimeout(TimeoutCoroutine<U, ? super T> timeoutCoroutine, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2) {
@@ -124,7 +124,7 @@ public final class TimeoutKt {
         DelayWithTimeoutDiagnostics delayWithTimeoutDiagnostics = delay instanceof DelayWithTimeoutDiagnostics ? (DelayWithTimeoutDiagnostics) delay : null;
         if (delayWithTimeoutDiagnostics != null) {
             Duration.Companion companion = Duration.Companion;
-            str2 = delayWithTimeoutDiagnostics.m11348timeoutMessageLRDsOJo(DurationKt.toDuration(j, DurationUnit.MILLISECONDS));
+            str2 = delayWithTimeoutDiagnostics.m11422timeoutMessageLRDsOJo(DurationKt.toDuration(j, DurationUnit.MILLISECONDS));
         }
         str2 = "Timed out waiting for " + j + " ms";
         if (str != null) {

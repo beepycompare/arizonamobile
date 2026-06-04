@@ -99,7 +99,7 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
         this.retainedInstance = retainedInstance;
         if (list == null) {
             retainedInstance.onDestroy();
-            m9423switch(navState.getChildren());
+            m9474switch(navState.getChildren());
         } else {
             restore(navState, list);
         }
@@ -307,12 +307,12 @@ public final class ChildrenNavigator<C, T, N extends NavState<? extends C>> {
 
     public final void navigate(N navState) {
         Intrinsics.checkNotNullParameter(navState, "navState");
-        m9423switch(navState.getChildren());
+        m9474switch(navState.getChildren());
         this.navState = navState;
     }
 
     /* renamed from: switch  reason: not valid java name */
-    private final void m9423switch(List<? extends ChildNavState<? extends C>> list) {
+    private final void m9474switch(List<? extends ChildNavState<? extends C>> list) {
         Map<ItemKey, ? extends ChildNavState<? extends C>> keyed = UtilsKt.keyed(list, new PropertyReference1Impl() { // from class: com.arkivanov.decompose.router.children.ChildrenNavigator$switch$newKeyedStates$1
             @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object get(Object obj) {

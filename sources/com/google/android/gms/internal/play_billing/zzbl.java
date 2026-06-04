@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -55,7 +56,7 @@ public final class zzbl {
                 str = "μs";
                 break;
             case 3:
-                str = "ms";
+                str = AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL;
                 break;
             case 4:
                 str = CmcdData.STREAMING_FORMAT_SS;

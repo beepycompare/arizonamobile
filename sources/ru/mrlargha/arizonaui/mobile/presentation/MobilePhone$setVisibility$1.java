@@ -17,7 +17,7 @@ import ru.mrlargha.feature.mobile.presentation.HistoryManager;
 import ru.mrlargha.feature.mobile.presentation.MobileController;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MobilePhone.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.arizonaui.mobile.presentation.MobilePhone$setVisibility$1", f = "MobilePhone.kt", i = {}, l = {103}, m = "invokeSuspend", n = {}, nl = {104}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class MobilePhone$setVisibility$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

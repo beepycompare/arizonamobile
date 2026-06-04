@@ -1,6 +1,7 @@
 package com.google.android.gms.internal.measurement;
 
 import android.net.Uri;
+import coil3.util.UtilsKt;
 import com.google.common.io.Files;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,7 +21,7 @@ public final class zzsd implements zzsx {
 
     @Override // com.google.android.gms.internal.measurement.zzsx
     public final String zzc() {
-        return "file";
+        return UtilsKt.SCHEME_FILE;
     }
 
     @Override // com.google.android.gms.internal.measurement.zzsx

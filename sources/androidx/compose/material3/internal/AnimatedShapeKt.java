@@ -140,7 +140,7 @@ public final class AnimatedShapeKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit rememberAnimatedShape$lambda$4$lambda$3(Channel channel, RoundedCornerShape roundedCornerShape) {
-        channel.mo9005trySendJP2dKIU(roundedCornerShape);
+        channel.mo9057trySendJP2dKIU(roundedCornerShape);
         return Unit.INSTANCE;
     }
 }

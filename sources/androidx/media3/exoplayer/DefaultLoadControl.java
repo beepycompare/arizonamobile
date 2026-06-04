@@ -16,6 +16,7 @@ import androidx.media3.exoplayer.upstream.Allocation;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.DefaultAllocator;
 import androidx.media3.exoplayer.upstream.PlayerIdAwareAllocator;
+import coil3.util.UtilsKt;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -49,7 +50,7 @@ public class DefaultLoadControl implements LoadControl {
     public static final int DEFAULT_TEXT_BUFFER_SIZE = 131072;
     public static final int DEFAULT_VIDEO_BUFFER_SIZE = 131072000;
     public static final int DEFAULT_VIDEO_BUFFER_SIZE_FOR_LOCAL_PLAYBACK = 19660800;
-    public static final ImmutableList<String> LOCAL_PLAYBACK_SCHEMES = ImmutableList.of("file", FirebaseAnalytics.Param.CONTENT, "data", "android.resource", RawResourceDataSource.RAW_RESOURCE_SCHEME, "asset");
+    public static final ImmutableList<String> LOCAL_PLAYBACK_SCHEMES = ImmutableList.of(UtilsKt.SCHEME_FILE, FirebaseAnalytics.Param.CONTENT, "data", "android.resource", RawResourceDataSource.RAW_RESOURCE_SCHEME, "asset");
     private final DefaultAllocator allocator;
     private final long backBufferDurationUs;
     private final long bufferForPlaybackAfterRebufferForLocalPlaybackUs;

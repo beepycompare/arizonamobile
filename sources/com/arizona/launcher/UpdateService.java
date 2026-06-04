@@ -8,6 +8,9 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,6 +23,9 @@ import android.util.Log;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.media3.exoplayer.upstream.CmcdData;
+import coil3.util.UtilsKt;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -49,12 +55,18 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
@@ -66,17 +78,19 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.BuildersKt__Builders_concurrentKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.ConnectionPool;
 import okhttp3.OkHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000¿\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006*\u0001%\b\u0007\u0018\u0000 \\2\u00020\u0001:\u0005\\]^_`B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010'\u001a\u00020(H\u0016J\b\u0010)\u001a\u00020(H\u0002J\"\u0010*\u001a\u00020+2\b\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020+2\u0006\u0010/\u001a\u00020+H\u0016J\b\u00100\u001a\u00020(H\u0002J\b\u00101\u001a\u000202H\u0002J\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u000202H\u0002J\b\u00106\u001a\u00020(H\u0002J\u0012\u00107\u001a\u0004\u0018\u0001082\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u00109\u001a\u0002022\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u0010:\u001a\u00020(2\u0006\u0010,\u001a\u00020-H\u0016J\b\u0010;\u001a\u00020(H\u0016J\u0012\u0010<\u001a\u00020(2\b\u0010=\u001a\u0004\u0018\u00010-H\u0016J\u000e\u0010>\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012J\b\u0010@\u001a\u000202H\u0002J\b\u0010A\u001a\u00020(H\u0002J\u0006\u0010B\u001a\u00020(J\b\u0010C\u001a\u00020(H\u0002J\u0018\u0010D\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J \u0010G\u001a\u00020(2\u0016\u0010H\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J\b\u0010I\u001a\u00020(H\u0002J\u0010\u0010J\u001a\u00020(2\u0006\u00105\u001a\u000202H\u0002J\u0018\u0010K\u001a\u00020(2\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020\u0014H\u0002J\b\u0010O\u001a\u00020\u0012H\u0002J\u0010\u0010P\u001a\u00020(2\u0006\u0010Q\u001a\u00020\bH\u0002J\u0010\u0010R\u001a\u0002022\u0006\u0010S\u001a\u00020TH\u0002J\u0010\u0010U\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\b\u0010V\u001a\u00020(H\u0002J\u0010\u0010X\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\u001c\u0010Y\u001a\u00020(2\u0006\u0010?\u001a\u00020\u00122\f\u0010Z\u001a\b\u0012\u0004\u0012\u00020(0[R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082.¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u000e\u0010W\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006a"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "createNotificationChannel", "onStartCommand", "", "intent", "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isAppInForeground", "", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "deleteExistingDownloadTarget", "destFile", "Ljava/io/File;", "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "onFinish", "Lkotlin/Function0;", "Companion", "Errno", "UpdateStatus", "GameStatus", "IncomingHandler", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ß\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000*\u0001+\b\u0007\u0018\u0000 r2\u00020\u0001:\u0006rstuvwB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010-\u001a\u00020.H\u0016J\b\u0010/\u001a\u00020.H\u0002J\"\u00100\u001a\u0002012\b\u00102\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u0002012\u0006\u00105\u001a\u000201H\u0016J\b\u00106\u001a\u00020.H\u0002J\b\u00107\u001a\u000208H\u0002J\b\u00109\u001a\u000208H\u0002J\u0010\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u000208H\u0002J\b\u0010=\u001a\u00020.H\u0002J\u0012\u0010>\u001a\u0004\u0018\u00010?2\u0006\u00102\u001a\u000203H\u0016J\u0010\u0010@\u001a\u0002082\u0006\u00102\u001a\u000203H\u0016J\u0010\u0010A\u001a\u00020.2\u0006\u00102\u001a\u000203H\u0016J\b\u0010B\u001a\u00020.H\u0016J\u0012\u0010C\u001a\u00020.2\b\u0010D\u001a\u0004\u0018\u000103H\u0016J\u000e\u0010E\u001a\u00020.2\u0006\u0010F\u001a\u00020\u0012J\b\u0010G\u001a\u000208H\u0002J\b\u0010H\u001a\u00020.H\u0002J\u0006\u0010I\u001a\u00020.JF\u0010J\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020L0K2\u0006\u0010M\u001a\u00020\u001e2\b\b\u0002\u0010N\u001a\u00020\u00122\b\b\u0002\u0010O\u001a\u00020\u00122\u0014\b\u0002\u0010P\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020L0KH\u0002J\u0014\u0010Q\u001a\u0004\u0018\u00010\u00122\b\u0010R\u001a\u0004\u0018\u00010\u0012H\u0002J\u001c\u0010S\u001a\u0002082\b\u0010T\u001a\u0004\u0018\u00010\u00122\b\u0010U\u001a\u0004\u0018\u00010\u0012H\u0002J\b\u0010V\u001a\u00020.H\u0002J\u0018\u0010W\u001a\u0012\u0012\u0004\u0012\u0002010Xj\b\u0012\u0004\u0012\u000201`YH\u0002J \u0010Z\u001a\u00020.2\u0016\u0010[\u001a\u0012\u0012\u0004\u0012\u0002010Xj\b\u0012\u0004\u0012\u000201`YH\u0002J\b\u0010\\\u001a\u00020.H\u0002J\u0010\u0010]\u001a\u00020.2\u0006\u0010<\u001a\u000208H\u0002J\u0018\u0010^\u001a\u00020.2\u0006\u0010_\u001a\u00020`2\u0006\u0010a\u001a\u00020\u0014H\u0002J\b\u0010b\u001a\u00020\u0012H\u0002J\u0010\u0010c\u001a\u00020.2\u0006\u0010d\u001a\u00020\bH\u0002J\u0010\u0010e\u001a\u0002082\u0006\u0010f\u001a\u00020gH\u0002J\u0010\u0010h\u001a\u00020.2\u0006\u0010F\u001a\u00020\u0012H\u0002J\b\u0010i\u001a\u00020.H\u0002J\u0010\u0010k\u001a\u00020.2\u0006\u0010F\u001a\u00020\u0012H\u0002J&\u0010l\u001a\u00020.2\u0006\u0010F\u001a\u00020\u00122\b\b\u0002\u0010m\u001a\u0002012\f\u0010n\u001a\b\u0012\u0004\u0012\u00020.0oJ\u0010\u0010p\u001a\u00020.2\u0006\u0010q\u001a\u000201H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\"\u001a\u00020#8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b&\u0010'\u001a\u0004\b$\u0010%R\u000e\u0010(\u001a\u00020)X\u0082.¢\u0006\u0002\n\u0000R\u0010\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0004\n\u0002\u0010,R\u000e\u0010j\u001a\u000201X\u0082\u000e¢\u0006\u0002\n\u0000Ê\u0001\u0002\byÊ\u0001\f\bz\u0012\b\b{\u0012\u0004\b\u0003\u0010\u0000¨\u0006x"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "sharedRequestQueue", "Lcom/android/volley/RequestQueue;", "getSharedRequestQueue", "()Lcom/android/volley/RequestQueue;", "sharedRequestQueue$delegate", "Lkotlin/Lazy;", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "createNotificationChannel", "onStartCommand", "", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT, "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isDeviceOnline", "", "isAppInForeground", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "buildExpectedFileInfo", "", "Lcom/arizona/launcher/UpdateService$ExpectedFile;", "sources", "dir", "destDir", "out", "hostOf", "url", "sameHost", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "deleteExistingDownloadTarget", "destFile", "Ljava/io/File;", "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "attemptsLeft", "onFinish", "Lkotlin/Function0;", "notifyCheckUpdateAndDownloadUnreachable", "callSite", "Companion", "Errno", "UpdateStatus", "GameStatus", "ExpectedFile", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateService extends Hilt_UpdateService {
@@ -122,6 +136,14 @@ public final class UpdateService extends Hilt_UpdateService {
     private Errno mLastOperationStatus = Errno.NoError;
     private JSONArray mDataInfo = new JSONArray();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
+    private final Lazy sharedRequestQueue$delegate = LazyKt.lazy(new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+        @Override // kotlin.jvm.functions.Function0
+        public final Object invoke() {
+            RequestQueue newRequestQueue;
+            newRequestQueue = Volley.newRequestQueue(UpdateService.this.getApplicationContext());
+            return newRequestQueue;
+        }
+    });
     private final UpdateService$checkTimeoutRunnable$1 checkTimeoutRunnable = new Runnable() { // from class: com.arizona.launcher.UpdateService$checkTimeoutRunnable$1
         @Override // java.lang.Runnable
         public void run() {
@@ -164,7 +186,7 @@ public final class UpdateService extends Hilt_UpdateService {
     };
 
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "CURRENT_PROGRESS", "TIMEOUT_DOWNLOADER", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "PREFERENCE_FILE_KEY", "TASK_ID_LIST_KEY", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "CURRENT_PROGRESS", "TIMEOUT_DOWNLOADER", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "PREFERENCE_FILE_KEY", "TASK_ID_LIST_KEY", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -178,7 +200,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/UpdateService$Errno;", "", "<init>", "(Ljava/lang/String;I)V", "NoError", "UpdateServerUnreachable", "ConnectionRefused", "CorruptedFilesFound", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/UpdateService$Errno;", "", "<init>", "(Ljava/lang/String;I)V", "NoError", "UpdateServerUnreachable", "ConnectionRefused", "CorruptedFilesFound", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Errno {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -217,7 +239,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\t"}, d2 = {"Lcom/arizona/launcher/UpdateService$UpdateStatus;", "", "<init>", "(Ljava/lang/String;I)V", "Undefined", "CheckUpdate", "CheckFiles", "DownloadGame", "DownloadGameData", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\t"}, d2 = {"Lcom/arizona/launcher/UpdateService$UpdateStatus;", "", "<init>", "(Ljava/lang/String;I)V", "Undefined", "CheckUpdate", "CheckFiles", "DownloadGame", "DownloadGameData", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class UpdateStatus {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -257,7 +279,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/UpdateService$GameStatus;", "", "<init>", "(Ljava/lang/String;I)V", "Undefined", "UnsupportedVersion", "UpdateRequired", "Updated", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/UpdateService$GameStatus;", "", "<init>", "(Ljava/lang/String;I)V", "Undefined", "UnsupportedVersion", "UpdateRequired", "Updated", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class GameStatus {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -291,6 +313,10 @@ public final class UpdateService extends Hilt_UpdateService {
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
         }
+    }
+
+    private final RequestQueue getSharedRequestQueue() {
+        return (RequestQueue) this.sharedRequestQueue$delegate.getValue();
     }
 
     @Override // com.arizona.launcher.Hilt_UpdateService, android.app.Service
@@ -378,6 +404,17 @@ public final class UpdateService extends Hilt_UpdateService {
         }
     }
 
+    private final boolean isDeviceOnline() {
+        Network activeNetwork;
+        NetworkCapabilities networkCapabilities;
+        Object systemService = getSystemService("connectivity");
+        ConnectivityManager connectivityManager = systemService instanceof ConnectivityManager ? (ConnectivityManager) systemService : null;
+        if (connectivityManager == null || (activeNetwork = connectivityManager.getActiveNetwork()) == null || (networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)) == null) {
+            return false;
+        }
+        return networkCapabilities.hasCapability(12);
+    }
+
     private final boolean isAppInForeground() {
         Object systemService = getSystemService("activity");
         Intrinsics.checkNotNull(systemService, "null cannot be cast to non-null type android.app.ActivityManager");
@@ -457,8 +494,7 @@ public final class UpdateService extends Hilt_UpdateService {
         Log.i(TAG, "checkUpdate: requesting server for update json");
         startForegroundService();
         setUpdateStatus(UpdateStatus.CheckUpdate);
-        RequestQueue newRequestQueue = Volley.newRequestQueue(getApplicationContext());
-        Intrinsics.checkNotNullExpressionValue(newRequestQueue, "newRequestQueue(...)");
+        RequestQueue sharedRequestQueue = getSharedRequestQueue();
         this.mLastOperationStatus = Errno.NoError;
         if (server.length() == 0) {
             Bundle bundle = new Bundle();
@@ -477,12 +513,12 @@ public final class UpdateService extends Hilt_UpdateService {
             stopForegroundService();
             return;
         }
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
+        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda15
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
                 UpdateService.checkUpdate$lambda$0(UpdateService.this, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
                 UpdateService.checkUpdate$lambda$1(UpdateService.this, volleyError);
@@ -490,14 +526,14 @@ public final class UpdateService extends Hilt_UpdateService {
         });
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
         stringRequest.setShouldCache(false);
-        newRequestQueue.add(stringRequest);
+        sharedRequestQueue.add(stringRequest);
         Log.v(TAG, "Add to queue " + stringRequest);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkUpdate$lambda$0(UpdateService updateService, final String str) {
         final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda15
+        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 JSONArray checkUpdate$lambda$0$0;
@@ -517,16 +553,12 @@ public final class UpdateService extends Hilt_UpdateService {
     public static final JSONArray checkUpdate$lambda$0$0(JSONObject jSONObject, String str, String str2) {
         JSONArray jSONArray = jSONObject.getJSONObject("data").getJSONArray("data");
         int length = jSONArray.length();
-        if (length >= 0) {
-            int i = 0;
-            while (!Intrinsics.areEqual(jSONArray.getJSONObject(i).getString("name"), str2)) {
-                if (i != length) {
-                    i++;
-                }
+        for (int i = 0; i < length; i++) {
+            if (Intrinsics.areEqual(jSONArray.getJSONObject(i).getString("name"), str2)) {
+                JSONArray jSONArray2 = jSONArray.getJSONObject(i).getJSONArray("data");
+                Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
+                return jSONArray2;
             }
-            JSONArray jSONArray2 = jSONArray.getJSONObject(i).getJSONArray("data");
-            Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
-            return jSONArray2;
         }
         throw new Exception("JSON Corrupted " + str);
     }
@@ -584,9 +616,143 @@ public final class UpdateService extends Hilt_UpdateService {
         Log.v(TAG, "Send message game data updated " + obtain);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: UpdateService.kt */
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\t\u0010\n\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000b\u001a\u00020\u0003HÆ\u0003J\u001d\u0010\f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0010\u001a\u00020\u0011HÖ\u0081\u0004J\n\u0010\u0012\u001a\u00020\u0013HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u0014"}, d2 = {"Lcom/arizona/launcher/UpdateService$ExpectedFile;", "", "size", "", "dateMillis", "<init>", "(JJ)V", "getSize", "()J", "getDateMillis", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes3.dex */
+    public static final class ExpectedFile {
+        private final long dateMillis;
+        private final long size;
+
+        public static /* synthetic */ ExpectedFile copy$default(ExpectedFile expectedFile, long j, long j2, int i, Object obj) {
+            if ((i & 1) != 0) {
+                j = expectedFile.size;
+            }
+            if ((i & 2) != 0) {
+                j2 = expectedFile.dateMillis;
+            }
+            return expectedFile.copy(j, j2);
+        }
+
+        public final long component1() {
+            return this.size;
+        }
+
+        public final long component2() {
+            return this.dateMillis;
+        }
+
+        public final ExpectedFile copy(long j, long j2) {
+            return new ExpectedFile(j, j2);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof ExpectedFile) {
+                ExpectedFile expectedFile = (ExpectedFile) obj;
+                return this.size == expectedFile.size && this.dateMillis == expectedFile.dateMillis;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (Long.hashCode(this.size) * 31) + Long.hashCode(this.dateMillis);
+        }
+
+        public String toString() {
+            long j = this.size;
+            return "ExpectedFile(size=" + j + ", dateMillis=" + this.dateMillis + ")";
+        }
+
+        public ExpectedFile(long j, long j2) {
+            this.size = j;
+            this.dateMillis = j2;
+        }
+
+        public final long getDateMillis() {
+            return this.dateMillis;
+        }
+
+        public final long getSize() {
+            return this.size;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    static /* synthetic */ Map buildExpectedFileInfo$default(UpdateService updateService, JSONArray jSONArray, String str, String str2, Map map, int i, Object obj) {
+        if ((i & 2) != 0) {
+            str = "";
+        }
+        if ((i & 4) != 0) {
+            str2 = "";
+        }
+        if ((i & 8) != 0) {
+            map = new LinkedHashMap();
+        }
+        return updateService.buildExpectedFileInfo(jSONArray, str, str2, map);
+    }
+
+    private final Map<String, ExpectedFile> buildExpectedFileInfo(JSONArray jSONArray, String str, String str2, Map<String, ExpectedFile> map) {
+        int length = jSONArray.length();
+        for (int i = 0; i < length; i++) {
+            JSONObject jSONObject = jSONArray.getJSONObject(i);
+            String string = jSONObject.getString("type");
+            if (string != null) {
+                int hashCode = string.hashCode();
+                if (hashCode != 99469) {
+                    if (hashCode == 112800) {
+                        if (!string.equals("res")) {
+                        }
+                        map.put(str2 + str + "/" + jSONObject.getString("name"), new ExpectedFile(jSONObject.getLong("size"), jSONObject.optLong("date_change", 0L) * 1000));
+                    } else if (hashCode == 3143036) {
+                        if (!string.equals(UtilsKt.SCHEME_FILE)) {
+                        }
+                        map.put(str2 + str + "/" + jSONObject.getString("name"), new ExpectedFile(jSONObject.getLong("size"), jSONObject.optLong("date_change", 0L) * 1000));
+                    }
+                } else if (string.equals("dir")) {
+                    String string2 = jSONObject.getString("name");
+                    JSONArray jSONArray2 = jSONObject.getJSONArray("data");
+                    Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
+                    buildExpectedFileInfo(jSONArray2, str + "/" + string2, str2, map);
+                }
+            }
+        }
+        return map;
+    }
+
+    private final String hostOf(String str) {
+        String str2 = str;
+        if (str2 == null || StringsKt.isBlank(str2)) {
+            return null;
+        }
+        String substringAfter = StringsKt.substringAfter(str, "://", "");
+        if (substringAfter.length() == 0) {
+            return null;
+        }
+        String lowerCase = StringsKt.substringBefore$default(StringsKt.substringBefore$default(substringAfter, '/', (String) null, 2, (Object) null), (char) AbstractJsonLexerKt.COLON, (String) null, 2, (Object) null).toLowerCase(Locale.ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
+        String str3 = lowerCase;
+        return StringsKt.isBlank(str3) ? null : str3;
+    }
+
+    private final boolean sameHost(String str, String str2) {
+        String hostOf;
+        String hostOf2 = hostOf(str);
+        if (hostOf2 == null || (hostOf = hostOf(str2)) == null) {
+            return false;
+        }
+        return Intrinsics.areEqual(hostOf2, hostOf);
+    }
+
     private final void downloadGameData() {
         String str;
         File externalFilesDir;
+        Map map;
+        HashMap hashMap;
+        boolean z;
+        String str2;
         Log.i(TAG, "Downloading game data...");
         startForegroundService();
         DownloadContext.Builder commit = new DownloadContext.QueueSet().setMinIntervalMillisCallbackProcess(100).commit();
@@ -595,7 +761,6 @@ public final class UpdateService extends Hilt_UpdateService {
         this.mTotalLength = 0L;
         String currentServer = FileServers.INSTANCE.getCurrentServer();
         this.mLastOperationStatus = Errno.NoError;
-        int i = 2;
         if (currentServer.length() == 0) {
             Bundle bundle = new Bundle();
             bundle.putInt(".kt", 478);
@@ -631,16 +796,70 @@ public final class UpdateService extends Hilt_UpdateService {
             stopForegroundService();
             return;
         }
+        Map buildExpectedFileInfo$default = buildExpectedFileInfo$default(this, this.mDataInfo, null, null, null, 14, null);
+        HashMap hashMap2 = new HashMap();
         int size = this.mUpdateFiles.size();
-        int i2 = 0;
-        while (i2 < size) {
-            String str2 = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i2);
-            if (str2 == null || (str = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i2)) == null) {
+        int i = 0;
+        while (i < size) {
+            String str3 = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i);
+            if (str3 == null || (str = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i)) == null) {
                 return;
             }
-            String str3 = currentServer + "data/files" + str2;
+            String str4 = currentServer + "data/files" + str3;
+            int i2 = size;
+            int i3 = i;
             File file = new File((getExternalFilesDir(null) != null ? externalFilesDir.getPath() : null) + str);
-            if (!deleteExistingDownloadTarget(file)) {
+            ExpectedFile expectedFile = (ExpectedFile) buildExpectedFileInfo$default.get(str3);
+            File parentFile = file.getParentFile();
+            if (parentFile == null || parentFile.exists() || parentFile.mkdirs()) {
+                map = buildExpectedFileInfo$default;
+            } else {
+                map = buildExpectedFileInfo$default;
+                Log.e(TAG, "Error make directory " + parentFile.getAbsolutePath());
+            }
+            ArrayList<Integer> notFinishedTaskIdList = notFinishedTaskIdList();
+            Long valueOf = expectedFile != null ? Long.valueOf(expectedFile.getSize()) : null;
+            Iterator<Integer> it = notFinishedTaskIdList.iterator();
+            Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
+            boolean z2 = false;
+            while (true) {
+                Iterator<Integer> it2 = it;
+                if (!it.hasNext()) {
+                    break;
+                }
+                Integer next = it2.next();
+                ExpectedFile expectedFile2 = expectedFile;
+                Intrinsics.checkNotNullExpressionValue(next, "next(...)");
+                BreakpointInfo breakpointInfo = OkDownload.with().breakpointStore().get(next.intValue());
+                if (breakpointInfo == null || !Intrinsics.areEqual(breakpointInfo.getFile(), file)) {
+                    hashMap = hashMap2;
+                    z = z2;
+                    str2 = currentServer;
+                } else {
+                    if (sameHost(breakpointInfo.getUrl(), str4) && valueOf != null && breakpointInfo.getTotalLength() == valueOf.longValue() && file.exists()) {
+                        long totalLength = breakpointInfo.getTotalLength();
+                        long length = file.length();
+                        if (1 <= length && length <= totalLength) {
+                            it = it2;
+                            expectedFile = expectedFile2;
+                            z2 = true;
+                        }
+                    }
+                    hashMap = hashMap2;
+                    z = z2;
+                    str2 = currentServer;
+                    Log.w(TAG, "Discard partial " + str + " (bp=" + breakpointInfo.getUrl() + " now=" + str4 + ", bpLen=" + breakpointInfo.getTotalLength() + " expected=" + valueOf + ")");
+                }
+                it = it2;
+                expectedFile = expectedFile2;
+                hashMap2 = hashMap;
+                z2 = z;
+                currentServer = str2;
+            }
+            HashMap hashMap3 = hashMap2;
+            ExpectedFile expectedFile3 = expectedFile;
+            String str5 = currentServer;
+            if (!z2 && !deleteExistingDownloadTarget(file)) {
                 this.mLastOperationStatus = Errno.CorruptedFilesFound;
                 resetGameStatus();
                 setUpdateStatus(UpdateStatus.Undefined);
@@ -648,7 +867,7 @@ public final class UpdateService extends Hilt_UpdateService {
                 bundle3.putInt(".kt", 536);
                 bundle3.putInt(ERRNO_MSG, Errno.CorruptedFilesFound.ordinal());
                 FirebaseAnalytics.getInstance(this).logEvent("error_download", bundle3);
-                Message obtain3 = Message.obtain(this.mInHandler, i);
+                Message obtain3 = Message.obtain(this.mInHandler, 2);
                 obtain3.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
                 obtain3.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
                 obtain3.replyTo = this.mMessenger;
@@ -659,35 +878,23 @@ public final class UpdateService extends Hilt_UpdateService {
                 stopForegroundService();
                 return;
             }
-            File parentFile = file.getParentFile();
-            if (parentFile != null && !parentFile.exists() && !parentFile.mkdirs()) {
-                Log.e(TAG, "Error make directory " + parentFile.getAbsolutePath());
-            }
-            Iterator<Integer> it = notFinishedTaskIdList().iterator();
-            Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
-            while (it.hasNext()) {
-                Integer next = it.next();
-                Intrinsics.checkNotNullExpressionValue(next, "next(...)");
-                int intValue = next.intValue();
-                BreakpointInfo breakpointInfo = OkDownload.with().breakpointStore().get(intValue);
-                if (breakpointInfo != null) {
-                    if (Intrinsics.areEqual(breakpointInfo.getFile(), file)) {
-                        BreakpointInfo copyWithReplaceIdAndUrl = breakpointInfo.copyWithReplaceIdAndUrl(intValue, str3);
-                        OkDownload.with().breakpointStore().update(copyWithReplaceIdAndUrl);
-                        Log.i(TAG, "Update breakPoint " + copyWithReplaceIdAndUrl + " " + intValue);
-                        currentServer = currentServer;
-                    }
-                }
-            }
-            String str4 = currentServer;
-            DownloadTask build = new DownloadTask.Builder(str3, file).setPriority(5).setMinIntervalMillisCallbackProcess(300).setConnectionCount(1).setPreAllocateLength(true).build();
+            DownloadTask build = new DownloadTask.Builder(str4, file).setPriority(5).setMinIntervalMillisCallbackProcess(300).setConnectionCount(1).setPreAllocateLength(true).build();
             commit.bindSetTask(build);
             Log.v(TAG, "Create download " + build);
             arrayList.add(Integer.valueOf(build.getId()));
-            i2++;
-            currentServer = str4;
-            i = 2;
+            if (expectedFile3 != null) {
+                ExpectedFile expectedFile4 = expectedFile3.getDateMillis() > 0 ? expectedFile3 : null;
+                if (expectedFile4 != null) {
+                    hashMap3.put(Integer.valueOf(build.getId()), Long.valueOf(expectedFile4.getDateMillis()));
+                }
+            }
+            i = i3 + 1;
+            size = i2;
+            buildExpectedFileInfo$default = map;
+            hashMap2 = hashMap3;
+            currentServer = str5;
         }
+        final HashMap hashMap4 = hashMap2;
         this.mDownloadContext = commit.build();
         this.mSpeedCalculator = new SpeedCalculator();
         saveDownloadTaskIdList(arrayList);
@@ -698,34 +905,34 @@ public final class UpdateService extends Hilt_UpdateService {
         this.mainHandler.postDelayed(this.checkTimeoutRunnable, 15000L);
         DownloadContext downloadContext = this.mDownloadContext;
         if (downloadContext != null) {
-            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
+            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    return UpdateService.downloadGameData$lambda$0((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
+                    return UpdateService.downloadGameData$lambda$2((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
                 }
-            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
+            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    return UpdateService.downloadGameData$lambda$1(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
+                    return UpdateService.downloadGameData$lambda$3(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
                 }
-            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
+            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    return UpdateService.downloadGameData$lambda$2(UpdateService.this, arrayList, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
+                    return UpdateService.downloadGameData$lambda$4(UpdateService.this, arrayList, hashMap4, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
                 }
             }, 3, null), false);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit downloadGameData$lambda$0(DownloadTask connectTask, int i, long j, long j2) {
+    public static final Unit downloadGameData$lambda$2(DownloadTask connectTask, int i, long j, long j2) {
         Intrinsics.checkNotNullParameter(connectTask, "connectTask");
         Log.v(TAG, "Downloading " + connectTask);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit downloadGameData$lambda$1(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
+    public static final Unit downloadGameData$lambda$3(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
         Intrinsics.checkNotNullParameter(progressTask, "progressTask");
         updateService.calcSpeed(progressTask, j);
         progressTask.addTag(2, Long.valueOf(j));
@@ -734,7 +941,8 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit downloadGameData$lambda$2(UpdateService updateService, ArrayList arrayList, DownloadTask task, EndCause p1, Exception exc, Listener1Assist.Listener1Model p3) {
+    public static final Unit downloadGameData$lambda$4(UpdateService updateService, ArrayList arrayList, HashMap hashMap, DownloadTask task, EndCause p1, Exception exc, Listener1Assist.Listener1Model p3) {
+        FilesChek filesChek;
         Intrinsics.checkNotNullParameter(task, "task");
         Intrinsics.checkNotNullParameter(p1, "p1");
         Intrinsics.checkNotNullParameter(p3, "p3");
@@ -747,7 +955,11 @@ public final class UpdateService extends Hilt_UpdateService {
                 return Unit.INSTANCE;
             }
             Log.v(TAG, "Request repeat download");
-            FileServers.INSTANCE.currentServerIsUnreachable();
+            if (updateService.isDeviceOnline()) {
+                FileServers.INSTANCE.currentServerIsUnreachable();
+            } else {
+                Log.w(TAG, "Device offline, keep current file server");
+            }
             Bundle bundle = new Bundle();
             bundle.putInt(".kt", 592);
             bundle.putInt(ERRNO_MSG, Errno.ConnectionRefused.ordinal());
@@ -781,6 +993,18 @@ public final class UpdateService extends Hilt_UpdateService {
             updateService.stopForegroundService();
             return Unit.INSTANCE;
         }
+        if (p1 == EndCause.COMPLETED) {
+            Long l = (Long) hashMap.get(Integer.valueOf(task.getId()));
+            File file = task.getFile();
+            if (l != null && file != null) {
+                SharedPreferences sharedPreferences = updateService.updatePreferences;
+                if (sharedPreferences == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
+                    sharedPreferences = null;
+                }
+                sharedPreferences.edit().putLong(file.getAbsolutePath(), l.longValue()).apply();
+            }
+        }
         arrayList.remove(Integer.valueOf(task.getId()));
         if (!arrayList.isEmpty()) {
             return Unit.INSTANCE;
@@ -789,10 +1013,12 @@ public final class UpdateService extends Hilt_UpdateService {
         updateService.mainHandler.removeCallbacks(updateService.checkTimeoutRunnable);
         updateService.updateStatusInfoAndProgress(true);
         updateService.removeDownloadTaskIdList();
-        FilesChek filesChek = updateService.filesChek;
-        if (filesChek == null) {
+        FilesChek filesChek2 = updateService.filesChek;
+        if (filesChek2 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("filesChek");
             filesChek = null;
+        } else {
+            filesChek = filesChek2;
         }
         if (!filesChek.isAllFilesOk(false, false, true, false, updateService.mDataInfo)) {
             updateService.resetGameStatus();
@@ -993,16 +1219,14 @@ public final class UpdateService extends Hilt_UpdateService {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkLauncherUpdate(String str) {
-        UpdateService updateService = this;
-        RequestQueue newRequestQueue = Volley.newRequestQueue(updateService);
-        Intrinsics.checkNotNullExpressionValue(newRequestQueue, "newRequestQueue(...)");
+        RequestQueue sharedRequestQueue = getSharedRequestQueue();
         String str2 = str + "app_version.json";
         this.mLastOperationStatus = Errno.NoError;
         if (str2.length() == 0) {
             Bundle bundle = new Bundle();
             bundle.putInt(".kt", 807);
             bundle.putInt(ERRNO_MSG, Errno.UpdateServerUnreachable.ordinal());
-            FirebaseAnalytics.getInstance(updateService).logEvent("error_download", bundle);
+            FirebaseAnalytics.getInstance(this).logEvent("error_download", bundle);
             FileServers.INSTANCE.currentServerIsUnreachable();
             this.mLastOperationStatus = Errno.UpdateServerUnreachable;
             Message obtain = Message.obtain(this.mInHandler, 3);
@@ -1017,12 +1241,12 @@ public final class UpdateService extends Hilt_UpdateService {
             return;
         }
         this.mLastOperationStatus = Errno.NoError;
-        StringRequest stringRequest = new StringRequest(0, str2, new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
+        StringRequest stringRequest = new StringRequest(0, str2, new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
                 UpdateService.checkLauncherUpdate$lambda$0(UpdateService.this, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
                 UpdateService.this.notifyServerUnreachable();
@@ -1030,13 +1254,13 @@ public final class UpdateService extends Hilt_UpdateService {
         });
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
         stringRequest.setShouldCache(false);
-        newRequestQueue.add(stringRequest);
+        sharedRequestQueue.add(stringRequest);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1724;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1725;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
@@ -1194,7 +1418,7 @@ public final class UpdateService extends Hilt_UpdateService {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00030\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/arizona/launcher/UpdateService$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/UpdateService;", "looper", "Landroid/os/Looper;", "<init>", "(Lcom/arizona/launcher/UpdateService;Landroid/os/Looper;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0016R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00030\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/arizona/launcher/UpdateService$IncomingHandler;", "Landroid/os/Handler;", "ref", "Lcom/arizona/launcher/UpdateService;", "looper", "Landroid/os/Looper;", "<init>", "(Lcom/arizona/launcher/UpdateService;Landroid/os/Looper;)V", "activityRef", "Ljava/lang/ref/WeakReference;", "handleMessage", "", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class IncomingHandler extends Handler {
         private final WeakReference<UpdateService> activityRef;
@@ -1315,12 +1539,12 @@ public final class UpdateService extends Hilt_UpdateService {
                         }
                         return;
                     case 10:
-                        updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), new Function0() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda0
+                        UpdateService.checkUpdateAndDownload$default(updateService, FileServers.INSTANCE.getCurrentServer(), 0, new Function0() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function0
                             public final Object invoke() {
                                 return UpdateService.IncomingHandler.handleMessage$lambda$0(UpdateService.this);
                             }
-                        });
+                        }, 2, null);
                         return;
                     default:
                         return;
@@ -1336,7 +1560,14 @@ public final class UpdateService extends Hilt_UpdateService {
         }
     }
 
-    public final void checkUpdateAndDownload(String server, final Function0<Unit> onFinish) {
+    public static /* synthetic */ void checkUpdateAndDownload$default(UpdateService updateService, String str, int i, Function0 function0, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            i = FileServers.INSTANCE.getGame_servers().length;
+        }
+        updateService.checkUpdateAndDownload(str, i, function0);
+    }
+
+    public final void checkUpdateAndDownload(String server, final int i, final Function0<Unit> onFinish) {
         Intrinsics.checkNotNullParameter(server, "server");
         Intrinsics.checkNotNullParameter(onFinish, "onFinish");
         DownloadDispatcher downloadDispatcher = OkDownload.with().downloadDispatcher();
@@ -1345,51 +1576,37 @@ public final class UpdateService extends Hilt_UpdateService {
             OkDownload.with().downloadDispatcher().cancelAll();
             Unit unit = Unit.INSTANCE;
         }
-        Log.d(TAG, "checkUpdate");
+        Log.d(TAG, "checkUpdate (attemptsLeft=" + i + ")");
         startForegroundService();
         setUpdateStatus(UpdateStatus.CheckUpdate);
-        RequestQueue newRequestQueue = Volley.newRequestQueue(getApplicationContext());
-        Intrinsics.checkNotNullExpressionValue(newRequestQueue, "newRequestQueue(...)");
+        RequestQueue sharedRequestQueue = getSharedRequestQueue();
         this.mLastOperationStatus = Errno.NoError;
         if (server.length() == 0) {
-            Bundle bundle = new Bundle();
-            bundle.putInt(".kt", 1110);
-            bundle.putInt(ERRNO_MSG, Errno.UpdateServerUnreachable.ordinal());
-            FirebaseAnalytics.getInstance(this).logEvent("error_download", bundle);
-            this.mLastOperationStatus = Errno.UpdateServerUnreachable;
-            Message obtain = Message.obtain(this.mInHandler, 0);
-            obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-            obtain.replyTo = this.mMessenger;
-            Messenger messenger = this.mActivityMessenger;
-            if (messenger != null) {
-                messenger.send(obtain);
-            }
-            Log.w(TAG, "Send message server unreachable " + obtain);
-            stopForegroundService();
+            notifyCheckUpdateAndDownloadUnreachable(1110);
             return;
         }
         Log.i(TAG, "checkUpdate: requesting server for update json");
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
+        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
                 UpdateService.checkUpdateAndDownload$lambda$1(UpdateService.this, onFinish, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
-                UpdateService.checkUpdateAndDownload$lambda$2(UpdateService.this, volleyError);
+                UpdateService.checkUpdateAndDownload$lambda$2(UpdateService.this, i, onFinish, volleyError);
             }
         });
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
         stringRequest.setShouldCache(false);
-        newRequestQueue.add(stringRequest);
+        sharedRequestQueue.add(stringRequest);
         Log.v(TAG, "Add to queue " + stringRequest);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkUpdateAndDownload$lambda$1(UpdateService updateService, Function0 function0, final String str) {
         final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 JSONArray checkUpdateAndDownload$lambda$1$0;
@@ -1408,37 +1625,47 @@ public final class UpdateService extends Hilt_UpdateService {
     public static final JSONArray checkUpdateAndDownload$lambda$1$0(JSONObject jSONObject, String str, String str2) {
         JSONArray jSONArray = jSONObject.getJSONObject("data").getJSONArray("data");
         int length = jSONArray.length();
-        if (length >= 0) {
-            int i = 0;
-            while (!Intrinsics.areEqual(jSONArray.getJSONObject(i).getString("name"), str2)) {
-                if (i != length) {
-                    i++;
-                }
+        for (int i = 0; i < length; i++) {
+            if (Intrinsics.areEqual(jSONArray.getJSONObject(i).getString("name"), str2)) {
+                JSONArray jSONArray2 = jSONArray.getJSONObject(i).getJSONArray("data");
+                Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
+                return jSONArray2;
             }
-            JSONArray jSONArray2 = jSONArray.getJSONObject(i).getJSONArray("data");
-            Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
-            return jSONArray2;
         }
         throw new Exception("JSON Corrupted " + str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void checkUpdateAndDownload$lambda$2(final UpdateService updateService, VolleyError volleyError) {
+    public static final void checkUpdateAndDownload$lambda$2(UpdateService updateService, int i, Function0 function0, VolleyError volleyError) {
+        if (!updateService.isDeviceOnline()) {
+            Log.w(TAG, "Device offline, skip mirror rotation in checkUpdateAndDownload");
+            updateService.notifyCheckUpdateAndDownloadUnreachable(1238);
+            return;
+        }
         FileServers.INSTANCE.currentServerIsUnreachable();
-        updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
-                Unit checkUpdateAndDownload$lambda$2$0;
-                checkUpdateAndDownload$lambda$2$0 = UpdateService.checkUpdateAndDownload$lambda$2$0(UpdateService.this);
-                return checkUpdateAndDownload$lambda$2$0;
-            }
-        });
-        updateService.stopForegroundService();
+        if (i > 1) {
+            updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), i - 1, function0);
+        } else {
+            updateService.notifyCheckUpdateAndDownloadUnreachable(1238);
+        }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit checkUpdateAndDownload$lambda$2$0(UpdateService updateService) {
-        updateService.updateGameData();
-        return Unit.INSTANCE;
+    private final void notifyCheckUpdateAndDownloadUnreachable(int i) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(".kt", i);
+        bundle.putInt(ERRNO_MSG, Errno.UpdateServerUnreachable.ordinal());
+        FirebaseAnalytics.getInstance(this).logEvent("error_download", bundle);
+        this.mLastOperationStatus = Errno.UpdateServerUnreachable;
+        setUpdateStatus(UpdateStatus.Undefined);
+        Message obtain = Message.obtain(this.mInHandler, 2);
+        obtain.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
+        obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
+        obtain.replyTo = this.mMessenger;
+        Messenger messenger = this.mActivityMessenger;
+        if (messenger != null) {
+            messenger.send(obtain);
+        }
+        Log.w(TAG, "Send message server unreachable " + obtain);
+        stopForegroundService();
     }
 }

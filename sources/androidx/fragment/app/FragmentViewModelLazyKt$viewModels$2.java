@@ -22,8 +22,8 @@ public final class FragmentViewModelLazyKt$viewModels$2 extends Lambda implement
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final ViewModelStore invoke() {
-        ViewModelStoreOwner m8698viewModels$lambda0;
-        m8698viewModels$lambda0 = FragmentViewModelLazyKt.m8698viewModels$lambda0(this.$owner$delegate);
-        return m8698viewModels$lambda0.getViewModelStore();
+        ViewModelStoreOwner m8750viewModels$lambda0;
+        m8750viewModels$lambda0 = FragmentViewModelLazyKt.m8750viewModels$lambda0(this.$owner$delegate);
+        return m8750viewModels$lambda0.getViewModelStore();
     }
 }

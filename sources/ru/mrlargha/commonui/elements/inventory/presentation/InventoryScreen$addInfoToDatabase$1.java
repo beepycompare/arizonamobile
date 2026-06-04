@@ -19,13 +19,11 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItemKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: InventoryScreen.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$addInfoToDatabase$1", f = "InventoryScreen.kt", i = {0, 0, 0, 0, 0}, l = {1913}, m = "invokeSuspend", n = {"$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-InventoryScreen$addInfoToDatabase$1$1"}, nl = {1914}, s = {"L$0", "L$3", "L$4", "I$0", "I$1"}, v = 2)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$addInfoToDatabase$1", f = "InventoryScreen.kt", i = {0, 0, 0}, l = {1913}, m = "invokeSuspend", n = {"$this$forEach$iv", "element$iv", "it"}, nl = {1914}, s = {"L$0", "L$3", "L$4"}, v = 2)
 /* loaded from: classes6.dex */
 public final class InventoryScreen$addInfoToDatabase$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<InventoryItem> $list;
-    int I$0;
-    int I$1;
     Object L$0;
     Object L$1;
     Object L$2;
@@ -55,28 +53,24 @@ public final class InventoryScreen$addInfoToDatabase$1 extends SuspendLambda imp
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         AppDatabase appDatabase;
+        InventoryScreen inventoryScreen;
         Iterator it;
         Iterable iterable;
-        InventoryScreen inventoryScreen;
-        int i;
         AppDatabase appDatabase2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i2 = this.label;
+        int i = this.label;
         try {
-            if (i2 == 0) {
+            if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 appDatabase = this.this$0.db;
                 appDatabase.inventoryItemDao().deleteAllItems();
                 List<InventoryItem> list = this.$list;
-                InventoryScreen inventoryScreen2 = this.this$0;
+                inventoryScreen = this.this$0;
                 it = list.iterator();
                 iterable = list;
-                inventoryScreen = inventoryScreen2;
-                i = 0;
-            } else if (i2 != 1) {
+            } else if (i != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             } else {
-                i = this.I$0;
                 InventoryItem inventoryItem = (InventoryItem) this.L$4;
                 it = (Iterator) this.L$2;
                 inventoryScreen = (InventoryScreen) this.L$1;
@@ -94,8 +88,6 @@ public final class InventoryScreen$addInfoToDatabase$1 extends SuspendLambda imp
                 this.L$2 = it;
                 this.L$3 = SpillingKt.nullOutSpilledVariable(next);
                 this.L$4 = SpillingKt.nullOutSpilledVariable(inventoryItem2);
-                this.I$0 = i;
-                this.I$1 = 0;
                 this.label = 1;
                 if (inventoryItemDao.insertAll(entity, this) == coroutine_suspended) {
                     return coroutine_suspended;

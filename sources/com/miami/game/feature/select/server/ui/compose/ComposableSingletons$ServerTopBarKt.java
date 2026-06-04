@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ServerTopBar.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$ServerTopBarKt {
     public static final ComposableSingletons$ServerTopBarKt INSTANCE = new ComposableSingletons$ServerTopBarKt();
@@ -33,7 +33,7 @@ public final class ComposableSingletons$ServerTopBarKt {
     });
 
     /* renamed from: getLambda$-1484463318$select_server  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9764getLambda$1484463318$select_server() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9815getLambda$1484463318$select_server() {
         return f65lambda$1484463318;
     }
 

@@ -1013,7 +1013,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                 mediaCodecAdapter.useInputBuffer(new Runnable() { // from class: androidx.media3.exoplayer.mediacodec.MediaCodecRenderer$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        MediaCodecRenderer.this.m8877xf3821a9d(formatHolder);
+                        MediaCodecRenderer.this.m8929xf3821a9d(formatHolder);
                     }
                 });
                 int i3 = this.readDataResultHolder.get();
@@ -1109,7 +1109,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$feedInputBuffer$0$androidx-media3-exoplayer-mediacodec-MediaCodecRenderer  reason: not valid java name */
-    public /* synthetic */ void m8877xf3821a9d(FormatHolder formatHolder) {
+    public /* synthetic */ void m8929xf3821a9d(FormatHolder formatHolder) {
         this.readDataResultHolder.set(readSource(formatHolder, this.buffer, 0));
     }
 

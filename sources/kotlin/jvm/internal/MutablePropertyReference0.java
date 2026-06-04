@@ -26,12 +26,12 @@ public abstract class MutablePropertyReference0 extends MutablePropertyReference
         return get();
     }
 
-    @Override // kotlin.reflect.KProperty
+    @Override // kotlin.reflect.KProperty, kotlin.reflect.KProperty0
     public KProperty0.Getter getGetter() {
         return ((KMutableProperty0) getReflected()).getGetter();
     }
 
-    @Override // kotlin.reflect.KMutableProperty
+    @Override // kotlin.reflect.KMutableProperty, kotlin.reflect.KMutableProperty0
     public KMutableProperty0.Setter getSetter() {
         return ((KMutableProperty0) getReflected()).getSetter();
     }

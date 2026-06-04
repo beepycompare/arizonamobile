@@ -1,5 +1,6 @@
 package okhttp3.logging;
 
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.common.net.HttpHeaders;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -167,7 +168,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to var", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.LEVEL, imports = {}))
     /* renamed from: -deprecated_level  reason: not valid java name */
-    public final Level m11698deprecated_level() {
+    public final Level m11772deprecated_level() {
         return this.level;
     }
 
@@ -302,7 +303,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
             } else {
                 str2 = str;
             }
-            sb.append(str2 + redactUrl$logging_interceptor(proceed.request().url()) + " (" + millis + "ms");
+            sb.append(str2 + redactUrl$logging_interceptor(proceed.request().url()) + " (" + millis + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
             if (!z) {
                 sb.append(", " + str6 + " body");
             }

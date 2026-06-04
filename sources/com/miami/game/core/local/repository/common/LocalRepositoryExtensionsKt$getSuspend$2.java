@@ -16,13 +16,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Add missing generic type declarations: [V] */
 /* compiled from: LocalRepositoryExtensions.kt */
-@Metadata(d1 = {"\u0000\f\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\n\b\u0000\u0010\u0001\u0018\u0001*\u00020\u0002*\u00020\u0003H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 176)
-@DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepositoryExtensionsKt$getSuspend$2", f = "LocalRepositoryExtensions.kt", i = {0, 0, 0}, l = {19}, m = "invokeSuspend", n = {"$this$get$iv", "key$iv", "$i$f$get"}, nl = {16}, s = {"L$0", "L$1", "I$0"}, v = 2)
+@Metadata(d1 = {"\u0000\f\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\n\b\u0000\u0010\u0001\u0018\u0001*\u00020\u0002*\u00020\u0003H\n"}, d2 = {"<anonymous>", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 176)
+@DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepositoryExtensionsKt$getSuspend$2", f = "LocalRepositoryExtensions.kt", i = {0, 0}, l = {19}, m = "invokeSuspend", n = {"$this$get$iv", "key$iv"}, nl = {16}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes5.dex */
 public final class LocalRepositoryExtensionsKt$getSuspend$2<V> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super V>, Object> {
     final /* synthetic */ String $key;
     final /* synthetic */ IKeyValueRepository<String> $this_getSuspend;
-    int I$0;
     Object L$0;
     Object L$1;
     int label;
@@ -71,7 +70,6 @@ public final class LocalRepositoryExtensionsKt$getSuspend$2<V> extends SuspendLa
         Intrinsics.checkNotNullExpressionValue(type, "getType(...)");
         this.L$0 = SpillingKt.nullOutSpilledVariable(iKeyValueRepository2);
         this.L$1 = SpillingKt.nullOutSpilledVariable(str2);
-        this.I$0 = 0;
         this.label = 1;
         Object obj2 = iKeyValueRepository2.get(str2, type, this);
         return obj2 == coroutine_suspended ? coroutine_suspended : obj2;

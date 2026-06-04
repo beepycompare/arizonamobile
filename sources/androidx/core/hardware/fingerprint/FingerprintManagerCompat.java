@@ -47,7 +47,7 @@ public class FingerprintManagerCompat {
     private FingerprintManagerCompat() {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class CryptoObject {
         private final Cipher mCipher;
         private final Mac mMac;

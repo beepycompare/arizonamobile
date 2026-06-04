@@ -11,16 +11,16 @@ public final class ArrayPoolsKt {
     private static final int MAX_CHARS_IN_POOL;
 
     static {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             String property = System.getProperty("kotlinx.serialization.json.pool.size");
-            m9843constructorimpl = Result.m9843constructorimpl(property != null ? StringsKt.toIntOrNull(property) : null);
+            m9896constructorimpl = Result.m9896constructorimpl(property != null ? StringsKt.toIntOrNull(property) : null);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        Integer num = Result.m9849isFailureimpl(m9843constructorimpl) ? null : m9843constructorimpl;
+        Integer num = Result.m9902isFailureimpl(m9896constructorimpl) ? null : m9896constructorimpl;
         MAX_CHARS_IN_POOL = num != null ? num.intValue() : 2097152;
     }
 }

@@ -24,7 +24,7 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final d0 invoke() {
-            Object m9843constructorimpl;
+            Object m9896constructorimpl;
             String value;
             e0 e0Var = e0.this;
             try {
@@ -36,16 +36,16 @@ public final class e0 {
                 value = f0.a(packageManager, packageName).versionName;
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+                m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
             }
             if (value != null) {
                 Intrinsics.checkNotNullExpressionValue(value, "requireNotNull(context.p…packageName).versionName)");
                 Intrinsics.checkNotNullParameter(value, "value");
-                m9843constructorimpl = Result.m9843constructorimpl(new d0(value));
-                if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-                    m9843constructorimpl = null;
+                m9896constructorimpl = Result.m9896constructorimpl(new d0(value));
+                if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+                    m9896constructorimpl = null;
                 }
-                d0 d0Var = (d0) m9843constructorimpl;
+                d0 d0Var = (d0) m9896constructorimpl;
                 String str = d0Var != null ? d0Var.f1582a : null;
                 if (str != null) {
                     return new d0(str);

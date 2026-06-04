@@ -278,7 +278,7 @@ public final class PageFetcherSnapshotState<Key, Value> {
                 setPlaceholdersAfter$paging_common(event.getPlaceholdersRemaining());
                 int i3 = this.appendGenerationId + 1;
                 this.appendGenerationId = i3;
-                this.appendGenerationIdCh.mo9005trySendJP2dKIU(Integer.valueOf(i3));
+                this.appendGenerationIdCh.mo9057trySendJP2dKIU(Integer.valueOf(i3));
                 return;
             }
             throw new IllegalArgumentException("cannot drop " + event.getLoadType());
@@ -291,7 +291,7 @@ public final class PageFetcherSnapshotState<Key, Value> {
         setPlaceholdersBefore$paging_common(event.getPlaceholdersRemaining());
         int i5 = this.prependGenerationId + 1;
         this.prependGenerationId = i5;
-        this.prependGenerationIdCh.mo9005trySendJP2dKIU(Integer.valueOf(i5));
+        this.prependGenerationIdCh.mo9057trySendJP2dKIU(Integer.valueOf(i5));
     }
 
     public final PageEvent.Drop<Value> dropEventOrNull(LoadType loadType, ViewportHint hint) {

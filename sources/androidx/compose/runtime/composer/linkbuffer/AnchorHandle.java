@@ -18,7 +18,7 @@ public final class AnchorHandle {
     }
 
     public final long toHandle() {
-        return (this.contextAnchor.getAddress() << 32) | (UInt.m9943constructorimpl(this.groupAnchor.getAddress()) & 4294967295L);
+        return (this.contextAnchor.getAddress() << 32) | (UInt.m9997constructorimpl(this.groupAnchor.getAddress()) & 4294967295L);
     }
 
     public String toString() {

@@ -9,10 +9,10 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public abstract class MediationServerParameters {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final class MappingException extends Exception {
         public MappingException(String str) {
             super(str);
@@ -21,7 +21,7 @@ public abstract class MediationServerParameters {
 
     @Target({ElementType.FIELD})
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     protected @interface Parameter {
         String name();
 

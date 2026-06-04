@@ -66,14 +66,14 @@ public class ListItemLayout extends FrameLayout {
             this.continueSettlingRunnable = new Runnable() { // from class: com.google.android.material.listitem.ListItemLayout$StateSettlingTracker$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ListItemLayout.StateSettlingTracker.this.m9526x75cf24c1();
+                    ListItemLayout.StateSettlingTracker.this.m9577x75cf24c1();
                 }
             };
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$new$0$com-google-android-material-listitem-ListItemLayout$StateSettlingTracker  reason: not valid java name */
-        public /* synthetic */ void m9526x75cf24c1() {
+        public /* synthetic */ void m9577x75cf24c1() {
             this.isContinueSettlingRunnablePosted = false;
             if (ListItemLayout.this.viewDragHelper == null || !ListItemLayout.this.viewDragHelper.continueSettling(true)) {
                 if (ListItemLayout.this.swipeState == 2) {
@@ -657,7 +657,7 @@ public class ListItemLayout extends FrameLayout {
         Runnable runnable = new Runnable() { // from class: com.google.android.material.listitem.ListItemLayout$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ListItemLayout.this.m9525x6b76121b(z, i, i2);
+                ListItemLayout.this.m9576x6b76121b(z, i, i2);
             }
         };
         if (isLaidOut()) {
@@ -669,7 +669,7 @@ public class ListItemLayout extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setSwipeState$0$com-google-android-material-listitem-ListItemLayout  reason: not valid java name */
-    public /* synthetic */ void m9525x6b76121b(boolean z, int i, int i2) {
+    public /* synthetic */ void m9576x6b76121b(boolean z, int i, int i2) {
         if (!z) {
             ViewDragHelper viewDragHelper = this.viewDragHelper;
             if (viewDragHelper != null) {

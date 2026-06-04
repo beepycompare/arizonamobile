@@ -81,39 +81,39 @@ public final class CursorSQLiteStatement implements SQLiteStatement {
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindBlob */
-    public Void mo9014bindBlob(int i, byte[] value) {
+    public Void mo9066bindBlob(int i, byte[] value) {
         Intrinsics.checkNotNullParameter(value, "value");
         throw new IllegalStateException("Only get*() calls are allowed on a Cursor backed SQLiteStatement".toString());
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindDouble */
-    public Void mo9015bindDouble(int i, double d) {
+    public Void mo9067bindDouble(int i, double d) {
         throw new IllegalStateException("Only get*() calls are allowed on a Cursor backed SQLiteStatement".toString());
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindLong */
-    public Void mo9016bindLong(int i, long j) {
+    public Void mo9068bindLong(int i, long j) {
         throw new IllegalStateException("Only get*() calls are allowed on a Cursor backed SQLiteStatement".toString());
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindText */
-    public Void mo9018bindText(int i, String value) {
+    public Void mo9070bindText(int i, String value) {
         Intrinsics.checkNotNullParameter(value, "value");
         throw new IllegalStateException("Only get*() calls are allowed on a Cursor backed SQLiteStatement".toString());
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: bindNull */
-    public Void mo9017bindNull(int i) {
+    public Void mo9069bindNull(int i) {
         throw new IllegalStateException("Only get*() calls are allowed on a Cursor backed SQLiteStatement".toString());
     }
 
     @Override // androidx.sqlite.SQLiteStatement
     /* renamed from: clearBindings */
-    public Void mo9019clearBindings() {
+    public Void mo9071clearBindings() {
         throw new IllegalStateException("Only get*() calls are allowed on a Cursor backed SQLiteStatement".toString());
     }
 

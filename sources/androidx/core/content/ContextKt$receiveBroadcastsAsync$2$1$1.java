@@ -11,12 +11,13 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
+import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Context.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.core.content.ContextKt$receiveBroadcastsAsync$2$1$1", f = "Context.kt", i = {}, l = {247}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "androidx.core.content.ContextKt$receiveBroadcastsAsync$2$1$1", f = "Context.kt", i = {}, l = {250}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class ContextKt$receiveBroadcastsAsync$2$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Intent $intent;
@@ -59,6 +60,7 @@ public final class ContextKt$receiveBroadcastsAsync$2$1$1 extends SuspendLambda 
                 CoroutineScopeKt.ensureActive((CoroutineScope) this.L$0);
                 Function3<BroadcastReceiver.PendingResult, Intent, Continuation<? super Unit>, Object> function3 = this.$onReceive;
                 BroadcastReceiver.PendingResult pendingResult = this.$pendingResult;
+                Intrinsics.checkNotNull(pendingResult);
                 Intent intent = this.$intent;
                 this.label = 1;
                 if (function3.invoke(pendingResult, intent, this) == coroutine_suspended) {

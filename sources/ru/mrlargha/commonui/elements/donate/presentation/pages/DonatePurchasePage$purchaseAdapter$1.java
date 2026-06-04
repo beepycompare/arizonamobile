@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonatePurchasePage.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final /* synthetic */ class DonatePurchasePage$purchaseAdapter$1 extends FunctionReferenceImpl implements Function1<DonateItemModelUi, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

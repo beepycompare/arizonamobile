@@ -48,12 +48,12 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ErrorDialogFromActivity.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\u001a7\u0010\u0000\u001a\u00020\u00012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0007\u001a?\u0010\b\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001¢\u0006\u0002\u0010\u000e¨\u0006\u000f²\u0006\n\u0010\t\u001a\u00020\nX\u008a\u0084\u0002"}, d2 = {"ErrorDialogFromActivityRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "onBackClick", "Lkotlin/Function0;", "onRetry", "(Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "ErrorDialogFromActivityScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;", "onConfirm", "onDismiss", "onClose", "(Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "dialogs"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\u001aI\u0010\u0000\u001a\u00020\u00012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007b\u0002\b\bb\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b¢\u0006\u0002\u0010\u0007\u001a_\u0010\f\u001a\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e2\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00010\u00052\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0001b\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\u0003\u0010\u0004b\u0002\b\bb\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b¢\u0006\u0002\u0010\u0012¨\u0006\u0015²\u0006\n\u0010\r\u001a\u00020\u000eX\u008a\u0084\u0002"}, d2 = {"ErrorDialogFromActivityRoute", "", "component", "Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;", "onBackClick", "Lkotlin/Function0;", "onRetry", "(Lcom/miami/game/feature/download/dialog/ui/error/ErrorDialogComponent;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "ErrorDialogFromActivityScreen", "uiState", "Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;", "onConfirm", "onDismiss", "onClose", "(Lcom/miami/game/feature/download/dialog/ui/error/fromactivity/ErrorDialogExternalUiState;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "Landroidx/annotation/VisibleForTesting;", "otherwise", "dialogs"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ErrorDialogFromActivityKt {
 
     /* compiled from: ErrorDialogFromActivity.kt */
-    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -237,7 +237,7 @@ public final class ErrorDialogFromActivityKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-210437023, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous> (ErrorDialogFromActivity.kt:74)");
             }
-            TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getTitle(), null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodyMedium(), composer, 0, 0, 131066);
+            TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getTitle(), null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 0, 0, 131066);
             int i3 = WhenMappings.$EnumSwitchMapping$0[errorDialogExternalUiState.getType().ordinal()];
             if (i3 == 1) {
                 i2 = R.drawable.dialog_frame_check_files_error;
@@ -373,7 +373,7 @@ public final class ErrorDialogFromActivityKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1469251392, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:109)");
             }
-            TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getNegativeText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 0, 0, 131070);
+            TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getNegativeText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -397,7 +397,7 @@ public final class ErrorDialogFromActivityKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1442369824, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:119)");
             }
-            TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getPositiveText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 0, 0, 131070);
+            TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getPositiveText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

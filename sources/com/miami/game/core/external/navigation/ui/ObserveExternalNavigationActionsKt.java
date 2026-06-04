@@ -26,7 +26,7 @@ import kotlin.text.StringsKt;
 import kotlinx.coroutines.flow.Flow;
 import timber.log.Timber;
 /* compiled from: ObserveExternalNavigationActions.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0017\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\u0007¢\u0006\u0002\u0010\u0004\u001a1\u0010\u0005\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0006*\b\u0012\u0004\u0012\u0002H\u00060\u00022\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u0002H\u0006\u0012\u0004\u0012\u00020\u00010\bH\u0003¢\u0006\u0002\u0010\t¨\u0006\n²\u0006\u001c\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u0002H\u0006\u0012\u0004\u0012\u00020\u00010\b\"\u0004\b\u0000\u0010\u0006X\u008a\u0084\u0002"}, d2 = {"observeExternalNavigationActions", "", "Lkotlinx/coroutines/flow/Flow;", "Lcom/miami/game/core/external/navigation/model/ExternalNavigationAction;", "(Lkotlinx/coroutines/flow/Flow;Landroidx/compose/runtime/Composer;I)V", "collectWithLifecycle", ExifInterface.GPS_DIRECTION_TRUE, "onEvent", "Lkotlin/Function1;", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "external-navigation", "currentOnEvent"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\u0007b\u0002\b\u0005¢\u0006\u0002\u0010\u0004\u001a5\u0010\u0006\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0007*\b\u0012\u0004\u0012\u0002H\u00070\u00022\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u0002H\u0007\u0012\u0004\u0012\u00020\u00010\tH\u0003b\u0002\b\u0005¢\u0006\u0002\u0010\n¨\u0006\u000b²\u0006\u001c\u0010\f\u001a\u000e\u0012\u0004\u0012\u0002H\u0007\u0012\u0004\u0012\u00020\u00010\t\"\u0004\b\u0000\u0010\u0007X\u008a\u0084\u0002"}, d2 = {"observeExternalNavigationActions", "", "Lkotlinx/coroutines/flow/Flow;", "Lcom/miami/game/core/external/navigation/model/ExternalNavigationAction;", "(Lkotlinx/coroutines/flow/Flow;Landroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "collectWithLifecycle", ExifInterface.GPS_DIRECTION_TRUE, "onEvent", "Lkotlin/Function1;", "(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V", "external-navigation", "currentOnEvent"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ObserveExternalNavigationActionsKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -47,7 +47,7 @@ public final class ObserveExternalNavigationActionsKt {
         Composer startRestartGroup = composer.startRestartGroup(1430888900);
         ComposerKt.sourceInformation(startRestartGroup, "C(observeExternalNavigationActions)24@1140L7,25@1178L1197,25@1157L1218:ObserveExternalNavigationActions.kt#sjckhk");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(flow) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(flow) : startRestartGroup.changedInstance(flow) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
@@ -124,13 +124,14 @@ public final class ObserveExternalNavigationActionsKt {
         Composer startRestartGroup = composer.startRestartGroup(557583643);
         ComposerKt.sourceInformation(startRestartGroup, "C(collectWithLifecycle)N(onEvent)62@2505L7,63@2539L29,64@2614L121,64@2573L162:ObserveExternalNavigationActions.kt#sjckhk");
         if ((i & 6) == 0) {
-            i2 = (startRestartGroup.changedInstance(flow) ? 4 : 2) | i;
+            i2 = ((i & 8) == 0 ? startRestartGroup.changed(flow) : startRestartGroup.changedInstance(flow) ? 4 : 2) | i;
         } else {
             i2 = i;
         }
         if ((i & 48) == 0) {
             i2 |= startRestartGroup.changedInstance(function1) ? 32 : 16;
         }
+        boolean z = true;
         if (!startRestartGroup.shouldExecute((i2 & 19) != 18, i2 & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
@@ -144,9 +145,13 @@ public final class ObserveExternalNavigationActionsKt {
             State rememberUpdatedState = SnapshotStateKt.rememberUpdatedState(function1, startRestartGroup, (i2 >> 3) & 14);
             Lifecycle lifecycle = lifecycleOwner.getLifecycle();
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1033024076, "CC(remember):ObserveExternalNavigationActions.kt#9igjgp");
-            boolean changedInstance = startRestartGroup.changedInstance(lifecycleOwner) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState);
+            boolean changedInstance = startRestartGroup.changedInstance(lifecycleOwner);
+            if ((i2 & 14) != 4 && ((i2 & 8) == 0 || !startRestartGroup.changedInstance(flow))) {
+                z = false;
+            }
+            boolean changed = changedInstance | z | startRestartGroup.changed(rememberUpdatedState);
             ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 rememberedValue = startRestartGroup.rememberedValue();
-            if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+            if (changed || rememberedValue == Composer.Companion.getEmpty()) {
                 rememberedValue = new ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1(lifecycleOwner, flow, rememberUpdatedState, null);
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }

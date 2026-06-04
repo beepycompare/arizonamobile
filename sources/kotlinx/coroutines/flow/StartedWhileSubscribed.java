@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow;
 
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -29,10 +30,10 @@ final class StartedWhileSubscribed implements SharingStarted {
     public String toString() {
         List createListBuilder = CollectionsKt.createListBuilder(2);
         if (this.stopTimeout > 0) {
-            createListBuilder.add("stopTimeout=" + this.stopTimeout + "ms");
+            createListBuilder.add("stopTimeout=" + this.stopTimeout + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
         }
         if (this.replayExpiration < Long.MAX_VALUE) {
-            createListBuilder.add("replayExpiration=" + this.replayExpiration + "ms");
+            createListBuilder.add("replayExpiration=" + this.replayExpiration + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
         }
         return "SharingStarted.WhileSubscribed(" + CollectionsKt.joinToString$default(CollectionsKt.build(createListBuilder), null, null, null, 0, null, null, 63, null) + ')';
     }

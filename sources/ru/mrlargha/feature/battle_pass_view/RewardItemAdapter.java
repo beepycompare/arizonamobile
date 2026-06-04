@@ -25,7 +25,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.battle_pass_view.databinding.ItemRewardBinding;
 /* compiled from: RewardItemAdapter.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 \u00192\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0018\u0019B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\f\u001a\u00020\r2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000bJ\u001c\u0010\u000f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\tH\u0016J\u001c\u0010\u0013\u001a\u00020\r2\n\u0010\u0014\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\tH\u0016J\u000e\u0010\u0016\u001a\u00020\r2\u0006\u0010\u0017\u001a\u00020\tR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/feature/battle_pass_view/RewardResponse;", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$RewardItemViewHolder;", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "type", "", "arizonaPath", "", "setPath", "", "path", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "setType", "int", "RewardItemViewHolder", "Companion", "battle-pass-view"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 \u00192\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0018\u0019B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\f\u001a\u00020\r2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000bJ\u001c\u0010\u000f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\tH\u0016J\u001c\u0010\u0013\u001a\u00020\r2\n\u0010\u0014\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\tH\u0016J\u000e\u0010\u0016\u001a\u00020\r2\u0006\u0010\u0017\u001a\u00020\tR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/feature/battle_pass_view/RewardResponse;", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$RewardItemViewHolder;", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "type", "", "arizonaPath", "", "setPath", "", "path", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "setType", "int", "RewardItemViewHolder", "Companion", "battle-pass-view"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardItemViewHolder> {
     private String arizonaPath;
@@ -65,7 +65,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
     }
 
     /* compiled from: RewardItemAdapter.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$RewardItemViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/battle_pass_view/databinding/ItemRewardBinding;", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter;Lru/mrlargha/feature/battle_pass_view/databinding/ItemRewardBinding;Landroid/content/Context;)V", "bind", "", "item", "Lru/mrlargha/feature/battle_pass_view/RewardResponse;", "type", "", "battle-pass-view"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$RewardItemViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/battle_pass_view/databinding/ItemRewardBinding;", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter;Lru/mrlargha/feature/battle_pass_view/databinding/ItemRewardBinding;Landroid/content/Context;)V", "bind", "", "item", "Lru/mrlargha/feature/battle_pass_view/RewardResponse;", "type", "", "battle-pass-view"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public final class RewardItemViewHolder extends RecyclerView.ViewHolder {
         private final ItemRewardBinding binding;
@@ -83,7 +83,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
         }
 
         public final void bind(RewardResponse item, int i) {
-            Object m9843constructorimpl;
+            Object m9896constructorimpl;
             Intrinsics.checkNotNullParameter(item, "item");
             ItemRewardBinding itemRewardBinding = this.binding;
             RewardItemAdapter rewardItemAdapter = this.this$0;
@@ -121,15 +121,15 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
             for (String str3 : colors) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9843constructorimpl = Result.m9843constructorimpl(Integer.valueOf(Color.parseColor(str3)));
+                    m9896constructorimpl = Result.m9896constructorimpl(Integer.valueOf(Color.parseColor(str3)));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+                    m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
                 }
-                if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-                    m9843constructorimpl = null;
+                if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+                    m9896constructorimpl = null;
                 }
-                Integer num = (Integer) m9843constructorimpl;
+                Integer num = (Integer) m9896constructorimpl;
                 if (num != null) {
                     arrayList.add(num);
                 }
@@ -167,7 +167,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
     }
 
     /* compiled from: RewardItemAdapter.kt */
-    @Metadata(d1 = {"\u0000\u0013\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\b\u0003*\u0001\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion;", "", "<init>", "()V", "COMPARATOR", "ru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1;", "battle-pass-view"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0013\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\b\u0003*\u0001\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion;", "", "<init>", "()V", "COMPARATOR", "ru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1;", "battle-pass-view"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

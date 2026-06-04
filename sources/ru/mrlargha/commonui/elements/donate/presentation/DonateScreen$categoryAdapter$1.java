@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUi;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final /* synthetic */ class DonateScreen$categoryAdapter$1 extends FunctionReferenceImpl implements Function1<DonateCategoryModelUi, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

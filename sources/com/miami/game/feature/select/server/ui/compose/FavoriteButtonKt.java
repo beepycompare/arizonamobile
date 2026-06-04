@@ -36,7 +36,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 /* compiled from: FavoriteButton.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"FavoriteButton", "", "isFavorite", "", "modifier", "Landroidx/compose/ui/Modifier;", "(ZLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "select-server"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007b\u0002\b\u0007b\f\b\b\u0012\b\b\t\u0012\u0004\b\b(\n¢\u0006\u0002\u0010\u0006¨\u0006\u000b"}, d2 = {"FavoriteButton", "", "isFavorite", "", "modifier", "Landroidx/compose/ui/Modifier;", "(ZLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "select-server"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FavoriteButtonKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -48,8 +48,8 @@ public final class FavoriteButtonKt {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0049  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x004b  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x021a  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0224  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0219  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0223  */
     /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -84,7 +84,7 @@ public final class FavoriteButtonKt {
                 if (z) {
                     startRestartGroup.startReplaceGroup(1795979405);
                     ComposerKt.sourceInformation(startRestartGroup, "25@1105L11");
-                    m5347copywmQWz5c$default = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, MaterialTheme.$stable).m2322getPrimary0d7_KjU();
+                    m5347copywmQWz5c$default = MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU();
                     startRestartGroup.endReplaceGroup();
                 } else {
                     startRestartGroup.startReplaceGroup(1795980216);

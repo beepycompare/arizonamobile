@@ -27,6 +27,6 @@ public final class TaskCoroutineExtensionsKt$toSuspendResult$1<T> extends Contin
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
         Object suspendResult = TaskCoroutineExtensionsKt.toSuspendResult(null, this);
-        return suspendResult == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? suspendResult : Result.m9842boximpl(suspendResult);
+        return suspendResult == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? suspendResult : Result.m9895boximpl(suspendResult);
     }
 }

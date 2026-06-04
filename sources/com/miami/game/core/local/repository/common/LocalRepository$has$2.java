@@ -2,27 +2,21 @@ package com.miami.game.core.local.repository.common;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.datastore.core.DataStore;
-import androidx.datastore.preferences.core.Preferences;
-import androidx.datastore.preferences.core.PreferencesKeys;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
-import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.flow.Flow;
-import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LocalRepository.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$has$2", f = "LocalRepository.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, nl = {ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_HEIGHT}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class LocalRepository$has$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
@@ -56,107 +50,8 @@ public final class LocalRepository$has$2 extends SuspendLambda implements Functi
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             dataStore = this.this$0.dataStorePreferences;
-            final Flow data = dataStore.getData();
-            final String str = this.$key;
             this.label = 1;
-            obj = FlowKt.firstOrNull(new Flow<Boolean>() { // from class: com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1
-
-                /* compiled from: Emitters.kt */
-                @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-                /* renamed from: com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1$2  reason: invalid class name */
-                /* loaded from: classes5.dex */
-                public static final class AnonymousClass2<T> implements FlowCollector {
-                    final /* synthetic */ String $key$inlined;
-                    final /* synthetic */ FlowCollector $this_unsafeFlow;
-
-                    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-                    @DebugMetadata(c = "com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1$2", f = "LocalRepository.kt", i = {0, 0, 0, 0, 0}, l = {50}, m = "emit", n = {"value", "$completion", "value", "$this$map_u24lambda_u245", "$i$a$-unsafeTransform-FlowKt__TransformKt$map$1"}, nl = {49}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
-                    /* renamed from: com.miami.game.core.local.repository.common.LocalRepository$has$2$invokeSuspend$$inlined$map$1$2$1  reason: invalid class name */
-                    /* loaded from: classes5.dex */
-                    public static final class AnonymousClass1 extends ContinuationImpl {
-                        int I$0;
-                        Object L$0;
-                        Object L$1;
-                        Object L$2;
-                        Object L$3;
-                        int label;
-                        /* synthetic */ Object result;
-
-                        public AnonymousClass1(Continuation continuation) {
-                            super(continuation);
-                        }
-
-                        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-                        public final Object invokeSuspend(Object obj) {
-                            this.result = obj;
-                            this.label |= Integer.MIN_VALUE;
-                            return AnonymousClass2.this.emit(null, this);
-                        }
-                    }
-
-                    public AnonymousClass2(FlowCollector flowCollector, String str) {
-                        this.$this_unsafeFlow = flowCollector;
-                        this.$key$inlined = str;
-                    }
-
-                    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-                    /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
-                    @Override // kotlinx.coroutines.flow.FlowCollector
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final Object emit(Object obj, Continuation continuation) {
-                        AnonymousClass1 anonymousClass1;
-                        int i;
-                        if (continuation instanceof AnonymousClass1) {
-                            anonymousClass1 = (AnonymousClass1) continuation;
-                            if ((anonymousClass1.label & Integer.MIN_VALUE) != 0) {
-                                anonymousClass1.label -= Integer.MIN_VALUE;
-                                Object obj2 = anonymousClass1.result;
-                                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                                i = anonymousClass1.label;
-                                if (i != 0) {
-                                    ResultKt.throwOnFailure(obj2);
-                                    FlowCollector flowCollector = this.$this_unsafeFlow;
-                                    Boolean boxBoolean = Boxing.boxBoolean(((Preferences) obj).contains(PreferencesKeys.stringKey(this.$key$inlined)));
-                                    anonymousClass1.L$0 = SpillingKt.nullOutSpilledVariable(obj);
-                                    anonymousClass1.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass1);
-                                    anonymousClass1.L$2 = SpillingKt.nullOutSpilledVariable(obj);
-                                    anonymousClass1.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
-                                    anonymousClass1.I$0 = 0;
-                                    anonymousClass1.label = 1;
-                                    if (flowCollector.emit(boxBoolean, anonymousClass1) == coroutine_suspended) {
-                                        return coroutine_suspended;
-                                    }
-                                } else if (i != 1) {
-                                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                                } else {
-                                    int i2 = anonymousClass1.I$0;
-                                    FlowCollector flowCollector2 = (FlowCollector) anonymousClass1.L$3;
-                                    Object obj3 = anonymousClass1.L$2;
-                                    AnonymousClass1 anonymousClass12 = (AnonymousClass1) anonymousClass1.L$1;
-                                    Object obj4 = anonymousClass1.L$0;
-                                    ResultKt.throwOnFailure(obj2);
-                                }
-                                return Unit.INSTANCE;
-                            }
-                        }
-                        anonymousClass1 = new AnonymousClass1(continuation);
-                        Object obj22 = anonymousClass1.result;
-                        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                        i = anonymousClass1.label;
-                        if (i != 0) {
-                        }
-                        return Unit.INSTANCE;
-                    }
-                }
-
-                @Override // kotlinx.coroutines.flow.Flow
-                public Object collect(FlowCollector<? super Boolean> flowCollector, Continuation continuation) {
-                    Object collect = Flow.this.collect(new AnonymousClass2(flowCollector, str), continuation);
-                    return collect == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? collect : Unit.INSTANCE;
-                }
-            }, this);
+            obj = FlowKt.firstOrNull(new LocalRepository$has$2$invokeSuspend$$inlined$map$1(dataStore.getData(), this.$key), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }

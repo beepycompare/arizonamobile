@@ -2,6 +2,7 @@ package com.arizona.launcher.downloader;
 
 import android.content.Context;
 import androidx.media3.exoplayer.upstream.CmcdData;
+import coil3.util.UtilsKt;
 import java.io.File;
 import java.util.List;
 import kotlin.Metadata;
@@ -21,7 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FilesChek.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.arizona.launcher.downloader.FilesChek$getFilesToDownload$2", f = "FilesChek.kt", i = {0, 0, 0, 0}, l = {86}, m = "invokeSuspend", n = {"jsonObject", "jsonArray", "jsonDir", CmcdData.OBJECT_TYPE_INIT_SEGMENT}, nl = {90}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class FilesChek$getFilesToDownload$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -123,7 +124,7 @@ public final class FilesChek$getFilesToDownload$2 extends SuspendLambda implemen
                         return Unit.INSTANCE;
                     }
                 } else {
-                    if (Intrinsics.areEqual(jSONObject2.getString("type"), "file")) {
+                    if (Intrinsics.areEqual(jSONObject2.getString("type"), UtilsKt.SCHEME_FILE)) {
                         String string2 = jSONObject2.getString("name");
                         context2 = this.this$0.context;
                         File externalFilesDir = context2.getExternalFilesDir(null);

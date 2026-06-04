@@ -484,22 +484,22 @@ public class ActivityChooserModel extends DataSetObservable {
         PersistHistoryAsyncTask() {
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:10:0x006d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:10:0x006f, code lost:
             if (r15 != null) goto L15;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:11:0x006f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:11:0x0071, code lost:
             r15.close();
          */
-        /* JADX WARN: Code restructure failed: missing block: B:18:0x0094, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:18:0x0096, code lost:
             if (r15 == null) goto L13;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:23:0x00b6, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:23:0x00b8, code lost:
             if (r15 == null) goto L13;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:28:0x00d8, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:28:0x00da, code lost:
             if (r15 == null) goto L13;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:30:0x00db, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:30:0x00dd, code lost:
             return null;
          */
         @Override // android.os.AsyncTask
@@ -515,40 +515,38 @@ public class ActivityChooserModel extends DataSetObservable {
                 try {
                     try {
                         try {
-                            try {
-                                newSerializer.setOutput(openFileOutput, null);
-                                newSerializer.startDocument("UTF-8", true);
-                                newSerializer.startTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORDS);
-                                int size = list.size();
-                                for (int i = 0; i < size; i++) {
-                                    HistoricalRecord historicalRecord = (HistoricalRecord) list.remove(0);
-                                    newSerializer.startTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORD);
-                                    newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_ACTIVITY, historicalRecord.activity.flattenToString());
-                                    newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_TIME, String.valueOf(historicalRecord.time));
-                                    newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_WEIGHT, String.valueOf(historicalRecord.weight));
-                                    newSerializer.endTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORD);
-                                }
-                                newSerializer.endTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORDS);
-                                newSerializer.endDocument();
-                                ActivityChooserModel.this.mCanReadHistoricalData = true;
-                            } catch (Throwable th) {
-                                ActivityChooserModel.this.mCanReadHistoricalData = true;
-                                if (openFileOutput != null) {
-                                    try {
-                                        openFileOutput.close();
-                                    } catch (IOException unused) {
-                                    }
-                                }
-                                throw th;
+                            newSerializer.setOutput(openFileOutput, null);
+                            newSerializer.startDocument("UTF-8", true);
+                            newSerializer.startTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORDS);
+                            int size = list.size();
+                            for (int i = 0; i < size; i++) {
+                                HistoricalRecord historicalRecord = (HistoricalRecord) list.remove(0);
+                                newSerializer.startTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORD);
+                                newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_ACTIVITY, historicalRecord.activity.flattenToString());
+                                newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_TIME, String.valueOf(historicalRecord.time));
+                                newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_WEIGHT, String.valueOf(historicalRecord.weight));
+                                newSerializer.endTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORD);
                             }
-                        } catch (IOException e) {
-                            Log.e(ActivityChooserModel.LOG_TAG, "Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName, e);
+                            newSerializer.endTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORDS);
+                            newSerializer.endDocument();
                             ActivityChooserModel.this.mCanReadHistoricalData = true;
+                        } catch (Throwable th) {
+                            ActivityChooserModel.this.mCanReadHistoricalData = true;
+                            if (openFileOutput != null) {
+                                try {
+                                    openFileOutput.close();
+                                } catch (IOException unused) {
+                                }
+                            }
+                            throw th;
                         }
-                    } catch (IllegalStateException e2) {
-                        Log.e(ActivityChooserModel.LOG_TAG, "Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName, e2);
+                    } catch (IllegalStateException e) {
+                        Log.e(ActivityChooserModel.LOG_TAG, "Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName, e);
                         ActivityChooserModel.this.mCanReadHistoricalData = true;
                     }
+                } catch (IOException e2) {
+                    Log.e(ActivityChooserModel.LOG_TAG, "Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName, e2);
+                    ActivityChooserModel.this.mCanReadHistoricalData = true;
                 } catch (IllegalArgumentException e3) {
                     Log.e(ActivityChooserModel.LOG_TAG, "Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName, e3);
                     ActivityChooserModel.this.mCanReadHistoricalData = true;

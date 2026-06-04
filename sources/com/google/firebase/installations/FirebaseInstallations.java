@@ -135,7 +135,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.m9668xc18eb11d();
+                FirebaseInstallations.this.m9719xc18eb11d();
             }
         });
         return addGetIdListener;
@@ -143,8 +143,8 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getId$1$com-google-firebase-installations-FirebaseInstallations  reason: not valid java name */
-    public /* synthetic */ void m9668xc18eb11d() {
-        m9669x7147f7aa(false);
+    public /* synthetic */ void m9719xc18eb11d() {
+        m9720x7147f7aa(false);
     }
 
     @Override // com.google.firebase.installations.FirebaseInstallationsApi
@@ -154,7 +154,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.m9669x7147f7aa(z);
+                FirebaseInstallations.this.m9720x7147f7aa(z);
             }
         });
         return addGetAuthTokenListener;
@@ -240,7 +240,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: doRegistrationOrRefresh */
-    public final void m9669x7147f7aa(final boolean z) {
+    public final void m9720x7147f7aa(final boolean z) {
         PersistedInstallationEntry prefsWithGeneratedIdMultiProcessSafe = getPrefsWithGeneratedIdMultiProcessSafe();
         if (z) {
             prefsWithGeneratedIdMultiProcessSafe = prefsWithGeneratedIdMultiProcessSafe.withClearedAuthToken();
@@ -249,7 +249,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.networkExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.m9667x5a306a82(z);
+                FirebaseInstallations.this.m9718x5a306a82(z);
             }
         });
     }
@@ -266,7 +266,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void m9667x5a306a82(boolean z) {
+    public void m9718x5a306a82(boolean z) {
         PersistedInstallationEntry registerFidWithServer;
         PersistedInstallationEntry multiProcessSafePrefs = getMultiProcessSafePrefs();
         try {

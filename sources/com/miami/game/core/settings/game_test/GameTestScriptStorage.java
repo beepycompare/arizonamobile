@@ -32,7 +32,7 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: GameTestScriptStorage.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007J\u0012\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\u0006\u001a\u00020\u0007H\u0007J\u0018\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\rH\u0007J\u0016\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u000b0\u000f2\u0006\u0010\u0006\u001a\u00020\u0007H\u0007J\u0012\u0010\u0010\u001a\u0004\u0018\u00010\t2\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J&\u0010\u0011\u001a\u0004\u0018\u00010\t2\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\u0012\u001a\u0004\u0018\u00010\u00132\b\u0010\u0014\u001a\u0004\u0018\u00010\u0013H\u0002J\"\u0010\u0015\u001a\u0004\u0018\u00010\t2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0013H\u0002J\u001a\u0010\u0018\u001a\u0004\u0018\u00010\u00192\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0013H\u0002J\u001a\u0010\u001a\u001a\u0004\u0018\u00010\u00132\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\rH\u0002J\u0018\u0010\u001b\u001a\u00020\u00192\u0006\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u0017\u001a\u00020\u0013H\u0002J\u0010\u0010\u001d\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0013H\u0002R\u000e\u0010\u001e\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082T¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptStorage;", "", "<init>", "()V", "shouldAutoRun", "", "context", "Landroid/content/Context;", "loadActiveScript", "Lcom/miami/game/core/settings/game_test/LoadedGameTestScript;", "importScript", "Lcom/miami/game/core/settings/game_test/GameTestSavedScript;", "uri", "Landroid/net/Uri;", "listImportedScripts", "", "readBundledScript", "readImportedScript", "activeImportedScriptFileName", "", "importedScriptName", "readImportedScriptFile", "fileName", "displayName", "resolveImportedScriptFile", "Ljava/io/File;", "queryDisplayName", "createUniqueImportedScriptFile", "destinationDir", "sanitizeImportedScriptFileName", "TAG", "MAX_IMPORTED_SCRIPT_FILE_NAME_LENGTH", "", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\b\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\bJ\u0016\u0010\t\u001a\u0004\u0018\u00010\n2\u0006\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\bJ\u001c\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u000eH\u0007b\u0002\b\bJ\u001a\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\f0\u00102\u0006\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\bJ\u0012\u0010\u0011\u001a\u0004\u0018\u00010\n2\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J&\u0010\u0012\u001a\u0004\u0018\u00010\n2\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\u0013\u001a\u0004\u0018\u00010\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0014H\u0002J\"\u0010\u0016\u001a\u0004\u0018\u00010\n2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0017\u001a\u00020\u00142\u0006\u0010\u0018\u001a\u00020\u0014H\u0002J\u001a\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0017\u001a\u00020\u0014H\u0002J\u001a\u0010\u001b\u001a\u0004\u0018\u00010\u00142\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u000eH\u0002J\u0018\u0010\u001c\u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u0018\u001a\u00020\u0014H\u0002J\u0010\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u0018\u001a\u00020\u0014H\u0002R\u000e\u0010\u001f\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082T¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptStorage;", "", "<init>", "()V", "shouldAutoRun", "", "context", "Landroid/content/Context;", "Lkotlin/jvm/JvmStatic;", "loadActiveScript", "Lcom/miami/game/core/settings/game_test/LoadedGameTestScript;", "importScript", "Lcom/miami/game/core/settings/game_test/GameTestSavedScript;", "uri", "Landroid/net/Uri;", "listImportedScripts", "", "readBundledScript", "readImportedScript", "activeImportedScriptFileName", "", "importedScriptName", "readImportedScriptFile", "fileName", "displayName", "resolveImportedScriptFile", "Ljava/io/File;", "queryDisplayName", "createUniqueImportedScriptFile", "destinationDir", "sanitizeImportedScriptFileName", "TAG", "MAX_IMPORTED_SCRIPT_FILE_NAME_LENGTH", "", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class GameTestScriptStorage {
     public static final GameTestScriptStorage INSTANCE = new GameTestScriptStorage();
@@ -116,7 +116,7 @@ public final class GameTestScriptStorage {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final List<GameTestSavedScript> listImportedScripts(Context context) {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         String name;
         Intrinsics.checkNotNullParameter(context, "context");
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -166,19 +166,19 @@ public final class GameTestScriptStorage {
                     name = file3.getName();
                 }
                 Intrinsics.checkNotNull(name);
-                m9843constructorimpl = Result.m9843constructorimpl(new GameTestSavedScript(name2, name, file3.lastModified()));
+                m9896constructorimpl = Result.m9896constructorimpl(new GameTestSavedScript(name2, name, file3.lastModified()));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+                m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-            if (m9846exceptionOrNullimpl != null) {
-                Log.w(TAG, "Skipping invalid saved test script '" + file3.getName() + "'", m9846exceptionOrNullimpl);
+            Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+            if (m9899exceptionOrNullimpl != null) {
+                Log.w(TAG, "Skipping invalid saved test script '" + file3.getName() + "'", m9899exceptionOrNullimpl);
             }
-            if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-                m9843constructorimpl = null;
+            if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+                m9896constructorimpl = null;
             }
-            GameTestSavedScript gameTestSavedScript = (GameTestSavedScript) m9843constructorimpl;
+            GameTestSavedScript gameTestSavedScript = (GameTestSavedScript) m9896constructorimpl;
             if (gameTestSavedScript != null) {
                 arrayList2.add(gameTestSavedScript);
             }
@@ -222,7 +222,7 @@ public final class GameTestScriptStorage {
     }
 
     private final LoadedGameTestScript readBundledScript(Context context) {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             GameTestScriptStorage gameTestScriptStorage = this;
@@ -234,16 +234,16 @@ public final class GameTestScriptStorage {
             BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
             String readText = TextStreamsKt.readText(bufferedReader);
             CloseableKt.closeFinally(bufferedReader, null);
-            m9843constructorimpl = Result.m9843constructorimpl(new LoadedGameTestScript(GameTestScriptPreferences.BUNDLED_SCRIPT_FILE_NAME, "bundled", GameTestScriptParser.parse(readText)));
+            m9896constructorimpl = Result.m9896constructorimpl(new LoadedGameTestScript(GameTestScriptPreferences.BUNDLED_SCRIPT_FILE_NAME, "bundled", GameTestScriptParser.parse(readText)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-        if (m9846exceptionOrNullimpl != null) {
-            Log.w(TAG, "Unable to load bundled test script", m9846exceptionOrNullimpl);
+        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+        if (m9899exceptionOrNullimpl != null) {
+            Log.w(TAG, "Unable to load bundled test script", m9899exceptionOrNullimpl);
         }
-        return Result.m9849isFailureimpl(m9843constructorimpl) ? null : m9843constructorimpl;
+        return Result.m9902isFailureimpl(m9896constructorimpl) ? null : m9896constructorimpl;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x001f, code lost:
@@ -290,8 +290,8 @@ public final class GameTestScriptStorage {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final LoadedGameTestScript readImportedScriptFile(Context context, String str, String str2) {
-        Object m9843constructorimpl;
-        Throwable m9846exceptionOrNullimpl;
+        Object m9896constructorimpl;
+        Throwable m9899exceptionOrNullimpl;
         File resolveImportedScriptFile;
         LoadedGameTestScript loadedGameTestScript;
         try {
@@ -300,25 +300,25 @@ public final class GameTestScriptStorage {
             resolveImportedScriptFile = resolveImportedScriptFile(context, str);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
         if (resolveImportedScriptFile != null && resolveImportedScriptFile.exists()) {
             Charset UTF_8 = StandardCharsets.UTF_8;
             Intrinsics.checkNotNullExpressionValue(UTF_8, "UTF_8");
             loadedGameTestScript = new LoadedGameTestScript(str2, "imported", GameTestScriptParser.parse(FilesKt.readText(resolveImportedScriptFile, UTF_8)));
-            m9843constructorimpl = Result.m9843constructorimpl(loadedGameTestScript);
-            m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-            if (m9846exceptionOrNullimpl != null) {
-                Log.w(TAG, "Unable to load imported test script '" + str + "'", m9846exceptionOrNullimpl);
+            m9896constructorimpl = Result.m9896constructorimpl(loadedGameTestScript);
+            m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+            if (m9899exceptionOrNullimpl != null) {
+                Log.w(TAG, "Unable to load imported test script '" + str + "'", m9899exceptionOrNullimpl);
             }
-            return Result.m9849isFailureimpl(m9843constructorimpl) ? null : m9843constructorimpl;
+            return Result.m9902isFailureimpl(m9896constructorimpl) ? null : m9896constructorimpl;
         }
         loadedGameTestScript = null;
-        m9843constructorimpl = Result.m9843constructorimpl(loadedGameTestScript);
-        m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-        if (m9846exceptionOrNullimpl != null) {
+        m9896constructorimpl = Result.m9896constructorimpl(loadedGameTestScript);
+        m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+        if (m9899exceptionOrNullimpl != null) {
         }
-        return Result.m9849isFailureimpl(m9843constructorimpl) ? null : m9843constructorimpl;
+        return Result.m9902isFailureimpl(m9896constructorimpl) ? null : m9896constructorimpl;
     }
 
     private final File resolveImportedScriptFile(Context context, String str) {

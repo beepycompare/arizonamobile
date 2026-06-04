@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.models.MobileRentAccessoryCategoryModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RentAccessoryPage.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final /* synthetic */ class RentAccessoryPage$categoryAdapter$1 extends FunctionReferenceImpl implements Function1<MobileRentAccessoryCategoryModel, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

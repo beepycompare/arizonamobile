@@ -23,7 +23,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ObserveExternalNavigationActions.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1", f = "ObserveExternalNavigationActions.kt", i = {}, l = {ConstraintLayout.LayoutParams.Table.LAYOUT_WRAP_BEHAVIOR_IN_PARENT}, m = "invokeSuspend", n = {}, nl = {69}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -54,7 +54,7 @@ public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 e
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ObserveExternalNavigationActions.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1$1", f = "ObserveExternalNavigationActions.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, nl = {68}, s = {}, v = 2)
     /* renamed from: com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
@@ -83,7 +83,7 @@ public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 e
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: ObserveExternalNavigationActions.kt */
-        @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+        @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
         /* renamed from: com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes5.dex */
         public static final /* synthetic */ class C00701 implements FlowCollector, FunctionAdapter {
@@ -103,7 +103,7 @@ public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 e
 
             @Override // kotlin.jvm.internal.FunctionAdapter
             public final Function<?> getFunctionDelegate() {
-                return new FunctionReferenceImpl(2, this.$tmp0, Intrinsics.Kotlin.class, "suspendConversion0", "invokeSuspend$suspendConversion0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", 0);
+                return new FunctionReferenceImpl(2, this.$tmp0, Intrinsics.Kotlin.class, "suspendConversion0", "suspendConversion0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", 0);
             }
 
             public final int hashCode() {
@@ -112,8 +112,8 @@ public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 e
 
             @Override // kotlinx.coroutines.flow.FlowCollector
             public final Object emit(T t, Continuation<? super Unit> continuation) {
-                Object invokeSuspend$suspendConversion0 = AnonymousClass1.invokeSuspend$suspendConversion0(this.$tmp0, t, continuation);
-                return invokeSuspend$suspendConversion0 == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? invokeSuspend$suspendConversion0 : Unit.INSTANCE;
+                this.$tmp0.invoke(t);
+                return Unit.INSTANCE;
             }
         }
 
@@ -135,12 +135,6 @@ public final class ObserveExternalNavigationActionsKt$collectWithLifecycle$1$1 e
             } else {
                 ResultKt.throwOnFailure(obj);
             }
-            return Unit.INSTANCE;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final /* synthetic */ Object invokeSuspend$suspendConversion0(Function1 function1, Object obj, Continuation continuation) {
-            function1.invoke(obj);
             return Unit.INSTANCE;
         }
     }

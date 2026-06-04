@@ -508,20 +508,20 @@ public final class AudioTrackAudioOutput implements AudioOutput {
             BackgroundExecutor.get().execute(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$OnRoutingChangedListenerApi24$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8855xdb32c08b(audioRouting);
+                    AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8907xdb32c08b(audioRouting);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onRoutingChanged$1$androidx-media3-exoplayer-audio-AudioTrackAudioOutput$OnRoutingChangedListenerApi24  reason: not valid java name */
-        public /* synthetic */ void m8855xdb32c08b(AudioRouting audioRouting) {
+        public /* synthetic */ void m8907xdb32c08b(AudioRouting audioRouting) {
             final AudioDeviceInfo routedDevice = audioRouting.getRoutedDevice();
             if (routedDevice != null) {
                 this.playbackThreadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.audio.AudioTrackAudioOutput$OnRoutingChangedListenerApi24$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8854x2346530a(routedDevice);
+                        AudioTrackAudioOutput.OnRoutingChangedListenerApi24.this.m8906x2346530a(routedDevice);
                     }
                 });
             }
@@ -529,7 +529,7 @@ public final class AudioTrackAudioOutput implements AudioOutput {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onRoutingChanged$0$androidx-media3-exoplayer-audio-AudioTrackAudioOutput$OnRoutingChangedListenerApi24  reason: not valid java name */
-        public /* synthetic */ void m8854x2346530a(AudioDeviceInfo audioDeviceInfo) {
+        public /* synthetic */ void m8906x2346530a(AudioDeviceInfo audioDeviceInfo) {
             if (this.listener == null) {
                 return;
             }

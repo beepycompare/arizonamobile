@@ -99,7 +99,7 @@ public final class RoundedPolygonKt {
 
     public static final RoundedPolygon RoundedPolygon(RoundedPolygon source) {
         Intrinsics.checkNotNullParameter(source, "source");
-        return new RoundedPolygon(source.getFeatures(), source.m8730getCenter1ufDz9w$graphics_shapes(), null);
+        return new RoundedPolygon(source.getFeatures(), source.m8782getCenter1ufDz9w$graphics_shapes(), null);
     }
 
     public static /* synthetic */ RoundedPolygon RoundedPolygon$default(float[] fArr, CornerRounding cornerRounding, List list, float f, float f2, int i, Object obj) {
@@ -185,7 +185,7 @@ public final class RoundedPolygonKt {
             int i15 = (((i2 + length) - 1) % length) * 2;
             long m12constructorimpl2 = FloatFloatPair.m12constructorimpl(vertices[i15], vertices[i15 + 1]);
             int i16 = (i13 % length) * 2;
-            arrayList5.add(new Feature.Corner((List) arrayList.get(i2), Utils.m8744convexb22R3LQ(m12constructorimpl2, m12constructorimpl, FloatFloatPair.m12constructorimpl(vertices[i16], vertices[i16 + 1]))));
+            arrayList5.add(new Feature.Corner((List) arrayList.get(i2), Utils.m8796convexb22R3LQ(m12constructorimpl2, m12constructorimpl, FloatFloatPair.m12constructorimpl(vertices[i16], vertices[i16 + 1]))));
             arrayList5.add(new Feature.Edge(CollectionsKt.listOf(Cubic.Companion.straightLine(((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i2))).getAnchor1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) arrayList.get(i2))).getAnchor1Y(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0X(), ((Cubic) CollectionsKt.first((List<? extends Object>) arrayList.get(i))).getAnchor0Y()))));
             i2 = i13;
         }
@@ -249,11 +249,11 @@ public final class RoundedPolygonKt {
         int i3 = 0;
         while (i2 < i) {
             float f4 = f;
-            long m8715plusybeJwSQ = PointKt.m8715plusybeJwSQ(Utils.m8746radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2.0f * i2, 0L, 4, null), FloatFloatPair.m12constructorimpl(f2, f3));
+            long m8767plusybeJwSQ = PointKt.m8767plusybeJwSQ(Utils.m8798radialToCartesianL6JJ3z0$default(f4, (Utils.getFloatPi() / i) * 2.0f * i2, 0L, 4, null), FloatFloatPair.m12constructorimpl(f2, f3));
             int i4 = i3 + 1;
-            fArr[i3] = PointKt.m8711getXDnnuFBc(m8715plusybeJwSQ);
+            fArr[i3] = PointKt.m8763getXDnnuFBc(m8767plusybeJwSQ);
             i3 += 2;
-            fArr[i4] = PointKt.m8712getYDnnuFBc(m8715plusybeJwSQ);
+            fArr[i4] = PointKt.m8764getYDnnuFBc(m8767plusybeJwSQ);
             i2++;
             f = f4;
         }

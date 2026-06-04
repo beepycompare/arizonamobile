@@ -11,13 +11,13 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ImageResponseCache {
     static final String TAG = "ImageResponseCache";
     private static volatile FileLruCache imageCache;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class BufferedHttpInputStream extends BufferedInputStream {
         HttpURLConnection connection;
 

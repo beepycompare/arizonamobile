@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HomeComponent.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.feature.home.ui.HomeComponent", f = "HomeComponent.kt", i = {}, l = {118}, m = "isShopAllowedByRemoteVersion", n = {}, nl = {119}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class HomeComponent$isShopAllowedByRemoteVersion$1 extends ContinuationImpl {

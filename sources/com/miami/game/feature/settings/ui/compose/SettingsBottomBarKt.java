@@ -34,7 +34,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsBottomBar.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aE\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"SettingsBottomBar", "", "onBugsReport", "Lkotlin/Function0;", "onShareLogs", "onPrivacyPolicy", "onLongShareLogs", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "settings"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aW\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0007b\u0002\b\bb\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b¢\u0006\u0002\u0010\u0007¨\u0006\f"}, d2 = {"SettingsBottomBar", "", "onBugsReport", "Lkotlin/Function0;", "onShareLogs", "onPrivacyPolicy", "onLongShareLogs", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "settings"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class SettingsBottomBarKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -157,7 +157,7 @@ public final class SettingsBottomBarKt {
             int i4 = i3 >> 6;
             ScalingButtonKt.ScalingButtonLong(onShareLogs, onLongShareLogs, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$124095881$settings(), startRestartGroup, ((i3 >> 3) & 14) | 3072 | (i4 & 112), 4);
             startRestartGroup = startRestartGroup;
-            ScalingButtonKt.ScalingButton(onPrivacyPolicy, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9773getLambda$1935939771$settings(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onPrivacyPolicy, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9824getLambda$1935939771$settings(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

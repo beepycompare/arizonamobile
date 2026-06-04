@@ -17,7 +17,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SettingsInteractor.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.settings.SettingsInteractor$importGameTestScript$1", f = "SettingsInteractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class SettingsInteractor$importGameTestScript$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -48,7 +48,7 @@ public final class SettingsInteractor$importGameTestScript$1 extends SuspendLamb
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         LocalRepository localRepository;
         MutableStateFlow mutableStateFlow;
         LocalRepository localRepository2;
@@ -70,15 +70,15 @@ public final class SettingsInteractor$importGameTestScript$1 extends SuspendLamb
             localRepository2 = settingsInteractor.localRepository;
             settingsInteractor.saveSettings(SettingState.copy$default((SettingState) mutableStateFlow.getValue(), 0.0f, 0, false, false, false, false, false, false, false, false, false, true, displayName, fileName, GameTestScriptStorage.listImportedScripts(localRepository2.getContext()), null, false, null, null, 493567, null));
             settingsInteractor.showToast("Тестовый сценарий импортирован", 0);
-            m9843constructorimpl = Result.m9843constructorimpl(Unit.INSTANCE);
+            m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
         SettingsInteractor settingsInteractor2 = this.this$0;
-        Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-        if (m9846exceptionOrNullimpl != null) {
-            String message = m9846exceptionOrNullimpl.getMessage();
+        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+        if (m9899exceptionOrNullimpl != null) {
+            String message = m9899exceptionOrNullimpl.getMessage();
             if (message == null) {
                 message = "Не удалось импортировать сценарий";
             }

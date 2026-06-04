@@ -62,7 +62,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ServerButton.kt */
-@Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a#\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007¢\u0006\u0002\u0010\u0006\"\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"ServerButton", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickServer", "Lkotlin/Function0;", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "path", "Landroidx/compose/ui/graphics/Path;", "home"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u001a5\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005H\u0007b\u0002\b\u0007b\f\b\b\u0012\b\b\t\u0012\u0004\b\b(\n¢\u0006\u0002\u0010\u0006\"\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"ServerButton", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "onClickServer", "Lkotlin/Function0;", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "path", "Landroidx/compose/ui/graphics/Path;", "home"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ServerButtonKt {
     private static final Path path = PathParser.toPath$default(new PathParser().parsePathString("M 0.5768 25.1032 C -1.3113 11.8522 8.972 0 22.3568 0 H 500.912 C 511.864 0 521.148 8.0548 522.692 18.8967 L 529.423 66.1361 C 531.311 79.387 521.028 91.239 507.643 91.239 H 29.0876 C 18.1362 91.239 8.8523 83.184 7.3075 72.343 L 0.5768 25.1032 Z"), null, 1, null);
@@ -238,8 +238,8 @@ public final class ServerButtonKt {
                 ComposerKt.sourceInformationMarkerStart(composer, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, 1583301852, "C83@3482L28,84@3535L265:ServerButton.kt#dswm0d");
-                AnimatedLoadingKt.m9721AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(16.0f), null, composer, 54, 4);
-                SingletonAsyncImageKt.m9167AsyncImage10Xjiaw(currentServer.getIcon(), null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(70.0f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
+                AnimatedLoadingKt.m9772AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(16.0f), null, composer, 54, 4);
+                SingletonAsyncImageKt.m9219AsyncImage10Xjiaw(currentServer.getIcon(), null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(70.0f)), null, null, null, contentScale, 0.0f, null, 0, false, composer, 432, 0, 1976);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 ComposerKt.sourceInformationMarkerEnd(composer);
                 composer.endNode();
@@ -273,8 +273,8 @@ public final class ServerButtonKt {
                 ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
                 ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(composer, -1442354249, "C101@4339L10,102@4400L13,103@4456L13,97@4133L362,107@4622L11,108@4693L10,109@4754L12,105@4520L272:ServerButton.kt#dswm0d");
-                TextKt.m3157TextNvy7gAk(String.valueOf(currentServer.getName()), null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(17.0f), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
-                TextKt.m3157TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, MaterialTheme.$stable).m2322getPrimary0d7_KjU(), null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131050);
+                TextKt.m3157TextNvy7gAk(String.valueOf(currentServer.getName()), null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(16.0f), composer, 6), null, null, null, 0L, null, null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(17.0f), composer, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
+                TextKt.m3157TextNvy7gAk("ВЫБРАТЬ СЕРВЕР", null, MaterialTheme.INSTANCE.getColorScheme(composer, 6).m2322getPrimary0d7_KjU(), null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), composer, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 6, 0, 131050);
                 composer2 = composer;
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -286,7 +286,7 @@ public final class ServerButtonKt {
             } else {
                 composer.startReplaceGroup(1175491626);
                 ComposerKt.sourceInformation(composer, "116@5001L10,113@4860L368");
-                TextKt.m3157TextNvy7gAk("СЕРВЕР НЕ ВЫБРАН", SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, TextUnitKt.getSp(12), null, null, null, 0L, null, TextAlign.m8031boximpl(TextAlign.Companion.m8038getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 25014, 0, 130024);
+                TextKt.m3157TextNvy7gAk("СЕРВЕР НЕ ВЫБРАН", SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, TextUnitKt.getSp(12), null, null, null, 0L, null, TextAlign.m8031boximpl(TextAlign.Companion.m8038getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 25014, 0, 130024);
                 composer2 = composer;
                 composer2.endReplaceGroup();
             }

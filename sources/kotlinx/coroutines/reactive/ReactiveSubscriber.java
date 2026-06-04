@@ -40,7 +40,7 @@ public final class ReactiveSubscriber<T> implements Subscriber<T> {
         ReactiveSubscriber$takeNextOrNull$1 reactiveSubscriber$takeNextOrNull$1;
         int i;
         Object obj;
-        Throwable m11374exceptionOrNullimpl;
+        Throwable m11448exceptionOrNullimpl;
         if (continuation instanceof ReactiveSubscriber$takeNextOrNull$1) {
             reactiveSubscriber$takeNextOrNull$1 = (ReactiveSubscriber$takeNextOrNull$1) continuation;
             if ((reactiveSubscriber$takeNextOrNull$1.label & Integer.MIN_VALUE) != 0) {
@@ -52,7 +52,7 @@ public final class ReactiveSubscriber<T> implements Subscriber<T> {
                     ResultKt.throwOnFailure(obj2);
                     Channel<T> channel = this.channel;
                     reactiveSubscriber$takeNextOrNull$1.label = 1;
-                    obj = channel.mo11363receiveCatchingJP2dKIU(reactiveSubscriber$takeNextOrNull$1);
+                    obj = channel.mo11437receiveCatchingJP2dKIU(reactiveSubscriber$takeNextOrNull$1);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -60,14 +60,14 @@ public final class ReactiveSubscriber<T> implements Subscriber<T> {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
                     ResultKt.throwOnFailure(obj2);
-                    obj = ((ChannelResult) obj2).m11382unboximpl();
+                    obj = ((ChannelResult) obj2).m11456unboximpl();
                 }
-                m11374exceptionOrNullimpl = ChannelResult.m11374exceptionOrNullimpl(obj);
-                if (m11374exceptionOrNullimpl == null) {
-                    throw m11374exceptionOrNullimpl;
+                m11448exceptionOrNullimpl = ChannelResult.m11448exceptionOrNullimpl(obj);
+                if (m11448exceptionOrNullimpl == null) {
+                    throw m11448exceptionOrNullimpl;
                 }
                 if (obj instanceof ChannelResult.Failed) {
-                    ChannelResult.m11374exceptionOrNullimpl(obj);
+                    ChannelResult.m11448exceptionOrNullimpl(obj);
                     return null;
                 }
                 return obj;
@@ -79,14 +79,14 @@ public final class ReactiveSubscriber<T> implements Subscriber<T> {
         i = reactiveSubscriber$takeNextOrNull$1.label;
         if (i != 0) {
         }
-        m11374exceptionOrNullimpl = ChannelResult.m11374exceptionOrNullimpl(obj);
-        if (m11374exceptionOrNullimpl == null) {
+        m11448exceptionOrNullimpl = ChannelResult.m11448exceptionOrNullimpl(obj);
+        if (m11448exceptionOrNullimpl == null) {
         }
     }
 
     @Override // org.reactivestreams.Subscriber
     public void onNext(T t) {
-        if (!ChannelResult.m11380isSuccessimpl(this.channel.mo9005trySendJP2dKIU(t))) {
+        if (!ChannelResult.m11454isSuccessimpl(this.channel.mo9057trySendJP2dKIU(t))) {
             throw new IllegalArgumentException(("Element " + t + " was not added to channel because it was full, " + this.channel).toString());
         }
     }

@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* compiled from: DonateOrdinaryPage.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1$sortedList$1", f = "DonateOrdinaryPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class DonateOrdinaryPage$renderListGradually$1$sortedList$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<DonateItemModelUi>>, Object> {

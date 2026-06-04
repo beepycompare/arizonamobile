@@ -25,12 +25,12 @@ public final class FragmentViewModelLazyKt$viewModels$7 extends Lambda implement
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final CreationExtras invoke() {
-        ViewModelStoreOwner m8699viewModels$lambda1;
+        ViewModelStoreOwner m8751viewModels$lambda1;
         CreationExtras invoke;
         Function0<CreationExtras> function0 = this.$extrasProducer;
         if (function0 == null || (invoke = function0.invoke()) == null) {
-            m8699viewModels$lambda1 = FragmentViewModelLazyKt.m8699viewModels$lambda1(this.$owner$delegate);
-            HasDefaultViewModelProviderFactory hasDefaultViewModelProviderFactory = m8699viewModels$lambda1 instanceof HasDefaultViewModelProviderFactory ? (HasDefaultViewModelProviderFactory) m8699viewModels$lambda1 : null;
+            m8751viewModels$lambda1 = FragmentViewModelLazyKt.m8751viewModels$lambda1(this.$owner$delegate);
+            HasDefaultViewModelProviderFactory hasDefaultViewModelProviderFactory = m8751viewModels$lambda1 instanceof HasDefaultViewModelProviderFactory ? (HasDefaultViewModelProviderFactory) m8751viewModels$lambda1 : null;
             return hasDefaultViewModelProviderFactory != null ? hasDefaultViewModelProviderFactory.getDefaultViewModelCreationExtras() : CreationExtras.Empty.INSTANCE;
         }
         return invoke;

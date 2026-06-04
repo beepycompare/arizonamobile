@@ -3,6 +3,7 @@ package com.squareup.picasso;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.net.Uri;
+import coil3.util.UtilsKt;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestHandler;
 import java.io.IOException;
@@ -24,7 +25,7 @@ public class AssetRequestHandler extends RequestHandler {
     @Override // com.squareup.picasso.RequestHandler
     public boolean canHandleRequest(Request request) {
         Uri uri = request.uri;
-        return "file".equals(uri.getScheme()) && !uri.getPathSegments().isEmpty() && "android_asset".equals(uri.getPathSegments().get(0));
+        return UtilsKt.SCHEME_FILE.equals(uri.getScheme()) && !uri.getPathSegments().isEmpty() && "android_asset".equals(uri.getPathSegments().get(0));
     }
 
     @Override // com.squareup.picasso.RequestHandler

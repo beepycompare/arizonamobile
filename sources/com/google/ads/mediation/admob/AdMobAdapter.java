@@ -17,12 +17,12 @@ import com.google.android.gms.ads.mediation.MediationInterstitialListener;
 import com.google.android.gms.internal.eu;
 import java.util.Date;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class AdMobAdapter implements MediationBannerAdapter, MediationInterstitialAdapter {
     private AdView i;
     private InterstitialAd j;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     private static final class a extends AdListener {
         private final AdMobAdapter k;
         private final MediationBannerListener l;
@@ -54,7 +54,7 @@ public final class AdMobAdapter implements MediationBannerAdapter, MediationInte
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     private static final class b extends AdListener {
         private final AdMobAdapter k;
         private final MediationInterstitialListener m;

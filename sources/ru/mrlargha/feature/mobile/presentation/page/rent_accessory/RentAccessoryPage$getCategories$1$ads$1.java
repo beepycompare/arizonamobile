@@ -15,7 +15,7 @@ import retrofit2.Response;
 import ru.mrlargha.feature.mobile.data.remote.MobileRetrofitClient;
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.models.MobileRentAccessoryCategoryModel;
 /* compiled from: RentAccessoryPage.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u00020\u0001*\u00020\u0004H\n"}, d2 = {"<anonymous>", "Lretrofit2/Response;", "", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryCategoryModel;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u00020\u0001*\u00020\u0004H\n"}, d2 = {"<anonymous>", "Lretrofit2/Response;", "", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryCategoryModel;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.RentAccessoryPage$getCategories$1$ads$1", f = "RentAccessoryPage.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_E_AC3}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class RentAccessoryPage$getCategories$1$ads$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Response<List<? extends MobileRentAccessoryCategoryModel>>>, Object> {

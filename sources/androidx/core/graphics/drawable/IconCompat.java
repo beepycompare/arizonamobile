@@ -27,6 +27,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
 import androidx.versionedparcelable.CustomVersionedParcelable;
+import coil3.util.UtilsKt;
 import com.google.android.vending.expansion.downloader.impl.DownloadsDB;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
@@ -290,7 +291,7 @@ public class IconCompat extends CustomVersionedParcelable {
     public InputStream getUriInputStream(Context context) {
         Uri uri = getUri();
         String scheme = uri.getScheme();
-        if (FirebaseAnalytics.Param.CONTENT.equals(scheme) || "file".equals(scheme)) {
+        if (FirebaseAnalytics.Param.CONTENT.equals(scheme) || UtilsKt.SCHEME_FILE.equals(scheme)) {
             try {
                 return context.getContentResolver().openInputStream(uri);
             } catch (Exception e) {

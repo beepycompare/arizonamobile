@@ -7,21 +7,18 @@ import com.adjust.sdk.AdjustConfig;
 import com.adjust.sdk.LogLevel;
 import com.arizona.launcher.util.FlavorUtilKt;
 import com.arizona.launcher.util.ProjectLocale;
-import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.Firebase;
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.RemoteConfigKt;
 import com.miami.game.core.connection.resolver.R;
 import dagger.hilt.android.HiltAndroidApp;
 import io.appmetrica.analytics.AppMetrica;
 import io.appmetrica.analytics.AppMetricaConfig;
-import java.util.concurrent.TimeUnit;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import timber.log.Timber;
 /* compiled from: ArizonaApplication.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0014J\b\u0010\b\u001a\u00020\u0005H\u0016J\b\u0010\t\u001a\u00020\u0005H\u0002¨\u0006\n"}, d2 = {"Lcom/arizona/launcher/ArizonaApplication;", "Landroid/app/Application;", "<init>", "()V", "attachBaseContext", "", TtmlNode.RUBY_BASE, "Landroid/content/Context;", "onCreate", "adjustInitialize", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0014J\b\u0010\b\u001a\u00020\u0005H\u0016J\b\u0010\t\u001a\u00020\u0005H\u0002Ê\u0001\u0002\b\u000bÊ\u0001\f\b\f\u0012\b\b\r\u0012\u0004\b\u0003\u0010\u0000¨\u0006\n"}, d2 = {"Lcom/arizona/launcher/ArizonaApplication;", "Landroid/app/Application;", "<init>", "()V", "attachBaseContext", "", TtmlNode.RUBY_BASE, "Landroid/content/Context;", "onCreate", "adjustInitialize", "app", "Ldagger/hilt/android/HiltAndroidApp;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @HiltAndroidApp
 /* loaded from: classes3.dex */
 public final class ArizonaApplication extends Hilt_ArizonaApplication {
@@ -40,13 +37,7 @@ public final class ArizonaApplication extends Hilt_ArizonaApplication {
         ArizonaApplication arizonaApplication = this;
         FirebaseApp.initializeApp(arizonaApplication);
         String str = FlavorUtilKt.isArizona() ? ArizonaApplicationKt.ARIZONA_API_KEY : ArizonaApplicationKt.RODINA_API_KEY;
-        FirebaseRemoteConfig remoteConfig = RemoteConfigKt.getRemoteConfig(Firebase.INSTANCE);
-        try {
-            Tasks.await(remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults), 2L, TimeUnit.SECONDS);
-        } catch (Exception e) {
-            Timber.Forest.e(e, "Remote Config defaults failed to apply in time", new Object[0]);
-        }
-        remoteConfig.fetchAndActivate();
+        RemoteConfigKt.getRemoteConfig(Firebase.INSTANCE).setDefaultsAsync(R.xml.remote_config_defaults);
         AppMetricaConfig build = AppMetricaConfig.newConfigBuilder(str).withLocationTracking(true).withCrashReporting(false).withNativeCrashReporting(false).withLogs().build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         AppMetrica.activate(arizonaApplication, build);

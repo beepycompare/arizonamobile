@@ -26,7 +26,7 @@ import ru.mrlargha.feature.mobile.databinding.MobileRentAccessoryItemBinding;
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MobileRentAccessoryMainAdapter.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.adapters.MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$1$1", f = "MobileRentAccessoryMainAdapter.kt", i = {0, 0, 0}, l = {132}, m = "invokeSuspend", n = {"$this$launch", "leftTime", "days"}, nl = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, s = {"L$0", "J$0", "J$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class MobileRentAccessoryMainAdapter$MainViewHolder$startRentTimer$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

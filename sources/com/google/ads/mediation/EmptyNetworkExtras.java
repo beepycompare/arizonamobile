@@ -1,5 +1,5 @@
 package com.google.ads.mediation;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class EmptyNetworkExtras implements NetworkExtras {
 }

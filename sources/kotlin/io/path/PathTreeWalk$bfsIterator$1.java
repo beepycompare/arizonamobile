@@ -19,11 +19,10 @@ import kotlin.jvm.functions.Function2;
 import kotlin.sequences.SequenceScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PathTreeWalk.kt */
-@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", "Ljava/nio/file/Path;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "kotlin.io.path.PathTreeWalk$bfsIterator$1", f = "PathTreeWalk.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {191, DownloaderService.STATUS_QUEUED_FOR_WIFI}, m = "invokeSuspend", n = {"$this$iterator", "queue", "entriesReader", "pathNode", "this_$iv", "$this$yieldIfNeeded$iv", "node$iv", "entriesReader$iv", "path$iv", "$i$f$yieldIfNeeded", "$this$iterator", "queue", "entriesReader", "pathNode", "this_$iv", "$this$yieldIfNeeded$iv", "node$iv", "entriesReader$iv", "path$iv", "$i$f$yieldIfNeeded"}, nl = {DownloaderService.STATUS_PAUSED_BY_APP, 199}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
+@Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\b\u0012\u0004\u0012\u00020\u00030\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlin/sequences/SequenceScope;", "Ljava/nio/file/Path;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "kotlin.io.path.PathTreeWalk$bfsIterator$1", f = "PathTreeWalk.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {191, DownloaderService.STATUS_QUEUED_FOR_WIFI}, m = "invokeSuspend", n = {"$this$iterator", "queue", "entriesReader", "pathNode", "this_$iv", "$this$yieldIfNeeded$iv", "node$iv", "entriesReader$iv", "path$iv", "$this$iterator", "queue", "entriesReader", "pathNode", "this_$iv", "$this$yieldIfNeeded$iv", "node$iv", "entriesReader$iv", "path$iv"}, nl = {DownloaderService.STATUS_PAUSED_BY_APP, 199}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
 /* loaded from: classes5.dex */
 public final class PathTreeWalk$bfsIterator$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super Path>, Continuation<? super Unit>, Object> {
-    int I$0;
     private /* synthetic */ Object L$0;
     Object L$1;
     Object L$2;
@@ -56,8 +55,8 @@ public final class PathTreeWalk$bfsIterator$1 extends RestrictedSuspendLambda im
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x009f  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0124  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x012d -> B:11:0x0096). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0121  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x017f -> B:11:0x0096). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -110,6 +109,7 @@ public final class PathTreeWalk$bfsIterator$1 extends RestrictedSuspendLambda im
                 arrayDeque.addAll(directoryEntriesReader.readEntries(pathNode));
             }
             directoryEntriesReader = directoryEntriesReader2;
+            Unit unit = Unit.INSTANCE;
         } else if (i != 2) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
@@ -142,6 +142,7 @@ public final class PathTreeWalk$bfsIterator$1 extends RestrictedSuspendLambda im
                         if (Files.isDirectory(path3, (LinkOption[]) Arrays.copyOf(linkOptionArr, linkOptionArr.length))) {
                         }
                         directoryEntriesReader = directoryEntriesReader2;
+                        Unit unit2 = Unit.INSTANCE;
                         while (!arrayDeque.isEmpty()) {
                         }
                     } else {
@@ -154,7 +155,6 @@ public final class PathTreeWalk$bfsIterator$1 extends RestrictedSuspendLambda im
                         this.L$6 = pathNode;
                         this.L$7 = directoryEntriesReader;
                         this.L$8 = path3;
-                        this.I$0 = 0;
                         this.label = 1;
                         if (sequenceScope.yield(path3, this) != coroutine_suspended) {
                             directoryEntriesReader2 = directoryEntriesReader;
@@ -169,6 +169,7 @@ public final class PathTreeWalk$bfsIterator$1 extends RestrictedSuspendLambda im
                             if (Files.isDirectory(path3, (LinkOption[]) Arrays.copyOf(linkOptionArr, linkOptionArr.length))) {
                             }
                             directoryEntriesReader = directoryEntriesReader2;
+                            Unit unit22 = Unit.INSTANCE;
                             while (!arrayDeque.isEmpty()) {
                             }
                         }
@@ -186,9 +187,12 @@ public final class PathTreeWalk$bfsIterator$1 extends RestrictedSuspendLambda im
                 this.L$6 = SpillingKt.nullOutSpilledVariable(pathNode);
                 this.L$7 = SpillingKt.nullOutSpilledVariable(directoryEntriesReader);
                 this.L$8 = SpillingKt.nullOutSpilledVariable(path3);
-                this.I$0 = 0;
                 this.label = 2;
                 if (sequenceScope.yield(path3, this) == coroutine_suspended) {
+                }
+            } else {
+                Unit unit222 = Unit.INSTANCE;
+                while (!arrayDeque.isEmpty()) {
                 }
             }
             return coroutine_suspended;

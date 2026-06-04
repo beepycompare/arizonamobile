@@ -15,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DelayKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NotificationsViewModel.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1", f = "NotificationsViewModel.kt", i = {}, l = {58}, m = "invokeSuspend", n = {}, nl = {59}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 public final class NotificationsViewModel$initial$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -72,7 +72,7 @@ public final class NotificationsViewModel$initial$1 extends SuspendLambda implem
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: NotificationsViewModel.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1$1", f = "NotificationsViewModel.kt", i = {}, l = {61}, m = "invokeSuspend", n = {}, nl = {RectListKt.BitOffsetForGesturable}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.ui.notifications.NotificationsViewModel$initial$1$1  reason: invalid class name */
     /* loaded from: classes3.dex */

@@ -1,23 +1,31 @@
 package androidx.core.net;
 
 import android.net.Uri;
+import coil3.util.UtilsKt;
 import java.io.File;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Uri.kt */
-@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0086\b\u001a\r\u0010\u0000\u001a\u00020\u0001*\u00020\u0003H\u0086\b\u001a\n\u0010\u0004\u001a\u00020\u0003*\u00020\u0001¨\u0006\u0005"}, d2 = {"toUri", "Landroid/net/Uri;", "", "Ljava/io/File;", "toFile", "core-ktx"}, k = 2, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\r\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0086\b\u001a\r\u0010\u0000\u001a\u00020\u0001*\u00020\u0003H\u0086\b\u001a\n\u0010\u0004\u001a\u00020\u0003*\u00020\u0001¨\u0006\u0005"}, d2 = {"toUri", "Landroid/net/Uri;", "", "Ljava/io/File;", "toFile", "core"}, k = 2, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class UriKt {
     public static final Uri toUri(String str) {
-        return Uri.parse(str);
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        Uri parse = Uri.parse(str);
+        Intrinsics.checkNotNullExpressionValue(parse, "parse(...)");
+        return parse;
     }
 
     public static final Uri toUri(File file) {
-        return Uri.fromFile(file);
+        Intrinsics.checkNotNullParameter(file, "<this>");
+        Uri fromFile = Uri.fromFile(file);
+        Intrinsics.checkNotNullExpressionValue(fromFile, "fromFile(...)");
+        return fromFile;
     }
 
     public static final File toFile(Uri uri) {
-        if (!Intrinsics.areEqual(uri.getScheme(), "file")) {
+        Intrinsics.checkNotNullParameter(uri, "<this>");
+        if (!Intrinsics.areEqual(uri.getScheme(), UtilsKt.SCHEME_FILE)) {
             throw new IllegalArgumentException(("Uri lacks 'file' scheme: " + uri).toString());
         }
         String path = uri.getPath();

@@ -39,7 +39,7 @@ public class AccessibilityNodeInfoCompat {
     public static final String ACTION_ARGUMENT_ROW_INT = "android.view.accessibility.action.ARGUMENT_ROW_INT";
     public static final String ACTION_ARGUMENT_SCROLL_AMOUNT_FLOAT = "androidx.core.view.accessibility.action.ARGUMENT_SCROLL_AMOUNT_FLOAT";
     public static final String ACTION_ARGUMENT_SELECTION_END_INT = "ACTION_ARGUMENT_SELECTION_END_INT";
-    public static final String ACTION_ARGUMENT_SELECTION_PARCELABLE = "androidx.core.view.accessibility.action.ARGUMENT_SELECTION_PARCELABLE";
+    public static final String ACTION_ARGUMENT_SELECTION_PARCELABLE = "android.view.accessibility.action.ARGUMENT_SELECTION_PARCELABLE";
     public static final String ACTION_ARGUMENT_SELECTION_START_INT = "ACTION_ARGUMENT_SELECTION_START_INT";
     public static final String ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE = "ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE";
     public static final int ACTION_CLEAR_ACCESSIBILITY_FOCUS = 128;
@@ -543,6 +543,128 @@ public class AccessibilityNodeInfoCompat {
     }
 
     /* loaded from: classes2.dex */
+    public static abstract class StructuredDataInfoCompat {
+        final AccessibilityNodeInfo.StructuredDataInfo mStructuredDataInfo;
+
+        protected StructuredDataInfoCompat(AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo) {
+            this.mStructuredDataInfo = structuredDataInfo;
+        }
+
+        public String getTag() {
+            if (Build.VERSION.SDK_INT >= 37) {
+                return Api37Impl.getStructuredDataInfoTag(this.mStructuredDataInfo);
+            }
+            return null;
+        }
+
+        public void putAttribute(String str, String str2) {
+            if (Build.VERSION.SDK_INT >= 37) {
+                Api37Impl.putStructuredDataInfoAttribute(this.mStructuredDataInfo, str, str2);
+            }
+        }
+
+        public void removeAttribute(String str) {
+            if (Build.VERSION.SDK_INT >= 37) {
+                Api37Impl.removeStructuredDataInfoAttribute(this.mStructuredDataInfo, str);
+            }
+        }
+
+        public String getAttribute(String str) {
+            if (Build.VERSION.SDK_INT >= 37) {
+                return Api37Impl.getStructuredDataInfoAttribute(this.mStructuredDataInfo, str);
+            }
+            return null;
+        }
+
+        public Map<String, String> getAttributes() {
+            if (Build.VERSION.SDK_INT >= 37) {
+                return Api37Impl.getStructuredDataInfoAttributes(this.mStructuredDataInfo);
+            }
+            return Collections.emptyMap();
+        }
+
+        public int hashCode() {
+            if (Build.VERSION.SDK_INT >= 37) {
+                return Api37Impl.structuredDataInfoHashCode(this.mStructuredDataInfo);
+            }
+            return 0;
+        }
+
+        public boolean equals(Object obj) {
+            if (Build.VERSION.SDK_INT < 37 || !(obj instanceof StructuredDataInfoCompat)) {
+                return this == obj;
+            }
+            return Api37Impl.structuredDataInfoEquals(this.mStructuredDataInfo, ((StructuredDataInfoCompat) obj).mStructuredDataInfo);
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    public static class MathInfoCompat extends StructuredDataInfoCompat {
+        public static final String MATH_ATTRIBUTE_ARG = "arg";
+        public static final String MATH_ATTRIBUTE_INTENT = "intent";
+        public static final String MATH_TAG_FRACTION = "mfrac";
+        public static final String MATH_TAG_IDENTIFIER = "mi";
+        public static final String MATH_TAG_MATH = "math";
+        public static final String MATH_TAG_MULTISCRIPTS = "mmultiscripts";
+        public static final String MATH_TAG_NONE_SCRIPT = "none";
+        public static final String MATH_TAG_NUMBER = "mn";
+        public static final String MATH_TAG_OPERATOR = "mo";
+        public static final String MATH_TAG_OVER = "mover";
+        public static final String MATH_TAG_PRESCRIPT_DELIMITER = "mprescripts";
+        public static final String MATH_TAG_ROOT = "mroot";
+        public static final String MATH_TAG_ROW = "mrow";
+        public static final String MATH_TAG_SQUARE_ROOT = "msqrt";
+        public static final String MATH_TAG_STRING_LITERAL = "ms";
+        public static final String MATH_TAG_SUB = "msub";
+        public static final String MATH_TAG_SUB_SUP = "msubsup";
+        public static final String MATH_TAG_SUP = "msup";
+        public static final String MATH_TAG_TABLE = "mtable";
+        public static final String MATH_TAG_TABLE_CELL = "mtd";
+        public static final String MATH_TAG_TABLE_ROW = "mtr";
+        public static final String MATH_TAG_TEXT = "mtext";
+        public static final String MATH_TAG_UNDER = "munder";
+        public static final String MATH_TAG_UNDER_OVER = "munderover";
+
+        @Retention(RetentionPolicy.SOURCE)
+        /* loaded from: classes2.dex */
+        public @interface MathAttribute {
+        }
+
+        @Retention(RetentionPolicy.SOURCE)
+        /* loaded from: classes2.dex */
+        public @interface MathTag {
+        }
+
+        public MathInfoCompat(String str) {
+            super(Build.VERSION.SDK_INT >= 37 ? Api37Impl.createMathInfo(str) : null);
+        }
+
+        public MathInfoCompat(AccessibilityNodeInfo.MathInfo mathInfo) {
+            super(Build.VERSION.SDK_INT < 37 ? null : mathInfo);
+        }
+
+        @Override // androidx.core.view.accessibility.AccessibilityNodeInfoCompat.StructuredDataInfoCompat
+        public String getTag() {
+            return super.getTag();
+        }
+
+        @Override // androidx.core.view.accessibility.AccessibilityNodeInfoCompat.StructuredDataInfoCompat
+        public void putAttribute(String str, String str2) {
+            super.putAttribute(str, str2);
+        }
+
+        @Override // androidx.core.view.accessibility.AccessibilityNodeInfoCompat.StructuredDataInfoCompat
+        public void removeAttribute(String str) {
+            super.removeAttribute(str);
+        }
+
+        @Override // androidx.core.view.accessibility.AccessibilityNodeInfoCompat.StructuredDataInfoCompat
+        public String getAttribute(String str) {
+            return super.getAttribute(str);
+        }
+    }
+
+    /* loaded from: classes2.dex */
     public static class RangeInfoCompat {
         public static final int RANGE_TYPE_FLOAT = 1;
         public static final int RANGE_TYPE_INT = 0;
@@ -671,6 +793,20 @@ public class AccessibilityNodeInfoCompat {
             return -1;
         }
 
+        public View getView() {
+            if (Build.VERSION.SDK_INT >= 37) {
+                return Api37Impl.getView(this.mPosition);
+            }
+            return null;
+        }
+
+        public int getVirtualDescendantId() {
+            if (Build.VERSION.SDK_INT >= 37) {
+                return Api37Impl.getVirtualDescendantId(this.mPosition);
+            }
+            return -1;
+        }
+
         public int hashCode() {
             AccessibilityNodeInfo.SelectionPosition selectionPosition;
             if (!BuildCompat.isAtLeastB_1() || (selectionPosition = this.mPosition) == null) {
@@ -681,10 +817,13 @@ public class AccessibilityNodeInfoCompat {
 
         public boolean equals(Object obj) {
             AccessibilityNodeInfo.SelectionPosition selectionPosition;
-            if (!BuildCompat.isAtLeastB_1() || (selectionPosition = this.mPosition) == null) {
+            if (!BuildCompat.isAtLeastB_1()) {
+                return this == obj;
+            } else if ((obj instanceof SelectionPositionCompat) && (selectionPosition = this.mPosition) != null) {
+                return selectionPosition.equals(((SelectionPositionCompat) obj).mPosition);
+            } else {
                 return false;
             }
-            return selectionPosition.equals(obj);
         }
     }
 
@@ -722,6 +861,10 @@ public class AccessibilityNodeInfoCompat {
             return null;
         }
 
+        public AccessibilityNodeInfo.Selection unwrap() {
+            return this.mSelection;
+        }
+
         public int hashCode() {
             AccessibilityNodeInfo.Selection selection;
             if (!BuildCompat.isAtLeastB_1() || (selection = this.mSelection) == null) {
@@ -732,10 +875,13 @@ public class AccessibilityNodeInfoCompat {
 
         public boolean equals(Object obj) {
             AccessibilityNodeInfo.Selection selection;
-            if (!BuildCompat.isAtLeastB_1() || (selection = this.mSelection) == null) {
+            if (!BuildCompat.isAtLeastB_1()) {
+                return this == obj;
+            } else if ((obj instanceof SelectionCompat) && (selection = this.mSelection) != null) {
+                return selection.equals(((SelectionCompat) obj).mSelection);
+            } else {
                 return false;
             }
-            return selection.equals(obj);
         }
     }
 
@@ -993,10 +1139,10 @@ public class AccessibilityNodeInfoCompat {
     public int getChecked() {
         int i = Build.VERSION.SDK_INT;
         AccessibilityNodeInfo accessibilityNodeInfo = this.mInfo;
-        if (i < 36) {
-            return accessibilityNodeInfo.getExtras().getInt(CHECKED_KEY, this.mInfo.isChecked() ? 1 : 0);
+        if (i >= 36) {
+            return Api36Impl.getChecked(accessibilityNodeInfo);
         }
-        return Api36Impl.getChecked(accessibilityNodeInfo);
+        return accessibilityNodeInfo.getExtras().getInt(CHECKED_KEY, this.mInfo.isChecked() ? 1 : 0);
     }
 
     public void setChecked(int i) {
@@ -1409,6 +1555,20 @@ public class AccessibilityNodeInfoCompat {
         return null;
     }
 
+    public StructuredDataInfoCompat getStructuredDataInfo() {
+        AccessibilityNodeInfo.MathInfo structuredDataInfo;
+        if (Build.VERSION.SDK_INT < 37 || (structuredDataInfo = Api37Impl.getStructuredDataInfo(this.mInfo)) == null || !(structuredDataInfo instanceof AccessibilityNodeInfo.MathInfo)) {
+            return null;
+        }
+        return new MathInfoCompat(structuredDataInfo);
+    }
+
+    public void setStructuredDataInfo(StructuredDataInfoCompat structuredDataInfoCompat) {
+        if (Build.VERSION.SDK_INT >= 37) {
+            Api37Impl.setStructuredDataInfo(this.mInfo, structuredDataInfoCompat == null ? null : structuredDataInfoCompat.mStructuredDataInfo);
+        }
+    }
+
     public RangeInfoCompat getRangeInfo() {
         AccessibilityNodeInfo.RangeInfo rangeInfo = this.mInfo.getRangeInfo();
         if (rangeInfo != null) {
@@ -1506,23 +1666,23 @@ public class AccessibilityNodeInfoCompat {
     }
 
     public void addLabeledBy(View view, int i) {
-        if (Build.VERSION.SDK_INT < 36) {
-            setLabeledBy(view, i);
-        } else {
+        if (Build.VERSION.SDK_INT >= 36) {
             Api36Impl.addLabeledBy(this.mInfo, view, i);
+        } else {
+            setLabeledBy(view, i);
         }
     }
 
     public List<AccessibilityNodeInfoCompat> getLabeledByList() {
-        if (Build.VERSION.SDK_INT < 36) {
-            ArrayList arrayList = new ArrayList(1);
-            AccessibilityNodeInfoCompat labeledBy = getLabeledBy();
-            if (labeledBy != null) {
-                arrayList.add(labeledBy);
-            }
-            return arrayList;
+        if (Build.VERSION.SDK_INT >= 36) {
+            return Api36Impl.getLabeledByList(this.mInfo);
         }
-        return Api36Impl.getLabeledByList(this.mInfo);
+        ArrayList arrayList = new ArrayList(1);
+        AccessibilityNodeInfoCompat labeledBy = getLabeledBy();
+        if (labeledBy != null) {
+            arrayList.add(labeledBy);
+        }
+        return arrayList;
     }
 
     public boolean removeLabeledBy(View view) {
@@ -2295,6 +2455,88 @@ public class AccessibilityNodeInfoCompat {
 
         public static AccessibilityNodeInfo.AccessibilityAction getActionSetExtendedSelection() {
             return AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_EXTENDED_SELECTION;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes2.dex */
+    public static class Api37Impl {
+        private Api37Impl() {
+        }
+
+        public static View getView(AccessibilityNodeInfo.SelectionPosition selectionPosition) {
+            return selectionPosition.getView();
+        }
+
+        public static int getVirtualDescendantId(AccessibilityNodeInfo.SelectionPosition selectionPosition) {
+            return selectionPosition.getVirtualDescendantId();
+        }
+
+        public static AccessibilityNodeInfo.MathInfo createMathInfo(String str) {
+            return new AccessibilityNodeInfo.MathInfo(str);
+        }
+
+        public static void setStructuredDataInfo(AccessibilityNodeInfo accessibilityNodeInfo, AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo) {
+            if (accessibilityNodeInfo == null) {
+                return;
+            }
+            accessibilityNodeInfo.setStructuredDataInfo(structuredDataInfo);
+        }
+
+        public static AccessibilityNodeInfo.StructuredDataInfo getStructuredDataInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+            if (accessibilityNodeInfo == null) {
+                return null;
+            }
+            return accessibilityNodeInfo.getStructuredDataInfo();
+        }
+
+        public static String getStructuredDataInfoTag(AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo) {
+            if (structuredDataInfo == null) {
+                return null;
+            }
+            return structuredDataInfo.getTag();
+        }
+
+        public static void putStructuredDataInfoAttribute(AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo, String str, String str2) {
+            if (structuredDataInfo == null) {
+                return;
+            }
+            structuredDataInfo.putAttribute(str, str2);
+        }
+
+        public static void removeStructuredDataInfoAttribute(AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo, String str) {
+            if (structuredDataInfo == null) {
+                return;
+            }
+            structuredDataInfo.removeAttribute(str);
+        }
+
+        public static String getStructuredDataInfoAttribute(AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo, String str) {
+            if (structuredDataInfo == null) {
+                return null;
+            }
+            return structuredDataInfo.getAttribute(str);
+        }
+
+        public static Map<String, String> getStructuredDataInfoAttributes(AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo) {
+            if (structuredDataInfo == null) {
+                return Collections.emptyMap();
+            }
+            return structuredDataInfo.getAttributes();
+        }
+
+        public static int structuredDataInfoHashCode(AccessibilityNodeInfo.StructuredDataInfo structuredDataInfo) {
+            if (structuredDataInfo == null) {
+                return 0;
+            }
+            return structuredDataInfo.hashCode();
+        }
+
+        public static boolean structuredDataInfoEquals(Object obj, Object obj2) {
+            if (obj == null) {
+                return obj2 == null;
+            }
+            return obj.equals(obj2);
         }
     }
 }

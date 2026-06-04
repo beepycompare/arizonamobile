@@ -46,7 +46,7 @@ public final class ConstructorConstructor {
     }
 
     /* renamed from: $r8$lambda$emGBdOG-cRs8pZGsKocRtr0g63Q  reason: not valid java name */
-    public static /* synthetic */ TreeMap m9710$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q() {
+    public static /* synthetic */ TreeMap m9761$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q() {
         return new TreeMap();
     }
 
@@ -277,7 +277,7 @@ public final class ConstructorConstructor {
             return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda12
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.m9710$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q();
+                    return ConstructorConstructor.m9761$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q();
                 }
             };
         }

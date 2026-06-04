@@ -24,7 +24,7 @@ import kotlin.jvm.internal.SpreadBuilder;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: FlowExtensions.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a;\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00012\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007¢\u0006\u0002\u0010\b\u001ax\u0010\t\u001a\u00020\n\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0016\u0010\u000b\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\r0\f\"\u0004\u0018\u00010\r2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072-\u0010\u000e\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u0011\u0012\u0006\u0012\u0004\u0018\u00010\r0\u000f¢\u0006\u0002\b\u0012H\u0007¢\u0006\u0002\u0010\u0013¨\u0006\u0014²\u00067\u0010\u0015\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u0011\u0012\u0006\u0012\u0004\u0018\u00010\r0\u000f¢\u0006\u0002\b\u0012\"\u0004\b\u0000\u0010\u0002X\u008a\u0084\u0002"}, d2 = {"rememberFlowWithLifecycle", "Lkotlinx/coroutines/flow/Flow;", ExifInterface.GPS_DIRECTION_TRUE, "flow", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "minActiveState", "Landroidx/lifecycle/Lifecycle$State;", "(Lkotlinx/coroutines/flow/Flow;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Landroidx/compose/runtime/Composer;II)Lkotlinx/coroutines/flow/Flow;", "collectInLaunchedEffectWithLifecycle", "", UserMetadata.KEYDATA_FILENAME, "", "", "collector", "Lkotlin/Function3;", "Lkotlinx/coroutines/CoroutineScope;", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/coroutines/flow/Flow;[Ljava/lang/Object;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "ui-utils", "currentCollector"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a?\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u0002H\u00020\u00012\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\t¢\u0006\u0002\u0010\b\u001a|\u0010\n\u001a\u00020\u000b\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u00012\u0016\u0010\f\u001a\f\u0012\b\b\u0001\u0012\u0004\u0018\u00010\u000e0\r\"\u0004\u0018\u00010\u000e2\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072-\u0010\u000f\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u000e0\u0010¢\u0006\u0002\b\u0013H\u0007b\u0002\b\t¢\u0006\u0002\u0010\u0014¨\u0006\u0015²\u00067\u0010\u0016\u001a)\b\u0001\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u0002H\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u000e0\u0010¢\u0006\u0002\b\u0013\"\u0004\b\u0000\u0010\u0002X\u008a\u0084\u0002"}, d2 = {"rememberFlowWithLifecycle", "Lkotlinx/coroutines/flow/Flow;", ExifInterface.GPS_DIRECTION_TRUE, "flow", "lifecycle", "Landroidx/lifecycle/Lifecycle;", "minActiveState", "Landroidx/lifecycle/Lifecycle$State;", "(Lkotlinx/coroutines/flow/Flow;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Landroidx/compose/runtime/Composer;II)Lkotlinx/coroutines/flow/Flow;", "Landroidx/compose/runtime/Composable;", "collectInLaunchedEffectWithLifecycle", "", UserMetadata.KEYDATA_FILENAME, "", "", "collector", "Lkotlin/Function3;", "Lkotlinx/coroutines/CoroutineScope;", "Lkotlin/coroutines/Continuation;", "Lkotlin/ExtensionFunctionType;", "(Lkotlinx/coroutines/flow/Flow;[Ljava/lang/Object;Landroidx/lifecycle/Lifecycle;Landroidx/lifecycle/Lifecycle$State;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V", "ui-utils", "currentCollector"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlowExtensionsKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -49,7 +49,7 @@ public final class FlowExtensionsKt {
             ComposerKt.traceEventStart(1523529420, i, -1, "com.miami.game.core.ui.utils.extensions.rememberFlowWithLifecycle (FlowExtensions.kt:21)");
         }
         ComposerKt.sourceInformationMarkerStart(composer, -472068926, "CC(remember):FlowExtensions.kt#9igjgp");
-        boolean changed = ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(state.ordinal())) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256) | composer.changed(flow) | composer.changed(lifecycle);
+        boolean changed = ((((i & 14) ^ 6) > 4 && composer.changed(flow)) || (i & 6) == 4) | composer.changed(lifecycle) | ((((i & 896) ^ RendererCapabilities.DECODER_SUPPORT_MASK) > 256 && composer.changed(state.ordinal())) || (i & RendererCapabilities.DECODER_SUPPORT_MASK) == 256);
         Object rememberedValue = composer.rememberedValue();
         if (changed || rememberedValue == Composer.Companion.getEmpty()) {
             rememberedValue = FlowExtKt.flowWithLifecycle(flow, lifecycle, state);
@@ -64,9 +64,10 @@ public final class FlowExtensionsKt {
         return flow2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:77:0x0126  */
-    /* JADX WARN: Removed duplicated region for block: B:81:0x015f  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x01bc  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x0174  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -76,7 +77,7 @@ public final class FlowExtensionsKt {
         final Lifecycle.State state2;
         int i3;
         Lifecycle.State state3;
-        boolean changedInstance;
+        boolean changed;
         FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 rememberedValue;
         Lifecycle lifecycle3;
         int i4;
@@ -85,7 +86,7 @@ public final class FlowExtensionsKt {
         Intrinsics.checkNotNullParameter(collector, "collector");
         Composer startRestartGroup = composer.startRestartGroup(239778954);
         ComposerKt.sourceInformation(startRestartGroup, "C(collectInLaunchedEffectWithLifecycle)N(keys,lifecycle,minActiveState,collector)37@1317L31,39@1409L193,39@1354L248:FlowExtensions.kt#iw6472");
-        int i5 = (i & 6) == 0 ? (startRestartGroup.changedInstance(flow) ? 4 : 2) | i : i;
+        int i5 = (i & 6) == 0 ? ((i & 8) == 0 ? startRestartGroup.changed(flow) : startRestartGroup.changedInstance(flow) ? 4 : 2) | i : i;
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             if ((i2 & 2) == 0) {
                 obj = lifecycle;
@@ -108,7 +109,7 @@ public final class FlowExtensionsKt {
             i5 |= startRestartGroup.changed(state == null ? -1 : state.ordinal()) ? 2048 : 1024;
         }
         if ((i & 24576) == 0) {
-            i5 |= startRestartGroup.changedInstance(collector) ? 16384 : 8192;
+            i5 |= (32768 & i) == 0 ? startRestartGroup.changed(collector) : startRestartGroup.changedInstance(collector) ? 16384 : 8192;
         }
         startRestartGroup.startMovableGroup(-1500657317, Integer.valueOf(keys.length));
         ComposerKt.sourceInformation(startRestartGroup, "32@1133L7");
@@ -120,6 +121,7 @@ public final class FlowExtensionsKt {
         if ((i7 & 112) == 0) {
             i7 |= 16;
         }
+        boolean z = true;
         if (!startRestartGroup.shouldExecute((i7 & 9363) != 9362, i7 & 1)) {
             startRestartGroup.skipToGroupEnd();
             lifecycle2 = obj;
@@ -150,9 +152,13 @@ public final class FlowExtensionsKt {
                     spreadBuilder.addSpread(keys);
                     Object[] array = spreadBuilder.toArray(new Object[spreadBuilder.size()]);
                     ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500646197, "CC(remember):FlowExtensions.kt#9igjgp");
-                    changedInstance = startRestartGroup.changedInstance(obj) | ((i3 & 7168) == 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState);
+                    boolean changedInstance = ((i3 & 7168) != 2048) | startRestartGroup.changedInstance(obj);
+                    if ((i3 & 14) != 4 && ((i3 & 8) == 0 || !startRestartGroup.changedInstance(flow))) {
+                        z = false;
+                    }
+                    changed = changedInstance | z | startRestartGroup.changed(rememberUpdatedState);
                     rememberedValue = startRestartGroup.rememberedValue();
-                    if (!changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+                    if (!changed || rememberedValue == Composer.Companion.getEmpty()) {
                         lifecycle3 = obj;
                         rememberedValue = new FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1(lifecycle3, state3, flow, rememberUpdatedState, null);
                         startRestartGroup.updateRememberedValue(rememberedValue);
@@ -186,9 +192,13 @@ public final class FlowExtensionsKt {
             spreadBuilder2.addSpread(keys);
             Object[] array2 = spreadBuilder2.toArray(new Object[spreadBuilder2.size()]);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1500646197, "CC(remember):FlowExtensions.kt#9igjgp");
-            changedInstance = startRestartGroup.changedInstance(obj) | ((i3 & 7168) == 2048) | startRestartGroup.changedInstance(flow) | startRestartGroup.changed(rememberUpdatedState2);
+            boolean changedInstance2 = ((i3 & 7168) != 2048) | startRestartGroup.changedInstance(obj);
+            if ((i3 & 14) != 4) {
+                z = false;
+            }
+            changed = changedInstance2 | z | startRestartGroup.changed(rememberUpdatedState2);
             rememberedValue = startRestartGroup.rememberedValue();
-            if (changedInstance) {
+            if (changed) {
             }
             lifecycle3 = obj;
             rememberedValue = new FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1(lifecycle3, state3, flow, rememberUpdatedState2, null);

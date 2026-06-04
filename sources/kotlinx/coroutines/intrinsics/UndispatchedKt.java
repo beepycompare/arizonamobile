@@ -94,7 +94,7 @@ public final class UndispatchedKt {
             ThreadContextKt.restoreThreadContext(context, updateThreadContext);
             if (wrapWithContinuationImpl != IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
                 Result.Companion companion = Result.Companion;
-                probeCoroutineCreated.resumeWith(Result.m9843constructorimpl(wrapWithContinuationImpl));
+                probeCoroutineCreated.resumeWith(Result.m9896constructorimpl(wrapWithContinuationImpl));
             }
         } catch (Throwable th) {
             th = th;
@@ -102,7 +102,7 @@ public final class UndispatchedKt {
                 th = ((DispatchException) th).getCause();
             }
             Result.Companion companion2 = Result.Companion;
-            probeCoroutineCreated.resumeWith(Result.m9843constructorimpl(ResultKt.createFailure(th)));
+            probeCoroutineCreated.resumeWith(Result.m9896constructorimpl(ResultKt.createFailure(th)));
         }
     }
 }

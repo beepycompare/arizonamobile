@@ -15,7 +15,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationItem.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$NotificationItemKt {
     public static final ComposableSingletons$NotificationItemKt INSTANCE = new ComposableSingletons$NotificationItemKt();
@@ -35,7 +35,7 @@ public final class ComposableSingletons$NotificationItemKt {
     });
 
     /* renamed from: getLambda$-458006129$notifications  reason: not valid java name */
-    public final Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> m9760getLambda$458006129$notifications() {
+    public final Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> m9811getLambda$458006129$notifications() {
         return f63lambda$458006129;
     }
 
@@ -54,7 +54,7 @@ public final class ComposableSingletons$NotificationItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-458006129, i, -1, "com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationItemKt.lambda$-458006129.<anonymous> (NotificationItem.kt:62)");
             }
-            AnimatedLoadingKt.m9721AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
+            AnimatedLoadingKt.m9772AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -73,7 +73,7 @@ public final class ComposableSingletons$NotificationItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(968944409, i, -1, "com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationItemKt.lambda$968944409.<anonymous> (NotificationItem.kt:69)");
             }
-            AnimatedLoadingKt.m9721AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
+            AnimatedLoadingKt.m9772AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

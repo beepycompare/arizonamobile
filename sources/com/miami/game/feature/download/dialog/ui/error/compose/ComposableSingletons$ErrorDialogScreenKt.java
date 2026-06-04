@@ -11,7 +11,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ErrorDialogScreen.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$ErrorDialogScreenKt {
     public static final ComposableSingletons$ErrorDialogScreenKt INSTANCE = new ComposableSingletons$ErrorDialogScreenKt();
@@ -31,7 +31,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
     });
 
     /* renamed from: getLambda$-1032883188$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9735getLambda$1032883188$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9786getLambda$1032883188$dialogs() {
         return f56lambda$1032883188;
     }
 
@@ -49,7 +49,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1032883188, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$ErrorDialogScreenKt.lambda$-1032883188.<anonymous> (ErrorDialogScreen.kt:69)");
             }
-            TextKt.m3157TextNvy7gAk("ЗАКРЫТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ЗАКРЫТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -67,7 +67,7 @@ public final class ComposableSingletons$ErrorDialogScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(24227829, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ComposableSingletons$ErrorDialogScreenKt.lambda$24227829.<anonymous> (ErrorDialogScreen.kt:75)");
             }
-            TextKt.m3157TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("ПОВТОРИТЬ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

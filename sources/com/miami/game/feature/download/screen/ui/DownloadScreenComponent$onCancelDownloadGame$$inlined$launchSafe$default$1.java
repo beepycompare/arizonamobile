@@ -12,11 +12,10 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: CoroutineFeatureExtensions.kt */
-@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/miami/game/core/decompose/utils/CoroutineFeatureExtensionsKt$launchSafe$1"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.feature.download.screen.ui.DownloadScreenComponent$onCancelDownloadGame$$inlined$launchSafe$default$1", f = "DownloadScreenComponent.kt", i = {0, 0, 0, 0}, l = {27}, m = "invokeSuspend", n = {"$this$launch", "$completion", "$this$onCancelDownloadGame_u24lambda_u240", "$i$a$-launchSafe$default-DownloadScreenComponent$onCancelDownloadGame$2"}, nl = {28}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
+@Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/miami/game/core/decompose/utils/CoroutineFeatureExtensionsKt$launchSafe$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.feature.download.screen.ui.DownloadScreenComponent$onCancelDownloadGame$$inlined$launchSafe$default$1", f = "DownloadScreenComponent.kt", i = {0, 0, 0}, l = {27}, m = "invokeSuspend", n = {"$this$launch", "$completion", "$this$onCancelDownloadGame_u24lambda_u240"}, nl = {28}, s = {"L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes5.dex */
 public final class DownloadScreenComponent$onCancelDownloadGame$$inlined$launchSafe$default$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-    int I$0;
     private /* synthetic */ Object L$0;
     Object L$1;
     Object L$2;
@@ -58,7 +57,6 @@ public final class DownloadScreenComponent$onCancelDownloadGame$$inlined$launchS
                 this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(this);
                 this.L$2 = SpillingKt.nullOutSpilledVariable(coroutineScope);
-                this.I$0 = 0;
                 this.label = 1;
                 Object cancelDownload = filesUpdaterInteractor.cancelDownload(this);
                 this = cancelDownload;

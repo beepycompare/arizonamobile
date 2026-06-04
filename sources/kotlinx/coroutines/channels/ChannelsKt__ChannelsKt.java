@@ -15,18 +15,18 @@ public final /* synthetic */ class ChannelsKt__ChannelsKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E> Object trySendBlocking(SendChannel<? super E> sendChannel, E e) {
         Object runBlockingK$default;
-        Object mo9005trySendJP2dKIU = sendChannel.mo9005trySendJP2dKIU(e);
-        if (mo9005trySendJP2dKIU instanceof ChannelResult.Failed) {
+        Object mo9057trySendJP2dKIU = sendChannel.mo9057trySendJP2dKIU(e);
+        if (mo9057trySendJP2dKIU instanceof ChannelResult.Failed) {
             runBlockingK$default = BuildersKt__Builders_concurrentKt.runBlockingK$default(null, new ChannelsKt__ChannelsKt$trySendBlocking$2(sendChannel, e, null), 1, null);
-            return ((ChannelResult) runBlockingK$default).m11382unboximpl();
+            return ((ChannelResult) runBlockingK$default).m11456unboximpl();
         }
-        Unit unit = (Unit) mo9005trySendJP2dKIU;
-        return ChannelResult.Companion.m11385successJP2dKIU(Unit.INSTANCE);
+        Unit unit = (Unit) mo9057trySendJP2dKIU;
+        return ChannelResult.Companion.m11459successJP2dKIU(Unit.INSTANCE);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Deprecated in the favour of 'trySendBlocking'. Consider handling the result of 'trySendBlocking' explicitly and rethrow exception if necessary", replaceWith = @ReplaceWith(expression = "trySendBlocking(element)", imports = {}))
     public static final /* synthetic */ void sendBlocking(SendChannel sendChannel, Object obj) {
-        if (ChannelResult.m11380isSuccessimpl(sendChannel.mo9005trySendJP2dKIU(obj))) {
+        if (ChannelResult.m11454isSuccessimpl(sendChannel.mo9057trySendJP2dKIU(obj))) {
             return;
         }
         BuildersKt__Builders_concurrentKt.runBlockingK$default(null, new ChannelsKt__ChannelsKt$sendBlocking$1(sendChannel, obj, null), 1, null);

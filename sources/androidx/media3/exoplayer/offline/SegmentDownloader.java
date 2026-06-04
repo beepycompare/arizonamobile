@@ -285,14 +285,14 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
         return (M) execute(new Supplier() { // from class: androidx.media3.exoplayer.offline.SegmentDownloader$$ExternalSyntheticLambda0
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return SegmentDownloader.this.m8886xeae2e604(dataSource, dataSpec);
+                return SegmentDownloader.this.m8938xeae2e604(dataSource, dataSpec);
             }
         }, z);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getManifest$0$androidx-media3-exoplayer-offline-SegmentDownloader  reason: not valid java name */
-    public /* synthetic */ RunnableFutureTask m8886xeae2e604(final DataSource dataSource, final DataSpec dataSpec) {
+    public /* synthetic */ RunnableFutureTask m8938xeae2e604(final DataSource dataSource, final DataSpec dataSpec) {
         return new RunnableFutureTask<M, IOException>() { // from class: androidx.media3.exoplayer.offline.SegmentDownloader.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // androidx.media3.common.util.RunnableFutureTask

@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DialogCloseButton.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$DialogCloseButtonKt {
     public static final ComposableSingletons$DialogCloseButtonKt INSTANCE = new ComposableSingletons$DialogCloseButtonKt();
@@ -33,7 +33,7 @@ public final class ComposableSingletons$DialogCloseButtonKt {
     });
 
     /* renamed from: getLambda$-1894286437$design_system  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9718getLambda$1894286437$design_system() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9769getLambda$1894286437$design_system() {
         return f50lambda$1894286437;
     }
 

@@ -22,7 +22,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 /* compiled from: ServersDAO_Impl.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u0000 \u00162\u00020\u0001:\u0001\u0016B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\bH\u0016J\u0014\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u000e0\rH\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0016J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002J\u0010\u0010\u0015\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u0012H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lcom/arizona/launcher/data/database/ServersDAO_Impl;", "Lcom/arizona/launcher/data/database/ServersDAO;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfServerEntity", "Landroidx/room/EntityInsertAdapter;", "Lcom/arizona/launcher/model/servers/ServerEntity;", "addServer", "Lio/reactivex/Completable;", "server", "getAllServers", "Lio/reactivex/Observable;", "", "deleteTable", "", "__ServerType_enumToString", "", "_value", "Lcom/arizona/launcher/model/servers/ServerType;", "__ServerType_stringToEnum", "Companion", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u0000 \u00162\u00020\u0001:\u0001\u0016B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\bH\u0016J\u0014\u0010\f\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u000e0\rH\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0016J\u0010\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002J\u0010\u0010\u0015\u001a\u00020\u00142\u0006\u0010\u0013\u001a\u00020\u0012H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0017"}, d2 = {"Lcom/arizona/launcher/data/database/ServersDAO_Impl;", "Lcom/arizona/launcher/data/database/ServersDAO;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfServerEntity", "Landroidx/room/EntityInsertAdapter;", "Lcom/arizona/launcher/model/servers/ServerEntity;", "addServer", "Lio/reactivex/Completable;", "server", "getAllServers", "Lio/reactivex/Observable;", "", "deleteTable", "", "__ServerType_enumToString", "", "_value", "Lcom/arizona/launcher/model/servers/ServerType;", "__ServerType_stringToEnum", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ServersDAO_Impl implements ServersDAO {
     private final RoomDatabase __db;
@@ -31,7 +31,7 @@ public final class ServersDAO_Impl implements ServersDAO {
     public static final int $stable = 8;
 
     /* compiled from: ServersDAO_Impl.kt */
-    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -72,21 +72,21 @@ public final class ServersDAO_Impl implements ServersDAO {
             public void bind(SQLiteStatement statement, ServerEntity entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo9016bindLong(1, entity.getId());
-                statement.mo9018bindText(2, entity.getAddress());
-                statement.mo9016bindLong(3, entity.getPort());
-                statement.mo9016bindLong(4, entity.getHasPassword() ? 1L : 0L);
-                statement.mo9016bindLong(5, entity.getCurrentPlayerCount());
-                statement.mo9016bindLong(6, entity.getMaxPlayerCount());
-                statement.mo9018bindText(7, entity.getServerName());
-                statement.mo9018bindText(8, entity.getTg());
-                statement.mo9018bindText(9, entity.getVk());
-                statement.mo9018bindText(10, entity.getInst());
-                statement.mo9016bindLong(11, entity.getFavorite() ? 1L : 0L);
-                statement.mo9018bindText(12, ServersDAO_Impl.this.__ServerType_enumToString(entity.getServerType()));
-                statement.mo9016bindLong(13, entity.getPing());
-                statement.mo9018bindText(14, entity.getPlotPoints());
-                statement.mo9018bindText(15, entity.getServerIcon());
+                statement.mo9068bindLong(1, entity.getId());
+                statement.mo9070bindText(2, entity.getAddress());
+                statement.mo9068bindLong(3, entity.getPort());
+                statement.mo9068bindLong(4, entity.getHasPassword() ? 1L : 0L);
+                statement.mo9068bindLong(5, entity.getCurrentPlayerCount());
+                statement.mo9068bindLong(6, entity.getMaxPlayerCount());
+                statement.mo9070bindText(7, entity.getServerName());
+                statement.mo9070bindText(8, entity.getTg());
+                statement.mo9070bindText(9, entity.getVk());
+                statement.mo9070bindText(10, entity.getInst());
+                statement.mo9068bindLong(11, entity.getFavorite() ? 1L : 0L);
+                statement.mo9070bindText(12, ServersDAO_Impl.this.__ServerType_enumToString(entity.getServerType()));
+                statement.mo9068bindLong(13, entity.getPing());
+                statement.mo9070bindText(14, entity.getPlotPoints());
+                statement.mo9070bindText(15, entity.getServerIcon());
             }
         };
     }
@@ -243,7 +243,7 @@ public final class ServersDAO_Impl implements ServersDAO {
     }
 
     /* compiled from: ServersDAO_Impl.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/arizona/launcher/data/database/ServersDAO_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lcom/arizona/launcher/data/database/ServersDAO_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -2169,14 +2169,14 @@ public class PlayerControlView extends FrameLayout {
             view.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$SettingViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    PlayerControlView.SettingViewHolder.this.m8976x7eeeb754(view2);
+                    PlayerControlView.SettingViewHolder.this.m9028x7eeeb754(view2);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$new$0$androidx-media3-ui-PlayerControlView$SettingViewHolder  reason: not valid java name */
-        public /* synthetic */ void m8976x7eeeb754(View view) {
+        public /* synthetic */ void m9028x7eeeb754(View view) {
             PlayerControlView.this.onSettingViewClicked(getBindingAdapterPosition());
         }
     }
@@ -2238,14 +2238,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$PlaybackSpeedAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.PlaybackSpeedAdapter.this.m8975x9de2ddb7(i, view);
+                    PlayerControlView.PlaybackSpeedAdapter.this.m9027x9de2ddb7(i, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$PlaybackSpeedAdapter  reason: not valid java name */
-        public /* synthetic */ void m8975x9de2ddb7(int i, View view) {
+        public /* synthetic */ void m9027x9de2ddb7(int i, View view) {
             if (i != this.selectedIndex) {
                 PlayerControlView.this.setPlaybackSpeed(this.playbackSpeeds[i]);
             }
@@ -2332,14 +2332,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TextTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TextTrackSelectionAdapter.this.m8977x7bd5d809(view);
+                    PlayerControlView.TextTrackSelectionAdapter.this.m9029x7bd5d809(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$TextTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m8977x7bd5d809(View view) {
+        public /* synthetic */ void m9029x7bd5d809(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -2371,14 +2371,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$AudioTrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.AudioTrackSelectionAdapter.this.m8974xa84b12b0(view);
+                    PlayerControlView.AudioTrackSelectionAdapter.this.m9026xa84b12b0(view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolderAtZeroPosition$0$androidx-media3-ui-PlayerControlView$AudioTrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m8974xa84b12b0(View view) {
+        public /* synthetic */ void m9026xa84b12b0(View view) {
             if (PlayerControlView.this.player == null || !PlayerControlView.this.player.isCommandAvailable(29)) {
                 return;
             }
@@ -2463,14 +2463,14 @@ public class PlayerControlView extends FrameLayout {
             subSettingViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: androidx.media3.ui.PlayerControlView$TrackSelectionAdapter$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    PlayerControlView.TrackSelectionAdapter.this.m8978x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
+                    PlayerControlView.TrackSelectionAdapter.this.m9030x45c3fb1a(player, mediaTrackGroup, trackInformation, view);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onBindViewHolder$0$androidx-media3-ui-PlayerControlView$TrackSelectionAdapter  reason: not valid java name */
-        public /* synthetic */ void m8978x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
+        public /* synthetic */ void m9030x45c3fb1a(Player player, TrackGroup trackGroup, TrackInformation trackInformation, View view) {
             if (player.isCommandAvailable(29)) {
                 player.setTrackSelectionParameters(player.getTrackSelectionParameters().buildUpon().setOverrideForType(new TrackSelectionOverride(trackGroup, ImmutableList.of(Integer.valueOf(trackInformation.trackIndex)))).setTrackTypeDisabled(trackInformation.trackGroup.getType(), false).build());
                 onTrackSelection(trackInformation.trackName);

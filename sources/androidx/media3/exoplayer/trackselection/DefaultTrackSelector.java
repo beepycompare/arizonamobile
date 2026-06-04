@@ -1625,7 +1625,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         return selectTracksForType(1, mappedTrackInfo, iArr, new TrackInfo.Factory() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda8
             @Override // androidx.media3.exoplayer.trackselection.DefaultTrackSelector.TrackInfo.Factory
             public final List create(int i2, TrackGroup trackGroup, int[] iArr3) {
-                return DefaultTrackSelector.this.m8939x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
+                return DefaultTrackSelector.this.m8991x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
             }
         }, new Comparator() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda9
             @Override // java.util.Comparator
@@ -1637,18 +1637,18 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$selectAudioTrack$3$androidx-media3-exoplayer-trackselection-DefaultTrackSelector  reason: not valid java name */
-    public /* synthetic */ List m8939x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
+    public /* synthetic */ List m8991x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
         return AudioTrackInfo.createForTrackGroup(i, trackGroup, parameters, iArr2, z, new Predicate() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda5
             @Override // com.google.common.base.Predicate
             public final boolean apply(Object obj) {
-                return DefaultTrackSelector.this.m8938x92d8c743(parameters, (Format) obj);
+                return DefaultTrackSelector.this.m8990x92d8c743(parameters, (Format) obj);
             }
         }, iArr[i]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isAudioFormatWithinAudioChannelCountConstraints */
-    public boolean m8938x92d8c743(Format format, Parameters parameters) {
+    public boolean m8990x92d8c743(Format format, Parameters parameters) {
         SpatializerWrapper spatializerWrapper;
         SpatializerWrapper spatializerWrapper2;
         if (parameters.constrainAudioChannelCountToDeviceCapabilities) {

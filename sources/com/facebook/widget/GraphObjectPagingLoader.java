@@ -11,7 +11,7 @@ import com.facebook.Response;
 import com.facebook.internal.CacheableRequestBatch;
 import com.facebook.model.GraphObject;
 import com.facebook.model.GraphObjectList;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 class GraphObjectPagingLoader<T extends GraphObject> extends Loader<SimpleGraphObjectCursor<T>> {
     private boolean appendResults;
     private Request currentRequest;
@@ -23,13 +23,13 @@ class GraphObjectPagingLoader<T extends GraphObject> extends Loader<SimpleGraphO
     private Request originalRequest;
     private boolean skipRoundtripIfCached;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface OnErrorListener {
         void onError(FacebookException facebookException, GraphObjectPagingLoader<?> graphObjectPagingLoader);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public interface PagedResults extends GraphObject {
         GraphObjectList<GraphObject> getData();
     }

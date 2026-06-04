@@ -153,24 +153,24 @@ public final class AppUpdateManagerKtxKt {
         });
         if (task.isComplete()) {
             if (task.isSuccessful()) {
-                cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(task.getResult()));
+                cancellableContinuationImpl2.resumeWith(Result.m9896constructorimpl(task.getResult()));
             } else {
                 Exception exception = task.getException();
                 Intrinsics.checkNotNull(exception);
-                cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(ResultKt.createFailure(exception)));
+                cancellableContinuationImpl2.resumeWith(Result.m9896constructorimpl(ResultKt.createFailure(exception)));
             }
         } else {
             task.addOnSuccessListener(new OnSuccessListener() { // from class: com.google.android.play.core.ktx.AppUpdateManagerKtxKt$runTask$3$2
                 @Override // com.google.android.gms.tasks.OnSuccessListener
                 public final void onSuccess(T t) {
-                    cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(t));
+                    cancellableContinuationImpl2.resumeWith(Result.m9896constructorimpl(t));
                 }
             });
             task.addOnFailureListener(new OnFailureListener() { // from class: com.google.android.play.core.ktx.AppUpdateManagerKtxKt$runTask$3$3
                 @Override // com.google.android.gms.tasks.OnFailureListener
                 public final void onFailure(Exception exception2) {
                     Intrinsics.checkNotNullParameter(exception2, "exception");
-                    cancellableContinuationImpl2.resumeWith(Result.m9843constructorimpl(ResultKt.createFailure(exception2)));
+                    cancellableContinuationImpl2.resumeWith(Result.m9896constructorimpl(ResultKt.createFailure(exception2)));
                 }
             });
         }
@@ -243,6 +243,6 @@ public final class AppUpdateManagerKtxKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E> boolean tryOffer(SendChannel<? super E> sendChannel, E e) {
         Intrinsics.checkNotNullParameter(sendChannel, "<this>");
-        return ChannelResult.m11380isSuccessimpl(sendChannel.mo9005trySendJP2dKIU(e));
+        return ChannelResult.m11454isSuccessimpl(sendChannel.mo9057trySendJP2dKIU(e));
     }
 }

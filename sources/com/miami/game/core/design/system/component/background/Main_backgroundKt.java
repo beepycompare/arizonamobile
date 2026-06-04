@@ -20,6 +20,7 @@ import coil3.compose.SingletonAsyncImageKt;
 import coil3.request.ImageRequest;
 import coil3.request.ImageRequestsKt;
 import coil3.transform.Transformation;
+import coil3.util.UtilsKt;
 import com.facebook.internal.NativeProtocol;
 import com.miami.game.core.design.system.component.coil.blur.CoilBlurTransformation;
 import java.io.File;
@@ -27,7 +28,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: main_background.kt */
-@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a9\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"BackgroundImage", "", "default", "", "isBlur", "", "imageBitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", "file", "Ljava/io/File;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "(IZLandroidx/compose/ui/graphics/ImageBitmap;Ljava/io/File;ILandroidx/compose/runtime/Composer;I)V", "design-system"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aK\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u0003H\u0007b\u0002\b\fb\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f¢\u0006\u0002\u0010\u000b¨\u0006\u0010"}, d2 = {"BackgroundImage", "", "default", "", "isBlur", "", "imageBitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", UtilsKt.SCHEME_FILE, "Ljava/io/File;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "(IZLandroidx/compose/ui/graphics/ImageBitmap;Ljava/io/File;ILandroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "design-system"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Main_backgroundKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -52,7 +53,7 @@ public final class Main_backgroundKt {
             i4 |= startRestartGroup.changed(z) ? 32 : 16;
         }
         if ((i3 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            i4 |= startRestartGroup.changedInstance(imageBitmap) ? 256 : 128;
+            i4 |= (i3 & 512) == 0 ? startRestartGroup.changed(imageBitmap) : startRestartGroup.changedInstance(imageBitmap) ? 256 : 128;
         }
         if ((i3 & 3072) == 0) {
             i4 |= startRestartGroup.changedInstance(file) ? 2048 : 1024;
@@ -74,7 +75,7 @@ public final class Main_backgroundKt {
             if (file != null) {
                 startRestartGroup.startReplaceGroup(1722561634);
                 ComposerKt.sourceInformation(startRestartGroup, "28@1015L418");
-                SingletonAsyncImageKt.m9167AsyncImage10Xjiaw(new ImageRequest.Builder(context2).data(file).memoryCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).diskCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                SingletonAsyncImageKt.m9219AsyncImage10Xjiaw(new ImageRequest.Builder(context2).data(file).memoryCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).diskCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
                 context = context2;
                 str = "_";
@@ -100,7 +101,7 @@ public final class Main_backgroundKt {
                 ImageRequest.Builder diskCacheKey = new ImageRequest.Builder(context).data(file).memoryCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2).diskCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2);
                 Transformation[] transformationArr = new Transformation[i5];
                 transformationArr[0] = new CoilBlurTransformation(0, 0, 3, null);
-                SingletonAsyncImageKt.m9167AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i5, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                SingletonAsyncImageKt.m9219AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i5, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
             } else {
                 startRestartGroup.startReplaceGroup(1723727668);

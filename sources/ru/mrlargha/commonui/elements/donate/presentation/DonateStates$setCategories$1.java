@@ -23,7 +23,7 @@ import ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetCategoriesU
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUiKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateStates.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateStates$setCategories$1", f = "DonateStates.kt", i = {1, 2, 2}, l = {82, 84, 92}, m = "invokeSuspend", n = {RemoteConfigConstants.ResponseFieldKey.STATE, RemoteConfigConstants.ResponseFieldKey.STATE, "categories"}, nl = {83, 87, 82}, s = {"L$0", "L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateStates$setCategories$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

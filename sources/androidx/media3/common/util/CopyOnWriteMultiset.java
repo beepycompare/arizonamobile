@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final class CopyOnWriteMultiset<E> implements Iterable<E> {
     private final Object lock = new Object();
     private final Map<E, Integer> elementCounts = new HashMap();

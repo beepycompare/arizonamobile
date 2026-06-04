@@ -1,5 +1,6 @@
 package com.google.common.base;
 
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import java.util.concurrent.TimeUnit;
 @ElementTypesAreNonnullByDefault
@@ -142,7 +143,7 @@ public final class Stopwatch {
             case 2:
                 return "μs";
             case 3:
-                return "ms";
+                return AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL;
             case 4:
                 return CmcdData.STREAMING_FORMAT_SS;
             case 5:

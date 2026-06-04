@@ -198,7 +198,7 @@ public class DefaultTimeBar extends View implements TimeBar {
         this.stopScrubbingRunnable = new Runnable() { // from class: androidx.media3.ui.DefaultTimeBar$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultTimeBar.this.m8971lambda$new$0$androidxmedia3uiDefaultTimeBar();
+                DefaultTimeBar.this.m9023lambda$new$0$androidxmedia3uiDefaultTimeBar();
             }
         };
         Drawable drawable2 = this.scrubberDrawable;
@@ -213,7 +213,7 @@ public class DefaultTimeBar extends View implements TimeBar {
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.DefaultTimeBar$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DefaultTimeBar.this.m8972lambda$new$1$androidxmedia3uiDefaultTimeBar(valueAnimator2);
+                DefaultTimeBar.this.m9024lambda$new$1$androidxmedia3uiDefaultTimeBar(valueAnimator2);
             }
         });
         this.duration = C.TIME_UNSET;
@@ -227,13 +227,13 @@ public class DefaultTimeBar extends View implements TimeBar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-DefaultTimeBar  reason: not valid java name */
-    public /* synthetic */ void m8971lambda$new$0$androidxmedia3uiDefaultTimeBar() {
+    public /* synthetic */ void m9023lambda$new$0$androidxmedia3uiDefaultTimeBar() {
         stopScrubbing(false);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$androidx-media3-ui-DefaultTimeBar  reason: not valid java name */
-    public /* synthetic */ void m8972lambda$new$1$androidxmedia3uiDefaultTimeBar(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9024lambda$new$1$androidxmedia3uiDefaultTimeBar(ValueAnimator valueAnimator) {
         this.scrubberScale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         invalidate(this.seekBounds);
     }

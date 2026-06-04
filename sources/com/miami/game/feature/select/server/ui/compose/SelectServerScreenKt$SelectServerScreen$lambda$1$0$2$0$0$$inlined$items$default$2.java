@@ -4,7 +4,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 /* compiled from: LazyGridDsl.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class SelectServerScreenKt$SelectServerScreen$lambda$1$0$2$0$0$$inlined$items$default$2 implements Function1<Integer, Object> {
     final /* synthetic */ List $items;

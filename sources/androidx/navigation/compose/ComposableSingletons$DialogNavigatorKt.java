@@ -33,7 +33,7 @@ public final class ComposableSingletons$DialogNavigatorKt {
     });
 
     /* renamed from: getLambda$-1092249270$navigation_compose_release  reason: not valid java name */
-    public final Function3<NavBackStackEntry, Composer, Integer, Unit> m8999getLambda$1092249270$navigation_compose_release() {
+    public final Function3<NavBackStackEntry, Composer, Integer, Unit> m9051getLambda$1092249270$navigation_compose_release() {
         return f44lambda$1092249270;
     }
 }

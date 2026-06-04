@@ -103,7 +103,7 @@ public final class MultiSubscriptionSnapshotFlowManager extends SnapshotFlowMana
                         int i2 = 8 - ((~(i - length)) >>> 31);
                         for (int i3 = 0; i3 < i2; i3++) {
                             if ((255 & j) < 128) {
-                                ((SendChannel) objArr[(i << 3) + i3]).mo9005trySendJP2dKIU(Unit.INSTANCE);
+                                ((SendChannel) objArr[(i << 3) + i3]).mo9057trySendJP2dKIU(Unit.INSTANCE);
                             }
                             j >>= 8;
                         }

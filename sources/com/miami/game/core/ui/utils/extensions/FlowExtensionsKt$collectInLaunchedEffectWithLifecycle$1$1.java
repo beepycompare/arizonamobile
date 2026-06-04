@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.Flow;
 import kotlinx.coroutines.flow.FlowCollector;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FlowExtensions.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1", f = "FlowExtensions.kt", i = {}, l = {41}, m = "invokeSuspend", n = {}, nl = {46}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -53,7 +53,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: FlowExtensions.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1", f = "FlowExtensions.kt", i = {}, l = {42}, m = "invokeSuspend", n = {}, nl = {45}, s = {}, v = 2)
     /* renamed from: com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1  reason: invalid class name */
     /* loaded from: classes5.dex */
@@ -86,7 +86,7 @@ public final class FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1 ext
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* compiled from: FlowExtensions.kt */
-        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
         @DebugMetadata(c = "com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1$1", f = "FlowExtensions.kt", i = {0}, l = {43}, m = "invokeSuspend", n = {"$this$repeatOnLifecycle"}, nl = {44}, s = {"L$0"}, v = 2)
         /* renamed from: com.miami.game.core.ui.utils.extensions.FlowExtensionsKt$collectInLaunchedEffectWithLifecycle$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes5.dex */

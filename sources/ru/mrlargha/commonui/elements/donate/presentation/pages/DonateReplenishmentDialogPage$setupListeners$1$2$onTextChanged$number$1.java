@@ -13,7 +13,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: DonateReplenishmentDialogPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$number$1", f = "DonateReplenishmentDialogPage.kt", i = {}, l = {85}, m = "invokeSuspend", n = {}, nl = {86}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$number$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

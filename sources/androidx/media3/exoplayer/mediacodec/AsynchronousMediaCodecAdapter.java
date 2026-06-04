@@ -203,14 +203,14 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.asynchronousMediaCodecCallback.useInputBuffer(new Runnable() { // from class: androidx.media3.exoplayer.mediacodec.AsynchronousMediaCodecAdapter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                AsynchronousMediaCodecAdapter.this.m8875x33de379c(runnable);
+                AsynchronousMediaCodecAdapter.this.m8927x33de379c(runnable);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$useInputBuffer$0$androidx-media3-exoplayer-mediacodec-AsynchronousMediaCodecAdapter  reason: not valid java name */
-    public /* synthetic */ void m8875x33de379c(Runnable runnable) {
+    public /* synthetic */ void m8927x33de379c(Runnable runnable) {
         this.bufferEnqueuer.maybeThrowException();
         this.asynchronousMediaCodecCallback.useInputBuffer(runnable);
     }
@@ -281,14 +281,14 @@ public final class AsynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.codec.setOnFrameRenderedListener(new MediaCodec.OnFrameRenderedListener() { // from class: androidx.media3.exoplayer.mediacodec.AsynchronousMediaCodecAdapter$$ExternalSyntheticLambda1
             @Override // android.media.MediaCodec.OnFrameRenderedListener
             public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-                AsynchronousMediaCodecAdapter.this.m8874xe6985aa9(onFrameRenderedListener, mediaCodec, j, j2);
+                AsynchronousMediaCodecAdapter.this.m8926xe6985aa9(onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnFrameRenderedListener$1$androidx-media3-exoplayer-mediacodec-AsynchronousMediaCodecAdapter  reason: not valid java name */
-    public /* synthetic */ void m8874xe6985aa9(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+    public /* synthetic */ void m8926xe6985aa9(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
         onFrameRenderedListener.onFrameRendered(this, j, j2);
     }
 

@@ -176,7 +176,7 @@ public class PreferenceInflater {
             }
             if (next == 2) {
                 String name = xmlPullParser.getName();
-                if (INTENT_TAG_NAME.equals(name)) {
+                if ("intent".equals(name)) {
                     try {
                         preference.setIntent(Intent.parseIntent(getContext().getResources(), xmlPullParser, attributeSet));
                     } catch (IOException e) {

@@ -1,5 +1,6 @@
 package com.google.firebase.sessions;
 
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
 import kotlin.Metadata;
@@ -34,7 +35,7 @@ public /* synthetic */ class Time$$serializer implements GeneratedSerializer<Tim
         Time$$serializer time$$serializer = new Time$$serializer();
         INSTANCE = time$$serializer;
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("com.google.firebase.sessions.Time", time$$serializer, 3);
-        pluginGeneratedSerialDescriptor.addElement("ms", false);
+        pluginGeneratedSerialDescriptor.addElement(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL, false);
         pluginGeneratedSerialDescriptor.addElement("us", true);
         pluginGeneratedSerialDescriptor.addElement("seconds", true);
         descriptor = pluginGeneratedSerialDescriptor;

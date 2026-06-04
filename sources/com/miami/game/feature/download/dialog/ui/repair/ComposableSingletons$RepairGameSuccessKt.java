@@ -11,7 +11,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RepairGameSuccess.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$RepairGameSuccessKt {
     public static final ComposableSingletons$RepairGameSuccessKt INSTANCE = new ComposableSingletons$RepairGameSuccessKt();
@@ -36,7 +36,7 @@ public final class ComposableSingletons$RepairGameSuccessKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1248275720, i, -1, "com.miami.game.feature.download.dialog.ui.repair.ComposableSingletons$RepairGameSuccessKt.lambda$1248275720.<anonymous> (RepairGameSuccess.kt:86)");
             }
-            TextKt.m3157TextNvy7gAk("НАЗАД", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, MaterialTheme.$stable).getBodySmall(), composer, 6, 0, 131070);
+            TextKt.m3157TextNvy7gAk("НАЗАД", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 6, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

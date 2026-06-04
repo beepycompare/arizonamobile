@@ -2,6 +2,7 @@ package com.squareup.picasso;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -105,7 +106,7 @@ public final class Request {
         if (nanoTime > TOO_LONG_LOG) {
             return plainId() + '+' + TimeUnit.NANOSECONDS.toSeconds(nanoTime) + 's';
         }
-        return plainId() + '+' + TimeUnit.NANOSECONDS.toMillis(nanoTime) + "ms";
+        return plainId() + '+' + TimeUnit.NANOSECONDS.toMillis(nanoTime) + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

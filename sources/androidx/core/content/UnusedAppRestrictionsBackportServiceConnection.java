@@ -59,6 +59,11 @@ public class UnusedAppRestrictionsBackportServiceConnection implements ServiceCo
     private IUnusedAppRestrictionsBackportCallback getBackportCallback() {
         return new IUnusedAppRestrictionsBackportCallback.Stub() { // from class: androidx.core.content.UnusedAppRestrictionsBackportServiceConnection.1
             @Override // androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCallback
+            public int getInterfaceVersion() {
+                return 1;
+            }
+
+            @Override // androidx.core.app.unusedapprestrictions.IUnusedAppRestrictionsBackportCallback
             public void onIsPermissionRevocationEnabledForAppResult(boolean z, boolean z2) throws RemoteException {
                 if (z) {
                     UnusedAppRestrictionsBackportServiceConnection unusedAppRestrictionsBackportServiceConnection = UnusedAppRestrictionsBackportServiceConnection.this;

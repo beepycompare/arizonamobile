@@ -6,7 +6,7 @@ import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.decoder.DecoderOutputBuffer;
 import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends DecoderOutputBuffer, E extends DecoderException> implements Decoder<I, O, E> {
     private int availableInputBufferCount;
     private final I[] availableInputBuffers;

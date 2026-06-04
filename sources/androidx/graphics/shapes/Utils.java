@@ -56,21 +56,21 @@ public final class Utils {
     }
 
     /* renamed from: radialToCartesian-L6JJ3z0$default  reason: not valid java name */
-    public static /* synthetic */ long m8746radialToCartesianL6JJ3z0$default(float f, float f2, long j, int i, Object obj) {
+    public static /* synthetic */ long m8798radialToCartesianL6JJ3z0$default(float f, float f2, long j, int i, Object obj) {
         if ((i & 4) != 0) {
             j = Zero;
         }
-        return m8745radialToCartesianL6JJ3z0(f, f2, j);
+        return m8797radialToCartesianL6JJ3z0(f, f2, j);
     }
 
     /* renamed from: radialToCartesian-L6JJ3z0  reason: not valid java name */
-    public static final long m8745radialToCartesianL6JJ3z0(float f, float f2, long j) {
-        return PointKt.m8715plusybeJwSQ(PointKt.m8717timesso9K2fw(directionVector(f2), f), j);
+    public static final long m8797radialToCartesianL6JJ3z0(float f, float f2, long j) {
+        return PointKt.m8767plusybeJwSQ(PointKt.m8769timesso9K2fw(directionVector(f2), f), j);
     }
 
     /* renamed from: rotate90-DnnuFBc  reason: not valid java name */
-    public static final long m8747rotate90DnnuFBc(long j) {
-        return FloatFloatPair.m12constructorimpl(-PointKt.m8712getYDnnuFBc(j), PointKt.m8711getXDnnuFBc(j));
+    public static final long m8799rotate90DnnuFBc(long j) {
+        return FloatFloatPair.m12constructorimpl(-PointKt.m8764getYDnnuFBc(j), PointKt.m8763getXDnnuFBc(j));
     }
 
     public static final long getZero() {
@@ -93,15 +93,15 @@ public final class Utils {
     }
 
     public static final boolean collinearIsh(float f, float f2, float f3, float f4, float f5, float f6, float f7) {
-        long m8747rotate90DnnuFBc = m8747rotate90DnnuFBc(FloatFloatPair.m12constructorimpl(f3 - f, f4 - f2));
+        long m8799rotate90DnnuFBc = m8799rotate90DnnuFBc(FloatFloatPair.m12constructorimpl(f3 - f, f4 - f2));
         long m12constructorimpl = FloatFloatPair.m12constructorimpl(f5 - f, f6 - f2);
-        float abs = Math.abs(PointKt.m8707dotProductybeJwSQ(m8747rotate90DnnuFBc, m12constructorimpl));
-        return abs < f7 || abs < (PointKt.m8709getDistanceDnnuFBc(m8747rotate90DnnuFBc) * f7) * PointKt.m8709getDistanceDnnuFBc(m12constructorimpl);
+        float abs = Math.abs(PointKt.m8759dotProductybeJwSQ(m8799rotate90DnnuFBc, m12constructorimpl));
+        return abs < f7 || abs < (PointKt.m8761getDistanceDnnuFBc(m8799rotate90DnnuFBc) * f7) * PointKt.m8761getDistanceDnnuFBc(m12constructorimpl);
     }
 
     /* renamed from: convex-b22R3LQ  reason: not valid java name */
-    public static final boolean m8744convexb22R3LQ(long j, long j2, long j3) {
-        return PointKt.m8702clockwiseybeJwSQ(PointKt.m8714minusybeJwSQ(j2, j), PointKt.m8714minusybeJwSQ(j3, j2));
+    public static final boolean m8796convexb22R3LQ(long j, long j2, long j3) {
+        return PointKt.m8754clockwiseybeJwSQ(PointKt.m8766minusybeJwSQ(j2, j), PointKt.m8766minusybeJwSQ(j3, j2));
     }
 
     public static /* synthetic */ float findMinimum$default(float f, float f2, float f3, FindMinimumFunction findMinimumFunction, int i, Object obj) {

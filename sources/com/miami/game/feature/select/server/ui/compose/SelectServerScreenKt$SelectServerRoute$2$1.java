@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectServerScreen.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 final /* synthetic */ class SelectServerScreenKt$SelectServerRoute$2$1 extends FunctionReferenceImpl implements Function1<ServerModel, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

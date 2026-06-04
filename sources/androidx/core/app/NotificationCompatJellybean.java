@@ -108,7 +108,7 @@ public class NotificationCompatJellybean {
             remoteInputArr = null;
             remoteInputArr2 = null;
         }
-        return new NotificationCompat.Action(i, charSequence, pendingIntent, bundle, remoteInputArr, remoteInputArr2, z, 0, true, false, false);
+        return new NotificationCompat.Action(i, charSequence, pendingIntent, bundle, remoteInputArr, remoteInputArr2, z, 0, true, false, 0, 0, false);
     }
 
     public static Bundle writeActionAndGetExtras(Notification.Builder builder, NotificationCompat.Action action) {
@@ -198,7 +198,7 @@ public class NotificationCompatJellybean {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static NotificationCompat.Action getActionFromBundle(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle(KEY_EXTRAS);
-        return new NotificationCompat.Action(bundle.getInt(KEY_ICON), bundle.getCharSequence(KEY_TITLE), (PendingIntent) bundle.getParcelable(KEY_ACTION_INTENT), bundle.getBundle(KEY_EXTRAS), fromBundleArray(getBundleArrayFromBundle(bundle, KEY_REMOTE_INPUTS)), fromBundleArray(getBundleArrayFromBundle(bundle, KEY_DATA_ONLY_REMOTE_INPUTS)), bundle2 != null ? bundle2.getBoolean(EXTRA_ALLOW_GENERATED_REPLIES, false) : false, bundle.getInt(KEY_SEMANTIC_ACTION), bundle.getBoolean(KEY_SHOWS_USER_INTERFACE), false, false);
+        return new NotificationCompat.Action(bundle.getInt(KEY_ICON), bundle.getCharSequence(KEY_TITLE), (PendingIntent) bundle.getParcelable(KEY_ACTION_INTENT), bundle.getBundle(KEY_EXTRAS), fromBundleArray(getBundleArrayFromBundle(bundle, KEY_REMOTE_INPUTS)), fromBundleArray(getBundleArrayFromBundle(bundle, KEY_DATA_ONLY_REMOTE_INPUTS)), bundle2 != null ? bundle2.getBoolean(EXTRA_ALLOW_GENERATED_REPLIES, false) : false, bundle.getInt(KEY_SEMANTIC_ACTION), bundle.getBoolean(KEY_SHOWS_USER_INTERFACE), false, 0, 0, false);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

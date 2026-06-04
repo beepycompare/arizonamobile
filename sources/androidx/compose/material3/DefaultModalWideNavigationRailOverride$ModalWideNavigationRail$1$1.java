@@ -78,7 +78,7 @@ final class DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1 e
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 boolean booleanValue = it.next().booleanValue();
-                Boolean bool = (Boolean) ChannelResult.m11375getOrNullimpl(this.$channel.mo11364tryReceivePtdJZtk());
+                Boolean bool = (Boolean) ChannelResult.m11449getOrNullimpl(this.$channel.mo11438tryReceivePtdJZtk());
                 if (bool != null) {
                     booleanValue = bool.booleanValue();
                 }

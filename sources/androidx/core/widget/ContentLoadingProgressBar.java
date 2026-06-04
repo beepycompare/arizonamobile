@@ -16,7 +16,7 @@ public class ContentLoadingProgressBar extends ProgressBar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-core-widget-ContentLoadingProgressBar  reason: not valid java name */
-    public /* synthetic */ void m8678lambda$new$0$androidxcorewidgetContentLoadingProgressBar() {
+    public /* synthetic */ void m8729lambda$new$0$androidxcorewidgetContentLoadingProgressBar() {
         this.mPostedHide = false;
         this.mStartTime = -1L;
         setVisibility(8);
@@ -24,7 +24,7 @@ public class ContentLoadingProgressBar extends ProgressBar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$androidx-core-widget-ContentLoadingProgressBar  reason: not valid java name */
-    public /* synthetic */ void m8679lambda$new$1$androidxcorewidgetContentLoadingProgressBar() {
+    public /* synthetic */ void m8730lambda$new$1$androidxcorewidgetContentLoadingProgressBar() {
         this.mPostedShow = false;
         if (this.mDismissed) {
             return;
@@ -46,13 +46,13 @@ public class ContentLoadingProgressBar extends ProgressBar {
         this.mDelayedHide = new Runnable() { // from class: androidx.core.widget.ContentLoadingProgressBar$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ContentLoadingProgressBar.this.m8678lambda$new$0$androidxcorewidgetContentLoadingProgressBar();
+                ContentLoadingProgressBar.this.m8729lambda$new$0$androidxcorewidgetContentLoadingProgressBar();
             }
         };
         this.mDelayedShow = new Runnable() { // from class: androidx.core.widget.ContentLoadingProgressBar$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                ContentLoadingProgressBar.this.m8679lambda$new$1$androidxcorewidgetContentLoadingProgressBar();
+                ContentLoadingProgressBar.this.m8730lambda$new$1$androidxcorewidgetContentLoadingProgressBar();
             }
         };
     }

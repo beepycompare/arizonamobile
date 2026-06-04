@@ -3,6 +3,7 @@ package coil3.map;
 import coil3.Uri;
 import coil3.UriKt;
 import coil3.request.Options;
+import coil3.util.UtilsKt;
 import java.io.File;
 import kotlin.Metadata;
 /* compiled from: FileMapper.kt */
@@ -11,6 +12,6 @@ import kotlin.Metadata;
 public final class FileMapper implements Mapper<File, Uri> {
     @Override // coil3.map.Mapper
     public Uri map(File file, Options options) {
-        return UriKt.Uri$default("file", null, file.getPath(), null, null, null, 58, null);
+        return UriKt.Uri$default(UtilsKt.SCHEME_FILE, null, file.getPath(), null, null, null, 58, null);
     }
 }

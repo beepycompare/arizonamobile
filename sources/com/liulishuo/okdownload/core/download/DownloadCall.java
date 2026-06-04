@@ -1,6 +1,7 @@
 package com.liulishuo.okdownload.core.download;
 
 import android.os.SystemClock;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.OkDownload;
 import com.liulishuo.okdownload.core.NamedRunnable;
@@ -87,7 +88,7 @@ public class DownloadCall extends NamedRunnable implements Comparable<DownloadCa
             if (downloadCache != null) {
                 downloadCache.getOutputStream().cancelAsync();
             }
-            Util.d(TAG, "cancel task " + this.task.getId() + " consume: " + (SystemClock.uptimeMillis() - uptimeMillis) + "ms");
+            Util.d(TAG, "cancel task " + this.task.getId() + " consume: " + (SystemClock.uptimeMillis() - uptimeMillis) + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
             return true;
         }
     }

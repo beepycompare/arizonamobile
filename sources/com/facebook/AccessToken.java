@@ -3,6 +3,7 @@ package com.facebook;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.facebook.internal.NativeProtocol;
 import com.facebook.internal.Utility;
 import com.facebook.internal.Validate;
@@ -128,7 +129,7 @@ public final class AccessToken implements Serializable {
     }
 
     public static AccessToken createFromNativeLinkingIntent(Intent intent) {
-        Validate.notNull(intent, "intent");
+        Validate.notNull(intent, AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT);
         if (intent.getExtras() == null) {
             return null;
         }

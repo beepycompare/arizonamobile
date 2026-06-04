@@ -3,6 +3,7 @@ package com.squareup.picasso;
 import android.content.Context;
 import android.net.Uri;
 import androidx.exifinterface.media.ExifInterface;
+import coil3.util.UtilsKt;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestHandler;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class FileRequestHandler extends ContentStreamRequestHandler {
 
     @Override // com.squareup.picasso.ContentStreamRequestHandler, com.squareup.picasso.RequestHandler
     public boolean canHandleRequest(Request request) {
-        return "file".equals(request.uri.getScheme());
+        return UtilsKt.SCHEME_FILE.equals(request.uri.getScheme());
     }
 
     @Override // com.squareup.picasso.ContentStreamRequestHandler, com.squareup.picasso.RequestHandler

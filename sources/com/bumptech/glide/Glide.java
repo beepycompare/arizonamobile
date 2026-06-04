@@ -64,7 +64,7 @@ public class Glide implements ComponentCallbacks2 {
     private final GlideSuppliers.GlideSupplier<SetMemoryCategoryOnLifecycleCallbacks> setMemoryCategoryCallbacks = GlideSuppliers.memorize(new GlideSuppliers.GlideSupplier() { // from class: com.bumptech.glide.Glide$$ExternalSyntheticLambda0
         @Override // com.bumptech.glide.util.GlideSuppliers.GlideSupplier
         public final Object get() {
-            return Glide.this.m9424lambda$new$0$combumptechglideGlide();
+            return Glide.this.m9475lambda$new$0$combumptechglideGlide();
         }
     });
 
@@ -79,7 +79,7 @@ public class Glide implements ComponentCallbacks2 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-bumptech-glide-Glide  reason: not valid java name */
-    public /* synthetic */ SetMemoryCategoryOnLifecycleCallbacks m9424lambda$new$0$combumptechglideGlide() {
+    public /* synthetic */ SetMemoryCategoryOnLifecycleCallbacks m9475lambda$new$0$combumptechglideGlide() {
         return new SetMemoryCategoryOnLifecycleCallbacks();
     }
 

@@ -7,7 +7,7 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: MainScaffold.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$MainScaffoldKt {
     public static final ComposableSingletons$MainScaffoldKt INSTANCE = new ComposableSingletons$MainScaffoldKt();
@@ -35,12 +35,12 @@ public final class ComposableSingletons$MainScaffoldKt {
     });
 
     /* renamed from: getLambda$-1632204659$app_root  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9712getLambda$1632204659$app_root() {
+    public final Function2<Composer, Integer, Unit> m9763getLambda$1632204659$app_root() {
         return f48lambda$1632204659;
     }
 
     /* renamed from: getLambda$-863503316$app_root  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9713getLambda$863503316$app_root() {
+    public final Function2<Composer, Integer, Unit> m9764getLambda$863503316$app_root() {
         return f49lambda$863503316;
     }
 

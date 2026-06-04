@@ -1,12 +1,13 @@
 package kotlin.internal;
 
 import androidx.exifinterface.media.ExifInterface;
+import com.facebook.internal.NativeProtocol;
 import kotlin.KotlinVersion;
 import kotlin.Metadata;
 import kotlin.internal.jdk8.JDK8PlatformImplementations;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PlatformImplementations.kt */
-@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\u001a#\u0010\u0002\u001a\u0002H\u0003\"\n\b\u0000\u0010\u0003\u0018\u0001*\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0004H\u0083\u0088\u0004¢\u0006\u0002\u0010\u0006\u001a\"\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\n2\u0006\u0010\f\u001a\u00020\nH\u0081\u0080\u0004\"\u0011\u0010\u0000\u001a\u00020\u00018\u0000X\u0081\u0084\b¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"IMPLEMENTATIONS", "Lkotlin/internal/PlatformImplementations;", "castToBaseType", ExifInterface.GPS_DIRECTION_TRUE, "", "instance", "(Ljava/lang/Object;)Ljava/lang/Object;", "apiVersionIsAtLeast", "", "major", "", "minor", "patch", "kotlin-stdlib"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a'\u0010\u0003\u001a\u0002H\u0004\"\n\b\u0000\u0010\u0004\u0018\u0001*\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0083\u0088\u0004b\u0002\b\b¢\u0006\u0002\u0010\u0007\u001a4\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\f2\u0006\u0010\u000e\u001a\u00020\fH\u0081\u0080\u0004b\u0002\b\u000fb\f\b\u0010\u0012\b\b\u0011\u0012\u0004\b\b(\u0012\"\u0016\u0010\u0000\u001a\u00020\u00018\u0000X\u0081\u0084\b\u0092\u0002\u0002\b\u0002¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"IMPLEMENTATIONS", "Lkotlin/internal/PlatformImplementations;", "Lkotlin/jvm/JvmField;", "castToBaseType", ExifInterface.GPS_DIRECTION_TRUE, "", "instance", "(Ljava/lang/Object;)Ljava/lang/Object;", "Lkotlin/internal/InlineOnly;", "apiVersionIsAtLeast", "", "major", "", "minor", "patch", "Lkotlin/PublishedApi;", "Lkotlin/SinceKotlin;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "1.2", "kotlin-stdlib"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class PlatformImplementationsKt {
     public static final PlatformImplementations IMPLEMENTATIONS;

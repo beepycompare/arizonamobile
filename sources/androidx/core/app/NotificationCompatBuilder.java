@@ -244,6 +244,10 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
         if (Build.VERSION.SDK_INT >= 31) {
             Api31Impl.setAuthenticationRequired(builder, action.isAuthenticationRequired());
         }
+        if (Build.VERSION.SDK_INT >= 37) {
+            Api37Impl.setEmphasisHint(builder, action.getEmphasisHint());
+            Api37Impl.setStyleHint(builder, action.getStyleHint());
+        }
         bundle.putBoolean("android.support.action.showsUserInterface", action.getShowsUserInterface());
         builder.addExtras(bundle);
         this.mBuilder.addAction(builder.build());
@@ -395,6 +399,21 @@ public class NotificationCompatBuilder implements NotificationBuilderWithBuilder
 
         static Notification.Builder setShortCriticalText(Notification.Builder builder, String str) {
             return builder.setShortCriticalText(str);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* loaded from: classes2.dex */
+    public static final class Api37Impl {
+        private Api37Impl() {
+        }
+
+        static Notification.Action.Builder setEmphasisHint(Notification.Action.Builder builder, int i) {
+            return builder.setEmphasisHint(i);
+        }
+
+        static Notification.Action.Builder setStyleHint(Notification.Action.Builder builder, int i) {
+            return builder.setStyleHint(i);
         }
     }
 }

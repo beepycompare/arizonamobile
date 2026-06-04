@@ -1,5 +1,5 @@
 package com.arizona.game;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class BuildConfig {
     public static final String APPLICATION_ID = "com.arizona21.game";
     public static final String BUILD_TYPE = "release";
@@ -8,6 +8,6 @@ public final class BuildConfig {
     public static final String FLAVOR = "arizona";
     public static final boolean IS_ARIZONA = true;
     public static final boolean IS_BRAZIL = false;
-    public static final int VERSION_CODE = 1724;
-    public static final String VERSION_NAME = "v17.2.4";
+    public static final int VERSION_CODE = 1725;
+    public static final String VERSION_NAME = "v17.2.5";
 }

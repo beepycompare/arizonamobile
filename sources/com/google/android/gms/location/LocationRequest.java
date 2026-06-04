@@ -3,6 +3,7 @@ package com.google.android.gms.location;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.ReflectedParcelable;
@@ -204,15 +205,15 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
         if (this.zza != 105) {
             sb.append(" requested=");
             sb.append(this.zzb);
-            sb.append("ms");
+            sb.append(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
         }
         sb.append(" fastest=");
         sb.append(this.zzc);
-        sb.append("ms");
+        sb.append(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
         if (this.zzh > this.zzb) {
             sb.append(" maxWait=");
             sb.append(this.zzh);
-            sb.append("ms");
+            sb.append(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
         }
         if (this.zzg > 0.0f) {
             sb.append(" smallestDisplacement=");
@@ -224,7 +225,7 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
             long elapsedRealtime = SystemClock.elapsedRealtime();
             sb.append(" expireIn=");
             sb.append(j - elapsedRealtime);
-            sb.append("ms");
+            sb.append(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
         }
         if (this.zzf != Integer.MAX_VALUE) {
             sb.append(" num=");

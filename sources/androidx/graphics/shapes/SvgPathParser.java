@@ -114,15 +114,15 @@ public final class SvgPathParser {
                     }
                 }
                 ArrayList arrayList3 = arrayList2;
-                Command m8743parseHiPawso = Command.Factory.m8743parseHiPawso((String) CollectionsKt.first((List<? extends Object>) arrayList3), m12constructorimpl);
-                long m8715plusybeJwSQ = PointKt.m8715plusybeJwSQ(m8743parseHiPawso.m8741getStart1ufDz9w(), FloatFloatPair.m12constructorimpl(m8743parseHiPawso.get(0), m8743parseHiPawso.get(1)));
-                SvgPathParser svgPathParser = new SvgPathParser(m8715plusybeJwSQ, null);
-                svgPathParser.parseCommand(m8743parseHiPawso.m8737asLineDnnuFBc(m8715plusybeJwSQ));
+                Command m8795parseHiPawso = Command.Factory.m8795parseHiPawso((String) CollectionsKt.first((List<? extends Object>) arrayList3), m12constructorimpl);
+                long m8767plusybeJwSQ = PointKt.m8767plusybeJwSQ(m8795parseHiPawso.m8793getStart1ufDz9w(), FloatFloatPair.m12constructorimpl(m8795parseHiPawso.get(0), m8795parseHiPawso.get(1)));
+                SvgPathParser svgPathParser = new SvgPathParser(m8767plusybeJwSQ, null);
+                svgPathParser.parseCommand(m8795parseHiPawso.m8789asLineDnnuFBc(m8767plusybeJwSQ));
                 for (String str2 : CollectionsKt.drop(arrayList3, 1)) {
-                    svgPathParser.parseCommand(Command.Factory.m8743parseHiPawso(str2, svgPathParser.m8733getPosition1ufDz9w()));
+                    svgPathParser.parseCommand(Command.Factory.m8795parseHiPawso(str2, svgPathParser.m8785getPosition1ufDz9w()));
                 }
                 createListBuilder.addAll(svgPathParser.cubics);
-                m12constructorimpl = m8715plusybeJwSQ;
+                m12constructorimpl = m8767plusybeJwSQ;
             }
             return CollectionsKt.build(createListBuilder);
         }
@@ -130,20 +130,20 @@ public final class SvgPathParser {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: getPosition-1ufDz9w  reason: not valid java name */
-    public final long m8733getPosition1ufDz9w() {
+    public final long m8785getPosition1ufDz9w() {
         Cubic cubic = (Cubic) CollectionsKt.lastOrNull((List<? extends Object>) this.cubics);
         return cubic != null ? FloatFloatPair.m12constructorimpl(cubic.getAnchor1X(), cubic.getAnchor1Y()) : this.start;
     }
 
     /* renamed from: getReflectedPreviousControlPoint-1ufDz9w  reason: not valid java name */
-    private final long m8734getReflectedPreviousControlPoint1ufDz9w() {
-        return PointKt.m8715plusybeJwSQ(m8733getPosition1ufDz9w(), PointKt.m8714minusybeJwSQ(m8733getPosition1ufDz9w(), FloatFloatPair.m12constructorimpl(((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1Y())));
+    private final long m8786getReflectedPreviousControlPoint1ufDz9w() {
+        return PointKt.m8767plusybeJwSQ(m8785getPosition1ufDz9w(), PointKt.m8766minusybeJwSQ(m8785getPosition1ufDz9w(), FloatFloatPair.m12constructorimpl(((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1X(), ((Cubic) CollectionsKt.last((List<? extends Object>) this.cubics)).getControl1Y())));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void parseCommand(Command command) {
         if (command.isCloseCommand()) {
-            this.cubics.add(m8735lineToCubicybeJwSQ(m8733getPosition1ufDz9w(), this.start));
+            this.cubics.add(m8787lineToCubicybeJwSQ(m8785getPosition1ufDz9w(), this.start));
             return;
         }
         int lastIndex = ArraysKt.getLastIndex(command.getParameters());
@@ -157,7 +157,7 @@ public final class SvgPathParser {
             return;
         }
         while (true) {
-            parseAtomicCommand(command.m8738chunkHiPawso(i, m8733getPosition1ufDz9w()));
+            parseAtomicCommand(command.m8790chunkHiPawso(i, m8785getPosition1ufDz9w()));
             if (i == progressionLastElement) {
                 return;
             }
@@ -181,18 +181,18 @@ public final class SvgPathParser {
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 boolean add;
-                add = r0.cubics.add(r0.m8735lineToCubicybeJwSQ(SvgPathParser.this.m8733getPosition1ufDz9w(), ((FloatFloatPair) obj).m20unboximpl()));
+                add = r0.cubics.add(r0.m8787lineToCubicybeJwSQ(SvgPathParser.this.m8785getPosition1ufDz9w(), ((FloatFloatPair) obj).m20unboximpl()));
                 return Boolean.valueOf(add);
             }
         };
         char letter = command.getLetter();
         if (letter == 'h') {
-            function1.invoke(FloatFloatPair.m9boximpl(FloatFloatPair.m12constructorimpl(command.x(0), PointKt.m8712getYDnnuFBc(command.m8741getStart1ufDz9w()))));
+            function1.invoke(FloatFloatPair.m9boximpl(FloatFloatPair.m12constructorimpl(command.x(0), PointKt.m8764getYDnnuFBc(command.m8793getStart1ufDz9w()))));
         } else if (letter == 'l') {
-            function1.invoke(FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(0, 1)));
+            function1.invoke(FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(0, 1)));
         } else if (letter != 'v') {
         } else {
-            function1.invoke(FloatFloatPair.m9boximpl(FloatFloatPair.m12constructorimpl(PointKt.m8711getXDnnuFBc(command.m8741getStart1ufDz9w()), command.y(0))));
+            function1.invoke(FloatFloatPair.m9boximpl(FloatFloatPair.m12constructorimpl(PointKt.m8763getXDnnuFBc(command.m8793getStart1ufDz9w()), command.y(0))));
         }
     }
 
@@ -201,37 +201,37 @@ public final class SvgPathParser {
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
                 boolean add;
-                add = r0.cubics.add(r0.m8732curveToCubicArktYTI(SvgPathParser.this.m8733getPosition1ufDz9w(), ((FloatFloatPair) obj).m20unboximpl(), ((FloatFloatPair) obj2).m20unboximpl(), ((FloatFloatPair) obj3).m20unboximpl()));
+                add = r0.cubics.add(r0.m8784curveToCubicArktYTI(SvgPathParser.this.m8785getPosition1ufDz9w(), ((FloatFloatPair) obj).m20unboximpl(), ((FloatFloatPair) obj2).m20unboximpl(), ((FloatFloatPair) obj3).m20unboximpl()));
                 return Boolean.valueOf(add);
             }
         };
         char letter = command.getLetter();
         if (letter == 'c') {
-            function3.invoke(FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(2, 3)), FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(4, 5)));
+            function3.invoke(FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(2, 3)), FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(4, 5)));
         } else if (letter == 'q') {
-            function3.invoke(FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(2, 3)));
+            function3.invoke(FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(2, 3)));
         } else if (letter == 's') {
-            function3.invoke(FloatFloatPair.m9boximpl(this.previousCommand.isBezierCommand() ? m8734getReflectedPreviousControlPoint1ufDz9w() : m8733getPosition1ufDz9w()), FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(2, 3)));
+            function3.invoke(FloatFloatPair.m9boximpl(this.previousCommand.isBezierCommand() ? m8786getReflectedPreviousControlPoint1ufDz9w() : m8785getPosition1ufDz9w()), FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(0, 1)), FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(2, 3)));
         } else if (letter != 't') {
         } else {
-            long m8734getReflectedPreviousControlPoint1ufDz9w = this.previousCommand.isQuadraticCurveCommand() ? m8734getReflectedPreviousControlPoint1ufDz9w() : m8733getPosition1ufDz9w();
-            function3.invoke(FloatFloatPair.m9boximpl(m8734getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m9boximpl(m8734getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m9boximpl(command.m8742xyXgqJiTY(0, 1)));
+            long m8786getReflectedPreviousControlPoint1ufDz9w = this.previousCommand.isQuadraticCurveCommand() ? m8786getReflectedPreviousControlPoint1ufDz9w() : m8785getPosition1ufDz9w();
+            function3.invoke(FloatFloatPair.m9boximpl(m8786getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m9boximpl(m8786getReflectedPreviousControlPoint1ufDz9w), FloatFloatPair.m9boximpl(command.m8794xyXgqJiTY(0, 1)));
         }
     }
 
     private final void parseArc(Command command) {
-        long m8742xyXgqJiTY = command.m8742xyXgqJiTY(5, 6);
-        this.cubics.addAll(ArcConverter.Companion.arcToCubics(PointKt.m8711getXDnnuFBc(m8733getPosition1ufDz9w()), PointKt.m8712getYDnnuFBc(m8733getPosition1ufDz9w()), PointKt.m8711getXDnnuFBc(m8742xyXgqJiTY), PointKt.m8712getYDnnuFBc(m8742xyXgqJiTY), command.get(0), command.get(1), command.get(2), !(command.get(3) == 0.0f), !(command.get(4) == 0.0f)));
+        long m8794xyXgqJiTY = command.m8794xyXgqJiTY(5, 6);
+        this.cubics.addAll(ArcConverter.Companion.arcToCubics(PointKt.m8763getXDnnuFBc(m8785getPosition1ufDz9w()), PointKt.m8764getYDnnuFBc(m8785getPosition1ufDz9w()), PointKt.m8763getXDnnuFBc(m8794xyXgqJiTY), PointKt.m8764getYDnnuFBc(m8794xyXgqJiTY), command.get(0), command.get(1), command.get(2), !(command.get(3) == 0.0f), !(command.get(4) == 0.0f)));
     }
 
     /* renamed from: curveToCubic-ArktYTI  reason: not valid java name */
-    private final Cubic m8732curveToCubicArktYTI(long j, long j2, long j3, long j4) {
-        return new Cubic(new float[]{PointKt.m8711getXDnnuFBc(j), PointKt.m8712getYDnnuFBc(j), PointKt.m8711getXDnnuFBc(j2), PointKt.m8712getYDnnuFBc(j2), PointKt.m8711getXDnnuFBc(j3), PointKt.m8712getYDnnuFBc(j3), PointKt.m8711getXDnnuFBc(j4), PointKt.m8712getYDnnuFBc(j4)});
+    private final Cubic m8784curveToCubicArktYTI(long j, long j2, long j3, long j4) {
+        return new Cubic(new float[]{PointKt.m8763getXDnnuFBc(j), PointKt.m8764getYDnnuFBc(j), PointKt.m8763getXDnnuFBc(j2), PointKt.m8764getYDnnuFBc(j2), PointKt.m8763getXDnnuFBc(j3), PointKt.m8764getYDnnuFBc(j3), PointKt.m8763getXDnnuFBc(j4), PointKt.m8764getYDnnuFBc(j4)});
     }
 
     /* renamed from: lineToCubic-ybeJwSQ  reason: not valid java name */
-    private final Cubic m8735lineToCubicybeJwSQ(long j, long j2) {
-        return Cubic.Companion.straightLine(PointKt.m8711getXDnnuFBc(j), PointKt.m8712getYDnnuFBc(j), PointKt.m8711getXDnnuFBc(j2), PointKt.m8712getYDnnuFBc(j2));
+    private final Cubic m8787lineToCubicybeJwSQ(long j, long j2) {
+        return Cubic.Companion.straightLine(PointKt.m8763getXDnnuFBc(j), PointKt.m8764getYDnnuFBc(j), PointKt.m8763getXDnnuFBc(j2), PointKt.m8764getYDnnuFBc(j2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -258,7 +258,7 @@ public final class SvgPathParser {
         }
 
         /* renamed from: copy-teZZwEo$default  reason: not valid java name */
-        public static /* synthetic */ Command m8736copyteZZwEo$default(Command command, char c, boolean z, float[] fArr, int i, long j, int i2, Object obj) {
+        public static /* synthetic */ Command m8788copyteZZwEo$default(Command command, char c, boolean z, float[] fArr, int i, long j, int i2, Object obj) {
             if ((i2 & 1) != 0) {
                 c = command.letter;
             }
@@ -275,7 +275,7 @@ public final class SvgPathParser {
                 j = command.start;
             }
             long j2 = j;
-            return command.m8740copyteZZwEo(c, z, fArr, i, j2);
+            return command.m8792copyteZZwEo(c, z, fArr, i, j2);
         }
 
         public final char component1() {
@@ -295,12 +295,12 @@ public final class SvgPathParser {
         }
 
         /* renamed from: component5-1ufDz9w  reason: not valid java name */
-        public final long m8739component51ufDz9w() {
+        public final long m8791component51ufDz9w() {
             return this.start;
         }
 
         /* renamed from: copy-teZZwEo  reason: not valid java name */
-        public final Command m8740copyteZZwEo(char c, boolean z, float[] parameters, int i, long j) {
+        public final Command m8792copyteZZwEo(char c, boolean z, float[] parameters, int i, long j) {
             Intrinsics.checkNotNullParameter(parameters, "parameters");
             return new Command(c, z, parameters, i, j, null);
         }
@@ -345,7 +345,7 @@ public final class SvgPathParser {
         }
 
         /* renamed from: getStart-1ufDz9w  reason: not valid java name */
-        public final long m8741getStart1ufDz9w() {
+        public final long m8793getStart1ufDz9w() {
             return this.start;
         }
 
@@ -361,7 +361,7 @@ public final class SvgPathParser {
             }
 
             /* renamed from: parse-HiPawso  reason: not valid java name */
-            public final Command m8743parseHiPawso(String input, long j) {
+            public final Command m8795parseHiPawso(String input, long j) {
                 Intrinsics.checkNotNullParameter(input, "input");
                 char first = StringsKt.first(input);
                 boolean isLowerCase = Character.isLowerCase(first);
@@ -418,27 +418,27 @@ public final class SvgPathParser {
 
         public final float x(int i) {
             float f = get(i);
-            return this.isRelative ? PointKt.m8711getXDnnuFBc(this.start) + f : f;
+            return this.isRelative ? PointKt.m8763getXDnnuFBc(this.start) + f : f;
         }
 
         public final float y(int i) {
             float f = get(i);
-            return this.isRelative ? PointKt.m8712getYDnnuFBc(this.start) + f : f;
+            return this.isRelative ? PointKt.m8764getYDnnuFBc(this.start) + f : f;
         }
 
         /* renamed from: xy-XgqJiTY  reason: not valid java name */
-        public final long m8742xyXgqJiTY(int i, int i2) {
+        public final long m8794xyXgqJiTY(int i, int i2) {
             long m12constructorimpl = FloatFloatPair.m12constructorimpl(get(i), get(i2));
-            return this.isRelative ? PointKt.m8715plusybeJwSQ(this.start, m12constructorimpl) : m12constructorimpl;
+            return this.isRelative ? PointKt.m8767plusybeJwSQ(this.start, m12constructorimpl) : m12constructorimpl;
         }
 
         /* renamed from: chunk-HiPawso  reason: not valid java name */
-        public final Command m8738chunkHiPawso(int i, long j) {
+        public final Command m8790chunkHiPawso(int i, long j) {
             return new Command(this.letter, this.isRelative, ArraysKt.sliceArray(this.parameters, RangesKt.until(i, this.paramsCount + i)), this.paramsCount, j, null);
         }
 
         /* renamed from: asLine-DnnuFBc  reason: not valid java name */
-        public final Command m8737asLineDnnuFBc(long j) {
+        public final Command m8789asLineDnnuFBc(long j) {
             return new Command('l', this.isRelative, CollectionsKt.toFloatArray(ArraysKt.drop(this.parameters, this.paramsCount)), 2, j, null);
         }
 

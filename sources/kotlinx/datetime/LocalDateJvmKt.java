@@ -104,7 +104,7 @@ public final class LocalDateJvmKt {
     }
 
     /* renamed from: until  reason: collision with other method in class */
-    public static final long m11446until(LocalDate localDate, LocalDate other, DateTimeUnit.DateBased unit) {
+    public static final long m11520until(LocalDate localDate, LocalDate other, DateTimeUnit.DateBased unit) {
         Intrinsics.checkNotNullParameter(localDate, "<this>");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(unit, "unit");
@@ -121,7 +121,7 @@ public final class LocalDateJvmKt {
         Intrinsics.checkNotNullParameter(localDate, "<this>");
         Intrinsics.checkNotNullParameter(other, "other");
         Intrinsics.checkNotNullParameter(unit, "unit");
-        return MathKt.clampToInt(m11446until(localDate, other, unit));
+        return MathKt.clampToInt(m11520until(localDate, other, unit));
     }
 
     public static final int daysUntil(LocalDate localDate, LocalDate other) {

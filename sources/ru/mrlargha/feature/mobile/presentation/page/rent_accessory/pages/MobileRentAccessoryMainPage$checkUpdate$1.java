@@ -23,7 +23,7 @@ import ru.mrlargha.feature.mobile.data.remote.api_services.rent_accessory.Mobile
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.RentAccessoryPage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MobileRentAccessoryMainPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1", f = "MobileRentAccessoryMainPage.kt", i = {0}, l = {RouletteView.DEFAULT_ROULETTE_WIDTH}, m = "invokeSuspend", n = {"$this$launch"}, nl = {281}, s = {"L$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -86,12 +86,11 @@ public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLamb
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: MobileRentAccessoryMainPage.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1$1", f = "MobileRentAccessoryMainPage.kt", i = {1, 1, 1}, l = {283, 287}, m = "invokeSuspend", n = {"ads", "it", "$i$a$-let-MobileRentAccessoryMainPage$checkUpdate$1$1$1"}, nl = {282, 296}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1$1", f = "MobileRentAccessoryMainPage.kt", i = {1, 1}, l = {283, 287}, m = "invokeSuspend", n = {"ads", "it"}, nl = {282, 296}, s = {"L$0", "L$1"}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-        int I$0;
         Object L$0;
         Object L$1;
         int label;
@@ -116,10 +115,10 @@ public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLamb
         /* JADX WARN: Code restructure failed: missing block: B:11:0x0051, code lost:
             if (r8 == r0) goto L20;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:20:0x0093, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:20:0x0090, code lost:
             if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$checkUpdate$1$1$1$1(r3, null), r7) == r0) goto L20;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:21:0x0095, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x0092, code lost:
             return r0;
          */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -158,7 +157,6 @@ public final class MobileRentAccessoryMainPage$checkUpdate$1 extends SuspendLamb
                 if (!Intrinsics.areEqual(list2, list)) {
                     this.L$0 = SpillingKt.nullOutSpilledVariable(response2);
                     this.L$1 = SpillingKt.nullOutSpilledVariable(list);
-                    this.I$0 = 0;
                     this.label = 2;
                 }
             }

@@ -586,14 +586,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             ((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8858x937f548e(format);
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8910x937f548e(format);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$acquire$0$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m8858x937f548e(Format format) {
+        public /* synthetic */ void m8910x937f548e(Format format) {
             if (DefaultDrmSessionManager.this.prepareCallsCount == 0 || this.isReleased) {
                 return;
             }
@@ -607,14 +607,14 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             Util.postOrRun((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler), new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8859xce10c5c();
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8911xce10c5c();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$release$1$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m8859xce10c5c() {
+        public /* synthetic */ void m8911xce10c5c() {
             if (this.isReleased) {
                 return;
             }

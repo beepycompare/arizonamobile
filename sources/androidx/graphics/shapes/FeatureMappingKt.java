@@ -92,7 +92,7 @@ public final class FeatureMappingKt {
         if ((f1 instanceof Feature.Corner) && (f2 instanceof Feature.Corner) && ((Feature.Corner) f1).getConvex() != ((Feature.Corner) f2).getConvex()) {
             return Float.MAX_VALUE;
         }
-        return PointKt.m8710getDistanceSquaredDnnuFBc(PointKt.m8714minusybeJwSQ(featureRepresentativePoint(f1), featureRepresentativePoint(f2)));
+        return PointKt.m8762getDistanceSquaredDnnuFBc(PointKt.m8766minusybeJwSQ(featureRepresentativePoint(f1), featureRepresentativePoint(f2)));
     }
 
     public static final long featureRepresentativePoint(Feature feature) {

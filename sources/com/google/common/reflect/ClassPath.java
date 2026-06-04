@@ -1,5 +1,6 @@
 package com.google.common.reflect;
 
+import coil3.util.UtilsKt;
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
@@ -354,7 +355,7 @@ public final class ClassPath {
             for (String str : CLASS_PATH_ATTRIBUTE_SEPARATOR.split(value)) {
                 try {
                     URL classPathEntry = getClassPathEntry(jarFile, str);
-                    if (classPathEntry.getProtocol().equals("file")) {
+                    if (classPathEntry.getProtocol().equals(UtilsKt.SCHEME_FILE)) {
                         builder.add((ImmutableSet.Builder) toFile(classPathEntry));
                     }
                 } catch (MalformedURLException unused) {
@@ -374,7 +375,7 @@ public final class ClassPath {
         UnmodifiableIterator<URL> it = getClassLoaderUrls(classloader).iterator();
         while (it.hasNext()) {
             URL next = it.next();
-            if (next.getProtocol().equals("file")) {
+            if (next.getProtocol().equals(UtilsKt.SCHEME_FILE)) {
                 File file = toFile(next);
                 if (!newLinkedHashMap.containsKey(file)) {
                     newLinkedHashMap.put(file, classloader);
@@ -401,7 +402,7 @@ public final class ClassPath {
                 try {
                     builder.add((ImmutableList.Builder) new File(str).toURI().toURL());
                 } catch (SecurityException unused) {
-                    builder.add((ImmutableList.Builder) new URL("file", (String) null, new File(str).getAbsolutePath()));
+                    builder.add((ImmutableList.Builder) new URL(UtilsKt.SCHEME_FILE, (String) null, new File(str).getAbsolutePath()));
                 }
             } catch (MalformedURLException e) {
                 logger.log(Level.WARNING, "malformed classpath entry: " + str, (Throwable) e);
@@ -419,7 +420,7 @@ public final class ClassPath {
     }
 
     static File toFile(URL url) {
-        Preconditions.checkArgument(url.getProtocol().equals("file"));
+        Preconditions.checkArgument(url.getProtocol().equals(UtilsKt.SCHEME_FILE));
         try {
             return new File(url.toURI());
         } catch (URISyntaxException unused) {

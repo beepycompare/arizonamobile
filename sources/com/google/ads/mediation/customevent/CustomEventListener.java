@@ -1,6 +1,6 @@
 package com.google.ads.mediation.customevent;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public interface CustomEventListener {
     void onDismissScreen();
 

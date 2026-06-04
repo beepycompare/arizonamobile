@@ -51,8 +51,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public void mo11430invokeOnClose(Function1<? super Throwable, Unit> function1) {
-        this._channel.mo11430invokeOnClose(function1);
+    public void mo11504invokeOnClose(Function1<? super Throwable, Unit> function1) {
+        this._channel.mo11504invokeOnClose(function1);
     }
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
@@ -94,8 +94,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     /* renamed from: receiveCatching-JP2dKIU */
-    public Object mo11363receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
-        Object obj = this._channel.mo11363receiveCatchingJP2dKIU(continuation);
+    public Object mo11437receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation) {
+        Object obj = this._channel.mo11437receiveCatchingJP2dKIU(continuation);
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         return obj;
     }
@@ -113,14 +113,14 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
     /* renamed from: tryReceive-PtdJZtk */
-    public Object mo11364tryReceivePtdJZtk() {
-        return this._channel.mo11364tryReceivePtdJZtk();
+    public Object mo11438tryReceivePtdJZtk() {
+        return this._channel.mo11438tryReceivePtdJZtk();
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo9005trySendJP2dKIU(E e) {
-        return this._channel.mo9005trySendJP2dKIU(e);
+    public Object mo9057trySendJP2dKIU(E e) {
+        return this._channel.mo9057trySendJP2dKIU(e);
     }
 
     public ChannelCoroutine(CoroutineContext coroutineContext, Channel<E> channel, boolean z, boolean z2) {

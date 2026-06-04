@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.core.Util;
 import com.liulishuo.okdownload.core.cause.EndCause;
@@ -84,7 +85,7 @@ public class DownloadContext {
         } else {
             DownloadTask.enqueue(this.tasks, downloadListener);
         }
-        Util.d(TAG, "start finish " + z + " " + (SystemClock.uptimeMillis() - uptimeMillis) + "ms");
+        Util.d(TAG, "start finish " + z + " " + (SystemClock.uptimeMillis() - uptimeMillis) + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
     }
 
     public AlterContext alter() {

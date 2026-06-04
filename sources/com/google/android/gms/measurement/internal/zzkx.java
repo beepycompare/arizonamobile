@@ -3,6 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.adjust.sdk.Constants;
 import com.google.firebase.messaging.Constants;
 import java.util.Objects;
@@ -55,7 +56,7 @@ public final class zzkx implements Runnable {
                     }
                     str = this.zzc;
                     if (this.zza && (zzi2 = zzicVar.zzk().zzi(uri)) != null) {
-                        zzi2.putString("_cis", "intent");
+                        zzi2.putString("_cis", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT);
                         if (!zzi2.containsKey("gclid") && zzi != null && zzi.containsKey("gclid")) {
                             zzi2.putString("_cer", String.format("gclid=%s", zzi.getString("gclid")));
                         }
@@ -89,7 +90,7 @@ public final class zzkx implements Runnable {
             zzi = null;
             str = this.zzc;
             if (this.zza) {
-                zzi2.putString("_cis", "intent");
+                zzi2.putString("_cis", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT);
                 if (!zzi2.containsKey("gclid")) {
                     zzi2.putString("_cer", String.format("gclid=%s", zzi.getString("gclid")));
                 }

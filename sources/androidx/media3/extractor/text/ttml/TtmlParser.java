@@ -1002,7 +1002,7 @@ public final class TtmlParser implements SubtitleParser {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x00bc, code lost:
-        if (r13.equals("ms") == false) goto L21;
+        if (r13.equals(androidx.core.view.accessibility.AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL) == false) goto L21;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

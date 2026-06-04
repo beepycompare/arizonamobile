@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.util.Pair;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import coil3.util.UtilsKt;
 import com.facebook.RequestBatch;
 import com.facebook.internal.Logger;
 import com.facebook.internal.ServerProtocol;
@@ -738,14 +739,14 @@ public class Request {
 
     public static Request newUploadStagingResourceWithImageRequest(Session session, Bitmap bitmap, Callback callback) {
         Bundle bundle = new Bundle(1);
-        bundle.putParcelable("file", bitmap);
+        bundle.putParcelable(UtilsKt.SCHEME_FILE, bitmap);
         return new Request(session, MY_STAGING_RESOURCES, bundle, HttpMethod.POST, callback);
     }
 
     public static Request newUploadStagingResourceWithImageRequest(Session session, File file, Callback callback) throws FileNotFoundException {
         ParcelFileDescriptorWithMimeType parcelFileDescriptorWithMimeType = new ParcelFileDescriptorWithMimeType(ParcelFileDescriptor.open(file, 268435456), MimeTypes.IMAGE_PNG);
         Bundle bundle = new Bundle(1);
-        bundle.putParcelable("file", parcelFileDescriptorWithMimeType);
+        bundle.putParcelable(UtilsKt.SCHEME_FILE, parcelFileDescriptorWithMimeType);
         return new Request(session, MY_STAGING_RESOURCES, bundle, HttpMethod.POST, callback);
     }
 
@@ -923,7 +924,7 @@ public class Request {
         for (String str3 : this.parameters.keySet()) {
             Object obj = this.parameters.get(str3);
             if (isSupportedAttachmentType(obj)) {
-                String format = String.format("%s%d", "file", Integer.valueOf(bundle.size()));
+                String format = String.format("%s%d", UtilsKt.SCHEME_FILE, Integer.valueOf(bundle.size()));
                 arrayList.add(format);
                 Utility.putObjectInBundle(bundle, format, obj);
             }

@@ -19,7 +19,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentFilte
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentFilterModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$openFilter$1$1$1", f = "ArizonaRentPage.kt", i = {}, l = {273}, m = "invokeSuspend", n = {}, nl = {279}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ArizonaRentPage$openFilter$1$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -49,14 +49,13 @@ public final class ArizonaRentPage$openFilter$1$1$1 extends SuspendLambda implem
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArizonaRentPage.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$openFilter$1$1$1$1", f = "ArizonaRentPage.kt", i = {0, 0, 0}, l = {276}, m = "invokeSuspend", n = {"it", CommonUrlParts.MODEL, "$i$a$-let-ArizonaRentPage$openFilter$1$1$1$1$1"}, nl = {277}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$openFilter$1$1$1$1", f = "ArizonaRentPage.kt", i = {0, 0}, l = {276}, m = "invokeSuspend", n = {"it", CommonUrlParts.MODEL}, nl = {277}, s = {"L$0", "L$1"}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$openFilter$1$1$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ ArizonaRentFilterModel $filter;
         final /* synthetic */ UiState<ArizonaRentFilterContainerModel> $state;
-        int I$0;
         Object L$0;
         Object L$1;
         int label;
@@ -96,7 +95,6 @@ public final class ArizonaRentPage$openFilter$1$1$1 extends SuspendLambda implem
                     UiState.Successful successful = new UiState.Successful(arizonaRentFilterContainerModel2);
                     this.L$0 = SpillingKt.nullOutSpilledVariable(arizonaRentFilterContainerModel);
                     this.L$1 = SpillingKt.nullOutSpilledVariable(arizonaRentFilterContainerModel2);
-                    this.I$0 = 0;
                     this.label = 1;
                     if (mutableStateFlow.emit(successful, this) == coroutine_suspended) {
                         return coroutine_suspended;

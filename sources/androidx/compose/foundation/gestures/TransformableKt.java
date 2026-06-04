@@ -398,7 +398,7 @@ public final class TransformableKt {
                             float m5101getDistanceimpl = Offset.m5101getDistanceimpl(j);
                             if (abs > f || abs2 > f || (m5101getDistanceimpl > f && function13.invoke(Offset.m5092boximpl(calculatePan)).booleanValue())) {
                                 int i14 = (!z3 || abs2 >= f) ? 0 : 1;
-                                channel3.mo9005trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                                channel3.mo9057trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
                                 i9 = i14;
                                 f8 = f4;
                                 f9 = f2;
@@ -425,7 +425,7 @@ public final class TransformableKt {
                                     } else {
                                         transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
                                     }
-                                    channel3.mo9005trySendJP2dKIU(new TransformEvent.TransformDelta(calculateCentroid, calculateZoom, calculatePan, f13, null));
+                                    channel3.mo9057trySendJP2dKIU(new TransformEvent.TransformDelta(calculateCentroid, calculateZoom, calculatePan, f13, null));
                                     List<PointerInputChange> changes42 = pointerEvent2.getChanges();
                                     size2 = changes42.size();
                                     while (i10 < size2) {
@@ -453,7 +453,7 @@ public final class TransformableKt {
                         f6 = f8;
                     } else {
                         transformableKt$detectZoom$12 = transformableKt$detectZoom$14;
-                        ChannelResult.m11370boximpl(channel3.mo9005trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
+                        ChannelResult.m11444boximpl(channel3.mo9057trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE));
                         j2 = j;
                         f5 = f2;
                         f6 = f4;

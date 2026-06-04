@@ -173,6 +173,7 @@ public final class BuildCompat {
         return true;
     }
 
+    @Deprecated(message = "Android Baklava is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT >= 36`.", replaceWith = @ReplaceWith(expression = "android.os.Build.VERSION.SDK_INT >= 36", imports = {}))
     @JvmStatic
     public static final boolean isAtLeastB() {
         if (Build.VERSION.SDK_INT < 36) {
@@ -186,6 +187,7 @@ public final class BuildCompat {
         return true;
     }
 
+    @Deprecated(message = "Android Baklava minor release 1 is a finalized release and this method is no longer necessary. It will be removed in a future release of this library. Instead, use `Build.VERSION.SDK_INT_FULL >= Build.VERSION_CODES_FULL.BAKLAVA_1`.", replaceWith = @ReplaceWith(expression = "android.os.Build.VERSION.SDK_INT_FULL >= android.os.Build.VERSION_CODES_FULL.BAKLAVA_1", imports = {}))
     @JvmStatic
     public static final boolean isAtLeastB_1() {
         return Build.VERSION.SDK_INT >= 36 && BuildCompat$$ExternalSyntheticBackportWithForwarding0.m() >= 3600001;

@@ -233,11 +233,11 @@ public final class BitmapFactoryDecoder implements Decoder {
         }
         int i = ExifUtilsKt.isSwapped(exifData) ? options.outHeight : options.outWidth;
         int i2 = ExifUtilsKt.isSwapped(exifData) ? options.outWidth : options.outHeight;
-        long m9187computeDstSizesEdh43o = DecodeUtils.m9187computeDstSizesEdh43o(i, i2, this.options.getSize(), this.options.getScale(), ImageRequestsKt.getMaxBitmapSize(this.options));
-        int m9237getFirstimpl = IntPair.m9237getFirstimpl(m9187computeDstSizesEdh43o);
-        int m9238getSecondimpl = IntPair.m9238getSecondimpl(m9187computeDstSizesEdh43o);
-        options.inSampleSize = DecodeUtils.calculateInSampleSize(i, i2, m9237getFirstimpl, m9238getSecondimpl, this.options.getScale());
-        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(i / options.inSampleSize, i2 / options.inSampleSize, m9237getFirstimpl, m9238getSecondimpl, this.options.getScale());
+        long m9239computeDstSizesEdh43o = DecodeUtils.m9239computeDstSizesEdh43o(i, i2, this.options.getSize(), this.options.getScale(), ImageRequestsKt.getMaxBitmapSize(this.options));
+        int m9289getFirstimpl = IntPair.m9289getFirstimpl(m9239computeDstSizesEdh43o);
+        int m9290getSecondimpl = IntPair.m9290getSecondimpl(m9239computeDstSizesEdh43o);
+        options.inSampleSize = DecodeUtils.calculateInSampleSize(i, i2, m9289getFirstimpl, m9290getSecondimpl, this.options.getScale());
+        double computeSizeMultiplier = DecodeUtils.computeSizeMultiplier(i / options.inSampleSize, i2 / options.inSampleSize, m9289getFirstimpl, m9290getSecondimpl, this.options.getScale());
         if (this.options.getPrecision() == Precision.INEXACT) {
             computeSizeMultiplier = RangesKt.coerceAtMost(computeSizeMultiplier, 1.0d);
         }

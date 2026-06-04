@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.commonui.elements.donate.presentation.UiState;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentPage$setDefaultScreen$1", f = "ArizonaRentPage.kt", i = {}, l = {DownloaderService.STATUS_PAUSED_BY_APP}, m = "invokeSuspend", n = {}, nl = {DownloaderService.STATUS_WAITING_TO_RETRY}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ArizonaRentPage$setDefaultScreen$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

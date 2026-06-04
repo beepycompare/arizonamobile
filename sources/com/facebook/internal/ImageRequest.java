@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import java.net.URI;
 import java.net.URISyntaxException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ImageRequest {
     private static final String HEIGHT_PARAM = "height";
     private static final String MIGRATION_PARAM = "migration_overrides";
@@ -18,7 +18,7 @@ public class ImageRequest {
     private Context context;
     private URI imageUri;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private boolean allowCachedRedirects;
         private Callback callback;
@@ -52,7 +52,7 @@ public class ImageRequest {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public interface Callback {
         void onCompleted(ImageResponse imageResponse);
     }

@@ -7,12 +7,10 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateGetItemUseCase.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase", f = "DonateGetItemUseCase.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {108, ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF}, m = "updateItem", n = {"item", "$this$withLock_u24default$iv", "$i$f$withLock", "item", "$this$withLock_u24default$iv", "$i$f$withLock", "$i$a$-withLock$default-DonateGetItemUseCase$updateItem$2"}, nl = {109, ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0", "I$1"}, v = 2)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase", f = "DonateGetItemUseCase.kt", i = {0, 0, 1, 1}, l = {108, ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_TOP_OF}, m = "updateItem", n = {"item", "$this$withLock_u24default$iv", "item", "$this$withLock_u24default$iv"}, nl = {109, ConstraintLayout.LayoutParams.Table.LAYOUT_CONSTRAINT_BASELINE_TO_BOTTOM_OF}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateGetItemUseCase$updateItem$1 extends ContinuationImpl {
-    int I$0;
-    int I$1;
     Object L$0;
     Object L$1;
     int label;

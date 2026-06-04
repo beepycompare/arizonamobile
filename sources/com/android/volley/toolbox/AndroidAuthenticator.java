@@ -6,6 +6,7 @@ import android.accounts.AccountManagerFuture;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.android.volley.AuthFailureError;
 /* loaded from: classes3.dex */
 public class AndroidAuthenticator implements Authenticator {
@@ -45,8 +46,8 @@ public class AndroidAuthenticator implements Authenticator {
             Bundle result = authToken.getResult();
             if (!authToken.isDone() || authToken.isCancelled()) {
                 str = null;
-            } else if (result.containsKey("intent")) {
-                throw new AuthFailureError((Intent) result.getParcelable("intent"));
+            } else if (result.containsKey(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT)) {
+                throw new AuthFailureError((Intent) result.getParcelable(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT));
             } else {
                 str = result.getString("authtoken");
             }

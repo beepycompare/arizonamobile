@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
+import coil3.util.UtilsKt;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.data.AssetFileDescriptorLocalUriFetcher;
 import com.bumptech.glide.load.data.DataFetcher;
@@ -19,7 +20,7 @@ import java.util.HashSet;
 import java.util.Set;
 /* loaded from: classes3.dex */
 public class UriLoader<Data> implements ModelLoader<Uri, Data> {
-    private static final Set<String> SCHEMES = Collections.unmodifiableSet(new HashSet(Arrays.asList("file", FirebaseAnalytics.Param.CONTENT, "android.resource")));
+    private static final Set<String> SCHEMES = Collections.unmodifiableSet(new HashSet(Arrays.asList(UtilsKt.SCHEME_FILE, FirebaseAnalytics.Param.CONTENT, "android.resource")));
     private final LocalUriFetcherFactory<Data> factory;
 
     /* loaded from: classes3.dex */

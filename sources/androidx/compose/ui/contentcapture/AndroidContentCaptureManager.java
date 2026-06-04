@@ -482,7 +482,7 @@ public final class AndroidContentCaptureManager implements DefaultLifecycleObser
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void notifySubtreeStateChangeIfNeeded() {
-        this.boundsUpdateChannel.mo9005trySendJP2dKIU(Unit.INSTANCE);
+        this.boundsUpdateChannel.mo9057trySendJP2dKIU(Unit.INSTANCE);
     }
 
     private final ViewStructureCompat toViewStructure(SemanticsNode semanticsNode, int i) {

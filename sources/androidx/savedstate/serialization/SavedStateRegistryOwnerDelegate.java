@@ -92,7 +92,7 @@ public final class SavedStateRegistryOwnerDelegate<T> implements ReadWriteProper
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9109constructorimpl(bundleOf);
+        SavedStateWriter.m9161constructorimpl(bundleOf);
         return bundleOf;
     }
 

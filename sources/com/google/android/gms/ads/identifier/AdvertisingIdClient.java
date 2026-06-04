@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.gms.common.BlockingServiceConnection;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -124,7 +125,7 @@ public class AdvertisingIdClient {
                         StringBuilder sb = new StringBuilder(String.valueOf(elapsedRealtime).length() + 25);
                         sb.append("GetInfoInternal elapse ");
                         sb.append(elapsedRealtime);
-                        sb.append("ms");
+                        sb.append(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
                         Log.i("AdvertisingIdClient", sb.toString());
                         return zzf;
                     } catch (Throwable th3) {

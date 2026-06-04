@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.ImageBitmap;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.app.NotificationCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import coil3.network.internal.UtilsKt;
+import coil3.util.UtilsKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
@@ -55,10 +55,10 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: BackgroundManager.kt */
-@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0014\n\u0002\u0010\b\n\u0002\b\u0007\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010'\u001a\u00020(2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\u0006\u0010)\u001a\u00020(J\u0006\u0010*\u001a\u00020+J\u000e\u0010,\u001a\u00020(H\u0082@¢\u0006\u0002\u0010-J\u000e\u0010.\u001a\u00020(H\u0082@¢\u0006\u0002\u0010-J \u0010/\u001a\u00020(2\u0006\u00100\u001a\u00020+2\b\u00101\u001a\u0004\u0018\u000102H\u0082@¢\u0006\u0002\u00103J\b\u00104\u001a\u00020+H\u0002J\b\u00105\u001a\u00020(H\u0002J\b\u00106\u001a\u00020+H\u0002J\b\u00107\u001a\u00020+H\u0002J\b\u00108\u001a\u00020+H\u0002J\u0010\u00109\u001a\u00020(2\u0006\u0010:\u001a\u00020+H\u0002J\b\u0010;\u001a\u00020<H\u0002J\b\u0010=\u001a\u00020\u0014H\u0002J\b\u0010>\u001a\u00020(H\u0002J\u0010\u0010?\u001a\u00020(2\u0006\u0010@\u001a\u00020+H\u0002J\u0018\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u0005H\u0002J\u0010\u0010D\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u0005H\u0002J\u0018\u0010E\u001a\u00020(2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020+H\u0002J\u0010\u0010H\u001a\u00020\u00142\u0006\u00100\u001a\u00020+H\u0002J\u0018\u0010I\u001a\u00020(2\u0006\u0010J\u001a\u00020\u00052\u0006\u0010K\u001a\u00020\u0005H\u0002J\u0018\u0010L\u001a\u00020(2\u0006\u0010M\u001a\u00020\u00052\u0006\u0010N\u001a\u00020\u0005H\u0002J\u0010\u0010O\u001a\u00020\u00052\u0006\u0010P\u001a\u00020QH\u0002J\u0010\u0010R\u001a\u00020\u00052\u0006\u0010S\u001a\u00020QH\u0002J\u0010\u0010T\u001a\u00020\u00052\u0006\u00100\u001a\u00020+H\u0002J\u0010\u0010U\u001a\u00020\u00052\u0006\u00100\u001a\u00020+H\u0002J\u0012\u0010V\u001a\u00020\u00052\b\u0010W\u001a\u0004\u0018\u00010\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001c\u001a\u00020\u001d¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010#\u001a\b\u0012\u0004\u0012\u00020\"0$¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&¨\u0006X"}, d2 = {"Lcom/miami/game/core/design/system/component/background/LauncherBackgroundWriter;", "", "<init>", "()V", "TAG", "", "PREFS_NAME", "DIR_NAME", "KEY_REMOTE", "KEY_REMOTE_RODINA", "KEY_REMOTE_HASH", "KEY_REMOTE_HASH_RODINA", "PREF_CURRENT_FILE_NAME", "PREF_CURRENT_FILE_HASH", "PREF_DEFAULT_VERSION_CODE", "DEFAULT_ASSET_PATH", "DEFAULT_LOCAL_FILE_NAME", "context", "Landroid/content/Context;", "isArizona", "", "prefs", "Landroid/content/SharedPreferences;", "assetPath", "scope", "Lkotlinx/coroutines/CoroutineScope;", "startJob", "Lkotlinx/coroutines/Job;", "remoteConfigProvider", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfigProvider", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/design/system/component/background/LauncherBackgroundState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/StateFlow;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "setParams", "", TtmlNode.START, "currentTargetFile", "Ljava/io/File;", "loadLocal", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "syncRemoteAndStore", "emitNew", "file", "image", "Landroidx/compose/ui/graphics/ImageBitmap;", "(Ljava/io/File;Landroidx/compose/ui/graphics/ImageBitmap;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ensureDir", "ensureDefaultExists", "resolveLocalFile", "ensureValidDefaultFile", "forceRestoreDefaultFile", "deleteStaleDownloadedFiles", "keep", "appVersionCode", "", "defaultMatchesAppVersion", "persistDefaultAppVersion", "writeAssetToFileAtomically", TypedValues.AttributesType.S_TARGET, "buildLocalFileName", "remotePath", "remoteHash", "buildRemoteUrl", "downloadToFile", "urlString", "dest", "isDecodableImage", "persistCurrentFile", "fileName", "fileHash", "logRemoteConfigInfo", "pathKey", "hashKey", "sourceName", "source", "", "fetchStatusName", NotificationCompat.CATEGORY_STATUS, "calculateFileHashOrEmpty", "calculateFileHash", "normalizeHash", "rawHash", "design-system"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0014\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010'\u001a\u00020(2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\u0006\u0010)\u001a\u00020(J\u0006\u0010*\u001a\u00020+J\u000e\u0010,\u001a\u00020(H\u0082@¢\u0006\u0002\u0010-J\u000e\u0010.\u001a\u00020(H\u0082@¢\u0006\u0002\u0010-J \u0010/\u001a\u00020(2\u0006\u00100\u001a\u00020+2\b\u00101\u001a\u0004\u0018\u000102H\u0082@¢\u0006\u0002\u00103J\b\u00104\u001a\u00020+H\u0002J\b\u00105\u001a\u00020(H\u0002J\b\u00106\u001a\u00020+H\u0002J\b\u00107\u001a\u00020+H\u0002J\b\u00108\u001a\u00020+H\u0002J\u0010\u00109\u001a\u00020(2\u0006\u0010:\u001a\u00020+H\u0002J\b\u0010;\u001a\u00020<H\u0002J\b\u0010=\u001a\u00020\u0014H\u0002J\b\u0010>\u001a\u00020(H\u0002J\u0010\u0010?\u001a\u00020(2\u0006\u0010@\u001a\u00020+H\u0002J\u0018\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u0005H\u0002J\u0010\u0010D\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u0005H\u0002J\u0018\u0010E\u001a\u00020(2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020+H\u0002J\u0010\u0010H\u001a\u00020\u00142\u0006\u00100\u001a\u00020+H\u0002J\u0018\u0010I\u001a\u00020(2\u0006\u0010J\u001a\u00020\u00052\u0006\u0010K\u001a\u00020\u0005H\u0002J\u0018\u0010L\u001a\u00020(2\u0006\u0010M\u001a\u00020\u00052\u0006\u0010N\u001a\u00020\u0005H\u0002J\u0010\u0010O\u001a\u00020\u00052\u0006\u0010P\u001a\u00020QH\u0002J\u0010\u0010R\u001a\u00020\u00052\u0006\u0010S\u001a\u00020QH\u0002J\u0010\u0010T\u001a\u00020\u00052\u0006\u00100\u001a\u00020+H\u0002J\u0010\u0010U\u001a\u00020\u00052\u0006\u00100\u001a\u00020+H\u0002J\u0012\u0010V\u001a\u00020\u00052\b\u0010W\u001a\u0004\u0018\u00010\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001c\u001a\u00020\u001d¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010#\u001a\b\u0012\u0004\u0012\u00020\"0$¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&Ê\u0001\f\bY\u0012\b\bZ\u0012\u0004\b\u0003\u0010\u0002¨\u0006X"}, d2 = {"Lcom/miami/game/core/design/system/component/background/LauncherBackgroundWriter;", "", "<init>", "()V", "TAG", "", "PREFS_NAME", "DIR_NAME", "KEY_REMOTE", "KEY_REMOTE_RODINA", "KEY_REMOTE_HASH", "KEY_REMOTE_HASH_RODINA", "PREF_CURRENT_FILE_NAME", "PREF_CURRENT_FILE_HASH", "PREF_DEFAULT_VERSION_CODE", "DEFAULT_ASSET_PATH", "DEFAULT_LOCAL_FILE_NAME", "context", "Landroid/content/Context;", "isArizona", "", "prefs", "Landroid/content/SharedPreferences;", "assetPath", "scope", "Lkotlinx/coroutines/CoroutineScope;", "startJob", "Lkotlinx/coroutines/Job;", "remoteConfigProvider", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfigProvider", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "_state", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/design/system/component/background/LauncherBackgroundState;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lkotlinx/coroutines/flow/StateFlow;", "getState", "()Lkotlinx/coroutines/flow/StateFlow;", "setParams", "", TtmlNode.START, "currentTargetFile", "Ljava/io/File;", "loadLocal", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "syncRemoteAndStore", "emitNew", UtilsKt.SCHEME_FILE, "image", "Landroidx/compose/ui/graphics/ImageBitmap;", "(Ljava/io/File;Landroidx/compose/ui/graphics/ImageBitmap;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ensureDir", "ensureDefaultExists", "resolveLocalFile", "ensureValidDefaultFile", "forceRestoreDefaultFile", "deleteStaleDownloadedFiles", "keep", "appVersionCode", "", "defaultMatchesAppVersion", "persistDefaultAppVersion", "writeAssetToFileAtomically", TypedValues.AttributesType.S_TARGET, "buildLocalFileName", "remotePath", "remoteHash", "buildRemoteUrl", "downloadToFile", "urlString", "dest", "isDecodableImage", "persistCurrentFile", "fileName", "fileHash", "logRemoteConfigInfo", "pathKey", "hashKey", "sourceName", "source", "", "fetchStatusName", NotificationCompat.CATEGORY_STATUS, "calculateFileHashOrEmpty", "calculateFileHash", "normalizeHash", "rawHash", "design-system", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class LauncherBackgroundWriter {
-    public static final int $stable;
+    public static final int $stable = 0;
     private static final String DEFAULT_ASSET_PATH = "background_home.webp";
     private static final String DEFAULT_LOCAL_FILE_NAME = "background_home.webp";
     private static final String DIR_NAME = "launcher_bg";
@@ -92,7 +92,6 @@ public final class LauncherBackgroundWriter {
         MutableStateFlow<LauncherBackgroundState> MutableStateFlow = StateFlowKt.MutableStateFlow(new LauncherBackgroundState(0, null, null, 7, null));
         _state = MutableStateFlow;
         state = FlowKt.asStateFlow(MutableStateFlow);
-        $stable = 8;
     }
 
     public final FirebaseRemoteConfig getRemoteConfigProvider() {
@@ -210,15 +209,15 @@ public final class LauncherBackgroundWriter {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Can't wrap try/catch for region: R(8:1|(2:3|(6:5|6|7|(1:(1:(5:11|12|13|14|(1:16))(2:20|21))(2:22|23))(3:24|25|(1:27))|17|18))|30|6|7|(0)(0)|17|18) */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0043, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0041, code lost:
         r10 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x00cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00c7, code lost:
         r11 = kotlin.Result.Companion;
-        r10 = kotlin.Result.m9843constructorimpl(kotlin.ResultKt.createFailure(r10));
+        r10 = kotlin.Result.m9896constructorimpl(kotlin.ResultKt.createFailure(r10));
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0057  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -248,15 +247,14 @@ public final class LauncherBackgroundWriter {
                 } else if (i != 2) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    int i2 = launcherBackgroundWriter$loadLocal$1.I$0;
                     File file2 = (File) launcherBackgroundWriter$loadLocal$1.L$2;
                     LauncherBackgroundWriter launcherBackgroundWriter = (LauncherBackgroundWriter) launcherBackgroundWriter$loadLocal$1.L$1;
                     Throwable th = (Throwable) launcherBackgroundWriter$loadLocal$1.L$0;
                     ResultKt.throwOnFailure(obj);
-                    Object m9843constructorimpl = Result.m9843constructorimpl(Unit.INSTANCE);
-                    Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-                    if (m9846exceptionOrNullimpl != null) {
-                        Log.e(TAG, "loadLocal: emergency fallback failed", m9846exceptionOrNullimpl);
+                    Object m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
+                    Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+                    if (m9899exceptionOrNullimpl != null) {
+                        Log.e(TAG, "loadLocal: emergency fallback failed", m9899exceptionOrNullimpl);
                     }
                 }
                 return Unit.INSTANCE;
@@ -369,9 +367,9 @@ public final class LauncherBackgroundWriter {
             if (currentTargetFile.exists() && !Intrinsics.areEqual(currentTargetFile.getName(), "background_home.webp") && !Intrinsics.areEqual(currentTargetFile.getName(), file.getName())) {
                 Log.d(TAG, "syncRemoteAndStore: delete old current file result=" + currentTargetFile.delete());
             }
-            Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(Result.m9843constructorimpl(Unit.INSTANCE));
-            if (m9846exceptionOrNullimpl != null) {
-                Log.e(TAG, "syncRemoteAndStore: update failed", m9846exceptionOrNullimpl);
+            Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(Result.m9896constructorimpl(Unit.INSTANCE));
+            if (m9899exceptionOrNullimpl != null) {
+                Log.e(TAG, "syncRemoteAndStore: update failed", m9899exceptionOrNullimpl);
                 if (file2.exists()) {
                     Log.d(TAG, "syncRemoteAndStore: tmp delete after fail result=" + file2.delete());
                 }
@@ -385,8 +383,7 @@ public final class LauncherBackgroundWriter {
         MutableStateFlow<LauncherBackgroundState> mutableStateFlow = _state;
         int version = mutableStateFlow.getValue().getVersion() + 1;
         Log.d(TAG, "emitNew: version=" + version + ", file=" + file.getAbsolutePath() + ", imageNull=" + (imageBitmap == null));
-        Object emit = mutableStateFlow.emit(new LauncherBackgroundState(version, file, imageBitmap), continuation);
-        return emit == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? emit : Unit.INSTANCE;
+        return mutableStateFlow.emit(new LauncherBackgroundState(version, file, imageBitmap), continuation);
     }
 
     private final File ensureDir() {
@@ -577,7 +574,7 @@ public final class LauncherBackgroundWriter {
         }
         String normalizeHash = normalizeHash(str2);
         if (StringsKt.isBlank(normalizeHash)) {
-            normalizeHash = UStringsKt.m11185toStringV7xB4Y4(UInt.m9943constructorimpl(str.hashCode()), 16);
+            normalizeHash = UStringsKt.m11259toStringV7xB4Y4(UInt.m9997constructorimpl(str.hashCode()), 16);
         }
         String str6 = str3 + "_" + StringsKt.take(normalizeHash, 16) + str4;
         Log.d(TAG, "buildLocalFileName: remotePath=" + str + ", rawName=" + str5 + ", result=" + str6);
@@ -605,7 +602,7 @@ public final class LauncherBackgroundWriter {
         httpURLConnection.setConnectTimeout(10000);
         httpURLConnection.setReadTimeout(15000);
         httpURLConnection.setInstanceFollowRedirects(true);
-        httpURLConnection.setRequestMethod(UtilsKt.HTTP_METHOD_GET);
+        httpURLConnection.setRequestMethod(coil3.network.internal.UtilsKt.HTTP_METHOD_GET);
         httpURLConnection.connect();
         int responseCode = httpURLConnection.getResponseCode();
         String contentType = httpURLConnection.getContentType();
@@ -687,23 +684,23 @@ public final class LauncherBackgroundWriter {
     }
 
     private final String calculateFileHashOrEmpty(File file) {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             LauncherBackgroundWriter launcherBackgroundWriter = this;
-            m9843constructorimpl = Result.m9843constructorimpl(calculateFileHash(file));
+            m9896constructorimpl = Result.m9896constructorimpl(calculateFileHash(file));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-        if (m9846exceptionOrNullimpl != null) {
-            Log.e(TAG, "calculateFileHashOrEmpty: failed for " + file.getAbsolutePath(), m9846exceptionOrNullimpl);
+        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+        if (m9899exceptionOrNullimpl != null) {
+            Log.e(TAG, "calculateFileHashOrEmpty: failed for " + file.getAbsolutePath(), m9899exceptionOrNullimpl);
         }
-        if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-            m9843constructorimpl = "";
+        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+            m9896constructorimpl = "";
         }
-        return (String) m9843constructorimpl;
+        return (String) m9896constructorimpl;
     }
 
     private final String calculateFileHash(File file) {

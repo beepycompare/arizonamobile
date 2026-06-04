@@ -75,7 +75,7 @@ final class LifecycleKt$eventFlow$1 extends SuspendLambda implements Function2<P
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void invokeSuspend$lambda$0(ProducerScope producerScope, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-        producerScope.mo9005trySendJP2dKIU(event);
+        producerScope.mo9057trySendJP2dKIU(event);
         if (event == Lifecycle.Event.ON_DESTROY) {
             SendChannel.close$default(producerScope, null, 1, null);
         }

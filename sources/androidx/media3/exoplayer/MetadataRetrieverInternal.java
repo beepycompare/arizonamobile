@@ -130,7 +130,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
             Futures.whenAllComplete(this.allFutures).run(new Runnable() { // from class: androidx.media3.exoplayer.MetadataRetrieverInternal$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MetadataRetrieverInternal.this.m8819xe88b021d();
+                    MetadataRetrieverInternal.this.m8871xe88b021d();
                 }
             }, MoreExecutors.directExecutor());
         }
@@ -138,7 +138,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$close$0$androidx-media3-exoplayer-MetadataRetrieverInternal  reason: not valid java name */
-    public /* synthetic */ void m8819xe88b021d() {
+    public /* synthetic */ void m8871xe88b021d() {
         synchronized (this.lock) {
             RetrievalTask retrievalTask = this.retrievalTask;
             if (retrievalTask != null) {
@@ -153,12 +153,12 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
             RetrievalTask retrievalTask = new RetrievalTask(this.mediaSourceFactory, this.mediaItem, this.clock, new RetrievalTask.OnPreparedListener() { // from class: androidx.media3.exoplayer.MetadataRetrieverInternal$$ExternalSyntheticLambda1
                 @Override // androidx.media3.exoplayer.MetadataRetrieverInternal.RetrievalTask.OnPreparedListener
                 public final void onPrepared(TrackGroupArray trackGroupArray, Timeline timeline) {
-                    MetadataRetrieverInternal.this.m8820x26d3b195(trackGroupArray, timeline);
+                    MetadataRetrieverInternal.this.m8872x26d3b195(trackGroupArray, timeline);
                 }
             }, new RetrievalTask.OnFailureListener() { // from class: androidx.media3.exoplayer.MetadataRetrieverInternal$$ExternalSyntheticLambda2
                 @Override // androidx.media3.exoplayer.MetadataRetrieverInternal.RetrievalTask.OnFailureListener
                 public final void onFailure(Exception exc) {
-                    MetadataRetrieverInternal.this.m8821xb40e6316(exc);
+                    MetadataRetrieverInternal.this.m8873xb40e6316(exc);
                 }
             });
             this.retrievalTask = retrievalTask;
@@ -168,7 +168,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startPreparation$1$androidx-media3-exoplayer-MetadataRetrieverInternal  reason: not valid java name */
-    public /* synthetic */ void m8820x26d3b195(TrackGroupArray trackGroupArray, Timeline timeline) {
+    public /* synthetic */ void m8872x26d3b195(TrackGroupArray trackGroupArray, Timeline timeline) {
         synchronized (this.lock) {
             ((SettableFuture) Preconditions.checkNotNull(this.preparationFuture)).set(new InternalResult(trackGroupArray, timeline));
         }
@@ -176,7 +176,7 @@ public final class MetadataRetrieverInternal implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startPreparation$2$androidx-media3-exoplayer-MetadataRetrieverInternal  reason: not valid java name */
-    public /* synthetic */ void m8821xb40e6316(Exception exc) {
+    public /* synthetic */ void m8873xb40e6316(Exception exc) {
         synchronized (this.lock) {
             ((SettableFuture) Preconditions.checkNotNull(this.preparationFuture)).setException(exc);
         }

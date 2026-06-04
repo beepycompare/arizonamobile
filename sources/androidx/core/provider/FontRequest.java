@@ -4,6 +4,7 @@ import android.util.Base64;
 import androidx.core.util.Preconditions;
 import com.google.android.vending.expansion.downloader.Constants;
 import java.util.List;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 public final class FontRequest {
     private final List<List<byte[]>> mCertificates;
@@ -16,7 +17,19 @@ public final class FontRequest {
     private final String mVariationSettings;
 
     public FontRequest(String str, String str2, String str3, List<List<byte[]>> list) {
-        this(str, str2, str3, list, null, null);
+        this(str, str2, str3, list, (String) null, (String) null);
+    }
+
+    public FontRequest(String str, String str2, String str3, List<List<byte[]>> list, String str4) {
+        this(str, str2, str3, list, (String) null, str4);
+    }
+
+    public FontRequest(String str, String str2, String str3, int i) {
+        this(str, str2, str3, i, (String) null, (String) null);
+    }
+
+    public FontRequest(String str, String str2, String str3, int i, String str4) {
+        this(str, str2, str3, i, (String) null, str4);
     }
 
     public FontRequest(String str, String str2, String str3, List<List<byte[]>> list, String str4, String str5) {
@@ -30,20 +43,25 @@ public final class FontRequest {
         this.mIdentifier = createIdentifier(str, str2, str3, str4, str5);
     }
 
-    public FontRequest(String str, String str2, String str3, int i) {
+    private FontRequest(String str, String str2, String str3, int i, String str4, String str5) {
         this.mProviderAuthority = (String) Preconditions.checkNotNull(str);
         this.mProviderPackage = (String) Preconditions.checkNotNull(str2);
         this.mQuery = (String) Preconditions.checkNotNull(str3);
         this.mCertificates = null;
         Preconditions.checkArgument(i != 0);
         this.mCertificatesArray = i;
-        this.mSystemFont = null;
-        this.mVariationSettings = null;
-        this.mIdentifier = createIdentifier(str, str2, str3, null, null);
+        this.mSystemFont = str4;
+        this.mVariationSettings = str5;
+        this.mIdentifier = createIdentifier(str, str2, str3, null, str5);
     }
 
     private String createIdentifier(String str, String str2, String str3, String str4, String str5) {
-        return str + Constants.FILENAME_SEQUENCE_SEPARATOR + str2 + Constants.FILENAME_SEQUENCE_SEPARATOR + str3 + Constants.FILENAME_SEQUENCE_SEPARATOR + str4 + Constants.FILENAME_SEQUENCE_SEPARATOR + str5;
+        StringBuilder sb = new StringBuilder();
+        sb.append(str).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str2).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str3).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str4);
+        if (str5 != null && !UByte$$ExternalSyntheticBackport0.m9970m(str5)) {
+            sb.append("-VF");
+        }
+        return sb.toString();
     }
 
     public String getProviderAuthority() {

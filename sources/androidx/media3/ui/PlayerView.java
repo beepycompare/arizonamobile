@@ -321,7 +321,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             obj = Proxy.newProxyInstance(cls2.getClassLoader(), new Class[]{cls2}, new InvocationHandler() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda0
                 @Override // java.lang.reflect.InvocationHandler
                 public final Object invoke(Object obj2, Method method2, Object[] objArr) {
-                    return PlayerView.this.m8986lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
+                    return PlayerView.this.m9038lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
                 }
             });
         } catch (ClassNotFoundException | NoSuchMethodException unused) {
@@ -392,7 +392,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ Object m8986lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
+    public /* synthetic */ Object m9038lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
         if (method.getName().equals("onImageAvailable")) {
             onImageAvailable((Bitmap) objArr[1]);
             return null;
@@ -1096,14 +1096,14 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         this.mainLooperHandler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PlayerView.this.m8987lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
+                PlayerView.this.m9039lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onImageAvailable$1$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ void m8987lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
+    public /* synthetic */ void m9039lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
         setImage(new BitmapDrawable(getResources(), bitmap));
         if (hasSelectedVideoTrack()) {
             return;
@@ -1361,14 +1361,14 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             handler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$SurfaceSyncGroupCompatV34$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlayerView.SurfaceSyncGroupCompatV34.this.m8989xd2b35cc8(surfaceView, runnable);
+                    PlayerView.SurfaceSyncGroupCompatV34.this.m9041xd2b35cc8(surfaceView, runnable);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRegister$1$androidx-media3-ui-PlayerView$SurfaceSyncGroupCompatV34  reason: not valid java name */
-        public /* synthetic */ void m8989xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
+        public /* synthetic */ void m9041xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
             AttachedSurfaceControl rootSurfaceControl = surfaceView.getRootSurfaceControl();
             if (rootSurfaceControl == null) {
                 return;

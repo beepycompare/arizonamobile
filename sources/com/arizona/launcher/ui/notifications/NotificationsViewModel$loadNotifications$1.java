@@ -6,12 +6,10 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NotificationsViewModel.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel", f = "NotificationsViewModel.kt", i = {1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {69, 70, 76, 79}, m = "loadNotifications", n = {"fromApi", "fromApi", "fromDb", "mergedList", "fromApi", "fromDb", "mergedList", "$this$forEach$iv", "element$iv", "it", "$i$f$forEach", "$i$a$-forEach-NotificationsViewModel$loadNotifications$2"}, nl = {70, 72, 77, 80}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$5", "L$6", "I$0", "I$1"}, v = 2)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.ui.notifications.NotificationsViewModel", f = "NotificationsViewModel.kt", i = {1, 2, 2, 2, 3, 3, 3, 3, 3, 3}, l = {69, 70, 76, 79}, m = "loadNotifications", n = {"fromApi", "fromApi", "fromDb", "mergedList", "fromApi", "fromDb", "mergedList", "$this$forEach$iv", "element$iv", "it"}, nl = {70, 72, 77, 80}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$5", "L$6"}, v = 2)
 /* loaded from: classes3.dex */
 public final class NotificationsViewModel$loadNotifications$1 extends ContinuationImpl {
-    int I$0;
-    int I$1;
     Object L$0;
     Object L$1;
     Object L$2;

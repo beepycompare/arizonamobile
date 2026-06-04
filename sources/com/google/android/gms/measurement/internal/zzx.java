@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.firebase.messaging.Constants;
 import kotlin.time.DurationKt;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
@@ -25,7 +26,7 @@ public final class zzx {
                 Bundle bundle = new Bundle();
                 bundle.putString("source", "(not set)");
                 bundle.putString("medium", "(not set)");
-                bundle.putString("_cis", "intent");
+                bundle.putString("_cis", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT);
                 bundle.putLong("_cc", 1L);
                 zzicVar.zzj().zzE("auto", "_cmpx", bundle);
             } else {

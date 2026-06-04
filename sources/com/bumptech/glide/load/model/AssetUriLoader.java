@@ -3,6 +3,7 @@ package com.bumptech.glide.load.model;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.net.Uri;
+import coil3.util.UtilsKt;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.data.DataFetcher;
 import com.bumptech.glide.load.data.FileDescriptorAssetPathFetcher;
@@ -35,7 +36,7 @@ public class AssetUriLoader<Data> implements ModelLoader<Uri, Data> {
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public boolean handles(Uri uri) {
-        return "file".equals(uri.getScheme()) && !uri.getPathSegments().isEmpty() && "android_asset".equals(uri.getPathSegments().get(0));
+        return UtilsKt.SCHEME_FILE.equals(uri.getScheme()) && !uri.getPathSegments().isEmpty() && "android_asset".equals(uri.getPathSegments().get(0));
     }
 
     /* loaded from: classes3.dex */

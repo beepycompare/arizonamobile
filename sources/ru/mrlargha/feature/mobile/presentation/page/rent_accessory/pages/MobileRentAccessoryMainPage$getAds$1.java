@@ -24,11 +24,10 @@ import ru.mrlargha.feature.mobile.databinding.MobileRentAccessoryMainBinding;
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.RentAccessoryPage;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MobileRentAccessoryMainPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$getAds$1", f = "MobileRentAccessoryMainPage.kt", i = {1, 1, 1, 2}, l = {127, 131, 141}, m = "invokeSuspend", n = {"ads", "it", "$i$a$-let-MobileRentAccessoryMainPage$getAds$1$1", "ads"}, nl = {WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_DTS_UHD, 149}, s = {"L$0", "L$1", "I$0", "L$0"}, v = 2)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$getAds$1", f = "MobileRentAccessoryMainPage.kt", i = {1, 1, 2}, l = {127, 131, 141}, m = "invokeSuspend", n = {"ads", "it", "ads"}, nl = {WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_DTS_UHD, 149}, s = {"L$0", "L$1", "L$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class MobileRentAccessoryMainPage$getAds$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-    int I$0;
     Object L$0;
     Object L$1;
     int label;
@@ -54,13 +53,13 @@ public final class MobileRentAccessoryMainPage$getAds$1 extends SuspendLambda im
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0055, code lost:
         if (r8 == r0) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0090, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x008d, code lost:
         if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$getAds$1$1$1(r2, null), r7) == r0) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x00b1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x00ae, code lost:
         if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$getAds$1.AnonymousClass2(r7.this$0, null), r7) == r0) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x00b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x00b0, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -99,7 +98,6 @@ public final class MobileRentAccessoryMainPage$getAds$1 extends SuspendLambda im
                 mobileRentAccessoryMainPage.currentAddsList = list2;
                 this.L$0 = SpillingKt.nullOutSpilledVariable(response2);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(list2);
-                this.I$0 = 0;
                 this.label = 2;
             }
             return Unit.INSTANCE;
@@ -110,7 +108,7 @@ public final class MobileRentAccessoryMainPage$getAds$1 extends SuspendLambda im
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: MobileRentAccessoryMainPage.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$getAds$1$2", f = "MobileRentAccessoryMainPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage$getAds$1$2  reason: invalid class name */
     /* loaded from: classes6.dex */

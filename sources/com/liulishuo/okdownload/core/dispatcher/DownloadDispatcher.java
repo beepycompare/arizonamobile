@@ -1,6 +1,7 @@
 package com.liulishuo.okdownload.core.dispatcher;
 
 import android.os.SystemClock;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.OkDownload;
 import com.liulishuo.okdownload.StatusUtil;
@@ -97,7 +98,7 @@ public class DownloadDispatcher {
         if (size != this.readyAsyncCalls.size()) {
             Collections.sort(this.readyAsyncCalls);
         }
-        Util.d(TAG, "end enqueueLocked for bunch task: " + downloadTaskArr.length + " consume " + (SystemClock.uptimeMillis() - uptimeMillis) + "ms");
+        Util.d(TAG, "end enqueueLocked for bunch task: " + downloadTaskArr.length + " consume " + (SystemClock.uptimeMillis() - uptimeMillis) + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
     }
 
     private synchronized void enqueueLocked(DownloadTask downloadTask) {
@@ -190,7 +191,7 @@ public class DownloadDispatcher {
             filterCanceledCalls(identifiedTask, arrayList, arrayList2);
         }
         handleCanceledCalls(arrayList, arrayList2);
-        Util.d(TAG, "finish cancel bunch task manually: " + identifiedTaskArr.length + " consume " + (SystemClock.uptimeMillis() - uptimeMillis) + "ms");
+        Util.d(TAG, "finish cancel bunch task manually: " + identifiedTaskArr.length + " consume " + (SystemClock.uptimeMillis() - uptimeMillis) + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
     }
 
     synchronized boolean cancelLocked(IdentifiedTask identifiedTask) {

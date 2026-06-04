@@ -19,6 +19,7 @@ import androidx.core.content.res.FontResourcesParserCompat;
 import androidx.core.graphics.TypefaceCompat;
 import androidx.core.provider.FontsContractCompat;
 import androidx.tracing.Trace;
+import coil3.util.UtilsKt;
 import com.android.vending.expansion.zipfile.APEZProvider;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
@@ -27,9 +28,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
 public class FontProvider {
+    private static final String VARIABLE_FONT_QUERY_PARAM = "VF";
     private static final LruCache<ProviderCacheKey, ProviderInfo> sProviderCache = new LruCache<>(2);
     private static final Comparator<byte[]> sByteArrayComparator = new Comparator() { // from class: androidx.core.provider.FontProvider$$ExternalSyntheticLambda0
         @Override // java.util.Comparator
@@ -143,13 +146,13 @@ public class FontProvider {
         try {
             ArrayList arrayList2 = new ArrayList();
             Uri build = new Uri.Builder().scheme(FirebaseAnalytics.Param.CONTENT).authority(str).build();
-            Uri build2 = new Uri.Builder().scheme(FirebaseAnalytics.Param.CONTENT).authority(str).appendPath("file").build();
+            Uri build2 = new Uri.Builder().scheme(FirebaseAnalytics.Param.CONTENT).authority(str).appendPath(UtilsKt.SCHEME_FILE).build();
             ContentQueryWrapper make = ContentQueryWrapper.make(context, build);
             try {
                 int i = 0;
                 String[] strArr = {APEZProvider.FILEID, FontsContractCompat.Columns.FILE_ID, FontsContractCompat.Columns.TTC_INDEX, FontsContractCompat.Columns.VARIATION_SETTINGS, FontsContractCompat.Columns.WEIGHT, FontsContractCompat.Columns.ITALIC, FontsContractCompat.Columns.RESULT_CODE};
                 Trace.beginSection("ContentQueryWrapper.query");
-                Cursor query = make.query(build, strArr, "query = ?", new String[]{fontRequest.getQuery()}, null, cancellationSignal);
+                Cursor query = make.query(build, strArr, "query = ?", getSelectionArgs(fontRequest), null, cancellationSignal);
                 try {
                     if (query != null && query.getCount() > 0) {
                         int columnIndex = query.getColumnIndex(FontsContractCompat.Columns.RESULT_CODE);
@@ -197,6 +200,11 @@ public class FontProvider {
         } finally {
             Trace.endSection();
         }
+    }
+
+    protected static String[] getSelectionArgs(FontRequest fontRequest) {
+        String variationSettings = fontRequest.getVariationSettings();
+        return (variationSettings == null || UByte$$ExternalSyntheticBackport0.m9970m(variationSettings)) ? new String[]{fontRequest.getQuery()} : new String[]{fontRequest.getQuery(), VARIABLE_FONT_QUERY_PARAM};
     }
 
     private static List<List<byte[]>> getCertificates(FontRequest fontRequest, Resources resources) {

@@ -24,22 +24,19 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ long m9912m(long j, long j2) {
+    public static /* synthetic */ long m9965m(long j, long j2) {
         if (j2 < 0) {
-            return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? j : j - j2;
+            return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? 0L : 1L;
         } else if (j >= 0) {
-            return j % j2;
+            return j / j2;
         } else {
-            long j3 = j - ((((j >>> 1) / j2) << 1) * j2);
-            if ((j3 ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE)) {
-                j2 = 0;
-            }
-            return j3 - j2;
+            long j3 = ((j >>> 1) / j2) << 1;
+            return j3 + (((j - (j3 * j2)) ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? 0 : 1);
         }
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ String m9913m(int i, int i2) {
+    public static /* synthetic */ String m9966m(int i, int i2) {
         return Long.toString(i & 4294967295L, i2);
     }
 
@@ -63,14 +60,14 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
                 j >>>= numberOfTrailingZeros;
             } while (j != 0);
         } else {
-            long m$1 = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : m$1(j, i);
+            long m9965m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : m9965m(j, i);
             long j2 = i;
-            cArr[63] = Character.forDigit((int) (j - (m$1 * j2)), i);
+            cArr[63] = Character.forDigit((int) (j - (m9965m * j2)), i);
             i3 = 63;
-            while (m$1 > 0) {
+            while (m9965m > 0) {
                 i3--;
-                cArr[i3] = Character.forDigit((int) (m$1 % j2), i);
-                m$1 /= j2;
+                cArr[i3] = Character.forDigit((int) (m9965m % j2), i);
+                m9965m /= j2;
             }
         }
         return new String(cArr, i3, 64 - i3);
@@ -97,7 +94,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ Set m9915m(Object[] objArr) {
+    public static /* synthetic */ Set m9968m(Object[] objArr) {
         HashSet hashSet = new HashSet(objArr.length);
         for (Object obj : objArr) {
             if (!hashSet.add(Objects.requireNonNull(obj))) {
@@ -108,7 +105,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ void m9916m(Object obj) {
+    public static /* synthetic */ void m9969m(Object obj) {
         if (obj instanceof AutoCloseable) {
             ((AutoCloseable) obj).close();
         } else if (obj instanceof ExecutorService) {
@@ -146,18 +143,35 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
         }
     }
 
+    /* renamed from: m  reason: collision with other method in class */
+    public static /* synthetic */ boolean m9970m(String str) {
+        int length = str.length();
+        int i = 0;
+        while (i < length) {
+            int codePointAt = str.codePointAt(i);
+            if (!Character.isWhitespace(codePointAt)) {
+                return false;
+            }
+            i += Character.charCount(codePointAt);
+        }
+        return true;
+    }
+
     public static /* synthetic */ int m$1(int i, int i2) {
         return (int) ((i & 4294967295L) % (i2 & 4294967295L));
     }
 
     public static /* synthetic */ long m$1(long j, long j2) {
         if (j2 < 0) {
-            return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? 0L : 1L;
+            return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? j : j - j2;
         } else if (j >= 0) {
-            return j / j2;
+            return j % j2;
         } else {
-            long j3 = ((j >>> 1) / j2) << 1;
-            return j3 + (((j - (j3 * j2)) ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? 0 : 1);
+            long j3 = j - ((((j >>> 1) / j2) << 1) * j2);
+            if ((j3 ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE)) {
+                j2 = 0;
+            }
+            return j3 - j2;
         }
     }
 

@@ -1056,12 +1056,12 @@ public final class NavControllerImpl {
     public final void onGraphCreated$navigation_runtime_release(Bundle bundle) {
         Bundle bundle2 = this.navigatorStateToRestore;
         if (bundle2 != null) {
-            Bundle m9023constructorimpl = SavedStateReader.m9023constructorimpl(bundle2);
-            if (SavedStateReader.m9024containsimpl(m9023constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
-                for (String str : SavedStateReader.m9097getStringListimpl(m9023constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
+            Bundle m9075constructorimpl = SavedStateReader.m9075constructorimpl(bundle2);
+            if (SavedStateReader.m9076containsimpl(m9075constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
+                for (String str : SavedStateReader.m9149getStringListimpl(m9075constructorimpl, KEY_NAVIGATOR_STATE_NAMES)) {
                     Navigator navigator = this._navigatorProvider.getNavigator(str);
-                    if (SavedStateReader.m9024containsimpl(m9023constructorimpl, str)) {
-                        navigator.onRestoreState(SavedStateReader.m9080getSavedStateimpl(m9023constructorimpl, str));
+                    if (SavedStateReader.m9076containsimpl(m9075constructorimpl, str)) {
+                        navigator.onRestoreState(SavedStateReader.m9132getSavedStateimpl(m9075constructorimpl, str));
                     }
                 }
             }
@@ -1315,7 +1315,7 @@ public final class NavControllerImpl {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 addInDefaultArgs = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                SavedStateWriter.m9109constructorimpl(addInDefaultArgs);
+                SavedStateWriter.m9161constructorimpl(addInDefaultArgs);
             }
             NavDestination destination = matchDeepLinkComprehensive.getDestination();
             this.navController.writeIntent$navigation_runtime_release(request, addInDefaultArgs);
@@ -1681,7 +1681,7 @@ public final class NavControllerImpl {
         while (destination2 != null && findDestination$navigation_runtime_release(destination2.getId(), destination2) != destination2) {
             NavGraph parent2 = destination2.getParent();
             if (parent2 != null) {
-                Bundle bundle3 = (bundle2 == null || !SavedStateReader.m9101isEmptyimpl(SavedStateReader.m9023constructorimpl(bundle2))) ? bundle2 : null;
+                Bundle bundle3 = (bundle2 == null || !SavedStateReader.m9153isEmptyimpl(SavedStateReader.m9075constructorimpl(bundle2))) ? bundle2 : null;
                 ListIterator<NavBackStackEntry> listIterator2 = list2.listIterator(list2.size());
                 while (true) {
                     if (!listIterator2.hasPrevious()) {
@@ -1798,7 +1798,7 @@ public final class NavControllerImpl {
                     pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
                 }
                 addInDefaultArgs = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-                SavedStateWriter.m9109constructorimpl(addInDefaultArgs);
+                SavedStateWriter.m9161constructorimpl(addInDefaultArgs);
             }
             NavDestination destination2 = matchRouteComprehensive.getDestination();
             this.navController.writeIntent$navigation_runtime_release(NavDeepLinkRequest.Builder.Companion.fromUri(NavUriKt.NavUri(NavDestination.Companion.createRoute(destination.getRoute()))).build(), addInDefaultArgs);
@@ -1845,13 +1845,13 @@ public final class NavControllerImpl {
             pairArr = (Pair[]) arrayList2.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9109constructorimpl(bundleOf);
+        SavedStateWriter.m9161constructorimpl(bundleOf);
         for (Map.Entry<String, Navigator<? extends NavDestination>> entry2 : this._navigatorProvider.getNavigators().entrySet()) {
             String key = entry2.getKey();
             Bundle onSaveState = entry2.getValue().onSaveState();
             if (onSaveState != null) {
                 arrayList.add(key);
-                SavedStateWriter.m9136putSavedStateimpl(SavedStateWriter.m9109constructorimpl(bundleOf), key, onSaveState);
+                SavedStateWriter.m9188putSavedStateimpl(SavedStateWriter.m9161constructorimpl(bundleOf), key, onSaveState);
             }
         }
         if (arrayList.isEmpty()) {
@@ -1868,9 +1868,9 @@ public final class NavControllerImpl {
                 pairArr5 = (Pair[]) arrayList3.toArray(new Pair[0]);
             }
             bundle = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr5, pairArr5.length));
-            Bundle m9109constructorimpl = SavedStateWriter.m9109constructorimpl(bundle);
-            SavedStateWriter.m9144putStringListimpl(SavedStateWriter.m9109constructorimpl(bundleOf), KEY_NAVIGATOR_STATE_NAMES, arrayList);
-            SavedStateWriter.m9136putSavedStateimpl(m9109constructorimpl, KEY_NAVIGATOR_STATE, bundleOf);
+            Bundle m9161constructorimpl = SavedStateWriter.m9161constructorimpl(bundle);
+            SavedStateWriter.m9196putStringListimpl(SavedStateWriter.m9161constructorimpl(bundleOf), KEY_NAVIGATOR_STATE_NAMES, arrayList);
+            SavedStateWriter.m9188putSavedStateimpl(m9161constructorimpl, KEY_NAVIGATOR_STATE, bundleOf);
         }
         if (!this.backQueue.isEmpty()) {
             if (bundle == null) {
@@ -1885,7 +1885,7 @@ public final class NavControllerImpl {
                     pairArr4 = (Pair[]) arrayList4.toArray(new Pair[0]);
                 }
                 Bundle bundleOf2 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr4, pairArr4.length));
-                SavedStateWriter.m9109constructorimpl(bundleOf2);
+                SavedStateWriter.m9161constructorimpl(bundleOf2);
                 bundle = bundleOf2;
             }
             ArrayList arrayList5 = new ArrayList();
@@ -1893,7 +1893,7 @@ public final class NavControllerImpl {
             while (it.hasNext()) {
                 arrayList5.add(new NavBackStackEntryState((NavBackStackEntry) it.next()).writeToState());
             }
-            SavedStateWriter.m9138putSavedStateListimpl(SavedStateWriter.m9109constructorimpl(bundle), KEY_BACK_STACK, arrayList5);
+            SavedStateWriter.m9190putSavedStateListimpl(SavedStateWriter.m9161constructorimpl(bundle), KEY_BACK_STACK, arrayList5);
         }
         if (!this.backStackMap.isEmpty()) {
             if (bundle == null) {
@@ -1908,7 +1908,7 @@ public final class NavControllerImpl {
                     pairArr3 = (Pair[]) arrayList6.toArray(new Pair[0]);
                 }
                 Bundle bundleOf3 = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr3, pairArr3.length));
-                SavedStateWriter.m9109constructorimpl(bundleOf3);
+                SavedStateWriter.m9161constructorimpl(bundleOf3);
                 bundle = bundleOf3;
             }
             int[] iArr = new int[this.backStackMap.size()];
@@ -1925,9 +1925,9 @@ public final class NavControllerImpl {
                 arrayList7.add(value);
                 i = i2;
             }
-            Bundle m9109constructorimpl2 = SavedStateWriter.m9109constructorimpl(bundle);
-            SavedStateWriter.m9127putIntArrayimpl(m9109constructorimpl2, KEY_BACK_STACK_DEST_IDS, iArr);
-            SavedStateWriter.m9144putStringListimpl(m9109constructorimpl2, KEY_BACK_STACK_IDS, arrayList7);
+            Bundle m9161constructorimpl2 = SavedStateWriter.m9161constructorimpl(bundle);
+            SavedStateWriter.m9179putIntArrayimpl(m9161constructorimpl2, KEY_BACK_STACK_DEST_IDS, iArr);
+            SavedStateWriter.m9196putStringListimpl(m9161constructorimpl2, KEY_BACK_STACK_IDS, arrayList7);
         }
         if (!this.backStackStates.isEmpty()) {
             if (bundle == null) {
@@ -1942,7 +1942,7 @@ public final class NavControllerImpl {
                     pairArr2 = (Pair[]) arrayList8.toArray(new Pair[0]);
                 }
                 bundle = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr2, pairArr2.length));
-                SavedStateWriter.m9109constructorimpl(bundle);
+                SavedStateWriter.m9161constructorimpl(bundle);
             }
             ArrayList arrayList9 = new ArrayList();
             for (Map.Entry<String, ArrayDeque<NavBackStackEntryState>> entry8 : this.backStackStates.entrySet()) {
@@ -1952,9 +1952,9 @@ public final class NavControllerImpl {
                 for (NavBackStackEntryState navBackStackEntryState : entry8.getValue()) {
                     arrayList10.add(navBackStackEntryState.writeToState());
                 }
-                SavedStateWriter.m9138putSavedStateListimpl(SavedStateWriter.m9109constructorimpl(bundle), KEY_BACK_STACK_STATES_PREFIX + key2, arrayList10);
+                SavedStateWriter.m9190putSavedStateListimpl(SavedStateWriter.m9161constructorimpl(bundle), KEY_BACK_STACK_STATES_PREFIX + key2, arrayList10);
             }
-            SavedStateWriter.m9144putStringListimpl(SavedStateWriter.m9109constructorimpl(bundle), KEY_BACK_STACK_STATES_IDS, arrayList9);
+            SavedStateWriter.m9196putStringListimpl(SavedStateWriter.m9161constructorimpl(bundle), KEY_BACK_STACK_STATES_IDS, arrayList9);
         }
         return bundle;
     }
@@ -2114,30 +2114,30 @@ public final class NavControllerImpl {
         if (bundle == null) {
             return;
         }
-        Bundle m9023constructorimpl = SavedStateReader.m9023constructorimpl(bundle);
-        this.navigatorStateToRestore = SavedStateReader.m9024containsimpl(m9023constructorimpl, KEY_NAVIGATOR_STATE) ? SavedStateReader.m9080getSavedStateimpl(m9023constructorimpl, KEY_NAVIGATOR_STATE) : null;
+        Bundle m9075constructorimpl = SavedStateReader.m9075constructorimpl(bundle);
+        this.navigatorStateToRestore = SavedStateReader.m9076containsimpl(m9075constructorimpl, KEY_NAVIGATOR_STATE) ? SavedStateReader.m9132getSavedStateimpl(m9075constructorimpl, KEY_NAVIGATOR_STATE) : null;
         int i = 0;
-        this.backStackToRestore = SavedStateReader.m9024containsimpl(m9023constructorimpl, KEY_BACK_STACK) ? (Bundle[]) SavedStateReader.m9083getSavedStateListimpl(m9023constructorimpl, KEY_BACK_STACK).toArray(new Bundle[0]) : null;
+        this.backStackToRestore = SavedStateReader.m9076containsimpl(m9075constructorimpl, KEY_BACK_STACK) ? (Bundle[]) SavedStateReader.m9135getSavedStateListimpl(m9075constructorimpl, KEY_BACK_STACK).toArray(new Bundle[0]) : null;
         this.backStackStates.clear();
-        if (SavedStateReader.m9024containsimpl(m9023constructorimpl, KEY_BACK_STACK_DEST_IDS) && SavedStateReader.m9024containsimpl(m9023constructorimpl, KEY_BACK_STACK_IDS)) {
-            int[] m9055getIntArrayimpl = SavedStateReader.m9055getIntArrayimpl(m9023constructorimpl, KEY_BACK_STACK_DEST_IDS);
-            List<String> m9097getStringListimpl = SavedStateReader.m9097getStringListimpl(m9023constructorimpl, KEY_BACK_STACK_IDS);
-            int length = m9055getIntArrayimpl.length;
+        if (SavedStateReader.m9076containsimpl(m9075constructorimpl, KEY_BACK_STACK_DEST_IDS) && SavedStateReader.m9076containsimpl(m9075constructorimpl, KEY_BACK_STACK_IDS)) {
+            int[] m9107getIntArrayimpl = SavedStateReader.m9107getIntArrayimpl(m9075constructorimpl, KEY_BACK_STACK_DEST_IDS);
+            List<String> m9149getStringListimpl = SavedStateReader.m9149getStringListimpl(m9075constructorimpl, KEY_BACK_STACK_IDS);
+            int length = m9107getIntArrayimpl.length;
             int i2 = 0;
             while (i < length) {
                 int i3 = i2 + 1;
-                this.backStackMap.put(Integer.valueOf(m9055getIntArrayimpl[i]), !Intrinsics.areEqual(m9097getStringListimpl.get(i2), "") ? m9097getStringListimpl.get(i2) : null);
+                this.backStackMap.put(Integer.valueOf(m9107getIntArrayimpl[i]), !Intrinsics.areEqual(m9149getStringListimpl.get(i2), "") ? m9149getStringListimpl.get(i2) : null);
                 i++;
                 i2 = i3;
             }
         }
-        if (SavedStateReader.m9024containsimpl(m9023constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
-            for (String str : SavedStateReader.m9097getStringListimpl(m9023constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
-                if (SavedStateReader.m9024containsimpl(m9023constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str)) {
-                    List<Bundle> m9083getSavedStateListimpl = SavedStateReader.m9083getSavedStateListimpl(m9023constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str);
+        if (SavedStateReader.m9076containsimpl(m9075constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
+            for (String str : SavedStateReader.m9149getStringListimpl(m9075constructorimpl, KEY_BACK_STACK_STATES_IDS)) {
+                if (SavedStateReader.m9076containsimpl(m9075constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str)) {
+                    List<Bundle> m9135getSavedStateListimpl = SavedStateReader.m9135getSavedStateListimpl(m9075constructorimpl, KEY_BACK_STACK_STATES_PREFIX + str);
                     Map<String, ArrayDeque<NavBackStackEntryState>> map = this.backStackStates;
-                    ArrayDeque<NavBackStackEntryState> arrayDeque = new ArrayDeque<>(m9083getSavedStateListimpl.size());
-                    for (Bundle bundle2 : m9083getSavedStateListimpl) {
+                    ArrayDeque<NavBackStackEntryState> arrayDeque = new ArrayDeque<>(m9135getSavedStateListimpl.size());
+                    for (Bundle bundle2 : m9135getSavedStateListimpl) {
                         arrayDeque.add(new NavBackStackEntryState(bundle2));
                     }
                     map.put(str, arrayDeque);

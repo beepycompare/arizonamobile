@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InputField.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$InputFieldKt {
     public static final ComposableSingletons$InputFieldKt INSTANCE = new ComposableSingletons$InputFieldKt();
@@ -23,7 +23,7 @@ public final class ComposableSingletons$InputFieldKt {
     });
 
     /* renamed from: getLambda$-1682333503$dialogs  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9731getLambda$1682333503$dialogs() {
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9782getLambda$1682333503$dialogs() {
         return f53lambda$1682333503;
     }
 

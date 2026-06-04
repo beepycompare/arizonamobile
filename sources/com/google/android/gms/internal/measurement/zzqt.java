@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Process;
 import android.os.StrictMode;
+import coil3.util.UtilsKt;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Futures;
@@ -128,7 +129,7 @@ public final class zzqt {
                 sb.append(zzb);
                 String sb2 = sb.toString();
                 zzmz zzmzVar = new zzmz(zzc2.zza(), str, this.zze);
-                Uri.Builder scheme = new Uri.Builder().scheme("file");
+                Uri.Builder scheme = new Uri.Builder().scheme(UtilsKt.SCHEME_FILE);
                 String str3 = File.separator;
                 String str4 = File.separator;
                 String obj = zzmzVar.zza().toString();

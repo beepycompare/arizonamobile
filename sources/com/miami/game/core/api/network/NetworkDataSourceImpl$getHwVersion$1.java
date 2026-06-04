@@ -1,14 +1,14 @@
 package com.miami.game.core.api.network;
 
-import androidx.compose.runtime.GapComposerKt;
+import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NetworkDataSourceImpl.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {}, l = {124}, m = "getHwVersion", n = {}, nl = {GapComposerKt.nodeKey}, s = {}, v = 2)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "getHwVersion", n = {}, nl = {131}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class NetworkDataSourceImpl$getHwVersion$1 extends ContinuationImpl {
     int label;

@@ -100,7 +100,7 @@ public class ExpandCollapseAnimationHelper {
         ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.internal.ExpandCollapseAnimationHelper$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ExpandCollapseAnimationHelper.this.m9524xeb41e2ac(rect, valueAnimator);
+                ExpandCollapseAnimationHelper.this.m9575xeb41e2ac(rect, valueAnimator);
             }
         });
         ValueAnimator.AnimatorUpdateListener animatorUpdateListener = this.additionalUpdateListener;
@@ -114,7 +114,7 @@ public class ExpandCollapseAnimationHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getExpandCollapseAnimator$0$com-google-android-material-internal-ExpandCollapseAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m9524xeb41e2ac(Rect rect, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9575xeb41e2ac(Rect rect, ValueAnimator valueAnimator) {
         ViewUtils.setBoundsFromRect(this.expandedView, rect);
     }
 

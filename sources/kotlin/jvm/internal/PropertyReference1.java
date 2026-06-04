@@ -25,7 +25,7 @@ public abstract class PropertyReference1 extends PropertyReference implements KP
         return get(obj);
     }
 
-    @Override // kotlin.reflect.KProperty
+    @Override // kotlin.reflect.KProperty, kotlin.reflect.KProperty0
     public KProperty1.Getter getGetter() {
         return ((KProperty1) getReflected()).getGetter();
     }

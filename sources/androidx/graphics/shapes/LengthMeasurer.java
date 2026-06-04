@@ -13,17 +13,17 @@ public final class LengthMeasurer implements Measurer {
     @Override // androidx.graphics.shapes.Measurer
     public float measureCubic(Cubic c) {
         Intrinsics.checkNotNullParameter(c, "c");
-        return Float.intBitsToFloat((int) (m8701closestProgressToXgqJiTY(c, Float.POSITIVE_INFINITY) & 4294967295L));
+        return Float.intBitsToFloat((int) (m8753closestProgressToXgqJiTY(c, Float.POSITIVE_INFINITY) & 4294967295L));
     }
 
     @Override // androidx.graphics.shapes.Measurer
     public float findCubicCutPoint(Cubic c, float f) {
         Intrinsics.checkNotNullParameter(c, "c");
-        return Float.intBitsToFloat((int) (m8701closestProgressToXgqJiTY(c, f) >> 32));
+        return Float.intBitsToFloat((int) (m8753closestProgressToXgqJiTY(c, f) >> 32));
     }
 
     /* renamed from: closestProgressTo-XgqJiTY  reason: not valid java name */
-    private final long m8701closestProgressToXgqJiTY(Cubic cubic, float f) {
+    private final long m8753closestProgressToXgqJiTY(Cubic cubic, float f) {
         long m12constructorimpl = FloatFloatPair.m12constructorimpl(cubic.getAnchor0X(), cubic.getAnchor0Y());
         int i = this.segments;
         float f2 = 0.0f;
@@ -32,18 +32,18 @@ public final class LengthMeasurer implements Measurer {
             float f3 = f;
             while (true) {
                 float f4 = i2 / this.segments;
-                long m8700pointOnCurveOOQOV4g$graphics_shapes = cubic.m8700pointOnCurveOOQOV4g$graphics_shapes(f4);
-                float m8709getDistanceDnnuFBc = PointKt.m8709getDistanceDnnuFBc(PointKt.m8714minusybeJwSQ(m8700pointOnCurveOOQOV4g$graphics_shapes, m12constructorimpl));
-                if (m8709getDistanceDnnuFBc < f3) {
-                    f3 -= m8709getDistanceDnnuFBc;
-                    f2 += m8709getDistanceDnnuFBc;
+                long m8752pointOnCurveOOQOV4g$graphics_shapes = cubic.m8752pointOnCurveOOQOV4g$graphics_shapes(f4);
+                float m8761getDistanceDnnuFBc = PointKt.m8761getDistanceDnnuFBc(PointKt.m8766minusybeJwSQ(m8752pointOnCurveOOQOV4g$graphics_shapes, m12constructorimpl));
+                if (m8761getDistanceDnnuFBc < f3) {
+                    f3 -= m8761getDistanceDnnuFBc;
+                    f2 += m8761getDistanceDnnuFBc;
                     if (i2 == i) {
                         break;
                     }
                     i2++;
-                    m12constructorimpl = m8700pointOnCurveOOQOV4g$graphics_shapes;
+                    m12constructorimpl = m8752pointOnCurveOOQOV4g$graphics_shapes;
                 } else {
-                    return FloatFloatPair.m12constructorimpl(f4 - ((1.0f - (f3 / m8709getDistanceDnnuFBc)) / this.segments), f);
+                    return FloatFloatPair.m12constructorimpl(f4 - ((1.0f - (f3 / m8761getDistanceDnnuFBc)) / this.segments), f);
                 }
             }
         }

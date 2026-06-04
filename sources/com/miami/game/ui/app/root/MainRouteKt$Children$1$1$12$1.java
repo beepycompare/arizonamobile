@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MainRoute.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final /* synthetic */ class MainRouteKt$Children$1$1$12$1 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

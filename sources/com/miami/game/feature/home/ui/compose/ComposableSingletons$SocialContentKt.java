@@ -9,7 +9,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SocialContent.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$SocialContentKt {
     public static final ComposableSingletons$SocialContentKt INSTANCE = new ComposableSingletons$SocialContentKt();
@@ -35,7 +35,7 @@ public final class ComposableSingletons$SocialContentKt {
     });
 
     /* renamed from: getLambda$-2110633905$home  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9756getLambda$2110633905$home() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9807getLambda$2110633905$home() {
         return f62lambda$2110633905;
     }
 

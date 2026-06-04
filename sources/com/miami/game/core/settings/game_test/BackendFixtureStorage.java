@@ -24,7 +24,7 @@ import kotlin.text.StringsKt;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* compiled from: BackendFixtureStorage.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0007J\u0010\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\tH\u0007J\u0016\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\u0006\u0010\u000f\u001a\u00020\u0010H\u0002J\u0018\u0010\u0011\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0002J\u001e\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\r2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0002J\u0014\u0010\u0014\u001a\u00020\t*\u00020\u00152\u0006\u0010\u0016\u001a\u00020\tH\u0002R\u000e\u0010\u0017\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/miami/game/core/settings/game_test/BackendFixtureStorage;", "", "<init>", "()V", "load", "Lcom/miami/game/core/settings/game_test/BackendFixture;", "context", "Landroid/content/Context;", "path", "", "parse", "rawFixture", "parseEvents", "", "Lcom/miami/game/core/settings/game_test/BackendFixtureEvent;", "array", "Lorg/json/JSONArray;", "resolveRawFixture", "resolveCandidateFiles", "Ljava/io/File;", "extractRawMessage", "Lorg/json/JSONObject;", "key", "TAG", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001c\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0007b\u0002\b\nJ\u0014\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\tH\u0007b\u0002\b\nJ\u0016\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0018\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0002J\u001e\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u000e2\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0002J\u0014\u0010\u0015\u001a\u00020\t*\u00020\u00162\u0006\u0010\u0017\u001a\u00020\tH\u0002R\u000e\u0010\u0018\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0019"}, d2 = {"Lcom/miami/game/core/settings/game_test/BackendFixtureStorage;", "", "<init>", "()V", "load", "Lcom/miami/game/core/settings/game_test/BackendFixture;", "context", "Landroid/content/Context;", "path", "", "Lkotlin/jvm/JvmStatic;", "parse", "rawFixture", "parseEvents", "", "Lcom/miami/game/core/settings/game_test/BackendFixtureEvent;", "array", "Lorg/json/JSONArray;", "resolveRawFixture", "resolveCandidateFiles", "Ljava/io/File;", "extractRawMessage", "Lorg/json/JSONObject;", "key", "TAG", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class BackendFixtureStorage {
     public static final BackendFixtureStorage INSTANCE = new BackendFixtureStorage();
@@ -124,7 +124,7 @@ public final class BackendFixtureStorage {
 
     private final String resolveRawFixture(Context context, String str) {
         Object obj;
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         Iterator<T> it = resolveCandidateFiles(context, str).iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -153,16 +153,16 @@ public final class BackendFixtureStorage {
             BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
             String readText = TextStreamsKt.readText(bufferedReader);
             CloseableKt.closeFinally(bufferedReader, null);
-            m9843constructorimpl = Result.m9843constructorimpl(readText);
+            m9896constructorimpl = Result.m9896constructorimpl(readText);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9846exceptionOrNullimpl = Result.m9846exceptionOrNullimpl(m9843constructorimpl);
-        if (m9846exceptionOrNullimpl != null) {
-            Log.w(TAG, "Unable to load backend fixture asset '" + str + "'", m9846exceptionOrNullimpl);
+        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
+        if (m9899exceptionOrNullimpl != null) {
+            Log.w(TAG, "Unable to load backend fixture asset '" + str + "'", m9899exceptionOrNullimpl);
         }
-        String str2 = Result.m9849isFailureimpl(m9843constructorimpl) ? null : m9843constructorimpl;
+        String str2 = Result.m9902isFailureimpl(m9896constructorimpl) ? null : m9896constructorimpl;
         if (str2 != null) {
             return str2;
         }

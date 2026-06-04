@@ -11,9 +11,11 @@ import androidx.exifinterface.media.ExifInterface;
 import com.google.gson.Gson;
 import java.lang.reflect.Type;
 import kotlin.Metadata;
+import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference2Impl;
@@ -22,7 +24,7 @@ import kotlin.reflect.KProperty;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.Dispatchers;
 /* compiled from: LocalRepository.kt */
-@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\b\u0016\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ&\u0010\u0013\u001a\u00020\u0014\"\u0004\b\u0000\u0010\u00152\u0006\u0010\u0016\u001a\u00020\u00022\b\u0010\u0017\u001a\u0004\u0018\u0001H\u0015H\u0096@¢\u0006\u0002\u0010\u0018J*\u0010\u0019\u001a\u0004\u0018\u0001H\u0015\"\b\b\u0000\u0010\u0015*\u00020\u001a2\u0006\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u001b\u001a\u00020\u001cH\u0096@¢\u0006\u0002\u0010\u001dJ\u0016\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u0016\u001a\u00020\u0002H\u0096@¢\u0006\u0002\u0010\u001fJ\u0016\u0010 \u001a\u00020!2\u0006\u0010\u0016\u001a\u00020\u0002H\u0096@¢\u0006\u0002\u0010\u001fR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R%\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f*\u00020\u00048FX\u0086\u0084\u0002¢\u0006\f\n\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lcom/miami/game/core/local/repository/common/LocalRepository;", "Lcom/miami/game/core/local/repository/common/IKeyValueRepository;", "", "context", "Landroid/content/Context;", "gson", "Lcom/google/gson/Gson;", "<init>", "(Landroid/content/Context;Lcom/google/gson/Gson;)V", "getContext", "()Landroid/content/Context;", "appDataStore", "Landroidx/datastore/core/DataStore;", "Landroidx/datastore/preferences/core/Preferences;", "getAppDataStore", "(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", "appDataStore$delegate", "Lkotlin/properties/ReadOnlyProperty;", "dataStorePreferences", "save", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "key", "value", "(Ljava/lang/String;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "get", "", "t", "Ljava/lang/reflect/Type;", "(Ljava/lang/String;Ljava/lang/reflect/Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "remove", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "has", "", "local-repository"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\b\u0016\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ&\u0010\u0013\u001a\u00020\u0014\"\u0004\b\u0000\u0010\u00152\u0006\u0010\u0016\u001a\u00020\u00022\b\u0010\u0017\u001a\u0004\u0018\u0001H\u0015H\u0096@¢\u0006\u0002\u0010\u0018J*\u0010\u0019\u001a\u0004\u0018\u0001H\u0015\"\b\b\u0000\u0010\u0015*\u00020\u001a2\u0006\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u001b\u001a\u00020\u001cH\u0096@¢\u0006\u0002\u0010\u001dJ\u0016\u0010\u001e\u001a\u00020\u00142\u0006\u0010\u0016\u001a\u00020\u0002H\u0096@¢\u0006\u0002\u0010\u001fJ\u0016\u0010 \u001a\u00020!2\u0006\u0010\u0016\u001a\u00020\u0002H\u0096@¢\u0006\u0002\u0010\u001fR\u0011\u0010\u0003\u001a\u00020\u0004¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R%\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\f*\u00020\u00048FX\u0086\u0084\u0002¢\u0006\f\n\u0004\b\u0010\u0010\u0011\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lcom/miami/game/core/local/repository/common/LocalRepository;", "Lcom/miami/game/core/local/repository/common/IKeyValueRepository;", "", "context", "Landroid/content/Context;", "gson", "Lcom/google/gson/Gson;", "<init>", "(Landroid/content/Context;Lcom/google/gson/Gson;)V", "getContext", "()Landroid/content/Context;", "appDataStore", "Landroidx/datastore/core/DataStore;", "Landroidx/datastore/preferences/core/Preferences;", "getAppDataStore", "(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", "appDataStore$delegate", "Lkotlin/properties/ReadOnlyProperty;", "dataStorePreferences", "save", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "key", "value", "(Ljava/lang/String;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "get", "", "t", "Ljava/lang/reflect/Type;", "(Ljava/lang/String;Ljava/lang/reflect/Type;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "remove", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "has", "", "local-repository"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public class LocalRepository implements IKeyValueRepository<String> {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {new PropertyReference2Impl(LocalRepository.class, "appDataStore", "getAppDataStore(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", 0)};
@@ -95,18 +97,96 @@ public class LocalRepository implements IKeyValueRepository<String> {
         return PreferencesFactory.createEmpty();
     }
 
-    static /* synthetic */ <V> Object save$suspendImpl(LocalRepository localRepository, String str, V v, Continuation<? super Unit> continuation) {
-        Object withContext = BuildersKt.withContext(Dispatchers.getIO(), new LocalRepository$save$2(localRepository, v, str, null), continuation);
-        return withContext == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withContext : Unit.INSTANCE;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static /* synthetic */ <V> Object save$suspendImpl(LocalRepository localRepository, String str, V v, Continuation<? super Unit> continuation) {
+        LocalRepository$save$1 localRepository$save$1;
+        int i;
+        if (continuation instanceof LocalRepository$save$1) {
+            localRepository$save$1 = (LocalRepository$save$1) continuation;
+            if ((localRepository$save$1.label & Integer.MIN_VALUE) != 0) {
+                localRepository$save$1.label -= Integer.MIN_VALUE;
+                Object obj = localRepository$save$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = localRepository$save$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    localRepository$save$1.L$0 = SpillingKt.nullOutSpilledVariable(localRepository);
+                    localRepository$save$1.L$1 = SpillingKt.nullOutSpilledVariable(str);
+                    localRepository$save$1.L$2 = SpillingKt.nullOutSpilledVariable(v);
+                    localRepository$save$1.label = 1;
+                    if (BuildersKt.withContext(Dispatchers.getIO(), new LocalRepository$save$2(localRepository, v, str, null), localRepository$save$1) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                } else if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    Object obj2 = localRepository$save$1.L$2;
+                    String str2 = (String) localRepository$save$1.L$1;
+                    LocalRepository localRepository2 = (LocalRepository) localRepository$save$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                return Unit.INSTANCE;
+            }
+        }
+        localRepository$save$1 = new LocalRepository$save$1(localRepository, continuation);
+        Object obj3 = localRepository$save$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = localRepository$save$1.label;
+        if (i != 0) {
+        }
+        return Unit.INSTANCE;
     }
 
     static /* synthetic */ <V> Object get$suspendImpl(LocalRepository localRepository, String str, Type type, Continuation<? super V> continuation) {
         return BuildersKt.withContext(Dispatchers.getIO(), new LocalRepository$get$2(localRepository, str, type, null), continuation);
     }
 
-    static /* synthetic */ Object remove$suspendImpl(LocalRepository localRepository, String str, Continuation<? super Unit> continuation) {
-        Object withContext = BuildersKt.withContext(Dispatchers.getIO(), new LocalRepository$remove$2(localRepository, str, null), continuation);
-        return withContext == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? withContext : Unit.INSTANCE;
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static /* synthetic */ Object remove$suspendImpl(LocalRepository localRepository, String str, Continuation<? super Unit> continuation) {
+        LocalRepository$remove$1 localRepository$remove$1;
+        int i;
+        if (continuation instanceof LocalRepository$remove$1) {
+            localRepository$remove$1 = (LocalRepository$remove$1) continuation;
+            if ((localRepository$remove$1.label & Integer.MIN_VALUE) != 0) {
+                localRepository$remove$1.label -= Integer.MIN_VALUE;
+                Object obj = localRepository$remove$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = localRepository$remove$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    localRepository$remove$1.L$0 = SpillingKt.nullOutSpilledVariable(localRepository);
+                    localRepository$remove$1.L$1 = SpillingKt.nullOutSpilledVariable(str);
+                    localRepository$remove$1.label = 1;
+                    if (BuildersKt.withContext(Dispatchers.getIO(), new LocalRepository$remove$2(localRepository, str, null), localRepository$remove$1) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                } else if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    String str2 = (String) localRepository$remove$1.L$1;
+                    LocalRepository localRepository2 = (LocalRepository) localRepository$remove$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                return Unit.INSTANCE;
+            }
+        }
+        localRepository$remove$1 = new LocalRepository$remove$1(localRepository, continuation);
+        Object obj2 = localRepository$remove$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = localRepository$remove$1.label;
+        if (i != 0) {
+        }
+        return Unit.INSTANCE;
     }
 
     static /* synthetic */ Object has$suspendImpl(LocalRepository localRepository, String str, Continuation<? super Boolean> continuation) {

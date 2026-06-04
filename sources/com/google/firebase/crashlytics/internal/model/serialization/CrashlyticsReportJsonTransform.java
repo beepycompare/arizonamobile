@@ -3,6 +3,7 @@ package com.google.firebase.crashlytics.internal.model.serialization;
 import android.util.Base64;
 import android.util.JsonReader;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import coil3.util.UtilsKt;
 import com.facebook.internal.NativeProtocol;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.model.AutoCrashlyticsReportEncoder;
@@ -1273,7 +1274,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case 3143036:
-                    if (nextName.equals("file")) {
+                    if (nextName.equals(UtilsKt.SCHEME_FILE)) {
                         c = 3;
                         break;
                     }

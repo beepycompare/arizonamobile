@@ -15,7 +15,7 @@ import kotlin.annotation.MustBeDocumented;
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.PROPERTY, AnnotationTarget.CLASS})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public @interface SerialName {
     String value();
 }

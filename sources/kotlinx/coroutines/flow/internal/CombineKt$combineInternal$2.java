@@ -151,7 +151,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
             this.I$1 = length;
             this.I$2 = b2;
             this.label = i4;
-            obj2 = channel.mo11363receiveCatchingJP2dKIU(this);
+            obj2 = channel.mo11437receiveCatchingJP2dKIU(this);
             if (obj2 != coroutine_suspended) {
             }
             return coroutine_suspended;
@@ -184,13 +184,13 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                 this.I$1 = length;
                 this.I$2 = b2;
                 this.label = i4;
-                obj2 = channel.mo11363receiveCatchingJP2dKIU(this);
+                obj2 = channel.mo11437receiveCatchingJP2dKIU(this);
                 if (obj2 != coroutine_suspended) {
                     Channel channel4 = channel;
                     bArr2 = bArr;
                     i2 = length;
                     channel2 = channel4;
-                    indexedValue = (IndexedValue) ChannelResult.m11375getOrNullimpl(obj2);
+                    indexedValue = (IndexedValue) ChannelResult.m11449getOrNullimpl(obj2);
                     if (indexedValue != null) {
                         return Unit.INSTANCE;
                     }
@@ -206,7 +206,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                             break;
                         }
                         bArr2[index] = b2;
-                        indexedValue = (IndexedValue) ChannelResult.m11375getOrNullimpl(channel2.mo11364tryReceivePtdJZtk());
+                        indexedValue = (IndexedValue) ChannelResult.m11449getOrNullimpl(channel2.mo11438tryReceivePtdJZtk());
                         if (indexedValue == null) {
                             break;
                         }
@@ -230,7 +230,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                         this.I$1 = length;
                         this.I$2 = b2;
                         this.label = i4;
-                        obj2 = channel.mo11363receiveCatchingJP2dKIU(this);
+                        obj2 = channel.mo11437receiveCatchingJP2dKIU(this);
                         if (obj2 != coroutine_suspended) {
                         }
                     } else {
@@ -279,7 +279,7 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
                         this.I$1 = length;
                         this.I$2 = b2;
                         this.label = i4;
-                        obj2 = channel.mo11363receiveCatchingJP2dKIU(this);
+                        obj2 = channel.mo11437receiveCatchingJP2dKIU(this);
                         if (obj2 != coroutine_suspended) {
                         }
                     }
@@ -296,10 +296,10 @@ final class CombineKt$combineInternal$2 extends SuspendLambda implements Functio
             channel2 = (Channel) this.L$2;
             objArr = (Object[]) this.L$1;
             ResultKt.throwOnFailure(obj);
-            obj2 = ((ChannelResult) obj).m11382unboximpl();
+            obj2 = ((ChannelResult) obj).m11456unboximpl();
             b2 = r32;
             atomicInteger = atomicInteger4;
-            indexedValue = (IndexedValue) ChannelResult.m11375getOrNullimpl(obj2);
+            indexedValue = (IndexedValue) ChannelResult.m11449getOrNullimpl(obj2);
             if (indexedValue != null) {
             }
         }

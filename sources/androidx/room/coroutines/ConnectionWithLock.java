@@ -177,9 +177,9 @@ public final class ConnectionWithLock implements SQLiteConnection, Mutex {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindBlob */
-        public void mo9014bindBlob(int i, byte[] value) {
+        public void mo9066bindBlob(int i, byte[] value) {
             Intrinsics.checkNotNullParameter(value, "value");
-            this.delegate.mo9014bindBlob(i, value);
+            this.delegate.mo9066bindBlob(i, value);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
@@ -189,8 +189,8 @@ public final class ConnectionWithLock implements SQLiteConnection, Mutex {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindDouble */
-        public void mo9015bindDouble(int i, double d) {
-            this.delegate.mo9015bindDouble(i, d);
+        public void mo9067bindDouble(int i, double d) {
+            this.delegate.mo9067bindDouble(i, d);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
@@ -205,27 +205,27 @@ public final class ConnectionWithLock implements SQLiteConnection, Mutex {
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindLong */
-        public void mo9016bindLong(int i, long j) {
-            this.delegate.mo9016bindLong(i, j);
+        public void mo9068bindLong(int i, long j) {
+            this.delegate.mo9068bindLong(i, j);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindNull */
-        public void mo9017bindNull(int i) {
-            this.delegate.mo9017bindNull(i);
+        public void mo9069bindNull(int i) {
+            this.delegate.mo9069bindNull(i);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: bindText */
-        public void mo9018bindText(int i, String value) {
+        public void mo9070bindText(int i, String value) {
             Intrinsics.checkNotNullParameter(value, "value");
-            this.delegate.mo9018bindText(i, value);
+            this.delegate.mo9070bindText(i, value);
         }
 
         @Override // androidx.sqlite.SQLiteStatement
         /* renamed from: clearBindings */
-        public void mo9019clearBindings() {
-            this.delegate.mo9019clearBindings();
+        public void mo9071clearBindings() {
+            this.delegate.mo9071clearBindings();
         }
 
         @Override // androidx.sqlite.SQLiteStatement
@@ -310,7 +310,7 @@ public final class ConnectionWithLock implements SQLiteConnection, Mutex {
         @Override // androidx.sqlite.SQLiteStatement, java.lang.AutoCloseable
         public void close() {
             this.delegate.reset();
-            this.delegate.mo9019clearBindings();
+            this.delegate.mo9071clearBindings();
         }
     }
 }

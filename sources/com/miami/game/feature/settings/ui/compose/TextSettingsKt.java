@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TextSettings.kt */
-@Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u001f\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"TextSettings", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "settings"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000 \n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a1\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0005H\u0007b\u0002\b\u0007b\f\b\b\u0012\b\b\t\u0012\u0004\b\b(\n¢\u0006\u0002\u0010\u0006¨\u0006\u000b"}, d2 = {"TextSettings", "", "text", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "settings"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class TextSettingsKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -30,8 +30,8 @@ public final class TextSettingsKt {
     /* JADX WARN: Removed duplicated region for block: B:23:0x004a  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x004c  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00e6  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00e4  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00ef  */
     /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -65,7 +65,7 @@ public final class TextSettingsKt {
                 }
                 Modifier modifier2 = companion;
                 composer2 = startRestartGroup;
-                TextKt.m3157TextNvy7gAk(text, OffsetKt.m1010offsetVpY3zN4$default(companion, 0.0f, Dp.m8160constructorimpl(-Dp.m8160constructorimpl(1.0f)), 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(20.0f), startRestartGroup, 6), null, null, null, 0L, null, TextAlign.m8031boximpl(TextAlign.Companion.m8038getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 130024);
+                TextKt.m3157TextNvy7gAk(text, OffsetKt.m1010offsetVpY3zN4$default(companion, 0.0f, Dp.m8160constructorimpl(-Dp.m8160constructorimpl(1.0f)), 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(20.0f), startRestartGroup, 6), null, null, null, 0L, null, TextAlign.m8031boximpl(TextAlign.Companion.m8038getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 130024);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

@@ -9,7 +9,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentAdCli
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentAdModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentPage.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final /* synthetic */ class ArizonaRentPage$adAdapter$1 extends FunctionReferenceImpl implements Function2<ArizonaRentAdClickEvent, ArizonaRentAdModel, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */

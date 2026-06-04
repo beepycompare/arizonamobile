@@ -12,7 +12,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: DownloaderSyncRepository.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/miami/game/core/domain/model/DownloaderInfo;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/miami/game/core/domain/model/DownloaderInfo;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.miami.game.core.downloader.sync.data.DownloaderSyncRepository$getTask$2", f = "DownloaderSyncRepository.kt", i = {}, l = {36}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 final class DownloaderSyncRepository$getTask$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super DownloaderInfo>, Object> {

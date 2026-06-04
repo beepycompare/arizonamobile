@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SelectServerScreen.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$SelectServerScreenKt {
     public static final ComposableSingletons$SelectServerScreenKt INSTANCE = new ComposableSingletons$SelectServerScreenKt();

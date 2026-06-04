@@ -51,6 +51,11 @@ public class ResultReceiver implements Parcelable {
 
     /* loaded from: classes.dex */
     class MyResultReceiver extends IResultReceiver.Stub {
+        @Override // android.support.v4.os.IResultReceiver
+        public int getInterfaceVersion() {
+            return 1;
+        }
+
         MyResultReceiver() {
         }
 

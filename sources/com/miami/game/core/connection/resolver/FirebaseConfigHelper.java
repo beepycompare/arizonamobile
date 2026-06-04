@@ -5,7 +5,6 @@ import android.util.Log;
 import com.arizona.game.BuildConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +33,7 @@ import okhttp3.ResponseBody;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: FirebaseServerHandler.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010$\n\u0002\b\b\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J(\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u00052\u0006\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\t2\b\b\u0002\u0010\u001f\u001a\u00020\u0005J\u000e\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0011J\f\u0010\"\u001a\u00020\u0013*\u00020\u0013H\u0002J\u0010\u0010#\u001a\u0004\u0018\u00010\u00112\u0006\u0010!\u001a\u00020\u0011J\f\u0010$\u001a\u00020\u0005*\u00020\u0013H\u0002J\u0010\u0010%\u001a\u00020\u00112\u0006\u0010&\u001a\u00020\u0013H\u0002J\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110(H\u0086@¢\u0006\u0002\u0010)J\u0012\u0010*\u001a\u00020\u00112\b\b\u0002\u0010+\u001a\u00020\u0005H\u0002J\u0010\u0010,\u001a\u00020\u00112\b\b\u0002\u0010+\u001a\u00020\u0005J\u0006\u0010-\u001a\u00020\u0011J\u0006\u0010.\u001a\u00020\u0011J\u0006\u0010/\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\n\u001a\u00020\u000b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000e\u0010\u000f\u001a\u0004\b\f\u0010\rR\u001a\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Lcom/miami/game/core/connection/resolver/FirebaseConfigHelper;", "", "<init>", "()V", "isDebug", "", "isArizona", "isBrazil", "sharedPref", "Landroid/content/SharedPreferences;", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "remoteConfig$delegate", "Lkotlin/Lazy;", "getRawLink", "", "type", "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "linkCache", "", "hostRegex", "Lkotlin/text/Regex;", "httpClient", "Lokhttp3/OkHttpClient;", "setDebug", "", "debug", BuildConfig.FLAVOR, "sharedPreferences", "brazil", "isServiceAvailable", "url", "toReserve", "extractHost", "hasReserve", "fetchLink", "primary", "fetchAll", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getResourceUrl", "useDebug", "getProjectResourceUrl", "getServerApiUrl", "getHudPingUrl", "getChannelsState", "connection-resolver"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010$\n\u0002\b\t\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J(\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u00052\u0006\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\t2\b\b\u0002\u0010\u001f\u001a\u00020\u0005J\u000e\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0011J\f\u0010\"\u001a\u00020\u0013*\u00020\u0013H\u0002J\u0010\u0010#\u001a\u0004\u0018\u00010\u00112\u0006\u0010!\u001a\u00020\u0011J\f\u0010$\u001a\u00020\u0005*\u00020\u0013H\u0002J\u0010\u0010%\u001a\u00020\u00112\u0006\u0010&\u001a\u00020\u0013H\u0002J\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110(H\u0086@¢\u0006\u0002\u0010)J\u001a\u0010*\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110(H\u0086@¢\u0006\u0002\u0010)J\u0012\u0010+\u001a\u00020\u00112\b\b\u0002\u0010,\u001a\u00020\u0005H\u0002J\u0010\u0010-\u001a\u00020\u00112\b\b\u0002\u0010,\u001a\u00020\u0005J\u0006\u0010.\u001a\u00020\u0011J\u0006\u0010/\u001a\u00020\u0011J\u0006\u00100\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\n\u001a\u00020\u000b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000e\u0010\u000f\u001a\u0004\b\f\u0010\rR\u001a\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lcom/miami/game/core/connection/resolver/FirebaseConfigHelper;", "", "<init>", "()V", "isDebug", "", "isArizona", "isBrazil", "sharedPref", "Landroid/content/SharedPreferences;", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "remoteConfig$delegate", "Lkotlin/Lazy;", "getRawLink", "", "type", "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "linkCache", "", "hostRegex", "Lkotlin/text/Regex;", "httpClient", "Lokhttp3/OkHttpClient;", "setDebug", "", "debug", BuildConfig.FLAVOR, "sharedPreferences", "brazil", "isServiceAvailable", "url", "toReserve", "extractHost", "hasReserve", "fetchLink", "primary", "bootstrap", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchAll", "getResourceUrl", "useDebug", "getProjectResourceUrl", "getServerApiUrl", "getHudPingUrl", "getChannelsState", "connection-resolver"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FirebaseConfigHelper {
     private static boolean isArizona;
@@ -55,7 +54,7 @@ public final class FirebaseConfigHelper {
     private static final OkHttpClient httpClient = new OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).writeTimeout(5, TimeUnit.SECONDS).readTimeout(5, TimeUnit.SECONDS).protocols(CollectionsKt.listOf(Protocol.HTTP_1_1)).build();
 
     /* compiled from: FirebaseServerHandler.kt */
-    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -75,12 +74,8 @@ public final class FirebaseConfigHelper {
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                iArr[FirebaseConfigLinks.NEWS_AUTH_BASE_URL.ordinal()] = 4;
+                iArr[FirebaseConfigLinks.MAIN_HUD_PING.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
-            }
-            try {
-                iArr[FirebaseConfigLinks.MAIN_HUD_PING.ordinal()] = 5;
-            } catch (NoSuchFieldError unused5) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -89,7 +84,8 @@ public final class FirebaseConfigHelper {
     private FirebaseConfigHelper() {
     }
 
-    private final FirebaseRemoteConfig getRemoteConfig() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final FirebaseRemoteConfig getRemoteConfig() {
         Object value = remoteConfig$delegate.getValue();
         Intrinsics.checkNotNullExpressionValue(value, "getValue(...)");
         return (FirebaseRemoteConfig) value;
@@ -125,37 +121,42 @@ public final class FirebaseConfigHelper {
             return false;
         }
         try {
-            Response execute = httpClient.newCall(new Request.Builder().url("https://" + extractHost + "/ping.json").header("User-Agent", "Arizona Mobile").get().build()).execute();
-            Response response = execute;
-            if (response.isSuccessful()) {
-                ResponseBody body = response.body();
-                String string = body != null ? body.string() : null;
-                String str2 = string;
-                if (str2 != null && str2.length() != 0) {
-                    try {
-                        String optString = new JSONObject(string).optString("hash");
-                        boolean areEqual = Intrinsics.areEqual(optString, "5aa4731d5d84e09e2f7e7141e560104f");
-                        if (areEqual) {
-                            Log.d("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " OK");
-                        } else {
-                            Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " hash mismatch got=" + optString);
+            try {
+                Response execute = httpClient.newCall(new Request.Builder().url("https://" + extractHost + "/ping.json").header("User-Agent", "Arizona Mobile").get().build()).execute();
+                Response response = execute;
+                if (response.isSuccessful()) {
+                    ResponseBody body = response.body();
+                    String string = body != null ? body.string() : null;
+                    String str2 = string;
+                    if (str2 != null && str2.length() != 0) {
+                        try {
+                            String optString = new JSONObject(string).optString("hash");
+                            boolean areEqual = Intrinsics.areEqual(optString, "5aa4731d5d84e09e2f7e7141e560104f");
+                            if (areEqual) {
+                                Log.d("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " OK");
+                            } else {
+                                Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " hash mismatch got=" + optString);
+                            }
+                            CloseableKt.closeFinally(execute, null);
+                            return areEqual;
+                        } catch (JSONException e) {
+                            Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " bad json: " + e.getMessage());
+                            CloseableKt.closeFinally(execute, null);
+                            return false;
                         }
-                        CloseableKt.closeFinally(execute, null);
-                        return areEqual;
-                    } catch (JSONException e) {
-                        Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " bad json: " + e.getMessage());
-                        CloseableKt.closeFinally(execute, null);
-                        return false;
                     }
+                    Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " empty body");
+                } else {
+                    Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " non-2xx code=" + response.code());
                 }
-                Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " empty body");
-            } else {
-                Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " non-2xx code=" + response.code());
+                CloseableKt.closeFinally(execute, null);
+                return false;
+            } catch (Exception e2) {
+                Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " " + e2.getClass().getSimpleName() + ": " + e2.getMessage());
+                return false;
             }
-            CloseableKt.closeFinally(execute, null);
-            return false;
-        } catch (IOException e2) {
-            Log.w("FirebaseSrvHandler", "isServiceAvailable: " + extractHost + " " + e2.getClass().getSimpleName() + ": " + e2.getMessage());
+        } catch (Exception e3) {
+            Log.w("FirebaseSrvHandler", "isServiceAvailable: cannot build request for host=" + extractHost + ": " + e3.getMessage());
             return false;
         }
     }
@@ -165,13 +166,10 @@ public final class FirebaseConfigHelper {
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
-                    if (i != 4) {
-                        if (i == 5) {
-                            return FirebaseConfigLinks.RESERVE_HUD_PING;
-                        }
-                        throw new IllegalArgumentException("There is no backup link for " + firebaseConfigLinks + " channel.");
+                    if (i == 4) {
+                        return FirebaseConfigLinks.RESERVE_HUD_PING;
                     }
-                    return FirebaseConfigLinks.RESERVE_NEWS_AUTH_BASE_URL;
+                    throw new IllegalArgumentException("There is no backup link for " + firebaseConfigLinks + " channel.");
                 }
                 return FirebaseConfigLinks.RESERVE_SOUND;
             }
@@ -192,20 +190,20 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean hasReserve(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
+            m9896constructorimpl = Result.m9896constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9850isSuccessimpl(m9843constructorimpl);
+        return Result.m9903isSuccessimpl(m9896constructorimpl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String fetchLink(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         String rawLink = getRawLink(firebaseConfigLinks);
         if (isServiceAvailable(rawLink)) {
             return rawLink;
@@ -213,21 +211,25 @@ public final class FirebaseConfigHelper {
         try {
             Result.Companion companion = Result.Companion;
             FirebaseConfigHelper firebaseConfigHelper = this;
-            m9843constructorimpl = Result.m9843constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
+            m9896constructorimpl = Result.m9896constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-            m9843constructorimpl = null;
+        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+            m9896constructorimpl = null;
         }
-        String str = (String) m9843constructorimpl;
+        String str = (String) m9896constructorimpl;
         if (str != null && isServiceAvailable(str)) {
             Log.w("FirebaseSrvHandler", "fetchLink: primary=" + firebaseConfigLinks.getKey() + " down, fall back to reserve");
             return str;
         }
         Log.w("FirebaseSrvHandler", "fetchLink: primary=" + firebaseConfigLinks.getKey() + " and reserve both unavailable, keep primary");
         return rawLink;
+    }
+
+    public final Object bootstrap(Continuation<? super Map<FirebaseConfigLinks, String>> continuation) {
+        return BuildersKt.withContext(Dispatchers.getIO(), new FirebaseConfigHelper$bootstrap$2(null), continuation);
     }
 
     public final Object fetchAll(Continuation<? super Map<FirebaseConfigLinks, String>> continuation) {
@@ -289,7 +291,7 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence getChannelsState$lambda$0(FirebaseConfigLinks linkType) {
-        Object m9843constructorimpl;
+        Object m9896constructorimpl;
         Intrinsics.checkNotNullParameter(linkType, "linkType");
         String str = linkCache.get(linkType);
         if (str == null) {
@@ -299,15 +301,15 @@ public final class FirebaseConfigHelper {
         String rawLink = firebaseConfigHelper.getRawLink(linkType);
         try {
             Result.Companion companion = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
+            m9896constructorimpl = Result.m9896constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-            m9843constructorimpl = null;
+        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+            m9896constructorimpl = null;
         }
-        String str2 = (String) m9843constructorimpl;
+        String str2 = (String) m9896constructorimpl;
         if (!Intrinsics.areEqual(str, rawLink) && Intrinsics.areEqual(str, str2)) {
             return "1";
         }

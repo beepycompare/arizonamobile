@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: CertificateScreen.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.arizonagames.feature.arizona.certificate.CertificateScreen$startAnimatedScreen$2$1", f = "CertificateScreen.kt", i = {0, 0}, l = {133}, m = "invokeSuspend", n = {"$this$launch", "currentZoom"}, nl = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, s = {"L$0", "F$0"}, v = 2)
 /* loaded from: classes3.dex */
 final class CertificateScreen$startAnimatedScreen$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

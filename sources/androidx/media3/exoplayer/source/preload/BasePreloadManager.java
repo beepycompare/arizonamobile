@@ -226,14 +226,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
         this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                BasePreloadManager.this.m8910x3eecb679(mediaSource, predicate);
+                BasePreloadManager.this.m8962x3eecb679(mediaSource, predicate);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onCompleted$1$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8910x3eecb679(MediaSource mediaSource, Predicate predicate) {
+    public /* synthetic */ void m8962x3eecb679(MediaSource mediaSource, Predicate predicate) {
         PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaSource);
         if (targetPreloadStatusIfCurrentlyPreloading == null) {
             return;
@@ -255,14 +255,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
         this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                BasePreloadManager.this.m8911xb3d7f77b(mediaItem, predicate);
+                BasePreloadManager.this.m8963xb3d7f77b(mediaItem, predicate);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onCompleted$3$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8911xb3d7f77b(MediaItem mediaItem, Predicate predicate) {
+    public /* synthetic */ void m8963xb3d7f77b(MediaItem mediaItem, Predicate predicate) {
         PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaItem);
         if (targetPreloadStatusIfCurrentlyPreloading == null) {
             return;
@@ -284,14 +284,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
         this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                BasePreloadManager.this.m8912x72a3597a(mediaSource, predicate, preloadException);
+                BasePreloadManager.this.m8964x72a3597a(mediaSource, predicate, preloadException);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onError$5$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8912x72a3597a(MediaSource mediaSource, Predicate predicate, final PreloadException preloadException) {
+    public /* synthetic */ void m8964x72a3597a(MediaSource mediaSource, Predicate predicate, final PreloadException preloadException) {
         PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaSource);
         if (targetPreloadStatusIfCurrentlyPreloading != null && predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
             this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda5
@@ -309,14 +309,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
         this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BasePreloadManager.this.m8913xe78e9a7c(mediaItem, predicate, preloadException);
+                BasePreloadManager.this.m8965xe78e9a7c(mediaItem, predicate, preloadException);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onError$7$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8913xe78e9a7c(MediaItem mediaItem, Predicate predicate, final PreloadException preloadException) {
+    public /* synthetic */ void m8965xe78e9a7c(MediaItem mediaItem, Predicate predicate, final PreloadException preloadException) {
         PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaItem);
         if (targetPreloadStatusIfCurrentlyPreloading != null && predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
             this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda6
@@ -334,14 +334,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
         Util.postOrRun(this.applicationHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                BasePreloadManager.this.m8915x83a22925(mediaSource, predicate);
+                BasePreloadManager.this.m8967x83a22925(mediaSource, predicate);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSkipped$8$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8915x83a22925(MediaSource mediaSource, Predicate predicate) {
+    public /* synthetic */ void m8967x83a22925(MediaSource mediaSource, Predicate predicate) {
         PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaSource);
         if (targetPreloadStatusIfCurrentlyPreloading != null && predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
             maybeAdvanceToNextMediaSourceHolder();
@@ -360,14 +360,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
         Util.postOrRun(this.applicationHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                BasePreloadManager.this.m8914xfe00ce8a(mediaItem, mediaSource);
+                BasePreloadManager.this.m8966xfe00ce8a(mediaItem, mediaSource);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onMediaSourceUpdated$9$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8914xfe00ce8a(MediaItem mediaItem, MediaSource mediaSource) {
+    public /* synthetic */ void m8966xfe00ce8a(MediaItem mediaItem, MediaSource mediaSource) {
         if (getTargetPreloadStatusIfCurrentlyPreloading(mediaItem) == null) {
             return;
         }

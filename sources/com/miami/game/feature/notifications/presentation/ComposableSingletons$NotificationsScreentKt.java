@@ -19,7 +19,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NotificationsScreent.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$NotificationsScreentKt {
     public static final ComposableSingletons$NotificationsScreentKt INSTANCE = new ComposableSingletons$NotificationsScreentKt();
@@ -33,7 +33,7 @@ public final class ComposableSingletons$NotificationsScreentKt {
     });
 
     /* renamed from: getLambda$-556808038$notifications  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9761getLambda$556808038$notifications() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9812getLambda$556808038$notifications() {
         return f64lambda$556808038;
     }
 

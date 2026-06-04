@@ -1,5 +1,7 @@
 package kotlin.io.encoding;
 
+import com.facebook.internal.NativeProtocol;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -15,7 +17,7 @@ import kotlin.annotation.MustBeDocumented;
 @Retention(RetentionPolicy.CLASS)
 @kotlin.annotation.Retention(AnnotationRetention.BINARY)
 @MustBeDocumented
-@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\b\u0087\u0002\u0018\u00002\u00020\u0001B\u0002\bF¨\u0006\u0002"}, d2 = {"Lkotlin/io/encoding/ExperimentalEncodingApi;", "", "kotlin-stdlib"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0087\u0002\u0018\u00002\u00020\u0001B\u0002\bFÊ\u0001\u000e\b\u0003\u0012\n\b\u0004\u0012\u0006\b\n0\u00058\u0006Ê\u0001\u000e\b\u0007\u0012\n\b\b\u0012\u0006\b\n0\t8\nÊ\u0001b\b\u000b\u0012^\b\f\u0012Z\b\fJ\u0006\b\n0\r8\u000eJ\u0006\b\n0\r8\u000fJ\u0006\b\n0\r8\u0010J\u0006\b\n0\r8\u0011J\u0006\b\n0\r8\u0012J\u0006\b\n0\r8\u0013J\u0006\b\n0\r8\u0014J\u0006\b\n0\r8\u0015J\u0006\b\n0\r8\u0016J\u0006\b\n0\r8\u0017J\u0006\b\n0\r8\u0018Ê\u0001\u0002\b\u0019Ê\u0001\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001c¨\u0006\u0002"}, d2 = {"Lkotlin/io/encoding/ExperimentalEncodingApi;", "", "kotlin-stdlib", "Lkotlin/RequiresOptIn;", FirebaseAnalytics.Param.LEVEL, "Lkotlin/RequiresOptIn$Level;", "ERROR", "Lkotlin/annotation/Retention;", "value", "Lkotlin/annotation/AnnotationRetention;", "BINARY", "Lkotlin/annotation/Target;", "allowedTargets", "Lkotlin/annotation/AnnotationTarget;", "CLASS", "ANNOTATION_CLASS", "PROPERTY", "FIELD", "LOCAL_VARIABLE", "VALUE_PARAMETER", "CONSTRUCTOR", "FUNCTION", "PROPERTY_GETTER", "PROPERTY_SETTER", "TYPEALIAS", "Lkotlin/annotation/MustBeDocumented;", "Lkotlin/SinceKotlin;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "1.8"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @Documented
 /* loaded from: classes5.dex */
 public @interface ExperimentalEncodingApi {

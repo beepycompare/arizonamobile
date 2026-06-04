@@ -14,19 +14,19 @@ import kotlin.sequences.SequencesKt;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 /* compiled from: DeviceCountryResolver.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\tR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lcom/miami/game/feature/home/ui/DeviceCountryResolver;", "", "<init>", "()V", "isoCountryRegex", "Lkotlin/text/Regex;", "detectCountryIso", "", "context", "Landroid/content/Context;", "home"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\tR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u000b\u0012\b\b\f\u0012\u0004\b\u0003\u0010\u0002¨\u0006\n"}, d2 = {"Lcom/miami/game/feature/home/ui/DeviceCountryResolver;", "", "<init>", "()V", "isoCountryRegex", "Lkotlin/text/Regex;", "detectCountryIso", "", "context", "Landroid/content/Context;", "home", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DeviceCountryResolver {
+    public static final int $stable = 0;
     public static final DeviceCountryResolver INSTANCE = new DeviceCountryResolver();
     private static final Regex isoCountryRegex = new Regex("[A-Z]{2}");
-    public static final int $stable = 8;
 
     private DeviceCountryResolver() {
     }
 
     public final String detectCountryIso(Context context) {
-        Object m9843constructorimpl;
-        Object m9843constructorimpl2;
+        Object m9896constructorimpl;
+        Object m9896constructorimpl2;
         Intrinsics.checkNotNullParameter(context, "context");
         Context applicationContext = context.getApplicationContext();
         Object systemService = applicationContext.getSystemService("phone");
@@ -35,27 +35,27 @@ public final class DeviceCountryResolver {
         try {
             Result.Companion companion = Result.Companion;
             DeviceCountryResolver deviceCountryResolver = this;
-            m9843constructorimpl = Result.m9843constructorimpl(telephonyManager != null ? telephonyManager.getNetworkCountryIso() : null);
+            m9896constructorimpl = Result.m9896constructorimpl(telephonyManager != null ? telephonyManager.getNetworkCountryIso() : null);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9843constructorimpl = Result.m9843constructorimpl(ResultKt.createFailure(th));
+            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9849isFailureimpl(m9843constructorimpl)) {
-            m9843constructorimpl = null;
+        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+            m9896constructorimpl = null;
         }
-        String str = (String) m9843constructorimpl;
+        String str = (String) m9896constructorimpl;
         try {
             Result.Companion companion3 = Result.Companion;
             DeviceCountryResolver deviceCountryResolver2 = this;
-            m9843constructorimpl2 = Result.m9843constructorimpl(telephonyManager != null ? telephonyManager.getSimCountryIso() : null);
+            m9896constructorimpl2 = Result.m9896constructorimpl(telephonyManager != null ? telephonyManager.getSimCountryIso() : null);
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m9843constructorimpl2 = Result.m9843constructorimpl(ResultKt.createFailure(th2));
+            m9896constructorimpl2 = Result.m9896constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m9849isFailureimpl(m9843constructorimpl2)) {
-            m9843constructorimpl2 = null;
+        if (Result.m9902isFailureimpl(m9896constructorimpl2)) {
+            m9896constructorimpl2 = null;
         }
-        String str2 = (String) m9843constructorimpl2;
+        String str2 = (String) m9896constructorimpl2;
         Locale locale = ConfigurationCompat.getLocales(applicationContext.getResources().getConfiguration()).get(0);
         Iterator it = SequencesKt.mapNotNull(SequencesKt.sequenceOf((Object[]) new String[]{str, str2, locale != null ? locale.getCountry() : null}), new Function1() { // from class: com.miami.game.feature.home.ui.DeviceCountryResolver$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1

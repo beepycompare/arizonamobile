@@ -2,6 +2,7 @@ package androidx.constraintlayout.widget;
 
 import android.util.Log;
 import androidx.constraintlayout.core.Metrics;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.text.DecimalFormat;
 /* loaded from: classes2.dex */
@@ -91,7 +92,7 @@ public class ConstraintLayoutStatistics {
     }
 
     private String compare(DecimalFormat decimalFormat, ConstraintLayoutStatistics constraintLayoutStatistics, int i) {
-        String str = fmt(decimalFormat, ((float) getValue(i)) * 1.0E-6f, 7) + " -> " + fmt(decimalFormat, ((float) constraintLayoutStatistics.getValue(i)) * 1.0E-6f, 7) + "ms";
+        String str = fmt(decimalFormat, ((float) getValue(i)) * 1.0E-6f, 7) + " -> " + fmt(decimalFormat, ((float) constraintLayoutStatistics.getValue(i)) * 1.0E-6f, 7) + AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL;
         String str2 = WORD_PAD + geName(i);
         return "CL Perf: " + (str2.substring(str2.length() - MAX_WORD) + " = ") + str;
     }

@@ -321,7 +321,7 @@ public final class AndroidTextContextMenuToolbarProvider implements TextContextM
 
         @Override // androidx.compose.foundation.text.contextmenu.data.TextContextMenuSession
         public void close() {
-            this.channel.mo9005trySendJP2dKIU(Unit.INSTANCE);
+            this.channel.mo9057trySendJP2dKIU(Unit.INSTANCE);
         }
 
         public final Object awaitClose(Continuation<? super Unit> continuation) {

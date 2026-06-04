@@ -46,7 +46,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: OnlineContent.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0015\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007¢\u0006\u0002\u0010\u0004\u001a/\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\n2\b\b\u0002\u0010\u000b\u001a\u00020\fH\u0003¢\u0006\u0002\u0010\r\u001a\f\u0010\u000e\u001a\u00020\u0007*\u00020\nH\u0002¨\u0006\u000f"}, d2 = {"OnlineContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Landroidx/compose/runtime/Composer;I)V", "OnlineMetric", Constants.ScionAnalytics.PARAM_LABEL, "", "value", "iconRes", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Ljava/lang/String;ILandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "formatMetric", "home"}, k = 2, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a'\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0007b\u0002\b\u0005b\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b¢\u0006\u0002\u0010\u0004\u001aA\u0010\t\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u0010H\u0003b\u0002\b\u0005b\f\b\u0006\u0012\b\b\u0007\u0012\u0004\b\b(\b¢\u0006\u0002\u0010\u0011\u001a\f\u0010\u0012\u001a\u00020\u000b*\u00020\u000eH\u0002¨\u0006\u0013"}, d2 = {"OnlineContent", "", "uiState", "Lcom/miami/game/feature/home/ui/model/HomeUiState;", "(Lcom/miami/game/feature/home/ui/model/HomeUiState;Landroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "OnlineMetric", Constants.ScionAnalytics.PARAM_LABEL, "", "value", "iconRes", "", "modifier", "Landroidx/compose/ui/Modifier;", "(Ljava/lang/String;Ljava/lang/String;ILandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "formatMetric", "home"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class OnlineContentKt {
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -132,8 +132,8 @@ public final class OnlineContentKt {
     /* JADX WARN: Removed duplicated region for block: B:38:0x006e  */
     /* JADX WARN: Removed duplicated region for block: B:39:0x0070  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0318  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0324  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0314  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0320  */
     /* JADX WARN: Removed duplicated region for block: B:71:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -208,7 +208,7 @@ public final class OnlineContentKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -216308211, "C83@2736L10,84@2781L12,85@2820L12,80@2617L251,88@2877L686:OnlineContent.kt#dswm0d");
                 Modifier modifier3 = companion;
                 int i6 = i4;
-                TextKt.m3157TextNvy7gAk(obj, null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.88f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
+                TextKt.m3157TextNvy7gAk(obj, null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.88f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
                 Modifier m1054paddingqDBjuR0$default = PaddingKt.m1054paddingqDBjuR0$default(Modifier.Companion, 0.0f, Dp.m8160constructorimpl(3.0f), 0.0f, 0.0f, 13, null);
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
@@ -240,7 +240,7 @@ public final class OnlineContentKt {
                 ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, (i6 >> 6) & 14), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
                 composer2 = startRestartGroup;
                 String str3 = obj2;
-                TextKt.m3157TextNvy7gAk(str3, null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), null, FontWeight.Companion.getW700(), null, 0L, null, null, TypeKt.m9794dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, ((i6 >> 3) & 14) | 1573248, 24576, 112554);
+                TextKt.m3157TextNvy7gAk(str3, null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), null, FontWeight.Companion.getW700(), null, 0L, null, null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, ((i6 >> 3) & 14) | 1573248, 24576, 112554);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 composer2.endNode();

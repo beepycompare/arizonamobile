@@ -42,8 +42,8 @@ public final /* synthetic */ class FlowKt__DelayKt {
     }
 
     /* renamed from: debounce-HG0u8IE  reason: not valid java name */
-    public static final <T> Flow<T> m11394debounceHG0u8IE(Flow<? extends T> flow, long j) {
-        return FlowKt.debounce(flow, DelayKt.m11347toDelayMillisLRDsOJo(j));
+    public static final <T> Flow<T> m11468debounceHG0u8IE(Flow<? extends T> flow, long j) {
+        return FlowKt.debounce(flow, DelayKt.m11421toDelayMillisLRDsOJo(j));
     }
 
     public static final <T> Flow<T> debounceDuration(Flow<? extends T> flow, final Function1<? super T, Duration> function1) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class FlowKt__DelayKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long debounce$lambda$2$FlowKt__DelayKt(Function1 function1, Object obj) {
-        return DelayKt.m11347toDelayMillisLRDsOJo(((Duration) function1.invoke(obj)).m11245unboximpl());
+        return DelayKt.m11421toDelayMillisLRDsOJo(((Duration) function1.invoke(obj)).m11319unboximpl());
     }
 
     private static final <T> Flow<T> debounceInternal$FlowKt__DelayKt(Flow<? extends T> flow, Function1<? super T, Long> function1) {
@@ -78,17 +78,17 @@ public final /* synthetic */ class FlowKt__DelayKt {
     }
 
     /* renamed from: sample-HG0u8IE  reason: not valid java name */
-    public static final <T> Flow<T> m11395sampleHG0u8IE(Flow<? extends T> flow, long j) {
-        return FlowKt.sample(flow, DelayKt.m11347toDelayMillisLRDsOJo(j));
+    public static final <T> Flow<T> m11469sampleHG0u8IE(Flow<? extends T> flow, long j) {
+        return FlowKt.sample(flow, DelayKt.m11421toDelayMillisLRDsOJo(j));
     }
 
     /* renamed from: timeout-HG0u8IE  reason: not valid java name */
-    public static final <T> Flow<T> m11396timeoutHG0u8IE(Flow<? extends T> flow, long j) {
-        return m11397timeoutInternalHG0u8IE$FlowKt__DelayKt(flow, j);
+    public static final <T> Flow<T> m11470timeoutHG0u8IE(Flow<? extends T> flow, long j) {
+        return m11471timeoutInternalHG0u8IE$FlowKt__DelayKt(flow, j);
     }
 
     /* renamed from: timeoutInternal-HG0u8IE$FlowKt__DelayKt  reason: not valid java name */
-    private static final <T> Flow<T> m11397timeoutInternalHG0u8IE$FlowKt__DelayKt(Flow<? extends T> flow, long j) {
+    private static final <T> Flow<T> m11471timeoutInternalHG0u8IE$FlowKt__DelayKt(Flow<? extends T> flow, long j) {
         return FlowCoroutineKt.scopedFlow(new FlowKt__DelayKt$timeoutInternal$1(j, flow, null));
     }
 }

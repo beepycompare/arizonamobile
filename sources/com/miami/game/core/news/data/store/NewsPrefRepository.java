@@ -20,7 +20,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.Dispatchers;
 /* compiled from: NewsPrefRepository.kt */
-@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u0011\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u0006\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007H\u0086@¢\u0006\u0002\u0010\tJ\u001e\u0010\n\u001a\u00020\u000b2\u000e\u0010\f\u001a\n\u0012\u0004\u0012\u00020\b\u0018\u00010\u0007H\u0086@¢\u0006\u0002\u0010\rJ\u000e\u0010\u000e\u001a\u00020\u000bH\u0086@¢\u0006\u0002\u0010\tR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/miami/game/core/news/data/store/NewsPrefRepository;", "", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "<init>", "(Lcom/miami/game/core/local/repository/common/LocalRepository;)V", "getCache", "", "Lcom/miami/game/core/api/model/response/news/NewsApiModelItem;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "saveCache", "", "news", "(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "remove", "Companion"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\u0018\u0000 \u00102\u00020\u0001:\u0001\u0010B\u0015\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u0002\b\u0006¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u0007\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\bH\u0086@¢\u0006\u0002\u0010\nJ\u001e\u0010\u000b\u001a\u00020\f2\u000e\u0010\r\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\bH\u0086@¢\u0006\u0002\u0010\u000eJ\u000e\u0010\u000f\u001a\u00020\fH\u0086@¢\u0006\u0002\u0010\nR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lcom/miami/game/core/news/data/store/NewsPrefRepository;", "", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "<init>", "(Lcom/miami/game/core/local/repository/common/LocalRepository;)V", "Ljavax/inject/Inject;", "getCache", "", "Lcom/miami/game/core/api/model/response/news/NewsApiModelItem;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "saveCache", "", "news", "(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "remove", "Companion"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class NewsPrefRepository {
     public static final Companion Companion = new Companion(null);
@@ -34,7 +34,7 @@ public final class NewsPrefRepository {
     }
 
     /* compiled from: NewsPrefRepository.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/miami/game/core/news/data/store/NewsPrefRepository$Companion;", "", "<init>", "()V", NewsPrefRepository.NEWS_CACHE_KEY, "", "news"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/miami/game/core/news/data/store/NewsPrefRepository$Companion;", "", "<init>", "()V", NewsPrefRepository.NEWS_CACHE_KEY, "", "news"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -46,9 +46,9 @@ public final class NewsPrefRepository {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0099 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0094 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -68,7 +68,6 @@ public final class NewsPrefRepository {
                     LocalRepository localRepository = this.localRepository;
                     newsPrefRepository$getCache$1.L$0 = SpillingKt.nullOutSpilledVariable(localRepository);
                     newsPrefRepository$getCache$1.L$1 = SpillingKt.nullOutSpilledVariable(NEWS_CACHE_KEY);
-                    newsPrefRepository$getCache$1.I$0 = 0;
                     newsPrefRepository$getCache$1.label = 1;
                     obj = BuildersKt.withContext(Dispatchers.getIO(), new NewsPrefRepository$getCache$$inlined$getSuspend$1(localRepository, NEWS_CACHE_KEY, null), newsPrefRepository$getCache$1);
                     if (obj == coroutine_suspended) {
@@ -77,7 +76,6 @@ public final class NewsPrefRepository {
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    int i2 = newsPrefRepository$getCache$1.I$0;
                     String str = (String) newsPrefRepository$getCache$1.L$1;
                     IKeyValueRepository iKeyValueRepository = (IKeyValueRepository) newsPrefRepository$getCache$1.L$0;
                     ResultKt.throwOnFailure(obj);
@@ -117,12 +115,10 @@ public final class NewsPrefRepository {
         } else {
             arrayList = null;
         }
-        Object save2 = this.localRepository.save2(NEWS_CACHE_KEY, (String) arrayList, continuation);
-        return save2 == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? save2 : Unit.INSTANCE;
+        return this.localRepository.save2(NEWS_CACHE_KEY, (String) arrayList, continuation);
     }
 
     public final Object remove(Continuation<? super Unit> continuation) {
-        Object remove2 = this.localRepository.remove2(NEWS_CACHE_KEY, continuation);
-        return remove2 == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? remove2 : Unit.INSTANCE;
+        return this.localRepository.remove2(NEWS_CACHE_KEY, continuation);
     }
 }

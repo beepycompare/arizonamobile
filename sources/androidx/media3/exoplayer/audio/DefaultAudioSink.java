@@ -1255,7 +1255,7 @@ public final class DefaultAudioSink implements AudioSink {
         AudioOutputProvider.Listener listener = new AudioOutputProvider.Listener() { // from class: androidx.media3.exoplayer.audio.DefaultAudioSink$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.audio.AudioOutputProvider.Listener
             public final void onFormatSupportChanged() {
-                DefaultAudioSink.this.m8856x5f4a2db();
+                DefaultAudioSink.this.m8908x5f4a2db();
             }
         };
         this.audioOutputProviderListener = listener;
@@ -1264,7 +1264,7 @@ public final class DefaultAudioSink implements AudioSink {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeAddAudioOutputProviderListener$0$androidx-media3-exoplayer-audio-DefaultAudioSink  reason: not valid java name */
-    public /* synthetic */ void m8856x5f4a2db() {
+    public /* synthetic */ void m8908x5f4a2db() {
         AudioSink.Listener listener = this.listener;
         if (listener != null) {
             listener.onAudioCapabilitiesChanged();

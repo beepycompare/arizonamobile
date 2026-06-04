@@ -26,7 +26,7 @@ public final /* synthetic */ class ClockKt__ClockKt {
     public static final TimeSource.WithComparableMarks asTimeSource(final Clock clock) {
         Intrinsics.checkNotNullParameter(clock, "<this>");
         return new TimeSource.WithComparableMarks() { // from class: kotlinx.datetime.ClockKt__ClockKt$asTimeSource$1
-            @Override // kotlin.time.TimeSource
+            @Override // kotlin.time.TimeSource.WithComparableMarks, kotlin.time.TimeSource
             public ComparableTimeMark markNow() {
                 return new InstantTimeMark(Clock.this.now(), Clock.this);
             }
@@ -48,7 +48,7 @@ public final /* synthetic */ class ClockKt__ClockKt {
 
             @Override // kotlin.time.Clock
             public Instant now() {
-                return this.$origin.m11304plusLRDsOJo(this.startMark.mo11187elapsedNowUwyO8pc());
+                return this.$origin.m11378plusLRDsOJo(this.startMark.mo11261elapsedNowUwyO8pc());
             }
         };
     }

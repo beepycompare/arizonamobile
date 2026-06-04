@@ -20,6 +20,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import android.text.Annotation;
+import android.text.ParcelableSpan;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
@@ -37,17 +39,25 @@ import androidx.core.content.LocusIdCompat;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.text.BidiFormatter;
+import androidx.core.util.Preconditions;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.text.NumberFormat;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 public class NotificationCompat {
+    private static final String ANNOTATION_SEMANTIC_STYLE_KEY = "android.app.notification.semanticStyle";
     public static final int BADGE_ICON_LARGE = 2;
     public static final int BADGE_ICON_NONE = 0;
     public static final int BADGE_ICON_SMALL = 1;
@@ -104,6 +114,7 @@ public class NotificationCompat {
     public static final String EXTRA_LARGE_ICON_BIG = "android.largeIcon.big";
     public static final String EXTRA_MEDIA_SESSION = "android.mediaSession";
     public static final String EXTRA_MESSAGES = "android.messages";
+    private static final String EXTRA_MESSAGING_PERSON = "android.messagingUser";
     public static final String EXTRA_MESSAGING_STYLE_USER = "android.messagingStyleUser";
     public static final String EXTRA_NOTIFICATION_ID = "android.intent.extra.NOTIFICATION_ID";
     public static final String EXTRA_NOTIFICATION_TAG = "android.intent.extra.NOTIFICATION_TAG";
@@ -113,6 +124,7 @@ public class NotificationCompat {
     public static final String EXTRA_PICTURE = "android.picture";
     public static final String EXTRA_PICTURE_CONTENT_DESCRIPTION = "android.pictureContentDescription";
     public static final String EXTRA_PICTURE_ICON = "android.pictureIcon";
+    public static final String EXTRA_PREFER_SMALL_ICON = "android.app.preferSmallIcon";
     public static final String EXTRA_PROGRESS = "android.progress";
     public static final String EXTRA_PROGRESS_END_ICON = "android.progressEndIcon";
     public static final String EXTRA_PROGRESS_INDETERMINATE = "android.progressIndeterminate";
@@ -166,6 +178,11 @@ public class NotificationCompat {
     public static final int PRIORITY_LOW = -1;
     public static final int PRIORITY_MAX = 2;
     public static final int PRIORITY_MIN = -2;
+    public static final int SEMANTIC_STYLE_CAUTION = 3;
+    public static final int SEMANTIC_STYLE_DANGER = 4;
+    public static final int SEMANTIC_STYLE_INFO = 1;
+    public static final int SEMANTIC_STYLE_SAFE = 2;
+    public static final int SEMANTIC_STYLE_UNSPECIFIED = 0;
     public static final int STREAM_DEFAULT = -1;
     private static final String TAG = "NotifCompat";
     public static final int VISIBILITY_PRIVATE = 0;
@@ -194,12 +211,21 @@ public class NotificationCompat {
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes2.dex */
+    public @interface SemanticStyle {
+    }
+
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes2.dex */
     public @interface ServiceNotificationBehavior {
     }
 
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes2.dex */
     public @interface StreamType {
+    }
+
+    public static ParcelableSpan createSemanticStyleAnnotation(int i) {
+        return new Annotation(ANNOTATION_SEMANTIC_STYLE_KEY, String.valueOf(i));
     }
 
     /* loaded from: classes2.dex */
@@ -851,6 +877,18 @@ public class NotificationCompat {
             return new NotificationCompatBuilder(this).build();
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public static String safeCharSequenceToString(CharSequence charSequence) {
+            if (charSequence == null) {
+                return null;
+            }
+            return safeString(charSequence.toString());
+        }
+
+        private static String safeString(String str) {
+            return (str != null && str.length() > MAX_CHARSEQUENCE_LENGTH) ? str.substring(0, MAX_CHARSEQUENCE_LENGTH) : str;
+        }
+
         protected static CharSequence limitCharSequenceLength(CharSequence charSequence) {
             return (charSequence != null && charSequence.length() > MAX_CHARSEQUENCE_LENGTH) ? charSequence.subSequence(0, MAX_CHARSEQUENCE_LENGTH) : charSequence;
         }
@@ -1022,7 +1060,10 @@ public class NotificationCompat {
             if (str.equals(Notification.DecoratedCustomViewStyle.class.getName())) {
                 return new DecoratedCustomViewStyle();
             }
-            return null;
+            if (Build.VERSION.SDK_INT < 37 || !str.equals(Notification.MetricStyle.class.getName())) {
+                return null;
+            }
+            return new MetricStyle();
         }
 
         static Style constructCompatStyleByName(String str) {
@@ -1048,27 +1089,33 @@ public class NotificationCompat {
                             break;
                         }
                         break;
+                    case -128932575:
+                        if (str.equals("androidx.core.app.NotificationCompat$MetricStyle")) {
+                            c = 3;
+                            break;
+                        }
+                        break;
                     case 714386739:
                         if (str.equals("androidx.core.app.NotificationCompat$CallStyle")) {
-                            c = 3;
+                            c = 4;
                             break;
                         }
                         break;
                     case 912942987:
                         if (str.equals("androidx.core.app.NotificationCompat$InboxStyle")) {
-                            c = 4;
+                            c = 5;
                             break;
                         }
                         break;
                     case 919595044:
                         if (str.equals("androidx.core.app.NotificationCompat$BigTextStyle")) {
-                            c = 5;
+                            c = 6;
                             break;
                         }
                         break;
                     case 2090799565:
                         if (str.equals("androidx.core.app.NotificationCompat$MessagingStyle")) {
-                            c = 6;
+                            c = 7;
                             break;
                         }
                         break;
@@ -1081,12 +1128,14 @@ public class NotificationCompat {
                     case 2:
                         return new BigPictureStyle();
                     case 3:
-                        return new CallStyle();
+                        return new MetricStyle();
                     case 4:
-                        return new InboxStyle();
+                        return new CallStyle();
                     case 5:
-                        return new BigTextStyle();
+                        return new InboxStyle();
                     case 6:
+                        return new BigTextStyle();
+                    case 7:
                         return new MessagingStyle();
                     default:
                         return null;
@@ -1117,6 +1166,9 @@ public class NotificationCompat {
             }
             if (bundle.containsKey(NotificationCompat.EXTRA_PROGRESS_SEGMENTS) || bundle.containsKey(NotificationCompat.EXTRA_PROGRESS_POINTS)) {
                 return new ProgressStyle();
+            }
+            if (bundle.containsKey("android.metrics")) {
+                return new MetricStyle();
             }
             return constructCompatStyleByPlatformName(bundle.getString(NotificationCompat.EXTRA_TEMPLATE));
         }
@@ -1710,21 +1762,23 @@ public class NotificationCompat {
         @Override // androidx.core.app.NotificationCompat.Style
         public void addCompatExtras(Bundle bundle) {
             super.addCompatExtras(bundle);
-            bundle.putCharSequence(NotificationCompat.EXTRA_SELF_DISPLAY_NAME, this.mUser.getName());
-            bundle.putBundle(NotificationCompat.EXTRA_MESSAGING_STYLE_USER, this.mUser.toBundle());
-            bundle.putCharSequence(NotificationCompat.EXTRA_HIDDEN_CONVERSATION_TITLE, this.mConversationTitle);
-            if (this.mConversationTitle != null && this.mIsGroupConversation.booleanValue()) {
-                bundle.putCharSequence(NotificationCompat.EXTRA_CONVERSATION_TITLE, this.mConversationTitle);
-            }
-            if (!this.mMessages.isEmpty()) {
-                bundle.putParcelableArray(NotificationCompat.EXTRA_MESSAGES, Message.getBundleArrayForMessages(this.mMessages));
-            }
-            if (!this.mHistoricMessages.isEmpty()) {
-                bundle.putParcelableArray(NotificationCompat.EXTRA_HISTORIC_MESSAGES, Message.getBundleArrayForMessages(this.mHistoricMessages));
-            }
-            Boolean bool = this.mIsGroupConversation;
-            if (bool != null) {
-                bundle.putBoolean(NotificationCompat.EXTRA_IS_GROUP_CONVERSATION, bool.booleanValue());
+            if (Build.VERSION.SDK_INT < 28) {
+                bundle.putCharSequence(NotificationCompat.EXTRA_SELF_DISPLAY_NAME, this.mUser.getName());
+                bundle.putBundle(NotificationCompat.EXTRA_MESSAGING_STYLE_USER, this.mUser.toBundle());
+                bundle.putCharSequence(NotificationCompat.EXTRA_HIDDEN_CONVERSATION_TITLE, this.mConversationTitle);
+                if (this.mConversationTitle != null && this.mIsGroupConversation.booleanValue()) {
+                    bundle.putCharSequence(NotificationCompat.EXTRA_CONVERSATION_TITLE, this.mConversationTitle);
+                }
+                if (!this.mMessages.isEmpty()) {
+                    bundle.putParcelableArray(NotificationCompat.EXTRA_MESSAGES, Message.getBundleArrayForMessages(this.mMessages));
+                }
+                if (!this.mHistoricMessages.isEmpty()) {
+                    bundle.putParcelableArray(NotificationCompat.EXTRA_HISTORIC_MESSAGES, Message.getBundleArrayForMessages(this.mHistoricMessages));
+                }
+                Boolean bool = this.mIsGroupConversation;
+                if (bool != null) {
+                    bundle.putBoolean(NotificationCompat.EXTRA_IS_GROUP_CONVERSATION, bool.booleanValue());
+                }
             }
         }
 
@@ -1732,7 +1786,10 @@ public class NotificationCompat {
         protected void restoreFromCompatExtras(Bundle bundle) {
             super.restoreFromCompatExtras(bundle);
             this.mMessages.clear();
-            if (bundle.containsKey(NotificationCompat.EXTRA_MESSAGING_STYLE_USER)) {
+            Person userPerson = (Build.VERSION.SDK_INT < 28 || !bundle.containsKey(NotificationCompat.EXTRA_MESSAGING_PERSON)) ? null : Api28Impl.getUserPerson(bundle, NotificationCompat.EXTRA_MESSAGING_PERSON);
+            if (userPerson != null) {
+                this.mUser = userPerson;
+            } else if (bundle.containsKey(NotificationCompat.EXTRA_MESSAGING_STYLE_USER)) {
                 this.mUser = Person.fromBundle(bundle.getBundle(NotificationCompat.EXTRA_MESSAGING_STYLE_USER));
             } else {
                 this.mUser = new Person.Builder().setName(bundle.getString(NotificationCompat.EXTRA_SELF_DISPLAY_NAME)).build();
@@ -1915,6 +1972,7 @@ public class NotificationCompat {
 
             Notification.MessagingStyle.Message toAndroidMessage() {
                 Notification.MessagingStyle.Message createMessage;
+                Bundle bundle;
                 Person person = getPerson();
                 if (Build.VERSION.SDK_INT >= 28) {
                     createMessage = Api28Impl.createMessage(getText(), getTimestamp(), person != null ? person.toAndroidPerson() : null);
@@ -1923,6 +1981,9 @@ public class NotificationCompat {
                 }
                 if (getDataMimeType() != null) {
                     Api24Impl.setData(createMessage, getDataMimeType(), getDataUri());
+                }
+                if (Build.VERSION.SDK_INT >= 28 && (bundle = this.mExtras) != null) {
+                    Api28Impl.setExtras(createMessage, bundle);
                 }
                 return createMessage;
             }
@@ -1954,6 +2015,10 @@ public class NotificationCompat {
 
                 static Notification.MessagingStyle.Message createMessage(CharSequence charSequence, long j, android.app.Person person) {
                     return new Notification.MessagingStyle.Message(charSequence, j, person);
+                }
+
+                static void setExtras(Notification.MessagingStyle.Message message, Bundle bundle) {
+                    message.getExtras().putAll(bundle);
                 }
             }
         }
@@ -1997,6 +2062,14 @@ public class NotificationCompat {
 
             static Notification.MessagingStyle setGroupConversation(Notification.MessagingStyle messagingStyle, boolean z) {
                 return messagingStyle.setGroupConversation(z);
+            }
+
+            static Person getUserPerson(Bundle bundle, String str) {
+                Parcelable parcelable = bundle.getParcelable(str);
+                if (parcelable instanceof android.app.Person) {
+                    return Person.fromAndroidPerson((android.app.Person) parcelable);
+                }
+                return null;
             }
         }
     }
@@ -2353,6 +2426,769 @@ public class NotificationCompat {
     }
 
     /* loaded from: classes2.dex */
+    public static final class MetricStyle extends Style {
+        private static final int CRITICAL_METRIC_DEFAULT = 0;
+        private static final String EXTRA_METRICS = "android.metrics";
+        private static final String EXTRA_METRICS_CRITICAL_INDEX = "android.metrics.criticalIndex";
+        public static final int METRIC_INDEX_NONE = -1;
+        private static final String TEMPLATE_CLASS_NAME = "androidx.core.app.NotificationCompat$MetricStyle";
+        private final List<Metric> mMetrics = new ArrayList();
+        private int mCriticalMetric = 0;
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        protected String getClassName() {
+            return TEMPLATE_CLASS_NAME;
+        }
+
+        public boolean equals(Object obj) {
+            if (obj instanceof MetricStyle) {
+                MetricStyle metricStyle = (MetricStyle) obj;
+                if (this == metricStyle) {
+                    return true;
+                }
+                return Objects.equals(this.mMetrics, metricStyle.mMetrics) && this.mCriticalMetric == metricStyle.mCriticalMetric;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return Objects.hash(this.mMetrics, Integer.valueOf(this.mCriticalMetric));
+        }
+
+        public String toString() {
+            return "MetricStyle{mMetrics=" + this.mMetrics + ", mCriticalMetric=" + this.mCriticalMetric + "}";
+        }
+
+        public MetricStyle addMetric(Metric metric) {
+            this.mMetrics.add((Metric) Objects.requireNonNull(metric));
+            return this;
+        }
+
+        public MetricStyle setMetrics(List<Metric> list) {
+            this.mMetrics.clear();
+            for (Metric metric : list) {
+                this.mMetrics.add((Metric) Objects.requireNonNull(metric));
+            }
+            return this;
+        }
+
+        public List<Metric> getMetrics() {
+            return Collections.unmodifiableList(this.mMetrics);
+        }
+
+        public MetricStyle setCriticalMetric(int i) {
+            this.mCriticalMetric = i;
+            return this;
+        }
+
+        public Metric getCriticalMetric() {
+            int i = this.mCriticalMetric;
+            if (i < 0 || i >= this.mMetrics.size()) {
+                return null;
+            }
+            return this.mMetrics.get(this.mCriticalMetric);
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        public void apply(NotificationBuilderWithBuilderAccessor notificationBuilderWithBuilderAccessor) {
+            validate();
+            if (Build.VERSION.SDK_INT >= 37) {
+                notificationBuilderWithBuilderAccessor.getBuilder().setStyle(Api37Impl.toPlatformStyle(this));
+            }
+        }
+
+        private void validate() {
+            if (this.mMetrics.isEmpty()) {
+                throw new IllegalArgumentException("A MetricStyle must have at least one Metric");
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        private static final class Api37Impl {
+            private Api37Impl() {
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static Notification.Style toPlatformStyle(MetricStyle metricStyle) {
+                Notification.MetricStyle metricStyle2 = new Notification.MetricStyle();
+                for (Metric metric : metricStyle.getMetrics()) {
+                    metricStyle2.addMetric(toPlatformMetric(metric));
+                }
+                metricStyle2.setCriticalMetric(metricStyle.getMetrics().indexOf(metricStyle.getCriticalMetric()));
+                return metricStyle2;
+            }
+
+            private static Notification.Metric toPlatformMetric(Metric metric) {
+                return new Notification.Metric(toPlatformMetricValue(metric.getValue()), metric.getLabel(), metric.getSemanticStyle());
+            }
+
+            private static Notification.Metric.MetricValue toPlatformMetricValue(Metric.MetricValue metricValue) {
+                if (metricValue instanceof Metric.TimeDifference) {
+                    Metric.TimeDifference timeDifference = (Metric.TimeDifference) metricValue;
+                    if (timeDifference.getZeroTime() != null) {
+                        if (timeDifference.isTimer()) {
+                            return Notification.Metric.TimeDifference.forTimer(timeDifference.getZeroTime(), timeDifference.getFormat());
+                        }
+                        return Notification.Metric.TimeDifference.forStopwatch(timeDifference.getZeroTime(), timeDifference.getFormat());
+                    } else if (timeDifference.getZeroElapsedRealtime() != null) {
+                        if (timeDifference.isTimer()) {
+                            return Notification.Metric.TimeDifference.forTimer(timeDifference.getZeroElapsedRealtime().longValue(), timeDifference.getFormat());
+                        }
+                        return Notification.Metric.TimeDifference.forStopwatch(timeDifference.getZeroElapsedRealtime().longValue(), timeDifference.getFormat());
+                    } else if (timeDifference.getPausedDuration() != null) {
+                        if (timeDifference.isTimer()) {
+                            return Notification.Metric.TimeDifference.forPausedTimer(timeDifference.getPausedDuration(), timeDifference.getFormat());
+                        }
+                        return Notification.Metric.TimeDifference.forPausedStopwatch(timeDifference.getPausedDuration(), timeDifference.getFormat());
+                    } else {
+                        throw new IllegalArgumentException("Unexpected TimeDifference: " + timeDifference);
+                    }
+                } else if (metricValue instanceof Metric.FixedDate) {
+                    Metric.FixedDate fixedDate = (Metric.FixedDate) metricValue;
+                    return new Notification.Metric.FixedDate(fixedDate.getValue(), fixedDate.getFormat());
+                } else if (metricValue instanceof Metric.FixedFloat) {
+                    Metric.FixedFloat fixedFloat = (Metric.FixedFloat) metricValue;
+                    return new Notification.Metric.FixedFloat(fixedFloat.getValue(), fixedFloat.getUnit(), fixedFloat.getMinFractionDigits(), fixedFloat.getMaxFractionDigits());
+                } else if (metricValue instanceof Metric.FixedInt) {
+                    Metric.FixedInt fixedInt = (Metric.FixedInt) metricValue;
+                    return new Notification.Metric.FixedInt(fixedInt.getValue(), fixedInt.getUnit());
+                } else if (metricValue instanceof Metric.FixedText) {
+                    Metric.FixedText fixedText = (Metric.FixedText) metricValue;
+                    return new Notification.Metric.FixedText(fixedText.getValue(), fixedText.getUnit());
+                } else if (metricValue instanceof Metric.FixedTime) {
+                    return new Notification.Metric.FixedTime(((Metric.FixedTime) metricValue).getValue());
+                } else {
+                    throw new IllegalArgumentException("Unexpected MetricValue: " + metricValue);
+                }
+            }
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        public void addCompatExtras(Bundle bundle) {
+            super.addCompatExtras(bundle);
+            if (Build.VERSION.SDK_INT >= 37) {
+                return;
+            }
+            ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
+            for (Metric metric : this.mMetrics) {
+                arrayList.add(Metric.toBundle(metric));
+            }
+            bundle.putParcelableArrayList(EXTRA_METRICS, arrayList);
+            bundle.putInt(EXTRA_METRICS_CRITICAL_INDEX, this.mCriticalMetric);
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        protected void restoreFromCompatExtras(Bundle bundle) {
+            Metric fromBundle;
+            super.restoreFromCompatExtras(bundle);
+            this.mMetrics.clear();
+            ArrayList parcelableArrayList = androidx.core.os.BundleCompat.getParcelableArrayList(bundle, EXTRA_METRICS, Bundle.class);
+            if (parcelableArrayList != null) {
+                Iterator it = parcelableArrayList.iterator();
+                while (it.hasNext()) {
+                    Bundle bundle2 = (Bundle) it.next();
+                    if (bundle2 != null && (fromBundle = Metric.fromBundle(bundle2)) != null) {
+                        addMetric(fromBundle);
+                    }
+                }
+            }
+            this.mCriticalMetric = bundle.getInt(EXTRA_METRICS_CRITICAL_INDEX, 0);
+        }
+
+        @Override // androidx.core.app.NotificationCompat.Style
+        protected void clearCompatExtraKeys(Bundle bundle) {
+            super.clearCompatExtraKeys(bundle);
+            bundle.remove(EXTRA_METRICS);
+            bundle.remove(EXTRA_METRICS_CRITICAL_INDEX);
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    public static final class Metric {
+        private static final String KEY_LABEL = "label";
+        private static final String KEY_SEMANTIC_STYLE = "semanticStyle";
+        private static final String KEY_VALUE = "value";
+        private final String mLabel;
+        private final int mSemanticStyle;
+        private final MetricValue mValue;
+
+        public Metric(MetricValue metricValue, CharSequence charSequence) {
+            this(metricValue, charSequence, 0);
+        }
+
+        public Metric(MetricValue metricValue, CharSequence charSequence, int i) {
+            this.mValue = (MetricValue) Objects.requireNonNull(metricValue);
+            String safeCharSequenceToString = Builder.safeCharSequenceToString((CharSequence) Objects.requireNonNull(charSequence));
+            this.mLabel = safeCharSequenceToString;
+            Preconditions.checkArgument(!UByte$$ExternalSyntheticBackport0.m9970m(safeCharSequenceToString), "Metric label is required");
+            this.mSemanticStyle = i;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static Metric fromBundle(Bundle bundle) {
+            MetricValue fromBundle;
+            Bundle bundle2 = bundle.getBundle("value");
+            if (bundle2 == null || (fromBundle = MetricValue.fromBundle(bundle2)) == null) {
+                return null;
+            }
+            return new Metric(fromBundle, bundle.getString("label"), bundle.getInt(KEY_SEMANTIC_STYLE, 0));
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static Bundle toBundle(Metric metric) {
+            Bundle bundle = new Bundle();
+            bundle.putBundle("value", MetricValue.toBundle(metric.mValue));
+            bundle.putString("label", metric.mLabel);
+            bundle.putInt(KEY_SEMANTIC_STYLE, metric.mSemanticStyle);
+            return bundle;
+        }
+
+        public boolean equals(Object obj) {
+            if (obj instanceof Metric) {
+                Metric metric = (Metric) obj;
+                if (this == metric) {
+                    return true;
+                }
+                return Objects.equals(this.mValue, metric.mValue) && Objects.equals(this.mLabel, metric.mLabel) && this.mSemanticStyle == metric.mSemanticStyle;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return Objects.hash(this.mValue, this.mLabel, Integer.valueOf(this.mSemanticStyle));
+        }
+
+        public String toString() {
+            return "Metric{mValue=" + this.mValue + ", mLabel=" + this.mLabel + ", mSemanticStyle=" + this.mSemanticStyle + "}";
+        }
+
+        public MetricValue getValue() {
+            return this.mValue;
+        }
+
+        public CharSequence getLabel() {
+            return this.mLabel;
+        }
+
+        public int getSemanticStyle() {
+            return this.mSemanticStyle;
+        }
+
+        /* loaded from: classes2.dex */
+        public static abstract class MetricValue {
+            private static final String KEY_TYPE = "_type";
+            private static final int TYPE_FIXED_DATE = 2;
+            private static final int TYPE_FIXED_FLOAT = 5;
+            private static final int TYPE_FIXED_INT = 4;
+            private static final int TYPE_FIXED_TEXT = 6;
+            private static final int TYPE_FIXED_TIME = 3;
+            private static final int TYPE_TIME_DIFFERENCE = 1;
+
+            abstract void toBundle(Bundle bundle);
+
+            private MetricValue() {
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static MetricValue fromBundle(Bundle bundle) {
+                switch (bundle.getInt(KEY_TYPE)) {
+                    case 1:
+                        return TimeDifference.fromBundle(bundle);
+                    case 2:
+                        return FixedDate.fromBundle(bundle);
+                    case 3:
+                        return FixedTime.fromBundle(bundle);
+                    case 4:
+                        return FixedInt.fromBundle(bundle);
+                    case 5:
+                        return FixedFloat.fromBundle(bundle);
+                    case 6:
+                        return FixedText.fromBundle(bundle);
+                    default:
+                        return null;
+                }
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static Bundle toBundle(MetricValue metricValue) {
+                Bundle bundle = new Bundle();
+                if (metricValue instanceof TimeDifference) {
+                    bundle.putInt(KEY_TYPE, 1);
+                } else if (metricValue instanceof FixedDate) {
+                    bundle.putInt(KEY_TYPE, 2);
+                } else if (metricValue instanceof FixedTime) {
+                    bundle.putInt(KEY_TYPE, 3);
+                } else if (metricValue instanceof FixedInt) {
+                    bundle.putInt(KEY_TYPE, 4);
+                } else if (metricValue instanceof FixedFloat) {
+                    bundle.putInt(KEY_TYPE, 5);
+                } else if (metricValue instanceof FixedText) {
+                    bundle.putInt(KEY_TYPE, 6);
+                } else {
+                    throw new AssertionError("Impossible MetricValue subclass: " + metricValue);
+                }
+                metricValue.toBundle(bundle);
+                return bundle;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class TimeDifference extends MetricValue {
+            public static final int FORMAT_ADAPTIVE = 1;
+            public static final int FORMAT_CHRONOMETER = 2;
+            private static final String KEY_COUNT_DOWN = "countDown";
+            private static final String KEY_FORMAT = "format";
+            private static final String KEY_PAUSED_DURATION = "pausedDuration";
+            private static final String KEY_ZERO_ELAPSED_REALTIME = "zeroElapsedRealtime";
+            private static final String KEY_ZERO_TIME = "zeroTime";
+            private final boolean mCountDown;
+            private final int mFormat;
+            private final Duration mPausedDuration;
+            private final Long mZeroElapsedRealtime;
+            private final Instant mZeroTime;
+
+            @Retention(RetentionPolicy.SOURCE)
+            /* loaded from: classes2.dex */
+            public @interface Format {
+            }
+
+            public static TimeDifference forTimer(Instant instant, int i) {
+                return new TimeDifference((Instant) Objects.requireNonNull(instant), null, null, true, i);
+            }
+
+            public static TimeDifference forTimer(long j, int i) {
+                return new TimeDifference(null, Long.valueOf(j), null, true, i);
+            }
+
+            public static TimeDifference forStopwatch(Instant instant, int i) {
+                return new TimeDifference((Instant) Objects.requireNonNull(instant), null, null, false, i);
+            }
+
+            public static TimeDifference forStopwatch(long j, int i) {
+                return new TimeDifference(null, Long.valueOf(j), null, false, i);
+            }
+
+            public static TimeDifference forPausedTimer(Duration duration, int i) {
+                return new TimeDifference(null, null, (Duration) Objects.requireNonNull(duration), true, i);
+            }
+
+            public static TimeDifference forPausedStopwatch(Duration duration, int i) {
+                return new TimeDifference(null, null, (Duration) Objects.requireNonNull(duration), false, i);
+            }
+
+            private TimeDifference(Instant instant, Long l, Duration duration, boolean z, int i) {
+                super();
+                boolean z2 = false;
+                Preconditions.checkArgument(((instant != null ? 1 : 0) + (l != null ? 1 : 0)) + (duration != null ? 1 : 0) == 1, "Exactly one of zeroTime, zeroElapsedRealtime, or pausedDuration must be present; received %s,%s,%s", instant, l, duration);
+                if (i >= 1 && i <= 2) {
+                    z2 = true;
+                }
+                Preconditions.checkArgument(z2, "Invalid format: %s", Integer.valueOf(i));
+                this.mZeroTime = instant;
+                this.mZeroElapsedRealtime = l;
+                this.mPausedDuration = duration;
+                this.mCountDown = z;
+                this.mFormat = i;
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static TimeDifference fromBundle(Bundle bundle) {
+                Instant ofEpochMilli = bundle.containsKey(KEY_ZERO_TIME) ? Instant.ofEpochMilli(bundle.getLong(KEY_ZERO_TIME)) : null;
+                Long valueOf = bundle.containsKey(KEY_ZERO_ELAPSED_REALTIME) ? Long.valueOf(bundle.getLong(KEY_ZERO_ELAPSED_REALTIME)) : null;
+                Duration ofMillis = bundle.containsKey(KEY_PAUSED_DURATION) ? Duration.ofMillis(bundle.getLong(KEY_PAUSED_DURATION)) : null;
+                if (ofEpochMilli == null && valueOf == null && ofMillis == null) {
+                    return null;
+                }
+                return new TimeDifference(ofEpochMilli, valueOf, ofMillis, bundle.getBoolean(KEY_COUNT_DOWN), bundle.getInt(KEY_FORMAT));
+            }
+
+            @Override // androidx.core.app.NotificationCompat.Metric.MetricValue
+            void toBundle(Bundle bundle) {
+                Instant instant = this.mZeroTime;
+                if (instant != null) {
+                    bundle.putLong(KEY_ZERO_TIME, instant.toEpochMilli());
+                } else {
+                    Long l = this.mZeroElapsedRealtime;
+                    if (l != null) {
+                        bundle.putLong(KEY_ZERO_ELAPSED_REALTIME, l.longValue());
+                    } else {
+                        Duration duration = this.mPausedDuration;
+                        if (duration != null) {
+                            bundle.putLong(KEY_PAUSED_DURATION, duration.toMillis());
+                        }
+                    }
+                }
+                bundle.putBoolean(KEY_COUNT_DOWN, this.mCountDown);
+                bundle.putInt(KEY_FORMAT, this.mFormat);
+            }
+
+            public boolean equals(Object obj) {
+                if (obj instanceof TimeDifference) {
+                    TimeDifference timeDifference = (TimeDifference) obj;
+                    if (this == timeDifference) {
+                        return true;
+                    }
+                    return Objects.equals(this.mZeroTime, timeDifference.mZeroTime) && Objects.equals(this.mZeroElapsedRealtime, timeDifference.mZeroElapsedRealtime) && Objects.equals(this.mPausedDuration, timeDifference.mPausedDuration) && this.mCountDown == timeDifference.mCountDown && this.mFormat == timeDifference.mFormat;
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return Objects.hash(this.mZeroTime, this.mZeroElapsedRealtime, this.mPausedDuration, Boolean.valueOf(this.mCountDown), Integer.valueOf(this.mFormat));
+            }
+
+            public String toString() {
+                StringBuilder sb = new StringBuilder("TimeDifference{");
+                if (this.mZeroTime != null) {
+                    sb.append("mZeroTime=").append(this.mZeroTime);
+                } else if (this.mZeroElapsedRealtime != null) {
+                    sb.append("mZeroElapsedRealtime=").append(this.mZeroElapsedRealtime);
+                } else if (this.mPausedDuration != null) {
+                    sb.append("mPausedDuration=").append(this.mPausedDuration);
+                }
+                sb.append(", mCountDown=").append(this.mCountDown).append(", mFormat=").append(this.mFormat).append("}");
+                return sb.toString();
+            }
+
+            public Instant getZeroTime() {
+                return this.mZeroTime;
+            }
+
+            public Long getZeroElapsedRealtime() {
+                return this.mZeroElapsedRealtime;
+            }
+
+            public Duration getPausedDuration() {
+                return this.mPausedDuration;
+            }
+
+            public boolean isStopwatch() {
+                return !this.mCountDown;
+            }
+
+            public boolean isTimer() {
+                return this.mCountDown;
+            }
+
+            public int getFormat() {
+                return this.mFormat;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class FixedDate extends MetricValue {
+            public static final int FORMAT_AUTOMATIC = 0;
+            public static final int FORMAT_LONG_DATE = 1;
+            public static final int FORMAT_SHORT_DATE = 2;
+            private static final String KEY_FORMAT = "format";
+            private static final String KEY_VALUE = "value";
+            private final int mFormat;
+            private final LocalDate mValue;
+
+            @Retention(RetentionPolicy.SOURCE)
+            /* loaded from: classes2.dex */
+            public @interface Format {
+            }
+
+            public FixedDate(LocalDate localDate) {
+                this(localDate, 0);
+            }
+
+            public FixedDate(LocalDate localDate, int i) {
+                super();
+                this.mValue = (LocalDate) Objects.requireNonNull(localDate);
+                Preconditions.checkArgument(i >= 0 && i <= 2, "Invalid format: %s", Integer.valueOf(i));
+                this.mFormat = i;
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static FixedDate fromBundle(Bundle bundle) {
+                LocalDate ofEpochDay = bundle.containsKey("value") ? LocalDate.ofEpochDay(bundle.getLong("value")) : null;
+                if (ofEpochDay != null) {
+                    return new FixedDate(ofEpochDay, bundle.getInt(KEY_FORMAT, 0));
+                }
+                return null;
+            }
+
+            @Override // androidx.core.app.NotificationCompat.Metric.MetricValue
+            void toBundle(Bundle bundle) {
+                bundle.putLong("value", this.mValue.toEpochDay());
+                bundle.putInt(KEY_FORMAT, this.mFormat);
+            }
+
+            public boolean equals(Object obj) {
+                if (obj instanceof FixedDate) {
+                    FixedDate fixedDate = (FixedDate) obj;
+                    if (this == fixedDate) {
+                        return true;
+                    }
+                    return Objects.equals(this.mValue, fixedDate.mValue) && this.mFormat == fixedDate.mFormat;
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return Objects.hash(this.mValue, Integer.valueOf(this.mFormat));
+            }
+
+            public String toString() {
+                return getClass().getSimpleName() + "{mValue=" + this.mValue + ", mFormat=" + this.mFormat + "}";
+            }
+
+            public LocalDate getValue() {
+                return this.mValue;
+            }
+
+            public int getFormat() {
+                return this.mFormat;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class FixedTime extends MetricValue {
+            private static final String KEY_VALUE = "value";
+            private final LocalTime mValue;
+
+            public FixedTime(LocalTime localTime) {
+                super();
+                this.mValue = ((LocalTime) Objects.requireNonNull(localTime)).truncatedTo(ChronoUnit.SECONDS);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static FixedTime fromBundle(Bundle bundle) {
+                LocalTime ofSecondOfDay = bundle.containsKey("value") ? LocalTime.ofSecondOfDay(bundle.getLong("value")) : null;
+                if (ofSecondOfDay != null) {
+                    return new FixedTime(ofSecondOfDay);
+                }
+                return null;
+            }
+
+            @Override // androidx.core.app.NotificationCompat.Metric.MetricValue
+            void toBundle(Bundle bundle) {
+                bundle.putLong("value", this.mValue.toSecondOfDay());
+            }
+
+            public boolean equals(Object obj) {
+                if (obj instanceof FixedTime) {
+                    FixedTime fixedTime = (FixedTime) obj;
+                    if (this == fixedTime) {
+                        return true;
+                    }
+                    return Objects.equals(this.mValue, fixedTime.mValue);
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return Objects.hash(this.mValue);
+            }
+
+            public String toString() {
+                return getClass().getSimpleName() + "{mValue=" + this.mValue + "}";
+            }
+
+            public LocalTime getValue() {
+                return this.mValue;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class FixedInt extends MetricValue {
+            private static final String KEY_UNIT = "unit";
+            private static final String KEY_VALUE = "value";
+            private final String mUnit;
+            private final int mValue;
+
+            public FixedInt(int i) {
+                this(i, null);
+            }
+
+            public FixedInt(int i, CharSequence charSequence) {
+                super();
+                this.mValue = i;
+                this.mUnit = Builder.safeCharSequenceToString(charSequence);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static FixedInt fromBundle(Bundle bundle) {
+                return new FixedInt(bundle.getInt("value"), bundle.getString(KEY_UNIT));
+            }
+
+            @Override // androidx.core.app.NotificationCompat.Metric.MetricValue
+            void toBundle(Bundle bundle) {
+                bundle.putInt("value", this.mValue);
+                bundle.putString(KEY_UNIT, this.mUnit);
+            }
+
+            public boolean equals(Object obj) {
+                if (obj instanceof FixedInt) {
+                    FixedInt fixedInt = (FixedInt) obj;
+                    if (this == fixedInt) {
+                        return true;
+                    }
+                    return this.mValue == fixedInt.mValue && Objects.equals(this.mUnit, fixedInt.mUnit);
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return Objects.hash(Integer.valueOf(this.mValue), this.mUnit);
+            }
+
+            public String toString() {
+                return getClass().getSimpleName() + "{mValue=" + this.mValue + ", mUnit=" + this.mUnit + "}";
+            }
+
+            public int getValue() {
+                return this.mValue;
+            }
+
+            public CharSequence getUnit() {
+                return this.mUnit;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class FixedFloat extends MetricValue {
+            private static final int DEFAULT_MAX_FRACTION_DIGITS = 2;
+            private static final int DEFAULT_MIN_FRACTION_DIGITS = 0;
+            private static final String KEY_MAX_FRACTION_DIGITS = "maxDigits";
+            private static final String KEY_MIN_FRACTION_DIGITS = "minDigits";
+            private static final String KEY_UNIT = "unit";
+            private static final String KEY_VALUE = "value";
+            private static final int LOWER_BOUND_FRACTION_DIGITS = 0;
+            private static final int UPPER_BOUND_FRACTION_DIGITS = 6;
+            private final int mMaxFractionDigits;
+            private final int mMinFractionDigits;
+            private final String mUnit;
+            private final float mValue;
+
+            public FixedFloat(float f) {
+                this(f, null);
+            }
+
+            public FixedFloat(float f, CharSequence charSequence) {
+                this(f, charSequence, 0, 2);
+            }
+
+            public FixedFloat(float f, CharSequence charSequence, int i, int i2) {
+                super();
+                this.mValue = f;
+                this.mUnit = Builder.safeCharSequenceToString(charSequence);
+                Preconditions.checkArgument(i >= 0 && i <= 6, "Invalid minFractionDigits: %s", Integer.valueOf(i));
+                Preconditions.checkArgument(i2 >= 0 && i2 <= 6, "Invalid maxFractionDigits: %s", Integer.valueOf(i2));
+                Preconditions.checkArgument(i <= i2, "Invalid minFractionDigits/maxFractionDigits: %s/%s", Integer.valueOf(i), Integer.valueOf(i2));
+                this.mMinFractionDigits = i;
+                this.mMaxFractionDigits = i2;
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static FixedFloat fromBundle(Bundle bundle) {
+                return new FixedFloat(bundle.getFloat("value"), bundle.getString(KEY_UNIT), bundle.getInt(KEY_MIN_FRACTION_DIGITS, 0), bundle.getInt(KEY_MAX_FRACTION_DIGITS, 2));
+            }
+
+            @Override // androidx.core.app.NotificationCompat.Metric.MetricValue
+            void toBundle(Bundle bundle) {
+                bundle.putFloat("value", this.mValue);
+                bundle.putString(KEY_UNIT, this.mUnit);
+                bundle.putInt(KEY_MIN_FRACTION_DIGITS, this.mMinFractionDigits);
+                bundle.putInt(KEY_MAX_FRACTION_DIGITS, this.mMaxFractionDigits);
+            }
+
+            public boolean equals(Object obj) {
+                if (obj instanceof FixedFloat) {
+                    FixedFloat fixedFloat = (FixedFloat) obj;
+                    if (this == fixedFloat) {
+                        return true;
+                    }
+                    return this.mValue == fixedFloat.mValue && Objects.equals(this.mUnit, fixedFloat.mUnit) && this.mMinFractionDigits == fixedFloat.mMinFractionDigits && this.mMaxFractionDigits == fixedFloat.mMaxFractionDigits;
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return Objects.hash(Float.valueOf(this.mValue), this.mUnit, Integer.valueOf(this.mMinFractionDigits), Integer.valueOf(this.mMaxFractionDigits));
+            }
+
+            public String toString() {
+                return getClass().getSimpleName() + "{mValue=" + this.mValue + ", mUnit=" + this.mUnit + ", mMinFractionDigits=" + this.mMinFractionDigits + ", mMaxFractionDigits=" + this.mMaxFractionDigits + "}";
+            }
+
+            public float getValue() {
+                return this.mValue;
+            }
+
+            public CharSequence getUnit() {
+                return this.mUnit;
+            }
+
+            public int getMinFractionDigits() {
+                return this.mMinFractionDigits;
+            }
+
+            public int getMaxFractionDigits() {
+                return this.mMaxFractionDigits;
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        public static final class FixedText extends MetricValue {
+            private static final String KEY_UNIT = "unit";
+            private static final String KEY_VALUE = "value";
+            private final String mUnit;
+            private final String mValue;
+
+            public FixedText(CharSequence charSequence) {
+                this(charSequence, null);
+            }
+
+            public FixedText(CharSequence charSequence, CharSequence charSequence2) {
+                super();
+                this.mValue = Builder.safeCharSequenceToString((CharSequence) Objects.requireNonNull(charSequence));
+                this.mUnit = Builder.safeCharSequenceToString(charSequence2);
+            }
+
+            /* JADX INFO: Access modifiers changed from: private */
+            public static FixedText fromBundle(Bundle bundle) {
+                return new FixedText(bundle.getString("value", ""), bundle.getString(KEY_UNIT));
+            }
+
+            @Override // androidx.core.app.NotificationCompat.Metric.MetricValue
+            void toBundle(Bundle bundle) {
+                bundle.putString("value", this.mValue);
+                bundle.putString(KEY_UNIT, this.mUnit);
+            }
+
+            public boolean equals(Object obj) {
+                if (obj instanceof FixedText) {
+                    FixedText fixedText = (FixedText) obj;
+                    if (this == fixedText) {
+                        return true;
+                    }
+                    return Objects.equals(this.mValue, fixedText.mValue) && Objects.equals(this.mUnit, fixedText.mUnit);
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return Objects.hash(this.mValue, this.mUnit);
+            }
+
+            public String toString() {
+                return getClass().getSimpleName() + "{mValue=" + this.mValue + ", mUnit=" + this.mUnit + "}";
+            }
+
+            public CharSequence getValue() {
+                return this.mValue;
+            }
+
+            public CharSequence getUnit() {
+                return this.mUnit;
+            }
+        }
+    }
+
+    /* loaded from: classes2.dex */
     public static class InboxStyle extends Style {
         private static final String TEMPLATE_CLASS_NAME = "androidx.core.app.NotificationCompat$InboxStyle";
         private ArrayList<CharSequence> mTexts = new ArrayList<>();
@@ -2420,6 +3256,7 @@ public class NotificationCompat {
         private static final int DEFAULT_PROGRESS_MAX = 100;
         private static final String KEY_ELEMENT_COLOR = "colorInt";
         private static final String KEY_ELEMENT_ID = "id";
+        private static final String KEY_ELEMENT_SEMANTIC_STYLE = "semanticStyle";
         private static final String KEY_POINT_POSITION = "position";
         private static final String KEY_SEGMENT_LENGTH = "length";
         private static final String TEMPLATE_CLASS_NAME = "androidx.core.app.NotificationCompat$ProgressStyle";
@@ -2585,8 +3422,15 @@ public class NotificationCompat {
                 Api36Impl.setProgressEndIcon(progressStyle, iconCompat2 != null ? iconCompat2.toIcon(context) : null);
                 IconCompat iconCompat3 = this.mTrackerIcon;
                 Api36Impl.setProgressTrackerIcon(progressStyle, iconCompat3 != null ? iconCompat3.toIcon(context) : null);
-                Api36Impl.setProgressPoints(progressStyle, this.mProgressPoints);
-                Api36Impl.setProgressSegments(progressStyle, this.mProgressSegments);
+                int i = Build.VERSION.SDK_INT;
+                List<Point> list = this.mProgressPoints;
+                if (i >= 37) {
+                    Api37Impl.setProgressPoints(progressStyle, list);
+                    Api37Impl.setProgressSegments(progressStyle, this.mProgressSegments);
+                } else {
+                    Api36Impl.setProgressPoints(progressStyle, list);
+                    Api36Impl.setProgressSegments(progressStyle, this.mProgressSegments);
+                }
                 builder.setStyle(progressStyle);
                 return;
             }
@@ -2597,9 +3441,11 @@ public class NotificationCompat {
         @Override // androidx.core.app.NotificationCompat.Style
         public void addCompatExtras(Bundle bundle) {
             super.addCompatExtras(bundle);
-            if (Build.VERSION.SDK_INT < 36) {
+            if (Build.VERSION.SDK_INT <= 36) {
                 bundle.putParcelableArrayList(NotificationCompat.EXTRA_PROGRESS_SEGMENTS, getProgressSegmentsAsBundleList(this.mProgressSegments));
                 bundle.putParcelableArrayList(NotificationCompat.EXTRA_PROGRESS_POINTS, getProgressPointsAsBundleList(this.mProgressPoints));
+            }
+            if (Build.VERSION.SDK_INT < 36) {
                 bundle.putInt(NotificationCompat.EXTRA_PROGRESS, this.mProgress);
                 bundle.putBoolean(NotificationCompat.EXTRA_PROGRESS_INDETERMINATE, this.mIndeterminate);
                 bundle.putInt(NotificationCompat.EXTRA_PROGRESS_MAX, getProgressMax());
@@ -2675,7 +3521,8 @@ public class NotificationCompat {
                     Bundle bundle = list.get(i);
                     int i2 = bundle.getInt(KEY_SEGMENT_LENGTH);
                     if (i2 > 0) {
-                        arrayList.add(new Segment(i2).setId(bundle.getInt("id")).setColor(bundle.getInt(KEY_ELEMENT_COLOR, 0)));
+                        int i3 = bundle.getInt("id");
+                        arrayList.add(new Segment(i2).setId(i3).setColor(bundle.getInt(KEY_ELEMENT_COLOR, 0)).setSemanticStyle(bundle.getInt(KEY_ELEMENT_SEMANTIC_STYLE, 0)));
                     }
                 }
             }
@@ -2692,6 +3539,7 @@ public class NotificationCompat {
                         bundle.putInt(KEY_POINT_POSITION, point.getPosition());
                         bundle.putInt("id", point.getId());
                         bundle.putInt(KEY_ELEMENT_COLOR, point.getColor());
+                        bundle.putInt(KEY_ELEMENT_SEMANTIC_STYLE, point.getSemanticStyle());
                         arrayList.add(bundle);
                     }
                 }
@@ -2706,7 +3554,8 @@ public class NotificationCompat {
                     Bundle bundle = list.get(i);
                     int i2 = bundle.getInt(KEY_POINT_POSITION);
                     if (i2 >= 0) {
-                        arrayList.add(new Point(i2).setId(bundle.getInt("id")).setColor(bundle.getInt(KEY_ELEMENT_COLOR, 0)));
+                        int i3 = bundle.getInt("id");
+                        arrayList.add(new Point(i2).setId(i3).setColor(bundle.getInt(KEY_ELEMENT_COLOR, 0)).setSemanticStyle(bundle.getInt(KEY_ELEMENT_SEMANTIC_STYLE, 0)));
                     }
                 }
             }
@@ -2723,6 +3572,7 @@ public class NotificationCompat {
                         bundle.putInt(KEY_SEGMENT_LENGTH, segment.getLength());
                         bundle.putInt("id", segment.getId());
                         bundle.putInt(KEY_ELEMENT_COLOR, segment.getColor());
+                        bundle.putInt(KEY_ELEMENT_SEMANTIC_STYLE, segment.getSemanticStyle());
                         arrayList.add(bundle);
                     }
                 }
@@ -2735,6 +3585,7 @@ public class NotificationCompat {
             private int mLength;
             private int mId = 0;
             private int mColor = 0;
+            private int mSemanticStyle = 0;
 
             public Segment(int i) {
                 this.mLength = i;
@@ -2761,6 +3612,15 @@ public class NotificationCompat {
                 this.mColor = i;
                 return this;
             }
+
+            public int getSemanticStyle() {
+                return this.mSemanticStyle;
+            }
+
+            public Segment setSemanticStyle(int i) {
+                this.mSemanticStyle = i;
+                return this;
+            }
         }
 
         /* loaded from: classes2.dex */
@@ -2768,6 +3628,7 @@ public class NotificationCompat {
             private int mPosition;
             private int mId = 0;
             private int mColor = 0;
+            private int mSemanticStyle = 0;
 
             public Point(int i) {
                 this.mPosition = i;
@@ -2794,10 +3655,20 @@ public class NotificationCompat {
                 this.mColor = i;
                 return this;
             }
+
+            public int getSemanticStyle() {
+                return this.mSemanticStyle;
+            }
+
+            public Point setSemanticStyle(int i) {
+                this.mSemanticStyle = i;
+                return this;
+            }
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: classes2.dex */
-        private static final class Api36Impl {
+        public static final class Api36Impl {
             private Api36Impl() {
             }
 
@@ -2827,14 +3698,48 @@ public class NotificationCompat {
 
             static void setProgressPoints(Notification.ProgressStyle progressStyle, List<Point> list) {
                 for (Point point : list) {
-                    progressStyle.addProgressPoint(new Notification.ProgressStyle.Point(point.getPosition()).setColor(point.getColor()).setId(point.getId()));
+                    progressStyle.addProgressPoint(toPlatformPoint(point));
                 }
+            }
+
+            static Notification.ProgressStyle.Point toPlatformPoint(Point point) {
+                return new Notification.ProgressStyle.Point(point.getPosition()).setColor(point.getColor()).setId(point.getId());
             }
 
             static void setProgressSegments(Notification.ProgressStyle progressStyle, List<Segment> list) {
                 for (Segment segment : list) {
-                    progressStyle.addProgressSegment(new Notification.ProgressStyle.Segment(segment.getLength()).setColor(segment.getColor()).setId(segment.getId()));
+                    progressStyle.addProgressSegment(toPlatformSegment(segment));
                 }
+            }
+
+            static Notification.ProgressStyle.Segment toPlatformSegment(Segment segment) {
+                return new Notification.ProgressStyle.Segment(segment.getLength()).setColor(segment.getColor()).setId(segment.getId());
+            }
+        }
+
+        /* loaded from: classes2.dex */
+        private static final class Api37Impl {
+            private Api37Impl() {
+            }
+
+            static void setProgressPoints(Notification.ProgressStyle progressStyle, List<Point> list) {
+                for (Point point : list) {
+                    progressStyle.addProgressPoint(toPlatformPoint(point));
+                }
+            }
+
+            static Notification.ProgressStyle.Point toPlatformPoint(Point point) {
+                return Api36Impl.toPlatformPoint(point).setSemanticStyle(point.getSemanticStyle());
+            }
+
+            static void setProgressSegments(Notification.ProgressStyle progressStyle, List<Segment> list) {
+                for (Segment segment : list) {
+                    progressStyle.addProgressSegment(toPlatformSegment(segment));
+                }
+            }
+
+            static Notification.ProgressStyle.Segment toPlatformSegment(Segment segment) {
+                return Api36Impl.toPlatformSegment(segment).setSemanticStyle(segment.getSemanticStyle());
             }
         }
     }
@@ -2989,6 +3894,9 @@ public class NotificationCompat {
 
     /* loaded from: classes2.dex */
     public static class Action {
+        public static final int EMPHASIS_AUTO = 0;
+        public static final int EMPHASIS_PRIMARY = 1;
+        public static final int EMPHASIS_SECONDARY = 2;
         static final String EXTRA_SEMANTIC_ACTION = "android.support.action.semanticAction";
         static final String EXTRA_SHOWS_USER_INTERFACE = "android.support.action.showsUserInterface";
         public static final int SEMANTIC_ACTION_ARCHIVE = 5;
@@ -2998,23 +3906,37 @@ public class NotificationCompat {
         public static final int SEMANTIC_ACTION_MARK_AS_UNREAD = 3;
         public static final int SEMANTIC_ACTION_MUTE = 6;
         public static final int SEMANTIC_ACTION_NONE = 0;
+        public static final int SEMANTIC_ACTION_PAUSE = 14;
+        public static final int SEMANTIC_ACTION_PLAY = 13;
         public static final int SEMANTIC_ACTION_REPLY = 1;
+        public static final int SEMANTIC_ACTION_STOP = 15;
         public static final int SEMANTIC_ACTION_THUMBS_DOWN = 9;
         public static final int SEMANTIC_ACTION_THUMBS_UP = 8;
         public static final int SEMANTIC_ACTION_UNMUTE = 7;
+        public static final int STYLE_AUTO = 0;
+        public static final int STYLE_ICON_AND_TEXT = 2;
+        public static final int STYLE_ICON_ONLY = 3;
+        public static final int STYLE_TEXT_ONLY = 1;
         public PendingIntent actionIntent;
         @Deprecated
         public int icon;
         private boolean mAllowGeneratedReplies;
         private boolean mAuthenticationRequired;
         private final RemoteInput[] mDataOnlyRemoteInputs;
+        private final int mEmphasisHint;
         final Bundle mExtras;
         private IconCompat mIcon;
         private final boolean mIsContextual;
         private final RemoteInput[] mRemoteInputs;
         private final int mSemanticAction;
         boolean mShowsUserInterface;
+        private final int mStyleHint;
         public CharSequence title;
+
+        @Retention(RetentionPolicy.SOURCE)
+        /* loaded from: classes2.dex */
+        public @interface Emphasis {
+        }
 
         /* loaded from: classes2.dex */
         public interface Extender {
@@ -3026,20 +3948,25 @@ public class NotificationCompat {
         public @interface SemanticAction {
         }
 
+        @Retention(RetentionPolicy.SOURCE)
+        /* loaded from: classes2.dex */
+        public @interface Style {
+        }
+
         public Action(int i, CharSequence charSequence, PendingIntent pendingIntent) {
             this(i != 0 ? IconCompat.createWithResource(null, "", i) : null, charSequence, pendingIntent);
         }
 
         public Action(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent) {
-            this(iconCompat, charSequence, pendingIntent, new Bundle(), (RemoteInput[]) null, (RemoteInput[]) null, true, 0, true, false, false);
+            this(iconCompat, charSequence, pendingIntent, new Bundle(), (RemoteInput[]) null, (RemoteInput[]) null, true, 0, true, false, 0, 0, false);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public Action(int i, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, RemoteInput[] remoteInputArr2, boolean z, int i2, boolean z2, boolean z3, boolean z4) {
-            this(i != 0 ? IconCompat.createWithResource(null, "", i) : null, charSequence, pendingIntent, bundle, remoteInputArr, remoteInputArr2, z, i2, z2, z3, z4);
+        public Action(int i, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, RemoteInput[] remoteInputArr2, boolean z, int i2, boolean z2, boolean z3, int i3, int i4, boolean z4) {
+            this(i != 0 ? IconCompat.createWithResource(null, "", i) : null, charSequence, pendingIntent, bundle, remoteInputArr, remoteInputArr2, z, i2, z2, z3, i3, i4, z4);
         }
 
-        Action(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, RemoteInput[] remoteInputArr2, boolean z, int i, boolean z2, boolean z3, boolean z4) {
+        Action(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, RemoteInput[] remoteInputArr, RemoteInput[] remoteInputArr2, boolean z, int i, boolean z2, boolean z3, int i2, int i3, boolean z4) {
             this.mShowsUserInterface = true;
             this.mIcon = iconCompat;
             if (iconCompat != null && iconCompat.getType() == 2) {
@@ -3054,6 +3981,8 @@ public class NotificationCompat {
             this.mSemanticAction = i;
             this.mShowsUserInterface = z2;
             this.mIsContextual = z3;
+            this.mEmphasisHint = i2;
+            this.mStyleHint = i3;
             this.mAuthenticationRequired = z4;
         }
 
@@ -3110,10 +4039,19 @@ public class NotificationCompat {
             return this.mShowsUserInterface;
         }
 
+        public int getEmphasisHint() {
+            return this.mEmphasisHint;
+        }
+
+        public int getStyleHint() {
+            return this.mStyleHint;
+        }
+
         /* loaded from: classes2.dex */
         public static final class Builder {
             private boolean mAllowGeneratedReplies;
             private boolean mAuthenticationRequired;
+            private int mEmphasisHint;
             private final Bundle mExtras;
             private final IconCompat mIcon;
             private final PendingIntent mIntent;
@@ -3121,6 +4059,7 @@ public class NotificationCompat {
             private ArrayList<RemoteInput> mRemoteInputs;
             private int mSemanticAction;
             private boolean mShowsUserInterface;
+            private int mStyleHint;
             private final CharSequence mTitle;
 
             public static Builder fromAndroidAction(Notification.Action action) {
@@ -3145,6 +4084,10 @@ public class NotificationCompat {
                 }
                 if (Build.VERSION.SDK_INT >= 31) {
                     builder.setAuthenticationRequired(Api31Impl.isAuthenticationRequired(action));
+                }
+                if (Build.VERSION.SDK_INT >= 37) {
+                    builder.setStyleHint(Api37Impl.getStyleHint(action));
+                    builder.setEmphasisHint(Api37Impl.getEmphasisHint(action));
                 }
                 builder.addExtras(action.getExtras());
                 return builder;
@@ -3213,6 +4156,16 @@ public class NotificationCompat {
                 return this;
             }
 
+            public Builder setEmphasisHint(int i) {
+                this.mEmphasisHint = i;
+                return this;
+            }
+
+            public Builder setStyleHint(int i) {
+                this.mStyleHint = i;
+                return this;
+            }
+
             public Builder setAuthenticationRequired(boolean z) {
                 this.mAuthenticationRequired = z;
                 return this;
@@ -3251,7 +4204,7 @@ public class NotificationCompat {
                     }
                 }
                 RemoteInput[] remoteInputArr = arrayList.isEmpty() ? null : (RemoteInput[]) arrayList.toArray(new RemoteInput[arrayList.size()]);
-                return new Action(this.mIcon, this.mTitle, this.mIntent, this.mExtras, arrayList2.isEmpty() ? null : (RemoteInput[]) arrayList2.toArray(new RemoteInput[arrayList2.size()]), remoteInputArr, this.mAllowGeneratedReplies, this.mSemanticAction, this.mShowsUserInterface, this.mIsContextual, this.mAuthenticationRequired);
+                return new Action(this.mIcon, this.mTitle, this.mIntent, this.mExtras, arrayList2.isEmpty() ? null : (RemoteInput[]) arrayList2.toArray(new RemoteInput[arrayList2.size()]), remoteInputArr, this.mAllowGeneratedReplies, this.mSemanticAction, this.mShowsUserInterface, this.mIsContextual, this.mEmphasisHint, this.mStyleHint, this.mAuthenticationRequired);
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -3295,6 +4248,21 @@ public class NotificationCompat {
 
                 static boolean isAuthenticationRequired(Notification.Action action) {
                     return action.isAuthenticationRequired();
+                }
+            }
+
+            /* JADX INFO: Access modifiers changed from: package-private */
+            /* loaded from: classes2.dex */
+            public static class Api37Impl {
+                private Api37Impl() {
+                }
+
+                static int getEmphasisHint(Notification.Action action) {
+                    return action.getEmphasisHint();
+                }
+
+                static int getStyleHint(Notification.Action action) {
+                    return action.getStyleHint();
                 }
             }
         }
@@ -3634,7 +4602,7 @@ public class NotificationCompat {
         }
 
         /* renamed from: clone */
-        public WearableExtender m8648clone() {
+        public WearableExtender m8660clone() {
             WearableExtender wearableExtender = new WearableExtender();
             wearableExtender.mActions = new ArrayList<>(this.mActions);
             wearableExtender.mFlags = this.mFlags;
@@ -4613,14 +5581,16 @@ public class NotificationCompat {
     static Action getActionCompatFromAction(Notification.Action action) {
         RemoteInput[] remoteInputArr;
         int i;
+        int i2;
+        int i3;
         android.app.RemoteInput[] remoteInputs = action.getRemoteInputs();
         if (remoteInputs == null) {
             remoteInputArr = null;
         } else {
             RemoteInput[] remoteInputArr2 = new RemoteInput[remoteInputs.length];
-            for (int i2 = 0; i2 < remoteInputs.length; i2++) {
-                android.app.RemoteInput remoteInput = remoteInputs[i2];
-                remoteInputArr2[i2] = new RemoteInput(remoteInput.getResultKey(), remoteInput.getLabel(), remoteInput.getChoices(), remoteInput.getAllowFreeFormInput(), Build.VERSION.SDK_INT >= 29 ? Api29Impl.getEditChoicesBeforeSending(remoteInput) : 0, remoteInput.getExtras(), null);
+            for (int i4 = 0; i4 < remoteInputs.length; i4++) {
+                android.app.RemoteInput remoteInput = remoteInputs[i4];
+                remoteInputArr2[i4] = new RemoteInput(remoteInput.getResultKey(), remoteInput.getLabel(), remoteInput.getChoices(), remoteInput.getAllowFreeFormInput(), Build.VERSION.SDK_INT >= 29 ? Api29Impl.getEditChoicesBeforeSending(remoteInput) : 0, remoteInput.getExtras(), null);
             }
             remoteInputArr = remoteInputArr2;
         }
@@ -4631,13 +5601,20 @@ public class NotificationCompat {
         } else {
             i = action.getExtras().getInt("android.support.action.semanticAction", 0);
         }
-        int i3 = i;
+        int i5 = i;
         boolean isContextual = Build.VERSION.SDK_INT >= 29 ? Api29Impl.isContextual(action) : false;
-        boolean isAuthenticationRequired = Build.VERSION.SDK_INT >= 31 ? Api31Impl.isAuthenticationRequired(action) : false;
-        if (action.getIcon() == null && action.icon != 0) {
-            return new Action(action.icon, action.title, action.actionIntent, action.getExtras(), remoteInputArr, (RemoteInput[]) null, z, i3, z2, isContextual, isAuthenticationRequired);
+        if (Build.VERSION.SDK_INT >= 37) {
+            i2 = Action.Builder.Api37Impl.getEmphasisHint(action);
+            i3 = Action.Builder.Api37Impl.getStyleHint(action);
+        } else {
+            i2 = 0;
+            i3 = 0;
         }
-        return new Action(action.getIcon() != null ? IconCompat.createFromIconOrNullIfZeroResId(action.getIcon()) : null, action.title, action.actionIntent, action.getExtras(), remoteInputArr, (RemoteInput[]) null, z, i3, z2, isContextual, isAuthenticationRequired);
+        boolean isAuthenticationRequired = Build.VERSION.SDK_INT >= 31 ? Action.Builder.Api31Impl.isAuthenticationRequired(action) : false;
+        if (action.getIcon() == null && action.icon != 0) {
+            return new Action(action.icon, action.title, action.actionIntent, action.getExtras(), remoteInputArr, (RemoteInput[]) null, z, i5, z2, isContextual, i2, i3, isAuthenticationRequired);
+        }
+        return new Action(action.getIcon() != null ? IconCompat.createFromIconOrNullIfZeroResId(action.getIcon()) : null, action.title, action.actionIntent, action.getExtras(), remoteInputArr, (RemoteInput[]) null, z, i5, z2, isContextual, i2, i3, isAuthenticationRequired);
     }
 
     public static List<Action> getInvisibleActions(Notification notification) {
@@ -4917,17 +5894,6 @@ public class NotificationCompat {
 
         static Notification.BubbleMetadata getBubbleMetadata(Notification notification) {
             return notification.getBubbleMetadata();
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
-    public static class Api31Impl {
-        private Api31Impl() {
-        }
-
-        static boolean isAuthenticationRequired(Notification.Action action) {
-            return action.isAuthenticationRequired();
         }
     }
 

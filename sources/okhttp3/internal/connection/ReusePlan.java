@@ -19,19 +19,19 @@ public final class ReusePlan implements RoutePlanner.Plan {
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: connectTcp  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ RoutePlanner.ConnectResult mo11693connectTcp() {
+    public /* bridge */ /* synthetic */ RoutePlanner.ConnectResult mo11767connectTcp() {
         return (RoutePlanner.ConnectResult) connectTcp();
     }
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: connectTlsEtc  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ RoutePlanner.ConnectResult mo11694connectTlsEtc() {
+    public /* bridge */ /* synthetic */ RoutePlanner.ConnectResult mo11768connectTlsEtc() {
         return (RoutePlanner.ConnectResult) connectTlsEtc();
     }
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: retry */
-    public /* bridge */ /* synthetic */ RoutePlanner.Plan mo11691retry() {
+    public /* bridge */ /* synthetic */ RoutePlanner.Plan mo11765retry() {
         return (RoutePlanner.Plan) retry();
     }
 
@@ -54,13 +54,13 @@ public final class ReusePlan implements RoutePlanner.Plan {
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: handleSuccess */
-    public RealConnection mo11690handleSuccess() {
+    public RealConnection mo11764handleSuccess() {
         return this.connection;
     }
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan, okhttp3.internal.http.ExchangeCodec.Carrier
     /* renamed from: cancel */
-    public Void mo11689cancel() {
+    public Void mo11763cancel() {
         throw new IllegalStateException("unexpected cancel".toString());
     }
 

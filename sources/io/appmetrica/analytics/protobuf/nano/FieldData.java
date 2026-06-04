@@ -152,7 +152,7 @@ public class FieldData implements Cloneable {
     }
 
     /* renamed from: clone */
-    public final FieldData m9838clone() {
+    public final FieldData m9889clone() {
         FieldData fieldData = new FieldData();
         try {
             fieldData.cachedExtension = this.cachedExtension;
@@ -165,7 +165,7 @@ public class FieldData implements Cloneable {
             Object obj = this.value;
             if (obj != null) {
                 if (obj instanceof MessageNano) {
-                    fieldData.value = ((MessageNano) obj).mo9836clone();
+                    fieldData.value = ((MessageNano) obj).mo9887clone();
                     return fieldData;
                 } else if (obj instanceof byte[]) {
                     fieldData.value = ((byte[]) obj).clone();
@@ -200,7 +200,7 @@ public class FieldData implements Cloneable {
                         MessageNano[] messageNanoArr2 = new MessageNano[messageNanoArr.length];
                         fieldData.value = messageNanoArr2;
                         while (i < messageNanoArr.length) {
-                            messageNanoArr2[i] = messageNanoArr[i].mo9836clone();
+                            messageNanoArr2[i] = messageNanoArr[i].mo9887clone();
                             i++;
                         }
                     }

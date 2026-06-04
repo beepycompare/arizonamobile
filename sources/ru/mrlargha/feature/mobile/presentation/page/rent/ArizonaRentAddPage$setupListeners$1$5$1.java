@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.feature.mobile.presentation.page.rent.models.ArizonaRentCreateAdModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArizonaRentAddPage.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$5$1", f = "ArizonaRentAddPage.kt", i = {}, l = {ComposerKt.reuseKey}, m = "invokeSuspend", n = {}, nl = {210}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class ArizonaRentAddPage$setupListeners$1$5$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
@@ -46,7 +46,7 @@ public final class ArizonaRentAddPage$setupListeners$1$5$1 extends SuspendLambda
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArizonaRentAddPage.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$5$1$1", f = "ArizonaRentAddPage.kt", i = {}, l = {208}, m = "invokeSuspend", n = {}, nl = {209}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentAddPage$setupListeners$1$5$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */

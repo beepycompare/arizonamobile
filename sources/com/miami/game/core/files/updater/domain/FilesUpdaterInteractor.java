@@ -44,7 +44,7 @@ import kotlinx.coroutines.flow.StateFlowKt;
 import timber.log.Timber;
 /* compiled from: FilesUpdaterInteractor.kt */
 @Singleton
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0011\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u0012\u001a\u00020\u0013H\u0002J\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0002J\u001c\u0010\u0018\u001a\u00020\u00152\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001aH\u0003J\u000e\u0010\u001c\u001a\u00020\u0013H\u0086@¢\u0006\u0002\u0010\u001dJ\u000e\u0010\u001e\u001a\u00020\u0015H\u0086@¢\u0006\u0002\u0010\u001dJ\u0006\u0010\u001f\u001a\u00020\u0015J\u000e\u0010 \u001a\u00020!H\u0082@¢\u0006\u0002\u0010\u001dJ\u0016\u0010\"\u001a\u00020\u00152\u0006\u0010#\u001a\u00020\u001aH\u0082@¢\u0006\u0002\u0010$J\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020'0&H\u0082@¢\u0006\u0002\u0010\u001dJ\u000e\u0010(\u001a\u00020\u0015H\u0082@¢\u0006\u0002\u0010\u001dJ\f\u0010)\u001a\u00020**\u00020+H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\b0\n¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006,"}, d2 = {"Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;", "", "downloaderSyncInteractor", "Lcom/miami/game/core/downloader/sync/domain/DownloaderSyncInteractor;", "<init>", "(Lcom/miami/game/core/downloader/sync/domain/DownloaderSyncInteractor;)V", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/files/updater/domain/model/FilesUpdaterState;", "interactorStateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getInteractorStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "gameInfoFilesCheckedList", "Ljava/util/LinkedList;", "Lcom/miami/game/core/files/updater/domain/model/CheckedFile;", "collectBytes", "Lkotlinx/coroutines/Job;", "updateStateBytes", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/miami/game/core/downloader/sync/domain/model/BytesAndSpeedState;", "calculatePercentage", "bytes", "", "speed", "downloadGame", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "cancelDownload", "onRepairGameClick", "repairGame", "", "downloadFiles", "currentTime", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "finalValidationFiles", "", "Lcom/miami/game/core/domain/model/GameInfoFile;", "cancelDownloadFiles", "md5", "", "Ljava/io/File;", "files-updater"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0015\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u0002\b\u0006¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u0013\u001a\u00020\u0014H\u0002J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J.\u0010\u0019\u001a\u00020\u00162\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u001bH\u0003b\u0010\b\u001d\u0012\f\b\u001e\u0012\b\b\fJ\u0004\b\b(\u001fJ\u000e\u0010 \u001a\u00020\u0014H\u0086@¢\u0006\u0002\u0010!J\u000e\u0010\"\u001a\u00020\u0016H\u0086@¢\u0006\u0002\u0010!J\u0006\u0010#\u001a\u00020\u0016J\u000e\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u0010!J\u0016\u0010&\u001a\u00020\u00162\u0006\u0010'\u001a\u00020\u001bH\u0082@¢\u0006\u0002\u0010(J\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020+0*H\u0082@¢\u0006\u0002\u0010!J\u000e\u0010,\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010!J\f\u0010-\u001a\u00020.*\u00020/H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\t0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\n\u001a\b\u0012\u0004\u0012\u00020\t0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000Ê\u0001\u0002\b1¨\u00060"}, d2 = {"Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;", "", "downloaderSyncInteractor", "Lcom/miami/game/core/downloader/sync/domain/DownloaderSyncInteractor;", "<init>", "(Lcom/miami/game/core/downloader/sync/domain/DownloaderSyncInteractor;)V", "Ljavax/inject/Inject;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/files/updater/domain/model/FilesUpdaterState;", "interactorStateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getInteractorStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "gameInfoFilesCheckedList", "Ljava/util/LinkedList;", "Lcom/miami/game/core/files/updater/domain/model/CheckedFile;", "collectBytes", "Lkotlinx/coroutines/Job;", "updateStateBytes", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/miami/game/core/downloader/sync/domain/model/BytesAndSpeedState;", "calculatePercentage", "bytes", "", "speed", "Landroid/annotation/SuppressLint;", "value", "DefaultLocale", "downloadGame", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "cancelDownload", "onRepairGameClick", "repairGame", "", "downloadFiles", "currentTime", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "finalValidationFiles", "", "Lcom/miami/game/core/domain/model/GameInfoFile;", "cancelDownloadFiles", "md5", "", "Ljava/io/File;", "files-updater", "Ljavax/inject/Singleton;"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FilesUpdaterInteractor {
     private final DownloaderSyncInteractor downloaderSyncInteractor;
@@ -291,28 +291,29 @@ public final class FilesUpdaterInteractor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x00b2, code lost:
-        if (cancelDownloadFiles(r2) == r3) goto L52;
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x00a4, code lost:
+        if (cancelDownloadFiles(r2) == r3) goto L51;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x00be, code lost:
-        if (r1 != r3) goto L72;
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x00b0, code lost:
+        if (r1 != r3) goto L71;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x01b1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0194, code lost:
         if (r1 != r3) goto L36;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0244, code lost:
-        if (r5.deleteSideFiles(r6, r2) == r3) goto L52;
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x0227, code lost:
+        if (r5.deleteSideFiles(r6, r2) == r3) goto L51;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002f  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x013b  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01ed  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x025c  */
-    /* JADX WARN: Removed duplicated region for block: B:78:0x0288 A[LOOP:1: B:76:0x0282->B:78:0x0288, LOOP_END] */
-    /* JADX WARN: Type inference failed for: r13v6 */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01d0  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x023f  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x026b A[LOOP:1: B:75:0x0265->B:77:0x026b, LOOP_END] */
+    /* JADX WARN: Type inference failed for: r12v12, types: [java.lang.Iterable] */
+    /* JADX WARN: Type inference failed for: r13v6, types: [java.lang.Iterable] */
     /* JADX WARN: Type inference failed for: r17v0, types: [com.miami.game.core.files.updater.domain.FilesUpdaterInteractor] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:45:0x01b1 -> B:19:0x0074). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:44:0x0194 -> B:46:0x0198). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -323,15 +324,10 @@ public final class FilesUpdaterInteractor {
         HashSet hashSet;
         LinkedList<CheckedFile> linkedList;
         Iterator it;
-        int i2;
         List list2;
         HashSet hashSet2;
-        Iterable iterable;
-        Iterator it2;
-        CheckedFile checkedFile;
         Object obj;
-        int i3;
-        int i4;
+        CheckedFile checkedFile;
         boolean z;
         if (continuation instanceof FilesUpdaterInteractor$finalValidationFiles$1) {
             filesUpdaterInteractor$finalValidationFiles$1 = (FilesUpdaterInteractor$finalValidationFiles$1) continuation;
@@ -359,7 +355,6 @@ public final class FilesUpdaterInteractor {
                     hashSet = CollectionsKt.toHashSet(arrayList);
                     linkedList = this.gameInfoFilesCheckedList;
                     it = linkedList.iterator();
-                    i2 = 0;
                     if (it.hasNext()) {
                     }
                     return coroutine_suspended;
@@ -385,20 +380,14 @@ public final class FilesUpdaterInteractor {
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    int i5 = filesUpdaterInteractor$finalValidationFiles$1.I$1;
-                    i4 = filesUpdaterInteractor$finalValidationFiles$1.I$0;
                     Uri uri = (Uri) filesUpdaterInteractor$finalValidationFiles$1.L$6;
                     checkedFile = (CheckedFile) filesUpdaterInteractor$finalValidationFiles$1.L$5;
                     Object obj4 = filesUpdaterInteractor$finalValidationFiles$1.L$4;
-                    it2 = (Iterator) filesUpdaterInteractor$finalValidationFiles$1.L$3;
-                    iterable = (Iterable) filesUpdaterInteractor$finalValidationFiles$1.L$2;
+                    it = (Iterator) filesUpdaterInteractor$finalValidationFiles$1.L$3;
                     hashSet2 = (HashSet) filesUpdaterInteractor$finalValidationFiles$1.L$1;
                     list2 = (List) filesUpdaterInteractor$finalValidationFiles$1.L$0;
                     ResultKt.throwOnFailure(obj2);
-                    int i6 = i4;
-                    it = it2;
-                    linkedList = iterable;
-                    hashSet = hashSet2;
+                    linkedList = (Iterable) filesUpdaterInteractor$finalValidationFiles$1.L$2;
                     File file3 = (File) obj2;
                     if (file3 == null || !file3.exists()) {
                         z = true;
@@ -412,7 +401,7 @@ public final class FilesUpdaterInteractor {
                         checkedFile.setNewDownloaded(false);
                         z = true;
                     }
-                    i2 = i6;
+                    hashSet = hashSet2;
                     list = list2;
                     if (it.hasNext()) {
                         ArrayList arrayList5 = new ArrayList();
@@ -442,8 +431,8 @@ public final class FilesUpdaterInteractor {
                         }
                         return arrayList42;
                     }
-                    Object next = it.next();
-                    CheckedFile checkedFile3 = (CheckedFile) next;
+                    obj = it.next();
+                    CheckedFile checkedFile3 = (CheckedFile) obj;
                     String name = checkedFile3.getGameInfoFile().getName();
                     Intrinsics.checkNotNull(name);
                     hashSet.remove(name);
@@ -453,62 +442,48 @@ public final class FilesUpdaterInteractor {
                     filesUpdaterInteractor$finalValidationFiles$1.L$1 = hashSet;
                     filesUpdaterInteractor$finalValidationFiles$1.L$2 = SpillingKt.nullOutSpilledVariable(linkedList);
                     filesUpdaterInteractor$finalValidationFiles$1.L$3 = it;
-                    filesUpdaterInteractor$finalValidationFiles$1.L$4 = SpillingKt.nullOutSpilledVariable(next);
+                    filesUpdaterInteractor$finalValidationFiles$1.L$4 = SpillingKt.nullOutSpilledVariable(obj);
                     filesUpdaterInteractor$finalValidationFiles$1.L$5 = checkedFile3;
                     filesUpdaterInteractor$finalValidationFiles$1.L$6 = null;
-                    filesUpdaterInteractor$finalValidationFiles$1.I$0 = i2;
-                    filesUpdaterInteractor$finalValidationFiles$1.I$1 = 0;
                     filesUpdaterInteractor$finalValidationFiles$1.label = 3;
                     Object destinationUri = downloaderSyncInteractor2.getDestinationUri(localPath, filesUpdaterInteractor$finalValidationFiles$1);
                     if (destinationUri != coroutine_suspended) {
                         hashSet2 = hashSet;
-                        i4 = i2;
                         checkedFile = checkedFile3;
                         list2 = list;
                         obj2 = destinationUri;
-                        iterable = linkedList;
-                        i3 = 0;
-                        obj = next;
-                        it2 = it;
                         Uri uri2 = (Uri) obj2;
                         DownloaderSyncInteractor downloaderSyncInteractor3 = this.downloaderSyncInteractor;
                         filesUpdaterInteractor$finalValidationFiles$1.L$0 = list2;
                         filesUpdaterInteractor$finalValidationFiles$1.L$1 = hashSet2;
-                        filesUpdaterInteractor$finalValidationFiles$1.L$2 = SpillingKt.nullOutSpilledVariable(iterable);
-                        filesUpdaterInteractor$finalValidationFiles$1.L$3 = it2;
+                        filesUpdaterInteractor$finalValidationFiles$1.L$2 = SpillingKt.nullOutSpilledVariable(linkedList);
+                        filesUpdaterInteractor$finalValidationFiles$1.L$3 = it;
                         filesUpdaterInteractor$finalValidationFiles$1.L$4 = SpillingKt.nullOutSpilledVariable(obj);
                         filesUpdaterInteractor$finalValidationFiles$1.L$5 = checkedFile;
                         filesUpdaterInteractor$finalValidationFiles$1.L$6 = SpillingKt.nullOutSpilledVariable(uri2);
-                        filesUpdaterInteractor$finalValidationFiles$1.I$0 = i4;
-                        filesUpdaterInteractor$finalValidationFiles$1.I$1 = i3;
                         filesUpdaterInteractor$finalValidationFiles$1.label = 4;
                         obj2 = downloaderSyncInteractor3.getFileByPath(uri2, filesUpdaterInteractor$finalValidationFiles$1);
                     }
                     return coroutine_suspended;
                 } else {
-                    int i7 = filesUpdaterInteractor$finalValidationFiles$1.I$1;
-                    int i8 = filesUpdaterInteractor$finalValidationFiles$1.I$0;
-                    Object obj6 = filesUpdaterInteractor$finalValidationFiles$1.L$4;
-                    ResultKt.throwOnFailure(obj2);
-                    i3 = i7;
-                    i4 = i8;
                     checkedFile = (CheckedFile) filesUpdaterInteractor$finalValidationFiles$1.L$5;
-                    it2 = (Iterator) filesUpdaterInteractor$finalValidationFiles$1.L$3;
-                    hashSet2 = (HashSet) filesUpdaterInteractor$finalValidationFiles$1.L$1;
+                    Object obj6 = filesUpdaterInteractor$finalValidationFiles$1.L$4;
+                    Iterator it2 = (Iterator) filesUpdaterInteractor$finalValidationFiles$1.L$3;
+                    ResultKt.throwOnFailure(obj2);
                     obj = obj6;
-                    iterable = (Iterable) filesUpdaterInteractor$finalValidationFiles$1.L$2;
+                    it = it2;
+                    linkedList = (Iterable) filesUpdaterInteractor$finalValidationFiles$1.L$2;
+                    hashSet2 = (HashSet) filesUpdaterInteractor$finalValidationFiles$1.L$1;
                     list2 = (List) filesUpdaterInteractor$finalValidationFiles$1.L$0;
                     Uri uri22 = (Uri) obj2;
                     DownloaderSyncInteractor downloaderSyncInteractor32 = this.downloaderSyncInteractor;
                     filesUpdaterInteractor$finalValidationFiles$1.L$0 = list2;
                     filesUpdaterInteractor$finalValidationFiles$1.L$1 = hashSet2;
-                    filesUpdaterInteractor$finalValidationFiles$1.L$2 = SpillingKt.nullOutSpilledVariable(iterable);
-                    filesUpdaterInteractor$finalValidationFiles$1.L$3 = it2;
+                    filesUpdaterInteractor$finalValidationFiles$1.L$2 = SpillingKt.nullOutSpilledVariable(linkedList);
+                    filesUpdaterInteractor$finalValidationFiles$1.L$3 = it;
                     filesUpdaterInteractor$finalValidationFiles$1.L$4 = SpillingKt.nullOutSpilledVariable(obj);
                     filesUpdaterInteractor$finalValidationFiles$1.L$5 = checkedFile;
                     filesUpdaterInteractor$finalValidationFiles$1.L$6 = SpillingKt.nullOutSpilledVariable(uri22);
-                    filesUpdaterInteractor$finalValidationFiles$1.I$0 = i4;
-                    filesUpdaterInteractor$finalValidationFiles$1.I$1 = i3;
                     filesUpdaterInteractor$finalValidationFiles$1.label = 4;
                     obj2 = downloaderSyncInteractor32.getFileByPath(uri22, filesUpdaterInteractor$finalValidationFiles$1);
                 }

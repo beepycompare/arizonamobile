@@ -19,7 +19,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class ImageDownloader {
     private static final int CACHE_READ_QUEUE_MAX_CONCURRENT = 2;
     private static final int DOWNLOAD_QUEUE_MAX_CONCURRENT = 8;
@@ -29,7 +29,7 @@ public class ImageDownloader {
     private static final Map<RequestKey, DownloaderContext> pendingRequests = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class CacheReadWorkItem implements Runnable {
         private boolean allowCachedRedirects;
         private Context context;
@@ -48,7 +48,7 @@ public class ImageDownloader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class DownloadImageWorkItem implements Runnable {
         private Context context;
         private RequestKey key;
@@ -65,7 +65,7 @@ public class ImageDownloader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class DownloaderContext {
         boolean isCancelled;
         ImageRequest request;
@@ -80,7 +80,7 @@ public class ImageDownloader {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class RequestKey {
         private static final int HASH_MULTIPLIER = 37;
         private static final int HASH_SEED = 29;

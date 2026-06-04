@@ -19,7 +19,7 @@ public final class YearMonthKt {
 
     public static final YearMonth getYearMonth(LocalDate localDate) {
         Intrinsics.checkNotNullParameter(localDate, "<this>");
-        return new YearMonth(localDate.getYear(), localDate.m11444getMonth());
+        return new YearMonth(localDate.getYear(), localDate.m11518getMonth());
     }
 
     public static final LocalDate onDay(YearMonth yearMonth, int i) {

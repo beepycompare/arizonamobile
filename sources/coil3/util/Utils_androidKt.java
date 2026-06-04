@@ -179,7 +179,7 @@ public final class Utils_androidKt {
     }
 
     public static final boolean isAssetUri(Uri uri) {
-        return Intrinsics.areEqual(uri.getScheme(), "file") && Intrinsics.areEqual(kotlin.collections.CollectionsKt.firstOrNull((List<? extends Object>) UriKt.getPathSegments(uri)), ASSET_FILE_PATH_ROOT);
+        return Intrinsics.areEqual(uri.getScheme(), UtilsKt.SCHEME_FILE) && Intrinsics.areEqual(kotlin.collections.CollectionsKt.firstOrNull((List<? extends Object>) UriKt.getPathSegments(uri)), ASSET_FILE_PATH_ROOT);
     }
 
     public static final Scale getScale(ImageView imageView) {

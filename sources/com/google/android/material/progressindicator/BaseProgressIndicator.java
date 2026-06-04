@@ -70,7 +70,7 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
         this.hideAfterMaxProgressListener = new DynamicAnimation.OnAnimationEndListener() { // from class: com.google.android.material.progressindicator.BaseProgressIndicator$$ExternalSyntheticLambda0
             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-                BaseProgressIndicator.this.m9530x4b14d911(dynamicAnimation, z, f, f2);
+                BaseProgressIndicator.this.m9581x4b14d911(dynamicAnimation, z, f, f2);
             }
         };
         this.delayedShow = new Runnable() { // from class: com.google.android.material.progressindicator.BaseProgressIndicator.1
@@ -568,7 +568,7 @@ public abstract class BaseProgressIndicator<S extends BaseProgressIndicatorSpec>
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-progressindicator-BaseProgressIndicator  reason: not valid java name */
-    public /* synthetic */ void m9530x4b14d911(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
+    public /* synthetic */ void m9581x4b14d911(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
         if (getProgressDrawable() == null || getProgressDrawable().getLevel() != 10000) {
             return;
         }

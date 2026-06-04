@@ -37,7 +37,7 @@ import kotlinx.coroutines.Job;
 import kotlinx.coroutines.SupervisorKt;
 import kotlinx.coroutines.TimeoutKt;
 /* compiled from: GameTestScriptRunner.kt */
-@Metadata(d1 = {"\u0000\u0094\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010#\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0004\u0018\u0000 A2\u00020\u0001:\u0003?@AB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0018\u001a\u00020\u0019J\u0006\u0010\u001a\u001a\u00020\u0015J\u000e\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u001c\u001a\u00020\fJ\u0010\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u001c\u001a\u00020\fH\u0002J\u001c\u0010\u001e\u001a\u00020\u00152\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 H\u0082@¢\u0006\u0002\u0010\"J\u0016\u0010#\u001a\u00020\u00152\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u0010&J\u0016\u0010'\u001a\u00020\u00152\u0006\u0010$\u001a\u00020(H\u0082@¢\u0006\u0002\u0010)J\u0016\u0010*\u001a\u00020\u00152\u0006\u0010$\u001a\u00020+H\u0082@¢\u0006\u0002\u0010,J(\u0010-\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u0002012\b\u00102\u001a\u0004\u0018\u00010\u0019H\u0082@¢\u0006\u0002\u00103J\u0018\u00104\u001a\u0004\u0018\u00010\f2\u0006\u0010$\u001a\u00020(H\u0082@¢\u0006\u0002\u0010)J\u0010\u00105\u001a\u00020\u00152\u0006\u00106\u001a\u000207H\u0002J\u0010\u00108\u001a\u00020\u00152\u0006\u00109\u001a\u00020\u0019H\u0002J\b\u0010:\u001a\u00020\u0015H\u0002J\u0018\u0010;\u001a\u00020\u00152\u0006\u00106\u001a\u0002072\u0006\u0010\u001c\u001a\u00020\fH\u0002J\u0010\u0010<\u001a\u00020\u00152\u0006\u0010=\u001a\u00020>H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\t0\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner;", "", "runtime", "Lcom/miami/game/core/settings/game_test/GameTestRuntime;", "<init>", "(Lcom/miami/game/core/settings/game_test/GameTestRuntime;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "activeJob", "Lkotlinx/coroutines/Job;", "recentBackendEvents", "Lkotlin/collections/ArrayDeque;", "Lcom/miami/game/core/settings/game_test/GameTestBackendEvent;", "pendingBackendMessageWaiters", "", "Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$PendingBackendMessageWaiter;", "activeBackendMessageListeners", "Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$ActiveBackendMessageListener;", "listenerReactionJobs", "", TtmlNode.START, "", "script", "Lcom/miami/game/core/settings/game_test/GameTestScript;", "displayName", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "onBackendMessage", NotificationCompat.CATEGORY_EVENT, "handleBackendMessage", "executeSteps", "steps", "", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeBackendMessage", "step", "Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;", "(Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeWaitBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;", "(Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeBackendFixture", "Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;", "(Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "replayFixture", "fixture", "Lcom/miami/game/core/settings/game_test/BackendFixture;", TypedValues.AttributesType.S_TARGET, "Lcom/miami/game/core/settings/game_test/BackendReplayTarget;", "providerOverride", "(Lcom/miami/game/core/settings/game_test/BackendFixture;Lcom/miami/game/core/settings/game_test/BackendReplayTarget;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "waitForBackendMessage", "registerBackendMessageListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "removeBackendMessageListener", "name", "clearBackendMessageListeners", "launchListenerReaction", "clearScriptRuntimeState", "clearRecentEvents", "", "PendingBackendMessageWaiter", "ActiveBackendMessageListener", "Companion", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0094\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010#\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0004\u0018\u0000 A2\u00020\u0001:\u0003?@AB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0018\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00172\b\b\u0002\u0010\u0018\u001a\u00020\u0019J\u0006\u0010\u001a\u001a\u00020\u0015J\u000e\u0010\u001b\u001a\u00020\u00152\u0006\u0010\u001c\u001a\u00020\fJ\u0010\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u001c\u001a\u00020\fH\u0002J\u001c\u0010\u001e\u001a\u00020\u00152\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 H\u0082@¢\u0006\u0002\u0010\"J\u0016\u0010#\u001a\u00020\u00152\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u0010&J\u0016\u0010'\u001a\u00020\u00152\u0006\u0010$\u001a\u00020(H\u0082@¢\u0006\u0002\u0010)J\u0016\u0010*\u001a\u00020\u00152\u0006\u0010$\u001a\u00020+H\u0082@¢\u0006\u0002\u0010,J(\u0010-\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u0002012\b\u00102\u001a\u0004\u0018\u00010\u0019H\u0082@¢\u0006\u0002\u00103J\u0018\u00104\u001a\u0004\u0018\u00010\f2\u0006\u0010$\u001a\u00020(H\u0082@¢\u0006\u0002\u0010)J\u0010\u00105\u001a\u00020\u00152\u0006\u00106\u001a\u000207H\u0002J\u0010\u00108\u001a\u00020\u00152\u0006\u00109\u001a\u00020\u0019H\u0002J\b\u0010:\u001a\u00020\u0015H\u0002J\u0018\u0010;\u001a\u00020\u00152\u0006\u00106\u001a\u0002072\u0006\u0010\u001c\u001a\u00020\fH\u0002J\u0010\u0010<\u001a\u00020\u00152\u0006\u0010=\u001a\u00020>H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\t0\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner;", "", "runtime", "Lcom/miami/game/core/settings/game_test/GameTestRuntime;", "<init>", "(Lcom/miami/game/core/settings/game_test/GameTestRuntime;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "activeJob", "Lkotlinx/coroutines/Job;", "recentBackendEvents", "Lkotlin/collections/ArrayDeque;", "Lcom/miami/game/core/settings/game_test/GameTestBackendEvent;", "pendingBackendMessageWaiters", "", "Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$PendingBackendMessageWaiter;", "activeBackendMessageListeners", "Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$ActiveBackendMessageListener;", "listenerReactionJobs", "", TtmlNode.START, "", "script", "Lcom/miami/game/core/settings/game_test/GameTestScript;", "displayName", "", FacebookDialog.COMPLETION_GESTURE_CANCEL, "onBackendMessage", NotificationCompat.CATEGORY_EVENT, "handleBackendMessage", "executeSteps", "steps", "", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "(Ljava/util/List;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeBackendMessage", "step", "Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;", "(Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeWaitBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;", "(Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeBackendFixture", "Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;", "(Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "replayFixture", "fixture", "Lcom/miami/game/core/settings/game_test/BackendFixture;", TypedValues.AttributesType.S_TARGET, "Lcom/miami/game/core/settings/game_test/BackendReplayTarget;", "providerOverride", "(Lcom/miami/game/core/settings/game_test/BackendFixture;Lcom/miami/game/core/settings/game_test/BackendReplayTarget;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "waitForBackendMessage", "registerBackendMessageListener", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "removeBackendMessageListener", "name", "clearBackendMessageListeners", "launchListenerReaction", "clearScriptRuntimeState", "clearRecentEvents", "", "PendingBackendMessageWaiter", "ActiveBackendMessageListener", "Companion", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class GameTestScriptRunner {
     private static final Companion Companion = new Companion(null);
@@ -125,85 +125,93 @@ public final class GameTestScriptRunner {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0127, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(r12, r2) == r3) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00d5, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(r13, r2) == r3) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x012b, code lost:
-        r7 = r1;
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00d9, code lost:
+        r11 = r1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x019b, code lost:
-        if (executeBackendMessage((com.miami.game.core.settings.game_test.GameTestStep.BackendMessage) r11, r2) == r3) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x0145, code lost:
+        if (executeBackendMessage((com.miami.game.core.settings.game_test.GameTestStep.BackendMessage) r12, r2) == r3) goto L18;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x028f, code lost:
-        if (executeSteps(r8, r2) == r3) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0170, code lost:
+        if (executeWaitBackendMessage((com.miami.game.core.settings.game_test.GameTestStep.WaitBackendMessage) r12, r2) == r3) goto L18;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x02f1  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00d5  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x025c  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0298  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:101:0x02b9 -> B:111:0x02e6). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:104:0x02c7 -> B:111:0x02e6). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:107:0x02d5 -> B:111:0x02e6). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:110:0x02e3 -> B:111:0x02e6). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:38:0x0131 -> B:111:0x02e6). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:80:0x0225 -> B:111:0x02e6). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:89:0x024b -> B:90:0x025a). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:92:0x028f -> B:94:0x0292). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:98:0x02a5 -> B:111:0x02e6). Please submit an issue!!! */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x01b9, code lost:
+        if (executeBackendFixture((com.miami.game.core.settings.game_test.GameTestStep.ReplayBackendFixture) r12, r2) == r3) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x021a, code lost:
+        if (executeSteps(r1, r2) == r3) goto L18;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x021c, code lost:
+        return r3;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0272  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x01f1  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0220  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:100:0x0266 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x0090 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x009d -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x00da -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:37:0x00e1 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:40:0x00ee -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x00fb -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:46:0x0108 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:49:0x0115 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:62:0x0178 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:65:0x0187 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:73:0x01c0 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:76:0x01d1 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:79:0x01de -> B:80:0x01ef). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:82:0x021a -> B:84:0x021d). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:88:0x0228 -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:91:0x023c -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:94:0x024a -> B:101:0x0269). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:97:0x0258 -> B:101:0x0269). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object executeSteps(List<? extends GameTestStep> list, Continuation<? super Unit> continuation) {
         GameTestScriptRunner$executeSteps$1 gameTestScriptRunner$executeSteps$1;
         int i;
-        Object obj;
         Iterator it;
-        int i2;
+        Object obj;
         List<? extends GameTestStep> list2;
-        int i3;
-        List<? extends GameTestStep> list3;
-        List<? extends GameTestStep> list4;
+        Iterator it2;
+        int i2;
         Object obj2;
-        GameTestStep gameTestStep;
         int times;
-        List<? extends GameTestStep> list5;
-        int i4;
-        int i5;
-        int i6;
-        int i7;
+        Object obj3;
+        GameTestStep gameTestStep;
+        List<? extends GameTestStep> list3;
         if (continuation instanceof GameTestScriptRunner$executeSteps$1) {
             gameTestScriptRunner$executeSteps$1 = (GameTestScriptRunner$executeSteps$1) continuation;
             if ((gameTestScriptRunner$executeSteps$1.label & Integer.MIN_VALUE) != 0) {
                 gameTestScriptRunner$executeSteps$1.label -= Integer.MIN_VALUE;
-                Object obj3 = gameTestScriptRunner$executeSteps$1.result;
+                Object obj4 = gameTestScriptRunner$executeSteps$1.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                 i = gameTestScriptRunner$executeSteps$1.label;
-                int i8 = 2;
-                int i9 = 1;
+                int i3 = 4;
                 if (i != 0) {
-                    ResultKt.throwOnFailure(obj3);
-                    List<? extends GameTestStep> list6 = list;
-                    obj = list6;
-                    it = list6.iterator();
-                    i2 = 0;
+                    ResultKt.throwOnFailure(obj4);
+                    List<? extends GameTestStep> list4 = list;
+                    it = list4.iterator();
+                    obj = list4;
                     list2 = list;
                     if (it.hasNext()) {
                     }
-                } else if (i == 1 || i == 2) {
-                    int i10 = gameTestScriptRunner$executeSteps$1.I$1;
-                    i2 = gameTestScriptRunner$executeSteps$1.I$0;
+                } else if (i == 1 || i == 2 || i == 3 || i == 4) {
                     GameTestStep gameTestStep2 = (GameTestStep) gameTestScriptRunner$executeSteps$1.L$4;
-                    Object obj4 = gameTestScriptRunner$executeSteps$1.L$3;
+                    Object obj5 = gameTestScriptRunner$executeSteps$1.L$3;
                     it = (Iterator) gameTestScriptRunner$executeSteps$1.L$2;
                     obj = (Iterable) gameTestScriptRunner$executeSteps$1.L$1;
-                    List<? extends GameTestStep> list7 = (List) gameTestScriptRunner$executeSteps$1.L$0;
-                    ResultKt.throwOnFailure(obj3);
-                    list2 = list7;
-                    i3 = i9;
-                    i9 = i3;
-                    i8 = 2;
+                    List<? extends GameTestStep> list5 = (List) gameTestScriptRunner$executeSteps$1.L$0;
+                    ResultKt.throwOnFailure(obj4);
+                    list2 = list5;
+                    i3 = 4;
                     if (it.hasNext()) {
                         Object next = it.next();
                         GameTestStep gameTestStep3 = (GameTestStep) next;
@@ -219,9 +227,7 @@ public final class GameTestScriptRunner {
                                 gameTestScriptRunner$executeSteps$1.L$2 = it;
                                 gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(next);
                                 gameTestScriptRunner$executeSteps$1.L$4 = SpillingKt.nullOutSpilledVariable(gameTestStep3);
-                                gameTestScriptRunner$executeSteps$1.I$0 = i2;
-                                gameTestScriptRunner$executeSteps$1.I$1 = 0;
-                                gameTestScriptRunner$executeSteps$1.label = i9;
+                                gameTestScriptRunner$executeSteps$1.label = 1;
                             } else if (gameTestStep3 instanceof GameTestStep.Tap) {
                                 this.runtime.tap((GameTestStep.Tap) gameTestStep3);
                             } else if (gameTestStep3 instanceof GameTestStep.Swipe) {
@@ -230,208 +236,111 @@ public final class GameTestScriptRunner {
                                 this.runtime.captureScreenshot((GameTestStep.Screenshot) gameTestStep3);
                             } else if (gameTestStep3 instanceof GameTestStep.ShowUi) {
                                 this.runtime.showUi((GameTestStep.ShowUi) gameTestStep3);
-                            } else if (!(gameTestStep3 instanceof GameTestStep.HideUi)) {
-                                if (gameTestStep3 instanceof GameTestStep.BackendMessage) {
-                                    gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list2);
-                                    gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj);
-                                    gameTestScriptRunner$executeSteps$1.L$2 = it;
-                                    gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(next);
-                                    gameTestScriptRunner$executeSteps$1.L$4 = SpillingKt.nullOutSpilledVariable(gameTestStep3);
-                                    gameTestScriptRunner$executeSteps$1.I$0 = i2;
-                                    gameTestScriptRunner$executeSteps$1.I$1 = 0;
-                                    gameTestScriptRunner$executeSteps$1.label = i8;
-                                } else if (gameTestStep3 instanceof GameTestStep.WaitBackendMessage) {
-                                    gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list2);
-                                    gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj);
-                                    gameTestScriptRunner$executeSteps$1.L$2 = it;
-                                    gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(next);
-                                    gameTestScriptRunner$executeSteps$1.L$4 = SpillingKt.nullOutSpilledVariable(gameTestStep3);
-                                    gameTestScriptRunner$executeSteps$1.I$0 = i2;
-                                    gameTestScriptRunner$executeSteps$1.I$1 = 0;
-                                    gameTestScriptRunner$executeSteps$1.label = 3;
-                                    if (executeWaitBackendMessage((GameTestStep.WaitBackendMessage) gameTestStep3, gameTestScriptRunner$executeSteps$1) != coroutine_suspended) {
-                                        list4 = list2;
-                                        list2 = list4;
-                                        i3 = i9;
-                                        i9 = i3;
-                                        i8 = 2;
-                                        if (it.hasNext()) {
-                                        }
-                                    }
-                                } else {
-                                    if (gameTestStep3 instanceof GameTestStep.AddBackendMessageListener) {
-                                        registerBackendMessageListener(((GameTestStep.AddBackendMessageListener) gameTestStep3).getListener());
-                                    } else if (gameTestStep3 instanceof GameTestStep.RemoveBackendMessageListener) {
-                                        removeBackendMessageListener(((GameTestStep.RemoveBackendMessageListener) gameTestStep3).getName());
-                                    } else if (gameTestStep3 instanceof GameTestStep.ReplayBackendFixture) {
-                                        gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list2);
-                                        gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj);
-                                        gameTestScriptRunner$executeSteps$1.L$2 = it;
-                                        gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(next);
-                                        gameTestScriptRunner$executeSteps$1.L$4 = SpillingKt.nullOutSpilledVariable(gameTestStep3);
-                                        gameTestScriptRunner$executeSteps$1.I$0 = i2;
-                                        gameTestScriptRunner$executeSteps$1.I$1 = 0;
-                                        gameTestScriptRunner$executeSteps$1.label = 4;
-                                        if (executeBackendFixture((GameTestStep.ReplayBackendFixture) gameTestStep3, gameTestScriptRunner$executeSteps$1) != coroutine_suspended) {
-                                            list3 = list2;
-                                            list2 = list3;
-                                            i3 = i9;
-                                            i9 = i3;
-                                            i8 = 2;
-                                            if (it.hasNext()) {
-                                            }
-                                        }
-                                    } else {
-                                        if (gameTestStep3 instanceof GameTestStep.StartBackendTrace) {
-                                            this.runtime.startBackendTrace(((GameTestStep.StartBackendTrace) gameTestStep3).getTraceName());
-                                        } else if (gameTestStep3 instanceof GameTestStep.StartBackendValidation) {
-                                            this.runtime.startBackendValidation((GameTestStep.StartBackendValidation) gameTestStep3);
-                                        } else if (gameTestStep3 instanceof GameTestStep.Repeat) {
-                                            obj2 = next;
-                                            gameTestStep = gameTestStep3;
-                                            times = ((GameTestStep.Repeat) gameTestStep3).getTimes();
-                                            list5 = list2;
-                                            i4 = i2;
-                                            i5 = 0;
-                                            i6 = 0;
-                                            if (i5 >= times) {
-                                                List<? extends GameTestStep> steps = ((GameTestStep.Repeat) gameTestStep).getSteps();
-                                                i7 = i9;
-                                                gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list5);
-                                                gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj);
-                                                gameTestScriptRunner$executeSteps$1.L$2 = it;
-                                                gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(obj2);
-                                                gameTestScriptRunner$executeSteps$1.L$4 = gameTestStep;
-                                                gameTestScriptRunner$executeSteps$1.I$0 = i4;
-                                                gameTestScriptRunner$executeSteps$1.I$1 = i6;
-                                                gameTestScriptRunner$executeSteps$1.I$2 = times;
-                                                gameTestScriptRunner$executeSteps$1.I$3 = i5;
-                                                gameTestScriptRunner$executeSteps$1.I$4 = i5;
-                                                gameTestScriptRunner$executeSteps$1.I$5 = 0;
-                                                gameTestScriptRunner$executeSteps$1.label = 5;
-                                            } else {
-                                                i3 = i9;
-                                                i2 = i4;
-                                                list2 = list5;
-                                                i9 = i3;
-                                                i8 = 2;
-                                                if (it.hasNext()) {
-                                                    return Unit.INSTANCE;
-                                                }
-                                            }
-                                        } else {
-                                            i3 = i9;
-                                            if (gameTestStep3 instanceof GameTestStep.Log) {
-                                                this.runtime.log(((GameTestStep.Log) gameTestStep3).getMessage());
-                                            } else if (Intrinsics.areEqual(gameTestStep3, GameTestStep.CloseAll.INSTANCE)) {
-                                                this.runtime.closeAll();
-                                            } else if (Intrinsics.areEqual(gameTestStep3, GameTestStep.StopBackendTrace.INSTANCE)) {
-                                                this.runtime.stopBackendTrace();
-                                            } else if (Intrinsics.areEqual(gameTestStep3, GameTestStep.StopBackendValidation.INSTANCE)) {
-                                                this.runtime.stopBackendValidation();
-                                            } else if (!Intrinsics.areEqual(gameTestStep3, GameTestStep.ClearBackendMessageListeners.INSTANCE)) {
-                                                throw new NoWhenBranchMatchedException();
-                                            } else {
-                                                clearBackendMessageListeners();
-                                            }
-                                            i9 = i3;
-                                            i8 = 2;
-                                            if (it.hasNext()) {
-                                            }
-                                        }
-                                        i3 = i9;
-                                        i9 = i3;
-                                        i8 = 2;
-                                        if (it.hasNext()) {
-                                        }
-                                    }
-                                    i3 = i9;
-                                    i9 = i3;
-                                    i8 = 2;
-                                    if (it.hasNext()) {
-                                    }
-                                }
-                                return coroutine_suspended;
-                            } else {
+                            } else if (gameTestStep3 instanceof GameTestStep.HideUi) {
                                 this.runtime.hideUi((GameTestStep.HideUi) gameTestStep3);
+                            } else if (gameTestStep3 instanceof GameTestStep.BackendMessage) {
+                                gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list2);
+                                gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj);
+                                gameTestScriptRunner$executeSteps$1.L$2 = it;
+                                gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(next);
+                                gameTestScriptRunner$executeSteps$1.L$4 = SpillingKt.nullOutSpilledVariable(gameTestStep3);
+                                gameTestScriptRunner$executeSteps$1.label = 2;
+                            } else if (gameTestStep3 instanceof GameTestStep.WaitBackendMessage) {
+                                gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list2);
+                                gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj);
+                                gameTestScriptRunner$executeSteps$1.L$2 = it;
+                                gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(next);
+                                gameTestScriptRunner$executeSteps$1.L$4 = SpillingKt.nullOutSpilledVariable(gameTestStep3);
+                                gameTestScriptRunner$executeSteps$1.label = 3;
+                            } else if (gameTestStep3 instanceof GameTestStep.AddBackendMessageListener) {
+                                registerBackendMessageListener(((GameTestStep.AddBackendMessageListener) gameTestStep3).getListener());
+                            } else if (gameTestStep3 instanceof GameTestStep.RemoveBackendMessageListener) {
+                                removeBackendMessageListener(((GameTestStep.RemoveBackendMessageListener) gameTestStep3).getName());
+                            } else if (gameTestStep3 instanceof GameTestStep.ReplayBackendFixture) {
+                                gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list2);
+                                gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj);
+                                gameTestScriptRunner$executeSteps$1.L$2 = it;
+                                gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(next);
+                                gameTestScriptRunner$executeSteps$1.L$4 = SpillingKt.nullOutSpilledVariable(gameTestStep3);
+                                gameTestScriptRunner$executeSteps$1.label = i3;
+                            } else if (gameTestStep3 instanceof GameTestStep.StartBackendTrace) {
+                                this.runtime.startBackendTrace(((GameTestStep.StartBackendTrace) gameTestStep3).getTraceName());
+                            } else if (gameTestStep3 instanceof GameTestStep.StartBackendValidation) {
+                                this.runtime.startBackendValidation((GameTestStep.StartBackendValidation) gameTestStep3);
+                            } else if (gameTestStep3 instanceof GameTestStep.Repeat) {
+                                it2 = it;
+                                i2 = 0;
+                                obj2 = obj;
+                                times = ((GameTestStep.Repeat) gameTestStep3).getTimes();
+                                obj3 = next;
+                                gameTestStep = gameTestStep3;
+                                list3 = list2;
+                                if (i2 >= times) {
+                                    List<? extends GameTestStep> steps = ((GameTestStep.Repeat) gameTestStep).getSteps();
+                                    gameTestScriptRunner$executeSteps$1.L$0 = SpillingKt.nullOutSpilledVariable(list3);
+                                    gameTestScriptRunner$executeSteps$1.L$1 = SpillingKt.nullOutSpilledVariable(obj2);
+                                    gameTestScriptRunner$executeSteps$1.L$2 = it2;
+                                    gameTestScriptRunner$executeSteps$1.L$3 = SpillingKt.nullOutSpilledVariable(obj3);
+                                    gameTestScriptRunner$executeSteps$1.L$4 = gameTestStep;
+                                    gameTestScriptRunner$executeSteps$1.I$0 = times;
+                                    gameTestScriptRunner$executeSteps$1.I$1 = i2;
+                                    gameTestScriptRunner$executeSteps$1.I$2 = i2;
+                                    gameTestScriptRunner$executeSteps$1.label = 5;
+                                } else {
+                                    it = it2;
+                                    obj = obj2;
+                                    list2 = list3;
+                                }
+                            } else if (gameTestStep3 instanceof GameTestStep.Log) {
+                                this.runtime.log(((GameTestStep.Log) gameTestStep3).getMessage());
+                            } else if (Intrinsics.areEqual(gameTestStep3, GameTestStep.CloseAll.INSTANCE)) {
+                                this.runtime.closeAll();
+                            } else if (Intrinsics.areEqual(gameTestStep3, GameTestStep.StopBackendTrace.INSTANCE)) {
+                                this.runtime.stopBackendTrace();
+                            } else if (Intrinsics.areEqual(gameTestStep3, GameTestStep.StopBackendValidation.INSTANCE)) {
+                                this.runtime.stopBackendValidation();
+                            } else if (!Intrinsics.areEqual(gameTestStep3, GameTestStep.ClearBackendMessageListeners.INSTANCE)) {
+                                throw new NoWhenBranchMatchedException();
+                            } else {
+                                clearBackendMessageListeners();
                             }
-                            list2 = list7;
+                            list2 = list5;
                         }
-                        i3 = i9;
-                        i9 = i3;
-                        i8 = 2;
+                        i3 = 4;
                         if (it.hasNext()) {
+                            return Unit.INSTANCE;
                         }
-                    }
-                } else if (i == 3) {
-                    int i11 = gameTestScriptRunner$executeSteps$1.I$1;
-                    i2 = gameTestScriptRunner$executeSteps$1.I$0;
-                    GameTestStep gameTestStep4 = (GameTestStep) gameTestScriptRunner$executeSteps$1.L$4;
-                    Object obj5 = gameTestScriptRunner$executeSteps$1.L$3;
-                    it = (Iterator) gameTestScriptRunner$executeSteps$1.L$2;
-                    obj = (Iterable) gameTestScriptRunner$executeSteps$1.L$1;
-                    list4 = (List) gameTestScriptRunner$executeSteps$1.L$0;
-                    ResultKt.throwOnFailure(obj3);
-                    list2 = list4;
-                    i3 = i9;
-                    i9 = i3;
-                    i8 = 2;
-                    if (it.hasNext()) {
-                    }
-                } else if (i == 4) {
-                    int i12 = gameTestScriptRunner$executeSteps$1.I$1;
-                    i2 = gameTestScriptRunner$executeSteps$1.I$0;
-                    GameTestStep gameTestStep5 = (GameTestStep) gameTestScriptRunner$executeSteps$1.L$4;
-                    Object obj6 = gameTestScriptRunner$executeSteps$1.L$3;
-                    it = (Iterator) gameTestScriptRunner$executeSteps$1.L$2;
-                    obj = (Iterable) gameTestScriptRunner$executeSteps$1.L$1;
-                    list3 = (List) gameTestScriptRunner$executeSteps$1.L$0;
-                    ResultKt.throwOnFailure(obj3);
-                    list2 = list3;
-                    i3 = i9;
-                    i9 = i3;
-                    i8 = 2;
-                    if (it.hasNext()) {
                     }
                 } else if (i != 5) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    int i13 = gameTestScriptRunner$executeSteps$1.I$5;
-                    int i14 = gameTestScriptRunner$executeSteps$1.I$4;
-                    i5 = gameTestScriptRunner$executeSteps$1.I$3;
-                    times = gameTestScriptRunner$executeSteps$1.I$2;
-                    i6 = gameTestScriptRunner$executeSteps$1.I$1;
-                    int i15 = gameTestScriptRunner$executeSteps$1.I$0;
-                    Object obj7 = gameTestScriptRunner$executeSteps$1.L$3;
-                    it = (Iterator) gameTestScriptRunner$executeSteps$1.L$2;
-                    obj = (Iterable) gameTestScriptRunner$executeSteps$1.L$1;
-                    list5 = (List) gameTestScriptRunner$executeSteps$1.L$0;
-                    ResultKt.throwOnFailure(obj3);
-                    i7 = 1;
-                    i4 = i15;
-                    obj2 = obj7;
+                    int i4 = gameTestScriptRunner$executeSteps$1.I$2;
+                    i2 = gameTestScriptRunner$executeSteps$1.I$1;
+                    times = gameTestScriptRunner$executeSteps$1.I$0;
                     gameTestStep = (GameTestStep) gameTestScriptRunner$executeSteps$1.L$4;
-                    i5++;
-                    i9 = i7;
-                    if (i5 >= times) {
+                    obj3 = gameTestScriptRunner$executeSteps$1.L$3;
+                    it2 = (Iterator) gameTestScriptRunner$executeSteps$1.L$2;
+                    obj2 = (Iterable) gameTestScriptRunner$executeSteps$1.L$1;
+                    list3 = (List) gameTestScriptRunner$executeSteps$1.L$0;
+                    ResultKt.throwOnFailure(obj4);
+                    i2++;
+                    if (i2 >= times) {
                     }
                 }
             }
         }
         gameTestScriptRunner$executeSteps$1 = new GameTestScriptRunner$executeSteps$1(this, continuation);
-        Object obj32 = gameTestScriptRunner$executeSteps$1.result;
+        Object obj42 = gameTestScriptRunner$executeSteps$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = gameTestScriptRunner$executeSteps$1.label;
-        int i82 = 2;
-        int i92 = 1;
+        int i32 = 4;
         if (i != 0) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object executeBackendMessage(GameTestStep.BackendMessage backendMessage, Continuation<? super Unit> continuation) {
-        Object replayFixture = replayFixture(new BackendFixture("inline_backend_message", backendMessage.getProvider(), null, CollectionsKt.listOf(new BackendFixtureEvent(backendMessage.getBackendId(), backendMessage.getBackendName(), backendMessage.getSubId(), backendMessage.getMessage(), 0L, 16, null)), 4, null), backendMessage.getTarget(), backendMessage.getProvider(), continuation);
-        return replayFixture == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? replayFixture : Unit.INSTANCE;
+        return replayFixture(new BackendFixture("inline_backend_message", backendMessage.getProvider(), null, CollectionsKt.listOf(new BackendFixtureEvent(backendMessage.getBackendId(), backendMessage.getBackendName(), backendMessage.getSubId(), backendMessage.getMessage(), 0L, 16, null)), 4, null), backendMessage.getTarget(), backendMessage.getProvider(), continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -487,30 +396,27 @@ public final class GameTestScriptRunner {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object executeBackendFixture(GameTestStep.ReplayBackendFixture replayBackendFixture, Continuation<? super Unit> continuation) {
-        Object replayFixture = replayFixture(this.runtime.loadBackendFixture(replayBackendFixture), replayBackendFixture.getTarget(), replayBackendFixture.getProvider(), continuation);
-        return replayFixture == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? replayFixture : Unit.INSTANCE;
+        return replayFixture(this.runtime.loadBackendFixture(replayBackendFixture), replayBackendFixture.getTarget(), replayBackendFixture.getProvider(), continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00ed  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x00a2 -> B:35:0x00e7). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x00d7 -> B:34:0x00df). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00d9  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x0094 -> B:35:0x00d3). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x00c5 -> B:34:0x00cc). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object replayFixture(BackendFixture backendFixture, BackendReplayTarget backendReplayTarget, String str, Continuation<? super Unit> continuation) {
         GameTestScriptRunner$replayFixture$1 gameTestScriptRunner$replayFixture$1;
         int i;
-        Object obj;
-        Iterator it;
-        String str2;
-        GameTestScriptRunner$replayFixture$1 gameTestScriptRunner$replayFixture$12;
-        int i2;
         BackendReplayTarget backendReplayTarget2;
-        BackendFixture backendFixture2 = backendFixture;
+        Iterator it;
+        GameTestScriptRunner$replayFixture$1 gameTestScriptRunner$replayFixture$12;
+        Object obj;
+        String str2;
         if (continuation instanceof GameTestScriptRunner$replayFixture$1) {
             gameTestScriptRunner$replayFixture$1 = (GameTestScriptRunner$replayFixture$1) continuation;
             if ((gameTestScriptRunner$replayFixture$1.label & Integer.MIN_VALUE) != 0) {
@@ -521,43 +427,39 @@ public final class GameTestScriptRunner {
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj2);
                     if (backendReplayTarget.getIncludesValidator()) {
-                        this.runtime.validateBackendFixture(backendFixture2, str);
+                        this.runtime.validateBackendFixture(backendFixture, str);
                     }
                     if (!backendReplayTarget.getIncludesUi()) {
                         return Unit.INSTANCE;
                     }
-                    if (this.runtime.previewBackendFixture(backendFixture2, str)) {
+                    if (this.runtime.previewBackendFixture(backendFixture, str)) {
                         return Unit.INSTANCE;
                     }
-                    List<BackendFixtureEvent> events = backendFixture2.getEvents();
-                    obj = events;
-                    it = events.iterator();
-                    str2 = str;
-                    gameTestScriptRunner$replayFixture$12 = gameTestScriptRunner$replayFixture$1;
-                    i2 = 0;
+                    List<BackendFixtureEvent> events = backendFixture.getEvents();
                     backendReplayTarget2 = backendReplayTarget;
+                    it = events.iterator();
+                    gameTestScriptRunner$replayFixture$12 = gameTestScriptRunner$replayFixture$1;
+                    obj = events;
+                    str2 = str;
                     if (it.hasNext()) {
                     }
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
-                    int i3 = gameTestScriptRunner$replayFixture$1.I$1;
-                    int i4 = gameTestScriptRunner$replayFixture$1.I$0;
                     BackendFixtureEvent backendFixtureEvent = (BackendFixtureEvent) gameTestScriptRunner$replayFixture$1.L$6;
                     Object obj3 = gameTestScriptRunner$replayFixture$1.L$5;
-                    Iterator it2 = (Iterator) gameTestScriptRunner$replayFixture$1.L$4;
+                    it = (Iterator) gameTestScriptRunner$replayFixture$1.L$4;
                     Object obj4 = (Iterable) gameTestScriptRunner$replayFixture$1.L$3;
                     String str3 = (String) gameTestScriptRunner$replayFixture$1.L$2;
                     BackendReplayTarget backendReplayTarget3 = (BackendReplayTarget) gameTestScriptRunner$replayFixture$1.L$1;
-                    BackendFixture backendFixture3 = (BackendFixture) gameTestScriptRunner$replayFixture$1.L$0;
+                    BackendFixture backendFixture2 = (BackendFixture) gameTestScriptRunner$replayFixture$1.L$0;
                     ResultKt.throwOnFailure(obj2);
-                    str2 = str3;
-                    obj = obj4;
-                    it = it2;
-                    gameTestScriptRunner$replayFixture$12 = gameTestScriptRunner$replayFixture$1;
-                    i2 = i4;
-                    backendFixture2 = backendFixture3;
+                    BackendFixture backendFixture3 = backendFixture2;
                     BackendFixtureEvent backendFixtureEvent2 = backendFixtureEvent;
+                    backendFixture = backendFixture3;
+                    str2 = str3;
+                    gameTestScriptRunner$replayFixture$12 = gameTestScriptRunner$replayFixture$1;
+                    obj = obj4;
                     backendReplayTarget2 = backendReplayTarget3;
                     this.runtime.dispatchBackendEvent(backendFixtureEvent2);
                     if (it.hasNext()) {
@@ -565,34 +467,29 @@ public final class GameTestScriptRunner {
                         backendFixtureEvent2 = (BackendFixtureEvent) next;
                         if (backendFixtureEvent2.getDelayMs() > 0) {
                             long delayMs = backendFixtureEvent2.getDelayMs();
-                            gameTestScriptRunner$replayFixture$12.L$0 = SpillingKt.nullOutSpilledVariable(backendFixture2);
+                            gameTestScriptRunner$replayFixture$12.L$0 = SpillingKt.nullOutSpilledVariable(backendFixture);
                             gameTestScriptRunner$replayFixture$12.L$1 = SpillingKt.nullOutSpilledVariable(backendReplayTarget2);
                             gameTestScriptRunner$replayFixture$12.L$2 = SpillingKt.nullOutSpilledVariable(str2);
                             gameTestScriptRunner$replayFixture$12.L$3 = SpillingKt.nullOutSpilledVariable(obj);
                             gameTestScriptRunner$replayFixture$12.L$4 = it;
                             gameTestScriptRunner$replayFixture$12.L$5 = SpillingKt.nullOutSpilledVariable(next);
                             gameTestScriptRunner$replayFixture$12.L$6 = backendFixtureEvent2;
-                            gameTestScriptRunner$replayFixture$12.I$0 = i2;
-                            gameTestScriptRunner$replayFixture$12.I$1 = 0;
                             gameTestScriptRunner$replayFixture$12.label = 1;
                             if (DelayKt.delay(delayMs, gameTestScriptRunner$replayFixture$12) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            backendReplayTarget3 = backendReplayTarget2;
+                            backendFixture2 = backendFixture;
                             backendFixtureEvent = backendFixtureEvent2;
-                            backendFixture3 = backendFixture2;
-                            i4 = i2;
-                            gameTestScriptRunner$replayFixture$1 = gameTestScriptRunner$replayFixture$12;
-                            it2 = it;
+                            backendReplayTarget3 = backendReplayTarget2;
                             obj4 = obj;
+                            gameTestScriptRunner$replayFixture$1 = gameTestScriptRunner$replayFixture$12;
                             str3 = str2;
-                            str2 = str3;
-                            obj = obj4;
-                            it = it2;
-                            gameTestScriptRunner$replayFixture$12 = gameTestScriptRunner$replayFixture$1;
-                            i2 = i4;
-                            backendFixture2 = backendFixture3;
+                            BackendFixture backendFixture32 = backendFixture2;
                             BackendFixtureEvent backendFixtureEvent22 = backendFixtureEvent;
+                            backendFixture = backendFixture32;
+                            str2 = str3;
+                            gameTestScriptRunner$replayFixture$12 = gameTestScriptRunner$replayFixture$1;
+                            obj = obj4;
                             backendReplayTarget2 = backendReplayTarget3;
                         }
                         this.runtime.dispatchBackendEvent(backendFixtureEvent22);
@@ -818,7 +715,7 @@ public final class GameTestScriptRunner {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: GameTestScriptRunner.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\u000f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0003J#\u0010\u000f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0016HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u0017"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$PendingBackendMessageWaiter;", "", "matcher", "Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;", "deferred", "Lkotlinx/coroutines/CompletableDeferred;", "Lcom/miami/game/core/settings/game_test/GameTestBackendEvent;", "<init>", "(Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;Lkotlinx/coroutines/CompletableDeferred;)V", "getMatcher", "()Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;", "getDeferred", "()Lkotlinx/coroutines/CompletableDeferred;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\u000f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0003J#\u0010\u000f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0016HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u0017"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$PendingBackendMessageWaiter;", "", "matcher", "Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;", "deferred", "Lkotlinx/coroutines/CompletableDeferred;", "Lcom/miami/game/core/settings/game_test/GameTestBackendEvent;", "<init>", "(Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;Lkotlinx/coroutines/CompletableDeferred;)V", "getMatcher", "()Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;", "getDeferred", "()Lkotlinx/coroutines/CompletableDeferred;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class PendingBackendMessageWaiter {
         private final CompletableDeferred<GameTestBackendEvent> deferred;
@@ -887,7 +784,7 @@ public final class GameTestScriptRunner {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: GameTestScriptRunner.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\b\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010\u000f\u001a\u00020\u0010HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0011"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$ActiveBackendMessageListener;", "", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "<init>", "(Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;)V", "getListener", "()Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "component1", "copy", "equals", "", "other", "hashCode", "", "toString", "", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\b\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010\u000f\u001a\u00020\u0010HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0011"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$ActiveBackendMessageListener;", "", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "<init>", "(Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;)V", "getListener", "()Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "component1", "copy", "equals", "", "other", "hashCode", "", "toString", "", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class ActiveBackendMessageListener {
         private final GameTestBackendMessageListener listener;
@@ -934,7 +831,7 @@ public final class GameTestScriptRunner {
     }
 
     /* compiled from: GameTestScriptRunner.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$Companion;", "", "<init>", "()V", "TAG", "", "MAX_RECENT_BACKEND_EVENTS", "", "settings"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptRunner$Companion;", "", "<init>", "()V", "TAG", "", "MAX_RECENT_BACKEND_EVENTS", "", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

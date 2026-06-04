@@ -3,6 +3,7 @@ package coil3.map;
 import coil3.Uri;
 import coil3.UriKt;
 import coil3.request.Options;
+import coil3.util.UtilsKt;
 import kotlin.Metadata;
 import okio.Path;
 /* compiled from: PathMapper.kt */
@@ -11,6 +12,6 @@ import okio.Path;
 public final class PathMapper implements Mapper<Path, Uri> {
     @Override // coil3.map.Mapper
     public Uri map(Path path, Options options) {
-        return UriKt.Uri$default("file", null, path.toString(), null, null, null, 58, null);
+        return UriKt.Uri$default(UtilsKt.SCHEME_FILE, null, path.toString(), null, null, null, 58, null);
     }
 }

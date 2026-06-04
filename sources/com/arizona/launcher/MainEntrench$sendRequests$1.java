@@ -21,8 +21,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: MainEntrench.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0, 0}, l = {1236}, m = "invokeSuspend", n = {"request", "it", "$i$a$-repeat-MainEntrench$sendRequests$1$1"}, nl = {1237}, s = {"L$2", "I$2", "I$3"}, v = 2)
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0}, l = {1238}, m = "invokeSuspend", n = {"request", "it"}, nl = {1239}, s = {"L$2", "I$2"}, v = 2)
 /* loaded from: classes3.dex */
 final class MainEntrench$sendRequests$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $iterations;
@@ -31,7 +31,6 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
     int I$0;
     int I$1;
     int I$2;
-    int I$3;
     Object L$0;
     Object L$1;
     Object L$2;
@@ -57,8 +56,8 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0037  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006b  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0066 -> B:13:0x0069). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0069  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0064 -> B:13:0x0067). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -116,7 +115,6 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
                 this.I$0 = i2;
                 this.I$1 = i;
                 this.I$2 = i;
-                this.I$3 = 0;
                 this.label = 1;
                 if (DelayKt.delay(300L, this) == coroutine_suspended) {
                     return coroutine_suspended;

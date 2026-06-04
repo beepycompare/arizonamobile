@@ -1,5 +1,5 @@
 package com.google.android.vending.licensing.util;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class Base64DecoderException extends Exception {
     private static final long serialVersionUID = 1;
 

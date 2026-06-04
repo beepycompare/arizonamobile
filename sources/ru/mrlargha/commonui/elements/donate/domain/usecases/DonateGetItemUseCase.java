@@ -27,7 +27,7 @@ import ru.mrlargha.commonui.elements.donate.domain.models.DonateBadgesModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateItemModel;
 import ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository;
 /* compiled from: DonateGetItemUseCase.kt */
-@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0010H\u0086@¢\u0006\u0002\u0010\u001cJ\u0016\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0010H\u0082@¢\u0006\u0002\u0010\u001cR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR \u0010\f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u0015\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000e0\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018¨\u0006\u001e"}, d2 = {"Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "", "repository", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "<init>", "(Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;Lkotlinx/coroutines/CoroutineScope;)V", "getRepository", "()Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "_itemList", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "updatedItem", "", "updateMutex", "Lkotlinx/coroutines/sync/Mutex;", "itemList", "Lkotlinx/coroutines/flow/StateFlow;", "getItemList", "()Lkotlinx/coroutines/flow/StateFlow;", "updateItem", "", "item", "(Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateItemLocked", "CommonUI"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0010H\u0086@¢\u0006\u0002\u0010\u001cJ\u0016\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0010H\u0082@¢\u0006\u0002\u0010\u001cR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR \u0010\f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u0015\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000e0\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018¨\u0006\u001e"}, d2 = {"Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "", "repository", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "<init>", "(Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;Lkotlinx/coroutines/CoroutineScope;)V", "getRepository", "()Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "_itemList", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "updatedItem", "", "updateMutex", "Lkotlinx/coroutines/sync/Mutex;", "itemList", "Lkotlinx/coroutines/flow/StateFlow;", "getItemList", "()Lkotlinx/coroutines/flow/StateFlow;", "updateItem", "", "item", "(Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "updateItemLocked", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateGetItemUseCase {
     private final MutableStateFlow<ResultState<List<DonateItemModel>>> _itemList;
@@ -63,15 +63,11 @@ public final class DonateGetItemUseCase {
     }
 
     /* compiled from: DonateGetItemUseCase.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {35, 108, 37, 43}, m = "invokeSuspend", n = {"items", "$this$withLock_u24default$iv", "$i$f$withLock", "items", "$this$withLock_u24default$iv", "$i$f$withLock", "$i$a$-withLock$default-DonateGetItemUseCase$1$1", "items", "$this$withLock_u24default$iv", "pendingUpdates", "$this$forEach$iv", "element$iv", "updatedModel", "$i$f$withLock", "$i$a$-withLock$default-DonateGetItemUseCase$1$1", "$i$f$forEach", "$i$a$-forEach-DonateGetItemUseCase$1$1$1"}, nl = {36, 109, 39, 44}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0", "I$1", "L$0", "L$1", "L$3", "L$4", "L$6", "L$7", "I$0", "I$1", "I$2", "I$3"}, v = 2)
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 1, 2, 2, 3, 3, 3, 3, 3, 3}, l = {35, 108, 37, 43}, m = "invokeSuspend", n = {"items", "$this$withLock_u24default$iv", "items", "$this$withLock_u24default$iv", "items", "$this$withLock_u24default$iv", "pendingUpdates", "$this$forEach$iv", "element$iv", "updatedModel"}, nl = {36, 109, 39, 44}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$3", "L$4", "L$6", "L$7"}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-        int I$0;
-        int I$1;
-        int I$2;
-        int I$3;
         Object L$0;
         Object L$1;
         Object L$2;
@@ -96,44 +92,37 @@ public final class DonateGetItemUseCase {
             return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:21:0x008c, code lost:
-            if (r2 == r1) goto L16;
+        /* JADX WARN: Code restructure failed: missing block: B:21:0x007a, code lost:
+            if (r12 == r0) goto L16;
          */
-        /* JADX WARN: Removed duplicated region for block: B:29:0x00cd  */
-        /* JADX WARN: Removed duplicated region for block: B:30:0x00cf  */
-        /* JADX WARN: Removed duplicated region for block: B:33:0x00dd A[Catch: all -> 0x005d, TryCatch #0 {all -> 0x005d, blocks: (B:9:0x003a, B:34:0x00fe, B:36:0x0104, B:39:0x0141, B:14:0x0058, B:31:0x00d1, B:33:0x00dd, B:27:0x00b3), top: B:44:0x000e }] */
-        /* JADX WARN: Removed duplicated region for block: B:36:0x0104 A[Catch: all -> 0x005d, TryCatch #0 {all -> 0x005d, blocks: (B:9:0x003a, B:34:0x00fe, B:36:0x0104, B:39:0x0141, B:14:0x0058, B:31:0x00d1, B:33:0x00dd, B:27:0x00b3), top: B:44:0x000e }] */
+        /* JADX WARN: Removed duplicated region for block: B:29:0x00b3  */
+        /* JADX WARN: Removed duplicated region for block: B:30:0x00b4  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x00c1 A[Catch: all -> 0x004f, TryCatch #0 {all -> 0x004f, blocks: (B:9:0x0031, B:34:0x00df, B:36:0x00e5, B:39:0x0119, B:14:0x004b, B:31:0x00b5, B:33:0x00c1, B:27:0x009d), top: B:44:0x000b }] */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x00e5 A[Catch: all -> 0x004f, TryCatch #0 {all -> 0x004f, blocks: (B:9:0x0031, B:34:0x00df, B:36:0x00e5, B:39:0x0119, B:14:0x004b, B:31:0x00b5, B:33:0x00c1, B:27:0x009d), top: B:44:0x000b }] */
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final Object invokeSuspend(Object obj) {
-            Object items;
+            ResultState resultState;
             Mutex mutex;
             DonateGetItemUseCase donateGetItemUseCase;
-            ResultState resultState;
-            int i;
             MutableStateFlow mutableStateFlow;
-            int i2;
-            int i3;
-            List list;
-            Iterable iterable;
             ResultState resultState2;
-            Iterator it;
             DonateGetItemUseCase donateGetItemUseCase2;
-            int i4;
-            int i5;
-            int i6;
+            Iterator it;
+            ResultState resultState3;
+            Iterable iterable;
+            List list;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            int i7 = this.label;
+            int i = this.label;
             try {
-                if (i7 == 0) {
+                if (i == 0) {
                     ResultKt.throwOnFailure(obj);
                     this.label = 1;
-                    items = DonateGetItemUseCase.this.getRepository().getItems(this);
-                } else if (i7 != 1) {
-                    if (i7 == 2) {
-                        i = this.I$0;
+                    obj = DonateGetItemUseCase.this.getRepository().getItems(this);
+                } else if (i != 1) {
+                    if (i == 2) {
                         donateGetItemUseCase = (DonateGetItemUseCase) this.L$2;
                         ResultKt.throwOnFailure(obj);
                         mutex = (Mutex) this.L$1;
@@ -142,61 +131,49 @@ public final class DonateGetItemUseCase {
                         this.L$0 = SpillingKt.nullOutSpilledVariable(resultState);
                         this.L$1 = mutex;
                         this.L$2 = donateGetItemUseCase;
-                        this.I$0 = i;
-                        this.I$1 = 0;
                         this.label = 3;
                         if (mutableStateFlow.emit(resultState, this) != coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        i2 = i;
-                        i3 = 0;
+                        resultState2 = resultState;
                         if (!donateGetItemUseCase.updatedItem.isEmpty()) {
                         }
                         Unit unit = Unit.INSTANCE;
                         mutex.unlock(null);
                         return Unit.INSTANCE;
-                    } else if (i7 == 3) {
-                        i3 = this.I$1;
-                        i2 = this.I$0;
+                    } else if (i == 3) {
                         donateGetItemUseCase = (DonateGetItemUseCase) this.L$2;
                         mutex = (Mutex) this.L$1;
-                        resultState = (ResultState) this.L$0;
+                        resultState2 = (ResultState) this.L$0;
                         ResultKt.throwOnFailure(obj);
                         if (!donateGetItemUseCase.updatedItem.isEmpty()) {
                             List list2 = CollectionsKt.toList(donateGetItemUseCase.updatedItem);
                             donateGetItemUseCase.updatedItem.clear();
                             List list3 = list2;
-                            Iterator it2 = list3.iterator();
-                            list = list2;
-                            iterable = list3;
-                            resultState2 = resultState;
-                            it = it2;
                             donateGetItemUseCase2 = donateGetItemUseCase;
-                            i4 = i2;
-                            i5 = i3;
-                            i6 = 0;
+                            it = list3.iterator();
+                            resultState3 = resultState2;
+                            iterable = list3;
+                            list = list2;
                             while (it.hasNext()) {
                             }
                         }
                         Unit unit2 = Unit.INSTANCE;
                         mutex.unlock(null);
                         return Unit.INSTANCE;
-                    } else if (i7 == 4) {
-                        i6 = this.I$2;
-                        i5 = this.I$1;
-                        i4 = this.I$0;
+                    } else if (i == 4) {
                         DonateItemModel donateItemModel = (DonateItemModel) this.L$7;
                         it = (Iterator) this.L$5;
                         iterable = (Iterable) this.L$4;
                         list = (List) this.L$3;
                         donateGetItemUseCase2 = (DonateGetItemUseCase) this.L$2;
                         mutex = (Mutex) this.L$1;
-                        resultState2 = (ResultState) this.L$0;
+                        resultState3 = (ResultState) this.L$0;
                         ResultKt.throwOnFailure(obj);
                         while (it.hasNext()) {
                             Object next = it.next();
                             DonateItemModel donateItemModel2 = (DonateItemModel) next;
-                            this.L$0 = SpillingKt.nullOutSpilledVariable(resultState2);
+                            this.L$0 = SpillingKt.nullOutSpilledVariable(resultState3);
                             this.L$1 = mutex;
                             this.L$2 = donateGetItemUseCase2;
                             this.L$3 = SpillingKt.nullOutSpilledVariable(list);
@@ -204,10 +181,6 @@ public final class DonateGetItemUseCase {
                             this.L$5 = it;
                             this.L$6 = SpillingKt.nullOutSpilledVariable(next);
                             this.L$7 = SpillingKt.nullOutSpilledVariable(donateItemModel2);
-                            this.I$0 = i4;
-                            this.I$1 = i5;
-                            this.I$2 = i6;
-                            this.I$3 = 0;
                             this.label = 4;
                             if (donateGetItemUseCase2.updateItemLocked(donateItemModel2, this) == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -221,27 +194,21 @@ public final class DonateGetItemUseCase {
                     }
                 } else {
                     ResultKt.throwOnFailure(obj);
-                    items = obj;
                 }
-                ResultState resultState3 = (ResultState) items;
+                resultState = (ResultState) obj;
                 Mutex mutex2 = DonateGetItemUseCase.this.updateMutex;
                 DonateGetItemUseCase donateGetItemUseCase3 = DonateGetItemUseCase.this;
-                this.L$0 = resultState3;
+                this.L$0 = resultState;
                 this.L$1 = mutex2;
                 this.L$2 = donateGetItemUseCase3;
-                this.I$0 = 0;
                 this.label = 2;
                 if (mutex2.lock(null, this) != coroutine_suspended) {
                     mutex = mutex2;
                     donateGetItemUseCase = donateGetItemUseCase3;
-                    resultState = resultState3;
-                    i = 0;
                     mutableStateFlow = donateGetItemUseCase._itemList;
                     this.L$0 = SpillingKt.nullOutSpilledVariable(resultState);
                     this.L$1 = mutex;
                     this.L$2 = donateGetItemUseCase;
-                    this.I$0 = i;
-                    this.I$1 = 0;
                     this.label = 3;
                     if (mutableStateFlow.emit(resultState, this) != coroutine_suspended) {
                     }
@@ -254,9 +221,9 @@ public final class DonateGetItemUseCase {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0027  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0071  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -264,8 +231,9 @@ public final class DonateGetItemUseCase {
         DonateGetItemUseCase$updateItem$1 donateGetItemUseCase$updateItem$1;
         Object coroutine_suspended;
         int i;
+        DonateItemModel donateItemModel2;
         Mutex mutex;
-        int i2;
+        Throwable th;
         Mutex mutex2;
         try {
             if (continuation instanceof DonateGetItemUseCase$updateItem$1) {
@@ -277,46 +245,40 @@ public final class DonateGetItemUseCase {
                     i = donateGetItemUseCase$updateItem$1.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        mutex = this.updateMutex;
+                        Mutex mutex3 = this.updateMutex;
                         donateGetItemUseCase$updateItem$1.L$0 = donateItemModel;
-                        donateGetItemUseCase$updateItem$1.L$1 = mutex;
-                        donateGetItemUseCase$updateItem$1.I$0 = 0;
+                        donateGetItemUseCase$updateItem$1.L$1 = mutex3;
                         donateGetItemUseCase$updateItem$1.label = 1;
-                        if (mutex.lock(null, donateGetItemUseCase$updateItem$1) != coroutine_suspended) {
-                            i2 = 0;
+                        if (mutex3.lock(null, donateGetItemUseCase$updateItem$1) != coroutine_suspended) {
+                            donateItemModel2 = donateItemModel;
+                            mutex = mutex3;
                         }
                         return coroutine_suspended;
                     } else if (i != 1) {
                         if (i == 2) {
-                            int i3 = donateGetItemUseCase$updateItem$1.I$1;
-                            int i4 = donateGetItemUseCase$updateItem$1.I$0;
                             mutex2 = (Mutex) donateGetItemUseCase$updateItem$1.L$1;
-                            DonateItemModel donateItemModel2 = (DonateItemModel) donateGetItemUseCase$updateItem$1.L$0;
+                            DonateItemModel donateItemModel3 = (DonateItemModel) donateGetItemUseCase$updateItem$1.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj);
                                 Unit unit = Unit.INSTANCE;
                                 mutex2.unlock(null);
                                 return Unit.INSTANCE;
-                            } catch (Throwable th) {
-                                th = th;
+                            } catch (Throwable th2) {
+                                th = th2;
                                 mutex2.unlock(null);
                                 throw th;
                             }
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        int i5 = donateGetItemUseCase$updateItem$1.I$0;
-                        ResultKt.throwOnFailure(obj);
                         mutex = (Mutex) donateGetItemUseCase$updateItem$1.L$1;
-                        i2 = i5;
-                        donateItemModel = (DonateItemModel) donateGetItemUseCase$updateItem$1.L$0;
+                        donateItemModel2 = (DonateItemModel) donateGetItemUseCase$updateItem$1.L$0;
+                        ResultKt.throwOnFailure(obj);
                     }
-                    donateGetItemUseCase$updateItem$1.L$0 = SpillingKt.nullOutSpilledVariable(donateItemModel);
+                    donateGetItemUseCase$updateItem$1.L$0 = SpillingKt.nullOutSpilledVariable(donateItemModel2);
                     donateGetItemUseCase$updateItem$1.L$1 = mutex;
-                    donateGetItemUseCase$updateItem$1.I$0 = i2;
-                    donateGetItemUseCase$updateItem$1.I$1 = 0;
                     donateGetItemUseCase$updateItem$1.label = 2;
-                    if (updateItemLocked(donateItemModel, donateGetItemUseCase$updateItem$1) != coroutine_suspended) {
+                    if (updateItemLocked(donateItemModel2, donateGetItemUseCase$updateItem$1) != coroutine_suspended) {
                         mutex2 = mutex;
                         Unit unit2 = Unit.INSTANCE;
                         mutex2.unlock(null);
@@ -325,17 +287,16 @@ public final class DonateGetItemUseCase {
                     return coroutine_suspended;
                 }
             }
-            donateGetItemUseCase$updateItem$1.L$0 = SpillingKt.nullOutSpilledVariable(donateItemModel);
+            donateGetItemUseCase$updateItem$1.L$0 = SpillingKt.nullOutSpilledVariable(donateItemModel2);
             donateGetItemUseCase$updateItem$1.L$1 = mutex;
-            donateGetItemUseCase$updateItem$1.I$0 = i2;
-            donateGetItemUseCase$updateItem$1.I$1 = 0;
             donateGetItemUseCase$updateItem$1.label = 2;
-            if (updateItemLocked(donateItemModel, donateGetItemUseCase$updateItem$1) != coroutine_suspended) {
+            if (updateItemLocked(donateItemModel2, donateGetItemUseCase$updateItem$1) != coroutine_suspended) {
             }
             return coroutine_suspended;
-        } catch (Throwable th2) {
-            th = th2;
-            mutex2 = mutex;
+        } catch (Throwable th3) {
+            Mutex mutex4 = mutex;
+            th = th3;
+            mutex2 = mutex4;
             mutex2.unlock(null);
             throw th;
         }
@@ -419,8 +380,7 @@ public final class DonateGetItemUseCase {
                 }
                 arrayList.add(donateItemModel2);
             }
-            Object emit = this._itemList.emit(new ResultState.Success(arrayList), continuation);
-            return emit == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? emit : Unit.INSTANCE;
+            return this._itemList.emit(new ResultState.Success(arrayList), continuation);
         }
         return Unit.INSTANCE;
     }

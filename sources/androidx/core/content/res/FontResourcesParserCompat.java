@@ -12,7 +12,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import kotlin.UByte$$ExternalSyntheticBackport0;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 /* loaded from: classes2.dex */
@@ -183,9 +182,9 @@ public class FontResourcesParserCompat {
             }
             if (arrayList.isEmpty()) {
                 if (string3 != null) {
-                    arrayList.add(new FontRequest(string, string2, string3, readCerts, null, null));
+                    arrayList.add(new FontRequest(string, string2, string3, readCerts, (String) null, (String) null));
                     if (string4 != null) {
-                        arrayList.add(new FontRequest(string, string2, string4, readCerts, null, null));
+                        arrayList.add(new FontRequest(string, string2, string4, readCerts, (String) null, (String) null));
                     }
                     return new ProviderResourceEntry(arrayList, integer, integer2, string5);
                 }
@@ -259,20 +258,9 @@ public class FontResourcesParserCompat {
             while (xmlPullParser.next() != 3) {
                 skip(xmlPullParser);
             }
-            FontRequest fontRequest = new FontRequest(str, str2, string, list, string2, string3);
-            if (obtainAttributes != null) {
-                UByte$$ExternalSyntheticBackport0.m9916m((Object) obtainAttributes);
-            }
-            return fontRequest;
-        } catch (Throwable th) {
-            if (obtainAttributes != null) {
-                try {
-                    UByte$$ExternalSyntheticBackport0.m9916m((Object) obtainAttributes);
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
-                }
-            }
-            throw th;
+            return new FontRequest(str, str2, string, list, string2, string3);
+        } finally {
+            obtainAttributes.recycle();
         }
     }
 

@@ -189,7 +189,7 @@ public final class TransformableKt$detectNonTouchGestures$2 extends RestrictedSu
                 consumePointerEventAsScaleOrNull2 = TransformableKt.consumePointerEventAsScaleOrNull(awaitPointerEventScope, pointerEvent);
                 if (consumePointerEventAsScaleOrNull2 != null) {
                     f = consumePointerEventAsScaleOrNull2.floatValue();
-                    this.$channel.mo9005trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda2
+                    this.$channel.mo9057trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda2
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj5) {
                             return Boolean.valueOf(TransformableKt$detectNonTouchGestures$2.invokeSuspend$lambda$3((PointerInputChange) obj5));
@@ -215,8 +215,8 @@ public final class TransformableKt$detectNonTouchGestures$2 extends RestrictedSu
                 if (consumePointerEventAsCtrlScrollOrNull2 == null || consumePointerEventAsPanOrNull2 != null || consumePointerEventAsScaleOrNull != null) {
                     if (consumePointerEventAsCtrlScrollOrNull2 != null) {
                         long m5113unboximpl = consumePointerEventAsCtrlScrollOrNull2.m5113unboximpl();
-                        this.$channel.mo9005trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
-                        this.$channel.mo9005trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda0
+                        this.$channel.mo9057trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                        this.$channel.mo9057trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda0
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj5) {
                                 return Boolean.valueOf(TransformableKt$detectNonTouchGestures$2.invokeSuspend$lambda$0((PointerInputChange) obj5));
@@ -232,7 +232,7 @@ public final class TransformableKt$detectNonTouchGestures$2 extends RestrictedSu
                         consumePointerEventAsCtrlScrollOrNull = TransformableKt.consumePointerEventAsCtrlScrollOrNull(awaitPointerEventScope, pointerEvent, this.$scrollConfig);
                         if (consumePointerEventAsCtrlScrollOrNull != null) {
                             m5113unboximpl = consumePointerEventAsCtrlScrollOrNull.m5113unboximpl();
-                            this.$channel.mo9005trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda0
+                            this.$channel.mo9057trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda0
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj5) {
                                     return Boolean.valueOf(TransformableKt$detectNonTouchGestures$2.invokeSuspend$lambda$0((PointerInputChange) obj5));
@@ -252,9 +252,9 @@ public final class TransformableKt$detectNonTouchGestures$2 extends RestrictedSu
                         }
                     } else if (consumePointerEventAsPanOrNull2 != null) {
                         long m5113unboximpl2 = consumePointerEventAsPanOrNull2.m5113unboximpl();
-                        this.$channel.mo9005trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                        this.$channel.mo9057trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
                         long m5113unboximpl3 = m5113unboximpl2;
-                        this.$channel.mo9005trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda1
+                        this.$channel.mo9057trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda1
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj5) {
                                 return Boolean.valueOf(TransformableKt$detectNonTouchGestures$2.invokeSuspend$lambda$1((PointerInputChange) obj5));
@@ -270,7 +270,7 @@ public final class TransformableKt$detectNonTouchGestures$2 extends RestrictedSu
                         consumePointerEventAsPanOrNull = TransformableKt.consumePointerEventAsPanOrNull(awaitPointerEventScope, pointerEvent);
                         if (consumePointerEventAsPanOrNull != null) {
                             m5113unboximpl3 = consumePointerEventAsPanOrNull.m5113unboximpl();
-                            this.$channel.mo9005trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda1
+                            this.$channel.mo9057trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function1
                                 public final Object invoke(Object obj5) {
                                     return Boolean.valueOf(TransformableKt$detectNonTouchGestures$2.invokeSuspend$lambda$1((PointerInputChange) obj5));
@@ -292,9 +292,9 @@ public final class TransformableKt$detectNonTouchGestures$2 extends RestrictedSu
                         throw new IllegalStateException("One of zoomOffset, panOffset and scaleDelta must be non-null".toString());
                     } else {
                         float floatValue = consumePointerEventAsScaleOrNull.floatValue();
-                        this.$channel.mo9005trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
+                        this.$channel.mo9057trySendJP2dKIU(TransformEvent.TransformStarted.INSTANCE);
                         f = floatValue;
-                        this.$channel.mo9005trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda2
+                        this.$channel.mo9057trySendJP2dKIU(new TransformEvent.TransformDelta(TransformGestureDetectorKt.calculateCentroid$default(pointerEvent, false, new Function1() { // from class: androidx.compose.foundation.gestures.TransformableKt$detectNonTouchGestures$2$$ExternalSyntheticLambda2
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj5) {
                                 return Boolean.valueOf(TransformableKt$detectNonTouchGestures$2.invokeSuspend$lambda$3((PointerInputChange) obj5));
@@ -320,7 +320,7 @@ public final class TransformableKt$detectNonTouchGestures$2 extends RestrictedSu
                 }
             }
         } finally {
-            this.$channel.mo9005trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
+            this.$channel.mo9057trySendJP2dKIU(TransformEvent.TransformStopped.INSTANCE);
         }
     }
 }

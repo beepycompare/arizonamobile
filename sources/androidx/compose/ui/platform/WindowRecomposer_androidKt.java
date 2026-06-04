@@ -96,7 +96,7 @@ public final class WindowRecomposer_androidKt {
                 stateFlow2 = FlowKt.stateIn(FlowKt.flow(new WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1(contentResolver, uriFor, new ContentObserver(createAsync) { // from class: androidx.compose.ui.platform.WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1
                     @Override // android.database.ContentObserver
                     public void onChange(boolean z, Uri uri) {
-                        Channel$default.mo9005trySendJP2dKIU(Unit.INSTANCE);
+                        Channel$default.mo9057trySendJP2dKIU(Unit.INSTANCE);
                     }
                 }, Channel$default, context, null)), CoroutineScopeKt.MainScope(), SharingStarted.Companion.WhileSubscribed$default(SharingStarted.Companion, 0L, 0L, 3, null), Float.valueOf(readAnimationScale(context)));
                 mutableScatterMap.set(context, stateFlow2);

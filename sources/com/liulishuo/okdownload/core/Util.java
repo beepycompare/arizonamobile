@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.StatFs;
 import android.util.Log;
 import androidx.media3.exoplayer.upstream.CmcdData;
+import coil3.util.UtilsKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.OkDownload;
@@ -272,7 +273,7 @@ public class Util {
     }
 
     public static boolean isUriFileScheme(Uri uri) {
-        return uri.getScheme().equals("file");
+        return uri.getScheme().equals(UtilsKt.SCHEME_FILE);
     }
 
     public static String getFilenameFromContentUri(Uri uri) {

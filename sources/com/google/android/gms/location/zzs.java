@@ -3,6 +3,7 @@ package com.google.android.gms.location;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
@@ -48,7 +49,7 @@ public final class zzs extends AbstractSafeParcelable {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             sb.append(" expireIn=");
             sb.append(j - elapsedRealtime);
-            sb.append("ms");
+            sb.append(AccessibilityNodeInfoCompat.MathInfoCompat.MATH_TAG_STRING_LITERAL);
         }
         if (this.zze != Integer.MAX_VALUE) {
             sb.append(" num=");

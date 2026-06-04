@@ -10,6 +10,7 @@ import kotlin.text.Typography;
 /* loaded from: classes.dex */
 public interface INotificationSideChannel extends IInterface {
     public static final String DESCRIPTOR = "android$support$v4$app$INotificationSideChannel".replace((char) Typography.dollar, '.');
+    public static final int VERSION = 1;
 
     /* loaded from: classes.dex */
     public static class Default implements INotificationSideChannel {
@@ -27,6 +28,11 @@ public interface INotificationSideChannel extends IInterface {
         }
 
         @Override // android.support.v4.app.INotificationSideChannel
+        public int getInterfaceVersion() {
+            return 0;
+        }
+
+        @Override // android.support.v4.app.INotificationSideChannel
         public void notify(String str, int i, String str2, Notification notification) throws RemoteException {
         }
     }
@@ -35,12 +41,15 @@ public interface INotificationSideChannel extends IInterface {
 
     void cancelAll(String str) throws RemoteException;
 
+    int getInterfaceVersion() throws RemoteException;
+
     void notify(String str, int i, String str2, Notification notification) throws RemoteException;
 
     /* loaded from: classes.dex */
     public static abstract class Stub extends Binder implements INotificationSideChannel {
         static final int TRANSACTION_cancel = 2;
         static final int TRANSACTION_cancelAll = 3;
+        static final int TRANSACTION_getInterfaceVersion = 16777215;
         static final int TRANSACTION_notify = 1;
 
         @Override // android.os.IInterface
@@ -72,21 +81,27 @@ public interface INotificationSideChannel extends IInterface {
             if (i == 1598968902) {
                 parcel2.writeString(str);
                 return true;
-            }
-            if (i == 1) {
-                notify(parcel.readString(), parcel.readInt(), parcel.readString(), (Notification) parcel.readTypedObject(Notification.CREATOR));
-            } else if (i == 2) {
-                cancel(parcel.readString(), parcel.readInt(), parcel.readString());
-            } else if (i == 3) {
-                cancelAll(parcel.readString());
+            } else if (i == 16777215) {
+                parcel2.writeNoException();
+                parcel2.writeInt(getInterfaceVersion());
+                return true;
             } else {
-                return super.onTransact(i, parcel, parcel2, i2);
+                if (i == 1) {
+                    notify(parcel.readString(), parcel.readInt(), parcel.readString(), (Notification) parcel.readTypedObject(Notification.CREATOR));
+                } else if (i == 2) {
+                    cancel(parcel.readString(), parcel.readInt(), parcel.readString());
+                } else if (i == 3) {
+                    cancelAll(parcel.readString());
+                } else {
+                    return super.onTransact(i, parcel, parcel2, i2);
+                }
+                return true;
             }
-            return true;
         }
 
         /* loaded from: classes.dex */
         private static class Proxy implements INotificationSideChannel {
+            private int mCachedVersion = -1;
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -111,7 +126,10 @@ public interface INotificationSideChannel extends IInterface {
                     obtain.writeInt(i);
                     obtain.writeString(str2);
                     obtain.writeTypedObject(notification, 0);
-                    this.mRemote.transact(1, obtain, null, 1);
+                    if (this.mRemote.transact(1, obtain, null, 1)) {
+                        return;
+                    }
+                    throw new RemoteException("Method notify is unimplemented.");
                 } finally {
                     obtain.recycle();
                 }
@@ -125,7 +143,10 @@ public interface INotificationSideChannel extends IInterface {
                     obtain.writeString(str);
                     obtain.writeInt(i);
                     obtain.writeString(str2);
-                    this.mRemote.transact(2, obtain, null, 1);
+                    if (this.mRemote.transact(2, obtain, null, 1)) {
+                        return;
+                    }
+                    throw new RemoteException("Method cancel is unimplemented.");
                 } finally {
                     obtain.recycle();
                 }
@@ -137,10 +158,31 @@ public interface INotificationSideChannel extends IInterface {
                 try {
                     obtain.writeInterfaceToken(DESCRIPTOR);
                     obtain.writeString(str);
-                    this.mRemote.transact(3, obtain, null, 1);
+                    if (this.mRemote.transact(3, obtain, null, 1)) {
+                        return;
+                    }
+                    throw new RemoteException("Method cancelAll is unimplemented.");
                 } finally {
                     obtain.recycle();
                 }
+            }
+
+            @Override // android.support.v4.app.INotificationSideChannel
+            public int getInterfaceVersion() throws RemoteException {
+                if (this.mCachedVersion == -1) {
+                    Parcel obtain = Parcel.obtain();
+                    Parcel obtain2 = Parcel.obtain();
+                    try {
+                        obtain.writeInterfaceToken(DESCRIPTOR);
+                        this.mRemote.transact(16777215, obtain, obtain2, 0);
+                        obtain2.readException();
+                        this.mCachedVersion = obtain2.readInt();
+                    } finally {
+                        obtain2.recycle();
+                        obtain.recycle();
+                    }
+                }
+                return this.mCachedVersion;
             }
         }
     }

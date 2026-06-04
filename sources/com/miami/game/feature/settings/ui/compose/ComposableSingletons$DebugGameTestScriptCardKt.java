@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DebugGameTestScriptCard.kt */
-@Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+@Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class ComposableSingletons$DebugGameTestScriptCardKt {
     public static final ComposableSingletons$DebugGameTestScriptCardKt INSTANCE = new ComposableSingletons$DebugGameTestScriptCardKt();
@@ -94,27 +94,27 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: getLambda$-1004594734$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9768getLambda$1004594734$settings() {
+    public final Function2<Composer, Integer, Unit> m9819getLambda$1004594734$settings() {
         return f66lambda$1004594734;
     }
 
     /* renamed from: getLambda$-1164861006$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9769getLambda$1164861006$settings() {
+    public final Function3<RowScope, Composer, Integer, Unit> m9820getLambda$1164861006$settings() {
         return f67lambda$1164861006;
     }
 
     /* renamed from: getLambda$-235814089$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9770getLambda$235814089$settings() {
+    public final Function2<Composer, Integer, Unit> m9821getLambda$235814089$settings() {
         return f68lambda$235814089;
     }
 
     /* renamed from: getLambda$-5343975$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9771getLambda$5343975$settings() {
+    public final Function3<RowScope, Composer, Integer, Unit> m9822getLambda$5343975$settings() {
         return f69lambda$5343975;
     }
 
     /* renamed from: getLambda$-937640016$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9772getLambda$937640016$settings() {
+    public final Function3<RowScope, Composer, Integer, Unit> m9823getLambda$937640016$settings() {
         return f70lambda$937640016;
     }
 

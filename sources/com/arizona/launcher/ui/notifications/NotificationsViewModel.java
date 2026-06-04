@@ -38,7 +38,7 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.SupervisorKt;
 /* compiled from: NotificationsViewModel.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0007\u0018\u0000 02\u00020\u00012\u00020\u0002:\u00010B\u0019\b\u0007\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010 \u001a\u00020!H\u0002J\u000e\u0010\"\u001a\u00020!H\u0082@¢\u0006\u0002\u0010#J\b\u0010$\u001a\u00020!H\u0016J\b\u0010%\u001a\u00020!H\u0016J\u0016\u0010&\u001a\u00020!2\u0006\u0010'\u001a\u00020(H\u0082@¢\u0006\u0002\u0010)J\u000e\u0010*\u001a\u00020!H\u0086@¢\u0006\u0002\u0010#J\b\u0010+\u001a\u00020!H\u0002J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0012H\u0002J\b\u0010/\u001a\u00020!H\u0014R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\r\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00120\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00100\u000f0\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R \u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00180\u000f0\u0014X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0016R\u001a\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00120\u0014X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0016R\u0011\u0010\u001c\u001a\u00020\u001d¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u00061"}, d2 = {"Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "Landroidx/lifecycle/ViewModel;", "Lcom/miami/game/feature/notifications/INotificationViewModel;", "notificationsRepository", "Lcom/arizona/launcher/data/repository/notifications/NotificationsRepository;", "schedulers", "Lcom/arizona/launcher/data/rx/SchedulersFacade;", "<init>", "(Lcom/arizona/launcher/data/repository/notifications/NotificationsRepository;Lcom/arizona/launcher/data/rx/SchedulersFacade;)V", "compositeDisposable", "Lio/reactivex/disposables/CompositeDisposable;", "useMockNotifications", "", "_notificationsLiveData", "Landroidx/lifecycle/MutableLiveData;", "", "Lcom/arizona/launcher/model/notificatoins/ArizonaNotification;", "_notificationsCountData", "", "notificationsLiveData", "Landroidx/lifecycle/LiveData;", "getNotificationsLiveData", "()Landroidx/lifecycle/LiveData;", "notificationsLiveDataCompose", "Lcom/miami/game/feature/notifications/NotificationModel;", "getNotificationsLiveDataCompose", "notificationsUnViewed", "getNotificationsUnViewed", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "initial", "", "loadNotifications", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotificationHistory", "viewAllNotifications", "addNotificationToDB", "item", "Lcom/arizona/launcher/model/servers/NotificationHistoryData;", "(Lcom/arizona/launcher/model/servers/NotificationHistoryData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "clearDB", "loadMockNotifications", "resourceUri", "", "drawableId", "onCleared", "Companion", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@Metadata(d1 = {"\u0000|\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u0000 12\u00020\u00012\u00020\u0002:\u00011B\u001d\b\u0007\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u001a\u0002\b\t¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010!\u001a\u00020\"H\u0002J\u000e\u0010#\u001a\u00020\"H\u0082@¢\u0006\u0002\u0010$J\b\u0010%\u001a\u00020\"H\u0016J\b\u0010&\u001a\u00020\"H\u0016J\u0016\u0010'\u001a\u00020\"2\u0006\u0010(\u001a\u00020)H\u0082@¢\u0006\u0002\u0010*J\u000e\u0010+\u001a\u00020\"H\u0086@¢\u0006\u0002\u0010$J\b\u0010,\u001a\u00020\"H\u0002J\u0010\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0013H\u0002J\b\u00100\u001a\u00020\"H\u0014R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\u000e\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010\u0014\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\u00100\u0015¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R \u0010\u0018\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u00100\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0017R\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00130\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0017R\u0011\u0010\u001d\u001a\u00020\u001e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 Ê\u0001\u0002\b3Ê\u0001\f\b4\u0012\b\b5\u0012\u0004\b\u0003\u0010\u0000¨\u00062"}, d2 = {"Lcom/arizona/launcher/ui/notifications/NotificationsViewModel;", "Landroidx/lifecycle/ViewModel;", "Lcom/miami/game/feature/notifications/INotificationViewModel;", "notificationsRepository", "Lcom/arizona/launcher/data/repository/notifications/NotificationsRepository;", "schedulers", "Lcom/arizona/launcher/data/rx/SchedulersFacade;", "<init>", "(Lcom/arizona/launcher/data/repository/notifications/NotificationsRepository;Lcom/arizona/launcher/data/rx/SchedulersFacade;)V", "Ljavax/inject/Inject;", "compositeDisposable", "Lio/reactivex/disposables/CompositeDisposable;", "useMockNotifications", "", "_notificationsLiveData", "Landroidx/lifecycle/MutableLiveData;", "", "Lcom/arizona/launcher/model/notificatoins/ArizonaNotification;", "_notificationsCountData", "", "notificationsLiveData", "Landroidx/lifecycle/LiveData;", "getNotificationsLiveData", "()Landroidx/lifecycle/LiveData;", "notificationsLiveDataCompose", "Lcom/miami/game/feature/notifications/NotificationModel;", "getNotificationsLiveDataCompose", "notificationsUnViewed", "getNotificationsUnViewed", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "initial", "", "loadNotifications", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotificationHistory", "viewAllNotifications", "addNotificationToDB", "item", "Lcom/arizona/launcher/model/servers/NotificationHistoryData;", "(Lcom/arizona/launcher/model/servers/NotificationHistoryData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "clearDB", "loadMockNotifications", "resourceUri", "", "drawableId", "onCleared", "Companion", "app", "Ldagger/hilt/android/lifecycle/HiltViewModel;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class NotificationsViewModel extends ViewModel implements INotificationViewModel {
     @Deprecated
@@ -118,16 +118,16 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0088, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0083, code lost:
         if (r1 == r3) goto L19;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x011d  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x013a  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002b  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0183  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -141,11 +141,10 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
         List list2;
         Object obj;
         List list3;
-        List list4;
+        List<ArizonaNotification> list4;
         Iterator it;
+        List list5;
         Iterable iterable;
-        List<ArizonaNotification> list5;
-        int i2;
         if (continuation instanceof NotificationsViewModel$loadNotifications$1) {
             notificationsViewModel$loadNotifications$1 = (NotificationsViewModel$loadNotifications$1) continuation;
             if ((notificationsViewModel$loadNotifications$1.label & Integer.MIN_VALUE) != 0) {
@@ -192,15 +191,14 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
                             list2 = list6;
                             Log.w(TAG, arrayList.toString());
                             List<ArizonaNotification> list8 = arrayList;
-                            list3 = list2;
-                            list4 = list;
+                            list3 = list;
+                            list4 = arrayList;
                             it = list8.iterator();
+                            list5 = list2;
                             iterable = list8;
-                            list5 = arrayList;
-                            i2 = 0;
                             while (it.hasNext()) {
                             }
-                            this._notificationsLiveData.postValue(list5);
+                            this._notificationsLiveData.postValue(list4);
                             MutableLiveData<Integer> mutableLiveData = this._notificationsCountData;
                             ArrayList arrayList3 = new ArrayList();
                             while (r2.hasNext()) {
@@ -216,15 +214,14 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
                         ResultKt.throwOnFailure(obj2);
                         Log.w(TAG, arrayList.toString());
                         List<ArizonaNotification> list82 = arrayList;
-                        list3 = list2;
-                        list4 = list;
+                        list3 = list;
+                        list4 = arrayList;
                         it = list82.iterator();
+                        list5 = list2;
                         iterable = list82;
-                        list5 = arrayList;
-                        i2 = 0;
                         while (it.hasNext()) {
                         }
-                        this._notificationsLiveData.postValue(list5);
+                        this._notificationsLiveData.postValue(list4);
                         MutableLiveData<Integer> mutableLiveData2 = this._notificationsCountData;
                         ArrayList arrayList32 = new ArrayList();
                         while (r2.hasNext()) {
@@ -232,38 +229,34 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
                         mutableLiveData2.postValue(Boxing.boxInt(arrayList32.size()));
                         return Unit.INSTANCE;
                     } else if (i == 4) {
-                        int i3 = notificationsViewModel$loadNotifications$1.I$1;
-                        i2 = notificationsViewModel$loadNotifications$1.I$0;
                         ArizonaNotification arizonaNotification2 = (ArizonaNotification) notificationsViewModel$loadNotifications$1.L$6;
                         Object obj3 = notificationsViewModel$loadNotifications$1.L$5;
                         it = (Iterator) notificationsViewModel$loadNotifications$1.L$4;
                         iterable = (Iterable) notificationsViewModel$loadNotifications$1.L$3;
-                        list5 = (List) notificationsViewModel$loadNotifications$1.L$2;
-                        list3 = (List) notificationsViewModel$loadNotifications$1.L$1;
-                        list4 = (List) notificationsViewModel$loadNotifications$1.L$0;
+                        list4 = (List) notificationsViewModel$loadNotifications$1.L$2;
+                        list5 = (List) notificationsViewModel$loadNotifications$1.L$1;
+                        list3 = (List) notificationsViewModel$loadNotifications$1.L$0;
                         ResultKt.throwOnFailure(obj2);
                         while (it.hasNext()) {
                             Object next = it.next();
                             ArizonaNotification arizonaNotification3 = (ArizonaNotification) next;
                             NotificationHistoryData db = ArizonaNotificationKt.toDb(arizonaNotification3);
-                            notificationsViewModel$loadNotifications$1.L$0 = SpillingKt.nullOutSpilledVariable(list4);
-                            notificationsViewModel$loadNotifications$1.L$1 = SpillingKt.nullOutSpilledVariable(list3);
-                            notificationsViewModel$loadNotifications$1.L$2 = list5;
+                            notificationsViewModel$loadNotifications$1.L$0 = SpillingKt.nullOutSpilledVariable(list3);
+                            notificationsViewModel$loadNotifications$1.L$1 = SpillingKt.nullOutSpilledVariable(list5);
+                            notificationsViewModel$loadNotifications$1.L$2 = list4;
                             notificationsViewModel$loadNotifications$1.L$3 = SpillingKt.nullOutSpilledVariable(iterable);
                             notificationsViewModel$loadNotifications$1.L$4 = it;
                             notificationsViewModel$loadNotifications$1.L$5 = SpillingKt.nullOutSpilledVariable(next);
                             notificationsViewModel$loadNotifications$1.L$6 = SpillingKt.nullOutSpilledVariable(arizonaNotification3);
-                            notificationsViewModel$loadNotifications$1.I$0 = i2;
-                            notificationsViewModel$loadNotifications$1.I$1 = 0;
                             notificationsViewModel$loadNotifications$1.label = 4;
                             if (addNotificationToDB(db, notificationsViewModel$loadNotifications$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         }
-                        this._notificationsLiveData.postValue(list5);
+                        this._notificationsLiveData.postValue(list4);
                         MutableLiveData<Integer> mutableLiveData22 = this._notificationsCountData;
                         ArrayList arrayList322 = new ArrayList();
-                        for (Object obj4 : list5) {
+                        for (Object obj4 : list4) {
                             if (!((ArizonaNotification) obj4).isViewed()) {
                                 arrayList322.add(obj4);
                             }
@@ -323,13 +316,11 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object addNotificationToDB(NotificationHistoryData notificationHistoryData, Continuation<? super Unit> continuation) {
-        Object addNotificationToDB = this.notificationsRepository.addNotificationToDB(notificationHistoryData, continuation);
-        return addNotificationToDB == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? addNotificationToDB : Unit.INSTANCE;
+        return this.notificationsRepository.addNotificationToDB(notificationHistoryData, continuation);
     }
 
     public final Object clearDB(Continuation<? super Unit> continuation) {
-        Object clearDataFromDB = this.notificationsRepository.clearDataFromDB(continuation);
-        return clearDataFromDB == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? clearDataFromDB : Unit.INSTANCE;
+        return this.notificationsRepository.clearDataFromDB(continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -361,7 +352,7 @@ public final class NotificationsViewModel extends ViewModel implements INotifica
     }
 
     /* compiled from: NotificationsViewModel.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/ui/notifications/NotificationsViewModel$Companion;", "", "<init>", "()V", "TAG", "", "app"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/ui/notifications/NotificationsViewModel$Companion;", "", "<init>", "()V", "TAG", "", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
