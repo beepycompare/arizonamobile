@@ -3,6 +3,7 @@ package com.google.firebase.analytics.connector.internal;
 import android.os.Bundle;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.android.gms.measurement.internal.zzjm;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import java.util.Objects;
 /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
 /* loaded from: classes4.dex */
@@ -24,7 +25,7 @@ final class zzd implements AppMeasurementSdk.OnEventListener {
             if (zza != null) {
                 str2 = zza;
             }
-            bundle2.putString("events", str2);
+            bundle2.putString(NotificationStatsStore.KEY_EVENTS, str2);
             zzeVar.zzd().onMessageTriggered(2, bundle2);
         }
     }

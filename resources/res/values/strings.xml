@@ -224,7 +224,7 @@
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
     <string name="res_0x7f1200df_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f1200e0_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"62bbaae645c313dd9d5534ee7181e146ec9dd2b1\"\n}\n</string>
+    <string name="res_0x7f1200e0_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"45e80d56a9011f2d323dbab644bf6789cf36035b\"\n}\n</string>
     <string name="common_api_error">Ошибка API: %1$d</string>
     <string name="common_check_fields">Проверьте правильность введенных полей.</string>
     <string name="common_close">Закрыть</string>
@@ -295,6 +295,8 @@
     <string name="desc">Описание</string>
     <string name="description">Играйте в любимые проекты в любой точке мира на своём мобильном устройстве</string>
     <string name="dest_title">destination title</string>
+    <string name="dialog_withdraw_maximum_prefix">Максимум</string>
+    <string name="dialog_withdraw_minimum_prefix">Минимум</string>
     <string name="dice_make_bet">Сделать ставку</string>
     <string name="dig_item">Выкопать предмет</string>
     <string name="distance">Расстояние</string>
@@ -1419,6 +1421,7 @@
     <string name="update_game_error">Ошибка обновлени клиента игры</string>
     <string name="update_server_connection_refused">Соединение с сервером оборвано</string>
     <string name="update_server_error">Ошибка подключения к серверу обновления</string>
+    <string name="update_server_error_description">Проверьте ваше интернет соединение и попробуйте снова</string>
     <string name="upgrade_available">Доступно повышение</string>
     <string name="user_case">Кейс</string>
     <string name="user_receive">Вы получаете</string>

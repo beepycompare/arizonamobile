@@ -107,7 +107,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
         private static final FieldDescriptor OSBUILD_DESCRIPTOR = FieldDescriptor.of("osBuild");
         private static final FieldDescriptor MANUFACTURER_DESCRIPTOR = FieldDescriptor.of(CommonUrlParts.MANUFACTURER);
         private static final FieldDescriptor FINGERPRINT_DESCRIPTOR = FieldDescriptor.of("fingerprint");
-        private static final FieldDescriptor LOCALE_DESCRIPTOR = FieldDescriptor.of(CommonUrlParts.LOCALE);
+        private static final FieldDescriptor LOCALE_DESCRIPTOR = FieldDescriptor.of("locale");
         private static final FieldDescriptor COUNTRY_DESCRIPTOR = FieldDescriptor.of("country");
         private static final FieldDescriptor MCCMNC_DESCRIPTOR = FieldDescriptor.of("mccMnc");
         private static final FieldDescriptor APPLICATIONBUILD_DESCRIPTOR = FieldDescriptor.of("applicationBuild");

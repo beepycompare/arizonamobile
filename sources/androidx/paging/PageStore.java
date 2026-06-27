@@ -1,6 +1,5 @@
 package androidx.paging;
 
-import androidx.core.app.NotificationCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.paging.LoadState;
 import androidx.paging.PageEvent;
@@ -257,7 +256,7 @@ public final class PageStore<T> implements PlaceholderPaddedList<T> {
     }
 
     /* compiled from: PageStore.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J-\u0010\u0006\u001a\b\u0012\u0004\u0012\u0002H\u00070\u0005\"\b\b\u0001\u0010\u0007*\u00020\u00012\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u0002H\u0007\u0018\u00010\tH\u0000¢\u0006\u0002\b\nR\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Landroidx/paging/PageStore$Companion;", "", "<init>", "()V", "INITIAL", "Landroidx/paging/PageStore;", "initial", ExifInterface.GPS_DIRECTION_TRUE, NotificationCompat.CATEGORY_EVENT, "Landroidx/paging/PageEvent$Insert;", "initial$paging_common", "paging-common"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J-\u0010\u0006\u001a\b\u0012\u0004\u0012\u0002H\u00070\u0005\"\b\b\u0001\u0010\u0007*\u00020\u00012\u000e\u0010\b\u001a\n\u0012\u0004\u0012\u0002H\u0007\u0018\u00010\tH\u0000¢\u0006\u0002\b\nR\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Landroidx/paging/PageStore$Companion;", "", "<init>", "()V", "INITIAL", "Landroidx/paging/PageStore;", "initial", ExifInterface.GPS_DIRECTION_TRUE, "event", "Landroidx/paging/PageEvent$Insert;", "initial$paging_common", "paging-common"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

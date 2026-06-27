@@ -112,15 +112,15 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int icon_frame = 0x7f0a06fa;
-        public static int preferences_detail = 0x7f0a0af6;
-        public static int preferences_header = 0x7f0a0af7;
-        public static int preferences_sliding_pane_layout = 0x7f0a0af8;
-        public static int recycler_view = 0x7f0a0b8a;
-        public static int seekbar = 0x7f0a0cff;
-        public static int seekbar_value = 0x7f0a0d00;
-        public static int spinner = 0x7f0a0d80;
-        public static int switchWidget = 0x7f0a0df2;
+        public static int icon_frame = 0x7f0a06f2;
+        public static int preferences_detail = 0x7f0a0aeb;
+        public static int preferences_header = 0x7f0a0aec;
+        public static int preferences_sliding_pane_layout = 0x7f0a0aed;
+        public static int recycler_view = 0x7f0a0b7f;
+        public static int seekbar = 0x7f0a0cf4;
+        public static int seekbar_value = 0x7f0a0cf5;
+        public static int spinner = 0x7f0a0d75;
+        public static int switchWidget = 0x7f0a0de7;
 
         private id() {
         }
@@ -163,12 +163,12 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class string {
         public static int copy = 0x7f120107;
-        public static int expand_button_title = 0x7f1201b7;
-        public static int not_set = 0x7f120452;
-        public static int preference_copied = 0x7f12049b;
-        public static int summary_collapsed_preference_list = 0x7f12055e;
-        public static int v7_preference_off = 0x7f120591;
-        public static int v7_preference_on = 0x7f120592;
+        public static int expand_button_title = 0x7f1201b9;
+        public static int not_set = 0x7f120454;
+        public static int preference_copied = 0x7f12049d;
+        public static int summary_collapsed_preference_list = 0x7f120560;
+        public static int v7_preference_off = 0x7f120594;
+        public static int v7_preference_on = 0x7f120595;
 
         private string() {
         }

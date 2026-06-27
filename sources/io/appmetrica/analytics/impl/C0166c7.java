@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.db.DBUtils;
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public final class C0166c7 {
         } catch (Throwable unused) {
         }
         if (readableDatabase != null) {
-            j = DBUtils.queryRowsCount(readableDatabase, "events");
+            j = DBUtils.queryRowsCount(readableDatabase, NotificationStatsStore.KEY_EVENTS);
             this.f922a.unlock();
             return j;
         }
@@ -90,7 +91,7 @@ public final class C0166c7 {
                     while (cursor2.moveToNext()) {
                         stringBuffer.append(cursor2.getString(0)).append(", ");
                     }
-                    cursor3 = readableDatabase.query(true, "events", new String[]{"session_id"}, null, null, null, null, "session_id ASC", null);
+                    cursor3 = readableDatabase.query(true, NotificationStatsStore.KEY_EVENTS, new String[]{"session_id"}, null, null, null, null, "session_id ASC", null);
                     StringBuffer stringBuffer2 = new StringBuffer();
                     stringBuffer2.append("All sessions in reports db: ");
                     while (cursor3.moveToNext()) {
@@ -147,7 +148,7 @@ public final class C0166c7 {
                 sb.append(")");
                 str = sb.toString();
             }
-            j = DatabaseUtils.queryNumEntries(readableDatabase, "events", str, strArr);
+            j = DatabaseUtils.queryNumEntries(readableDatabase, NotificationStatsStore.KEY_EVENTS, str, strArr);
             this.f922a.unlock();
             return j;
         }

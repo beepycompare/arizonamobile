@@ -5,6 +5,7 @@ import com.adjust.sdk.ActivityHandler;
 import com.facebook.AppEventsLogger;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.impl.M2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Date;
@@ -162,7 +163,7 @@ public class PackageBuilder {
     }
 
     private void checkDeviceIds(Map<String, String> map) {
-        if (map == null || map.containsKey("android_id") || map.containsKey("gps_adid") || map.containsKey("fire_adid") || map.containsKey(CommonUrlParts.HUAWEI_OAID) || map.containsKey("imei") || map.containsKey("meid") || map.containsKey("device_id") || map.containsKey("imeis") || map.containsKey("meids") || map.containsKey("device_ids")) {
+        if (map == null || map.containsKey("android_id") || map.containsKey("gps_adid") || map.containsKey("fire_adid") || map.containsKey(CommonUrlParts.HUAWEI_OAID) || map.containsKey("imei") || map.containsKey("meid") || map.containsKey(NotificationStatsPayloadFactory.KEY_DEVICE_ID) || map.containsKey("imeis") || map.containsKey("meids") || map.containsKey("device_ids")) {
             return;
         }
         AdjustConfig adjustConfig = this.adjustConfig;
@@ -218,7 +219,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addLong(hashMap, "connectivity_type", this.deviceInfo.connectivityType);
@@ -227,7 +228,7 @@ public class PackageBuilder {
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
         addString(hashMap, "default_tracker", this.adjustConfig.defaultTracker);
         addBoolean(hashMap, "needs_cost", this.adjustConfig.isCostDataInAttributionEnabled);
-        addString(hashMap, "device_manufacturer", this.deviceInfo.deviceManufacturer);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_DEVICE_MANUFACTURER, this.deviceInfo.deviceManufacturer);
         addString(hashMap, "device_name", this.deviceInfo.deviceName);
         addString(hashMap, CommonUrlParts.DEVICE_TYPE, this.deviceInfo.deviceType);
         addLong(hashMap, "ui_mode", this.deviceInfo.uiMode);
@@ -245,7 +246,7 @@ public class PackageBuilder {
         addString(hashMap, "os_build", this.deviceInfo.buildName);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         addString(hashMap, "screen_density", this.deviceInfo.screenDensity);
         addString(hashMap, "screen_format", this.deviceInfo.screenFormat);
@@ -299,7 +300,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
@@ -313,7 +314,7 @@ public class PackageBuilder {
         addBoolean(hashMap, "needs_response_details", bool);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         if (!this.deviceInfo.isGooglePlayGamesForPC) {
             bool = null;
@@ -359,7 +360,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addMapJson(hashMap, Constants.CALLBACK_PARAMETERS, this.globalParameters.callbackParameters);
@@ -372,7 +373,7 @@ public class PackageBuilder {
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
         addString(hashMap, Constants.DEEPLINK, this.deeplink);
         addBoolean(hashMap, "needs_cost", this.adjustConfig.isCostDataInAttributionEnabled);
-        addString(hashMap, "device_manufacturer", this.deviceInfo.deviceManufacturer);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_DEVICE_MANUFACTURER, this.deviceInfo.deviceManufacturer);
         addString(hashMap, "device_name", this.deviceInfo.deviceName);
         addString(hashMap, CommonUrlParts.DEVICE_TYPE, this.deviceInfo.deviceType);
         addLong(hashMap, "ui_mode", this.deviceInfo.uiMode);
@@ -395,7 +396,7 @@ public class PackageBuilder {
         addString(hashMap, "os_build", this.deviceInfo.buildName);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addMapJson(hashMap, "params", this.extraParameters);
         addMapJson(hashMap, Constants.PARTNER_PARAMETERS, this.globalParameters.partnerParameters);
         addString(hashMap, "push_token", this.activityStateCopy.g);
@@ -471,7 +472,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
@@ -484,7 +485,7 @@ public class PackageBuilder {
         addBoolean(hashMap, "needs_response_details", bool);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         if (!this.deviceInfo.isGooglePlayGamesForPC) {
             bool = null;
@@ -569,7 +570,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
@@ -581,7 +582,7 @@ public class PackageBuilder {
         addBoolean(hashMap, "needs_response_details", bool);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         if (!this.deviceInfo.isGooglePlayGamesForPC) {
             bool = null;
@@ -622,7 +623,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addLong(hashMap, "connectivity_type", this.deviceInfo.connectivityType);
@@ -631,7 +632,7 @@ public class PackageBuilder {
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
         addString(hashMap, "default_tracker", this.adjustConfig.defaultTracker);
         addBoolean(hashMap, "needs_cost", this.adjustConfig.isCostDataInAttributionEnabled);
-        addString(hashMap, "device_manufacturer", this.deviceInfo.deviceManufacturer);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_DEVICE_MANUFACTURER, this.deviceInfo.deviceManufacturer);
         addString(hashMap, "device_name", this.deviceInfo.deviceName);
         addString(hashMap, CommonUrlParts.DEVICE_TYPE, this.deviceInfo.deviceType);
         addLong(hashMap, "ui_mode", this.deviceInfo.uiMode);
@@ -649,7 +650,7 @@ public class PackageBuilder {
         addString(hashMap, "os_build", this.deviceInfo.buildName);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         addString(hashMap, "screen_density", this.deviceInfo.screenDensity);
         addString(hashMap, "screen_format", this.deviceInfo.screenFormat);
@@ -699,7 +700,7 @@ public class PackageBuilder {
         addMapJson(hashMap, Constants.PARTNER_PARAMETERS, Util.mergeParameters(this.globalParameters.partnerParameters, adjustPlayStoreSubscription.getPartnerParameters(), "Partner"));
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addLong(hashMap, "connectivity_type", this.deviceInfo.connectivityType);
@@ -708,7 +709,7 @@ public class PackageBuilder {
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
         addString(hashMap, "default_tracker", this.adjustConfig.defaultTracker);
         addBoolean(hashMap, "needs_cost", this.adjustConfig.isCostDataInAttributionEnabled);
-        addString(hashMap, "device_manufacturer", this.deviceInfo.deviceManufacturer);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_DEVICE_MANUFACTURER, this.deviceInfo.deviceManufacturer);
         addString(hashMap, "device_name", this.deviceInfo.deviceName);
         addString(hashMap, CommonUrlParts.DEVICE_TYPE, this.deviceInfo.deviceType);
         addLong(hashMap, "ui_mode", this.deviceInfo.uiMode);
@@ -726,7 +727,7 @@ public class PackageBuilder {
         addString(hashMap, "os_build", this.deviceInfo.buildName);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         addString(hashMap, "screen_density", this.deviceInfo.screenDensity);
         addString(hashMap, "screen_format", this.deviceInfo.screenFormat);
@@ -786,7 +787,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool2 = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool2);
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
@@ -798,7 +799,7 @@ public class PackageBuilder {
         addBoolean(hashMap, "needs_response_details", bool2);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         if (!this.deviceInfo.isGooglePlayGamesForPC) {
             bool2 = null;
@@ -836,7 +837,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addLong(hashMap, "connectivity_type", this.deviceInfo.connectivityType);
@@ -845,7 +846,7 @@ public class PackageBuilder {
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
         addString(hashMap, "default_tracker", this.adjustConfig.defaultTracker);
         addBoolean(hashMap, "needs_cost", this.adjustConfig.isCostDataInAttributionEnabled);
-        addString(hashMap, "device_manufacturer", this.deviceInfo.deviceManufacturer);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_DEVICE_MANUFACTURER, this.deviceInfo.deviceManufacturer);
         addString(hashMap, "device_name", this.deviceInfo.deviceName);
         addString(hashMap, CommonUrlParts.DEVICE_TYPE, this.deviceInfo.deviceType);
         addLong(hashMap, "ui_mode", this.deviceInfo.uiMode);
@@ -863,7 +864,7 @@ public class PackageBuilder {
         addString(hashMap, "os_build", this.deviceInfo.buildName);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         addString(hashMap, "screen_density", this.deviceInfo.screenDensity);
         addString(hashMap, "screen_format", this.deviceInfo.screenFormat);
@@ -1070,7 +1071,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addLong(hashMap, "connectivity_type", this.deviceInfo.connectivityType);
@@ -1079,7 +1080,7 @@ public class PackageBuilder {
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
         addString(hashMap, FirebaseAnalytics.Param.CURRENCY, adjustEvent.currency);
         addBoolean(hashMap, "needs_cost", this.adjustConfig.isCostDataInAttributionEnabled);
-        addString(hashMap, "device_manufacturer", this.deviceInfo.deviceManufacturer);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_DEVICE_MANUFACTURER, this.deviceInfo.deviceManufacturer);
         addString(hashMap, "device_name", this.deviceInfo.deviceName);
         addString(hashMap, CommonUrlParts.DEVICE_TYPE, this.deviceInfo.deviceType);
         addLong(hashMap, "ui_mode", this.deviceInfo.uiMode);
@@ -1099,7 +1100,7 @@ public class PackageBuilder {
         addString(hashMap, "os_build", this.deviceInfo.buildName);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, FirebaseAnalytics.Param.PRODUCT_ID, adjustEvent.productId);
         addString(hashMap, "purchase_token", adjustEvent.purchaseToken);
         addString(hashMap, "push_token", this.activityStateCopy.g);
@@ -1167,7 +1168,7 @@ public class PackageBuilder {
         }
         addString(hashMap, "api_level", this.deviceInfo.apiLevel);
         addString(hashMap, "app_token", this.adjustConfig.appToken);
-        addString(hashMap, "app_version", this.deviceInfo.appVersion);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_APP_VERSION, this.deviceInfo.appVersion);
         Boolean bool = Boolean.TRUE;
         addBoolean(hashMap, "attribution_deeplink", bool);
         addLong(hashMap, "connectivity_type", this.deviceInfo.connectivityType);
@@ -1176,7 +1177,7 @@ public class PackageBuilder {
         addDateInMilliseconds(hashMap, "created_at", this.createdAt);
         addString(hashMap, "default_tracker", this.adjustConfig.defaultTracker);
         addBoolean(hashMap, "needs_cost", this.adjustConfig.isCostDataInAttributionEnabled);
-        addString(hashMap, "device_manufacturer", this.deviceInfo.deviceManufacturer);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_DEVICE_MANUFACTURER, this.deviceInfo.deviceManufacturer);
         addString(hashMap, "device_name", this.deviceInfo.deviceName);
         addString(hashMap, CommonUrlParts.DEVICE_TYPE, this.deviceInfo.deviceType);
         addLong(hashMap, "ui_mode", this.deviceInfo.uiMode);
@@ -1194,7 +1195,7 @@ public class PackageBuilder {
         addString(hashMap, "os_build", this.deviceInfo.buildName);
         addString(hashMap, "os_name", this.deviceInfo.osName);
         addString(hashMap, CommonUrlParts.OS_VERSION, this.deviceInfo.osVersion);
-        addString(hashMap, "package_name", this.deviceInfo.packageName);
+        addString(hashMap, NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.deviceInfo.packageName);
         addString(hashMap, "push_token", this.activityStateCopy.g);
         addString(hashMap, "screen_density", this.deviceInfo.screenDensity);
         addString(hashMap, "screen_format", this.deviceInfo.screenFormat);

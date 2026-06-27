@@ -15,7 +15,6 @@ import androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNode;
 import androidx.compose.ui.node.CompositionLocalConsumerModifierNode;
 import androidx.compose.ui.node.DelegatingNode;
 import androidx.compose.ui.node.PointerInputModifierNode;
-import androidx.core.app.NotificationCompat;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.List;
@@ -93,7 +92,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
             /* JADX INFO: Access modifiers changed from: package-private */
             /* compiled from: Transformable.kt */
             @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1", f = "Transformable.kt", i = {0, 0, 1}, l = {177, 180}, m = "invokeSuspend", n = {"$this$launch", NotificationCompat.CATEGORY_EVENT, "$this$launch"}, s = {"L$0", "L$1", "L$0"}, v = 1)
+            @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1", f = "Transformable.kt", i = {0, 0, 1}, l = {177, 180}, m = "invokeSuspend", n = {"$this$launch", "event", "$this$launch"}, s = {"L$0", "L$1", "L$0"}, v = 1)
             /* renamed from: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: classes.dex */
             public static final class C00081 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

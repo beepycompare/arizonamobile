@@ -226,6 +226,8 @@
     <string name="default_error_message">Entrada inválida</string>
     <string name="default_popup_window_title">Janela pop-up</string>
     <string name="delivered">entregue</string>
+    <string name="dialog_withdraw_maximum_prefix">Maximo</string>
+    <string name="dialog_withdraw_minimum_prefix">Minimo</string>
     <string name="dig_item">Cavar item</string>
     <string name="distance">Distancia</string>
     <string name="donate_category_currency">Moeda</string>

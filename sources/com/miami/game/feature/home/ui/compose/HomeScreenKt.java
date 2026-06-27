@@ -41,7 +41,6 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.compose.FlowExtKt;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
-import com.google.firebase.messaging.ServiceStarter;
 import com.miami.game.core.decompose.utils.SharedEventFlow;
 import com.miami.game.core.design.system.component.background.Main_backgroundKt;
 import com.miami.game.core.external.navigation.ui.ObserveExternalNavigationActionsKt;
@@ -412,7 +411,7 @@ public final class HomeScreenKt {
             Main_backgroundKt.BackgroundImage(uiState.getBackGroundId(), false, uiState.getImageBitmap(), uiState.getFile(), uiState.getVersion(), startRestartGroup, 48);
             boolean z = (uiState.getFile() == null && uiState.getImageBitmap() == null) ? false : true;
             HomeContent(uiState, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, startRestartGroup, 2147483646 & i5, i6 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
-            final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(z ? 0.0f : 1.0f, AnimationSpecKt.tween$default(ServiceStarter.ERROR_UNKNOWN, 0, EasingKt.getFastOutSlowInEasing(), 2, null), 0.0f, "bg_alpha", null, startRestartGroup, 3072, 20);
+            final State<Float> animateFloatAsState = AnimateAsStateKt.animateFloatAsState(z ? 0.0f : 1.0f, AnimationSpecKt.tween$default(500, 0, EasingKt.getFastOutSlowInEasing(), 2, null), 0.0f, "bg_alpha", null, startRestartGroup, 3072, 20);
             Modifier fillMaxSize$default2 = SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -2030792900, "CC(remember):HomeScreen.kt#9igjgp");
             boolean changed = startRestartGroup.changed(animateFloatAsState);

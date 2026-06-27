@@ -1,7 +1,6 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import androidx.core.app.NotificationCompat;
 import io.appmetrica.analytics.ModuleEvent;
 import io.appmetrica.analytics.ModulesFacade;
 import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
@@ -50,7 +49,7 @@ public final class H0 {
         if (str2 == null) {
             str2 = AbstractJsonLexerKt.NULL;
         }
-        pairArr[1] = TuplesKt.to(NotificationCompat.CATEGORY_EVENT, str2);
+        pairArr[1] = TuplesKt.to("event", str2);
         if (str3 == null) {
             str3 = AbstractJsonLexerKt.NULL;
         }

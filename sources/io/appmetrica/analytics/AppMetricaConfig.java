@@ -2,6 +2,7 @@ package io.appmetrica.analytics;
 
 import android.location.Location;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import io.appmetrica.analytics.impl.C0312ho;
 import io.appmetrica.analytics.impl.C0339j0;
@@ -275,7 +276,7 @@ public class AppMetricaConfig {
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("apikey", this.apiKey);
-            jSONObject.put("app_version", this.appVersion);
+            jSONObject.put(NotificationStatsPayloadFactory.KEY_APP_VERSION, this.appVersion);
             jSONObject.put("session_timeout", this.sessionTimeout);
             jSONObject.put(FirebaseAnalytics.Param.LOCATION, X3.a(this.location));
             PreloadInfo preloadInfo = this.preloadInfo;

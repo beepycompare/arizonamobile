@@ -14,7 +14,6 @@ import com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource;
 import com.google.firebase.crashlytics.internal.breadcrumbs.DisabledBreadcrumbSource;
 import com.google.firebase.inject.Deferred;
 import com.google.firebase.inject.Provider;
-import com.google.firebase.messaging.ServiceStarter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -91,7 +90,7 @@ public class AnalyticsDeferredProxy {
         if (subscribeToAnalyticsEvents(analyticsConnector, crashlyticsAnalyticsListener) != null) {
             Logger.getLogger().d("Registered Firebase Analytics listener.");
             BreadcrumbAnalyticsEventReceiver breadcrumbAnalyticsEventReceiver = new BreadcrumbAnalyticsEventReceiver();
-            BlockingAnalyticsEventLogger blockingAnalyticsEventLogger = new BlockingAnalyticsEventLogger(crashlyticsOriginAnalyticsEventLogger, ServiceStarter.ERROR_UNKNOWN, TimeUnit.MILLISECONDS);
+            BlockingAnalyticsEventLogger blockingAnalyticsEventLogger = new BlockingAnalyticsEventLogger(crashlyticsOriginAnalyticsEventLogger, 500, TimeUnit.MILLISECONDS);
             synchronized (this) {
                 for (BreadcrumbHandler breadcrumbHandler : this.breadcrumbHandlerList) {
                     breadcrumbAnalyticsEventReceiver.registerBreadcrumbHandler(breadcrumbHandler);

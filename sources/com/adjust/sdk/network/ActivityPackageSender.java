@@ -18,6 +18,7 @@ import com.adjust.sdk.network.UtilNetworking;
 import com.adjust.sdk.scheduler.SingleThreadCachedScheduler;
 import com.adjust.sdk.scheduler.ThreadExecutor;
 import com.google.common.net.HttpHeaders;
+import com.miami.game.core.firebase.notification.NotificationIntentExtras;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -457,7 +458,7 @@ public class ActivityPackageSender implements IActivityPackageSender {
         if (map == null) {
             map = new HashMap<>();
         }
-        PackageBuilder.addString(map, "sent_at", Util.dateFormatter.format(Long.valueOf(System.currentTimeMillis())));
+        PackageBuilder.addString(map, NotificationIntentExtras.SENT_AT, Util.dateFormatter.format(Long.valueOf(System.currentTimeMillis())));
         return map;
     }
 

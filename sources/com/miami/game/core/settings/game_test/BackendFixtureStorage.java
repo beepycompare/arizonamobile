@@ -2,6 +2,7 @@ package com.miami.game.core.settings.game_test;
 
 import android.content.Context;
 import android.util.Log;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
@@ -44,7 +45,7 @@ public final class BackendFixtureStorage {
     public static final BackendFixture parse(String rawFixture) {
         Intrinsics.checkNotNullParameter(rawFixture, "rawFixture");
         JSONObject jSONObject = new JSONObject(rawFixture);
-        JSONArray optJSONArray = jSONObject.optJSONArray("events");
+        JSONArray optJSONArray = jSONObject.optJSONArray(NotificationStatsStore.KEY_EVENTS);
         if (optJSONArray == null) {
             throw new IllegalArgumentException("Backend fixture must contain an 'events' array");
         }

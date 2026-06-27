@@ -8,6 +8,7 @@ import androidx.collection.LruCache;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.measurement.zzaeh;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
@@ -160,14 +161,14 @@ public final class zzht extends zzos implements zzak {
                                 String str3 = str2;
                                 zzh zzu = zzj.zzu(str3);
                                 HashMap hashMap = new HashMap();
-                                hashMap.put("platform", ConstantDeviceInfo.APP_PLATFORM);
-                                hashMap.put("package_name", str3);
+                                hashMap.put(NotificationStatsPayloadFactory.KEY_PLATFORM, ConstantDeviceInfo.APP_PLATFORM);
+                                hashMap.put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, str3);
                                 zzhtVar2.zzu.zzc().zzi();
                                 hashMap.put("gmp_version", 161000L);
                                 if (zzu != null) {
                                     String zzr = zzu.zzr();
                                     if (zzr != null) {
-                                        hashMap.put("app_version", zzr);
+                                        hashMap.put(NotificationStatsPayloadFactory.KEY_APP_VERSION, zzr);
                                     }
                                     hashMap.put("app_version_int", Long.valueOf(zzu.zzt()));
                                     hashMap.put("dynamite_version", Long.valueOf(zzu.zzB()));
@@ -484,7 +485,7 @@ public final class zzht extends zzos implements zzak {
         zzF(str);
         Map map = this.zza;
         if (map.get(str) != null) {
-            return ((Set) map.get(str)).contains("device_model") || ((Set) map.get(str)).contains("device_info");
+            return ((Set) map.get(str)).contains(NotificationStatsPayloadFactory.KEY_DEVICE_MODEL) || ((Set) map.get(str)).contains("device_info");
         }
         return false;
     }

@@ -1,6 +1,7 @@
 package coil3.compose;
 
 import coil3.request.ImageRequest;
+import com.arizona.launcher.MessagingService;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LocalAsyncImageModelEqualityDelegate.kt */
@@ -66,7 +67,7 @@ public interface AsyncImageModelEqualityDelegate {
     int hashCode(Object obj);
 
     /* compiled from: LocalAsyncImageModelEqualityDelegate.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\u0001R\u0013\u0010\u0006\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\u0001¨\u0006\u0007"}, d2 = {"Lcoil3/compose/AsyncImageModelEqualityDelegate$Companion;", "", "<init>", "()V", "Default", "Lcoil3/compose/AsyncImageModelEqualityDelegate;", "AllProperties", "coil-compose-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0013\u0010\u0004\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\u0001R\u0013\u0010\u0006\u001a\u00020\u00058\u0006X\u0087\u0004¢\u0006\u0002\n\u0000¨\u0006\u0001¨\u0006\u0007"}, d2 = {"Lcoil3/compose/AsyncImageModelEqualityDelegate$Companion;", "", "<init>", "()V", MessagingService.CHANNEL_ID, "Lcoil3/compose/AsyncImageModelEqualityDelegate;", "AllProperties", "coil-compose-core_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();

@@ -29,10 +29,13 @@ import timber.log.Timber;
 @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\b\u0007\u0018\u0000 \u00142\u00020\u0001:\u0001\u0014B\u0015\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u001a\u0002\b\u0006¢\u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\u000b\u001a\u00020\fJ\u000e\u0010\r\u001a\u00020\u000eH\u0086@¢\u0006\u0002\u0010\u000fJ\u000e\u0010\u0010\u001a\u00020\u000eH\u0086@¢\u0006\u0002\u0010\u000fJ\u0006\u0010\u0011\u001a\u00020\fJ\u0006\u0010\u0012\u001a\u00020\fJ\u0006\u0010\u0013\u001a\u00020\fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nÊ\u0001\u0002\b\u0016¨\u0006\u0015"}, d2 = {"Lcom/miami/game/core/privacy/privacyInteractor;", "", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "<init>", "(Lcom/miami/game/core/local/repository/common/LocalRepository;)V", "Ljavax/inject/Inject;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "acceptPrivacy", "", "isPrivacyAccepted", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "isFirstDownload", "startFirstDownload", "finishFirstDownload", "logFirstLaunch", "Companion", "privacy", "Ljavax/inject/Singleton;"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class privacyInteractor {
-    public static final Companion Companion = new Companion(null);
-    private static final String privacyKey = "IS_PRIVACY_ACCEPTED";
+    public static final String FIRST_START_ERROR_SESSION_KEY = "firstStartErrorSession";
+    public static final String FIRST_START_KEY = "firstStart";
+    public static final String SP_NAME = "SP_NAME";
     private final LocalRepository localRepository;
     private final CoroutineScope scope;
+    public static final Companion Companion = new Companion(null);
+    private static final String privacyKey = "IS_PRIVACY_ACCEPTED";
 
     @Inject
     public privacyInteractor(LocalRepository localRepository) {
@@ -74,9 +77,11 @@ public final class privacyInteractor {
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label == 0) {
                 ResultKt.throwOnFailure(obj);
-                SharedPreferences sharedPreferences = privacyInteractor.this.localRepository.getContext().getSharedPreferences("SP_NAME", 0);
-                if (sharedPreferences.getBoolean("firstStart", true)) {
-                    sharedPreferences.edit().putBoolean("firstStart", false).apply();
+                SharedPreferences sharedPreferences = privacyInteractor.this.localRepository.getContext().getSharedPreferences(privacyInteractor.SP_NAME, 0);
+                if (!sharedPreferences.getBoolean(privacyInteractor.FIRST_START_KEY, true)) {
+                    sharedPreferences.edit().putBoolean(privacyInteractor.FIRST_START_ERROR_SESSION_KEY, false).apply();
+                } else {
+                    sharedPreferences.edit().putBoolean(privacyInteractor.FIRST_START_KEY, false).putBoolean(privacyInteractor.FIRST_START_ERROR_SESSION_KEY, true).apply();
                     FirebaseAnalytics.getInstance(privacyInteractor.this.localRepository.getContext()).logEvent("start_application", new Bundle());
                 }
                 return Unit.INSTANCE;
@@ -90,11 +95,11 @@ public final class privacyInteractor {
     }
 
     public final Object isPrivacyAccepted(Continuation<? super Boolean> continuation) {
-        return Boxing.boxBoolean(this.localRepository.getContext().getSharedPreferences("SP_NAME", 0).getBoolean("firstOpen", false));
+        return Boxing.boxBoolean(this.localRepository.getContext().getSharedPreferences(SP_NAME, 0).getBoolean("firstOpen", false));
     }
 
     public final Object isFirstDownload(Continuation<? super Boolean> continuation) {
-        return Boxing.boxBoolean(this.localRepository.getContext().getSharedPreferences("SP_NAME", 0).getBoolean("firstDownload", false));
+        return Boxing.boxBoolean(this.localRepository.getContext().getSharedPreferences(SP_NAME, 0).getBoolean("firstDownload", false));
     }
 
     public final void startFirstDownload() {
@@ -102,7 +107,7 @@ public final class privacyInteractor {
     }
 
     public final void finishFirstDownload() {
-        SharedPreferences sharedPreferences = this.localRepository.getContext().getSharedPreferences("SP_NAME", 0);
+        SharedPreferences sharedPreferences = this.localRepository.getContext().getSharedPreferences(SP_NAME, 0);
         if (sharedPreferences.getBoolean("firstDownload", false)) {
             Timber.Forest.d("finish_first_download", new Object[0]);
             sharedPreferences.edit().putBoolean("firstDownload", false).apply();
@@ -111,7 +116,7 @@ public final class privacyInteractor {
     }
 
     public final void logFirstLaunch() {
-        SharedPreferences sharedPreferences = this.localRepository.getContext().getSharedPreferences("SP_NAME", 0);
+        SharedPreferences sharedPreferences = this.localRepository.getContext().getSharedPreferences(SP_NAME, 0);
         if (sharedPreferences.getBoolean("firstLaunch", true)) {
             sharedPreferences.edit().putBoolean("firstLaunch", false).apply();
             FirebaseAnalytics.getInstance(this.localRepository.getContext()).logEvent("start_game", new Bundle());
@@ -119,7 +124,7 @@ public final class privacyInteractor {
     }
 
     /* compiled from: privacyInteractor.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0014\u0010\u0004\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/privacy/privacyInteractor$Companion;", "", "<init>", "()V", "privacyKey", "", "getPrivacyKey", "()Ljava/lang/String;", "privacy"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\u00020\u0005X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lcom/miami/game/core/privacy/privacyInteractor$Companion;", "", "<init>", "()V", "FIRST_START_ERROR_SESSION_KEY", "", "FIRST_START_KEY", privacyInteractor.SP_NAME, "privacyKey", "getPrivacyKey", "()Ljava/lang/String;", "privacy"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

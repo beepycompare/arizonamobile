@@ -42,7 +42,7 @@ public final class privacyInteractor$acceptPrivacy$1 extends SuspendLambda imple
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        this.this$0.localRepository.getContext().getSharedPreferences("SP_NAME", 0).edit().putBoolean("firstOpen", true).apply();
+        this.this$0.localRepository.getContext().getSharedPreferences(privacyInteractor.SP_NAME, 0).edit().putBoolean("firstOpen", true).apply();
         return Unit.INSTANCE;
     }
 }

@@ -1,6 +1,5 @@
 package androidx.paging;
 
-import androidx.core.app.NotificationCompat;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CachedPageEventFlow.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.FlattenedPageController", f = "CachedPageEventFlow.kt", i = {0, 0}, l = {274}, m = "record", n = {NotificationCompat.CATEGORY_EVENT, "$this$withLock_u24default$iv"}, s = {"L$0", "L$1"}, v = 1)
+@DebugMetadata(c = "androidx.paging.FlattenedPageController", f = "CachedPageEventFlow.kt", i = {0, 0}, l = {274}, m = "record", n = {"event", "$this$withLock_u24default$iv"}, s = {"L$0", "L$1"}, v = 1)
 /* loaded from: classes3.dex */
 public final class FlattenedPageController$record$1 extends ContinuationImpl {
     Object L$0;

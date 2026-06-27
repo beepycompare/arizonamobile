@@ -13,7 +13,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.Constants;
-import com.google.firebase.messaging.ServiceStarter;
 import java.lang.ref.SoftReference;
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
@@ -69,7 +68,7 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
             return -1;
         }
         Log.e("CloudMessagingReceiver", "Unknown notification action");
-        return ServiceStarter.ERROR_UNKNOWN;
+        return 500;
     }
 
     protected Executor getBroadcastExecutor() {
@@ -115,7 +114,7 @@ public abstract class CloudMessagingReceiver extends BroadcastReceiver {
             Intent intent2 = parcelableExtra instanceof Intent ? (Intent) parcelableExtra : null;
             if (intent2 == null) {
                 if (intent.getExtras() == null) {
-                    i = ServiceStarter.ERROR_UNKNOWN;
+                    i = 500;
                 } else {
                     final CloudMessage cloudMessage = new CloudMessage(intent);
                     final CountDownLatch countDownLatch = new CountDownLatch(1);

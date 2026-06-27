@@ -1,7 +1,6 @@
 package androidx.media3.container;
 
 import androidx.media3.common.C;
-import com.android.volley.DefaultRetryPolicy;
 import com.google.common.base.Ascii;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -29,7 +28,7 @@ public class OpusUtil {
             i = 1;
         }
         int i5 = i3 >> 3;
-        return i * (i5 >= 16 ? DefaultRetryPolicy.DEFAULT_TIMEOUT_MS << i2 : i5 >= 12 ? 10000 << (i5 & 1) : (i5 & 3) == 3 ? 60000 : 10000 << i2);
+        return i * (i5 >= 16 ? 2500 << i2 : i5 >= 12 ? 10000 << (i5 & 1) : (i5 & 3) == 3 ? 60000 : 10000 << i2);
     }
 
     private OpusUtil() {

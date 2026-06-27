@@ -56,6 +56,8 @@ import com.miami.game.core.downloader.sync.data.store.DownloaderSyncDbRepository
 import com.miami.game.core.downloader.sync.domain.DownloaderSyncInteractor;
 import com.miami.game.core.files.Files;
 import com.miami.game.core.files.updater.domain.FilesUpdaterInteractor;
+import com.miami.game.core.firebase.notification.MessagingService_MembersInjector;
+import com.miami.game.core.firebase.notification.data.MessagingRepository;
 import com.miami.game.core.foreground.service.DownloadService;
 import com.miami.game.core.foreground.service.DownloadService_MembersInjector;
 import com.miami.game.core.local.repository.common.LocalRepository;
@@ -713,7 +715,7 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class ServiceCImpl extends ArizonaApplication_HiltComponents.ServiceC {
         private final ServiceCImpl serviceCImpl = this;
         private final SingletonCImpl singletonCImpl;
@@ -726,14 +728,28 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
             this.singletonCImpl = singletonCImpl;
         }
 
+        MessagingRepository messagingRepository() {
+            return new MessagingRepository(this.singletonCImpl.provideLocalRepositoryProvider.get());
+        }
+
+        @Override // com.miami.game.core.firebase.notification.MessagingService_GeneratedInjector
+        public void injectMessagingService(com.miami.game.core.firebase.notification.MessagingService messagingService) {
+            injectMessagingService2(messagingService);
+        }
+
         @Override // com.miami.game.core.foreground.service.DownloadService_GeneratedInjector
         public void injectDownloadService(DownloadService arg0) {
             injectDownloadService2(arg0);
         }
 
-        private DownloadService injectDownloadService2(DownloadService instance) {
-            DownloadService_MembersInjector.injectFilesUpdaterInteractor(instance, this.singletonCImpl.filesUpdaterInteractorProvider.get());
+        private com.miami.game.core.firebase.notification.MessagingService injectMessagingService2(com.miami.game.core.firebase.notification.MessagingService instance) {
+            MessagingService_MembersInjector.injectMessagingRepository(instance, messagingRepository());
             return instance;
+        }
+
+        private DownloadService injectDownloadService2(DownloadService instance2) {
+            DownloadService_MembersInjector.injectFilesUpdaterInteractor(instance2, this.singletonCImpl.filesUpdaterInteractorProvider.get());
+            return instance2;
         }
     }
 

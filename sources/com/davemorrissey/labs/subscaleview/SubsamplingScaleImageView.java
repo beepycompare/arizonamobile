@@ -33,7 +33,6 @@ import com.davemorrissey.labs.subscaleview.decoder.ImageRegionDecoder;
 import com.davemorrissey.labs.subscaleview.decoder.SkiaImageDecoder;
 import com.davemorrissey.labs.subscaleview.decoder.SkiaImageRegionDecoder;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.messaging.ServiceStarter;
 import com.tbuonomo.viewpagerdotsindicator.BaseDotsIndicator;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.lang.ref.WeakReference;
@@ -277,7 +276,7 @@ public class SubsamplingScaleImageView extends View {
         this.quickScaleEnabled = true;
         this.doubleTapZoomScale = 1.0f;
         this.doubleTapZoomStyle = 1;
-        this.doubleTapZoomDuration = ServiceStarter.ERROR_UNKNOWN;
+        this.doubleTapZoomDuration = 500;
         this.decoderLock = new ReentrantReadWriteLock(true);
         this.bitmapDecoderFactory = new CompatDecoderFactory(SkiaImageDecoder.class);
         this.regionDecoderFactory = new CompatDecoderFactory(SkiaImageRegionDecoder.class);

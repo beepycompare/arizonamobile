@@ -1,5 +1,5 @@
 package com.facebook;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class FacebookGraphObjectException extends FacebookException {
     static final long serialVersionUID = 1;
 

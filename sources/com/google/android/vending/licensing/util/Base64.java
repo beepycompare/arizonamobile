@@ -2,7 +2,7 @@ package com.google.android.vending.licensing.util;
 
 import com.google.common.base.Ascii;
 import okio.Utf8;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class Base64 {
     static final /* synthetic */ boolean $assertionsDisabled = true;
     public static final boolean DECODE = false;

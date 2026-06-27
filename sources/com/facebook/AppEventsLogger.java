@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.facebook.Request;
 import com.facebook.internal.Logger;
@@ -448,7 +447,7 @@ public class AppEventsLogger {
         private void populateRequest(Request request, int i, JSONArray jSONArray, boolean z, boolean z2) {
             String str;
             GraphObject create = GraphObject.Factory.create();
-            create.setProperty(NotificationCompat.CATEGORY_EVENT, "CUSTOM_APP_EVENTS");
+            create.setProperty("event", "CUSTOM_APP_EVENTS");
             if (this.numSkippedEventsDueToFullBuffer > 0) {
                 create.setProperty("num_skipped_events", Integer.valueOf(i));
             }

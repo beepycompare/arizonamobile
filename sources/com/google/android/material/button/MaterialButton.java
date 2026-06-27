@@ -135,7 +135,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         BOTH
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<MaterialButton> {
         private int mIconPaddingId;
         private boolean mPropertiesMapped = false;

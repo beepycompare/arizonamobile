@@ -28,7 +28,7 @@ import java.util.UUID;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class FacebookDialog {
     public static final String COMPLETION_GESTURE_CANCEL = "cancel";
     private static final String EXTRA_DIALOG_COMPLETE_KEY = "com.facebook.platform.extra.DID_COMPLETE";
@@ -42,7 +42,7 @@ public class FacebookDialog {
     private OnPresentCallback onPresentCallback;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static abstract class Builder<CONCRETE extends Builder<?>> {
         protected final Activity activity;
         protected final PendingCall appCall;
@@ -112,7 +112,7 @@ public class FacebookDialog {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface Callback {
         void onComplete(PendingCall pendingCall, Bundle bundle);
 
@@ -120,18 +120,18 @@ public class FacebookDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface DialogFeature {
         int getMinVersion();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface OnPresentCallback {
         void onPresent(Context context) throws Exception;
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class OpenGraphActionDialogBuilder extends Builder<OpenGraphActionDialogBuilder> {
         private OpenGraphAction action;
         private String actionType;
@@ -341,7 +341,7 @@ public class FacebookDialog {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public enum OpenGraphActionDialogFeature implements DialogFeature {
         OG_ACTION_DIALOG(20130618);
         
@@ -366,7 +366,7 @@ public class FacebookDialog {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class PendingCall implements Parcelable {
         public static final Parcelable.Creator<PendingCall> CREATOR = new Parcelable.Creator<PendingCall>() { // from class: com.facebook.widget.FacebookDialog.PendingCall.1
             /* JADX WARN: Can't rename method to resolve collision */
@@ -436,7 +436,7 @@ public class FacebookDialog {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class ShareDialogBuilder extends Builder<ShareDialogBuilder> {
         private String caption;
         private boolean dataErrorsFatal;
@@ -550,7 +550,7 @@ public class FacebookDialog {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public enum ShareDialogFeature implements DialogFeature {
         SHARE_DIALOG(20130618);
         

@@ -154,6 +154,8 @@
     <string name="cost_hours">Cost per hour</string>
     <string name="customize_character">Customize your character</string>
     <string name="delivered">delivered</string>
+    <string name="dialog_withdraw_maximum_prefix">Maximum</string>
+    <string name="dialog_withdraw_minimum_prefix">Minimum</string>
     <string name="dig_item">Dig up item</string>
     <string name="distance">Distance</string>
     <string name="donate_category_currency">Currency</string>

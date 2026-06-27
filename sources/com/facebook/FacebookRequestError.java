@@ -2,7 +2,6 @@ package com.facebook;
 
 import com.facebook.android.R;
 import com.facebook.internal.Utility;
-import com.google.firebase.messaging.ServiceStarter;
 import java.net.HttpURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,7 +48,7 @@ public final class FacebookRequestError {
     private static final Range EC_RANGE_PERMISSION = new Range(200, 299, null);
     private static final Range HTTP_RANGE_SUCCESS = new Range(200, 299, null);
     private static final Range HTTP_RANGE_CLIENT_ERROR = new Range(400, 499, null);
-    private static final Range HTTP_RANGE_SERVER_ERROR = new Range(ServiceStarter.ERROR_UNKNOWN, 599, null);
+    private static final Range HTTP_RANGE_SERVER_ERROR = new Range(500, 599, null);
 
     /* loaded from: classes3.dex */
     public enum Category {

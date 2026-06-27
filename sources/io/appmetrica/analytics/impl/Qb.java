@@ -2,7 +2,6 @@ package io.appmetrica.analytics.impl;
 
 import android.os.Handler;
 import android.os.SystemClock;
-import com.google.firebase.messaging.ServiceStarter;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes5.dex */
 public final class Qb {
@@ -20,6 +19,6 @@ public final class Qb {
 
     public static void a(Handler handler, V2 v2, Runnable runnable) {
         handler.removeCallbacks(runnable, v2.b.b.getApiKey());
-        handler.postAtTime(runnable, v2.b.b.getApiKey(), SystemClock.uptimeMillis() + (((Integer) WrapUtils.getOrDefault(v2.b.b.getSessionTimeout(), 10)).intValue() * ServiceStarter.ERROR_UNKNOWN));
+        handler.postAtTime(runnable, v2.b.b.getApiKey(), SystemClock.uptimeMillis() + (((Integer) WrapUtils.getOrDefault(v2.b.b.getSessionTimeout(), 10)).intValue() * 500));
     }
 }

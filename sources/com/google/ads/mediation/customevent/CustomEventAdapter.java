@@ -11,14 +11,14 @@ import com.google.ads.mediation.MediationInterstitialAdapter;
 import com.google.ads.mediation.MediationInterstitialListener;
 import com.google.android.gms.ads.mediation.customevent.CustomEventExtras;
 import com.google.android.gms.internal.ev;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class CustomEventAdapter implements MediationBannerAdapter<CustomEventExtras, CustomEventServerParameters>, MediationInterstitialAdapter<CustomEventExtras, CustomEventServerParameters> {
     private View n;
     private CustomEventBanner o;
     private CustomEventInterstitial p;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class a implements CustomEventBannerListener {
         private final CustomEventAdapter q;
         private final MediationBannerListener r;
@@ -67,7 +67,7 @@ public final class CustomEventAdapter implements MediationBannerAdapter<CustomEv
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public class b implements CustomEventInterstitialListener {
         private final CustomEventAdapter q;
         private final MediationInterstitialListener s;

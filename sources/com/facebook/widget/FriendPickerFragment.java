@@ -18,7 +18,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class FriendPickerFragment extends PickerFragment<GraphUser> {
     private static final String ID = "id";
     public static final String MULTI_SELECT_BUNDLE_KEY = "com.facebook.widget.FriendPickerFragment.MultiSelect";
@@ -27,7 +27,7 @@ public class FriendPickerFragment extends PickerFragment<GraphUser> {
     private boolean multiSelect;
     private String userId;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     private class ImmediateLoadingStrategy extends PickerFragment<GraphUser>.LoadingStrategy {
         private ImmediateLoadingStrategy() {
             super();

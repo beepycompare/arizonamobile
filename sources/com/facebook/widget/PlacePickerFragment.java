@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class PlacePickerFragment extends PickerFragment<GraphPlace> {
     private static final String CATEGORY = "category";
     public static final int DEFAULT_RADIUS_IN_METERS = 1000;
@@ -58,7 +58,7 @@ public class PlacePickerFragment extends PickerFragment<GraphPlace> {
     private Timer searchTextTimer;
     private boolean showSearchBox;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     private class AsNeededLoadingStrategy extends PickerFragment<GraphPlace>.LoadingStrategy {
         private AsNeededLoadingStrategy() {
             super();
@@ -96,7 +96,7 @@ public class PlacePickerFragment extends PickerFragment<GraphPlace> {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     private class SearchTextWatcher implements TextWatcher {
         private SearchTextWatcher() {
         }

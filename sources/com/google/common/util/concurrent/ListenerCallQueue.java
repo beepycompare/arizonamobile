@@ -1,6 +1,5 @@
 package com.google.common.util.concurrent;
 
-import androidx.core.app.NotificationCompat;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Queues;
@@ -39,7 +38,7 @@ public final class ListenerCallQueue<L> {
     }
 
     private void enqueueHelper(Event<L> event, Object label) {
-        Preconditions.checkNotNull(event, NotificationCompat.CATEGORY_EVENT);
+        Preconditions.checkNotNull(event, "event");
         Preconditions.checkNotNull(label, Constants.ScionAnalytics.PARAM_LABEL);
         synchronized (this.listeners) {
             for (PerListenerQueue<L> perListenerQueue : this.listeners) {

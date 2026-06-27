@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.ProcessUtils;
 import com.google.android.gms.common.wrappers.Wrappers;
-import com.google.firebase.messaging.ServiceStarter;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
@@ -119,7 +118,10 @@ public final class zzal extends zzje {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int zze(String str, boolean z) {
-        return z ? zzn(str, zzfy.zzag, 100, ServiceStarter.ERROR_UNKNOWN) : ServiceStarter.ERROR_UNKNOWN;
+        if (z) {
+            return zzn(str, zzfy.zzag, 100, 500);
+        }
+        return 500;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -129,7 +131,7 @@ public final class zzal extends zzje {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int zzh(String str) {
-        return zzn(str, zzfy.zzW, ServiceStarter.ERROR_UNKNOWN, 2000);
+        return zzn(str, zzfy.zzW, 500, 2000);
     }
 
     public final long zzi() {

@@ -15,7 +15,6 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.os.ext.SdkExtensions;
 import android.text.TextUtils;
-import androidx.core.app.NotificationCompat;
 import androidx.privacysandbox.ads.adservices.java.measurement.MeasurementManagerFutures;
 import com.android.vending.expansion.zipfile.APEZProvider;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
@@ -1352,11 +1351,11 @@ public final class zzpp extends zzjf {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int zzp(String str) {
-        if (zzl(NotificationCompat.CATEGORY_EVENT, str)) {
+        if (zzl("event", str)) {
             zzic zzicVar = this.zzu;
-            if (zzm(NotificationCompat.CATEGORY_EVENT, zzjm.zza, zzicVar.zzc().zzp(null, zzfy.zzbf) ? zzjm.zzc : zzjm.zzb, str)) {
+            if (zzm("event", zzjm.zza, zzicVar.zzc().zzp(null, zzfy.zzbf) ? zzjm.zzc : zzjm.zzb, str)) {
                 zzicVar.zzc();
-                return !zzn(NotificationCompat.CATEGORY_EVENT, 40, str) ? 2 : 0;
+                return !zzn("event", 40, str) ? 2 : 0;
             }
             return 13;
         }

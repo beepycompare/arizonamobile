@@ -3,6 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.location.Location;
 import android.text.TextUtils;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.AppMetricaConfig;
 import io.appmetrica.analytics.PreloadInfo;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
@@ -57,8 +58,8 @@ public final class X3 {
         try {
             JSONObject jSONObject = new JSONObject(str);
             AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder(jSONObject.getString("apikey"));
-            if (jSONObject.has("app_version")) {
-                newConfigBuilder.withAppVersion(jSONObject.optString("app_version"));
+            if (jSONObject.has(NotificationStatsPayloadFactory.KEY_APP_VERSION)) {
+                newConfigBuilder.withAppVersion(jSONObject.optString(NotificationStatsPayloadFactory.KEY_APP_VERSION));
             }
             if (jSONObject.has("session_timeout")) {
                 newConfigBuilder.withSessionTimeout(jSONObject.getInt("session_timeout"));

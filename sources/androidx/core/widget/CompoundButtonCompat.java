@@ -4,7 +4,7 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.widget.CompoundButton;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class CompoundButtonCompat {
     private CompoundButtonCompat() {
     }

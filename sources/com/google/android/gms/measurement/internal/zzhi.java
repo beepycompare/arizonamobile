@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.adjust.sdk.Constants;
 import com.google.android.gms.common.stats.ConnectionTracker;
 import com.google.firebase.messaging.Constants;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -35,7 +36,7 @@ final class zzhi implements Runnable {
         zzicVar.zzaX().zzg();
         Bundle bundle2 = new Bundle();
         String zza = zzhjVar.zza();
-        bundle2.putString("package_name", zza);
+        bundle2.putString(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, zza);
         try {
             bundle = this.zza.zze(bundle2);
         } catch (Exception e) {

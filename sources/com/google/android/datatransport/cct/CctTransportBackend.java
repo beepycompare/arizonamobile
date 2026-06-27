@@ -33,7 +33,6 @@ import com.google.android.datatransport.runtime.time.Clock;
 import com.google.common.net.HttpHeaders;
 import com.google.firebase.encoders.DataEncoder;
 import com.google.firebase.encoders.EncodingException;
-import com.google.firebase.messaging.ServiceStarter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -291,11 +290,11 @@ public final class CctTransportBackend implements TransportBackend {
         } catch (ConnectException e2) {
             e = e2;
             Logging.e(LOG_TAG, "Couldn't open connection, returning with 500", e);
-            return new HttpResponse(ServiceStarter.ERROR_UNKNOWN, null, 0L);
+            return new HttpResponse(500, null, 0L);
         } catch (UnknownHostException e3) {
             e = e3;
             Logging.e(LOG_TAG, "Couldn't open connection, returning with 500", e);
-            return new HttpResponse(ServiceStarter.ERROR_UNKNOWN, null, 0L);
+            return new HttpResponse(500, null, 0L);
         } catch (IOException e4) {
             e = e4;
             Logging.e(LOG_TAG, "Couldn't encode request, returning with 400", e);

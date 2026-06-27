@@ -26,6 +26,7 @@ import com.google.firebase.crashlytics.CustomKeysAndValues;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
+import com.miami.game.core.privacy.privacyInteractor;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
@@ -283,7 +284,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public String GetReferrerString() {
-        SharedPreferences sharedPreferences = getSharedPreferences("SP_NAME", 0);
+        SharedPreferences sharedPreferences = getSharedPreferences(privacyInteractor.SP_NAME, 0);
         this.settings = sharedPreferences;
         return MetricsFunsKt.toNormalReferrer(sharedPreferences.getString("referrerUrl", ""));
     }
@@ -393,8 +394,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             boolean z = defaultSharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, false);
             boolean z2 = defaultSharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, true);
             String string = defaultSharedPreferences.getString("token", "");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.2.5\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.2.5", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.2.6\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.2.6", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);

@@ -1,7 +1,7 @@
 package androidx.core.widget;
 
 import android.widget.ListView;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class ListViewAutoScrollHelper extends AutoScrollHelper {
     private final ListView mTarget;
 

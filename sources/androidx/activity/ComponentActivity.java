@@ -771,8 +771,9 @@ public class ComponentActivity extends androidx.core.app.ComponentActivity imple
         this.onTrimMemoryListeners.remove(listener);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    protected void onNewIntent(Intent intent) {
+    public void onNewIntent(Intent intent) {
         Intrinsics.checkNotNullParameter(intent, "intent");
         super.onNewIntent(intent);
         Iterator<Consumer<Intent>> it = this.onNewIntentListeners.iterator();

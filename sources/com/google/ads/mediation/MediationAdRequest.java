@@ -5,7 +5,7 @@ import com.google.ads.AdRequest;
 import java.util.Date;
 import java.util.Set;
 @Deprecated
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class MediationAdRequest {
     private final Date d;
     private final AdRequest.Gender e;

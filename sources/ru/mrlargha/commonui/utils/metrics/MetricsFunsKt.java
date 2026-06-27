@@ -14,6 +14,7 @@ import com.adjust.sdk.Constants;
 import com.arizona.game.BuildConfig;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
+import com.miami.game.core.privacy.privacyInteractor;
 import io.appmetrica.analytics.AppMetrica;
 import io.appmetrica.analytics.ecommerce.ECommerceAmount;
 import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
@@ -53,7 +54,7 @@ import ru.mrlargha.commonui.utils.PurchaseData;
 import ru.mrlargha.commonui.utils.TrackUsAPI;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: metricsFuns.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u001e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u000e\u0010\u0010\u001a\u00020\n2\u0006\u0010\u0011\u001a\u00020\u000e\u001a\u0018\u0010\u0012\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0015\u0010\u0013\u001a\u00020\u0014*\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u0001H\u0082\u0004\u001a\u0016\u0010\u0016\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e\u001a\u0016\u0010\u0017\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u0019\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001c\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001d\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001e\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001f\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010 \u001a\u00020\u0001\u001a\u000e\u0010!\u001a\u00020\u000e2\u0006\u0010\"\u001a\u00020\u000e\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"DEFAULT_ANALYTICS", "", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "ADVGAME", "ADMITAD", "ADVGAME_NEW", "sendDataAnalytics", "", "context", "Landroid/content/Context;", NotificationCompat.CATEGORY_EVENT, "", "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "", "flag", "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "client", "Lokhttp3/OkHttpClient;", "sendAdmitadAnalytics", "sendAdvgameAnalytics", "sendAdvertiseAnalytics", "sendAdjustAnalytics", "eventId", "toNormalReferrer", "raw", "CommonUI"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\b\n\u0002\b\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u001e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u000e\u0010\u0010\u001a\u00020\n2\u0006\u0010\u0011\u001a\u00020\u000e\u001a\u0018\u0010\u0012\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0002\u001a\u0015\u0010\u0013\u001a\u00020\u0014*\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u0001H\u0082\u0004\u001a\u0016\u0010\u0016\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e\u001a\u0016\u0010\u0017\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u0019\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001c\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001d\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001e\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u000e\u001a\u0016\u0010\u001f\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010 \u001a\u00020\u0001\u001a\u000e\u0010!\u001a\u00020\u000e2\u0006\u0010\"\u001a\u00020\u000e\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0001X\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"DEFAULT_ANALYTICS", "", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "ADVGAME", "ADMITAD", "ADVGAME_NEW", "sendDataAnalytics", "", "context", "Landroid/content/Context;", "event", "", "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "", "flag", "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "client", "Lokhttp3/OkHttpClient;", "sendAdmitadAnalytics", "sendAdvgameAnalytics", "sendAdvertiseAnalytics", "sendAdjustAnalytics", "eventId", "toNormalReferrer", "raw", "CommonUI"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MetricsFunsKt {
     public static final int ADMITAD = 64;
@@ -132,7 +133,7 @@ public final class MetricsFunsKt {
     public static final void sendAnalytics(Context context, String event) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(event, "event");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
         if (string == null) {
             string = "";
         }
@@ -181,7 +182,7 @@ public final class MetricsFunsKt {
     public static final void sendTrackUsRequest(Context context, String action) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
         if (string == null) {
             string = "";
         }
@@ -232,7 +233,7 @@ public final class MetricsFunsKt {
         PackageInfo packageInfo;
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
         String str = string != null ? string : "";
         if (StringsKt.isBlank(str)) {
             Log.e("appMetrica", "url is Empty");
@@ -334,7 +335,7 @@ public final class MetricsFunsKt {
         String str3 = (String) map.get("goal");
         String str4 = (String) map.get(NotificationCompat.CATEGORY_STATUS);
         String str5 = (String) map.get("order_id");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
         if (string == null) {
             string = "";
         }
@@ -399,7 +400,7 @@ public final class MetricsFunsKt {
         } else {
             str = ExifInterface.GPS_MEASUREMENT_2D;
         }
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
         String str3 = string != null ? string : "";
         ArrayList arrayList = new ArrayList();
         for (Object obj : StringsKt.split$default((CharSequence) str3, new String[]{"&"}, false, 0, 6, (Object) null)) {

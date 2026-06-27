@@ -15,6 +15,7 @@ import com.google.android.gms.internal.measurement.zzafb;
 import com.google.android.gms.internal.measurement.zzaif;
 import com.google.android.gms.internal.measurement.zzair;
 import com.google.common.net.HttpHeaders;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.ByteArrayOutputStream;
@@ -708,7 +709,7 @@ public final class zzpk extends zzos {
                 zzk2 = zza;
             }
             zzR(builder, "app_event_name", zzk2, hashSet);
-            zzR(builder, "app_version", String.valueOf(zzicVar.zzai()), hashSet);
+            zzR(builder, NotificationStatsPayloadFactory.KEY_APP_VERSION, String.valueOf(zzicVar.zzai()), hashSet);
             String zzD = zzicVar.zzD();
             if (zzicVar2.zzc().zzp(str, zzfxVar) && zzpgVar.zzh().zzr(str) && !TextUtils.isEmpty(zzD) && (indexOf = zzD.indexOf(".")) != -1) {
                 zzD = zzD.substring(0, indexOf);
@@ -840,7 +841,7 @@ public final class zzpk extends zzos {
                 if (zzicVar.zzc().zzp(zzidVar.zzA(), zzfy.zzaM) && zzidVar.zzag()) {
                     zzW(sb, 1, "session_stitching_token", zzidVar.zzah());
                 }
-                zzW(sb, 1, "platform", zzidVar.zzt());
+                zzW(sb, 1, NotificationStatsPayloadFactory.KEY_PLATFORM, zzidVar.zzt());
                 if (zzidVar.zzC()) {
                     zzW(sb, 1, "gmp_version", Long.valueOf(zzidVar.zzD()));
                 }
@@ -855,7 +856,7 @@ public final class zzpk extends zzos {
                 }
                 zzW(sb, 1, "gmp_app_id", zzidVar.zzP());
                 zzW(sb, 1, "app_id", zzidVar.zzA());
-                zzW(sb, 1, "app_version", zzidVar.zzB());
+                zzW(sb, 1, NotificationStatsPayloadFactory.KEY_APP_VERSION, zzidVar.zzB());
                 if (zzidVar.zzU()) {
                     zzW(sb, 1, "app_version_major", Integer.valueOf(zzidVar.zzV()));
                 }
@@ -886,7 +887,7 @@ public final class zzpk extends zzos {
                     zzW(sb, 1, "limited_ad_tracking", Boolean.valueOf(zzidVar.zzI()));
                 }
                 zzW(sb, 1, CommonUrlParts.OS_VERSION, zzidVar.zzu());
-                zzW(sb, 1, "device_model", zzidVar.zzv());
+                zzW(sb, 1, NotificationStatsPayloadFactory.KEY_DEVICE_MODEL, zzidVar.zzv());
                 zzW(sb, 1, "user_default_language", zzidVar.zzw());
                 if (zzidVar.zzx()) {
                     zzW(sb, 1, "time_zone_offset_minutes", Integer.valueOf(zzidVar.zzy()));

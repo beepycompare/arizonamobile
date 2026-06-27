@@ -2,6 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.util.Base64;
 import com.adjust.sdk.Constants;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
@@ -70,7 +71,7 @@ public final class Zo {
 
     public static final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
         JSONObject jSONObject3 = new JSONObject();
-        jSONObject3.put("device_id", JsonUtils.optStringOrNullable(jSONObject2, "device_id", JsonUtils.optStringOrNull(jSONObject, "device_id")));
+        jSONObject3.put(NotificationStatsPayloadFactory.KEY_DEVICE_ID, JsonUtils.optStringOrNullable(jSONObject2, NotificationStatsPayloadFactory.KEY_DEVICE_ID, JsonUtils.optStringOrNull(jSONObject, NotificationStatsPayloadFactory.KEY_DEVICE_ID)));
         jSONObject3.put("device_id_hash", JsonUtils.optStringOrNullable(jSONObject2, "device_id_hash", JsonUtils.optStringOrNull(jSONObject, "device_id_hash")));
         jSONObject3.put(Constants.REFERRER, JsonUtils.optStringOrNullable(jSONObject2, Constants.REFERRER, JsonUtils.optStringOrNull(jSONObject, Constants.REFERRER)));
         jSONObject3.put("referrer_checked", JsonUtils.optBooleanOrNullable(jSONObject2, "referrer_checked", JsonUtils.optBooleanOrNullable(jSONObject, "referrer_checked", Boolean.FALSE)));
@@ -80,8 +81,8 @@ public final class Zo {
 
     public final synchronized void a(String str) {
         JSONObject a2 = this.f876a.a();
-        if (!Intrinsics.areEqual(JsonUtils.optStringOrNull(a2, "device_id"), str)) {
-            this.f876a.a(a2.put("device_id", str));
+        if (!Intrinsics.areEqual(JsonUtils.optStringOrNull(a2, NotificationStatsPayloadFactory.KEY_DEVICE_ID), str)) {
+            this.f876a.a(a2.put(NotificationStatsPayloadFactory.KEY_DEVICE_ID, str));
         }
         bp bpVar = this.f876a;
         bp.a(bpVar.f914a);

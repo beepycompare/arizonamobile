@@ -13,7 +13,6 @@ import com.google.android.material.animation.ArgbEvaluatorCompat;
 import com.google.android.material.math.MathUtils;
 import com.google.android.material.motion.MotionUtils;
 import com.google.android.material.progressindicator.DrawingDelegate;
-import com.google.firebase.messaging.ServiceStarter;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
 public final class CircularIndeterminateRetreatAnimatorDelegate extends IndeterminateAnimatorDelegate<ObjectAnimator> {
@@ -158,7 +157,7 @@ public final class CircularIndeterminateRetreatAnimatorDelegate extends Indeterm
         float f = this.animationFraction * 1080.0f;
         float f2 = 0.0f;
         for (int i2 : DELAY_SPINS_IN_MS) {
-            f2 += this.standardInterpolator.getInterpolation(getFractionInRange(i, i2, ServiceStarter.ERROR_UNKNOWN)) * 90.0f;
+            f2 += this.standardInterpolator.getInterpolation(getFractionInRange(i, i2, 500)) * 90.0f;
         }
         activeIndicator.rotationDegree = f + f2;
         float interpolation = this.standardInterpolator.getInterpolation(getFractionInRange(i, 0, 3000)) - this.standardInterpolator.getInterpolation(getFractionInRange(i, 3000, 3000));

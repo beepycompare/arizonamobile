@@ -1,6 +1,5 @@
 package com.arkivanov.decompose.router.children;
 
-import androidx.core.app.NotificationCompat;
 import androidx.exifinterface.media.ExifInterface;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -27,7 +26,7 @@ interface NavEvent<E> {
     }
 
     /* compiled from: ChildrenFactory.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000*\n\b\u0001\u0010\u0001 \u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B\u000f\u0012\u0006\u0010\u0004\u001a\u00028\u0001¢\u0006\u0004\b\u0005\u0010\u0006R\u0013\u0010\u0004\u001a\u00028\u0001¢\u0006\n\n\u0002\u0010\t\u001a\u0004\b\u0007\u0010\b¨\u0006\n"}, d2 = {"Lcom/arkivanov/decompose/router/children/NavEvent$Event;", ExifInterface.LONGITUDE_EAST, "", "Lcom/arkivanov/decompose/router/children/NavEvent;", NotificationCompat.CATEGORY_EVENT, "<init>", "(Ljava/lang/Object;)V", "getEvent", "()Ljava/lang/Object;", "Ljava/lang/Object;", "decompose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000*\n\b\u0001\u0010\u0001 \u0001*\u00020\u00022\b\u0012\u0004\u0012\u0002H\u00010\u0003B\u000f\u0012\u0006\u0010\u0004\u001a\u00028\u0001¢\u0006\u0004\b\u0005\u0010\u0006R\u0013\u0010\u0004\u001a\u00028\u0001¢\u0006\n\n\u0002\u0010\t\u001a\u0004\b\u0007\u0010\b¨\u0006\n"}, d2 = {"Lcom/arkivanov/decompose/router/children/NavEvent$Event;", ExifInterface.LONGITUDE_EAST, "", "Lcom/arkivanov/decompose/router/children/NavEvent;", "event", "<init>", "(Ljava/lang/Object;)V", "getEvent", "()Ljava/lang/Object;", "Ljava/lang/Object;", "decompose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Event<E> implements NavEvent<E> {
         private final E event;

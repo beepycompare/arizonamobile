@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import org.json.JSONObject;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class GraphObjectAdapter<T extends GraphObject> extends BaseAdapter implements SectionIndexer {
     private static /* synthetic */ int[] $SWITCH_TABLE$com$facebook$widget$GraphObjectAdapter$SectionAndItem$Type = null;
     static final /* synthetic */ boolean $assertionsDisabled = true;
@@ -62,40 +62,40 @@ public class GraphObjectAdapter<T extends GraphObject> extends BaseAdapter imple
     private Map<String, ImageResponse> prefetchedPictureCache = new HashMap();
     private ArrayList<String> prefetchedProfilePictureIds = new ArrayList<>();
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface DataNeededListener {
         void onDataNeeded();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface Filter<T> {
         boolean includeItem(T t);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface ItemPicture extends GraphObject {
         ItemPictureData getData();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface ItemPictureData extends GraphObject {
         String getUrl();
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface OnErrorListener {
         void onError(GraphObjectAdapter<?> graphObjectAdapter, FacebookException facebookException);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class SectionAndItem<T extends GraphObject> {
         public T graphObject;
         public String sectionKey;
 
-        /* loaded from: classes.dex */
+        /* loaded from: classes2.dex */
         public enum Type {
             GRAPH_OBJECT,
             SECTION_HEADER,

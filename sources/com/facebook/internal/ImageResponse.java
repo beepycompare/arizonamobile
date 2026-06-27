@@ -1,7 +1,7 @@
 package com.facebook.internal;
 
 import android.graphics.Bitmap;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class ImageResponse {
     private Bitmap bitmap;
     private Exception error;

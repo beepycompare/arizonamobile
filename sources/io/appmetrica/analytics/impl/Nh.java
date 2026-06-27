@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.WrapUtils;
@@ -496,7 +497,7 @@ public final class Nh implements UnderlyingNetworkTask {
                         }
                     }
                     z = z3;
-                    cursor2 = readableDatabase.query("events", null, sb.toString(), strArr, null, null, "session_id ASC, number_in_session ASC", String.valueOf(i));
+                    cursor2 = readableDatabase.query(NotificationStatsStore.KEY_EVENTS, null, sb.toString(), strArr, null, null, "session_id ASC, number_in_session ASC", String.valueOf(i));
                     z2 = z3;
                     c0166c722.f922a.unlock();
                     z3 = z2;

@@ -10,13 +10,13 @@ import android.util.Pair;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.UUID;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class NativeAppCallContentProvider extends ContentProvider {
     private static final String ATTACHMENT_URL_BASE = "content://com.facebook.app.NativeAppCallContentProvider";
     private static final String TAG = "com.facebook.NativeAppCallContentProvider";
     private final AttachmentDataSource dataSource;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     interface AttachmentDataSource {
         File openAttachment(UUID uuid, String str) throws FileNotFoundException;
     }

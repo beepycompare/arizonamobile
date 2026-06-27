@@ -4,6 +4,7 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizona.game.BuildConfig;
 import com.arizona.launcher.data.repository.notifications.NotificationsAPI;
 import com.arizona.launcher.util.FlavorUtilKt;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import dagger.Module;
 import dagger.Provides;
 import java.util.concurrent.TimeUnit;
@@ -45,7 +46,7 @@ public final class ArizonaLauncherAPIModule {
                     public final String invoke() {
                         return BuildConfig.FLAVOR;
                     }
-                })).addQueryParameter("platform", TtmlNode.COMBINE_ALL).build()).build());
+                })).addQueryParameter(NotificationStatsPayloadFactory.KEY_PLATFORM, TtmlNode.COMBINE_ALL).build()).build());
             }
         }).build();
         this.okHttpClient = build;

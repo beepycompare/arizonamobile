@@ -2,10 +2,11 @@ package com.arkivanov.decompose.extensions.compose.pages;
 
 import androidx.compose.animation.core.AnimationSpec;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.arizona.launcher.MessagingService;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: PagesScrollAnimation.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bv\u0018\u00002\u00020\u0001:\u0003\u0002\u0003\u0004\u0082\u0001\u0003\u0005\u0006\u0007¨\u0006\b"}, d2 = {"Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;", "", "Disabled", "Default", TypedValues.Custom.NAME, "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation$Custom;", "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation$Default;", "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation$Disabled;", "extensions-compose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bv\u0018\u00002\u00020\u0001:\u0003\u0002\u0003\u0004\u0082\u0001\u0003\u0005\u0006\u0007¨\u0006\b"}, d2 = {"Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation;", "", "Disabled", MessagingService.CHANNEL_ID, TypedValues.Custom.NAME, "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation$Custom;", "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation$Default;", "Lcom/arkivanov/decompose/extensions/compose/pages/PagesScrollAnimation$Disabled;", "extensions-compose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public interface PagesScrollAnimation {
 
@@ -62,7 +63,7 @@ public interface PagesScrollAnimation {
         }
 
         public String toString() {
-            return "Default";
+            return MessagingService.CHANNEL_ID;
         }
 
         private Default() {

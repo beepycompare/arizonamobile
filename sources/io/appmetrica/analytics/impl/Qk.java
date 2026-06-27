@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 import io.appmetrica.analytics.coreutils.internal.io.CloseableUtils;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
@@ -25,7 +26,7 @@ public final class Qk implements InterfaceC0352jd {
     public static void a(Zo zo, Km km, C0171cc c0171cc) {
         String optStringOrNull;
         synchronized (zo) {
-            optStringOrNull = JsonUtils.optStringOrNull(zo.f876a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(zo.f876a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
         }
         if (TextUtils.isEmpty(optStringOrNull)) {
             if (!TextUtils.isEmpty(c0171cc.d)) {

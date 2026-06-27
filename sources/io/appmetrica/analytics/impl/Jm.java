@@ -1,6 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -50,7 +51,7 @@ public final class Jm implements Mm {
         ProtobufStateStorage<Object> create = ((AbstractC0621tn) C0569rn.a(Lm.class)).create(context);
         Zo a2 = Na.k().D().a();
         synchronized (a2) {
-            optStringOrNull = JsonUtils.optStringOrNull(a2.f876a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(a2.f876a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
         }
         a(new Hm(optStringOrNull, a2.a(), (Lm) create.read()));
     }

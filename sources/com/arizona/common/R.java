@@ -46,8 +46,8 @@ public final class R {
         public static int avatar_loader = 0x7f0a0147;
         public static int avatar_status = 0x7f0a0148;
         public static int back_progress = 0x7f0a0162;
-        public static int front_progress = 0x7f0a05a7;
-        public static int max_progress = 0x7f0a0908;
+        public static int front_progress = 0x7f0a059f;
+        public static int max_progress = 0x7f0a08fd;
 
         private id() {
         }

@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0d83;
+        public static int splashscreen_icon_view = 0x7f0a0d78;
 
         private id() {
         }

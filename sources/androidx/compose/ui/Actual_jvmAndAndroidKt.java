@@ -11,7 +11,7 @@ import kotlin.collections.ArraysKt;
 import kotlin.comparisons.ComparisonsKt;
 /* compiled from: Actual.jvmAndAndroid.kt */
 @Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\b\u0010\u0000\u001a\u00020\u0001H\u0000\u001a\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0000\u001a\u0010\u0010\u0007\u001a\u00020\u00052\u0006\u0010\u0004\u001a\u00020\u0005H\u0000\u001a\u0018\u0010\b\u001a\u00020\t*\u00020\n2\n\u0010\u000b\u001a\u0006\u0012\u0002\b\u00030\fH\u0000¨\u0006\r"}, d2 = {"currentTimeMillis", "", "areObjectsOfSameType", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "", "b", "classKeyForObject", "tryPopulateReflectively", "", "Landroidx/compose/ui/platform/InspectorInfo;", "element", "Landroidx/compose/ui/node/ModifierNodeElement;", "ui"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class Actual_jvmAndAndroidKt {
     public static final long currentTimeMillis() {
         return System.currentTimeMillis();

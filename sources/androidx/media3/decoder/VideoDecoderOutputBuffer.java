@@ -3,7 +3,7 @@ package androidx.media3.decoder;
 import androidx.media3.common.Format;
 import androidx.media3.decoder.DecoderOutputBuffer;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class VideoDecoderOutputBuffer extends DecoderOutputBuffer {
     public static final int COLORSPACE_BT2020 = 3;
     public static final int COLORSPACE_BT601 = 1;

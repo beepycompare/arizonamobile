@@ -36,9 +36,9 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class id {
-        public static int dot = 0x7f0a048f;
-        public static int spring_dot = 0x7f0a0d9c;
-        public static int worm_dot = 0x7f0a108d;
+        public static int dot = 0x7f0a0489;
+        public static int spring_dot = 0x7f0a0d91;
+        public static int worm_dot = 0x7f0a1082;
 
         private id() {
         }

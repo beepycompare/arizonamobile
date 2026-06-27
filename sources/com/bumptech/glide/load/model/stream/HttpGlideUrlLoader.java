@@ -1,6 +1,5 @@
 package com.bumptech.glide.load.model.stream;
 
-import com.android.volley.DefaultRetryPolicy;
 import com.bumptech.glide.load.Option;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.data.HttpUrlFetcher;
@@ -12,7 +11,7 @@ import com.bumptech.glide.load.model.MultiModelLoaderFactory;
 import java.io.InputStream;
 /* loaded from: classes3.dex */
 public class HttpGlideUrlLoader implements ModelLoader<GlideUrl, InputStream> {
-    public static final Option<Integer> TIMEOUT = Option.memory("com.bumptech.glide.load.model.stream.HttpGlideUrlLoader.Timeout", Integer.valueOf((int) DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
+    public static final Option<Integer> TIMEOUT = Option.memory("com.bumptech.glide.load.model.stream.HttpGlideUrlLoader.Timeout", 2500);
     private final ModelCache<GlideUrl, GlideUrl> modelCache;
 
     @Override // com.bumptech.glide.load.model.ModelLoader

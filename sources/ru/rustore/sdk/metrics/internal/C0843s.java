@@ -2,6 +2,8 @@ package ru.rustore.sdk.metrics.internal;
 
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -53,7 +55,7 @@ public final class C0843s {
             jSONObject2.put("event_name", remoteMetricsEventDto.e.getEventName());
             jSONObject2.put("user_id", remoteMetricsEventDto.c);
             JSONObject jSONObject3 = new JSONObject();
-            jSONObject3.put("package_name", remoteMetricsEventDto.f1567a);
+            jSONObject3.put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, remoteMetricsEventDto.f1567a);
             String str = remoteMetricsEventDto.d;
             if (str == null) {
                 str = null;
@@ -69,7 +71,7 @@ public final class C0843s {
             Intrinsics.checkNotNullExpressionValue(jSONObject4, "jsonObject.toString()");
             jSONArray.put(new JSONObject(jSONObject4));
         }
-        jSONObject.put("events", jSONArray);
+        jSONObject.put(NotificationStatsStore.KEY_EVENTS, jSONArray);
         String jSONObject5 = jSONObject.toString();
         Intrinsics.checkNotNullExpressionValue(jSONObject5, "jsonObject.toString()");
         return jSONObject5;

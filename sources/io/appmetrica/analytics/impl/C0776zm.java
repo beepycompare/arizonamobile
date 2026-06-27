@@ -47,7 +47,7 @@ public final class C0776zm implements IParamsAppender {
         builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.SCREEN_HEIGHT), String.valueOf(dm.getScreenHeight()));
         builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.SCREEN_DPI), String.valueOf(dm.getScreenDpi()));
         builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.SCALE_FACTOR), String.valueOf(dm.getScaleFactor()));
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.LOCALE), dm.getLocale());
+        builder.appendQueryParameter(this.f1322a.a("locale"), dm.getLocale());
         builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.DEVICE_TYPE), dm.getDeviceType());
         builder.appendQueryParameter(this.f1322a.a("queries"), String.valueOf(1));
         builder.appendQueryParameter(this.f1322a.a("query_hosts"), String.valueOf(2));

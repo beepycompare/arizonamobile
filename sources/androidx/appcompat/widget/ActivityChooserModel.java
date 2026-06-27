@@ -479,7 +479,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public final class PersistHistoryAsyncTask extends AsyncTask<Object, Void, Void> {
         PersistHistoryAsyncTask() {
         }

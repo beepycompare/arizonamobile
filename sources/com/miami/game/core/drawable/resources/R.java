@@ -37,7 +37,7 @@ public final class R {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static final class mipmap {
         public static int ic_launcher = 0x7f0f0000;
         public static int ic_launcher_foreground = 0x7f0f0001;

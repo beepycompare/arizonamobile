@@ -2,6 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 import okhttp3.internal.connection.RealConnection;
 /* loaded from: classes5.dex */
@@ -65,7 +66,7 @@ public final class Y4 extends DatabaseScript {
                         C0657v7 a2 = a(cursor);
                         if (a2 != null && a(a2)) {
                             try {
-                                sQLiteDatabase2.insertOrThrow("events", null, this.x.fromModel(a2));
+                                sQLiteDatabase2.insertOrThrow(NotificationStatsStore.KEY_EVENTS, null, this.x.fromModel(a2));
                             } catch (Throwable unused) {
                             }
                         }

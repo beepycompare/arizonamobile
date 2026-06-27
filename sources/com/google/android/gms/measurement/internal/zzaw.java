@@ -15,6 +15,8 @@ import com.google.android.gms.internal.measurement.zzahk;
 import com.google.android.gms.internal.measurement.zzaif;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.messaging.Constants;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ public final class zzaw extends zzos {
     private static final String[] zzb = {"last_bundled_timestamp", "ALTER TABLE events ADD COLUMN last_bundled_timestamp INTEGER;", "last_bundled_day", "ALTER TABLE events ADD COLUMN last_bundled_day INTEGER;", "last_sampled_complex_event_id", "ALTER TABLE events ADD COLUMN last_sampled_complex_event_id INTEGER;", "last_sampling_rate", "ALTER TABLE events ADD COLUMN last_sampling_rate INTEGER;", "last_exempt_from_sampling", "ALTER TABLE events ADD COLUMN last_exempt_from_sampling INTEGER;", "current_session_count", "ALTER TABLE events ADD COLUMN current_session_count INTEGER;"};
     static final String[] zza = {"associated_row_id", "ALTER TABLE upload_queue ADD COLUMN associated_row_id INTEGER;", "last_upload_timestamp", "ALTER TABLE upload_queue ADD COLUMN last_upload_timestamp INTEGER;"};
     private static final String[] zzc = {"origin", "ALTER TABLE user_attributes ADD COLUMN origin TEXT;"};
-    private static final String[] zzd = {"app_version", "ALTER TABLE apps ADD COLUMN app_version TEXT;", "app_store", "ALTER TABLE apps ADD COLUMN app_store TEXT;", "gmp_version", "ALTER TABLE apps ADD COLUMN gmp_version INTEGER;", "dev_cert_hash", "ALTER TABLE apps ADD COLUMN dev_cert_hash INTEGER;", "measurement_enabled", "ALTER TABLE apps ADD COLUMN measurement_enabled INTEGER;", "last_bundle_start_timestamp", "ALTER TABLE apps ADD COLUMN last_bundle_start_timestamp INTEGER;", "day", "ALTER TABLE apps ADD COLUMN day INTEGER;", "daily_public_events_count", "ALTER TABLE apps ADD COLUMN daily_public_events_count INTEGER;", "daily_events_count", "ALTER TABLE apps ADD COLUMN daily_events_count INTEGER;", "daily_conversions_count", "ALTER TABLE apps ADD COLUMN daily_conversions_count INTEGER;", "remote_config", "ALTER TABLE apps ADD COLUMN remote_config BLOB;", "config_fetched_time", "ALTER TABLE apps ADD COLUMN config_fetched_time INTEGER;", "failed_config_fetch_time", "ALTER TABLE apps ADD COLUMN failed_config_fetch_time INTEGER;", "app_version_int", "ALTER TABLE apps ADD COLUMN app_version_int INTEGER;", "firebase_instance_id", "ALTER TABLE apps ADD COLUMN firebase_instance_id TEXT;", "daily_error_events_count", "ALTER TABLE apps ADD COLUMN daily_error_events_count INTEGER;", "daily_realtime_events_count", "ALTER TABLE apps ADD COLUMN daily_realtime_events_count INTEGER;", "health_monitor_sample", "ALTER TABLE apps ADD COLUMN health_monitor_sample TEXT;", "android_id", "ALTER TABLE apps ADD COLUMN android_id INTEGER;", "adid_reporting_enabled", "ALTER TABLE apps ADD COLUMN adid_reporting_enabled INTEGER;", "ssaid_reporting_enabled", "ALTER TABLE apps ADD COLUMN ssaid_reporting_enabled INTEGER;", "admob_app_id", "ALTER TABLE apps ADD COLUMN admob_app_id TEXT;", "linked_admob_app_id", "ALTER TABLE apps ADD COLUMN linked_admob_app_id TEXT;", "dynamite_version", "ALTER TABLE apps ADD COLUMN dynamite_version INTEGER;", "safelisted_events", "ALTER TABLE apps ADD COLUMN safelisted_events TEXT;", "ga_app_id", "ALTER TABLE apps ADD COLUMN ga_app_id TEXT;", "config_last_modified_time", "ALTER TABLE apps ADD COLUMN config_last_modified_time TEXT;", "e_tag", "ALTER TABLE apps ADD COLUMN e_tag TEXT;", "session_stitching_token", "ALTER TABLE apps ADD COLUMN session_stitching_token TEXT;", "sgtm_upload_enabled", "ALTER TABLE apps ADD COLUMN sgtm_upload_enabled INTEGER;", "target_os_version", "ALTER TABLE apps ADD COLUMN target_os_version INTEGER;", "session_stitching_token_hash", "ALTER TABLE apps ADD COLUMN session_stitching_token_hash INTEGER;", "ad_services_version", "ALTER TABLE apps ADD COLUMN ad_services_version INTEGER;", "unmatched_first_open_without_ad_id", "ALTER TABLE apps ADD COLUMN unmatched_first_open_without_ad_id INTEGER;", "npa_metadata_value", "ALTER TABLE apps ADD COLUMN npa_metadata_value INTEGER;", "attribution_eligibility_status", "ALTER TABLE apps ADD COLUMN attribution_eligibility_status INTEGER;", "sgtm_preview_key", "ALTER TABLE apps ADD COLUMN sgtm_preview_key TEXT;", "dma_consent_state", "ALTER TABLE apps ADD COLUMN dma_consent_state INTEGER;", "daily_realtime_dcu_count", "ALTER TABLE apps ADD COLUMN daily_realtime_dcu_count INTEGER;", "bundle_delivery_index", "ALTER TABLE apps ADD COLUMN bundle_delivery_index INTEGER;", "serialized_npa_metadata", "ALTER TABLE apps ADD COLUMN serialized_npa_metadata TEXT;", "unmatched_pfo", "ALTER TABLE apps ADD COLUMN unmatched_pfo INTEGER;", "unmatched_uwa", "ALTER TABLE apps ADD COLUMN unmatched_uwa INTEGER;", "ad_campaign_info", "ALTER TABLE apps ADD COLUMN ad_campaign_info BLOB;", "daily_registered_triggers_count", "ALTER TABLE apps ADD COLUMN daily_registered_triggers_count INTEGER;", "client_upload_eligibility", "ALTER TABLE apps ADD COLUMN client_upload_eligibility INTEGER;", "gmp_version_for_remote_config", "ALTER TABLE apps ADD COLUMN gmp_version_for_remote_config INTEGER;", "last_diagnostics_signal_upload_timestamp", "ALTER TABLE apps ADD COLUMN last_diagnostics_signal_upload_timestamp INTEGER;"};
+    private static final String[] zzd = {NotificationStatsPayloadFactory.KEY_APP_VERSION, "ALTER TABLE apps ADD COLUMN app_version TEXT;", "app_store", "ALTER TABLE apps ADD COLUMN app_store TEXT;", "gmp_version", "ALTER TABLE apps ADD COLUMN gmp_version INTEGER;", "dev_cert_hash", "ALTER TABLE apps ADD COLUMN dev_cert_hash INTEGER;", "measurement_enabled", "ALTER TABLE apps ADD COLUMN measurement_enabled INTEGER;", "last_bundle_start_timestamp", "ALTER TABLE apps ADD COLUMN last_bundle_start_timestamp INTEGER;", "day", "ALTER TABLE apps ADD COLUMN day INTEGER;", "daily_public_events_count", "ALTER TABLE apps ADD COLUMN daily_public_events_count INTEGER;", "daily_events_count", "ALTER TABLE apps ADD COLUMN daily_events_count INTEGER;", "daily_conversions_count", "ALTER TABLE apps ADD COLUMN daily_conversions_count INTEGER;", "remote_config", "ALTER TABLE apps ADD COLUMN remote_config BLOB;", "config_fetched_time", "ALTER TABLE apps ADD COLUMN config_fetched_time INTEGER;", "failed_config_fetch_time", "ALTER TABLE apps ADD COLUMN failed_config_fetch_time INTEGER;", "app_version_int", "ALTER TABLE apps ADD COLUMN app_version_int INTEGER;", "firebase_instance_id", "ALTER TABLE apps ADD COLUMN firebase_instance_id TEXT;", "daily_error_events_count", "ALTER TABLE apps ADD COLUMN daily_error_events_count INTEGER;", "daily_realtime_events_count", "ALTER TABLE apps ADD COLUMN daily_realtime_events_count INTEGER;", "health_monitor_sample", "ALTER TABLE apps ADD COLUMN health_monitor_sample TEXT;", "android_id", "ALTER TABLE apps ADD COLUMN android_id INTEGER;", "adid_reporting_enabled", "ALTER TABLE apps ADD COLUMN adid_reporting_enabled INTEGER;", "ssaid_reporting_enabled", "ALTER TABLE apps ADD COLUMN ssaid_reporting_enabled INTEGER;", "admob_app_id", "ALTER TABLE apps ADD COLUMN admob_app_id TEXT;", "linked_admob_app_id", "ALTER TABLE apps ADD COLUMN linked_admob_app_id TEXT;", "dynamite_version", "ALTER TABLE apps ADD COLUMN dynamite_version INTEGER;", "safelisted_events", "ALTER TABLE apps ADD COLUMN safelisted_events TEXT;", "ga_app_id", "ALTER TABLE apps ADD COLUMN ga_app_id TEXT;", "config_last_modified_time", "ALTER TABLE apps ADD COLUMN config_last_modified_time TEXT;", "e_tag", "ALTER TABLE apps ADD COLUMN e_tag TEXT;", "session_stitching_token", "ALTER TABLE apps ADD COLUMN session_stitching_token TEXT;", "sgtm_upload_enabled", "ALTER TABLE apps ADD COLUMN sgtm_upload_enabled INTEGER;", "target_os_version", "ALTER TABLE apps ADD COLUMN target_os_version INTEGER;", "session_stitching_token_hash", "ALTER TABLE apps ADD COLUMN session_stitching_token_hash INTEGER;", "ad_services_version", "ALTER TABLE apps ADD COLUMN ad_services_version INTEGER;", "unmatched_first_open_without_ad_id", "ALTER TABLE apps ADD COLUMN unmatched_first_open_without_ad_id INTEGER;", "npa_metadata_value", "ALTER TABLE apps ADD COLUMN npa_metadata_value INTEGER;", "attribution_eligibility_status", "ALTER TABLE apps ADD COLUMN attribution_eligibility_status INTEGER;", "sgtm_preview_key", "ALTER TABLE apps ADD COLUMN sgtm_preview_key TEXT;", "dma_consent_state", "ALTER TABLE apps ADD COLUMN dma_consent_state INTEGER;", "daily_realtime_dcu_count", "ALTER TABLE apps ADD COLUMN daily_realtime_dcu_count INTEGER;", "bundle_delivery_index", "ALTER TABLE apps ADD COLUMN bundle_delivery_index INTEGER;", "serialized_npa_metadata", "ALTER TABLE apps ADD COLUMN serialized_npa_metadata TEXT;", "unmatched_pfo", "ALTER TABLE apps ADD COLUMN unmatched_pfo INTEGER;", "unmatched_uwa", "ALTER TABLE apps ADD COLUMN unmatched_uwa INTEGER;", "ad_campaign_info", "ALTER TABLE apps ADD COLUMN ad_campaign_info BLOB;", "daily_registered_triggers_count", "ALTER TABLE apps ADD COLUMN daily_registered_triggers_count INTEGER;", "client_upload_eligibility", "ALTER TABLE apps ADD COLUMN client_upload_eligibility INTEGER;", "gmp_version_for_remote_config", "ALTER TABLE apps ADD COLUMN gmp_version_for_remote_config INTEGER;", "last_diagnostics_signal_upload_timestamp", "ALTER TABLE apps ADD COLUMN last_diagnostics_signal_upload_timestamp INTEGER;"};
     private static final String[] zze = {"realtime", "ALTER TABLE raw_events ADD COLUMN realtime INTEGER;", "elapsed_time", "ALTER TABLE raw_events ADD COLUMN elapsed_time INTEGER;"};
     private static final String[] zzf = {"has_realtime", "ALTER TABLE queue ADD COLUMN has_realtime INTEGER;", "retry_count", "ALTER TABLE queue ADD COLUMN retry_count INTEGER;"};
     private static final String[] zzh = {"session_scoped", "ALTER TABLE event_filters ADD COLUMN session_scoped BOOLEAN;"};
@@ -1837,7 +1839,7 @@ public final class zzaw extends zzos {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final zzbd zzah(String str, com.google.android.gms.internal.measurement.zzhs zzhsVar, String str2) {
-        zzbd zzaE = zzaE("events", str, zzhsVar.zzd());
+        zzbd zzaE = zzaE(NotificationStatsStore.KEY_EVENTS, str, zzhsVar.zzd());
         if (zzaE == null) {
             zzic zzicVar = this.zzu;
             zzicVar.zzaW().zze().zzc("Event aggregate wasn't created during raw event logging. appId, event", zzgu.zzl(str), zzicVar.zzl().zza(str2));
@@ -2053,11 +2055,11 @@ public final class zzaw extends zzos {
     }
 
     public final zzbd zzf(String str, String str2) {
-        return zzaE("events", str, str2);
+        return zzaE(NotificationStatsStore.KEY_EVENTS, str, str2);
     }
 
     public final void zzh(zzbd zzbdVar) {
-        zzaF("events", zzbdVar);
+        zzaF(NotificationStatsStore.KEY_EVENTS, zzbdVar);
     }
 
     public final void zzi(String str) {
@@ -2066,11 +2068,11 @@ public final class zzaw extends zzos {
         Cursor cursor = null;
         try {
             try {
-                cursor = zze().query("events", (String[]) Collections.singletonList("name").toArray(new String[0]), "app_id=?", new String[]{str}, null, null, null);
+                cursor = zze().query(NotificationStatsStore.KEY_EVENTS, (String[]) Collections.singletonList("name").toArray(new String[0]), "app_id=?", new String[]{str}, null, null, null);
                 if (cursor.moveToFirst()) {
                     do {
                         String string = cursor.getString(0);
-                        if (string != null && (zzaE = zzaE("events", str, string)) != null) {
+                        if (string != null && (zzaE = zzaE(NotificationStatsStore.KEY_EVENTS, str, string)) != null) {
                             zzaF("events_snapshot", zzaE);
                         }
                     } while (cursor.moveToNext());
@@ -2093,7 +2095,7 @@ public final class zzaw extends zzos {
         if (r10 != null) goto L12;
      */
     /* JADX WARN: Code restructure failed: missing block: B:46:0x00c5, code lost:
-        zzaF("events", r10);
+        zzaF(com.miami.game.core.firebase.notification.NotificationStatsStore.KEY_EVENTS, r10);
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x005e, code lost:
         if (r10 != null) goto L12;
@@ -2109,9 +2111,9 @@ public final class zzaw extends zzos {
         zzbd zzaE;
         boolean z2 = false;
         ArrayList arrayList = new ArrayList(Arrays.asList("name", "lifetime_count"));
-        zzbd zzaE2 = zzaE("events", str, "_f");
-        zzbd zzaE3 = zzaE("events", str, "_v");
-        zzaG("events", str);
+        zzbd zzaE2 = zzaE(NotificationStatsStore.KEY_EVENTS, str, "_f");
+        zzbd zzaE3 = zzaE(NotificationStatsStore.KEY_EVENTS, str, "_v");
+        zzaG(NotificationStatsStore.KEY_EVENTS, str);
         Cursor cursor = null;
         try {
             cursor = zze().query("events_snapshot", (String[]) arrayList.toArray(new String[0]), "app_id=?", new String[]{str}, null, null, null);
@@ -2128,7 +2130,7 @@ public final class zzaw extends zzos {
             }
             if (zzaE2 == null) {
             }
-            zzaF("events", zzaE2);
+            zzaF(NotificationStatsStore.KEY_EVENTS, zzaE2);
             zzaG("events_snapshot", str);
         }
         boolean z3 = false;
@@ -2144,7 +2146,7 @@ public final class zzaw extends zzos {
                     }
                 }
                 if (string != null && (zzaE = zzaE("events_snapshot", str, string)) != null) {
-                    zzaF("events", zzaE);
+                    zzaF(NotificationStatsStore.KEY_EVENTS, zzaE);
                 }
             } catch (SQLiteException e2) {
                 e = e2;
@@ -2165,9 +2167,9 @@ public final class zzaw extends zzos {
                         cursor.close();
                     }
                     if (z2 && zzaE2 != null) {
-                        zzaF("events", zzaE2);
+                        zzaF(NotificationStatsStore.KEY_EVENTS, zzaE2);
                     } else if (!z && zzaE3 != null) {
-                        zzaF("events", zzaE3);
+                        zzaF(NotificationStatsStore.KEY_EVENTS, zzaE3);
                     }
                     zzaG("events_snapshot", str);
                     throw th;
@@ -2180,7 +2182,7 @@ public final class zzaw extends zzos {
                 if (z2) {
                 }
                 if (!z) {
-                    zzaF("events", zzaE3);
+                    zzaF(NotificationStatsStore.KEY_EVENTS, zzaE3);
                 }
                 zzaG("events_snapshot", str);
                 throw th;
@@ -2194,7 +2196,7 @@ public final class zzaw extends zzos {
             }
             zzaG("events_snapshot", str);
         }
-        zzaF("events", zzaE2);
+        zzaF(NotificationStatsStore.KEY_EVENTS, zzaE2);
         zzaG("events_snapshot", str);
     }
 
@@ -2832,7 +2834,7 @@ public final class zzaw extends zzos {
                 strArr[3] = "last_bundle_index";
                 strArr[4] = "last_bundle_start_timestamp";
                 strArr[5] = "last_bundle_end_timestamp";
-                strArr[6] = "app_version";
+                strArr[6] = NotificationStatsPayloadFactory.KEY_APP_VERSION;
                 strArr[7] = "app_store";
                 strArr[8] = "gmp_version";
                 strArr[9] = "dev_cert_hash";
@@ -3162,7 +3164,7 @@ public final class zzaw extends zzos {
         contentValues.put("last_bundle_index", Long.valueOf(zzhVar.zzG()));
         contentValues.put("last_bundle_start_timestamp", Long.valueOf(zzhVar.zzn()));
         contentValues.put("last_bundle_end_timestamp", Long.valueOf(zzhVar.zzp()));
-        contentValues.put("app_version", zzhVar.zzr());
+        contentValues.put(NotificationStatsPayloadFactory.KEY_APP_VERSION, zzhVar.zzr());
         contentValues.put("app_store", zzhVar.zzv());
         contentValues.put("gmp_version", Long.valueOf(zzhVar.zzx()));
         contentValues.put("dev_cert_hash", Long.valueOf(zzhVar.zzz()));

@@ -1,7 +1,6 @@
 package com.google.android.gms.measurement.internal;
 
 import com.adjust.sdk.Constants;
-import com.google.firebase.messaging.ServiceStarter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -190,8 +189,7 @@ public final class zzfy {
         zzae = zza("measurement.test.test_double_flag", valueOf2, valueOf2, zzdq.zza, false);
         zza("measurement.experiment.max_ids", 50, 50, zzdr.zza, false);
         zzaf = zza("measurement.upload.max_item_scoped_custom_parameters", 27, 27, zzds.zza, false);
-        Integer valueOf3 = Integer.valueOf((int) ServiceStarter.ERROR_UNKNOWN);
-        zzag = zza("measurement.upload.max_event_parameter_value_length", valueOf3, valueOf3, zzdt.zza, true);
+        zzag = zza("measurement.upload.max_event_parameter_value_length", 500, 500, zzdt.zza, true);
         zzah = zza("measurement.max_bundles_per_iteration", 100, 100, zzdu.zza, false);
         zzai = zza("measurement.sdk.attribution.cache.ttl", 604800000L, 604800000L, zzdv.zza, false);
         zzaj = zza("measurement.redaction.app_instance_id.ttl", 7200000L, 7200000L, zzdw.zza, false);

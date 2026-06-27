@@ -1,5 +1,5 @@
 package com.google.android.vending.licensing;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class ValidationException extends Exception {
     private static final long serialVersionUID = 1;
 

@@ -5,7 +5,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
 import android.util.Pair;
-import com.google.firebase.messaging.ServiceStarter;
 import io.appmetrica.analytics.coreapi.internal.event.CounterReportApi;
 import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
@@ -187,7 +186,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
         if (str3 == null) {
             str3 = null;
         } else if (str3.length() > 500) {
-            str3 = str3.substring(0, ServiceStarter.ERROR_UNKNOWN);
+            str3 = str3.substring(0, 500);
         }
         return String.format(locale, "[event: %s, type: %s, value: %s]", str, str2, str3);
     }

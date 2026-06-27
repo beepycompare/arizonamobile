@@ -10,7 +10,6 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.SparseArray;
 import androidx.collection.ArrayMap;
-import androidx.core.app.NotificationCompat;
 import androidx.privacysandbox.ads.adservices.java.measurement.MeasurementManagerFutures;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.CollectionUtils;
@@ -467,12 +466,12 @@ public final class zzlj extends zzg {
                 if (!"_iap".equals(str2)) {
                     zzic zzicVar4 = this.zzu;
                     zzpp zzk = zzicVar4.zzk();
-                    if (zzk.zzk(NotificationCompat.CATEGORY_EVENT, str2)) {
+                    if (zzk.zzk("event", str2)) {
                         zzic zzicVar5 = zzk.zzu;
                         c = 2;
-                        if (zzk.zzm(NotificationCompat.CATEGORY_EVENT, zzjm.zza, zzicVar5.zzc().zzp(null, zzfy.zzbf) ? zzjm.zzc : zzjm.zzb, str2)) {
+                        if (zzk.zzm("event", zzjm.zza, zzicVar5.zzc().zzp(null, zzfy.zzbf) ? zzjm.zzc : zzjm.zzb, str2)) {
                             zzicVar5.zzc();
-                            i4 = !zzk.zzn(NotificationCompat.CATEGORY_EVENT, 40, str2) ? 2 : 0;
+                            i4 = !zzk.zzn("event", 40, str2) ? 2 : 0;
                         } else {
                             i4 = 13;
                         }

@@ -1,6 +1,5 @@
 package com.adjust.sdk;
 
-import androidx.core.app.NotificationCompat;
 import com.google.firebase.analytics.FirebaseAnalytics;
 /* loaded from: classes3.dex */
 public enum ActivityKind {
@@ -24,7 +23,7 @@ public enum ActivityKind {
         if ("session".equals(str)) {
             return SESSION;
         }
-        if (NotificationCompat.CATEGORY_EVENT.equals(str)) {
+        if ("event".equals(str)) {
             return EVENT;
         }
         if ("click".equals(str)) {
@@ -63,7 +62,7 @@ public enum ActivityKind {
             case 1:
                 return "session";
             case 2:
-                return NotificationCompat.CATEGORY_EVENT;
+                return "event";
             case 3:
                 return "click";
             case 4:

@@ -5,6 +5,7 @@ import android.os.Build;
 import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
+import com.arizona.launcher.MessagingService;
 import com.google.android.material.internal.ViewUtils;
 import com.google.common.base.Ascii;
 import com.google.common.collect.ImmutableList;
@@ -126,7 +127,7 @@ public final class AudioDescriptorUtil {
                 r2 |= 6144;
             }
             if ((b2 & 128) != 0) {
-                r2 |= 3145728;
+                r2 |= MessagingService.MAX_IMAGE_BYTES;
             }
             byte b3 = bArr[2];
             if ((b3 & 1) != 0) {

@@ -2,7 +2,6 @@ package androidx.compose.ui.text.font;
 
 import androidx.compose.ui.text.internal.InlineClassHelperKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.google.firebase.messaging.ServiceStarter;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -202,7 +201,7 @@ public final class FontWeight implements Comparable<FontWeight> {
         W300 = fontWeight3;
         FontWeight fontWeight4 = new FontWeight(400);
         W400 = fontWeight4;
-        FontWeight fontWeight5 = new FontWeight(ServiceStarter.ERROR_UNKNOWN);
+        FontWeight fontWeight5 = new FontWeight(500);
         W500 = fontWeight5;
         FontWeight fontWeight6 = new FontWeight(600);
         W600 = fontWeight6;

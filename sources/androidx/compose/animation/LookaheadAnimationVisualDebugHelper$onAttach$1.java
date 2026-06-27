@@ -40,7 +40,7 @@ public final class LookaheadAnimationVisualDebugHelper$onAttach$1 extends Suspen
         if (r13.snapTo(kotlin.coroutines.jvm.internal.Boxing.boxFloat(0.0f), r12) == r0) goto L14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:14:0x006d, code lost:
-        if (androidx.compose.animation.core.Animatable.animateTo$default(r4, kotlin.coroutines.jvm.internal.Boxing.boxFloat(1.0f), androidx.compose.animation.core.AnimationSpecKt.m196infiniteRepeatable9IiC70o$default(androidx.compose.animation.core.AnimationSpecKt.tween$default(com.google.firebase.messaging.ServiceStarter.ERROR_UNKNOWN, 0, androidx.compose.animation.core.EasingKt.getLinearEasing(), 2, null), androidx.compose.animation.core.RepeatMode.Reverse, 0, 4, null), null, null, r12, 12, null) == r0) goto L14;
+        if (androidx.compose.animation.core.Animatable.animateTo$default(r4, kotlin.coroutines.jvm.internal.Boxing.boxFloat(1.0f), androidx.compose.animation.core.AnimationSpecKt.m196infiniteRepeatable9IiC70o$default(androidx.compose.animation.core.AnimationSpecKt.tween$default(500, 0, androidx.compose.animation.core.EasingKt.getLinearEasing(), 2, null), androidx.compose.animation.core.RepeatMode.Reverse, 0, 4, null), null, null, r12, 12, null) == r0) goto L14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x006f, code lost:
         return r0;

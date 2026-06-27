@@ -55,7 +55,7 @@ public final class C0615th implements IParamsAppender {
             a(builder, CommonUrlParts.ANALYTICS_SDK_BUILD_NUMBER, this.c.d);
             a(builder, CommonUrlParts.ANALYTICS_SDK_BUILD_TYPE, this.c.e);
             a(builder, "app_debuggable", this.c.g);
-            builder.appendQueryParameter(CommonUrlParts.LOCALE, StringUtils.ifIsEmptyToDef(this.c.k, eh.getLocale()));
+            builder.appendQueryParameter("locale", StringUtils.ifIsEmptyToDef(this.c.k, eh.getLocale()));
             builder.appendQueryParameter(CommonUrlParts.ROOT_STATUS, StringUtils.ifIsEmptyToDef(this.c.l, eh.getDeviceRootStatus()));
             builder.appendQueryParameter(CommonUrlParts.APP_FRAMEWORK, StringUtils.ifIsEmptyToDef(this.c.m, eh.getAppFramework()));
             a(builder, "attribution_id", this.c.n);

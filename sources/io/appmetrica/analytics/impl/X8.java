@@ -2,6 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,7 +63,7 @@ public final class X8 {
                         Iterator it = list.iterator();
                         while (it.hasNext()) {
                             ContentValues contentValues = (ContentValues) it.next();
-                            writableDatabase.insertOrThrow("events", null, contentValues);
+                            writableDatabase.insertOrThrow(NotificationStatsStore.KEY_EVENTS, null, contentValues);
                             this.c.incrementAndGet();
                             a(contentValues);
                         }

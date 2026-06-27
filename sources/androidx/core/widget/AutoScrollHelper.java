@@ -10,7 +10,6 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import androidx.core.view.ViewCompat;
-import com.google.firebase.messaging.ServiceStarter;
 /* loaded from: classes2.dex */
 public abstract class AutoScrollHelper implements View.OnTouchListener {
     private static final int DEFAULT_ACTIVATION_DELAY = ViewConfiguration.getTapTimeout();
@@ -74,8 +73,8 @@ public abstract class AutoScrollHelper implements View.OnTouchListener {
         setRelativeEdges(0.2f, 0.2f);
         setRelativeVelocity(1.0f, 1.0f);
         setActivationDelay(DEFAULT_ACTIVATION_DELAY);
-        setRampUpDuration(ServiceStarter.ERROR_UNKNOWN);
-        setRampDownDuration(ServiceStarter.ERROR_UNKNOWN);
+        setRampUpDuration(500);
+        setRampDownDuration(500);
     }
 
     public AutoScrollHelper setEnabled(boolean z) {

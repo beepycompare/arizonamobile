@@ -2,7 +2,6 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 import com.adjust.sdk.Constants;
-import com.google.firebase.messaging.ServiceStarter;
 import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
 import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
@@ -141,7 +140,7 @@ public final class W implements InterfaceC0170cb {
         if (a3.mStatus == identifierStatus2) {
             a3 = new AdTrackingInfoResult(huawei.mAdTrackingInfo, a3.mStatus, a3.mErrorExplanation);
         }
-        AdTrackingInfoResult a4 = a(this.n.c, new V(this, new C0441mo(3, ServiceStarter.ERROR_UNKNOWN)));
+        AdTrackingInfoResult a4 = a(this.n.c, new V(this, new C0441mo(3, 500)));
         AdTrackingInfoResult yandex = this.m.getYandex();
         if (a4.mStatus == identifierStatus2) {
             a4 = new AdTrackingInfoResult(yandex.mAdTrackingInfo, a4.mStatus, a4.mErrorExplanation);

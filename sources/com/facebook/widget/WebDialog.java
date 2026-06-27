@@ -32,7 +32,7 @@ import com.facebook.android.Util;
 import com.facebook.internal.ServerProtocol;
 import com.facebook.internal.Utility;
 import com.facebook.internal.Validate;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class WebDialog extends Dialog {
     private static final int BACKGROUND_GRAY = -872415232;
     static final String CANCEL_URI = "fbconnect://cancel";
@@ -54,7 +54,7 @@ public class WebDialog extends Dialog {
     private String url;
     private WebView webView;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class Builder extends BuilderBase<Builder> {
         public Builder(Context context, Session session, String str, Bundle bundle) {
             super(context, session, str, bundle);
@@ -83,7 +83,7 @@ public class WebDialog extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class BuilderBase<CONCRETE extends BuilderBase<?>> {
         private String action;
         private String applicationId;
@@ -171,7 +171,7 @@ public class WebDialog extends Dialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public class DialogWebViewClient extends WebViewClient {
         private DialogWebViewClient() {
         }
@@ -268,7 +268,7 @@ public class WebDialog extends Dialog {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class FeedDialogBuilder extends BuilderBase<FeedDialogBuilder> {
         private static final String CAPTION_PARAM = "caption";
         private static final String DESCRIPTION_PARAM = "description";
@@ -346,12 +346,12 @@ public class WebDialog extends Dialog {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface OnCompleteListener {
         void onComplete(Bundle bundle, FacebookException facebookException);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static class RequestsDialogBuilder extends BuilderBase<RequestsDialogBuilder> {
         private static final String APPREQUESTS_DIALOG = "apprequests";
         private static final String DATA_PARAM = "data";

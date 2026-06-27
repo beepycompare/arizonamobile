@@ -2,7 +2,6 @@ package io.appmetrica.analytics.impl;
 
 import android.text.TextUtils;
 import io.appmetrica.analytics.coreutils.internal.parsing.RemoteConfigJsonUtils;
-import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import io.appmetrica.analytics.networktasks.internal.RetryPolicyConfig;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -62,7 +61,7 @@ public final class Am {
             }
             fm.j = AbstractC0311hn.a((Map) hashMap);
         }
-        JSONObject optJSONObject7 = hb.optJSONObject(CommonUrlParts.LOCALE);
+        JSONObject optJSONObject7 = hb.optJSONObject("locale");
         String str3 = "";
         if (optJSONObject7 == null || (optJSONObject = optJSONObject7.optJSONObject("country")) == null || !optJSONObject.optBoolean("reliable", false)) {
             str = "";

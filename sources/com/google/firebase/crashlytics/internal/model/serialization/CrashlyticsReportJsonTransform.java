@@ -13,6 +13,8 @@ import com.google.firebase.encoders.json.JsonDataEncoderBuilder;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.impl.M2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.IOException;
@@ -137,7 +139,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case 1874684019:
-                    if (nextName.equals("platform")) {
+                    if (nextName.equals(NotificationStatsPayloadFactory.KEY_PLATFORM)) {
                         c = '\t';
                         break;
                     }
@@ -240,7 +242,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case -1291329255:
-                    if (nextName.equals("events")) {
+                    if (nextName.equals(NotificationStatsStore.KEY_EVENTS)) {
                         c = 5;
                         break;
                     }
@@ -599,7 +601,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case 1874684019:
-                    if (nextName.equals("platform")) {
+                    if (nextName.equals(NotificationStatsPayloadFactory.KEY_PLATFORM)) {
                         c = 3;
                         break;
                     }

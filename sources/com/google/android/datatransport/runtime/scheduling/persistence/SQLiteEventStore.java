@@ -24,6 +24,7 @@ import com.google.android.datatransport.runtime.synchronization.SynchronizationG
 import com.google.android.datatransport.runtime.time.Clock;
 import com.google.android.datatransport.runtime.util.PriorityMapping;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -137,7 +138,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         contentValues.put("pseudonymous_id", eventInternal.getPseudonymousId());
         contentValues.put("experiment_ids_clear_blob", eventInternal.getExperimentIdsClear());
         contentValues.put("experiment_ids_encrypted_blob", eventInternal.getExperimentIdsEncrypted());
-        long insert = sQLiteDatabase.insert("events", null, contentValues);
+        long insert = sQLiteDatabase.insert(NotificationStatsStore.KEY_EVENTS, null, contentValues);
         if (!z) {
             int ceil = (int) Math.ceil(bytes.length / maxBlobByteSizePerRow);
             for (int i = 1; i <= ceil; i++) {
@@ -398,7 +399,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
                 return SQLiteEventStore.this.m9495xc84244d8((Cursor) obj);
             }
         });
-        return Integer.valueOf(sQLiteDatabase.delete("events", "timestamp_ms < ?", strArr));
+        return Integer.valueOf(sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, "timestamp_ms < ?", strArr));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -427,7 +428,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ Object lambda$clearDb$13(SQLiteDatabase sQLiteDatabase) {
-        sQLiteDatabase.delete("events", null, new String[0]);
+        sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, null, new String[0]);
         sQLiteDatabase.delete("transport_contexts", null, new String[0]);
         return null;
     }
@@ -445,7 +446,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         if (transportContextId == null) {
             return arrayList;
         }
-        tryWithCursor(sQLiteDatabase.query("events", new String[]{APEZProvider.FILEID, "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", FirebaseAnalytics.Param.PRODUCT_ID, "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{transportContextId.toString()}, null, null, null, String.valueOf(i)), new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda1
+        tryWithCursor(sQLiteDatabase.query(NotificationStatsStore.KEY_EVENTS, new String[]{APEZProvider.FILEID, "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", FirebaseAnalytics.Param.PRODUCT_ID, "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{transportContextId.toString()}, null, null, null, String.valueOf(i)), new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda1
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
                 return SQLiteEventStore.this.m9501x1b337a6a(arrayList, transportContext, (Cursor) obj);

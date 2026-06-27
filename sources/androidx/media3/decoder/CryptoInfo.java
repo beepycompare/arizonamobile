@@ -56,7 +56,7 @@ public final class CryptoInfo {
         iArr2[0] = iArr2[0] + i;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     private static final class PatternHolderV24 {
         private final MediaCodec.CryptoInfo frameworkCryptoInfo;
         private final MediaCodec.CryptoInfo.Pattern pattern;

@@ -12,12 +12,13 @@ import android.os.SystemClock;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzgl extends zzg {
-    private static final String[] zza = {"app_version", "ALTER TABLE messages ADD COLUMN app_version TEXT;", "app_version_int", "ALTER TABLE messages ADD COLUMN app_version_int INTEGER;"};
+    private static final String[] zza = {NotificationStatsPayloadFactory.KEY_APP_VERSION, "ALTER TABLE messages ADD COLUMN app_version TEXT;", "app_version_int", "ALTER TABLE messages ADD COLUMN app_version_int INTEGER;"};
     private final zzgj zzb;
     private boolean zzc;
 
@@ -59,7 +60,7 @@ public final class zzgl extends zzg {
             contentValues.put("type", Integer.valueOf(i));
             contentValues.put("entry", bArr);
             if (zzicVar.zzc().zzp(null, zzfxVar) && zzh != null) {
-                contentValues.put("app_version", zzh.zzc);
+                contentValues.put(NotificationStatsPayloadFactory.KEY_APP_VERSION, zzh.zzc);
                 contentValues.put("app_version_int", Long.valueOf(zzh.zzj));
             }
             zzicVar.zzc();
@@ -500,7 +501,7 @@ public final class zzgl extends zzg {
                                                 strArr2[i9] = str8;
                                                 strArr2[1] = str7;
                                                 strArr2[2] = str6;
-                                                strArr2[3] = "app_version";
+                                                strArr2[3] = NotificationStatsPayloadFactory.KEY_APP_VERSION;
                                                 strArr2[4] = "app_version_int";
                                                 i5 = 5;
                                             } catch (SQLiteDatabaseLockedException unused2) {

@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.view.MotionEvent;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.messaging.ServiceStarter;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public class FastScroller extends RecyclerView.ItemDecoration implements RecyclerView.OnItemTouchListener {
@@ -71,7 +70,7 @@ public class FastScroller extends RecyclerView.ItemDecoration implements Recycle
         this.mHideRunnable = new Runnable() { // from class: androidx.recyclerview.widget.FastScroller.1
             @Override // java.lang.Runnable
             public void run() {
-                FastScroller.this.hide(ServiceStarter.ERROR_UNKNOWN);
+                FastScroller.this.hide(500);
             }
         };
         this.mOnScrollListener = new RecyclerView.OnScrollListener() { // from class: androidx.recyclerview.widget.FastScroller.2

@@ -1,6 +1,5 @@
 package com.google.common.eventbus;
 
-import androidx.core.app.NotificationCompat;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 @ElementTypesAreNonnullByDefault
@@ -23,6 +22,6 @@ public class DeadEvent {
     }
 
     public String toString() {
-        return MoreObjects.toStringHelper(this).add("source", this.source).add(NotificationCompat.CATEGORY_EVENT, this.event).toString();
+        return MoreObjects.toStringHelper(this).add("source", this.source).add("event", this.event).toString();
     }
 }

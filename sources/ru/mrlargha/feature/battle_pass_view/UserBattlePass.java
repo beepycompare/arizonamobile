@@ -25,6 +25,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
+import ru.mrlargha.commonui.elements.hud.presentation.RodinaHudSubwindowEvents;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.battle_pass_view.databinding.UserBattlepassBinding;
@@ -107,6 +108,9 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void setVisibility(boolean z) {
+        if (!UtilsKt.isArizonaType()) {
+            RodinaHudSubwindowEvents.INSTANCE.setBattlePassRewardsBannerVisible(z);
+        }
         LinearLayout linearLayout = this.linearLayout;
         if (z) {
             linearLayout.setTranslationX(800.0f);

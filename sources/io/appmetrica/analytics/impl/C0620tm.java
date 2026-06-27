@@ -2,6 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.text.TextUtils;
 import com.google.common.net.HttpHeaders;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import io.appmetrica.analytics.networktasks.internal.NetworkResponseHandler;
 import io.appmetrica.analytics.networktasks.internal.ResponseDataHolder;
@@ -40,7 +41,7 @@ public final class C0620tm implements NetworkResponseHandler {
                 try {
                     am.h.getClass();
                     Hb hb = new Hb(new String(responseData, "UTF-8"));
-                    JSONObject optJSONObject = hb.optJSONObject("device_id");
+                    JSONObject optJSONObject = hb.optJSONObject(NotificationStatsPayloadFactory.KEY_DEVICE_ID);
                     if (optJSONObject == null) {
                         str = "";
                         str2 = "";

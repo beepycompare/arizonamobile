@@ -2,7 +2,7 @@ package com.facebook.internal;
 
 import com.facebook.Request;
 import com.facebook.RequestBatch;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class CacheableRequestBatch extends RequestBatch {
     private String cacheKey;
     private boolean forceRoundTrip;

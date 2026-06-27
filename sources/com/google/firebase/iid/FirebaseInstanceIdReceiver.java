@@ -9,7 +9,6 @@ import com.google.android.gms.cloudmessaging.CloudMessagingReceiver;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FcmBroadcastProcessor;
 import com.google.firebase.messaging.MessagingAnalytics;
-import com.google.firebase.messaging.ServiceStarter;
 import java.util.concurrent.ExecutionException;
 /* loaded from: classes4.dex */
 public final class FirebaseInstanceIdReceiver extends CloudMessagingReceiver {
@@ -25,7 +24,7 @@ public final class FirebaseInstanceIdReceiver extends CloudMessagingReceiver {
             return ((Integer) Tasks.await(new FcmBroadcastProcessor(context).process(cloudMessage.getIntent()))).intValue();
         } catch (InterruptedException | ExecutionException e) {
             Log.e("FirebaseMessaging", "Failed to send message to service.", e);
-            return ServiceStarter.ERROR_UNKNOWN;
+            return 500;
         }
     }
 

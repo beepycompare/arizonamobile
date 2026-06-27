@@ -34,7 +34,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int item_touch_helper_previous_elevation = 0x7f0a078b;
+        public static int item_touch_helper_previous_elevation = 0x7f0a0783;
 
         private id() {
         }

@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.util.Base64;
-import androidx.core.app.NotificationCompat;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
 import io.appmetrica.analytics.internal.CounterConfiguration;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
@@ -28,7 +28,7 @@ public final class Lb {
 
     public Lb(String str, long j) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
-        JSONObject jSONObject2 = jSONObject.getJSONObject(NotificationCompat.CATEGORY_EVENT);
+        JSONObject jSONObject2 = jSONObject.getJSONObject("event");
         this.f644a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
         this.b = jSONObject2.getString("name");
         this.c = jSONObject2.getInt("bytes_truncated");
@@ -47,7 +47,7 @@ public final class Lb {
             }
         }
         JSONObject jSONObject3 = jSONObject.getJSONObject("process_configuration");
-        this.e = jSONObject3.getString("package_name");
+        this.e = jSONObject3.getString(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME);
         this.f = Integer.valueOf(jSONObject3.getInt("pid"));
         this.g = jSONObject3.getString("psid");
         JSONObject jSONObject4 = jSONObject.getJSONObject("reporter_configuration");
@@ -105,7 +105,7 @@ public final class Lb {
         for (Map.Entry entry : this.d.entrySet()) {
             hashMap.put(((EnumC0163c4) entry.getKey()).name(), (Integer) entry.getValue());
         }
-        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put("package_name", this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put(NotificationCompat.CATEGORY_EVENT, new JSONObject().put("jvm_crash", Base64.encodeToString(this.f644a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Ib.b(hashMap)).putOpt("environment", this.j)).toString();
+        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put("event", new JSONObject().put("jvm_crash", Base64.encodeToString(this.f644a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Ib.b(hashMap)).putOpt("environment", this.j)).toString();
     }
 
     public final String toString() {

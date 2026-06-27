@@ -43,7 +43,6 @@ import com.google.android.material.motion.MaterialBottomContainerBackHelper;
 import com.google.android.material.resources.MaterialResources;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
-import com.google.firebase.messaging.ServiceStarter;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
@@ -543,7 +542,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         } else {
             setExpandedOffset(obtainStyledAttributes.getDimensionPixelOffset(R.styleable.BottomSheetBehavior_Layout_behavior_expandedOffset, 0));
         }
-        setSignificantVelocityThreshold(obtainStyledAttributes.getInt(R.styleable.BottomSheetBehavior_Layout_behavior_significantVelocityThreshold, ServiceStarter.ERROR_UNKNOWN));
+        setSignificantVelocityThreshold(obtainStyledAttributes.getInt(R.styleable.BottomSheetBehavior_Layout_behavior_significantVelocityThreshold, 500));
         this.multipleScrollingChildrenSupported = obtainStyledAttributes.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_multipleScrollingChildrenSupported, false);
         this.autoExpandOnRequestChildRectangleOffscreen = obtainStyledAttributes.getBoolean(R.styleable.BottomSheetBehavior_Layout_behavior_autoExpandOnRequestChildRectangleOffscreen, true);
         this.paddingBottomSystemWindowInsets = obtainStyledAttributes.getBoolean(R.styleable.BottomSheetBehavior_Layout_paddingBottomSystemWindowInsets, false);

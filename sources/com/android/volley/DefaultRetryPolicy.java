@@ -10,7 +10,7 @@ public class DefaultRetryPolicy implements RetryPolicy {
     private final int mMaxNumRetries;
 
     public DefaultRetryPolicy() {
-        this(DEFAULT_TIMEOUT_MS, 1, 1.0f);
+        this(2500, 1, 1.0f);
     }
 
     public DefaultRetryPolicy(int i, int i2, float f) {

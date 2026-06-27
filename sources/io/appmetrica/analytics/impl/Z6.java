@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.ResultReceiver;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import io.appmetrica.analytics.internal.CounterConfiguration;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
@@ -39,7 +40,7 @@ public final class Z6 {
         Integer num;
         int i2 = 0;
         try {
-            cursor = sQLiteDatabase.query("events", new String[]{"global_number", "type", "event_description"}, str, strArr, null, null, null);
+            cursor = sQLiteDatabase.query(NotificationStatsStore.KEY_EVENTS, new String[]{"global_number", "type", "event_description"}, str, strArr, null, null, null);
         } catch (Throwable th) {
             th = th;
             cursor = null;
@@ -54,7 +55,7 @@ public final class Z6 {
                     c0541qk.a(new Pj("select_rows_to_delete_exception", th));
                     Oo.a(cursor);
                     arrayList = null;
-                    i2 = sQLiteDatabase.delete("events", str, strArr);
+                    i2 = sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, str, strArr);
                     if (arrayList != null) {
                     }
                     return new X6(arrayList, i2);
@@ -69,7 +70,7 @@ public final class Z6 {
                     DatabaseUtils.cursorRowToContentValues(cursor, contentValues);
                     arrayList.add(contentValues);
                 }
-                i2 = sQLiteDatabase.delete("events", str, strArr);
+                i2 = sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, str, strArr);
                 if (arrayList != null && arrayList.size() != 0 && i2 == arrayList.size() && z) {
                     mj = Na.I.f;
                     if (str2 != null && mj != null) {
@@ -124,7 +125,7 @@ public final class Z6 {
             }
         }
         arrayList = null;
-        i2 = sQLiteDatabase.delete("events", str, strArr);
+        i2 = sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, str, strArr);
         if (arrayList != null) {
             mj = Na.I.f;
             if (str2 != null) {

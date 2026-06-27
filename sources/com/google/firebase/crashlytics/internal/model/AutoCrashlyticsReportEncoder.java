@@ -13,6 +13,8 @@ import com.google.firebase.encoders.config.EncoderConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
+import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.impl.M2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.IOException;
@@ -85,7 +87,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         static final CrashlyticsReportEncoder INSTANCE = new CrashlyticsReportEncoder();
         private static final FieldDescriptor SDKVERSION_DESCRIPTOR = FieldDescriptor.of(RemoteConfigConstants.RequestFieldKey.SDK_VERSION);
         private static final FieldDescriptor GMPAPPID_DESCRIPTOR = FieldDescriptor.of("gmpAppId");
-        private static final FieldDescriptor PLATFORM_DESCRIPTOR = FieldDescriptor.of("platform");
+        private static final FieldDescriptor PLATFORM_DESCRIPTOR = FieldDescriptor.of(NotificationStatsPayloadFactory.KEY_PLATFORM);
         private static final FieldDescriptor INSTALLATIONUUID_DESCRIPTOR = FieldDescriptor.of("installationUuid");
         private static final FieldDescriptor FIREBASEINSTALLATIONID_DESCRIPTOR = FieldDescriptor.of("firebaseInstallationId");
         private static final FieldDescriptor FIREBASEAUTHENTICATIONTOKEN_DESCRIPTOR = FieldDescriptor.of("firebaseAuthenticationToken");
@@ -129,7 +131,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         private static final FieldDescriptor USER_DESCRIPTOR = FieldDescriptor.of("user");
         private static final FieldDescriptor OS_DESCRIPTOR = FieldDescriptor.of("os");
         private static final FieldDescriptor DEVICE_DESCRIPTOR = FieldDescriptor.of("device");
-        private static final FieldDescriptor EVENTS_DESCRIPTOR = FieldDescriptor.of("events");
+        private static final FieldDescriptor EVENTS_DESCRIPTOR = FieldDescriptor.of(NotificationStatsStore.KEY_EVENTS);
         private static final FieldDescriptor GENERATORTYPE_DESCRIPTOR = FieldDescriptor.of("generatorType");
 
         private CrashlyticsReportSessionEncoder() {
@@ -209,7 +211,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
     /* loaded from: classes4.dex */
     private static final class CrashlyticsReportSessionOperatingSystemEncoder implements ObjectEncoder<CrashlyticsReport.Session.OperatingSystem> {
         static final CrashlyticsReportSessionOperatingSystemEncoder INSTANCE = new CrashlyticsReportSessionOperatingSystemEncoder();
-        private static final FieldDescriptor PLATFORM_DESCRIPTOR = FieldDescriptor.of("platform");
+        private static final FieldDescriptor PLATFORM_DESCRIPTOR = FieldDescriptor.of(NotificationStatsPayloadFactory.KEY_PLATFORM);
         private static final FieldDescriptor VERSION_DESCRIPTOR = FieldDescriptor.of(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN);
         private static final FieldDescriptor BUILDVERSION_DESCRIPTOR = FieldDescriptor.of("buildVersion");
         private static final FieldDescriptor JAILBROKEN_DESCRIPTOR = FieldDescriptor.of("jailbroken");

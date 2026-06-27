@@ -1,7 +1,6 @@
 package androidx.compose.ui.tooling.preview.datasource;
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider;
-import com.google.firebase.messaging.ServiceStarter;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
@@ -20,7 +19,7 @@ public class LoremIpsum implements PreviewParameterProvider<String> {
     }
 
     public LoremIpsum() {
-        this(ServiceStarter.ERROR_UNKNOWN);
+        this(500);
     }
 
     @Override // androidx.compose.ui.tooling.preview.PreviewParameterProvider

@@ -4,6 +4,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import com.google.android.gms.common.internal.Preconditions;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -71,7 +72,7 @@ public final class zzgz extends zzos {
         String zzf2 = zzhVar.zzf();
         Uri.Builder encodedAuthority = builder.scheme((String) zzfy.zze.zzb(null)).encodedAuthority((String) zzfy.zzf.zzb(null));
         String.valueOf(zzf2);
-        Uri.Builder appendQueryParameter = encodedAuthority.path("config/app/".concat(String.valueOf(zzf2))).appendQueryParameter("platform", ConstantDeviceInfo.APP_PLATFORM);
+        Uri.Builder appendQueryParameter = encodedAuthority.path("config/app/".concat(String.valueOf(zzf2))).appendQueryParameter(NotificationStatsPayloadFactory.KEY_PLATFORM, ConstantDeviceInfo.APP_PLATFORM);
         zzf.zzu.zzc().zzi();
         appendQueryParameter.appendQueryParameter("gmp_version", String.valueOf(161000L)).appendQueryParameter("runtime_version", "0");
         String uri = builder.build().toString();

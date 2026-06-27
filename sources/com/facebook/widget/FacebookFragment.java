@@ -11,11 +11,11 @@ import com.facebook.internal.SessionTracker;
 import java.util.Date;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class FacebookFragment extends Fragment {
     private SessionTracker sessionTracker;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     private class DefaultSessionStatusCallback implements Session.StatusCallback {
         private DefaultSessionStatusCallback() {
         }

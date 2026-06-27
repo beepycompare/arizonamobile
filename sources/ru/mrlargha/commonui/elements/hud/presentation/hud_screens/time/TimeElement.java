@@ -25,6 +25,7 @@ import ru.mrlargha.commonui.databinding.HudElementTimeBinding;
 import ru.mrlargha.commonui.databinding.HudElementTimeItemBinding;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: TimeElement.kt */
@@ -214,19 +215,19 @@ public final class TimeElement {
                 textView3.setText(format2);
             }
         }
-        String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        Picasso.get().load(projectResourceUrl$default + "systems/time/icons/" + component.getImage()).into(hudElementTimeItemBinding.image);
-        String str2 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
-        String str3 = DonateUtilsKt.TRANSPARENT_COLOR;
-        if (str2 == null) {
-            str2 = DonateUtilsKt.TRANSPARENT_COLOR;
+        String str2 = UtilsKt.isArizonaType() ? "systems/time/icons/" : "systems/time_menu/";
+        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str2 + component.getImage()).into(hudElementTimeItemBinding.image);
+        String str3 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
+        String str4 = DonateUtilsKt.TRANSPARENT_COLOR;
+        if (str3 == null) {
+            str3 = DonateUtilsKt.TRANSPARENT_COLOR;
         }
-        int parseColor = Color.parseColor(str2);
-        String str4 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 1);
-        if (str4 != null) {
-            str3 = str4;
+        int parseColor = Color.parseColor(str3);
+        String str5 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 1);
+        if (str5 != null) {
+            str4 = str5;
         }
-        int parseColor2 = Color.parseColor(str3);
+        int parseColor2 = Color.parseColor(str4);
         CustomCardView mainCard = hudElementTimeItemBinding.mainCard;
         Intrinsics.checkNotNullExpressionValue(mainCard, "mainCard");
         CustomCardView.setBackground$default(mainCard, parseColor, parseColor2, null, null, 12, null);

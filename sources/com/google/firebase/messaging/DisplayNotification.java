@@ -19,8 +19,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-class DisplayNotification {
+public class DisplayNotification {
     private static final int IMAGE_DOWNLOAD_TIMEOUT_SECONDS = 5;
     private final Context context;
     private final ExecutorService networkIoExecutor;

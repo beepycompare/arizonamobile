@@ -19,7 +19,6 @@ import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import androidx.media3.extractor.ts.PsExtractor;
 import androidx.media3.extractor.ts.TsExtractor;
-import com.android.volley.DefaultRetryPolicy;
 import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Ascii;
@@ -1349,7 +1348,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                     break;
                 }
                 break;
-            case DefaultRetryPolicy.DEFAULT_TIMEOUT_MS /* 2500 */:
+            case 2500:
                 if (str.equals("NR")) {
                     c = 161;
                     break;

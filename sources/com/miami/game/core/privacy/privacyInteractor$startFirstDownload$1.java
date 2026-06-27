@@ -47,7 +47,7 @@ public final class privacyInteractor$startFirstDownload$1 extends SuspendLambda 
         ResultKt.throwOnFailure(obj);
         Timber.Forest.d("start_first_download", new Object[0]);
         FirebaseAnalytics.getInstance(this.this$0.localRepository.getContext()).logEvent("start_download", new Bundle());
-        this.this$0.localRepository.getContext().getSharedPreferences("SP_NAME", 0).edit().putBoolean("firstDownload", true).apply();
+        this.this$0.localRepository.getContext().getSharedPreferences(privacyInteractor.SP_NAME, 0).edit().putBoolean("firstDownload", true).apply();
         return Unit.INSTANCE;
     }
 }

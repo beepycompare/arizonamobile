@@ -2,6 +2,7 @@ package coil3.util;
 
 import androidx.media3.common.MimeTypes;
 import com.android.internal.http.multipart.FilePart;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.collections.MapsKt;
@@ -115,7 +116,7 @@ public final class MimeTypesKt {
         createMapBuilder.put("jpm", "video/jpm");
         createMapBuilder.put("mj2", "video/mj2");
         createMapBuilder.put("mjp2", "video/mj2");
-        createMapBuilder.put("ts", MimeTypes.VIDEO_MP2T);
+        createMapBuilder.put(NotificationStatsPayloadFactory.KEY_TS, MimeTypes.VIDEO_MP2T);
         createMapBuilder.put("mp4", MimeTypes.VIDEO_MP4);
         createMapBuilder.put("mp4v", MimeTypes.VIDEO_MP4);
         createMapBuilder.put("mpg4", MimeTypes.VIDEO_MP4);

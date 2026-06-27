@@ -26,7 +26,6 @@ import androidx.appcompat.widget.VectorEnabledTintResources;
 import androidx.collection.ArraySet;
 import androidx.core.app.AppLocalesStorageHelper;
 import androidx.core.os.LocaleListCompat;
-import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
@@ -297,7 +296,7 @@ public abstract class AppCompatDelegate {
         while (it.hasNext()) {
             AppCompatDelegate appCompatDelegate = it.next().get();
             if (appCompatDelegate != null && (contextForDelegate = appCompatDelegate.getContextForDelegate()) != null) {
-                return contextForDelegate.getSystemService(CommonUrlParts.LOCALE);
+                return contextForDelegate.getSystemService("locale");
             }
         }
         return null;
@@ -398,7 +397,7 @@ public abstract class AppCompatDelegate {
             if (context.getPackageManager().getComponentEnabledSetting(componentName) != 1) {
                 if (getApplicationLocales().isEmpty()) {
                     String readLocales = AppLocalesStorageHelper.readLocales(context);
-                    Object systemService = context.getSystemService(CommonUrlParts.LOCALE);
+                    Object systemService = context.getSystemService("locale");
                     if (systemService != null) {
                         Api33Impl.localeManagerSetApplicationLocales(systemService, Api24Impl.localeListForLanguageTags(readLocales));
                     }

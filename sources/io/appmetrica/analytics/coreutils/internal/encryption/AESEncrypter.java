@@ -4,7 +4,7 @@ import io.appmetrica.analytics.coreapi.internal.crypto.Encrypter;
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AESEncrypter implements Encrypter {
     public static final String DEFAULT_ALGORITHM = "AES/CBC/PKCS5Padding";
     public static final int DEFAULT_KEY_LENGTH = 16;

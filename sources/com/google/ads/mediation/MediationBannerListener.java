@@ -2,7 +2,7 @@ package com.google.ads.mediation;
 
 import com.google.ads.AdRequest;
 @Deprecated
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface MediationBannerListener {
     void onClick(MediationBannerAdapter<?, ?> mediationBannerAdapter);
 

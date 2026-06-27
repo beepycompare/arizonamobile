@@ -10,7 +10,7 @@ import java.io.IOException;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class AppLocalesStorageHelper {
     static final String APPLICATION_LOCALES_RECORD_FILE = "androidx.appcompat.app.AppCompatDelegate.application_locales_record_file";
     static final boolean DEBUG = false;

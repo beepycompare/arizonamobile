@@ -4,7 +4,6 @@ import androidx.compose.foundation.gestures.Orientation;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.Modifier;
-import com.google.firebase.messaging.ServiceStarter;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
@@ -13,7 +12,7 @@ import kotlin.jvm.functions.Function0;
 /* loaded from: classes.dex */
 public final class LazyLayoutSemanticsKt {
     public static final float estimatedLazyScrollOffset(int i, int i2) {
-        return i2 + (i * ServiceStarter.ERROR_UNKNOWN);
+        return i2 + (i * 500);
     }
 
     public static final Modifier lazyLayoutSemantics(Modifier modifier, Function0<? extends LazyLayoutItemProvider> function0, LazyLayoutSemanticState lazyLayoutSemanticState, Orientation orientation, boolean z, boolean z2, Composer composer, int i) {

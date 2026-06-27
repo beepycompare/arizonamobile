@@ -10,6 +10,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import com.android.installreferrer.commons.InstallReferrerCommons;
 import com.google.android.finsky.externalreferrer.IGetInstallReferrerService;
+import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
@@ -89,7 +90,7 @@ public class InstallReferrerClientImpl extends InstallReferrerClient {
             throw new IllegalStateException("Service not connected. Please start a connection before using the service.");
         }
         Bundle bundle = new Bundle();
-        bundle.putString("package_name", this.mApplicationContext.getPackageName());
+        bundle.putString(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.mApplicationContext.getPackageName());
         try {
             return new ReferrerDetails(this.service.c(bundle));
         } catch (RemoteException e) {

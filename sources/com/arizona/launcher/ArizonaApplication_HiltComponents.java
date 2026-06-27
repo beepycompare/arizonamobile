@@ -12,6 +12,7 @@ import com.miami.game.core.connection.resolver.di.ConnectionResolverModule;
 import com.miami.game.core.downloader.DowndloaderModule;
 import com.miami.game.core.downloader.database.LauncherDBModule;
 import com.miami.game.core.downloader.sync.DowndloaderSyncModule;
+import com.miami.game.core.firebase.notification.MessagingService_GeneratedInjector;
 import com.miami.game.core.foreground.service.DownloadService_GeneratedInjector;
 import com.miami.game.core.local.repository.di.LocalRepositoryModule;
 import com.miami.game.core.play.country.billing.PlayCountryResolverModule;
@@ -109,8 +110,8 @@ public final class ArizonaApplication_HiltComponents {
     }
 
     @Subcomponent
-    /* loaded from: classes3.dex */
-    public static abstract class ServiceC implements UpdateService_GeneratedInjector, DownloadService_GeneratedInjector, ServiceComponent, GeneratedComponent {
+    /* loaded from: classes5.dex */
+    public static abstract class ServiceC implements UpdateService_GeneratedInjector, MessagingService_GeneratedInjector, DownloadService_GeneratedInjector, ServiceComponent, GeneratedComponent {
 
         @Subcomponent.Builder
         /* loaded from: classes3.dex */
