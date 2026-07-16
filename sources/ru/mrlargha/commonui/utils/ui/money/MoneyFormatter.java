@@ -83,7 +83,7 @@ public final class MoneyFormatter {
     }
 
     public final String formatK(int i) {
-        return LegacyMoneyFormatter.INSTANCE.formatK(i);
+        return LegacyMoneyFormatter.formatK$default(LegacyMoneyFormatter.INSTANCE, i, false, 2, null);
     }
 
     private final long absSafe(long j) {

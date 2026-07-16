@@ -16,7 +16,7 @@ public final class AppSetIdScope {
     private static final /* synthetic */ EnumEntries c;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f321a;
+    private final String f323a;
 
     static {
         AppSetIdScope appSetIdScope = new AppSetIdScope("UNKNOWN", 0, "");
@@ -31,7 +31,7 @@ public final class AppSetIdScope {
     }
 
     private AppSetIdScope(String str, int i, String str2) {
-        this.f321a = str2;
+        this.f323a = str2;
     }
 
     public static EnumEntries<AppSetIdScope> getEntries() {
@@ -47,6 +47,6 @@ public final class AppSetIdScope {
     }
 
     public final String getValue() {
-        return this.f321a;
+        return this.f323a;
     }
 }

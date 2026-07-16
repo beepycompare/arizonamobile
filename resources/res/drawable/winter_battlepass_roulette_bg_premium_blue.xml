@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/battlepass8"/>
+    <solid android:color="@color/winter_bp_action_yellow"/>
     <corners android:radius="@dimen/_3sdp"/>
 </shape>

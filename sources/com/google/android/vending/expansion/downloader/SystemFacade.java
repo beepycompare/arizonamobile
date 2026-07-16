@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import androidx.collection.SieveCacheKt;
@@ -51,7 +50,7 @@ class SystemFacade {
     }
 
     public Long getRecommendedMaxBytesOverMobile() {
-        return Long.valueOf((long) PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE);
+        return 2097152L;
     }
 
     public boolean isNetworkRoaming() {

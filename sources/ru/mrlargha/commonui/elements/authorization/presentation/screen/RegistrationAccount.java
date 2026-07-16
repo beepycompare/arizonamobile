@@ -451,7 +451,8 @@ public final class RegistrationAccount implements InterfaceController {
                 return;
             case 561732553:
                 if (data.equals("pass_invalid")) {
-                    Toast.makeText(this.targetActivity, "Пароль не соотвествует требованиям!", 0).show();
+                    Activity activity = this.targetActivity;
+                    Toast.makeText(activity, activity.getString(R.string.auth_password_latin_digits_only), 0).show();
                     enablePasswordError();
                     return;
                 }

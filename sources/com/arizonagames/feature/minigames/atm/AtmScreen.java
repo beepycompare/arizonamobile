@@ -17,8 +17,11 @@ import android.widget.TextView;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizonagames.feature.minigames.atm.databinding.AtmScreenBinding;
 import com.arizonagames.feature.minigames.atm.databinding.AtmScreenChickenBinding;
+import com.arizonagames.feature.minigames.atm.databinding.AtmScreenEvidenceBinding;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import kotlin.Metadata;
@@ -40,7 +43,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: AtmScreen.kt */
-@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001:\u0001PB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001e\u001a\u00020\u001fH\u0002J\b\u0010 \u001a\u00020\u001fH\u0002J\u0018\u0010!\u001a\u00020\u001f2\u0006\u0010\"\u001a\u00020\u00122\u0006\u0010#\u001a\u00020\u001dH\u0002J\b\u0010$\u001a\u00020\u001fH\u0002J\u0018\u0010%\u001a\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020'H\u0002J\u0018\u0010)\u001a\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020'H\u0002J\u0018\u0010*\u001a\u00020\u001f2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020'H\u0002J\u0010\u0010+\u001a\u00020\u001f2\u0006\u0010\"\u001a\u00020\u0012H\u0002J\b\u0010,\u001a\u00020\u001fH\u0002J&\u0010-\u001a\u00020\u001f2\u0006\u0010\"\u001a\u00020\u00122\u0006\u0010.\u001a\u00020\u00142\f\u0010/\u001a\b\u0012\u0004\u0012\u00020\u001f00H\u0002J\u001e\u00101\u001a\u00020\u001f2\u0006\u0010.\u001a\u00020\u00142\f\u0010/\u001a\b\u0012\u0004\u0012\u00020\u001f00H\u0002J\u0010\u00102\u001a\u00020\u001f2\u0006\u0010\"\u001a\u00020\u0012H\u0002J\u0010\u00103\u001a\u00020\u001f2\u0006\u0010\"\u001a\u00020\u0012H\u0002J\u0010\u00104\u001a\u0002052\u0006\u0010\"\u001a\u00020\u0012H\u0002J\u0010\u00106\u001a\u00020\u001f2\u0006\u0010\"\u001a\u00020\u0012H\u0002J\b\u00107\u001a\u00020\u001fH\u0002J\b\u00108\u001a\u00020\u001fH\u0002J\u0010\u00109\u001a\u00020\u001f2\u0006\u0010:\u001a\u00020\u0016H\u0002J \u0010;\u001a\u00020\u001f2\u0006\u0010\"\u001a\u00020\u00122\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020'H\u0002J\b\u0010<\u001a\u00020\u001fH\u0002J\u0010\u0010=\u001a\u00020\u001f2\u0006\u0010>\u001a\u00020\u0016H\u0002J\b\u0010?\u001a\u00020\u001fH\u0002J\u001a\u0010@\u001a\u0004\u0018\u00010\u00122\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020'H\u0002J\u001c\u0010A\u001a\u000e\u0012\u0004\u0012\u00020'\u0012\u0004\u0012\u00020'0B2\u0006\u0010C\u001a\u000205H\u0002J\u0010\u0010D\u001a\u00020\u001d2\u0006\u0010E\u001a\u000205H\u0002J\b\u0010F\u001a\u00020\u001fH\u0002J\u0018\u0010G\u001a\u00020\u001f2\u0006\u0010H\u001a\u00020I2\u0006\u0010J\u001a\u00020\u0005H\u0016J\u0012\u0010K\u001a\u00020\u001f2\b\u0010H\u001a\u0004\u0018\u00010LH\u0002J\u0010\u0010M\u001a\u00020\u001f2\u0006\u0010\u0010\u001a\u00020\u0005H\u0002J\u0010\u0010N\u001a\u00020\u001f2\u0006\u0010O\u001a\u00020\u0016H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\u0018\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u001d0\u001cX\u0082.¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Lcom/arizonagames/feature/minigames/atm/AtmScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "baseScreen", "Landroid/widget/FrameLayout;", "binding", "Lcom/arizonagames/feature/minigames/atm/MiniGameScreenViews;", "mainHandler", "Landroid/os/Handler;", "finishTarget", "successCount", "type", "currentDraggedNominal", "Lcom/arizonagames/feature/minigames/atm/BillNominal;", "currentDraggedBillView", "Landroid/widget/ImageView;", "isDragging", "", "maxVisibleBillsInSlot", "slotStates", "", "Lcom/arizonagames/feature/minigames/atm/SlotState;", "slotViews", "", "Lcom/arizonagames/feature/minigames/atm/SlotViews;", "setupUi", "", "setupSlotsVisual", "setupSlot", "nominal", "slot", "setupTouchHandling", "tryStartDrag", "rawX", "", "rawY", "updateDraggedPosition", "finishDrag", "onCorrectDrop", "onWrongDrop", "animateBillToSlot", "dragView", "onEnd", "Lkotlin/Function0;", "animateBillFadeOut", "animateTrayCycle", "refreshSlotBills", "getDropTargetBillView", "Landroid/view/View;", "selectSlotForNominal", "clearSelectedSlots", "updateProgress", "showStatus", FirebaseAnalytics.Param.SUCCESS, "createDragBillView", "removeDragBillView", "resetDragState", "removeView", "resetDragFlagsOnly", "findSlotUnderPoint", "getViewCenterOnScreen", "Lkotlin/Pair;", "view", "makeSlot", TtmlNode.RUBY_CONTAINER, "closeScreen", "onBackendMessageHandled", "data", "", "subId", "setData", "Lcom/arizonagames/feature/minigames/atm/AtmData;", "setType", "setVisibility", "visible", "Spawner", "atm"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001:\u0001WB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001f\u001a\u00020 H\u0002J\b\u0010!\u001a\u00020 H\u0002J\u0018\u0010\"\u001a\u00020 2\u0006\u0010#\u001a\u00020\u00122\u0006\u0010$\u001a\u00020\u001eH\u0002J\b\u0010%\u001a\u00020 H\u0002J\u0018\u0010&\u001a\u00020 2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0002J\u0018\u0010*\u001a\u00020 2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0002J\u0018\u0010+\u001a\u00020 2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0002J\u0010\u0010,\u001a\u00020 2\u0006\u0010#\u001a\u00020\u0012H\u0002J\b\u0010-\u001a\u00020 H\u0002J&\u0010.\u001a\u00020 2\u0006\u0010#\u001a\u00020\u00122\u0006\u0010/\u001a\u00020\u00142\f\u00100\u001a\b\u0012\u0004\u0012\u00020 01H\u0002J\u001e\u00102\u001a\u00020 2\u0006\u0010/\u001a\u00020\u00142\f\u00100\u001a\b\u0012\u0004\u0012\u00020 01H\u0002J\u0010\u00103\u001a\u00020 2\u0006\u0010#\u001a\u00020\u0012H\u0002J\u0010\u00104\u001a\u00020 2\u0006\u0010#\u001a\u00020\u0012H\u0002J\u0014\u00105\u001a\u00020 2\n\b\u0002\u00106\u001a\u0004\u0018\u00010\u0012H\u0002J\b\u00107\u001a\u00020 H\u0002J\u0016\u00108\u001a\b\u0012\u0004\u0012\u00020(092\u0006\u0010:\u001a\u00020\u0005H\u0002J\u0010\u0010;\u001a\u00020<2\u0006\u0010#\u001a\u00020\u0012H\u0002J\u0010\u0010=\u001a\u00020 2\u0006\u0010#\u001a\u00020\u0012H\u0002J\b\u0010>\u001a\u00020 H\u0002J\b\u0010?\u001a\u00020 H\u0002J\u0010\u0010@\u001a\u00020 2\u0006\u0010A\u001a\u00020\u0017H\u0002J \u0010B\u001a\u00020 2\u0006\u0010#\u001a\u00020\u00122\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0002J\b\u0010C\u001a\u00020 H\u0002J\u0010\u0010D\u001a\u00020 2\u0006\u0010E\u001a\u00020\u0017H\u0002J\b\u0010F\u001a\u00020 H\u0002J\u001a\u0010G\u001a\u0004\u0018\u00010\u00122\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020(H\u0002J\u001c\u0010H\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020(0I2\u0006\u0010J\u001a\u00020<H\u0002J\u0010\u0010K\u001a\u00020\u001e2\u0006\u0010L\u001a\u00020<H\u0002J\b\u0010M\u001a\u00020 H\u0002J\u0018\u0010N\u001a\u00020 2\u0006\u0010O\u001a\u00020P2\u0006\u0010Q\u001a\u00020\u0005H\u0016J\u0012\u0010R\u001a\u00020 2\b\u0010O\u001a\u0004\u0018\u00010SH\u0002J\u0010\u0010T\u001a\u00020 2\u0006\u0010\u0010\u001a\u00020\u0005H\u0002J\u0010\u0010U\u001a\u00020 2\u0006\u0010V\u001a\u00020\u0017H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\u0019\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u001e0\u001dX\u0082.¢\u0006\u0002\n\u0000¨\u0006X"}, d2 = {"Lcom/arizonagames/feature/minigames/atm/AtmScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "baseScreen", "Landroid/widget/FrameLayout;", "binding", "Lcom/arizonagames/feature/minigames/atm/MiniGameScreenViews;", "mainHandler", "Landroid/os/Handler;", "finishTarget", "successCount", "type", "currentDraggedNominal", "Lcom/arizonagames/feature/minigames/atm/BillNominal;", "currentDraggedBillView", "Landroid/widget/ImageView;", "nextEvidenceNominal", "isDragging", "", "maxVisibleBillsInSlot", "slotStates", "", "Lcom/arizonagames/feature/minigames/atm/SlotState;", "slotViews", "", "Lcom/arizonagames/feature/minigames/atm/SlotViews;", "setupUi", "", "setupSlotsVisual", "setupSlot", "nominal", "slot", "setupTouchHandling", "tryStartDrag", "rawX", "", "rawY", "updateDraggedPosition", "finishDrag", "onCorrectDrop", "onWrongDrop", "animateBillToSlot", "dragView", "onEnd", "Lkotlin/Function0;", "animateBillFadeOut", "animateTrayCycle", "refreshSlotBills", "prepareNextEvidenceNominal", "excludedNominal", "hideEvidenceSourceWhileDragging", "randomEvidenceSlotRotations", "", "count", "getDropTargetBillView", "Landroid/view/View;", "selectSlotForNominal", "clearSelectedSlots", "updateProgress", "showStatus", FirebaseAnalytics.Param.SUCCESS, "createDragBillView", "removeDragBillView", "resetDragState", "removeView", "resetDragFlagsOnly", "findSlotUnderPoint", "getViewCenterOnScreen", "Lkotlin/Pair;", "view", "makeSlot", TtmlNode.RUBY_CONTAINER, "closeScreen", "onBackendMessageHandled", "data", "", "subId", "setData", "Lcom/arizonagames/feature/minigames/atm/AtmData;", "setType", "setVisibility", "visible", "Spawner", "atm"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class AtmScreen extends SAMPUIElement {
     private final FrameLayout baseScreen;
@@ -51,6 +54,7 @@ public final class AtmScreen extends SAMPUIElement {
     private boolean isDragging;
     private final Handler mainHandler;
     private final int maxVisibleBillsInSlot;
+    private BillNominal nextEvidenceNominal;
     private Map<BillNominal, SlotState> slotStates;
     private Map<BillNominal, SlotViews> slotViews;
     private int successCount;
@@ -79,6 +83,10 @@ public final class AtmScreen extends SAMPUIElement {
             try {
                 iArr[BillNominal.HUNDRED.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[BillNominal.EXTRA.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -111,13 +119,44 @@ public final class AtmScreen extends SAMPUIElement {
     }
 
     private final void setupSlotsVisual() {
-        for (BillNominal billNominal : BillNominal.getEntries()) {
+        List<Float> emptyList;
+        if (this.type == 2) {
             Map<BillNominal, SlotViews> map = this.slotViews;
             if (map == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("slotViews");
                 map = null;
             }
-            setupSlot(billNominal, (SlotViews) MapsKt.getValue(map, billNominal));
+            emptyList = randomEvidenceSlotRotations(map.size());
+        } else {
+            emptyList = CollectionsKt.emptyList();
+        }
+        Map<BillNominal, SlotViews> map2 = this.slotViews;
+        if (map2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("slotViews");
+            map2 = null;
+        }
+        int i = 0;
+        for (Object obj : map2.keySet()) {
+            int i2 = i + 1;
+            if (i < 0) {
+                CollectionsKt.throwIndexOverflow();
+            }
+            BillNominal billNominal = (BillNominal) obj;
+            Map<BillNominal, SlotViews> map3 = this.slotViews;
+            if (map3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("slotViews");
+                map3 = null;
+            }
+            setupSlot(billNominal, (SlotViews) MapsKt.getValue(map3, billNominal));
+            if (this.type == 2) {
+                Map<BillNominal, SlotViews> map4 = this.slotViews;
+                if (map4 == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("slotViews");
+                    map4 = null;
+                }
+                ((SlotViews) MapsKt.getValue(map4, billNominal)).getBody().setRotation(((i < 0 || i >= emptyList.size()) ? Float.valueOf(0.0f) : emptyList.get(i)).floatValue());
+            }
+            i = i2;
         }
         clearSelectedSlots();
     }
@@ -125,6 +164,10 @@ public final class AtmScreen extends SAMPUIElement {
     private final void setupSlot(BillNominal billNominal, SlotViews slotViews) {
         slotViews.getBody().setImageResource(((SlotState) MapsKt.getValue(this.slotStates, billNominal)).getDefaultDrawableRes());
         slotViews.getTray().setTranslationY(0.0f);
+        View selectedOverlay = slotViews.getSelectedOverlay();
+        if (selectedOverlay != null) {
+            selectedOverlay.setVisibility(4);
+        }
         for (ImageView imageView : slotViews.getBills()) {
             imageView.setImageResource(billNominal.billDrawableRes(this.type));
             imageView.setVisibility(4);
@@ -141,7 +184,7 @@ public final class AtmScreen extends SAMPUIElement {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             miniGameScreenViews = null;
         }
-        miniGameScreenViews.getBagTouchArea().setOnTouchListener(new View.OnTouchListener() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda11
+        miniGameScreenViews.getBagTouchArea().setOnTouchListener(new View.OnTouchListener() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda13
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 return AtmScreen.setupTouchHandling$lambda$0(AtmScreen.this, view, motionEvent);
@@ -153,7 +196,7 @@ public final class AtmScreen extends SAMPUIElement {
         } else {
             miniGameScreenViews2 = miniGameScreenViews3;
         }
-        miniGameScreenViews2.getRoot().setOnTouchListener(new View.OnTouchListener() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda12
+        miniGameScreenViews2.getRoot().setOnTouchListener(new View.OnTouchListener() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 return AtmScreen.setupTouchHandling$lambda$1(AtmScreen.this, view, motionEvent);
@@ -199,6 +242,7 @@ public final class AtmScreen extends SAMPUIElement {
     }
 
     private final void tryStartDrag(float f, float f2) {
+        BillNominal billNominal;
         if (this.isDragging) {
             return;
         }
@@ -218,11 +262,20 @@ public final class AtmScreen extends SAMPUIElement {
             showStatus(false);
             return;
         }
-        BillNominal billNominal = (BillNominal) CollectionsKt.random(arrayList4, Random.Default);
-        this.currentDraggedNominal = billNominal;
+        BillNominal billNominal2 = (BillNominal) CollectionsKt.random(arrayList4, Random.Default);
+        if (this.type == 2 && (billNominal = this.nextEvidenceNominal) != null) {
+            if (!arrayList4.contains(billNominal)) {
+                billNominal = null;
+            }
+            if (billNominal != null) {
+                billNominal2 = billNominal;
+            }
+        }
+        this.currentDraggedNominal = billNominal2;
         this.isDragging = true;
-        createDragBillView(billNominal, f, f2);
-        selectSlotForNominal(billNominal);
+        createDragBillView(billNominal2, f, f2);
+        selectSlotForNominal(billNominal2);
+        hideEvidenceSourceWhileDragging();
     }
 
     private final void updateDraggedPosition(float f, float f2) {
@@ -240,18 +293,19 @@ public final class AtmScreen extends SAMPUIElement {
         clearSelectedSlots();
         if (!this.isDragging || billNominal == null || imageView == null) {
             resetDragState(true);
+            prepareNextEvidenceNominal$default(this, null, 1, null);
             return;
         }
         BillNominal findSlotUnderPoint = findSlotUnderPoint(f, f2);
         if (findSlotUnderPoint == billNominal && !((SlotState) MapsKt.getValue(this.slotStates, findSlotUnderPoint)).isBusy()) {
-            animateBillToSlot(billNominal, imageView, new Function0() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda2
+            animateBillToSlot(billNominal, imageView, new Function0() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return AtmScreen.finishDrag$lambda$0(AtmScreen.this, billNominal);
                 }
             });
         } else {
-            animateBillFadeOut(imageView, new Function0() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda3
+            animateBillFadeOut(imageView, new Function0() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return AtmScreen.finishDrag$lambda$1(AtmScreen.this);
@@ -282,6 +336,7 @@ public final class AtmScreen extends SAMPUIElement {
         showStatus(true);
         removeDragBillView();
         resetDragFlagsOnly();
+        prepareNextEvidenceNominal$default(this, null, 1, null);
         animateTrayCycle(billNominal);
         if (this.successCount >= this.finishTarget) {
             SAMPUIElement.notifyClick$default(this, 2, 2, null, 4, null);
@@ -291,11 +346,12 @@ public final class AtmScreen extends SAMPUIElement {
     private final void onWrongDrop() {
         showStatus(false);
         resetDragState(true);
+        prepareNextEvidenceNominal$default(this, null, 1, null);
     }
 
     private final void animateBillToSlot(BillNominal billNominal, ImageView imageView, final Function0<Unit> function0) {
         Pair<Float, Float> viewCenterOnScreen = getViewCenterOnScreen(getDropTargetBillView(billNominal));
-        imageView.animate().x(viewCenterOnScreen.getFirst().floatValue() - (imageView.getWidth() / 2.0f)).y(viewCenterOnScreen.getSecond().floatValue() - (imageView.getHeight() / 2.0f)).scaleX(0.88f).scaleY(0.88f).setDuration(220L).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda5
+        imageView.animate().x(viewCenterOnScreen.getFirst().floatValue() - (imageView.getWidth() / 2.0f)).y(viewCenterOnScreen.getSecond().floatValue() - (imageView.getHeight() / 2.0f)).scaleX(0.88f).scaleY(0.88f).setDuration(220L).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 Function0.this.invoke();
@@ -304,7 +360,7 @@ public final class AtmScreen extends SAMPUIElement {
     }
 
     private final void animateBillFadeOut(ImageView imageView, final Function0<Unit> function0) {
-        imageView.animate().alpha(0.0f).scaleX(0.82f).scaleY(0.82f).setDuration(140L).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda6
+        imageView.animate().alpha(0.0f).scaleX(0.82f).scaleY(0.82f).setDuration(140L).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 Function0.this.invoke();
@@ -321,10 +377,10 @@ public final class AtmScreen extends SAMPUIElement {
         final SlotViews slotViews = (SlotViews) MapsKt.getValue(map, billNominal);
         final SlotState slotState = (SlotState) MapsKt.getValue(this.slotStates, billNominal);
         slotViews.getTray().animate().cancel();
-        slotViews.getTray().animate().translationY((-slotViews.getTray().getHeight()) * 0.88f).setDuration(320L).setInterpolator(new AccelerateDecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda7
+        slotViews.getTray().animate().translationY((-slotViews.getTray().getHeight()) * 0.88f).setDuration(320L).setInterpolator(new AccelerateDecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
-                r0.mainHandler.postDelayed(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda8
+                r0.mainHandler.postDelayed(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda9
                     @Override // java.lang.Runnable
                     public final void run() {
                         AtmScreen.animateTrayCycle$lambda$0$0(SlotState.this, r2, r3, r4);
@@ -335,15 +391,21 @@ public final class AtmScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void animateTrayCycle$lambda$0$0(final SlotState slotState, AtmScreen atmScreen, BillNominal billNominal, SlotViews slotViews) {
+    public static final void animateTrayCycle$lambda$0$0(final SlotState slotState, final AtmScreen atmScreen, BillNominal billNominal, SlotViews slotViews) {
         slotState.setBillsCount(0);
         atmScreen.refreshSlotBills(billNominal);
-        slotViews.getTray().animate().translationY(0.0f).setDuration(320L).setInterpolator(new AccelerateDecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda1
+        slotViews.getTray().animate().translationY(0.0f).setDuration(320L).setInterpolator(new AccelerateDecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                SlotState.this.setBusy(false);
+                AtmScreen.animateTrayCycle$lambda$0$0$0(SlotState.this, atmScreen);
             }
         }).start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void animateTrayCycle$lambda$0$0$0(SlotState slotState, AtmScreen atmScreen) {
+        slotState.setBusy(false);
+        prepareNextEvidenceNominal$default(atmScreen, null, 1, null);
     }
 
     private final void refreshSlotBills(BillNominal billNominal) {
@@ -370,6 +432,102 @@ public final class AtmScreen extends SAMPUIElement {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void prepareNextEvidenceNominal$default(AtmScreen atmScreen, BillNominal billNominal, int i, Object obj) {
+        if ((i & 1) != 0) {
+            billNominal = null;
+        }
+        atmScreen.prepareNextEvidenceNominal(billNominal);
+    }
+
+    private final void prepareNextEvidenceNominal(BillNominal billNominal) {
+        if (this.type != 2) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList();
+        for (Object obj : this.slotStates.values()) {
+            if (!((SlotState) obj).isBusy()) {
+                arrayList.add(obj);
+            }
+        }
+        ArrayList<SlotState> arrayList2 = arrayList;
+        ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList2, 10));
+        for (SlotState slotState : arrayList2) {
+            arrayList3.add(slotState.getNominal());
+        }
+        ArrayList arrayList4 = arrayList3;
+        ArrayList arrayList5 = new ArrayList();
+        for (Object obj2 : arrayList4) {
+            if (((BillNominal) obj2) != billNominal) {
+                arrayList5.add(obj2);
+            }
+        }
+        ArrayList arrayList6 = arrayList5;
+        if (!arrayList6.isEmpty()) {
+            arrayList4 = arrayList6;
+        }
+        ArrayList arrayList7 = arrayList4;
+        MiniGameScreenViews miniGameScreenViews = null;
+        if (arrayList7.isEmpty()) {
+            arrayList7 = null;
+        }
+        BillNominal billNominal2 = arrayList7 != null ? (BillNominal) CollectionsKt.random(arrayList7, Random.Default) : null;
+        this.nextEvidenceNominal = billNominal2;
+        MiniGameScreenViews miniGameScreenViews2 = this.binding;
+        if (billNominal2 == null) {
+            if (miniGameScreenViews2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+            } else {
+                miniGameScreenViews = miniGameScreenViews2;
+            }
+            miniGameScreenViews.getSourceImage().setVisibility(4);
+            return;
+        }
+        if (miniGameScreenViews2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+            miniGameScreenViews2 = null;
+        }
+        miniGameScreenViews2.getSourceImage().setImageResource(billNominal2.billDrawableRes(this.type));
+        MiniGameScreenViews miniGameScreenViews3 = this.binding;
+        if (miniGameScreenViews3 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+        } else {
+            miniGameScreenViews = miniGameScreenViews3;
+        }
+        miniGameScreenViews.getSourceImage().setVisibility(0);
+    }
+
+    private final void hideEvidenceSourceWhileDragging() {
+        if (this.type != 2) {
+            return;
+        }
+        MiniGameScreenViews miniGameScreenViews = null;
+        this.nextEvidenceNominal = null;
+        MiniGameScreenViews miniGameScreenViews2 = this.binding;
+        if (miniGameScreenViews2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+        } else {
+            miniGameScreenViews = miniGameScreenViews2;
+        }
+        miniGameScreenViews.getSourceImage().setVisibility(4);
+    }
+
+    private final List<Float> randomEvidenceSlotRotations(int i) {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        while (linkedHashSet.size() < i) {
+            int nextInt = Random.Default.nextInt(-18, 19);
+            if (nextInt <= -4 || nextInt >= 4) {
+                linkedHashSet.add(Integer.valueOf(nextInt));
+            }
+        }
+        LinkedHashSet<Number> linkedHashSet2 = linkedHashSet;
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(linkedHashSet2, 10));
+        for (Number number : linkedHashSet2) {
+            arrayList.add(Float.valueOf(number.intValue()));
+        }
+        return arrayList;
+    }
+
     private final View getDropTargetBillView(BillNominal billNominal) {
         Map<BillNominal, SlotViews> map = this.slotViews;
         if (map == null) {
@@ -388,7 +546,12 @@ public final class AtmScreen extends SAMPUIElement {
                 Intrinsics.throwUninitializedPropertyAccessException("slotViews");
                 map = null;
             }
-            ((SlotViews) MapsKt.getValue(map, key)).getBody().setImageResource(key == billNominal ? value.getSelectedDrawableRes() : value.getDefaultDrawableRes());
+            SlotViews slotViews = (SlotViews) MapsKt.getValue(map, key);
+            slotViews.getBody().setImageResource(key == billNominal ? value.getSelectedDrawableRes() : value.getDefaultDrawableRes());
+            View selectedOverlay = slotViews.getSelectedOverlay();
+            if (selectedOverlay != null) {
+                selectedOverlay.setVisibility(key == billNominal ? 0 : 4);
+            }
         }
     }
 
@@ -401,7 +564,12 @@ public final class AtmScreen extends SAMPUIElement {
                 Intrinsics.throwUninitializedPropertyAccessException("slotViews");
                 map = null;
             }
-            ((SlotViews) MapsKt.getValue(map, key)).getBody().setImageResource(value.getDefaultDrawableRes());
+            SlotViews slotViews = (SlotViews) MapsKt.getValue(map, key);
+            slotViews.getBody().setImageResource(value.getDefaultDrawableRes());
+            View selectedOverlay = slotViews.getSelectedOverlay();
+            if (selectedOverlay != null) {
+                selectedOverlay.setVisibility(4);
+            }
         }
     }
 
@@ -423,68 +591,89 @@ public final class AtmScreen extends SAMPUIElement {
         } else {
             parseColor = Color.parseColor("#FF4A4A");
         }
+        MiniGameScreenViews miniGameScreenViews = null;
         SAMPUIElement.notifyClick$default(this, this.successCount, 1, null, 4, null);
-        MiniGameScreenViews miniGameScreenViews = this.binding;
-        MiniGameScreenViews miniGameScreenViews2 = null;
-        if (miniGameScreenViews == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            miniGameScreenViews = null;
+        int i = this.type;
+        MiniGameScreenViews miniGameScreenViews2 = this.binding;
+        if (i == 2) {
+            if (miniGameScreenViews2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                miniGameScreenViews2 = null;
+            }
+            miniGameScreenViews2.getBgResult().setImageResource(0);
+            MiniGameScreenViews miniGameScreenViews3 = this.binding;
+            if (miniGameScreenViews3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                miniGameScreenViews3 = null;
+            }
+            miniGameScreenViews3.getBgResult().setBackgroundColor(Color.parseColor(z ? "#3377FF30" : "#33FF4A4A"));
+        } else {
+            if (miniGameScreenViews2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                miniGameScreenViews2 = null;
+            }
+            miniGameScreenViews2.getBgResult().setBackgroundColor(0);
+            MiniGameScreenViews miniGameScreenViews4 = this.binding;
+            if (miniGameScreenViews4 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("binding");
+                miniGameScreenViews4 = null;
+            }
+            miniGameScreenViews4.getBgResult().setImageResource(z ? R.drawable.atm_bg_success : R.drawable.atm_bg_error);
         }
-        miniGameScreenViews.getBgResult().setImageResource(z ? R.drawable.atm_bg_success : R.drawable.atm_bg_error);
-        MiniGameScreenViews miniGameScreenViews3 = this.binding;
-        if (miniGameScreenViews3 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            miniGameScreenViews3 = null;
-        }
-        miniGameScreenViews3.getStatusText().animate().cancel();
-        MiniGameScreenViews miniGameScreenViews4 = this.binding;
-        if (miniGameScreenViews4 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("binding");
-            miniGameScreenViews4 = null;
-        }
-        miniGameScreenViews4.getStatusText().setText(z ? "УСПЕШНО!" : "ОШИБКА!");
         MiniGameScreenViews miniGameScreenViews5 = this.binding;
         if (miniGameScreenViews5 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             miniGameScreenViews5 = null;
         }
-        miniGameScreenViews5.getStatusText().setTextColor(parseColor);
+        miniGameScreenViews5.getStatusText().animate().cancel();
         MiniGameScreenViews miniGameScreenViews6 = this.binding;
         if (miniGameScreenViews6 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             miniGameScreenViews6 = null;
         }
-        miniGameScreenViews6.getStatusText().setAlpha(0.0f);
+        miniGameScreenViews6.getStatusText().setText(z ? "УСПЕШНО!" : "ОШИБКА!");
         MiniGameScreenViews miniGameScreenViews7 = this.binding;
         if (miniGameScreenViews7 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             miniGameScreenViews7 = null;
         }
-        miniGameScreenViews7.getStatusText().setScaleX(0.92f);
+        miniGameScreenViews7.getStatusText().setTextColor(parseColor);
         MiniGameScreenViews miniGameScreenViews8 = this.binding;
         if (miniGameScreenViews8 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             miniGameScreenViews8 = null;
         }
-        miniGameScreenViews8.getStatusText().setScaleY(0.92f);
+        miniGameScreenViews8.getStatusText().setAlpha(0.0f);
         MiniGameScreenViews miniGameScreenViews9 = this.binding;
         if (miniGameScreenViews9 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
             miniGameScreenViews9 = null;
         }
-        miniGameScreenViews9.getStatusText().animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(120L).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda0
+        miniGameScreenViews9.getStatusText().setScaleX(0.92f);
+        MiniGameScreenViews miniGameScreenViews10 = this.binding;
+        if (miniGameScreenViews10 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+            miniGameScreenViews10 = null;
+        }
+        miniGameScreenViews10.getStatusText().setScaleY(0.92f);
+        MiniGameScreenViews miniGameScreenViews11 = this.binding;
+        if (miniGameScreenViews11 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+            miniGameScreenViews11 = null;
+        }
+        miniGameScreenViews11.getStatusText().animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(120L).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 AtmScreen.showStatus$lambda$0(AtmScreen.this);
             }
         }).start();
-        MiniGameScreenViews miniGameScreenViews10 = this.binding;
-        if (miniGameScreenViews10 == null) {
+        MiniGameScreenViews miniGameScreenViews12 = this.binding;
+        if (miniGameScreenViews12 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
         } else {
-            miniGameScreenViews2 = miniGameScreenViews10;
+            miniGameScreenViews = miniGameScreenViews12;
         }
-        miniGameScreenViews2.getBgResult().animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(120L).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda4
+        miniGameScreenViews.getBgResult().animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(120L).withEndAction(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 AtmScreen.showStatus$lambda$1(AtmScreen.this);
@@ -515,21 +704,26 @@ public final class AtmScreen extends SAMPUIElement {
     private final void createDragBillView(BillNominal billNominal, final float f, final float f2) {
         FrameLayout.LayoutParams layoutParams;
         removeDragBillView();
-        if (this.type == 0) {
+        int i = this.type;
+        if (i == 0) {
             layoutParams = new FrameLayout.LayoutParams(getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._70sdp), getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._140sdp));
-        } else {
-            int i = WhenMappings.$EnumSwitchMapping$0[billNominal.ordinal()];
-            if (i == 1) {
+        } else if (i == 1) {
+            int i2 = WhenMappings.$EnumSwitchMapping$0[billNominal.ordinal()];
+            if (i2 == 1) {
                 layoutParams = new FrameLayout.LayoutParams(getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._60sdp), getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._60sdp));
-            } else if (i == 2) {
+            } else if (i2 == 2) {
                 layoutParams = new FrameLayout.LayoutParams(getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._50sdp), getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._50sdp));
-            } else if (i == 3) {
+            } else if (i2 == 3) {
                 layoutParams = new FrameLayout.LayoutParams(getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._40sdp), getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._40sdp));
-            } else if (i != 4) {
+            } else if (i2 == 4) {
+                layoutParams = new FrameLayout.LayoutParams(getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._30sdp), getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._30sdp));
+            } else if (i2 != 5) {
                 throw new NoWhenBranchMatchedException();
             } else {
                 layoutParams = new FrameLayout.LayoutParams(getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._30sdp), getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._30sdp));
             }
+        } else {
+            layoutParams = new FrameLayout.LayoutParams(getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._82sdp), getTargetActivity().getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._82sdp));
         }
         final ImageView imageView = new ImageView(getTargetActivity());
         imageView.setImageResource(billNominal.billDrawableRes(this.type));
@@ -549,7 +743,7 @@ public final class AtmScreen extends SAMPUIElement {
         } else {
             imageView2.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$createDragBillView$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
-                public void onLayoutChange(View view, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9) {
+                public void onLayoutChange(View view, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10) {
                     Intrinsics.checkNotNullParameter(view, "view");
                     view.removeOnLayoutChangeListener(this);
                     ImageView imageView3 = imageView;
@@ -618,7 +812,7 @@ public final class AtmScreen extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById(...)");
         View findViewById2 = view.findViewById(R.id.slotBody);
         Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById(...)");
-        return new SlotViews(view, findViewById, (ImageView) findViewById2, CollectionsKt.listOf(view.findViewById(R.id.slotBill1)));
+        return new SlotViews(view, findViewById, (ImageView) findViewById2, view.findViewById(R.id.slotSelectedOverlay), CollectionsKt.listOf(view.findViewById(R.id.slotBill1)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -635,7 +829,7 @@ public final class AtmScreen extends SAMPUIElement {
         this.successCount = RangesKt.coerceAtMost(RangesKt.coerceAtLeast(atmData.getCount(), 0), this.finishTarget);
         updateProgress();
         if (this.successCount >= this.finishTarget) {
-            this.mainHandler.post(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda10
+            this.mainHandler.post(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
                     AtmScreen.this.closeScreen();
@@ -645,9 +839,14 @@ public final class AtmScreen extends SAMPUIElement {
     }
 
     private final void setType(int i) {
-        this.type = i;
+        int i2 = i;
+        if (i2 < 0 || i2 >= 3) {
+            i2 = 0;
+        }
+        this.type = i2;
         MiniGameScreenViews miniGameScreenViews = null;
-        if (i == 0) {
+        this.nextEvidenceNominal = null;
+        if (i2 == 0) {
             View inflate = getTargetActivity().getLayoutInflater().inflate(R.layout.atm_screen, (ViewGroup) null);
             AtmScreenBinding bind = AtmScreenBinding.bind(inflate);
             Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
@@ -655,7 +854,7 @@ public final class AtmScreen extends SAMPUIElement {
             this.baseScreen.removeAllViews();
             this.baseScreen.addView(inflate, -1, -1);
             this.slotStates = MapsKt.mutableMapOf(TuplesKt.to(BillNominal.ONE, new SlotState(BillNominal.ONE, R.drawable.atm_slot_1, R.drawable.atm_slot_1_selected, false, 0, 24, null)), TuplesKt.to(BillNominal.TEN, new SlotState(BillNominal.TEN, R.drawable.atm_slot_2, R.drawable.atm_slot_2_selected, false, 0, 24, null)), TuplesKt.to(BillNominal.FIFTY, new SlotState(BillNominal.FIFTY, R.drawable.atm_slot_3, R.drawable.atm_slot_3_selected, false, 0, 24, null)), TuplesKt.to(BillNominal.HUNDRED, new SlotState(BillNominal.HUNDRED, R.drawable.atm_slot_4, R.drawable.atm_slot_4_selected, false, 0, 24, null)));
-        } else if (i == 1) {
+        } else if (i2 == 1) {
             View inflate2 = getTargetActivity().getLayoutInflater().inflate(R.layout.atm_screen_chicken, (ViewGroup) null);
             AtmScreenChickenBinding bind2 = AtmScreenChickenBinding.bind(inflate2);
             Intrinsics.checkNotNullExpressionValue(bind2, "bind(...)");
@@ -663,6 +862,14 @@ public final class AtmScreen extends SAMPUIElement {
             this.baseScreen.removeAllViews();
             this.baseScreen.addView(inflate2, -1, -1);
             this.slotStates = MapsKt.mutableMapOf(TuplesKt.to(BillNominal.ONE, new SlotState(BillNominal.ONE, R.drawable.atm_slot_chicken, R.drawable.atm_slot_selected_chicken, false, 0, 24, null)), TuplesKt.to(BillNominal.TEN, new SlotState(BillNominal.TEN, R.drawable.atm_slot_chicken, R.drawable.atm_slot_selected_chicken, false, 0, 24, null)), TuplesKt.to(BillNominal.FIFTY, new SlotState(BillNominal.FIFTY, R.drawable.atm_slot_chicken, R.drawable.atm_slot_selected_chicken, false, 0, 24, null)), TuplesKt.to(BillNominal.HUNDRED, new SlotState(BillNominal.HUNDRED, R.drawable.atm_slot_chicken, R.drawable.atm_slot_selected_chicken, false, 0, 24, null)));
+        } else if (i2 == 2) {
+            View inflate3 = getTargetActivity().getLayoutInflater().inflate(R.layout.atm_screen_evidence, (ViewGroup) null);
+            AtmScreenEvidenceBinding bind3 = AtmScreenEvidenceBinding.bind(inflate3);
+            Intrinsics.checkNotNullExpressionValue(bind3, "bind(...)");
+            this.binding = new AtmMiniGameScreenViewsEvidence(bind3);
+            this.baseScreen.removeAllViews();
+            this.baseScreen.addView(inflate3, -1, -1);
+            this.slotStates = MapsKt.mutableMapOf(TuplesKt.to(BillNominal.ONE, new SlotState(BillNominal.ONE, R.drawable.atm_evidence_slot_1, R.drawable.atm_evidence_slot_1, false, 0, 24, null)), TuplesKt.to(BillNominal.TEN, new SlotState(BillNominal.TEN, R.drawable.atm_evidence_slot_2, R.drawable.atm_evidence_slot_2, false, 0, 24, null)), TuplesKt.to(BillNominal.FIFTY, new SlotState(BillNominal.FIFTY, R.drawable.atm_evidence_slot_3, R.drawable.atm_evidence_slot_3, false, 0, 24, null)), TuplesKt.to(BillNominal.HUNDRED, new SlotState(BillNominal.HUNDRED, R.drawable.atm_evidence_slot_4, R.drawable.atm_evidence_slot_4, false, 0, 24, null)), TuplesKt.to(BillNominal.EXTRA, new SlotState(BillNominal.EXTRA, R.drawable.atm_evidence_slot_5, R.drawable.atm_evidence_slot_5, false, 0, 24, null)));
         }
         Pair[] pairArr = new Pair[4];
         BillNominal billNominal = BillNominal.ONE;
@@ -693,16 +900,38 @@ public final class AtmScreen extends SAMPUIElement {
             miniGameScreenViews5 = null;
         }
         pairArr[3] = TuplesKt.to(billNominal4, makeSlot(miniGameScreenViews5.getSlot100Container()));
-        this.slotViews = MapsKt.mapOf(pairArr);
-        setupUi();
-        setupTouchHandling();
+        Map<BillNominal, SlotViews> mutableMapOf = MapsKt.mutableMapOf(pairArr);
         MiniGameScreenViews miniGameScreenViews6 = this.binding;
         if (miniGameScreenViews6 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("binding");
-        } else {
-            miniGameScreenViews = miniGameScreenViews6;
+            miniGameScreenViews6 = null;
         }
-        miniGameScreenViews.getClose().setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda9
+        View slotExtraContainer = miniGameScreenViews6.getSlotExtraContainer();
+        if (slotExtraContainer != null) {
+            mutableMapOf.put(BillNominal.EXTRA, makeSlot(slotExtraContainer));
+        }
+        this.slotViews = mutableMapOf;
+        setupUi();
+        prepareNextEvidenceNominal$default(this, null, 1, null);
+        MiniGameScreenViews miniGameScreenViews7 = this.binding;
+        if (miniGameScreenViews7 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+            miniGameScreenViews7 = null;
+        }
+        miniGameScreenViews7.getSourceImage().post(new Runnable() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda10
+            @Override // java.lang.Runnable
+            public final void run() {
+                AtmScreen.prepareNextEvidenceNominal$default(AtmScreen.this, null, 1, null);
+            }
+        });
+        setupTouchHandling();
+        MiniGameScreenViews miniGameScreenViews8 = this.binding;
+        if (miniGameScreenViews8 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("binding");
+        } else {
+            miniGameScreenViews = miniGameScreenViews8;
+        }
+        miniGameScreenViews.getClose().setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.minigames.atm.AtmScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AtmScreen.this.closeScreen();
@@ -714,6 +943,10 @@ public final class AtmScreen extends SAMPUIElement {
     public void setVisibility(boolean z) {
         super.setVisibility(z);
         if (z) {
+            return;
+        }
+        if (this.slotViews == null) {
+            this.baseScreen.removeAllViews();
             return;
         }
         clearSelectedSlots();

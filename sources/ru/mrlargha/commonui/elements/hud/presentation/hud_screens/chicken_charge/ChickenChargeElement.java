@@ -2,16 +2,21 @@ package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charg
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.ViewTarget;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -24,29 +29,32 @@ import ru.mrlargha.commonui.databinding.HudElementChickenChargeBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: ChickenCharge.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 '2\u00020\u0001:\u0001'B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0018J\u000e\u0010\u001d\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0018J\u0016\u0010\u001e\u001a\u00020\u001b2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 H\u0002J\b\u0010\"\u001a\u00020\u001bH\u0002J\u0014\u0010#\u001a\u00020\u001b2\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020$0 J\u000e\u0010%\u001a\u00020\u001b2\u0006\u0010&\u001a\u00020\u0010R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "animator1", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/PercentMover;", "animator2", "mainBg", "", "finalBg", "playerGif", "opponentGif", "leftImg", "Landroid/widget/ImageView;", "rightImg", "successText", "", "failText", "setVisibility", "", "data", "setInfo", "setData", "info", "", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/StageState;", "firstOpen", "setResult", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/HudChickenChargeResult;", "setType", "type", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008a\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0005\u0018\u0000 ?2\u00020\u0001:\u0001?B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\u000e\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\u0016\u0010\u0015\u001a\u00020\u00112\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\fH\u0002J\u0010\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0017H\u0002J\u0010\u0010\u0019\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0017H\u0002J\u0010\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0017H\u0002J\u0010\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0017H\u0002J\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0012\u001a\u00020\u0017H\u0002J\u0010\u0010\u001e\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0017H\u0002J\b\u0010\u001f\u001a\u00020\u0011H\u0002J\u0014\u0010 \u001a\u00020\u00112\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020!0\fJ\u000e\u0010\"\u001a\u00020\u00112\u0006\u0010#\u001a\u00020$J,\u0010%\u001a\u001e\u0012\f\u0012\n '*\u0004\u0018\u00010\r0\r\u0012\f\u0012\n '*\u0004\u0018\u00010(0(0&2\u0006\u0010)\u001a\u00020\u000fH\u0002J\u001c\u0010*\u001a\u00020\u0011*\u00020\r2\u0006\u0010)\u001a\u00020\u000f2\u0006\u0010+\u001a\u00020\u001dH\u0002J\u0014\u00101\u001a\u000202*\u0002032\u0006\u00104\u001a\u00020$H\u0002J\u0016\u00105\u001a\u00020$2\f\b\u0001\u00106\u001a\u00020$:\u0002\b7H\u0002J/\u00108\u001a\u00020\u00132\f\b\u0001\u00106\u001a\u00020$:\u0002\b92\u0012\u0010:\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00010;\"\u00020\u0001H\u0002¢\u0006\u0002\u0010<J\u0016\u0010=\u001a\u00020\u00132\f\b\u0001\u00106\u001a\u00020$:\u0002\b9H\u0002J\b\u0010>\u001a\u00020\u0011H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\r0\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0018\u0010,\u001a\u00020\r*\u00020\u000f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b-\u0010.R\u0018\u0010/\u001a\u00020\r*\u00020\u000f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b0\u0010.¨\u0006@"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "animator1", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/PercentMover;", "animator2", "sideImages", "", "Landroid/widget/ImageView;", "currentVariant", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeVariant;", "setVisibility", "", "data", "", "setInfo", "setData", "info", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/StageState;", "renderAction", "renderStage", "renderPlayerOne", "renderPlayerTwo", "renderTargetZone", "", "renderTurnState", "showMainState", "setResult", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/HudChickenChargeResult;", "setType", "type", "", "applyVariant", "Lcom/bumptech/glide/request/target/ViewTarget;", "kotlin.jvm.PlatformType", "Landroid/graphics/drawable/Drawable;", "variant", "applySideImage", "isRight", "leftSideImage", "getLeftSideImage", "(Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeVariant;)Landroid/widget/ImageView;", "rightSideImage", "getRightSideImage", "percentToX", "", "Landroid/view/View;", "percent", "dimen", "resId", "Landroidx/annotation/DimenRes;", TypedValues.Custom.S_STRING, "Landroidx/annotation/StringRes;", "args", "", "(I[Ljava/lang/Object;)Ljava/lang/String;", "stringOrEmpty", "stopAnimations", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ChickenChargeElement {
     public static final int CHICKEN = 0;
-    public static final Companion Companion = new Companion(null);
+    private static final int CLICK_CLOSE = 92;
+    private static final int CLICK_START = 90;
+    private static final int CLICK_STOP = 91;
+    private static final float DISABLED_ALPHA = 0.2f;
+    private static final float ENABLED_ALPHA = 1.0f;
     public static final int HAY = 2;
+    public static final int SAFE = 3;
     public static final int SAWMILL = 1;
     private final PercentMover animator1;
     private final PercentMover animator2;
     private final HudElementChickenChargeBinding binding;
-    private String failText;
-    private int finalBg;
-    private ImageView leftImg;
-    private int mainBg;
+    private ChickenChargeVariant currentVariant;
     private final SAMPUIElement notifier;
-    private int opponentGif;
-    private int playerGif;
-    private ImageView rightImg;
-    private String successText;
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setData$lambda$0$2(View view) {
-    }
+    private final List<ImageView> sideImages;
+    public static final Companion Companion = new Companion(null);
+    private static final int BUTTON_BG_MAIN = Color.parseColor("#000B22");
+    private static final int BUTTON_START_BG = Color.parseColor("#1C692D");
+    private static final int BUTTON_START_BORDER = Color.parseColor("#50DA59");
+    private static final int BUTTON_STOP_BG = Color.parseColor("#D81C45");
+    private static final int BUTTON_STOP_BORDER = Color.parseColor("#E2254E");
+    private static final int RESULT_SUCCESS_COLOR = Color.parseColor("#BFFF64");
+    private static final int RESULT_FAIL_COLOR = Color.parseColor("#E83C3C");
 
     public ChickenChargeElement(HudElementChickenChargeBinding binding, SAMPUIElement notifier) {
         Intrinsics.checkNotNullParameter(binding, "binding");
@@ -63,179 +71,173 @@ public final class ChickenChargeElement {
         FrameLayout player2target = binding.player2target;
         Intrinsics.checkNotNullExpressionValue(player2target, "player2target");
         this.animator2 = new PercentMover(player2progressbar, player2target);
-        ImageView ivBgLeftChiken = binding.ivBgLeftChiken;
-        Intrinsics.checkNotNullExpressionValue(ivBgLeftChiken, "ivBgLeftChiken");
-        this.leftImg = ivBgLeftChiken;
-        ImageView ivBgRightChiken = binding.ivBgRightChiken;
-        Intrinsics.checkNotNullExpressionValue(ivBgRightChiken, "ivBgRightChiken");
-        this.rightImg = ivBgRightChiken;
-        this.successText = "УСПЕХ";
-        this.failText = "ПРОВАЛ";
-    }
-
-    public final HudElementChickenChargeBinding getBinding() {
-        return this.binding;
-    }
-
-    public final SAMPUIElement getNotifier() {
-        return this.notifier;
+        this.sideImages = CollectionsKt.listOf((Object[]) new ImageView[]{binding.ivBgLeftVariant, binding.ivBgRightVariant});
+        ChickenChargeVariant fromType = ChickenChargeVariant.Companion.fromType(0);
+        this.currentVariant = fromType;
+        applyVariant(fromType);
     }
 
     public final void setVisibility(String data) {
         Intrinsics.checkNotNullParameter(data, "data");
-        firstOpen();
-        boolean areEqual = Intrinsics.areEqual(data, "1");
-        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
-        if (areEqual) {
-            hudElementChickenChargeBinding.getRoot().setVisibility(0);
-        } else {
-            hudElementChickenChargeBinding.getRoot().setVisibility(8);
+        if (Intrinsics.areEqual(data, "1")) {
+            showMainState();
+            this.binding.getRoot().setVisibility(0);
+            return;
         }
+        stopAnimations();
+        this.binding.getRoot().setVisibility(8);
     }
 
     private final void setData(List<StageState> list) {
-        StageUserInfo stageUserInfo;
-        StageUserInfo stageUserInfo2;
-        final StageState stageState = (StageState) CollectionsKt.getOrNull(list, 0);
+        StageState stageState = (StageState) CollectionsKt.getOrNull(list, 0);
         if (stageState == null) {
             return;
         }
-        final HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
-        if (stageState.isMyState() == 1 && (stageUserInfo2 = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 0)) != null && stageUserInfo2.getMoving() == 1) {
+        renderAction(stageState);
+        renderStage(stageState);
+        renderPlayerOne(stageState);
+        renderPlayerTwo(stageState);
+        renderTargetZone(stageState);
+        renderTurnState(stageState);
+        this.binding.close.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                SAMPUIElement.notifyClick$default(ChickenChargeElement.this.notifier, ChickenChargeElement.CLICK_CLOSE, ChickenChargeElement.CLICK_CLOSE, null, 4, null);
+            }
+        });
+    }
+
+    private final void renderAction(final StageState stageState) {
+        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        boolean z = stageState.isMyState() == 1;
+        StageUserInfo stageUserInfo = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 0);
+        boolean z2 = stageUserInfo != null && stageUserInfo.getMoving() == 1;
+        if (z && z2) {
+            hudElementChickenChargeBinding.action.setEnabled(true);
             hudElementChickenChargeBinding.action.setAlpha(1.0f);
             CustomCardView action = hudElementChickenChargeBinding.action;
             Intrinsics.checkNotNullExpressionValue(action, "action");
-            CustomCardView.setBackground$default(action, Color.parseColor("#000B22"), Color.parseColor("#D81C45"), null, null, 12, null);
-            hudElementChickenChargeBinding.action.setBorder(Color.parseColor("#E2254E"));
-            hudElementChickenChargeBinding.actionText.setText("стоп");
-            hudElementChickenChargeBinding.actionIc.setImageTintList(ColorStateList.valueOf(Color.parseColor("#E2254E")));
-            hudElementChickenChargeBinding.action.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    ChickenChargeElement.setData$lambda$0$0(ChickenChargeElement.this, stageState, view);
-                }
-            });
-        } else if (stageState.isMyState() == 1 && ((stageUserInfo = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 0)) == null || stageUserInfo.getMoving() != 1)) {
-            hudElementChickenChargeBinding.action.setAlpha(1.0f);
-            CustomCardView action2 = hudElementChickenChargeBinding.action;
-            Intrinsics.checkNotNullExpressionValue(action2, "action");
-            CustomCardView.setBackground$default(action2, Color.parseColor("#000B22"), Color.parseColor("#1C692D"), null, null, 12, null);
-            hudElementChickenChargeBinding.action.setBorder(Color.parseColor("#50DA59"));
-            hudElementChickenChargeBinding.actionText.setText("Запуск");
-            hudElementChickenChargeBinding.actionIc.setImageTintList(null);
+            CustomCardView.setBackground$default(action, BUTTON_BG_MAIN, BUTTON_STOP_BG, null, null, 12, null);
+            CustomCardView customCardView = hudElementChickenChargeBinding.action;
+            int i = BUTTON_STOP_BORDER;
+            customCardView.setBorder(i);
+            hudElementChickenChargeBinding.actionText.setText(string(R.string.chicken_charge_stop, new Object[0]));
+            hudElementChickenChargeBinding.actionIc.setImageTintList(ColorStateList.valueOf(i));
             hudElementChickenChargeBinding.action.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChickenChargeElement.setData$lambda$0$1(ChickenChargeElement.this, view);
+                    ChickenChargeElement.renderAction$lambda$0$0(ChickenChargeElement.this, stageState, view);
                 }
             });
-        } else {
-            hudElementChickenChargeBinding.action.setAlpha(0.2f);
-            CustomCardView action3 = hudElementChickenChargeBinding.action;
-            Intrinsics.checkNotNullExpressionValue(action3, "action");
-            CustomCardView.setBackground$default(action3, Color.parseColor("#000B22"), Color.parseColor("#1C692D"), null, null, 12, null);
-            hudElementChickenChargeBinding.action.setBorder(Color.parseColor("#50DA59"));
-            hudElementChickenChargeBinding.actionText.setText("Запуск");
+        } else if (z) {
+            hudElementChickenChargeBinding.action.setEnabled(true);
+            hudElementChickenChargeBinding.action.setAlpha(1.0f);
+            CustomCardView action2 = hudElementChickenChargeBinding.action;
+            Intrinsics.checkNotNullExpressionValue(action2, "action");
+            CustomCardView.setBackground$default(action2, BUTTON_BG_MAIN, BUTTON_START_BG, null, null, 12, null);
+            hudElementChickenChargeBinding.action.setBorder(BUTTON_START_BORDER);
+            hudElementChickenChargeBinding.actionText.setText(string(R.string.chicken_charge_start, new Object[0]));
             hudElementChickenChargeBinding.actionIc.setImageTintList(null);
             hudElementChickenChargeBinding.action.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ChickenChargeElement.setData$lambda$0$2(view);
+                    ChickenChargeElement.renderAction$lambda$0$1(ChickenChargeElement.this, view);
                 }
             });
-        }
-        hudElementChickenChargeBinding.stage.setText("Этап " + stageState.getStage() + "/" + stageState.getStageTotal());
-        Glide.with(hudElementChickenChargeBinding.chickenGif.getContext()).load(Integer.valueOf(this.playerGif)).into(hudElementChickenChargeBinding.chickenGif);
-        Glide.with(hudElementChickenChargeBinding.chickenGif.getContext()).load(Integer.valueOf(this.opponentGif)).into(hudElementChickenChargeBinding.chickenGif2);
-        StageUserInfo stageUserInfo3 = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 0);
-        if (stageUserInfo3 != null) {
-            this.animator1.setCurrentPercent(stageUserInfo3.getCurrentPosition());
-            hudElementChickenChargeBinding.player1target.setTranslationX((this.binding.player1progressbar.getWidth() * stageUserInfo3.getCurrentPosition()) / 100.0f);
-            hudElementChickenChargeBinding.chance1.setText(stageUserInfo3.getChance() + "%");
-            hudElementChickenChargeBinding.name1.setText(stageUserInfo3.getName());
-            if (stageUserInfo3.getMoving() == 1) {
-                hudElementChickenChargeBinding.chickenGif.setVisibility(0);
-                PercentMover.start$default(this.animator1, stageState.getSpeed(), 0L, 2, null);
-            } else {
-                hudElementChickenChargeBinding.chickenGif.setVisibility(8);
-                this.animator1.stop();
-            }
-        }
-        StageUserInfo stageUserInfo4 = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 1);
-        if (stageUserInfo4 != null) {
-            this.animator2.setCurrentPercent(stageUserInfo4.getCurrentPosition());
-            hudElementChickenChargeBinding.player2target.setTranslationX((this.binding.player1progressbar.getWidth() * stageUserInfo4.getCurrentPosition()) / 100.0f);
-            hudElementChickenChargeBinding.chance2.setText(stageUserInfo4.getChance() + "%");
-            hudElementChickenChargeBinding.name2.setText(stageUserInfo4.getName());
-            if (stageUserInfo4.getMoving() == 1) {
-                hudElementChickenChargeBinding.chickenGif2.setVisibility(0);
-                PercentMover.start$default(this.animator2, stageState.getSpeed(), 0L, 2, null);
-            } else {
-                this.animator2.stop();
-            }
-            if (stageState.isMyState() == 1) {
-                hudElementChickenChargeBinding.chickenGif2.setVisibility(8);
-            }
-        }
-        this.binding.player1progressbar.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                ChickenChargeElement.setData$lambda$0$5(ChickenChargeElement.this, stageState, hudElementChickenChargeBinding);
-            }
-        });
-        if (stageState.isMyState() == 1) {
-            hudElementChickenChargeBinding.player2tooltip.setAlpha(0.2f);
-            hudElementChickenChargeBinding.player1tooltip.setAlpha(1.0f);
-            hudElementChickenChargeBinding.player1progressbar.setAlpha(1.0f);
-            hudElementChickenChargeBinding.player2progressbar.setAlpha(0.2f);
-            hudElementChickenChargeBinding.player1target.setAlpha(1.0f);
-            TextView tvWaitingYou = hudElementChickenChargeBinding.tvWaitingYou;
-            Intrinsics.checkNotNullExpressionValue(tvWaitingYou, "tvWaitingYou");
-            tvWaitingYou.setVisibility(0);
-            TextView tvYouWaiting = hudElementChickenChargeBinding.tvYouWaiting;
-            Intrinsics.checkNotNullExpressionValue(tvYouWaiting, "tvYouWaiting");
-            tvYouWaiting.setVisibility(8);
         } else {
-            hudElementChickenChargeBinding.player2tooltip.setAlpha(1.0f);
-            hudElementChickenChargeBinding.player1tooltip.setAlpha(0.2f);
-            hudElementChickenChargeBinding.player1target.setAlpha(0.2f);
-            hudElementChickenChargeBinding.player1progressbar.setAlpha(0.2f);
-            hudElementChickenChargeBinding.player2progressbar.setAlpha(1.0f);
-            TextView tvWaitingYou2 = hudElementChickenChargeBinding.tvWaitingYou;
-            Intrinsics.checkNotNullExpressionValue(tvWaitingYou2, "tvWaitingYou");
-            tvWaitingYou2.setVisibility(8);
-            TextView tvYouWaiting2 = hudElementChickenChargeBinding.tvYouWaiting;
-            Intrinsics.checkNotNullExpressionValue(tvYouWaiting2, "tvYouWaiting");
-            tvYouWaiting2.setVisibility(0);
+            hudElementChickenChargeBinding.action.setEnabled(false);
+            hudElementChickenChargeBinding.action.setAlpha(0.2f);
+            CustomCardView action3 = hudElementChickenChargeBinding.action;
+            Intrinsics.checkNotNullExpressionValue(action3, "action");
+            CustomCardView.setBackground$default(action3, BUTTON_BG_MAIN, BUTTON_START_BG, null, null, 12, null);
+            hudElementChickenChargeBinding.action.setBorder(BUTTON_START_BORDER);
+            hudElementChickenChargeBinding.actionText.setText(string(R.string.chicken_charge_start, new Object[0]));
+            hudElementChickenChargeBinding.actionIc.setImageTintList(null);
+            hudElementChickenChargeBinding.action.setOnClickListener(null);
         }
-        hudElementChickenChargeBinding.close.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement$$ExternalSyntheticLambda4
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                ChickenChargeElement.setData$lambda$0$6(ChickenChargeElement.this, view);
-            }
-        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setData$lambda$0$0(ChickenChargeElement chickenChargeElement, StageState stageState, View view) {
-        float stop = chickenChargeElement.animator1.stop();
-        SAMPUIElement sAMPUIElement = chickenChargeElement.notifier;
-        int roundToInt = MathKt.roundToInt(stop);
-        sAMPUIElement.notifyClick(91, 91, roundToInt + ", " + MathKt.roundToInt(((stop - stageState.getStart()) / stageState.getWidth()) * 100.0f));
+    public static final void renderAction$lambda$0$0(ChickenChargeElement chickenChargeElement, StageState stageState, View view) {
+        float stop$default = PercentMover.stop$default(chickenChargeElement.animator1, false, 1, null);
+        float start = stageState.getWidth() != 0 ? ((stop$default - stageState.getStart()) / stageState.getWidth()) * 100.0f : 0.0f;
+        chickenChargeElement.notifier.notifyClick(CLICK_STOP, CLICK_STOP, MathKt.roundToInt(stop$default) + ", " + MathKt.roundToInt(start));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setData$lambda$0$1(ChickenChargeElement chickenChargeElement, View view) {
+    public static final void renderAction$lambda$0$1(ChickenChargeElement chickenChargeElement, View view) {
         SAMPUIElement.notifyClick$default(chickenChargeElement.notifier, 90, 90, null, 4, null);
     }
 
+    private final void renderStage(StageState stageState) {
+        this.binding.stage.setText(string(R.string.chicken_charge_stage_format, Integer.valueOf(stageState.getStage()), Integer.valueOf(stageState.getStageTotal())));
+    }
+
+    private final void renderPlayerOne(StageState stageState) {
+        StageUserInfo stageUserInfo = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 0);
+        if (stageUserInfo == null) {
+            return;
+        }
+        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        this.animator1.setCurrentPercent(stageUserInfo.getCurrentPosition());
+        FrameLayout frameLayout = hudElementChickenChargeBinding.player1target;
+        CustomCardView player1progressbar = hudElementChickenChargeBinding.player1progressbar;
+        Intrinsics.checkNotNullExpressionValue(player1progressbar, "player1progressbar");
+        frameLayout.setTranslationX(percentToX(player1progressbar, stageUserInfo.getCurrentPosition()));
+        hudElementChickenChargeBinding.chance1.setText(string(R.string.chicken_charge_chance_value, Integer.valueOf(stageUserInfo.getChance())));
+        hudElementChickenChargeBinding.name1.setText(stageUserInfo.getName());
+        if (stageUserInfo.getMoving() == 1) {
+            hudElementChickenChargeBinding.chickenGif.setVisibility(0);
+            PercentMover.start$default(this.animator1, stageState.getSpeed(), 0L, 2, null);
+            return;
+        }
+        hudElementChickenChargeBinding.chickenGif.setVisibility(8);
+        this.animator1.stop(false);
+    }
+
+    private final void renderPlayerTwo(StageState stageState) {
+        if (!this.currentVariant.getShowSecondPlayer()) {
+            this.binding.chickenGif2.setVisibility(8);
+            this.animator2.stop(false);
+            return;
+        }
+        StageUserInfo stageUserInfo = (StageUserInfo) CollectionsKt.getOrNull(stageState.getInfoUser(), 1);
+        if (stageUserInfo == null) {
+            return;
+        }
+        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        this.animator2.setCurrentPercent(stageUserInfo.getCurrentPosition());
+        FrameLayout frameLayout = hudElementChickenChargeBinding.player2target;
+        CustomCardView player2progressbar = hudElementChickenChargeBinding.player2progressbar;
+        Intrinsics.checkNotNullExpressionValue(player2progressbar, "player2progressbar");
+        frameLayout.setTranslationX(percentToX(player2progressbar, stageUserInfo.getCurrentPosition()));
+        hudElementChickenChargeBinding.chance2.setText(string(R.string.chicken_charge_chance_value, Integer.valueOf(stageUserInfo.getChance())));
+        hudElementChickenChargeBinding.name2.setText(stageUserInfo.getName());
+        if (stageUserInfo.getMoving() == 1 && stageState.isMyState() != 1) {
+            hudElementChickenChargeBinding.chickenGif2.setVisibility(0);
+            PercentMover.start$default(this.animator2, stageState.getSpeed(), 0L, 2, null);
+            return;
+        }
+        hudElementChickenChargeBinding.chickenGif2.setVisibility(8);
+        this.animator2.stop(false);
+    }
+
+    private final boolean renderTargetZone(final StageState stageState) {
+        final HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        return hudElementChickenChargeBinding.player1progressbar.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                ChickenChargeElement.renderTargetZone$lambda$0$0(HudElementChickenChargeBinding.this, stageState);
+            }
+        });
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setData$lambda$0$5(ChickenChargeElement chickenChargeElement, StageState stageState, HudElementChickenChargeBinding hudElementChickenChargeBinding) {
-        float width = chickenChargeElement.binding.player1progressbar.getWidth();
+    public static final void renderTargetZone$lambda$0$0(HudElementChickenChargeBinding hudElementChickenChargeBinding, StageState stageState) {
+        float width = hudElementChickenChargeBinding.player1progressbar.getWidth();
         float start = (stageState.getStart() * width) / 100.0f;
-        hudElementChickenChargeBinding.zone.setTranslationX(start);
-        hudElementChickenChargeBinding.zone2.setTranslationX(start);
         float width2 = (width * stageState.getWidth()) / 100.0f;
+        hudElementChickenChargeBinding.zone.setTranslationX(start);
         FrameLayout zone = hudElementChickenChargeBinding.zone;
         Intrinsics.checkNotNullExpressionValue(zone, "zone");
         FrameLayout frameLayout = zone;
@@ -244,6 +246,7 @@ public final class ChickenChargeElement {
             int i = (int) width2;
             layoutParams.width = i;
             frameLayout.setLayoutParams(layoutParams);
+            hudElementChickenChargeBinding.zone2.setTranslationX(start);
             FrameLayout zone2 = hudElementChickenChargeBinding.zone2;
             Intrinsics.checkNotNullExpressionValue(zone2, "zone2");
             FrameLayout frameLayout2 = zone2;
@@ -258,14 +261,30 @@ public final class ChickenChargeElement {
         throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void setData$lambda$0$6(ChickenChargeElement chickenChargeElement, View view) {
-        SAMPUIElement.notifyClick$default(chickenChargeElement.notifier, 92, 92, null, 4, null);
+    private final void renderTurnState(StageState stageState) {
+        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        boolean z = true;
+        boolean z2 = stageState.isMyState() == 1;
+        hudElementChickenChargeBinding.player1tooltip.setAlpha(z2 ? 1.0f : 0.2f);
+        hudElementChickenChargeBinding.player1progressbar.setAlpha(z2 ? 1.0f : 0.2f);
+        hudElementChickenChargeBinding.player1target.setAlpha(z2 ? 1.0f : 0.2f);
+        hudElementChickenChargeBinding.player2tooltip.setAlpha(!z2 ? 1.0f : 0.2f);
+        hudElementChickenChargeBinding.player2progressbar.setAlpha(z2 ? 0.2f : 1.0f);
+        TextView tvWaitingYou = hudElementChickenChargeBinding.tvWaitingYou;
+        Intrinsics.checkNotNullExpressionValue(tvWaitingYou, "tvWaitingYou");
+        tvWaitingYou.setVisibility(z2 && this.currentVariant.getWaitingYourTurnTextRes() != 0 ? 0 : 8);
+        TextView tvYouWaiting = hudElementChickenChargeBinding.tvYouWaiting;
+        Intrinsics.checkNotNullExpressionValue(tvYouWaiting, "tvYouWaiting");
+        TextView textView = tvYouWaiting;
+        if (z2 || !this.currentVariant.getShowSecondPlayer()) {
+            z = false;
+        }
+        textView.setVisibility(z ? 0 : 8);
     }
 
-    private final void firstOpen() {
+    private final void showMainState() {
         HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
-        hudElementChickenChargeBinding.ivBgMain.setImageResource(this.mainBg);
+        applyVariant(this.currentVariant);
         LinearLayout main = hudElementChickenChargeBinding.main;
         Intrinsics.checkNotNullExpressionValue(main, "main");
         main.setVisibility(0);
@@ -279,114 +298,157 @@ public final class ChickenChargeElement {
         LinearLayout finalContainer = hudElementChickenChargeBinding.finalContainer;
         Intrinsics.checkNotNullExpressionValue(finalContainer, "finalContainer");
         finalContainer.setVisibility(8);
-        this.rightImg.setVisibility(8);
-        this.leftImg.setVisibility(0);
-        hudElementChickenChargeBinding.ivBgMain.setImageTintList(null);
+        applySideImage(getLeftSideImage(this.currentVariant), this.currentVariant, false);
+        getRightSideImage(this.currentVariant).setVisibility(8);
     }
 
     public final void setResult(List<HudChickenChargeResult> data) {
         Intrinsics.checkNotNullParameter(data, "data");
-        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
         HudChickenChargeResult hudChickenChargeResult = (HudChickenChargeResult) CollectionsKt.getOrNull(data, 0);
         if (hudChickenChargeResult == null) {
             return;
         }
-        hudElementChickenChargeBinding.ivBgMain.setImageResource(this.finalBg);
-        this.rightImg.setVisibility(0);
-        LinearLayout main = hudElementChickenChargeBinding.main;
-        Intrinsics.checkNotNullExpressionValue(main, "main");
-        main.setVisibility(8);
-        hudElementChickenChargeBinding.hided.setAlpha(0.2f);
-        LinearLayout finalContainer = hudElementChickenChargeBinding.finalContainer;
-        Intrinsics.checkNotNullExpressionValue(finalContainer, "finalContainer");
-        finalContainer.setVisibility(0);
-        TextView tvWaitingYou = hudElementChickenChargeBinding.tvWaitingYou;
-        Intrinsics.checkNotNullExpressionValue(tvWaitingYou, "tvWaitingYou");
-        tvWaitingYou.setVisibility(8);
-        TextView tvYouWaiting = hudElementChickenChargeBinding.tvYouWaiting;
-        Intrinsics.checkNotNullExpressionValue(tvYouWaiting, "tvYouWaiting");
-        tvYouWaiting.setVisibility(8);
-        hudElementChickenChargeBinding.tvPercentSuccess.setText("Общий шанс успеха - " + hudChickenChargeResult.getChance() + "%");
-        if (hudChickenChargeResult.getSuccess() == 1) {
-            hudElementChickenChargeBinding.tvResult.setText(this.successText);
-            hudElementChickenChargeBinding.tvResult.setTextColor(Color.parseColor("#BFFF64"));
+        HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        stopAnimations();
+        hudElementChickenChargeBinding.ivBgMain.setImageResource(this.currentVariant.getFinalBgRes());
+        ImageView ivBgMain = hudElementChickenChargeBinding.ivBgMain;
+        Intrinsics.checkNotNullExpressionValue(ivBgMain, "ivBgMain");
+        ImageView imageView = ivBgMain;
+        ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
+        if (layoutParams != null) {
+            layoutParams.height = dimen(this.currentVariant.getFinalBgHeightRes());
+            imageView.setLayoutParams(layoutParams);
+            applySideImage(getLeftSideImage(this.currentVariant), this.currentVariant, false);
+            applySideImage(getRightSideImage(this.currentVariant), this.currentVariant, true);
+            LinearLayout main = hudElementChickenChargeBinding.main;
+            Intrinsics.checkNotNullExpressionValue(main, "main");
+            main.setVisibility(8);
+            hudElementChickenChargeBinding.hided.setAlpha(0.2f);
+            LinearLayout finalContainer = hudElementChickenChargeBinding.finalContainer;
+            Intrinsics.checkNotNullExpressionValue(finalContainer, "finalContainer");
+            finalContainer.setVisibility(0);
+            TextView tvWaitingYou = hudElementChickenChargeBinding.tvWaitingYou;
+            Intrinsics.checkNotNullExpressionValue(tvWaitingYou, "tvWaitingYou");
+            tvWaitingYou.setVisibility(8);
+            TextView tvYouWaiting = hudElementChickenChargeBinding.tvYouWaiting;
+            Intrinsics.checkNotNullExpressionValue(tvYouWaiting, "tvYouWaiting");
+            tvYouWaiting.setVisibility(8);
+            hudElementChickenChargeBinding.tvPercentSuccess.setText(string(R.string.chicken_charge_total_chance_format, Integer.valueOf(hudChickenChargeResult.getChance())));
+            if (hudChickenChargeResult.getSuccess() == 1) {
+                hudElementChickenChargeBinding.tvResult.setText(string(this.currentVariant.getSuccessTextRes(), new Object[0]));
+                hudElementChickenChargeBinding.tvResult.setTextColor(RESULT_SUCCESS_COLOR);
+                return;
+            }
+            hudElementChickenChargeBinding.tvResult.setText(string(this.currentVariant.getFailTextRes(), new Object[0]));
+            hudElementChickenChargeBinding.tvResult.setTextColor(RESULT_FAIL_COLOR);
             return;
         }
-        hudElementChickenChargeBinding.tvResult.setText(this.failText);
-        hudElementChickenChargeBinding.tvResult.setTextColor(Color.parseColor("#E83C3C"));
+        throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
     }
 
     public final void setType(int i) {
-        this.binding.ivBgLeftChiken.setVisibility(8);
-        this.binding.ivBgRightChiken.setVisibility(8);
+        this.currentVariant = ChickenChargeVariant.Companion.fromType(i);
+        showMainState();
+        this.binding.getRoot().setVisibility(0);
+    }
+
+    private final ViewTarget<ImageView, Drawable> applyVariant(ChickenChargeVariant chickenChargeVariant) {
         HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
-        hudElementChickenChargeBinding.player2target.setVisibility(0);
-        hudElementChickenChargeBinding.chance2.setVisibility(0);
-        hudElementChickenChargeBinding.player2Info.setVisibility(0);
-        hudElementChickenChargeBinding.ivBgMain2.setVisibility(8);
-        hudElementChickenChargeBinding.ivBgMain.setVisibility(0);
-        if (i == 0) {
-            HudElementChickenChargeBinding hudElementChickenChargeBinding2 = this.binding;
-            hudElementChickenChargeBinding2.ivBgText.setImageResource(R.drawable.hud_element_chicken_charging_bg_text);
-            this.mainBg = R.drawable.hud_element_chicken_charging_bg_main;
-            this.finalBg = R.drawable.hud_element_chicken_charge_final_bg;
-            this.playerGif = R.drawable.hud_chicken_charge;
-            this.opponentGif = R.drawable.hud_chicken_charge_game_target2_ic;
-            ImageView ivBgLeftChiken = this.binding.ivBgLeftChiken;
-            Intrinsics.checkNotNullExpressionValue(ivBgLeftChiken, "ivBgLeftChiken");
-            this.leftImg = ivBgLeftChiken;
-            ImageView ivBgRightChiken = this.binding.ivBgRightChiken;
-            Intrinsics.checkNotNullExpressionValue(ivBgRightChiken, "ivBgRightChiken");
-            this.rightImg = ivBgRightChiken;
-            hudElementChickenChargeBinding2.tvWaitingYou.setText("ОЖИДАЕТ ВАШЕГО ХОДА");
-            hudElementChickenChargeBinding2.player1progressbar.setBackground(Color.parseColor("#AA5A34B1"));
-            hudElementChickenChargeBinding2.player2progressbar.setBackground(Color.parseColor("#AA5A34B1"));
-            this.successText = "УСПЕХ";
-            this.failText = "ПРОВАЛ";
-        } else if (i == 1) {
-            HudElementChickenChargeBinding hudElementChickenChargeBinding3 = this.binding;
-            hudElementChickenChargeBinding3.ivBgText.setImageResource(R.drawable.hud_element_chicken_charging_bg_text_sawmill);
-            this.mainBg = R.drawable.hud_element_chicken_charging_bg_main_sawmill;
-            this.finalBg = R.drawable.hud_element_chicken_charge_final_bg_sawmill;
-            this.playerGif = R.drawable.hud_chicken_charge_saw;
-            this.opponentGif = R.drawable.hud_chicken_charge_saw;
-            ImageView ivBgLeftSawmill = this.binding.ivBgLeftSawmill;
-            Intrinsics.checkNotNullExpressionValue(ivBgLeftSawmill, "ivBgLeftSawmill");
-            this.leftImg = ivBgLeftSawmill;
-            ImageView ivBgRightSawmill = this.binding.ivBgRightSawmill;
-            Intrinsics.checkNotNullExpressionValue(ivBgRightSawmill, "ivBgRightSawmill");
-            this.rightImg = ivBgRightSawmill;
-            hudElementChickenChargeBinding3.tvWaitingYou.setText("ВАША ОЧЕРЕДЬ РЕЗАТЬ");
-            hudElementChickenChargeBinding3.player1progressbar.setBackground(Color.parseColor("#AAA97950"));
-            hudElementChickenChargeBinding3.player2progressbar.setBackground(Color.parseColor("#AAA97950"));
-            this.successText = "УСПЕШНЫЙ НАДРЕЗ";
-            this.failText = "БЕНЗОПИЛА ЗАГЛОХЛА";
-        } else if (i == 2) {
-            HudElementChickenChargeBinding hudElementChickenChargeBinding4 = this.binding;
-            hudElementChickenChargeBinding4.ivBgMain.setVisibility(8);
-            hudElementChickenChargeBinding4.ivBgMain2.setVisibility(0);
-            hudElementChickenChargeBinding4.player2target.setVisibility(8);
-            hudElementChickenChargeBinding4.chance2.setVisibility(8);
-            hudElementChickenChargeBinding4.player2Info.setVisibility(8);
-            hudElementChickenChargeBinding4.ivBgText.setImageResource(R.drawable.hud_element_chicken_charging_bg_text_hay);
-            this.playerGif = R.drawable.hud_chicken_charge_hay;
-            this.opponentGif = R.drawable.hud_chicken_charge_hay;
-            ImageView ivBgLeftHay = this.binding.ivBgLeftHay;
-            Intrinsics.checkNotNullExpressionValue(ivBgLeftHay, "ivBgLeftHay");
-            this.leftImg = ivBgLeftHay;
-            ImageView ivBgRightHay = this.binding.ivBgRightHay;
-            Intrinsics.checkNotNullExpressionValue(ivBgRightHay, "ivBgRightHay");
-            this.rightImg = ivBgRightHay;
-            hudElementChickenChargeBinding4.tvWaitingYou.setText("");
-            hudElementChickenChargeBinding4.player1progressbar.setBackground(Color.parseColor("#B17634"));
-            this.successText = "Успешное измельчение";
-            this.failText = "Измельчитель заглох";
+        Iterator<T> it = this.sideImages.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                break;
+            }
+            ((ImageView) it.next()).setVisibility(8);
         }
-        setVisibility("1");
+        hudElementChickenChargeBinding.ivBgText.setImageResource(chickenChargeVariant.getTitleRes());
+        hudElementChickenChargeBinding.ivBgMain.setImageResource(chickenChargeVariant.getMainBgRes());
+        ImageView ivBgMain = hudElementChickenChargeBinding.ivBgMain;
+        Intrinsics.checkNotNullExpressionValue(ivBgMain, "ivBgMain");
+        ImageView imageView = ivBgMain;
+        ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
+        if (layoutParams != null) {
+            layoutParams.height = dimen(chickenChargeVariant.getMainBgHeightRes());
+            imageView.setLayoutParams(layoutParams);
+            ImageView ivBgMain2 = hudElementChickenChargeBinding.ivBgMain;
+            Intrinsics.checkNotNullExpressionValue(ivBgMain2, "ivBgMain");
+            ivBgMain2.setVisibility(0);
+            hudElementChickenChargeBinding.ivBgMain.setImageTintList(null);
+            FrameLayout player2target = hudElementChickenChargeBinding.player2target;
+            Intrinsics.checkNotNullExpressionValue(player2target, "player2target");
+            player2target.setVisibility(chickenChargeVariant.getShowSecondPlayer() ? 0 : 8);
+            TextView chance2 = hudElementChickenChargeBinding.chance2;
+            Intrinsics.checkNotNullExpressionValue(chance2, "chance2");
+            chance2.setVisibility(chickenChargeVariant.getShowSecondPlayer() ? 0 : 8);
+            LinearLayout player2Info = hudElementChickenChargeBinding.player2Info;
+            Intrinsics.checkNotNullExpressionValue(player2Info, "player2Info");
+            player2Info.setVisibility(chickenChargeVariant.getShowSecondPlayer() ? 0 : 8);
+            hudElementChickenChargeBinding.tvWaitingYou.setText(stringOrEmpty(chickenChargeVariant.getWaitingYourTurnTextRes()));
+            hudElementChickenChargeBinding.tvYouWaiting.setText(string(R.string.chicken_charge_waiting_partner_turn, new Object[0]));
+            hudElementChickenChargeBinding.player1progressbar.setBackground(chickenChargeVariant.getProgressColor());
+            hudElementChickenChargeBinding.player2progressbar.setBackground(chickenChargeVariant.getProgressColor());
+            Glide.with(hudElementChickenChargeBinding.chickenGif.getContext()).load(Integer.valueOf(chickenChargeVariant.getPlayerGifRes())).into(hudElementChickenChargeBinding.chickenGif);
+            ViewTarget<ImageView, Drawable> into = Glide.with(hudElementChickenChargeBinding.chickenGif2.getContext()).load(Integer.valueOf(chickenChargeVariant.getOpponentGifRes())).into(hudElementChickenChargeBinding.chickenGif2);
+            Intrinsics.checkNotNullExpressionValue(into, "with(...)");
+            return into;
+        }
+        throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
+    }
+
+    private final void applySideImage(ImageView imageView, ChickenChargeVariant chickenChargeVariant, boolean z) {
+        imageView.setImageResource(chickenChargeVariant.getSideImageRes());
+        ImageView imageView2 = imageView;
+        ViewGroup.LayoutParams layoutParams = imageView2.getLayoutParams();
+        if (layoutParams == null) {
+            throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
+        }
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
+        FrameLayout.LayoutParams layoutParams3 = layoutParams2;
+        layoutParams3.width = dimen(chickenChargeVariant.getSideWidthRes());
+        layoutParams3.height = dimen(chickenChargeVariant.getSideHeightRes());
+        layoutParams3.leftMargin = z ? dimen(chickenChargeVariant.getSideMarginRes()) : 0;
+        layoutParams3.rightMargin = z ? 0 : dimen(chickenChargeVariant.getSideMarginRes());
+        imageView2.setLayoutParams(layoutParams2);
+        imageView2.setVisibility(0);
+    }
+
+    private final ImageView getLeftSideImage(ChickenChargeVariant chickenChargeVariant) {
+        ImageView ivBgLeftVariant = this.binding.ivBgLeftVariant;
+        Intrinsics.checkNotNullExpressionValue(ivBgLeftVariant, "ivBgLeftVariant");
+        return ivBgLeftVariant;
+    }
+
+    private final ImageView getRightSideImage(ChickenChargeVariant chickenChargeVariant) {
+        ImageView ivBgRightVariant = this.binding.ivBgRightVariant;
+        Intrinsics.checkNotNullExpressionValue(ivBgRightVariant, "ivBgRightVariant");
+        return ivBgRightVariant;
+    }
+
+    private final float percentToX(View view, int i) {
+        return (view.getWidth() * i) / 100.0f;
+    }
+
+    private final int dimen(int i) {
+        return this.binding.getRoot().getResources().getDimensionPixelSize(i);
+    }
+
+    private final String string(int i, Object... objArr) {
+        String string = this.binding.getRoot().getContext().getString(i, Arrays.copyOf(objArr, objArr.length));
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        return string;
+    }
+
+    private final String stringOrEmpty(int i) {
+        return i == 0 ? "" : string(i, new Object[0]);
+    }
+
+    private final void stopAnimations() {
+        this.animator1.stop(false);
+        this.animator2.stop(false);
     }
 
     /* compiled from: ChickenCharge.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement$Companion;", "", "<init>", "()V", "CHICKEN", "", "SAWMILL", "HAY", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u0015\u0010\u000f\u001a\u00020\u00058\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0010¢\u0006\u0002\n\u0000R\u0015\u0010\u0011\u001a\u00020\u00058\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0010¢\u0006\u0002\n\u0000R\u0015\u0010\u0012\u001a\u00020\u00058\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0010¢\u0006\u0002\n\u0000R\u0015\u0010\u0013\u001a\u00020\u00058\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0010¢\u0006\u0002\n\u0000R\u0015\u0010\u0014\u001a\u00020\u00058\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0010¢\u0006\u0002\n\u0000R\u0015\u0010\u0015\u001a\u00020\u00058\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0010¢\u0006\u0002\n\u0000R\u0015\u0010\u0016\u001a\u00020\u00058\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0010¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement$Companion;", "", "<init>", "()V", "CHICKEN", "", "SAWMILL", "HAY", "SAFE", "CLICK_START", "CLICK_STOP", "CLICK_CLOSE", "ENABLED_ALPHA", "", "DISABLED_ALPHA", "BUTTON_BG_MAIN", "Landroidx/annotation/ColorInt;", "BUTTON_START_BG", "BUTTON_START_BORDER", "BUTTON_STOP_BG", "BUTTON_STOP_BORDER", "RESULT_SUCCESS_COLOR", "RESULT_FAIL_COLOR", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -416,6 +478,7 @@ public final class ChickenChargeElement {
             setData(arrayList);
         } catch (Exception e) {
             e.printStackTrace();
+            stopAnimations();
             this.binding.getRoot().setVisibility(8);
         }
     }

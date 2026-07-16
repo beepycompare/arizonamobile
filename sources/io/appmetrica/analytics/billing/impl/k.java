@@ -8,17 +8,17 @@ import java.util.List;
 public final class k implements BillingInfoStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProtobufStateStorage f265a;
+    public final ProtobufStateStorage f267a;
     public C0097a b;
 
     public k(ProtobufStateStorage<C0097a> protobufStateStorage) {
-        this.f265a = protobufStateStorage;
+        this.f267a = protobufStateStorage;
         this.b = protobufStateStorage.read();
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
     public final List<BillingInfo> getBillingInfo() {
-        return this.b.f259a;
+        return this.b.f261a;
     }
 
     @Override // io.appmetrica.analytics.billinginterface.internal.storage.BillingInfoStorage
@@ -32,6 +32,6 @@ public final class k implements BillingInfoStorage {
         }
         C0097a c0097a = new C0097a(list, z);
         this.b = c0097a;
-        this.f265a.save(c0097a);
+        this.f267a.save(c0097a);
     }
 }

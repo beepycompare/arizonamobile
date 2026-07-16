@@ -52,7 +52,6 @@ import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.viewinterop.AndroidView_androidKt;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-import androidx.core.content.FileProvider;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -126,7 +125,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 import javax.inject.Inject;
@@ -137,7 +135,6 @@ import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt;
-import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
@@ -447,7 +444,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.2.6 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.2.7 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -535,12 +532,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$5(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C304@12690L269,304@12671L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C302@12619L269,302@12600L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:304)");
+                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:302)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda17
                 @Override // kotlin.jvm.functions.Function2
@@ -559,12 +556,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5$0(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C305@12708L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C303@12637L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:305)");
+                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:303)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
@@ -591,7 +588,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C306@12737L8,310@12862L43,308@12767L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C304@12666L8,308@12791L43,306@12696L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -648,13 +645,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)362@14491L7,363@14548L7,365@14578L48,367@14669L464,367@14636L497,382@15178L10,381@15143L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)360@14420L7,361@14477L7,363@14507L48,365@14598L464,365@14565L497,380@15107L10,379@15072L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:361)");
+                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:359)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
@@ -1726,37 +1723,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final void shareLogs() {
-        File externalFilesDir = getExternalFilesDir(null);
-        File file = new File((externalFilesDir != null ? externalFilesDir.getPath() : null) + "/logcat/samp.log");
-        File externalFilesDir2 = getExternalFilesDir(null);
-        File file2 = new File((externalFilesDir2 != null ? externalFilesDir2.getPath() : null) + "/logcat/crashes.log");
-        File externalFilesDir3 = getExternalFilesDir(null);
-        File file3 = new File((externalFilesDir3 != null ? externalFilesDir3.getPath() : null) + "/AZVoice/azvoice.log");
-        File externalFilesDir4 = getExternalFilesDir(null);
-        File file4 = new File((externalFilesDir4 != null ? externalFilesDir4.getPath() : null) + "/logcat/client.log");
-        Intent intent = new Intent();
-        intent.setAction("android.intent.action.SEND_MULTIPLE");
-        File[] fileArr = {file, file2, file3, file4};
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : CollectionsKt.arrayListOf(fileArr)) {
-            File file5 = (File) obj;
-            if (file5.exists() && file5.length() > 0) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList arrayList2 = arrayList;
-        if (arrayList2.isEmpty()) {
-            return;
-        }
-        ArrayList<File> arrayList3 = arrayList2;
-        ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList3, 10));
-        for (File file6 : arrayList3) {
-            arrayList4.add(FileProvider.getUriForFile(this, "com.arizona21.game.fileprovider", file6));
-        }
-        intent.putParcelableArrayListExtra("android.intent.extra.STREAM", arrayList4);
-        intent.setType("*/*");
-        intent.addFlags(1);
-        startActivity(Intent.createChooser(intent, "Отправить логи"));
+        LogShareHelper.shareAllLogs(this);
     }
 
     static /* synthetic */ Job sendRequests$default(MainEntrench mainEntrench, ComponentActivity componentActivity, String str, int i, RequestQueue requestQueue, int i2, Object obj) {
@@ -2032,7 +1999,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final NotificationLaunchAttribution readStoredNotificationLaunchAttribution() {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         Map<String, ?> all;
         String str;
         Long longOrNull;
@@ -2044,7 +2011,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             str = obj instanceof String ? (String) obj : null;
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
         if (str == null) {
             return null;
@@ -2060,16 +2027,16 @@ public final class MainEntrench extends Hilt_MainEntrench {
         Long longOrNull2 = toLongOrNull(all.get(PREF_NOTIFICATION_RECEIVED_AT_MILLIS));
         Object obj4 = all.get(PREF_NOTIFICATION_DID_REPORT_GAME_LAUNCH);
         Boolean bool = obj4 instanceof Boolean ? (Boolean) obj4 : null;
-        m9896constructorimpl = Result.m9896constructorimpl(new NotificationLaunchAttribution(str, str2, str3, longOrNull2, longValue, bool != null ? bool.booleanValue() : false));
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to read notification launch attribution", m9899exceptionOrNullimpl);
+        m9898constructorimpl = Result.m9898constructorimpl(new NotificationLaunchAttribution(str, str2, str3, longOrNull2, longValue, bool != null ? bool.booleanValue() : false));
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to read notification launch attribution", m9901exceptionOrNullimpl);
         }
-        return Result.m9902isFailureimpl(m9896constructorimpl) ? null : m9896constructorimpl;
+        return Result.m9904isFailureimpl(m9898constructorimpl) ? null : m9898constructorimpl;
     }
 
     private final void saveNotificationLaunchAttribution(NotificationLaunchAttribution notificationLaunchAttribution) {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             MainEntrench mainEntrench = this;
@@ -2079,31 +2046,31 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 putBoolean.remove(PREF_NOTIFICATION_RECEIVED_AT_MILLIS);
             }
             putBoolean.apply();
-            m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
+            m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to save notification launch attribution", m9899exceptionOrNullimpl);
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to save notification launch attribution", m9901exceptionOrNullimpl);
         }
     }
 
     private final void clearStoredNotificationLaunchAttribution() {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             MainEntrench mainEntrench = this;
             getSharedPreferences(NOTIFICATION_ATTRIBUTION_PREFS_NAME, 0).edit().clear().apply();
-            m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
+            m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to clear notification launch attribution", m9899exceptionOrNullimpl);
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to clear notification launch attribution", m9901exceptionOrNullimpl);
         }
     }
 
@@ -2328,7 +2295,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final String getSavedAuthorizationNickname() {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         SharedPreferences sharedPreferences;
         Object obj;
         String obj2;
@@ -2340,7 +2307,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             obj = sharedPreferences.getAll().get(AUTH_SERVER_ID_KEY);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
         if (obj != null && (obj2 = obj.toString()) != null) {
             if (StringsKt.isBlank(obj2)) {
@@ -2356,12 +2323,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 if (optJSONObject == null || (str = optJSONObject.optString("username")) == null || StringsKt.isBlank(str)) {
                     str = null;
                 }
-                m9896constructorimpl = Result.m9896constructorimpl(str);
-                Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-                if (m9899exceptionOrNullimpl != null) {
-                    Log.w(TAG, "Failed to read saved authorization nickname", m9899exceptionOrNullimpl);
+                m9898constructorimpl = Result.m9898constructorimpl(str);
+                Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+                if (m9901exceptionOrNullimpl != null) {
+                    Log.w(TAG, "Failed to read saved authorization nickname", m9901exceptionOrNullimpl);
                 }
-                return Result.m9902isFailureimpl(m9896constructorimpl) ? null : m9896constructorimpl;
+                return Result.m9904isFailureimpl(m9898constructorimpl) ? null : m9898constructorimpl;
             }
         }
         return null;

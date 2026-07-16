@@ -81,7 +81,7 @@ public final class Dm extends C0191d6 {
         if (!Oo.a((Collection) this.e)) {
             linkedHashSet.addAll(this.e);
         }
-        String[] strArr = (String[]) this.p.f868a.a();
+        String[] strArr = (String[]) this.p.f870a.a();
         if (strArr != null) {
             arrayList = new ArrayList();
             for (String str : strArr) {

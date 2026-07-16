@@ -3,21 +3,21 @@ package io.appmetrica.analytics.impl;
 public final class Ce implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f496a;
+    public final String f498a;
 
     public Ce(String str) {
-        this.f496a = str;
+        this.f498a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(Object obj) {
         if (obj == null) {
-            return new To(this, false, this.f496a + " is null.");
+            return new To(this, false, this.f498a + " is null.");
         }
         return new To(this, true, "");
     }
 
     public final String a() {
-        return this.f496a;
+        return this.f498a;
     }
 }

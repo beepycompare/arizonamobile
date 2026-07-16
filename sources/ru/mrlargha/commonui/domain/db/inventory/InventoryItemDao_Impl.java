@@ -36,7 +36,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         this.__insertAdapterOfInventoryItemEntity = new EntityInsertAdapter<InventoryItemEntity>() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl.1
             @Override // androidx.room.EntityInsertAdapter
             protected String createQuery() {
-                return "INSERT OR REPLACE INTO `InventoryItemEntity` (`slot`,`item`,`id`,`text`,`item_type`,`amount`,`background`,`color`,`bits`,`available`,`enchant`,`breaks`,`isActive`,`itemStrength`,`blackout`,`time`,`acsSlot`,`inventoryType`,`isColored`,`isLocked`,`effect`,`effectType`,`quality`,`custom_icon`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                return "INSERT OR REPLACE INTO `InventoryItemEntity` (`slot`,`item`,`id`,`text`,`item_type`,`amount`,`background`,`color`,`bits`,`available`,`enchant`,`breaks`,`isActive`,`itemStrength`,`blackout`,`time`,`acsSlot`,`inventoryType`,`isColored`,`isLocked`,`effect`,`effectType`,`quality`,`custom_icon`,`loading`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -163,12 +163,19 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
                 } else {
                     statement.mo9070bindText(24, custom_icon);
                 }
+                Boolean loading = entity.getLoading();
+                Integer valueOf = loading != null ? Integer.valueOf(loading.booleanValue() ? 1 : 0) : null;
+                if (valueOf == null) {
+                    statement.mo9069bindNull(25);
+                } else {
+                    statement.mo9068bindLong(25, valueOf.intValue());
+                }
             }
         };
         this.__updateAdapterOfInventoryItemEntity = new EntityDeleteOrUpdateAdapter<InventoryItemEntity>() { // from class: ru.mrlargha.commonui.domain.db.inventory.InventoryItemDao_Impl.2
             @Override // androidx.room.EntityDeleteOrUpdateAdapter
             protected String createQuery() {
-                return "UPDATE OR ABORT `InventoryItemEntity` SET `slot` = ?,`item` = ?,`id` = ?,`text` = ?,`item_type` = ?,`amount` = ?,`background` = ?,`color` = ?,`bits` = ?,`available` = ?,`enchant` = ?,`breaks` = ?,`isActive` = ?,`itemStrength` = ?,`blackout` = ?,`time` = ?,`acsSlot` = ?,`inventoryType` = ?,`isColored` = ?,`isLocked` = ?,`effect` = ?,`effectType` = ?,`quality` = ?,`custom_icon` = ? WHERE `slot` = ?";
+                return "UPDATE OR ABORT `InventoryItemEntity` SET `slot` = ?,`item` = ?,`id` = ?,`text` = ?,`item_type` = ?,`amount` = ?,`background` = ?,`color` = ?,`bits` = ?,`available` = ?,`enchant` = ?,`breaks` = ?,`isActive` = ?,`itemStrength` = ?,`blackout` = ?,`time` = ?,`acsSlot` = ?,`inventoryType` = ?,`isColored` = ?,`isLocked` = ?,`effect` = ?,`effectType` = ?,`quality` = ?,`custom_icon` = ?,`loading` = ? WHERE `slot` = ?";
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -295,7 +302,14 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
                 } else {
                     statement.mo9070bindText(24, custom_icon);
                 }
-                statement.mo9068bindLong(25, entity.getSlot());
+                Boolean loading = entity.getLoading();
+                Integer valueOf = loading != null ? Integer.valueOf(loading.booleanValue() ? 1 : 0) : null;
+                if (valueOf == null) {
+                    statement.mo9069bindNull(25);
+                } else {
+                    statement.mo9068bindLong(25, valueOf.intValue());
+                }
+                statement.mo9068bindLong(26, entity.getSlot());
             }
         };
     }
@@ -365,6 +379,9 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Integer valueOf6;
         int i10;
         Integer valueOf7;
+        int i11;
+        int i12;
+        Integer valueOf8;
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -392,19 +409,21 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow22 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "effectType");
             int columnIndexOrThrow23 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "quality");
             int columnIndexOrThrow24 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "custom_icon");
+            int columnIndexOrThrow25 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "loading");
             ArrayList arrayList = new ArrayList();
             while (prepare.step()) {
-                int i11 = columnIndexOrThrow14;
+                int i13 = columnIndexOrThrow14;
                 ArrayList arrayList2 = arrayList;
-                int i12 = (int) prepare.getLong(columnIndexOrThrow);
+                int i14 = (int) prepare.getLong(columnIndexOrThrow);
+                Boolean bool = null;
                 if (prepare.isNull(columnIndexOrThrow2)) {
-                    i = i12;
+                    i = i14;
                     valueOf = null;
                 } else {
-                    i = i12;
+                    i = i14;
                     valueOf = Integer.valueOf((int) prepare.getLong(columnIndexOrThrow2));
                 }
-                int i13 = (int) prepare.getLong(columnIndexOrThrow3);
+                int i15 = (int) prepare.getLong(columnIndexOrThrow3);
                 String text = prepare.isNull(columnIndexOrThrow4) ? null : prepare.getText(columnIndexOrThrow4);
                 if (prepare.isNull(columnIndexOrThrow5)) {
                     i2 = columnIndexOrThrow2;
@@ -415,85 +434,100 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
                     i3 = columnIndexOrThrow3;
                     valueOf2 = Integer.valueOf((int) prepare.getLong(columnIndexOrThrow5));
                 }
-                Long valueOf8 = prepare.isNull(columnIndexOrThrow6) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow6));
-                Integer valueOf9 = prepare.isNull(columnIndexOrThrow7) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow7));
-                Integer valueOf10 = prepare.isNull(columnIndexOrThrow8) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow8));
-                Integer valueOf11 = prepare.isNull(columnIndexOrThrow9) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow9));
-                Integer valueOf12 = prepare.isNull(columnIndexOrThrow10) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow10));
-                Integer valueOf13 = prepare.isNull(columnIndexOrThrow11) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow11));
-                Integer valueOf14 = prepare.isNull(columnIndexOrThrow12) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow12));
-                Integer valueOf15 = prepare.isNull(columnIndexOrThrow13) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow13));
-                if (prepare.isNull(i11)) {
+                Long valueOf9 = prepare.isNull(columnIndexOrThrow6) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow6));
+                Integer valueOf10 = prepare.isNull(columnIndexOrThrow7) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow7));
+                Integer valueOf11 = prepare.isNull(columnIndexOrThrow8) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow8));
+                Integer valueOf12 = prepare.isNull(columnIndexOrThrow9) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow9));
+                Integer valueOf13 = prepare.isNull(columnIndexOrThrow10) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow10));
+                Integer valueOf14 = prepare.isNull(columnIndexOrThrow11) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow11));
+                Integer valueOf15 = prepare.isNull(columnIndexOrThrow12) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow12));
+                Integer valueOf16 = prepare.isNull(columnIndexOrThrow13) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow13));
+                if (prepare.isNull(i13)) {
                     i4 = columnIndexOrThrow4;
                     valueOf3 = null;
                 } else {
                     i4 = columnIndexOrThrow4;
-                    valueOf3 = Integer.valueOf((int) prepare.getLong(i11));
+                    valueOf3 = Integer.valueOf((int) prepare.getLong(i13));
                 }
-                int i14 = columnIndexOrThrow15;
-                if (prepare.isNull(i14)) {
+                int i16 = columnIndexOrThrow15;
+                if (prepare.isNull(i16)) {
                     i5 = columnIndexOrThrow5;
                     valueOf4 = null;
                 } else {
                     i5 = columnIndexOrThrow5;
-                    valueOf4 = Integer.valueOf((int) prepare.getLong(i14));
+                    valueOf4 = Integer.valueOf((int) prepare.getLong(i16));
                 }
-                int i15 = columnIndexOrThrow16;
-                Long valueOf16 = prepare.isNull(i15) ? null : Long.valueOf(prepare.getLong(i15));
-                int i16 = columnIndexOrThrow17;
-                if (prepare.isNull(i16)) {
-                    i6 = i11;
-                    i7 = i14;
+                int i17 = columnIndexOrThrow16;
+                Long valueOf17 = prepare.isNull(i17) ? null : Long.valueOf(prepare.getLong(i17));
+                int i18 = columnIndexOrThrow17;
+                if (prepare.isNull(i18)) {
+                    i6 = i13;
+                    i7 = i16;
                     valueOf5 = null;
                 } else {
-                    i6 = i11;
-                    i7 = i14;
-                    valueOf5 = Integer.valueOf((int) prepare.getLong(i16));
+                    i6 = i13;
+                    i7 = i16;
+                    valueOf5 = Integer.valueOf((int) prepare.getLong(i18));
                 }
-                int i17 = columnIndexOrThrow18;
-                int i18 = (int) prepare.getLong(i17);
-                int i19 = columnIndexOrThrow19;
-                boolean z = ((int) prepare.getLong(i19)) != 0;
-                int i20 = columnIndexOrThrow20;
-                boolean z2 = ((int) prepare.getLong(i20)) != 0;
-                int i21 = columnIndexOrThrow21;
-                String text2 = prepare.isNull(i21) ? null : prepare.getText(i21);
-                int i22 = columnIndexOrThrow22;
-                if (prepare.isNull(i22)) {
-                    i8 = i20;
-                    i9 = i21;
+                int i19 = columnIndexOrThrow18;
+                int i20 = (int) prepare.getLong(i19);
+                int i21 = columnIndexOrThrow19;
+                boolean z = ((int) prepare.getLong(i21)) != 0;
+                int i22 = columnIndexOrThrow20;
+                boolean z2 = ((int) prepare.getLong(i22)) != 0;
+                int i23 = columnIndexOrThrow21;
+                String text2 = prepare.isNull(i23) ? null : prepare.getText(i23);
+                int i24 = columnIndexOrThrow22;
+                if (prepare.isNull(i24)) {
+                    i8 = i22;
+                    i9 = i23;
                     valueOf6 = null;
                 } else {
-                    i8 = i20;
-                    i9 = i21;
-                    valueOf6 = Integer.valueOf((int) prepare.getLong(i22));
+                    i8 = i22;
+                    i9 = i23;
+                    valueOf6 = Integer.valueOf((int) prepare.getLong(i24));
                 }
-                int i23 = columnIndexOrThrow23;
-                if (prepare.isNull(i23)) {
-                    i10 = i22;
+                int i25 = columnIndexOrThrow23;
+                if (prepare.isNull(i25)) {
+                    i10 = i24;
                     valueOf7 = null;
                 } else {
-                    i10 = i22;
-                    valueOf7 = Integer.valueOf((int) prepare.getLong(i23));
+                    i10 = i24;
+                    valueOf7 = Integer.valueOf((int) prepare.getLong(i25));
                 }
-                int i24 = columnIndexOrThrow24;
-                arrayList2.add(new InventoryItemEntity(i, valueOf, i13, text, valueOf2, valueOf8, valueOf9, valueOf10, valueOf11, valueOf12, valueOf13, valueOf14, valueOf15, valueOf3, valueOf4, valueOf16, valueOf5, i18, z, z2, text2, valueOf6, valueOf7, prepare.isNull(i24) ? null : prepare.getText(i24)));
+                int i26 = columnIndexOrThrow24;
+                String text3 = prepare.isNull(i26) ? null : prepare.getText(i26);
+                int i27 = columnIndexOrThrow25;
+                if (prepare.isNull(i27)) {
+                    i11 = i25;
+                    i12 = i26;
+                    valueOf8 = null;
+                } else {
+                    i11 = i25;
+                    i12 = i26;
+                    valueOf8 = Integer.valueOf((int) prepare.getLong(i27));
+                }
+                if (valueOf8 != null) {
+                    bool = Boolean.valueOf(valueOf8.intValue() != 0);
+                }
+                arrayList2.add(new InventoryItemEntity(i, valueOf, i15, text, valueOf2, valueOf9, valueOf10, valueOf11, valueOf12, valueOf13, valueOf14, valueOf15, valueOf16, valueOf3, valueOf4, valueOf17, valueOf5, i20, z, z2, text2, valueOf6, valueOf7, text3, bool));
+                columnIndexOrThrow2 = i2;
+                columnIndexOrThrow14 = i6;
+                columnIndexOrThrow21 = i9;
+                arrayList = arrayList2;
+                columnIndexOrThrow17 = i18;
+                columnIndexOrThrow3 = i3;
                 columnIndexOrThrow5 = i5;
                 columnIndexOrThrow15 = i7;
-                columnIndexOrThrow16 = i15;
-                columnIndexOrThrow18 = i17;
-                columnIndexOrThrow19 = i19;
+                columnIndexOrThrow16 = i17;
+                columnIndexOrThrow18 = i19;
+                columnIndexOrThrow19 = i21;
                 columnIndexOrThrow20 = i8;
-                columnIndexOrThrow21 = i9;
                 columnIndexOrThrow22 = i10;
-                columnIndexOrThrow23 = i23;
-                columnIndexOrThrow2 = i2;
-                arrayList = arrayList2;
-                columnIndexOrThrow14 = i6;
-                columnIndexOrThrow17 = i16;
-                columnIndexOrThrow24 = i24;
+                columnIndexOrThrow23 = i11;
+                columnIndexOrThrow24 = i12;
+                columnIndexOrThrow25 = i27;
                 columnIndexOrThrow4 = i4;
-                columnIndexOrThrow3 = i3;
             }
             return arrayList;
         } finally {
@@ -530,6 +564,9 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         Integer valueOf6;
         int i10;
         Integer valueOf7;
+        int i11;
+        int i12;
+        Integer valueOf8;
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
@@ -557,19 +594,21 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow22 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "effectType");
             int columnIndexOrThrow23 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "quality");
             int columnIndexOrThrow24 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "custom_icon");
+            int columnIndexOrThrow25 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "loading");
             ArrayList arrayList = new ArrayList();
             while (prepare.step()) {
-                int i11 = columnIndexOrThrow14;
+                int i13 = columnIndexOrThrow14;
                 ArrayList arrayList2 = arrayList;
-                int i12 = (int) prepare.getLong(columnIndexOrThrow);
+                int i14 = (int) prepare.getLong(columnIndexOrThrow);
+                Boolean bool = null;
                 if (prepare.isNull(columnIndexOrThrow2)) {
-                    i = i12;
+                    i = i14;
                     valueOf = null;
                 } else {
-                    i = i12;
+                    i = i14;
                     valueOf = Integer.valueOf((int) prepare.getLong(columnIndexOrThrow2));
                 }
-                int i13 = (int) prepare.getLong(columnIndexOrThrow3);
+                int i15 = (int) prepare.getLong(columnIndexOrThrow3);
                 String text = prepare.isNull(columnIndexOrThrow4) ? null : prepare.getText(columnIndexOrThrow4);
                 if (prepare.isNull(columnIndexOrThrow5)) {
                     i2 = columnIndexOrThrow2;
@@ -580,85 +619,100 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
                     i3 = columnIndexOrThrow3;
                     valueOf2 = Integer.valueOf((int) prepare.getLong(columnIndexOrThrow5));
                 }
-                Long valueOf8 = prepare.isNull(columnIndexOrThrow6) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow6));
-                Integer valueOf9 = prepare.isNull(columnIndexOrThrow7) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow7));
-                Integer valueOf10 = prepare.isNull(columnIndexOrThrow8) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow8));
-                Integer valueOf11 = prepare.isNull(columnIndexOrThrow9) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow9));
-                Integer valueOf12 = prepare.isNull(columnIndexOrThrow10) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow10));
-                Integer valueOf13 = prepare.isNull(columnIndexOrThrow11) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow11));
-                Integer valueOf14 = prepare.isNull(columnIndexOrThrow12) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow12));
-                Integer valueOf15 = prepare.isNull(columnIndexOrThrow13) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow13));
-                if (prepare.isNull(i11)) {
+                Long valueOf9 = prepare.isNull(columnIndexOrThrow6) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow6));
+                Integer valueOf10 = prepare.isNull(columnIndexOrThrow7) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow7));
+                Integer valueOf11 = prepare.isNull(columnIndexOrThrow8) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow8));
+                Integer valueOf12 = prepare.isNull(columnIndexOrThrow9) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow9));
+                Integer valueOf13 = prepare.isNull(columnIndexOrThrow10) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow10));
+                Integer valueOf14 = prepare.isNull(columnIndexOrThrow11) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow11));
+                Integer valueOf15 = prepare.isNull(columnIndexOrThrow12) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow12));
+                Integer valueOf16 = prepare.isNull(columnIndexOrThrow13) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow13));
+                if (prepare.isNull(i13)) {
                     i4 = columnIndexOrThrow4;
                     valueOf3 = null;
                 } else {
                     i4 = columnIndexOrThrow4;
-                    valueOf3 = Integer.valueOf((int) prepare.getLong(i11));
+                    valueOf3 = Integer.valueOf((int) prepare.getLong(i13));
                 }
-                int i14 = columnIndexOrThrow15;
-                if (prepare.isNull(i14)) {
+                int i16 = columnIndexOrThrow15;
+                if (prepare.isNull(i16)) {
                     i5 = columnIndexOrThrow5;
                     valueOf4 = null;
                 } else {
                     i5 = columnIndexOrThrow5;
-                    valueOf4 = Integer.valueOf((int) prepare.getLong(i14));
+                    valueOf4 = Integer.valueOf((int) prepare.getLong(i16));
                 }
-                int i15 = columnIndexOrThrow16;
-                Long valueOf16 = prepare.isNull(i15) ? null : Long.valueOf(prepare.getLong(i15));
-                int i16 = columnIndexOrThrow17;
-                if (prepare.isNull(i16)) {
-                    i6 = i11;
-                    i7 = i14;
+                int i17 = columnIndexOrThrow16;
+                Long valueOf17 = prepare.isNull(i17) ? null : Long.valueOf(prepare.getLong(i17));
+                int i18 = columnIndexOrThrow17;
+                if (prepare.isNull(i18)) {
+                    i6 = i13;
+                    i7 = i16;
                     valueOf5 = null;
                 } else {
-                    i6 = i11;
-                    i7 = i14;
-                    valueOf5 = Integer.valueOf((int) prepare.getLong(i16));
+                    i6 = i13;
+                    i7 = i16;
+                    valueOf5 = Integer.valueOf((int) prepare.getLong(i18));
                 }
-                int i17 = columnIndexOrThrow18;
-                int i18 = (int) prepare.getLong(i17);
-                int i19 = columnIndexOrThrow19;
-                boolean z = ((int) prepare.getLong(i19)) != 0;
-                int i20 = columnIndexOrThrow20;
-                boolean z2 = ((int) prepare.getLong(i20)) != 0;
-                int i21 = columnIndexOrThrow21;
-                String text2 = prepare.isNull(i21) ? null : prepare.getText(i21);
-                int i22 = columnIndexOrThrow22;
-                if (prepare.isNull(i22)) {
-                    i8 = i20;
-                    i9 = i21;
+                int i19 = columnIndexOrThrow18;
+                int i20 = (int) prepare.getLong(i19);
+                int i21 = columnIndexOrThrow19;
+                boolean z = ((int) prepare.getLong(i21)) != 0;
+                int i22 = columnIndexOrThrow20;
+                boolean z2 = ((int) prepare.getLong(i22)) != 0;
+                int i23 = columnIndexOrThrow21;
+                String text2 = prepare.isNull(i23) ? null : prepare.getText(i23);
+                int i24 = columnIndexOrThrow22;
+                if (prepare.isNull(i24)) {
+                    i8 = i22;
+                    i9 = i23;
                     valueOf6 = null;
                 } else {
-                    i8 = i20;
-                    i9 = i21;
-                    valueOf6 = Integer.valueOf((int) prepare.getLong(i22));
+                    i8 = i22;
+                    i9 = i23;
+                    valueOf6 = Integer.valueOf((int) prepare.getLong(i24));
                 }
-                int i23 = columnIndexOrThrow23;
-                if (prepare.isNull(i23)) {
-                    i10 = i22;
+                int i25 = columnIndexOrThrow23;
+                if (prepare.isNull(i25)) {
+                    i10 = i24;
                     valueOf7 = null;
                 } else {
-                    i10 = i22;
-                    valueOf7 = Integer.valueOf((int) prepare.getLong(i23));
+                    i10 = i24;
+                    valueOf7 = Integer.valueOf((int) prepare.getLong(i25));
                 }
-                int i24 = columnIndexOrThrow24;
-                arrayList2.add(new InventoryItemEntity(i, valueOf, i13, text, valueOf2, valueOf8, valueOf9, valueOf10, valueOf11, valueOf12, valueOf13, valueOf14, valueOf15, valueOf3, valueOf4, valueOf16, valueOf5, i18, z, z2, text2, valueOf6, valueOf7, prepare.isNull(i24) ? null : prepare.getText(i24)));
+                int i26 = columnIndexOrThrow24;
+                String text3 = prepare.isNull(i26) ? null : prepare.getText(i26);
+                int i27 = columnIndexOrThrow25;
+                if (prepare.isNull(i27)) {
+                    i11 = i25;
+                    i12 = i26;
+                    valueOf8 = null;
+                } else {
+                    i11 = i25;
+                    i12 = i26;
+                    valueOf8 = Integer.valueOf((int) prepare.getLong(i27));
+                }
+                if (valueOf8 != null) {
+                    bool = Boolean.valueOf(valueOf8.intValue() != 0);
+                }
+                arrayList2.add(new InventoryItemEntity(i, valueOf, i15, text, valueOf2, valueOf9, valueOf10, valueOf11, valueOf12, valueOf13, valueOf14, valueOf15, valueOf16, valueOf3, valueOf4, valueOf17, valueOf5, i20, z, z2, text2, valueOf6, valueOf7, text3, bool));
+                columnIndexOrThrow2 = i2;
+                columnIndexOrThrow14 = i6;
+                columnIndexOrThrow21 = i9;
+                arrayList = arrayList2;
+                columnIndexOrThrow17 = i18;
+                columnIndexOrThrow3 = i3;
                 columnIndexOrThrow5 = i5;
                 columnIndexOrThrow15 = i7;
-                columnIndexOrThrow16 = i15;
-                columnIndexOrThrow18 = i17;
-                columnIndexOrThrow19 = i19;
+                columnIndexOrThrow16 = i17;
+                columnIndexOrThrow18 = i19;
+                columnIndexOrThrow19 = i21;
                 columnIndexOrThrow20 = i8;
-                columnIndexOrThrow21 = i9;
                 columnIndexOrThrow22 = i10;
-                columnIndexOrThrow23 = i23;
-                columnIndexOrThrow2 = i2;
-                arrayList = arrayList2;
-                columnIndexOrThrow14 = i6;
-                columnIndexOrThrow17 = i16;
-                columnIndexOrThrow24 = i24;
+                columnIndexOrThrow23 = i11;
+                columnIndexOrThrow24 = i12;
+                columnIndexOrThrow25 = i27;
                 columnIndexOrThrow4 = i4;
-                columnIndexOrThrow3 = i3;
             }
             return arrayList;
         } finally {
@@ -708,8 +762,10 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow22 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "effectType");
             int columnIndexOrThrow23 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "quality");
             int columnIndexOrThrow24 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "custom_icon");
+            int columnIndexOrThrow25 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "loading");
             if (prepare.step()) {
                 int i3 = (int) prepare.getLong(columnIndexOrThrow);
+                Boolean bool = null;
                 if (prepare.isNull(columnIndexOrThrow2)) {
                     i2 = i3;
                     valueOf = null;
@@ -717,7 +773,33 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
                     i2 = i3;
                     valueOf = Integer.valueOf((int) prepare.getLong(columnIndexOrThrow2));
                 }
-                return new InventoryItemEntity(i2, valueOf, (int) prepare.getLong(columnIndexOrThrow3), prepare.isNull(columnIndexOrThrow4) ? null : prepare.getText(columnIndexOrThrow4), prepare.isNull(columnIndexOrThrow5) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow5)), prepare.isNull(columnIndexOrThrow6) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow6)), prepare.isNull(columnIndexOrThrow7) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow7)), prepare.isNull(columnIndexOrThrow8) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow8)), prepare.isNull(columnIndexOrThrow9) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow9)), prepare.isNull(columnIndexOrThrow10) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow10)), prepare.isNull(columnIndexOrThrow11) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow11)), prepare.isNull(columnIndexOrThrow12) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow12)), prepare.isNull(columnIndexOrThrow13) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow13)), prepare.isNull(columnIndexOrThrow14) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow14)), prepare.isNull(columnIndexOrThrow15) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow15)), prepare.isNull(columnIndexOrThrow16) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow16)), prepare.isNull(columnIndexOrThrow17) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow17)), (int) prepare.getLong(columnIndexOrThrow18), ((int) prepare.getLong(columnIndexOrThrow19)) != 0, ((int) prepare.getLong(columnIndexOrThrow20)) != 0, prepare.isNull(columnIndexOrThrow21) ? null : prepare.getText(columnIndexOrThrow21), prepare.isNull(columnIndexOrThrow22) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow22)), prepare.isNull(columnIndexOrThrow23) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow23)), prepare.isNull(columnIndexOrThrow24) ? null : prepare.getText(columnIndexOrThrow24));
+                int i4 = (int) prepare.getLong(columnIndexOrThrow3);
+                String text = prepare.isNull(columnIndexOrThrow4) ? null : prepare.getText(columnIndexOrThrow4);
+                Integer valueOf2 = prepare.isNull(columnIndexOrThrow5) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow5));
+                Long valueOf3 = prepare.isNull(columnIndexOrThrow6) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow6));
+                Integer valueOf4 = prepare.isNull(columnIndexOrThrow7) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow7));
+                Integer valueOf5 = prepare.isNull(columnIndexOrThrow8) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow8));
+                Integer valueOf6 = prepare.isNull(columnIndexOrThrow9) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow9));
+                Integer valueOf7 = prepare.isNull(columnIndexOrThrow10) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow10));
+                Integer valueOf8 = prepare.isNull(columnIndexOrThrow11) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow11));
+                Integer valueOf9 = prepare.isNull(columnIndexOrThrow12) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow12));
+                Integer valueOf10 = prepare.isNull(columnIndexOrThrow13) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow13));
+                Integer valueOf11 = prepare.isNull(columnIndexOrThrow14) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow14));
+                Integer valueOf12 = prepare.isNull(columnIndexOrThrow15) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow15));
+                Long valueOf13 = prepare.isNull(columnIndexOrThrow16) ? null : Long.valueOf(prepare.getLong(columnIndexOrThrow16));
+                Integer valueOf14 = prepare.isNull(columnIndexOrThrow17) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow17));
+                int i5 = (int) prepare.getLong(columnIndexOrThrow18);
+                boolean z = ((int) prepare.getLong(columnIndexOrThrow19)) != 0;
+                boolean z2 = ((int) prepare.getLong(columnIndexOrThrow20)) != 0;
+                String text2 = prepare.isNull(columnIndexOrThrow21) ? null : prepare.getText(columnIndexOrThrow21);
+                Integer valueOf15 = prepare.isNull(columnIndexOrThrow22) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow22));
+                Integer valueOf16 = prepare.isNull(columnIndexOrThrow23) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow23));
+                String text3 = prepare.isNull(columnIndexOrThrow24) ? null : prepare.getText(columnIndexOrThrow24);
+                Integer valueOf17 = prepare.isNull(columnIndexOrThrow25) ? null : Integer.valueOf((int) prepare.getLong(columnIndexOrThrow25));
+                if (valueOf17 != null) {
+                    bool = Boolean.valueOf(valueOf17.intValue() != 0);
+                }
+                return new InventoryItemEntity(i2, valueOf, i4, text, valueOf2, valueOf3, valueOf4, valueOf5, valueOf6, valueOf7, valueOf8, valueOf9, valueOf10, valueOf11, valueOf12, valueOf13, valueOf14, i5, z, z2, text2, valueOf15, valueOf16, text3, bool);
             }
             throw new IllegalStateException("The query result was empty, but expected a single row to return a NON-NULL object of type 'ru.mrlargha.commonui.domain.db.inventory.InventoryItemEntity'.".toString());
         } finally {
@@ -776,7 +858,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
 
     /* compiled from: InventoryItemDao_Impl.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00060\u0005¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/domain/db/inventory/InventoryItemDao_Impl$Companion;", "", "<init>", "()V", "getRequiredConverters", "", "Lkotlin/reflect/KClass;", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

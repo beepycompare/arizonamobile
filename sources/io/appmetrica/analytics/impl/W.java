@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class W implements InterfaceC0170cb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f815a;
+    public final Context f817a;
     public final ICommonExecutor b;
     public FutureTask i;
     public final O l;
@@ -36,7 +36,7 @@ public final class W implements InterfaceC0170cb {
     public volatile AdvertisingIdsHolder m = new AdvertisingIdsHolder();
 
     public W(Context context, ICommonExecutor iCommonExecutor, Hm hm) {
-        this.f815a = context;
+        this.f817a = context;
         this.b = iCommonExecutor;
         this.l = new O(hm);
         M m = M.d;
@@ -44,7 +44,7 @@ public final class W implements InterfaceC0170cb {
     }
 
     public static final Void f(W w) {
-        w.m = new AdvertisingIdsHolder(w.a(w.n.f635a, new T(w)), w.a(w.n.b, new U(w)), w.a(w.n.c, new V(w, new C0742ye())));
+        w.m = new AdvertisingIdsHolder(w.a(w.n.f637a, new T(w)), w.a(w.n.b, new U(w)), w.a(w.n.c, new V(w, new C0742ye())));
         w.b.executeDelayed((FutureTask) w.j.getValue(), w.k, TimeUnit.SECONDS);
         return null;
     }
@@ -128,7 +128,7 @@ public final class W implements InterfaceC0170cb {
     }
 
     public final void b() {
-        AdTrackingInfoResult a2 = a(this.n.f635a, new T(this));
+        AdTrackingInfoResult a2 = a(this.n.f637a, new T(this));
         AdTrackingInfoResult google = this.m.getGoogle();
         IdentifierStatus identifierStatus = a2.mStatus;
         IdentifierStatus identifierStatus2 = IdentifierStatus.UNKNOWN;

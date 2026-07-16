@@ -7,16 +7,16 @@ import io.appmetrica.analytics.StartupParamsCallback;
 public final class C0517pm implements S6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ StartupParamsCallback f1151a;
+    public final /* synthetic */ StartupParamsCallback f1153a;
     public final /* synthetic */ C0543qm b;
 
     public C0517pm(C0543qm c0543qm, StartupParamsCallback startupParamsCallback) {
         this.b = c0543qm;
-        this.f1151a = startupParamsCallback;
+        this.f1153a = startupParamsCallback;
     }
 
     @Override // io.appmetrica.analytics.impl.S6
     public final void a(int i, Bundle bundle) {
-        this.b.b(bundle, this.f1151a);
+        this.b.b(bundle, this.f1153a);
     }
 }

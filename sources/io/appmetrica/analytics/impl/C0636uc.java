@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0636uc implements InterfaceC0558rc, ToggleObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f1230a = new ArrayList();
+    public final ArrayList f1232a = new ArrayList();
     public final IHandlerExecutor b = Na.k().w().c();
     public C0467no c;
     public boolean d;
@@ -52,7 +52,7 @@ public final class C0636uc implements InterfaceC0558rc, ToggleObserver {
     }
 
     public static final void a(C0636uc c0636uc, LocationControllerObserver locationControllerObserver, boolean z) {
-        c0636uc.f1230a.add(locationControllerObserver);
+        c0636uc.f1232a.add(locationControllerObserver);
         if (z) {
             if (c0636uc.d) {
                 locationControllerObserver.startLocationTracking();
@@ -65,8 +65,8 @@ public final class C0636uc implements InterfaceC0558rc, ToggleObserver {
     public static final void a(C0636uc c0636uc, boolean z) {
         if (c0636uc.d != z) {
             c0636uc.d = z;
-            Function1 function1 = z ? C0584sc.f1196a : C0610tc.f1214a;
-            for (LocationControllerObserver locationControllerObserver : c0636uc.f1230a) {
+            Function1 function1 = z ? C0584sc.f1198a : C0610tc.f1216a;
+            for (LocationControllerObserver locationControllerObserver : c0636uc.f1232a) {
                 function1.invoke(locationControllerObserver);
             }
         }
@@ -87,6 +87,6 @@ public final class C0636uc implements InterfaceC0558rc, ToggleObserver {
             Intrinsics.throwUninitializedPropertyAccessException("togglesHolder");
             c0467no = null;
         }
-        c0467no.f1121a.a(z);
+        c0467no.f1123a.a(z);
     }
 }

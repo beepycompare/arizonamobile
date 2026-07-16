@@ -6,11 +6,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Df implements InterfaceC0322i8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Qf f513a;
+    public final Qf f515a;
     public final List<Cf> b;
 
     public Df(Qf qf, List<Cf> list) {
-        this.f513a = qf;
+        this.f515a = qf;
         this.b = list;
     }
 
@@ -21,14 +21,14 @@ public final class Df implements InterfaceC0322i8 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0322i8
     public final Object b() {
-        return this.f513a;
+        return this.f515a;
     }
 
     public final Qf c() {
-        return this.f513a;
+        return this.f515a;
     }
 
     public final String toString() {
-        return "PreloadInfoData{chosenPreloadInfo=" + this.f513a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "PreloadInfoData{chosenPreloadInfo=" + this.f515a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 public final class Hn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B0 f583a;
+    public final B0 f585a;
     public final lp b;
     public final C0468o c;
     public final Bl d;
@@ -16,7 +16,7 @@ public final class Hn {
     public final C0764za f;
 
     public Hn(B0 b0, lp lpVar, C0468o c0468o, Bl bl, U5 u5, C0764za c0764za) {
-        this.f583a = b0;
+        this.f585a = b0;
         this.b = lpVar;
         this.c = c0468o;
         this.d = bl;

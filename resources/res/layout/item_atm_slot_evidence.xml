@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:id="@+id/tray" android:visibility="invisible" android:layout_width="@dimen/_1sdp" android:layout_height="@dimen/_1sdp"/>
+    <ImageView android:id="@+id/slotBody" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/atm_evidence_slot_1" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+    <ImageView android:layout_gravity="center" android:id="@+id/slotBill1" android:visibility="invisible" android:layout_width="@dimen/_44sdp" android:layout_height="@dimen/_76sdp" android:src="@drawable/atm_evidence_biomaterial_1" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+    <FrameLayout android:layout_gravity="center" android:id="@+id/slotSelectedOverlay" android:visibility="invisible" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent">
+        <View android:layout_gravity="center" android:background="@drawable/atm_evidence_selected_circle" android:layout_width="@dimen/_72sdp" android:layout_height="@dimen/_72sdp"/>
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/_30sdp" android:layout_height="@dimen/_30sdp" android:src="@drawable/atm_evidence_grab" android:rotation="90"/>
+    </FrameLayout>
+</FrameLayout>

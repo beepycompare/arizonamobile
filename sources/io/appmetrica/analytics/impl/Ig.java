@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 public final class Ig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SafePackageManager f596a;
+    public final SafePackageManager f598a;
 
     public Ig(SafePackageManager safePackageManager) {
-        this.f596a = safePackageManager;
+        this.f598a = safePackageManager;
     }
 
     public final T9 a(Context context) {
@@ -18,7 +18,7 @@ public final class Ig {
         Na na = Na.I;
         IHandlerExecutor g = na.d.g();
         Zo zo = na.D().c;
-        String installerPackageName = this.f596a.getInstallerPackageName(context, context.getPackageName());
+        String installerPackageName = this.f598a.getInstallerPackageName(context, context.getPackageName());
         if (installerPackageName != null) {
             int hashCode = installerPackageName.hashCode();
             if (hashCode != -1637701853) {

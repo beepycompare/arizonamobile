@@ -34,7 +34,7 @@ public abstract class V2 implements InterfaceC0247fb {
     public static final T2 o = new T2();
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f802a;
+    protected final Context f804a;
     protected final Zh b;
     protected final PublicLogger c;
     protected final C0648uo d;
@@ -50,7 +50,7 @@ public abstract class V2 implements InterfaceC0247fb {
 
     public V2(Context context, Qi qi, Zh zh, C0298ha c0298ha, J6 j6, C0648uo c0648uo, Ug ug, N6 n6, C0236f0 c0236f0, C0380kf c0380kf) {
         Context applicationContext = context.getApplicationContext();
-        this.f802a = applicationContext;
+        this.f804a = applicationContext;
         this.h = qi;
         this.b = zh;
         this.k = c0298ha;
@@ -79,7 +79,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Zh zh = this.b;
         synchronized (zh) {
             W8 w8 = zh.c;
-            w8.b.b(w8.f822a, str, str2);
+            w8.b.b(w8.f824a, str, str2);
         }
     }
 
@@ -98,11 +98,11 @@ public abstract class V2 implements InterfaceC0247fb {
         }
         this.h.d.c();
         Qb qb = this.i;
-        qb.f730a.removeCallbacks(qb.c, qb.b.b.b.getApiKey());
+        qb.f732a.removeCallbacks(qb.c, qb.b.b.b.getApiKey());
         this.b.e = true;
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4("", str, 3, 0, publicLogger);
         Zh zh = this.b;
@@ -118,7 +118,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Zh zh = this.b;
         qi.getClass();
         C0242f6 n2 = C0189d4.n();
-        C0175cg c0175cg = new C0175cg(zh.f850a);
+        C0175cg c0175cg = new C0175cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
@@ -130,10 +130,10 @@ public abstract class V2 implements InterfaceC0247fb {
     public final void d(String str) {
         this.h.d.b();
         Qb qb = this.i;
-        Qb.a(qb.f730a, qb.b, qb.c);
+        Qb.a(qb.f732a, qb.b, qb.c);
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4("", str, 6400, 0, publicLogger);
         Zh zh = this.b;
@@ -162,9 +162,9 @@ public abstract class V2 implements InterfaceC0247fb {
             str = zh.f;
         }
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey());
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         JSONObject jSONObject = new JSONObject();
-        if (uf != null && (qf = uf.f793a) != null) {
+        if (uf != null && (qf = uf.f795a) != null) {
             try {
                 jSONObject.put("preloadInfo", qf.c());
             } catch (Throwable unused) {
@@ -197,7 +197,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Zh zh = this.b;
         qi.getClass();
         C0242f6 b = C0189d4.b(str, str2);
-        C0175cg c0175cg = new C0175cg(zh.f850a);
+        C0175cg c0175cg = new C0175cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
@@ -216,7 +216,7 @@ public abstract class V2 implements InterfaceC0247fb {
         StackTraceElement[] stackTraceElementArr;
         C0262g0 c0262g0 = new C0262g0(new C0288h0(this, map));
         Ia ia = new Ia();
-        J6 j6 = C0576s4.l().f1192a;
+        J6 j6 = C0576s4.l().f1194a;
         Thread a2 = c0262g0.a();
         Map map2 = null;
         try {
@@ -260,9 +260,9 @@ public abstract class V2 implements InterfaceC0247fb {
             C0189d4 c0189d4 = new C0189d4(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()));
             Db db = Db.EVENT_TYPE_UNDEFINED;
             c0189d4.d = 41000;
-            c0189d4.b = c0189d4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) xi.f839a)));
+            c0189d4.b = c0189d4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) xi.f841a)));
             c0189d4.g = xi.b.getBytesTruncated();
-            C0175cg c0175cg = new C0175cg(zh.f850a);
+            C0175cg c0175cg = new C0175cg(zh.f852a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
             W8 w8 = zh.c;
             synchronized (zh) {
@@ -278,7 +278,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.e.fromModel(tg));
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(byteArray, str, 5892, publicLogger);
         Zh zh = this.b;
@@ -292,7 +292,7 @@ public abstract class V2 implements InterfaceC0247fb {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str), new Object[0]);
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4("", str, 1, 0, publicLogger);
         Zh zh = this.b;
@@ -303,16 +303,16 @@ public abstract class V2 implements InterfaceC0247fb {
     @Override // io.appmetrica.analytics.IReporter
     public final void reportRevenue(Revenue revenue) {
         String str;
-        C0332ij c0332ij = U2.f785a;
+        C0332ij c0332ij = U2.f787a;
         c0332ij.getClass();
         To a2 = c0332ij.a(revenue);
-        if (a2.f782a) {
+        if (a2.f784a) {
             Qi qi = this.h;
             C0358jj c0358jj = new C0358jj(revenue, this.c);
             Zh zh = this.b;
             qi.getClass();
             C0189d4 a3 = C0189d4.a(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()), c0358jj);
-            C0175cg c0175cg = new C0175cg(zh.f850a);
+            C0175cg c0175cg = new C0175cg(zh.f852a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
             W8 w8 = zh.c;
             synchronized (zh) {
@@ -345,19 +345,19 @@ public abstract class V2 implements InterfaceC0247fb {
         }
         Lo lo = new Lo();
         ArrayList arrayList = new ArrayList();
-        for (int i = 0; i < go.f568a.size(); i++) {
-            SparseArray sparseArray = go.f568a;
+        for (int i = 0; i < go.f570a.size(); i++) {
+            SparseArray sparseArray = go.f570a;
             for (Io io2 : ((HashMap) sparseArray.get(sparseArray.keyAt(i))).values()) {
                 arrayList.add(io2);
             }
         }
-        lo.f653a = (Io[]) arrayList.toArray(new Io[arrayList.size()]);
-        if (o.a(lo).f782a) {
+        lo.f655a = (Io[]) arrayList.toArray(new Io[arrayList.size()]);
+        if (o.a(lo).f784a) {
             Qi qi = this.h;
             Zh zh = this.b;
             qi.getClass();
             C0242f6 a3 = C0189d4.a(lo);
-            C0175cg c0175cg = new C0175cg(zh.f850a);
+            C0175cg c0175cg = new C0175cg(zh.f852a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
             W8 w8 = zh.c;
             synchronized (zh) {
@@ -382,7 +382,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         C0189d4 c0189d4 = new C0189d4("", "", 256, 0, publicLogger);
         Zh zh = this.b;
         qi.getClass();
@@ -399,7 +399,7 @@ public abstract class V2 implements InterfaceC0247fb {
     public final void setSessionExtra(String str, byte[] bArr) {
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4("", (String) null, 8193, 0, publicLogger);
         if (bArr == null) {
@@ -422,7 +422,7 @@ public abstract class V2 implements InterfaceC0247fb {
         c0189d4.d = 40962;
         c0189d4.c(str);
         c0189d4.b = c0189d4.e(str);
-        C0175cg c0175cg = new C0175cg(zh.f850a);
+        C0175cg c0175cg = new C0175cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
@@ -440,7 +440,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Zh zh = this.b;
         qi.getClass();
         C0189d4 a2 = C0189d4.a(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()), f);
-        C0175cg c0175cg = new C0175cg(zh.f850a);
+        C0175cg c0175cg = new C0175cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
@@ -455,7 +455,7 @@ public abstract class V2 implements InterfaceC0247fb {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(str2, str, 1, 0, publicLogger);
         c0189d4.l = G9.JS;
@@ -478,7 +478,7 @@ public abstract class V2 implements InterfaceC0247fb {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(str2, str, 1, 0, publicLogger);
         Zh zh = this.b;
@@ -513,7 +513,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.f.fromModel(m6));
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(byteArray, str2, 5896, publicLogger);
         Zh zh = this.b;
@@ -535,11 +535,11 @@ public abstract class V2 implements InterfaceC0247fb {
     public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
         C0622to a2 = this.l.a(pluginErrorDetails);
         Qi qi = this.h;
-        C0363jo c0363jo = a2.f1221a;
-        String str = c0363jo != null ? (String) WrapUtils.getOrDefault(c0363jo.f1056a, "") : "";
+        C0363jo c0363jo = a2.f1223a;
+        String str = c0363jo != null ? (String) WrapUtils.getOrDefault(c0363jo.f1058a, "") : "";
         byte[] byteArray = MessageNano.toByteArray(this.d.fromModel(a2));
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(byteArray, str, 5891, publicLogger);
         Zh zh = this.b;
@@ -557,7 +557,7 @@ public abstract class V2 implements InterfaceC0247fb {
     public final void reportEvent(String str, Map<String, Object> map) {
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         qi.a(new C0189d4("", str, 1, 0, publicLogger), this.b, 1, map);
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(map == null ? null : map.toString()), new Object[0]);
@@ -593,7 +593,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.e.fromModel(tg));
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(byteArray, str, 5896, publicLogger);
         Zh zh = this.b;
@@ -609,12 +609,12 @@ public abstract class V2 implements InterfaceC0247fb {
             return;
         }
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         String value = moduleEvent.getValue();
         String name = moduleEvent.getName();
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(value, name, 8192, moduleEvent.getType(), publicLogger);
-        int i = Y8.f854a[moduleEvent.getCategory().ordinal()];
+        int i = Y8.f856a[moduleEvent.getCategory().ordinal()];
         if (i == 1) {
             g9 = G9.NATIVE;
         } else if (i != 2) {
@@ -636,7 +636,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0210e0));
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(byteArray, "", 5968, publicLogger);
         Zh zh = this.b;
@@ -644,8 +644,8 @@ public abstract class V2 implements InterfaceC0247fb {
         qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
         PublicLogger publicLogger2 = this.c;
         StringBuilder sb = new StringBuilder("ANR was reported ");
-        Zn zn = x.f833a;
-        publicLogger2.info(sb.append(zn != null ? "Thread[name=" + zn.f875a + ",tid={" + zn.c + ", priority=" + zn.b + ", group=" + zn.d + "}] at " + CollectionsKt.joinToString$default(zn.f, "\n", null, null, 0, null, null, 62, null) : null).toString(), new Object[0]);
+        Zn zn = x.f835a;
+        publicLogger2.info(sb.append(zn != null ? "Thread[name=" + zn.f877a + ",tid={" + zn.c + ", priority=" + zn.b + ", group=" + zn.d + "}] at " + CollectionsKt.joinToString$default(zn.f, "\n", null, null, 0, null, null, 62, null) : null).toString(), new Object[0]);
     }
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
@@ -662,7 +662,7 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.f.fromModel(m6));
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(byteArray, str2, 5896, publicLogger);
         Zh zh = this.b;

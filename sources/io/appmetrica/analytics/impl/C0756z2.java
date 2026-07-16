@@ -8,13 +8,13 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0756z2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1305a;
+    public final List f1307a;
 
     public C0756z2(ArrayList arrayList) {
-        this.f1305a = arrayList;
+        this.f1307a = arrayList;
     }
 
     public final String toString() {
-        return "AttributionConfig{deeplinkConditions=" + this.f1305a + AbstractJsonLexerKt.END_OBJ;
+        return "AttributionConfig{deeplinkConditions=" + this.f1307a + AbstractJsonLexerKt.END_OBJ;
     }
 }

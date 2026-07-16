@@ -6,14 +6,14 @@ import java.util.Map;
 public final class C0333ik implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Map f1037a;
+    public final /* synthetic */ Map f1039a;
 
     public C0333ik(Map map) {
-        this.f1037a = map;
+        this.f1039a = map;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
     public final void a(InterfaceC0506pb interfaceC0506pb) {
-        interfaceC0506pb.reportAnr(this.f1037a);
+        interfaceC0506pb.reportAnr(this.f1039a);
     }
 }

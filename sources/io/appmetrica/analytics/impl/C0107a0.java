@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C0107a0 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final N7 f878a;
+    public final N7 f880a;
     public final Va b;
 
     public C0107a0() {
@@ -18,9 +18,9 @@ public final class C0107a0 implements Converter {
     /* renamed from: a */
     public final Xi fromModel(C0133b0 c0133b0) {
         C0658v8 c0658v8 = new C0658v8();
-        c0658v8.b = this.f878a.fromModel(c0133b0.f896a);
+        c0658v8.b = this.f880a.fromModel(c0133b0.f898a);
         C0519po a2 = this.b.a(c0133b0.b);
-        c0658v8.f1245a = StringUtils.getUTF8Bytes((String) a2.f1153a);
+        c0658v8.f1247a = StringUtils.getUTF8Bytes((String) a2.f1155a);
         return new Xi(c0658v8, new C0524q3(C0524q3.b(a2)));
     }
 
@@ -31,7 +31,7 @@ public final class C0107a0 implements Converter {
     }
 
     public C0107a0(N7 n7, Va va) {
-        this.f878a = n7;
+        this.f880a = n7;
         this.b = va;
     }
 

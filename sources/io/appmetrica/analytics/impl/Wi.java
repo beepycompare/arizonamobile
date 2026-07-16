@@ -5,18 +5,18 @@ import android.content.Context;
 public abstract class Wi {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f827a;
+    protected final Context f829a;
     public final String b;
     public final String c;
 
     public Wi(Context context, String str, String str2) {
-        this.f827a = context;
+        this.f829a = context;
         this.b = str;
         this.c = str2;
     }
 
     public final Object a() {
-        int identifier = this.f827a.getResources().getIdentifier(this.b, this.c, this.f827a.getPackageName());
+        int identifier = this.f829a.getResources().getIdentifier(this.b, this.c, this.f829a.getPackageName());
         if (identifier != 0) {
             try {
                 return a(identifier);

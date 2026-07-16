@@ -236,19 +236,23 @@ public final class HudCounter {
                 iArr2[TypeTaximeter.COMBINE_CONDITION.ordinal()] = 40;
             } catch (NoSuchFieldError unused42) {
             }
+            try {
+                iArr2[TypeTaximeter.ESCAPE.ordinal()] = 41;
+            } catch (NoSuchFieldError unused43) {
+            }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[HudCounterItemType.values().length];
             try {
                 iArr3[HudCounterItemType.SIMPLE_TEXT.ordinal()] = 1;
-            } catch (NoSuchFieldError unused43) {
-            }
-            try {
-                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused44) {
             }
             try {
-                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused45) {
+            }
+            try {
+                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused46) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -876,9 +880,15 @@ public final class HudCounter {
                 Unit unit40 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
+            case 41:
+                setVisible(valueOf);
+                this.firstTextView = hudTaximeterBinding.escape.tvFirst;
+                Unit unit41 = Unit.INSTANCE;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
             default:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
-                Unit unit41 = Unit.INSTANCE;
+                Unit unit42 = Unit.INSTANCE;
                 break;
         }
         Intrinsics.checkNotNullExpressionValue(hudTaximeterContainerBinding, "with(...)");
@@ -1204,5 +1214,8 @@ public final class HudCounter {
         FrameLayout root24 = hudTaximeterBinding.combineCondition.getRoot();
         Intrinsics.checkNotNullExpressionValue(root24, "getRoot(...)");
         root24.setVisibility(typeTaximeter == TypeTaximeter.COMBINE_CONDITION ? 0 : 8);
+        FrameLayout root25 = hudTaximeterBinding.escape.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root25, "getRoot(...)");
+        root25.setVisibility(typeTaximeter == TypeTaximeter.ESCAPE ? 0 : 8);
     }
 }

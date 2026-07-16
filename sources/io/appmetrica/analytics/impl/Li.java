@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public final class Li {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0745yh f649a;
+    public final C0745yh f651a;
     public final Hh b;
     public final Jh c;
     public final Kh d;
@@ -28,7 +28,7 @@ public final class Li {
     public final C0169ca u;
 
     public Li(C0448n5 c0448n5) {
-        this.f649a = new C0745yh(c0448n5);
+        this.f651a = new C0745yh(c0448n5);
         this.b = new Hh(c0448n5);
         this.c = new Jh(c0448n5);
         this.d = new Kh(c0448n5);

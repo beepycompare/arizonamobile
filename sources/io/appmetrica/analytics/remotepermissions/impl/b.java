@@ -18,7 +18,7 @@ public final class b implements ProtobufConverter {
         for (String str : permittedPermissions) {
             arrayList.add(str.getBytes(Charsets.UTF_8));
         }
-        eVar.f1425a = (byte[][]) arrayList.toArray(new byte[0]);
+        eVar.f1427a = (byte[][]) arrayList.toArray(new byte[0]);
         return eVar;
     }
 
@@ -32,7 +32,7 @@ public final class b implements ProtobufConverter {
     */
     public final FeatureConfig toModel(e eVar) {
         Set emptySet;
-        byte[][] bArr = eVar.f1425a;
+        byte[][] bArr = eVar.f1427a;
         if (bArr != null) {
             ArrayList arrayList = new ArrayList(bArr.length);
             for (byte[] bArr2 : bArr) {

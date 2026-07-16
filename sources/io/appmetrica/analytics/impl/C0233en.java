@@ -4,24 +4,24 @@ package io.appmetrica.analytics.impl;
 public final class C0233en {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f969a;
+    public final int f971a;
 
     public C0233en(int i) {
-        this.f969a = i;
+        this.f971a = i;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof C0233en) && this.f969a == ((C0233en) obj).f969a;
+        return (obj instanceof C0233en) && this.f971a == ((C0233en) obj).f971a;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.f969a);
+        return Integer.hashCode(this.f971a);
     }
 
     public final String toString() {
-        return "StartupUpdateConfig(intervalSeconds=" + this.f969a + ')';
+        return "StartupUpdateConfig(intervalSeconds=" + this.f971a + ')';
     }
 }

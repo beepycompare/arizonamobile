@@ -31,7 +31,7 @@ import kotlin.collections.MapsKt;
 public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryPoint<ServiceSideScreenshotConfigWrapper> {
 
     /* renamed from: a  reason: collision with root package name */
-    private P f1469a;
+    private P f1471a;
     private final T b = new T();
     private final S c = new S(null, 1, null);
     private final Q d = new Q(null, 1, null);
@@ -40,7 +40,7 @@ public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryP
         public void onRemoteConfigUpdated(ModuleRemoteConfig<ServiceSideScreenshotConfigWrapper> moduleRemoteConfig) {
             ScreenshotServiceModuleEntryPoint screenshotServiceModuleEntryPoint = ScreenshotServiceModuleEntryPoint.this;
             ServiceSideScreenshotConfigWrapper featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-            screenshotServiceModuleEntryPoint.f1469a = featuresConfig != null ? featuresConfig.getConfig$screenshot_release() : null;
+            screenshotServiceModuleEntryPoint.f1471a = featuresConfig != null ? featuresConfig.getConfig$screenshot_release() : null;
         }
     };
     private final String f = "screenshot";
@@ -70,7 +70,7 @@ public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryP
                 public byte[] fromModel(ServiceSideScreenshotConfigWrapper serviceSideScreenshotConfigWrapper) {
                     Q q;
                     q = ScreenshotServiceModuleEntryPoint.this.d;
-                    return MessageNano.toByteArray(q.f1442a.fromModel(serviceSideScreenshotConfigWrapper.getConfig$screenshot_release()));
+                    return MessageNano.toByteArray(q.f1444a.fromModel(serviceSideScreenshotConfigWrapper.getConfig$screenshot_release()));
                 }
 
                 @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -96,25 +96,25 @@ public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryP
             T t;
             P p;
             t = ScreenshotServiceModuleEntryPoint.this.b;
-            p = ScreenshotServiceModuleEntryPoint.this.f1469a;
+            p = ScreenshotServiceModuleEntryPoint.this.f1471a;
             t.getClass();
             if (p == null) {
                 return null;
             }
             Bundle bundle = new Bundle();
-            bundle.putBoolean("enabled", p.f1441a);
+            bundle.putBoolean("enabled", p.f1443a);
             N n = p.b;
             if (n != null) {
-                bundle.putBoolean("api_captor_enabled", n.f1439a);
+                bundle.putBoolean("api_captor_enabled", n.f1441a);
             }
             U u = p.c;
             if (u != null) {
-                bundle.putBoolean("service_captor_enabled", u.f1444a);
+                bundle.putBoolean("service_captor_enabled", u.f1446a);
                 bundle.putLong("service_captor_delay_seconds", u.b);
             }
             O o = p.d;
             if (o != null) {
-                bundle.putBoolean("content_observer_enabled", o.f1440a);
+                bundle.putBoolean("content_observer_enabled", o.f1442a);
                 bundle.putStringArrayList("content_observer_media_store_column_names", new ArrayList<>(o.b));
                 bundle.putLong("content_observer_detect_window_seconds", o.c);
             }
@@ -140,6 +140,6 @@ public final class ScreenshotServiceModuleEntryPoint extends ModuleServiceEntryP
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceEntryPoint
     public void initServiceSide(ServiceContext serviceContext, ModuleRemoteConfig<ServiceSideScreenshotConfigWrapper> moduleRemoteConfig) {
         ServiceSideScreenshotConfigWrapper featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-        this.f1469a = featuresConfig != null ? featuresConfig.getConfig$screenshot_release() : null;
+        this.f1471a = featuresConfig != null ? featuresConfig.getConfig$screenshot_release() : null;
     }
 }

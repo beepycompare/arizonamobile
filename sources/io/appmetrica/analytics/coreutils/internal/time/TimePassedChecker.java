@@ -6,19 +6,19 @@ import kotlin.Metadata;
 public final class TimePassedChecker {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TimeProvider f383a;
+    private final TimeProvider f385a;
 
     public TimePassedChecker(TimeProvider timeProvider) {
-        this.f383a = timeProvider;
+        this.f385a = timeProvider;
     }
 
     public final boolean didTimePassMillis(long j, long j2, String str) {
-        long currentTimeMillis = this.f383a.currentTimeMillis();
+        long currentTimeMillis = this.f385a.currentTimeMillis();
         return currentTimeMillis < j || currentTimeMillis - j >= j2;
     }
 
     public final boolean didTimePassSeconds(long j, long j2, String str) {
-        long currentTimeSeconds = this.f383a.currentTimeSeconds();
+        long currentTimeSeconds = this.f385a.currentTimeSeconds();
         return currentTimeSeconds < j || currentTimeSeconds - j >= j2;
     }
 

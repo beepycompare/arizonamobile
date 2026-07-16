@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class Ii {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f597a = new HashMap();
+    public final HashMap f599a = new HashMap();
     public final B0 b;
 
     public Ii(B0 b0) {
@@ -15,15 +15,15 @@ public final class Ii {
     }
 
     public static Ii a() {
-        return Hi.f578a;
+        return Hi.f580a;
     }
 
     public final Ai a(Context context, String str) {
         Ai ai;
-        Ai ai2 = (Ai) this.f597a.get(str);
+        Ai ai2 = (Ai) this.f599a.get(str);
         if (ai2 == null) {
-            synchronized (this.f597a) {
-                ai = (Ai) this.f597a.get(str);
+            synchronized (this.f599a) {
+                ai = (Ai) this.f599a.get(str);
                 if (ai == null) {
                     IHandlerExecutor a2 = C0576s4.l().c.a();
                     this.b.getClass();
@@ -31,7 +31,7 @@ public final class Ii {
                         ((U9) a2).b.post(new Gi(this, context));
                     }
                     ai = new Ai(context.getApplicationContext(), str, new B0());
-                    this.f597a.put(str, ai);
+                    this.f599a.put(str, ai);
                     ai.c(str);
                 }
             }

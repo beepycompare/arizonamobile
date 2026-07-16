@@ -9,11 +9,11 @@ public final class H4 extends I4 {
 
     public final void a(Db db, List<AbstractC0305hh> list) {
         if (!Q9.h.contains(db)) {
-            list.add(this.f588a.s);
+            list.add(this.f590a.s);
         }
         if (Q9.b.contains(db)) {
             return;
         }
-        list.add(this.f588a.c);
+        list.add(this.f590a.c);
     }
 }

@@ -1,5 +1,5 @@
 package com.facebook.internal;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public class AnalyticsEvents {
     public static final String EVENT_FRIEND_PICKER_USAGE = "fb_friend_picker_usage";
     public static final String EVENT_LOGIN_VIEW_USAGE = "fb_login_view_usage";

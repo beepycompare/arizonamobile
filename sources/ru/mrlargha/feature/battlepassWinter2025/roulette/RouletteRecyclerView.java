@@ -2,7 +2,6 @@ package ru.mrlargha.feature.battlepassWinter2025.roulette;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -83,7 +82,6 @@ public final class RouletteRecyclerView extends RecyclerView {
                     RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
                     Intrinsics.checkNotNull(layoutManager, "null cannot be cast to non-null type androidx.recyclerview.widget.LinearLayoutManager");
                     if (((LinearLayoutManager) layoutManager).findLastVisibleItemPosition() >= i) {
-                        Log.d("onBackendMessage", prise.toString());
                         RecyclerView.Adapter adapter = this.getAdapter();
                         Intrinsics.checkNotNull(adapter, "null cannot be cast to non-null type ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteAdapter");
                         ((RouletteAdapter) adapter).changePrise(prise);

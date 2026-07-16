@@ -17,7 +17,7 @@ public final class ModuleAdType {
     public static final ModuleAdType REWARDED;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ ModuleAdType[] f1357a;
+    private static final /* synthetic */ ModuleAdType[] f1359a;
     private static final /* synthetic */ EnumEntries b;
 
     static {
@@ -36,7 +36,7 @@ public final class ModuleAdType {
         ModuleAdType moduleAdType7 = new ModuleAdType("OTHER", 6);
         OTHER = moduleAdType7;
         ModuleAdType[] moduleAdTypeArr = {moduleAdType, moduleAdType2, moduleAdType3, moduleAdType4, moduleAdType5, moduleAdType6, moduleAdType7};
-        f1357a = moduleAdTypeArr;
+        f1359a = moduleAdTypeArr;
         b = EnumEntriesKt.enumEntries(moduleAdTypeArr);
     }
 
@@ -52,6 +52,6 @@ public final class ModuleAdType {
     }
 
     public static ModuleAdType[] values() {
-        return (ModuleAdType[]) f1357a.clone();
+        return (ModuleAdType[]) f1359a.clone();
     }
 }

@@ -5,7 +5,7 @@ import io.appmetrica.analytics.modulesapi.internal.common.InternalModuleEvent;
 public abstract /* synthetic */ class Bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f474a;
+    public static final /* synthetic */ int[] f476a;
 
     static {
         int[] iArr = new int[InternalModuleEvent.Category.values().length];
@@ -17,6 +17,6 @@ public abstract /* synthetic */ class Bb {
             iArr[InternalModuleEvent.Category.GENERAL.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
-        f474a = iArr;
+        f476a = iArr;
     }
 }

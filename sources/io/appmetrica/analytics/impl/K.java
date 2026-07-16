@@ -9,10 +9,10 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public final class K implements H {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H f621a;
+    public final H f623a;
 
     public K(H h) {
-        this.f621a = h;
+        this.f623a = h;
     }
 
     @Override // io.appmetrica.analytics.impl.H

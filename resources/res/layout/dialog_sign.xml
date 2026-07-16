@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bank_card_signature_modal_root" android:background="#66030a1f" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:focusable="true" android:clickable="true" android:layout_width="@dimen/_350sdp" style="@style/DialogSmallContainer">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_12sdp" android:textColor="#ffffff" android:layout_gravity="center_vertical" android:id="@+id/bank_card_signature_modal_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ПОСТАВЬТЕ ПОДПИСЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <ImageView android:layout_gravity="end|center_vertical" android:id="@+id/btn_cancel" android:layout_width="wrap_content" android:layout_height="@dimen/_12sdp" android:src="@drawable/dialog_ic_cross" android:adjustViewBounds="true" android:layout_marginStart="@dimen/_6sdp"/>
+            </FrameLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:padding="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="@dimen/_136sdp" android:layout_marginTop="@dimen/_10sdp" app:backgroundMainColor="#f3f8f9" app:corners="@dimen/_6sdp">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <ru.mrlargha.commonui.elements.dialogs.views.DialogSignaturePadView android:id="@+id/bank_card_signature_pad" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <LinearLayout android:gravity="center_vertical" android:layout_gravity="end|top" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="#b2000000" android:id="@+id/tv_background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_sign_filled_prefix" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/background" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_4sdp" app:backgroundMainColor="@color/red" app:corners="@dimen/_2sdp">
+                            <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:id="@+id/tv_signature_progress_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_3sdp" android:layout_marginRight="@dimen/_3sdp" android:text="0%" android:fontFamily="@font/headingnow_67" android:layout_marginHorizontal="@dimen/_3sdp"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </LinearLayout>
+                </FrameLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_8sdp">
+                <TextView android:textSize="@dimen/_5sdp" android:textColor="#15182a" android:gravity="center" android:background="@drawable/hud_notice_info_ic" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:text="i" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:backgroundTint="@color/white"/>
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="#fff000" android:id="@+id/bank_card_signature_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Проведите пальцем и нарисуйте подпись" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_6sdp"/>
+            </LinearLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_card_signature_confirm_button" android:layout_width="match_parent" android:layout_height="@dimen/_30sdp" android:layout_marginTop="@dimen/_10sdp" app:backgroundMainColor="#33ffffff" app:backgroundTransparency="28" app:corners="@dimen/_8sdp">
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#33ffffff" android:gravity="center" android:id="@+id/bank_card_signature_confirm_button_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="ПОДТВЕРДИТЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

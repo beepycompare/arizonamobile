@@ -9,8 +9,8 @@ public final class Cl extends W2 {
     public final Io a(Go go, Io io2, InterfaceC0652v2 interfaceC0652v2) {
         if (io2 == null || io2.c.b) {
             Io a2 = ((AbstractC0121ae) interfaceC0652v2).a();
-            a2.c.f620a = true;
-            return this.f818a.a(go, a2);
+            a2.c.f622a = true;
+            return this.f820a.a(go, a2);
         }
         return null;
     }

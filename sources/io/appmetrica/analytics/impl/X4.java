@@ -6,7 +6,7 @@ import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 public final class X4 implements InterfaceC0476o7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f836a;
+    public final String f838a;
     public final String b;
 
     public X4(C0267g5 c0267g5) {
@@ -16,7 +16,7 @@ public final class X4 implements InterfaceC0476o7 {
         } else {
             b = c0267g5.b();
         }
-        this.f836a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
+        this.f838a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
         this.b = "db_metrica_" + c0267g5;
     }
 
@@ -27,6 +27,6 @@ public final class X4 implements InterfaceC0476o7 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0476o7
     public final String b() {
-        return this.f836a;
+        return this.f838a;
     }
 }

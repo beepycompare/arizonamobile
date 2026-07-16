@@ -30,7 +30,7 @@
                     <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1 попытка -" android:fontFamily="@font/heading_now_64_regular" android:layout_marginEnd="@dimen/_12sdp"/>
                     <TextView android:textSize="@dimen/_9sdp" android:textStyle="bold" android:textColor="@color/white" android:id="@+id/textPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="999" android:fontFamily="@font/heading_now_65"/>
                     <ImageView android:id="@+id/buttonPriceIconTop" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:src="@drawable/battlepass_2025_ic_battlepoints" android:layout_marginStart="@dimen/_5sdp"/>
-                    <TextView android:textSize="@dimen/_10sdp" android:textStyle="bold" android:textColor="#ffffff" android:id="@+id/buttonPriceRubTop" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="RUB" android:drawablePadding="@dimen/_4sdp"/>
+                    <TextView android:textSize="@dimen/_10sdp" android:textStyle="bold" android:textColor="@color/winter_bp_white" android:id="@+id/buttonPriceRubTop" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="RUB" android:drawablePadding="@dimen/_4sdp"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1">
                     <FrameLayout android:gravity="center" android:id="@+id/btn_1" android:background="@drawable/winter_battlepass_roulette_bg_transparent_white" android:layout_width="@dimen/_26sdp" android:layout_height="@dimen/_26sdp">
@@ -47,7 +47,7 @@
                     <TextView android:textSize="@dimen/_13sdp" android:textColor="@color/black" android:id="@+id/tv_buy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Купить" android:fontFamily="@font/heading_now_64_regular" android:layout_marginEnd="@dimen/_12sdp"/>
                     <TextView android:textSize="@dimen/_13sdp" android:textColor="@color/black" android:id="@+id/buttonPrice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="999" android:drawablePadding="@dimen/_4sdp" android:fontFamily="@font/heading_now_65"/>
                     <ImageView android:id="@+id/buttonPriceIcon" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:src="@drawable/battlepass_2025_ic_battlepoints" android:layout_marginStart="@dimen/_5sdp"/>
-                    <TextView android:textSize="@dimen/_14sdp" android:textStyle="bold" android:textColor="#ffffff" android:id="@+id/buttonPriceRub" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" RUB" android:drawablePadding="@dimen/_4sdp"/>
+                    <TextView android:textSize="@dimen/_14sdp" android:textStyle="bold" android:textColor="@color/winter_bp_white" android:id="@+id/buttonPriceRub" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" RUB" android:drawablePadding="@dimen/_4sdp"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

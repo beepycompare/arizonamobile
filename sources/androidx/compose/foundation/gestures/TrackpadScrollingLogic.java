@@ -123,13 +123,13 @@ public final class TrackpadScrollingLogic extends NonTouchScrollingLogic {
                 HistoricalChange historicalChange = historical.get(i);
                 long m5095constructorimpl = Offset.m5095constructorimpl((-9223372034707292160L) ^ historicalChange.m6585getPanOffsetF1C5BW0());
                 if (m642canConsumeDeltaUv8p0NA(getScrollingLogic(), m5095constructorimpl)) {
-                    z = ChannelResult.m11454isSuccessimpl(this.channel.mo9057trySendJP2dKIU(new TrackpadScrollDelta(m5095constructorimpl, historicalChange.getUptimeMillis(), false, null))) || z;
+                    z = ChannelResult.m11456isSuccessimpl(this.channel.mo9057trySendJP2dKIU(new TrackpadScrollDelta(m5095constructorimpl, historicalChange.getUptimeMillis(), false, null))) || z;
                 }
             }
             long m5095constructorimpl2 = Offset.m5095constructorimpl(pointerInputChange.m6684getPanOffsetF1C5BW0() ^ (-9223372034707292160L));
             boolean m6625equalsimpl0 = PointerEventType.m6625equalsimpl0(pointerEvent.m6618getType7fucELk(), PointerEventType.Companion.m6632getPanEnd7fucELk());
             if (m642canConsumeDeltaUv8p0NA(getScrollingLogic(), m5095constructorimpl2) || m6625equalsimpl0) {
-                if (ChannelResult.m11454isSuccessimpl(this.channel.mo9057trySendJP2dKIU(new TrackpadScrollDelta(m5095constructorimpl2, pointerInputChange.getUptimeMillis(), m6625equalsimpl0, null))) || z) {
+                if (ChannelResult.m11456isSuccessimpl(this.channel.mo9057trySendJP2dKIU(new TrackpadScrollDelta(m5095constructorimpl2, pointerInputChange.getUptimeMillis(), m6625equalsimpl0, null))) || z) {
                     z = true;
                 }
             }
@@ -156,7 +156,7 @@ public final class TrackpadScrollingLogic extends NonTouchScrollingLogic {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final TrackpadScrollDelta sumOrNull$lambda$0(Channel channel) {
-        return (TrackpadScrollDelta) ChannelResult.m11449getOrNullimpl(channel.mo11438tryReceivePtdJZtk());
+        return (TrackpadScrollDelta) ChannelResult.m11451getOrNullimpl(channel.mo11440tryReceivePtdJZtk());
     }
 
     /* renamed from: canConsumeDelta-Uv8p0NA  reason: not valid java name */

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/root" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/backgroundImage" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/atm_evidence_bg" android:scaleType="centerCrop"/>
+    <View android:background="#33000000" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <ImageView android:id="@+id/bgResult" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop" android:alpha="0"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/leftPanel" android:layout_width="@dimen/_170sdp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_18sdp" android:layout_marginStart="@dimen/_18sdp">
+        <TextView android:textSize="@dimen/_18sdp" android:textColor="#ffffff" android:id="@+id/titleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Анализ улик" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/infoCard" android:layout_width="@dimen/_126sdp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp" app:backgroundMainColor="#80000000" app:backgroundSecondColor="#66000000" app:borderMainColor="#33ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_5sdp">
+            <LinearLayout android:gravity="top" android:orientation="horizontal" android:padding="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@+id/infoIcon" android:layout_width="@dimen/_9sdp" android:layout_height="@dimen/_9sdp" android:layout_marginTop="@dimen/_2sdp" android:src="@drawable/atm_info_ic"/>
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:id="@+id/infoText" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Сортируйте биоматериал преступников по цветам, чтобы провести анализ улик" android:layout_weight="1" android:lineSpacingExtra="@dimen/_2sdp" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_8sdp"/>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </LinearLayout>
+    <LinearLayout android:gravity="end|center_vertical" android:layout_gravity="end|top" android:orientation="horizontal" android:id="@+id/progressBlock" android:layout_width="@dimen/_132sdp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_18sdp" android:layout_marginEnd="@dimen/_18sdp">
+        <FrameLayout android:layout_width="@dimen/_42sdp" android:layout_height="@dimen/_42sdp">
+            <View android:layout_gravity="center" android:background="@drawable/atm_evidence_progress_glow" android:layout_width="@dimen/_42sdp" android:layout_height="@dimen/_42sdp"/>
+            <ImageView android:layout_gravity="center" android:id="@+id/progressIcon" android:layout_width="@dimen/_38sdp" android:layout_height="@dimen/_38sdp" android:src="@drawable/atm_evidence_progress_icon" android:adjustViewBounds="true"/>
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="@dimen/_82sdp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_5sdp">
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffffff" android:id="@+id/progressTitleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Распределено\10пробирок" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <TextView android:textSize="@dimen/_18sdp" android:textColor="#77ff30" android:id="@+id/progressText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0/50" android:fontFamily="@font/heading_now_66_bold"/>
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="top|center_horizontal" android:id="@+id/centerPanel" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_430sdp" android:layout_height="@dimen/_210sdp" android:layout_marginTop="@dimen/_24sdp">
+        <FrameLayout android:id="@+id/slot1Container" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_88sdp" android:layout_height="@dimen/_88sdp" android:layout_marginTop="@dimen/_22sdp" android:layout_marginStart="@dimen/_34sdp">
+            <include layout="@layout/item_atm_slot_evidence"/>
+        </FrameLayout>
+        <FrameLayout android:id="@+id/slot10Container" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_88sdp" android:layout_height="@dimen/_88sdp" android:layout_marginTop="@dimen/_88sdp" android:layout_marginStart="@dimen/_112sdp">
+            <include layout="@layout/item_atm_slot_evidence"/>
+        </FrameLayout>
+        <FrameLayout android:id="@+id/slot50Container" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_88sdp" android:layout_height="@dimen/_88sdp" android:layout_marginTop="@dimen/_22sdp" android:layout_marginStart="@dimen/_184sdp">
+            <include layout="@layout/item_atm_slot_evidence"/>
+        </FrameLayout>
+        <FrameLayout android:id="@+id/slot100Container" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_88sdp" android:layout_height="@dimen/_88sdp" android:layout_marginTop="@dimen/_90sdp" android:layout_marginStart="@dimen/_254sdp">
+            <include layout="@layout/item_atm_slot_evidence"/>
+        </FrameLayout>
+        <FrameLayout android:id="@+id/slotExtraContainer" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_88sdp" android:layout_height="@dimen/_88sdp" android:layout_marginTop="@dimen/_22sdp" android:layout_marginStart="@dimen/_324sdp">
+            <include layout="@layout/item_atm_slot_evidence"/>
+        </FrameLayout>
+    </FrameLayout>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:id="@+id/statusPanel" android:layout_width="@dimen/_230sdp" android:layout_height="@dimen/_52sdp">
+        <TextView android:textSize="@dimen/_16sdp" android:textStyle="bold" android:textColor="#a8ff57" android:layout_gravity="center" android:id="@+id/statusText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:textAllCaps="true"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <FrameLayout android:layout_gravity="bottom|center_horizontal" android:id="@+id/bottomArea" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_146sdp" android:layout_height="@dimen/_176sdp" android:translationY="@dimen/_64sdp">
+        <ImageView android:layout_gravity="center" android:id="@+id/bagImage" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/atm_evidence_biomaterial" android:scaleType="fitCenter" android:adjustViewBounds="true"/>
+        <View android:layout_gravity="center" android:id="@+id/bagTouchArea" android:background="@android:color/transparent" android:layout_width="@dimen/_66sdp" android:layout_height="@dimen/_132sdp"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/dragLayer" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <View android:layout_gravity="right" android:id="@+id/close" android:background="@drawable/atm_evidence_btn_close" android:layout_width="@dimen/_24sdp" android:layout_height="@dimen/_24sdp" android:layout_margin="@dimen/_16sdp"/>
+</FrameLayout>

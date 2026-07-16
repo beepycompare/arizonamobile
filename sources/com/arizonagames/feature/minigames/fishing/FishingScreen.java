@@ -32,15 +32,19 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: FishingScreen.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010#\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u000e\n\u0002\b\u0006\u0018\u0000 22\u00020\u0001:\u000223B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\b\u0010\u001a\u001a\u00020\u0005H\u0002J\b\u0010\u001b\u001a\u00020\u0005H\u0002J\b\u0010\u001c\u001a\u00020\u0005H\u0002J\b\u0010\u001d\u001a\u00020\u0005H\u0002J\b\u0010\u001e\u001a\u00020\u0005H\u0002J\b\u0010\u001f\u001a\u00020\u0005H\u0002J\b\u0010 \u001a\u00020\u0005H\u0002J\b\u0010!\u001a\u00020\u0005H\u0002J\b\u0010\"\u001a\u00020\u0005H\u0002J\b\u0010#\u001a\u00020\u0005H\u0002J\b\u0010$\u001a\u00020\u0005H\u0002J\b\u0010%\u001a\u00020\u0005H\u0002J\b\u0010&\u001a\u00020\u0005H\u0002J\b\u0010'\u001a\u00020\u0005H\u0002J\b\u0010(\u001a\u00020\u0005H\u0002J\b\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u0005H\u0002J\b\u0010+\u001a\u00020\u0005H\u0002J\u0018\u0010,\u001a\u00020\u00172\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0005H\u0016J\u0010\u00100\u001a\u00020\u00172\u0006\u00101\u001a\u00020\u0005H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00050\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0013*\u0004\u0018\u00010\u00120\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00064"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lcom/arizonagames/feature/minigames/fishing/databinding/FishingLayoutBinding;", "fishingAdapter", "Lcom/arizonagames/feature/minigames/fishing/FishingAdapter;", "totalFishCount", "successIds", "", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "correctSoundId", "wrongSoundId", "setItems", "", "info", "Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion$ScreenInfo;", "getRandomTrashImage", "getRandomFishImage", "getRandomFactoryTrashImage", "getRandomFactoryDetailsImage", "getRandomFarmHayImage", "getRandomFarmTrashImage", "getRandomSearchDocsImage", "getRandomSearchDocsTrashImage", "getRandomRoadRepairImage", "getRandomRoadRepairTrashImage", "getRandomRanchImage", "getRandomRanchTrashImage", "getRandomSpaceImage", "getRandomHalloweenImage", "getRandomHalloweenTrashIImage", "getRandomSpaceTrashImage", "getRandomNewYearItem", "getRandomNewYearTrash", "onBackendMessageHandled", "data", "", "subId", "playSound", "soundId", "Companion", "Spawner", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010#\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0015\n\u0002\u0010\u000e\n\u0002\b\u0006\u0018\u0000 82\u00020\u0001:\u000289B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u001d\u001a\u00020\u001eH\u0002J\b\u0010\u001f\u001a\u00020\u0005H\u0002J\b\u0010 \u001a\u00020\u0005H\u0002J\b\u0010!\u001a\u00020\u0005H\u0002J\b\u0010\"\u001a\u00020\u0005H\u0002J\b\u0010#\u001a\u00020\u0005H\u0002J\b\u0010$\u001a\u00020\u0005H\u0002J\b\u0010%\u001a\u00020\u0005H\u0002J\b\u0010&\u001a\u00020\u0005H\u0002J\b\u0010'\u001a\u00020\u0005H\u0002J\b\u0010(\u001a\u00020\u0005H\u0002J\b\u0010)\u001a\u00020\u0005H\u0002J\b\u0010*\u001a\u00020\u0005H\u0002J\b\u0010+\u001a\u00020\u0005H\u0002J\b\u0010,\u001a\u00020\u0005H\u0002J\b\u0010-\u001a\u00020\u0005H\u0002J\b\u0010.\u001a\u00020\u0005H\u0002J\b\u0010/\u001a\u00020\u0005H\u0002J\b\u00100\u001a\u00020\u0005H\u0002J\b\u00101\u001a\u00020\u0005H\u0002J\u0018\u00102\u001a\u00020\u00192\u0006\u00103\u001a\u0002042\u0006\u00105\u001a\u00020\u0005H\u0016J\u0010\u00106\u001a\u00020\u00192\u0006\u00107\u001a\u00020\u0005H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00050\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006:"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lcom/arizonagames/feature/minigames/fishing/databinding/FishingLayoutBinding;", "fishingAdapter", "Lcom/arizonagames/feature/minigames/fishing/FishingAdapter;", "defaultGridContainerLayoutParams", "Landroidx/constraintlayout/widget/ConstraintLayout$LayoutParams;", "totalFishCount", "successIds", "", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "correctSoundId", "wrongSoundId", "setItems", "", "info", "Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion$ScreenInfo;", "configureGrid", "isComputerFolderMode", "", "getRandomTrashImage", "getRandomFishImage", "getRandomFactoryTrashImage", "getRandomFactoryDetailsImage", "getRandomFarmHayImage", "getRandomFarmTrashImage", "getRandomSearchDocsImage", "getRandomSearchDocsTrashImage", "getRandomRoadRepairImage", "getRandomRoadRepairTrashImage", "getRandomRanchImage", "getRandomRanchTrashImage", "getRandomSpaceImage", "getRandomHalloweenImage", "getRandomHalloweenTrashIImage", "getRandomSpaceTrashImage", "getRandomNewYearItem", "getRandomNewYearTrash", "getComputerClosedFolderImage", "onBackendMessageHandled", "data", "", "subId", "playSound", "soundId", "Companion", "Spawner", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class FishingScreen extends SAMPUIElement {
+    private static final String COMPUTER_GRID_ASPECT_RATIO = "W,1615:1080";
+    private static final float COMPUTER_GRID_HEIGHT_PERCENT = 0.81f;
+    private static final float COMPUTER_GRID_VERTICAL_BIAS = 0.45f;
     public static final Companion Companion = new Companion(null);
     private static final String EMPTY_ELEMENT = "empty";
     private static final String RIGHT_ELEMENT = "fish";
     private static final String TRASH_ELEMENT = "trash";
     private final FishingLayoutBinding binding;
     private int correctSoundId;
+    private final ConstraintLayout.LayoutParams defaultGridContainerLayoutParams;
     private final FishingAdapter fishingAdapter;
     private final ConstraintLayout layout;
     private final SoundPool soundPool;
@@ -61,6 +65,9 @@ public final class FishingScreen extends SAMPUIElement {
         this.binding = bind;
         FishingAdapter fishingAdapter = new FishingAdapter();
         this.fishingAdapter = fishingAdapter;
+        ViewGroup.LayoutParams layoutParams = bind.rcContainer.getLayoutParams();
+        Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
+        this.defaultGridContainerLayoutParams = new ConstraintLayout.LayoutParams((ConstraintLayout.LayoutParams) layoutParams);
         this.successIds = new LinkedHashSet();
         SoundPool build = new SoundPool.Builder().setMaxStreams(1).setAudioAttributes(new AudioAttributes.Builder().setContentType(4).setUsage(14).build()).build();
         this.soundPool = build;
@@ -118,6 +125,9 @@ public final class FishingScreen extends SAMPUIElement {
     }
 
     private final void setItems(Companion.ScreenInfo screenInfo) {
+        boolean z = screenInfo.getType() == Companion.FishingId.COMPUTER.getId();
+        configureGrid(z);
+        this.fishingAdapter.setComputerFolderMode(z);
         int type = screenInfo.getType();
         if (type == Companion.FishingId.FISH.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_bg);
@@ -137,6 +147,8 @@ public final class FishingScreen extends SAMPUIElement {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_halloween_bg);
         } else if (type == Companion.FishingId.NEW_YEAR.getId()) {
             this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_new_year_bg);
+        } else if (type == Companion.FishingId.COMPUTER.getId()) {
+            this.binding.fishingLayout.setBackgroundResource(R.drawable.fishing_computer_bg);
         }
         this.binding.mainTitle.setText(screenInfo.getName());
         this.binding.description.setText(screenInfo.getDesc());
@@ -165,6 +177,8 @@ public final class FishingScreen extends SAMPUIElement {
                 arrayList.add(new Companion.FishInfo(i, RIGHT_ELEMENT, getRandomHalloweenImage(), false));
             } else if (type2 == Companion.FishingId.NEW_YEAR.getId()) {
                 arrayList.add(new Companion.FishInfo(i, RIGHT_ELEMENT, getRandomNewYearItem(), false));
+            } else if (type2 == Companion.FishingId.COMPUTER.getId()) {
+                arrayList.add(new Companion.FishInfo(i, RIGHT_ELEMENT, getComputerClosedFolderImage(), false));
             }
             i++;
         }
@@ -189,16 +203,38 @@ public final class FishingScreen extends SAMPUIElement {
                 arrayList.add(new Companion.FishInfo(i, TRASH_ELEMENT, getRandomHalloweenTrashIImage(), false));
             } else if (type3 == Companion.FishingId.NEW_YEAR.getId()) {
                 arrayList.add(new Companion.FishInfo(i, TRASH_ELEMENT, getRandomNewYearTrash(), false));
+            } else if (type3 == Companion.FishingId.COMPUTER.getId()) {
+                arrayList.add(new Companion.FishInfo(i, TRASH_ELEMENT, getComputerClosedFolderImage(), false));
             }
             i2++;
             i++;
         }
         while (arrayList.size() < 28) {
-            arrayList.add(new Companion.FishInfo(i, EMPTY_ELEMENT, 0, false));
+            if (z) {
+                arrayList.add(new Companion.FishInfo(i, TRASH_ELEMENT, getComputerClosedFolderImage(), false));
+            } else {
+                arrayList.add(new Companion.FishInfo(i, EMPTY_ELEMENT, 0, false));
+            }
             i++;
         }
         Collections.shuffle(arrayList);
         this.fishingAdapter.addItems(arrayList);
+    }
+
+    private final void configureGrid(boolean z) {
+        ConstraintLayout constraintLayout = this.binding.rcContainer;
+        ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(this.defaultGridContainerLayoutParams);
+        if (z) {
+            layoutParams.height = 0;
+            layoutParams.topToTop = 0;
+            layoutParams.matchConstraintDefaultHeight = 2;
+            layoutParams.matchConstraintPercentHeight = COMPUTER_GRID_HEIGHT_PERCENT;
+            layoutParams.matchConstraintDefaultWidth = 0;
+            layoutParams.matchConstraintPercentWidth = 1.0f;
+            layoutParams.dimensionRatio = COMPUTER_GRID_ASPECT_RATIO;
+            layoutParams.verticalBias = COMPUTER_GRID_VERTICAL_BIAS;
+        }
+        constraintLayout.setLayoutParams(layoutParams);
     }
 
     private final int getRandomTrashImage() {
@@ -291,6 +327,10 @@ public final class FishingScreen extends SAMPUIElement {
         return numArr[RangesKt.random(ArraysKt.getIndices(numArr), Random.Default)].intValue();
     }
 
+    private final int getComputerClosedFolderImage() {
+        return R.drawable.fishing_computer_element_two;
+    }
+
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessageHandled(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
@@ -305,7 +345,7 @@ public final class FishingScreen extends SAMPUIElement {
     }
 
     /* compiled from: FishingScreen.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\b\t\nB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion;", "", "<init>", "()V", "RIGHT_ELEMENT", "", "TRASH_ELEMENT", "EMPTY_ELEMENT", "FishingId", "FishInfo", "ScreenInfo", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\f\r\u000eB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion;", "", "<init>", "()V", "RIGHT_ELEMENT", "", "TRASH_ELEMENT", "EMPTY_ELEMENT", "COMPUTER_GRID_HEIGHT_PERCENT", "", "COMPUTER_GRID_ASPECT_RATIO", "COMPUTER_GRID_VERTICAL_BIAS", "FishingId", "FishInfo", "ScreenInfo", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -319,7 +359,7 @@ public final class FishingScreen extends SAMPUIElement {
         /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
         /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
         /* compiled from: FishingScreen.kt */
-        @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000e\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010¨\u0006\u0011"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion$FishingId;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "FISH", "FACTORY", "FARM", "SEARCH_DOCS", "ROAD_REPAIR", "RANCH", "SPACE", "HALLOWEEN", "NEW_YEAR", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000f\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011¨\u0006\u0012"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion$FishingId;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "FISH", "FACTORY", "FARM", "SEARCH_DOCS", "ROAD_REPAIR", "RANCH", "SPACE", "HALLOWEEN", "NEW_YEAR", "COMPUTER", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
         /* loaded from: classes3.dex */
         public static final class FishingId {
             private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -334,9 +374,10 @@ public final class FishingScreen extends SAMPUIElement {
             public static final FishingId SPACE = new FishingId("SPACE", 6, 6);
             public static final FishingId HALLOWEEN = new FishingId("HALLOWEEN", 7, 7);
             public static final FishingId NEW_YEAR = new FishingId("NEW_YEAR", 8, 8);
+            public static final FishingId COMPUTER = new FishingId("COMPUTER", 9, 9);
 
             private static final /* synthetic */ FishingId[] $values() {
-                return new FishingId[]{FISH, FACTORY, FARM, SEARCH_DOCS, ROAD_REPAIR, RANCH, SPACE, HALLOWEEN, NEW_YEAR};
+                return new FishingId[]{FISH, FACTORY, FARM, SEARCH_DOCS, ROAD_REPAIR, RANCH, SPACE, HALLOWEEN, NEW_YEAR, COMPUTER};
             }
 
             public static EnumEntries<FishingId> getEntries() {

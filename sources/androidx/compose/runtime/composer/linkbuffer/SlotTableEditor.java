@@ -155,7 +155,7 @@ public final class SlotTableEditor {
     }
 
     public final long handle() {
-        return (this.previousSibling << 32) | (UInt.m9997constructorimpl(this.current) & 4294967295L);
+        return (this.previousSibling << 32) | (UInt.m9999constructorimpl(this.current) & 4294967295L);
     }
 
     public final int parentGroup(int i) {
@@ -358,14 +358,14 @@ public final class SlotTableEditor {
         insertGroup(group);
         this.previousSibling = i;
         this.current = group;
-        long m9997constructorimpl = (i << 32) | (UInt.m9997constructorimpl(group) & 4294967295L);
+        long m9999constructorimpl = (i << 32) | (UInt.m9999constructorimpl(group) & 4294967295L);
         if (j3 != -1) {
             seek(j3);
         }
         if (this.table.getRecordSourceInformation()) {
             this.addressSpace.recordMovedSourceInformation(group, i);
         }
-        return m9997constructorimpl;
+        return m9999constructorimpl;
     }
 
     public final int skipGroup() {
@@ -397,7 +397,7 @@ public final class SlotTableEditor {
     }
 
     public final void seek(LinkAnchor linkAnchor) {
-        seek(UInt.m9997constructorimpl(linkAnchor.getAddress()) & 4294967295L);
+        seek(UInt.m9999constructorimpl(linkAnchor.getAddress()) & 4294967295L);
     }
 
     public final void seek(long j) {

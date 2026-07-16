@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public abstract /* synthetic */ class AbstractC0698wm {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1271a;
+    public static final /* synthetic */ int[] f1273a;
 
     static {
         int[] iArr = new int[IdentifierStatus.values().length];
@@ -30,6 +30,6 @@ public abstract /* synthetic */ class AbstractC0698wm {
             iArr[IdentifierStatus.FORBIDDEN_BY_CLIENT_CONFIG.ordinal()] = 5;
         } catch (NoSuchFieldError unused5) {
         }
-        f1271a = iArr;
+        f1273a = iArr;
     }
 }

@@ -4,5 +4,5 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0544qn {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0569rn f1171a = new C0569rn();
+    public static final C0569rn f1173a = new C0569rn();
 }

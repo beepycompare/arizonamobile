@@ -10,7 +10,7 @@ import java.util.Map;
 public final class V7 implements InterfaceC0327id {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f805a;
+    public Location f807a;
     public Boolean b;
     public Boolean c;
     public Boolean e;
@@ -28,7 +28,7 @@ public final class V7 implements InterfaceC0327id {
         if (appMetricaConfig.locationTracking == null && Oo.a(bool)) {
             builder.withLocationTracking(bool.booleanValue());
         }
-        Location location = this.f805a;
+        Location location = this.f807a;
         if (appMetricaConfig.location == null && Oo.a(location)) {
             builder.withLocation(location);
         }
@@ -64,7 +64,7 @@ public final class V7 implements InterfaceC0327id {
         AppMetricaConfig.Builder a2 = a(appMetricaConfig);
         a(a2, appMetricaConfig);
         this.k = true;
-        this.f805a = null;
+        this.f807a = null;
         this.b = null;
         this.c = null;
         this.d = Boolean.FALSE;
@@ -81,7 +81,7 @@ public final class V7 implements InterfaceC0327id {
     }
 
     public final Location k() {
-        return this.f805a;
+        return this.f807a;
     }
 
     public final Boolean l() {
@@ -147,7 +147,7 @@ public final class V7 implements InterfaceC0327id {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0327id
     public final void a(Location location) {
-        this.f805a = location;
+        this.f807a = location;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0327id

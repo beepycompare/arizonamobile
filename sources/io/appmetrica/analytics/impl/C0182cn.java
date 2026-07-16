@@ -21,16 +21,16 @@ import kotlin.text.StringsKt;
 public final class C0182cn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0208dn f933a;
+    public final C0208dn f935a;
     public final Object b = new Object();
     public volatile NetworkTask c;
 
     public C0182cn(C0208dn c0208dn) {
-        this.f933a = c0208dn;
+        this.f935a = c0208dn;
     }
 
     public final Context b() {
-        return this.f933a.f950a;
+        return this.f935a.f952a;
     }
 
     public final NetworkTask c() {
@@ -50,42 +50,42 @@ public final class C0182cn {
     }
 
     public final Dm d() {
-        return (Dm) this.f933a.l.a();
+        return (Dm) this.f935a.l.a();
     }
 
     public final Hm e() {
         Hm hm;
-        C0387km c0387km = this.f933a.l;
+        C0387km c0387km = this.f935a.l;
         synchronized (c0387km) {
-            hm = c0387km.c.f902a;
+            hm = c0387km.c.f904a;
         }
         return hm;
     }
 
     public final void f() {
         Hm hm;
-        C0387km c0387km = this.f933a.l;
+        C0387km c0387km = this.f935a.l;
         synchronized (c0387km) {
-            hm = c0387km.c.f902a;
+            hm = c0387km.c.f904a;
         }
         Lm lm = hm.c;
         Km a2 = lm.a(lm.m);
-        String str = hm.f582a;
+        String str = hm.f584a;
         String str2 = hm.b;
-        String str3 = this.f933a.m.a().id;
+        String str3 = this.f935a.m.a().id;
         if (str3 == null || (StringUtils.isNotNullOrEmpty(hm.d) && !Intrinsics.areEqual(str3, hm.d))) {
-            Oj.f706a.reportError((str3 == null ? "null_uuid" : "wrong_uuid").concat("_on_service"), "The only true uuid: " + str3 + "; backup uuid: " + hm.d);
+            Oj.f708a.reportError((str3 == null ? "null_uuid" : "wrong_uuid").concat("_on_service"), "The only true uuid: " + str3 + "; backup uuid: " + hm.d);
         }
         if (str3 == null) {
             str3 = hm.d;
         }
-        a2.f633a = str3;
-        String str4 = hm.f582a;
+        a2.f635a = str3;
+        String str4 = hm.f584a;
         if (str4 == null || str4.length() == 0) {
-            str = this.f933a.h.a();
+            str = this.f935a.h.a();
             str2 = "";
         }
-        List<String> list = this.f933a.c.e;
+        List<String> list = this.f935a.c.e;
         a2.g = (list == null || list.isEmpty()) ? null : null;
         Hm hm2 = new Hm(str, str2, new Lm(a2));
         b(hm2);
@@ -103,18 +103,18 @@ public final class C0182cn {
             return false;
         }
         Hm e = e();
-        Set set = Em.f532a;
+        Set set = Em.f534a;
         if (!e.w) {
-            if (Em.b.currentTimeSeconds() <= e.o + e.z.f969a) {
+            if (Em.b.currentTimeSeconds() <= e.o + e.z.f971a) {
                 z = false;
                 if (!z) {
-                    if (Em.a(e.d) && Em.a(e.f582a) && Em.a(e.b)) {
+                    if (Em.a(e.d) && Em.a(e.f584a) && Em.a(e.b)) {
                         z2 = true;
                     }
                     z = !z2;
-                    T3 t3 = this.f933a.k;
+                    T3 t3 = this.f935a.k;
                     Map map = d().h;
-                    Q3 q3 = this.f933a.j;
+                    Q3 q3 = this.f935a.j;
                     t3.getClass();
                     boolean a2 = T3.a(map, e, q3);
                     if (z2 && !a2) {
@@ -131,19 +131,19 @@ public final class C0182cn {
     }
 
     public final C0267g5 a() {
-        return this.f933a.f;
+        return this.f935a.f;
     }
 
     public final void b(Hm hm) {
-        this.f933a.l.a(hm);
-        Gm gm = this.f933a.g;
-        gm.b.a(hm.f582a);
+        this.f935a.l.a(hm);
+        Gm gm = this.f935a.g;
+        gm.b.a(hm.f584a);
         gm.b.b(hm.b);
-        bp bpVar = gm.b.f876a;
-        bp.a(bpVar.f914a);
+        bp bpVar = gm.b.f878a;
+        bp.a(bpVar.f916a);
         bp.a(bpVar.b);
-        gm.f566a.save(hm.c);
-        this.f933a.e.a(hm);
+        gm.f568a.save(hm.c);
+        this.f935a.e.a(hm);
     }
 
     public final boolean a(List<String> list, Map<String, String> map) {
@@ -160,21 +160,21 @@ public final class C0182cn {
         String str;
         boolean equals;
         String a2 = AbstractC0311hn.a(dm.h);
-        Map map = dm.i.f587a;
+        Map map = dm.i.f589a;
         String str2 = fm.j;
         String str3 = e().k;
         if (!AbstractC0311hn.a(AbstractC0311hn.a(str2))) {
             str2 = AbstractC0311hn.a(AbstractC0311hn.a(str3)) ? str3 : null;
         }
-        String str4 = e().f582a;
+        String str4 = e().f584a;
         if (str4 != null) {
             str = StringsKt.isBlank(str4) ? null : str4;
         }
         str = fm.h;
         Km km = new Km(fm.b);
         String str5 = fm.i;
-        km.o = this.f933a.i.currentTimeSeconds();
-        km.f633a = e().d;
+        km.o = this.f935a.i.currentTimeSeconds();
+        km.f635a = e().d;
         km.c = fm.d;
         km.f = fm.c;
         km.g = dm.e;
@@ -185,7 +185,7 @@ public final class C0182cn {
         km.i = fm.o;
         km.j = str2;
         km.k = a2;
-        this.f933a.k.getClass();
+        this.f935a.k.getClass();
         HashMap a3 = AbstractC0311hn.a(str2);
         if (Oo.a(map)) {
             equals = Oo.a((Map) a3);
@@ -216,13 +216,13 @@ public final class C0182cn {
 
     public final void a(Hm hm) {
         ArrayList arrayList;
-        C0208dn c0208dn = this.f933a;
+        C0208dn c0208dn = this.f935a;
         C0310hm c0310hm = c0208dn.d;
         String str = c0208dn.b;
-        synchronized (c0310hm.f1022a.b) {
-            C0361jm c0361jm = c0310hm.f1022a;
+        synchronized (c0310hm.f1024a.b) {
+            C0361jm c0361jm = c0310hm.f1024a;
             c0361jm.c = hm;
-            Collection collection = (Collection) c0361jm.f1055a.f763a.get(str);
+            Collection collection = (Collection) c0361jm.f1057a.f765a.get(str);
             if (collection == null) {
                 arrayList = new ArrayList();
             } else {
@@ -238,12 +238,12 @@ public final class C0182cn {
     public final void a(EnumC0413lm enumC0413lm) {
         ArrayList arrayList;
         this.c = null;
-        C0208dn c0208dn = this.f933a;
+        C0208dn c0208dn = this.f935a;
         C0310hm c0310hm = c0208dn.d;
-        String str = c0208dn.f.f993a;
+        String str = c0208dn.f.f995a;
         Hm e = e();
-        synchronized (c0310hm.f1022a.b) {
-            Collection collection = (Collection) c0310hm.f1022a.f1055a.f763a.get(str);
+        synchronized (c0310hm.f1024a.b) {
+            Collection collection = (Collection) c0310hm.f1024a.f1057a.f765a.get(str);
             if (collection == null) {
                 arrayList = new ArrayList();
             } else {
@@ -257,7 +257,7 @@ public final class C0182cn {
     }
 
     public final void a(Bm bm) {
-        this.f933a.l.a(bm);
+        this.f935a.l.a(bm);
         Dm d = d();
         if (d.k) {
             List list = d.j;
@@ -268,7 +268,7 @@ public final class C0182cn {
                 Hm e = e();
                 Lm lm = e.c;
                 Km a2 = lm.a(lm.m);
-                String str = e.f582a;
+                String str = e.f584a;
                 String str2 = e.b;
                 a2.g = list;
                 Hm hm = new Hm(str, str2, new Lm(a2));
@@ -283,7 +283,7 @@ public final class C0182cn {
             Hm e2 = e();
             Lm lm2 = e2.c;
             Km a3 = lm2.a(lm2.m);
-            String str3 = e2.f582a;
+            String str3 = e2.f584a;
             String str4 = e2.b;
             a3.g = null;
             Hm hm2 = new Hm(str3, str4, new Lm(a3));
@@ -307,7 +307,7 @@ public final class C0182cn {
                 } catch (Throwable unused) {
                 }
                 long longValue = l == null ? l.longValue() : 0L;
-                AbstractC0748yk.f1299a.a(longValue, fm.l);
+                AbstractC0748yk.f1301a.a(longValue, fm.l);
                 Hm a2 = a(fm, dm, longValue);
                 this.c = null;
                 b(a2);
@@ -317,7 +317,7 @@ public final class C0182cn {
         l = null;
         if (l == null) {
         }
-        AbstractC0748yk.f1299a.a(longValue, fm.l);
+        AbstractC0748yk.f1301a.a(longValue, fm.l);
         Hm a22 = a(fm, dm, longValue);
         this.c = null;
         b(a22);

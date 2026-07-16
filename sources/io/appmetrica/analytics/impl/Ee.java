@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class Ee implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f529a;
+    public final String f531a;
     public final String b;
 
     public Ee(String str) {
-        this.f529a = str;
+        this.f531a = str;
         this.b = str == null ? "<unknown-package-installer>" : str;
     }
 
@@ -18,6 +18,6 @@ public final class Ee implements Hg {
 
     @Override // io.appmetrica.analytics.impl.Hg
     public final void a(Dg dg) {
-        dg.a(new Jg("Package installer " + this.f529a + " is not supported", null, 2, null));
+        dg.a(new Jg("Package installer " + this.f531a + " is not supported", null, 2, null));
     }
 }

@@ -157,7 +157,7 @@ public final class PlayContentKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1066622857, "C64@2561L27,65@2649L339,65@2601L387:PlayContent.kt#dswm0d");
-            AnimatedLoadingKt.m9772AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
+            AnimatedLoadingKt.m9773AnimatedLoadinguFdPcIQ(isCheckingFiles, 0.0f, null, startRestartGroup, 0, 6);
             ScalingButtonKt.ScalingButtonLong(onClickGame, onLongClickGame, null, ComposableLambdaKt.rememberComposableLambda(775434495, true, new Function3() { // from class: com.miami.game.feature.home.ui.compose.PlayContentKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
@@ -175,7 +175,7 @@ public final class PlayContentKt {
             if (isCheckingFiles) {
                 startRestartGroup.startReplaceGroup(-676623729);
                 ComposerKt.sourceInformation(startRestartGroup, "80@3106L10,81@3159L13,82@3203L13,79@3037L392");
-                TextKt.m3157TextNvy7gAk((String) mutableState.getValue(), SizeKt.m1103height3ABfNKs(OffsetKt.m1010offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m8160constructorimpl(62.0f), 0.0f, 2, null), Dp.m8160constructorimpl(24.0f)), ColorKt.Color(4294046193L), null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9845dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
+                TextKt.m3157TextNvy7gAk((String) mutableState.getValue(), SizeKt.m1103height3ABfNKs(OffsetKt.m1010offsetVpY3zN4$default(columnScopeInstance.align(Modifier.Companion, Alignment.Companion.getStart()), Dp.m8160constructorimpl(62.0f), 0.0f, 2, null), Dp.m8160constructorimpl(24.0f)), ColorKt.Color(4294046193L), null, TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(13.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getHeadlineSmall(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129000);
                 startRestartGroup = startRestartGroup;
                 startRestartGroup.endReplaceGroup();
             } else {

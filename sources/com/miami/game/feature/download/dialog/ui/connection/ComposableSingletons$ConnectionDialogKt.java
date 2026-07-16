@@ -33,12 +33,12 @@ public final class ComposableSingletons$ConnectionDialogKt {
     });
 
     /* renamed from: getLambda$-1711092251$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9780getLambda$1711092251$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9781getLambda$1711092251$dialogs() {
         return f51lambda$1711092251;
     }
 
     /* renamed from: getLambda$-751471044$dialogs  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9781getLambda$751471044$dialogs() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9782getLambda$751471044$dialogs() {
         return f52lambda$751471044;
     }
 

@@ -12,7 +12,7 @@ public final class Lo extends MessageNano {
     public static volatile Lo[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public Io[] f653a;
+    public Io[] f655a;
 
     public Lo() {
         a();
@@ -30,7 +30,7 @@ public final class Lo extends MessageNano {
     }
 
     public final Lo a() {
-        this.f653a = Io.b();
+        this.f655a = Io.b();
         this.cachedSize = -1;
         return this;
     }
@@ -38,11 +38,11 @@ public final class Lo extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        Io[] ioArr = this.f653a;
+        Io[] ioArr = this.f655a;
         if (ioArr != null && ioArr.length > 0) {
             int i = 0;
             while (true) {
-                Io[] ioArr2 = this.f653a;
+                Io[] ioArr2 = this.f655a;
                 if (i >= ioArr2.length) {
                     break;
                 }
@@ -58,11 +58,11 @@ public final class Lo extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        Io[] ioArr = this.f653a;
+        Io[] ioArr = this.f655a;
         if (ioArr != null && ioArr.length > 0) {
             int i = 0;
             while (true) {
-                Io[] ioArr2 = this.f653a;
+                Io[] ioArr2 = this.f655a;
                 if (i >= ioArr2.length) {
                     break;
                 }
@@ -89,7 +89,7 @@ public final class Lo extends MessageNano {
                 }
             } else {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                Io[] ioArr = this.f653a;
+                Io[] ioArr = this.f655a;
                 int length = ioArr == null ? 0 : ioArr.length;
                 int i = repeatedFieldArrayLength + length;
                 Io[] ioArr2 = new Io[i];
@@ -106,7 +106,7 @@ public final class Lo extends MessageNano {
                 Io io3 = new Io();
                 ioArr2[length] = io3;
                 codedInputByteBufferNano.readMessage(io3);
-                this.f653a = ioArr2;
+                this.f655a = ioArr2;
             }
         }
         return this;

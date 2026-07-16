@@ -416,10 +416,10 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
 
     private final void createEmptyLists(int i, int i2) {
         for (int i3 = 0; i3 < 10; i3++) {
-            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, null, 33488894, null));
+            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, null, null, 67043326, null));
         }
         for (int i4 = 0; i4 < 10; i4++) {
-            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, null, null, null, null, 33488894, null));
+            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, null, null, null, null, null, 67043326, null));
         }
     }
 
@@ -448,7 +448,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             List<InventoryItem> items = inventoryResponse.getItems();
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
             for (InventoryItem inventoryItem : items) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, null, 33488895, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, null, null, 67043327, null));
             }
             InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList, 0, 4, null);
             int type2 = inventoryResponse2.getType();
@@ -501,7 +501,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                 ShowDialogInfo showDialogInfo = (ShowDialogInfo) MapperKt.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
                 InventoryItem inventoryItem4 = this.selectedInventoryItem;
                 if (inventoryItem4 != null) {
-                    new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33554175, null), 0);
+                    new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67108607, null), 0);
                     return;
                 }
                 return;
@@ -525,7 +525,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                             ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
                             for (InventoryItem inventoryItem6 : list) {
                                 if (inventoryItem6.getSlot() == inventoryItem5.getSlot()) {
-                                    inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33553919, null);
+                                    inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67108351, null);
                                 }
                                 arrayList2.add(inventoryItem6);
                             }
@@ -608,7 +608,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             int i = 1;
             while (true) {
                 InventoryItem inventoryItem = (InventoryItem) CollectionsKt.lastOrNull((List<? extends Object>) getInventoryList());
-                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, 32505854, null));
+                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, 66060286, null));
                 if (i == nextMultipleOfFive) {
                     break;
                 }
@@ -618,7 +618,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         List<InventoryItem> list = this.inventoryItemList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, 33551871, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67106303, null));
         }
         List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList);
         this.inventoryItemList = mutableList;

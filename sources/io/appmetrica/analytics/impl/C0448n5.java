@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt;
 public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1109a;
+    public final Context f1111a;
     public final C0267g5 b;
     public final C0691wf c;
     public final C0769zf d;
@@ -50,11 +50,11 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
     public final boolean B() {
         Hm hm;
         Tf tf = this.s;
-        tf.h.a(tf.f1009a);
+        tf.h.a(tf.f1011a);
         boolean z = ((Qf) tf.c()).d;
         C0279gh c0279gh = this.k;
         synchronized (c0279gh) {
-            hm = c0279gh.c.f902a;
+            hm = c0279gh.c.f904a;
         }
         return !(z && hm.q);
     }
@@ -71,15 +71,15 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
         synchronized (c0417m0) {
             if (a2.b > c0691wf.d().b) {
                 c0691wf.a(a2);
-                this.m.info("Save new app environment for %s. Value: %s", this.b, a2.f1059a);
+                this.m.info("Save new app environment for %s. Value: %s", this.b, a2.f1061a);
             }
         }
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0273gb
     public final void c() {
-        bp bpVar = this.t.f894a;
-        bp.a(bpVar.f914a);
+        bp bpVar = this.t.f896a;
+        bp.a(bpVar.f916a);
         bp.a(bpVar.b);
         this.e.j.b.flushAsync();
     }
@@ -87,7 +87,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
     public final void d() {
         C0391l0 c0391l0 = this.h;
         synchronized (c0391l0) {
-            c0391l0.f1072a = new C0275gd();
+            c0391l0.f1074a = new C0275gd();
         }
         this.i.a(this.h.a(), this.c);
     }
@@ -106,7 +106,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0273gb
     public final Context getContext() {
-        return this.f1109a;
+        return this.f1111a;
     }
 
     public final C0691wf h() {
@@ -161,7 +161,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
         Hm hm;
         C0279gh c0279gh = this.k;
         synchronized (c0279gh) {
-            hm = c0279gh.c.f902a;
+            hm = c0279gh.c.f904a;
         }
         return hm;
     }
@@ -174,7 +174,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
         E9 e9 = this.n;
         int i = e9.j;
         e9.l = i;
-        e9.f525a.a(i);
+        e9.f527a.a(i);
     }
 
     public final void w() {
@@ -182,7 +182,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
         int libraryApiLevel = AppMetrica.getLibraryApiLevel();
         ap apVar = this.t;
         synchronized (apVar) {
-            optInt = apVar.f894a.a().optInt("last_migration_api_level", 0);
+            optInt = apVar.f896a.a().optInt("last_migration_api_level", 0);
         }
         Integer valueOf = Integer.valueOf(optInt);
         if (valueOf.intValue() < libraryApiLevel) {
@@ -209,7 +209,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
     public final void z() {
         C0279gh c0279gh = this.k;
         synchronized (c0279gh) {
-            c0279gh.f521a = null;
+            c0279gh.f523a = null;
         }
     }
 
@@ -261,7 +261,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
         }
         if (z) {
             c2.a(c2.e);
-            c2.f485a.a(c2.e);
+            c2.f487a.a(c2.e);
         }
         if (z2) {
             this.k.e();
@@ -269,7 +269,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
     }
 
     public C0448n5(Context context, C0267g5 c0267g5, C0417m0 c0417m0, TimePassedChecker timePassedChecker, C0577s5 c0577s5, F4 f4) {
-        this.f1109a = context.getApplicationContext();
+        this.f1111a = context.getApplicationContext();
         this.b = c0267g5;
         this.i = c0417m0;
         this.r = timePassedChecker;
@@ -294,7 +294,7 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
         w();
         C0671vl a6 = C0577s5.a(this, f, new C0422m5(this));
         this.j = a6;
-        a4.info("Read app environment for component %s. Value: %s", c0267g5.toString(), a5.a().f1059a);
+        a4.info("Read app environment for component %s. Value: %s", c0267g5.toString(), a5.a().f1061a);
         C0438ml c = c0577s5.c();
         this.u = c;
         this.n = c0577s5.a(a2, f, a6, b, a5, c, d);
@@ -317,6 +317,6 @@ public class C0448n5 implements InterfaceC0454nb, InterfaceC0273gb, Dh {
     }
 
     public final void a(String str) {
-        this.c.j(str).f1279a.flushAsync();
+        this.c.j(str).f1281a.flushAsync();
     }
 }

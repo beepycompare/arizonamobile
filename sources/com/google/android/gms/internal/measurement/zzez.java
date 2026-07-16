@@ -15,6 +15,7 @@ import com.google.android.gms.common.util.DefaultClock;
 import com.google.android.gms.dynamite.DynamiteModule;
 import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import com.miami.game.core.settings.game_test.GameTestScriptModelKt;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -169,13 +170,13 @@ public final class zzez {
     public final String zzG() {
         zzcm zzcmVar = new zzcm();
         zzM(new zzee(this, zzcmVar));
-        return zzcmVar.zzc(120000L);
+        return zzcmVar.zzc(GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS);
     }
 
     public final Long zzH() {
         zzcm zzcmVar = new zzcm();
         zzM(new zzef(this, zzcmVar));
-        return zzcmVar.zzd(120000L);
+        return zzcmVar.zzd(GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS);
     }
 
     public final String zzI() {

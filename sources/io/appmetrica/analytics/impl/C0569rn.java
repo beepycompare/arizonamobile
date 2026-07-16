@@ -6,11 +6,11 @@ import java.util.HashMap;
 public final class C0569rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1186a;
+    public final HashMap f1188a;
 
     public C0569rn() {
         HashMap hashMap = new HashMap();
-        this.f1186a = hashMap;
+        this.f1188a = hashMap;
         C0414ln c0414ln = new C0414ln();
         C0440mn c0440mn = new C0440mn();
         C0466nn c0466nn = new C0466nn();
@@ -22,6 +22,6 @@ public final class C0569rn {
     }
 
     public static InterfaceC0595sn a(Class cls) {
-        return (InterfaceC0595sn) AbstractC0544qn.f1171a.f1186a.get(cls);
+        return (InterfaceC0595sn) AbstractC0544qn.f1173a.f1188a.get(cls);
     }
 }

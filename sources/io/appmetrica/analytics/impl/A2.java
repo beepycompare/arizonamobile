@@ -10,11 +10,11 @@ public final class A2 implements ProtobufConverter {
     public final Pm fromModel(C0756z2 c0756z2) {
         Nm nm;
         Pm pm = new Pm();
-        pm.f721a = new Om[c0756z2.f1305a.size()];
-        for (int i = 0; i < c0756z2.f1305a.size(); i++) {
+        pm.f723a = new Om[c0756z2.f1307a.size()];
+        for (int i = 0; i < c0756z2.f1307a.size(); i++) {
             Om om = new Om();
-            Pair pair = (Pair) c0756z2.f1305a.get(i);
-            om.f708a = (String) pair.first;
+            Pair pair = (Pair) c0756z2.f1307a.get(i);
+            om.f710a = (String) pair.first;
             if (pair.second != null) {
                 om.b = new Nm();
                 C0730y2 c0730y2 = (C0730y2) pair.second;
@@ -22,12 +22,12 @@ public final class A2 implements ProtobufConverter {
                     nm = null;
                 } else {
                     Nm nm2 = new Nm();
-                    nm2.f690a = c0730y2.f1285a;
+                    nm2.f692a = c0730y2.f1287a;
                     nm = nm2;
                 }
                 om.b = nm;
             }
-            pm.f721a[i] = om;
+            pm.f723a[i] = om;
         }
         return pm;
     }
@@ -37,10 +37,10 @@ public final class A2 implements ProtobufConverter {
     public final C0756z2 toModel(Pm pm) {
         Om[] omArr;
         ArrayList arrayList = new ArrayList();
-        for (Om om : pm.f721a) {
-            String str = om.f708a;
+        for (Om om : pm.f723a) {
+            String str = om.f710a;
             Nm nm = om.b;
-            arrayList.add(new Pair(str, nm == null ? null : new C0730y2(nm.f690a)));
+            arrayList.add(new Pair(str, nm == null ? null : new C0730y2(nm.f692a)));
         }
         return new C0756z2(arrayList);
     }

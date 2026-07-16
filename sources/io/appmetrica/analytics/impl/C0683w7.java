@@ -9,7 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class C0683w7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0605t7 f1260a;
+    public final C0605t7 f1262a;
 
     public C0683w7() {
         this(null, 1, null);
@@ -19,13 +19,13 @@ public final class C0683w7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(C0657v7 c0657v7) {
         ContentValues contentValues = new ContentValues();
-        Long l = c0657v7.f1244a;
+        Long l = c0657v7.f1246a;
         if (l != null) {
             contentValues.put("session_id", Long.valueOf(l.longValue()));
         }
         Al al = c0657v7.b;
         if (al != null) {
-            contentValues.put("session_type", Integer.valueOf(al.f463a));
+            contentValues.put("session_type", Integer.valueOf(al.f465a));
         }
         Long l2 = c0657v7.c;
         if (l2 != null) {
@@ -33,7 +33,7 @@ public final class C0683w7 implements Converter {
         }
         Db db = c0657v7.d;
         if (db != null) {
-            contentValues.put("type", Integer.valueOf(db.f511a));
+            contentValues.put("type", Integer.valueOf(db.f513a));
         }
         Long l3 = c0657v7.e;
         if (l3 != null) {
@@ -43,13 +43,13 @@ public final class C0683w7 implements Converter {
         if (l4 != null) {
             contentValues.put("time", Long.valueOf(l4.longValue()));
         }
-        C0605t7 c0605t7 = this.f1260a;
-        contentValues.put("event_description", MessageNano.toByteArray(c0605t7.f1211a.fromModel(c0657v7.g)));
+        C0605t7 c0605t7 = this.f1262a;
+        contentValues.put("event_description", MessageNano.toByteArray(c0605t7.f1213a.fromModel(c0657v7.g)));
         return contentValues;
     }
 
     public C0683w7(C0605t7 c0605t7) {
-        this.f1260a = c0605t7;
+        this.f1262a = c0605t7;
     }
 
     public /* synthetic */ C0683w7(C0605t7 c0605t7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -74,6 +74,6 @@ public final class C0683w7 implements Converter {
         }
         Long asLong2 = contentValues.getAsLong("number_in_session");
         Integer asInteger2 = contentValues.getAsInteger("type");
-        return new C0657v7(asLong, al, asLong2, asInteger2 != null ? Db.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f1260a.toModel(contentValues.getAsByteArray("event_description")));
+        return new C0657v7(asLong, al, asLong2, asInteger2 != null ? Db.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f1262a.toModel(contentValues.getAsByteArray("event_description")));
     }
 }

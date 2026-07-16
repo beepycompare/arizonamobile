@@ -1487,7 +1487,7 @@ public abstract class Operation {
             try {
                 openEditor.startGroup();
                 openEditor.startGroup();
-                long moveFrom = slotTableEditor.moveFrom(openEditor, openEditor.handle(), (slotTableEditor.firstChildOf(slotTableEditor.getCurrentGroup()) << 32) | (UInt.m9997constructorimpl(-1) & 4294967295L));
+                long moveFrom = slotTableEditor.moveFrom(openEditor, openEditor.handle(), (slotTableEditor.firstChildOf(slotTableEditor.getCurrentGroup()) << 32) | (UInt.m9999constructorimpl(-1) & 4294967295L));
                 openEditor.close();
                 SlotTable table = slotTableEditor.getTable();
                 int group = GroupHandleKt.getGroup(moveFrom);

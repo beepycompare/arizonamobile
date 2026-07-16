@@ -6,7 +6,7 @@ import com.facebook.internal.NativeProtocol;
 /* loaded from: classes5.dex */
 public final class CharCodeJVMKt {
     /* renamed from: Char-xj2QHRw  reason: not valid java name */
-    private static final char m9890Charxj2QHRw(short s) {
+    private static final char m9892Charxj2QHRw(short s) {
         return (char) (s & UShort.MAX_VALUE);
     }
 }

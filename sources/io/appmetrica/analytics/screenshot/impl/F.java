@@ -6,7 +6,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class F implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0784f f1433a;
+    public final C0784f f1435a;
     public final I b;
     public final C0793o c;
 
@@ -18,10 +18,10 @@ public final class F implements Converter {
     /* renamed from: a */
     public final A fromModel(P p) {
         A a2 = new A();
-        a2.f1430a = p.f1441a;
+        a2.f1432a = p.f1443a;
         z zVar = new z();
         N n = p.b;
-        zVar.f1464a = n != null ? this.f1433a.fromModel(n) : null;
+        zVar.f1466a = n != null ? this.f1435a.fromModel(n) : null;
         U u = p.c;
         zVar.b = u != null ? this.b.fromModel(u) : null;
         O o = p.d;
@@ -31,7 +31,7 @@ public final class F implements Converter {
     }
 
     public F(C0784f c0784f, I i, C0793o c0793o) {
-        this.f1433a = c0784f;
+        this.f1435a = c0784f;
         this.b = i;
         this.c = c0793o;
     }
@@ -48,21 +48,21 @@ public final class F implements Converter {
         x xVar;
         y yVar;
         w wVar;
-        boolean z = a2.f1430a;
+        boolean z = a2.f1432a;
         z zVar = a2.b;
         O o = null;
-        if (zVar == null || (wVar = zVar.f1464a) == null) {
+        if (zVar == null || (wVar = zVar.f1466a) == null) {
             n = null;
         } else {
-            this.f1433a.getClass();
-            n = new N(wVar.f1461a);
+            this.f1435a.getClass();
+            n = new N(wVar.f1463a);
         }
         z zVar2 = a2.b;
         if (zVar2 == null || (yVar = zVar2.b) == null) {
             u = null;
         } else {
             this.b.getClass();
-            u = new U(yVar.f1463a, yVar.b);
+            u = new U(yVar.f1465a, yVar.b);
         }
         z zVar3 = a2.b;
         if (zVar3 != null && (xVar = zVar3.c) != null) {

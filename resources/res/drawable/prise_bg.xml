@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="1dp" android:width="1dp" android:viewportWidth="156" android:viewportHeight="62">
     <path android:fillColor="#0d1011" android:pathData="M4.79,0.3L150.23,0.3A4.49,4.49 0,0 1,154.71 4.79L154.71,56.26A4.49,4.49 0,0 1,150.23 60.75L4.79,60.75A4.49,4.49 0,0 1,0.3 56.26L0.3,4.79A4.49,4.49 0,0 1,4.79 0.3z"/>
-    <path android:fillColor="@drawable/res_0x7f0802ab_prise_bg__0" android:pathData="M4.79,0.3L150.23,0.3A4.49,4.49 0,0 1,154.71 4.79L154.71,56.26A4.49,4.49 0,0 1,150.23 60.75L4.79,60.75A4.49,4.49 0,0 1,0.3 56.26L0.3,4.79A4.49,4.49 0,0 1,4.79 0.3z"/>
+    <path android:fillColor="@drawable/res_0x7f080296_prise_bg__0" android:pathData="M4.79,0.3L150.23,0.3A4.49,4.49 0,0 1,154.71 4.79L154.71,56.26A4.49,4.49 0,0 1,150.23 60.75L4.79,60.75A4.49,4.49 0,0 1,0.3 56.26L0.3,4.79A4.49,4.49 0,0 1,4.79 0.3z"/>
     <path android:fillColor="#00000000" android:pathData="M4.79,0.3L150.23,0.3A4.49,4.49 0,0 1,154.71 4.79L154.71,56.26A4.49,4.49 0,0 1,150.23 60.75L4.79,60.75A4.49,4.49 0,0 1,0.3 56.26L0.3,4.79A4.49,4.49 0,0 1,4.79 0.3z" android:strokeColor="#3e3e3e" android:strokeWidth="0.5985"/>
 </vector>

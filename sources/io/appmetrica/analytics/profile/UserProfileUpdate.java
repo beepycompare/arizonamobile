@@ -5,14 +5,14 @@ import io.appmetrica.analytics.impl.Ho;
 public class UserProfileUpdate<T extends Ho> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Ho f1421a;
+    private final Ho f1423a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public UserProfileUpdate(Ho ho) {
-        this.f1421a = ho;
+        this.f1423a = ho;
     }
 
     public T getUserProfileUpdatePatcher() {
-        return (T) this.f1421a;
+        return (T) this.f1423a;
     }
 }

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Uh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0312ho f795a = new C0312ho(new Ae("Event name"));
+    public final C0312ho f797a = new C0312ho(new Ae("Event name"));
     public final C0312ho b = new C0312ho(new Ae("Error message"));
     public final C0312ho c = new C0312ho(new Ae("Error identifier"));
     public final C0312ho d = new C0312ho(new Ce("Unhandled exception"));

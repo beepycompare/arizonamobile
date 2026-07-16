@@ -18,6 +18,6 @@ public class C0253fh extends Rh {
     @Override // io.appmetrica.analytics.impl.Rh
     public final void a(IAppMetricaService iAppMetricaService) {
         Ph ph = this.e;
-        iAppMetricaService.reportData(ph.c, ph.f718a.d(ph.e.c()));
+        iAppMetricaService.reportData(ph.c, ph.f720a.d(ph.e.c()));
     }
 }

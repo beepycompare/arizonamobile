@@ -15,7 +15,7 @@ public final class C0370k5 extends AbstractC0344j5 {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0344j5
     public final void c() {
-        C0691wf c0691wf = this.f1046a.c;
+        C0691wf c0691wf = this.f1048a.c;
         try {
             C0775zl c0775zl = new C0775zl(c0691wf, M2.g);
             Long b = c0775zl.c.b(C0775zl.d);

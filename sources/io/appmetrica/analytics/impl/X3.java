@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public final class X3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile U7 f835a = new U7();
+    public volatile U7 f837a = new U7();
 
     public static Location b(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -138,7 +138,7 @@ public final class X3 {
                 newConfigBuilder.withCustomHosts(Ib.a(jSONObject.optJSONArray("customHosts")));
             }
             if (jSONObject.has("additional_config")) {
-                U7 u7 = this.f835a;
+                U7 u7 = this.f837a;
                 jSONObject.optJSONObject("additional_config");
                 u7.getClass();
             }

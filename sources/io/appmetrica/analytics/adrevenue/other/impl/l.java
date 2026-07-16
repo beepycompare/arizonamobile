@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public final class l implements JsonParser {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f243a;
+    public final a f245a;
 
     public l() {
         this(null, 1, null);
@@ -18,8 +18,8 @@ public final class l implements JsonParser {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Parser
     /* renamed from: a */
     public final ServiceSideAdRevenueOtherConfigWrapper parse(JSONObject jSONObject) {
-        this.f243a.getClass();
-        return ServiceSideAdRevenueOtherConfigWrapper.Companion.toWrapper$ad_revenue_other_release(new j(RemoteConfigJsonUtils.extractFeature(jSONObject, "ad_revenue_other", f.f238a), RemoteConfigJsonUtils.extractFeature(jSONObject, "ad_revenue_other_include_source", f.b)));
+        this.f245a.getClass();
+        return ServiceSideAdRevenueOtherConfigWrapper.Companion.toWrapper$ad_revenue_other_release(new j(RemoteConfigJsonUtils.extractFeature(jSONObject, "ad_revenue_other", f.f240a), RemoteConfigJsonUtils.extractFeature(jSONObject, "ad_revenue_other_include_source", f.b)));
     }
 
     public final ServiceSideAdRevenueOtherConfigWrapper b(JSONObject jSONObject) {
@@ -32,7 +32,7 @@ public final class l implements JsonParser {
     }
 
     public l(a aVar) {
-        this.f243a = aVar;
+        this.f245a = aVar;
     }
 
     public /* synthetic */ l(a aVar, int i, DefaultConstructorMarker defaultConstructorMarker) {

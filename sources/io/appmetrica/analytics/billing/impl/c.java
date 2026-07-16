@@ -12,7 +12,7 @@ public final class c extends MessageNano {
     public static volatile c[] f;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f261a;
+    public int f263a;
     public String b;
     public String c;
     public long d;
@@ -34,7 +34,7 @@ public final class c extends MessageNano {
     }
 
     public final c a() {
-        this.f261a = 1;
+        this.f263a = 1;
         this.b = "";
         this.c = "";
         this.d = 0L;
@@ -45,12 +45,12 @@ public final class c extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeUInt64Size(5, this.e) + CodedOutputByteBufferNano.computeUInt64Size(4, this.d) + CodedOutputByteBufferNano.computeStringSize(3, this.c) + CodedOutputByteBufferNano.computeStringSize(2, this.b) + CodedOutputByteBufferNano.computeInt32Size(1, this.f261a) + super.computeSerializedSize();
+        return CodedOutputByteBufferNano.computeUInt64Size(5, this.e) + CodedOutputByteBufferNano.computeUInt64Size(4, this.d) + CodedOutputByteBufferNano.computeStringSize(3, this.c) + CodedOutputByteBufferNano.computeStringSize(2, this.b) + CodedOutputByteBufferNano.computeInt32Size(1, this.f263a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt32(1, this.f261a);
+        codedOutputByteBufferNano.writeInt32(1, this.f263a);
         codedOutputByteBufferNano.writeString(2, this.b);
         codedOutputByteBufferNano.writeString(3, this.c);
         codedOutputByteBufferNano.writeUInt64(4, this.d);
@@ -68,7 +68,7 @@ public final class c extends MessageNano {
             } else if (readTag == 8) {
                 int readInt32 = codedInputByteBufferNano.readInt32();
                 if (readInt32 == 1 || readInt32 == 2 || readInt32 == 3) {
-                    this.f261a = readInt32;
+                    this.f263a = readInt32;
                 }
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readString();

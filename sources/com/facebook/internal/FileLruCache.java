@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FileLruCache {
     private static final String HEADER_CACHEKEY_KEY = "key";
     private static final String HEADER_CACHE_CONTENT_TAG_KEY = "tag";
@@ -35,7 +35,7 @@ public final class FileLruCache {
     private final String tag;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class BufferFile {
         private static final String FILE_NAME_PREFIX = "buffer";
         private static final FilenameFilter filterExcludeBufferFiles = new FilenameFilter() { // from class: com.facebook.internal.FileLruCache.BufferFile.1
@@ -74,7 +74,7 @@ public final class FileLruCache {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class CloseCallbackOutputStream extends OutputStream {
         final StreamCloseCallback callback;
         final OutputStream innerStream;
@@ -195,7 +195,7 @@ public final class FileLruCache {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Limits {
         private int fileCount = 1024;
         private int byteCount = 1048576;
@@ -224,7 +224,7 @@ public final class FileLruCache {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class ModifiedFile implements Comparable<ModifiedFile> {
         private static final int HASH_MULTIPLIER = 37;
         private static final int HASH_SEED = 29;

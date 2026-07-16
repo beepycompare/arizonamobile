@@ -11,7 +11,7 @@ import java.util.Map;
 public class Bi implements InterfaceC0506pb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0536qf f479a = new C0536qf();
+    public final C0536qf f481a = new C0536qf();
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0506pb, io.appmetrica.analytics.impl.InterfaceC0314i0
     public final void a(X x) {
@@ -27,7 +27,7 @@ public class Bi implements InterfaceC0506pb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final IPluginReporter getPluginExtension() {
-        return this.f479a;
+        return this.f481a;
     }
 
     @Override // io.appmetrica.analytics.IReporter

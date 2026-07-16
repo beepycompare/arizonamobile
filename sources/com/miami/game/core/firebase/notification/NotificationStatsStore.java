@@ -37,14 +37,14 @@ public final class NotificationStatsStore {
     }
 
     public final void append(NotificationInteractionEvent event) {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         Intrinsics.checkNotNullParameter(event, "event");
         try {
             Result.Companion companion = Result.Companion;
             NotificationStatsStore notificationStatsStore = this;
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
         synchronized (LOCK) {
             List mutableList = CollectionsKt.toMutableList((Collection) pendingEventsLocked());
@@ -59,16 +59,16 @@ public final class NotificationStatsStore {
             mutableList.add(event);
             writeEventsLocked(CollectionsKt.takeLast(mutableList, 500));
             Unit unit = Unit.INSTANCE;
-            m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
-            Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-            if (m9899exceptionOrNullimpl != null) {
-                Timber.Forest.w(m9899exceptionOrNullimpl, "Failed to append pending notification stats", new Object[0]);
+            m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
+            Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+            if (m9901exceptionOrNullimpl != null) {
+                Timber.Forest.w(m9901exceptionOrNullimpl, "Failed to append pending notification stats", new Object[0]);
             }
         }
     }
 
     public final List<NotificationInteractionEvent> pendingEvents() {
-        List m9896constructorimpl;
+        List m9898constructorimpl;
         List<NotificationInteractionEvent> pendingEventsLocked;
         try {
             Result.Companion companion = Result.Companion;
@@ -76,24 +76,24 @@ public final class NotificationStatsStore {
             synchronized (LOCK) {
                 pendingEventsLocked = pendingEventsLocked();
             }
-            m9896constructorimpl = Result.m9896constructorimpl(pendingEventsLocked);
+            m9898constructorimpl = Result.m9898constructorimpl(pendingEventsLocked);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Timber.Forest.w(m9899exceptionOrNullimpl, "Failed to read pending notification stats", new Object[0]);
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Timber.Forest.w(m9901exceptionOrNullimpl, "Failed to read pending notification stats", new Object[0]);
         }
         List emptyList = CollectionsKt.emptyList();
-        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
-            m9896constructorimpl = emptyList;
+        if (Result.m9904isFailureimpl(m9898constructorimpl)) {
+            m9898constructorimpl = emptyList;
         }
-        return (List) m9896constructorimpl;
+        return (List) m9898constructorimpl;
     }
 
     public final void remove(Set<String> eventIds) {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         Intrinsics.checkNotNullParameter(eventIds, "eventIds");
         if (eventIds.isEmpty()) {
             return;
@@ -111,19 +111,19 @@ public final class NotificationStatsStore {
                 writeEventsLocked(arrayList);
                 Unit unit = Unit.INSTANCE;
             }
-            m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
+            m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Timber.Forest.w(m9899exceptionOrNullimpl, "Failed to remove sent notification stats", new Object[0]);
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Timber.Forest.w(m9901exceptionOrNullimpl, "Failed to remove sent notification stats", new Object[0]);
         }
     }
 
     private final List<NotificationInteractionEvent> pendingEventsLocked() {
-        List m9896constructorimpl;
+        List m9898constructorimpl;
         NotificationInteractionEvent fromJson;
         Object obj = this.prefs.getAll().get(KEY_EVENTS);
         String str = obj instanceof String ? (String) obj : null;
@@ -143,21 +143,21 @@ public final class NotificationStatsStore {
                     createListBuilder.add(fromJson);
                 }
             }
-            m9896constructorimpl = Result.m9896constructorimpl(CollectionsKt.build(createListBuilder));
+            m9898constructorimpl = Result.m9898constructorimpl(CollectionsKt.build(createListBuilder));
         } catch (Throwable th) {
             Result.Companion companion3 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Timber.Forest.w(m9899exceptionOrNullimpl, "Failed to parse pending notification stats", new Object[0]);
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Timber.Forest.w(m9901exceptionOrNullimpl, "Failed to parse pending notification stats", new Object[0]);
             this.prefs.edit().remove(KEY_EVENTS).apply();
         }
         List emptyList = CollectionsKt.emptyList();
-        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
-            m9896constructorimpl = emptyList;
+        if (Result.m9904isFailureimpl(m9898constructorimpl)) {
+            m9898constructorimpl = emptyList;
         }
-        return (List) m9896constructorimpl;
+        return (List) m9898constructorimpl;
     }
 
     private final void writeEventsLocked(List<NotificationInteractionEvent> list) {

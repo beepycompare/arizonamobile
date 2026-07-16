@@ -17,20 +17,20 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.security.auth.x500.X500Principal;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f201a;
+    public final int f203a;
 
     public c(int i) {
-        this.f201a = i;
+        this.f203a = i;
     }
 
     public final byte[] a(Context context, byte[] bArr) {
         Key secretKeySpec;
         Mac mac = Mac.getInstance("HmacSHA256");
-        int i = this.f201a;
+        int i = this.f203a;
         if (i >= 23) {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
             keyStore.load(null);
@@ -56,7 +56,7 @@ public final class c {
     }
 
     public final void a(Context context) {
-        int i = this.f201a;
+        int i = this.f203a;
         if (i >= 23) {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
             keyStore.load(null);
@@ -75,7 +75,7 @@ public final class c {
             Calendar calendar = Calendar.getInstance();
             calendar.add(1, 1);
             KeyPairGeneratorSpec.Builder endDate = new KeyPairGeneratorSpec.Builder(context).setAlias("key2").setSubject(new X500Principal("CN=key2")).setSerialNumber(BigInteger.TEN).setStartDate(time).setEndDate(calendar.getTime());
-            if (this.f201a >= 19) {
+            if (this.f203a >= 19) {
                 endDate.setKeySize(1024);
             }
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");

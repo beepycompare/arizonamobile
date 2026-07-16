@@ -14,7 +14,7 @@ public final class C0693wh extends AbstractC0305hh {
         C0749yl c0749yl;
         boolean z;
         boolean z2;
-        E9 e9 = this.f1017a.n;
+        E9 e9 = this.f1019a.n;
         C0671vl c0671vl = e9.c;
         if (c0671vl.g == 0) {
             c0257fl = c0671vl.c.a();
@@ -30,7 +30,7 @@ public final class C0693wh extends AbstractC0305hh {
                 z2 = c0257fl.k;
             }
             if (z2) {
-                C0697wl a3 = c0671vl.f1251a.e.a(c0257fl.d, c0257fl.c.f1038a);
+                C0697wl a3 = c0671vl.f1253a.e.a(c0257fl.d, c0257fl.c.f1040a);
                 long j = c0242f6.i;
                 long j2 = c0242f6.j;
                 c0671vl.g = 2;
@@ -40,7 +40,7 @@ public final class C0693wh extends AbstractC0305hh {
                 c0749yl = C0671vl.a(c0671vl.f, j);
             } else {
                 c0749yl = new C0749yl();
-                c0749yl.f1300a = c0257fl.d;
+                c0749yl.f1302a = c0257fl.d;
                 long andIncrement = c0257fl.g.getAndIncrement();
                 C0775zl c0775zl = c0257fl.b;
                 c0775zl.a(C0775zl.g, Long.valueOf(c0257fl.g.get()));
@@ -56,7 +56,7 @@ public final class C0693wh extends AbstractC0305hh {
                 c0775zl2.a(C0775zl.e, Long.valueOf(j5));
                 c0775zl2.a();
                 c0749yl.c = Math.max(seconds, timeUnit.toSeconds(c0257fl.j));
-                c0749yl.d = c0257fl.c.f1038a;
+                c0749yl.d = c0257fl.c.f1040a;
             }
         } else {
             c0749yl = null;

@@ -7,14 +7,14 @@ import kotlin.Metadata;
 public final class SystemTimeOffsetProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SystemTimeProvider f382a;
+    private final SystemTimeProvider f384a;
 
     public SystemTimeOffsetProvider(SystemTimeProvider systemTimeProvider) {
-        this.f382a = systemTimeProvider;
+        this.f384a = systemTimeProvider;
     }
 
     public final long elapsedRealtimeOffset(long j, TimeUnit timeUnit) {
-        return this.f382a.elapsedRealtime() - timeUnit.toMillis(j);
+        return this.f384a.elapsedRealtime() - timeUnit.toMillis(j);
     }
 
     public final long elapsedRealtimeOffsetInSeconds(long j, TimeUnit timeUnit) {
@@ -25,11 +25,11 @@ public final class SystemTimeOffsetProvider {
         if (j == 0) {
             return 0L;
         }
-        return this.f382a.currentTimeSeconds() - timeUnit.toSeconds(j);
+        return this.f384a.currentTimeSeconds() - timeUnit.toSeconds(j);
     }
 
     public final long systemNanoTimeOffsetInNanos(long j, TimeUnit timeUnit) {
-        return this.f382a.systemNanoTime() - timeUnit.toNanos(j);
+        return this.f384a.systemNanoTime() - timeUnit.toNanos(j);
     }
 
     public final long systemNanoTimeOffsetInSeconds(long j, TimeUnit timeUnit) {

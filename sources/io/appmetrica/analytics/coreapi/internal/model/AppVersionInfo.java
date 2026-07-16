@@ -8,17 +8,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AppVersionInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f326a;
+    private final String f328a;
     private final String b;
 
     public AppVersionInfo(String str, String str2) {
-        this.f326a = str;
+        this.f328a = str;
         this.b = str2;
     }
 
     public static /* synthetic */ AppVersionInfo copy$default(AppVersionInfo appVersionInfo, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = appVersionInfo.f326a;
+            str = appVersionInfo.f328a;
         }
         if ((i & 2) != 0) {
             str2 = appVersionInfo.b;
@@ -27,7 +27,7 @@ public final class AppVersionInfo {
     }
 
     public final String component1() {
-        return this.f326a;
+        return this.f328a;
     }
 
     public final String component2() {
@@ -44,7 +44,7 @@ public final class AppVersionInfo {
         }
         if (obj instanceof AppVersionInfo) {
             AppVersionInfo appVersionInfo = (AppVersionInfo) obj;
-            return Intrinsics.areEqual(this.f326a, appVersionInfo.f326a) && Intrinsics.areEqual(this.b, appVersionInfo.b);
+            return Intrinsics.areEqual(this.f328a, appVersionInfo.f328a) && Intrinsics.areEqual(this.b, appVersionInfo.b);
         }
         return false;
     }
@@ -54,14 +54,14 @@ public final class AppVersionInfo {
     }
 
     public final String getAppVersionName() {
-        return this.f326a;
+        return this.f328a;
     }
 
     public int hashCode() {
-        return this.b.hashCode() + (this.f326a.hashCode() * 31);
+        return this.b.hashCode() + (this.f328a.hashCode() * 31);
     }
 
     public String toString() {
-        return "AppVersionInfo(appVersionName=" + this.f326a + ", appBuildNumber=" + this.b + ')';
+        return "AppVersionInfo(appVersionName=" + this.f328a + ", appBuildNumber=" + this.b + ')';
     }
 }

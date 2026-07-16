@@ -51,7 +51,7 @@ public class MaterialSplitButton extends MaterialButtonGroup {
             materialButton.addOnCheckedChangeListener(new MaterialButton.OnCheckedChangeListener() { // from class: com.google.android.material.button.MaterialSplitButton$$ExternalSyntheticLambda0
                 @Override // com.google.android.material.button.MaterialButton.OnCheckedChangeListener
                 public final void onCheckedChanged(MaterialButton materialButton2, boolean z) {
-                    MaterialSplitButton.this.m9519xf376ee79(materialButton, materialButton2, z);
+                    MaterialSplitButton.this.m9520xf376ee79(materialButton, materialButton2, z);
                 }
             });
         }
@@ -59,7 +59,7 @@ public class MaterialSplitButton extends MaterialButtonGroup {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$addView$0$com-google-android-material-button-MaterialSplitButton  reason: not valid java name */
-    public /* synthetic */ void m9519xf376ee79(MaterialButton materialButton, MaterialButton materialButton2, boolean z) {
+    public /* synthetic */ void m9520xf376ee79(MaterialButton materialButton, MaterialButton materialButton2, boolean z) {
         int i;
         Resources resources = getResources();
         if (z) {

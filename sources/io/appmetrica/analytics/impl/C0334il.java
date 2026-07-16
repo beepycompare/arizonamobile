@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0334il {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Al f1038a;
+    public final Al f1040a;
     public final Long b;
     public final Long c;
     public final Long d;
@@ -26,7 +26,7 @@ public final class C0334il {
         Long l5;
         Boolean bool2;
         al = c0309hl.b;
-        this.f1038a = al;
+        this.f1040a = al;
         num = c0309hl.f;
         this.e = num;
         l = c0309hl.c;
@@ -41,7 +41,7 @@ public final class C0334il {
         this.g = bool;
         l5 = c0309hl.i;
         this.h = l5;
-        this.i = c0309hl.f1021a;
+        this.i = c0309hl.f1023a;
         bool2 = c0309hl.j;
         this.j = bool2;
     }

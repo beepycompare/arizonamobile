@@ -20,7 +20,7 @@ public final class N8 extends MessageNano {
     public static volatile N8[] o;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f680a;
+    public int f682a;
     public M8 b;
     public K8 c;
     public L8 d;
@@ -43,7 +43,7 @@ public final class N8 extends MessageNano {
     }
 
     public final N8 a() {
-        this.f680a = 0;
+        this.f682a = 0;
         this.b = null;
         this.c = null;
         this.d = null;
@@ -56,7 +56,7 @@ public final class N8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i2 = this.f680a;
+        int i2 = this.f682a;
         if (i2 != 0) {
             computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i2);
         }
@@ -82,7 +82,7 @@ public final class N8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i2 = this.f680a;
+        int i2 = this.f682a;
         if (i2 != 0) {
             codedOutputByteBufferNano.writeInt32(1, i2);
         }
@@ -126,7 +126,7 @@ public final class N8 extends MessageNano {
                         case 5:
                         case 6:
                         case 7:
-                            this.f680a = readInt32;
+                            this.f682a = readInt32;
                             continue;
                     }
                 } else if (readTag == 18) {

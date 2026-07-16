@@ -136,7 +136,7 @@ public final class SsaParser implements SubtitleParser {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0059 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x005b A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:4:0x0006  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

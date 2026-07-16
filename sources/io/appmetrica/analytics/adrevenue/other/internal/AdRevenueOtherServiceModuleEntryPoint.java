@@ -26,7 +26,7 @@ import kotlin.collections.MapsKt;
 public final class AdRevenueOtherServiceModuleEntryPoint extends ModuleServiceEntryPoint<ServiceSideAdRevenueOtherConfigWrapper> {
 
     /* renamed from: a  reason: collision with root package name */
-    private j f248a;
+    private j f250a;
     private final m b = new m();
     private final l c = new l(null, 1, null);
     private final k d = new k(null, 1, null);
@@ -35,7 +35,7 @@ public final class AdRevenueOtherServiceModuleEntryPoint extends ModuleServiceEn
         public void onRemoteConfigUpdated(ModuleRemoteConfig<ServiceSideAdRevenueOtherConfigWrapper> moduleRemoteConfig) {
             AdRevenueOtherServiceModuleEntryPoint adRevenueOtherServiceModuleEntryPoint = AdRevenueOtherServiceModuleEntryPoint.this;
             ServiceSideAdRevenueOtherConfigWrapper featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-            adRevenueOtherServiceModuleEntryPoint.f248a = featuresConfig != null ? featuresConfig.getConfig$ad_revenue_other_release() : null;
+            adRevenueOtherServiceModuleEntryPoint.f250a = featuresConfig != null ? featuresConfig.getConfig$ad_revenue_other_release() : null;
         }
     };
     private final String f = "ad-revenue-other";
@@ -65,7 +65,7 @@ public final class AdRevenueOtherServiceModuleEntryPoint extends ModuleServiceEn
                 public byte[] fromModel(ServiceSideAdRevenueOtherConfigWrapper serviceSideAdRevenueOtherConfigWrapper) {
                     k kVar;
                     kVar = AdRevenueOtherServiceModuleEntryPoint.this.d;
-                    return MessageNano.toByteArray(kVar.f242a.fromModel(serviceSideAdRevenueOtherConfigWrapper.getConfig$ad_revenue_other_release()));
+                    return MessageNano.toByteArray(kVar.f244a.fromModel(serviceSideAdRevenueOtherConfigWrapper.getConfig$ad_revenue_other_release()));
                 }
 
                 @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -92,13 +92,13 @@ public final class AdRevenueOtherServiceModuleEntryPoint extends ModuleServiceEn
             m mVar;
             j jVar;
             mVar = AdRevenueOtherServiceModuleEntryPoint.this.b;
-            jVar = AdRevenueOtherServiceModuleEntryPoint.this.f248a;
+            jVar = AdRevenueOtherServiceModuleEntryPoint.this.f250a;
             mVar.getClass();
             if (jVar == null) {
                 return null;
             }
             Bundle bundle = new Bundle();
-            bundle.putBoolean("enabled", jVar.f241a);
+            bundle.putBoolean("enabled", jVar.f243a);
             bundle.putBoolean("include_source", jVar.b);
             return bundle;
         }
@@ -122,6 +122,6 @@ public final class AdRevenueOtherServiceModuleEntryPoint extends ModuleServiceEn
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ModuleServiceEntryPoint
     public void initServiceSide(ServiceContext serviceContext, ModuleRemoteConfig<ServiceSideAdRevenueOtherConfigWrapper> moduleRemoteConfig) {
         ServiceSideAdRevenueOtherConfigWrapper featuresConfig = moduleRemoteConfig.getFeaturesConfig();
-        this.f248a = featuresConfig != null ? featuresConfig.getConfig$ad_revenue_other_release() : null;
+        this.f250a = featuresConfig != null ? featuresConfig.getConfig$ad_revenue_other_release() : null;
     }
 }

@@ -8,5 +8,5 @@
             <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/white" android:id="@+id/priseTimeStamp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:layout_marginTop="@dimen/_3sdp" android:layout_marginRight="@dimen/_4sdp" android:layout_marginBottom="@dimen/_3sdp" android:text="30 сек" android:layout_marginHorizontal="@dimen/_4sdp" android:layout_marginVertical="@dimen/_3sdp"/>
         </FrameLayout>
     </FrameLayout>
-    <TextView android:textSize="5sp" android:textStyle="bold" android:textColor="@color/white" android:id="@+id/oldPriseTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dlinniy Nicknamenick [ID:1000]" android:maxLines="2" android:textAlignment="center"/>
+    <TextView android:textSize="@dimen/_5sdp" android:textStyle="bold" android:textColor="@color/white" android:id="@+id/oldPriseTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dlinniy Nicknamenick [ID:1000]" android:maxLines="3" android:textAlignment="center"/>
 </LinearLayout>

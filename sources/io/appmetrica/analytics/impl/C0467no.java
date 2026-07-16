@@ -8,13 +8,13 @@ import kotlin.collections.CollectionsKt;
 public final class C0467no {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V3 f1121a;
+    public final V3 f1123a;
     public final hp b;
     public final ConjunctiveCompositeThreadSafeToggle c;
 
     public C0467no(Toggle toggle) {
         V3 v3 = new V3(Na.k().y());
-        this.f1121a = v3;
+        this.f1123a = v3;
         hp hpVar = new hp();
         this.b = hpVar;
         Toggle[] toggleArr = new Toggle[3];

@@ -10,7 +10,7 @@ import java.util.Set;
 public abstract class Q9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f728a;
+    public static final Set f730a;
     public static final EnumSet b;
     public static final EnumSet c;
     public static final EnumSet d;
@@ -28,7 +28,7 @@ public abstract class Q9 {
         Db db4 = Db.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE;
         Db db5 = Db.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE;
         Db db6 = Db.EVENT_TYPE_ANR;
-        f728a = CollectionUtils.unmodifiableSetOf(5892, 5896, 5891, 5889, 5890, 5968);
+        f730a = CollectionUtils.unmodifiableSetOf(5892, 5896, 5891, 5889, 5890, 5968);
         Db db7 = Db.EVENT_TYPE_UNDEFINED;
         Db db8 = Db.EVENT_TYPE_PURGE_BUFFER;
         Db db9 = Db.EVENT_TYPE_SEND_REFERRER;

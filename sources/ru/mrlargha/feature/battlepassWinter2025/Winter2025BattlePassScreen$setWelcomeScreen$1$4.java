@@ -11,20 +11,20 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
-import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassLayoutBinding;
+import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassWelcomeLayoutBinding;
 /* compiled from: Winter2025BattlePass.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$setWelcomeScreen$1$4", f = "Winter2025BattlePass.kt", i = {}, l = {1308, 1309, 1310}, m = "invokeSuspend", n = {}, nl = {1309, 1310, 1311}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$setWelcomeScreen$1$4", f = "Winter2025BattlePass.kt", i = {}, l = {911, 912, 913}, m = "invokeSuspend", n = {}, nl = {912, 913, 914}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class Winter2025BattlePassScreen$setWelcomeScreen$1$4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-    final /* synthetic */ WinterBattlepassLayoutBinding $this_apply;
+    final /* synthetic */ WinterBattlepassWelcomeLayoutBinding $this_apply;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Winter2025BattlePassScreen$setWelcomeScreen$1$4(WinterBattlepassLayoutBinding winterBattlepassLayoutBinding, Continuation<? super Winter2025BattlePassScreen$setWelcomeScreen$1$4> continuation) {
+    public Winter2025BattlePassScreen$setWelcomeScreen$1$4(WinterBattlepassWelcomeLayoutBinding winterBattlepassWelcomeLayoutBinding, Continuation<? super Winter2025BattlePassScreen$setWelcomeScreen$1$4> continuation) {
         super(2, continuation);
-        this.$this_apply = winterBattlepassLayoutBinding;
+        this.$this_apply = winterBattlepassWelcomeLayoutBinding;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

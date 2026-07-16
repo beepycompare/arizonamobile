@@ -70,6 +70,7 @@ import kotlin.LazyKt;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
+import kotlin.collections.SetsKt;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function0;
@@ -90,7 +91,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000å\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000*\u0001+\b\u0007\u0018\u0000 u2\u00020\u0001:\u0007uvwxyz{B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010-\u001a\u00020.H\u0016J\u0010\u0010/\u001a\u00020.2\u0006\u00100\u001a\u000201H\u0002J\b\u00102\u001a\u000203H\u0002J\b\u00104\u001a\u00020.H\u0002J\"\u00105\u001a\u0002062\b\u00107\u001a\u0004\u0018\u0001082\u0006\u00109\u001a\u0002062\u0006\u0010:\u001a\u000206H\u0016J\b\u0010;\u001a\u00020.H\u0002J\b\u0010<\u001a\u000203H\u0002J\b\u0010=\u001a\u000203H\u0002J\u0010\u0010>\u001a\u00020?2\u0006\u0010@\u001a\u000203H\u0002J\b\u0010A\u001a\u00020.H\u0002J\u0012\u0010B\u001a\u0004\u0018\u00010C2\u0006\u00107\u001a\u000208H\u0016J\u0010\u0010D\u001a\u0002032\u0006\u00107\u001a\u000208H\u0016J\u0010\u0010E\u001a\u00020.2\u0006\u00107\u001a\u000208H\u0016J\b\u0010F\u001a\u00020.H\u0016J\u0012\u0010G\u001a\u00020.2\b\u0010H\u001a\u0004\u0018\u000108H\u0016J\u000e\u0010I\u001a\u00020.2\u0006\u0010J\u001a\u00020\u0012J\b\u0010K\u001a\u000203H\u0002J\b\u0010L\u001a\u00020.H\u0002J\u0006\u0010M\u001a\u00020.JF\u0010N\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020P0O2\u0006\u0010Q\u001a\u00020\u001e2\b\b\u0002\u0010R\u001a\u00020\u00122\b\b\u0002\u0010S\u001a\u00020\u00122\u0014\b\u0002\u0010T\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020P0OH\u0002J\u0014\u0010U\u001a\u0004\u0018\u00010\u00122\b\u0010V\u001a\u0004\u0018\u00010\u0012H\u0002J\u001c\u0010W\u001a\u0002032\b\u0010X\u001a\u0004\u0018\u00010\u00122\b\u0010Y\u001a\u0004\u0018\u00010\u0012H\u0002J\b\u0010Z\u001a\u00020.H\u0002J\u0018\u0010[\u001a\u0012\u0012\u0004\u0012\u0002060\\j\b\u0012\u0004\u0012\u000206`]H\u0002J \u0010^\u001a\u00020.2\u0016\u0010_\u001a\u0012\u0012\u0004\u0012\u0002060\\j\b\u0012\u0004\u0012\u000206`]H\u0002J\b\u0010`\u001a\u00020.H\u0002J\u0010\u0010a\u001a\u00020.2\u0006\u0010@\u001a\u000203H\u0002J\u0018\u0010b\u001a\u00020.2\u0006\u0010c\u001a\u00020d2\u0006\u0010e\u001a\u00020\u0014H\u0002J\b\u0010f\u001a\u00020\u0012H\u0002J\u0010\u0010g\u001a\u00020.2\u0006\u0010h\u001a\u00020\bH\u0002J\u0010\u0010i\u001a\u0002032\u0006\u0010j\u001a\u00020kH\u0002J\u0010\u0010l\u001a\u00020.2\u0006\u0010J\u001a\u00020\u0012H\u0002J\u0010\u0010m\u001a\u00020.2\u0006\u00100\u001a\u000201H\u0002J\u0010\u0010o\u001a\u00020.2\u0006\u0010J\u001a\u00020\u0012H\u0002J&\u0010p\u001a\u00020.2\u0006\u0010J\u001a\u00020\u00122\b\b\u0002\u0010q\u001a\u0002062\f\u0010r\u001a\b\u0012\u0004\u0012\u00020.0sJ\u0010\u0010t\u001a\u00020.2\u0006\u00100\u001a\u000201H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\"\u001a\u00020#8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b&\u0010'\u001a\u0004\b$\u0010%R\u000e\u0010(\u001a\u00020)X\u0082.¢\u0006\u0002\n\u0000R\u0010\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0004\n\u0002\u0010,R\u000e\u0010n\u001a\u000206X\u0082\u000e¢\u0006\u0002\n\u0000Ê\u0001\u0002\b}Ê\u0001\f\b~\u0012\b\b\u007f\u0012\u0004\b\u0003\u0010\u0000¨\u0006|"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "sharedRequestQueue", "Lcom/android/volley/RequestQueue;", "getSharedRequestQueue", "()Lcom/android/volley/RequestQueue;", "sharedRequestQueue$delegate", "Lkotlin/Lazy;", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "logDownloadError", "error", "Lcom/arizona/launcher/UpdateService$DownloadErrorEvent;", "isFirstLauncherStartErrorSession", "", "createNotificationChannel", "onStartCommand", "", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT, "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isDeviceOnline", "isAppInForeground", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "buildExpectedFileInfo", "", "Lcom/arizona/launcher/UpdateService$ExpectedFile;", "sources", "dir", "destDir", "out", "hostOf", "url", "sameHost", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "deleteExistingDownloadTarget", "destFile", "Ljava/io/File;", "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "attemptsLeft", "onFinish", "Lkotlin/Function0;", "notifyCheckUpdateAndDownloadUnreachable", "Companion", "Errno", "DownloadErrorEvent", "UpdateStatus", "GameStatus", "ExpectedFile", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ó\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000*\u0001-\b\u0007\u0018\u0000 |2\u00020\u0001:\n|}~\u007f\u0080\u0001\u0081\u0001\u0082\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010/\u001a\u000200H\u0016J\u0010\u00101\u001a\u0002002\u0006\u00102\u001a\u000203H\u0002J\b\u00104\u001a\u000205H\u0002J\u0010\u00106\u001a\u0002052\u0006\u00102\u001a\u000203H\u0002J\b\u00107\u001a\u000200H\u0002J\b\u00108\u001a\u000200H\u0002J\"\u00109\u001a\u00020:2\b\u0010;\u001a\u0004\u0018\u00010<2\u0006\u0010=\u001a\u00020:2\u0006\u0010>\u001a\u00020:H\u0016J\b\u0010?\u001a\u000200H\u0002J\b\u0010@\u001a\u000205H\u0002J\b\u0010A\u001a\u000205H\u0002J\n\u0010B\u001a\u0004\u0018\u00010CH\u0002J\b\u0010D\u001a\u000205H\u0002J\u0010\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u000205H\u0002J\b\u0010H\u001a\u000200H\u0002J\u0012\u0010I\u001a\u0004\u0018\u00010J2\u0006\u0010;\u001a\u00020<H\u0016J\u0010\u0010K\u001a\u0002052\u0006\u0010;\u001a\u00020<H\u0016J\u0010\u0010L\u001a\u0002002\u0006\u0010;\u001a\u00020<H\u0016J\b\u0010M\u001a\u000200H\u0016J\u0012\u0010N\u001a\u0002002\b\u0010O\u001a\u0004\u0018\u00010<H\u0016J\u000e\u0010P\u001a\u0002002\u0006\u0010Q\u001a\u00020\u0012J\b\u0010R\u001a\u000205H\u0002J\b\u0010S\u001a\u000200H\u0002J\u0006\u0010T\u001a\u000200JF\u0010U\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020W0V2\u0006\u0010X\u001a\u00020\u001e2\b\b\u0002\u0010Y\u001a\u00020\u00122\b\b\u0002\u0010Z\u001a\u00020\u00122\u0014\b\u0002\u0010[\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020W0VH\u0002J\u0014\u0010\\\u001a\u0004\u0018\u00010\u00122\b\u0010]\u001a\u0004\u0018\u00010\u0012H\u0002J\u001c\u0010^\u001a\u0002052\b\u0010_\u001a\u0004\u0018\u00010\u00122\b\u0010`\u001a\u0004\u0018\u00010\u0012H\u0002J\b\u0010a\u001a\u000200H\u0002J\u0018\u0010b\u001a\u0012\u0012\u0004\u0012\u00020:0cj\b\u0012\u0004\u0012\u00020:`dH\u0002J \u0010e\u001a\u0002002\u0016\u0010f\u001a\u0012\u0012\u0004\u0012\u00020:0cj\b\u0012\u0004\u0012\u00020:`dH\u0002J\b\u0010g\u001a\u000200H\u0002J\u0010\u0010h\u001a\u0002002\u0006\u0010G\u001a\u000205H\u0002J\u0018\u0010i\u001a\u0002002\u0006\u0010j\u001a\u00020k2\u0006\u0010l\u001a\u00020\u0014H\u0002J\b\u0010m\u001a\u00020\u0012H\u0002J\u0010\u0010n\u001a\u0002002\u0006\u0010o\u001a\u00020\bH\u0002J\u0010\u0010p\u001a\u0002052\u0006\u0010q\u001a\u00020rH\u0002J\u0010\u0010s\u001a\u0002002\u0006\u0010Q\u001a\u00020\u0012H\u0002J\u0010\u0010t\u001a\u0002002\u0006\u00102\u001a\u000203H\u0002J\u0010\u0010v\u001a\u0002002\u0006\u0010Q\u001a\u00020\u0012H\u0002J&\u0010w\u001a\u0002002\u0006\u0010Q\u001a\u00020\u00122\b\b\u0002\u0010x\u001a\u00020:2\f\u0010y\u001a\b\u0012\u0004\u0012\u0002000zJ\u0010\u0010{\u001a\u0002002\u0006\u00102\u001a\u000203H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\"\u001a\u00020#8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b&\u0010'\u001a\u0004\b$\u0010%R\u000e\u0010(\u001a\u00020)X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0004\n\u0002\u0010.R\u000e\u0010u\u001a\u00020:X\u0082\u000e¢\u0006\u0002\n\u0000Ê\u0001\u0003\b\u0084\u0001Ê\u0001\u000e\b\u0085\u0001\u0012\t\b\u0086\u0001\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0083\u0001"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "sharedRequestQueue", "Lcom/android/volley/RequestQueue;", "getSharedRequestQueue", "()Lcom/android/volley/RequestQueue;", "sharedRequestQueue$delegate", "Lkotlin/Lazy;", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "firstLaunchAnalyticsLock", "", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "logDownloadError", "error", "Lcom/arizona/launcher/UpdateService$DownloadErrorEvent;", "isFirstLauncherStartErrorSession", "", "shouldLogFirstLaunchDownloadError", "finishFirstLauncherStartErrorSession", "createNotificationChannel", "onStartCommand", "", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT, "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isDeviceOnline", "isDeviceNetworkValidated", "activeNetworkCapabilities", "Landroid/net/NetworkCapabilities;", "isAppInForeground", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "buildExpectedFileInfo", "", "Lcom/arizona/launcher/UpdateService$ExpectedFile;", "sources", "dir", "destDir", "out", "hostOf", "url", "sameHost", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "deleteExistingDownloadTarget", "destFile", "Ljava/io/File;", "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "attemptsLeft", "onFinish", "Lkotlin/Function0;", "notifyCheckUpdateAndDownloadUnreachable", "Companion", "Errno", "DownloadErrorEvent", "UpdateStatus", "GameStatus", "ExpectedFile", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateService extends Hilt_UpdateService {
@@ -111,17 +112,22 @@ public final class UpdateService extends Hilt_UpdateService {
     private static final String ERROR_CONTEXT_PARAM = "error_context";
     private static final String ERROR_TYPE_PARAM = "error_type";
     private static final String EVENT_TAG_PARAM = "event_tag";
+    private static final String FIRST_LAUNCH_DEDUPED_PARAM = "first_launch_deduped";
     private static final String FIRST_LAUNCH_EVENT_TAG = "first_launch";
     private static final String FIRST_LAUNCH_PARAM = "first_launch";
     private static final String FIRST_START_ERROR_SESSION_KEY = "firstStartErrorSession";
     private static final String FIRST_START_KEY = "firstStart";
+    private static final String FIRST_START_REPORTED_ERROR_CODES_KEY = "firstStartReportedErrorCodes";
     private static final int FOREGROUND_NOTIFICATION_ID = 1;
     public static final int FULL_CHECK = 8;
     public static final int GAME_STATUS = 5;
     private static final String LAUNCHER_PREFERENCE_FILE_KEY = "SP_NAME";
     private static final String LEGACY_CALL_SITE_PARAM = ".kt";
     public static final String NEED_UPDATE_MSG = "needUpdateMsg";
+    private static final String NETWORK_INTERNET_CAPABLE_PARAM = "network_internet_capable";
+    private static final String NETWORK_VALIDATED_PARAM = "network_validated";
     private static final String PREFERENCE_FILE_KEY = "downloadPreference";
+    private static final String SERVER_HOST_PARAM = "server_host";
     private static final String SOURCE_LINE_PARAM = "source_line";
     private static final String TAG = "UPDATE_SERVICE";
     private static final String TASK_ID_LIST_KEY = "taskIdList";
@@ -159,6 +165,7 @@ public final class UpdateService extends Hilt_UpdateService {
             return newRequestQueue;
         }
     });
+    private final Object firstLaunchAnalyticsLock = new Object();
     private final UpdateService$checkTimeoutRunnable$1 checkTimeoutRunnable = new Runnable() { // from class: com.arizona.launcher.UpdateService$checkTimeoutRunnable$1
         @Override // java.lang.Runnable
         public void run() {
@@ -221,7 +228,7 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u0016\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006,"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "CURRENT_PROGRESS", "TIMEOUT_DOWNLOADER", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "PREFERENCE_FILE_KEY", "TASK_ID_LIST_KEY", "LAUNCHER_PREFERENCE_FILE_KEY", "FIRST_START_KEY", "FIRST_START_ERROR_SESSION_KEY", "DOWNLOAD_ERROR_EVENT", "DOWNLOAD_ERROR_FIRST_LAUNCH_EVENT", "LEGACY_CALL_SITE_PARAM", "SOURCE_LINE_PARAM", "ERROR_CODE_PARAM", "ERROR_TYPE_PARAM", "ERROR_CONTEXT_PARAM", "ERRNO_CODE_PARAM", "ERRNO_NAME_PARAM", "EVENT_TAG_PARAM", "FIRST_LAUNCH_PARAM", "FIRST_LAUNCH_EVENT_TAG", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u001b\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "CURRENT_PROGRESS", "TIMEOUT_DOWNLOADER", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "PREFERENCE_FILE_KEY", "TASK_ID_LIST_KEY", "LAUNCHER_PREFERENCE_FILE_KEY", "FIRST_START_KEY", "FIRST_START_ERROR_SESSION_KEY", "FIRST_START_REPORTED_ERROR_CODES_KEY", "DOWNLOAD_ERROR_EVENT", "DOWNLOAD_ERROR_FIRST_LAUNCH_EVENT", "LEGACY_CALL_SITE_PARAM", "SOURCE_LINE_PARAM", "ERROR_CODE_PARAM", "ERROR_TYPE_PARAM", "ERROR_CONTEXT_PARAM", "ERRNO_CODE_PARAM", "ERRNO_NAME_PARAM", "EVENT_TAG_PARAM", "FIRST_LAUNCH_PARAM", "FIRST_LAUNCH_EVENT_TAG", "FIRST_LAUNCH_DEDUPED_PARAM", "SERVER_HOST_PARAM", "NETWORK_INTERNET_CAPABLE_PARAM", "NETWORK_VALIDATED_PARAM", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -482,12 +489,20 @@ public final class UpdateService extends Hilt_UpdateService {
         bundle.putInt(ERROR_CODE_PARAM, downloadErrorEvent.getCode());
         bundle.putString(ERROR_TYPE_PARAM, downloadErrorEvent.name());
         bundle.putString(ERROR_CONTEXT_PARAM, downloadErrorEvent.getContext());
+        String hostOf = hostOf(FileServers.INSTANCE.getCurrentServer());
+        if (hostOf == null) {
+            hostOf = "";
+        }
+        bundle.putString(SERVER_HOST_PARAM, hostOf);
+        bundle.putBoolean(NETWORK_INTERNET_CAPABLE_PARAM, isDeviceOnline());
+        bundle.putBoolean(NETWORK_VALIDATED_PARAM, isDeviceNetworkValidated());
         UpdateService updateService = this;
         FirebaseAnalytics.getInstance(updateService).logEvent(DOWNLOAD_ERROR_EVENT, bundle);
-        if (isFirstLauncherStartErrorSession()) {
+        if (shouldLogFirstLaunchDownloadError(downloadErrorEvent)) {
             Bundle bundle2 = new Bundle(bundle);
             bundle2.putString(EVENT_TAG_PARAM, "first_launch");
             bundle2.putBoolean("first_launch", true);
+            bundle2.putBoolean(FIRST_LAUNCH_DEDUPED_PARAM, true);
             FirebaseAnalytics.getInstance(updateService).logEvent(DOWNLOAD_ERROR_FIRST_LAUNCH_EVENT, bundle2);
         }
     }
@@ -495,6 +510,37 @@ public final class UpdateService extends Hilt_UpdateService {
     private final boolean isFirstLauncherStartErrorSession() {
         SharedPreferences sharedPreferences = getSharedPreferences("SP_NAME", 0);
         return sharedPreferences.getBoolean("firstStartErrorSession", false) || sharedPreferences.getBoolean("firstStart", true);
+    }
+
+    private final boolean shouldLogFirstLaunchDownloadError(DownloadErrorEvent downloadErrorEvent) {
+        boolean z;
+        synchronized (this.firstLaunchAnalyticsLock) {
+            z = false;
+            if (isFirstLauncherStartErrorSession()) {
+                SharedPreferences sharedPreferences = getSharedPreferences("SP_NAME", 0);
+                String valueOf = String.valueOf(downloadErrorEvent.getCode());
+                Set<String> stringSet = sharedPreferences.getStringSet(FIRST_START_REPORTED_ERROR_CODES_KEY, SetsKt.emptySet());
+                if (stringSet == null) {
+                    stringSet = SetsKt.emptySet();
+                }
+                if (!stringSet.contains(valueOf)) {
+                    SharedPreferences.Editor edit = sharedPreferences.edit();
+                    Set<String> mutableSet = CollectionsKt.toMutableSet(stringSet);
+                    mutableSet.add(valueOf);
+                    Unit unit = Unit.INSTANCE;
+                    edit.putStringSet(FIRST_START_REPORTED_ERROR_CODES_KEY, mutableSet).apply();
+                    z = true;
+                }
+            }
+        }
+        return z;
+    }
+
+    private final void finishFirstLauncherStartErrorSession() {
+        synchronized (this.firstLaunchAnalyticsLock) {
+            getSharedPreferences("SP_NAME", 0).edit().putBoolean("firstStart", false).putBoolean("firstStartErrorSession", false).remove(FIRST_START_REPORTED_ERROR_CODES_KEY).apply();
+            Unit unit = Unit.INSTANCE;
+        }
     }
 
     private final void createNotificationChannel() {
@@ -554,14 +600,23 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     private final boolean isDeviceOnline() {
+        NetworkCapabilities activeNetworkCapabilities = activeNetworkCapabilities();
+        return activeNetworkCapabilities != null && activeNetworkCapabilities.hasCapability(12);
+    }
+
+    private final boolean isDeviceNetworkValidated() {
+        NetworkCapabilities activeNetworkCapabilities = activeNetworkCapabilities();
+        return activeNetworkCapabilities != null && activeNetworkCapabilities.hasCapability(16);
+    }
+
+    private final NetworkCapabilities activeNetworkCapabilities() {
         Network activeNetwork;
-        NetworkCapabilities networkCapabilities;
         Object systemService = getSystemService("connectivity");
         ConnectivityManager connectivityManager = systemService instanceof ConnectivityManager ? (ConnectivityManager) systemService : null;
-        if (connectivityManager == null || (activeNetwork = connectivityManager.getActiveNetwork()) == null || (networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork)) == null) {
-            return false;
+        if (connectivityManager == null || (activeNetwork = connectivityManager.getActiveNetwork()) == null) {
+            return null;
         }
-        return networkCapabilities.hasCapability(12);
+        return connectivityManager.getNetworkCapabilities(activeNetwork);
     }
 
     private final boolean isAppInForeground() {
@@ -748,6 +803,7 @@ public final class UpdateService extends Hilt_UpdateService {
         }
         Log.d(TAG, "updateGameData: game update status: undefined");
         setUpdateStatus(UpdateStatus.Undefined);
+        finishFirstLauncherStartErrorSession();
         Message obtain = Message.obtain(this.mInHandler, 2);
         obtain.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, true);
         obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
@@ -1181,6 +1237,7 @@ public final class UpdateService extends Hilt_UpdateService {
         updateService.mUpdateFilesNeedSize = 0L;
         updateService.resetGameStatus();
         updateService.setUpdateStatus(UpdateStatus.Undefined);
+        updateService.finishFirstLauncherStartErrorSession();
         Message obtain3 = Message.obtain(updateService.mInHandler, 2);
         obtain3.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, true);
         obtain3.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
@@ -1394,7 +1451,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1726;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1727;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);

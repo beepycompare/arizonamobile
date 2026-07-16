@@ -40,22 +40,22 @@ public final class JsonElementKt {
     }
 
     /* renamed from: JsonPrimitive-7apg3OU  reason: not valid java name */
-    public static final JsonPrimitive m11614JsonPrimitive7apg3OU(byte b) {
-        return m11615JsonPrimitiveVKZWuLQ(ULong.m10076constructorimpl(b & 255));
+    public static final JsonPrimitive m11616JsonPrimitive7apg3OU(byte b) {
+        return m11617JsonPrimitiveVKZWuLQ(ULong.m10078constructorimpl(b & 255));
     }
 
     /* renamed from: JsonPrimitive-xj2QHRw  reason: not valid java name */
-    public static final JsonPrimitive m11617JsonPrimitivexj2QHRw(short s) {
-        return m11615JsonPrimitiveVKZWuLQ(ULong.m10076constructorimpl(s & WebSocketProtocol.PAYLOAD_SHORT_MAX));
+    public static final JsonPrimitive m11619JsonPrimitivexj2QHRw(short s) {
+        return m11617JsonPrimitiveVKZWuLQ(ULong.m10078constructorimpl(s & WebSocketProtocol.PAYLOAD_SHORT_MAX));
     }
 
     /* renamed from: JsonPrimitive-WZ4Q5Ns  reason: not valid java name */
-    public static final JsonPrimitive m11616JsonPrimitiveWZ4Q5Ns(int i) {
-        return m11615JsonPrimitiveVKZWuLQ(ULong.m10076constructorimpl(i & 4294967295L));
+    public static final JsonPrimitive m11618JsonPrimitiveWZ4Q5Ns(int i) {
+        return m11617JsonPrimitiveVKZWuLQ(ULong.m10078constructorimpl(i & 4294967295L));
     }
 
     /* renamed from: JsonPrimitive-VKZWuLQ  reason: not valid java name */
-    public static final JsonPrimitive m11615JsonPrimitiveVKZWuLQ(long j) {
+    public static final JsonPrimitive m11617JsonPrimitiveVKZWuLQ(long j) {
         String m;
         m = UByte$$ExternalSyntheticBackport0.m(j, 10);
         return JsonUnquotedLiteral(m);

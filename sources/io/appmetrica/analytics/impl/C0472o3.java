@@ -8,10 +8,10 @@ import kotlin.jvm.functions.Function1;
 public final class C0472o3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f1125a;
+    public final Function1 f1127a;
     public final DeferredBatchExecutor b = new DeferredBatchExecutor(Na.k().w().e(), new AccumulatingTaskBuffer(), new C0446n3(this), 1000, "[BufferedTempCacheWriter]");
 
     public C0472o3(Tn tn) {
-        this.f1125a = tn;
+        this.f1127a = tn;
     }
 }

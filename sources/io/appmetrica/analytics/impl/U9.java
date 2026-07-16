@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public final class U9 implements IHandlerExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Looper f788a;
+    public final Looper f790a;
     public final Handler b;
     public final Eb c;
 
@@ -21,7 +21,7 @@ public final class U9 implements IHandlerExecutor {
     }
 
     public static Eb a(String str) {
-        Eb eb = new Eb(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Zd.f871a.incrementAndGet());
+        Eb eb = new Eb(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Zd.f873a.incrementAndGet());
         eb.start();
         return eb;
     }
@@ -43,7 +43,7 @@ public final class U9 implements IHandlerExecutor {
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
     public final Looper getLooper() {
-        return this.f788a;
+        return this.f790a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
@@ -51,7 +51,7 @@ public final class U9 implements IHandlerExecutor {
         boolean z;
         Eb eb = this.c;
         synchronized (eb) {
-            z = eb.f526a;
+            z = eb.f528a;
         }
         return z;
     }
@@ -70,7 +70,7 @@ public final class U9 implements IHandlerExecutor {
     public final void stopRunning() {
         Eb eb = this.c;
         synchronized (eb) {
-            eb.f526a = false;
+            eb.f528a = false;
             eb.interrupt();
         }
     }
@@ -88,7 +88,7 @@ public final class U9 implements IHandlerExecutor {
 
     public U9(Eb eb, Looper looper, Handler handler) {
         this.c = eb;
-        this.f788a = looper;
+        this.f790a = looper;
         this.b = handler;
     }
 

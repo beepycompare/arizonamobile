@@ -10,7 +10,7 @@ import kotlin.Metadata;
 public final class UtilityServiceProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Lazy f372a = LazyKt.lazy(new l(this));
+    private final Lazy f374a = LazyKt.lazy(new l(this));
     private final WaitForActivationDelayBarrier b = new WaitForActivationDelayBarrier();
 
     public final WaitForActivationDelayBarrier getActivationBarrier() {
@@ -18,7 +18,7 @@ public final class UtilityServiceProvider {
     }
 
     public final FirstExecutionConditionServiceImpl getFirstExecutionService() {
-        return (FirstExecutionConditionServiceImpl) this.f372a.getValue();
+        return (FirstExecutionConditionServiceImpl) this.f374a.getValue();
     }
 
     public final void initAsync() {

@@ -17,17 +17,21 @@ public final class HudElementTimeItemBinding implements ViewBinding {
     public final CustomCardView innerCard;
     public final LinearLayout main;
     public final CustomCardView mainCard;
+    public final TextView multiplier;
+    public final CustomCardView multiplierCard;
     public final FrameLayout promo;
     private final FrameLayout rootView;
     public final TextView timer;
     public final TextView title;
 
-    private HudElementTimeItemBinding(FrameLayout rootView, ImageView image, CustomCardView innerCard, LinearLayout main, CustomCardView mainCard, FrameLayout promo, TextView timer, TextView title) {
+    private HudElementTimeItemBinding(FrameLayout rootView, ImageView image, CustomCardView innerCard, LinearLayout main, CustomCardView mainCard, TextView multiplier, CustomCardView multiplierCard, FrameLayout promo, TextView timer, TextView title) {
         this.rootView = rootView;
         this.image = image;
         this.innerCard = innerCard;
         this.main = main;
         this.mainCard = mainCard;
+        this.multiplier = multiplier;
+        this.multiplierCard = multiplierCard;
         this.promo = promo;
         this.timer = timer;
         this.title = title;
@@ -63,14 +67,22 @@ public final class HudElementTimeItemBinding implements ViewBinding {
                     i = R.id.main_card;
                     CustomCardView customCardView2 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
                     if (customCardView2 != null) {
-                        FrameLayout frameLayout = (FrameLayout) rootView;
-                        i = R.id.timer;
+                        i = R.id.multiplier;
                         TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
                         if (textView != null) {
-                            i = R.id.title;
-                            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView2 != null) {
-                                return new HudElementTimeItemBinding(frameLayout, imageView, customCardView, linearLayout, customCardView2, frameLayout, textView, textView2);
+                            i = R.id.multiplier_card;
+                            CustomCardView customCardView3 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                            if (customCardView3 != null) {
+                                FrameLayout frameLayout = (FrameLayout) rootView;
+                                i = R.id.timer;
+                                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                if (textView2 != null) {
+                                    i = R.id.title;
+                                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView3 != null) {
+                                        return new HudElementTimeItemBinding(frameLayout, imageView, customCardView, linearLayout, customCardView2, textView, customCardView3, frameLayout, textView2, textView3);
+                                    }
+                                }
                             }
                         }
                     }

@@ -1,13 +1,14 @@
 package ru.mrlargha.commonui.elements.inventory.domain.models;
 
 import android.graphics.Bitmap;
+import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import com.google.gson.annotations.SerializedName;
 import io.appmetrica.analytics.impl.M2;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InventoryItem.kt */
-@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u001d\n\u0002\u0018\u0002\n\u0002\b/\b\u0086\b\u0018\u00002\u00020\u0001Bû\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\r\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0011\u001a\u0004\u0018\u00010\n\u0012\b\u0010\u0012\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0013\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0014\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0015\u001a\u00020\u0003\u0012\b\u0010\u0016\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018\u0012\u0006\u0010\u0019\u001a\u00020\u001a\u0012\u0006\u0010\u001b\u001a\u00020\u001a\u0012\b\u0010\u001c\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\u001d\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010\u0007¢\u0006\u0004\b \u0010!J\t\u0010H\u001a\u00020\u0003HÆ\u0003J\u0010\u0010I\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\t\u0010J\u001a\u00020\u0003HÆ\u0003J\u000b\u0010K\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010L\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010M\u001a\u0004\u0018\u00010\nHÆ\u0003¢\u0006\u0002\u0010,J\u0010\u0010N\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010O\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010P\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010Q\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010R\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010S\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010T\u001a\u0004\u0018\u00010\nHÆ\u0003¢\u0006\u0002\u0010,J\u0010\u0010U\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010V\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010W\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\t\u0010X\u001a\u00020\u0003HÆ\u0003J\u0010\u0010Y\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u000b\u0010Z\u001a\u0004\u0018\u00010\u0018HÆ\u0003J\t\u0010[\u001a\u00020\u001aHÆ\u0003J\t\u0010\\\u001a\u00020\u001aHÆ\u0003J\u000b\u0010]\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010^\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u0010\u0010_\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010%J\u000b\u0010`\u001a\u0004\u0018\u00010\u0007HÆ\u0003J°\u0002\u0010a\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n2\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\n2\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001a2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010\u0007HÆ\u0001¢\u0006\u0002\u0010bJ\u0014\u0010c\u001a\u00020\u001a2\b\u0010d\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010e\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010f\u001a\u00020\u0007HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#R\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b$\u0010%R\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b'\u0010#R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)R\u0015\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b*\u0010%R\u001e\u0010\t\u001a\u0004\u0018\u00010\nX\u0086\u000e¢\u0006\u0010\n\u0002\u0010/\u001a\u0004\b+\u0010,\"\u0004\b-\u0010.R\u0015\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b0\u0010%R\u0015\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b1\u0010%R\u0015\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b2\u0010%R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b3\u0010%R\u0015\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b4\u0010%R\u0015\u0010\u0010\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b5\u0010%R\u0015\u0010\u0011\u001a\u0004\u0018\u00010\n¢\u0006\n\n\u0002\u0010/\u001a\u0004\b6\u0010,R)\u0010\u0012\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004\u0092\u0002\f\b8\u0012\b\b9\u0012\u0004\b\b(:¢\u0006\n\n\u0002\u0010&\u001a\u0004\b7\u0010%R)\u0010\u0013\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004\u0092\u0002\f\b8\u0012\b\b9\u0012\u0004\b\b(;¢\u0006\n\n\u0002\u0010&\u001a\u0004\b\u0013\u0010%R)\u0010\u0014\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004\u0092\u0002\f\b8\u0012\b\b9\u0012\u0004\b\b(=¢\u0006\n\n\u0002\u0010&\u001a\u0004\b<\u0010%R\u0011\u0010\u0015\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b>\u0010#R\u0015\u0010\u0016\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\b?\u0010%R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\u0018¢\u0006\b\n\u0000\u001a\u0004\b@\u0010AR\u0011\u0010\u0019\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010BR\u0011\u0010\u001b\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010BR\u0013\u0010\u001c\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\bC\u0010)R\u0015\u0010\u001d\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\bD\u0010%R\u0015\u0010\u001e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010&\u001a\u0004\bE\u0010%R'\u0010\u001f\u001a\u0004\u0018\u00010\u00078\u0006X\u0087\u0004\u0092\u0002\f\b8\u0012\b\b9\u0012\u0004\b\b(G¢\u0006\b\n\u0000\u001a\u0004\bF\u0010)¨\u0006g"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "slot", "", "item", "id", "text", "", "item_type", "amount", "", M2.g, "color", "bits", "available", "enchant", "blackout", "time", "itemStrength", "isActive", "breaks", "inventoryType", "acsSlot", "photoBitmap", "Landroid/graphics/Bitmap;", "isColored", "", "isLocked", "effect", "effectType", "quality", "customIcon", "<init>", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V", "getSlot", "()I", "getItem", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getId", "getText", "()Ljava/lang/String;", "getItem_type", "getAmount", "()Ljava/lang/Long;", "setAmount", "(Ljava/lang/Long;)V", "Ljava/lang/Long;", "getBackground", "getColor", "getBits", "getAvailable", "getEnchant", "getBlackout", "getTime", "getItemStrength", "Lcom/google/gson/annotations/SerializedName;", "value", "strength", "is_use", "getBreaks", "break", "getInventoryType", "getAcsSlot", "getPhotoBitmap", "()Landroid/graphics/Bitmap;", "()Z", "getEffect", "getEffectType", "getQuality", "getCustomIcon", "custom_icon", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "copy", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "equals", "other", "hashCode", "toString", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u001e\n\u0002\u0018\u0002\n\u0002\b5\b\u0086\b\u0018\u00002\u00020\u0001B\u0087\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\t\u001a\u0004\u0018\u00010\n\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\r\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0011\u001a\u0004\u0018\u00010\n\u0012\b\u0010\u0012\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0013\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0014\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0015\u001a\u00020\u0003\u0012\b\u0010\u0016\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018\u0012\u0006\u0010\u0019\u001a\u00020\u001a\u0012\u0006\u0010\u001b\u001a\u00020\u001a\u0012\b\u0010\u001c\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\u001d\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010 \u001a\u0004\u0018\u00010\u001a¢\u0006\u0004\b!\u0010\"J\t\u0010N\u001a\u00020\u0003HÆ\u0003J\u0010\u0010O\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\t\u0010P\u001a\u00020\u0003HÆ\u0003J\u000b\u0010Q\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010R\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010S\u001a\u0004\u0018\u00010\nHÆ\u0003¢\u0006\u0002\u0010-J\u0010\u0010T\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010U\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010V\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010W\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010X\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010Y\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010Z\u001a\u0004\u0018\u00010\nHÆ\u0003¢\u0006\u0002\u0010-J\u0010\u0010[\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010\\\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010]\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\t\u0010^\u001a\u00020\u0003HÆ\u0003J\u0010\u0010_\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u000b\u0010`\u001a\u0004\u0018\u00010\u0018HÆ\u0003J\t\u0010a\u001a\u00020\u001aHÆ\u0003J\t\u0010b\u001a\u00020\u001aHÆ\u0003J\u000b\u0010c\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010d\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u0010\u0010e\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010&J\u000b\u0010f\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010g\u001a\u0004\u0018\u00010\u001aHÆ\u0003¢\u0006\u0002\u0010JJ¼\u0002\u0010h\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n2\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\n2\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001a2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010 \u001a\u0004\u0018\u00010\u001aHÆ\u0001¢\u0006\u0002\u0010iJ\u0014\u0010j\u001a\u00020\u001a2\b\u0010k\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010l\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010m\u001a\u00020\u0007HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b%\u0010&R\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b(\u0010$R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u0015\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b+\u0010&R\u001e\u0010\t\u001a\u0004\u0018\u00010\nX\u0086\u000e¢\u0006\u0010\n\u0002\u00100\u001a\u0004\b,\u0010-\"\u0004\b.\u0010/R\u0015\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b1\u0010&R\u0015\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b2\u0010&R\u0015\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b3\u0010&R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b4\u0010&R\u0015\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b5\u0010&R\u0015\u0010\u0010\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b6\u0010&R\u0015\u0010\u0011\u001a\u0004\u0018\u00010\n¢\u0006\n\n\u0002\u00100\u001a\u0004\b7\u0010-R)\u0010\u0012\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004\u0092\u0002\f\b9\u0012\b\b:\u0012\u0004\b\b(;¢\u0006\n\n\u0002\u0010'\u001a\u0004\b8\u0010&R)\u0010\u0013\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004\u0092\u0002\f\b9\u0012\b\b:\u0012\u0004\b\b(<¢\u0006\n\n\u0002\u0010'\u001a\u0004\b\u0013\u0010&R)\u0010\u0014\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004\u0092\u0002\f\b9\u0012\b\b:\u0012\u0004\b\b(>¢\u0006\n\n\u0002\u0010'\u001a\u0004\b=\u0010&R\u0011\u0010\u0015\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b?\u0010$R\u0015\u0010\u0016\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\b@\u0010&R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\u0018¢\u0006\b\n\u0000\u001a\u0004\bA\u0010BR\u0011\u0010\u0019\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010CR\u0011\u0010\u001b\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010CR\u0013\u0010\u001c\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\bD\u0010*R\u0015\u0010\u001d\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\bE\u0010&R\u0015\u0010\u001e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010'\u001a\u0004\bF\u0010&R'\u0010\u001f\u001a\u0004\u0018\u00010\u00078\u0006X\u0087\u0004\u0092\u0002\f\b9\u0012\b\b:\u0012\u0004\b\b(H¢\u0006\b\n\u0000\u001a\u0004\bG\u0010*R7\u0010 \u001a\u0004\u0018\u00010\u001a8\u0006X\u0087\u0004\u0092\u0002\u001a\b9\u0012\b\b:\u0012\u0004\b\b( \u0012\f\bL\u0012\b\b\fJ\u0004\b\b(M¢\u0006\n\n\u0002\u0010K\u001a\u0004\bI\u0010J¨\u0006n"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "slot", "", "item", "id", "text", "", "item_type", "amount", "", M2.g, "color", "bits", "available", "enchant", "blackout", "time", "itemStrength", "isActive", "breaks", "inventoryType", "acsSlot", "photoBitmap", "Landroid/graphics/Bitmap;", "isColored", "", "isLocked", "effect", "effectType", "quality", "customIcon", "loading", "<init>", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Boolean;)V", "getSlot", "()I", "getItem", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getId", "getText", "()Ljava/lang/String;", "getItem_type", "getAmount", "()Ljava/lang/Long;", "setAmount", "(Ljava/lang/Long;)V", "Ljava/lang/Long;", "getBackground", "getColor", "getBits", "getAvailable", "getEnchant", "getBlackout", "getTime", "getItemStrength", "Lcom/google/gson/annotations/SerializedName;", "value", "strength", "is_use", "getBreaks", "break", "getInventoryType", "getAcsSlot", "getPhotoBitmap", "()Landroid/graphics/Bitmap;", "()Z", "getEffect", "getEffectType", "getQuality", "getCustomIcon", "custom_icon", "getLoading", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "alternate", "bool", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "component26", "copy", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Boolean;)Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "equals", "other", "hashCode", "toString", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryItem {
     private final Integer acsSlot;
@@ -34,48 +35,51 @@ public final class InventoryItem {
     @SerializedName("strength")
     private final Integer itemStrength;
     private final Integer item_type;
+    @SerializedName(alternate = {"bool"}, value = "loading")
+    private final Boolean loading;
     private final Bitmap photoBitmap;
     private final Integer quality;
     private final int slot;
     private final String text;
     private final Long time;
 
-    public static /* synthetic */ InventoryItem copy$default(InventoryItem inventoryItem, int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3, int i4, Object obj) {
+    public static /* synthetic */ InventoryItem copy$default(InventoryItem inventoryItem, int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3, Boolean bool, int i4, Object obj) {
+        Boolean bool2;
         String str4;
-        Integer num15;
         int i5 = (i4 & 1) != 0 ? inventoryItem.slot : i;
-        Integer num16 = (i4 & 2) != 0 ? inventoryItem.item : num;
+        Integer num15 = (i4 & 2) != 0 ? inventoryItem.item : num;
         int i6 = (i4 & 4) != 0 ? inventoryItem.id : i2;
         String str5 = (i4 & 8) != 0 ? inventoryItem.text : str;
-        Integer num17 = (i4 & 16) != 0 ? inventoryItem.item_type : num2;
+        Integer num16 = (i4 & 16) != 0 ? inventoryItem.item_type : num2;
         Long l3 = (i4 & 32) != 0 ? inventoryItem.amount : l;
-        Integer num18 = (i4 & 64) != 0 ? inventoryItem.background : num3;
-        Integer num19 = (i4 & 128) != 0 ? inventoryItem.color : num4;
-        Integer num20 = (i4 & 256) != 0 ? inventoryItem.bits : num5;
-        Integer num21 = (i4 & 512) != 0 ? inventoryItem.available : num6;
-        Integer num22 = (i4 & 1024) != 0 ? inventoryItem.enchant : num7;
-        Integer num23 = (i4 & 2048) != 0 ? inventoryItem.blackout : num8;
+        Integer num17 = (i4 & 64) != 0 ? inventoryItem.background : num3;
+        Integer num18 = (i4 & 128) != 0 ? inventoryItem.color : num4;
+        Integer num19 = (i4 & 256) != 0 ? inventoryItem.bits : num5;
+        Integer num20 = (i4 & 512) != 0 ? inventoryItem.available : num6;
+        Integer num21 = (i4 & 1024) != 0 ? inventoryItem.enchant : num7;
+        Integer num22 = (i4 & 2048) != 0 ? inventoryItem.blackout : num8;
         Long l4 = (i4 & 4096) != 0 ? inventoryItem.time : l2;
-        Integer num24 = (i4 & 8192) != 0 ? inventoryItem.itemStrength : num9;
+        Integer num23 = (i4 & 8192) != 0 ? inventoryItem.itemStrength : num9;
         int i7 = i5;
-        Integer num25 = (i4 & 16384) != 0 ? inventoryItem.isActive : num10;
-        Integer num26 = (i4 & 32768) != 0 ? inventoryItem.breaks : num11;
+        Integer num24 = (i4 & 16384) != 0 ? inventoryItem.isActive : num10;
+        Integer num25 = (i4 & 32768) != 0 ? inventoryItem.breaks : num11;
         int i8 = (i4 & 65536) != 0 ? inventoryItem.inventoryType : i3;
-        Integer num27 = (i4 & 131072) != 0 ? inventoryItem.acsSlot : num12;
+        Integer num26 = (i4 & 131072) != 0 ? inventoryItem.acsSlot : num12;
         Bitmap bitmap2 = (i4 & 262144) != 0 ? inventoryItem.photoBitmap : bitmap;
         boolean z3 = (i4 & 524288) != 0 ? inventoryItem.isColored : z;
         boolean z4 = (i4 & 1048576) != 0 ? inventoryItem.isLocked : z2;
         String str6 = (i4 & 2097152) != 0 ? inventoryItem.effect : str2;
-        Integer num28 = (i4 & 4194304) != 0 ? inventoryItem.effectType : num13;
-        Integer num29 = (i4 & 8388608) != 0 ? inventoryItem.quality : num14;
-        if ((i4 & 16777216) != 0) {
-            num15 = num29;
-            str4 = inventoryItem.customIcon;
+        Integer num27 = (i4 & 4194304) != 0 ? inventoryItem.effectType : num13;
+        Integer num28 = (i4 & 8388608) != 0 ? inventoryItem.quality : num14;
+        String str7 = (i4 & 16777216) != 0 ? inventoryItem.customIcon : str3;
+        if ((i4 & GroupFlagsKt.HasAuxSlotFlag) != 0) {
+            str4 = str7;
+            bool2 = inventoryItem.loading;
         } else {
-            str4 = str3;
-            num15 = num29;
+            bool2 = bool;
+            str4 = str7;
         }
-        return inventoryItem.copy(i7, num16, i6, str5, num17, l3, num18, num19, num20, num21, num22, num23, l4, num24, num25, num26, i8, num27, bitmap2, z3, z4, str6, num28, num15, str4);
+        return inventoryItem.copy(i7, num15, i6, str5, num16, l3, num17, num18, num19, num20, num21, num22, l4, num23, num24, num25, i8, num26, bitmap2, z3, z4, str6, num27, num28, str4, bool2);
     }
 
     public final int component1() {
@@ -150,6 +154,10 @@ public final class InventoryItem {
         return this.customIcon;
     }
 
+    public final Boolean component26() {
+        return this.loading;
+    }
+
     public final int component3() {
         return this.id;
     }
@@ -178,8 +186,8 @@ public final class InventoryItem {
         return this.bits;
     }
 
-    public final InventoryItem copy(int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3) {
-        return new InventoryItem(i, num, i2, str, num2, l, num3, num4, num5, num6, num7, num8, l2, num9, num10, num11, i3, num12, bitmap, z, z2, str2, num13, num14, str3);
+    public final InventoryItem copy(int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3, Boolean bool) {
+        return new InventoryItem(i, num, i2, str, num2, l, num3, num4, num5, num6, num7, num8, l2, num9, num10, num11, i3, num12, bitmap, z, z2, str2, num13, num14, str3, bool);
     }
 
     public boolean equals(Object obj) {
@@ -188,7 +196,7 @@ public final class InventoryItem {
         }
         if (obj instanceof InventoryItem) {
             InventoryItem inventoryItem = (InventoryItem) obj;
-            return this.slot == inventoryItem.slot && Intrinsics.areEqual(this.item, inventoryItem.item) && this.id == inventoryItem.id && Intrinsics.areEqual(this.text, inventoryItem.text) && Intrinsics.areEqual(this.item_type, inventoryItem.item_type) && Intrinsics.areEqual(this.amount, inventoryItem.amount) && Intrinsics.areEqual(this.background, inventoryItem.background) && Intrinsics.areEqual(this.color, inventoryItem.color) && Intrinsics.areEqual(this.bits, inventoryItem.bits) && Intrinsics.areEqual(this.available, inventoryItem.available) && Intrinsics.areEqual(this.enchant, inventoryItem.enchant) && Intrinsics.areEqual(this.blackout, inventoryItem.blackout) && Intrinsics.areEqual(this.time, inventoryItem.time) && Intrinsics.areEqual(this.itemStrength, inventoryItem.itemStrength) && Intrinsics.areEqual(this.isActive, inventoryItem.isActive) && Intrinsics.areEqual(this.breaks, inventoryItem.breaks) && this.inventoryType == inventoryItem.inventoryType && Intrinsics.areEqual(this.acsSlot, inventoryItem.acsSlot) && Intrinsics.areEqual(this.photoBitmap, inventoryItem.photoBitmap) && this.isColored == inventoryItem.isColored && this.isLocked == inventoryItem.isLocked && Intrinsics.areEqual(this.effect, inventoryItem.effect) && Intrinsics.areEqual(this.effectType, inventoryItem.effectType) && Intrinsics.areEqual(this.quality, inventoryItem.quality) && Intrinsics.areEqual(this.customIcon, inventoryItem.customIcon);
+            return this.slot == inventoryItem.slot && Intrinsics.areEqual(this.item, inventoryItem.item) && this.id == inventoryItem.id && Intrinsics.areEqual(this.text, inventoryItem.text) && Intrinsics.areEqual(this.item_type, inventoryItem.item_type) && Intrinsics.areEqual(this.amount, inventoryItem.amount) && Intrinsics.areEqual(this.background, inventoryItem.background) && Intrinsics.areEqual(this.color, inventoryItem.color) && Intrinsics.areEqual(this.bits, inventoryItem.bits) && Intrinsics.areEqual(this.available, inventoryItem.available) && Intrinsics.areEqual(this.enchant, inventoryItem.enchant) && Intrinsics.areEqual(this.blackout, inventoryItem.blackout) && Intrinsics.areEqual(this.time, inventoryItem.time) && Intrinsics.areEqual(this.itemStrength, inventoryItem.itemStrength) && Intrinsics.areEqual(this.isActive, inventoryItem.isActive) && Intrinsics.areEqual(this.breaks, inventoryItem.breaks) && this.inventoryType == inventoryItem.inventoryType && Intrinsics.areEqual(this.acsSlot, inventoryItem.acsSlot) && Intrinsics.areEqual(this.photoBitmap, inventoryItem.photoBitmap) && this.isColored == inventoryItem.isColored && this.isLocked == inventoryItem.isLocked && Intrinsics.areEqual(this.effect, inventoryItem.effect) && Intrinsics.areEqual(this.effectType, inventoryItem.effectType) && Intrinsics.areEqual(this.quality, inventoryItem.quality) && Intrinsics.areEqual(this.customIcon, inventoryItem.customIcon) && Intrinsics.areEqual(this.loading, inventoryItem.loading);
         }
         return false;
     }
@@ -234,7 +242,9 @@ public final class InventoryItem {
         Integer num14 = this.quality;
         int hashCode20 = (hashCode19 + (num14 == null ? 0 : num14.hashCode())) * 31;
         String str3 = this.customIcon;
-        return hashCode20 + (str3 != null ? str3.hashCode() : 0);
+        int hashCode21 = (hashCode20 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        Boolean bool = this.loading;
+        return hashCode21 + (bool != null ? bool.hashCode() : 0);
     }
 
     public String toString() {
@@ -262,10 +272,11 @@ public final class InventoryItem {
         String str2 = this.effect;
         Integer num13 = this.effectType;
         Integer num14 = this.quality;
-        return "InventoryItem(slot=" + i + ", item=" + num + ", id=" + i2 + ", text=" + str + ", item_type=" + num2 + ", amount=" + l + ", background=" + num3 + ", color=" + num4 + ", bits=" + num5 + ", available=" + num6 + ", enchant=" + num7 + ", blackout=" + num8 + ", time=" + l2 + ", itemStrength=" + num9 + ", isActive=" + num10 + ", breaks=" + num11 + ", inventoryType=" + i3 + ", acsSlot=" + num12 + ", photoBitmap=" + bitmap + ", isColored=" + z + ", isLocked=" + z2 + ", effect=" + str2 + ", effectType=" + num13 + ", quality=" + num14 + ", customIcon=" + this.customIcon + ")";
+        String str3 = this.customIcon;
+        return "InventoryItem(slot=" + i + ", item=" + num + ", id=" + i2 + ", text=" + str + ", item_type=" + num2 + ", amount=" + l + ", background=" + num3 + ", color=" + num4 + ", bits=" + num5 + ", available=" + num6 + ", enchant=" + num7 + ", blackout=" + num8 + ", time=" + l2 + ", itemStrength=" + num9 + ", isActive=" + num10 + ", breaks=" + num11 + ", inventoryType=" + i3 + ", acsSlot=" + num12 + ", photoBitmap=" + bitmap + ", isColored=" + z + ", isLocked=" + z2 + ", effect=" + str2 + ", effectType=" + num13 + ", quality=" + num14 + ", customIcon=" + str3 + ", loading=" + this.loading + ")";
     }
 
-    public InventoryItem(int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3) {
+    public InventoryItem(int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3, Boolean bool) {
         this.slot = i;
         this.item = num;
         this.id = i2;
@@ -291,6 +302,7 @@ public final class InventoryItem {
         this.effectType = num13;
         this.quality = num14;
         this.customIcon = str3;
+        this.loading = bool;
     }
 
     public final int getSlot() {
@@ -393,11 +405,15 @@ public final class InventoryItem {
         return this.quality;
     }
 
-    public /* synthetic */ InventoryItem(int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, num, i2, str, num2, l, num3, num4, num5, num6, num7, num8, l2, num9, num10, num11, i3, num12, bitmap, z, z2, str2, num13, (i4 & 8388608) != 0 ? null : num14, (i4 & 16777216) != 0 ? "" : str3);
+    public /* synthetic */ InventoryItem(int i, Integer num, int i2, String str, Integer num2, Long l, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Long l2, Integer num9, Integer num10, Integer num11, int i3, Integer num12, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num13, Integer num14, String str3, Boolean bool, int i4, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, num, i2, str, num2, l, num3, num4, num5, num6, num7, num8, l2, num9, num10, num11, i3, num12, bitmap, z, z2, str2, num13, (i4 & 8388608) != 0 ? null : num14, (i4 & 16777216) != 0 ? "" : str3, (i4 & GroupFlagsKt.HasAuxSlotFlag) != 0 ? null : bool);
     }
 
     public final String getCustomIcon() {
         return this.customIcon;
+    }
+
+    public final Boolean getLoading() {
+        return this.loading;
     }
 }

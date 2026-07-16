@@ -6,17 +6,17 @@ import io.appmetrica.analytics.profile.UserProfile;
 public final class RunnableC0306hi implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UserProfile f1018a;
+    public final /* synthetic */ UserProfile f1020a;
     public final /* synthetic */ Ai b;
 
     public RunnableC0306hi(Ai ai, UserProfile userProfile) {
         this.b = ai;
-        this.f1018a = userProfile;
+        this.f1020a = userProfile;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Ai ai = this.b;
-        Ai.a(ai.f461a, ai.d, ai.e).reportUserProfile(this.f1018a);
+        Ai.a(ai.f463a, ai.d, ai.e).reportUserProfile(this.f1020a);
     }
 }

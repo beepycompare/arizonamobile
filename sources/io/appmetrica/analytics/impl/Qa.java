@@ -9,12 +9,12 @@ import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
 public final class Qa implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f729a;
+    public final Context f731a;
     public final ICommonExecutor b;
     public final String c = Constants.REFERRER_API_GOOGLE;
 
     public Qa(Context context, ICommonExecutor iCommonExecutor) {
-        this.f729a = context;
+        this.f731a = context;
         this.b = iCommonExecutor;
     }
 
@@ -28,11 +28,11 @@ public final class Qa implements Hg {
         if (ReflectionUtils.detectClassExists("com.android.installreferrer.api.InstallReferrerClient")) {
             Pa pa = new Pa(this.b);
             try {
-                InstallReferrerClient build = InstallReferrerClient.newBuilder(this.f729a).build();
+                InstallReferrerClient build = InstallReferrerClient.newBuilder(this.f731a).build();
                 build.startConnection(new Oa(pa, build, dg));
                 return;
             } catch (Throwable th) {
-                C0541qk c0541qk = Oj.f706a;
+                C0541qk c0541qk = Oj.f708a;
                 c0541qk.getClass();
                 c0541qk.a(new Pj("Failed to get referrer from Google Play referrer library", th));
                 dg.a(new Jg("Failed to get referrer from Google Play referrer library", th));

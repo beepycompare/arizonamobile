@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class Z7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0673vn f868a;
+    public final C0673vn f870a;
 
     public Z7(C0673vn c0673vn) {
-        this.f868a = c0673vn;
+        this.f870a = c0673vn;
     }
 
     public Z7() {

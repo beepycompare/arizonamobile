@@ -178,7 +178,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: connectTcp */
-    public RoutePlanner.ConnectResult mo11767connectTcp() {
+    public RoutePlanner.ConnectResult mo11769connectTcp() {
         Socket socket;
         Socket socket2;
         if (this.rawSocket != null) {
@@ -223,7 +223,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public RoutePlanner.ConnectResult mo11768connectTlsEtc() {
+    public RoutePlanner.ConnectResult mo11770connectTlsEtc() {
         IOException iOException;
         ConnectPlan connectPlan;
         Socket socket = this.rawSocket;
@@ -563,7 +563,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: handleSuccess */
-    public RealConnection mo11764handleSuccess() {
+    public RealConnection mo11766handleSuccess() {
         this.call.getClient().getRouteDatabase$okhttp().connected(getRoute());
         RealConnection realConnection = this.connection;
         Intrinsics.checkNotNull(realConnection);
@@ -585,7 +585,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan, okhttp3.internal.http.ExchangeCodec.Carrier
     /* renamed from: cancel */
-    public void mo11763cancel() {
+    public void mo11765cancel() {
         this.canceled = true;
         Socket socket = this.rawSocket;
         if (socket != null) {
@@ -595,7 +595,7 @@ public final class ConnectPlan implements RoutePlanner.Plan, ExchangeCodec.Carri
 
     @Override // okhttp3.internal.connection.RoutePlanner.Plan
     /* renamed from: retry */
-    public RoutePlanner.Plan mo11765retry() {
+    public RoutePlanner.Plan mo11767retry() {
         return new ConnectPlan(this.taskRunner, this.connectionPool, this.readTimeoutMillis, this.writeTimeoutMillis, this.socketConnectTimeoutMillis, this.socketReadTimeoutMillis, this.pingIntervalMillis, this.retryOnConnectionFailure, this.call, this.routePlanner, getRoute(), this.routes, this.attempt, this.tunnelRequest, this.connectionSpecIndex, this.isTlsFallback);
     }
 

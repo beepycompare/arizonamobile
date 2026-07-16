@@ -214,7 +214,7 @@ public final class LauncherBackgroundWriter {
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00c7, code lost:
         r11 = kotlin.Result.Companion;
-        r10 = kotlin.Result.m9896constructorimpl(kotlin.ResultKt.createFailure(r10));
+        r10 = kotlin.Result.m9898constructorimpl(kotlin.ResultKt.createFailure(r10));
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0057  */
@@ -251,10 +251,10 @@ public final class LauncherBackgroundWriter {
                     LauncherBackgroundWriter launcherBackgroundWriter = (LauncherBackgroundWriter) launcherBackgroundWriter$loadLocal$1.L$1;
                     Throwable th = (Throwable) launcherBackgroundWriter$loadLocal$1.L$0;
                     ResultKt.throwOnFailure(obj);
-                    Object m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
-                    Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-                    if (m9899exceptionOrNullimpl != null) {
-                        Log.e(TAG, "loadLocal: emergency fallback failed", m9899exceptionOrNullimpl);
+                    Object m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
+                    Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+                    if (m9901exceptionOrNullimpl != null) {
+                        Log.e(TAG, "loadLocal: emergency fallback failed", m9901exceptionOrNullimpl);
                     }
                 }
                 return Unit.INSTANCE;
@@ -367,9 +367,9 @@ public final class LauncherBackgroundWriter {
             if (currentTargetFile.exists() && !Intrinsics.areEqual(currentTargetFile.getName(), "background_home.webp") && !Intrinsics.areEqual(currentTargetFile.getName(), file.getName())) {
                 Log.d(TAG, "syncRemoteAndStore: delete old current file result=" + currentTargetFile.delete());
             }
-            Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(Result.m9896constructorimpl(Unit.INSTANCE));
-            if (m9899exceptionOrNullimpl != null) {
-                Log.e(TAG, "syncRemoteAndStore: update failed", m9899exceptionOrNullimpl);
+            Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(Result.m9898constructorimpl(Unit.INSTANCE));
+            if (m9901exceptionOrNullimpl != null) {
+                Log.e(TAG, "syncRemoteAndStore: update failed", m9901exceptionOrNullimpl);
                 if (file2.exists()) {
                     Log.d(TAG, "syncRemoteAndStore: tmp delete after fail result=" + file2.delete());
                 }
@@ -574,7 +574,7 @@ public final class LauncherBackgroundWriter {
         }
         String normalizeHash = normalizeHash(str2);
         if (StringsKt.isBlank(normalizeHash)) {
-            normalizeHash = UStringsKt.m11259toStringV7xB4Y4(UInt.m9997constructorimpl(str.hashCode()), 16);
+            normalizeHash = UStringsKt.m11261toStringV7xB4Y4(UInt.m9999constructorimpl(str.hashCode()), 16);
         }
         String str6 = str3 + "_" + StringsKt.take(normalizeHash, 16) + str4;
         Log.d(TAG, "buildLocalFileName: remotePath=" + str + ", rawName=" + str5 + ", result=" + str6);
@@ -684,23 +684,23 @@ public final class LauncherBackgroundWriter {
     }
 
     private final String calculateFileHashOrEmpty(File file) {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             LauncherBackgroundWriter launcherBackgroundWriter = this;
-            m9896constructorimpl = Result.m9896constructorimpl(calculateFileHash(file));
+            m9898constructorimpl = Result.m9898constructorimpl(calculateFileHash(file));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Log.e(TAG, "calculateFileHashOrEmpty: failed for " + file.getAbsolutePath(), m9899exceptionOrNullimpl);
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Log.e(TAG, "calculateFileHashOrEmpty: failed for " + file.getAbsolutePath(), m9901exceptionOrNullimpl);
         }
-        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
-            m9896constructorimpl = "";
+        if (Result.m9904isFailureimpl(m9898constructorimpl)) {
+            m9898constructorimpl = "";
         }
-        return (String) m9896constructorimpl;
+        return (String) m9898constructorimpl;
     }
 
     private final String calculateFileHash(File file) {

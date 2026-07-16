@@ -36,7 +36,7 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     });
 
     /* renamed from: lambda$-1935939771  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f71lambda$1935939771 = ComposableLambdaKt.composableLambdaInstance(-1935939771, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
+    private static Function3<BoxScope, Composer, Integer, Unit> f73lambda$1935939771 = ComposableLambdaKt.composableLambdaInstance(-1935939771, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
             return ComposableSingletons$SettingsBottomBarKt.lambda__1935939771$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
@@ -44,8 +44,8 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     });
 
     /* renamed from: getLambda$-1935939771$settings  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9824getLambda$1935939771$settings() {
-        return f71lambda$1935939771;
+    public final Function3<BoxScope, Composer, Integer, Unit> m9827getLambda$1935939771$settings() {
+        return f73lambda$1935939771;
     }
 
     public final Function3<BoxScope, Composer, Integer, Unit> getLambda$124095881$settings() {

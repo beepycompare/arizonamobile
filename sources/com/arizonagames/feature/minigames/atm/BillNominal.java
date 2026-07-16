@@ -8,7 +8,7 @@ import kotlin.enums.EnumEntriesKt;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* compiled from: AtmScreen.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\tj\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\u000b"}, d2 = {"Lcom/arizonagames/feature/minigames/atm/BillNominal;", "", "<init>", "(Ljava/lang/String;I)V", "ONE", "TEN", "FIFTY", "HUNDRED", "billDrawableRes", "", "type", "atm"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\nj\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\f"}, d2 = {"Lcom/arizonagames/feature/minigames/atm/BillNominal;", "", "<init>", "(Ljava/lang/String;I)V", "ONE", "TEN", "FIFTY", "HUNDRED", "EXTRA", "billDrawableRes", "", "type", "atm"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class BillNominal {
     private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -17,6 +17,7 @@ public final class BillNominal {
     public static final BillNominal TEN = new BillNominal("TEN", 1);
     public static final BillNominal FIFTY = new BillNominal("FIFTY", 2);
     public static final BillNominal HUNDRED = new BillNominal("HUNDRED", 3);
+    public static final BillNominal EXTRA = new BillNominal("EXTRA", 4);
 
     /* compiled from: AtmScreen.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
@@ -42,12 +43,16 @@ public final class BillNominal {
                 iArr[BillNominal.HUNDRED.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
+            try {
+                iArr[BillNominal.EXTRA.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
     private static final /* synthetic */ BillNominal[] $values() {
-        return new BillNominal[]{ONE, TEN, FIFTY, HUNDRED};
+        return new BillNominal[]{ONE, TEN, FIFTY, HUNDRED, EXTRA};
     }
 
     public static EnumEntries<BillNominal> getEntries() {
@@ -78,7 +83,10 @@ public final class BillNominal {
                 if (i2 != 2) {
                     if (i2 != 3) {
                         if (i2 != 4) {
-                            throw new NoWhenBranchMatchedException();
+                            if (i2 != 5) {
+                                throw new NoWhenBranchMatchedException();
+                            }
+                            return R.drawable.atm_bill_1;
                         }
                         return R.drawable.atm_bill_100;
                     }
@@ -87,20 +95,42 @@ public final class BillNominal {
                 return R.drawable.atm_bill_10;
             }
             return R.drawable.atm_bill_1;
-        }
-        int i3 = WhenMappings.$EnumSwitchMapping$0[ordinal()];
-        if (i3 != 1) {
-            if (i3 != 2) {
-                if (i3 != 3) {
-                    if (i3 != 4) {
-                        throw new NoWhenBranchMatchedException();
+        } else if (i == 2) {
+            int i3 = WhenMappings.$EnumSwitchMapping$0[ordinal()];
+            if (i3 != 1) {
+                if (i3 != 2) {
+                    if (i3 != 3) {
+                        if (i3 != 4) {
+                            if (i3 != 5) {
+                                throw new NoWhenBranchMatchedException();
+                            }
+                            return R.drawable.atm_evidence_biomaterial_5;
+                        }
+                        return R.drawable.atm_evidence_biomaterial_4;
                     }
-                    return R.drawable.atm_chicken_item_4;
+                    return R.drawable.atm_evidence_biomaterial_3;
                 }
-                return R.drawable.atm_chicken_item_3;
+                return R.drawable.atm_evidence_biomaterial_2;
             }
-            return R.drawable.atm_chicken_item_2;
+            return R.drawable.atm_evidence_biomaterial_1;
+        } else {
+            int i4 = WhenMappings.$EnumSwitchMapping$0[ordinal()];
+            if (i4 != 1) {
+                if (i4 != 2) {
+                    if (i4 != 3) {
+                        if (i4 != 4) {
+                            if (i4 != 5) {
+                                throw new NoWhenBranchMatchedException();
+                            }
+                            return R.drawable.atm_chicken_item_1;
+                        }
+                        return R.drawable.atm_chicken_item_4;
+                    }
+                    return R.drawable.atm_chicken_item_3;
+                }
+                return R.drawable.atm_chicken_item_2;
+            }
+            return R.drawable.atm_chicken_item_1;
         }
-        return R.drawable.atm_chicken_item_1;
     }
 }

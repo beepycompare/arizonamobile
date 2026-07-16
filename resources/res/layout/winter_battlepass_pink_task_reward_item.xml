@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="@dimen/_48sdp" android:layout_height="match_parent" android:layout_marginEnd="@dimen/_6sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_38sdp" android:layout_height="@dimen/_38sdp" app:backgroundMainColor="@color/winter_bp_pink_surface_translucent" app:backgroundSecondColor="@color/winter_bp_pink_action" app:borderMainColor="@color/winter_bp_pink_border" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_5sdp" app:gradientAngle="90">
+        <ImageView android:layout_gravity="center" android:id="@+id/task_info_reward_item_image" android:layout_width="@dimen/_34sdp" android:layout_height="@dimen/_34sdp" android:scaleType="centerInside" android:contentDescription="@null"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/winter_bp_pink_text_dark" android:ellipsize="end" android:gravity="top|center_horizontal" android:id="@+id/task_info_reward_item_name" android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="@dimen/_3sdp" android:maxLines="2" android:includeFontPadding="false" android:layout_weight="1" android:fontFamily="@font/heading_now_64_regular"/>
+</LinearLayout>

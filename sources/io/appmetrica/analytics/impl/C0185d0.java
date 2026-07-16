@@ -10,25 +10,25 @@ import java.util.concurrent.TimeUnit;
 public final class C0185d0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B0 f935a;
+    public final B0 f937a;
     public final Bl b;
     public final C0318i4 c;
     public final long d = TimeUnit.SECONDS.toMillis(10);
 
     public C0185d0(B0 b0, Bl bl, C0318i4 c0318i4) {
-        this.f935a = b0;
+        this.f937a = b0;
         this.b = bl;
         this.c = c0318i4;
     }
 
     public final synchronized void a(final Context context, final AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        this.f935a.getClass();
+        this.f937a.getClass();
         if (B0.a()) {
             return;
         }
         LoggerStorage.getMainPublicOrAnonymousLogger().info("Session autotracking enabled", new Object[0]);
         this.b.a();
-        this.f935a.getClass();
+        this.f937a.getClass();
         A0 a2 = A0.a(context);
         a2.d.a(null, a2);
         IHandlerExecutor a3 = this.c.a();
@@ -38,14 +38,14 @@ public final class C0185d0 {
                 C0185d0.a(C0185d0.this, context, appMetricaLibraryAdapterConfig);
             }
         });
-        this.f935a.getClass();
+        this.f937a.getClass();
         B0.b();
     }
 
     public static final void a(C0185d0 c0185d0, Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
-        c0185d0.f935a.getClass();
+        c0185d0.f937a.getClass();
         A0 a2 = A0.a(context);
         a2.f().a(appMetricaLibraryAdapterConfig);
-        C0576s4.l().c.a().execute(new RunnableC0729y1(a2.f447a));
+        C0576s4.l().c.a().execute(new RunnableC0729y1(a2.f449a));
     }
 }

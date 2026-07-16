@@ -10,19 +10,19 @@ import ru.rustore.sdk.core.util.ContextExtKt;
 public final class C0815p extends Lambda implements Function0<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0817r f1537a;
+    public final /* synthetic */ C0817r f1539a;
     public final /* synthetic */ ServiceConnection b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0815p(C0817r c0817r, ServiceConnection serviceConnection) {
         super(0);
-        this.f1537a = c0817r;
+        this.f1539a = c0817r;
         this.b = serviceConnection;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Unit invoke() {
-        ContextExtKt.unbindServiceSafely(this.f1537a.f1539a, this.b);
+        ContextExtKt.unbindServiceSafely(this.f1539a.f1541a, this.b);
         return Unit.INSTANCE;
     }
 }

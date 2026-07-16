@@ -19,12 +19,12 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0776zm implements IParamsAppender {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ie f1322a;
+    public final Ie f1324a;
     public final Od b;
     public final C0351jc c = new C0351jc();
 
     public C0776zm(Ie ie, Od od) {
-        this.f1322a = ie;
+        this.f1324a = ie;
         this.b = od;
     }
 
@@ -33,46 +33,46 @@ public final class C0776zm implements IParamsAppender {
     public final void appendParams(Uri.Builder builder, Dm dm) {
         String str;
         builder.path("analytics/startup");
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.DEVICE_ID), dm.getDeviceId());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.DEVICE_ID), dm.getDeviceId());
         a(builder, Na.I.h(), this.c);
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.APP_SET_ID), dm.getAppSetId());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.APP_SET_ID_SCOPE), dm.getAppSetIdScope());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.APP_PLATFORM), dm.getAppPlatform());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.PROTOCOL_VERSION), dm.getProtocolVersion());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.ANALYTICS_SDK_VERSION_NAME), dm.getAnalyticsSdkVersionName());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.MODEL), dm.getModel());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.MANUFACTURER), dm.getManufacturer());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.OS_VERSION), dm.getOsVersion());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.SCREEN_WIDTH), String.valueOf(dm.getScreenWidth()));
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.SCREEN_HEIGHT), String.valueOf(dm.getScreenHeight()));
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.SCREEN_DPI), String.valueOf(dm.getScreenDpi()));
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.SCALE_FACTOR), String.valueOf(dm.getScaleFactor()));
-        builder.appendQueryParameter(this.f1322a.a("locale"), dm.getLocale());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.DEVICE_TYPE), dm.getDeviceType());
-        builder.appendQueryParameter(this.f1322a.a("queries"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("query_hosts"), String.valueOf(2));
-        String a2 = this.f1322a.a("features");
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.APP_SET_ID), dm.getAppSetId());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.APP_SET_ID_SCOPE), dm.getAppSetIdScope());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.APP_PLATFORM), dm.getAppPlatform());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.PROTOCOL_VERSION), dm.getProtocolVersion());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.ANALYTICS_SDK_VERSION_NAME), dm.getAnalyticsSdkVersionName());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.MODEL), dm.getModel());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.MANUFACTURER), dm.getManufacturer());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.OS_VERSION), dm.getOsVersion());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.SCREEN_WIDTH), String.valueOf(dm.getScreenWidth()));
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.SCREEN_HEIGHT), String.valueOf(dm.getScreenHeight()));
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.SCREEN_DPI), String.valueOf(dm.getScreenDpi()));
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.SCALE_FACTOR), String.valueOf(dm.getScaleFactor()));
+        builder.appendQueryParameter(this.f1324a.a("locale"), dm.getLocale());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.DEVICE_TYPE), dm.getDeviceType());
+        builder.appendQueryParameter(this.f1324a.a("queries"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("query_hosts"), String.valueOf(2));
+        String a2 = this.f1324a.a("features");
         List<String> g = ((Zk) this.b).g();
-        String[] strArr = {this.f1322a.a("permissions_collecting"), this.f1322a.a("features_collecting"), this.f1322a.a("google_aid"), this.f1322a.a("huawei_oaid"), this.f1322a.a("sim_info"), this.f1322a.a("ssl_pinning")};
+        String[] strArr = {this.f1324a.a("permissions_collecting"), this.f1324a.a("features_collecting"), this.f1324a.a("google_aid"), this.f1324a.a("huawei_oaid"), this.f1324a.a("sim_info"), this.f1324a.a("ssl_pinning")};
         ArrayList arrayList = new ArrayList(g);
         arrayList.addAll(Arrays.asList(strArr));
         builder.appendQueryParameter(a2, StringUtils.wrapFeatures((String[]) arrayList.toArray(new String[0])));
-        builder.appendQueryParameter(this.f1322a.a("app_id"), dm.getPackageName());
-        builder.appendQueryParameter(this.f1322a.a("app_debuggable"), ((C0191d6) dm).f939a);
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.APP_VERSION), dm.getAppVersion());
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.APP_VERSION_CODE), dm.getAppBuildNumber());
+        builder.appendQueryParameter(this.f1324a.a("app_id"), dm.getPackageName());
+        builder.appendQueryParameter(this.f1324a.a("app_debuggable"), ((C0191d6) dm).f941a);
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.APP_VERSION), dm.getAppVersion());
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.APP_VERSION_CODE), dm.getAppBuildNumber());
         if (dm.l) {
             String str2 = dm.m;
             if (!TextUtils.isEmpty(str2)) {
-                builder.appendQueryParameter(this.f1322a.a("country_init"), str2);
+                builder.appendQueryParameter(this.f1324a.a("country_init"), str2);
             }
         } else {
-            builder.appendQueryParameter(this.f1322a.a("detect_locale"), String.valueOf(1));
+            builder.appendQueryParameter(this.f1324a.a("detect_locale"), String.valueOf(1));
         }
         I3 i3 = dm.i;
-        if (!Oo.a(i3.f587a)) {
-            builder.appendQueryParameter(this.f1322a.a("distribution_customization"), String.valueOf(1));
-            builder.appendQueryParameter(this.f1322a.a("clids_set"), AbstractC0311hn.a(i3.f587a));
+        if (!Oo.a(i3.f589a)) {
+            builder.appendQueryParameter(this.f1324a.a("distribution_customization"), String.valueOf(1));
+            builder.appendQueryParameter(this.f1324a.a("clids_set"), AbstractC0311hn.a(i3.f589a));
             int ordinal = i3.b.ordinal();
             if (ordinal == 1) {
                 str = "api";
@@ -83,38 +83,38 @@ public final class C0776zm implements IParamsAppender {
             } else {
                 str = "retail";
             }
-            builder.appendQueryParameter(this.f1322a.a("clids_set_source"), str);
+            builder.appendQueryParameter(this.f1324a.a("clids_set_source"), str);
             String str3 = dm.f;
             String str4 = dm.g;
             if (TextUtils.isEmpty(str3)) {
                 Lg lg = dm.o.b;
                 Bg a3 = lg == null ? null : lg.a();
                 if (a3 != null) {
-                    str3 = a3.f478a;
+                    str3 = a3.f480a;
                     str4 = Ag.a(a3.d);
                 }
             }
             if (!TextUtils.isEmpty(str3)) {
-                builder.appendQueryParameter(this.f1322a.a(Constants.INSTALL_REFERRER), str3);
+                builder.appendQueryParameter(this.f1324a.a(Constants.INSTALL_REFERRER), str3);
                 if (str4 == null) {
                     str4 = AbstractJsonLexerKt.NULL;
                 }
-                builder.appendQueryParameter(this.f1322a.a("install_referrer_source"), str4);
+                builder.appendQueryParameter(this.f1324a.a("install_referrer_source"), str4);
             }
         }
         String uuid = dm.getUuid();
         if (!TextUtils.isEmpty(uuid)) {
-            builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.UUID), uuid);
+            builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.UUID), uuid);
         }
-        builder.appendQueryParameter(this.f1322a.a("time"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("stat_sending"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("retry_policy"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("cache_control"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("permissions_collecting"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("app_system_flag"), ((C0191d6) dm).b);
-        builder.appendQueryParameter(this.f1322a.a("attribution"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("startup_update"), String.valueOf(1));
-        builder.appendQueryParameter(this.f1322a.a("external_attribution"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("time"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("stat_sending"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("retry_policy"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("cache_control"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("permissions_collecting"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("app_system_flag"), ((C0191d6) dm).b);
+        builder.appendQueryParameter(this.f1324a.a("attribution"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("startup_update"), String.valueOf(1));
+        builder.appendQueryParameter(this.f1324a.a("external_attribution"), String.valueOf(1));
         Map<String, Integer> c = ((Zk) this.b).c();
         for (String str5 : c.keySet()) {
             builder.appendQueryParameter(str5, String.valueOf(c.get(str5)));
@@ -127,7 +127,7 @@ public final class C0776zm implements IParamsAppender {
         if (identifiers != null && !dataSendingRestrictionController.isRestrictedForSdk()) {
             AdTrackingInfoResult google = identifiers.getGoogle();
             boolean isValid = google.isValid();
-            Ie ie = this.f1322a;
+            Ie ie = this.f1324a;
             if (!isValid) {
                 builder.appendQueryParameter(ie.a(CommonUrlParts.ADV_ID), "");
             } else {
@@ -135,7 +135,7 @@ public final class C0776zm implements IParamsAppender {
             }
             AdTrackingInfoResult huawei = identifiers.getHuawei();
             boolean isValid2 = huawei.isValid();
-            Ie ie2 = this.f1322a;
+            Ie ie2 = this.f1324a;
             if (!isValid2) {
                 builder.appendQueryParameter(ie2.a(CommonUrlParts.HUAWEI_OAID), "");
             } else {
@@ -143,7 +143,7 @@ public final class C0776zm implements IParamsAppender {
             }
             AdTrackingInfoResult yandex = identifiers.getYandex();
             boolean isValid3 = yandex.isValid();
-            Ie ie3 = this.f1322a;
+            Ie ie3 = this.f1324a;
             if (!isValid3) {
                 builder.appendQueryParameter(ie3.a(CommonUrlParts.YANDEX_ADV_ID), "");
                 return;
@@ -152,8 +152,8 @@ public final class C0776zm implements IParamsAppender {
                 return;
             }
         }
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.ADV_ID), "");
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.HUAWEI_OAID), "");
-        builder.appendQueryParameter(this.f1322a.a(CommonUrlParts.YANDEX_ADV_ID), "");
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.ADV_ID), "");
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.HUAWEI_OAID), "");
+        builder.appendQueryParameter(this.f1324a.a(CommonUrlParts.YANDEX_ADV_ID), "");
     }
 }

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 public abstract /* synthetic */ class AbstractC0780b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1446a;
+    public static final /* synthetic */ int[] f1448a;
 
     static {
         int[] iArr = new int[ActivityEvent.values().length];
@@ -18,6 +18,6 @@ public abstract /* synthetic */ class AbstractC0780b {
             iArr[ActivityEvent.STOPPED.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
-        f1446a = iArr;
+        f1448a = iArr;
     }
 }

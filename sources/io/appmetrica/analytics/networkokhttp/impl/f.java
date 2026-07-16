@@ -10,7 +10,7 @@ import okhttp3.OkHttpClient;
 public final class f extends NetworkClient {
 
     /* renamed from: a  reason: collision with root package name */
-    public final OkHttpClient f1382a;
+    public final OkHttpClient f1384a;
 
     public f(NetworkClientSettings networkClientSettings) {
         this(networkClientSettings, null, 2, null);
@@ -18,7 +18,7 @@ public final class f extends NetworkClient {
 
     @Override // io.appmetrica.analytics.networkapi.NetworkClient
     public final Call newCall(Request request) {
-        return new c(this.f1382a, request, getSettings());
+        return new c(this.f1384a, request, getSettings());
     }
 
     public final String toString() {
@@ -31,6 +31,6 @@ public final class f extends NetworkClient {
 
     public f(NetworkClientSettings networkClientSettings, OkHttpClient okHttpClient) {
         super(networkClientSettings);
-        this.f1382a = okHttpClient;
+        this.f1384a = okHttpClient;
     }
 }

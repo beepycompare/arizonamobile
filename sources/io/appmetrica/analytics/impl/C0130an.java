@@ -13,7 +13,7 @@ import javax.net.ssl.SSLSocketFactory;
 public final class C0130an implements UnderlyingNetworkTask {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0182cn f892a;
+    public final C0182cn f894a;
     public Fm b;
     public EnumC0413lm c;
     public final RequestDataHolder d;
@@ -28,7 +28,7 @@ public final class C0130an implements UnderlyingNetworkTask {
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final String description() {
-        return "Startup task for component: " + this.f892a.f933a.f.toString();
+        return "Startup task for component: " + this.f894a.f935a.f.toString();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -60,7 +60,7 @@ public final class C0130an implements UnderlyingNetworkTask {
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
     public final boolean onCreateTask() {
         this.d.setHeader(HttpHeaders.ACCEPT_ENCODING, "encrypted");
-        return this.f892a.g();
+        return this.f894a.g();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -97,7 +97,7 @@ public final class C0130an implements UnderlyingNetworkTask {
         if (this.b == null || this.f.getResponseHeaders() == null) {
             return;
         }
-        this.f892a.a(this.b, (Dm) this.e.getConfig(), this.f.getResponseHeaders());
+        this.f894a.a(this.b, (Dm) this.e.getConfig(), this.f.getResponseHeaders());
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.UnderlyingNetworkTask
@@ -117,11 +117,11 @@ public final class C0130an implements UnderlyingNetworkTask {
         if (this.c == null) {
             this.c = EnumC0413lm.UNKNOWN;
         }
-        this.f892a.a(this.c);
+        this.f894a.a(this.c);
     }
 
     public C0130an(C0182cn c0182cn, C0620tm c0620tm, FullUrlFormer fullUrlFormer, RequestDataHolder requestDataHolder, ResponseDataHolder responseDataHolder, ConfigProvider configProvider) {
-        this.f892a = c0182cn;
+        this.f894a = c0182cn;
         this.h = c0620tm;
         this.d = requestDataHolder;
         this.f = responseDataHolder;

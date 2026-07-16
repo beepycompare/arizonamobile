@@ -10,14 +10,14 @@ import kotlin.Metadata;
 public final class C0140b7 implements InterfaceC0114a7 {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Zg f903a;
+    private final Zg f905a;
 
     public C0140b7(Zg zg) {
-        this.f903a = zg;
+        this.f905a = zg;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0114a7
     public File a(Context context, String str) {
-        return new File(context.getNoBackupFilesDir(), this.f903a.a(str));
+        return new File(context.getNoBackupFilesDir(), this.f905a.a(str));
     }
 }

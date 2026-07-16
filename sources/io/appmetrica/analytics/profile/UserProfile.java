@@ -8,29 +8,29 @@ import java.util.List;
 public class UserProfile {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List f1419a;
+    private final List f1421a;
 
     /* loaded from: classes5.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final LinkedList f1420a;
+        private final LinkedList f1422a;
 
         /* synthetic */ Builder(int i) {
             this();
         }
 
         public Builder apply(UserProfileUpdate<? extends Ho> userProfileUpdate) {
-            this.f1420a.add(userProfileUpdate);
+            this.f1422a.add(userProfileUpdate);
             return this;
         }
 
         public UserProfile build() {
-            return new UserProfile(this.f1420a, 0);
+            return new UserProfile(this.f1422a, 0);
         }
 
         private Builder() {
-            this.f1420a = new LinkedList();
+            this.f1422a = new LinkedList();
         }
     }
 
@@ -43,10 +43,10 @@ public class UserProfile {
     }
 
     public List<UserProfileUpdate<? extends Ho>> getUserProfileUpdates() {
-        return this.f1419a;
+        return this.f1421a;
     }
 
     private UserProfile(LinkedList linkedList) {
-        this.f1419a = CollectionUtils.unmodifiableListCopy(linkedList);
+        this.f1421a = CollectionUtils.unmodifiableListCopy(linkedList);
     }
 }

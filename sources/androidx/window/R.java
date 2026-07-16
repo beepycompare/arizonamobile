@@ -18,22 +18,22 @@ public final class R {
         public static int finishPrimaryWithSecondary = 0x7f040289;
         public static int finishSecondaryWithPrimary = 0x7f04028a;
         public static int isDraggingToFullscreenAllowed = 0x7f040344;
-        public static int placeholderActivityName = 0x7f040518;
-        public static int primaryActivityName = 0x7f04053f;
-        public static int secondaryActivityAction = 0x7f04058e;
-        public static int secondaryActivityName = 0x7f04058f;
-        public static int splitChangeAnimation = 0x7f0405e6;
-        public static int splitCloseAnimation = 0x7f0405e7;
-        public static int splitLayoutDirection = 0x7f0405e8;
-        public static int splitMaxAspectRatioInLandscape = 0x7f0405e9;
-        public static int splitMaxAspectRatioInPortrait = 0x7f0405ea;
-        public static int splitMinHeightDp = 0x7f0405eb;
-        public static int splitMinSmallestWidthDp = 0x7f0405ec;
-        public static int splitMinWidthDp = 0x7f0405ed;
-        public static int splitOpenAnimation = 0x7f0405ee;
-        public static int splitRatio = 0x7f0405ef;
-        public static int stickyPlaceholder = 0x7f040613;
-        public static int tag = 0x7f040654;
+        public static int placeholderActivityName = 0x7f040522;
+        public static int primaryActivityName = 0x7f040549;
+        public static int secondaryActivityAction = 0x7f040598;
+        public static int secondaryActivityName = 0x7f040599;
+        public static int splitChangeAnimation = 0x7f0405f0;
+        public static int splitCloseAnimation = 0x7f0405f1;
+        public static int splitLayoutDirection = 0x7f0405f2;
+        public static int splitMaxAspectRatioInLandscape = 0x7f0405f3;
+        public static int splitMaxAspectRatioInPortrait = 0x7f0405f4;
+        public static int splitMinHeightDp = 0x7f0405f5;
+        public static int splitMinSmallestWidthDp = 0x7f0405f6;
+        public static int splitMinWidthDp = 0x7f0405f7;
+        public static int splitOpenAnimation = 0x7f0405f8;
+        public static int splitRatio = 0x7f0405f9;
+        public static int stickyPlaceholder = 0x7f04061d;
+        public static int tag = 0x7f04065e;
 
         private attr() {
         }
@@ -45,17 +45,17 @@ public final class R {
         public static int always = 0x7f0a00d4;
         public static int alwaysAllow = 0x7f0a00d5;
         public static int alwaysDisallow = 0x7f0a00d6;
-        public static int androidx_window_activity_scope = 0x7f0a00dc;
-        public static int bottomToTop = 0x7f0a01e4;
-        public static int draggable = 0x7f0a0497;
-        public static int fixed = 0x7f0a0582;
-        public static int jumpCut = 0x7f0a080a;
-        public static int locale = 0x7f0a0892;
-        public static int ltr = 0x7f0a08a5;
-        public static int never = 0x7f0a0a28;
-        public static int rtl = 0x7f0a0c72;
-        public static int systemDefault = 0x7f0a0ded;
-        public static int topToBottom = 0x7f0a0eae;
+        public static int androidx_window_activity_scope = 0x7f0a00df;
+        public static int bottomToTop = 0x7f0a0208;
+        public static int draggable = 0x7f0a04df;
+        public static int fixed = 0x7f0a05d1;
+        public static int jumpCut = 0x7f0a0864;
+        public static int locale = 0x7f0a08ee;
+        public static int ltr = 0x7f0a0901;
+        public static int never = 0x7f0a0a8a;
+        public static int rtl = 0x7f0a0d1b;
+        public static int systemDefault = 0x7f0a0e9d;
+        public static int topToBottom = 0x7f0a0f61;
 
         private id() {
         }

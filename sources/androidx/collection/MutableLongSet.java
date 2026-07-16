@@ -238,7 +238,7 @@ public final class MutableLongSet extends LongSet {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m10076constructorimpl(ULong.m10076constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10076constructorimpl(ULong.m10076constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m10078constructorimpl(ULong.m10078constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10078constructorimpl(ULong.m10078constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

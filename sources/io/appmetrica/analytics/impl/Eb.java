@@ -6,21 +6,21 @@ import io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThrea
 public final class Eb extends HandlerThread implements IInterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f526a;
+    public volatile boolean f528a;
 
     public Eb(String str) {
         super(str);
-        this.f526a = true;
+        this.f528a = true;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public final synchronized boolean isRunning() {
-        return this.f526a;
+        return this.f528a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
     public final synchronized void stopRunning() {
-        this.f526a = false;
+        this.f528a = false;
         interrupt();
     }
 }

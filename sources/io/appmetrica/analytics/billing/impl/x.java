@@ -12,7 +12,7 @@ public final class x extends MessageNano {
     public static volatile x[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f277a;
+    public boolean f279a;
     public w b;
     public v c;
 
@@ -32,7 +32,7 @@ public final class x extends MessageNano {
     }
 
     public final x a() {
-        this.f277a = false;
+        this.f279a = false;
         this.b = null;
         this.c = null;
         this.cachedSize = -1;
@@ -42,7 +42,7 @@ public final class x extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        boolean z = this.f277a;
+        boolean z = this.f279a;
         if (z) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
         }
@@ -56,7 +56,7 @@ public final class x extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        boolean z = this.f277a;
+        boolean z = this.f279a;
         if (z) {
             codedOutputByteBufferNano.writeBool(1, z);
         }
@@ -79,7 +79,7 @@ public final class x extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f277a = codedInputByteBufferNano.readBool();
+                this.f279a = codedInputByteBufferNano.readBool();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new w();

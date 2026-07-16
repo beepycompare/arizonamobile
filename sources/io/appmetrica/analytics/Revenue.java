@@ -17,7 +17,7 @@ public class Revenue {
         private static final C0312ho g = new C0312ho(new Ce("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
-        final long f220a;
+        final long f222a;
         final Currency b;
         Integer c;
         String d;
@@ -54,7 +54,7 @@ public class Revenue {
 
         private Builder(long j, Currency currency) {
             g.a(currency);
-            this.f220a = j;
+            this.f222a = j;
             this.b = currency;
         }
     }
@@ -68,7 +68,7 @@ public class Revenue {
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */
-            private String f221a;
+            private String f223a;
             private String b;
 
             /* synthetic */ Builder(int i) {
@@ -80,7 +80,7 @@ public class Revenue {
             }
 
             public Builder withData(String str) {
-                this.f221a = str;
+                this.f223a = str;
                 return this;
             }
 
@@ -102,7 +102,7 @@ public class Revenue {
         }
 
         private Receipt(Builder builder) {
-            this.data = builder.f221a;
+            this.data = builder.f223a;
             this.signature = builder.b;
         }
     }
@@ -116,7 +116,7 @@ public class Revenue {
     }
 
     private Revenue(Builder builder) {
-        this.priceMicros = builder.f220a;
+        this.priceMicros = builder.f222a;
         this.currency = builder.b;
         this.quantity = builder.c;
         this.productID = builder.d;

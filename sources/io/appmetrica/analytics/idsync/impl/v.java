@@ -12,7 +12,7 @@ public final class v {
     public static String a(D d) {
         String encodeToString;
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("type", d.f415a);
+        jSONObject.put("type", d.f417a);
         jSONObject.put("url", d.c);
         jSONObject.put("responseCode", d.e);
         byte[] bArr = d.f;

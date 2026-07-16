@@ -54,18 +54,18 @@ public final class DefaultChoreographerFrameClock implements MonotonicFrameClock
         final Choreographer.FrameCallback frameCallback = new Choreographer.FrameCallback() { // from class: androidx.compose.runtime.DefaultChoreographerFrameClock$withFrameNanos$2$callback$1
             @Override // android.view.Choreographer.FrameCallback
             public final void doFrame(long j) {
-                Object m9896constructorimpl;
+                Object m9898constructorimpl;
                 Continuation continuation2 = cancellableContinuationImpl2;
                 DefaultChoreographerFrameClock defaultChoreographerFrameClock = DefaultChoreographerFrameClock.INSTANCE;
                 Function1<Long, R> function12 = function1;
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9896constructorimpl = Result.m9896constructorimpl(function12.invoke(Long.valueOf(j)));
+                    m9898constructorimpl = Result.m9898constructorimpl(function12.invoke(Long.valueOf(j)));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+                    m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
                 }
-                continuation2.resumeWith(m9896constructorimpl);
+                continuation2.resumeWith(m9898constructorimpl);
             }
         };
         choreographer.postFrameCallback(frameCallback);

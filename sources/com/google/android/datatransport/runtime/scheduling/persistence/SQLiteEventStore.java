@@ -104,7 +104,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         long longValue = ((Long) inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda4
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9502x42ac2bf1(eventInternal, transportContext, (SQLiteDatabase) obj);
+                return SQLiteEventStore.this.m9503x42ac2bf1(eventInternal, transportContext, (SQLiteDatabase) obj);
             }
         })).longValue();
         if (longValue < 1) {
@@ -115,7 +115,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$persist$1$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Long m9502x42ac2bf1(EventInternal eventInternal, TransportContext transportContext, SQLiteDatabase sQLiteDatabase) {
+    public /* synthetic */ Long m9503x42ac2bf1(EventInternal eventInternal, TransportContext transportContext, SQLiteDatabase sQLiteDatabase) {
         if (isStorageAtLimit()) {
             recordLogEventDropped(1L, LogEventDropped.Reason.CACHE_FULL, eventInternal.getTransportName());
             return -1L;
@@ -207,7 +207,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
             inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda11
                 @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
                 public final Object apply(Object obj) {
-                    return SQLiteEventStore.this.m9504x9f560649(str, r3, (SQLiteDatabase) obj);
+                    return SQLiteEventStore.this.m9505x9f560649(str, r3, (SQLiteDatabase) obj);
                 }
             });
         }
@@ -215,12 +215,12 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$recordFailure$4$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Object m9504x9f560649(String str, String str2, SQLiteDatabase sQLiteDatabase) {
+    public /* synthetic */ Object m9505x9f560649(String str, String str2, SQLiteDatabase sQLiteDatabase) {
         sQLiteDatabase.compileStatement(str).execute();
         tryWithCursor(sQLiteDatabase.rawQuery(str2, null), new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda27
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9503x70a49c2a((Cursor) obj);
+                return SQLiteEventStore.this.m9504x70a49c2a((Cursor) obj);
             }
         });
         sQLiteDatabase.compileStatement("DELETE FROM events WHERE num_attempts >= 16").execute();
@@ -229,7 +229,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$recordFailure$3$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Object m9503x70a49c2a(Cursor cursor) {
+    public /* synthetic */ Object m9504x70a49c2a(Cursor cursor) {
         while (cursor.moveToNext()) {
             int i = cursor.getInt(0);
             recordLogEventDropped(i, LogEventDropped.Reason.MAX_RETRIES_REACHED, cursor.getString(1));
@@ -280,14 +280,14 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         return ((Boolean) inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda5
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9497xca7e02ad(transportContext, (SQLiteDatabase) obj);
+                return SQLiteEventStore.this.m9498xca7e02ad(transportContext, (SQLiteDatabase) obj);
             }
         })).booleanValue();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$hasPendingEventsFor$6$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Boolean m9497xca7e02ad(TransportContext transportContext, SQLiteDatabase sQLiteDatabase) {
+    public /* synthetic */ Boolean m9498xca7e02ad(TransportContext transportContext, SQLiteDatabase sQLiteDatabase) {
         Long transportContextId = getTransportContextId(sQLiteDatabase, transportContext);
         if (transportContextId == null) {
             return false;
@@ -327,14 +327,14 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         return (Iterable) inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda24
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9498x21bf8b6a(transportContext, (SQLiteDatabase) obj);
+                return SQLiteEventStore.this.m9499x21bf8b6a(transportContext, (SQLiteDatabase) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$loadBatch$8$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ List m9498x21bf8b6a(TransportContext transportContext, SQLiteDatabase sQLiteDatabase) {
+    public /* synthetic */ List m9499x21bf8b6a(TransportContext transportContext, SQLiteDatabase sQLiteDatabase) {
         Priority[] values;
         List<PersistedEvent> loadEvents = loadEvents(sQLiteDatabase, transportContext, this.config.getLoadBatchSize());
         for (Priority priority : Priority.values()) {
@@ -384,19 +384,19 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         return ((Integer) inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda10
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9496xf6f3aef7(time, (SQLiteDatabase) obj);
+                return SQLiteEventStore.this.m9497xf6f3aef7(time, (SQLiteDatabase) obj);
             }
         })).intValue();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$cleanUp$12$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Integer m9496xf6f3aef7(long j, SQLiteDatabase sQLiteDatabase) {
+    public /* synthetic */ Integer m9497xf6f3aef7(long j, SQLiteDatabase sQLiteDatabase) {
         String[] strArr = {String.valueOf(j)};
         tryWithCursor(sQLiteDatabase.rawQuery("SELECT COUNT(*), transport_name FROM events WHERE timestamp_ms < ? GROUP BY transport_name", strArr), new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda19
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9495xc84244d8((Cursor) obj);
+                return SQLiteEventStore.this.m9496xc84244d8((Cursor) obj);
             }
         });
         return Integer.valueOf(sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, "timestamp_ms < ?", strArr));
@@ -404,7 +404,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$cleanUp$11$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Object m9495xc84244d8(Cursor cursor) {
+    public /* synthetic */ Object m9496xc84244d8(Cursor cursor) {
         while (cursor.moveToNext()) {
             int i = cursor.getInt(0);
             recordLogEventDropped(i, LogEventDropped.Reason.MESSAGE_TOO_OLD, cursor.getString(1));
@@ -449,7 +449,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         tryWithCursor(sQLiteDatabase.query(NotificationStatsStore.KEY_EVENTS, new String[]{APEZProvider.FILEID, "transport_name", "timestamp_ms", "uptime_ms", "payload_encoding", "payload", "code", "inline", FirebaseAnalytics.Param.PRODUCT_ID, "pseudonymous_id", "experiment_ids_clear_blob", "experiment_ids_encrypted_blob"}, "context_id = ?", new String[]{transportContextId.toString()}, null, null, null, String.valueOf(i)), new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda1
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9501x1b337a6a(arrayList, transportContext, (Cursor) obj);
+                return SQLiteEventStore.this.m9502x1b337a6a(arrayList, transportContext, (Cursor) obj);
             }
         });
         return arrayList;
@@ -457,7 +457,7 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$loadEvents$14$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Object m9501x1b337a6a(List list, TransportContext transportContext, Cursor cursor) {
+    public /* synthetic */ Object m9502x1b337a6a(List list, TransportContext transportContext, Cursor cursor) {
         while (cursor.moveToNext()) {
             long j = cursor.getLong(0);
             boolean z = cursor.getInt(7) != 0;
@@ -649,25 +649,25 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         return (ClientMetrics) inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda0
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9500xdd9aea28(r2, hashMap, newBuilder, (SQLiteDatabase) obj);
+                return SQLiteEventStore.this.m9501xdd9aea28(r2, hashMap, newBuilder, (SQLiteDatabase) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$loadClientMetrics$20$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ ClientMetrics m9500xdd9aea28(String str, final Map map, final ClientMetrics.Builder builder, SQLiteDatabase sQLiteDatabase) {
+    public /* synthetic */ ClientMetrics m9501xdd9aea28(String str, final Map map, final ClientMetrics.Builder builder, SQLiteDatabase sQLiteDatabase) {
         return (ClientMetrics) tryWithCursor(sQLiteDatabase.rawQuery(str, new String[0]), new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda6
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9499xda5bcb7e(map, builder, (Cursor) obj);
+                return SQLiteEventStore.this.m9500xda5bcb7e(map, builder, (Cursor) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$loadClientMetrics$19$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ ClientMetrics m9499xda5bcb7e(Map map, ClientMetrics.Builder builder, Cursor cursor) {
+    public /* synthetic */ ClientMetrics m9500xda5bcb7e(Map map, ClientMetrics.Builder builder, Cursor cursor) {
         while (cursor.moveToNext()) {
             String string = cursor.getString(0);
             LogEventDropped.Reason convertToReason = convertToReason(cursor.getInt(1));
@@ -722,14 +722,14 @@ public class SQLiteEventStore implements EventStore, SynchronizationGuard, Clien
         inTransaction(new Function() { // from class: com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore$$ExternalSyntheticLambda8
             @Override // com.google.android.datatransport.runtime.scheduling.persistence.SQLiteEventStore.Function
             public final Object apply(Object obj) {
-                return SQLiteEventStore.this.m9505x18ea3bd6((SQLiteDatabase) obj);
+                return SQLiteEventStore.this.m9506x18ea3bd6((SQLiteDatabase) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$resetClientMetrics$23$com-google-android-datatransport-runtime-scheduling-persistence-SQLiteEventStore  reason: not valid java name */
-    public /* synthetic */ Object m9505x18ea3bd6(SQLiteDatabase sQLiteDatabase) {
+    public /* synthetic */ Object m9506x18ea3bd6(SQLiteDatabase sQLiteDatabase) {
         sQLiteDatabase.compileStatement("DELETE FROM log_event_dropped").execute();
         sQLiteDatabase.compileStatement("UPDATE global_log_event_state SET last_metrics_upload_ms=" + this.wallClock.getTime()).execute();
         return null;

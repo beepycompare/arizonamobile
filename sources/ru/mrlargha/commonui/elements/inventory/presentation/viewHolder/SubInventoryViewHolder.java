@@ -30,7 +30,7 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
-import ru.mrlargha.commonui.utils.GsonStore;
+import ru.mrlargha.commonui.utils.InventoryDragState;
 import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: SubInventoryViewHolder.kt */
@@ -222,19 +222,21 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
     public static final boolean bind$lambda$0$1(SubInventoryViewHolder subInventoryViewHolder, View view, DragEvent dragEvent) {
         switch (dragEvent.getAction()) {
             case 1:
-                return dragEvent.getClipDescription().hasMimeType("text/plain");
+                Intrinsics.checkNotNull(dragEvent);
+                return UtilsKt.getInventoryDragState(dragEvent) != null;
             case 2:
                 view.invalidate();
                 return true;
             case 3:
-                if (dragEvent.getClipData() != null) {
-                    Object fromJson = GsonStore.INSTANCE.getGson().fromJson(UtilsKt.updateJsonString(dragEvent.getClipData().getItemAt(0).getText().toString()), (Class<Object>) InventoryItem.class);
-                    Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-                    subInventoryViewHolder.onItemDropped.invoke(new DraggedItem((InventoryItem) fromJson, subInventoryViewHolder.getAdapterPosition()));
+                Intrinsics.checkNotNull(dragEvent);
+                InventoryDragState inventoryDragState = UtilsKt.getInventoryDragState(dragEvent);
+                if (inventoryDragState != null) {
+                    subInventoryViewHolder.onItemDropped.invoke(new DraggedItem(inventoryDragState.getItem(), subInventoryViewHolder.getAdapterPosition()));
                 }
                 view.invalidate();
-                Object localState = dragEvent.getLocalState();
-                CardView cardView = localState instanceof CardView ? (CardView) localState : null;
+                InventoryDragState inventoryDragState2 = UtilsKt.getInventoryDragState(dragEvent);
+                View sourceView = inventoryDragState2 != null ? inventoryDragState2.getSourceView() : null;
+                CardView cardView = sourceView instanceof CardView ? (CardView) sourceView : null;
                 if (cardView != null) {
                     ViewParent parent = cardView.getParent();
                     ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;

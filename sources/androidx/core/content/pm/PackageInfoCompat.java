@@ -120,7 +120,7 @@ public final class PackageInfoCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class Api28Impl {
         private Api28Impl() {
         }

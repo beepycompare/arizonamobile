@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public final class C0208dn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f950a;
+    public final Context f952a;
     public final String b;
     public final Bm c;
     public final C0310hm d;
@@ -22,7 +22,7 @@ public final class C0208dn {
     public final Vd m;
 
     public C0208dn(Context context, String str, Bm bm, C0310hm c0310hm) {
-        this.f950a = context;
+        this.f952a = context;
         this.b = str;
         this.c = bm;
         this.d = c0310hm;

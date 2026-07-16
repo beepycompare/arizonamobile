@@ -11,7 +11,7 @@ import java.util.Set;
 public final class C0382kh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1066a;
+    public final Context f1068a;
     public final Fl b;
     public final D6 c;
     public final Pb d = new Pb();
@@ -19,7 +19,7 @@ public final class C0382kh {
     public final Consumer f;
 
     public C0382kh(Context context, final InterfaceC0604t6 interfaceC0604t6, final Db db, Fl fl, D6 d6) {
-        this.f1066a = context;
+        this.f1068a = context;
         this.b = fl;
         this.c = d6;
         this.f = new Consumer() { // from class: io.appmetrica.analytics.impl.kh$$ExternalSyntheticLambda0
@@ -34,14 +34,14 @@ public final class C0382kh {
         String str = lb.h;
         C0266g4 c0266g4 = new C0266g4(str, lb.e, lb.f, lb.g, lb.i);
         String str2 = lb.b;
-        byte[] bArr = lb.f644a;
+        byte[] bArr = lb.f646a;
         int i = lb.c;
         HashMap hashMap = lb.d;
         String str3 = lb.j;
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str);
         long a2 = ((C0608ta) c0382kh.c).a(lb);
-        Set set = Q9.f728a;
-        C0189d4 c0189d4 = new C0189d4(bArr, str2, db.f511a, orCreatePublicLogger);
+        Set set = Q9.f730a;
+        C0189d4 c0189d4 = new C0189d4(bArr, str2, db.f513a, orCreatePublicLogger);
         c0189d4.b(a2);
         c0189d4.q = hashMap;
         c0189d4.g = i;

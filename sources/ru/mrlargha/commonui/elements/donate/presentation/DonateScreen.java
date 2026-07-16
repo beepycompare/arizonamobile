@@ -498,7 +498,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
         Log.d("TAG", "selectCategory: " + donateCategoryModelUi.getId());
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$selectCategory$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11836getGridTemplateType().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11843getGridTemplateType().ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {

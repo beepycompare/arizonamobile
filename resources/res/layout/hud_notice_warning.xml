@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/hud_notice_warning_bg" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_40sdp">
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_240sdp" android:layout_height="@dimen/_240sdp" android:scaleY="0.4" app:backgroundMainColor="#a51f2d" app:backgroundSecondColor="@color/transparent100" app:backgroundTransparency="72" app:gradientType="radial" app:radialGradientRadius="@dimen/_120sdp"/>
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:paddingStart="@dimen/_20sdp" android:paddingEnd="@dimen/_20sdp">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:baselineAligned="false">
+                <ImageView android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:src="@drawable/hud_notice_warning_ic" android:contentDescription="@null"/>
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:ellipsize="end" android:id="@+id/notice_warning_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/_286sdp" android:text="ПРОЕЗД НА КРАСНЫЙ СИГНАЛ СВЕТОФОРА" android:maxLines="1" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_6sdp"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_5sdp" android:baselineAligned="false">
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="#e6ffffff" android:id="@+id/notice_warning_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ШТРАФ:" android:maxLines="1" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_64_regular"/>
+                <TextView android:textSize="@dimen/_14sdp" android:textColor="@color/white" android:id="@+id/notice_warning_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5000 ₽" android:maxLines="1" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_5sdp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

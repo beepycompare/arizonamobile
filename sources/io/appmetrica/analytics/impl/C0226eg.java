@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0226eg implements InterfaceC0201dg {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile String f964a;
+    private volatile String f966a;
 
     private final String b() {
         try {
@@ -25,15 +25,15 @@ public final class C0226eg implements InterfaceC0201dg {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0201dg
     public String a() {
-        if (this.f964a != null) {
-            return this.f964a;
+        if (this.f966a != null) {
+            return this.f966a;
         }
         synchronized (this) {
-            if (this.f964a == null) {
-                this.f964a = b();
+            if (this.f966a == null) {
+                this.f966a = b();
             }
             Unit unit = Unit.INSTANCE;
         }
-        return this.f964a;
+        return this.f966a;
     }
 }

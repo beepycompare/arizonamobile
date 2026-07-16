@@ -5,17 +5,17 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public abstract /* synthetic */ class Jj {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f615a;
+    public static final /* synthetic */ int[] f617a;
 
     static {
         int[] iArr = new int[CounterConfigurationReporterType.values().length];
-        f615a = iArr;
+        f617a = iArr;
         try {
             iArr[CounterConfigurationReporterType.MAIN.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            f615a[CounterConfigurationReporterType.MANUAL.ordinal()] = 2;
+            f617a[CounterConfigurationReporterType.MANUAL.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
     }

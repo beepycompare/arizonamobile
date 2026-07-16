@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="81dp" android:width="379dp" android:viewportWidth="379" android:viewportHeight="81">
-    <path android:fillColor="@color/battlepass5" android:pathData="M10,0L368.51,0A10,10 0,0 1,378.51 10L378.51,71A10,10 0,0 1,368.51 81L10,81A10,10 0,0 1,0 71L0,10A10,10 0,0 1,10 0z"/>
-    <path android:fillColor="@drawable/res_0x7f080029_battlepass_2025_buy_premium_btn__0" android:pathData="M10,0L368.51,0A10,10 0,0 1,378.51 10L378.51,71A10,10 0,0 1,368.51 81L10,81A10,10 0,0 1,0 71L0,10A10,10 0,0 1,10 0z"/>
-    <path android:fillColor="@drawable/res_0x7f08002a_battlepass_2025_buy_premium_btn__1" android:pathData="M10,0L368.51,0A10,10 0,0 1,378.51 10L378.51,71A10,10 0,0 1,368.51 81L10,81A10,10 0,0 1,0 71L0,10A10,10 0,0 1,10 0z"/>
-    <path android:fillColor="@drawable/res_0x7f08002b_battlepass_2025_buy_premium_btn__2" android:pathData="M10,0L368.51,0A10,10 0,0 1,378.51 10L378.51,71A10,10 0,0 1,368.51 81L10,81A10,10 0,0 1,0 71L0,10A10,10 0,0 1,10 0z"/>
-    <path android:fillColor="@drawable/res_0x7f08002c_battlepass_2025_buy_premium_btn__3" android:pathData="M10,0L368.51,0A10,10 0,0 1,378.51 10L378.51,71A10,10 0,0 1,368.51 81L10,81A10,10 0,0 1,0 71L0,10A10,10 0,0 1,10 0z"/>
-    <path android:fillColor="@drawable/res_0x7f08002d_battlepass_2025_buy_premium_btn__4" android:pathData="M10,0L368.51,0A10,10 0,0 1,378.51 10L378.51,71A10,10 0,0 1,368.51 81L10,81A10,10 0,0 1,0 71L0,10A10,10 0,0 1,10 0z"/>
-</vector>

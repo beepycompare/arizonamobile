@@ -13,13 +13,13 @@ import java.util.Locale;
 public abstract class AbstractC0303hf {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0200df f1015a;
+    public static final C0200df f1017a;
     public static final C0225ef b;
     public static final C0251ff c;
 
     static {
         NetworkType networkType = NetworkType.UNDEFINED;
-        f1015a = new C0200df(networkType);
+        f1017a = new C0200df(networkType);
         b = new C0225ef(networkType);
         c = new C0251ff(2);
     }
@@ -47,7 +47,7 @@ public abstract class AbstractC0303hf {
         }
         NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
         if (networkCapabilities != null) {
-            for (Integer num : b.f962a.keySet()) {
+            for (Integer num : b.f964a.keySet()) {
                 if (networkCapabilities.hasTransport(num.intValue())) {
                     return (NetworkType) b.a(num);
                 }

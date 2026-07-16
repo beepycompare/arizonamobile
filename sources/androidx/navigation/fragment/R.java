@@ -20,9 +20,9 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int nav_host_fragment_container = 0x7f0a0a1a;
-        public static int sliding_pane_detail_container = 0x7f0a0d45;
-        public static int sliding_pane_layout = 0x7f0a0d46;
+        public static int nav_host_fragment_container = 0x7f0a0a7c;
+        public static int sliding_pane_detail_container = 0x7f0a0df1;
+        public static int sliding_pane_layout = 0x7f0a0df2;
 
         private id() {
         }

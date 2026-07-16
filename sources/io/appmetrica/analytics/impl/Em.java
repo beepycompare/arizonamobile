@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function0;
 public abstract class Em {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Set f532a = SetsKt.setOf((Object[]) new String[]{"appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID});
+    public static final Set f534a = SetsKt.setOf((Object[]) new String[]{"appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID});
     public static final SystemTimeProvider b = new SystemTimeProvider();
     public static final T3 c = new T3();
 
@@ -39,7 +39,7 @@ public abstract class Em {
                             if (hm.w) {
                                 return false;
                             }
-                            if (b.currentTimeSeconds() > hm.o + hm.z.f969a) {
+                            if (b.currentTimeSeconds() > hm.o + hm.z.f971a) {
                                 return false;
                             }
                         } else {
@@ -83,7 +83,7 @@ public abstract class Em {
                         break;
                     case 1117383061:
                         if (str.equals(StartupParamsCallback.APPMETRICA_DEVICE_ID)) {
-                            a2 = a(hm.f582a);
+                            a2 = a(hm.f584a);
                             if (a2) {
                             }
                         } else if (hm.w) {

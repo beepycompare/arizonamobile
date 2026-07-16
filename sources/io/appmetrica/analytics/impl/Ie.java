@@ -7,11 +7,11 @@ import java.util.HashMap;
 public final class Ie {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f595a;
+    public final HashMap f597a;
 
     public Ie() {
         HashMap hashMap = new HashMap();
-        this.f595a = hashMap;
+        this.f597a = hashMap;
         hashMap.put("google_aid", "g");
         hashMap.put("huawei_oaid", CmcdData.STREAMING_FORMAT_HLS);
         hashMap.put("sim_info", "si");
@@ -26,6 +26,6 @@ public final class Ie {
     }
 
     public final String a(String str) {
-        return this.f595a.containsKey(str) ? (String) this.f595a.get(str) : str;
+        return this.f597a.containsKey(str) ? (String) this.f597a.get(str) : str;
     }
 }

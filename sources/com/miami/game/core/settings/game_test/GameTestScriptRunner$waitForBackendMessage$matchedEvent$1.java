@@ -12,7 +12,7 @@ import kotlinx.coroutines.CompletableDeferred;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: GameTestScriptRunner.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/miami/game/core/settings/game_test/GameTestBackendEvent;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.settings.game_test.GameTestScriptRunner$waitForBackendMessage$matchedEvent$1", f = "GameTestScriptRunner.kt", i = {}, l = {214}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.settings.game_test.GameTestScriptRunner$waitForBackendMessage$matchedEvent$1", f = "GameTestScriptRunner.kt", i = {}, l = {350}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 final class GameTestScriptRunner$waitForBackendMessage$matchedEvent$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super GameTestBackendEvent>, Object> {
     final /* synthetic */ CompletableDeferred<GameTestBackendEvent> $deferred;

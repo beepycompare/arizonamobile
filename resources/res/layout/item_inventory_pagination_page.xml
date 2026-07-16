@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:focusable="true" android:clickable="true" android:layout_width="@dimen/_32sdp" android:layout_height="@dimen/_32sdp" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_2sdp" app:backgroundMainColor="#b20c0f10" app:corners="@dimen/_6sdp">
+    <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:gravity="center" android:id="@+id/pageNumber" android:layout_width="match_parent" android:layout_height="match_parent" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

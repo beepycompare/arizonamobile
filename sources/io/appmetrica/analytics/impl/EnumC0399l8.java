@@ -14,7 +14,7 @@ public final class EnumC0399l8 {
     public static final /* synthetic */ EnumC0399l8[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1076a;
+    public final String f1078a;
 
     static {
         EnumC0399l8 enumC0399l8 = new EnumC0399l8(0, "UNDEFINED", "UNDEFINED");
@@ -32,7 +32,7 @@ public final class EnumC0399l8 {
     }
 
     public EnumC0399l8(int i, String str, String str2) {
-        this.f1076a = str2;
+        this.f1078a = str2;
     }
 
     public static EnumC0399l8 valueOf(String str) {

@@ -19,8 +19,8 @@ final class ParametrizedCacheEntry<T> {
     private final ConcurrentHashMap<List<KTypeWrapper>, Result<KSerializer<T>>> serializers = new ConcurrentHashMap<>();
 
     /* renamed from: computeIfAbsent-gIAlu-s  reason: not valid java name */
-    public final Object m11578computeIfAbsentgIAlus(List<? extends KType> types, Function0<? extends KSerializer<T>> producer) {
-        Object m9896constructorimpl;
+    public final Object m11580computeIfAbsentgIAlus(List<? extends KType> types, Function0<? extends KSerializer<T>> producer) {
+        Object m9898constructorimpl;
         Intrinsics.checkNotNullParameter(types, "types");
         Intrinsics.checkNotNullParameter(producer, "producer");
         List<? extends KType> list = types;
@@ -34,18 +34,18 @@ final class ParametrizedCacheEntry<T> {
         if (obj == null) {
             try {
                 Result.Companion companion = Result.Companion;
-                m9896constructorimpl = Result.m9896constructorimpl(producer.invoke());
+                m9898constructorimpl = Result.m9898constructorimpl(producer.invoke());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+                m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
             }
-            obj = Result.m9895boximpl(m9896constructorimpl);
+            obj = Result.m9897boximpl(m9898constructorimpl);
             Object putIfAbsent = concurrentHashMap.putIfAbsent(arrayList2, obj);
             if (putIfAbsent != null) {
                 obj = putIfAbsent;
             }
         }
         Intrinsics.checkNotNullExpressionValue(obj, "getOrPut(...)");
-        return ((Result) obj).m9905unboximpl();
+        return ((Result) obj).m9907unboximpl();
     }
 }

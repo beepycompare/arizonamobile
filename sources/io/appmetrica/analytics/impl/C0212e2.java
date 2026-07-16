@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0212e2 implements Be {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f955a;
+    public final /* synthetic */ String f957a;
 
     public C0212e2(String str) {
-        this.f955a = str;
+        this.f957a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Be
     public final void consume(Object obj) {
-        ((Q7) obj).a(this.f955a, true);
+        ((Q7) obj).a(this.f957a, true);
     }
 }

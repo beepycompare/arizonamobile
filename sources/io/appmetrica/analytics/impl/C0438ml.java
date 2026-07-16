@@ -8,13 +8,13 @@ import kotlin.collections.MapsKt;
 public final class C0438ml {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0542ql f1100a;
+    public final C0542ql f1102a;
     public final Map b;
 
     public C0438ml(Context context, C0267g5 c0267g5) {
         c0267g5.a();
         C0542ql c0542ql = new C0542ql(context, c0267g5);
-        this.f1100a = c0542ql;
+        this.f1102a = c0542ql;
         this.b = MapsKt.toMutableMap(c0542ql.a());
     }
 }

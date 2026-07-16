@@ -13,7 +13,7 @@ public final class C0423m6 extends MessageNano {
     public static volatile C0423m6[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1093a;
+    public String f1095a;
 
     public C0423m6() {
         a();
@@ -31,19 +31,19 @@ public final class C0423m6 extends MessageNano {
     }
 
     public final C0423m6 a() {
-        this.f1093a = "";
+        this.f1095a = "";
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeStringSize(1, this.f1093a) + super.computeSerializedSize();
+        return CodedOutputByteBufferNano.computeStringSize(1, this.f1095a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeString(1, this.f1093a);
+        codedOutputByteBufferNano.writeString(1, this.f1095a);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -59,7 +59,7 @@ public final class C0423m6 extends MessageNano {
                     break;
                 }
             } else {
-                this.f1093a = codedInputByteBufferNano.readString();
+                this.f1095a = codedInputByteBufferNano.readString();
             }
         }
         return this;

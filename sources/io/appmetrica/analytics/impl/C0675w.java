@@ -7,15 +7,15 @@ import android.os.Bundle;
 public final class C0675w implements InterfaceC0701x {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1254a;
+    public final Context f1256a;
 
     public C0675w(Context context) {
-        this.f1254a = context;
+        this.f1256a = context;
     }
 
     public final String a() {
         C0576s4 l = C0576s4.l();
-        Context context = this.f1254a;
+        Context context = this.f1256a;
         C0298ha c0298ha = l.u;
         if (c0298ha == null) {
             synchronized (l) {
@@ -26,7 +26,7 @@ public final class C0675w implements InterfaceC0701x {
                 }
             }
         }
-        Bundle applicationMetaData = c0298ha.d.getApplicationMetaData(c0298ha.f1011a);
+        Bundle applicationMetaData = c0298ha.d.getApplicationMetaData(c0298ha.f1013a);
         if (applicationMetaData != null) {
             return applicationMetaData.getString("io.appmetrica.analytics.plugin_supported_ad_revenue_sources");
         }

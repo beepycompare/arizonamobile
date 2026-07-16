@@ -7,7 +7,7 @@ import java.util.HashMap;
 public final class Mk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Lk f668a;
+    public final Lk f670a;
     public volatile U9 b;
     public volatile U9 c;
     public volatile U9 d;
@@ -25,7 +25,7 @@ public final class Mk {
         if (this.g == null) {
             synchronized (this) {
                 if (this.g == null) {
-                    this.f668a.getClass();
+                    this.f670a.getClass();
                     Eb a2 = U9.a("IAA-SDE");
                     this.g = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -38,7 +38,7 @@ public final class Mk {
         if (this.b == null) {
             synchronized (this) {
                 if (this.b == null) {
-                    this.f668a.getClass();
+                    this.f670a.getClass();
                     Eb a2 = U9.a("IAA-SC");
                     this.b = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -51,7 +51,7 @@ public final class Mk {
         if (this.d == null) {
             synchronized (this) {
                 if (this.d == null) {
-                    this.f668a.getClass();
+                    this.f670a.getClass();
                     Eb a2 = U9.a("IAA-SMH-1");
                     this.d = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -64,7 +64,7 @@ public final class Mk {
         if (this.e == null) {
             synchronized (this) {
                 if (this.e == null) {
-                    this.f668a.getClass();
+                    this.f670a.getClass();
                     Eb a2 = U9.a("IAA-SNTPE");
                     this.e = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -77,7 +77,7 @@ public final class Mk {
         if (this.i == null) {
             synchronized (this) {
                 if (this.i == null) {
-                    this.f668a.getClass();
+                    this.f670a.getClass();
                     Eb a2 = U9.a("IAA-SPT");
                     this.i = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -90,7 +90,7 @@ public final class Mk {
         if (this.c == null) {
             synchronized (this) {
                 if (this.c == null) {
-                    this.f668a.getClass();
+                    this.f670a.getClass();
                     Eb a2 = U9.a("IAA-STE");
                     this.c = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -103,7 +103,7 @@ public final class Mk {
         if (this.f == null) {
             synchronized (this) {
                 if (this.f == null) {
-                    this.f668a.getClass();
+                    this.f670a.getClass();
                     Eb a2 = U9.a("IAA-SIO");
                     this.f = new U9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -114,6 +114,6 @@ public final class Mk {
 
     public Mk(Lk lk) {
         new HashMap();
-        this.f668a = lk;
+        this.f670a = lk;
     }
 }

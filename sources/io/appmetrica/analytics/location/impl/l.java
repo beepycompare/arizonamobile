@@ -3,9 +3,9 @@ package io.appmetrica.analytics.location.impl;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f1337a;
+    public final long f1339a;
 
     public l(long j) {
-        this.f1337a = j;
+        this.f1339a = j;
     }
 }

@@ -9,15 +9,15 @@ import kotlin.collections.CollectionsKt;
 public final class C0585sd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f1197a = new ArrayList();
+    public final ArrayList f1199a = new ArrayList();
 
     public final synchronized List a() {
         ArrayList arrayList;
-        ArrayList arrayList2 = this.f1197a;
+        ArrayList arrayList2 = this.f1199a;
         ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList2, 10));
         Iterator it = arrayList2.iterator();
         while (it.hasNext()) {
-            arrayList3.add(((G5) it.next()).f558a);
+            arrayList3.add(((G5) it.next()).f560a);
         }
         arrayList = new ArrayList();
         Iterator it2 = arrayList3.iterator();

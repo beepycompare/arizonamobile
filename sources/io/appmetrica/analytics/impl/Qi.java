@@ -14,7 +14,7 @@ import org.json.JSONArray;
 public final class Qi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V4 f734a;
+    public final V4 f736a;
     public final C0674vo b;
     public final Si c;
     public final C0546r0 d;
@@ -37,15 +37,15 @@ public final class Qi {
     }
 
     public final void b(String str) {
-        C0175cg c0175cg = this.f734a.f850a;
+        C0175cg c0175cg = this.f736a.f852a;
         synchronized (c0175cg) {
-            c0175cg.f928a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", str);
+            c0175cg.f930a.put("PROCESS_CFG_INSTALL_REFERRER_SOURCE", str);
         }
     }
 
     public Qi(C0546r0 c0546r0, C0674vo c0674vo, V4 v4, Ak ak, Si si) {
         this.d = c0546r0;
-        this.f734a = v4;
+        this.f736a = v4;
         this.b = c0674vo;
         this.f = ak;
         this.c = si;
@@ -53,21 +53,21 @@ public final class Qi {
 
     public final void a(C0543qm c0543qm) {
         this.e = c0543qm;
-        this.f734a.b.setUuid(c0543qm.g());
+        this.f736a.b.setUuid(c0543qm.g());
     }
 
     public final void a(Boolean bool, Boolean bool2, Boolean bool3, Boolean bool4) {
         if (Oo.a(bool)) {
-            this.f734a.b.setLocationTracking(bool.booleanValue());
+            this.f736a.b.setLocationTracking(bool.booleanValue());
         }
         if (Oo.a(bool2)) {
-            this.f734a.b.setDataSendingEnabled(bool2.booleanValue());
+            this.f736a.b.setDataSendingEnabled(bool2.booleanValue());
         }
         if (Oo.a(bool3)) {
-            this.f734a.b.setAdvIdentifiersTracking(bool3.booleanValue(), bool4.booleanValue());
+            this.f736a.b.setAdvIdentifiersTracking(bool3.booleanValue(), bool4.booleanValue());
         }
         C0242f6 a2 = C0242f6.a();
-        V4 v4 = this.f734a;
+        V4 v4 = this.f736a;
         a(a(a2, v4), v4, 1, (Map) null);
     }
 
@@ -79,7 +79,7 @@ public final class Qi {
             c0242f6.setValue(Ib.b(map));
             a(c0242f6, zh);
         }
-        C0175cg c0175cg = new C0175cg(zh.f850a);
+        C0175cg c0175cg = new C0175cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
@@ -89,30 +89,30 @@ public final class Qi {
     }
 
     public static C0242f6 a(C0242f6 c0242f6, Zh zh) {
-        if (Q9.f728a.contains(Integer.valueOf(c0242f6.d))) {
+        if (Q9.f730a.contains(Integer.valueOf(c0242f6.d))) {
             c0242f6.c = zh.d();
         }
         return c0242f6;
     }
 
     public final void a(List list) {
-        C0175cg c0175cg = this.f734a.f850a;
+        C0175cg c0175cg = this.f736a.f852a;
         synchronized (c0175cg) {
-            c0175cg.f928a.put("PROCESS_CFG_CUSTOM_HOSTS", Oo.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
+            c0175cg.f930a.put("PROCESS_CFG_CUSTOM_HOSTS", Oo.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
         }
     }
 
     public final void a(HashMap hashMap) {
-        C0175cg c0175cg = this.f734a.f850a;
+        C0175cg c0175cg = this.f736a.f852a;
         synchronized (c0175cg) {
-            c0175cg.f928a.put("PROCESS_CFG_CLIDS", Ib.b(hashMap));
+            c0175cg.f930a.put("PROCESS_CFG_CLIDS", Ib.b(hashMap));
         }
     }
 
     public final void a(String str) {
-        C0175cg c0175cg = this.f734a.f850a;
+        C0175cg c0175cg = this.f736a.f852a;
         synchronized (c0175cg) {
-            c0175cg.f928a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
+            c0175cg.f930a.put("PROCESS_CFG_DISTRIBUTION_REFERRER", str);
         }
     }
 
@@ -122,20 +122,20 @@ public final class Qi {
         this.d.b();
         C0674vo c0674vo = this.b;
         c0674vo.getClass();
-        C0363jo c0363jo = c0622to.f1221a;
+        C0363jo c0363jo = c0622to.f1223a;
         if (c0363jo == null) {
             str = "";
         } else {
-            str = (String) WrapUtils.getOrDefault(c0363jo.f1056a, "");
+            str = (String) WrapUtils.getOrDefault(c0363jo.f1058a, "");
         }
-        byte[] fromModel = c0674vo.f1253a.fromModel(c0622to);
+        byte[] fromModel = c0674vo.f1255a.fromModel(c0622to);
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey());
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4(fromModel, str, 5891, orCreatePublicLogger);
         c0189d4.c = zh.d();
         HashMap hashMap = c0189d4.q;
-        C0175cg c0175cg = new C0175cg(zh.f850a);
+        C0175cg c0175cg = new C0175cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {

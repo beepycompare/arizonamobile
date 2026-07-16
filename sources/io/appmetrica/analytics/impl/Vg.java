@@ -7,6 +7,6 @@ public final class Vg extends AbstractC0396l5 {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0396l5
     public final <C extends InterfaceC0273gb> InterfaceC0439mm a() {
-        return new Yg(this.f1074a);
+        return new Yg(this.f1076a);
     }
 }

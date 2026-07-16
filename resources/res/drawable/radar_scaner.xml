@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt" android:height="256dp" android:width="256dp" android:viewportWidth="256" android:viewportHeight="256">
-    <path android:fillColor="@drawable/res_0x7f0802af_radar_scaner__0" android:pathData="M128,128m123,-0a123,123 0,1 1,-246 -0a123,123 0,1 1,246 -0" android:fillAlpha="0.6"/>
+    <path android:fillColor="@drawable/res_0x7f08029a_radar_scaner__0" android:pathData="M128,128m123,-0a123,123 0,1 1,-246 -0a123,123 0,1 1,246 -0" android:fillAlpha="0.6"/>
     <path android:fillColor="#d5fbff" android:pathData="M128,160.5C110.33,160.5 96,146.17 96,128.5C96,110.83 110.33,96.5 128,96.5C145.67,96.5 160,110.83 160,128.5C160,146.17 145.67,160.5 128,160.5ZM128.01,159.82C145.3,159.82 159.33,145.8 159.33,128.5C159.33,111.2 145.3,97.18 128.01,97.18C110.71,97.18 96.68,111.2 96.68,128.5C96.68,145.8 110.71,159.82 128.01,159.82Z"/>
     <path android:fillColor="#d5fbff" android:pathData="M128,194C91.83,194 62.5,164.68 62.5,128.5C62.5,92.33 91.83,63 128,63C164.18,63 193.5,92.33 193.5,128.5C193.5,164.68 164.18,194 128,194ZM128,192.61C163.4,192.61 192.11,163.91 192.11,128.5C192.11,93.09 163.4,64.39 128,64.39C92.59,64.39 63.88,93.09 63.88,128.5C63.88,163.91 92.59,192.61 128,192.61Z" android:fillAlpha="0.5"/>
     <path android:fillColor="#d5fbff" android:pathData="M128,223C75.81,223 33.5,180.69 33.5,128.5C33.5,76.31 75.81,34 128,34C180.19,34 222.5,76.31 222.5,128.5C222.5,180.69 180.19,223 128,223ZM128,221C179.09,221 220.5,179.59 220.5,128.5C220.5,77.41 179.09,36 128,36C76.91,36 35.5,77.41 35.5,128.5C35.5,179.59 76.91,221 128,221Z" android:fillAlpha="0.5"/>
-    <path android:fillColor="@drawable/res_0x7f0802b0_radar_scaner__1" android:pathData="M128,128m123,-0a123,123 0,1 1,-246 -0a123,123 0,1 1,246 -0" android:fillAlpha="0.7"/>
+    <path android:fillColor="@drawable/res_0x7f08029b_radar_scaner__1" android:pathData="M128,128m123,-0a123,123 0,1 1,-246 -0a123,123 0,1 1,246 -0" android:fillAlpha="0.7"/>
     <path android:fillColor="#00000000" android:pathData="M128.13,250.5L128.13,3" android:strokeColor="#9dcac5" android:strokeWidth="1.75"/>
     <path android:fillColor="#00000000" android:pathData="M5,127.63L252.5,127.63" android:strokeColor="#9dcac5" android:strokeWidth="1.75"/>
-    <path android:fillColor="@drawable/res_0x7f0802b1_radar_scaner__2" android:pathData="M198.5,75m8,-0a8,8 0,1 1,-16 -0a8,8 0,1 1,16 -0" android:strokeAlpha="0.92" android:fillAlpha="0.92"/>
-    <path android:fillColor="@drawable/res_0x7f0802b2_radar_scaner__3" android:pathData="M52.5,87m8,-0a8,8 0,1 1,-16 -0a8,8 0,1 1,16 -0" android:strokeAlpha="0.92" android:fillAlpha="0.92"/>
-    <path android:fillColor="@drawable/res_0x7f0802b3_radar_scaner__4" android:pathData="M88.5,34m8,-0a8,8 0,1 1,-16 -0a8,8 0,1 1,16 -0" android:strokeAlpha="0.92" android:fillAlpha="0.92"/>
+    <path android:fillColor="@drawable/res_0x7f08029c_radar_scaner__2" android:pathData="M198.5,75m8,-0a8,8 0,1 1,-16 -0a8,8 0,1 1,16 -0" android:strokeAlpha="0.92" android:fillAlpha="0.92"/>
+    <path android:fillColor="@drawable/res_0x7f08029d_radar_scaner__3" android:pathData="M52.5,87m8,-0a8,8 0,1 1,-16 -0a8,8 0,1 1,16 -0" android:strokeAlpha="0.92" android:fillAlpha="0.92"/>
+    <path android:fillColor="@drawable/res_0x7f08029e_radar_scaner__4" android:pathData="M88.5,34m8,-0a8,8 0,1 1,-16 -0a8,8 0,1 1,16 -0" android:strokeAlpha="0.92" android:fillAlpha="0.92"/>
     <path android:fillColor="#00000000" android:pathData="M251.5,134L4.5,134" android:strokeColor="#ffffff" android:strokeWidth="1" android:strokeAlpha="0.2" android:fillAlpha="0.2"/>
     <path android:fillColor="#00000000" android:pathData="M251.5,136L4.5,136" android:strokeColor="#ffffff" android:strokeWidth="1" android:strokeAlpha="0.2" android:fillAlpha="0.2"/>
     <path android:fillColor="#00000000" android:pathData="M251.5,138L4.5,138" android:strokeColor="#ffffff" android:strokeWidth="1" android:strokeAlpha="0.2" android:fillAlpha="0.2"/>
@@ -134,5 +134,5 @@
     <path android:fillColor="#00000000" android:pathData="M163.5,10L97,10" android:strokeColor="#ffffff" android:strokeWidth="1" android:strokeAlpha="0.2" android:fillAlpha="0.2"/>
     <path android:fillColor="#00000000" android:pathData="M163.5,8L97,8" android:strokeColor="#ffffff" android:strokeWidth="1" android:strokeAlpha="0.2" android:fillAlpha="0.2"/>
     <path android:fillColor="#00000000" android:pathData="M163.5,6L97,6" android:strokeColor="#ffffff" android:strokeWidth="1" android:strokeAlpha="0.2" android:fillAlpha="0.2"/>
-    <path android:fillColor="@drawable/res_0x7f0802b4_radar_scaner__5" android:pathData="M128,0C57.31,0 0,57.31 0,128C0,198.69 57.31,256 128,256C198.69,256 256,198.69 256,128C256,57.31 198.69,0 128,0ZM128,5C60.07,5 5,60.07 5,128C5,195.93 60.07,251 128,251C195.93,251 251,195.93 251,128C251,60.07 195.93,5 128,5Z" android:fillType="evenOdd"/>
+    <path android:fillColor="@drawable/res_0x7f08029f_radar_scaner__5" android:pathData="M128,0C57.31,0 0,57.31 0,128C0,198.69 57.31,256 128,256C198.69,256 256,198.69 256,128C256,57.31 198.69,0 128,0ZM128,5C60.07,5 5,60.07 5,128C5,195.93 60.07,251 128,251C195.93,251 251,195.93 251,128C251,60.07 195.93,5 128,5Z" android:fillType="evenOdd"/>
 </vector>

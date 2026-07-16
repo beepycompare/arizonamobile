@@ -8,7 +8,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class NetworkCallMetrics {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Long f1367a;
+    private final Long f1369a;
     private final Long b;
     private final Long c;
     private final Long d;
@@ -21,7 +21,7 @@ public final class NetworkCallMetrics {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private Long f1368a;
+        private Long f1370a;
         private Long b;
         private Long c;
         private Long d;
@@ -30,7 +30,7 @@ public final class NetworkCallMetrics {
         private String g;
 
         public final NetworkCallMetrics build() {
-            return new NetworkCallMetrics(this.f1368a, this.b, this.c, this.d, this.e, this.f, this.g, null);
+            return new NetworkCallMetrics(this.f1370a, this.b, this.c, this.d, this.e, this.f, this.g, null);
         }
 
         public final Builder withConnectionReused(boolean z) {
@@ -39,7 +39,7 @@ public final class NetworkCallMetrics {
         }
 
         public final Builder withDnsLookup(Long l) {
-            this.f1368a = l;
+            this.f1370a = l;
             return this;
         }
 
@@ -78,7 +78,7 @@ public final class NetworkCallMetrics {
     }
 
     public final Long getDnsLookup() {
-        return this.f1367a;
+        return this.f1369a;
     }
 
     public final String getProtocol() {
@@ -102,11 +102,11 @@ public final class NetworkCallMetrics {
     }
 
     public String toString() {
-        return "NetworkCallMetrics(dnsLookup=" + this.f1367a + ", tcpConnect=" + this.b + ", tlsHandshake=" + this.c + ", timeToFirstByte=" + this.d + ", response=" + this.e + ", connectionReused=" + this.f + ", protocol=" + this.g + ')';
+        return "NetworkCallMetrics(dnsLookup=" + this.f1369a + ", tcpConnect=" + this.b + ", tlsHandshake=" + this.c + ", timeToFirstByte=" + this.d + ", response=" + this.e + ", connectionReused=" + this.f + ", protocol=" + this.g + ')';
     }
 
     private NetworkCallMetrics(Long l, Long l2, Long l3, Long l4, Long l5, boolean z, String str) {
-        this.f1367a = l;
+        this.f1369a = l;
         this.b = l2;
         this.c = l3;
         this.d = l4;

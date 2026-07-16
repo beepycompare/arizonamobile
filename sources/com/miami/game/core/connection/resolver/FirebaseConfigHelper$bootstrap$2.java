@@ -49,8 +49,8 @@ public final class FirebaseConfigHelper$bootstrap$2 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9896constructorimpl;
-        Object m9896constructorimpl2;
+        Object m9898constructorimpl;
+        Object m9898constructorimpl2;
         FirebaseRemoteConfig remoteConfig;
         FirebaseRemoteConfig remoteConfig2;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
@@ -67,26 +67,26 @@ public final class FirebaseConfigHelper$bootstrap$2 extends SuspendLambda implem
         try {
             Result.Companion companion = Result.Companion;
             remoteConfig2 = FirebaseConfigHelper.INSTANCE.getRemoteConfig();
-            m9896constructorimpl = Result.m9896constructorimpl((Void) Tasks.await(remoteConfig2.setDefaultsAsync(R.xml.remote_config_defaults), 5L, TimeUnit.SECONDS));
+            m9898constructorimpl = Result.m9898constructorimpl((Void) Tasks.await(remoteConfig2.setDefaultsAsync(R.xml.remote_config_defaults), 5L, TimeUnit.SECONDS));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            Log.w("FirebaseSrvHandler", "bootstrap: setDefaults failed: " + m9899exceptionOrNullimpl.getMessage());
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            Log.w("FirebaseSrvHandler", "bootstrap: setDefaults failed: " + m9901exceptionOrNullimpl.getMessage());
         }
         try {
             Result.Companion companion3 = Result.Companion;
             remoteConfig = FirebaseConfigHelper.INSTANCE.getRemoteConfig();
-            m9896constructorimpl2 = Result.m9896constructorimpl((Boolean) Tasks.await(remoteConfig.fetchAndActivate(), 10L, TimeUnit.SECONDS));
+            m9898constructorimpl2 = Result.m9898constructorimpl((Boolean) Tasks.await(remoteConfig.fetchAndActivate(), 10L, TimeUnit.SECONDS));
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m9896constructorimpl2 = Result.m9896constructorimpl(ResultKt.createFailure(th2));
+            m9898constructorimpl2 = Result.m9898constructorimpl(ResultKt.createFailure(th2));
         }
-        Throwable m9899exceptionOrNullimpl2 = Result.m9899exceptionOrNullimpl(m9896constructorimpl2);
-        if (m9899exceptionOrNullimpl2 != null) {
-            Log.w("FirebaseSrvHandler", "bootstrap: fetchAndActivate failed: " + m9899exceptionOrNullimpl2.getMessage());
+        Throwable m9901exceptionOrNullimpl2 = Result.m9901exceptionOrNullimpl(m9898constructorimpl2);
+        if (m9901exceptionOrNullimpl2 != null) {
+            Log.w("FirebaseSrvHandler", "bootstrap: fetchAndActivate failed: " + m9901exceptionOrNullimpl2.getMessage());
         }
         this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
         this.label = 1;

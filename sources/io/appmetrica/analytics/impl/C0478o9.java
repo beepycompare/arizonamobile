@@ -10,7 +10,7 @@ public final class C0478o9 {
     public static final C0478o9 i;
 
     /* renamed from: a */
-    public final Xd f1127a;
+    public final Xd f1129a;
     public final Wo b;
     public final R8 c;
     public final N9 d;
@@ -40,7 +40,7 @@ public final class C0478o9 {
         InterfaceC0714xc interfaceC0714xc;
         InterfaceC0664ve interfaceC0664ve;
         InterfaceC0324ia interfaceC0324ia;
-        xd = c0452n9.f1112a;
+        xd = c0452n9.f1114a;
         wo = c0452n9.b;
         r8 = c0452n9.c;
         n9 = c0452n9.d;
@@ -59,7 +59,7 @@ public final class C0478o9 {
         if (a3 != null) {
             c0737y9.f = a3;
         }
-        String a4 = this.f1127a.a(c0297h9.f1010a);
+        String a4 = this.f1129a.a(c0297h9.f1012a);
         if (a4 != null) {
             c0737y9.d = a4;
         }
@@ -74,7 +74,7 @@ public final class C0478o9 {
         }
         Long l = c0297h9.c;
         if (l != null) {
-            c0737y9.f1291a = l.longValue();
+            c0737y9.f1293a = l.longValue();
         }
         Long l2 = c0297h9.d;
         if (l2 != null) {
@@ -94,7 +94,7 @@ public final class C0478o9 {
         }
         c0737y9.j = this.c.a(c0297h9.o);
         C0761z7 c0761z7 = c0297h9.g;
-        c0737y9.k = c0761z7 != null ? new C0708x6().a(c0761z7.f1309a) : -1;
+        c0737y9.k = c0761z7 != null ? new C0708x6().a(c0761z7.f1311a) : -1;
         String str2 = c0297h9.n;
         if (str2 != null) {
             c0737y9.l = str2.getBytes();
@@ -128,7 +128,7 @@ public final class C0478o9 {
     }
 
     public C0478o9(Xd xd, Wo wo, R8 r8, N9 n9, InterfaceC0714xc interfaceC0714xc, InterfaceC0664ve interfaceC0664ve, InterfaceC0324ia interfaceC0324ia) {
-        this.f1127a = xd;
+        this.f1129a = xd;
         this.b = wo;
         this.c = r8;
         this.d = n9;

@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int is_pooling_container_tag = 0x7f0a0754;
-        public static int pooling_container_listener_holder_tag = 0x7f0a0ae6;
+        public static int is_pooling_container_tag = 0x7f0a07ab;
+        public static int pooling_container_listener_holder_tag = 0x7f0a0b4e;
 
         private id() {
         }

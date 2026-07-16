@@ -87,9 +87,9 @@ public final class ParserOperationKt {
     public static final <Object, Type> Object setWithoutReassigning(final AssignableField<? super Object, Type> assignableField, Object object, final Type type, int i, int i2) {
         final Type trySetWithoutReassigning = assignableField.trySetWithoutReassigning(object, type);
         if (trySetWithoutReassigning == null) {
-            return ParseResult.Companion.m11542OkQi1bsqg(i2);
+            return ParseResult.Companion.m11544OkQi1bsqg(i2);
         }
-        return ParseResult.Companion.m11541ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.ParserOperationKt$$ExternalSyntheticLambda0
+        return ParseResult.Companion.m11543ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.ParserOperationKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return ParserOperationKt.setWithoutReassigning$lambda$2(trySetWithoutReassigning, type, assignableField);

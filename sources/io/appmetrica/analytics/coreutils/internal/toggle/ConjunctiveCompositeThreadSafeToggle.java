@@ -20,14 +20,14 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ReentrantLock f384a;
+    private final ReentrantLock f386a;
     private final ArrayList b;
     private final HashMap c;
     private final String d;
     private volatile boolean e;
 
     public ConjunctiveCompositeThreadSafeToggle(List<? extends Toggle> list, String str, ReentrantLock reentrantLock) {
-        this.f384a = reentrantLock;
+        this.f386a = reentrantLock;
         this.b = new ArrayList();
         this.c = new HashMap();
         this.d = "[ConjunctiveCompositeToggle-" + str + AbstractJsonLexerKt.END_LIST;
@@ -75,27 +75,27 @@ public final class ConjunctiveCompositeThreadSafeToggle implements Toggle {
         while (!z) {
             try {
                 Result.Companion companion = Result.Companion;
-                z = conjunctiveCompositeThreadSafeToggle.f384a.tryLock(100L, TimeUnit.MILLISECONDS);
-                Result.m9896constructorimpl(Unit.INSTANCE);
+                z = conjunctiveCompositeThreadSafeToggle.f386a.tryLock(100L, TimeUnit.MILLISECONDS);
+                Result.m9898constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                Result.m9896constructorimpl(ResultKt.createFailure(th));
+                Result.m9898constructorimpl(ResultKt.createFailure(th));
             }
             if (!z) {
                 try {
                     Result.Companion companion3 = Result.Companion;
                     Thread.sleep(100L);
-                    Result.m9896constructorimpl(Unit.INSTANCE);
+                    Result.m9898constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th2) {
                     Result.Companion companion4 = Result.Companion;
-                    Result.m9896constructorimpl(ResultKt.createFailure(th2));
+                    Result.m9898constructorimpl(ResultKt.createFailure(th2));
                 }
             }
         }
     }
 
     public static final void access$releaseLock(ConjunctiveCompositeThreadSafeToggle conjunctiveCompositeThreadSafeToggle) {
-        conjunctiveCompositeThreadSafeToggle.f384a.unlock();
+        conjunctiveCompositeThreadSafeToggle.f386a.unlock();
     }
 
     public static final void access$updateState(ConjunctiveCompositeThreadSafeToggle conjunctiveCompositeThreadSafeToggle, ToggleObserver toggleObserver, boolean z, String str) {

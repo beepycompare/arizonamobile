@@ -4,7 +4,7 @@ import androidx.media3.decoder.DecoderOutputBuffer;
 import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class SimpleDecoderOutputBuffer extends DecoderOutputBuffer {
     public ByteBuffer data;
     private final DecoderOutputBuffer.Owner<SimpleDecoderOutputBuffer> owner;

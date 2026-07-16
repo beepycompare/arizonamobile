@@ -33,6 +33,7 @@ public final class MainInventoryBinding implements ViewBinding {
     public final Guideline guidelineVer2;
     public final Guideline guidelineVer3;
     public final Guideline guidelineVer4;
+    public final InventoryPaginationBinding inventoryPagination;
     public final AppCompatImageView ivCharacterImage;
     public final LinearProgressIndicator ivFoodBar;
     public final AppCompatImageView ivFoodTab;
@@ -56,7 +57,7 @@ public final class MainInventoryBinding implements ViewBinding {
     public final AppCompatTextView tvShieldCount;
     public final ImageView viewLine;
 
-    private MainInventoryBinding(ConstraintLayout rootView, AppCompatImageView btnBack, AppCompatButton btnMedbook, AppCompatButton btnPassport, AppCompatButton btnSortItems, AppCompatButton btnStats, AppCompatButton btnVipStatus, Group groupCharacterInfo, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineHor4, Guideline guidelineHor5, Guideline guidelineVer1, Guideline guidelineVer2, Guideline guidelineVer3, Guideline guidelineVer4, AppCompatImageView ivCharacterImage, LinearProgressIndicator ivFoodBar, AppCompatImageView ivFoodTab, LinearProgressIndicator ivHealthBar, AppCompatImageView ivHealthTab, LinearProgressIndicator ivShieldBar, AppCompatImageView ivShieldTab, LayoutGuardInventoryBinding layoutGuards, LayoutVehicleInventoryBinding layoutVehicle, LayoutWarehouseBinding layoutWarehouse, ConstraintLayout parentLayout, InventoryPersonSectionBinding personSection, ProgressBar progressBar, RecyclerView rvCategoryMenu, RecyclerView rvGuardInventory, RecyclerView rvMainInventory, AppCompatTextView tvFoodCount, AppCompatTextView tvHealthCount, AppCompatTextView tvInventory, AppCompatTextView tvShieldCount, ImageView viewLine) {
+    private MainInventoryBinding(ConstraintLayout rootView, AppCompatImageView btnBack, AppCompatButton btnMedbook, AppCompatButton btnPassport, AppCompatButton btnSortItems, AppCompatButton btnStats, AppCompatButton btnVipStatus, Group groupCharacterInfo, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineHor4, Guideline guidelineHor5, Guideline guidelineVer1, Guideline guidelineVer2, Guideline guidelineVer3, Guideline guidelineVer4, InventoryPaginationBinding inventoryPagination, AppCompatImageView ivCharacterImage, LinearProgressIndicator ivFoodBar, AppCompatImageView ivFoodTab, LinearProgressIndicator ivHealthBar, AppCompatImageView ivHealthTab, LinearProgressIndicator ivShieldBar, AppCompatImageView ivShieldTab, LayoutGuardInventoryBinding layoutGuards, LayoutVehicleInventoryBinding layoutVehicle, LayoutWarehouseBinding layoutWarehouse, ConstraintLayout parentLayout, InventoryPersonSectionBinding personSection, ProgressBar progressBar, RecyclerView rvCategoryMenu, RecyclerView rvGuardInventory, RecyclerView rvMainInventory, AppCompatTextView tvFoodCount, AppCompatTextView tvHealthCount, AppCompatTextView tvInventory, AppCompatTextView tvShieldCount, ImageView viewLine) {
         this.rootView = rootView;
         this.btnBack = btnBack;
         this.btnMedbook = btnMedbook;
@@ -73,6 +74,7 @@ public final class MainInventoryBinding implements ViewBinding {
         this.guidelineVer2 = guidelineVer2;
         this.guidelineVer3 = guidelineVer3;
         this.guidelineVer4 = guidelineVer4;
+        this.inventoryPagination = inventoryPagination;
         this.ivCharacterImage = ivCharacterImage;
         this.ivFoodBar = ivFoodBar;
         this.ivFoodTab = ivFoodTab;
@@ -115,6 +117,7 @@ public final class MainInventoryBinding implements ViewBinding {
 
     public static MainInventoryBinding bind(View rootView) {
         View findChildViewById;
+        View findChildViewById2;
         int i = R.id.btnBack;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
         if (appCompatImageView != null) {
@@ -159,7 +162,8 @@ public final class MainInventoryBinding implements ViewBinding {
                                                             if (guideline7 != null) {
                                                                 i = R.id.guidelineVer4;
                                                                 Guideline guideline8 = (Guideline) ViewBindings.findChildViewById(rootView, i);
-                                                                if (guideline8 != null) {
+                                                                if (guideline8 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.inventoryPagination))) != null) {
+                                                                    InventoryPaginationBinding bind = InventoryPaginationBinding.bind(findChildViewById);
                                                                     i = R.id.ivCharacterImage;
                                                                     AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
                                                                     if (appCompatImageView2 != null) {
@@ -180,21 +184,21 @@ public final class MainInventoryBinding implements ViewBinding {
                                                                                         if (linearProgressIndicator3 != null) {
                                                                                             i = R.id.ivShieldTab;
                                                                                             AppCompatImageView appCompatImageView5 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
-                                                                                            if (appCompatImageView5 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.layoutGuards))) != null) {
-                                                                                                LayoutGuardInventoryBinding bind = LayoutGuardInventoryBinding.bind(findChildViewById);
+                                                                                            if (appCompatImageView5 != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.layoutGuards))) != null) {
+                                                                                                LayoutGuardInventoryBinding bind2 = LayoutGuardInventoryBinding.bind(findChildViewById2);
                                                                                                 i = R.id.layoutVehicle;
-                                                                                                View findChildViewById2 = ViewBindings.findChildViewById(rootView, i);
-                                                                                                if (findChildViewById2 != null) {
-                                                                                                    LayoutVehicleInventoryBinding bind2 = LayoutVehicleInventoryBinding.bind(findChildViewById2);
+                                                                                                View findChildViewById3 = ViewBindings.findChildViewById(rootView, i);
+                                                                                                if (findChildViewById3 != null) {
+                                                                                                    LayoutVehicleInventoryBinding bind3 = LayoutVehicleInventoryBinding.bind(findChildViewById3);
                                                                                                     i = R.id.layoutWarehouse;
-                                                                                                    View findChildViewById3 = ViewBindings.findChildViewById(rootView, i);
-                                                                                                    if (findChildViewById3 != null) {
-                                                                                                        LayoutWarehouseBinding bind3 = LayoutWarehouseBinding.bind(findChildViewById3);
+                                                                                                    View findChildViewById4 = ViewBindings.findChildViewById(rootView, i);
+                                                                                                    if (findChildViewById4 != null) {
+                                                                                                        LayoutWarehouseBinding bind4 = LayoutWarehouseBinding.bind(findChildViewById4);
                                                                                                         ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
                                                                                                         i = R.id.person_section;
-                                                                                                        View findChildViewById4 = ViewBindings.findChildViewById(rootView, i);
-                                                                                                        if (findChildViewById4 != null) {
-                                                                                                            InventoryPersonSectionBinding bind4 = InventoryPersonSectionBinding.bind(findChildViewById4);
+                                                                                                        View findChildViewById5 = ViewBindings.findChildViewById(rootView, i);
+                                                                                                        if (findChildViewById5 != null) {
+                                                                                                            InventoryPersonSectionBinding bind5 = InventoryPersonSectionBinding.bind(findChildViewById5);
                                                                                                             i = R.id.progressBar;
                                                                                                             ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(rootView, i);
                                                                                                             if (progressBar != null) {
@@ -222,7 +226,7 @@ public final class MainInventoryBinding implements ViewBinding {
                                                                                                                                             i = R.id.viewLine;
                                                                                                                                             ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                                                                                                                             if (imageView != null) {
-                                                                                                                                                return new MainInventoryBinding(constraintLayout, appCompatImageView, appCompatButton, appCompatButton2, appCompatButton3, appCompatButton4, appCompatButton5, group, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, guideline8, appCompatImageView2, linearProgressIndicator, appCompatImageView3, linearProgressIndicator2, appCompatImageView4, linearProgressIndicator3, appCompatImageView5, bind, bind2, bind3, constraintLayout, bind4, progressBar, recyclerView, recyclerView2, recyclerView3, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, imageView);
+                                                                                                                                                return new MainInventoryBinding(constraintLayout, appCompatImageView, appCompatButton, appCompatButton2, appCompatButton3, appCompatButton4, appCompatButton5, group, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, guideline8, bind, appCompatImageView2, linearProgressIndicator, appCompatImageView3, linearProgressIndicator2, appCompatImageView4, linearProgressIndicator3, appCompatImageView5, bind2, bind3, bind4, constraintLayout, bind5, progressBar, recyclerView, recyclerView2, recyclerView3, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, imageView);
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                     }

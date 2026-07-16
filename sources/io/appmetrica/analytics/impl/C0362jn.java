@@ -6,23 +6,23 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class C0362jn implements ProtobufConverter {
     public final Xm a(C0336in c0336in) {
         Xm xm = new Xm();
-        xm.f843a = c0336in.f1040a;
+        xm.f845a = c0336in.f1042a;
         return xm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
         Xm xm = new Xm();
-        xm.f843a = ((C0336in) obj).f1040a;
+        xm.f845a = ((C0336in) obj).f1042a;
         return xm;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        return new C0336in(((Xm) obj).f843a);
+        return new C0336in(((Xm) obj).f845a);
     }
 
     public final C0336in a(Xm xm) {
-        return new C0336in(xm.f843a);
+        return new C0336in(xm.f845a);
     }
 }

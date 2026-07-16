@@ -9,7 +9,7 @@ public final class Hm {
     public final W9 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f582a;
+    public final String f584a;
     public final String b;
     public final Lm c;
     public final String d;
@@ -37,10 +37,10 @@ public final class Hm {
     public final C0233en z;
 
     public Hm(String str, String str2, Lm lm) {
-        this.f582a = str;
+        this.f584a = str;
         this.b = str2;
         this.c = lm;
-        this.d = lm.f651a;
+        this.d = lm.f653a;
         this.e = lm.b;
         this.f = lm.f;
         this.g = lm.g;
@@ -71,7 +71,7 @@ public final class Hm {
     }
 
     public final String a() {
-        return this.f582a;
+        return this.f584a;
     }
 
     public final String b() {
@@ -83,6 +83,6 @@ public final class Hm {
     }
 
     public final String toString() {
-        return "StartupState(deviceId=" + this.f582a + ", deviceIdHash=" + this.b + ", startupStateModel=" + this.c + ')';
+        return "StartupState(deviceId=" + this.f584a + ", deviceIdHash=" + this.b + ", startupStateModel=" + this.c + ')';
     }
 }

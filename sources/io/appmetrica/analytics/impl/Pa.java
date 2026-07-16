@@ -5,9 +5,9 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class Pa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f715a;
+    public final ICommonExecutor f717a;
 
     public Pa(ICommonExecutor iCommonExecutor) {
-        this.f715a = iCommonExecutor;
+        this.f717a = iCommonExecutor;
     }
 }

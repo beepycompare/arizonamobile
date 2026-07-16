@@ -12,22 +12,22 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class B extends Lambda implements Function1<SingleEmitter<AppUpdateInfo>, ServiceConnection> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0817r f1480a;
+    public final /* synthetic */ C0817r f1482a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public B(C0817r c0817r) {
         super(1);
-        this.f1480a = c0817r;
+        this.f1482a = c0817r;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final ServiceConnection invoke(SingleEmitter<AppUpdateInfo> singleEmitter) {
         SingleEmitter<AppUpdateInfo> emitter = singleEmitter;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        C0817r c0817r = this.f1480a;
-        AppUpdateParams a2 = C0817r.a(c0817r, c0817r.f1539a);
-        C0817r c0817r2 = this.f1480a;
-        Context context = c0817r2.f1539a;
+        C0817r c0817r = this.f1482a;
+        AppUpdateParams a2 = C0817r.a(c0817r, c0817r.f1541a);
+        C0817r c0817r2 = this.f1482a;
+        Context context = c0817r2.f1541a;
         C0814o c0814o = c0817r2.b;
         String packageName = context.getPackageName();
         Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");

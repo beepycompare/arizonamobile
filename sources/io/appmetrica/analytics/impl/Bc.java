@@ -8,7 +8,7 @@ import java.io.Closeable;
 public final class Bc implements Q6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f475a;
+    public final Context f477a;
     public final String b;
     public final Jn c;
     public final C0634ua d;
@@ -23,7 +23,7 @@ public final class Bc implements Q6 {
         C0502p7 c0502p7;
         try {
             this.d.a();
-            c0502p7 = new C0502p7(this.f475a, this.b, this.c, PublicLogger.getAnonymousInstance());
+            c0502p7 = new C0502p7(this.f477a, this.b, this.c, PublicLogger.getAnonymousInstance());
             this.e = c0502p7;
         } catch (Throwable unused) {
             return null;
@@ -32,7 +32,7 @@ public final class Bc implements Q6 {
     }
 
     public Bc(Context context, String str, C0634ua c0634ua, Jn jn) {
-        this.f475a = context;
+        this.f477a = context;
         this.b = str;
         this.d = c0634ua;
         this.c = jn;

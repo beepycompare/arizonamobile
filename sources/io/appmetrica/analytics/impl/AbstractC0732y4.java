@@ -6,7 +6,7 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public abstract /* synthetic */ class AbstractC0732y4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1287a;
+    public static final /* synthetic */ int[] f1289a;
 
     static {
         int[] iArr = new int[CounterConfigurationReporterType.values().length];
@@ -38,6 +38,6 @@ public abstract /* synthetic */ class AbstractC0732y4 {
             iArr[CounterConfigurationReporterType.CRASH.ordinal()] = 7;
         } catch (NoSuchFieldError unused7) {
         }
-        f1287a = iArr;
+        f1289a = iArr;
     }
 }

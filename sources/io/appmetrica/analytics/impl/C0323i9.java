@@ -6,13 +6,13 @@ import java.util.Set;
 public final class C0323i9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f1030a;
+    public boolean f1032a;
     public Set b;
     public int c;
     public int d;
 
     public C0323i9(boolean z, int i, int i2, Set set) {
-        this.f1030a = z;
+        this.f1032a = z;
         this.b = set;
         this.c = i;
         this.d = i2;

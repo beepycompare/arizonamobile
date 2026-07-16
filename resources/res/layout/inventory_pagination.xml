@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/buttonPreviousPage" android:focusable="true" android:clickable="true" android:layout_width="@dimen/_32sdp" android:layout_height="@dimen/_32sdp" android:contentDescription="@string/inventory_previous_page" app:backgroundMainColor="#b20c0f10" app:corners="@dimen/_6sdp">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/_7sdp" android:layout_height="@dimen/_11sdp" android:src="@drawable/arrow_right_ic" android:rotation="180"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <Space android:layout_width="0dp" android:layout_height="@dimen/_1sdp" android:layout_weight="1"/>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/tabMainInventoryPages" android:layout_width="wrap_content" android:layout_height="match_parent"/>
+    <Space android:layout_width="0dp" android:layout_height="@dimen/_1sdp" android:layout_weight="1"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/buttonNextPage" android:focusable="true" android:clickable="true" android:layout_width="@dimen/_32sdp" android:layout_height="@dimen/_32sdp" android:contentDescription="@string/inventory_next_page" app:backgroundMainColor="#b20c0f10" app:corners="@dimen/_6sdp">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/_7sdp" android:layout_height="@dimen/_11sdp" android:src="@drawable/arrow_right_ic"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</LinearLayout>

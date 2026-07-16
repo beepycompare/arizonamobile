@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/rich_text_bar_root" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView android:textSize="@dimen/_12sdp" android:textColor="#e8f9fc" android:id="@+id/rich_text_bar_label" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:singleLine="true" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/rich_text_bar_track" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" android:layout_marginTop="@dimen/_6sdp" app:backgroundMainColor="#1affffff" app:borderMainColor="#55c7dde0" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp">
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/rich_text_bar_progress" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#9bff00" app:corners="@dimen/_6sdp"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="start|center_vertical" android:id="@+id/rich_text_bar_level_badge" android:layout_width="wrap_content" android:layout_height="wrap_content" app:backgroundMainColor="#000000" app:corners="@dimen/_2sdp">
+            <TextView android:textColor="@color/white" android:gravity="center" android:id="@+id/rich_text_bar_level_text" android:layout_width="wrap_content" android:layout_height="match_parent" android:minWidth="@dimen/_10sdp" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/rich_text_bar_value_badge" android:layout_width="wrap_content" android:layout_height="wrap_content" app:backgroundMainColor="#beff00" app:corners="@dimen/_2sdp">
+            <TextView android:textColor="#000000" android:gravity="center" android:id="@+id/rich_text_bar_value_text" android:layout_width="wrap_content" android:layout_height="match_parent" android:minWidth="@dimen/_30sdp" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</LinearLayout>

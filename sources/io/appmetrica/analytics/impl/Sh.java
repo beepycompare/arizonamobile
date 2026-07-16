@@ -9,6 +9,6 @@ public final class Sh extends Ah {
 
     @Override // io.appmetrica.analytics.impl.Ah, io.appmetrica.analytics.impl.Bh
     public final boolean a(Boolean bool) {
-        return !this.f460a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+        return !this.f462a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
     }
 }

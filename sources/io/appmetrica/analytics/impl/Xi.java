@@ -5,11 +5,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Xi implements InterfaceC0549r3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f839a;
+    public final Object f841a;
     public final InterfaceC0549r3 b;
 
     public Xi(Object obj, InterfaceC0549r3 interfaceC0549r3) {
-        this.f839a = obj;
+        this.f841a = obj;
         this.b = interfaceC0549r3;
     }
 
@@ -19,6 +19,6 @@ public final class Xi implements InterfaceC0549r3 {
     }
 
     public final String toString() {
-        return "Result{result=" + this.f839a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "Result{result=" + this.f841a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

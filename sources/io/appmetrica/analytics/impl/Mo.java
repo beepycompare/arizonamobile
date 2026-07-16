@@ -6,14 +6,14 @@ import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvide
 public final class Mo implements Mm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final UtilityServiceProvider f671a;
+    public final UtilityServiceProvider f673a;
 
     public Mo(UtilityServiceProvider utilityServiceProvider) {
-        this.f671a = utilityServiceProvider;
+        this.f673a = utilityServiceProvider;
     }
 
     @Override // io.appmetrica.analytics.impl.Mm
     public final void a(Hm hm) {
-        this.f671a.updateConfiguration(new UtilityServiceConfiguration(hm.v, hm.u));
+        this.f673a.updateConfiguration(new UtilityServiceConfiguration(hm.v, hm.u));
     }
 }

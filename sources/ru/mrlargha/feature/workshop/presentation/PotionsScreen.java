@@ -763,7 +763,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             }
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
             for (InventoryItem inventoryItem2 : list2) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, Integer.valueOf(!CollectionsKt.contains(this.availableList, inventoryItem2.getItem()) ? 1 : 0), null, null, null, null, 0, null, null, false, false, null, null, null, null, 33552383, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, Integer.valueOf(!CollectionsKt.contains(this.availableList, inventoryItem2.getItem()) ? 1 : 0), null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67106815, null));
             }
             this.inventoryItemList = CollectionsKt.toMutableList((Collection) arrayList);
         }
@@ -927,7 +927,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                         }
                     }
                     ItemsInfo itemsInfo2 = (ItemsInfo) obj3;
-                    arrayList.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, null, 33357807, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, null, null, 66912239, null));
                 }
                 InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList, 0, 4, null);
                 if (inventoryResponse2.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {

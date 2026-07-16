@@ -1,5 +1,6 @@
 package com.miami.game.core.settings.game_test;
 
+import androidx.autofill.HintConstants;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -23,7 +24,7 @@ import kotlin.text.StringsKt;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* compiled from: GameTestScriptParser.kt */
-@Metadata(d1 = {"\u0000\u009e\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0006\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\bJ\u0016\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0018\u0010\u000e\u001a\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001e\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020 0\n2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010!\u001a\u00020\u0007H\u0002J$\u0010\"\u001a\u00020 *\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010!\u001a\u00020\u00072\u0006\u0010#\u001a\u00020\u0007H\u0002J\u0018\u0010$\u001a\u00020%2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010&\u001a\u00020'2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\f\u0010(\u001a\u00020\u0007*\u00020\u0007H\u0002J\f\u0010)\u001a\u00020**\u00020\u0007H\u0002J$\u0010+\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u00070,*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u0010-\u001a\u00020.*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010!\u001a\u00020\u0007H\u0002J\u0014\u0010/\u001a\u00020\u0007*\u00020\u00102\u0006\u00100\u001a\u00020\u0007H\u0002J\u0014\u00101\u001a\u000202*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u00103\u001a\u00020\u0007*\u00020\u00102\u0006\u00100\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u00104\u001a\u00020\u0012*\u00020\u00102\u0006\u00100\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u00105\u001a\u00020\u0012*\u00020\u00102\u0006\u00100\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u00106\u001a\u000207*\u00020\u00102\u0006\u00100\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u00108\u001a\u000209*\u00020\u00102\u0006\u00100\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J$\u0010:\u001a\u000207*\u00020\u00102\u0006\u00100\u001a\u00020\u00072\u0006\u0010;\u001a\u0002072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J$\u0010<\u001a\u000207*\u00020\u00102\u0006\u00100\u001a\u00020\u00072\u0006\u0010;\u001a\u0002072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001b\u0010=\u001a\u0004\u0018\u000107*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002¢\u0006\u0002\u0010>¨\u0006?"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptParser;", "", "<init>", "()V", "parse", "Lcom/miami/game/core/settings/game_test/GameTestScript;", "rawScript", "", "Lkotlin/jvm/JvmStatic;", "parseSteps", "", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "array", "Lorg/json/JSONArray;", "parseStep", "stepObject", "Lorg/json/JSONObject;", FirebaseAnalytics.Param.INDEX, "", "parseNotifyClick", "Lcom/miami/game/core/settings/game_test/GameTestStep$NotifyClick;", "parseShowUi", "Lcom/miami/game/core/settings/game_test/GameTestStep$ShowUi;", "parseHideUi", "Lcom/miami/game/core/settings/game_test/GameTestStep$HideUi;", "parseBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;", "parseWaitBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;", "parseAddBackendMessageListener", "Lcom/miami/game/core/settings/game_test/GameTestStep$AddBackendMessageListener;", "parseBackendMessageListeners", "Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "owner", "parseBackendMessageListener", "defaultName", "parseReplayBackendFixture", "Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;", "parseStartBackendValidation", "Lcom/miami/game/core/settings/game_test/GameTestStep$StartBackendValidation;", "normalizeAction", "toStartTrigger", "Lcom/miami/game/core/settings/game_test/GameTestStartTrigger;", "parseBackendReference", "Lkotlin/Pair;", "parseBackendMessageMatcher", "Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;", "extractRawMessage", "key", "optReplayTarget", "Lcom/miami/game/core/settings/game_test/BackendReplayTarget;", "requireString", "requireInt", "requirePositiveInt", "requireNonNegativeLong", "", "requirePercent", "", "optNonNegativeLong", "defaultValue", "optPositiveLong", "optTimeoutMs", "(Lorg/json/JSONObject;I)Ljava/lang/Long;", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000²\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0007\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\bJ\u0016\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\f\u001a\u00020\rH\u0002J\u0018\u0010\u000e\u001a\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010\u001f\u001a\u00020 2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010!\u001a\u00020\"2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010#\u001a\u00020$2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001e\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\n2\u0006\u0010\f\u001a\u00020\r2\u0006\u0010'\u001a\u00020\u0007H\u0002J$\u0010(\u001a\u00020&*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010'\u001a\u00020\u00072\u0006\u0010)\u001a\u00020\u0007H\u0002J\u0018\u0010*\u001a\u00020+2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0018\u0010,\u001a\u00020-2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\f\u0010.\u001a\u00020\u0007*\u00020\u0007H\u0002J\f\u0010/\u001a\u000200*\u00020\u0007H\u0002J$\u00101\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u000702*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u00103\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u000702*\u00020\u0010H\u0002J\u001c\u00104\u001a\u000205*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010'\u001a\u00020\u0007H\u0002J\u0014\u00106\u001a\u00020\u0007*\u00020\u00102\u0006\u00107\u001a\u00020\u0007H\u0002J\u0014\u00108\u001a\u000209*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u0010:\u001a\u00020\u0007*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u0010;\u001a\u00020\u0012*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u0010<\u001a\u00020\u0012*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u0010=\u001a\u00020>*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001c\u0010?\u001a\u00020@*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J$\u0010A\u001a\u00020>*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010B\u001a\u00020>2\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J$\u0010C\u001a\u00020>*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010B\u001a\u00020>2\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J$\u0010D\u001a\u00020\u0012*\u00020\u00102\u0006\u00107\u001a\u00020\u00072\u0006\u0010B\u001a\u00020\u00122\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J%\u0010E\u001a\u0004\u0018\u00010>*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\b\b\u0002\u0010B\u001a\u00020>H\u0002¢\u0006\u0002\u0010F¨\u0006G"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestScriptParser;", "", "<init>", "()V", "parse", "Lcom/miami/game/core/settings/game_test/GameTestScript;", "rawScript", "", "Lkotlin/jvm/JvmStatic;", "parseSteps", "", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "array", "Lorg/json/JSONArray;", "parseStep", "stepObject", "Lorg/json/JSONObject;", FirebaseAnalytics.Param.INDEX, "", "parseNotifyClick", "Lcom/miami/game/core/settings/game_test/GameTestStep$NotifyClick;", "parseShowUi", "Lcom/miami/game/core/settings/game_test/GameTestStep$ShowUi;", "parseHideUi", "Lcom/miami/game/core/settings/game_test/GameTestStep$HideUi;", "parseBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;", "parseWaitBackendMessage", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;", "parseWaitVisibility", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitVisibility;", "parseAuthorize", "Lcom/miami/game/core/settings/game_test/GameTestStep$Authorize;", "parseLoginAndSpawn", "Lcom/miami/game/core/settings/game_test/GameTestStep$LoginAndSpawn;", "parseAddBackendMessageListener", "Lcom/miami/game/core/settings/game_test/GameTestStep$AddBackendMessageListener;", "parseBackendMessageListeners", "Lcom/miami/game/core/settings/game_test/GameTestBackendMessageListener;", "owner", "parseBackendMessageListener", "defaultName", "parseReplayBackendFixture", "Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;", "parseStartBackendValidation", "Lcom/miami/game/core/settings/game_test/GameTestStep$StartBackendValidation;", "normalizeAction", "toStartTrigger", "Lcom/miami/game/core/settings/game_test/GameTestStartTrigger;", "parseBackendReference", "Lkotlin/Pair;", "parseOptionalBackendReference", "parseBackendMessageMatcher", "Lcom/miami/game/core/settings/game_test/BackendMessageMatcher;", "extractRawMessage", "key", "optReplayTarget", "Lcom/miami/game/core/settings/game_test/BackendReplayTarget;", "requireString", "requireInt", "requirePositiveInt", "requireNonNegativeLong", "", "requirePercent", "", "optNonNegativeLong", "defaultValue", "optPositiveLong", "optNonNegativeInt", "optTimeoutMs", "(Lorg/json/JSONObject;IJ)Ljava/lang/Long;", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class GameTestScriptParser {
     public static final GameTestScriptParser INSTANCE = new GameTestScriptParser();
@@ -75,227 +76,266 @@ public final class GameTestScriptParser {
         return arrayList;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x01ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:101:0x019b, code lost:
+        return parseNotifyClick(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:103:0x01a3, code lost:
+        if (r2.equals("wait") != false) goto L100;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x01b2, code lost:
+        return new com.miami.game.core.settings.game_test.GameTestStep.Sleep(requireNonNegativeLong(r16, "delayMs", r17));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x01ba, code lost:
+        if (r2.equals("shot") != false) goto L114;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:110:0x01c5, code lost:
+        if (r2.equals("chat") != false) goto L104;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:112:0x01d4, code lost:
         return new com.miami.game.core.settings.game_test.GameTestStep.Chat(requireString(r16, "text", r17));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x01b4, code lost:
-        if (r2.equals("tap") != false) goto L78;
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x01dc, code lost:
+        if (r2.equals("auth") != false) goto L48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x01d6, code lost:
-        if (r2.equals("stop_backend_listener") != false) goto L23;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:112:0x01e1, code lost:
-        if (r2.equals("listen_backend_message") != false) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:115:0x01eb, code lost:
-        if (r2.equals("screenshot") != false) goto L100;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:118:0x01f6, code lost:
-        if (r2.equals("listen_for_backend_message") != false) goto L27;
+    /* JADX WARN: Code restructure failed: missing block: B:117:0x01e7, code lost:
+        if (r2.equals("tap") != false) goto L92;
      */
     /* JADX WARN: Code restructure failed: missing block: B:11:0x003a, code lost:
         if (r2.equals("notify_click") != false) goto L15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:120:0x01fe, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:124:0x0209, code lost:
+        if (r2.equals("login_server") != false) goto L48;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x0214, code lost:
+        if (r2.equals("stop_backend_listener") != false) goto L23;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:130:0x021f, code lost:
+        if (r2.equals("listen_backend_message") != false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:133:0x0229, code lost:
+        if (r2.equals("screenshot") != false) goto L114;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:136:0x0234, code lost:
+        if (r2.equals("listen_for_backend_message") != false) goto L27;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x023c, code lost:
         return parseAddBackendMessageListener(r16, r17);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:122:0x0206, code lost:
-        if (r2.equals("close_all") != false) goto L44;
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x0244, code lost:
+        if (r2.equals("close_all") != false) goto L58;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:124:0x020c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:142:0x024a, code lost:
         return com.miami.game.core.settings.game_test.GameTestStep.CloseAll.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:126:0x0214, code lost:
-        if (r2.equals("backend_validation_stop") != false) goto L128;
+    /* JADX WARN: Code restructure failed: missing block: B:144:0x0252, code lost:
+        if (r2.equals("backend_validation_stop") != false) goto L146;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:129:0x021f, code lost:
-        if (r2.equals("replay_fixture") != false) goto L19;
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x025d, code lost:
+        if (r2.equals("wait_ui_visibility") != false) goto L31;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:132:0x022a, code lost:
-        if (r2.equals("stop_backend_validation") != false) goto L128;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x0235, code lost:
-        if (r2.equals("backend_validation_start") != false) goto L66;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x0240, code lost:
-        if (r2.equals("backend_message") != false) goto L52;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x0248, code lost:
-        return parseBackendMessage(r16, r17);
+    /* JADX WARN: Code restructure failed: missing block: B:149:0x0265, code lost:
+        return parseWaitVisibility(r16, r17);
      */
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0044, code lost:
         if (r2.equals("backend_fixture") != false) goto L19;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0290, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:151:0x026d, code lost:
+        if (r2.equals("replay_fixture") != false) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:154:0x0278, code lost:
+        if (r2.equals("stop_backend_validation") != false) goto L146;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x0283, code lost:
+        if (r2.equals("backend_validation_start") != false) goto L80;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:160:0x028e, code lost:
+        if (r2.equals("backend_message") != false) goto L66;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:162:0x0296, code lost:
+        return parseBackendMessage(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:172:0x02de, code lost:
         if (r2.equals("remove_backend_message_listener") != false) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:152:0x029d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:174:0x02eb, code lost:
         return new com.miami.game.core.settings.game_test.GameTestStep.RemoveBackendMessageListener(requireString(r16, "name", r17));
      */
-    /* JADX WARN: Code restructure failed: missing block: B:154:0x02a5, code lost:
-        if (r2.equals("tap_screen") != false) goto L78;
+    /* JADX WARN: Code restructure failed: missing block: B:176:0x02f3, code lost:
+        if (r2.equals("tap_screen") != false) goto L92;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:156:0x02c8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:178:0x0316, code lost:
         return new com.miami.game.core.settings.game_test.GameTestStep.Tap(requirePercent(r16, "xPercent", r17), requirePercent(r16, "yPercent", r17), optNonNegativeLong(r16, "holdMs", 60, r17));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:158:0x02d0, code lost:
-        if (r2.equals("stop_validation") != false) goto L128;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:160:0x02d6, code lost:
-        return com.miami.game.core.settings.game_test.GameTestStep.StopBackendValidation.INSTANCE;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:162:0x02de, code lost:
-        if (r2.equals("wait_for_backend_message") != false) goto L40;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:164:0x02e6, code lost:
-        return parseWaitBackendMessage(r16, r17);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:166:0x02ee, code lost:
-        if (r2.equals("replay_backend_fixture") != false) goto L19;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:168:0x02f6, code lost:
-        return parseReplayBackendFixture(r16, r17);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:170:0x02fe, code lost:
-        if (r2.equals("open_ui") != false) goto L11;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:172:0x0306, code lost:
-        return parseShowUi(r16, r17);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:174:0x030e, code lost:
-        if (r2.equals("backend_trace_stop") != false) goto L62;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:176:0x0314, code lost:
-        return com.miami.game.core.settings.game_test.GameTestStep.StopBackendTrace.INSTANCE;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:178:0x031c, code lost:
-        if (r2.equals("clear_backend_message_listeners") != false) goto L58;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x004e, code lost:
         if (r2.equals("remove_backend_listener") != false) goto L23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:180:0x0322, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:180:0x031e, code lost:
+        if (r2.equals("stop_validation") != false) goto L146;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:182:0x0324, code lost:
+        return com.miami.game.core.settings.game_test.GameTestStep.StopBackendValidation.INSTANCE;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:184:0x032c, code lost:
+        if (r2.equals("wait_for_backend_message") != false) goto L52;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:186:0x0334, code lost:
+        return parseWaitBackendMessage(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:188:0x033c, code lost:
+        if (r2.equals("login_and_spawn") != false) goto L42;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:191:0x0347, code lost:
+        if (r2.equals("replay_backend_fixture") != false) goto L19;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:193:0x034f, code lost:
+        return parseReplayBackendFixture(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:195:0x0357, code lost:
+        if (r2.equals("open_ui") != false) goto L11;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:197:0x035f, code lost:
+        return parseShowUi(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:199:0x0367, code lost:
+        if (r2.equals("backend_trace_stop") != false) goto L76;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:201:0x036d, code lost:
+        return com.miami.game.core.settings.game_test.GameTestStep.StopBackendTrace.INSTANCE;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:203:0x0375, code lost:
+        if (r2.equals("clear_backend_message_listeners") != false) goto L72;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:205:0x037b, code lost:
         return com.miami.game.core.settings.game_test.GameTestStep.ClearBackendMessageListeners.INSTANCE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:182:0x032a, code lost:
-        if (r2.equals("capture_screen") != false) goto L100;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:185:0x0334, code lost:
-        if (r2.equals("capture_screenshot") != false) goto L100;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:186:0x0336, code lost:
-        r15 = r16.optString("fileName");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:187:0x0342, code lost:
-        if (kotlin.text.StringsKt.isBlank(r15) == false) goto L106;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:188:0x0344, code lost:
-        r15 = r16.optString("name");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x034e, code lost:
-        if (kotlin.text.StringsKt.isBlank(r15) == false) goto L104;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:191:0x0351, code lost:
-        r4 = r15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:192:0x0352, code lost:
-        r15 = r4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:194:0x035e, code lost:
-        return new com.miami.game.core.settings.game_test.GameTestStep.Screenshot(r15);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:196:0x0366, code lost:
-        if (r2.equals("start_validation") != false) goto L66;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:198:0x036e, code lost:
-        return parseStartBackendValidation(r16, r17);
+    /* JADX WARN: Code restructure failed: missing block: B:207:0x0383, code lost:
+        if (r2.equals("capture_screen") != false) goto L114;
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0058, code lost:
         if (r2.equals("add_backend_message_listener") != false) goto L27;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0062, code lost:
-        if (r2.equals("start_backend_trace") != false) goto L31;
+    /* JADX WARN: Code restructure failed: missing block: B:210:0x038d, code lost:
+        if (r2.equals("capture_screenshot") != false) goto L114;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x006b, code lost:
-        if (r2.equals("backend_trace_start") != false) goto L31;
+    /* JADX WARN: Code restructure failed: missing block: B:211:0x038f, code lost:
+        r15 = r16.optString("fileName");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x006d, code lost:
-        r15 = r16.optString("traceName");
+    /* JADX WARN: Code restructure failed: missing block: B:212:0x039b, code lost:
+        if (kotlin.text.StringsKt.isBlank(r15) == false) goto L120;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0079, code lost:
-        if (kotlin.text.StringsKt.isBlank(r15) == false) goto L33;
+    /* JADX WARN: Code restructure failed: missing block: B:213:0x039d, code lost:
+        r15 = r16.optString("name");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x007c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:214:0x03a7, code lost:
+        if (kotlin.text.StringsKt.isBlank(r15) == false) goto L118;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:216:0x03aa, code lost:
         r4 = r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0086, code lost:
-        return new com.miami.game.core.settings.game_test.GameTestStep.StartBackendTrace(r4);
+    /* JADX WARN: Code restructure failed: missing block: B:217:0x03ab, code lost:
+        r15 = r4;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:219:0x03b7, code lost:
+        return new com.miami.game.core.settings.game_test.GameTestStep.Screenshot(r15);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:221:0x03bf, code lost:
+        if (r2.equals("start_validation") != false) goto L80;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:223:0x03c7, code lost:
+        return parseStartBackendValidation(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:225:0x03cf, code lost:
+        if (r2.equals("authorize_and_spawn") != false) goto L42;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:227:0x03d7, code lost:
+        return parseLoginAndSpawn(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:229:0x03df, code lost:
+        if (r2.equals("server_login") != false) goto L48;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:231:0x03e7, code lost:
+        return parseAuthorize(r16, r17);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0062, code lost:
+        if (r2.equals("wait_visibility") != false) goto L31;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x006c, code lost:
+        if (r2.equals("start_backend_trace") != false) goto L35;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0075, code lost:
+        if (r2.equals("auth_and_spawn") != false) goto L42;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x007f, code lost:
+        if (r2.equals("backend_trace_start") != false) goto L35;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0081, code lost:
+        r15 = r16.optString("traceName");
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x008d, code lost:
-        if (r2.equals("wait_backend_message") != false) goto L40;
+        if (kotlin.text.StringsKt.isBlank(r15) == false) goto L37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0097, code lost:
-        if (r2.equals("closeall") != false) goto L44;
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x0090, code lost:
+        r4 = r15;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00b0, code lost:
-        if (r2.equals("frontend_message") != false) goto L52;
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x009a, code lost:
+        return new com.miami.game.core.settings.game_test.GameTestStep.StartBackendTrace(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00ba, code lost:
-        if (r2.equals("wait_frontend_message") != false) goto L40;
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00a1, code lost:
+        if (r2.equals("authorize") != false) goto L48;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00c4, code lost:
-        if (r2.equals("clear_backend_listeners") != false) goto L58;
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00ab, code lost:
+        if (r2.equals("wait_backend_message") != false) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00ce, code lost:
-        if (r2.equals("stop_backend_trace") != false) goto L62;
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00b5, code lost:
+        if (r2.equals("wait_for_visibility") != false) goto L31;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x00bf, code lost:
+        if (r2.equals("closeall") != false) goto L58;
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x00d8, code lost:
-        if (r2.equals("start_backend_validation") != false) goto L66;
+        if (r2.equals("frontend_message") != false) goto L66;
      */
     /* JADX WARN: Code restructure failed: missing block: B:59:0x00e2, code lost:
-        if (r2.equals("wait_for_frontend_message") != false) goto L40;
+        if (r2.equals("wait_frontend_message") != false) goto L52;
      */
     /* JADX WARN: Code restructure failed: missing block: B:62:0x00ec, code lost:
-        if (r2.equals("await_backend_message") != false) goto L40;
+        if (r2.equals("clear_backend_listeners") != false) goto L72;
      */
     /* JADX WARN: Code restructure failed: missing block: B:65:0x00f6, code lost:
-        if (r2.equals("mock_backend_message") != false) goto L52;
+        if (r2.equals("stop_backend_trace") != false) goto L76;
      */
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0100, code lost:
-        if (r2.equals("add_backend_listener") != false) goto L27;
+        if (r2.equals("start_backend_validation") != false) goto L80;
      */
     /* JADX WARN: Code restructure failed: missing block: B:71:0x010a, code lost:
-        if (r2.equals("touch") != false) goto L78;
+        if (r2.equals("wait_for_frontend_message") != false) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x014d, code lost:
-        if (r2.equals("sleep") != false) goto L86;
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0114, code lost:
+        if (r2.equals("await_backend_message") != false) goto L52;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0157, code lost:
-        if (r2.equals("input") != false) goto L90;
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x011e, code lost:
+        if (r2.equals("mock_backend_message") != false) goto L66;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x0161, code lost:
-        if (r2.equals("delay") != false) goto L86;
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0128, code lost:
+        if (r2.equals("add_backend_listener") != false) goto L27;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:87:0x016b, code lost:
-        if (r2.equals("click") != false) goto L15;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x0173, code lost:
-        return parseNotifyClick(r16, r17);
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x0132, code lost:
+        if (r2.equals("touch") != false) goto L92;
      */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0030, code lost:
         if (r2.equals("show_ui") != false) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x017b, code lost:
-        if (r2.equals("wait") != false) goto L86;
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x0175, code lost:
+        if (r2.equals("sleep") != false) goto L100;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x018a, code lost:
-        return new com.miami.game.core.settings.game_test.GameTestStep.Sleep(requireNonNegativeLong(r16, "delayMs", r17));
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x017f, code lost:
+        if (r2.equals("input") != false) goto L104;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x0192, code lost:
-        if (r2.equals("shot") != false) goto L100;
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x0189, code lost:
+        if (r2.equals("delay") != false) goto L100;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:98:0x019d, code lost:
-        if (r2.equals("chat") != false) goto L90;
+    /* JADX WARN: Code restructure failed: missing block: B:99:0x0193, code lost:
+        if (r2.equals("click") != false) goto L15;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -310,6 +350,12 @@ public final class GameTestScriptParser {
         String normalizeAction = normalizeAction(optString);
         String str2 = null;
         switch (normalizeAction.hashCode()) {
+            case -2048474259:
+                str = "action";
+                break;
+            case -2038249923:
+                str = "action";
+                break;
             case -1843812234:
                 str = "action";
                 break;
@@ -329,6 +375,9 @@ public final class GameTestScriptParser {
                 str = "action";
                 break;
             case -1257716986:
+                str = "action";
+                break;
+            case -1155969603:
                 str = "action";
                 break;
             case -1147610084:
@@ -366,6 +415,9 @@ public final class GameTestScriptParser {
             case -618720847:
                 str = "action";
                 break;
+            case -603015085:
+                str = "action";
+                break;
             case -576155555:
                 str = "action";
                 break;
@@ -384,6 +436,9 @@ public final class GameTestScriptParser {
             case -285723492:
                 str = "action";
                 break;
+            case -169032487:
+                str = "action";
+                break;
             case 107332:
                 str = "action";
                 if (normalizeAction.equals("log")) {
@@ -391,6 +446,9 @@ public final class GameTestScriptParser {
                 }
                 throw new IllegalArgumentException("Unsupported action '" + jSONObject.optString(str) + "' in step #" + (i + 1));
             case 114595:
+                str = "action";
+                break;
+            case 3005864:
                 str = "action";
                 break;
             case 3052376:
@@ -448,11 +506,19 @@ public final class GameTestScriptParser {
                 throw new IllegalArgumentException("Unsupported action '" + jSONObject.optString(str) + "' in step #" + (i + 1));
             case 1092827305:
                 break;
+            case 1149872210:
+                break;
             case 1353463442:
+                break;
+            case 1475610601:
                 break;
             case 1492481981:
                 break;
+            case 1524087100:
+                break;
             case 1571839677:
+                break;
+            case 1591286812:
                 break;
             case 1709655573:
                 break;
@@ -522,7 +588,50 @@ public final class GameTestScriptParser {
     }
 
     private final GameTestStep.WaitBackendMessage parseWaitBackendMessage(JSONObject jSONObject, int i) {
-        return new GameTestStep.WaitBackendMessage(parseBackendMessageMatcher(jSONObject, i, "Wait backend message step"), optTimeoutMs(jSONObject, i), jSONObject.optBoolean("includePast", true), jSONObject.optBoolean("failOnTimeout", true));
+        return new GameTestStep.WaitBackendMessage(parseBackendMessageMatcher(jSONObject, i, "Wait backend message step"), optTimeoutMs$default(this, jSONObject, i, 0L, 2, null), jSONObject.optBoolean("includePast", true), jSONObject.optBoolean("failOnTimeout", true));
+    }
+
+    private final GameTestStep.WaitVisibility parseWaitVisibility(JSONObject jSONObject, int i) {
+        Pair<Integer, String> parseBackendReference = parseBackendReference(jSONObject, i);
+        Integer component1 = parseBackendReference.component1();
+        String component2 = parseBackendReference.component2();
+        if (!jSONObject.has("visible")) {
+            throw new IllegalArgumentException("Wait visibility step #" + (i + 1) + " must contain 'visible'");
+        }
+        return new GameTestStep.WaitVisibility(component1, component2, jSONObject.getBoolean("visible"), optTimeoutMs$default(this, jSONObject, i, 0L, 2, null), jSONObject.optBoolean("includePast", true), jSONObject.optBoolean("failOnTimeout", true));
+    }
+
+    private final GameTestStep.Authorize parseAuthorize(JSONObject jSONObject, int i) {
+        Pair<Integer, String> parseOptionalBackendReference = parseOptionalBackendReference(jSONObject);
+        Integer component1 = parseOptionalBackendReference.component1();
+        String component2 = parseOptionalBackendReference.component2();
+        if (component2 == null) {
+            component2 = "AUTHORIZATION";
+        }
+        String optString = jSONObject.optString(HintConstants.AUTOFILL_HINT_USERNAME);
+        if (StringsKt.isBlank(optString)) {
+            optString = null;
+        }
+        String str = optString;
+        String optString2 = jSONObject.optString(HintConstants.AUTOFILL_HINT_PASSWORD);
+        return new GameTestStep.Authorize(component1, component2, str, StringsKt.isBlank(optString2) ? null : optString2);
+    }
+
+    private final GameTestStep.LoginAndSpawn parseLoginAndSpawn(JSONObject jSONObject, int i) {
+        Pair<Integer, String> parseOptionalBackendReference = parseOptionalBackendReference(jSONObject);
+        Integer component1 = parseOptionalBackendReference.component1();
+        String component2 = parseOptionalBackendReference.component2();
+        if (component2 == null) {
+            component2 = "AUTHORIZATION";
+        }
+        String str = component2;
+        String optString = jSONObject.optString(HintConstants.AUTOFILL_HINT_USERNAME);
+        if (StringsKt.isBlank(optString)) {
+            optString = null;
+        }
+        String str2 = optString;
+        String optString2 = jSONObject.optString(HintConstants.AUTOFILL_HINT_PASSWORD);
+        return new GameTestStep.LoginAndSpawn(component1, str, str2, StringsKt.isBlank(optString2) ? null : optString2, optNonNegativeInt(jSONObject, "spawnIndex", 0, i), optTimeoutMs(jSONObject, i, GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS), jSONObject.optBoolean("waitClosed", true));
     }
 
     private final GameTestStep.AddBackendMessageListener parseAddBackendMessageListener(JSONObject jSONObject, int i) {
@@ -671,6 +780,16 @@ public final class GameTestScriptParser {
         return TuplesKt.to(valueOf, str);
     }
 
+    private final Pair<Integer, String> parseOptionalBackendReference(JSONObject jSONObject) {
+        Integer valueOf = jSONObject.has("backendId") ? Integer.valueOf(jSONObject.getInt("backendId")) : null;
+        String optString = jSONObject.optString("backendName");
+        if (StringsKt.isBlank(optString)) {
+            String optString2 = jSONObject.optString("backend");
+            optString = StringsKt.isBlank(optString2) ? null : optString2;
+        }
+        return TuplesKt.to(valueOf, optString);
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:18:0x0045  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x0053  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
@@ -698,7 +817,7 @@ public final class GameTestScriptParser {
         String str5;
         String optString3;
         String str6;
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         BackendMessageMatcher backendMessageMatcher;
         JSONObject optJSONObject = jSONObject.optJSONObject("match");
         if (optJSONObject != null || (optJSONObject = jSONObject.optJSONObject("matcher")) != null) {
@@ -749,17 +868,17 @@ public final class GameTestScriptParser {
             if (str6 != null) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9896constructorimpl = Result.m9896constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
+                    m9898constructorimpl = Result.m9898constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+                    m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-                if (m9899exceptionOrNullimpl == null) {
-                    Regex regex = (Regex) m9896constructorimpl;
+                Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+                if (m9901exceptionOrNullimpl == null) {
+                    Regex regex = (Regex) m9898constructorimpl;
                 } else {
                     int i2 = i + 1;
-                    String message = m9899exceptionOrNullimpl.getMessage();
+                    String message = m9901exceptionOrNullimpl.getMessage();
                     if (message == null) {
                         message = "";
                     }
@@ -933,15 +1052,33 @@ public final class GameTestScriptParser {
         return j;
     }
 
-    private final Long optTimeoutMs(JSONObject jSONObject, int i) {
-        if (!jSONObject.has("timeoutMs")) {
-            return 10000L;
+    private final int optNonNegativeInt(JSONObject jSONObject, String str, int i, int i2) {
+        if (jSONObject.has(str)) {
+            int i3 = jSONObject.getInt(str);
+            if (i3 >= 0) {
+                return i3;
+            }
+            throw new IllegalArgumentException("Step #" + (i2 + 1) + " must contain a non-negative '" + str + "'");
         }
-        long j = jSONObject.getLong("timeoutMs");
-        if (j < 0) {
+        return i;
+    }
+
+    static /* synthetic */ Long optTimeoutMs$default(GameTestScriptParser gameTestScriptParser, JSONObject jSONObject, int i, long j, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            j = 10000;
+        }
+        return gameTestScriptParser.optTimeoutMs(jSONObject, i, j);
+    }
+
+    private final Long optTimeoutMs(JSONObject jSONObject, int i, long j) {
+        if (!jSONObject.has("timeoutMs")) {
+            return Long.valueOf(j);
+        }
+        long j2 = jSONObject.getLong("timeoutMs");
+        if (j2 < 0) {
             throw new IllegalArgumentException("Step #" + (i + 1) + " must contain a non-negative 'timeoutMs'");
         }
-        Long valueOf = Long.valueOf(j);
+        Long valueOf = Long.valueOf(j2);
         if (valueOf.longValue() > 0) {
             return valueOf;
         }

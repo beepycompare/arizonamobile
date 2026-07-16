@@ -5,7 +5,7 @@ import android.content.Context;
 public final class Y7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final X7 f853a = new X7();
+    public static final X7 f855a = new X7();
     public static final String b = "appmetrica";
 
     public final Jk a(Context context) {

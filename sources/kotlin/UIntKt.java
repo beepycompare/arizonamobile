@@ -6,19 +6,19 @@ import com.facebook.internal.NativeProtocol;
 /* loaded from: classes5.dex */
 public final class UIntKt {
     private static final int toUInt(byte b) {
-        return UInt.m9997constructorimpl(b);
+        return UInt.m9999constructorimpl(b);
     }
 
     private static final int toUInt(short s) {
-        return UInt.m9997constructorimpl(s);
+        return UInt.m9999constructorimpl(s);
     }
 
     private static final int toUInt(int i) {
-        return UInt.m9997constructorimpl(i);
+        return UInt.m9999constructorimpl(i);
     }
 
     private static final int toUInt(long j) {
-        return UInt.m9997constructorimpl((int) j);
+        return UInt.m9999constructorimpl((int) j);
     }
 
     private static final int toUInt(float f) {

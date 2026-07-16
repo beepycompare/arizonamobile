@@ -12,11 +12,11 @@ import kotlin.io.ByteStreamsKt;
 public final class C0250fe implements Function {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0302he f980a;
+    public final C0302he f982a;
     public final C0224ee b;
 
     public C0250fe(C0302he c0302he, C0224ee c0224ee) {
-        this.f980a = c0302he;
+        this.f982a = c0302he;
         this.b = c0224ee;
     }
 
@@ -52,7 +52,7 @@ public final class C0250fe implements Function {
                         bArr = null;
                     }
                     if (bArr != null) {
-                        return Base64Utils.compressBase64(MessageNano.toByteArray(this.b.fromModel(new C0379ke(bArr, this.f980a))));
+                        return Base64Utils.compressBase64(MessageNano.toByteArray(this.b.fromModel(new C0379ke(bArr, this.f982a))));
                     }
                     return null;
                 }

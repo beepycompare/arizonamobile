@@ -5,11 +5,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Q7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0376kb f727a;
+    public final InterfaceC0376kb f729a;
     public String b = "";
 
     public Q7(InterfaceC0376kb interfaceC0376kb) {
-        this.f727a = interfaceC0376kb;
+        this.f729a = interfaceC0376kb;
     }
 
     public final void a(String str, boolean z) {
@@ -18,7 +18,7 @@ public final class Q7 {
                 return;
             }
             this.b = str;
-            this.f727a.a(str, z);
+            this.f729a.a(str, z);
         }
     }
 }

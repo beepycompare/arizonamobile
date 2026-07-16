@@ -39,6 +39,7 @@ import com.google.android.gms.common.wrappers.InstantApps;
 import com.google.android.gms.internal.base.zak;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
+import com.miami.game.core.settings.game_test.GameTestScriptModelKt;
 import java.util.ArrayList;
 import java.util.Arrays;
 /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
@@ -289,7 +290,7 @@ public class GoogleApiAvailability extends GoogleApiAvailabilityLight {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void zai(Context context) {
-        new zad(this, context).sendEmptyMessageDelayed(1, 120000L);
+        new zad(this, context).sendEmptyMessageDelayed(1, GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS);
     }
 
     public Dialog getErrorDialog(Activity activity, int i, int i2, DialogInterface.OnCancelListener onCancelListener) {

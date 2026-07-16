@@ -19,6 +19,10 @@ public final class BackendUiPreviewProviderRegistry {
     @JvmStatic
     public static final List<BackendUiPreviewProvider> create(ProjectType projectType) {
         Intrinsics.checkNotNullParameter(projectType, "projectType");
-        return CollectionsKt.emptyList();
+        List createListBuilder = CollectionsKt.createListBuilder();
+        if (projectType == ProjectType.ARIZONA) {
+            createListBuilder.add(new DialogSignBackendUiPreviewProvider());
+        }
+        return CollectionsKt.build(createListBuilder);
     }
 }

@@ -22,7 +22,7 @@ import kotlinx.coroutines.GlobalScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {1418, 1419}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {1419, 1432}, s = {"L$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {1476, 1477}, m = "invokeSuspend", n = {"gameDataInfo"}, nl = {1477, 1490}, s = {"L$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<Unit> $onFinish;

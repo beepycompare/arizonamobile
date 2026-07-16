@@ -14,27 +14,27 @@ import io.appmetrica.analytics.impl.Vo;
 public class StringAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InterfaceC0493oo f1418a;
+    private final InterfaceC0493oo f1420a;
     private final L6 b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public StringAttribute(String str, C0777zn c0777zn, Vo vo, InterfaceC0678w2 interfaceC0678w2) {
         this.b = new L6(str, vo, interfaceC0678w2);
-        this.f1418a = c0777zn;
+        this.f1420a = c0777zn;
     }
 
     public UserProfileUpdate<? extends Ho> withValue(String str) {
         L6 l6 = this.b;
-        return new UserProfileUpdate<>(new An(l6.c, str, this.f1418a, l6.f642a, new J4(l6.b)));
+        return new UserProfileUpdate<>(new An(l6.c, str, this.f1420a, l6.f644a, new J4(l6.b)));
     }
 
     public UserProfileUpdate<? extends Ho> withValueIfUndefined(String str) {
         L6 l6 = this.b;
-        return new UserProfileUpdate<>(new An(l6.c, str, this.f1418a, l6.f642a, new Cl(l6.b)));
+        return new UserProfileUpdate<>(new An(l6.c, str, this.f1420a, l6.f644a, new Cl(l6.b)));
     }
 
     public UserProfileUpdate<? extends Ho> withValueReset() {
         L6 l6 = this.b;
-        return new UserProfileUpdate<>(new Vi(0, l6.c, l6.f642a, l6.b));
+        return new UserProfileUpdate<>(new Vi(0, l6.c, l6.f644a, l6.b));
     }
 }

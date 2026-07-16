@@ -21,12 +21,12 @@ public final class UByteSerializer implements KSerializer<UByte> {
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return UByte.m9908boximpl(m11587deserializeWa3L5BU(decoder));
+        return UByte.m9910boximpl(m11589deserializeWa3L5BU(decoder));
     }
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m11588serializeEK6454(encoder, ((UByte) obj).m9964unboximpl());
+        m11590serializeEK6454(encoder, ((UByte) obj).m9966unboximpl());
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -35,14 +35,14 @@ public final class UByteSerializer implements KSerializer<UByte> {
     }
 
     /* renamed from: serialize-EK-6454  reason: not valid java name */
-    public void m11588serializeEK6454(Encoder encoder, byte b) {
+    public void m11590serializeEK6454(Encoder encoder, byte b) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         encoder.encodeInline(getDescriptor()).encodeByte(b);
     }
 
     /* renamed from: deserialize-Wa3L5BU  reason: not valid java name */
-    public byte m11587deserializeWa3L5BU(Decoder decoder) {
+    public byte m11589deserializeWa3L5BU(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return UByte.m9914constructorimpl(decoder.decodeInline(getDescriptor()).decodeByte());
+        return UByte.m9916constructorimpl(decoder.decodeInline(getDescriptor()).decodeByte());
     }
 }

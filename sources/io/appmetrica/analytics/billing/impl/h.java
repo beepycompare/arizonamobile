@@ -5,7 +5,7 @@ import io.appmetrica.analytics.billinginterface.internal.ProductType;
 public abstract /* synthetic */ class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f263a;
+    public static final /* synthetic */ int[] f265a;
 
     static {
         int[] iArr = new int[ProductType.values().length];
@@ -17,6 +17,6 @@ public abstract /* synthetic */ class h {
             iArr[ProductType.SUBS.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
-        f263a = iArr;
+        f265a = iArr;
     }
 }

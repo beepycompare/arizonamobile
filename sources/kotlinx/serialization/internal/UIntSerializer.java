@@ -21,12 +21,12 @@ public final class UIntSerializer implements KSerializer<UInt> {
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return UInt.m9991boximpl(m11595deserializeOGnWXxg(decoder));
+        return UInt.m9993boximpl(m11597deserializeOGnWXxg(decoder));
     }
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m11596serializeQn1smSk(encoder, ((UInt) obj).m10049unboximpl());
+        m11598serializeQn1smSk(encoder, ((UInt) obj).m10051unboximpl());
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -35,14 +35,14 @@ public final class UIntSerializer implements KSerializer<UInt> {
     }
 
     /* renamed from: serialize-Qn1smSk  reason: not valid java name */
-    public void m11596serializeQn1smSk(Encoder encoder, int i) {
+    public void m11598serializeQn1smSk(Encoder encoder, int i) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         encoder.encodeInline(getDescriptor()).encodeInt(i);
     }
 
     /* renamed from: deserialize-OGnWXxg  reason: not valid java name */
-    public int m11595deserializeOGnWXxg(Decoder decoder) {
+    public int m11597deserializeOGnWXxg(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return UInt.m9997constructorimpl(decoder.decodeInline(getDescriptor()).decodeInt());
+        return UInt.m9999constructorimpl(decoder.decodeInline(getDescriptor()).decodeInt());
     }
 }

@@ -9,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.nio.ByteBuffer;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class DecoderInputBuffer extends Buffer {
     public static final int BUFFER_REPLACEMENT_MODE_DIRECT = 2;
     public static final int BUFFER_REPLACEMENT_MODE_DISABLED = 0;

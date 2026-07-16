@@ -12,7 +12,7 @@ import okhttp3.internal.connection.RealConnection;
 public final class C0671vl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0448n5 f1251a;
+    public final C0448n5 f1253a;
     public final C0422m5 b;
     public final InterfaceC0583sb c;
     public final InterfaceC0583sb d;
@@ -22,7 +22,7 @@ public final class C0671vl {
     public Long h = null;
 
     public C0671vl(C0448n5 c0448n5, C0422m5 c0422m5, Ea ea, M2 m2, C0619tl c0619tl) {
-        this.f1251a = c0448n5;
+        this.f1253a = c0448n5;
         this.b = c0422m5;
         this.c = ea;
         this.d = m2;
@@ -51,22 +51,22 @@ public final class C0671vl {
             c0775zl.a();
             return this.f;
         } else if (a2 != 2) {
-            this.f1251a.m.info("Start background session", new Object[0]);
+            this.f1253a.m.info("Start background session", new Object[0]);
             this.g = 2;
             long j2 = c0242f6.i;
             C0257fl a3 = this.d.a(new C0283gl(j2, c0242f6.j, null));
             a(a3.d);
-            if (this.f1251a.t.c()) {
+            if (this.f1253a.t.c()) {
                 C0422m5 c0422m5 = this.b;
-                c0422m5.f1092a.n.a(C0242f6.a(c0242f6, Na.I.i()), a(a3, c0242f6.i));
+                c0422m5.f1094a.n.a(C0242f6.a(c0242f6, Na.I.i()), a(a3, c0242f6.i));
             } else {
                 int i = c0242f6.d;
                 Db db = Db.EVENT_TYPE_UNDEFINED;
                 if (i == 6145) {
                     C0422m5 c0422m52 = this.b;
-                    c0422m52.f1092a.n.a(c0242f6, a(a3, j2));
+                    c0422m52.f1094a.n.a(c0242f6, a(a3, j2));
                     C0422m5 c0422m53 = this.b;
-                    c0422m53.f1092a.n.a(C0242f6.a(c0242f6, Na.I.i()), a(a3, j2));
+                    c0422m53.f1094a.n.a(C0242f6.a(c0242f6, Na.I.i()), a(a3, j2));
                 }
             }
             this.f = a3;
@@ -131,14 +131,14 @@ public final class C0671vl {
     }
 
     public final C0257fl a(C0242f6 c0242f6) {
-        this.f1251a.m.info("Start foreground session", new Object[0]);
+        this.f1253a.m.info("Start foreground session", new Object[0]);
         long j = c0242f6.i;
         C0257fl a2 = this.c.a(new C0283gl(j, c0242f6.j, null));
         a(a2.d);
         this.g = 3;
-        ((A5) this.f1251a.p).e();
+        ((A5) this.f1253a.p).e();
         C0422m5 c0422m5 = this.b;
-        c0422m5.f1092a.n.a(C0242f6.a(c0242f6, Na.I.i()), a(a2, j));
+        c0422m5.f1094a.n.a(C0242f6.a(c0242f6, Na.I.i()), a(a2, j));
         return a2;
     }
 
@@ -151,12 +151,12 @@ public final class C0671vl {
         long j = c0242f6.i;
         long j2 = c0257fl.d;
         boolean z3 = j2 >= 0;
-        C0697wl a2 = c0257fl.f984a.e.a(j2, c0257fl.c.f1038a);
+        C0697wl a2 = c0257fl.f986a.e.a(j2, c0257fl.c.f1040a);
         if (a2 == null) {
             z = false;
             break;
         }
-        Eh eh = (Eh) c0257fl.f984a.k.a();
+        Eh eh = (Eh) c0257fl.f986a.k.a();
         Boolean[] boolArr = new Boolean[7];
         boolArr[0] = Boolean.valueOf(Intrinsics.areEqual(eh.getAnalyticsSdkVersionName(), a2.n));
         boolArr[1] = Boolean.valueOf(Intrinsics.areEqual(eh.getAnalyticsSdkBuildNumber(), a2.o));
@@ -183,12 +183,12 @@ public final class C0671vl {
         if (!z4) {
             TimeUnit timeUnit = TimeUnit.SECONDS;
             C0334il c0334il = c0257fl.c;
-            int i = ((Eh) c0257fl.f984a.k.a()).f;
+            int i = ((Eh) c0257fl.f986a.k.a()).f;
             Integer num = c0334il.e;
             if (num != null) {
                 i = num.intValue();
             }
-            if (j4 < timeUnit.toMillis(i) && j5 < timeUnit.toMillis(AbstractC0360jl.f1054a)) {
+            if (j4 < timeUnit.toMillis(i) && j5 < timeUnit.toMillis(AbstractC0360jl.f1056a)) {
                 z2 = false;
                 if (z3 || !z || z2 || c0257fl.k) {
                     b(c0257fl, c0242f6);
@@ -209,15 +209,15 @@ public final class C0671vl {
             C0422m5 c0422m5 = this.b;
             C0242f6 a2 = C0242f6.a(c0242f6, Db.EVENT_TYPE_ALIVE);
             C0749yl c0749yl = new C0749yl();
-            c0749yl.f1300a = c0257fl.d;
-            c0749yl.d = c0257fl.c.f1038a;
+            c0749yl.f1302a = c0257fl.d;
+            c0749yl.d = c0257fl.c.f1040a;
             long andIncrement = c0257fl.g.getAndIncrement();
             C0775zl c0775zl = c0257fl.b;
             c0775zl.a(C0775zl.g, Long.valueOf(c0257fl.g.get()));
             c0775zl.a();
             c0749yl.b = andIncrement;
             c0749yl.c = TimeUnit.MILLISECONDS.toSeconds(Math.max(c0257fl.i - c0257fl.e, c0257fl.j));
-            c0422m5.f1092a.n.a(a2, c0749yl);
+            c0422m5.f1094a.n.a(a2, c0749yl);
             if (c0257fl.h) {
                 c0257fl.h = false;
                 C0775zl c0775zl2 = c0257fl.b;
@@ -225,8 +225,8 @@ public final class C0671vl {
                 c0775zl2.a();
             }
         }
-        PublicLogger publicLogger = this.f1251a.m;
-        int ordinal = c0257fl.c.f1038a.ordinal();
+        PublicLogger publicLogger = this.f1253a.m;
+        int ordinal = c0257fl.c.f1040a.ordinal();
         if (ordinal == 0) {
             publicLogger.info("Finish foreground session", new Object[0]);
         } else if (ordinal == 1) {
@@ -242,7 +242,7 @@ public final class C0671vl {
 
     public static C0749yl a(C0257fl c0257fl, long j) {
         C0749yl c0749yl = new C0749yl();
-        c0749yl.f1300a = c0257fl.d;
+        c0749yl.f1302a = c0257fl.d;
         long andIncrement = c0257fl.g.getAndIncrement();
         C0775zl c0775zl = c0257fl.b;
         c0775zl.a(C0775zl.g, Long.valueOf(c0257fl.g.get()));
@@ -254,7 +254,7 @@ public final class C0671vl {
         c0775zl2.a(C0775zl.e, Long.valueOf(j2));
         c0775zl2.a();
         c0749yl.c = TimeUnit.MILLISECONDS.toSeconds(c0257fl.j);
-        c0749yl.d = c0257fl.c.f1038a;
+        c0749yl.d = c0257fl.c.f1040a;
         return c0749yl;
     }
 }

@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public abstract class AbstractC0347j8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0223ed f1048a;
+    public final C0223ed f1050a;
 
     public AbstractC0347j8() {
         C0223ed c0223ed = new C0223ed(0);
@@ -12,11 +12,11 @@ public abstract class AbstractC0347j8 {
         c0223ed.a(EnumC0399l8.d, 1);
         c0223ed.a(EnumC0399l8.e, 2);
         c0223ed.a(EnumC0399l8.f, 3);
-        this.f1048a = c0223ed;
+        this.f1050a = c0223ed;
     }
 
     public final C0223ed a() {
-        return this.f1048a;
+        return this.f1050a;
     }
 
     public abstract boolean a(Object obj, Object obj2);

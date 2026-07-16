@@ -6,12 +6,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IdentifierStatus f400a;
+    public final IdentifierStatus f402a;
     public final a b;
     public final String c;
 
     public c(IdentifierStatus identifierStatus, a aVar, String str) {
-        this.f400a = identifierStatus;
+        this.f402a = identifierStatus;
         this.b = aVar;
         this.c = str;
     }
@@ -22,13 +22,13 @@ public final class c {
         }
         if (obj instanceof c) {
             c cVar = (c) obj;
-            return this.f400a == cVar.f400a && Intrinsics.areEqual(this.b, cVar.b) && Intrinsics.areEqual(this.c, cVar.c);
+            return this.f402a == cVar.f402a && Intrinsics.areEqual(this.b, cVar.b) && Intrinsics.areEqual(this.c, cVar.c);
         }
         return false;
     }
 
     public final int hashCode() {
-        int hashCode = this.f400a.hashCode() * 31;
+        int hashCode = this.f402a.hashCode() * 31;
         a aVar = this.b;
         int hashCode2 = (hashCode + (aVar == null ? 0 : aVar.hashCode())) * 31;
         String str = this.c;
@@ -36,7 +36,7 @@ public final class c {
     }
 
     public final String toString() {
-        return "AdvIdResult(status=" + this.f400a + ", advIdInfo=" + this.b + ", errorExplanation=" + this.c + ')';
+        return "AdvIdResult(status=" + this.f402a + ", advIdInfo=" + this.b + ", errorExplanation=" + this.c + ')';
     }
 
     public /* synthetic */ c(IdentifierStatus identifierStatus, a aVar, String str, int i) {

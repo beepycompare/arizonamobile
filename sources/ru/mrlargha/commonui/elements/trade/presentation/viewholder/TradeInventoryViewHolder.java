@@ -25,7 +25,7 @@ import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
-import ru.mrlargha.commonui.utils.GsonStore;
+import ru.mrlargha.commonui.utils.InventoryDragState;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: TradeInventoryViewHolder.kt */
@@ -190,24 +190,27 @@ public final class TradeInventoryViewHolder extends RecyclerView.ViewHolder {
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean bind$lambda$0$1(TradeInventoryViewHolder tradeInventoryViewHolder, View view, DragEvent dragEvent) {
         int action = dragEvent.getAction();
-        if (action != 1) {
-            if (action == 3) {
-                if (dragEvent.getClipData() != null) {
-                    Object fromJson = GsonStore.INSTANCE.getGson().fromJson(UtilsKt.updateJsonString(dragEvent.getClipData().getItemAt(0).getText().toString()), (Class<Object>) InventoryItem.class);
-                    Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-                    tradeInventoryViewHolder.onItemDropped.invoke(new DraggedItem((InventoryItem) fromJson, tradeInventoryViewHolder.getLayoutPosition()));
-                }
-                view.invalidate();
-                Object localState = dragEvent.getLocalState();
-                ConstraintLayout constraintLayout = localState instanceof ConstraintLayout ? (ConstraintLayout) localState : null;
-                ViewParent parent = constraintLayout != null ? constraintLayout.getParent() : null;
-                ViewGroup viewGroup = parent instanceof ViewGroup ? parent : null;
-                if (viewGroup != null) {
-                    viewGroup.removeView(constraintLayout);
-                }
-                tradeInventoryViewHolder.scrollHandler.removeCallbacks(tradeInventoryViewHolder.scrollRunnable);
-                return true;
+        if (action == 1) {
+            Intrinsics.checkNotNull(dragEvent);
+            return UtilsKt.getInventoryDragState(dragEvent) != null;
+        } else if (action == 3) {
+            Intrinsics.checkNotNull(dragEvent);
+            InventoryDragState inventoryDragState = UtilsKt.getInventoryDragState(dragEvent);
+            if (inventoryDragState != null) {
+                tradeInventoryViewHolder.onItemDropped.invoke(new DraggedItem(inventoryDragState.getItem(), tradeInventoryViewHolder.getLayoutPosition()));
             }
+            view.invalidate();
+            InventoryDragState inventoryDragState2 = UtilsKt.getInventoryDragState(dragEvent);
+            View sourceView = inventoryDragState2 != null ? inventoryDragState2.getSourceView() : null;
+            ConstraintLayout constraintLayout = sourceView instanceof ConstraintLayout ? (ConstraintLayout) sourceView : null;
+            ViewParent parent = constraintLayout != null ? constraintLayout.getParent() : null;
+            ViewGroup viewGroup = parent instanceof ViewGroup ? parent : null;
+            if (viewGroup != null) {
+                viewGroup.removeView(constraintLayout);
+            }
+            tradeInventoryViewHolder.scrollHandler.removeCallbacks(tradeInventoryViewHolder.scrollRunnable);
+            return true;
+        } else {
             if (action != 4) {
                 if (action == 5) {
                     boolean z = view.getRight() + tradeInventoryViewHolder.edgeHeight >= tradeInventoryViewHolder.recyclerView.getRight() - tradeInventoryViewHolder.recyclerView.getLeft();
@@ -233,7 +236,6 @@ public final class TradeInventoryViewHolder extends RecyclerView.ViewHolder {
             view.invalidate();
             return true;
         }
-        return dragEvent.getClipDescription().hasMimeType("text/plain");
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -8,14 +8,14 @@ import org.json.JSONObject;
 public final class Qf implements InterfaceC0425m8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f733a;
+    public final String f735a;
     public final JSONObject b;
     public final boolean c;
     public final boolean d;
     public final EnumC0399l8 e;
 
     public Qf(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0399l8 enumC0399l8) {
-        this.f733a = str;
+        this.f735a = str;
         this.b = jSONObject;
         this.c = z;
         this.d = z2;
@@ -31,7 +31,7 @@ public final class Qf implements InterfaceC0425m8 {
         if (this.c) {
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("trackingId", this.f733a);
+                jSONObject.put("trackingId", this.f735a);
                 if (this.b.length() > 0) {
                     jSONObject.put("additionalParams", this.b);
                 }
@@ -45,18 +45,18 @@ public final class Qf implements InterfaceC0425m8 {
     public final JSONObject c() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("trackingId", this.f733a);
+            jSONObject.put("trackingId", this.f735a);
             jSONObject.put("additionalParams", this.b);
             jSONObject.put("wasSet", this.c);
             jSONObject.put("autoTracking", this.d);
-            jSONObject.put("source", this.e.f1076a);
+            jSONObject.put("source", this.e.f1078a);
         } catch (Throwable unused) {
         }
         return jSONObject;
     }
 
     public final String toString() {
-        return "PreloadInfoState{trackingId='" + this.f733a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "PreloadInfoState{trackingId='" + this.f735a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 
     public static Qf a(JSONObject jSONObject) {
@@ -76,7 +76,7 @@ public final class Qf implements InterfaceC0425m8 {
                 break;
             }
             enumC0399l8 = values[i];
-            if (Intrinsics.areEqual(enumC0399l8.f1076a, optStringOrNull2)) {
+            if (Intrinsics.areEqual(enumC0399l8.f1078a, optStringOrNull2)) {
                 break;
             }
             i++;

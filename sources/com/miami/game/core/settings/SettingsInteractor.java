@@ -121,7 +121,7 @@ public final class SettingsInteractor {
     }
 
     public final void useBundledGameTestScript() {
-        saveSettings(SettingState.copy$default(this.stateStore.getValue(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, null, null, 522239, null));
+        saveSettings(SettingState.copy$default(this.stateStore.getValue(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1046527, null));
     }
 
     public final void selectImportedGameTestScript(String fileName) {
@@ -184,16 +184,18 @@ public final class SettingsInteractor {
         String str3 = str;
         Boolean bool2 = (Boolean) readRawField(settingState, "debugGameTestScreenshotButtonEnabled");
         boolean booleanCompat2 = getBooleanCompat(defaultSharedPreferences, GameTestScriptPreferences.SCREENSHOT_BUTTON_ENABLED_KEY, bool2 != null ? bool2.booleanValue() : false);
+        Boolean bool3 = (Boolean) readRawField(settingState, "debugGameTestLogShareButtonEnabled");
+        boolean booleanCompat3 = getBooleanCompat(defaultSharedPreferences, GameTestScriptPreferences.LOG_SHARE_BUTTON_ENABLED_KEY, bool3 != null ? bool3.booleanValue() : false);
         String stringCompat3 = getStringCompat(defaultSharedPreferences, GameTestScriptPreferences.SCREENSHOT_DEVICE_DIR_KEY, readRawStringField(settingState, "debugGameTestScreenshotDeviceDir"));
         String str4 = (stringCompat3 == null || (r7 = StringsKt.trim((CharSequence) stringCompat3).toString()) == null) ? "" : "";
         ConnectionData connectionData = (ConnectionData) readRawField(settingState, "connectionData");
         ConnectionData connectionData2 = (connectionData == null || (normalizeConnectionData = normalizeConnectionData(connectionData)) == null) ? new ConnectionData(null, null, null, 7, null) : normalizeConnectionData;
-        boolean booleanCompat3 = getBooleanCompat(defaultSharedPreferences, "debug_auto_connect_test_server", settingState.getDebugAutoConnectTestServer());
-        boolean booleanCompat4 = getBooleanCompat(defaultSharedPreferences, GameTestScriptPreferences.AUTO_RUN_KEY, settingState.getDebugAutoRunTestScript());
+        boolean booleanCompat4 = getBooleanCompat(defaultSharedPreferences, "debug_auto_connect_test_server", settingState.getDebugAutoConnectTestServer());
+        boolean booleanCompat5 = getBooleanCompat(defaultSharedPreferences, GameTestScriptPreferences.AUTO_RUN_KEY, settingState.getDebugAutoRunTestScript());
         if (booleanCompat && gameTestSavedScript != null) {
             z2 = true;
         }
-        return SettingState.copy$default(settingState, 0.0f, 0, false, false, false, false, false, false, z, booleanCompat3, booleanCompat4, z2, (gameTestSavedScript == null || (displayName = gameTestSavedScript.getDisplayName()) == null) ? stringCompat : displayName, resolveActiveImportedScriptFileName, listImportedScripts, str3, booleanCompat2, str4, connectionData2, 255, null);
+        return SettingState.copy$default(settingState, 0.0f, 0, false, false, false, false, false, false, z, booleanCompat4, booleanCompat5, z2, (gameTestSavedScript == null || (displayName = gameTestSavedScript.getDisplayName()) == null) ? stringCompat : displayName, resolveActiveImportedScriptFileName, listImportedScripts, str3, booleanCompat2, booleanCompat3, str4, connectionData2, 255, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -260,7 +262,7 @@ public final class SettingsInteractor {
     }
 
     private final <T> T readRawField(Object obj, String str) {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             SettingsInteractor settingsInteractor = this;
@@ -271,15 +273,15 @@ public final class SettingsInteractor {
             if (obj2 == null) {
                 obj2 = null;
             }
-            m9896constructorimpl = Result.m9896constructorimpl(obj2);
+            m9898constructorimpl = Result.m9898constructorimpl(obj2);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9902isFailureimpl(m9896constructorimpl)) {
+        if (Result.m9904isFailureimpl(m9898constructorimpl)) {
             return null;
         }
-        return (T) m9896constructorimpl;
+        return (T) m9898constructorimpl;
     }
 
     private final boolean getBooleanCompat(SharedPreferences sharedPreferences, String str, boolean z) {

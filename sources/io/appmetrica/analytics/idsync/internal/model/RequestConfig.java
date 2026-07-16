@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class RequestConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f445a;
+    private final String f447a;
     private final String b;
     private final Preconditions c;
     private final Map d;
@@ -21,7 +21,7 @@ public final class RequestConfig {
     private final String i;
 
     public RequestConfig(String str, String str2, Preconditions preconditions, Map<String, ? extends List<String>> map, long j, long j2, List<Integer> list, boolean z, String str3) {
-        this.f445a = str;
+        this.f447a = str;
         this.b = str2;
         this.c = preconditions;
         this.d = map;
@@ -39,7 +39,7 @@ public final class RequestConfig {
         if (Intrinsics.areEqual(RequestConfig.class, obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type io.appmetrica.analytics.idsync.internal.model.RequestConfig");
             RequestConfig requestConfig = (RequestConfig) obj;
-            return this.e == requestConfig.e && this.f == requestConfig.f && Intrinsics.areEqual(this.f445a, requestConfig.f445a) && Intrinsics.areEqual(this.b, requestConfig.b) && Intrinsics.areEqual(this.c, requestConfig.c) && Intrinsics.areEqual(this.d, requestConfig.d) && Intrinsics.areEqual(this.g, requestConfig.g) && this.h == requestConfig.h && Intrinsics.areEqual(this.i, requestConfig.i);
+            return this.e == requestConfig.e && this.f == requestConfig.f && Intrinsics.areEqual(this.f447a, requestConfig.f447a) && Intrinsics.areEqual(this.b, requestConfig.b) && Intrinsics.areEqual(this.c, requestConfig.c) && Intrinsics.areEqual(this.d, requestConfig.d) && Intrinsics.areEqual(this.g, requestConfig.g) && this.h == requestConfig.h && Intrinsics.areEqual(this.i, requestConfig.i);
         }
         return false;
     }
@@ -69,7 +69,7 @@ public final class RequestConfig {
     }
 
     public final String getType() {
-        return this.f445a;
+        return this.f447a;
     }
 
     public final String getUrl() {
@@ -82,7 +82,7 @@ public final class RequestConfig {
 
     public int hashCode() {
         int hashCode = Long.hashCode(this.f);
-        int hashCode2 = this.f445a.hashCode();
+        int hashCode2 = this.f447a.hashCode();
         int hashCode3 = this.b.hashCode();
         int hashCode4 = this.c.hashCode();
         int hashCode5 = this.d.hashCode();
@@ -92,6 +92,6 @@ public final class RequestConfig {
     }
 
     public String toString() {
-        return "RequestConfig(type='" + this.f445a + "', url='" + this.b + "', preconditions=" + this.c + ", headers=" + this.d + ", resendIntervalForValidResponse=" + this.e + ", resendIntervalForInvalidResponse=" + this.f + ", validResponseCodes=" + this.g + ", reportEventEnabled=" + this.h + ", reportUrl=" + this.i + ')';
+        return "RequestConfig(type='" + this.f447a + "', url='" + this.b + "', preconditions=" + this.c + ", headers=" + this.d + ", resendIntervalForValidResponse=" + this.e + ", resendIntervalForInvalidResponse=" + this.f + ", validResponseCodes=" + this.g + ", reportEventEnabled=" + this.h + ", reportUrl=" + this.i + ')';
     }
 }

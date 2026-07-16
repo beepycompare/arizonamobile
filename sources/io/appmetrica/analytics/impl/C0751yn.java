@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0751yn implements Ho {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f1302a;
+    public final ArrayList f1304a;
 
     public C0751yn(String str, List<String> list, int i, InterfaceC0493oo interfaceC0493oo, Vo vo, W2 w2) {
         List take = CollectionsKt.take(CollectionsKt.toList(CollectionsKt.toSet(list)), i);
@@ -24,12 +24,12 @@ public final class C0751yn implements Ho {
             arrayList.add(new An(str + '_' + i2, (String) obj, interfaceC0493oo, vo, w2));
             i2 = i3;
         }
-        this.f1302a = arrayList;
+        this.f1304a = arrayList;
     }
 
     @Override // io.appmetrica.analytics.impl.Ho
     public final void a(Go go) {
-        Iterator it = this.f1302a.iterator();
+        Iterator it = this.f1304a.iterator();
         while (it.hasNext()) {
             ((An) it.next()).a(go);
         }
@@ -37,7 +37,7 @@ public final class C0751yn implements Ho {
 
     @Override // io.appmetrica.analytics.impl.Ho
     public final void a(PublicLogger publicLogger) {
-        Iterator it = this.f1302a.iterator();
+        Iterator it = this.f1304a.iterator();
         while (it.hasNext()) {
             ((An) it.next()).e = publicLogger;
         }

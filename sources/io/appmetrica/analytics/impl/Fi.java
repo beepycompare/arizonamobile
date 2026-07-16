@@ -5,15 +5,15 @@ import java.util.Map;
 public final class Fi implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f549a;
+    public final Map f551a;
 
     public Fi(Map<String, ?> map) {
-        this.f549a = map;
+        this.f551a = map;
     }
 
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(String str) {
-        if (this.f549a.containsKey(str)) {
+        if (this.f551a.containsKey(str)) {
             return new To(this, false, String.format("Failed to activate AppMetrica with provided apiKey ApiKey %s has already been used by another reporter.", str));
         }
         return new To(this, true, "");

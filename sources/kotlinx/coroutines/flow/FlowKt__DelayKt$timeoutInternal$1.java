@@ -17,7 +17,7 @@ import kotlinx.coroutines.CoroutineScope;
 public final class FlowKt__DelayKt$timeoutInternal$1<T> extends SuspendLambda implements Function3<CoroutineScope, FlowCollector<? super T>, Continuation<? super Unit>, Object> {
 
     /* renamed from: $$v$c$kotlin-time-Duration$-timeout$0  reason: not valid java name */
-    final /* synthetic */ long f77$$v$c$kotlintimeDuration$timeout$0;
+    final /* synthetic */ long f79$$v$c$kotlintimeDuration$timeout$0;
     final /* synthetic */ Flow<T> $this_timeoutInternal;
     int I$0;
     int I$1;
@@ -34,7 +34,7 @@ public final class FlowKt__DelayKt$timeoutInternal$1<T> extends SuspendLambda im
     /* JADX WARN: Multi-variable type inference failed */
     public FlowKt__DelayKt$timeoutInternal$1(long j, Flow<? extends T> flow, Continuation<? super FlowKt__DelayKt$timeoutInternal$1> continuation) {
         super(3, continuation);
-        this.f77$$v$c$kotlintimeDuration$timeout$0 = j;
+        this.f79$$v$c$kotlintimeDuration$timeout$0 = j;
         this.$this_timeoutInternal = flow;
     }
 
@@ -44,7 +44,7 @@ public final class FlowKt__DelayKt$timeoutInternal$1<T> extends SuspendLambda im
     }
 
     public final Object invoke(CoroutineScope coroutineScope, FlowCollector<? super T> flowCollector, Continuation<? super Unit> continuation) {
-        FlowKt__DelayKt$timeoutInternal$1 flowKt__DelayKt$timeoutInternal$1 = new FlowKt__DelayKt$timeoutInternal$1(this.f77$$v$c$kotlintimeDuration$timeout$0, this.$this_timeoutInternal, continuation);
+        FlowKt__DelayKt$timeoutInternal$1 flowKt__DelayKt$timeoutInternal$1 = new FlowKt__DelayKt$timeoutInternal$1(this.f79$$v$c$kotlintimeDuration$timeout$0, this.$this_timeoutInternal, continuation);
         flowKt__DelayKt$timeoutInternal$1.L$0 = coroutineScope;
         flowKt__DelayKt$timeoutInternal$1.L$1 = flowCollector;
         return flowKt__DelayKt$timeoutInternal$1.invokeSuspend(Unit.INSTANCE);
@@ -92,16 +92,16 @@ public final class FlowKt__DelayKt$timeoutInternal$1<T> extends SuspendLambda im
             throw r13
         L2d:
             kotlin.ResultKt.throwOnFailure(r14)
-            long r7 = r13.f77$$v$c$kotlintimeDuration$timeout$0
+            long r7 = r13.f79$$v$c$kotlintimeDuration$timeout$0
             kotlin.time.Duration$Companion r14 = kotlin.time.Duration.Companion
-            long r9 = r14.m11368getZEROUwyO8pc()
-            int r14 = kotlin.time.Duration.m11272compareToLRDsOJo(r7, r9)
+            long r9 = r14.m11370getZEROUwyO8pc()
+            int r14 = kotlin.time.Duration.m11274compareToLRDsOJo(r7, r9)
             if (r14 <= 0) goto L9d
             kotlinx.coroutines.flow.Flow<T> r14 = r13.$this_timeoutInternal
             r3 = 2
             kotlinx.coroutines.flow.Flow r14 = kotlinx.coroutines.flow.FlowKt.buffer$default(r14, r6, r5, r3, r5)
             kotlinx.coroutines.channels.ReceiveChannel r14 = kotlinx.coroutines.flow.FlowKt.produceIn(r14, r0)
-            long r7 = r13.f77$$v$c$kotlintimeDuration$timeout$0
+            long r7 = r13.f79$$v$c$kotlintimeDuration$timeout$0
             r9 = r14
             r3 = r6
         L4d:
@@ -118,7 +118,7 @@ public final class FlowKt__DelayKt$timeoutInternal$1<T> extends SuspendLambda im
             kotlinx.coroutines.flow.FlowKt__DelayKt$timeoutInternal$1$1$2 r11 = new kotlinx.coroutines.flow.FlowKt__DelayKt$timeoutInternal$1$1$2
             r11.<init>(r7, r5)
             kotlin.jvm.functions.Function1 r11 = (kotlin.jvm.functions.Function1) r11
-            kotlinx.coroutines.selects.OnTimeoutKt.m11509onTimeout8Mi8wO0(r10, r7, r11)
+            kotlinx.coroutines.selects.OnTimeoutKt.m11511onTimeout8Mi8wO0(r10, r7, r11)
             java.lang.Object r10 = kotlin.coroutines.jvm.internal.SpillingKt.nullOutSpilledVariable(r0)
             r13.L$0 = r10
             r13.L$1 = r1

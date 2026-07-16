@@ -13,19 +13,19 @@ public final class Sl implements Sn {
     public static final long d = TimeUnit.SECONDS.toMillis(20);
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f766a;
+    public final Context f768a;
     public final PermissionExtractor b;
     public final CachedDataProvider.CachedData c;
 
     public Sl(Context context) {
         long j = d;
         this.c = new CachedDataProvider.CachedData(j, j, "sim-info");
-        this.f766a = context;
+        this.f768a = context;
         this.b = Na.k().j();
     }
 
     public final Nl b() {
-        return new Nl((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f766a, "phone", "getting SimMcc", "TelephonyManager", new Ol()), (Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f766a, "phone", "getting SimMnc", "TelephonyManager", new Pl()), ((Boolean) SystemServiceUtils.accessSystemServiceByNameSafelyOrDefault(this.f766a, "phone", "getting NetworkRoaming", "TelephonyManager", Boolean.FALSE, new Rl(this))).booleanValue(), (String) SystemServiceUtils.accessSystemServiceByNameSafely(this.f766a, "phone", "getting SimOperatorName", "TelephonyManager", new Ql()));
+        return new Nl((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f768a, "phone", "getting SimMcc", "TelephonyManager", new Ol()), (Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f768a, "phone", "getting SimMnc", "TelephonyManager", new Pl()), ((Boolean) SystemServiceUtils.accessSystemServiceByNameSafelyOrDefault(this.f768a, "phone", "getting NetworkRoaming", "TelephonyManager", Boolean.FALSE, new Rl(this))).booleanValue(), (String) SystemServiceUtils.accessSystemServiceByNameSafely(this.f768a, "phone", "getting SimOperatorName", "TelephonyManager", new Ql()));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0017, code lost:
@@ -49,8 +49,8 @@ public final class Sl implements Sn {
         ArrayList arrayList2 = new ArrayList();
         if (Na.I.u.a().n.d) {
             if (AndroidUtils.isApiAchieved(23)) {
-                if (this.b.hasPermission(this.f766a, "android.permission.READ_PHONE_STATE")) {
-                    arrayList2.addAll(Tl.a(this.f766a));
+                if (this.b.hasPermission(this.f768a, "android.permission.READ_PHONE_STATE")) {
+                    arrayList2.addAll(Tl.a(this.f768a));
                 }
                 if (arrayList2.size() == 0) {
                     arrayList2.add(b());

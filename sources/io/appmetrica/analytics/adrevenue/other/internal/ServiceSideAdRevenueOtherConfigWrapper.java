@@ -10,7 +10,7 @@ public final class ServiceSideAdRevenueOtherConfigWrapper {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f254a;
+    private final j f256a;
 
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001J\u0013\u0010\u0006\u001a\u00020\u0003*\u00020\u0002H\u0000¢\u0006\u0004\b\u0004\u0010\u0005¨\u0006\u0007"}, d2 = {"Lio/appmetrica/analytics/adrevenue/other/internal/ServiceSideAdRevenueOtherConfigWrapper$Companion;", "", "Lio/appmetrica/analytics/adrevenue/other/impl/j;", "Lio/appmetrica/analytics/adrevenue/other/internal/ServiceSideAdRevenueOtherConfigWrapper;", "toWrapper$ad_revenue_other_release", "(Lio/appmetrica/analytics/adrevenue/other/impl/j;)Lio/appmetrica/analytics/adrevenue/other/internal/ServiceSideAdRevenueOtherConfigWrapper;", "toWrapper", "ad-revenue-other_release"}, k = 1, mv = {1, 9, 0})
     /* loaded from: classes5.dex */
@@ -28,14 +28,14 @@ public final class ServiceSideAdRevenueOtherConfigWrapper {
     }
 
     public ServiceSideAdRevenueOtherConfigWrapper(j jVar) {
-        this.f254a = jVar;
+        this.f256a = jVar;
     }
 
     public final j getConfig$ad_revenue_other_release() {
-        return this.f254a;
+        return this.f256a;
     }
 
     public String toString() {
-        return "ServiceSideAdRevenueOtherConfigWrapper(config=" + this.f254a + ')';
+        return "ServiceSideAdRevenueOtherConfigWrapper(config=" + this.f256a + ')';
     }
 }

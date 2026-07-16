@@ -19,24 +19,24 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class C extends Lambda implements Function1<SingleEmitter<Integer>, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0817r f1481a;
+    public final /* synthetic */ C0817r f1483a;
     public final /* synthetic */ AppUpdateInfo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C(C0817r c0817r, AppUpdateInfo appUpdateInfo) {
         super(1);
-        this.f1481a = c0817r;
+        this.f1483a = c0817r;
         this.b = appUpdateInfo;
     }
 
     public final void a(final SingleEmitter<Integer> emitter) {
-        Object m9896constructorimpl;
+        Object m9898constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        C0817r c0817r = this.f1481a;
+        C0817r c0817r = this.f1483a;
         AppUpdateInfo appUpdateInfo = this.b;
         try {
             Result.Companion companion = Result.Companion;
-            Context context = c0817r.f1539a;
+            Context context = c0817r.f1541a;
             Intent intent = new Intent("ru.vk.store.FlexibleAppUpdate");
             c0817r.b.getClass();
             intent.putExtras(C0814o.a(appUpdateInfo));
@@ -47,14 +47,14 @@ public final class C extends Lambda implements Function1<SingleEmitter<Integer>,
                 }
             });
             appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-            m9896constructorimpl = Result.m9896constructorimpl(Unit.INSTANCE);
+            m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9899exceptionOrNullimpl = Result.m9899exceptionOrNullimpl(m9896constructorimpl);
-        if (m9899exceptionOrNullimpl != null) {
-            emitter.error(m9899exceptionOrNullimpl);
+        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
+        if (m9901exceptionOrNullimpl != null) {
+            emitter.error(m9901exceptionOrNullimpl);
         }
     }
 

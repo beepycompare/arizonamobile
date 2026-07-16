@@ -54,7 +54,7 @@ public final class DownloadContentKt {
     }
 
     /* JADX WARN: Type inference failed for: r2v11 */
-    /* JADX WARN: Type inference failed for: r2v13, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r2v13, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r2v37 */
     public static final void DownloadContent(final DownloadScreenUiState uiState, final Function0<Unit> onSoundClick, Composer composer, final int i) {
         int i2;

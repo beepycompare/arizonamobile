@@ -2620,7 +2620,7 @@ public class NotificationCompat {
             this.mValue = (MetricValue) Objects.requireNonNull(metricValue);
             String safeCharSequenceToString = Builder.safeCharSequenceToString((CharSequence) Objects.requireNonNull(charSequence));
             this.mLabel = safeCharSequenceToString;
-            Preconditions.checkArgument(!UByte$$ExternalSyntheticBackport0.m9970m(safeCharSequenceToString), "Metric label is required");
+            Preconditions.checkArgument(!UByte$$ExternalSyntheticBackport0.m9972m(safeCharSequenceToString), "Metric label is required");
             this.mSemanticStyle = i;
         }
 

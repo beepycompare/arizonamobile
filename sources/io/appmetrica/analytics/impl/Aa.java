@@ -7,17 +7,17 @@ public enum Aa {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f456a;
+    public final int f458a;
 
     Aa(int i) {
-        this.f456a = i;
+        this.f458a = i;
     }
 
     public static Aa a(Integer num) {
         Aa[] values;
         if (num != null) {
             for (Aa aa : values()) {
-                if (aa.f456a == num.intValue()) {
+                if (aa.f458a == num.intValue()) {
                     return aa;
                 }
             }

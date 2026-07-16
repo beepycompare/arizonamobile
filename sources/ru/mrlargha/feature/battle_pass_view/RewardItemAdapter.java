@@ -83,7 +83,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
         }
 
         public final void bind(RewardResponse item, int i) {
-            Object m9896constructorimpl;
+            Object m9898constructorimpl;
             Intrinsics.checkNotNullParameter(item, "item");
             ItemRewardBinding itemRewardBinding = this.binding;
             RewardItemAdapter rewardItemAdapter = this.this$0;
@@ -93,7 +93,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
                 if (UtilsKt.isArizonaType()) {
                     itemRewardBinding.cvReward.setBackground(Color.parseColor("#86E1FF"));
                 } else {
-                    itemRewardBinding.cvReward.setBackground(Color.parseColor("#86E1FF"));
+                    itemRewardBinding.cvReward.setBackground(Color.parseColor("#567A97"));
                 }
             }
             String str = UtilsKt.isArizonaType() ? FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false) + StringsKt.removePrefix(rewardItemAdapter.arizonaPath, (CharSequence) "/") : FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/training/image/";
@@ -121,15 +121,15 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
             for (String str3 : colors) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9896constructorimpl = Result.m9896constructorimpl(Integer.valueOf(Color.parseColor(str3)));
+                    m9898constructorimpl = Result.m9898constructorimpl(Integer.valueOf(Color.parseColor(str3)));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9896constructorimpl = Result.m9896constructorimpl(ResultKt.createFailure(th));
+                    m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
                 }
-                if (Result.m9902isFailureimpl(m9896constructorimpl)) {
-                    m9896constructorimpl = null;
+                if (Result.m9904isFailureimpl(m9898constructorimpl)) {
+                    m9898constructorimpl = null;
                 }
-                Integer num = (Integer) m9896constructorimpl;
+                Integer num = (Integer) m9898constructorimpl;
                 if (num != null) {
                     arrayList.add(num);
                 }

@@ -11,11 +11,11 @@ import kotlin.text.StringsKt;
 public final class C0144bb implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f906a;
+    public final Context f908a;
     public final String b = "huawei";
 
     public C0144bb(Context context) {
-        this.f906a = context;
+        this.f908a = context;
     }
 
     @Override // io.appmetrica.analytics.impl.Hg
@@ -26,7 +26,7 @@ public final class C0144bb implements Hg {
     public static final void a(Dg dg, C0144bb c0144bb) {
         Lg jg;
         Cursor query;
-        Context context = c0144bb.f906a;
+        Context context = c0144bb.f908a;
         try {
             query = context.getContentResolver().query(Uri.parse("content://com.huawei.appmarket.commondata/item/5"), null, null, new String[]{context.getPackageName()}, null);
         } catch (Throwable th) {
@@ -57,7 +57,7 @@ public final class C0144bb implements Hg {
                 C0144bb.a(Dg.this, this);
             }
         };
-        mk.f668a.getClass();
-        new InterruptionSafeThread(runnable, "IAA-SHMSR-" + Zd.f871a.incrementAndGet()).start();
+        mk.f670a.getClass();
+        new InterruptionSafeThread(runnable, "IAA-SHMSR-" + Zd.f873a.incrementAndGet()).start();
     }
 }

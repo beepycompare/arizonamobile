@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class N2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0313i f675a;
+    public final C0313i f677a;
     public final C0312ho b = new C0312ho(new Ce("Config"));
     public final C0312ho c = new C0312ho(new Ce("Activity"));
     public final C0312ho d = new C0312ho(new Ce("Intent"));
@@ -31,7 +31,7 @@ public final class N2 {
     public final C0312ho z;
 
     public N2(B0 b0) {
-        this.f675a = new C0313i(b0);
+        this.f677a = new C0313i(b0);
         new C0312ho(new Ce("Unhandled exception"));
         this.u = new C0312ho(new Ce("Throwable"));
         this.v = new C0312ho(new Ce("User profile"));

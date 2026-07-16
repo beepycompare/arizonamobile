@@ -26,12 +26,12 @@ import okhttp3.RequestBody;
 public final class c extends Call {
 
     /* renamed from: a  reason: collision with root package name */
-    public final OkHttpClient f1380a;
+    public final OkHttpClient f1382a;
     public final Request b;
     public final NetworkClientSettings c;
 
     public c(OkHttpClient okHttpClient, Request request, NetworkClientSettings networkClientSettings) {
-        this.f1380a = okHttpClient;
+        this.f1382a = okHttpClient;
         this.b = request;
         this.c = networkClientSettings;
     }
@@ -45,7 +45,7 @@ public final class c extends Call {
         NetworkCallMetrics networkCallMetrics;
         NetworkCallMetrics networkCallMetrics2 = null;
         final d dVar = Intrinsics.areEqual(this.c.getCollectMetrics(), Boolean.TRUE) ? new d(new SystemTimeProvider()) : null;
-        OkHttpClient okHttpClient = this.f1380a;
+        OkHttpClient okHttpClient = this.f1382a;
         if (dVar != null) {
             okHttpClient = okHttpClient.newBuilder().eventListenerFactory(new EventListener.Factory() { // from class: io.appmetrica.analytics.networkokhttp.impl.c$$ExternalSyntheticLambda0
                 @Override // okhttp3.EventListener.Factory
@@ -95,7 +95,7 @@ public final class c extends Call {
 
     public static okhttp3.Request a(Request request) {
         Request.Builder url = new Request.Builder().url(request.getUrl());
-        switch (a.f1378a[request.getMethod().ordinal()]) {
+        switch (a.f1380a[request.getMethod().ordinal()]) {
             case 1:
                 url.get();
                 break;

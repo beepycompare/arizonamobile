@@ -24,7 +24,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ long m9965m(long j, long j2) {
+    public static /* synthetic */ long m9967m(long j, long j2) {
         if (j2 < 0) {
             return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? 0L : 1L;
         } else if (j >= 0) {
@@ -36,7 +36,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ String m9966m(int i, int i2) {
+    public static /* synthetic */ String m9968m(int i, int i2) {
         return Long.toString(i & 4294967295L, i2);
     }
 
@@ -60,14 +60,14 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
                 j >>>= numberOfTrailingZeros;
             } while (j != 0);
         } else {
-            long m9965m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : m9965m(j, i);
+            long m9967m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : m9967m(j, i);
             long j2 = i;
-            cArr[63] = Character.forDigit((int) (j - (m9965m * j2)), i);
+            cArr[63] = Character.forDigit((int) (j - (m9967m * j2)), i);
             i3 = 63;
-            while (m9965m > 0) {
+            while (m9967m > 0) {
                 i3--;
-                cArr[i3] = Character.forDigit((int) (m9965m % j2), i);
-                m9965m /= j2;
+                cArr[i3] = Character.forDigit((int) (m9967m % j2), i);
+                m9967m /= j2;
             }
         }
         return new String(cArr, i3, 64 - i3);
@@ -94,7 +94,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ Set m9968m(Object[] objArr) {
+    public static /* synthetic */ Set m9970m(Object[] objArr) {
         HashSet hashSet = new HashSet(objArr.length);
         for (Object obj : objArr) {
             if (!hashSet.add(Objects.requireNonNull(obj))) {
@@ -105,7 +105,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ void m9969m(Object obj) {
+    public static /* synthetic */ void m9971m(Object obj) {
         if (obj instanceof AutoCloseable) {
             ((AutoCloseable) obj).close();
         } else if (obj instanceof ExecutorService) {
@@ -144,7 +144,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ boolean m9970m(String str) {
+    public static /* synthetic */ boolean m9972m(String str) {
         int length = str.length();
         int i = 0;
         while (i < length) {

@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt;
 public final class Di implements InterfaceC0532qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f514a;
+    public final Context f516a;
     public final C0175cg b;
     public final Qi c;
     public final Handler d;
@@ -28,7 +28,7 @@ public final class Di implements InterfaceC0532qb {
     public B6 k;
 
     public Di(Context context, C0175cg c0175cg, Qi qi, Handler handler, C0543qm c0543qm) {
-        this.f514a = context;
+        this.f516a = context;
         this.b = c0175cg;
         this.c = qi;
         this.d = handler;
@@ -118,7 +118,7 @@ public final class Di implements InterfaceC0532qb {
             if (!this.i.contains(reporterConfig.apiKey)) {
                 this.e.i();
             }
-            Context context = this.f514a;
+            Context context = this.f516a;
             Zc zc2 = new Zc(context, this.b, reporterConfig, this.c, new C0298ha(context));
             zc2.i = new Qb(this.d, zc2);
             C0543qm c0543qm = this.e;

@@ -18,17 +18,17 @@ import org.json.JSONObject;
 public final class i implements AdSDKNotificationListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f240a;
+    public final ClientContext f242a;
     public final h b;
 
     public i(ClientContext clientContext, h hVar) {
-        this.f240a = clientContext;
+        this.f242a = clientContext;
         this.b = hVar;
     }
 
     public final void onAdEvent(String str, Bundle bundle) {
         if (Intrinsics.areEqual(str, "impression")) {
-            InternalClientModuleFacade internalClientModuleFacade = this.f240a.getInternalClientModuleFacade();
+            InternalClientModuleFacade internalClientModuleFacade = this.f242a.getInternalClientModuleFacade();
             this.b.getClass();
             BigDecimal bigDecimal = BigDecimal.ZERO;
             Currency currency = Currency.getInstance("USD");

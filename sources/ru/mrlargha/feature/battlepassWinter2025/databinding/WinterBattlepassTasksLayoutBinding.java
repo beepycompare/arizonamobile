@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.battlepassWinter2025.R;
 /* loaded from: classes6.dex */
 public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
@@ -44,14 +45,15 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
     public final LinearLayout taskContainerListIsEmpty;
     public final LinearLayout taskInfo;
     public final ConstraintLayout taskInfoBlur;
+    public final LinearLayout taskInfoContentContainer;
     public final TextView taskInfoDesc;
-    public final LinearLayout taskInfoPremiumLockContainer;
+    public final CustomCardView taskInfoPremiumLockContainer;
     public final ProgressBar taskInfoProgressBar;
     public final TextView taskInfoTitle;
     public final RecyclerView taskItemsRewardsList;
     public final TextView tasksTimeText;
 
-    private WinterBattlepassTasksLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, RelativeLayout relativeLayout, TextView textView2, RelativeLayout relativeLayout2, TextView textView3, RelativeLayout relativeLayout3, TextView textView4, RelativeLayout relativeLayout4, TextView textView5, RelativeLayout relativeLayout5, ImageView imageView, RecyclerView recyclerView, LinearLayout linearLayout3, RelativeLayout relativeLayout6, TextView textView6, LinearLayout linearLayout4, TextView textView7, TextView textView8, LinearLayout linearLayout5, LinearProgressIndicator linearProgressIndicator, TextView textView9, LinearLayout linearLayout6, TextView textView10, LinearLayout linearLayout7, LinearLayout linearLayout8, ConstraintLayout constraintLayout, TextView textView11, LinearLayout linearLayout9, ProgressBar progressBar, TextView textView12, RecyclerView recyclerView2, TextView textView13) {
+    private WinterBattlepassTasksLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, RelativeLayout relativeLayout, TextView textView2, RelativeLayout relativeLayout2, TextView textView3, RelativeLayout relativeLayout3, TextView textView4, RelativeLayout relativeLayout4, TextView textView5, RelativeLayout relativeLayout5, ImageView imageView, RecyclerView recyclerView, LinearLayout linearLayout3, RelativeLayout relativeLayout6, TextView textView6, LinearLayout linearLayout4, TextView textView7, TextView textView8, LinearLayout linearLayout5, LinearProgressIndicator linearProgressIndicator, TextView textView9, LinearLayout linearLayout6, TextView textView10, LinearLayout linearLayout7, LinearLayout linearLayout8, ConstraintLayout constraintLayout, LinearLayout linearLayout9, TextView textView11, CustomCardView customCardView, ProgressBar progressBar, TextView textView12, RecyclerView recyclerView2, TextView textView13) {
         this.rootView = linearLayout;
         this.azBattlepassLayoutTasksContainer = linearLayout2;
         this.btnBuyPremiumLock = textView;
@@ -80,8 +82,9 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
         this.taskContainerListIsEmpty = linearLayout7;
         this.taskInfo = linearLayout8;
         this.taskInfoBlur = constraintLayout;
+        this.taskInfoContentContainer = linearLayout9;
         this.taskInfoDesc = textView11;
-        this.taskInfoPremiumLockContainer = linearLayout9;
+        this.taskInfoPremiumLockContainer = customCardView;
         this.taskInfoProgressBar = progressBar;
         this.taskInfoTitle = textView12;
         this.taskItemsRewardsList = recyclerView2;
@@ -185,25 +188,29 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
                                                                                                             i = R.id.task_info_blur;
                                                                                                             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                                                                                                             if (constraintLayout != null) {
-                                                                                                                i = R.id.task_info_desc;
-                                                                                                                TextView textView11 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                if (textView11 != null) {
-                                                                                                                    i = R.id.task_info_premium_lock_container;
-                                                                                                                    LinearLayout linearLayout8 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                                                                                    if (linearLayout8 != null) {
-                                                                                                                        i = R.id.task_info_progress_bar;
-                                                                                                                        ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
-                                                                                                                        if (progressBar != null) {
-                                                                                                                            i = R.id.task_info_title;
-                                                                                                                            TextView textView12 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                            if (textView12 != null) {
-                                                                                                                                i = R.id.task_items_rewards_list;
-                                                                                                                                RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                if (recyclerView2 != null) {
-                                                                                                                                    i = R.id.tasks_time_text;
-                                                                                                                                    TextView textView13 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                                    if (textView13 != null) {
-                                                                                                                                        return new WinterBattlepassTasksLayoutBinding(linearLayout, linearLayout, textView, relativeLayout, textView2, relativeLayout2, textView3, relativeLayout3, textView4, relativeLayout4, textView5, relativeLayout5, imageView, recyclerView, linearLayout2, relativeLayout6, textView6, linearLayout3, textView7, textView8, linearLayout4, linearProgressIndicator, textView9, linearLayout5, textView10, linearLayout6, linearLayout7, constraintLayout, textView11, linearLayout8, progressBar, textView12, recyclerView2, textView13);
+                                                                                                                i = R.id.task_info_content_container;
+                                                                                                                LinearLayout linearLayout8 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                                if (linearLayout8 != null) {
+                                                                                                                    i = R.id.task_info_desc;
+                                                                                                                    TextView textView11 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                    if (textView11 != null) {
+                                                                                                                        i = R.id.task_info_premium_lock_container;
+                                                                                                                        CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                                                                        if (customCardView != null) {
+                                                                                                                            i = R.id.task_info_progress_bar;
+                                                                                                                            ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
+                                                                                                                            if (progressBar != null) {
+                                                                                                                                i = R.id.task_info_title;
+                                                                                                                                TextView textView12 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                if (textView12 != null) {
+                                                                                                                                    i = R.id.task_items_rewards_list;
+                                                                                                                                    RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                    if (recyclerView2 != null) {
+                                                                                                                                        i = R.id.tasks_time_text;
+                                                                                                                                        TextView textView13 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                        if (textView13 != null) {
+                                                                                                                                            return new WinterBattlepassTasksLayoutBinding(linearLayout, linearLayout, textView, relativeLayout, textView2, relativeLayout2, textView3, relativeLayout3, textView4, relativeLayout4, textView5, relativeLayout5, imageView, recyclerView, linearLayout2, relativeLayout6, textView6, linearLayout3, textView7, textView8, linearLayout4, linearProgressIndicator, textView9, linearLayout5, textView10, linearLayout6, linearLayout7, constraintLayout, linearLayout8, textView11, customCardView, progressBar, textView12, recyclerView2, textView13);
+                                                                                                                                        }
                                                                                                                                     }
                                                                                                                                 }
                                                                                                                             }

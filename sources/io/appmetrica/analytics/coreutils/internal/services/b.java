@@ -5,17 +5,17 @@ import io.appmetrica.analytics.coreutils.internal.services.WaitForActivationDela
 public final class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ WaitForActivationDelayBarrier.ActivationBarrierHelper f376a;
+    public final /* synthetic */ WaitForActivationDelayBarrier.ActivationBarrierHelper f378a;
 
     public b(WaitForActivationDelayBarrier.ActivationBarrierHelper activationBarrierHelper) {
-        this.f376a = activationBarrierHelper;
+        this.f378a = activationBarrierHelper;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         a aVar;
-        aVar = this.f376a.b;
-        aVar.b.f374a = true;
-        aVar.f375a.run();
+        aVar = this.f378a.b;
+        aVar.b.f376a = true;
+        aVar.f377a.run();
     }
 }

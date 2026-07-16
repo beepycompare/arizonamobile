@@ -6,11 +6,11 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 public final class Gm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProtobufStateStorage f566a;
+    public final ProtobufStateStorage f568a;
     public final Zo b;
 
     public Gm(ProtobufStateStorage protobufStateStorage, Zo zo) {
-        this.f566a = protobufStateStorage;
+        this.f568a = protobufStateStorage;
         this.b = zo;
     }
 

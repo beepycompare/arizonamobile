@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 public final class C0133b0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BigDecimal f896a;
+    public final BigDecimal f898a;
     public final String b;
 
     public C0133b0(ECommerceAmount eCommerceAmount) {
@@ -15,11 +15,11 @@ public final class C0133b0 {
     }
 
     public final String toString() {
-        return "AmountWrapper{amount=" + this.f896a + ", unit='" + this.b + "'}";
+        return "AmountWrapper{amount=" + this.f898a + ", unit='" + this.b + "'}";
     }
 
     public C0133b0(BigDecimal bigDecimal, String str) {
-        this.f896a = bigDecimal;
+        this.f898a = bigDecimal;
         this.b = str;
     }
 }

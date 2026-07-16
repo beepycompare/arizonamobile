@@ -4,15 +4,15 @@ package io.appmetrica.analytics.impl;
 public final class C0592sk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1201a;
+    public final String f1203a;
     public final String b;
 
     public C0592sk(String str, String str2) {
-        this.f1201a = str;
+        this.f1203a = str;
         this.b = str2;
     }
 
     public final String toString() {
-        return "SelfReportingLazyEvent(eventName='" + this.f1201a + "', eventValue='" + this.b + "')";
+        return "SelfReportingLazyEvent(eventName='" + this.f1203a + "', eventValue='" + this.b + "')";
     }
 }

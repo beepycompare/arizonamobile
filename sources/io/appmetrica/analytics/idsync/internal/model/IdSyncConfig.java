@@ -9,12 +9,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class IdSyncConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f442a;
+    private final boolean f444a;
     private final long b;
     private final List c;
 
     public IdSyncConfig(boolean z, long j, List<RequestConfig> list) {
-        this.f442a = z;
+        this.f444a = z;
         this.b = j;
         this.c = list;
     }
@@ -26,13 +26,13 @@ public final class IdSyncConfig {
         if (Intrinsics.areEqual(IdSyncConfig.class, obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type io.appmetrica.analytics.idsync.internal.model.IdSyncConfig");
             IdSyncConfig idSyncConfig = (IdSyncConfig) obj;
-            return this.f442a == idSyncConfig.f442a && this.b == idSyncConfig.b && Intrinsics.areEqual(this.c, idSyncConfig.c);
+            return this.f444a == idSyncConfig.f444a && this.b == idSyncConfig.b && Intrinsics.areEqual(this.c, idSyncConfig.c);
         }
         return false;
     }
 
     public final boolean getEnabled() {
-        return this.f442a;
+        return this.f444a;
     }
 
     public final long getLaunchDelay() {
@@ -45,10 +45,10 @@ public final class IdSyncConfig {
 
     public int hashCode() {
         int hashCode = Long.hashCode(this.b);
-        return this.c.hashCode() + ((hashCode + (Boolean.hashCode(this.f442a) * 31)) * 31);
+        return this.c.hashCode() + ((hashCode + (Boolean.hashCode(this.f444a) * 31)) * 31);
     }
 
     public String toString() {
-        return "IdSyncConfig(enabled=" + this.f442a + ", launchDelay=" + this.b + ", requests=" + this.c + ')';
+        return "IdSyncConfig(enabled=" + this.f444a + ", launchDelay=" + this.b + ", requests=" + this.c + ')';
     }
 }

@@ -104,33 +104,33 @@ public final class R {
         public static int paddingLeft = 0x7f0404fa;
         public static int paddingRight = 0x7f0404fc;
         public static int paddingTop = 0x7f040500;
-        public static int pieBorderColor = 0x7f040515;
-        public static int pieBorderThickness = 0x7f040516;
-        public static int previewMode = 0x7f04053c;
-        public static int rangeLineColor = 0x7f04054f;
-        public static int rangeLineExtension = 0x7f040550;
-        public static int rangeLineThickness = 0x7f040551;
-        public static int rangeOriginLineColor = 0x7f040552;
-        public static int rangeOriginLineThickness = 0x7f040553;
-        public static int rangeStep = 0x7f040554;
-        public static int rangeStepMode = 0x7f040555;
-        public static int rangeTitle = 0x7f040556;
-        public static int rangeTitleAnchor = 0x7f040557;
-        public static int rangeTitleHeight = 0x7f040558;
-        public static int rangeTitleHeightMode = 0x7f040559;
-        public static int rangeTitleHorizontalPosition = 0x7f04055a;
-        public static int rangeTitleHorizontalPositioning = 0x7f04055b;
-        public static int rangeTitleTextColor = 0x7f04055c;
-        public static int rangeTitleTextSize = 0x7f04055d;
-        public static int rangeTitleVerticalPosition = 0x7f04055e;
-        public static int rangeTitleVerticalPositioning = 0x7f04055f;
-        public static int rangeTitleVisible = 0x7f040560;
-        public static int rangeTitleWidth = 0x7f040561;
-        public static int rangeTitleWidthMode = 0x7f040562;
-        public static int renderMode = 0x7f040570;
-        public static int title = 0x7f0406cd;
-        public static int titleTextColor = 0x7f0406da;
-        public static int titleTextSize = 0x7f0406dc;
+        public static int pieBorderColor = 0x7f04051f;
+        public static int pieBorderThickness = 0x7f040520;
+        public static int previewMode = 0x7f040546;
+        public static int rangeLineColor = 0x7f040559;
+        public static int rangeLineExtension = 0x7f04055a;
+        public static int rangeLineThickness = 0x7f04055b;
+        public static int rangeOriginLineColor = 0x7f04055c;
+        public static int rangeOriginLineThickness = 0x7f04055d;
+        public static int rangeStep = 0x7f04055e;
+        public static int rangeStepMode = 0x7f04055f;
+        public static int rangeTitle = 0x7f040560;
+        public static int rangeTitleAnchor = 0x7f040561;
+        public static int rangeTitleHeight = 0x7f040562;
+        public static int rangeTitleHeightMode = 0x7f040563;
+        public static int rangeTitleHorizontalPosition = 0x7f040564;
+        public static int rangeTitleHorizontalPositioning = 0x7f040565;
+        public static int rangeTitleTextColor = 0x7f040566;
+        public static int rangeTitleTextSize = 0x7f040567;
+        public static int rangeTitleVerticalPosition = 0x7f040568;
+        public static int rangeTitleVerticalPositioning = 0x7f040569;
+        public static int rangeTitleVisible = 0x7f04056a;
+        public static int rangeTitleWidth = 0x7f04056b;
+        public static int rangeTitleWidthMode = 0x7f04056c;
+        public static int renderMode = 0x7f04057a;
+        public static int title = 0x7f0406d7;
+        public static int titleTextColor = 0x7f0406e4;
+        public static int titleTextSize = 0x7f0406e6;
 
         private attr() {
         }
@@ -143,7 +143,7 @@ public final class R {
         public static int ap_gray = 0x7f06001f;
         public static int ap_transparent = 0x7f060020;
         public static int ap_white = 0x7f060021;
-        public static int off_white = 0x7f060411;
+        public static int off_white = 0x7f06041b;
 
         private color() {
         }
@@ -157,36 +157,36 @@ public final class R {
         public static int absolute_from_left = 0x7f0a0012;
         public static int absolute_from_right = 0x7f0a0013;
         public static int absolute_from_top = 0x7f0a0014;
-        public static int bar = 0x7f0a0171;
-        public static int bottom_middle = 0x7f0a01ea;
-        public static int candlestick = 0x7f0a02d8;
-        public static int center = 0x7f0a034a;
-        public static int fill = 0x7f0a055d;
-        public static int increment_by_pixels = 0x7f0a0723;
-        public static int increment_by_val = 0x7f0a0724;
-        public static int left = 0x7f0a083b;
-        public static int left_bottom = 0x7f0a0848;
-        public static int left_middle = 0x7f0a0858;
-        public static int left_top = 0x7f0a085f;
-        public static int line_and_point = 0x7f0a0879;
-        public static int negative_ninety_degrees = 0x7f0a0a26;
-        public static int ninety_degrees = 0x7f0a0a33;
-        public static int none = 0x7f0a0a39;
-        public static int one_hundred_eighty_degrees = 0x7f0a0a5b;
-        public static int relative = 0x7f0a0bb9;
-        public static int relative_from_bottom = 0x7f0a0bba;
-        public static int relative_from_center = 0x7f0a0bbb;
-        public static int relative_from_left = 0x7f0a0bbc;
-        public static int relative_from_right = 0x7f0a0bbd;
-        public static int relative_from_top = 0x7f0a0bbe;
-        public static int right = 0x7f0a0be1;
-        public static int right_bottom = 0x7f0a0bee;
-        public static int right_middle = 0x7f0a0bfc;
-        public static int right_top = 0x7f0a0c01;
-        public static int subdivide = 0x7f0a0dd1;
-        public static int top_middle = 0x7f0a0eb7;
-        public static int use_background_thread = 0x7f0a1024;
-        public static int use_main_thread = 0x7f0a1025;
+        public static int bar = 0x7f0a0194;
+        public static int bottom_middle = 0x7f0a020e;
+        public static int candlestick = 0x7f0a0304;
+        public static int center = 0x7f0a0376;
+        public static int fill = 0x7f0a05a7;
+        public static int increment_by_pixels = 0x7f0a0779;
+        public static int increment_by_val = 0x7f0a077a;
+        public static int left = 0x7f0a0895;
+        public static int left_bottom = 0x7f0a08a2;
+        public static int left_middle = 0x7f0a08b2;
+        public static int left_top = 0x7f0a08b9;
+        public static int line_and_point = 0x7f0a08d5;
+        public static int negative_ninety_degrees = 0x7f0a0a88;
+        public static int ninety_degrees = 0x7f0a0a95;
+        public static int none = 0x7f0a0a9b;
+        public static int one_hundred_eighty_degrees = 0x7f0a0ac1;
+        public static int relative = 0x7f0a0c27;
+        public static int relative_from_bottom = 0x7f0a0c28;
+        public static int relative_from_center = 0x7f0a0c29;
+        public static int relative_from_left = 0x7f0a0c2a;
+        public static int relative_from_right = 0x7f0a0c2b;
+        public static int relative_from_top = 0x7f0a0c2c;
+        public static int right = 0x7f0a0c58;
+        public static int right_bottom = 0x7f0a0c65;
+        public static int right_middle = 0x7f0a0c73;
+        public static int right_top = 0x7f0a0c78;
+        public static int subdivide = 0x7f0a0e7f;
+        public static int top_middle = 0x7f0a0f6a;
+        public static int use_background_thread = 0x7f0a10dc;
+        public static int use_main_thread = 0x7f0a10dd;
 
         private id() {
         }
@@ -197,10 +197,10 @@ public final class R {
         public static int APDefacto = 0x7f130001;
         public static int APDefacto_Dark = 0x7f130002;
         public static int APDefacto_Light = 0x7f130003;
-        public static int FullScreenGraph = 0x7f130165;
-        public static int FullScreenGraph_Minimalist = 0x7f130166;
-        public static int FullScreenGraph_Minimalist_Dark = 0x7f130167;
-        public static int FullScreenGraph_Minimalist_Light = 0x7f130168;
+        public static int FullScreenGraph = 0x7f13016a;
+        public static int FullScreenGraph_Minimalist = 0x7f13016b;
+        public static int FullScreenGraph_Minimalist_Dark = 0x7f13016c;
+        public static int FullScreenGraph_Minimalist_Light = 0x7f13016d;
 
         private style() {
         }

@@ -1,5 +1,6 @@
 package com.miami.game.core.settings.game_test;
 
+import androidx.autofill.HintConstants;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import java.util.List;
@@ -7,7 +8,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: GameTestScriptModel.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b6\u0018\u00002\u00020\u0001:\u0015\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\u0015\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-¨\u0006."}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestStep;", "", "<init>", "()V", "NotifyClick", "Chat", "Sleep", "Tap", "Swipe", "Screenshot", "ShowUi", "HideUi", "BackendMessage", "WaitBackendMessage", "AddBackendMessageListener", "RemoveBackendMessageListener", "ReplayBackendFixture", "StartBackendTrace", "StartBackendValidation", "Repeat", "Log", "CloseAll", "StopBackendTrace", "StopBackendValidation", "ClearBackendMessageListeners", "Lcom/miami/game/core/settings/game_test/GameTestStep$AddBackendMessageListener;", "Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Chat;", "Lcom/miami/game/core/settings/game_test/GameTestStep$ClearBackendMessageListeners;", "Lcom/miami/game/core/settings/game_test/GameTestStep$CloseAll;", "Lcom/miami/game/core/settings/game_test/GameTestStep$HideUi;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Log;", "Lcom/miami/game/core/settings/game_test/GameTestStep$NotifyClick;", "Lcom/miami/game/core/settings/game_test/GameTestStep$RemoveBackendMessageListener;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Repeat;", "Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Screenshot;", "Lcom/miami/game/core/settings/game_test/GameTestStep$ShowUi;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Sleep;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StartBackendTrace;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StartBackendValidation;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StopBackendTrace;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StopBackendValidation;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Swipe;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Tap;", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b6\u0018\u00002\u00020\u0001:\u0018\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001bB\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\u0018\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123¨\u00064"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestStep;", "", "<init>", "()V", "NotifyClick", "Chat", "Sleep", "Tap", "Swipe", "Screenshot", "ShowUi", "HideUi", "BackendMessage", "WaitBackendMessage", "WaitVisibility", "Authorize", "LoginAndSpawn", "AddBackendMessageListener", "RemoveBackendMessageListener", "ReplayBackendFixture", "StartBackendTrace", "StartBackendValidation", "Repeat", "Log", "CloseAll", "StopBackendTrace", "StopBackendValidation", "ClearBackendMessageListeners", "Lcom/miami/game/core/settings/game_test/GameTestStep$AddBackendMessageListener;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Authorize;", "Lcom/miami/game/core/settings/game_test/GameTestStep$BackendMessage;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Chat;", "Lcom/miami/game/core/settings/game_test/GameTestStep$ClearBackendMessageListeners;", "Lcom/miami/game/core/settings/game_test/GameTestStep$CloseAll;", "Lcom/miami/game/core/settings/game_test/GameTestStep$HideUi;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Log;", "Lcom/miami/game/core/settings/game_test/GameTestStep$LoginAndSpawn;", "Lcom/miami/game/core/settings/game_test/GameTestStep$NotifyClick;", "Lcom/miami/game/core/settings/game_test/GameTestStep$RemoveBackendMessageListener;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Repeat;", "Lcom/miami/game/core/settings/game_test/GameTestStep$ReplayBackendFixture;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Screenshot;", "Lcom/miami/game/core/settings/game_test/GameTestStep$ShowUi;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Sleep;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StartBackendTrace;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StartBackendValidation;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StopBackendTrace;", "Lcom/miami/game/core/settings/game_test/GameTestStep$StopBackendValidation;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Swipe;", "Lcom/miami/game/core/settings/game_test/GameTestStep$Tap;", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitBackendMessage;", "Lcom/miami/game/core/settings/game_test/GameTestStep$WaitVisibility;", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public abstract class GameTestStep {
     public /* synthetic */ GameTestStep(DefaultConstructorMarker defaultConstructorMarker) {
@@ -872,6 +873,399 @@ public abstract class GameTestStep {
 
         public final boolean getFailOnTimeout() {
             return this.failOnTimeout;
+        }
+    }
+
+    /* compiled from: GameTestScriptModel.kt */
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\t\n\u0002\b\u001a\n\u0002\u0010\u0000\n\u0002\b\u0003\b\u0086\b\u0018\u00002\u00020\u0001BG\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u0007\u0012\b\b\u0002\u0010\u000b\u001a\u00020\u0007¢\u0006\u0004\b\f\u0010\rJ\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\u000fJ\u000b\u0010\u001b\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\t\u0010\u001c\u001a\u00020\u0007HÆ\u0003J\u0010\u0010\u001d\u001a\u0004\u0018\u00010\tHÆ\u0003¢\u0006\u0002\u0010\u0016J\t\u0010\u001e\u001a\u00020\u0007HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0007HÆ\u0003JP\u0010 \u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\b\b\u0002\u0010\n\u001a\u00020\u00072\b\b\u0002\u0010\u000b\u001a\u00020\u0007HÆ\u0001¢\u0006\u0002\u0010!J\u0014\u0010\"\u001a\u00020\u00072\b\u0010#\u001a\u0004\u0018\u00010$HÖ\u0083\u0004J\n\u0010%\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010&\u001a\u00020\u0005HÖ\u0081\u0004R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u000e\u0010\u000fR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0015\u0010\b\u001a\u0004\u0018\u00010\t¢\u0006\n\n\u0002\u0010\u0017\u001a\u0004\b\u0015\u0010\u0016R\u0011\u0010\n\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0014R\u0011\u0010\u000b\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0014¨\u0006'"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestStep$WaitVisibility;", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "backendId", "", "backendName", "", "visible", "", "timeoutMs", "", "includePast", "failOnTimeout", "<init>", "(Ljava/lang/Integer;Ljava/lang/String;ZLjava/lang/Long;ZZ)V", "getBackendId", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getBackendName", "()Ljava/lang/String;", "getVisible", "()Z", "getTimeoutMs", "()Ljava/lang/Long;", "Ljava/lang/Long;", "getIncludePast", "getFailOnTimeout", "component1", "component2", "component3", "component4", "component5", "component6", "copy", "(Ljava/lang/Integer;Ljava/lang/String;ZLjava/lang/Long;ZZ)Lcom/miami/game/core/settings/game_test/GameTestStep$WaitVisibility;", "equals", "other", "", "hashCode", "toString", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes5.dex */
+    public static final class WaitVisibility extends GameTestStep {
+        private final Integer backendId;
+        private final String backendName;
+        private final boolean failOnTimeout;
+        private final boolean includePast;
+        private final Long timeoutMs;
+        private final boolean visible;
+
+        public static /* synthetic */ WaitVisibility copy$default(WaitVisibility waitVisibility, Integer num, String str, boolean z, Long l, boolean z2, boolean z3, int i, Object obj) {
+            if ((i & 1) != 0) {
+                num = waitVisibility.backendId;
+            }
+            if ((i & 2) != 0) {
+                str = waitVisibility.backendName;
+            }
+            if ((i & 4) != 0) {
+                z = waitVisibility.visible;
+            }
+            if ((i & 8) != 0) {
+                l = waitVisibility.timeoutMs;
+            }
+            if ((i & 16) != 0) {
+                z2 = waitVisibility.includePast;
+            }
+            if ((i & 32) != 0) {
+                z3 = waitVisibility.failOnTimeout;
+            }
+            boolean z4 = z2;
+            boolean z5 = z3;
+            return waitVisibility.copy(num, str, z, l, z4, z5);
+        }
+
+        public final Integer component1() {
+            return this.backendId;
+        }
+
+        public final String component2() {
+            return this.backendName;
+        }
+
+        public final boolean component3() {
+            return this.visible;
+        }
+
+        public final Long component4() {
+            return this.timeoutMs;
+        }
+
+        public final boolean component5() {
+            return this.includePast;
+        }
+
+        public final boolean component6() {
+            return this.failOnTimeout;
+        }
+
+        public final WaitVisibility copy(Integer num, String str, boolean z, Long l, boolean z2, boolean z3) {
+            return new WaitVisibility(num, str, z, l, z2, z3);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof WaitVisibility) {
+                WaitVisibility waitVisibility = (WaitVisibility) obj;
+                return Intrinsics.areEqual(this.backendId, waitVisibility.backendId) && Intrinsics.areEqual(this.backendName, waitVisibility.backendName) && this.visible == waitVisibility.visible && Intrinsics.areEqual(this.timeoutMs, waitVisibility.timeoutMs) && this.includePast == waitVisibility.includePast && this.failOnTimeout == waitVisibility.failOnTimeout;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            Integer num = this.backendId;
+            int hashCode = (num == null ? 0 : num.hashCode()) * 31;
+            String str = this.backendName;
+            int hashCode2 = (((hashCode + (str == null ? 0 : str.hashCode())) * 31) + Boolean.hashCode(this.visible)) * 31;
+            Long l = this.timeoutMs;
+            return ((((hashCode2 + (l != null ? l.hashCode() : 0)) * 31) + Boolean.hashCode(this.includePast)) * 31) + Boolean.hashCode(this.failOnTimeout);
+        }
+
+        public String toString() {
+            Integer num = this.backendId;
+            String str = this.backendName;
+            boolean z = this.visible;
+            Long l = this.timeoutMs;
+            boolean z2 = this.includePast;
+            return "WaitVisibility(backendId=" + num + ", backendName=" + str + ", visible=" + z + ", timeoutMs=" + l + ", includePast=" + z2 + ", failOnTimeout=" + this.failOnTimeout + ")";
+        }
+
+        public WaitVisibility(Integer num, String str, boolean z, Long l, boolean z2, boolean z3) {
+            super(null);
+            this.backendId = num;
+            this.backendName = str;
+            this.visible = z;
+            this.timeoutMs = l;
+            this.includePast = z2;
+            this.failOnTimeout = z3;
+        }
+
+        public final Integer getBackendId() {
+            return this.backendId;
+        }
+
+        public final String getBackendName() {
+            return this.backendName;
+        }
+
+        public final boolean getVisible() {
+            return this.visible;
+        }
+
+        public /* synthetic */ WaitVisibility(Integer num, String str, boolean z, Long l, boolean z2, boolean z3, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this((i & 1) != 0 ? null : num, (i & 2) != 0 ? null : str, z, (i & 8) != 0 ? 10000L : l, (i & 16) != 0 ? true : z2, (i & 32) != 0 ? true : z3);
+        }
+
+        public final Long getTimeoutMs() {
+            return this.timeoutMs;
+        }
+
+        public final boolean getIncludePast() {
+            return this.includePast;
+        }
+
+        public final boolean getFailOnTimeout() {
+            return this.failOnTimeout;
+        }
+    }
+
+    /* compiled from: GameTestScriptModel.kt */
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0012\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0003\b\u0086\b\u0018\u00002\u00020\u0001B7\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\b\u0010\tJ\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\u000bJ\u000b\u0010\u0012\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u000b\u0010\u0013\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u000b\u0010\u0014\u001a\u0004\u0018\u00010\u0005HÆ\u0003J>\u0010\u0015\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0005HÆ\u0001¢\u0006\u0002\u0010\u0016J\u0014\u0010\u0017\u001a\u00020\u00182\b\u0010\u0019\u001a\u0004\u0018\u00010\u001aHÖ\u0083\u0004J\n\u0010\u001b\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010\u001c\u001a\u00020\u0005HÖ\u0081\u0004R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000eR\u0013\u0010\u0007\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u000e¨\u0006\u001d"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestStep$Authorize;", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "backendId", "", "backendName", "", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "<init>", "(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getBackendId", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getBackendName", "()Ljava/lang/String;", "getUsername", "getPassword", "component1", "component2", "component3", "component4", "copy", "(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/miami/game/core/settings/game_test/GameTestStep$Authorize;", "equals", "", "other", "", "hashCode", "toString", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes5.dex */
+    public static final class Authorize extends GameTestStep {
+        private final Integer backendId;
+        private final String backendName;
+        private final String password;
+        private final String username;
+
+        public Authorize() {
+            this(null, null, null, null, 15, null);
+        }
+
+        public static /* synthetic */ Authorize copy$default(Authorize authorize, Integer num, String str, String str2, String str3, int i, Object obj) {
+            if ((i & 1) != 0) {
+                num = authorize.backendId;
+            }
+            if ((i & 2) != 0) {
+                str = authorize.backendName;
+            }
+            if ((i & 4) != 0) {
+                str2 = authorize.username;
+            }
+            if ((i & 8) != 0) {
+                str3 = authorize.password;
+            }
+            return authorize.copy(num, str, str2, str3);
+        }
+
+        public final Integer component1() {
+            return this.backendId;
+        }
+
+        public final String component2() {
+            return this.backendName;
+        }
+
+        public final String component3() {
+            return this.username;
+        }
+
+        public final String component4() {
+            return this.password;
+        }
+
+        public final Authorize copy(Integer num, String str, String str2, String str3) {
+            return new Authorize(num, str, str2, str3);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof Authorize) {
+                Authorize authorize = (Authorize) obj;
+                return Intrinsics.areEqual(this.backendId, authorize.backendId) && Intrinsics.areEqual(this.backendName, authorize.backendName) && Intrinsics.areEqual(this.username, authorize.username) && Intrinsics.areEqual(this.password, authorize.password);
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            Integer num = this.backendId;
+            int hashCode = (num == null ? 0 : num.hashCode()) * 31;
+            String str = this.backendName;
+            int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
+            String str2 = this.username;
+            int hashCode3 = (hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31;
+            String str3 = this.password;
+            return hashCode3 + (str3 != null ? str3.hashCode() : 0);
+        }
+
+        public String toString() {
+            Integer num = this.backendId;
+            String str = this.backendName;
+            String str2 = this.username;
+            return "Authorize(backendId=" + num + ", backendName=" + str + ", username=" + str2 + ", password=" + this.password + ")";
+        }
+
+        public Authorize(Integer num, String str, String str2, String str3) {
+            super(null);
+            this.backendId = num;
+            this.backendName = str;
+            this.username = str2;
+            this.password = str3;
+        }
+
+        public final Integer getBackendId() {
+            return this.backendId;
+        }
+
+        public /* synthetic */ Authorize(Integer num, String str, String str2, String str3, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this((i & 1) != 0 ? null : num, (i & 2) != 0 ? "AUTHORIZATION" : str, (i & 4) != 0 ? null : str2, (i & 8) != 0 ? null : str3);
+        }
+
+        public final String getBackendName() {
+            return this.backendName;
+        }
+
+        public final String getUsername() {
+            return this.username;
+        }
+
+        public final String getPassword() {
+            return this.password;
+        }
+    }
+
+    /* compiled from: GameTestScriptModel.kt */
+    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u001b\n\u0002\u0010\u0000\n\u0002\b\u0003\b\u0086\b\u0018\u00002\u00020\u0001BW\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0005\u0012\b\b\u0002\u0010\b\u001a\u00020\u0003\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010\u0010J\u000b\u0010\u001e\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u000b\u0010\u001f\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u000b\u0010 \u001a\u0004\u0018\u00010\u0005HÆ\u0003J\t\u0010!\u001a\u00020\u0003HÆ\u0003J\u0010\u0010\"\u001a\u0004\u0018\u00010\nHÆ\u0003¢\u0006\u0002\u0010\u0019J\t\u0010#\u001a\u00020\fHÆ\u0003J^\u0010$\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u0010\b\u001a\u00020\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\n2\b\b\u0002\u0010\u000b\u001a\u00020\fHÆ\u0001¢\u0006\u0002\u0010%J\u0014\u0010&\u001a\u00020\f2\b\u0010'\u001a\u0004\u0018\u00010(HÖ\u0083\u0004J\n\u0010)\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010*\u001a\u00020\u0005HÖ\u0081\u0004R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010\u0011\u001a\u0004\b\u000f\u0010\u0010R\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0013R\u0013\u0010\u0007\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0015\u0010\t\u001a\u0004\u0018\u00010\n¢\u0006\n\n\u0002\u0010\u001a\u001a\u0004\b\u0018\u0010\u0019R\u0011\u0010\u000b\u001a\u00020\f¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c¨\u0006+"}, d2 = {"Lcom/miami/game/core/settings/game_test/GameTestStep$LoginAndSpawn;", "Lcom/miami/game/core/settings/game_test/GameTestStep;", "backendId", "", "backendName", "", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "spawnIndex", "timeoutMs", "", "waitClosed", "", "<init>", "(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Long;Z)V", "getBackendId", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getBackendName", "()Ljava/lang/String;", "getUsername", "getPassword", "getSpawnIndex", "()I", "getTimeoutMs", "()Ljava/lang/Long;", "Ljava/lang/Long;", "getWaitClosed", "()Z", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "copy", "(Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Long;Z)Lcom/miami/game/core/settings/game_test/GameTestStep$LoginAndSpawn;", "equals", "other", "", "hashCode", "toString", "settings"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes5.dex */
+    public static final class LoginAndSpawn extends GameTestStep {
+        private final Integer backendId;
+        private final String backendName;
+        private final String password;
+        private final int spawnIndex;
+        private final Long timeoutMs;
+        private final String username;
+        private final boolean waitClosed;
+
+        public LoginAndSpawn() {
+            this(null, null, null, null, 0, null, false, 127, null);
+        }
+
+        public static /* synthetic */ LoginAndSpawn copy$default(LoginAndSpawn loginAndSpawn, Integer num, String str, String str2, String str3, int i, Long l, boolean z, int i2, Object obj) {
+            if ((i2 & 1) != 0) {
+                num = loginAndSpawn.backendId;
+            }
+            if ((i2 & 2) != 0) {
+                str = loginAndSpawn.backendName;
+            }
+            if ((i2 & 4) != 0) {
+                str2 = loginAndSpawn.username;
+            }
+            if ((i2 & 8) != 0) {
+                str3 = loginAndSpawn.password;
+            }
+            if ((i2 & 16) != 0) {
+                i = loginAndSpawn.spawnIndex;
+            }
+            if ((i2 & 32) != 0) {
+                l = loginAndSpawn.timeoutMs;
+            }
+            if ((i2 & 64) != 0) {
+                z = loginAndSpawn.waitClosed;
+            }
+            Long l2 = l;
+            boolean z2 = z;
+            int i3 = i;
+            String str4 = str2;
+            return loginAndSpawn.copy(num, str, str4, str3, i3, l2, z2);
+        }
+
+        public final Integer component1() {
+            return this.backendId;
+        }
+
+        public final String component2() {
+            return this.backendName;
+        }
+
+        public final String component3() {
+            return this.username;
+        }
+
+        public final String component4() {
+            return this.password;
+        }
+
+        public final int component5() {
+            return this.spawnIndex;
+        }
+
+        public final Long component6() {
+            return this.timeoutMs;
+        }
+
+        public final boolean component7() {
+            return this.waitClosed;
+        }
+
+        public final LoginAndSpawn copy(Integer num, String str, String str2, String str3, int i, Long l, boolean z) {
+            return new LoginAndSpawn(num, str, str2, str3, i, l, z);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof LoginAndSpawn) {
+                LoginAndSpawn loginAndSpawn = (LoginAndSpawn) obj;
+                return Intrinsics.areEqual(this.backendId, loginAndSpawn.backendId) && Intrinsics.areEqual(this.backendName, loginAndSpawn.backendName) && Intrinsics.areEqual(this.username, loginAndSpawn.username) && Intrinsics.areEqual(this.password, loginAndSpawn.password) && this.spawnIndex == loginAndSpawn.spawnIndex && Intrinsics.areEqual(this.timeoutMs, loginAndSpawn.timeoutMs) && this.waitClosed == loginAndSpawn.waitClosed;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            Integer num = this.backendId;
+            int hashCode = (num == null ? 0 : num.hashCode()) * 31;
+            String str = this.backendName;
+            int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
+            String str2 = this.username;
+            int hashCode3 = (hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31;
+            String str3 = this.password;
+            int hashCode4 = (((hashCode3 + (str3 == null ? 0 : str3.hashCode())) * 31) + Integer.hashCode(this.spawnIndex)) * 31;
+            Long l = this.timeoutMs;
+            return ((hashCode4 + (l != null ? l.hashCode() : 0)) * 31) + Boolean.hashCode(this.waitClosed);
+        }
+
+        public String toString() {
+            Integer num = this.backendId;
+            String str = this.backendName;
+            String str2 = this.username;
+            String str3 = this.password;
+            int i = this.spawnIndex;
+            Long l = this.timeoutMs;
+            return "LoginAndSpawn(backendId=" + num + ", backendName=" + str + ", username=" + str2 + ", password=" + str3 + ", spawnIndex=" + i + ", timeoutMs=" + l + ", waitClosed=" + this.waitClosed + ")";
+        }
+
+        public LoginAndSpawn(Integer num, String str, String str2, String str3, int i, Long l, boolean z) {
+            super(null);
+            this.backendId = num;
+            this.backendName = str;
+            this.username = str2;
+            this.password = str3;
+            this.spawnIndex = i;
+            this.timeoutMs = l;
+            this.waitClosed = z;
+        }
+
+        public final Integer getBackendId() {
+            return this.backendId;
+        }
+
+        public /* synthetic */ LoginAndSpawn(Integer num, String str, String str2, String str3, int i, Long l, boolean z, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+            this((i2 & 1) != 0 ? null : num, (i2 & 2) != 0 ? "AUTHORIZATION" : str, (i2 & 4) != 0 ? null : str2, (i2 & 8) != 0 ? null : str3, (i2 & 16) != 0 ? 0 : i, (i2 & 32) != 0 ? Long.valueOf((long) GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS) : l, (i2 & 64) != 0 ? true : z);
+        }
+
+        public final String getBackendName() {
+            return this.backendName;
+        }
+
+        public final String getUsername() {
+            return this.username;
+        }
+
+        public final String getPassword() {
+            return this.password;
+        }
+
+        public final int getSpawnIndex() {
+            return this.spawnIndex;
+        }
+
+        public final Long getTimeoutMs() {
+            return this.timeoutMs;
+        }
+
+        public final boolean getWaitClosed() {
+            return this.waitClosed;
         }
     }
 

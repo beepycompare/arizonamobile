@@ -6,142 +6,142 @@ import com.facebook.internal.NativeProtocol;
 /* loaded from: classes5.dex */
 public final class UNumbersKt {
     /* renamed from: countOneBits-WZ4Q5Ns  reason: not valid java name */
-    private static final int m10154countOneBitsWZ4Q5Ns(int i) {
+    private static final int m10156countOneBitsWZ4Q5Ns(int i) {
         return Integer.bitCount(i);
     }
 
     /* renamed from: countLeadingZeroBits-WZ4Q5Ns  reason: not valid java name */
-    private static final int m10150countLeadingZeroBitsWZ4Q5Ns(int i) {
+    private static final int m10152countLeadingZeroBitsWZ4Q5Ns(int i) {
         return Integer.numberOfLeadingZeros(i);
     }
 
     /* renamed from: countTrailingZeroBits-WZ4Q5Ns  reason: not valid java name */
-    private static final int m10158countTrailingZeroBitsWZ4Q5Ns(int i) {
+    private static final int m10160countTrailingZeroBitsWZ4Q5Ns(int i) {
         return Integer.numberOfTrailingZeros(i);
     }
 
     /* renamed from: takeHighestOneBit-WZ4Q5Ns  reason: not valid java name */
-    private static final int m10170takeHighestOneBitWZ4Q5Ns(int i) {
-        return UInt.m9997constructorimpl(Integer.highestOneBit(i));
+    private static final int m10172takeHighestOneBitWZ4Q5Ns(int i) {
+        return UInt.m9999constructorimpl(Integer.highestOneBit(i));
     }
 
     /* renamed from: takeLowestOneBit-WZ4Q5Ns  reason: not valid java name */
-    private static final int m10174takeLowestOneBitWZ4Q5Ns(int i) {
-        return UInt.m9997constructorimpl(Integer.lowestOneBit(i));
+    private static final int m10176takeLowestOneBitWZ4Q5Ns(int i) {
+        return UInt.m9999constructorimpl(Integer.lowestOneBit(i));
     }
 
     /* renamed from: rotateLeft-V7xB4Y4  reason: not valid java name */
-    private static final int m10162rotateLeftV7xB4Y4(int i, int i2) {
-        return UInt.m9997constructorimpl(Integer.rotateLeft(i, i2));
+    private static final int m10164rotateLeftV7xB4Y4(int i, int i2) {
+        return UInt.m9999constructorimpl(Integer.rotateLeft(i, i2));
     }
 
     /* renamed from: rotateRight-V7xB4Y4  reason: not valid java name */
-    private static final int m10166rotateRightV7xB4Y4(int i, int i2) {
-        return UInt.m9997constructorimpl(Integer.rotateRight(i, i2));
+    private static final int m10168rotateRightV7xB4Y4(int i, int i2) {
+        return UInt.m9999constructorimpl(Integer.rotateRight(i, i2));
     }
 
     /* renamed from: countOneBits-VKZWuLQ  reason: not valid java name */
-    private static final int m10153countOneBitsVKZWuLQ(long j) {
+    private static final int m10155countOneBitsVKZWuLQ(long j) {
         return Long.bitCount(j);
     }
 
     /* renamed from: countLeadingZeroBits-VKZWuLQ  reason: not valid java name */
-    private static final int m10149countLeadingZeroBitsVKZWuLQ(long j) {
+    private static final int m10151countLeadingZeroBitsVKZWuLQ(long j) {
         return Long.numberOfLeadingZeros(j);
     }
 
     /* renamed from: countTrailingZeroBits-VKZWuLQ  reason: not valid java name */
-    private static final int m10157countTrailingZeroBitsVKZWuLQ(long j) {
+    private static final int m10159countTrailingZeroBitsVKZWuLQ(long j) {
         return Long.numberOfTrailingZeros(j);
     }
 
     /* renamed from: takeHighestOneBit-VKZWuLQ  reason: not valid java name */
-    private static final long m10169takeHighestOneBitVKZWuLQ(long j) {
-        return ULong.m10076constructorimpl(Long.highestOneBit(j));
+    private static final long m10171takeHighestOneBitVKZWuLQ(long j) {
+        return ULong.m10078constructorimpl(Long.highestOneBit(j));
     }
 
     /* renamed from: takeLowestOneBit-VKZWuLQ  reason: not valid java name */
-    private static final long m10173takeLowestOneBitVKZWuLQ(long j) {
-        return ULong.m10076constructorimpl(Long.lowestOneBit(j));
+    private static final long m10175takeLowestOneBitVKZWuLQ(long j) {
+        return ULong.m10078constructorimpl(Long.lowestOneBit(j));
     }
 
     /* renamed from: rotateLeft-JSWoG40  reason: not valid java name */
-    private static final long m10160rotateLeftJSWoG40(long j, int i) {
-        return ULong.m10076constructorimpl(Long.rotateLeft(j, i));
+    private static final long m10162rotateLeftJSWoG40(long j, int i) {
+        return ULong.m10078constructorimpl(Long.rotateLeft(j, i));
     }
 
     /* renamed from: rotateRight-JSWoG40  reason: not valid java name */
-    private static final long m10164rotateRightJSWoG40(long j, int i) {
-        return ULong.m10076constructorimpl(Long.rotateRight(j, i));
+    private static final long m10166rotateRightJSWoG40(long j, int i) {
+        return ULong.m10078constructorimpl(Long.rotateRight(j, i));
     }
 
     /* renamed from: countOneBits-7apg3OU  reason: not valid java name */
-    private static final int m10152countOneBits7apg3OU(byte b) {
-        return Integer.bitCount(UInt.m9997constructorimpl(b & 255));
+    private static final int m10154countOneBits7apg3OU(byte b) {
+        return Integer.bitCount(UInt.m9999constructorimpl(b & 255));
     }
 
     /* renamed from: countLeadingZeroBits-7apg3OU  reason: not valid java name */
-    private static final int m10148countLeadingZeroBits7apg3OU(byte b) {
+    private static final int m10150countLeadingZeroBits7apg3OU(byte b) {
         return Integer.numberOfLeadingZeros(b & 255) - 24;
     }
 
     /* renamed from: countTrailingZeroBits-7apg3OU  reason: not valid java name */
-    private static final int m10156countTrailingZeroBits7apg3OU(byte b) {
+    private static final int m10158countTrailingZeroBits7apg3OU(byte b) {
         return Integer.numberOfTrailingZeros(b | 256);
     }
 
     /* renamed from: takeHighestOneBit-7apg3OU  reason: not valid java name */
-    private static final byte m10168takeHighestOneBit7apg3OU(byte b) {
-        return UByte.m9914constructorimpl((byte) Integer.highestOneBit(b & 255));
+    private static final byte m10170takeHighestOneBit7apg3OU(byte b) {
+        return UByte.m9916constructorimpl((byte) Integer.highestOneBit(b & 255));
     }
 
     /* renamed from: takeLowestOneBit-7apg3OU  reason: not valid java name */
-    private static final byte m10172takeLowestOneBit7apg3OU(byte b) {
-        return UByte.m9914constructorimpl((byte) Integer.lowestOneBit(b & 255));
+    private static final byte m10174takeLowestOneBit7apg3OU(byte b) {
+        return UByte.m9916constructorimpl((byte) Integer.lowestOneBit(b & 255));
     }
 
     /* renamed from: rotateLeft-LxnNnR4  reason: not valid java name */
-    private static final byte m10161rotateLeftLxnNnR4(byte b, int i) {
-        return UByte.m9914constructorimpl(NumbersKt.rotateLeft(b, i));
+    private static final byte m10163rotateLeftLxnNnR4(byte b, int i) {
+        return UByte.m9916constructorimpl(NumbersKt.rotateLeft(b, i));
     }
 
     /* renamed from: rotateRight-LxnNnR4  reason: not valid java name */
-    private static final byte m10165rotateRightLxnNnR4(byte b, int i) {
-        return UByte.m9914constructorimpl(NumbersKt.rotateRight(b, i));
+    private static final byte m10167rotateRightLxnNnR4(byte b, int i) {
+        return UByte.m9916constructorimpl(NumbersKt.rotateRight(b, i));
     }
 
     /* renamed from: countOneBits-xj2QHRw  reason: not valid java name */
-    private static final int m10155countOneBitsxj2QHRw(short s) {
-        return Integer.bitCount(UInt.m9997constructorimpl(s & UShort.MAX_VALUE));
+    private static final int m10157countOneBitsxj2QHRw(short s) {
+        return Integer.bitCount(UInt.m9999constructorimpl(s & UShort.MAX_VALUE));
     }
 
     /* renamed from: countLeadingZeroBits-xj2QHRw  reason: not valid java name */
-    private static final int m10151countLeadingZeroBitsxj2QHRw(short s) {
+    private static final int m10153countLeadingZeroBitsxj2QHRw(short s) {
         return Integer.numberOfLeadingZeros(s & UShort.MAX_VALUE) - 16;
     }
 
     /* renamed from: countTrailingZeroBits-xj2QHRw  reason: not valid java name */
-    private static final int m10159countTrailingZeroBitsxj2QHRw(short s) {
+    private static final int m10161countTrailingZeroBitsxj2QHRw(short s) {
         return Integer.numberOfTrailingZeros(s | 65536);
     }
 
     /* renamed from: takeHighestOneBit-xj2QHRw  reason: not valid java name */
-    private static final short m10171takeHighestOneBitxj2QHRw(short s) {
-        return UShort.m10183constructorimpl((short) Integer.highestOneBit(s & UShort.MAX_VALUE));
+    private static final short m10173takeHighestOneBitxj2QHRw(short s) {
+        return UShort.m10185constructorimpl((short) Integer.highestOneBit(s & UShort.MAX_VALUE));
     }
 
     /* renamed from: takeLowestOneBit-xj2QHRw  reason: not valid java name */
-    private static final short m10175takeLowestOneBitxj2QHRw(short s) {
-        return UShort.m10183constructorimpl((short) Integer.lowestOneBit(s & UShort.MAX_VALUE));
+    private static final short m10177takeLowestOneBitxj2QHRw(short s) {
+        return UShort.m10185constructorimpl((short) Integer.lowestOneBit(s & UShort.MAX_VALUE));
     }
 
     /* renamed from: rotateLeft-olVBNx4  reason: not valid java name */
-    private static final short m10163rotateLeftolVBNx4(short s, int i) {
-        return UShort.m10183constructorimpl(NumbersKt.rotateLeft(s, i));
+    private static final short m10165rotateLeftolVBNx4(short s, int i) {
+        return UShort.m10185constructorimpl(NumbersKt.rotateLeft(s, i));
     }
 
     /* renamed from: rotateRight-olVBNx4  reason: not valid java name */
-    private static final short m10167rotateRightolVBNx4(short s, int i) {
-        return UShort.m10183constructorimpl(NumbersKt.rotateRight(s, i));
+    private static final short m10169rotateRightolVBNx4(short s, int i) {
+        return UShort.m10185constructorimpl(NumbersKt.rotateRight(s, i));
     }
 }

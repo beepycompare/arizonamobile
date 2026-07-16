@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f425a;
+    public final ServiceContext f427a;
     public final IHandlerExecutor c;
     public final n d;
     public volatile IdSyncConfig e;
@@ -19,7 +19,7 @@ public final class h {
     public final C0104f g = new C0104f(this);
 
     public h(ServiceContext serviceContext, SdkIdentifiers sdkIdentifiers) {
-        this.f425a = serviceContext;
+        this.f427a = serviceContext;
         this.c = serviceContext.getExecutorProvider().getModuleExecutor();
         this.d = new n(serviceContext, new G(serviceContext.getServiceStorageProvider().modulePreferences("id-sync")), sdkIdentifiers);
     }
@@ -29,7 +29,7 @@ public final class h {
         if (!Intrinsics.areEqual(this.e, idSyncConfig)) {
             this.e = idSyncConfig;
             if (a(idSyncConfig) && !this.f) {
-                this.f425a.getActivationBarrier().subscribe(idSyncConfig.getLaunchDelay(), this.c, new C0105g(this));
+                this.f427a.getActivationBarrier().subscribe(idSyncConfig.getLaunchDelay(), this.c, new C0105g(this));
                 this.f = true;
             } else if (!a(idSyncConfig) && this.f) {
                 this.f = false;

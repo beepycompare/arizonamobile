@@ -16,7 +16,7 @@ public final class C0356jh extends AbstractC0305hh {
     public final boolean a(C0242f6 c0242f6) {
         C0301hd c0301hd = (C0301hd) C0301hd.c.get(c0242f6.d);
         HashMap hashMap = new HashMap();
-        hashMap.put("type", c0301hd.f1013a);
+        hashMap.put("type", c0301hd.f1015a);
         hashMap.put("delivery_method", c0301hd.b);
         this.b.reportEvent("crash_saved", hashMap);
         return false;

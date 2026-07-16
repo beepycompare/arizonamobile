@@ -260,6 +260,36 @@ public final class SelectorDialog extends SAMPUIElement {
     }
 
     private final String defineText(int i) {
-        return i == ActionTypes.INVENTORY_BUTTON_TYPE_USE.ordinal() ? "Использовать" : i == ActionTypes.INVENTORY_BUTTON_TYPE_PUT_ON.ordinal() ? "Надеть" : i == ActionTypes.INVENTORY_BUTTON_TYPE_DROP.ordinal() ? "Выкинуть" : i == ActionTypes.INVENTORY_BUTTON_TYPE_SPLIT.ordinal() ? "Разделить" : i == ActionTypes.INVENTORY_BUTTON_TYPE_INFO.ordinal() ? "Информация" : i == ActionTypes.INVENTORY_BUTTON_TYPE_ITEM_OPEN.ordinal() ? "Открыть" : i == ActionTypes.INVENTORY_BUTTON_TYPE_ITEM_CLOSE.ordinal() ? "Закрыть" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_TAKE_ON.ordinal() ? "Снять" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_CLEAR.ordinal() ? UtilsKt.isArizonaType() ? "Очистить" : "Снять номер" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_INSTALL.ordinal() ? UtilsKt.isArizonaType() ? "Установить" : "Надеть на акс" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_EDIT.ordinal() ? "Изменить" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_OPEN.ordinal() ? UtilsKt.isArizonaType() ? "Открыть" : "Распаковать" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_RENT.ordinal() ? "Арендовать" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_COLOR.ordinal() ? "Изменить цвет" : i == ActionTypes.INVENTORY_BUTTON_TYPE_PUT.ordinal() ? "Положить" : i == ActionTypes.INVENTORY_BUTTON_TYPE_TAKE.ordinal() ? "Забрать" : i == ActionTypes.INVENTORY_BUTTON_TYPE_SELL.ordinal() ? "Продать" : i == ActionTypes.INVENTORY_BUTTON_TYPE_PUT_IN_GIFT.ordinal() ? "Поместить" : i == ActionTypes.INVENT_BUTTON_TYPE_SEND.ordinal() ? "Передать" : i == ActionTypes.INVENT_BUTTON_TYPE_CANCEL_RENT.ordinal() ? "Завершить аренду" : i == ActionTypes.INVENT_BUTTON_TYPE_RATING.ordinal() ? "Рейтинг" : i == ActionTypes.INVENT_BUTTON_TYPE_ACTIVE.ordinal() ? "Активировать" : i == ActionTypes.INVENT_BUTTON_TYPE_DEACTIVE.ordinal() ? "Деактивировать" : "";
+        if (i == ActionTypes.INVENTORY_BUTTON_TYPE_USE.ordinal()) {
+            return "Использовать";
+        }
+        if (i == ActionTypes.INVENTORY_BUTTON_TYPE_PUT_ON.ordinal()) {
+            return "Надеть";
+        }
+        if (i == ActionTypes.INVENTORY_BUTTON_TYPE_DROP.ordinal()) {
+            return "Выкинуть";
+        }
+        if (i == ActionTypes.INVENTORY_BUTTON_TYPE_SPLIT.ordinal()) {
+            return "Разделить";
+        }
+        if (i == ActionTypes.INVENTORY_BUTTON_TYPE_INFO.ordinal()) {
+            return "Информация";
+        }
+        if (i == ActionTypes.INVENTORY_BUTTON_TYPE_ITEM_OPEN.ordinal()) {
+            if (UtilsKt.isArizonaType()) {
+                return "Открыть";
+            }
+            String string = getTargetActivity().getString(R.string.inventory_action_pin);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            return string;
+        } else if (i != ActionTypes.INVENTORY_BUTTON_TYPE_ITEM_CLOSE.ordinal()) {
+            return i == ActionTypes.INVENTORY_A_BUTTON_TYPE_TAKE_ON.ordinal() ? "Снять" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_CLEAR.ordinal() ? UtilsKt.isArizonaType() ? "Очистить" : "Снять номер" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_INSTALL.ordinal() ? UtilsKt.isArizonaType() ? "Установить" : "Надеть на акс" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_EDIT.ordinal() ? "Изменить" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_OPEN.ordinal() ? UtilsKt.isArizonaType() ? "Открыть" : "Распаковать" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_RENT.ordinal() ? "Арендовать" : i == ActionTypes.INVENTORY_A_BUTTON_TYPE_COLOR.ordinal() ? "Изменить цвет" : i == ActionTypes.INVENTORY_BUTTON_TYPE_PUT.ordinal() ? "Положить" : i == ActionTypes.INVENTORY_BUTTON_TYPE_TAKE.ordinal() ? "Забрать" : i == ActionTypes.INVENTORY_BUTTON_TYPE_SELL.ordinal() ? "Продать" : i == ActionTypes.INVENTORY_BUTTON_TYPE_PUT_IN_GIFT.ordinal() ? "Поместить" : i == ActionTypes.INVENT_BUTTON_TYPE_SEND.ordinal() ? "Передать" : i == ActionTypes.INVENT_BUTTON_TYPE_CANCEL_RENT.ordinal() ? "Завершить аренду" : i == ActionTypes.INVENT_BUTTON_TYPE_RATING.ordinal() ? "Рейтинг" : i == ActionTypes.INVENT_BUTTON_TYPE_ACTIVE.ordinal() ? "Активировать" : i == ActionTypes.INVENT_BUTTON_TYPE_DEACTIVE.ordinal() ? "Деактивировать" : "";
+        } else if (UtilsKt.isArizonaType()) {
+            return "Закрыть";
+        } else {
+            String string2 = getTargetActivity().getString(R.string.inventory_action_unpin);
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+            return string2;
+        }
     }
 }

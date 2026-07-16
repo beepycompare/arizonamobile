@@ -20,7 +20,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0750ym {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f1301a;
+    public final HashSet f1303a;
     public final HashMap b;
     public final C0672vm c;
     public List d;
@@ -43,7 +43,7 @@ public final class C0750ym {
     public final synchronized boolean a(List list) {
         boolean z;
         boolean z2;
-        boolean a2 = a(CollectionsKt.intersect(list, Em.f532a));
+        boolean a2 = a(CollectionsKt.intersect(list, Em.f534a));
         Iterator it = list.iterator();
         while (true) {
             z = true;
@@ -51,7 +51,7 @@ public final class C0750ym {
                 z2 = false;
                 break;
             }
-            if (this.f1301a.contains((String) it.next())) {
+            if (this.f1303a.contains((String) it.next())) {
                 z2 = true;
                 break;
             }
@@ -88,7 +88,7 @@ public final class C0750ym {
 
     public C0750ym(C0665vf c0665vf, Q q, T3 t3, Vd vd, P6 p6, C0479oa c0479oa, C0453na c0453na, So so) {
         HashSet hashSet = new HashSet();
-        this.f1301a = hashSet;
+        this.f1303a = hashSet;
         this.b = new HashMap();
         this.c = new C0672vm();
         hashSet.add("appmetrica_google_adv_id");
@@ -141,7 +141,7 @@ public final class C0750ym {
         String str2 = identifiersResult == null ? null : identifiersResult.id;
         String str3 = identifiersResult2.id;
         if (str2 == null || !(str3 == null || str2.equals(str3))) {
-            Oj.f706a.reportError((str2 == null ? "null_uuid" : "wrong_uuid").concat("_on_client"), "The only true uuid: " + str2 + "; backup uuid: " + str3);
+            Oj.f708a.reportError((str2 == null ? "null_uuid" : "wrong_uuid").concat("_on_client"), "The only true uuid: " + str2 + "; backup uuid: " + str3);
         }
     }
 
@@ -168,7 +168,7 @@ public final class C0750ym {
             }
             if (identifiersResult == null) {
                 C0531qa c0531qa = this.m.b;
-                if (!Intrinsics.areEqual(str2, "appmetrica_lib_ssl_enabled") || (bool = c0531qa.f1163a) == null) {
+                if (!Intrinsics.areEqual(str2, "appmetrica_lib_ssl_enabled") || (bool = c0531qa.f1165a) == null) {
                     identifiersResult = null;
                 } else {
                     boolean booleanValue = bool.booleanValue();

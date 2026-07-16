@@ -26,7 +26,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class IconKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit IconCompat_FNF3uiM$lambda$0(Painter painter, Modifier modifier, long j, int i, int i2, Composer composer, int i3) {
-        m9472IconCompatFNF3uiM(painter, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+        m9473IconCompatFNF3uiM(painter, modifier, j, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
@@ -47,7 +47,7 @@ public final class IconKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9472IconCompatFNF3uiM(final Painter painter, Modifier modifier, long j, Composer composer, final int i, final int i2) {
+    public static final void m9473IconCompatFNF3uiM(final Painter painter, Modifier modifier, long j, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         int i4;
@@ -147,11 +147,11 @@ public final class IconKt {
     }
 
     private static final Modifier defaultSizeFor(Modifier modifier, Painter painter) {
-        return (Size.m5168equalsimpl0(painter.mo6042getIntrinsicSizeNHjbRc(), Size.Companion.m5180getUnspecifiedNHjbRc()) || m9473isInfiniteuvyYCjk(painter.mo6042getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(24.0f))) : modifier;
+        return (Size.m5168equalsimpl0(painter.mo6042getIntrinsicSizeNHjbRc(), Size.Companion.m5180getUnspecifiedNHjbRc()) || m9474isInfiniteuvyYCjk(painter.mo6042getIntrinsicSizeNHjbRc())) ? modifier.then(SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(24.0f))) : modifier;
     }
 
     /* renamed from: isInfinite-uvyYCjk  reason: not valid java name */
-    private static final boolean m9473isInfiniteuvyYCjk(long j) {
+    private static final boolean m9474isInfiniteuvyYCjk(long j) {
         return Float.isInfinite(Float.intBitsToFloat((int) (j >> 32))) && Float.isInfinite(Float.intBitsToFloat((int) (j & 4294967295L)));
     }
 }

@@ -3,19 +3,25 @@ package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.time.DurationKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
@@ -28,13 +34,16 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.MainInventoryAdapter;
-import ru.mrlargha.commonui.utils.GsonStore;
+import ru.mrlargha.commonui.utils.InventoryDragState;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: MainInventoryViewHolder.kt */
-@Metadata(d1 = {"\u0000U\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004*\u0001\u0013\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cJ \u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\t2\u0006\u0010 \u001a\u00020\t2\u0006\u0010!\u001a\u00020\tH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0014R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\""}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemInventoryBinding;", "params", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemInventoryBinding;Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;)V", "scrollSpeed", "", "edgeHeight", "scrollDirection", "countDownTimer", "Landroid/os/CountDownTimer;", "scrollHandler", "Landroid/os/Handler;", "getScrollHandler", "()Landroid/os/Handler;", "scrollRunnable", "ru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder$scrollRunnable$1", "Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder$scrollRunnable$1;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "isWalletVisible", "", "formatHMS", "", "hours", "minutes", "seconds", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000c\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0013\u0018\u0000 '2\u00020\u0001:\u0001'B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001cJ \u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\t2\u0006\u0010 \u001a\u00020\t2\u0006\u0010!\u001a\u00020\tH\u0002J\u0018\u0010\"\u001a\u00020\t2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0014R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemInventoryBinding;", "params", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemInventoryBinding;Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;)V", "scrollSpeed", "", "edgeHeight", "scrollDirection", "countDownTimer", "Landroid/os/CountDownTimer;", "scrollHandler", "Landroid/os/Handler;", "getScrollHandler", "()Landroid/os/Handler;", "scrollRunnable", "ru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder$scrollRunnable$1", "Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder$scrollRunnable$1;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "isWalletVisible", "", "formatHMS", "", "hours", "minutes", "seconds", "getDragPageEdgeDirection", "view", "Landroid/view/View;", "dragEvent", "Landroid/view/DragEvent;", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
+    private static final Companion Companion = new Companion(null);
+    @Deprecated
+    public static final float MAIN_INVENTORY_DRAG_EDGE_CELL_RATIO = 0.75f;
     private final ItemInventoryBinding binding;
     private CountDownTimer countDownTimer;
     private final int edgeHeight;
@@ -77,9 +86,8 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
         return this.scrollHandler;
     }
 
-    /* JADX WARN: Type inference failed for: r1v2, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$6] */
+    /* JADX WARN: Type inference failed for: r0v42, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$6] */
     public final void bind(final InventoryItem itemVal, final boolean z) {
-        final InventoryItem inventoryItem;
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         final ItemInventoryBinding itemInventoryBinding = this.binding;
@@ -182,7 +190,6 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
             if (countDownTimer != null) {
                 countDownTimer.cancel();
             }
-            inventoryItem = itemVal;
             this.countDownTimer = new CountDownTimer(longValue) { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$6
                 @Override // android.os.CountDownTimer
                 public void onTick(long j) {
@@ -193,7 +200,7 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
                     int i3 = (int) ((j % 60000) / 1000);
                     ItemInventoryBinding itemInventoryBinding2 = itemInventoryBinding;
                     if (i > 24) {
-                        itemInventoryBinding2.tvTitleText.setText(inventoryItem.getText());
+                        itemInventoryBinding2.tvTitleText.setText(itemVal.getText());
                         countDownTimer2 = this.countDownTimer;
                         if (countDownTimer2 != null) {
                             countDownTimer2.cancel();
@@ -215,18 +222,28 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
                 }
             }.start();
         } else {
-            inventoryItem = itemVal;
-            itemInventoryBinding.tvTitleText.setText(inventoryItem.getText());
+            itemInventoryBinding.tvTitleText.setText(itemVal.getText());
             CountDownTimer countDownTimer2 = this.countDownTimer;
             if (countDownTimer2 != null) {
                 countDownTimer2.cancel();
             }
         }
-        if (inventoryItem.isLocked()) {
+        if (itemVal.isLocked()) {
             itemInventoryBinding.ivItemImage.setImageResource(R.drawable.ic_locked_item);
             itemInventoryBinding.tvTitleText.setText("");
         }
-        UtilKt.setInventoryItemEffect(itemInventoryBinding, inventoryItem.getItem());
+        UtilKt.setInventoryItemEffect(itemInventoryBinding, itemVal.getItem());
+        Log.d("TAG", "bind: " + itemVal.getLoading());
+        ImageView ivItemImage = itemInventoryBinding.ivItemImage;
+        Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
+        ImageView imageView = ivItemImage;
+        Boolean loading = itemVal.getLoading();
+        imageView.setVisibility(!(loading != null ? loading.booleanValue() : false) ? 0 : 8);
+        ProgressBar itemProgressBar = itemInventoryBinding.itemProgressBar;
+        Intrinsics.checkNotNullExpressionValue(itemProgressBar, "itemProgressBar");
+        ProgressBar progressBar = itemProgressBar;
+        Boolean loading2 = itemVal.getLoading();
+        progressBar.setVisibility(loading2 != null ? loading2.booleanValue() : false ? 0 : 8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -247,17 +264,27 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final boolean bind$lambda$0$2(MainInventoryViewHolder mainInventoryViewHolder, View view, DragEvent dragEvent) {
-        int action = dragEvent.getAction();
-        if (action != 1) {
-            if (action == 3) {
-                if (dragEvent.getClipData() != null) {
-                    Object fromJson = GsonStore.INSTANCE.getGson().fromJson(UtilsKt.updateJsonString(dragEvent.getClipData().getItemAt(0).getText().toString()), (Class<Object>) InventoryItem.class);
-                    Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-                    mainInventoryViewHolder.params.getOnItemDropped().invoke(new DraggedItem((InventoryItem) fromJson, mainInventoryViewHolder.getAbsoluteAdapterPosition()));
+        switch (dragEvent.getAction()) {
+            case 1:
+                Intrinsics.checkNotNull(dragEvent);
+                return UtilsKt.getInventoryDragState(dragEvent) != null;
+            case 2:
+                Function1<Integer, Unit> onDragPageEdgeChanged = mainInventoryViewHolder.params.getOnDragPageEdgeChanged();
+                Intrinsics.checkNotNull(view);
+                Intrinsics.checkNotNull(dragEvent);
+                onDragPageEdgeChanged.invoke(Integer.valueOf(mainInventoryViewHolder.getDragPageEdgeDirection(view, dragEvent)));
+                return true;
+            case 3:
+                mainInventoryViewHolder.params.getOnDragPageEdgeChanged().invoke(0);
+                Intrinsics.checkNotNull(dragEvent);
+                InventoryDragState inventoryDragState = UtilsKt.getInventoryDragState(dragEvent);
+                if (inventoryDragState != null) {
+                    mainInventoryViewHolder.params.getOnItemDropped().invoke(new DraggedItem(inventoryDragState.getItem(), mainInventoryViewHolder.getAbsoluteAdapterPosition()));
                 }
                 view.invalidate();
-                Object localState = dragEvent.getLocalState();
-                CardView cardView = localState instanceof CardView ? (CardView) localState : null;
+                InventoryDragState inventoryDragState2 = UtilsKt.getInventoryDragState(dragEvent);
+                View sourceView = inventoryDragState2 != null ? inventoryDragState2.getSourceView() : null;
+                CardView cardView = sourceView instanceof CardView ? (CardView) sourceView : null;
                 if (cardView != null) {
                     ViewParent parent = cardView.getParent();
                     ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
@@ -267,33 +294,35 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
                 }
                 mainInventoryViewHolder.scrollHandler.removeCallbacks(mainInventoryViewHolder.scrollRunnable);
                 return true;
-            }
-            if (action != 4) {
-                if (action == 5) {
-                    boolean z = view.getBottom() + mainInventoryViewHolder.edgeHeight >= mainInventoryViewHolder.params.getRecyclerView().getBottom() - mainInventoryViewHolder.params.getRecyclerView().getTop();
-                    boolean z2 = view.getTop() - mainInventoryViewHolder.edgeHeight <= 0;
-                    if (z) {
-                        mainInventoryViewHolder.scrollDirection = 1;
-                    } else if (z2) {
-                        mainInventoryViewHolder.scrollDirection = -1;
-                    } else {
-                        mainInventoryViewHolder.scrollDirection = 0;
-                        mainInventoryViewHolder.scrollHandler.removeCallbacks(mainInventoryViewHolder.scrollRunnable);
-                    }
-                    if (mainInventoryViewHolder.scrollDirection != 0) {
-                        mainInventoryViewHolder.scrollHandler.post(mainInventoryViewHolder.scrollRunnable);
-                    }
-                    view.invalidate();
-                    return true;
-                } else if (action != 6) {
-                    return false;
+            case 4:
+            case 6:
+                mainInventoryViewHolder.params.getOnDragPageEdgeChanged().invoke(0);
+                mainInventoryViewHolder.scrollHandler.removeCallbacks(mainInventoryViewHolder.scrollRunnable);
+                view.invalidate();
+                return true;
+            case 5:
+                Function1<Integer, Unit> onDragPageEdgeChanged2 = mainInventoryViewHolder.params.getOnDragPageEdgeChanged();
+                Intrinsics.checkNotNull(view);
+                Intrinsics.checkNotNull(dragEvent);
+                onDragPageEdgeChanged2.invoke(Integer.valueOf(mainInventoryViewHolder.getDragPageEdgeDirection(view, dragEvent)));
+                boolean z = view.getBottom() + mainInventoryViewHolder.edgeHeight >= mainInventoryViewHolder.params.getRecyclerView().getBottom() - mainInventoryViewHolder.params.getRecyclerView().getTop();
+                boolean z2 = view.getTop() - mainInventoryViewHolder.edgeHeight <= 0;
+                if (z) {
+                    mainInventoryViewHolder.scrollDirection = 1;
+                } else if (z2) {
+                    mainInventoryViewHolder.scrollDirection = -1;
+                } else {
+                    mainInventoryViewHolder.scrollDirection = 0;
+                    mainInventoryViewHolder.scrollHandler.removeCallbacks(mainInventoryViewHolder.scrollRunnable);
                 }
-            }
-            mainInventoryViewHolder.scrollHandler.removeCallbacks(mainInventoryViewHolder.scrollRunnable);
-            view.invalidate();
-            return true;
+                if (mainInventoryViewHolder.scrollDirection != 0) {
+                    mainInventoryViewHolder.scrollHandler.post(mainInventoryViewHolder.scrollRunnable);
+                }
+                view.invalidate();
+                return true;
+            default:
+                return false;
         }
-        return dragEvent.getClipDescription().hasMimeType("text/plain");
     }
 
     private static final String formatHMS$two(int i) {
@@ -305,5 +334,37 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
         String formatHMS$two = formatHMS$two(i);
         String formatHMS$two2 = formatHMS$two(i2);
         return formatHMS$two + StringUtils.PROCESS_POSTFIX_DELIMITER + formatHMS$two2 + StringUtils.PROCESS_POSTFIX_DELIMITER + formatHMS$two(i3);
+    }
+
+    private final int getDragPageEdgeDirection(View view, DragEvent dragEvent) {
+        int absoluteAdapterPosition = getAbsoluteAdapterPosition();
+        RecyclerView.LayoutManager layoutManager = this.params.getRecyclerView().getLayoutManager();
+        GridLayoutManager gridLayoutManager = layoutManager instanceof GridLayoutManager ? (GridLayoutManager) layoutManager : null;
+        if (gridLayoutManager != null) {
+            int spanCount = gridLayoutManager.getSpanCount();
+            if (absoluteAdapterPosition != -1 && view.getWidth() > 0 && spanCount > 1) {
+                int max = Math.max(this.params.getContext().getResources().getDimensionPixelSize(R.dimen._24sdp), (int) (view.getWidth() * 0.75f));
+                int i = absoluteAdapterPosition % spanCount;
+                if (i == 0 && dragEvent.getX() <= max) {
+                    return -1;
+                }
+                if (i == spanCount - 1 && dragEvent.getX() >= view.getWidth() - max) {
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+
+    /* compiled from: MainInventoryViewHolder.kt */
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder$Companion;", "", "<init>", "()V", "MAIN_INVENTORY_DRAG_EDGE_CELL_RATIO", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

@@ -9,7 +9,7 @@ public class Wg extends Ra {
 
     @Override // io.appmetrica.analytics.impl.Ra
     public void a(List<AbstractC0305hh> list) {
-        list.add(this.f743a.m);
-        list.add(this.f743a.b);
+        list.add(this.f745a.m);
+        list.add(this.f745a.b);
     }
 }

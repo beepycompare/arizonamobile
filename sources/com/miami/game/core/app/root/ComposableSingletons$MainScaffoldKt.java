@@ -35,12 +35,12 @@ public final class ComposableSingletons$MainScaffoldKt {
     });
 
     /* renamed from: getLambda$-1632204659$app_root  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9763getLambda$1632204659$app_root() {
+    public final Function2<Composer, Integer, Unit> m9764getLambda$1632204659$app_root() {
         return f48lambda$1632204659;
     }
 
     /* renamed from: getLambda$-863503316$app_root  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9764getLambda$863503316$app_root() {
+    public final Function2<Composer, Integer, Unit> m9765getLambda$863503316$app_root() {
         return f49lambda$863503316;
     }
 

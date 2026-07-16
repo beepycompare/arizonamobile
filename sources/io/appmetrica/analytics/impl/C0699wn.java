@@ -11,7 +11,7 @@ public final class C0699wn extends Z2 {
     }
 
     public final int b() {
-        return this.f865a;
+        return this.f867a;
     }
 
     public C0699wn(int i, String str, PublicLogger publicLogger) {
@@ -30,11 +30,11 @@ public final class C0699wn extends Z2 {
         try {
             byte[] bytes = str.getBytes("UTF-8");
             int length = bytes.length;
-            int i = this.f865a;
+            int i = this.f867a;
             if (length > i) {
                 String str2 = new String(bytes, 0, i, "UTF-8");
                 try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f865a));
+                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f867a));
                 } catch (UnsupportedEncodingException unused) {
                 }
                 return str2;

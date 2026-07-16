@@ -9,17 +9,17 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class C0821v extends Lambda implements Function0<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ SingleEmitter<Unit> f1545a;
+    public final /* synthetic */ SingleEmitter<Unit> f1547a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0821v(SingleEmitter<Unit> singleEmitter) {
         super(0);
-        this.f1545a = singleEmitter;
+        this.f1547a = singleEmitter;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Unit invoke() {
-        SingleEmitter<Unit> singleEmitter = this.f1545a;
+        SingleEmitter<Unit> singleEmitter = this.f1547a;
         Unit unit = Unit.INSTANCE;
         singleEmitter.success(unit);
         return unit;

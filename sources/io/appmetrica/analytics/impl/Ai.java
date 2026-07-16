@@ -16,7 +16,7 @@ import java.util.Map;
 public final class Ai implements InterfaceC0506pb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B0 f461a;
+    public final B0 f463a;
     public final Uh b;
     public final IHandlerExecutor c;
     public final Context d;
@@ -100,7 +100,7 @@ public final class Ai implements InterfaceC0506pb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str) {
-        this.b.f795a.a(str);
+        this.b.f797a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0746yi(this, str));
     }
@@ -181,7 +181,7 @@ public final class Ai implements InterfaceC0506pb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, String str2) {
-        this.b.f795a.a(str);
+        this.b.f797a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0772zi(this, str, str2));
     }
@@ -213,7 +213,7 @@ public final class Ai implements InterfaceC0506pb {
         this.c = C0576s4.l().g().a();
         this.d = context;
         this.b = uh;
-        this.f461a = b0;
+        this.f463a = b0;
         this.f = ki;
         this.e = reporterConfig;
         this.g = c0510pf;
@@ -221,7 +221,7 @@ public final class Ai implements InterfaceC0506pb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, Map<String, Object> map) {
-        this.b.f795a.a(str);
+        this.b.f797a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0125ai(this, str, CollectionUtils.getListFromMap(map)));
     }

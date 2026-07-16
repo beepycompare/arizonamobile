@@ -12,13 +12,13 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class H extends Lambda implements Function1<SingleEmitter<Unit>, ServiceConnection> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AppUpdateInfo f1486a;
+    public final /* synthetic */ AppUpdateInfo f1488a;
     public final /* synthetic */ C0817r b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public H(C0817r c0817r, AppUpdateInfo appUpdateInfo) {
         super(1);
-        this.f1486a = appUpdateInfo;
+        this.f1488a = appUpdateInfo;
         this.b = c0817r;
     }
 
@@ -26,8 +26,8 @@ public final class H extends Lambda implements Function1<SingleEmitter<Unit>, Se
     public final ServiceConnection invoke(SingleEmitter<Unit> singleEmitter) {
         SingleEmitter<Unit> emitter = singleEmitter;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        this.f1486a.markIsUsed$sdk_public_appupdate_release();
-        Context context = this.b.f1539a;
+        this.f1488a.markIsUsed$sdk_public_appupdate_release();
+        Context context = this.b.f1541a;
         String packageName = context.getPackageName();
         Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
         return new f0(context, packageName, new F(emitter), new G(emitter));

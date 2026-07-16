@@ -13,12 +13,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class Qk implements InterfaceC0352jd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zo f736a;
+    public final Zo f738a;
     public final String b = "startup_state";
     public final AESEncrypter c;
 
     public Qk(Zo zo) {
-        this.f736a = zo;
+        this.f738a = zo;
         C0106a c0106a = new C0106a(Na.k().g());
         this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0106a.b(), c0106a.a());
     }
@@ -26,7 +26,7 @@ public final class Qk implements InterfaceC0352jd {
     public static void a(Zo zo, Km km, C0171cc c0171cc) {
         String optStringOrNull;
         synchronized (zo) {
-            optStringOrNull = JsonUtils.optStringOrNull(zo.f876a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
+            optStringOrNull = JsonUtils.optStringOrNull(zo.f878a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
         }
         if (TextUtils.isEmpty(optStringOrNull)) {
             if (!TextUtils.isEmpty(c0171cc.d)) {
@@ -35,10 +35,10 @@ public final class Qk implements InterfaceC0352jd {
             if (!TextUtils.isEmpty(c0171cc.e)) {
                 zo.b(c0171cc.e);
             }
-            if (TextUtils.isEmpty(c0171cc.f924a)) {
+            if (TextUtils.isEmpty(c0171cc.f926a)) {
                 return;
             }
-            km.f633a = c0171cc.f924a;
+            km.f635a = c0171cc.f926a;
         }
     }
 
@@ -50,7 +50,7 @@ public final class Qk implements InterfaceC0352jd {
                 C0171cc a2 = a(readableDatabase);
                 Km km = new Km(new C4(new A4()));
                 if (a2 != null) {
-                    a(this.f736a, km, a2);
+                    a(this.f738a, km, a2);
                     km.p = a2.c;
                     km.r = a2.b;
                 }

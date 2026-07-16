@@ -26,7 +26,7 @@ import kotlin.collections.SetsKt;
 public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryPoint<FeatureConfig> implements AskForPermissionStrategyModuleProvider, RemoteConfigUpdateListener<FeatureConfig> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f1426a = new c();
+    private final c f1428a = new c();
     private final a b = new a();
     private final RemotePermissionsModuleEntryPoint c = this;
     private final d d = new d();
@@ -45,7 +45,7 @@ public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryP
         @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
         public JsonParser<FeatureConfig> getJsonParser() {
             JsonParser<FeatureConfig> jsonParser;
-            jsonParser = RemotePermissionsModuleEntryPoint.this.f1426a;
+            jsonParser = RemotePermissionsModuleEntryPoint.this.f1428a;
             return jsonParser;
         }
 
@@ -88,7 +88,7 @@ public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryP
             emptySet = SetsKt.emptySet();
         }
         synchronized (dVar) {
-            dVar.f1424a = emptySet;
+            dVar.f1426a = emptySet;
         }
     }
 
@@ -101,7 +101,7 @@ public final class RemotePermissionsModuleEntryPoint extends ModuleServiceEntryP
             emptySet = SetsKt.emptySet();
         }
         synchronized (dVar) {
-            dVar.f1424a = emptySet;
+            dVar.f1426a = emptySet;
         }
     }
 }

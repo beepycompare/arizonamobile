@@ -8,11 +8,11 @@ import kotlin.enums.EnumEntriesKt;
 public final class EnumC0597t {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ EnumC0597t[] f1204a;
+    public static final /* synthetic */ EnumC0597t[] f1206a;
 
     static {
         EnumC0597t[] enumC0597tArr = {new EnumC0597t(0, "AUTOCOLLECTED", "autocollected"), new EnumC0597t(1, "MANUAL", "manual")};
-        f1204a = enumC0597tArr;
+        f1206a = enumC0597tArr;
         EnumEntriesKt.enumEntries(enumC0597tArr);
     }
 
@@ -24,6 +24,6 @@ public final class EnumC0597t {
     }
 
     public static EnumC0597t[] values() {
-        return (EnumC0597t[]) f1204a.clone();
+        return (EnumC0597t[]) f1206a.clone();
     }
 }

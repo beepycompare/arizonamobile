@@ -15,10 +15,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FishingAdapter.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u0019\u001aB\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\u000b\u001a\u00020\f2\u0006\u0010\t\u001a\u00020\nJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\f2\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\f2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00070\u0018R\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/minigames/fishing/FishingAdapter$ViewHolder;", "<init>", "()V", "fishInfoList", "Ljava/util/ArrayList;", "Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion$FishInfo;", "Lkotlin/collections/ArrayList;", "onItemClickListener", "Lcom/arizonagames/feature/minigames/fishing/FishingAdapter$OnItemClickListener;", "setOnItemClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addItems", "infoList", "", "OnItemClickListener", "ViewHolder", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0005\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u001d\u001eB\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000b\u001a\u00020\fJ\u0018\u0010\u000f\u001a\u00020\u00022\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0016J\u0018\u0010\u0014\u001a\u00020\u000e2\u0006\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u0013H\u0016J\b\u0010\u0017\u001a\u00020\u0013H\u0016J\u0014\u0010\u0018\u001a\u00020\u000e2\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00070\u001aJ\u000e\u0010\u001b\u001a\u00020\u000e2\u0006\u0010\u001c\u001a\u00020\nR\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/minigames/fishing/FishingAdapter$ViewHolder;", "<init>", "()V", "fishInfoList", "Ljava/util/ArrayList;", "Lcom/arizonagames/feature/minigames/fishing/FishingScreen$Companion$FishInfo;", "Lkotlin/collections/ArrayList;", "isComputerFolderMode", "", "onItemClickListener", "Lcom/arizonagames/feature/minigames/fishing/FishingAdapter$OnItemClickListener;", "setOnItemClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addItems", "infoList", "", "setComputerFolderMode", "enabled", "OnItemClickListener", "ViewHolder", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class FishingAdapter extends RecyclerView.Adapter<ViewHolder> {
     private final ArrayList<FishingScreen.Companion.FishInfo> fishInfoList = new ArrayList<>();
+    private boolean isComputerFolderMode;
     private OnItemClickListener onItemClickListener;
 
     /* compiled from: FishingAdapter.kt */
@@ -53,7 +54,7 @@ public final class FishingAdapter extends RecyclerView.Adapter<ViewHolder> {
         } else {
             binding.itemImg.setImageDrawable(null);
         }
-        if (Intrinsics.areEqual(fishInfo2.getType(), "fish") && fishInfo2.isPressed()) {
+        if (!this.isComputerFolderMode && Intrinsics.areEqual(fishInfo2.getType(), "fish") && fishInfo2.isPressed()) {
             binding.acceptMask.setVisibility(0);
         } else {
             binding.acceptMask.setVisibility(8);
@@ -65,16 +66,27 @@ public final class FishingAdapter extends RecyclerView.Adapter<ViewHolder> {
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit onBindViewHolder$lambda$0$0;
-                onBindViewHolder$lambda$0$0 = FishingAdapter.onBindViewHolder$lambda$0$0(FishingScreen.Companion.FishInfo.this, binding, this);
+                onBindViewHolder$lambda$0$0 = FishingAdapter.onBindViewHolder$lambda$0$0(FishingAdapter.this, fishInfo2, binding);
                 return onBindViewHolder$lambda$0$0;
             }
         }, null, 5, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit onBindViewHolder$lambda$0$0(FishingScreen.Companion.FishInfo fishInfo, FishingItemBinding fishingItemBinding, FishingAdapter fishingAdapter) {
+    public static final Unit onBindViewHolder$lambda$0$0(FishingAdapter fishingAdapter, FishingScreen.Companion.FishInfo fishInfo, FishingItemBinding fishingItemBinding) {
+        if (fishingAdapter.isComputerFolderMode && fishInfo.isPressed()) {
+            return Unit.INSTANCE;
+        }
         fishInfo.setPressed(true);
-        if (Intrinsics.areEqual(fishInfo.getType(), "fish")) {
+        if (fishingAdapter.isComputerFolderMode) {
+            fishingItemBinding.acceptMask.setVisibility(8);
+            if (Intrinsics.areEqual(fishInfo.getType(), "fish")) {
+                fishInfo.setImg(R.drawable.fishing_computer_element_one);
+            } else {
+                fishInfo.setImg(R.drawable.fishing_computer_trash_element);
+                fishInfo.setType("bomb");
+            }
+        } else if (Intrinsics.areEqual(fishInfo.getType(), "fish")) {
             fishingItemBinding.acceptMask.setVisibility(0);
         } else if (Intrinsics.areEqual(fishInfo.getType(), "trash") || Intrinsics.areEqual(fishInfo.getType(), "bomb")) {
             fishInfo.setImg(R.drawable.fishing_bomb);
@@ -124,5 +136,9 @@ public final class FishingAdapter extends RecyclerView.Adapter<ViewHolder> {
         this.fishInfoList.clear();
         this.fishInfoList.addAll(infoList);
         notifyDataSetChanged();
+    }
+
+    public final void setComputerFolderMode(boolean z) {
+        this.isComputerFolderMode = z;
     }
 }

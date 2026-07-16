@@ -5,11 +5,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class K2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final J2 f623a;
+    public final J2 f625a;
     public final Boolean b;
 
     public K2(J2 j2, Boolean bool) {
-        this.f623a = j2;
+        this.f625a = j2;
         this.b = bool;
     }
 
@@ -19,7 +19,7 @@ public final class K2 {
         }
         if (obj != null && K2.class == obj.getClass()) {
             K2 k2 = (K2) obj;
-            if (this.f623a != k2.f623a) {
+            if (this.f625a != k2.f625a) {
                 return false;
             }
             Boolean bool = this.b;
@@ -34,13 +34,13 @@ public final class K2 {
     }
 
     public final int hashCode() {
-        J2 j2 = this.f623a;
+        J2 j2 = this.f625a;
         int hashCode = (j2 != null ? j2.hashCode() : 0) * 31;
         Boolean bool = this.b;
         return hashCode + (bool != null ? bool.hashCode() : 0);
     }
 
     public final String toString() {
-        return "BackgroundRestrictionsState{mAppStandByBucket=" + this.f623a + ", mBackgroundRestricted=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "BackgroundRestrictionsState{mAppStandByBucket=" + this.f625a + ", mBackgroundRestricted=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

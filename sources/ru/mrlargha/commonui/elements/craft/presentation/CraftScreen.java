@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
@@ -168,12 +167,6 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.tuningItems = CollectionsKt.emptyList();
         frameLayout.setClickable(true);
         addViewToConstraintLayout(frameLayout, -1, -1);
-        LinearLayout costContainer = bind.costContainer;
-        Intrinsics.checkNotNullExpressionValue(costContainer, "costContainer");
-        costContainer.setVisibility(UtilsKt.isArizonaType() ? 0 : 8);
-        ConstraintLayout root = bind.costField.getRoot();
-        Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
-        root.setVisibility(!UtilsKt.isArizonaType() ? 0 : 8);
         UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
         updateItemCounts();
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda21
@@ -253,7 +246,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         bind.experienceField.nameTextView.setText(targetActivity.getString(R.string.experience));
         ConstraintLayout parentLayout = bind.experienceField.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
-        parentLayout.setVisibility(!UtilsKt.isArizonaType() ? 0 : 8);
+        parentLayout.setVisibility(8);
         ImageView ivValueIcon = bind.experienceField.ivValueIcon;
         Intrinsics.checkNotNullExpressionValue(ivValueIcon, "ivValueIcon");
         ivValueIcon.setVisibility(8);
@@ -942,7 +935,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.binding.successChanceField.ivValueIcon.setImageResource(R.drawable.ic_percent_16);
         this.binding.costField.valueTextView.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
         this.binding.tvCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getCost(), false, null, " ", null, 11, null));
-        this.binding.tvTotalCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getTotalCost() > -1 ? craftItemInfo.getTotalCost() : craftItemInfo.getCost() * this.currentNumber, false, null, " ", null, 11, null));
+        this.binding.tvTotalCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(craftItemInfo.getTotalCost() > 0 ? craftItemInfo.getTotalCost() : craftItemInfo.getCost() * this.currentNumber, false, null, " ", null, 11, null));
         this.binding.experienceField.valueTextView.setText("+" + craftItemInfo.getExp() + " ");
         boolean isArizonaType = UtilsKt.isArizonaType();
         CraftScreenBinding craftScreenBinding = this.binding;

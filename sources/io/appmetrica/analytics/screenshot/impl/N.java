@@ -3,13 +3,13 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class N {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1439a;
+    public final boolean f1441a;
 
     public N(boolean z) {
-        this.f1439a = z;
+        this.f1441a = z;
     }
 
     public final String toString() {
-        return "ServiceSideApiCaptorConfig(enabled=" + this.f1439a + ')';
+        return "ServiceSideApiCaptorConfig(enabled=" + this.f1441a + ')';
     }
 }

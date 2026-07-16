@@ -4,16 +4,16 @@ package io.appmetrica.analytics.impl;
 public final class RunnableC0161c2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Be f917a;
+    public final /* synthetic */ Be f919a;
     public final /* synthetic */ Q7 b;
 
     public RunnableC0161c2(C0212e2 c0212e2, Q7 q7) {
-        this.f917a = c0212e2;
+        this.f919a = c0212e2;
         this.b = q7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f917a.consume(this.b);
+        this.f919a.consume(this.b);
     }
 }

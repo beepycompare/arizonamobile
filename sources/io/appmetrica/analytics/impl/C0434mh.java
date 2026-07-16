@@ -31,10 +31,10 @@ public final class C0434mh extends AbstractC0305hh {
     public final boolean a(C0242f6 c0242f6) {
         HashSet hashSet;
         ArrayList b;
-        C0448n5 c0448n5 = this.f1017a;
+        C0448n5 c0448n5 = this.f1019a;
         if (c0448n5.t.c() && c0448n5.y()) {
             C0691wf c0691wf = c0448n5.c;
-            String e = this.f1017a.c.e();
+            String e = this.f1019a.c.e();
             try {
                 if (!TextUtils.isEmpty(e)) {
                     try {
@@ -55,7 +55,7 @@ public final class C0434mh extends AbstractC0305hh {
                         while (it.hasNext()) {
                             C0427ma c0427ma = (C0427ma) it.next();
                             c0427ma.getClass();
-                            JSONObject put = new JSONObject().put("name", c0427ma.f1094a).put("required", c0427ma.c);
+                            JSONObject put = new JSONObject().put("name", c0427ma.f1096a).put("required", c0427ma.c);
                             int i2 = c0427ma.b;
                             if (i2 != -1) {
                                 put.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, i2);
@@ -67,7 +67,7 @@ public final class C0434mh extends AbstractC0305hh {
                         e9.a(a2, C0671vl.a(e9.c.b(a2), a2.i));
                         int i3 = e9.j;
                         e9.l = i3;
-                        e9.f525a.a(i3);
+                        e9.f527a.a(i3);
                         c0691wf.i(jSONArray2.toString());
                     }
                 }
@@ -85,9 +85,9 @@ public final class C0434mh extends AbstractC0305hh {
         AbstractC0401la c0375ka;
         FeatureInfo[] featureInfoArr;
         try {
-            C0448n5 c0448n5 = this.f1017a;
+            C0448n5 c0448n5 = this.f1019a;
             SafePackageManager safePackageManager = this.b;
-            Context context = c0448n5.f1109a;
+            Context context = c0448n5.f1111a;
             PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 16384);
             ArrayList arrayList = new ArrayList();
             if (AndroidUtils.isApiAchieved(24)) {

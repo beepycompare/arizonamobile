@@ -8,7 +8,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0257fl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0448n5 f984a;
+    public final C0448n5 f986a;
     public final C0775zl b;
     public final C0334il c;
     public long d;
@@ -22,7 +22,7 @@ public final class C0257fl {
     public final SystemTimeProvider l;
 
     public C0257fl(C0448n5 c0448n5, C0775zl c0775zl, C0334il c0334il, SystemTimeProvider systemTimeProvider) {
-        this.f984a = c0448n5;
+        this.f986a = c0448n5;
         this.b = c0775zl;
         this.c = c0334il;
         this.l = systemTimeProvider;

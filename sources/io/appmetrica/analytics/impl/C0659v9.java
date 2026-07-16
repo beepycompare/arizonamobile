@@ -15,7 +15,7 @@ public final class C0659v9 extends MessageNano {
     public static volatile C0659v9[] n;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1246a;
+    public String f1248a;
     public String b;
     public String c;
     public int d;
@@ -45,7 +45,7 @@ public final class C0659v9 extends MessageNano {
     }
 
     public final C0659v9 a() {
-        this.f1246a = "";
+        this.f1248a = "";
         this.b = "";
         this.c = "";
         this.d = 0;
@@ -65,8 +65,8 @@ public final class C0659v9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f1246a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1246a);
+        if (!this.f1248a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f1248a);
         }
         if (!this.b.equals("")) {
             computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
@@ -122,8 +122,8 @@ public final class C0659v9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f1246a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f1246a);
+        if (!this.f1248a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f1248a);
         }
         if (!this.b.equals("")) {
             codedOutputByteBufferNano.writeString(2, this.b);
@@ -193,7 +193,7 @@ public final class C0659v9 extends MessageNano {
                 case 0:
                     break;
                 case 10:
-                    this.f1246a = codedInputByteBufferNano.readString();
+                    this.f1248a = codedInputByteBufferNano.readString();
                     break;
                 case 18:
                     this.b = codedInputByteBufferNano.readString();

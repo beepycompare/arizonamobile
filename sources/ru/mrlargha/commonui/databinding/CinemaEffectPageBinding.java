@@ -8,19 +8,22 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes6.dex */
 public final class CinemaEffectPageBinding implements ViewBinding {
     public final ConstraintLayout cinemaEffectBottomShield;
     public final ConstraintLayout cinemaEffectPage;
+    public final CustomCardView cinemaEffectSkip;
     public final TextView cinemaEffectText;
     public final ConstraintLayout cinemaEffectTextContainer;
     public final ConstraintLayout cinemaEffectTopShield;
     private final ConstraintLayout rootView;
 
-    private CinemaEffectPageBinding(ConstraintLayout rootView, ConstraintLayout cinemaEffectBottomShield, ConstraintLayout cinemaEffectPage, TextView cinemaEffectText, ConstraintLayout cinemaEffectTextContainer, ConstraintLayout cinemaEffectTopShield) {
+    private CinemaEffectPageBinding(ConstraintLayout rootView, ConstraintLayout cinemaEffectBottomShield, ConstraintLayout cinemaEffectPage, CustomCardView cinemaEffectSkip, TextView cinemaEffectText, ConstraintLayout cinemaEffectTextContainer, ConstraintLayout cinemaEffectTopShield) {
         this.rootView = rootView;
         this.cinemaEffectBottomShield = cinemaEffectBottomShield;
         this.cinemaEffectPage = cinemaEffectPage;
+        this.cinemaEffectSkip = cinemaEffectSkip;
         this.cinemaEffectText = cinemaEffectText;
         this.cinemaEffectTextContainer = cinemaEffectTextContainer;
         this.cinemaEffectTopShield = cinemaEffectTopShield;
@@ -48,16 +51,20 @@ public final class CinemaEffectPageBinding implements ViewBinding {
         ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
         if (constraintLayout != null) {
             ConstraintLayout constraintLayout2 = (ConstraintLayout) rootView;
-            i = R.id.cinema_effect_text;
-            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView != null) {
-                i = R.id.cinema_effect_text_container;
-                ConstraintLayout constraintLayout3 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
-                if (constraintLayout3 != null) {
-                    i = R.id.cinema_effect_top_shield;
-                    ConstraintLayout constraintLayout4 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
-                    if (constraintLayout4 != null) {
-                        return new CinemaEffectPageBinding(constraintLayout2, constraintLayout, constraintLayout2, textView, constraintLayout3, constraintLayout4);
+            i = R.id.cinema_effect_skip;
+            CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+            if (customCardView != null) {
+                i = R.id.cinema_effect_text;
+                TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView != null) {
+                    i = R.id.cinema_effect_text_container;
+                    ConstraintLayout constraintLayout3 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
+                    if (constraintLayout3 != null) {
+                        i = R.id.cinema_effect_top_shield;
+                        ConstraintLayout constraintLayout4 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
+                        if (constraintLayout4 != null) {
+                            return new CinemaEffectPageBinding(constraintLayout2, constraintLayout, constraintLayout2, customCardView, textView, constraintLayout3, constraintLayout4);
+                        }
                     }
                 }
             }

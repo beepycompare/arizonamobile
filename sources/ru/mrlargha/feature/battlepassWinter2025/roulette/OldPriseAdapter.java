@@ -1,19 +1,21 @@
 package ru.mrlargha.feature.battlepassWinter2025.roulette;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
 import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 import ru.mrlargha.feature.battlepassWinter2025.R;
@@ -21,7 +23,7 @@ import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassRoul
 import ru.mrlargha.feature.battlepassWinter2025.roulette.OldPriseAdapter;
 import ru.mrlargha.feature.battlepassWinter2025.roulette.data.OldPrise;
 /* compiled from: OldPriseAdapter.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0015B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0014\u0010\b\u001a\u00020\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00070\u000bJ\b\u0010\f\u001a\u00020\rH\u0016J\u0018\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\rH\u0016J\u0018\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\rH\u0016R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0016"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter$OldPriseViewHolder;", "<init>", "()V", "priseList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/OldPrise;", "setPriseList", "", "list", "", "getItemCount", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "OldPriseViewHolder", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0016B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0014\u0010\b\u001a\u00020\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00070\u000bJ\b\u0010\f\u001a\u00020\rH\u0016J\u0018\u0010\u000e\u001a\u00020\u00022\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\rH\u0016J\u0018\u0010\u0012\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\rH\u0016J\u0010\u0010\u0015\u001a\u00020\t2\u0006\u0010\u0013\u001a\u00020\u0002H\u0016R\u0014\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter$OldPriseViewHolder;", "<init>", "()V", "priseList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/OldPrise;", "setPriseList", "", "list", "", "getItemCount", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "onViewRecycled", "OldPriseViewHolder", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class OldPriseAdapter extends RecyclerView.Adapter<OldPriseViewHolder> {
     private List<OldPrise> priseList = new ArrayList();
@@ -51,12 +53,20 @@ public final class OldPriseAdapter extends RecyclerView.Adapter<OldPriseViewHold
         holder.bind(this.priseList.get(i));
     }
 
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewRecycled(OldPriseViewHolder holder) {
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        holder.cancelImageLoading();
+        super.onViewRecycled((OldPriseAdapter) holder);
+    }
+
     /* compiled from: OldPriseAdapter.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rR\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter$OldPriseViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "<init>", "(Landroid/view/View;)V", "binding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassRouletteOldPriseItemBinding;", "isClicked", "", "bind", "", "prise", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/OldPrise;", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fJ\u0006\u0010\u0010\u001a\u00020\rR\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/OldPriseAdapter$OldPriseViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "itemView", "Landroid/view/View;", "<init>", "(Landroid/view/View;)V", "binding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassRouletteOldPriseItemBinding;", "loadImageJob", "Lkotlinx/coroutines/Job;", "isClicked", "", "bind", "", "prise", "Lru/mrlargha/feature/battlepassWinter2025/roulette/data/OldPrise;", "cancelImageLoading", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class OldPriseViewHolder extends RecyclerView.ViewHolder {
         private final WinterBattlepassRouletteOldPriseItemBinding binding;
         private boolean isClicked;
+        private Job loadImageJob;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public OldPriseViewHolder(View itemView) {
@@ -70,7 +80,8 @@ public final class OldPriseAdapter extends RecyclerView.Adapter<OldPriseViewHold
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
         public final void bind(final OldPrise prise) {
             int i;
-            String str;
+            int i2;
+            Job launch$default;
             Intrinsics.checkNotNullParameter(prise, "prise");
             String style = prise.getStyle();
             switch (style.hashCode()) {
@@ -117,48 +128,50 @@ public final class OldPriseAdapter extends RecyclerView.Adapter<OldPriseViewHold
             switch (style2.hashCode()) {
                 case -976943172:
                     if (style2.equals("purple")) {
-                        str = "#6881FF";
+                        i2 = R.color.winter_bp_rarity_purple;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 112785:
                     if (style2.equals(CasesSameCasesAdapter.NEW)) {
-                        str = "#FF3600";
+                        i2 = R.color.winter_bp_rarity_red;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 3002044:
                     if (style2.equals("aqua")) {
-                        str = "#6FF5FF";
+                        i2 = R.color.winter_bp_rarity_aqua;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 3178592:
                     if (style2.equals("gold")) {
-                        str = "#FFBA00";
+                        i2 = R.color.winter_bp_rarity_gold;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 3441014:
                     if (style2.equals("pink")) {
-                        str = "#E500FF";
+                        i2 = R.color.winter_bp_rarity_pink;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 default:
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
             }
             this.binding.priseTimeStamp.setText(TimeConverterKt.oldPriseTimeConvert(prise.getTime()));
             this.binding.oldPriseTitle.setText(prise.getTitle());
             this.binding.bg.setBackgroundResource(i);
-            this.binding.rarity.setBackgroundColor(Color.parseColor(str));
-            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new OldPriseAdapter$OldPriseViewHolder$bind$1(this, prise, null), 3, null);
+            this.binding.rarity.setBackgroundColor(ContextCompat.getColor(this.binding.getRoot().getContext(), i2));
+            cancelImageLoading();
+            launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new OldPriseAdapter$OldPriseViewHolder$bind$1(this, prise, null), 3, null);
+            this.loadImageJob = launch$default;
             this.binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.roulette.OldPriseAdapter$OldPriseViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -175,6 +188,14 @@ public final class OldPriseAdapter extends RecyclerView.Adapter<OldPriseViewHold
                 oldPriseViewHolder.binding.imagePrise.setImageResource(oldPrise.getId() == 1 ? R.drawable.winter_battlepass_old_item_prem : R.drawable.winter_battlepass_old_item_usual);
             }
             oldPriseViewHolder.isClicked = !oldPriseViewHolder.isClicked;
+        }
+
+        public final void cancelImageLoading() {
+            Job job = this.loadImageJob;
+            if (job != null) {
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            }
+            this.loadImageJob = null;
         }
     }
 }

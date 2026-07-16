@@ -98,7 +98,7 @@ public class LocalDateProgression implements Collection<LocalDate>, KMappedMarke
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LocalDateProgression(LocalDate start, LocalDate endInclusive, long j) {
-        this(LongProgression.Companion.fromClosedRange(start.m11519toEpochDays(), endInclusive.m11519toEpochDays(), j));
+        this(LongProgression.Companion.fromClosedRange(start.m11521toEpochDays(), endInclusive.m11521toEpochDays(), j));
         Intrinsics.checkNotNullParameter(start, "start");
         Intrinsics.checkNotNullParameter(endInclusive, "endInclusive");
     }
@@ -155,7 +155,7 @@ public class LocalDateProgression implements Collection<LocalDate>, KMappedMarke
 
     public boolean contains(LocalDate value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        return MathKt.containsUnsafe(this.longProgression, value.m11519toEpochDays());
+        return MathKt.containsUnsafe(this.longProgression, value.m11521toEpochDays());
     }
 
     @Override // java.util.Collection

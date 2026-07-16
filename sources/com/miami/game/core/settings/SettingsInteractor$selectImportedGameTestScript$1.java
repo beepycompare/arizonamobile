@@ -74,7 +74,7 @@ public final class SettingsInteractor$selectImportedGameTestScript$1 extends Sus
                 return Unit.INSTANCE;
             }
             mutableStateFlow = settingsInteractor.stateStore;
-            this.this$0.saveSettings(SettingState.copy$default((SettingState) mutableStateFlow.getValue(), 0.0f, 0, false, false, false, false, false, false, false, false, false, true, gameTestSavedScript.getDisplayName(), gameTestSavedScript.getFileName(), listImportedScripts, null, false, null, null, 493567, null));
+            this.this$0.saveSettings(SettingState.copy$default((SettingState) mutableStateFlow.getValue(), 0.0f, 0, false, false, false, false, false, false, false, false, false, true, gameTestSavedScript.getDisplayName(), gameTestSavedScript.getFileName(), listImportedScripts, null, false, false, null, null, 1017855, null));
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

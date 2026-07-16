@@ -5,18 +5,18 @@ import android.content.Intent;
 public final class Q0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Intent f723a;
+    public final /* synthetic */ Intent f725a;
     public final /* synthetic */ C0651v1 b;
 
     public Q0(C0651v1 c0651v1, Intent intent) {
         this.b = c0651v1;
-        this.f723a = intent;
+        this.f725a = intent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Q7 q7 = this.b.c().b;
-        Intent intent = this.f723a;
+        Intent intent = this.f725a;
         q7.getClass();
         if (intent != null) {
             q7.a(intent.getDataString(), false);

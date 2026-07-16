@@ -2,7 +2,6 @@ package ru.mrlargha.feature.battlepassWinter2025.roulette;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
@@ -18,12 +17,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
-import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.feature.battlepassWinter2025.R;
 /* compiled from: RouletteView.kt */
-@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 /2\u00020\u0001:\u0001/B+\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u001a\u0002\b\n¢\u0006\u0004\b\b\u0010\tJ\"\u0010\u001e\u001a\u00020\u001f2\u0006\u0010\u001e\u001a\u00020\u00182\u0012\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u001f0!J\"\u0010\"\u001a\u00020\u001f2\f\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$2\f\u0010&\u001a\b\u0012\u0004\u0012\u00020\u001f0'J\u0006\u0010(\u001a\u00020\u001fJ$\u0010)\u001a\u00020\u001f2\f\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u001f0'H\u0002J$\u0010+\u001a\u00020\u001f2\u0006\u0010\u000b\u001a\u00020\u00072\u0012\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u001f0!H\u0002J\b\u0010,\u001a\u00020\u001fH\u0002J\b\u0010-\u001a\u00020\u001fH\u0002J\u0016\u0010.\u001a\u00020\u001f2\f\u0010 \u001a\b\u0012\u0004\u0012\u00020\u001f0'H\u0002R\u000e\u0010\u000b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0013\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0017\u001a\u00020\u0018X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0019\"\u0004\b\u001a\u0010\u001bR\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteView;", "Landroid/widget/LinearLayout;", "context", "Landroid/content/Context;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "<init>", "(Landroid/content/Context;Landroid/util/AttributeSet;I)V", "Lkotlin/jvm/JvmOverloads;", "rouletteSlotCount", "rouletteSlotList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteRecyclerView;", "backgroundLine", "Landroid/widget/ImageView;", "getBackgroundLine", "()Landroid/widget/ImageView;", "foregroundLayout", "Landroid/widget/FrameLayout;", "getForegroundLayout", "()Landroid/widget/FrameLayout;", "isFirstStart", "", "()Z", "setFirstStart", "(Z)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "isPremium", "", "onSellPrise", "Lkotlin/Function1;", TtmlNode.START, "priseList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/PriseModel;", "endRotation", "Lkotlin/Function0;", "notifyAdapter", "startRotation", "endScrolling", "initialization", "createBackgroundLind", "createForegroundView", "createRouletteSlot", "Companion", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 -2\u00020\u0001:\u0001-B+\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u001a\u0002\b\n¢\u0006\u0004\b\b\u0010\tJ\"\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001c\u001a\u00020\u00182\u0012\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u001d0\u001fJ\"\u0010 \u001a\u00020\u001d2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"2\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u001d0%J\u0006\u0010&\u001a\u00020\u001dJ$\u0010'\u001a\u00020\u001d2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"2\f\u0010(\u001a\b\u0012\u0004\u0012\u00020\u001d0%H\u0002J$\u0010)\u001a\u00020\u001d2\u0006\u0010\u000b\u001a\u00020\u00072\u0012\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u001d0\u001fH\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\b\u0010+\u001a\u00020\u001dH\u0002J\u0016\u0010,\u001a\u00020\u001d2\f\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u001d0%H\u0002R\u000e\u0010\u000b\u001a\u00020\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000f\u001a\u00020\u0010¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0013\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u001a\u0010\u0017\u001a\u00020\u0018X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0019\"\u0004\b\u001a\u0010\u001b¨\u0006."}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteView;", "Landroid/widget/LinearLayout;", "context", "Landroid/content/Context;", "attrs", "Landroid/util/AttributeSet;", "defStyleAttr", "", "<init>", "(Landroid/content/Context;Landroid/util/AttributeSet;I)V", "Lkotlin/jvm/JvmOverloads;", "rouletteSlotCount", "rouletteSlotList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/RouletteRecyclerView;", "backgroundLine", "Landroid/widget/ImageView;", "getBackgroundLine", "()Landroid/widget/ImageView;", "foregroundLayout", "Landroid/widget/FrameLayout;", "getForegroundLayout", "()Landroid/widget/FrameLayout;", "isFirstStart", "", "()Z", "setFirstStart", "(Z)V", "isPremium", "", "onSellPrise", "Lkotlin/Function1;", TtmlNode.START, "priseList", "", "Lru/mrlargha/feature/battlepassWinter2025/roulette/PriseModel;", "endRotation", "Lkotlin/Function0;", "notifyAdapter", "startRotation", "endScrolling", "initialization", "createBackgroundLind", "createForegroundView", "createRouletteSlot", "Companion", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RouletteView extends LinearLayout {
     public static final Companion Companion = new Companion(null);
@@ -41,7 +37,6 @@ public final class RouletteView extends LinearLayout {
     private boolean isFirstStart;
     private int rouletteSlotCount;
     private final List<RouletteRecyclerView> rouletteSlotList;
-    private final CoroutineScope scope;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public RouletteView(Context context) {
@@ -64,7 +59,6 @@ public final class RouletteView extends LinearLayout {
         this.backgroundLine = new ImageView(context);
         this.foregroundLayout = new FrameLayout(context);
         this.isFirstStart = true;
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain());
         setOrientation(0);
     }
 
@@ -125,7 +119,6 @@ public final class RouletteView extends LinearLayout {
     public final void start(List<PriseModel> priseList, final Function0<Unit> endRotation) {
         Intrinsics.checkNotNullParameter(priseList, "priseList");
         Intrinsics.checkNotNullParameter(endRotation, "endRotation");
-        Log.d("onBackendMessage1", priseList.toString());
         if (priseList.size() == this.rouletteSlotCount) {
             startRotation(priseList, new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
@@ -152,7 +145,6 @@ public final class RouletteView extends LinearLayout {
     }
 
     private final void startRotation(final List<PriseModel> list, final Function0<Unit> function0) {
-        Log.d("onBackendMessage2", list.toString());
         final int i = 0;
         int i2 = 200;
         for (Object obj : list) {

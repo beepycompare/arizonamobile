@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/dialog_bank_history_layout" android:background="#66030a1f" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:padding="@dimen/_14sdp" android:layout_width="@dimen/_440sdp" android:layout_height="wrap_content" app:corners="@dimen/_12sdp" app:gradientAngle="335" style="@style/DialogSmallContainer">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_13sdp" android:textColor="#ffffff" android:id="@+id/dialog_bank_history_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_title" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/dialog_bank_history_close" android:layout_width="@dimen/_58sdp" android:layout_height="@dimen/_22sdp" app:backgroundMainColor="#2ed9f0f1" app:backgroundTransparency="18" app:borderMainColor="#55ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+                    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#506573" android:gravity="center" android:background="@drawable/dialog_bank_history_chip_placeholder" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:text="@string/dialog_bank_history_close_icon" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_close" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_4sdp"/>
+                    </LinearLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </FrameLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@+id/dialog_bank_history_tabs" android:background="@drawable/dialog_bank_history_tabs_bg" android:padding="@dimen/_4sdp" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_12sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/dialog_bank_history_tab_all" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#ffffff" app:corners="@dimen/_7sdp">
+                    <TextView android:textColor="#223140" android:id="@+id/dialog_bank_history_tab_all_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/dialog_bank_history_tab_all" style="@style/DialogBankHistoryTopTabTextStyle"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/dialog_bank_history_tab_deposit" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#00ffffff" app:corners="@dimen/_7sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:id="@+id/dialog_bank_history_tab_deposit_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/dialog_bank_history_tab_deposit" style="@style/DialogBankHistoryTopTabTextStyle"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/dialog_bank_history_tab_transfer" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#00ffffff" app:corners="@dimen/_7sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:id="@+id/dialog_bank_history_tab_transfer_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/dialog_bank_history_tab_transfer" style="@style/DialogBankHistoryTopTabTextStyle"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/dialog_bank_history_tab_withdraw" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#00ffffff" app:corners="@dimen/_7sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:id="@+id/dialog_bank_history_tab_withdraw_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/dialog_bank_history_tab_withdraw" style="@style/DialogBankHistoryTopTabTextStyle"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/_8sdp" android:paddingRight="@dimen/_8sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:paddingHorizontal="@dimen/_8sdp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_column_id" android:layout_weight="0.7" style="@style/DialogBankHistoryHeaderTextStyle"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_column_type" android:layout_weight="1.8" style="@style/DialogBankHistoryHeaderTextStyle"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_column_target" android:layout_weight="1.8" style="@style/DialogBankHistoryHeaderTextStyle"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_column_amount" android:layout_weight="1.5" style="@style/DialogBankHistoryHeaderTextStyle"/>
+                <TextView android:gravity="end" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_column_date" android:layout_weight="1.7" style="@style/DialogBankHistoryHeaderTextStyle"/>
+            </LinearLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/_172sdp" android:layout_marginTop="@dimen/_6sdp">
+                <androidx.recyclerview.widget.RecyclerView android:id="@+id/dialog_bank_history_list" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:overScrollMode="never" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                <TextView android:layout_gravity="center" android:id="@+id/dialog_bank_history_empty" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dialog_bank_history_empty" style="@style/DialogBankHistoryRowTextStyle"/>
+            </FrameLayout>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

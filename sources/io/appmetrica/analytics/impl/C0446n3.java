@@ -11,10 +11,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final /* synthetic */ class C0446n3 implements BatchProcessor, FunctionAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0472o3 f1107a;
+    public final /* synthetic */ C0472o3 f1109a;
 
     public C0446n3(C0472o3 c0472o3) {
-        this.f1107a = c0472o3;
+        this.f1109a = c0472o3;
     }
 
     public final boolean equals(Object obj) {
@@ -26,7 +26,7 @@ public final /* synthetic */ class C0446n3 implements BatchProcessor, FunctionAd
 
     @Override // kotlin.jvm.internal.FunctionAdapter
     public final Function getFunctionDelegate() {
-        return new FunctionReferenceImpl(1, this.f1107a, C0472o3.class, "processTasks", "processTasks(Ljava/util/List;)V", 0);
+        return new FunctionReferenceImpl(1, this.f1109a, C0472o3.class, "processTasks", "processTasks(Ljava/util/List;)V", 0);
     }
 
     public final int hashCode() {
@@ -35,10 +35,10 @@ public final /* synthetic */ class C0446n3 implements BatchProcessor, FunctionAd
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.BatchProcessor
     public final void processBatch(List list) {
-        C0472o3 c0472o3 = this.f1107a;
+        C0472o3 c0472o3 = this.f1109a;
         c0472o3.getClass();
         try {
-            c0472o3.f1125a.invoke(list);
+            c0472o3.f1127a.invoke(list);
         } catch (Exception unused) {
         }
     }

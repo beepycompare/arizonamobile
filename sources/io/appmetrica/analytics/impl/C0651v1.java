@@ -33,7 +33,7 @@ import java.util.Map;
 public final class C0651v1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B0 f1241a;
+    public final B0 f1243a;
     public final lp b;
     public final Ii c;
     public final V7 d;
@@ -43,7 +43,7 @@ public final class C0651v1 {
     public final Bl h;
 
     public C0651v1(B0 b0, N2 n2, Ml ml, lp lpVar, Hn hn, Ii ii, V7 v7, Bl bl) {
-        this.f1241a = b0;
+        this.f1243a = b0;
         this.b = lpVar;
         this.c = ii;
         this.d = v7;
@@ -71,7 +71,7 @@ public final class C0651v1 {
         } else {
             orCreatePublicLogger.info("Session auto tracking disabled", new Object[0]);
         }
-        hn.f583a.getClass();
+        hn.f585a.getClass();
         A0 a2 = A0.a(applicationContext);
         a2.d.a(appMetricaConfig, a2);
         IHandlerExecutor b = b();
@@ -81,33 +81,33 @@ public final class C0651v1 {
                 C0651v1.this.b(context, appMetricaConfig);
             }
         });
-        this.f1241a.getClass();
+        this.f1243a.getClass();
         B0.b();
     }
 
     public final Lc c() {
-        this.f1241a.getClass();
+        this.f1243a.getClass();
         return A0.e.f().i();
     }
 
     public final void d() {
-        c().f645a.a(this.h.a());
+        c().f647a.a(this.h.a());
     }
 
     public final void e() {
-        this.f.f675a.a(null);
+        this.f.f677a.a(null);
         this.g.getClass();
         IHandlerExecutor b = b();
         ((U9) b).b.post(new Y0(this));
     }
 
     public final void b(Context context, AppMetricaConfig appMetricaConfig) {
-        B0 b0 = this.f1241a;
+        B0 b0 = this.f1243a;
         Context applicationContext = context.getApplicationContext();
         b0.getClass();
         A0 a2 = A0.a(applicationContext);
         a2.f().b(this.d.d(appMetricaConfig));
-        Context context2 = a2.f447a;
+        Context context2 = a2.f449a;
         ((U9) C0576s4.l().c.a()).execute(new RunnableC0729y1(context2));
     }
 
@@ -119,7 +119,7 @@ public final class C0651v1 {
     }
 
     public final void c(Activity activity) {
-        this.f.f675a.a(null);
+        this.f.f677a.a(null);
         this.g.getClass();
         IHandlerExecutor b = b();
         ((U9) b).b.post(new RunnableC0340j1(this, activity));
@@ -131,8 +131,8 @@ public final class C0651v1 {
 
     public final void d(String str, String str2) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
-        if (n2.n.a(str).f782a) {
+        n2.f677a.a(null);
+        if (n2.n.a(str).f784a) {
             this.g.getClass();
             IHandlerExecutor b = b();
             ((U9) b).b.post(new RunnableC0237f1(this, str, str2));
@@ -145,7 +145,7 @@ public final class C0651v1 {
 
     public final void c(String str, String str2) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.r.a(str);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -154,7 +154,7 @@ public final class C0651v1 {
 
     public final void b(String str) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.r.a(str);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -170,7 +170,7 @@ public final class C0651v1 {
 
     public final void b(Activity activity) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.c.a(activity);
         this.g.getClass();
         Intent a2 = Hn.a(activity);
@@ -179,7 +179,7 @@ public final class C0651v1 {
     }
 
     public final void c(String str) {
-        if (this.e.a((Void) null).f782a && this.f.m.a(str).f782a) {
+        if (this.e.a((Void) null).f784a && this.f.m.a(str).f784a) {
             this.g.getClass();
             IHandlerExecutor b = b();
             ((U9) b).b.post(new RunnableC0263g1(this, str));
@@ -194,7 +194,7 @@ public final class C0651v1 {
     }
 
     public final void a(Activity activity) {
-        this.f.f675a.a(null);
+        this.f.f677a.a(null);
         this.g.getClass();
         IHandlerExecutor b = b();
         ((U9) b).b.post(new RunnableC0470o1(this, activity));
@@ -210,7 +210,7 @@ public final class C0651v1 {
     public final void c(Context context) {
         this.f.f.a(context);
         this.g.e.a(context);
-        this.f1241a.getClass();
+        this.f1243a.getClass();
         A0.a(context);
     }
 
@@ -237,7 +237,7 @@ public final class C0651v1 {
 
     public final void a(String str, Map<String, Object> map) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.r.a(str);
         this.g.getClass();
         List listFromMap = CollectionUtils.getListFromMap(map);
@@ -246,7 +246,7 @@ public final class C0651v1 {
     }
 
     public final void b(final Object... objArr) {
-        this.f.f675a.a(null);
+        this.f.f677a.a(null);
         this.g.getClass();
         IHandlerExecutor b = b();
         ((U9) b).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.v1$$ExternalSyntheticLambda1
@@ -259,7 +259,7 @@ public final class C0651v1 {
 
     public final void a(String str, Throwable th) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.s.a(str);
         this.g.getClass();
         if (th == null) {
@@ -272,7 +272,7 @@ public final class C0651v1 {
 
     public final void a(String str, String str2, Throwable th) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.t.a(str);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -281,7 +281,7 @@ public final class C0651v1 {
 
     public final void a(Throwable th) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.u.a(th);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -290,7 +290,7 @@ public final class C0651v1 {
 
     public final void a(String str) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.i.a(str);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -299,7 +299,7 @@ public final class C0651v1 {
 
     public final void a(Intent intent) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.d.a(intent);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -322,7 +322,7 @@ public final class C0651v1 {
 
     public final void a(UserProfile userProfile) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.v.a(userProfile);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -331,7 +331,7 @@ public final class C0651v1 {
 
     public final void a(Revenue revenue) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.w.a(revenue);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -340,7 +340,7 @@ public final class C0651v1 {
 
     public final void a(AdRevenue adRevenue) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.x.a(adRevenue);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -349,7 +349,7 @@ public final class C0651v1 {
 
     public final void a(ECommerceEvent eCommerceEvent) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.y.a(eCommerceEvent);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -358,7 +358,7 @@ public final class C0651v1 {
 
     public final void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.g.a(deferredDeeplinkParametersListener);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -367,7 +367,7 @@ public final class C0651v1 {
 
     public final void a(DeferredDeeplinkListener deferredDeeplinkListener) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.g.a(deferredDeeplinkListener);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -391,9 +391,9 @@ public final class C0651v1 {
         hn.e.a(context.getApplicationContext());
         Ii ii = this.c;
         Context applicationContext = context.getApplicationContext();
-        if (((Ai) ii.f597a.get(reporterConfig.apiKey)) == null) {
-            synchronized (ii.f597a) {
-                if (((Ai) ii.f597a.get(reporterConfig.apiKey)) == null) {
+        if (((Ai) ii.f599a.get(reporterConfig.apiKey)) == null) {
+            synchronized (ii.f599a) {
+                if (((Ai) ii.f599a.get(reporterConfig.apiKey)) == null) {
                     String str = reporterConfig.apiKey;
                     IHandlerExecutor a2 = C0576s4.l().c.a();
                     ii.b.getClass();
@@ -401,7 +401,7 @@ public final class C0651v1 {
                         ((U9) a2).b.post(new Gi(ii, applicationContext));
                     }
                     Ai ai = new Ai(applicationContext.getApplicationContext(), str, new B0());
-                    ii.f597a.put(str, ai);
+                    ii.f599a.put(str, ai);
                     ai.a(reporterConfig);
                 }
             }
@@ -410,7 +410,7 @@ public final class C0651v1 {
 
     public final void a(WebView webView) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.l.a(webView);
         lp lpVar = this.g.b;
         lpVar.getClass();
@@ -422,7 +422,7 @@ public final class C0651v1 {
                 synchronized (lpVar) {
                     PublicLogger publicLogger = lpVar.b;
                     if (publicLogger == null) {
-                        lpVar.f1085a.add(ipVar);
+                        lpVar.f1087a.add(ipVar);
                     } else {
                         ipVar.consume(publicLogger);
                     }
@@ -474,7 +474,7 @@ public final class C0651v1 {
 
     public final void a(AnrListener anrListener) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.p.a(anrListener);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -483,7 +483,7 @@ public final class C0651v1 {
 
     public final void a(ExternalAttribution externalAttribution) {
         N2 n2 = this.f;
-        n2.f675a.a(null);
+        n2.f677a.a(null);
         n2.q.a(externalAttribution);
         this.g.getClass();
         IHandlerExecutor b = b();
@@ -506,6 +506,6 @@ public final class C0651v1 {
     }
 
     public static InterfaceC0376kb a(C0651v1 c0651v1) {
-        return c0651v1.c().f645a;
+        return c0651v1.c().f647a;
     }
 }

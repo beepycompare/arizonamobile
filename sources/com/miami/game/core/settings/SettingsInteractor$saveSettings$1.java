@@ -94,7 +94,7 @@ public final class SettingsInteractor$saveSettings$1 extends SuspendLambda imple
             }
             String obj4 = StringsKt.trim((CharSequence) this.$settings.getDebugGameTestScreenshotDeviceDir()).toString();
             normalizeConnectionData = this.this$0.normalizeConnectionData(this.$settings.getConnectionData());
-            SettingState copy$default = SettingState.copy$default(settingState2, 0.0f, 0, false, false, false, false, false, false, false, false, false, z, str, resolveActiveImportedScriptFileName, listImportedScripts, obj3, false, obj4, normalizeConnectionData, 67583, null);
+            SettingState copy$default = SettingState.copy$default(settingState2, 0.0f, 0, false, false, false, false, false, false, false, false, false, z, str, resolveActiveImportedScriptFileName, listImportedScripts, obj3, false, false, obj4, normalizeConnectionData, 198655, null);
             localRepository2 = this.this$0.localRepository;
             this.L$0 = SpillingKt.nullOutSpilledVariable(listImportedScripts);
             this.L$1 = SpillingKt.nullOutSpilledVariable(resolveActiveImportedScriptFileName);
@@ -124,7 +124,7 @@ public final class SettingsInteractor$saveSettings$1 extends SuspendLambda imple
         }
         SharedPreferences.Editor putString = putBoolean.putString(GameTestScriptPreferences.IMPORTED_SCRIPT_NAME_KEY, debugImportedTestScriptName2);
         String debugActiveImportedTestScriptFileName = settingState.getDebugActiveImportedTestScriptFileName();
-        putString.putString(GameTestScriptPreferences.ACTIVE_IMPORTED_SCRIPT_FILE_KEY, debugActiveImportedTestScriptFileName != null ? debugActiveImportedTestScriptFileName : "").putString(GameTestScriptPreferences.SCREENSHOT_PULL_PATH_KEY, settingState.getDebugGameTestScreenshotPullPath()).putBoolean(GameTestScriptPreferences.SCREENSHOT_BUTTON_ENABLED_KEY, settingState.getDebugGameTestScreenshotButtonEnabled()).putString(GameTestScriptPreferences.SCREENSHOT_DEVICE_DIR_KEY, settingState.getDebugGameTestScreenshotDeviceDir()).putString(SettingsConstants.DEBUG_TEST_SERVER_IP, settingState.getConnectionData().getIp()).putString(SettingsConstants.DEBUG_TEST_SERVER_PORT, settingState.getConnectionData().getPort()).putString(SettingsConstants.DEBUG_TEST_SERVER_PASSWORD, settingState.getConnectionData().getPassword()).apply();
+        putString.putString(GameTestScriptPreferences.ACTIVE_IMPORTED_SCRIPT_FILE_KEY, debugActiveImportedTestScriptFileName != null ? debugActiveImportedTestScriptFileName : "").putString(GameTestScriptPreferences.SCREENSHOT_PULL_PATH_KEY, settingState.getDebugGameTestScreenshotPullPath()).putBoolean(GameTestScriptPreferences.SCREENSHOT_BUTTON_ENABLED_KEY, settingState.getDebugGameTestScreenshotButtonEnabled()).putBoolean(GameTestScriptPreferences.LOG_SHARE_BUTTON_ENABLED_KEY, settingState.getDebugGameTestLogShareButtonEnabled()).putString(GameTestScriptPreferences.SCREENSHOT_DEVICE_DIR_KEY, settingState.getDebugGameTestScreenshotDeviceDir()).putString(SettingsConstants.DEBUG_TEST_SERVER_IP, settingState.getConnectionData().getIp()).putString(SettingsConstants.DEBUG_TEST_SERVER_PORT, settingState.getConnectionData().getPort()).putString(SettingsConstants.DEBUG_TEST_SERVER_PASSWORD, settingState.getConnectionData().getPassword()).apply();
         mutableStateFlow = this.this$0.stateStore;
         do {
             value = mutableStateFlow.getValue();

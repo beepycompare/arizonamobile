@@ -16,11 +16,11 @@ public final class Cm extends AbstractC0165c6 {
     /* renamed from: b */
     public final Dm load(C0139b6 c0139b6) {
         Dm dm = (Dm) super.load(c0139b6);
-        Hm hm = c0139b6.f902a;
+        Hm hm = c0139b6.f904a;
         dm.d = hm.f;
         dm.e = hm.g;
         Bm bm = (Bm) c0139b6.componentArguments;
-        String str = bm.f482a;
+        String str = bm.f484a;
         if (str != null) {
             dm.f = str;
             dm.g = bm.b;
@@ -31,7 +31,7 @@ public final class Cm extends AbstractC0165c6 {
         Bm bm2 = (Bm) c0139b6.componentArguments;
         dm.k = bm2.d;
         dm.j = bm2.e;
-        Hm hm2 = c0139b6.f902a;
+        Hm hm2 = c0139b6.f904a;
         dm.l = hm2.p;
         dm.m = hm2.r;
         long j = hm2.v;

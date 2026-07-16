@@ -118,15 +118,15 @@ public final class ReadUtilsKt {
                 if (i != 2) {
                     if (i != 3) {
                         if (i == 4) {
-                            return new KmAnnotationArgument.ULongValue(ULong.m10076constructorimpl(value.getIntValue()), null);
+                            return new KmAnnotationArgument.ULongValue(ULong.m10078constructorimpl(value.getIntValue()), null);
                         }
                         throw new IllegalStateException(("Cannot read value of unsigned type: " + value.getType()).toString());
                     }
-                    return new KmAnnotationArgument.UIntValue(UInt.m9997constructorimpl((int) value.getIntValue()), null);
+                    return new KmAnnotationArgument.UIntValue(UInt.m9999constructorimpl((int) value.getIntValue()), null);
                 }
-                return new KmAnnotationArgument.UShortValue(UShort.m10183constructorimpl((short) value.getIntValue()), null);
+                return new KmAnnotationArgument.UShortValue(UShort.m10185constructorimpl((short) value.getIntValue()), null);
             }
-            return new KmAnnotationArgument.UByteValue(UByte.m9914constructorimpl((byte) value.getIntValue()), null);
+            return new KmAnnotationArgument.UByteValue(UByte.m9916constructorimpl((byte) value.getIntValue()), null);
         }
         ProtoBuf.Annotation.Argument.Value.Type type2 = value.getType();
         switch (type2 != null ? WhenMappings.$EnumSwitchMapping$0[type2.ordinal()] : -1) {

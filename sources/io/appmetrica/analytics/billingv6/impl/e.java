@@ -10,19 +10,19 @@ import kotlin.jvm.functions.Function0;
 public final class e extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ f f293a;
+    public final /* synthetic */ f f295a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ List c;
 
     public e(f fVar, BillingResult billingResult, List list) {
-        this.f293a = fVar;
+        this.f295a = fVar;
         this.b = billingResult;
         this.c = list;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        f fVar = this.f293a;
+        f fVar = this.f295a;
         BillingResult billingResult = this.b;
         List list = this.c;
         fVar.getClass();
@@ -34,7 +34,7 @@ public final class e extends SafeRunnable {
             k kVar = new k(utilsProvider, function0, list2, list, dVar, fVar.g);
             dVar.b.add(kVar);
             if (fVar.b.isReady()) {
-                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f294a).build(), kVar);
+                fVar.b.queryPurchasesAsync(QueryPurchasesParams.newBuilder().setProductType(fVar.f296a).build(), kVar);
             } else {
                 fVar.f.a(kVar);
                 fVar.g.onUpdateFinished();
@@ -42,7 +42,7 @@ public final class e extends SafeRunnable {
         } else {
             fVar.g.onUpdateFinished();
         }
-        f fVar2 = this.f293a;
+        f fVar2 = this.f295a;
         fVar2.f.a(fVar2);
     }
 }

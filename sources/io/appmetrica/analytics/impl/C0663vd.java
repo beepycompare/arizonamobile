@@ -7,13 +7,13 @@ import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServ
 public final class C0663vd implements ModuleEventServiceHandlerReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1248a;
+    public final String f1250a;
     public final boolean b;
     public final E9 c;
     public final C0242f6 d;
 
     public C0663vd(String str, boolean z, E9 e9, C0242f6 c0242f6) {
-        this.f1248a = str;
+        this.f1250a = str;
         this.b = z;
         this.c = e9;
         this.d = c0242f6;
@@ -21,7 +21,7 @@ public final class C0663vd implements ModuleEventServiceHandlerReporter {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter
     public final String getApiKey() {
-        return this.f1248a;
+        return this.f1250a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter

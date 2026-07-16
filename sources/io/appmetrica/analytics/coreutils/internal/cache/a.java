@@ -5,16 +5,16 @@ import io.appmetrica.analytics.locationapi.internal.ILastKnownUpdater;
 public final class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ LocationDataCacheUpdateScheduler f356a;
+    public final /* synthetic */ LocationDataCacheUpdateScheduler f358a;
 
     public a(LocationDataCacheUpdateScheduler locationDataCacheUpdateScheduler) {
-        this.f356a = locationDataCacheUpdateScheduler;
+        this.f358a = locationDataCacheUpdateScheduler;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         ILastKnownUpdater iLastKnownUpdater;
-        iLastKnownUpdater = this.f356a.b;
+        iLastKnownUpdater = this.f358a.b;
         iLastKnownUpdater.updateLastKnown();
     }
 }

@@ -6,16 +6,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class L1 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Bundle f637a;
+    public final /* synthetic */ Bundle f639a;
     public final /* synthetic */ N1 b;
 
     public L1(N1 n1, Bundle bundle) {
         this.b = n1;
-        this.f637a = bundle;
+        this.f639a = bundle;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        this.b.b.resumeUserSession(this.f637a);
+        this.b.b.resumeUserSession(this.f639a);
     }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 public final class C0648uo implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0337io f1238a;
+    public final C0337io f1240a;
     public final Y b;
     public final C0708x6 c;
     public final C0207dm d;
@@ -23,9 +23,9 @@ public final class C0648uo implements ProtobufConverter {
     /* renamed from: a */
     public final C0397l6 fromModel(C0622to c0622to) {
         C0397l6 c0397l6 = new C0397l6();
-        C0363jo c0363jo = c0622to.f1221a;
+        C0363jo c0363jo = c0622to.f1223a;
         if (c0363jo != null) {
-            c0397l6.f1075a = this.f1238a.fromModel(c0363jo);
+            c0397l6.f1077a = this.f1240a.fromModel(c0363jo);
         }
         X x = c0622to.b;
         if (x != null) {
@@ -60,7 +60,7 @@ public final class C0648uo implements ProtobufConverter {
 
     public C0648uo(C0337io c0337io, Y y, C0708x6 c0708x6, C0207dm c0207dm, Cif cif, C0354jf c0354jf) {
         this.b = y;
-        this.f1238a = c0337io;
+        this.f1240a = c0337io;
         this.c = c0708x6;
         this.d = c0207dm;
         this.e = cif;

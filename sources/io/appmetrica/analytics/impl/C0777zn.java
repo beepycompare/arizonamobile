@@ -9,7 +9,7 @@ public final class C0777zn extends Z2 {
     }
 
     public final int b() {
-        return this.f865a;
+        return this.f867a;
     }
 
     public C0777zn(int i, String str, PublicLogger publicLogger) {
@@ -20,10 +20,10 @@ public final class C0777zn extends Z2 {
     public final String a(String str) {
         if (str != null) {
             int length = str.length();
-            int i = this.f865a;
+            int i = this.f867a;
             if (length > i) {
                 String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f865a));
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f867a));
                 return substring;
             }
         }

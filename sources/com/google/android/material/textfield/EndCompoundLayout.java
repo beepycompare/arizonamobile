@@ -122,13 +122,13 @@ public class EndCompoundLayout extends LinearLayout {
         createIconView.setOnFocusableChangedListener(new CheckableImageButton.OnFocusableChangedListener() { // from class: com.google.android.material.textfield.EndCompoundLayout$$ExternalSyntheticLambda0
             @Override // com.google.android.material.internal.CheckableImageButton.OnFocusableChangedListener
             public final void onFocusableChanged(View view, boolean z) {
-                EndCompoundLayout.this.m9627x75feeb9b(view, z);
+                EndCompoundLayout.this.m9628x75feeb9b(view, z);
             }
         });
         createIconView2.setOnFocusableChangedListener(new CheckableImageButton.OnFocusableChangedListener() { // from class: com.google.android.material.textfield.EndCompoundLayout$$ExternalSyntheticLambda1
             @Override // com.google.android.material.internal.CheckableImageButton.OnFocusableChangedListener
             public final void onFocusableChanged(View view, boolean z) {
-                EndCompoundLayout.this.m9628x9b92f49c(view, z);
+                EndCompoundLayout.this.m9629x9b92f49c(view, z);
             }
         });
         textInputLayout.addOnEditTextAttachedListener(onEditTextAttachedListener);
@@ -147,14 +147,14 @@ public class EndCompoundLayout extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-textfield-EndCompoundLayout  reason: not valid java name */
-    public /* synthetic */ void m9627x75feeb9b(View view, boolean z) {
+    public /* synthetic */ void m9628x75feeb9b(View view, boolean z) {
         CheckableImageButton checkableImageButton = this.errorIconView;
         IconHelper.updateIconTooltip(checkableImageButton, this.errorIconOnLongClickListener, checkableImageButton.getContentDescription());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$com-google-android-material-textfield-EndCompoundLayout  reason: not valid java name */
-    public /* synthetic */ void m9628x9b92f49c(View view, boolean z) {
+    public /* synthetic */ void m9629x9b92f49c(View view, boolean z) {
         IconHelper.updateIconTooltip(this.endIconView, this.endIconOnLongClickListener, getEndIconContentDescription());
     }
 

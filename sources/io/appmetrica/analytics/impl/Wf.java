@@ -9,8 +9,8 @@ public final class Wf extends Ra {
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(List<AbstractC0305hh> list) {
-        list.add(this.f743a.h);
-        list.add(this.f743a.f649a);
-        list.add(this.f743a.d);
+        list.add(this.f745a.h);
+        list.add(this.f745a.f651a);
+        list.add(this.f745a.d);
     }
 }

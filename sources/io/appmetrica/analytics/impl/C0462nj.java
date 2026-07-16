@@ -13,16 +13,16 @@ import kotlin.collections.CollectionsKt;
 public final class C0462nj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1118a;
+    public final Context f1120a;
 
     public C0462nj(Context context) {
-        this.f1118a = context;
+        this.f1120a = context;
     }
 
     public static final void a(C0462nj c0462nj, ServiceConnection serviceConnection) {
         c0462nj.getClass();
         try {
-            c0462nj.f1118a.unbindService(serviceConnection);
+            c0462nj.f1120a.unbindService(serviceConnection);
         } catch (Throwable unused) {
         }
     }
@@ -38,7 +38,7 @@ public final class C0462nj {
         try {
             Intent intent = new Intent("ru.vk.store.sdk.install.referrer.InstallReferrerProvider");
             intent.setPackage("ru.vk.store");
-            queryIntentServices = this.f1118a.getPackageManager().queryIntentServices(intent, 0);
+            queryIntentServices = this.f1120a.getPackageManager().queryIntentServices(intent, 0);
         } catch (Throwable unused) {
         }
         if (queryIntentServices.isEmpty()) {
@@ -50,7 +50,7 @@ public final class C0462nj {
             Intent intent2 = new Intent("ru.vk.store.sdk.install.referrer.InstallReferrerProvider");
             intent2.setComponent(componentName);
             try {
-                if (this.f1118a.bindService(intent2, new ServiceConnectionC0436mj(this, dg), 1)) {
+                if (this.f1120a.bindService(intent2, new ServiceConnectionC0436mj(this, dg), 1)) {
                     return;
                 }
                 dg.a(new Jg("bindService returned false for RuStore service: " + componentName, null, 2, null));

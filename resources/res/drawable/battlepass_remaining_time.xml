@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:height="92dp" android:width="407dp" android:viewportWidth="407" android:viewportHeight="92">
     <corners android:radius="@dimen/_4sdp"/>
-    <solid android:color="#4dffffff"/>
+    <solid android:color="?attr/winterBpMainInfoBg"/>
 </shape>

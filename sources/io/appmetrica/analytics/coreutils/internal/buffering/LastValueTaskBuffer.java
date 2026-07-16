@@ -9,22 +9,22 @@ import kotlin.collections.CollectionsKt;
 public final class LastValueTaskBuffer<T> implements TaskBuffer<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f351a;
+    private Object f353a;
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public void add(T t) {
-        this.f351a = t;
+        this.f353a = t;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public List<T> getAndClear() {
-        Object obj = this.f351a;
-        this.f351a = null;
+        Object obj = this.f353a;
+        this.f353a = null;
         return obj != null ? CollectionsKt.listOf(obj) : CollectionsKt.emptyList();
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public boolean isEmpty() {
-        return this.f351a == null;
+        return this.f353a == null;
     }
 }

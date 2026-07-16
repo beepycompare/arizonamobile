@@ -14,7 +14,7 @@ import io.appmetrica.analytics.logger.common.BaseReleaseLogger;
 public final class C0572s0 implements InterfaceC0196db {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1189a;
+    public final Context f1191a;
     public final IHandlerExecutor b;
     public final C0654v4 c = new C0654v4();
     public final Handler d = f().getHandler();
@@ -22,7 +22,7 @@ public final class C0572s0 implements InterfaceC0196db {
     public final Mb f = new Mb();
 
     public C0572s0(Context context, C0318i4 c0318i4) {
-        this.f1189a = context;
+        this.f1191a = context;
         this.b = c0318i4.a();
         BaseReleaseLogger.init(context);
         f().execute(new Runnable() { // from class: io.appmetrica.analytics.impl.s0$$ExternalSyntheticLambda0
@@ -103,7 +103,7 @@ public final class C0572s0 implements InterfaceC0196db {
             this.f.c();
             this.f.b();
             if (appMetricaConfig != null) {
-                this.f.a(this.f1189a, appMetricaConfig, interfaceC0557rb);
+                this.f.a(this.f1191a, appMetricaConfig, interfaceC0557rb);
             }
             if (appMetricaConfig != null) {
             }

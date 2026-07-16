@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class N0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IHandlerExecutor f673a = C0576s4.l().g().a();
+    public final IHandlerExecutor f675a = C0576s4.l().g().a();
     public final B0 b;
     public final C0561rf c;
     public final C0639uf d;
@@ -22,12 +22,12 @@ public final class N0 {
 
     public final void a(final PluginErrorDetails pluginErrorDetails) {
         C0561rf c0561rf = this.c;
-        c0561rf.f1182a.a(null);
+        c0561rf.f1184a.a(null);
         c0561rf.b.a(pluginErrorDetails);
         C0639uf c0639uf = this.d;
         Intrinsics.checkNotNull(pluginErrorDetails);
         c0639uf.getClass();
-        this.f673a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda0
+        this.f675a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 N0.a(N0.this, pluginErrorDetails);
@@ -37,13 +37,13 @@ public final class N0 {
 
     public final void a(final PluginErrorDetails pluginErrorDetails, final String str) {
         C0561rf c0561rf = this.c;
-        c0561rf.f1182a.a(null);
+        c0561rf.f1184a.a(null);
         c0561rf.b.a(pluginErrorDetails);
-        if (c0561rf.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f782a) {
+        if (c0561rf.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f784a) {
             C0639uf c0639uf = this.d;
             Intrinsics.checkNotNull(pluginErrorDetails);
             c0639uf.getClass();
-            this.f673a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda1
+            this.f675a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     N0.a(N0.this, pluginErrorDetails, str);
@@ -54,12 +54,12 @@ public final class N0 {
 
     public final void a(final String str, final String str2, final PluginErrorDetails pluginErrorDetails) {
         C0561rf c0561rf = this.c;
-        c0561rf.f1182a.a(null);
+        c0561rf.f1184a.a(null);
         c0561rf.c.a(str);
         C0639uf c0639uf = this.d;
         Intrinsics.checkNotNull(str);
         c0639uf.getClass();
-        this.f673a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda2
+        this.f675a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 N0.a(N0.this, str, str2, pluginErrorDetails);
@@ -73,7 +73,7 @@ public final class N0 {
         Intrinsics.checkNotNull(a0);
         Lc i = a0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f645a.getPluginExtension().reportError(pluginErrorDetails, str);
+        i.f647a.getPluginExtension().reportError(pluginErrorDetails, str);
     }
 
     public static final void a(N0 n0, String str, String str2, PluginErrorDetails pluginErrorDetails) {
@@ -82,7 +82,7 @@ public final class N0 {
         Intrinsics.checkNotNull(a0);
         Lc i = a0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f645a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
+        i.f647a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
     }
 
     public static final void a(N0 n0, PluginErrorDetails pluginErrorDetails) {
@@ -91,6 +91,6 @@ public final class N0 {
         Intrinsics.checkNotNull(a0);
         Lc i = a0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f645a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
+        i.f647a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
     }
 }

@@ -10,7 +10,7 @@ import java.util.Iterator;
 public final class C0550r4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f1176a;
+    public final Object f1178a;
     public final C0603t5 b;
     public final HashMap c;
     public final Sa d;
@@ -23,7 +23,7 @@ public final class C0550r4 {
 
     public final InterfaceC0680w4 a(C0266g4 c0266g4, G4 g4) {
         InterfaceC0680w4 interfaceC0680w4;
-        synchronized (this.f1176a) {
+        synchronized (this.f1178a) {
             interfaceC0680w4 = (InterfaceC0680w4) this.c.get(c0266g4);
             if (interfaceC0680w4 == null) {
                 this.f.getClass();
@@ -36,7 +36,7 @@ public final class C0550r4 {
     }
 
     public C0550r4(Context context, C0603t5 c0603t5, C0758z4 c0758z4) {
-        this.f1176a = new Object();
+        this.f1178a = new Object();
         this.c = new HashMap();
         this.d = new Sa();
         this.e = context.getApplicationContext();
@@ -45,9 +45,9 @@ public final class C0550r4 {
     }
 
     public final void a(String str, Integer num, String str2) {
-        synchronized (this.f1176a) {
+        synchronized (this.f1178a) {
             Sa sa = this.d;
-            Collection<C0266g4> collection = (Collection) sa.f763a.remove(new C0525q4(str, num, str2));
+            Collection<C0266g4> collection = (Collection) sa.f765a.remove(new C0525q4(str, num, str2));
             if (!Oo.a(collection)) {
                 collection.size();
                 ArrayList arrayList = new ArrayList(collection.size());

@@ -15,7 +15,7 @@ public final class c extends e {
     public final boolean process(Object... objArr) {
         if (ReflectionUtils.isArgumentsOfClasses(objArr, AdValue.class, AppOpenAd.class)) {
             AppOpenAd appOpenAd = (AppOpenAd) objArr[1];
-            this.f225a.getClass();
+            this.f227a.getClass();
             a(b.a((AdValue) objArr[0], ModuleAdType.APP_OPEN, "appOpenAd", appOpenAd.getResponseInfo(), appOpenAd.getAdUnitId()));
             return true;
         }

@@ -12,7 +12,7 @@ import kotlin.collections.MapsKt;
 public final class MapMergingBuffer<K, V> implements TaskBuffer<Map<K, ? extends V>> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap f352a = new LinkedHashMap();
+    private final LinkedHashMap f354a = new LinkedHashMap();
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public /* bridge */ /* synthetic */ void add(Object obj) {
@@ -21,20 +21,20 @@ public final class MapMergingBuffer<K, V> implements TaskBuffer<Map<K, ? extends
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public List<Map<K, V>> getAndClear() {
-        if (this.f352a.isEmpty()) {
+        if (this.f354a.isEmpty()) {
             return CollectionsKt.emptyList();
         }
-        Map map = MapsKt.toMap(this.f352a);
-        this.f352a.clear();
+        Map map = MapsKt.toMap(this.f354a);
+        this.f354a.clear();
         return CollectionsKt.listOf(map);
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public boolean isEmpty() {
-        return this.f352a.isEmpty();
+        return this.f354a.isEmpty();
     }
 
     public void add(Map<K, ? extends V> map) {
-        this.f352a.putAll(map);
+        this.f354a.putAll(map);
     }
 }

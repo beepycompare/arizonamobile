@@ -14,7 +14,7 @@ public final class k extends MessageNano {
     public static volatile k[] j;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f428a;
+    public byte[] f430a;
     public j b;
     public byte[] c;
     public i[] d;
@@ -41,7 +41,7 @@ public final class k extends MessageNano {
 
     public final k a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f428a = bArr;
+        this.f430a = bArr;
         this.b = null;
         this.c = bArr;
         this.d = i.b();
@@ -58,10 +58,10 @@ public final class k extends MessageNano {
     public final int computeSerializedSize() {
         int[] iArr;
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f428a;
+        byte[] bArr = this.f430a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f428a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f430a);
         }
         j jVar = this.b;
         if (jVar != null) {
@@ -116,10 +116,10 @@ public final class k extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f428a;
+        byte[] bArr = this.f430a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f428a);
+            codedOutputByteBufferNano.writeBytes(1, this.f430a);
         }
         j jVar = this.b;
         if (jVar != null) {
@@ -186,7 +186,7 @@ public final class k extends MessageNano {
                 case 0:
                     break;
                 case 10:
-                    this.f428a = codedInputByteBufferNano.readBytes();
+                    this.f430a = codedInputByteBufferNano.readBytes();
                     break;
                 case 18:
                     if (this.b == null) {

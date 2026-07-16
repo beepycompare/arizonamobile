@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0560re implements Vc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Z8 f1181a = new Z8() { // from class: io.appmetrica.analytics.impl.re$$ExternalSyntheticLambda0
+    public final Z8 f1183a = new Z8() { // from class: io.appmetrica.analytics.impl.re$$ExternalSyntheticLambda0
         @Override // io.appmetrica.analytics.impl.Z8
         public final boolean b() {
             return C0560re.b();
@@ -17,6 +17,6 @@ public final class C0560re implements Vc {
 
     @Override // io.appmetrica.analytics.impl.Vc
     public final Z8 a() {
-        return this.f1181a;
+        return this.f1183a;
     }
 }

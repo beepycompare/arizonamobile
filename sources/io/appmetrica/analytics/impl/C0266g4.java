@@ -7,14 +7,14 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0266g4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f992a;
+    public final String f994a;
     public final String b;
     public final Integer c;
     public final String d;
     public final CounterConfigurationReporterType e;
 
     public C0266g4(String str, String str2, Integer num, String str3, CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f992a = str;
+        this.f994a = str;
         this.b = str2;
         this.c = num;
         this.d = str3;
@@ -22,7 +22,7 @@ public final class C0266g4 {
     }
 
     public static C0266g4 a(Y3 y3) {
-        return new C0266g4(y3.b.getApiKey(), y3.f850a.f928a.getAsString("PROCESS_CFG_PACKAGE_NAME"), y3.f850a.f928a.getAsInteger("PROCESS_CFG_PROCESS_ID"), y3.f850a.f928a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), y3.b.getReporterType());
+        return new C0266g4(y3.b.getApiKey(), y3.f852a.f930a.getAsString("PROCESS_CFG_PACKAGE_NAME"), y3.f852a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID"), y3.f852a.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), y3.b.getReporterType());
     }
 
     public final boolean equals(Object obj) {
@@ -31,8 +31,8 @@ public final class C0266g4 {
         }
         if (obj != null && C0266g4.class == obj.getClass()) {
             C0266g4 c0266g4 = (C0266g4) obj;
-            String str = this.f992a;
-            if (str == null ? c0266g4.f992a != null : !str.equals(c0266g4.f992a)) {
+            String str = this.f994a;
+            if (str == null ? c0266g4.f994a != null : !str.equals(c0266g4.f994a)) {
                 return false;
             }
             if (!this.b.equals(c0266g4.b)) {
@@ -54,7 +54,7 @@ public final class C0266g4 {
     }
 
     public final int hashCode() {
-        String str = this.f992a;
+        String str = this.f994a;
         int hashCode = (this.b.hashCode() + ((str != null ? str.hashCode() : 0) * 31)) * 31;
         Integer num = this.c;
         int hashCode2 = (hashCode + (num != null ? num.hashCode() : 0)) * 31;
@@ -63,6 +63,6 @@ public final class C0266g4 {
     }
 
     public final String toString() {
-        return "ClientDescription{mApiKey='" + this.f992a + "', mPackageName='" + this.b + "', mProcessID=" + this.c + ", mProcessSessionID='" + this.d + "', mReporterType=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "ClientDescription{mApiKey='" + this.f994a + "', mPackageName='" + this.b + "', mProcessID=" + this.c + ", mProcessSessionID='" + this.d + "', mReporterType=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 }

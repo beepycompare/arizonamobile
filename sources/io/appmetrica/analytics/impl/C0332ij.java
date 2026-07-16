@@ -8,12 +8,12 @@ import java.util.List;
 public final class C0332ij implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Uo f1036a = new Uo();
+    public final Uo f1038a = new Uo();
 
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(Revenue revenue) {
         To to;
-        Uo uo = this.f1036a;
+        Uo uo = this.f1038a;
         To[] toArr = new To[1];
         C0614tg c0614tg = new C0614tg();
         Integer num = revenue.quantity;

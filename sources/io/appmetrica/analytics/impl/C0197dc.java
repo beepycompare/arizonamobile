@@ -5,7 +5,7 @@ public final class C0197dc {
     public final Ml c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ce f943a = new Ce("Context");
+    public final Ce f945a = new Ce("Context");
     public final Ce b = new Ce("Config");
     public final Ce d = new Ce("Sender");
     public final Ce e = new Ce("Event");

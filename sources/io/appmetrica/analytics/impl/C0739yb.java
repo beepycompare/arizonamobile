@@ -6,14 +6,14 @@ import android.os.IBinder;
 public final class C0739yb implements Ab {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IBinder f1293a;
+    public final IBinder f1295a;
 
     public C0739yb(IBinder iBinder) {
-        this.f1293a = iBinder;
+        this.f1295a = iBinder;
     }
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f1293a;
+        return this.f1295a;
     }
 }

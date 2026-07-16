@@ -6,14 +6,14 @@ import io.appmetrica.analytics.ModuleEvent;
 public final class C0256fk implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ModuleEvent f983a;
+    public final /* synthetic */ ModuleEvent f985a;
 
     public C0256fk(ModuleEvent moduleEvent) {
-        this.f983a = moduleEvent;
+        this.f985a = moduleEvent;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
     public final void a(InterfaceC0506pb interfaceC0506pb) {
-        interfaceC0506pb.reportEvent(this.f983a);
+        interfaceC0506pb.reportEvent(this.f985a);
     }
 }

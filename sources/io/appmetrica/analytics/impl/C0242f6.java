@@ -23,7 +23,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
     public static final Parcelable.Creator<C0242f6> CREATOR = new C0216e6();
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f975a;
+    protected String f977a;
     protected String b;
     public String c;
     public int d;
@@ -96,7 +96,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public final String getName() {
-        return this.f975a;
+        return this.f977a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -135,7 +135,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
     }
 
     public final boolean l() {
-        return this.f975a == null;
+        return this.f977a == null;
     }
 
     public final boolean m() {
@@ -160,7 +160,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
     public void setName(String str) {
-        this.f975a = str;
+        this.f977a = str;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.event.CounterReportApi
@@ -180,7 +180,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
 
     public final String toString() {
         Locale locale = Locale.US;
-        String str = this.f975a;
+        String str = this.f977a;
         String str2 = Db.a(this.d).b;
         String str3 = this.b;
         if (str3 == null) {
@@ -194,13 +194,13 @@ public class C0242f6 implements CounterReportApi, Parcelable {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         Bundle bundle = new Bundle();
-        bundle.putString("CounterReport.Event", this.f975a);
+        bundle.putString("CounterReport.Event", this.f977a);
         bundle.putString("CounterReport.Value", this.b);
         bundle.putInt("CounterReport.Type", this.d);
         bundle.putInt("CounterReport.CustomType", this.e);
         bundle.putInt("CounterReport.TRUNCATED", this.g);
         bundle.putString("CounterReport.ProfileID", this.h);
-        bundle.putInt("CounterReport.UniquenessStatus", this.k.f456a);
+        bundle.putInt("CounterReport.UniquenessStatus", this.k.f458a);
         Bundle bundle2 = this.m;
         if (bundle2 != null) {
             bundle.putParcelable("CounterReport.Payload", bundle2);
@@ -218,7 +218,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
         bundle.putLong("CounterReport.CreationTimestamp", this.j);
         G9 g9 = this.l;
         if (g9 != null) {
-            bundle.putInt("CounterReport.Source", g9.f562a);
+            bundle.putInt("CounterReport.Source", g9.f564a);
         }
         Boolean bool = this.n;
         if (bool != null) {
@@ -260,7 +260,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
         this.k = Aa.UNKNOWN;
         this.p = new HashMap();
         SystemTimeProvider systemTimeProvider = new SystemTimeProvider();
-        this.f975a = str2;
+        this.f977a = str2;
         this.d = i;
         this.b = str;
         this.i = systemTimeProvider.elapsedRealtime();
@@ -334,7 +334,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
 
     public static C0242f6 a(C0242f6 c0242f6, Db db) {
         C0242f6 d = d(c0242f6);
-        d.d = db.f511a;
+        d.d = db.f513a;
         return d;
     }
 
@@ -366,7 +366,7 @@ public class C0242f6 implements CounterReportApi, Parcelable {
             JSONObject jSONObject = new JSONObject();
             if (k2 != null) {
                 jSONObject.put("background_restricted", k2.b);
-                J2 j2 = k2.f623a;
+                J2 j2 = k2.f625a;
                 c0497p2.getClass();
                 if (j2 != null) {
                     int ordinal = j2.ordinal();

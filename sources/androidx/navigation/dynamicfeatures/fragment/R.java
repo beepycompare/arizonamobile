@@ -12,11 +12,11 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int dfn_progress_fragment = 0x7f0a0430;
-        public static int installation_progress = 0x7f0a074a;
-        public static int progress_action = 0x7f0a0b27;
-        public static int progress_icon = 0x7f0a0b31;
-        public static int progress_title = 0x7f0a0b35;
+        public static int dfn_progress_fragment = 0x7f0a0460;
+        public static int installation_progress = 0x7f0a07a0;
+        public static int progress_action = 0x7f0a0b95;
+        public static int progress_icon = 0x7f0a0b9f;
+        public static int progress_title = 0x7f0a0ba3;
 
         private id() {
         }
@@ -24,7 +24,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class layout {
-        public static int dynamic_feature_install_fragment = 0x7f0d00b2;
+        public static int dynamic_feature_install_fragment = 0x7f0d00b9;
 
         private layout() {
         }
@@ -32,12 +32,12 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int installation_cancelled = 0x7f1202f1;
-        public static int installation_failed = 0x7f1202f2;
-        public static int installing_module = 0x7f1202f3;
-        public static int ok = 0x7f12045c;
-        public static int progress = 0x7f1204a2;
-        public static int retry = 0x7f120510;
+        public static int installation_cancelled = 0x7f120361;
+        public static int installation_failed = 0x7f120362;
+        public static int installing_module = 0x7f120363;
+        public static int ok = 0x7f1204d0;
+        public static int progress = 0x7f120516;
+        public static int retry = 0x7f120584;
 
         private string() {
         }

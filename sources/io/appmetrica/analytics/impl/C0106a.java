@@ -6,15 +6,15 @@ import android.content.Context;
 public final class C0106a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f877a;
+    public final Context f879a;
 
     public C0106a(Context context) {
-        this.f877a = context;
+        this.f879a = context;
     }
 
     public final byte[] a() {
         try {
-            return AbstractC0402lb.a(new StringBuilder(this.f877a.getPackageName()).reverse().toString());
+            return AbstractC0402lb.a(new StringBuilder(this.f879a.getPackageName()).reverse().toString());
         } catch (Throwable unused) {
             return new byte[16];
         }
@@ -22,7 +22,7 @@ public final class C0106a {
 
     public final byte[] b() {
         try {
-            return AbstractC0402lb.a(this.f877a.getPackageName());
+            return AbstractC0402lb.a(this.f879a.getPackageName());
         } catch (Throwable unused) {
             return new byte[16];
         }

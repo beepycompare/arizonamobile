@@ -17,7 +17,7 @@ public final class ActivityEvent {
     public static final ActivityEvent STOPPED;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ ActivityEvent[] f325a;
+    private static final /* synthetic */ ActivityEvent[] f327a;
     private static final /* synthetic */ EnumEntries b;
 
     static {
@@ -34,7 +34,7 @@ public final class ActivityEvent {
         ActivityEvent activityEvent6 = new ActivityEvent("DESTROYED", 5);
         DESTROYED = activityEvent6;
         ActivityEvent[] activityEventArr = {activityEvent, activityEvent2, activityEvent3, activityEvent4, activityEvent5, activityEvent6};
-        f325a = activityEventArr;
+        f327a = activityEventArr;
         b = EnumEntriesKt.enumEntries(activityEventArr);
     }
 
@@ -50,6 +50,6 @@ public final class ActivityEvent {
     }
 
     public static ActivityEvent[] values() {
-        return (ActivityEvent[]) f325a.clone();
+        return (ActivityEvent[]) f327a.clone();
     }
 }

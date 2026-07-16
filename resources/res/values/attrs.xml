@@ -3233,6 +3233,29 @@
     </attr>
     <attr name="path_percent" format="float">
     </attr>
+    <attr name="patternDrawable" format="reference">
+    </attr>
+    <attr name="patternOffsetX" format="dimension">
+    </attr>
+    <attr name="patternOffsetY" format="dimension">
+    </attr>
+    <attr name="patternRotation" format="float">
+    </attr>
+    <attr name="patternScale" format="float">
+    </attr>
+    <attr name="patternScaleX" format="float">
+    </attr>
+    <attr name="patternScaleY" format="float">
+    </attr>
+    <attr name="patternTileMode">
+        <enum name="repeat" value="0" />
+        <enum name="mirror" value="1" />
+        <enum name="clamp" value="2" />
+    </attr>
+    <attr name="patternTintColor" format="color">
+    </attr>
+    <attr name="patternTransparency" format="integer">
+    </attr>
     <attr name="pause_icon" format="reference">
     </attr>
     <attr name="percentHeight" format="float">
@@ -4595,6 +4618,194 @@
     <attr name="windowSplashScreenBackground" format="color">
     </attr>
     <attr name="windowSplashScreenIconBackgroundColor" format="color">
+    </attr>
+    <attr name="winterBpAccent" format="color">
+    </attr>
+    <attr name="winterBpAction" format="color">
+    </attr>
+    <attr name="winterBpExperienceShadow" format="color">
+    </attr>
+    <attr name="winterBpLevelFreeBg" format="color">
+    </attr>
+    <attr name="winterBpLevelFreeLockedOverlay" format="color">
+    </attr>
+    <attr name="winterBpLevelFreePattern" format="reference">
+    </attr>
+    <attr name="winterBpLevelFreeText" format="color">
+    </attr>
+    <attr name="winterBpLevelLockFree" format="color">
+    </attr>
+    <attr name="winterBpLevelLockPremium" format="color">
+    </attr>
+    <attr name="winterBpLevelPremiumEnd" format="color">
+    </attr>
+    <attr name="winterBpLevelPremiumLockedOverlay" format="color">
+    </attr>
+    <attr name="winterBpLevelPremiumStart" format="color">
+    </attr>
+    <attr name="winterBpLevelPremiumText" format="color">
+    </attr>
+    <attr name="winterBpLevelProgressNotPassed" format="color">
+    </attr>
+    <attr name="winterBpLevelProgressNotPassedText" format="color">
+    </attr>
+    <attr name="winterBpLevelProgressPassed" format="color">
+    </attr>
+    <attr name="winterBpLevelProgressPassedText" format="color">
+    </attr>
+    <attr name="winterBpLevelPurchaseTitleAccentFont" format="reference">
+    </attr>
+    <attr name="winterBpLevelPurchaseTitleAllCaps" format="boolean">
+    </attr>
+    <attr name="winterBpLevelPurchaseTitleFont" format="reference">
+    </attr>
+    <attr name="winterBpLevelReceived" format="color">
+    </attr>
+    <attr name="winterBpLevelSetBorder" format="color">
+    </attr>
+    <attr name="winterBpLevelSetEnd" format="color">
+    </attr>
+    <attr name="winterBpLevelSetLink" format="color">
+    </attr>
+    <attr name="winterBpLevelSetStart" format="color">
+    </attr>
+    <attr name="winterBpLevelSetTextMuted" format="color">
+    </attr>
+    <attr name="winterBpMainInfoBg" format="color">
+    </attr>
+    <attr name="winterBpMainInfoIcon" format="color">
+    </attr>
+    <attr name="winterBpMainInfoText" format="color">
+    </attr>
+    <attr name="winterBpMainProgressTrack" format="color">
+    </attr>
+    <attr name="winterBpModalBackground" format="color">
+    </attr>
+    <attr name="winterBpModalOverlay" format="color">
+    </attr>
+    <attr name="winterBpNavActiveText" format="color">
+    </attr>
+    <attr name="winterBpNavInactiveText" format="color">
+    </attr>
+    <attr name="winterBpNavSelectedBg" format="color">
+    </attr>
+    <attr name="winterBpOnAction" format="color">
+    </attr>
+    <attr name="winterBpPremiumCardBg" format="color">
+    </attr>
+    <attr name="winterBpPremiumCardBorder" format="color">
+    </attr>
+    <attr name="winterBpPremiumCardPattern" format="reference">
+    </attr>
+    <attr name="winterBpPremiumCardText" format="color">
+    </attr>
+    <attr name="winterBpPremiumCheck" format="color">
+    </attr>
+    <attr name="winterBpPremiumChipBg" format="color">
+    </attr>
+    <attr name="winterBpPremiumEnd" format="color">
+    </attr>
+    <attr name="winterBpPremiumLightEnd" format="color">
+    </attr>
+    <attr name="winterBpPremiumLightStart" format="color">
+    </attr>
+    <attr name="winterBpPremiumOutline" format="color">
+    </attr>
+    <attr name="winterBpPremiumPlusButtonBg" format="color">
+    </attr>
+    <attr name="winterBpPremiumPlusButtonText" format="color">
+    </attr>
+    <attr name="winterBpPremiumPlusHeading" format="color">
+    </attr>
+    <attr name="winterBpPremiumStandardButtonBg" format="color">
+    </attr>
+    <attr name="winterBpPremiumStandardButtonText" format="color">
+    </attr>
+    <attr name="winterBpPremiumStandardHeadingEnd" format="color">
+    </attr>
+    <attr name="winterBpPremiumStandardHeadingStart" format="color">
+    </attr>
+    <attr name="winterBpPremiumStart" format="color">
+    </attr>
+    <attr name="winterBpPremiumTextAccent" format="color">
+    </attr>
+    <attr name="winterBpPurchaseButtonBg" format="color">
+    </attr>
+    <attr name="winterBpPurchaseButtonText" format="color">
+    </attr>
+    <attr name="winterBpPurchaseTitleAccentColor" format="color">
+    </attr>
+    <attr name="winterBpPurchaseTitlePrimaryColor" format="color">
+    </attr>
+    <attr name="winterBpSelectedText" format="color">
+    </attr>
+    <attr name="winterBpTaskCategoryPremiumEnd" format="color">
+    </attr>
+    <attr name="winterBpTaskCategoryPremiumStart" format="color">
+    </attr>
+    <attr name="winterBpTaskCategorySelectedEnd" format="color">
+    </attr>
+    <attr name="winterBpTaskCategorySelectedStart" format="color">
+    </attr>
+    <attr name="winterBpTaskCategoryUnselectedBg" format="color">
+    </attr>
+    <attr name="winterBpTaskInfoAccent" format="color">
+    </attr>
+    <attr name="winterBpTaskLockEnd" format="color">
+    </attr>
+    <attr name="winterBpTaskLockIcon" format="color">
+    </attr>
+    <attr name="winterBpTaskLockStart" format="color">
+    </attr>
+    <attr name="winterBpTaskLockTextColors" format="string">
+    </attr>
+    <attr name="winterBpTaskPattern" format="reference">
+    </attr>
+    <attr name="winterBpTaskProgressDone" format="color">
+    </attr>
+    <attr name="winterBpTaskRemainingBg" format="color">
+    </attr>
+    <attr name="winterBpTaskSelectedBg" format="color">
+    </attr>
+    <attr name="winterBpTaskSurfaceBg" format="color">
+    </attr>
+    <attr name="winterBpTaskSurfaceText" format="color">
+    </attr>
+    <attr name="winterBpTaskSurfaceTrack" format="color">
+    </attr>
+    <attr name="winterBpTaskTextDisabled" format="color">
+    </attr>
+    <attr name="winterBpTaskTextMuted" format="color">
+    </attr>
+    <attr name="winterBpTaskTextSoft" format="color">
+    </attr>
+    <attr name="winterBpTaskTimerLabel" format="color">
+    </attr>
+    <attr name="winterBpTaskTimerValue" format="color">
+    </attr>
+    <attr name="winterBpTaskUnselectedBg" format="color">
+    </attr>
+    <attr name="winterBpTextDark" format="color">
+    </attr>
+    <attr name="winterBpTextLight" format="color">
+    </attr>
+    <attr name="winterBpTrackLabelBorder" format="color">
+    </attr>
+    <attr name="winterBpTrackPremiumEnd" format="color">
+    </attr>
+    <attr name="winterBpTrackPremiumStart" format="color">
+    </attr>
+    <attr name="winterBpTrackPremiumText" format="color">
+    </attr>
+    <attr name="winterBpTrackUsualBg" format="color">
+    </attr>
+    <attr name="winterBpTrackUsualText" format="color">
+    </attr>
+    <attr name="winterBpWelcomeIntroText" format="reference">
+    </attr>
+    <attr name="winterBpWelcomeText" format="color">
+    </attr>
+    <attr name="winterBpWelcomeTextColors" format="string">
     </attr>
     <attr name="yearSelectedStyle" format="reference">
     </attr>

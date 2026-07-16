@@ -9,14 +9,14 @@ public final class C0722xk extends AbstractC0305hh {
     }
 
     public static final void b(C0722xk c0722xk) {
-        ap apVar = c0722xk.f1017a.t;
+        ap apVar = c0722xk.f1019a.t;
         synchronized (apVar) {
-            JSONObject a2 = apVar.f894a.a();
+            JSONObject a2 = apVar.f896a.a();
             if (!a2.optBoolean("referrer_handled", false)) {
-                apVar.f894a.a(a2.put("referrer_handled", true));
+                apVar.f896a.a(a2.put("referrer_handled", true));
             }
-            bp bpVar = apVar.f894a;
-            bp.a(bpVar.f914a);
+            bp bpVar = apVar.f896a;
+            bp.a(bpVar.f916a);
             bp.a(bpVar.b);
         }
     }
@@ -29,15 +29,15 @@ public final class C0722xk extends AbstractC0305hh {
         Fg u = Na.I.u();
         C0696wk c0696wk = new C0696wk(this);
         u.getClass();
-        u.f547a.a(new C0514pj(c0696wk));
+        u.f549a.a(new C0514pj(c0696wk));
         return false;
     }
 
     public final boolean b() {
         boolean optBoolean;
-        ap apVar = this.f1017a.t;
+        ap apVar = this.f1019a.t;
         synchronized (apVar) {
-            optBoolean = apVar.f894a.a().optBoolean("referrer_handled", false);
+            optBoolean = apVar.f896a.a().optBoolean("referrer_handled", false);
         }
         return optBoolean;
     }

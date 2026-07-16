@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public final class Lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f644a;
+    public final byte[] f646a;
     public final String b;
     public final int c;
     public final HashMap d;
@@ -29,7 +29,7 @@ public final class Lb {
     public Lb(String str, long j) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
         JSONObject jSONObject2 = jSONObject.getJSONObject("event");
-        this.f644a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
+        this.f646a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
         this.b = jSONObject2.getString("name");
         this.c = jSONObject2.getInt("bytes_truncated");
         this.j = JsonUtils.optStringOrNull(jSONObject2, "environment");
@@ -65,7 +65,7 @@ public final class Lb {
     }
 
     public final byte[] c() {
-        return this.f644a;
+        return this.f646a;
     }
 
     public final String d() {
@@ -105,7 +105,7 @@ public final class Lb {
         for (Map.Entry entry : this.d.entrySet()) {
             hashMap.put(((EnumC0163c4) entry.getKey()).name(), (Integer) entry.getValue());
         }
-        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put("event", new JSONObject().put("jvm_crash", Base64.encodeToString(this.f644a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Ib.b(hashMap)).putOpt("environment", this.j)).toString();
+        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put("event", new JSONObject().put("jvm_crash", Base64.encodeToString(this.f646a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Ib.b(hashMap)).putOpt("environment", this.j)).toString();
     }
 
     public final String toString() {
@@ -120,7 +120,7 @@ public final class Lb {
     }
 
     public Lb(C0242f6 c0242f6, Y3 y3, HashMap<EnumC0163c4, Integer> hashMap) {
-        this.f644a = c0242f6.getValueBytes();
+        this.f646a = c0242f6.getValueBytes();
         this.b = c0242f6.getName();
         this.c = c0242f6.getBytesTruncated();
         if (hashMap != null) {

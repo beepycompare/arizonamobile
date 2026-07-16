@@ -20,6 +20,11 @@ public final class AtmMiniGameScreenViews implements MiniGameScreenViews {
     }
 
     @Override // com.arizonagames.feature.minigames.atm.MiniGameScreenViews
+    public /* bridge */ View getSlotExtraContainer() {
+        return super.getSlotExtraContainer();
+    }
+
+    @Override // com.arizonagames.feature.minigames.atm.MiniGameScreenViews
     public View getRoot() {
         FrameLayout root = this.binding.root;
         Intrinsics.checkNotNullExpressionValue(root, "root");

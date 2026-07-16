@@ -5,85 +5,85 @@ import java.util.Set;
 public final class Vb implements InterfaceC0350jb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0350jb f808a;
+    public final InterfaceC0350jb f810a;
 
     public Vb(InterfaceC0350jb interfaceC0350jb) {
-        this.f808a = interfaceC0350jb;
+        this.f810a = interfaceC0350jb;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final InterfaceC0350jb a(String str, String str2) {
-        this.f808a.a(str, str2);
+        this.f810a.a(str, str2);
         return this;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final Set b() {
-        return this.f808a.b();
+        return this.f810a.b();
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final void flushAsync() {
-        this.f808a.flushAsync();
+        this.f810a.flushAsync();
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final boolean getBoolean(String str, boolean z) {
-        return this.f808a.getBoolean(str, z);
+        return this.f810a.getBoolean(str, z);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final int getInt(String str, int i) {
-        return this.f808a.getInt(str, i);
+        return this.f810a.getInt(str, i);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final long getLong(String str, long j) {
-        return this.f808a.getLong(str, j);
+        return this.f810a.getLong(str, j);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final String getString(String str, String str2) {
-        return this.f808a.getString(str, str2);
+        return this.f810a.getString(str, str2);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final InterfaceC0350jb remove(String str) {
-        this.f808a.remove(str);
+        this.f810a.remove(str);
         return this;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final InterfaceC0350jb a(String str, long j) {
-        this.f808a.a(str, j);
+        this.f810a.a(str, j);
         return this;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final InterfaceC0350jb a(String str, int i) {
-        this.f808a.a(str, i);
+        this.f810a.a(str, i);
         return this;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final InterfaceC0350jb a(String str, boolean z) {
-        this.f808a.a(str, z);
+        this.f810a.a(str, z);
         return this;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final InterfaceC0350jb a(String str, float f) {
-        this.f808a.a(str, f);
+        this.f810a.a(str, f);
         return this;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final boolean a(String str) {
-        return this.f808a.a(str);
+        return this.f810a.a(str);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
     public final void a() {
-        this.f808a.a();
+        this.f810a.a();
     }
 }

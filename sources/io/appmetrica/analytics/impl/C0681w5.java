@@ -7,22 +7,22 @@ import kotlin.Pair;
 public final class C0681w5 implements ep {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1258a;
+    public final List f1260a;
 
     public C0681w5(List<? extends Pair<String, ? extends ep>> list) {
-        this.f1258a = list;
+        this.f1260a = list;
     }
 
     @Override // io.appmetrica.analytics.impl.ep
     public final void a(String str) {
-        for (Pair pair : this.f1258a) {
+        for (Pair pair : this.f1260a) {
             ((ep) pair.getSecond()).a(str);
         }
     }
 
     @Override // io.appmetrica.analytics.impl.ep
     public final String b() {
-        for (Pair pair : this.f1258a) {
+        for (Pair pair : this.f1260a) {
             String b = ((ep) pair.getSecond()).b();
             if (b != null && b.length() > 0) {
                 return b;
@@ -33,14 +33,14 @@ public final class C0681w5 implements ep {
 
     @Override // io.appmetrica.analytics.impl.ep
     public final void flushAsync() {
-        for (Pair pair : this.f1258a) {
+        for (Pair pair : this.f1260a) {
             ((ep) pair.getSecond()).flushAsync();
         }
     }
 
     @Override // io.appmetrica.analytics.impl.ep
     public final void a() {
-        for (Pair pair : this.f1258a) {
+        for (Pair pair : this.f1260a) {
             ((ep) pair.getSecond()).a();
         }
     }

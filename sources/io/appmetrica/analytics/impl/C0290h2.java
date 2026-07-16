@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public final class C0290h2 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I2 f1006a;
+    public final I2 f1008a;
 
     public C0290h2() {
         this(new I2());
@@ -18,20 +18,20 @@ public final class C0290h2 implements ProtobufConverter {
     /* renamed from: a */
     public final C0367k2 fromModel(C0264g2 c0264g2) {
         C0367k2 c0367k2 = new C0367k2();
-        c0367k2.f1061a = new C0341j2[c0264g2.f990a.size()];
+        c0367k2.f1063a = new C0341j2[c0264g2.f992a.size()];
         int i = 0;
         int i2 = 0;
-        for (PermissionState permissionState : c0264g2.f990a) {
-            C0341j2[] c0341j2Arr = c0367k2.f1061a;
+        for (PermissionState permissionState : c0264g2.f992a) {
+            C0341j2[] c0341j2Arr = c0367k2.f1063a;
             C0341j2 c0341j2 = new C0341j2();
-            c0341j2.f1044a = permissionState.name;
+            c0341j2.f1046a = permissionState.name;
             c0341j2.b = permissionState.granted;
             c0341j2Arr[i2] = c0341j2;
             i2++;
         }
         K2 k2 = c0264g2.b;
         if (k2 != null) {
-            c0367k2.b = this.f1006a.fromModel(k2);
+            c0367k2.b = this.f1008a.fromModel(k2);
         }
         c0367k2.c = new String[c0264g2.c.size()];
         for (String str : c0264g2.c) {
@@ -42,7 +42,7 @@ public final class C0290h2 implements ProtobufConverter {
     }
 
     public C0290h2(I2 i2) {
-        this.f1006a = i2;
+        this.f1008a = i2;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -52,16 +52,16 @@ public final class C0290h2 implements ProtobufConverter {
         int i = 0;
         int i2 = 0;
         while (true) {
-            C0341j2[] c0341j2Arr = c0367k2.f1061a;
+            C0341j2[] c0341j2Arr = c0367k2.f1063a;
             if (i2 >= c0341j2Arr.length) {
                 break;
             }
             C0341j2 c0341j2 = c0341j2Arr[i2];
-            arrayList.add(new PermissionState(c0341j2.f1044a, c0341j2.b));
+            arrayList.add(new PermissionState(c0341j2.f1046a, c0341j2.b));
             i2++;
         }
         C0316i2 c0316i2 = c0367k2.b;
-        K2 model = c0316i2 != null ? this.f1006a.toModel(c0316i2) : null;
+        K2 model = c0316i2 != null ? this.f1008a.toModel(c0316i2) : null;
         ArrayList arrayList2 = new ArrayList();
         while (true) {
             String[] strArr = c0367k2.c;

@@ -13,7 +13,7 @@ import java.util.Set;
 public final class C0770zg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1316a;
+    public final boolean f1318a;
     public final Qi b;
     public final C0665vf c;
     public final C0193d8 d;
@@ -25,7 +25,7 @@ public final class C0770zg {
     }
 
     public final void a() {
-        if (this.f1316a) {
+        if (this.f1318a) {
             return;
         }
         Qi qi = this.b;
@@ -34,11 +34,11 @@ public final class C0770zg {
         Bundle bundle = new Bundle();
         bundle.putParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver", mg);
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = Q9.f728a;
+        Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
         C0189d4 c0189d4 = new C0189d4("", "", (int) InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
         c0189d4.m = bundle;
-        V4 v4 = qi.f734a;
+        V4 v4 = qi.f736a;
         qi.a(Qi.a(c0189d4, v4), v4, 1, (Map) null);
     }
 
@@ -49,15 +49,15 @@ public final class C0770zg {
     public C0770zg(Qi qi, C0665vf c0665vf, Handler handler, boolean z, C0193d8 c0193d8, Gg gg) {
         this.b = qi;
         this.c = c0665vf;
-        this.f1316a = z;
+        this.f1318a = z;
         this.d = c0193d8;
         this.e = gg;
         this.f = handler;
     }
 
     public final void a(Bg bg) {
-        String str = bg == null ? null : bg.f478a;
-        if (this.f1316a) {
+        String str = bg == null ? null : bg.f480a;
+        if (this.f1318a) {
             return;
         }
         synchronized (this) {
@@ -71,7 +71,7 @@ public final class C0770zg {
     public final synchronized void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
         C0193d8 c0193d8 = this.d;
         c0193d8.c = deferredDeeplinkParametersListener;
-        if (c0193d8.f941a) {
+        if (c0193d8.f943a) {
             c0193d8.a(1);
         } else {
             c0193d8.a();
@@ -82,7 +82,7 @@ public final class C0770zg {
     public final synchronized void a(DeferredDeeplinkListener deferredDeeplinkListener) {
         C0193d8 c0193d8 = this.d;
         c0193d8.b = deferredDeeplinkListener;
-        if (c0193d8.f941a) {
+        if (c0193d8.f943a) {
             c0193d8.a(1);
         } else {
             c0193d8.a();

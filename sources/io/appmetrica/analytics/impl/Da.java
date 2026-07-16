@@ -13,14 +13,14 @@ public final class Da extends Q4 {
         C0687wb c0687wb = bundle != null ? (C0687wb) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
         if (c0687wb != null) {
             if (c0687wb.d) {
-                F4 f4 = l4.b.d.f779a;
+                F4 f4 = l4.b.d.f781a;
                 Boolean bool = f4.n;
                 Boolean bool2 = f4.i;
                 Na.I.c().c(bool != null ? bool.booleanValue() : true);
                 Na.I.h().b(bool2);
             }
         }
-        this.f725a.a(c0687wb);
+        this.f727a.a(c0687wb);
         return false;
     }
 }

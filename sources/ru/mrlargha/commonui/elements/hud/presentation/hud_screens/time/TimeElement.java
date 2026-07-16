@@ -175,9 +175,19 @@ public final class TimeElement {
     }
 
     private final void setItem(Component component, HudElementTimeItemBinding hudElementTimeItemBinding) {
+        int i;
         String str;
         hudElementTimeItemBinding.getRoot().setVisibility(0);
         hudElementTimeItemBinding.title.setText(component.getTitle());
+        Integer multiplier = component.getMultiplier();
+        CustomCardView customCardView = hudElementTimeItemBinding.multiplierCard;
+        if (multiplier == null || multiplier.intValue() <= 1) {
+            i = 8;
+        } else {
+            hudElementTimeItemBinding.multiplier.setText("X" + multiplier);
+            i = 0;
+        }
+        customCardView.setVisibility(i);
         if (component.getDescription() != null) {
             if (component.getDescription().length() > 14) {
                 hudElementTimeItemBinding.timer.setText(MoneyElementKt.resize(component.getDescription(), 0.8f));
@@ -215,19 +225,18 @@ public final class TimeElement {
                 textView3.setText(format2);
             }
         }
-        String str2 = UtilsKt.isArizonaType() ? "systems/time/icons/" : "systems/time_menu/";
-        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str2 + component.getImage()).into(hudElementTimeItemBinding.image);
-        String str3 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
-        String str4 = DonateUtilsKt.TRANSPARENT_COLOR;
-        if (str3 == null) {
-            str3 = DonateUtilsKt.TRANSPARENT_COLOR;
+        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + (UtilsKt.isArizonaType() ? "systems/time/icons/" : "systems/time_menu/") + component.getImage()).into(hudElementTimeItemBinding.image);
+        String str2 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
+        String str3 = DonateUtilsKt.TRANSPARENT_COLOR;
+        if (str2 == null) {
+            str2 = DonateUtilsKt.TRANSPARENT_COLOR;
         }
-        int parseColor = Color.parseColor(str3);
-        String str5 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 1);
-        if (str5 != null) {
-            str4 = str5;
+        int parseColor = Color.parseColor(str2);
+        String str4 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 1);
+        if (str4 != null) {
+            str3 = str4;
         }
-        int parseColor2 = Color.parseColor(str4);
+        int parseColor2 = Color.parseColor(str3);
         CustomCardView mainCard = hudElementTimeItemBinding.mainCard;
         Intrinsics.checkNotNullExpressionValue(mainCard, "mainCard");
         CustomCardView.setBackground$default(mainCard, parseColor, parseColor2, null, null, 12, null);

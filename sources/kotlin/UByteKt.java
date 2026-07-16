@@ -6,18 +6,18 @@ import com.facebook.internal.NativeProtocol;
 /* loaded from: classes5.dex */
 public final class UByteKt {
     private static final byte toUByte(byte b) {
-        return UByte.m9914constructorimpl(b);
+        return UByte.m9916constructorimpl(b);
     }
 
     private static final byte toUByte(short s) {
-        return UByte.m9914constructorimpl((byte) s);
+        return UByte.m9916constructorimpl((byte) s);
     }
 
     private static final byte toUByte(int i) {
-        return UByte.m9914constructorimpl((byte) i);
+        return UByte.m9916constructorimpl((byte) i);
     }
 
     private static final byte toUByte(long j) {
-        return UByte.m9914constructorimpl((byte) j);
+        return UByte.m9916constructorimpl((byte) j);
     }
 }

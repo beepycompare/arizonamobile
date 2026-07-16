@@ -6,19 +6,19 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0 implements Xc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ E0 f484a;
+    public final /* synthetic */ E0 f486a;
     public final /* synthetic */ AppMetricaConfig b;
     public final /* synthetic */ PublicLogger c;
 
     public C0(E0 e0, AppMetricaConfig appMetricaConfig, PublicLogger publicLogger) {
-        this.f484a = e0;
+        this.f486a = e0;
         this.b = appMetricaConfig;
         this.c = publicLogger;
     }
 
     @Override // io.appmetrica.analytics.impl.Xc
     public final Jc a() {
-        E0 e0 = this.f484a;
+        E0 e0 = this.f486a;
         Di di = e0.g;
         AppMetricaConfig appMetricaConfig = this.b;
         PublicLogger publicLogger = this.c;

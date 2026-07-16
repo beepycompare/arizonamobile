@@ -17,7 +17,7 @@ public final class LongParser {
     private static final LongParser iso = new LongParser(4611686018427387903L, true);
 
     /* renamed from: default  reason: not valid java name */
-    private static final LongParser f76default = new LongParser(Long.MAX_VALUE, false);
+    private static final LongParser f78default = new LongParser(Long.MAX_VALUE, false);
 
     private LongParser(long j, boolean z) {
         this.overflowLimit = j;
@@ -95,7 +95,7 @@ public final class LongParser {
         }
 
         public final LongParser getDefault() {
-            return LongParser.f76default;
+            return LongParser.f78default;
         }
     }
 }

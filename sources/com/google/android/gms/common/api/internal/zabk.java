@@ -18,6 +18,7 @@ import com.google.android.gms.common.api.internal.ListenerHolder;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.ArrayUtils;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import com.miami.game.core.settings.game_test.GameTestScriptModelKt;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -107,7 +108,7 @@ public final class zabk implements GoogleApiClient.ConnectionCallbacks, GoogleAp
         ApiKey apiKey = this.zad;
         GoogleApiManager googleApiManager = this.zaa;
         googleApiManager.zaF().sendMessageDelayed(Message.obtain(googleApiManager.zaF(), 9, apiKey), 5000L);
-        googleApiManager.zaF().sendMessageDelayed(Message.obtain(googleApiManager.zaF(), 11, apiKey), 120000L);
+        googleApiManager.zaF().sendMessageDelayed(Message.obtain(googleApiManager.zaF(), 11, apiKey), GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS);
         googleApiManager.zaB().zac();
         for (zacd zacdVar : this.zag.values()) {
             zacdVar.zac.run();
@@ -183,7 +184,7 @@ public final class zabk implements GoogleApiClient.ConnectionCallbacks, GoogleAp
         }
         list.add(zablVar);
         googleApiManager.zaF().sendMessageDelayed(Message.obtain(googleApiManager.zaF(), 15, zablVar), 5000L);
-        googleApiManager.zaF().sendMessageDelayed(Message.obtain(googleApiManager.zaF(), 16, zablVar), 120000L);
+        googleApiManager.zaF().sendMessageDelayed(Message.obtain(googleApiManager.zaF(), 16, zablVar), GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS);
         ConnectionResult connectionResult = new ConnectionResult(2, null, null, Integer.valueOf(zac));
         if (!zaE(connectionResult)) {
             if (googleApiManager.zap(connectionResult, this.zah)) {

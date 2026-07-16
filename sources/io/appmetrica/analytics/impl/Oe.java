@@ -10,7 +10,7 @@ public final class Oe extends ECommerceEvent {
     public static final int e = 7;
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f701a;
+    public final int f703a;
     public final Qe b;
     public final InterfaceC0632u8 c;
 
@@ -33,11 +33,11 @@ public final class Oe extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "OrderInfoEvent{eventType=" + this.f701a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "OrderInfoEvent{eventType=" + this.f703a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Oe(int i, Qe qe, InterfaceC0632u8 interfaceC0632u8) {
-        this.f701a = i;
+        this.f703a = i;
         this.b = qe;
         this.c = interfaceC0632u8;
     }

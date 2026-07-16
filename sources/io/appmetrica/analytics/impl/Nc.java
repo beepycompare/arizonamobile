@@ -7,10 +7,10 @@ public final class Nc implements InterfaceC0706x4 {
     /* renamed from: b */
     public final Oc a(Context context, C0603t5 c0603t5, C0266g4 c0266g4, G4 g4) {
         Rg rg;
-        Pc pc = new Pc(c0266g4.b, c0266g4.f992a);
+        Pc pc = new Pc(c0266g4.b, c0266g4.f994a);
         Sg sg = new Sg(new Rc());
         synchronized (c0603t5) {
-            rg = (Rg) c0603t5.a(pc, g4, sg, c0603t5.f1210a);
+            rg = (Rg) c0603t5.a(pc, g4, sg, c0603t5.f1212a);
         }
         return new Oc(context, rg);
     }

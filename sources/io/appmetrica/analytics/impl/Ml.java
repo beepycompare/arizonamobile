@@ -3,15 +3,15 @@ package io.appmetrica.analytics.impl;
 public final class Ml implements Vo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B0 f669a;
+    public final B0 f671a;
 
     public Ml(B0 b0) {
-        this.f669a = b0;
+        this.f671a = b0;
     }
 
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(Void r3) {
-        this.f669a.getClass();
+        this.f671a.getClass();
         if (B0.a()) {
             return new To(this, true, "");
         }

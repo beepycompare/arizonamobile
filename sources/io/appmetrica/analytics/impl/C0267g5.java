@@ -6,11 +6,11 @@ import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 public class C0267g5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f993a;
+    public final String f995a;
     public final String b;
 
     public C0267g5(String str, String str2) {
-        this.f993a = str;
+        this.f995a = str;
         this.b = str2;
     }
 
@@ -23,7 +23,7 @@ public class C0267g5 {
     }
 
     public final String c() {
-        return this.f993a;
+        return this.f995a;
     }
 
     public boolean d() {
@@ -31,7 +31,7 @@ public class C0267g5 {
     }
 
     public String e() {
-        return this.f993a + "_" + ApiKeyUtils.createPartialApiKey(this.b);
+        return this.f995a + "_" + ApiKeyUtils.createPartialApiKey(this.b);
     }
 
     public final boolean equals(Object obj) {
@@ -40,8 +40,8 @@ public class C0267g5 {
         }
         if (obj != null && getClass() == obj.getClass()) {
             C0267g5 c0267g5 = (C0267g5) obj;
-            String str = this.f993a;
-            if (str == null ? c0267g5.f993a != null : !str.equals(c0267g5.f993a)) {
+            String str = this.f995a;
+            if (str == null ? c0267g5.f995a != null : !str.equals(c0267g5.f995a)) {
                 return false;
             }
             String str2 = this.b;
@@ -56,13 +56,13 @@ public class C0267g5 {
     }
 
     public final int hashCode() {
-        String str = this.f993a;
+        String str = this.f995a;
         int hashCode = (str != null ? str.hashCode() : 0) * 31;
         String str2 = this.b;
         return hashCode + (str2 != null ? str2.hashCode() : 0);
     }
 
     public String toString() {
-        return this.f993a + "_" + this.b;
+        return this.f995a + "_" + this.b;
     }
 }

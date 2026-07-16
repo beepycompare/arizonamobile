@@ -243,7 +243,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-slider-BaseSlider  reason: not valid java name */
-    public /* synthetic */ void m9612lambda$new$0$comgoogleandroidmaterialsliderBaseSlider() {
+    public /* synthetic */ void m9613lambda$new$0$comgoogleandroidmaterialsliderBaseSlider() {
         setActiveThumbIndex(-1);
         invalidate();
     }
@@ -307,7 +307,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         this.resetActiveThumbIndex = new Runnable() { // from class: com.google.android.material.slider.BaseSlider$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                BaseSlider.this.m9612lambda$new$0$comgoogleandroidmaterialsliderBaseSlider();
+                BaseSlider.this.m9613lambda$new$0$comgoogleandroidmaterialsliderBaseSlider();
             }
         };
         Context context2 = getContext();
@@ -2374,7 +2374,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.slider.BaseSlider$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                BaseSlider.this.m9611x2eeddb89(valueAnimator);
+                BaseSlider.this.m9612x2eeddb89(valueAnimator);
             }
         });
         return ofFloat;
@@ -2382,7 +2382,7 @@ public abstract class BaseSlider<S extends BaseSlider<S, L, T>, L extends BaseOn
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createLabelAnimator$1$com-google-android-material-slider-BaseSlider  reason: not valid java name */
-    public /* synthetic */ void m9611x2eeddb89(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9612x2eeddb89(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         for (TooltipDrawable tooltipDrawable : this.labels) {
             tooltipDrawable.setRevealFraction(floatValue);

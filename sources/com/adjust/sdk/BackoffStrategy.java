@@ -1,9 +1,10 @@
 package com.adjust.sdk;
 
+import com.miami.game.core.settings.game_test.GameTestScriptModelKt;
 import kotlin.time.DurationKt;
 /* loaded from: classes3.dex */
 public enum BackoffStrategy {
-    LONG_WAIT(1, 120000, 86400000, 0.5d, 1.0d),
+    LONG_WAIT(1, GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS, 86400000, 0.5d, 1.0d),
     SHORT_WAIT(1, 200, DurationKt.MILLIS_IN_HOUR, 0.5d, 1.0d),
     TEST_WAIT(1, 200, 1000, 0.5d, 1.0d),
     NO_WAIT(100, 1, 1000, 1.0d, 1.0d);

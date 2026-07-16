@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class Bl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0468o f481a;
+    public final C0468o f483a;
     public final C5 b;
     public final ActivityLifecycleListener c;
     public final ActivityLifecycleListener d;
@@ -49,7 +49,7 @@ public final class Bl {
 
     public Bl(C0468o c0468o, C0416m c0416m, C5 c5, C0520q c0520q) {
         this.g = false;
-        this.f481a = c0468o;
+        this.f483a = c0468o;
         this.f = c0416m;
         this.b = c5;
         this.e = c0520q;
@@ -81,10 +81,10 @@ public final class Bl {
 
     public final synchronized EnumC0442n a() {
         if (!this.g) {
-            this.f481a.registerListener(this.c, ActivityEvent.RESUMED);
-            this.f481a.registerListener(this.d, ActivityEvent.PAUSED);
+            this.f483a.registerListener(this.c, ActivityEvent.RESUMED);
+            this.f483a.registerListener(this.d, ActivityEvent.PAUSED);
             this.g = true;
         }
-        return this.f481a.b;
+        return this.f483a.b;
     }
 }

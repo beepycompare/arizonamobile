@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_gravity="center" android:background="#cc000000" android:layout_width="match_parent" android:layout_height="match_parent">
-    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:background="#131516" android:layout_width="@dimen/_160sdp" android:layout_height="@dimen/_220sdp" app:corners="@dimen/_6sdp">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_gravity="center" android:background="?attr/winterBpModalOverlay" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:background="?attr/winterBpModalBackground" android:layout_width="@dimen/_160sdp" android:layout_height="@dimen/_220sdp" app:corners="@dimen/_6sdp">
         <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
             <ImageView android:id="@+id/iv_poster" android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/bp_season_ended_poster" android:adjustViewBounds="true"/>
             <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
                 <LinearLayout android:orientation="vertical" android:padding="@dimen/_8sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
                     <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/white" android:id="@+id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
-                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#b3ffffff" android:id="@+id/tv_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:fontFamily="@font/heading_now_64_regular"/>
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/winter_bp_white_70" android:id="@+id/tv_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:fontFamily="@font/heading_now_64_regular"/>
                 </LinearLayout>
             </ScrollView>
-            <View android:background="#0dffffff" android:layout_width="match_parent" android:layout_height="@dimen/_1sdp"/>
+            <View android:background="@color/winter_bp_white_05" android:layout_width="match_parent" android:layout_height="@dimen/_1sdp"/>
             <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/_20sdp" android:layout_margin="@dimen/_8sdp">
-                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/btn_accept" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#d279ff" app:backgroundSecondColor="#6a08c6" app:corners="@dimen/_4sdp">
-                    <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_accept" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Приинять" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/btn_accept" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="?attr/winterBpAction" app:corners="@dimen/_4sdp">
+                    <TextView android:textSize="@dimen/_7sdp" android:textColor="?attr/winterBpOnAction" android:layout_gravity="center" android:id="@+id/tv_accept" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Принять" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
                 </ru.mrlargha.commonui.utils.ui.CustomCardView>
                 <View android:layout_width="@dimen/_2sdp" android:layout_height="0dp"/>
-                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/btn_close" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#1affffff" app:corners="@dimen/_4sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/btn_close" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="@color/winter_bp_white_10" app:corners="@dimen/_4sdp">
                     <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_close" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Закрыть" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
                 </ru.mrlargha.commonui.utils.ui.CustomCardView>
             </LinearLayout>

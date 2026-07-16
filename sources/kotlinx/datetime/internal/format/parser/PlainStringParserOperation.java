@@ -31,10 +31,10 @@ public final class PlainStringParserOperation<Output> implements ParserOperation
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo11531consumeFANa98k(Output output, final CharSequence input, final int i) {
+    public Object mo11533consumeFANa98k(Output output, final CharSequence input, final int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (this.string.length() + i > input.length()) {
-            return ParseResult.Companion.m11541ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m11543ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return PlainStringParserOperation.consume_FANa98k$lambda$3(PlainStringParserOperation.this);
@@ -44,7 +44,7 @@ public final class PlainStringParserOperation<Output> implements ParserOperation
         int length = this.string.length();
         for (final int i2 = 0; i2 < length; i2++) {
             if (input.charAt(i + i2) != this.string.charAt(i2)) {
-                return ParseResult.Companion.m11541ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda1
+                return ParseResult.Companion.m11543ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.PlainStringParserOperation$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
                         return PlainStringParserOperation.consume_FANa98k$lambda$4(PlainStringParserOperation.this, input, i, i2);
@@ -52,7 +52,7 @@ public final class PlainStringParserOperation<Output> implements ParserOperation
                 });
             }
         }
-        return ParseResult.Companion.m11542OkQi1bsqg(i + this.string.length());
+        return ParseResult.Companion.m11544OkQi1bsqg(i + this.string.length());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public final class r implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f435a;
+    public final ServiceContext f437a;
     public final String b;
     public final String c = CommonUrlParts.ADV_ID;
     public final String d = CommonUrlParts.HUAWEI_OAID;
@@ -28,14 +28,14 @@ public final class r implements s {
     public final u l;
 
     public r(ServiceContext serviceContext, String str) {
-        this.f435a = serviceContext;
+        this.f437a = serviceContext;
         this.b = str;
         this.l = new u(serviceContext);
     }
 
     @Override // io.appmetrica.analytics.idsync.impl.s
     public final void a(final String str, SdkIdentifiers sdkIdentifiers) {
-        PlatformIdentifiers platformIdentifiers = this.f435a.getPlatformIdentifiers();
+        PlatformIdentifiers platformIdentifiers = this.f437a.getPlatformIdentifiers();
         AdvertisingIdsHolder identifiers = platformIdentifiers.getAdvIdentifiersProvider().getIdentifiers();
         Uri.Builder buildUpon = Uri.parse(this.b).buildUpon();
         AdTrackingInfo adTrackingInfo = identifiers.getGoogle().mAdTrackingInfo;
@@ -57,7 +57,7 @@ public final class r implements s {
             buildUpon.appendQueryParameter(this.h, id);
         }
         final String uri = buildUpon.build().toString();
-        final IHandlerExecutor supportIOExecutor = this.f435a.getExecutorProvider().getSupportIOExecutor();
+        final IHandlerExecutor supportIOExecutor = this.f437a.getExecutorProvider().getSupportIOExecutor();
         final long currentTimeMillis = this.k.currentTimeMillis();
         supportIOExecutor.execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.r$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable

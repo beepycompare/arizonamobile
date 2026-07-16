@@ -64,7 +64,7 @@ public class SequencesKt___SequencesJvmKt extends SequencesKt__SequencesKt {
     @Deprecated(message = "Use maxOrNull instead.", replaceWith = @ReplaceWith(expression = "this.maxOrNull()", imports = {}))
     @DeprecatedSinceKotlin(errorSince = "1.5", hiddenSince = "1.6", warningSince = "1.4")
     /* renamed from: max  reason: collision with other method in class */
-    public static final /* synthetic */ Double m11210max(Sequence sequence) {
+    public static final /* synthetic */ Double m11212max(Sequence sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         return SequencesKt.maxOrNull((Sequence<? extends Double>) sequence);
     }
@@ -72,7 +72,7 @@ public class SequencesKt___SequencesJvmKt extends SequencesKt__SequencesKt {
     @Deprecated(message = "Use maxOrNull instead.", replaceWith = @ReplaceWith(expression = "this.maxOrNull()", imports = {}))
     @DeprecatedSinceKotlin(errorSince = "1.5", hiddenSince = "1.6", warningSince = "1.4")
     /* renamed from: max  reason: collision with other method in class */
-    public static final /* synthetic */ Float m11211max(Sequence sequence) {
+    public static final /* synthetic */ Float m11213max(Sequence sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         return SequencesKt.maxOrNull((Sequence<? extends Float>) sequence);
     }
@@ -95,7 +95,7 @@ public class SequencesKt___SequencesJvmKt extends SequencesKt__SequencesKt {
     @Deprecated(message = "Use minOrNull instead.", replaceWith = @ReplaceWith(expression = "this.minOrNull()", imports = {}))
     @DeprecatedSinceKotlin(errorSince = "1.5", hiddenSince = "1.6", warningSince = "1.4")
     /* renamed from: min  reason: collision with other method in class */
-    public static final /* synthetic */ Double m11212min(Sequence sequence) {
+    public static final /* synthetic */ Double m11214min(Sequence sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         return SequencesKt.minOrNull((Sequence<? extends Double>) sequence);
     }
@@ -103,7 +103,7 @@ public class SequencesKt___SequencesJvmKt extends SequencesKt__SequencesKt {
     @Deprecated(message = "Use minOrNull instead.", replaceWith = @ReplaceWith(expression = "this.minOrNull()", imports = {}))
     @DeprecatedSinceKotlin(errorSince = "1.5", hiddenSince = "1.6", warningSince = "1.4")
     /* renamed from: min  reason: collision with other method in class */
-    public static final /* synthetic */ Float m11213min(Sequence sequence) {
+    public static final /* synthetic */ Float m11215min(Sequence sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         return SequencesKt.minOrNull((Sequence<? extends Float>) sequence);
     }

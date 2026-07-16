@@ -9,7 +9,7 @@ import ru.mrlargha.commonui.domain.db.inventory.InventoryItemEntity;
 public final class InventoryItemKt {
     public static final InventoryItemEntity toEntity(InventoryItem inventoryItem) {
         Intrinsics.checkNotNullParameter(inventoryItem, "<this>");
-        return new InventoryItemEntity(inventoryItem.getSlot(), inventoryItem.getItem(), inventoryItem.getId(), inventoryItem.getText(), inventoryItem.getItem_type(), inventoryItem.getAmount(), inventoryItem.getBackground(), inventoryItem.getColor(), inventoryItem.getBits(), inventoryItem.getAvailable(), inventoryItem.getEnchant(), inventoryItem.getBreaks(), inventoryItem.isActive(), inventoryItem.getItemStrength(), inventoryItem.getBlackout(), inventoryItem.getTime(), inventoryItem.getAcsSlot(), inventoryItem.getInventoryType(), inventoryItem.isColored(), inventoryItem.isLocked(), inventoryItem.getEffect(), inventoryItem.getEffectType(), inventoryItem.getQuality(), inventoryItem.getCustomIcon());
+        return new InventoryItemEntity(inventoryItem.getSlot(), inventoryItem.getItem(), inventoryItem.getId(), inventoryItem.getText(), inventoryItem.getItem_type(), inventoryItem.getAmount(), inventoryItem.getBackground(), inventoryItem.getColor(), inventoryItem.getBits(), inventoryItem.getAvailable(), inventoryItem.getEnchant(), inventoryItem.getBreaks(), inventoryItem.isActive(), inventoryItem.getItemStrength(), inventoryItem.getBlackout(), inventoryItem.getTime(), inventoryItem.getAcsSlot(), inventoryItem.getInventoryType(), inventoryItem.isColored(), inventoryItem.isLocked(), inventoryItem.getEffect(), inventoryItem.getEffectType(), inventoryItem.getQuality(), inventoryItem.getCustomIcon(), inventoryItem.getLoading());
     }
 
     public static final InventoryItem toUi(InventoryItemEntity inventoryItemEntity) {
@@ -31,6 +31,6 @@ public final class InventoryItemKt {
         Integer enchant = inventoryItemEntity.getEnchant();
         Integer breaks = inventoryItemEntity.getBreaks();
         Integer isActive = inventoryItemEntity.isActive();
-        return new InventoryItem(slot, item, id, text, item_type, amount, background, color, bits, available, enchant, inventoryItemEntity.getBlackout(), inventoryItemEntity.getTime(), inventoryItemEntity.getItemStrength(), isActive, breaks, inventoryType, acsSlot, null, isColored, isLocked, inventoryItemEntity.getEffect(), inventoryItemEntity.getEffectType(), inventoryItemEntity.getQuality(), inventoryItemEntity.getCustom_icon());
+        return new InventoryItem(slot, item, id, text, item_type, amount, background, color, bits, available, enchant, inventoryItemEntity.getBlackout(), inventoryItemEntity.getTime(), inventoryItemEntity.getItemStrength(), isActive, breaks, inventoryType, acsSlot, null, isColored, isLocked, inventoryItemEntity.getEffect(), inventoryItemEntity.getEffectType(), inventoryItemEntity.getQuality(), inventoryItemEntity.getCustom_icon(), inventoryItemEntity.getLoading());
     }
 }

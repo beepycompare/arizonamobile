@@ -9,7 +9,7 @@ public final class C0232em implements ProtobufConverter {
     /* renamed from: a */
     public final C0501p6 fromModel(C0258fm c0258fm) {
         C0501p6 c0501p6 = new C0501p6();
-        c0501p6.f1143a = (String) WrapUtils.getOrDefault(c0258fm.f985a, c0501p6.f1143a);
+        c0501p6.f1145a = (String) WrapUtils.getOrDefault(c0258fm.f987a, c0501p6.f1145a);
         c0501p6.b = (String) WrapUtils.getOrDefault(c0258fm.b, c0501p6.b);
         c0501p6.c = ((Integer) WrapUtils.getOrDefault(c0258fm.c, Integer.valueOf(c0501p6.c))).intValue();
         c0501p6.f = ((Integer) WrapUtils.getOrDefault(c0258fm.d, Integer.valueOf(c0501p6.f))).intValue();

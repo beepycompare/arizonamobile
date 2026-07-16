@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/dialog_buy_crypto_layout" android:paddingTop="@dimen/_20sdp" android:paddingBottom="@dimen/_20sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingVertical="@dimen/_20sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_400sdp" style="@style/DialogSmallContainer">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_13sdp" android:textColor="@color/white" android:id="@+id/caption" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/header_info_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/_7sdp" android:textColor="#d7eef1" android:id="@+id/header_info_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:paddingLeft="@dimen/_2sdp" android:paddingTop="@dimen/_2sdp" android:paddingRight="@dimen/_2sdp" android:paddingBottom="@dimen/_2sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_8sdp" android:paddingHorizontal="@dimen/_2sdp" android:paddingVertical="@dimen/_2sdp" app:backgroundMainColor="#203847" app:corners="@dimen/_16sdp">
+                        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <ImageView android:id="@+id/iv_currency" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:src="@drawable/currency_ic_btc"/>
+                            <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:id="@+id/header_info_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:fontFamily="@font/heading_now_66_bold" android:layout_marginHorizontal="@dimen/_2sdp"/>
+                        </LinearLayout>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                </LinearLayout>
+                <ImageView android:id="@+id/btn_cancel" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/dialog_ic_cross" android:layout_marginStart="@dimen/_10sdp"/>
+            </LinearLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/availability_card" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/_26sdp" android:layout_marginTop="@dimen/_14sdp" app:borderMainColor="#55b4c4cd" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#d7eef1" android:layout_gravity="center" android:id="@+id/availability_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <TextView android:scrollbarSize="@dimen/_3sdp" android:scrollbarThumbVertical="@drawable/dialog_scrollbar" android:scrollbarTrackVertical="@drawable/dialog_scrollbar_container" android:scrollbarStyle="outsideInset" android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:id="@+id/body_text" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp" android:fadeScrollbars="false" android:fontFamily="@font/heading_now_64_regular" android:paddingEnd="@dimen/_4sdp"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="@dimen/_26sdp" android:layout_marginTop="@dimen/_10sdp" app:backgroundMainColor="#1affffff" app:borderMainColor="#70b7c8d0" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/amount_input_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginEnd="@dimen/_34sdp" app:boxBackgroundMode="none" app:hintEnabled="false" style="@style/NoPaddingTextInputLayout">
+                        <EditText android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:gravity="center_vertical" android:id="@+id/amount_input" android:background="@android:color/transparent" android:paddingLeft="@dimen/_12sdp" android:paddingRight="@dimen/_12sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:digits="0123456789" android:inputType="number" android:imeOptions="flagNoExtractUi|actionDone" android:fontFamily="@font/heading_now_66_bold" android:paddingHorizontal="@dimen/_12sdp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_gravity="end|center_vertical" android:id="@+id/amount_suffix" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/heading_now_66_bold" android:layout_marginEnd="@dimen/_12sdp"/>
+                </FrameLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <TextView android:textSize="@dimen/_7sdp" android:textColor="#ff7c7c" android:id="@+id/validation_text" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_6sdp" android:fontFamily="@font/heading_now_64_regular"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_34sdp" android:layout_marginTop="@dimen/_16sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/summary_card_dollars" android:layout_width="match_parent" android:layout_height="@dimen/_26sdp" app:backgroundMainColor="#1affffff" app:borderMainColor="#33ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp">
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:gravity="center" android:id="@+id/summary_dollars" android:layout_width="match_parent" android:layout_height="match_parent" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_16sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/primary_button" android:layout_width="0dp" android:layout_height="@dimen/_34sdp" android:layout_weight="1" app:backgroundMainColor="#fff000" app:corners="@dimen/_8sdp">
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#15182a" android:gravity="center" android:id="@+id/primary_button_text" android:layout_width="match_parent" android:layout_height="match_parent" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/secondary_button" android:layout_width="0dp" android:layout_height="@dimen/_34sdp" android:layout_weight="1" android:layout_marginStart="@dimen/_8sdp" app:backgroundMainColor="#33ffffff" app:backgroundTransparency="20" app:corners="@dimen/_8sdp">
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:gravity="center" android:id="@+id/secondary_button_text" android:layout_width="match_parent" android:layout_height="match_parent" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

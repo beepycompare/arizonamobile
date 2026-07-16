@@ -11,12 +11,12 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 public final class C0518pn extends AbstractC0621tn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f1152a;
+    public final /* synthetic */ String f1154a;
     public final /* synthetic */ ProtobufStateSerializer b;
     public final /* synthetic */ ProtobufConverter c;
 
     public C0518pn(String str, ProtobufStateSerializer protobufStateSerializer, ProtobufConverter protobufConverter) {
-        this.f1152a = str;
+        this.f1154a = str;
         this.b = protobufStateSerializer;
         this.c = protobufConverter;
     }
@@ -40,7 +40,7 @@ public final class C0518pn extends AbstractC0621tn {
     public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
         byte[] bArr;
         byte[] bArr2;
-        String str = this.f1152a;
+        String str = this.f1154a;
         ProtobufStateSerializer protobufStateSerializer = this.b;
         try {
             bArr = AbstractC0402lb.a(context.getPackageName());

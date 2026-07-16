@@ -30,14 +30,14 @@ public final class Gd extends AbstractC0305hh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0305hh
     public final boolean a(C0242f6 c0242f6) {
-        if (this.f1017a.t.c()) {
+        if (this.f1019a.t.c()) {
             ArrayList arrayList = this.b;
             if (!(arrayList instanceof Collection) || !arrayList.isEmpty()) {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     Pair pair = (Pair) it.next();
                     C0611td c0611td = (C0611td) pair.component2();
-                    if (((ModuleServiceEventHandler) pair.component1()).handle(new C0689wd(c0611td.b, c0611td.f1215a, new C0663vd(c0611td.e, c0611td.d, c0611td.c, c0242f6)), c0242f6)) {
+                    if (((ModuleServiceEventHandler) pair.component1()).handle(new C0689wd(c0611td.b, c0611td.f1217a, new C0663vd(c0611td.e, c0611td.d, c0611td.c, c0242f6)), c0242f6)) {
                         return true;
                     }
                 }

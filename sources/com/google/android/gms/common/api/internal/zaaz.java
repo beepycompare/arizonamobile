@@ -18,6 +18,7 @@ import com.google.android.gms.common.internal.ClientSettings;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.service.Common;
 import com.google.android.gms.common.util.ClientLibraryUtils;
+import com.miami.game.core.settings.game_test.GameTestScriptModelKt;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -61,7 +62,7 @@ public final class zaaz extends GoogleApiClient implements zabu {
     final Queue zaa = new LinkedList();
 
     public zaaz(Context context, Lock lock, Looper looper, ClientSettings clientSettings, GoogleApiAvailability googleApiAvailability, Api.AbstractClientBuilder abstractClientBuilder, Map map, List list, List list2, Map map2, int i, int i2, ArrayList arrayList) {
-        this.zaq = true != ClientLibraryUtils.isPackageSide() ? 120000L : 10000L;
+        this.zaq = true != ClientLibraryUtils.isPackageSide() ? GameTestScriptModelKt.DEFAULT_LOGIN_AND_SPAWN_TIMEOUT_MS : 10000L;
         this.zar = 5000L;
         this.zad = new HashSet();
         this.zau = new ListenerHolders();

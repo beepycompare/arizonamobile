@@ -3,10 +3,10 @@ package ru.mrlargha.feature.battlepassWinter2025.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.feature.battlepassWinter2025.R;
@@ -15,17 +15,17 @@ public final class WinterBattlepassLevelSetsLayoutMaximumBinding implements View
     public final LinearLayout buttonReturn;
     public final ImageView logo;
     public final TextView mainPageTitle;
-    private final ConstraintLayout rootView;
+    private final FrameLayout rootView;
 
-    private WinterBattlepassLevelSetsLayoutMaximumBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, ImageView imageView, TextView textView) {
-        this.rootView = constraintLayout;
+    private WinterBattlepassLevelSetsLayoutMaximumBinding(FrameLayout frameLayout, LinearLayout linearLayout, ImageView imageView, TextView textView) {
+        this.rootView = frameLayout;
         this.buttonReturn = linearLayout;
         this.logo = imageView;
         this.mainPageTitle = textView;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public ConstraintLayout getRoot() {
+    public FrameLayout getRoot() {
         return this.rootView;
     }
 
@@ -51,7 +51,7 @@ public final class WinterBattlepassLevelSetsLayoutMaximumBinding implements View
                 i = R.id.main_page_title;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
-                    return new WinterBattlepassLevelSetsLayoutMaximumBinding((ConstraintLayout) view, linearLayout, imageView, textView);
+                    return new WinterBattlepassLevelSetsLayoutMaximumBinding((FrameLayout) view, linearLayout, imageView, textView);
                 }
             }
         }

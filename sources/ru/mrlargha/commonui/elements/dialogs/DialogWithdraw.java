@@ -67,6 +67,10 @@ public final class DialogWithdraw extends AbstractDialog {
     public static final Companion Companion = new Companion(null);
     private static final Map<Integer, String> inputHistory = new LinkedHashMap();
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void lambda$0$0(View view) {
+    }
+
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public DialogWithdraw(final Activity targetActivity, int i, SpannableString caption, SpannableString info, SpannableString leftButtonText, SpannableString rightButtonText, boolean z, final int i2, String hintInput) {
         super(targetActivity, i, i2);
@@ -94,10 +98,16 @@ public final class DialogWithdraw extends AbstractDialog {
         Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
         addViewToConstraintLayout(dialogLayout, -2, -2);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
-        dialogLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda0
+        bind.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                DialogWithdraw.lambda$0$0(view);
+            }
+        });
+        dialogLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda1
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
-                DialogWithdraw.lambda$0$0(DialogWithdraw.this);
+                DialogWithdraw.lambda$0$1(DialogWithdraw.this);
             }
         });
         bind.infoText.setText(info);
@@ -109,10 +119,10 @@ public final class DialogWithdraw extends AbstractDialog {
             bind.buttons.button1.setVisibility(8);
         } else {
             bind.buttons.tvAccept.setText(spannableString);
-            bind.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda1
+            bind.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogWithdraw.lambda$0$1(targetActivity, this, i2, view);
+                    DialogWithdraw.lambda$0$2(targetActivity, this, i2, view);
                 }
             });
         }
@@ -121,24 +131,24 @@ public final class DialogWithdraw extends AbstractDialog {
             bind.buttons.button2.setVisibility(8);
         } else {
             bind.buttons.tvCancel.setText(spannableString2);
-            bind.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda2
+            bind.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogWithdraw.lambda$0$2(targetActivity, this, i2, view);
+                    DialogWithdraw.lambda$0$3(targetActivity, this, i2, view);
                 }
             });
         }
-        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda3
+        bind.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DialogWithdraw.lambda$0$3(targetActivity, this, i2, view);
+                DialogWithdraw.lambda$0$4(targetActivity, this, i2, view);
             }
         });
         setupListeners();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$0$0(DialogWithdraw dialogWithdraw) {
+    public static final void lambda$0$1(DialogWithdraw dialogWithdraw) {
         Rect rect = new Rect();
         dialogWithdraw.dialogLayout.getWindowVisibleDisplayFrame(rect);
         int height = dialogWithdraw.dialogLayout.getRootView().getRootView().getHeight();
@@ -158,7 +168,7 @@ public final class DialogWithdraw extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$0$1(Activity activity, DialogWithdraw dialogWithdraw, int i, View view) {
+    public static final void lambda$0$2(Activity activity, DialogWithdraw dialogWithdraw, int i, View view) {
         SAMPUIElement.Companion.hideKeyboard(activity);
         if (!dialogWithdraw.passwordMode) {
             Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider");
@@ -174,14 +184,14 @@ public final class DialogWithdraw extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$0$2(Activity activity, DialogWithdraw dialogWithdraw, int i, View view) {
+    public static final void lambda$0$3(Activity activity, DialogWithdraw dialogWithdraw, int i, View view) {
         SAMPUIElement.Companion.hideKeyboard(activity);
         dialogWithdraw.getNotifier().onDialogResponseWrapper(i, 0, -1, StringsKt.encodeToByteArray(dialogWithdraw.getInputCost()));
         dialogWithdraw.getNotifier().destroyDialog();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$0$3(Activity activity, DialogWithdraw dialogWithdraw, int i, View view) {
+    public static final void lambda$0$4(Activity activity, DialogWithdraw dialogWithdraw, int i, View view) {
         SAMPUIElement.Companion.hideKeyboard(activity);
         dialogWithdraw.getNotifier().onDialogResponseWrapper(i, 0, -1, StringsKt.encodeToByteArray(dialogWithdraw.getInputCost()));
         dialogWithdraw.getNotifier().destroyDialog();
@@ -252,7 +262,7 @@ public final class DialogWithdraw extends AbstractDialog {
         Intrinsics.checkNotNullParameter(btnMinus, "btnMinus");
         Intrinsics.checkNotNullParameter(et, "et");
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-        customCardView.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda8
+        customCardView.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda9
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 return DialogWithdraw.onClickPlus$lambda$0(Ref.BooleanRef.this, this, et, z, btnMinus, view, motionEvent);
@@ -307,7 +317,7 @@ public final class DialogWithdraw extends AbstractDialog {
     private final void onClickMinus(final CustomCardView customCardView, final EditText editText, final boolean z) {
         CustomCardView.changeValidate$default(customCardView, checkIsZero(editText), 0.0f, 2, null);
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-        customCardView.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda7
+        customCardView.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda8
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 return DialogWithdraw.onClickMinus$lambda$0(Ref.BooleanRef.this, this, editText, z, customCardView, view, motionEvent);
@@ -482,7 +492,7 @@ public final class DialogWithdraw extends AbstractDialog {
     }
 
     private final void setFilter(EditText editText, final boolean z) {
-        InputFilter inputFilter = new InputFilter() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda4
+        InputFilter inputFilter = new InputFilter() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda5
             @Override // android.text.InputFilter
             public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
                 return DialogWithdraw.setFilter$lambda$0(z, this, charSequence, i, i2, spanned, i3, i4);
@@ -543,7 +553,7 @@ public final class DialogWithdraw extends AbstractDialog {
     }
 
     private final void setFocus(EditText editText, final CustomCardView customCardView) {
-        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda5
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda6
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
                 DialogWithdraw.setFocus$lambda$0(CustomCardView.this, this, view, z);
@@ -570,7 +580,7 @@ public final class DialogWithdraw extends AbstractDialog {
     }
 
     private final void setLimit(EditText editText) {
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda6
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda7
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 return DialogWithdraw.setLimit$lambda$0(DialogWithdraw.this, textView, i, keyEvent);

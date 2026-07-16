@@ -14,7 +14,7 @@ public interface CachedDataProvider {
         private Object f = null;
 
         /* renamed from: a  reason: collision with root package name */
-        private final SystemTimeProvider f353a = new SystemTimeProvider();
+        private final SystemTimeProvider f355a = new SystemTimeProvider();
 
         public CachedData(long j, long j2, String str) {
             this.b = String.format("[CachedData-%s]", str);
@@ -40,7 +40,7 @@ public interface CachedDataProvider {
 
         public void setData(T t) {
             this.f = t;
-            this.e = this.f353a.currentTimeMillis();
+            this.e = this.f355a.currentTimeMillis();
         }
 
         public void setExpirationPolicy(long j, long j2) {
@@ -52,12 +52,12 @@ public interface CachedDataProvider {
             if (this.e == 0) {
                 return false;
             }
-            long currentTimeMillis = this.f353a.currentTimeMillis() - this.e;
+            long currentTimeMillis = this.f355a.currentTimeMillis() - this.e;
             return currentTimeMillis > this.d || currentTimeMillis < 0;
         }
 
         public final boolean shouldUpdateData() {
-            long currentTimeMillis = this.f353a.currentTimeMillis() - this.e;
+            long currentTimeMillis = this.f355a.currentTimeMillis() - this.e;
             return currentTimeMillis > this.c || currentTimeMillis < 0;
         }
 

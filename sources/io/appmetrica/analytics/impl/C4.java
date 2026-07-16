@@ -5,7 +5,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f487a;
+    public final boolean f489a;
     public final boolean b;
     public final boolean c;
     public final boolean d;
@@ -19,8 +19,8 @@ public final class C4 {
         boolean z4;
         boolean z5;
         Boolean bool;
-        z = a4.f450a;
-        this.f487a = z;
+        z = a4.f452a;
+        this.f489a = z;
         z2 = a4.b;
         this.b = z2;
         z3 = a4.c;
@@ -39,7 +39,7 @@ public final class C4 {
         }
         if (obj != null && C4.class == obj.getClass()) {
             C4 c4 = (C4) obj;
-            if (this.f487a != c4.f487a || this.b != c4.b || this.c != c4.c || this.d != c4.d || this.e != c4.e) {
+            if (this.f489a != c4.f489a || this.b != c4.b || this.c != c4.c || this.d != c4.d || this.e != c4.e) {
                 return false;
             }
             Boolean bool = this.f;
@@ -54,12 +54,12 @@ public final class C4 {
     }
 
     public final int hashCode() {
-        int i = (((((((((this.f487a ? 1 : 0) * 31) + (this.b ? 1 : 0)) * 31) + (this.c ? 1 : 0)) * 31) + (this.d ? 1 : 0)) * 31) + (this.e ? 1 : 0)) * 31;
+        int i = (((((((((this.f489a ? 1 : 0) * 31) + (this.b ? 1 : 0)) * 31) + (this.c ? 1 : 0)) * 31) + (this.d ? 1 : 0)) * 31) + (this.e ? 1 : 0)) * 31;
         Boolean bool = this.f;
         return i + (bool != null ? bool.hashCode() : 0);
     }
 
     public final String toString() {
-        return "CollectingFlags{permissionsCollectingEnabled=" + this.f487a + ", featuresCollectingEnabled=" + this.b + ", googleAid=" + this.c + ", simInfo=" + this.d + ", huaweiOaid=" + this.e + ", sslPinning=" + this.f + AbstractJsonLexerKt.END_OBJ;
+        return "CollectingFlags{permissionsCollectingEnabled=" + this.f489a + ", featuresCollectingEnabled=" + this.b + ", googleAid=" + this.c + ", simInfo=" + this.d + ", huaweiOaid=" + this.e + ", sslPinning=" + this.f + AbstractJsonLexerKt.END_OBJ;
     }
 }

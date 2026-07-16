@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Oi implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Pi f705a;
+    public final /* synthetic */ Pi f707a;
 
     public Oi(Pi pi) {
-        this.f705a = pi;
+        this.f707a = pi;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f705a.c();
+        this.f707a.c();
     }
 }

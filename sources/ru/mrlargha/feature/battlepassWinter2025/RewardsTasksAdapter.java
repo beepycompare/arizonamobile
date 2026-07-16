@@ -6,41 +6,41 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScopeKt;
-import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.Job;
 import ru.mrlargha.feature.battlepassWinter2025.data.CommonTaskReward;
-import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassTaskRewardItemBinding;
 /* compiled from: RewardsTasksAdapter.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u0018\u0010\u000b\u001a\u00020\u00022\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00022\u0006\u0010\u0013\u001a\u00020\u000fH\u0016J\b\u0010\u0014\u001a\u00020\u000fH\u0016J\u0014\u0010\u0015\u001a\u00020\u00112\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0016R\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/RewardsTasksAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/battlepassWinter2025/RodinaBattlePassTaskRewardItemViewHolder;", "<init>", "()V", "rewards", "Ljava/util/ArrayList;", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskReward;", "Lkotlin/collections/ArrayList;", "loadImageJob", "Lkotlinx/coroutines/Job;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "", "holder", "position", "getItemCount", "setRewards", "", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0000\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B\u0015\u0012\f\b\u0001\u0010\u0003\u001a\u00020\u0004:\u0002\b\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\f\u001a\u00020\u00022\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0004H\u0016J\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00022\u0006\u0010\u0013\u001a\u00020\u0004H\u0016J\u0010\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0002H\u0016J\b\u0010\u0015\u001a\u00020\u0004H\u0016J\u0014\u0010\u0016\u001a\u00020\u00112\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\u0017R\u0015\u0010\u0003\u001a\u00020\u00048\u0002X\u0083\u0004\u0092\u0002\u0002\b\u0005¢\u0006\u0002\n\u0000R\u001e\u0010\b\u001a\u0012\u0012\u0004\u0012\u00020\n0\tj\b\u0012\u0004\u0012\u00020\n`\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/RewardsTasksAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/battlepassWinter2025/RodinaBattlePassTaskRewardItemViewHolder;", "itemLayout", "", "Landroidx/annotation/LayoutRes;", "<init>", "(I)V", "rewards", "Ljava/util/ArrayList;", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskReward;", "Lkotlin/collections/ArrayList;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "", "holder", "position", "onViewRecycled", "getItemCount", "setRewards", "", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RewardsTasksAdapter extends RecyclerView.Adapter<RodinaBattlePassTaskRewardItemViewHolder> {
-    private Job loadImageJob;
+    private final int itemLayout;
     private final ArrayList<CommonTaskReward> rewards = new ArrayList<>();
+
+    public RewardsTasksAdapter(int i) {
+        this.itemLayout = i;
+    }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public RodinaBattlePassTaskRewardItemViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.winter_battlepass_task_reward_item, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(this.itemLayout, parent, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         return new RodinaBattlePassTaskRewardItemViewHolder(inflate);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onBindViewHolder(RodinaBattlePassTaskRewardItemViewHolder holder, int i) {
-        Job launch$default;
         Intrinsics.checkNotNullParameter(holder, "holder");
         CommonTaskReward commonTaskReward = this.rewards.get(i);
         Intrinsics.checkNotNullExpressionValue(commonTaskReward, "get(...)");
-        CommonTaskReward commonTaskReward2 = commonTaskReward;
-        WinterBattlepassTaskRewardItemBinding binding = holder.getBinding();
-        binding.taskInfoRewardItemName.setText(commonTaskReward2.getName());
-        launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new RewardsTasksAdapter$onBindViewHolder$1$1(binding, holder, commonTaskReward2, null), 3, null);
-        this.loadImageJob = launch$default;
+        holder.bind(commonTaskReward);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewRecycled(RodinaBattlePassTaskRewardItemViewHolder holder) {
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        holder.cancelImageLoading();
+        super.onViewRecycled((RewardsTasksAdapter) holder);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -50,10 +50,6 @@ public final class RewardsTasksAdapter extends RecyclerView.Adapter<RodinaBattle
 
     public final void setRewards(List<CommonTaskReward> rewards) {
         Intrinsics.checkNotNullParameter(rewards, "rewards");
-        Job job = this.loadImageJob;
-        if (job != null) {
-            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
-        }
         this.rewards.clear();
         this.rewards.addAll(rewards);
         notifyDataSetChanged();

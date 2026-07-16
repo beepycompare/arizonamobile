@@ -6,7 +6,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Ng {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f686a;
+    public final String f688a;
     public final String b;
     public final Dj c;
 
@@ -15,11 +15,11 @@ public final class Ng {
     }
 
     public final String toString() {
-        return "ReferrerWrapper{type='" + this.f686a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ReferrerWrapper{type='" + this.f688a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public Ng(String str, String str2, Dj dj) {
-        this.f686a = str;
+        this.f688a = str;
         this.b = str2;
         this.c = dj;
     }

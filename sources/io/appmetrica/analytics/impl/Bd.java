@@ -5,11 +5,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Bd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f476a;
+    public final String f478a;
     public final boolean b;
 
     public Bd(String str, boolean z) {
-        this.f476a = str;
+        this.f478a = str;
         this.b = z;
     }
 
@@ -19,16 +19,16 @@ public final class Bd {
         }
         if (obj instanceof Bd) {
             Bd bd = (Bd) obj;
-            return Intrinsics.areEqual(this.f476a, bd.f476a) && this.b == bd.b;
+            return Intrinsics.areEqual(this.f478a, bd.f478a) && this.b == bd.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Boolean.hashCode(this.b) + (this.f476a.hashCode() * 31);
+        return Boolean.hashCode(this.b) + (this.f478a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "ModuleStatus(moduleName=" + this.f476a + ", loaded=" + this.b + ')';
+        return "ModuleStatus(moduleName=" + this.f478a + ", loaded=" + this.b + ')';
     }
 }

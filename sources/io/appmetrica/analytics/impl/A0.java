@@ -21,13 +21,13 @@ public final class A0 implements InterfaceC0557rb {
     public static volatile boolean g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f447a;
+    public final Context f449a;
     public final C0598t0 b;
     public final FutureTask c;
     public final InterfaceC0196db d;
 
     public A0(Context context) {
-        this.f447a = context;
+        this.f449a = context;
         C0598t0 c = C0576s4.l().c();
         this.b = c;
         this.d = c.a(context, C0576s4.l().g());
@@ -128,7 +128,7 @@ public final class A0 implements InterfaceC0557rb {
 
     public final void d(AppMetricaConfig appMetricaConfig) {
         f().b(appMetricaConfig);
-        C0576s4.l().c.a().execute(new RunnableC0729y1(this.f447a));
+        C0576s4.l().c.a().execute(new RunnableC0729y1(this.f449a));
     }
 
     public final String e() {
@@ -163,20 +163,20 @@ public final class A0 implements InterfaceC0557rb {
                 A0.this.o();
             }
         };
-        c0318i4.f1028a.getClass();
-        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + Zd.f871a.incrementAndGet()).start();
+        c0318i4.f1030a.getClass();
+        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + Zd.f873a.incrementAndGet()).start();
     }
 
     public final void o() {
-        C0576s4.l().s.a(this.f447a);
-        C0576s4.l().a(this.f447a).a();
+        C0576s4.l().s.a(this.f449a);
+        C0576s4.l().a(this.f449a).a();
         this.c.run();
     }
 
     public final InterfaceC0221eb p() {
         InterfaceC0221eb interfaceC0221eb;
         C0598t0 c0598t0 = this.b;
-        Context context = this.f447a;
+        Context context = this.f449a;
         InterfaceC0196db interfaceC0196db = this.d;
         synchronized (c0598t0) {
             if (c0598t0.d == null) {
@@ -193,7 +193,7 @@ public final class A0 implements InterfaceC0557rb {
 
     public final void b(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         f().a(appMetricaLibraryAdapterConfig);
-        C0576s4.l().c.a().execute(new RunnableC0729y1(this.f447a));
+        C0576s4.l().c.a().execute(new RunnableC0729y1(this.f449a));
     }
 
     public final InterfaceC0506pb c(ReporterConfig reporterConfig) {

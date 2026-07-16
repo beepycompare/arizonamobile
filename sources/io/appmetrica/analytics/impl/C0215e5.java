@@ -4,19 +4,19 @@ package io.appmetrica.analytics.impl;
 public final class C0215e5 implements L9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final A5 f958a;
+    public final A5 f960a;
 
     public C0215e5(P9 p9, C0166c7 c0166c7, C0279gh c0279gh, C0267g5 c0267g5) {
         C0190d5 c0190d5 = new C0190d5(c0166c7, c0279gh);
-        this.f958a = new A5(p9, c0190d5.a(), c0190d5.b(), c0267g5);
+        this.f960a = new A5(p9, c0190d5.a(), c0190d5.b(), c0267g5);
     }
 
     @Override // io.appmetrica.analytics.impl.L9
     public final K9 a() {
-        return this.f958a;
+        return this.f960a;
     }
 
     public final A5 b() {
-        return this.f958a;
+        return this.f960a;
     }
 }

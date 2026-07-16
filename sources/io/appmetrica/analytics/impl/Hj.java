@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class Hj implements InterfaceC0680w4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rg f579a;
+    public final Rg f581a;
 
     public Hj(Rg rg) {
-        this.f579a = rg;
+        this.f581a = rg;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0680w4
@@ -15,7 +15,7 @@ public final class Hj implements InterfaceC0680w4 {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0680w4
     public final void a(C0242f6 c0242f6, G4 g4) {
-        Rg rg = this.f579a;
+        Rg rg = this.f581a;
         if (rg != null) {
             rg.a(c0242f6, g4);
         }

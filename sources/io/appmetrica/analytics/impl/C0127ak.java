@@ -6,14 +6,14 @@ import io.appmetrica.analytics.AdRevenue;
 public final class C0127ak implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f890a;
+    public final /* synthetic */ AdRevenue f892a;
 
     public C0127ak(AdRevenue adRevenue) {
-        this.f890a = adRevenue;
+        this.f892a = adRevenue;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
     public final void a(InterfaceC0506pb interfaceC0506pb) {
-        interfaceC0506pb.reportAdRevenue(this.f890a);
+        interfaceC0506pb.reportAdRevenue(this.f892a);
     }
 }

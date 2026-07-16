@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0463nk implements InterfaceC0480ob {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f1119a;
+    public final /* synthetic */ String f1121a;
 
     public C0463nk(String str) {
-        this.f1119a = str;
+        this.f1121a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0480ob
     public final void a(InterfaceC0506pb interfaceC0506pb) {
-        interfaceC0506pb.reportEvent(this.f1119a);
+        interfaceC0506pb.reportEvent(this.f1121a);
     }
 }

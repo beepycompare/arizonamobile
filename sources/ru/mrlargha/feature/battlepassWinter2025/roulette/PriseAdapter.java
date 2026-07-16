@@ -1,9 +1,9 @@
 package ru.mrlargha.feature.battlepassWinter2025.roulette;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -93,7 +93,7 @@ public final class PriseAdapter extends RecyclerView.Adapter<PriseViewHolder> {
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
         public final void bind(final PossiblePrise prise) {
             int i;
-            String str;
+            int i2;
             Intrinsics.checkNotNullParameter(prise, "prise");
             this.binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.roulette.PriseAdapter$PriseViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -146,45 +146,45 @@ public final class PriseAdapter extends RecyclerView.Adapter<PriseViewHolder> {
             switch (rarity2.hashCode()) {
                 case -976943172:
                     if (rarity2.equals("purple")) {
-                        str = "#6881FF";
+                        i2 = R.color.winter_bp_rarity_purple;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 112785:
                     if (rarity2.equals(CasesSameCasesAdapter.NEW)) {
-                        str = "#FF3600";
+                        i2 = R.color.winter_bp_rarity_red;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 3002044:
                     if (rarity2.equals("aqua")) {
-                        str = "#6FF5FF";
+                        i2 = R.color.winter_bp_rarity_aqua;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 3178592:
                     if (rarity2.equals("gold")) {
-                        str = "#FFBA00";
+                        i2 = R.color.winter_bp_rarity_gold;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 case 3441014:
                     if (rarity2.equals("pink")) {
-                        str = "#E500FF";
+                        i2 = R.color.winter_bp_rarity_pink;
                         break;
                     }
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
                 default:
-                    str = "#FFFFFF";
+                    i2 = R.color.winter_bp_white;
                     break;
             }
             this.binding.bg.setBackgroundResource(i);
-            this.binding.rarity.setBackgroundColor(Color.parseColor(str));
+            this.binding.rarity.setBackgroundColor(ContextCompat.getColor(this.binding.getRoot().getContext(), i2));
             this.binding.imagePrise.setImageBitmap(RoulettePrisesPicasso.INSTANCE.getBitmap(prise.getImage()));
         }
 

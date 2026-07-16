@@ -29,17 +29,17 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.first = i;
-        this.last = UProgressionUtilKt.m11142getProgressionLastElementNkh28Cs(i, i2, i3);
+        this.last = UProgressionUtilKt.m11144getProgressionLastElementNkh28Cs(i, i2, i3);
         this.step = i3;
     }
 
     /* renamed from: getFirst-pVg5ArA  reason: not valid java name */
-    public final int m11160getFirstpVg5ArA() {
+    public final int m11162getFirstpVg5ArA() {
         return this.first;
     }
 
     /* renamed from: getLast-pVg5ArA  reason: not valid java name */
-    public final int m11161getLastpVg5ArA() {
+    public final int m11163getLastpVg5ArA() {
         return this.last;
     }
 
@@ -90,10 +90,10 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         int i2 = this.step;
         int i3 = this.first;
         if (i2 > 0) {
-            append = new StringBuilder().append((Object) UInt.m10043toStringimpl(i3)).append("..").append((Object) UInt.m10043toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) UInt.m10045toStringimpl(i3)).append("..").append((Object) UInt.m10045toStringimpl(this.last)).append(" step ");
             i = this.step;
         } else {
-            append = new StringBuilder().append((Object) UInt.m10043toStringimpl(i3)).append(" downTo ").append((Object) UInt.m10043toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) UInt.m10045toStringimpl(i3)).append(" downTo ").append((Object) UInt.m10045toStringimpl(this.last)).append(" step ");
             i = -this.step;
         }
         return append.append(i).toString();
@@ -111,7 +111,7 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         }
 
         /* renamed from: fromClosedRange-Nkh28Cs  reason: not valid java name */
-        public final UIntProgression m11162fromClosedRangeNkh28Cs(int i, int i2, int i3) {
+        public final UIntProgression m11164fromClosedRangeNkh28Cs(int i, int i2, int i3) {
             return new UIntProgression(i, i2, i3, null);
         }
     }

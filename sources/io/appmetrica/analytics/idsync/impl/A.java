@@ -13,7 +13,7 @@ public final class A {
     public static final /* synthetic */ A[] f;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f413a;
+    public final String f415a;
 
     static {
         A a2 = new A("NONE", 0, "none");
@@ -30,7 +30,7 @@ public final class A {
     }
 
     public A(String str, int i, String str2) {
-        this.f413a = str2;
+        this.f415a = str2;
     }
 
     public static A valueOf(String str) {

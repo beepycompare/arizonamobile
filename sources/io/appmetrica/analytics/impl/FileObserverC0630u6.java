@@ -9,13 +9,13 @@ import java.io.File;
 public final class FileObserverC0630u6 extends FileObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Consumer f1226a;
+    public final Consumer f1228a;
     public final File b;
     public final C0686wa c;
 
     public FileObserverC0630u6(File file, C0682w6 c0682w6, C0686wa c0686wa) {
         super(file.getAbsolutePath(), 8);
-        this.f1226a = c0682w6;
+        this.f1228a = c0682w6;
         this.b = file;
         this.c = c0686wa;
     }
@@ -25,7 +25,7 @@ public final class FileObserverC0630u6 extends FileObserver {
         if (i != 8 || TextUtils.isEmpty(str)) {
             return;
         }
-        Consumer consumer = this.f1226a;
+        Consumer consumer = this.f1228a;
         C0686wa c0686wa = this.c;
         File file = this.b;
         c0686wa.getClass();

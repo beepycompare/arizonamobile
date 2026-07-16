@@ -7,12 +7,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0788j {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1450a;
+    public final boolean f1452a;
     public final List b;
     public final long c;
 
     public C0788j(boolean z, List list, long j) {
-        this.f1450a = z;
+        this.f1452a = z;
         this.b = list;
         this.c = j;
     }
@@ -23,17 +23,17 @@ public final class C0788j {
         }
         if (obj instanceof C0788j) {
             C0788j c0788j = (C0788j) obj;
-            return this.f1450a == c0788j.f1450a && Intrinsics.areEqual(this.b, c0788j.b) && this.c == c0788j.c;
+            return this.f1452a == c0788j.f1452a && Intrinsics.areEqual(this.b, c0788j.b) && this.c == c0788j.c;
         }
         return false;
     }
 
     public final int hashCode() {
         int hashCode = this.b.hashCode();
-        return Long.hashCode(this.c) + ((hashCode + (Boolean.hashCode(this.f1450a) * 31)) * 31);
+        return Long.hashCode(this.c) + ((hashCode + (Boolean.hashCode(this.f1452a) * 31)) * 31);
     }
 
     public final String toString() {
-        return "ClientSideContentObserverCaptorConfig(enabled=" + this.f1450a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
+        return "ClientSideContentObserverCaptorConfig(enabled=" + this.f1452a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
     }
 }

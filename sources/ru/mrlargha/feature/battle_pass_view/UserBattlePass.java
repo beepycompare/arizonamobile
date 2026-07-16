@@ -11,15 +11,14 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
-import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
@@ -28,6 +27,7 @@ import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceControl
 import ru.mrlargha.commonui.elements.hud.presentation.RodinaHudSubwindowEvents;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.battle_pass_view.databinding.UserBattlepassBinding;
 import ru.mrlargha.feature.battle_pass_view.databinding.UserBattlepassRodinaBinding;
 /* compiled from: UserBattlePass.kt */
@@ -155,6 +155,9 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
         String str2;
         int intValue;
         int i2;
+        String title;
+        String description;
+        String info;
         Intrinsics.checkNotNullParameter(data, "data");
         Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) DataResponse.class);
         Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
@@ -166,9 +169,9 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
             String headers = dataResponse.getHeaders();
             str2 = headers != null ? headers : "";
         } else {
-            String title = dataResponse.getTitle();
-            if (title != null || (title = dataResponse.getHeaders()) != null) {
-                str = title;
+            String title2 = dataResponse.getTitle();
+            if (title2 != null || (title2 = dataResponse.getHeaders()) != null) {
+                str = title2;
             }
             str2 = str;
         }
@@ -184,9 +187,19 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
             intValue = valueOf != null ? valueOf.intValue() : dataResponse.getType();
         }
         this.rewardItemAdapter.setType(intValue);
-        List<RewardResponse> rewards = dataResponse.getRewards();
+        ArrayList rewards = dataResponse.getRewards();
         if (rewards == null) {
             rewards = CollectionsKt.emptyList();
+        }
+        if (!UtilsKt.isArizonaType()) {
+            ArrayList arrayList = new ArrayList();
+            for (Object obj : rewards) {
+                RewardResponse rewardResponse = (RewardResponse) obj;
+                if (rewardResponse.getSysName() > 0 || (((title = rewardResponse.getTitle()) != null && !StringsKt.isBlank(title)) || (((description = rewardResponse.getDescription()) != null && !StringsKt.isBlank(description)) || ((info = rewardResponse.getInfo()) != null && !StringsKt.isBlank(info))))) {
+                    arrayList.add(obj);
+                }
+            }
+            rewards = arrayList;
         }
         int size = rewards.size();
         RecyclerView recyclerView = this.rvRewardsLinear;
@@ -226,13 +239,31 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
             if (UtilsKt.isArizonaType()) {
                 i2 = ru.mrlargha.feature.battlepassWinter2025.R.drawable.battlepass_logo;
             } else {
-                i2 = ru.mrlargha.feature.battlepassWinter2025.R.drawable.battlepass_logo;
+                i2 = ru.mrlargha.feature.battlepassWinter2025.R.drawable.winter_bp_skin_pink_logo;
             }
             this.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), i2));
         }
         if (UtilsKt.isArizonaType()) {
             return;
         }
-        Glide.with(getTargetActivity()).load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/systems/hud_notification/" + intValue + ".webp").into(this.ivMainImage);
+        if (dataResponse.getImageType() == 3) {
+            int parseColor = Color.parseColor("#E26804");
+            int parseColor2 = Color.parseColor("#FDBA08");
+            this.bindingRodina.ivTopbarBackground.setImageResource(R.drawable.user_battlepass_topbar_bg_rodina);
+            this.bindingRodina.ivMainImage.setImageResource(R.drawable.user_battlepass_logo10);
+            CustomCardView contentCard = this.bindingRodina.contentCard;
+            Intrinsics.checkNotNullExpressionValue(contentCard, "contentCard");
+            CustomCardView.setBackground$default(contentCard, parseColor, parseColor2, 90, null, 8, null);
+            this.bindingRodina.contentCard.setBorder(parseColor2, Color.parseColor("#004E375E"), 90);
+            return;
+        }
+        int parseColor3 = Color.parseColor("#7E1F24");
+        int parseColor4 = Color.parseColor("#9F3937");
+        this.bindingRodina.ivTopbarBackground.setImageResource(R.drawable.user_battlepass_topbar_bg_rodina_old);
+        this.bindingRodina.ivMainImage.setImageResource(R.drawable.user_battlepass_rodina_usual);
+        CustomCardView contentCard2 = this.bindingRodina.contentCard;
+        Intrinsics.checkNotNullExpressionValue(contentCard2, "contentCard");
+        CustomCardView.setBackground$default(contentCard2, parseColor3, parseColor4, 90, null, 8, null);
+        this.bindingRodina.contentCard.setBorder(parseColor4, Color.parseColor("#004E375E"), 90);
     }
 }

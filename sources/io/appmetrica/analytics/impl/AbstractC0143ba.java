@@ -7,7 +7,7 @@ public abstract class AbstractC0143ba {
     public static final V9 a(int i, String str) {
         byte[] bArr;
         V9 v9 = new V9();
-        v9.f807a = i;
+        v9.f809a = i;
         if (str == null || (bArr = str.getBytes(Charsets.UTF_8)) == null) {
             bArr = v9.b;
         }
