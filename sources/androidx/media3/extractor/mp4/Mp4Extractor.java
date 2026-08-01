@@ -657,7 +657,7 @@ public final class Mp4Extractor implements Extractor {
     /* JADX WARN: Type inference failed for: r1v11 */
     /* JADX WARN: Type inference failed for: r1v12 */
     /* JADX WARN: Type inference failed for: r1v7 */
-    /* JADX WARN: Type inference failed for: r1v8, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r1v8, types: [boolean, int] */
     private int readSample(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         ?? r1;
         int i;

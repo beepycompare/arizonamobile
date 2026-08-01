@@ -285,6 +285,7 @@
     <string name="dialog_bank_tax_payment_tab_bank_account">Da conta bancaria</string>
     <string name="dialog_bank_tax_payment_tab_cash">Dinheiro</string>
     <string name="dialog_bank_tax_payment_title">Pagamento</string>
+    <string name="dialog_bank_tax_payment_total">Total a pagar</string>
     <string name="dialog_bank_tax_payment_transport_title">Pagar impostos de\ntransporte</string>
     <string name="dialog_bank_tax_payment_vehicle_restoration_title">Multa de restauracao\nde veiculo</string>
     <string name="dialog_buy_crypto_maximum">Maximo %1$s %2$s</string>

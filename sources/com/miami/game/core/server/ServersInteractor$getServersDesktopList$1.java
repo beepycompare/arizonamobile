@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {0, 0, 2}, l = {392, 319, 322, 330}, m = "getServersDesktopList", n = {"$this$getSuspend$iv", "key$iv", "serverList"}, nl = {286, 416, 323, 331}, s = {"L$0", "L$1", "L$0"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {0, 0, 2}, l = {393, 319, 322, 330}, m = "getServersDesktopList", n = {"$this$getSuspend$iv", "key$iv", "serverList"}, nl = {286, 417, 323, 331}, s = {"L$0", "L$1", "L$0"}, v = 2)
 /* loaded from: classes5.dex */
 public final class ServersInteractor$getServersDesktopList$1 extends ContinuationImpl {
     Object L$0;

@@ -206,7 +206,7 @@ public final class SelectServerUiState {
         }
 
         public final SelectServerUiState initial(boolean z) {
-            return new SelectServerUiState(null, null, ServerStateCategory.Mobile, false, z ? R.drawable.arizona_backgournd_home : R.drawable.rodina_backgournd_home, z, 0, null, null, 459, null);
+            return new SelectServerUiState(null, null, ServerStateCategory.Desktop, false, z ? R.drawable.arizona_backgournd_home : R.drawable.rodina_backgournd_home, z, 0, null, null, 459, null);
         }
     }
 }

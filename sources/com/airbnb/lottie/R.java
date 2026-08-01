@@ -35,14 +35,14 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int automatic = 0x7f0a0143;
-        public static int disabled = 0x7f0a0492;
-        public static int enabled = 0x7f0a052a;
-        public static int hardware = 0x7f0a06ce;
-        public static int lottie_layer_name = 0x7f0a0900;
-        public static int restart = 0x7f0a0c37;
-        public static int reverse = 0x7f0a0c3d;
-        public static int software = 0x7f0a0e0d;
+        public static int automatic = 0x7f0a0144;
+        public static int disabled = 0x7f0a0494;
+        public static int enabled = 0x7f0a052c;
+        public static int hardware = 0x7f0a06d0;
+        public static int lottie_layer_name = 0x7f0a0907;
+        public static int restart = 0x7f0a0c3e;
+        public static int reverse = 0x7f0a0c44;
+        public static int software = 0x7f0a0e15;
 
         private id() {
         }

@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
@@ -72,10 +73,8 @@ final class DialogBankTaxPaymentAdapter extends RecyclerView.Adapter<ViewHolder>
         private static final String EMPTY_CELL = "-";
         private static final String SELECTED_MARKER_BG = "#FFF000";
         private static final String SELECTED_ROW_BG = "#26FFFFFF";
-        private static final String SELECTED_ROW_BORDER = "#FFF000";
         private static final String UNSELECTED_MARKER_BG = "#26FFFFFF";
         private static final String UNSELECTED_ROW_BG = "#12FFFFFF";
-        private static final String UNSELECTED_ROW_BORDER = "#1FFFFFFF";
         private final DialogBankTaxPaymentItemBinding binding;
         private final Function1<Integer, Unit> onToggle;
 
@@ -90,7 +89,6 @@ final class DialogBankTaxPaymentAdapter extends RecyclerView.Adapter<ViewHolder>
         }
 
         public final void bind(final DialogBankTaxPaymentInfo item, boolean z) {
-            CharSequence dialogBankTaxPaymentMoneyText;
             Intrinsics.checkNotNullParameter(item, "item");
             DialogBankTaxPaymentItemBinding dialogBankTaxPaymentItemBinding = this.binding;
             dialogBankTaxPaymentItemBinding.bankTaxPaymentItemId.setText(String.valueOf(item.getId()));
@@ -101,17 +99,17 @@ final class DialogBankTaxPaymentAdapter extends RecyclerView.Adapter<ViewHolder>
                 name = "-";
             }
             textView.setText(ChatEmoji.toSpannable$default(chatEmoji, name, 0.0f, null, 3, null));
-            TextView textView2 = dialogBankTaxPaymentItemBinding.bankTaxPaymentItemAmount;
-            dialogBankTaxPaymentMoneyText = DialogBankTaxPaymentKt.toDialogBankTaxPaymentMoneyText(item.getTax());
-            textView2.setText(dialogBankTaxPaymentMoneyText);
+            dialogBankTaxPaymentItemBinding.bankTaxPaymentItemAmount.setText(DialogBankTaxPaymentKt.access$toDialogBankTaxPaymentMoneyText(item.getTax()));
             String str = "#26FFFFFF";
             dialogBankTaxPaymentItemBinding.bankTaxPaymentItem.setBackground(Color.parseColor(z ? "#26FFFFFF" : UNSELECTED_ROW_BG));
-            dialogBankTaxPaymentItemBinding.bankTaxPaymentItem.setBorder(Color.parseColor(z ? "#FFF000" : UNSELECTED_ROW_BORDER));
             CustomCardView customCardView = dialogBankTaxPaymentItemBinding.bankTaxPaymentItemMarker;
             if (z) {
-                str = "#FFF000";
+                str = SELECTED_MARKER_BG;
             }
             customCardView.setBackground(Color.parseColor(str));
+            ImageView bankTaxPaymentItemCheck = dialogBankTaxPaymentItemBinding.bankTaxPaymentItemCheck;
+            Intrinsics.checkNotNullExpressionValue(bankTaxPaymentItemCheck, "bankTaxPaymentItemCheck");
+            bankTaxPaymentItemCheck.setVisibility(z ? 0 : 8);
             dialogBankTaxPaymentItemBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogBankTaxPaymentAdapter$ViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -126,7 +124,7 @@ final class DialogBankTaxPaymentAdapter extends RecyclerView.Adapter<ViewHolder>
         }
 
         /* compiled from: DialogBankTaxPayment.kt */
-        @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentAdapter$ViewHolder$Companion;", "", "<init>", "()V", "EMPTY_CELL", "", "SELECTED_ROW_BG", "UNSELECTED_ROW_BG", "SELECTED_ROW_BORDER", "UNSELECTED_ROW_BORDER", "SELECTED_MARKER_BG", "UNSELECTED_MARKER_BG", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentAdapter$ViewHolder$Companion;", "", "<init>", "()V", "EMPTY_CELL", "", "SELECTED_ROW_BG", "UNSELECTED_ROW_BG", "SELECTED_MARKER_BG", "UNSELECTED_MARKER_BG", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
         /* loaded from: classes6.dex */
         private static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -32,9 +32,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class drawable {
-        public static int compat_splash_screen = 0x7f0805e0;
-        public static int compat_splash_screen_no_icon_background = 0x7f0805e1;
-        public static int icon_background = 0x7f080bb8;
+        public static int compat_splash_screen = 0x7f0805ec;
+        public static int compat_splash_screen_no_icon_background = 0x7f0805ed;
+        public static int icon_background = 0x7f080bc5;
 
         private drawable() {
         }
@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0e26;
+        public static int splashscreen_icon_view = 0x7f0a0e2e;
 
         private id() {
         }

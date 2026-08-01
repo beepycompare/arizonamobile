@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class drawable {
-        public static int notification_topbar_label = 0x7f080d6a;
+        public static int notification_topbar_label = 0x7f080d77;
 
         private drawable() {
         }

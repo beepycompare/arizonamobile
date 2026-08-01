@@ -115,6 +115,7 @@
     <string name="battlepass_premium_tasks">Premium задания</string>
     <string name="battlepass_premium_tasks_locked">&lt;c0&gt;Эти задания доступны только с&lt;/c0&gt;\n&lt;c1&gt;PREMIUM&lt;/c1&gt;</string>
     <string name="battlepass_received">Получено</string>
+    <string name="battlepass_refresh_tasks">Обновить Задания</string>
     <string name="battlepass_rewards">Награды:</string>
     <string name="battlepass_rodina_premium_benefit_progress">Ускоренная прокачка</string>
     <string name="battlepass_rodina_premium_benefit_rewards">Награды из Premium-ветки</string>
@@ -290,8 +291,8 @@
     <string name="close_menu">Закрыть меню</string>
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
-    <string name="res_0x7f120122_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f120123_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"89010f1956ab3cdf2e24b5366d7e86d03adcfce9\"\n}\n</string>
+    <string name="res_0x7f120123_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
+    <string name="res_0x7f120124_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"6c7717bc0d5c6f41b5941be871889657a69c67a7\"\n}\n</string>
     <string name="common_api_error">Ошибка API: %1$d</string>
     <string name="common_check_fields">Проверьте правильность введенных полей.</string>
     <string name="common_close">Закрыть</string>
@@ -399,6 +400,7 @@
     <string name="dialog_bank_tax_payment_tab_bank_account">С банковского счета</string>
     <string name="dialog_bank_tax_payment_tab_cash">Наличные</string>
     <string name="dialog_bank_tax_payment_title">Оплата</string>
+    <string name="dialog_bank_tax_payment_total">К оплате</string>
     <string name="dialog_bank_tax_payment_transport_title">Оплатить налоги на\nтранспорт</string>
     <string name="dialog_bank_tax_payment_vehicle_restoration_title">Штраф восстановление\nтранспорта</string>
     <string name="dialog_buy_crypto_maximum">Максимум %1$s %2$s</string>

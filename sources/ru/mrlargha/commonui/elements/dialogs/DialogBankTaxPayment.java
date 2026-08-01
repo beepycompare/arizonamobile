@@ -12,7 +12,7 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -21,50 +21,29 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
-import kotlin.text.MatchResult;
-import kotlin.text.Regex;
-import kotlin.text.RegexOption;
 import kotlin.text.StringsKt;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.DialogBankTaxPaymentBinding;
-import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: DialogBankTaxPayment.kt */
-@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 A2\u00020\u0001:\u0001AB7\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0005¢\u0006\u0004\b\u000b\u0010\fJ\b\u0010\u001d\u001a\u00020\u001eH\u0002J\b\u0010\u001f\u001a\u00020\u001eH\u0002J\b\u0010 \u001a\u00020\u001eH\u0002J\b\u0010!\u001a\u00020\u001eH\u0002J\b\u0010\"\u001a\u00020\u001eH\u0002J\b\u0010#\u001a\u00020\u001eH\u0002J\b\u0010$\u001a\u00020\u001eH\u0002J\b\u0010%\u001a\u00020\u001eH\u0002J\b\u0010&\u001a\u00020\u001eH\u0002J \u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-H\u0002J\u0010\u0010.\u001a\u00020\u001e2\u0006\u0010/\u001a\u00020\u0005H\u0002J\u0010\u00100\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u0005H\u0002J\b\u00102\u001a\u000203H\u0002J\b\u00104\u001a\u00020\u0007H\u0002J\u0010\u00105\u001a\u00020\u001e2\u0006\u00106\u001a\u00020\u0005H\u0002J \u00107\u001a\u00020\u00122\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\u0007H\u0002J\u0010\u00108\u001a\u00020\u00142\u0006\u00109\u001a\u00020\u0007H\u0002J\u000e\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00070\u0016H\u0002J\u0010\u0010;\u001a\u00020<2\u0006\u0010=\u001a\u00020\u0005H\u0002J\u0018\u0010>\u001a\u0002032\u0006\u0010?\u001a\u0002032\u0006\u0010@\u001a\u000203H\u0002R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00070\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0019\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u001aj\b\u0012\u0004\u0012\u00020\u0005`\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPayment;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "", "infoData", "leftButtonText", "sampDialogId", "<init>", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V", "dialogLayout", "Landroid/view/View;", "binding", "Lru/mrlargha/commonui/databinding/DialogBankTaxPaymentBinding;", "payload", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentModel;", "parsedBody", "Lru/mrlargha/commonui/elements/dialogs/ParsedTaxPaymentBody;", "methodTabs", "", "adapter", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentAdapter;", "selectedTaxIds", "Ljava/util/LinkedHashSet;", "Lkotlin/collections/LinkedHashSet;", "selectedMethodIndex", "setupUi", "", "setupPreview", "setupBalance", "setupList", "setupMethodTabs", "setupButtons", "setupAdditionalInfo", "render", "renderMethodTabs", "updateMethodTab", "card", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "text", "Landroid/widget/TextView;", "isSelected", "", "selectMethodTab", FirebaseAnalytics.Param.INDEX, "toggleTax", "id", "selectedTotal", "", "selectedIdsPayload", "dismiss", "responseButtonId", "buildPayload", "parseBody", TtmlNode.TAG_BODY, "defaultMethodTabs", "taxVisual", "Lru/mrlargha/commonui/elements/dialogs/TaxPaymentVisual;", "type", "safeSum", TtmlNode.LEFT, TtmlNode.RIGHT, "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\t\u0018\u0000 92\u00020\u0001:\u00019B?\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\u0005¢\u0006\u0004\b\f\u0010\rJ\b\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010\u001e\u001a\u00020\u001dH\u0002J\b\u0010\u001f\u001a\u00020\u001dH\u0002J\b\u0010 \u001a\u00020\u001dH\u0002J\b\u0010!\u001a\u00020\u001dH\u0002J\b\u0010\"\u001a\u00020\u001dH\u0002J\b\u0010#\u001a\u00020\u001dH\u0002J\b\u0010$\u001a\u00020\u001dH\u0002J \u0010%\u001a\u00020\u001d2\u0006\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+H\u0002J\u0010\u0010,\u001a\u00020\u001d2\u0006\u0010-\u001a\u00020\u0005H\u0002J\u0010\u0010.\u001a\u00020\u001d2\u0006\u0010/\u001a\u00020\u0005H\u0002J\b\u00100\u001a\u000201H\u0002J\b\u00102\u001a\u00020\u0007H\u0002J\u0010\u00103\u001a\u00020\u001d2\u0006\u00104\u001a\u00020\u0005H\u0002J\u000e\u00105\u001a\b\u0012\u0004\u0012\u00020\u00070\u0015H\u0002J\u0018\u00106\u001a\u0002012\u0006\u00107\u001a\u0002012\u0006\u00108\u001a\u000201H\u0002R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00070\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u0018\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u0019j\b\u0012\u0004\u0012\u00020\u0005`\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006:"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPayment;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "", "infoData", "leftButtonText", "hintInput", "sampDialogId", "<init>", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V", "dialogLayout", "Landroid/view/View;", "binding", "Lru/mrlargha/commonui/databinding/DialogBankTaxPaymentBinding;", "payload", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentModel;", "methodTabs", "", "adapter", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentAdapter;", "selectedTaxIds", "Ljava/util/LinkedHashSet;", "Lkotlin/collections/LinkedHashSet;", "selectedMethodIndex", "setupUi", "", "setupPreview", "setupList", "setupMethodTabs", "setupButtons", "setupAdditionalInfo", "render", "renderMethodTabs", "updateMethodTab", "card", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "text", "Landroid/widget/TextView;", "isSelected", "", "selectMethodTab", FirebaseAnalytics.Param.INDEX, "toggleTax", "id", "selectedTotal", "", "selectedIdsPayload", "dismiss", "responseButtonId", "defaultMethodTabs", "safeSum", TtmlNode.LEFT, TtmlNode.RIGHT, "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DialogBankTaxPayment extends AbstractDialog {
+    private static final Companion Companion = new Companion(null);
     private static final int MAX_METHOD_TABS = 2;
-    private static final String METHOD_TAB_SEPARATOR = ";";
-    private static final int PREVIEW_GRADIENT_ANGLE = 345;
     private static final String SELECTED_TAB_BG = "#FFFFFF";
     private static final String SELECTED_TAB_TEXT = "#2E3646";
-    private static final int TAX_BUSINESS = 9;
-    private static final int TAX_COMMUNAL = 2;
-    private static final int TAX_ELECTRICITY = 3;
-    private static final int TAX_FAMILY_APARTMENT = 10;
-    private static final int TAX_HOME = 8;
-    private static final int TAX_HOTEL_ROOM_LEASE = 7;
-    private static final int TAX_LEGAL_FINE = 1;
-    private static final int TAX_PRIVATE_ORGANIZATION = 4;
-    private static final int TAX_SOCIAL_HOUSING = 5;
-    private static final int TAX_TRANSPORT = 0;
-    private static final int TAX_VEHICLE_RESTORATION = 6;
     private static final String UNSELECTED_TAB_BG = "#00FFFFFF";
     private static final String UNSELECTED_TAB_TEXT = "#FFFFFF";
     private final DialogBankTaxPaymentAdapter adapter;
     private final DialogBankTaxPaymentBinding binding;
     private final View dialogLayout;
     private final List<String> methodTabs;
-    private final ParsedTaxPaymentBody parsedBody;
     private final DialogBankTaxPaymentModel payload;
     private int selectedMethodIndex;
     private final LinkedHashSet<Integer> selectedTaxIds;
-    private static final Companion Companion = new Companion(null);
-    private static final Gson gson = new Gson();
-    private static final Regex METHOD_TABS_REGEX = new Regex("\\[\\[listitemTabs:titles=([^\\]]*)\\]\\]", RegexOption.IGNORE_CASE);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$0(View view) {
@@ -78,24 +57,23 @@ public final class DialogBankTaxPayment extends AbstractDialog {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DialogBankTaxPayment(Activity targetActivity, int i, String caption, String infoData, String leftButtonText, int i2) {
+    public DialogBankTaxPayment(Activity targetActivity, int i, String caption, String infoData, String leftButtonText, String hintInput, int i2) {
         super(targetActivity, i, i2);
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         Intrinsics.checkNotNullParameter(caption, "caption");
         Intrinsics.checkNotNullParameter(infoData, "infoData");
         Intrinsics.checkNotNullParameter(leftButtonText, "leftButtonText");
+        Intrinsics.checkNotNullParameter(hintInput, "hintInput");
         View inflate = LayoutInflater.from(targetActivity).inflate(R.layout.dialog_bank_tax_payment, (ViewGroup) null, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         this.dialogLayout = inflate;
         DialogBankTaxPaymentBinding bind = DialogBankTaxPaymentBinding.bind(inflate);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        DialogBankTaxPaymentModel buildPayload = buildPayload(caption, infoData, leftButtonText);
-        this.payload = buildPayload;
-        ParsedTaxPaymentBody parseBody = parseBody(buildPayload.getBody());
-        this.parsedBody = parseBody;
-        List<String> methodTabs = parseBody.getMethodTabs();
-        this.methodTabs = CollectionsKt.take(methodTabs.isEmpty() ? defaultMethodTabs() : methodTabs, 2);
+        DialogBankTaxPaymentModel parseDialogBankTaxPaymentModel = DialogBankTaxPaymentKt.parseDialogBankTaxPaymentModel(caption, infoData, leftButtonText, hintInput);
+        this.payload = parseDialogBankTaxPaymentModel;
+        List<String> titles = DialogListItemTabsKt.parseDialogListItemTabs(parseDialogBankTaxPaymentModel.getBody(), 2).getTitles();
+        this.methodTabs = CollectionsKt.take(titles.isEmpty() ? defaultMethodTabs() : titles, 2);
         this.adapter = new DialogBankTaxPaymentAdapter(new DialogBankTaxPayment$adapter$1(this));
         this.selectedTaxIds = new LinkedHashSet<>();
         addViewToConstraintLayout(inflate, -1, -1);
@@ -127,7 +105,6 @@ public final class DialogBankTaxPayment extends AbstractDialog {
             }
         });
         setupPreview();
-        setupBalance();
         setupList();
         setupMethodTabs();
         setupButtons();
@@ -137,20 +114,8 @@ public final class DialogBankTaxPayment extends AbstractDialog {
 
     private final void setupPreview() {
         DialogBankTaxPaymentBinding dialogBankTaxPaymentBinding = this.binding;
-        TaxPaymentVisual taxVisual = taxVisual(this.payload.getAddType());
-        CustomCardView bankBusinessPaymentPreview = dialogBankTaxPaymentBinding.bankBusinessPaymentPreview;
-        Intrinsics.checkNotNullExpressionValue(bankBusinessPaymentPreview, "bankBusinessPaymentPreview");
-        CustomCardView.setBackground$default(bankBusinessPaymentPreview, Color.parseColor(taxVisual.getMainColor()), Color.parseColor(taxVisual.getSecondColor()), Integer.valueOf((int) PREVIEW_GRADIENT_ANGLE), null, 8, null);
-        dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewTitle.setText(getTargetActivity().getString(taxVisual.getTitleRes()));
-        dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewBadge.setText(taxVisual.getBadge());
-    }
-
-    private final void setupBalance() {
-        DialogBankTaxPaymentBinding dialogBankTaxPaymentBinding = this.binding;
-        TextView bankBusinessPaymentBalance = dialogBankTaxPaymentBinding.bankBusinessPaymentBalance;
-        Intrinsics.checkNotNullExpressionValue(bankBusinessPaymentBalance, "bankBusinessPaymentBalance");
-        bankBusinessPaymentBalance.setVisibility(!StringsKt.isBlank(this.parsedBody.getBalanceText()) ? 0 : 8);
-        dialogBankTaxPaymentBinding.bankBusinessPaymentBalance.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, this.parsedBody.getBalanceText(), 0.0f, null, 3, null));
+        dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewTitle.setText(getTargetActivity().getString(DialogBankTaxPaymentKt.resolveDialogBankTaxPaymentTitleRes(this.payload.getAddType())));
+        Picasso.get().load(DialogBankTaxPaymentKt.resolveTaxPaymentImageUrl(this.payload.getAddType())).into(dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewImage);
     }
 
     private final void setupList() {
@@ -158,6 +123,8 @@ public final class DialogBankTaxPayment extends AbstractDialog {
         dialogBankTaxPaymentBinding.bankBusinessPaymentList.setLayoutManager(new LinearLayoutManager(getTargetActivity()));
         dialogBankTaxPaymentBinding.bankBusinessPaymentList.setAdapter(this.adapter);
         dialogBankTaxPaymentBinding.bankBusinessPaymentList.setItemAnimator(null);
+        dialogBankTaxPaymentBinding.bankBusinessPaymentList.setNestedScrollingEnabled(true);
+        dialogBankTaxPaymentBinding.bankBusinessPaymentList.setScrollbarFadingEnabled(false);
     }
 
     private final void setupMethodTabs() {
@@ -203,11 +170,15 @@ public final class DialogBankTaxPayment extends AbstractDialog {
     }
 
     private final void setupAdditionalInfo() {
+        String normalizeTaxPaymentMoneyTokens;
         DialogBankTaxPaymentBinding dialogBankTaxPaymentBinding = this.binding;
         LinearLayout bankBusinessPaymentInfoContainer = dialogBankTaxPaymentBinding.bankBusinessPaymentInfoContainer;
         Intrinsics.checkNotNullExpressionValue(bankBusinessPaymentInfoContainer, "bankBusinessPaymentInfoContainer");
         bankBusinessPaymentInfoContainer.setVisibility(!StringsKt.isBlank(this.payload.getAdditionalInfo()) ? 0 : 8);
-        dialogBankTaxPaymentBinding.bankBusinessPaymentInfo.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, this.payload.getAdditionalInfo(), 0.0f, null, 3, null));
+        TextView textView = dialogBankTaxPaymentBinding.bankBusinessPaymentInfo;
+        ChatEmoji chatEmoji = ChatEmoji.INSTANCE;
+        normalizeTaxPaymentMoneyTokens = DialogBankTaxPaymentKt.normalizeTaxPaymentMoneyTokens(this.payload.getAdditionalInfo());
+        textView.setText(ChatEmoji.toSpannable$default(chatEmoji, normalizeTaxPaymentMoneyTokens, 0.8f, null, 2, null));
     }
 
     private final void render() {
@@ -223,9 +194,9 @@ public final class DialogBankTaxPayment extends AbstractDialog {
         CustomCardView bankBusinessPaymentPay = dialogBankTaxPaymentBinding.bankBusinessPaymentPay;
         Intrinsics.checkNotNullExpressionValue(bankBusinessPaymentPay, "bankBusinessPaymentPay");
         CustomCardView.changeValidate$default(bankBusinessPaymentPay, !this.selectedTaxIds.isEmpty(), 0.0f, 2, null);
-        TextView textView = dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewAmount;
         dialogBankTaxPaymentMoneyText = DialogBankTaxPaymentKt.toDialogBankTaxPaymentMoneyText(selectedTotal());
-        textView.setText(dialogBankTaxPaymentMoneyText);
+        dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewAmount.setText(dialogBankTaxPaymentMoneyText);
+        dialogBankTaxPaymentBinding.bankBusinessPaymentTotalAmount.setText(dialogBankTaxPaymentMoneyText);
         renderMethodTabs();
     }
 
@@ -349,19 +320,7 @@ public final class DialogBankTaxPayment extends AbstractDialog {
     }
 
     private final String selectedIdsPayload() {
-        ArrayList arrayList = new ArrayList();
-        for (DialogBankTaxPaymentInfo dialogBankTaxPaymentInfo : this.payload.getTaxList()) {
-            Integer valueOf = Integer.valueOf(dialogBankTaxPaymentInfo.getId());
-            if (!this.selectedTaxIds.contains(Integer.valueOf(valueOf.intValue()))) {
-                valueOf = null;
-            }
-            if (valueOf != null) {
-                arrayList.add(valueOf);
-            }
-        }
-        String json = gson.toJson(arrayList);
-        Intrinsics.checkNotNullExpressionValue(json, "toJson(...)");
-        return json;
+        return DialogBankTaxPaymentKt.buildDialogBankTaxPaymentSelectedIdsPayload(this.payload.getTaxList(), this.selectedTaxIds);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -370,68 +329,12 @@ public final class DialogBankTaxPayment extends AbstractDialog {
         getNotifier().destroyDialog();
     }
 
-    private final ParsedTaxPaymentBody parseBody(String str) {
-        List<String> groupValues;
-        String str2;
-        List split$default;
-        String str3 = str;
-        ArrayList arrayList = null;
-        MatchResult find$default = Regex.find$default(METHOD_TABS_REGEX, str3, 0, 2, null);
-        if (find$default != null && (groupValues = find$default.getGroupValues()) != null && (str2 = (String) CollectionsKt.getOrNull(groupValues, 1)) != null && (split$default = StringsKt.split$default((CharSequence) str2, new String[]{METHOD_TAB_SEPARATOR}, false, 0, 6, (Object) null)) != null) {
-            List<String> list = split$default;
-            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            for (String str4 : list) {
-                arrayList2.add(StringsKt.trim((CharSequence) str4).toString());
-            }
-            ArrayList arrayList3 = new ArrayList();
-            for (Object obj : arrayList2) {
-                if (!StringsKt.isBlank((String) obj)) {
-                    arrayList3.add(obj);
-                }
-            }
-            arrayList = arrayList3;
-        }
-        if (arrayList == null) {
-            arrayList = CollectionsKt.emptyList();
-        }
-        return new ParsedTaxPaymentBody(StringsKt.trim((CharSequence) METHOD_TABS_REGEX.replace(str3, "")).toString(), arrayList);
-    }
-
     private final List<String> defaultMethodTabs() {
         return CollectionsKt.listOf((Object[]) new String[]{getTargetActivity().getString(R.string.dialog_bank_tax_payment_tab_cash), getTargetActivity().getString(R.string.dialog_bank_tax_payment_tab_bank_account)});
     }
 
-    private final TaxPaymentVisual taxVisual(int i) {
-        switch (i) {
-            case 0:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_transport_title, "CAR", "#2669D4", "#7ED2F5");
-            case 1:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_legal_fine_title, "FINE", "#DC5A5A", "#FFC06E");
-            case 2:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_communal_title, "UTIL", "#5F7CFF", "#71D7B6");
-            case 3:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_electricity_title, "ELC", "#6A5CFF", "#FFF06A");
-            case 4:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_private_org_title, "ORG", "#25A7B8", "#8EF1D1");
-            case 5:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_social_housing_title, "SOC", "#4F85D9", "#B2C8FF");
-            case 6:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_vehicle_restoration_title, "REST", "#C94C67", "#FFA27A");
-            case 7:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_hotel_lease_title, "HOTEL", "#6E70D8", "#DFA7FF");
-            case 8:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_home_title, "HOME", "#5F2ABF", "#E980A9");
-            case 9:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_business_title, "BIZ", "#26B2D4", "#7ED2F5");
-            case 10:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_family_apartment_title, "FAM", "#845EC2", "#FF9F80");
-            default:
-                return new TaxPaymentVisual(R.string.dialog_bank_tax_payment_business_title, "TAX", "#26B2D4", "#7ED2F5");
-        }
-    }
-
     /* compiled from: DialogBankTaxPayment.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0011\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPayment$Companion;", "", "<init>", "()V", "gson", "Lcom/google/gson/Gson;", "METHOD_TABS_REGEX", "Lkotlin/text/Regex;", "METHOD_TAB_SEPARATOR", "", "MAX_METHOD_TABS", "", "PREVIEW_GRADIENT_ANGLE", "SELECTED_TAB_BG", "UNSELECTED_TAB_BG", "SELECTED_TAB_TEXT", "UNSELECTED_TAB_TEXT", "TAX_TRANSPORT", "TAX_LEGAL_FINE", "TAX_COMMUNAL", "TAX_ELECTRICITY", "TAX_PRIVATE_ORGANIZATION", "TAX_SOCIAL_HOUSING", "TAX_VEHICLE_RESTORATION", "TAX_HOTEL_ROOM_LEASE", "TAX_HOME", "TAX_BUSINESS", "TAX_FAMILY_APARTMENT", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPayment$Companion;", "", "<init>", "()V", "MAX_METHOD_TABS", "", "SELECTED_TAB_BG", "", "UNSELECTED_TAB_BG", "SELECTED_TAB_TEXT", "UNSELECTED_TAB_TEXT", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -440,25 +343,5 @@ public final class DialogBankTaxPayment extends AbstractDialog {
 
         private Companion() {
         }
-    }
-
-    private final DialogBankTaxPaymentModel buildPayload(String str, String str2, String str3) {
-        DialogBankTaxPaymentModel dialogBankTaxPaymentModel = (DialogBankTaxPaymentModel) ((!MapperKt.isJsonValid(str2) || Intrinsics.areEqual(str2, AbstractJsonLexerKt.NULL) || Intrinsics.areEqual(str2, "{}") || str2.length() == 0) ? null : MapperKt.getGson().fromJson(str2, (Class<Object>) DialogBankTaxPaymentModel.class));
-        if (dialogBankTaxPaymentModel != null) {
-            String header = dialogBankTaxPaymentModel.getHeader();
-            if (StringsKt.isBlank(header)) {
-                header = str;
-            }
-            String str4 = header;
-            String primaryButton = dialogBankTaxPaymentModel.getPrimaryButton();
-            if (StringsKt.isBlank(primaryButton)) {
-                primaryButton = str3;
-            }
-            DialogBankTaxPaymentModel copy$default = DialogBankTaxPaymentModel.copy$default(dialogBankTaxPaymentModel, 0, str4, 0, null, null, primaryButton, null, 93, null);
-            if (copy$default != null) {
-                return copy$default;
-            }
-        }
-        return new DialogBankTaxPaymentModel(0, str, 0, null, str2, str3, null, 77, null);
     }
 }

@@ -427,7 +427,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 return InventoryScreen.warehouseAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
         }, null, 32, null));
-        this.isMainInventoryTabsEnabled = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS_ENABLED", false);
+        this.isMainInventoryTabsEnabled = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS_ENABLED", UtilsKt.isArizonaType());
         this.db = AppDatabase.Companion.invoke(activity);
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
@@ -1494,10 +1494,10 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final boolean isMainInventoryPagingAvailable() {
-        if (UtilsKt.isArizonaType() || !this.isMainInventoryTabsEnabled) {
-            return false;
+        if (this.isMainInventoryTabsEnabled) {
+            return BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY.getId() || BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY_WAREHOUSE.getId();
         }
-        return BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY.getId() || BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY_WAREHOUSE.getId();
+        return false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1581,7 +1581,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void refreshMainInventoryTabsMode() {
-        boolean z = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS_ENABLED", false);
+        boolean z = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS_ENABLED", UtilsKt.isArizonaType());
         if (this.isMainInventoryTabsEnabled != z) {
             this.currentMainInventoryPage = 0;
         }
@@ -1591,6 +1591,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void defaultInventoryScreen() {
         MainInventoryBinding mainInventoryBinding = this.binding;
+        BaseInventory.Companion.setCurrentBackendId(getBackendID());
         LinearLayout root = mainInventoryBinding.personSection.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
         root.setVisibility(0);

@@ -75,7 +75,7 @@ public final class ServersInteractor {
         this.localRepository = localRepository;
         this.favoriteServerDatabase = favoriteServerDatabase;
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null)));
-        MutableStateFlow<ServersState> MutableStateFlow = StateFlowKt.MutableStateFlow(new ServersState(null, null, null, null, null, ServerStateCategory.Mobile, false, 0, 223, null));
+        MutableStateFlow<ServersState> MutableStateFlow = StateFlowKt.MutableStateFlow(new ServersState(null, null, null, null, null, ServerStateCategory.Desktop, false, 0, 223, null));
         this.stateStore = MutableStateFlow;
         this.interactorStateFlow = FlowKt.asStateFlow(MutableStateFlow);
         initial();
@@ -368,7 +368,7 @@ public final class ServersInteractor {
                 serverModel = (ServerModel) obj;
                 MutableStateFlow<ServersState> mutableStateFlow = this.stateStore;
                 if (serverModel != null) {
-                    ServerModel serverModel4 = (ServerModel) CollectionsKt.firstOrNull((List<? extends Object>) mutableStateFlow.getValue().getServerListMobile());
+                    ServerModel serverModel4 = (ServerModel) CollectionsKt.firstOrNull((List<? extends Object>) mutableStateFlow.getValue().getServerListDesktop());
                     if (serverModel4 != null) {
                         serversInteractor$getCurrentServer$1.L$0 = SpillingKt.nullOutSpilledVariable(serverModel);
                         serversInteractor$getCurrentServer$1.L$1 = SpillingKt.nullOutSpilledVariable(serverModel4);

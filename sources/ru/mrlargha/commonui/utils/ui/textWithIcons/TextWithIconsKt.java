@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.style.ImageSpan;
 import androidx.appcompat.content.res.AppCompatResources;
 import kotlin.Metadata;
 import kotlin.collections.ArraysKt;
@@ -36,7 +35,7 @@ public final class TextWithIconsKt {
                 if (drawable != null) {
                     drawable.setBounds(0, 0, context.getResources().getDimensionPixelSize(iconAndSize.getWidthSdpRes()), context.getResources().getDimensionPixelSize(iconAndSize.getHeightSpdRes()));
                     spannableStringBuilder.replace(first, last, (CharSequence) "￼");
-                    spannableStringBuilder.setSpan(new ImageSpan(drawable, 2), first, first + 1, 33);
+                    spannableStringBuilder.setSpan(new CenteredImageSpan(drawable), first, first + 1, 33);
                     length = matchResult.getValue().length() - 1;
                 } else {
                     spannableStringBuilder.delete(first, last);

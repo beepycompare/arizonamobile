@@ -260,10 +260,10 @@ public final class ServerTopBarKt {
             Updater.m4475setimpl(m4467constructorimpl4, materializeModifier4, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1530496866, "C72@2823L172,76@3012L166,80@3195L169:ServerTopBar.kt#2ojkxh");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1530496866, "C72@2823L172,76@3012L169,80@3198L166:ServerTopBar.kt#2ojkxh");
             FavoriteButtonTopBar(onFavorite, uiState.getSelectedCategory() == ServerStateCategory.Favorite, startRestartGroup, (i3 >> 6) & 14);
-            MobileButtonTopBar(onMobile, uiState.getSelectedCategory() == ServerStateCategory.Mobile, startRestartGroup, (i3 >> 9) & 14);
             DesktopButtonTopBar(onDesktop, uiState.getSelectedCategory() == ServerStateCategory.Desktop, startRestartGroup, (i3 >> 12) & 14);
+            MobileButtonTopBar(onMobile, uiState.getSelectedCategory() == ServerStateCategory.Mobile, startRestartGroup, (i3 >> 9) & 14);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

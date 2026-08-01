@@ -369,7 +369,7 @@ public final class UserInputDialog extends AbstractDialog {
             text4 = "";
         }
         textView.setText(text4);
-        inputDialogBinding.headerInfoBadge.setText(activeBadgeText);
+        inputDialogBinding.headerInfoBadge.setText(activeBadgeText + "%");
         LinearLayout transferCommissionContainer = inputDialogBinding.transferCommissionContainer;
         Intrinsics.checkNotNullExpressionValue(transferCommissionContainer, "transferCommissionContainer");
         transferCommissionContainer.setVisibility((StringsKt.isBlank(str) || calculateCommission <= 0) ? false : false ? 0 : 8);

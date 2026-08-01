@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {0, 0, 1, 1}, l = {392, 199}, m = "getCurrentServer", n = {"$this$getSuspend$iv", "key$iv", "currentServer", "it"}, nl = {DownloaderService.STATUS_QUEUED_FOR_WIFI, 199}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {0, 0, 1, 1}, l = {393, 199}, m = "getCurrentServer", n = {"$this$getSuspend$iv", "key$iv", "currentServer", "it"}, nl = {DownloaderService.STATUS_QUEUED_FOR_WIFI, 199}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 2)
 /* loaded from: classes5.dex */
 public final class ServersInteractor$getCurrentServer$1 extends ContinuationImpl {
     Object L$0;

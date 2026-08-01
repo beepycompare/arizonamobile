@@ -2,11 +2,13 @@ package ru.mrlargha.feature.battlepassWinter2025;
 
 import android.app.Activity;
 import android.content.res.ColorStateList;
+import android.graphics.drawable.ColorDrawable;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import com.arizona.game.BuildConfig;
@@ -24,6 +26,7 @@ import kotlin.LazyKt;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
+import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
@@ -32,6 +35,7 @@ import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.CharsKt;
 import kotlin.text.StringsKt;
@@ -64,15 +68,21 @@ import ru.mrlargha.feature.battlepassWinter2025.databinding.BpSeasonEndedBinding
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassConvertBattlecoinsLayoutBinding;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassLayoutBinding;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassLevelSetsLayoutBinding;
+import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassRewardDescriptionPopupBinding;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassRouletteLayoutBinding;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassWelcomeLayoutBinding;
 import ru.mrlargha.feature.battlepassWinter2025.roulette.data.OldPrise;
 import ru.mrlargha.feature.battlepassWinter2025.roulette.data.PossiblePrise;
 import ru.mrlargha.ui.kit.ParseColoredTextKt;
 /* compiled from: Winter2025BattlePass.kt */
-@Metadata(d1 = {"\u0000Ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001:\u0004\u008c\u0001\u008d\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010'\u001a\u00020\t2\u0006\u0010(\u001a\u00020\u0005H\u0002J\u0010\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020\u000bH\u0016J\u0018\u0010O\u001a\u00020M2\u0006\u0010P\u001a\u00020\t2\u0006\u0010Q\u001a\u00020\u0005H\u0016J\u001c\u0010R\u001a\u00020M2\u0012\u0010S\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050505H\u0002J\b\u0010T\u001a\u00020MH\u0002J\b\u0010U\u001a\u00020\u0005H\u0002J\b\u0010V\u001a\u00020MH\u0002J\b\u0010W\u001a\u00020MH\u0002J\b\u0010X\u001a\u00020MH\u0002J\u0010\u0010Y\u001a\u00020M2\u0006\u0010Z\u001a\u00020CH\u0002J\b\u0010[\u001a\u00020MH\u0002J\b\u0010\\\u001a\u00020MH\u0002J\u0018\u0010]\u001a\u00020M2\u0006\u0010^\u001a\u00020_2\u0006\u0010`\u001a\u00020\u000bH\u0002J\b\u0010a\u001a\u00020MH\u0002J\b\u0010b\u001a\u00020MH\u0002J\b\u0010c\u001a\u00020MH\u0002J\b\u0010d\u001a\u00020MH\u0002J\b\u0010e\u001a\u00020MH\u0002J\b\u0010f\u001a\u00020MH\u0002J\b\u0010g\u001a\u00020MH\u0002J\b\u0010h\u001a\u00020MH\u0002J\u0010\u0010i\u001a\u00020M2\u0006\u0010j\u001a\u00020kH\u0002J\u0010\u0010l\u001a\u00020M2\u0006\u0010m\u001a\u00020kH\u0002J\u0010\u0010n\u001a\u00020M2\u0006\u0010m\u001a\u00020kH\u0002J\u0014\u0010o\u001a\u00020M2\u0006\u0010p\u001a\u000200H\u0003b\u0002\bqJ\b\u0010r\u001a\u00020MH\u0002J\u0010\u0010s\u001a\u00020M2\u0006\u0010t\u001a\u00020\u000bH\u0002J\b\u0010u\u001a\u00020MH\u0002J\u0010\u0010v\u001a\u00020\u000b2\u0006\u0010j\u001a\u00020kH\u0002J\u0018\u0010w\u001a\u00020M2\u0006\u0010m\u001a\u0002092\u0006\u0010j\u001a\u00020kH\u0002J\u0018\u0010x\u001a\u00020M2\u0006\u0010m\u001a\u0002092\u0006\u0010y\u001a\u00020\u0005H\u0002J\u0014\u0010z\u001a\u00020M2\u0006\u0010{\u001a\u00020|H\u0003b\u0002\bqJ\u0016\u0010}\u001a\u00020M2\f\u0010~\u001a\b\u0012\u0004\u0012\u00020905H\u0002J\u0016\u0010\u007f\u001a\u00020M2\f\u0010P\u001a\b\u0012\u0004\u0012\u00020I05H\u0002J%\u0010\u0080\u0001\u001a\u00020M2\u001a\u0010\u0081\u0001\u001a\u0015\u0012\u0011\u0012\u000f\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u0002060\u0082\u000105H\u0002J\t\u0010\u0083\u0001\u001a\u00020MH\u0002J\u001a\u0010\u0084\u0001\u001a\u00020M2\u0007\u0010\u0085\u0001\u001a\u00020\u000b2\u0006\u0010y\u001a\u00020\u0005H\u0002J\t\u0010\u0086\u0001\u001a\u00020MH\u0002J\t\u0010\u0087\u0001\u001a\u00020MH\u0002J\u0013\u0010\u0088\u0001\u001a\u00020M2\b\u0010\u0089\u0001\u001a\u00030\u008a\u0001H\u0002J\t\u0010\u008b\u0001\u001a\u00020MH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001a\u001a\u00020\u00058BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u001d\u0010\u001e\u001a\u0004\b\u001b\u0010\u001cR\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010/\u001a\u0004\u0018\u000100X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00104\u001a\b\u0012\u0004\u0012\u00020605X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00107\u001a\b\u0012\u0004\u0012\u00020605X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00108\u001a\b\u0012\u0004\u0012\u00020905X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010:\u001a\b\u0012\u0004\u0012\u00020905X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010;\u001a\u00020<¢\u0006\b\n\u0000\u001a\u0004\b=\u0010>R\u000e\u0010?\u001a\u00020@X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u00020EX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u00020GX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010H\u001a\b\u0012\u0004\u0012\u00020I05X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010J\u001a\b\u0012\u0004\u0012\u00020I05X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010K\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u008e\u0001"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "azCoinsLink", "", "supportsBattlePassCurrency", "", "visualSkin", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassVisualSkin;", "visualContext", "Landroid/view/ContextThemeWrapper;", "battlePassUi", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassUi;", "layout", "Landroid/view/View;", "battlePassBinding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;", "colorMaxProgress", "colorText", "whiteColor", "taskProgressColor", "taskProgressTextColor", "getTaskProgressTextColor", "()I", "taskProgressTextColor$delegate", "Lkotlin/Lazy;", "navigationActiveTextColor", "navigationInactiveTextColor", "navigationSelectedBackgroundColor", "premiumTaskLockBgStartColor", "premiumTaskLockBgEndColor", "premiumTaskLockGradientAngle", "levelSetBuyText", "levelSetUnavailableText", "colorHex", "colorRes", "commonTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/CommonTasksAdapter;", "rewardsTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/RewardsTasksAdapter;", "levelItemsAdapter", "Lru/mrlargha/feature/battlepassWinter2025/LevelItemsAdapter;", "battlePassInfo", "Lru/mrlargha/feature/battlepassWinter2025/data/MainBattlePassInfo;", "startBattleCoinNumbCurse", "selectedBattleCoinMultiplier", "Lru/mrlargha/feature/battlepassWinter2025/data/BattleCoinsMultiplier;", "_bpUsualData", "", "Lru/mrlargha/feature/battlepassWinter2025/data/AwardItemData;", "_bpPremData", "_taskUsualData", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskInfo;", "_taskPremData", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/battlepassWinter2025/WinterBattlePassApi;", "isRouletteOpen", "currentNavItem", "Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$NavItems;", "rouletteController", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassRouletteController;", "purchaseController", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassPurchaseController;", "_usualTasks", "Lru/mrlargha/feature/battlepassWinter2025/data/ActualTask;", "_premTasks", "project", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "subId", "updateBpAwards", "awardsStatusList", "setupConvertBattleCoinsPage", "getChosenMultiplier", "updateUiBySelectedMultiplier", "setupMainPageInfo", "setupNavigation", "clickButtonMenuNavigation", "navItem", "hideAllPages", "resetNavigationAlpha", "applyNavigationState", "item", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassNavigationItemViews;", "selected", "refreshChromeVisibility", "showMainPage", "showTasksPage", "showRoulettePage", "showLevelSetsPage", "showBuyPremiumPage", "showConvertBattleCoinsPage", "setupCommonTasksInfo", "selectTaskCategory", "categoryType", "Lru/mrlargha/feature/battlepassWinter2025/data/CategoryType;", "filterListForSelectedTask", "task", "updateTaskCategoryTheme", "updateMainPageInfo", "info", "Landroidx/annotation/MainThread;", "updateLevelInfoOnPages", "setPremiumTaskLockVisible", "isVisible", "showPremiumTaskLockFallback", "updatePremiumTaskLock", "showSelectedTask", "showTaskInfo", "position", "updateCoins", "coinsData", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassUpdateCoinsData;", "updateCommonTaskItems", "commonTasks", "updateTasks", "updateLevelItems", "pairList", "Lkotlin/Pair;", "updateLogo", "onClaimItem", "isPremium", "onQuality", "setWelcomeScreen", "openModalWindow", CommonUrlParts.MODEL, "Lru/mrlargha/feature/battlepassWinter2025/data/BpModalWindowModel;", "setupListeners", "Spawner", "NavItems", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Þ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 \u0095\u00012\u00020\u0001:\u0006\u0095\u0001\u0096\u0001\u0097\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010'\u001a\u00020\t2\u0006\u0010(\u001a\u00020\u0005H\u0002J\u0010\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\u000bH\u0016J\u0018\u0010S\u001a\u00020Q2\u0006\u0010T\u001a\u00020\t2\u0006\u0010U\u001a\u00020\u0005H\u0016J\u001c\u0010V\u001a\u00020Q2\u0012\u0010W\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050909H\u0002J\b\u0010X\u001a\u00020QH\u0002J\b\u0010Y\u001a\u00020\u0005H\u0002J\b\u0010Z\u001a\u00020QH\u0002J\b\u0010[\u001a\u00020QH\u0002J\b\u0010\\\u001a\u00020QH\u0002J\u0010\u0010]\u001a\u00020Q2\u0006\u0010^\u001a\u00020GH\u0002J\b\u0010_\u001a\u00020QH\u0002J\b\u0010`\u001a\u00020QH\u0002J\u0018\u0010a\u001a\u00020Q2\u0006\u0010b\u001a\u00020c2\u0006\u0010d\u001a\u00020\u000bH\u0002J\b\u0010e\u001a\u00020QH\u0002J\b\u0010f\u001a\u00020QH\u0002J\b\u0010g\u001a\u00020QH\u0002J\b\u0010h\u001a\u00020QH\u0002J\b\u0010i\u001a\u00020QH\u0002J\b\u0010j\u001a\u00020QH\u0002J\b\u0010k\u001a\u00020QH\u0002J\b\u0010l\u001a\u00020QH\u0002J\u0010\u0010m\u001a\u00020Q2\u0006\u0010n\u001a\u00020oH\u0002J\u0010\u0010p\u001a\u00020Q2\u0006\u0010q\u001a\u00020oH\u0002J\u0010\u0010r\u001a\u00020Q2\u0006\u0010q\u001a\u00020oH\u0002J\u0014\u0010s\u001a\u00020Q2\u0006\u0010t\u001a\u000200H\u0003b\u0002\buJ\b\u0010v\u001a\u00020QH\u0002J\u0010\u0010w\u001a\u00020Q2\u0006\u0010x\u001a\u00020\u000bH\u0002J\b\u0010y\u001a\u00020QH\u0002J\u0010\u0010z\u001a\u00020\u000b2\u0006\u0010n\u001a\u00020oH\u0002J\u0018\u0010{\u001a\u00020Q2\u0006\u0010q\u001a\u00020=2\u0006\u0010n\u001a\u00020oH\u0002J\u0018\u0010|\u001a\u00020Q2\u0006\u0010q\u001a\u00020=2\u0006\u0010}\u001a\u00020\u0005H\u0002J\u0015\u0010~\u001a\u00020Q2\u0007\u0010\u007f\u001a\u00030\u0080\u0001H\u0003b\u0002\buJ\u0018\u0010\u0081\u0001\u001a\u00020Q2\r\u0010\u0082\u0001\u001a\b\u0012\u0004\u0012\u00020=09H\u0002J\u0017\u0010\u0083\u0001\u001a\u00020Q2\f\u0010T\u001a\b\u0012\u0004\u0012\u00020M09H\u0002J$\u0010\u0084\u0001\u001a\u00020Q2\u0019\u0010\u0085\u0001\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020:0209H\u0002J\t\u0010\u0086\u0001\u001a\u00020QH\u0002J\u001a\u0010\u0087\u0001\u001a\u00020Q2\u0007\u0010\u0088\u0001\u001a\u00020\u000b2\u0006\u0010}\u001a\u00020\u0005H\u0002J\u001b\u0010\u0089\u0001\u001a\u00020Q2\u0007\u0010\u008a\u0001\u001a\u00020\u00132\u0007\u0010\u008b\u0001\u001a\u00020\tH\u0002J\u0012\u0010\u008c\u0001\u001a\u00020Q2\u0007\u0010\u008d\u0001\u001a\u00020\tH\u0002J\t\u0010\u008e\u0001\u001a\u00020QH\u0002J\t\u0010\u008f\u0001\u001a\u00020QH\u0002J\t\u0010\u0090\u0001\u001a\u00020QH\u0002J\u0013\u0010\u0091\u0001\u001a\u00020Q2\b\u0010\u0092\u0001\u001a\u00030\u0093\u0001H\u0002J\t\u0010\u0094\u0001\u001a\u00020QH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001a\u001a\u00020\u00058BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u001d\u0010\u001e\u001a\u0004\b\u001b\u0010\u001cR\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010/\u001a\u0004\u0018\u000100X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u00101\u001a\u0010\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\t\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u00103\u001a\u0004\u0018\u000104X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u000207X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00108\u001a\b\u0012\u0004\u0012\u00020:09X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010;\u001a\b\u0012\u0004\u0012\u00020:09X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010<\u001a\b\u0012\u0004\u0012\u00020=09X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010>\u001a\b\u0012\u0004\u0012\u00020=09X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010?\u001a\u00020@¢\u0006\b\n\u0000\u001a\u0004\bA\u0010BR\u000e\u0010C\u001a\u00020DX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u00020GX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020IX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010J\u001a\u00020KX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010L\u001a\b\u0012\u0004\u0012\u00020M09X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010N\u001a\b\u0012\u0004\u0012\u00020M09X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010O\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0098\u0001"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "azCoinsLink", "", "supportsBattlePassCurrency", "", "visualSkin", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassVisualSkin;", "visualContext", "Landroid/view/ContextThemeWrapper;", "battlePassUi", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassUi;", "layout", "Landroid/view/View;", "battlePassBinding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;", "colorMaxProgress", "colorText", "whiteColor", "taskProgressColor", "taskProgressTextColor", "getTaskProgressTextColor", "()I", "taskProgressTextColor$delegate", "Lkotlin/Lazy;", "navigationActiveTextColor", "navigationInactiveTextColor", "navigationSelectedBackgroundColor", "premiumTaskLockBgStartColor", "premiumTaskLockBgEndColor", "premiumTaskLockGradientAngle", "levelSetBuyText", "levelSetUnavailableText", "colorHex", "colorRes", "commonTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/CommonTasksAdapter;", "rewardsTasksAdapter", "Lru/mrlargha/feature/battlepassWinter2025/RewardsTasksAdapter;", "levelItemsAdapter", "Lru/mrlargha/feature/battlepassWinter2025/LevelItemsAdapter;", "battlePassInfo", "Lru/mrlargha/feature/battlepassWinter2025/data/MainBattlePassInfo;", "pendingPremiumRewardDescription", "Lkotlin/Pair;", "premiumRewardDescriptionPopup", "Landroid/widget/PopupWindow;", "startBattleCoinNumbCurse", "selectedBattleCoinMultiplier", "Lru/mrlargha/feature/battlepassWinter2025/data/BattleCoinsMultiplier;", "_bpUsualData", "", "Lru/mrlargha/feature/battlepassWinter2025/data/AwardItemData;", "_bpPremData", "_taskUsualData", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskInfo;", "_taskPremData", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/battlepassWinter2025/WinterBattlePassApi;", "isRouletteOpen", "currentNavItem", "Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$NavItems;", "rouletteController", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassRouletteController;", "purchaseController", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassPurchaseController;", "_usualTasks", "Lru/mrlargha/feature/battlepassWinter2025/data/ActualTask;", "_premTasks", "project", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "subId", "updateBpAwards", "awardsStatusList", "setupConvertBattleCoinsPage", "getChosenMultiplier", "updateUiBySelectedMultiplier", "setupMainPageInfo", "setupNavigation", "clickButtonMenuNavigation", "navItem", "hideAllPages", "resetNavigationAlpha", "applyNavigationState", "item", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassNavigationItemViews;", "selected", "refreshChromeVisibility", "showMainPage", "showTasksPage", "showRoulettePage", "showLevelSetsPage", "showBuyPremiumPage", "showConvertBattleCoinsPage", "setupCommonTasksInfo", "selectTaskCategory", "categoryType", "Lru/mrlargha/feature/battlepassWinter2025/data/CategoryType;", "filterListForSelectedTask", "task", "updateTaskCategoryTheme", "updateMainPageInfo", "info", "Landroidx/annotation/MainThread;", "updateLevelInfoOnPages", "setPremiumTaskLockVisible", "isVisible", "showPremiumTaskLockFallback", "updatePremiumTaskLock", "showSelectedTask", "showTaskInfo", "position", "updateCoins", "coinsData", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassUpdateCoinsData;", "updateCommonTaskItems", "commonTasks", "updateTasks", "updateLevelItems", "pairList", "updateLogo", "onClaimItem", "isPremium", "requestPremiumRewardDescription", "anchor", "itemId", "showPremiumRewardDescription", "description", "dismissPremiumRewardDescription", "onQuality", "setWelcomeScreen", "openModalWindow", CommonUrlParts.MODEL, "Lru/mrlargha/feature/battlepassWinter2025/data/BpModalWindowModel;", "setupListeners", "Companion", "Spawner", "NavItems", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Winter2025BattlePassScreen extends SAMPUIElement {
+    @Deprecated
+    public static final int ARIZONA_REFRESH_TASKS_SUB_ID = 25;
+    @Deprecated
+    public static final int ARIZONA_WELCOME_CTA_SUB_ID = 24;
+    private static final Companion Companion = new Companion(null);
     private List<AwardItemData> _bpPremData;
     private List<AwardItemData> _bpUsualData;
     private List<ActualTask> _premTasks;
@@ -97,6 +107,8 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     private final int navigationActiveTextColor;
     private final int navigationInactiveTextColor;
     private final int navigationSelectedBackgroundColor;
+    private Pair<? extends View, String> pendingPremiumRewardDescription;
+    private PopupWindow premiumRewardDescriptionPopup;
     private final int premiumTaskLockBgEndColor;
     private final int premiumTaskLockBgStartColor;
     private final int premiumTaskLockGradientAngle;
@@ -168,56 +180,64 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
             } catch (NoSuchFieldError unused11) {
             }
             try {
-                iArr[BattlePassModelType.ModalWindow.ordinal()] = 12;
+                iArr[BattlePassModelType.ArizonaWelcome.ordinal()] = 12;
             } catch (NoSuchFieldError unused12) {
             }
             try {
-                iArr[BattlePassModelType.BlockTimer.ordinal()] = 13;
+                iArr[BattlePassModelType.PremiumRewardDescription.ordinal()] = 13;
             } catch (NoSuchFieldError unused13) {
+            }
+            try {
+                iArr[BattlePassModelType.ModalWindow.ordinal()] = 14;
+            } catch (NoSuchFieldError unused14) {
+            }
+            try {
+                iArr[BattlePassModelType.BlockTimer.ordinal()] = 15;
+            } catch (NoSuchFieldError unused15) {
             }
             $EnumSwitchMapping$0 = iArr;
             int[] iArr2 = new int[BattleCoinsMultiplier.values().length];
             try {
                 iArr2[BattleCoinsMultiplier.X10.ordinal()] = 1;
-            } catch (NoSuchFieldError unused14) {
+            } catch (NoSuchFieldError unused16) {
             }
             try {
                 iArr2[BattleCoinsMultiplier.X100.ordinal()] = 2;
-            } catch (NoSuchFieldError unused15) {
+            } catch (NoSuchFieldError unused17) {
             }
             try {
                 iArr2[BattleCoinsMultiplier.X1000.ordinal()] = 3;
-            } catch (NoSuchFieldError unused16) {
+            } catch (NoSuchFieldError unused18) {
             }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[NavItems.values().length];
             try {
                 iArr3[NavItems.MAIN_PAGE.ordinal()] = 1;
-            } catch (NoSuchFieldError unused17) {
-            }
-            try {
-                iArr3[NavItems.TASKS_PAGE.ordinal()] = 2;
-            } catch (NoSuchFieldError unused18) {
-            }
-            try {
-                iArr3[NavItems.ROULETTE_PAGE.ordinal()] = 3;
             } catch (NoSuchFieldError unused19) {
             }
             try {
-                iArr3[NavItems.DONATE_PAGE.ordinal()] = 4;
+                iArr3[NavItems.TASKS_PAGE.ordinal()] = 2;
             } catch (NoSuchFieldError unused20) {
             }
             try {
-                iArr3[NavItems.LEVEL_SETS.ordinal()] = 5;
+                iArr3[NavItems.ROULETTE_PAGE.ordinal()] = 3;
             } catch (NoSuchFieldError unused21) {
             }
             try {
-                iArr3[NavItems.BUY_PREMIUM.ordinal()] = 6;
+                iArr3[NavItems.DONATE_PAGE.ordinal()] = 4;
             } catch (NoSuchFieldError unused22) {
             }
             try {
-                iArr3[NavItems.CONVERT_BATTLE_COINS.ordinal()] = 7;
+                iArr3[NavItems.LEVEL_SETS.ordinal()] = 5;
             } catch (NoSuchFieldError unused23) {
+            }
+            try {
+                iArr3[NavItems.BUY_PREMIUM.ordinal()] = 6;
+            } catch (NoSuchFieldError unused24) {
+            }
+            try {
+                iArr3[NavItems.CONVERT_BATTLE_COINS.ordinal()] = 7;
+            } catch (NoSuchFieldError unused25) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -268,7 +288,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         int color = ContextCompat.getColor(contextThemeWrapper, R.color.winter_bp_white);
         this.whiteColor = color;
         this.taskProgressColor = BattlePassVisualSkinKt.resolveBattlePassColor(contextThemeWrapper, R.attr.winterBpTaskSurfaceTrack, R.color.winter_bp_white);
-        this.taskProgressTextColor$delegate = LazyKt.lazy(new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda39
+        this.taskProgressTextColor$delegate = LazyKt.lazy(new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda42
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 int currentTextColor;
@@ -310,7 +330,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
             public final Object invoke(Object obj, Object obj2) {
                 return Winter2025BattlePassScreen.levelItemsAdapter$lambda$2(Winter2025BattlePassScreen.this, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
             }
-        }, new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda5
+        }, new Winter2025BattlePassScreen$levelItemsAdapter$4(this), new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return Winter2025BattlePassScreen.levelItemsAdapter$lambda$3(Winter2025BattlePassScreen.this);
@@ -358,7 +378,13 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         LinearLayout buttonBuyBattlePoints = binding.buttonBuyBattlePoints;
         Intrinsics.checkNotNullExpressionValue(buttonBuyBattlePoints, "buttonBuyBattlePoints");
         buttonBuyBattlePoints.setVisibility(isArizonaType ? 0 : 8);
-        setWelcomeScreen();
+        if (UtilsKt.isArizonaType()) {
+            ConstraintLayout root = binding.winterBattlepassWelcome.getRoot();
+            Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+            root.setVisibility(8);
+        } else {
+            setWelcomeScreen();
+        }
         setupNavigation();
         setupMainPageInfo();
         setupCommonTasksInfo();
@@ -368,6 +394,18 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         }
         clickButtonMenuNavigation(NavItems.MAIN_PAGE);
         setupListeners();
+    }
+
+    /* compiled from: Winter2025BattlePass.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/Winter2025BattlePassScreen$Companion;", "", "<init>", "()V", "ARIZONA_WELCOME_CTA_SUB_ID", "", "ARIZONA_REFRESH_TASKS_SUB_ID", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 
     private final int getTaskProgressTextColor() {
@@ -438,6 +476,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void setVisibility(boolean z) {
         if (!z) {
+            dismissPremiumRewardDescription();
             this.commonTasksAdapter.clearAllTasksList();
             this.levelItemsAdapter.clearItems();
             this.rouletteController.clear();
@@ -483,9 +522,21 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                 this.rouletteController.updateOldPrises(MapperKt.toListModel(data, OldPrise.class));
                 return;
             case 11:
+                if (UtilsKt.isArizonaType()) {
+                    return;
+                }
                 setWelcomeScreen();
                 return;
             case 12:
+                if (UtilsKt.isArizonaType()) {
+                    setWelcomeScreen();
+                    return;
+                }
+                return;
+            case 13:
+                showPremiumRewardDescription(data);
+                return;
+            case 14:
                 if (data.length() == 0) {
                     FrameLayout root = this.battlePassBinding.seasonEnded.getRoot();
                     Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
@@ -498,7 +549,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                 } else {
                     throw new JsonParseException("Json is not valid");
                 }
-            case 13:
+            case 15:
                 this.purchaseController.checkAvailableBp(Long.parseLong(data));
                 return;
             default:
@@ -518,31 +569,31 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                 Winter2025BattlePassScreen.setupConvertBattleCoinsPage$lambda$0$0(Winter2025BattlePassScreen.this, winterBattlepassConvertBattlecoinsLayoutBinding, view);
             }
         });
-        winterBattlepassConvertBattlecoinsLayoutBinding.plusBattlepointsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda34
+        winterBattlepassConvertBattlecoinsLayoutBinding.plusBattlepointsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda37
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupConvertBattleCoinsPage$lambda$0$1(WinterBattlepassConvertBattlecoinsLayoutBinding.this, this, view);
             }
         });
-        winterBattlepassConvertBattlecoinsLayoutBinding.minusBattlepointsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda35
+        winterBattlepassConvertBattlecoinsLayoutBinding.minusBattlepointsButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda38
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupConvertBattleCoinsPage$lambda$0$2(WinterBattlepassConvertBattlecoinsLayoutBinding.this, this, view);
             }
         });
-        winterBattlepassConvertBattlecoinsLayoutBinding.multiplierBattlepoints10Text.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda36
+        winterBattlepassConvertBattlecoinsLayoutBinding.multiplierBattlepoints10Text.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda39
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupConvertBattleCoinsPage$lambda$0$3(Winter2025BattlePassScreen.this, view);
             }
         });
-        winterBattlepassConvertBattlecoinsLayoutBinding.multiplierBattlepoints100Text.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda37
+        winterBattlepassConvertBattlecoinsLayoutBinding.multiplierBattlepoints100Text.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda40
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupConvertBattleCoinsPage$lambda$0$4(Winter2025BattlePassScreen.this, view);
             }
         });
-        winterBattlepassConvertBattlecoinsLayoutBinding.multiplierBattlepoints1000Text.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda38
+        winterBattlepassConvertBattlecoinsLayoutBinding.multiplierBattlepoints1000Text.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda41
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupConvertBattleCoinsPage$lambda$0$5(Winter2025BattlePassScreen.this, view);
@@ -919,7 +970,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         MainBattlePassInfo mainBattlePassInfo = this.battlePassInfo;
         if ((mainBattlePassInfo != null ? mainBattlePassInfo.getLevel() : 0) >= 100) {
             winterBattlepassLayoutBinding.battlepassLevelSetsPageMaximum.getRoot().setVisibility(0);
-            winterBattlepassLayoutBinding.battlepassLevelSetsPageMaximum.buttonReturn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda29
+            winterBattlepassLayoutBinding.battlepassLevelSetsPageMaximum.buttonReturn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda30
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     Winter2025BattlePassScreen.showLevelSetsPage$lambda$0$0(Winter2025BattlePassScreen.this, view);
@@ -958,36 +1009,49 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     private final void setupCommonTasksInfo() {
         View container;
         View container2;
+        View container3;
         BattlePassTasksPageViews tasksPage = this.battlePassUi.getTasksPage();
         tasksPage.getCommonTaskList().setAdapter(this.commonTasksAdapter);
         BattlePassTaskCategoryViews battlePassTaskCategoryViews = tasksPage.getCategories().get(CategoryType.DAILY);
-        if (battlePassTaskCategoryViews != null && (container2 = battlePassTaskCategoryViews.getContainer()) != null) {
-            container2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda25
+        if (battlePassTaskCategoryViews != null && (container3 = battlePassTaskCategoryViews.getContainer()) != null) {
+            container3.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda25
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$0$0(Winter2025BattlePassScreen.this, view);
                 }
             });
         }
-        BattlePassTaskCategoryViews battlePassTaskCategoryViews2 = tasksPage.getCategories().get(CategoryType.PREMIUM);
-        if (battlePassTaskCategoryViews2 != null && (container = battlePassTaskCategoryViews2.getContainer()) != null) {
-            container.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda26
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$0$1(Winter2025BattlePassScreen.this, view);
-                }
-            });
-        }
-        tasksPage.getBuyLevelsButton().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda27
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$0$2(Winter2025BattlePassScreen.this, view);
+        if (!UtilsKt.isArizonaType()) {
+            BattlePassTaskCategoryViews battlePassTaskCategoryViews2 = tasksPage.getCategories().get(CategoryType.PREMIUM);
+            if (battlePassTaskCategoryViews2 != null && (container2 = battlePassTaskCategoryViews2.getContainer()) != null) {
+                container2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda26
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$0$1(Winter2025BattlePassScreen.this, view);
+                    }
+                });
             }
-        });
-        tasksPage.getBuyPremiumButton().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda28
+        } else {
+            BattlePassTaskCategoryViews battlePassTaskCategoryViews3 = tasksPage.getCategories().get(CategoryType.PREMIUM);
+            if (battlePassTaskCategoryViews3 != null && (container = battlePassTaskCategoryViews3.getContainer()) != null) {
+                container.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda27
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$0$2(Winter2025BattlePassScreen.this, view);
+                    }
+                });
+            }
+        }
+        tasksPage.getBuyLevelsButton().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda28
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$0$3(Winter2025BattlePassScreen.this, view);
+            }
+        });
+        tasksPage.getBuyPremiumButton().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda29
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                Winter2025BattlePassScreen.setupCommonTasksInfo$lambda$0$4(Winter2025BattlePassScreen.this, view);
             }
         });
     }
@@ -1004,11 +1068,16 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupCommonTasksInfo$lambda$0$2(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
-        winter2025BattlePassScreen.clickButtonMenuNavigation(NavItems.LEVEL_SETS);
+        SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 0, 25, null, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupCommonTasksInfo$lambda$0$3(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
+        winter2025BattlePassScreen.clickButtonMenuNavigation(NavItems.LEVEL_SETS);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupCommonTasksInfo$lambda$0$4(Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winter2025BattlePassScreen.clickButtonMenuNavigation(NavItems.BUY_PREMIUM);
     }
 
@@ -1255,6 +1324,73 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         notifyClick(0, 3, i + ", " + (z ? 1 : 0));
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void requestPremiumRewardDescription(View view, String str) {
+        if (this.pendingPremiumRewardDescription != null) {
+            return;
+        }
+        PopupWindow popupWindow = this.premiumRewardDescriptionPopup;
+        if (popupWindow != null) {
+            popupWindow.dismiss();
+        }
+        this.premiumRewardDescriptionPopup = null;
+        this.pendingPremiumRewardDescription = TuplesKt.to(view, str);
+        notifyClick(0, 26, str);
+    }
+
+    private final void showPremiumRewardDescription(String str) {
+        Pair<? extends View, String> pair = this.pendingPremiumRewardDescription;
+        if (pair == null) {
+            return;
+        }
+        View component1 = pair.component1();
+        String component2 = pair.component2();
+        this.pendingPremiumRewardDescription = null;
+        String str2 = str;
+        if (!StringsKt.isBlank(str2) && component1.isAttachedToWindow() && Intrinsics.areEqual(component1.getTag(), component2)) {
+            WinterBattlepassRewardDescriptionPopupBinding inflate = WinterBattlepassRewardDescriptionPopupBinding.inflate(LayoutInflater.from(this.visualContext));
+            Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
+            CustomCardView root = inflate.getRoot();
+            Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+            inflate.rewardDescriptionText.setText(str2);
+            root.measure(View.MeasureSpec.makeMeasureSpec(this.visualContext.getResources().getDisplayMetrics().widthPixels, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(0, 0));
+            final PopupWindow popupWindow = new PopupWindow((View) root, -2, -2, true);
+            popupWindow.setBackgroundDrawable(new ColorDrawable(0));
+            popupWindow.setOutsideTouchable(true);
+            popupWindow.setElevation(this.visualContext.getResources().getDimension(ru.mrlargha.commonui.R.dimen._2sdp));
+            popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda35
+                @Override // android.widget.PopupWindow.OnDismissListener
+                public final void onDismiss() {
+                    Winter2025BattlePassScreen.showPremiumRewardDescription$lambda$1(Winter2025BattlePassScreen.this, popupWindow);
+                }
+            });
+            root.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda36
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    popupWindow.dismiss();
+                }
+            });
+            this.premiumRewardDescriptionPopup = popupWindow;
+            popupWindow.showAsDropDown(component1, (component1.getWidth() - root.getMeasuredWidth()) / 2, -(component1.getHeight() + root.getMeasuredHeight() + this.visualContext.getResources().getDimensionPixelSize(ru.mrlargha.commonui.R.dimen._2sdp)));
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void showPremiumRewardDescription$lambda$1(Winter2025BattlePassScreen winter2025BattlePassScreen, PopupWindow popupWindow) {
+        if (winter2025BattlePassScreen.premiumRewardDescriptionPopup == popupWindow) {
+            winter2025BattlePassScreen.premiumRewardDescriptionPopup = null;
+        }
+    }
+
+    private final void dismissPremiumRewardDescription() {
+        this.pendingPremiumRewardDescription = null;
+        PopupWindow popupWindow = this.premiumRewardDescriptionPopup;
+        if (popupWindow != null) {
+            popupWindow.dismiss();
+        }
+        this.premiumRewardDescriptionPopup = null;
+    }
+
     private final void onQuality() {
         this.battlePassBinding.textBonus.setText("Качество будет определено при открытии сертификата.\nВы можете получить:\n- Хлам\n- Обычное\n- Идеальное");
         this.battlePassBinding.overlay.setVisibility(0);
@@ -1317,6 +1453,9 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     public static final void setWelcomeScreen$lambda$0$2(WinterBattlepassWelcomeLayoutBinding winterBattlepassWelcomeLayoutBinding, Winter2025BattlePassScreen winter2025BattlePassScreen, View view) {
         winterBattlepassWelcomeLayoutBinding.getRoot().setVisibility(8);
         winter2025BattlePassScreen.refreshChromeVisibility();
+        if (UtilsKt.isArizonaType()) {
+            SAMPUIElement.notifyClick$default(winter2025BattlePassScreen, 0, 24, null, 4, null);
+        }
     }
 
     private final void openModalWindow(BpModalWindowModel bpModalWindowModel) {
@@ -1344,19 +1483,19 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
 
     private final void setupListeners() {
         WinterBattlepassLayoutBinding winterBattlepassLayoutBinding = this.battlePassBinding;
-        winterBattlepassLayoutBinding.seasonEnded.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda30
+        winterBattlepassLayoutBinding.seasonEnded.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda31
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupListeners$lambda$0$0(Winter2025BattlePassScreen.this, view);
             }
         });
-        winterBattlepassLayoutBinding.seasonEnded.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda31
+        winterBattlepassLayoutBinding.seasonEnded.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda32
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupListeners$lambda$0$1(Winter2025BattlePassScreen.this, view);
             }
         });
-        winterBattlepassLayoutBinding.seasonEnded.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda32
+        winterBattlepassLayoutBinding.seasonEnded.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda34
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Winter2025BattlePassScreen.setupListeners$lambda$0$2(view);

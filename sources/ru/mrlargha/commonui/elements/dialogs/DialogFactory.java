@@ -242,7 +242,16 @@ public final class DialogFactory {
         Intrinsics.checkNotNullParameter(rightButton, "rightButton");
         Intrinsics.checkNotNullParameter(inputHint, "inputHint");
         Intrinsics.checkNotNullParameter(context, "context");
-        Log.d("MrLargha DialogFactory", "Creating dialog with parameters: ID: " + i + "\nCaption: " + caption + "\n Info: " + info + " \n Style " + i2);
+        StringBuilder sb = new StringBuilder("Creating dialog with parameters:\n");
+        sb.append("ID: " + i).append('\n');
+        sb.append("Style: " + i2).append('\n');
+        sb.append("Backend ID: " + i3).append('\n');
+        sb.append("Caption: " + caption).append('\n');
+        sb.append("Info: " + info).append('\n');
+        sb.append("Left button: " + leftButton).append('\n');
+        sb.append("Right button: " + rightButton).append('\n');
+        sb.append("Input hint: " + inputHint);
+        Log.d("MrLargha DialogFactory", sb.toString());
         ChatEmoji.INSTANCE.init(context);
         DialogCreator dialogCreator = customCreators.get(Integer.valueOf(i2));
         if (dialogCreator != null) {
@@ -250,7 +259,7 @@ public final class DialogFactory {
         }
         switch (i2) {
             case 0:
-                return new InfoDialog(targetActivity, i3, caption, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), i);
+                return new InfoDialog(targetActivity, i3, caption, info, leftButton, rightButton, i);
             case 1:
                 return new UserInputDialog(targetActivity, i3, ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, caption, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, info, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, leftButton, 0.0f, null, 3, null), ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, rightButton, 0.0f, null, 3, null), false, i, inputHint);
             case 2:
@@ -267,7 +276,7 @@ public final class DialogFactory {
             case 8:
                 return new DialogBuyCrypto(targetActivity, i3, caption, info, leftButton, rightButton, i, inputHint);
             case 9:
-                return new DialogBankTaxPayment(targetActivity, i3, caption, info, leftButton, i);
+                return new DialogBankTaxPayment(targetActivity, i3, caption, info, leftButton, inputHint, i);
             case 10:
                 return new DialogBankHistory(targetActivity, i3, caption, info, i, false, null, 96, null);
             default:

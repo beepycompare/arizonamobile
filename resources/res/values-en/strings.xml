@@ -213,6 +213,7 @@
     <string name="dialog_bank_tax_payment_tab_bank_account">From bank account</string>
     <string name="dialog_bank_tax_payment_tab_cash">Cash</string>
     <string name="dialog_bank_tax_payment_title">Payment</string>
+    <string name="dialog_bank_tax_payment_total">Total</string>
     <string name="dialog_bank_tax_payment_transport_title">Pay transport\ntaxes</string>
     <string name="dialog_bank_tax_payment_vehicle_restoration_title">Vehicle restoration\nfine</string>
     <string name="dialog_buy_crypto_maximum">Maximum %1$s %2$s</string>
