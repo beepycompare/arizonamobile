@@ -4,8 +4,9 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-final class CompositeOnPageChangeCallback extends ViewPager2.OnPageChangeCallback {
+public final class CompositeOnPageChangeCallback extends ViewPager2.OnPageChangeCallback {
     private final List<ViewPager2.OnPageChangeCallback> mCallbacks;
 
     /* JADX INFO: Access modifiers changed from: package-private */
