@@ -111,6 +111,7 @@ public final class ChildStackFactoryKt {
     }
 
     public static final <Ctx extends GenericComponentContext<? extends Ctx>, C, T> Value<ChildStack<C, T>> childStack(Ctx ctx, NavigationSource<StackNavigation.Event<C>> source, final Function0<? extends List<? extends C>> initialStack, final Function1<? super List<? extends C>, SerializableContainer> saveStack, final Function1<? super SerializableContainer, ? extends List<? extends C>> restoreStack, String key, final boolean z, Function2<? super C, ? super Ctx, ? extends T> childFactory) {
+        Value<ChildStack<C, T>> children;
         Intrinsics.checkNotNullParameter(ctx, "<this>");
         Intrinsics.checkNotNullParameter(source, "source");
         Intrinsics.checkNotNullParameter(initialStack, "initialStack");
@@ -118,7 +119,7 @@ public final class ChildStackFactoryKt {
         Intrinsics.checkNotNullParameter(restoreStack, "restoreStack");
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(childFactory, "childFactory");
-        return ChildrenFactoryKt.children$default(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda2
+        children = ChildrenFactoryKt.children(ctx, source, key, new Function0() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return ChildStackFactoryKt.childStack$lambda$3(Function0.this);
@@ -143,17 +144,35 @@ public final class ChildStackFactoryKt {
             public final Object invoke(Object obj, Object obj2) {
                 return ChildStackFactoryKt.childStack$lambda$7((StackNavState) obj, (List) obj2);
             }
-        }, null, new Function3() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda7
+        }, (r26 & 128) != 0 ? new Function2() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda8
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj, Object obj2) {
+                return ChildrenFactoryKt.children$lambda$4((NavState) obj, (NavState) obj2);
+            }
+        } : null, (r26 & 256) != 0 ? new Function3() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$$ExternalSyntheticLambda9
+            @Override // kotlin.jvm.functions.Function3
+            public final Object invoke(Object obj, Object obj2, Object obj3) {
+                return ChildrenFactoryKt.children$lambda$5(obj, (NavState) obj2, (NavState) obj3);
+            }
+        } : new Function3() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function3
             public final Object invoke(Object obj, Object obj2, Object obj3) {
                 return ChildStackFactoryKt.childStack$lambda$8((StackNavigation.Event) obj, (StackNavState) obj2, (StackNavState) obj3);
             }
-        }, new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda8
+        }, (r26 & 512) != 0 ? new Function1() { // from class: com.arkivanov.decompose.router.children.ChildrenFactoryKt$children$8
+            /* JADX WARN: Incorrect types in method signature: (TN;)Ljava/lang/Void; */
+            @Override // kotlin.jvm.functions.Function1
+            public final Void invoke(NavState it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return null;
+            }
+        } : new Function1() { // from class: com.arkivanov.decompose.router.stack.ChildStackFactoryKt$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return ChildStackFactoryKt.childStack$lambda$10(z, (StackNavState) obj);
             }
-        }, childFactory, 128, null);
+        }, childFactory);
+        return children;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

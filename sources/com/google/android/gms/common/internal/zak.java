@@ -3,9 +3,10 @@ package com.google.android.gms.common.internal;
 import android.os.Bundle;
 import com.google.android.gms.common.api.internal.ConnectionCallbacks;
 import com.google.android.gms.common.internal.BaseGmsClient;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-base@@18.9.0 */
 /* loaded from: classes4.dex */
-final class zak implements BaseGmsClient.BaseConnectionCallbacks {
+public final class zak implements BaseGmsClient.BaseConnectionCallbacks {
     final /* synthetic */ ConnectionCallbacks zaa;
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1731" android:versionName="v17.3.1" android:installLocation="auto" android:compileSdkVersion="37" android:compileSdkVersionCodename="17" package="com.arizona21.game" platformBuildVersionCode="37" platformBuildVersionName="17">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1732" android:versionName="v17.3.2" android:installLocation="auto" android:compileSdkVersion="37" android:compileSdkVersionCodename="17" package="com.arizona21.game" platformBuildVersionCode="37" platformBuildVersionName="17">
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="37"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.INTERNET"/>

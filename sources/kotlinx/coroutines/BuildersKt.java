@@ -20,24 +20,6 @@ public final class BuildersKt {
         return BuildersKt__Builders_commonKt.launch(coroutineScope, coroutineContext, coroutineStart, function2);
     }
 
-    /* JADX WARN: Failed to check method usage
-    java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.MethodNode.getTopParentClass()" because "m" is null
-    	at jadx.core.codegen.ClassGen.lambda$skipMethod$3(ClassGen.java:331)
-    	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
-    	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-    	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-    	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-    	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
-    	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-    	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
-    	at jadx.core.codegen.ClassGen.skipMethod(ClassGen.java:332)
-    	at jadx.core.codegen.ClassGen.addMethod(ClassGen.java:298)
-    	at jadx.core.codegen.ClassGen.lambda$addInnerClsAndMethods$2(ClassGen.java:272)
-    	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-    	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-    	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
-    	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
-     */
     public static /* synthetic */ Job launch$default(CoroutineScope coroutineScope, CoroutineContext coroutineContext, CoroutineStart coroutineStart, Function2 function2, int i, Object obj) {
         return BuildersKt__Builders_commonKt.launch$default(coroutineScope, coroutineContext, coroutineStart, function2, i, obj);
     }
