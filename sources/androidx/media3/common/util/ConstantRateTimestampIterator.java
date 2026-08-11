@@ -2,7 +2,7 @@ package androidx.media3.common.util;
 
 import androidx.media3.common.C;
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class ConstantRateTimestampIterator implements TimestampIterator {
     private final long endPositionUs;
     private final float frameRate;

@@ -1,6 +1,4 @@
 package io.appmetrica.analytics.impl;
-
-import kotlinx.datetime.internal.DateCalculationsKt;
 /* renamed from: io.appmetrica.analytics.impl.rl  reason: case insensitive filesystem */
 /* loaded from: classes5.dex */
 public final class C0567rl {
@@ -18,7 +16,7 @@ public final class C0567rl {
     }
 
     public final C0567rl b() {
-        this.b = Integer.valueOf((int) DateCalculationsKt.SECONDS_PER_HOUR);
+        this.b = 3600;
         return this;
     }
 }

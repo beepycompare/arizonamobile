@@ -148,7 +148,7 @@ class DocumentsContractApi19 {
     private static void closeQuietly(AutoCloseable autoCloseable) {
         if (autoCloseable != null) {
             try {
-                UByte$$ExternalSyntheticBackport0.m9971m((Object) autoCloseable);
+                UByte$$ExternalSyntheticBackport0.m9988m((Object) autoCloseable);
             } catch (RuntimeException e) {
                 throw e;
             } catch (Exception unused) {

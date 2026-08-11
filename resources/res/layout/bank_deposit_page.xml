@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:paddingTop="@dimen/_8sdp" android:paddingBottom="@dimen/_10sdp" android:scrollbars="none" android:fadingEdgeLength="@dimen/_20sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" android:requiresFadingEdge="vertical">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="@dimen/_420sdp" android:layout_height="wrap_content">
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_deposit_summary_card" android:paddingTop="@dimen/_10sdp" android:paddingBottom="@dimen/_11sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/_10sdp" android:paddingEnd="@dimen/_10sdp" app:backgroundMainColor="#26ffffff" app:corners="@dimen/_16sdp">
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="top" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                        <TextView android:textSize="@dimen/_14sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ДЕПОЗИТ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/headingnow_67"/>
+                        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_6sdp">
+                            <TextView android:textSize="@dimen/_18sdp" android:ellipsize="end" android:id="@+id/bank_deposit_balance" android:layout_width="0dp" android:layout_height="wrap_content" android:text="M 228  KK 129  K 999" android:singleLine="true" android:layout_weight="1" style="@style/BankAmountGoldStyle"/>
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_deposit_level_button" android:layout_width="wrap_content" android:layout_height="@dimen/_24sdp" android:layout_marginStart="@dimen/_14sdp" app:backgroundMainColor="#00ffffff" app:backgroundTransparency="0">
+                                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+                                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_24sdp" android:layout_height="@dimen/_24sdp" app:backgroundMainColor="#b6ff00" app:corners="@dimen/_6sdp">
+                                        <TextView android:textSize="@dimen/_13sdp" android:textColor="#15182a" android:gravity="center" android:id="@+id/bank_deposit_level_value" android:layout_width="match_parent" android:layout_height="match_parent" android:text="4" android:includeFontPadding="false" android:fontFamily="@font/headingnow_67"/>
+                                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                                    <TextView android:textSize="@dimen/_14sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="УР." android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/headingnow_67" android:layout_marginStart="@dimen/_6sdp"/>
+                                    <ImageView android:id="@+id/bank_deposit_level_info" android:layout_width="@dimen/_14sdp" android:layout_height="@dimen/_14sdp" android:src="@drawable/bank_ic_info" android:contentDescription="@null" android:layout_marginStart="@dimen/_6sdp"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="#d7def7" android:ellipsize="end" android:id="@+id/bank_deposit_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_8sdp" android:text="Пополнение: 1 раз в час, сумма $10 000 - $10 000 000. Снятие: комиссия 7%, сумма $10 000 - $10 000 000." android:maxLines="2" android:includeFontPadding="false" android:lineSpacingExtra="@dimen/_1sdp" android:alpha="0.9" android:fontFamily="@font/heading_now_64_regular"/>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_10sdp">
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.85">
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_deposit_withdraw_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#ffe600" app:corners="@dimen/_8sdp">
+                            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_9sdp" android:src="@drawable/bank_ic_take_off" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                <TextView android:textSize="@dimen/_7sdp" android:textColor="#171717" android:id="@+id/bank_deposit_withdraw_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="СНЯТЬ" android:singleLine="true" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                            </LinearLayout>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        <TextView android:layout_gravity="end|top" android:id="@+id/bank_deposit_withdraw_badge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7%" style="@style/BankWarningBadgeStyle"/>
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.02" android:layout_marginStart="@dimen/_6sdp">
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_deposit_top_up_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#33ffffff" app:backgroundTransparency="36" app:corners="@dimen/_8sdp">
+                            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_9sdp" android:src="@drawable/bank_ic_replenish" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                <TextView android:textSize="@dimen/_7sdp" android:id="@+id/bank_deposit_top_up_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ПОПОЛНИТЬ" android:singleLine="true" style="@style/BankButtonTextStyle"/>
+                            </LinearLayout>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.95" android:layout_marginStart="@dimen/_6sdp">
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_deposit_history_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#33ffffff" app:backgroundTransparency="36" app:corners="@dimen/_8sdp">
+                            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_9sdp" android:src="@drawable/bank_ic_history" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                <TextView android:textSize="@dimen/_7sdp" android:id="@+id/bank_deposit_history_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ИСТОРИЯ" android:singleLine="true" style="@style/BankButtonTextStyle"/>
+                            </LinearLayout>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.12" android:layout_marginStart="@dimen/_6sdp">
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_deposit_upgrade_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#b6ff00" app:corners="@dimen/_8sdp">
+                            <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_9sdp" android:src="@drawable/bank_ic_arrow_up" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                <TextView android:textSize="@dimen/_7sdp" android:textColor="#171717" android:id="@+id/bank_deposit_upgrade_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="УЛУЧШИТЬ" android:singleLine="true" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                            </LinearLayout>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </FrameLayout>
+                </LinearLayout>
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="#d7def7" android:id="@+id/bank_deposit_conditions_text" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_7sdp" android:text="Комиссии: снять 2%, пополнить 0%\10Таймеры: снять 01:00, пополнить 01:00, апгрейд доступно. Уровень: 4/10" android:includeFontPadding="false" android:lineSpacingExtra="@dimen/_1sdp" android:alpha="0.85" android:fontFamily="@font/heading_now_64_regular"/>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_deposit_profitability_card" android:paddingTop="@dimen/_13sdp" android:paddingBottom="@dimen/_13sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:paddingStart="@dimen/_13sdp" android:paddingEnd="@dimen/_13sdp" app:backgroundMainColor="#26ffffff" app:corners="@dimen/_18sdp">
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_12sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ДОХОДНОСТЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/_16sdp" android:layout_marginTop="@dimen/_10sdp">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_deposit_range_day_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginEnd="@dimen/_2sdp" app:backgroundMainColor="#ffffff" app:corners="@dimen/_5sdp">
+                            <TextView android:textSize="@dimen/_7sdp" android:textColor="#161a2a" android:gravity="center" android:id="@+id/bank_deposit_range_day_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="1Д." android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_deposit_range_week_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_2sdp" android:layout_marginRight="@dimen/_2sdp" android:layout_weight="1" android:layout_marginHorizontal="@dimen/_2sdp" app:backgroundMainColor="#33000000" app:corners="@dimen/_5sdp">
+                            <TextView android:textSize="@dimen/_7sdp" android:textColor="#a9b3d4" android:gravity="center" android:id="@+id/bank_deposit_range_week_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="7Д." android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_deposit_range_month_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_2sdp" app:backgroundMainColor="#33000000" app:corners="@dimen/_5sdp">
+                            <TextView android:textSize="@dimen/_7sdp" android:textColor="#a9b3d4" android:gravity="center" android:id="@+id/bank_deposit_range_month_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="30Д." android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </LinearLayout>
+                </FrameLayout>
+                <TextView android:textSize="@dimen/_18sdp" android:id="@+id/bank_deposit_income_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_9sdp" android:text=":k: 0" style="@style/BankAmountGoldStyle"/>
+                <FrameLayout android:id="@+id/bank_deposit_chart_container" android:layout_width="match_parent" android:layout_height="@dimen/_88sdp" android:layout_marginTop="@dimen/_7sdp">
+                    <com.arizonagames.feature.arizona.bank.views.BankIncomeChartView android:id="@+id/bank_deposit_profit_chart" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="start|top" android:id="@+id/bank_deposit_chart_point_card" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="@dimen/_22sdp" android:paddingStart="@dimen/_2sdp" android:paddingEnd="@dimen/_6sdp" app:backgroundMainColor="@color/white" app:borderMainColor="#d9e3ff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp">
+                        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="wrap_content" android:layout_height="@dimen/_19sdp" android:paddingStart="@dimen/_4sdp" android:paddingEnd="@dimen/_4sdp" app:backgroundMainColor="#091525" app:corners="@dimen/_4sdp">
+                                <TextView android:textSize="@dimen/_6sdp" android:textColor="#9dff00" android:gravity="center" android:id="@+id/bank_deposit_chart_point_value" android:layout_width="wrap_content" android:layout_height="match_parent" android:text=":k: 1" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                            <TextView android:textSize="@dimen/_6sdp" android:textColor="#091525" android:id="@+id/bank_deposit_chart_point_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Дата 24.05.2025 12:00" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_5sdp"/>
+                        </LinearLayout>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                </FrameLayout>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:paddingTop="@dimen/_6sdp" android:paddingBottom="@dimen/_6sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_8sdp" android:paddingStart="@dimen/_8sdp" android:paddingEnd="@dimen/_8sdp" app:backgroundMainColor="#1affffff" app:backgroundTransparency="70" app:corners="@dimen/_8sdp">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="#15182a" android:gravity="center" android:background="@drawable/bank_chip_placeholder" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:text="i" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="#b2ffffff" android:id="@+id/bank_deposit_payday_income" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Каждый PayDay Вы получаете + :k: 500" android:includeFontPadding="false" android:lineSpacingExtra="@dimen/_1sdp" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_6sdp"/>
+                    </LinearLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

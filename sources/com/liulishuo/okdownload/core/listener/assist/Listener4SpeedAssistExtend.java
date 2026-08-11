@@ -8,11 +8,11 @@ import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.cause.EndCause;
 import com.liulishuo.okdownload.core.listener.assist.Listener4Assist;
 import com.liulishuo.okdownload.core.listener.assist.ListenerModelHandler;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class Listener4SpeedAssistExtend implements Listener4Assist.AssistExtend, ListenerModelHandler.ModelCreator<Listener4SpeedModel> {
     private Listener4SpeedCallback callback;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Listener4SpeedCallback {
         void blockEnd(DownloadTask downloadTask, int i, BlockInfo blockInfo, SpeedCalculator speedCalculator);
 
@@ -89,7 +89,7 @@ public class Listener4SpeedAssistExtend implements Listener4Assist.AssistExtend,
         return new Listener4SpeedModel(i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Listener4SpeedModel extends Listener4Assist.Listener4Model {
         SparseArray<SpeedCalculator> blockSpeeds;
         SpeedCalculator taskSpeed;

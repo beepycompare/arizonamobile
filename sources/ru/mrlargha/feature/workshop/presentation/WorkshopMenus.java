@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import com.arizona.launcher.UpdateActivity;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -13,14 +14,17 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.workshop.databinding.WorkshopButtonsContainerBinding;
 import ru.mrlargha.feature.workshop.databinding.WorkshopInfoContainerBinding;
+import ru.mrlargha.feature.workshop.domain.GunWorkshopMode;
 /* compiled from: WorkshopResponse.kt */
-@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b6\u0018\u0000 22\u00020\u0001:\u0006-./012Be\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\b\u0001\u0010\u0004\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\u0006\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\u0007\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\b\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\t\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\n\u001a\u00020\u0003:\u0002\b\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\u001b\u001a\u00020\u00002\u0006\u0010\u001c\u001a\u00020\u000eJ\u000e\u0010\u001d\u001a\u00020\u00002\u0006\u0010\u001c\u001a\u00020\u0012J\u000e\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u000e\u0010\"\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u000e\u0010#\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u000e\u0010$\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u000e\u0010%\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u000e\u0010&\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!J\u0016\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020,R\u001e\u0010\u000f\u001a\u00020\u000e2\u0006\u0010\r\u001a\u00020\u000e@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001e\u0010\u0013\u001a\u00020\u00122\u0006\u0010\r\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0017X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0018\"\u0004\b\u0019\u0010\u001a\u0082\u0001\u000534567¨\u00068"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenusModels;", "id", "", "menuNameResId", "Landroidx/annotation/StringRes;", "descResId", "rightNameResId", "leftNameResId", "mainNameResId", "buttonNameResId", "<init>", "(IIIIIII)V", "value", "Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "infoType", "getInfoType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "buttonsType", "getButtonsType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "isHasProgress", "", "()Z", "setHasProgress", "(Z)V", "setInfoType", "type", "setButtonsType", "menuName", "", "context", "Landroid/content/Context;", "desc", "rightFieldName", "leftFieldName", "mainFieldName", "buttonName", "setVisible", "", "infoContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopInfoContainerBinding;", "buttonsContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopButtonsContainerBinding;", "SHARPING", "PAINTING", "REPAIR", "DISASSEMBLY", "TRANSFER", "Companion", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$DISASSEMBLY;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$PAINTING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$REPAIR;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$SHARPING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$TRANSFER;", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b6\u0018\u0000 =2\u00020\u0001:\b6789:;<=Be\b\u0004\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\f\b\u0001\u0010\u0004\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\u0006\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\u0007\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\b\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\t\u001a\u00020\u0003:\u0002\b\u0005\u0012\f\b\u0001\u0010\n\u001a\u00020\u0003:\u0002\b\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010 \u001a\u00020\u00002\u0006\u0010!\u001a\u00020\u0015J\u000e\u0010\"\u001a\u00020\u00002\u0006\u0010!\u001a\u00020\u0019J\u000e\u0010#\u001a\u00020\u00002\u0006\u0010$\u001a\u00020\u000eJ\u000e\u0010%\u001a\u00020\u00002\u0006\u0010&\u001a\u00020\u0012J\u000e\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u000e\u0010+\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u000e\u0010,\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u000e\u0010-\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u000e\u0010.\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u000e\u0010/\u001a\u00020(2\u0006\u0010)\u001a\u00020*J\u0016\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000205R\"\u0010\u000f\u001a\u0004\u0018\u00010\u000e2\b\u0010\r\u001a\u0004\u0018\u00010\u000e@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001e\u0010\u0013\u001a\u00020\u00122\u0006\u0010\r\u001a\u00020\u0012@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u001e\u0010\u0016\u001a\u00020\u00152\u0006\u0010\r\u001a\u00020\u0015@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001e\u0010\u001a\u001a\u00020\u00192\u0006\u0010\r\u001a\u00020\u0019@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001d\u0010\u0014\"\u0004\b\u001e\u0010\u001f\u0082\u0001\u0007>?@ABCD¨\u0006E"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenusModels;", "id", "", "menuNameResId", "Landroidx/annotation/StringRes;", "descResId", "rightNameResId", "leftNameResId", "mainNameResId", "buttonNameResId", "<init>", "(IIIIIII)V", "value", "Lru/mrlargha/feature/workshop/domain/GunWorkshopMode;", "gunWorkshopMode", "getGunWorkshopMode", "()Lru/mrlargha/feature/workshop/domain/GunWorkshopMode;", "", "isInformationVisible", "()Z", "Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "infoType", "getInfoType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopInfoType;", "Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "buttonsType", "getButtonsType", "()Lru/mrlargha/feature/workshop/presentation/WorkshopButtonsType;", "isHasProgress", "setHasProgress", "(Z)V", "setInfoType", "type", "setButtonsType", "setGunWorkshopMode", UpdateActivity.UPDATE_MODE, "setInformationVisible", "visible", "menuName", "", "context", "Landroid/content/Context;", "desc", "rightFieldName", "leftFieldName", "mainFieldName", "buttonName", "setVisible", "", "infoContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopInfoContainerBinding;", "buttonsContainer", "Lru/mrlargha/feature/workshop/databinding/WorkshopButtonsContainerBinding;", "SHARPING", "PAINTING", "REPAIR", "DISASSEMBLY", "TRANSFER", "GUN_ATTACHMENT", "GUN_WEAPON", "Companion", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$DISASSEMBLY;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$GUN_ATTACHMENT;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$GUN_WEAPON;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$PAINTING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$REPAIR;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$SHARPING;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$TRANSFER;", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public abstract class WorkshopMenus extends WorkshopMenusModels {
     public static final Companion Companion = new Companion(null);
     private WorkshopButtonsType buttonsType;
+    private GunWorkshopMode gunWorkshopMode;
     private WorkshopInfoType infoType;
     private boolean isHasProgress;
+    private boolean isInformationVisible;
 
     public /* synthetic */ WorkshopMenus(int i, int i2, int i3, int i4, int i5, int i6, int i7, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, i2, i3, i4, i5, i6, i7);
@@ -31,6 +35,14 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         this.infoType = WorkshopInfoType.NONE;
         this.buttonsType = WorkshopButtonsType.NONE;
         this.isHasProgress = true;
+    }
+
+    public final GunWorkshopMode getGunWorkshopMode() {
+        return this.gunWorkshopMode;
+    }
+
+    public final boolean isInformationVisible() {
+        return this.isInformationVisible;
     }
 
     public final WorkshopInfoType getInfoType() {
@@ -58,6 +70,17 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
     public final WorkshopMenus setButtonsType(WorkshopButtonsType type) {
         Intrinsics.checkNotNullParameter(type, "type");
         this.buttonsType = type;
+        return this;
+    }
+
+    public final WorkshopMenus setGunWorkshopMode(GunWorkshopMode mode) {
+        Intrinsics.checkNotNullParameter(mode, "mode");
+        this.gunWorkshopMode = mode;
+        return this;
+    }
+
+    public final WorkshopMenus setInformationVisible(boolean z) {
+        this.isInformationVisible = z;
         return this;
     }
 
@@ -117,7 +140,7 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         layoutFields.setVisibility(this.infoType == WorkshopInfoType.CHANCE_COST ? 0 : 8);
         CustomCardView root2 = infoContainer.info.getRoot();
         Intrinsics.checkNotNullExpressionValue(root2, "getRoot(...)");
-        root2.setVisibility(this.infoType == WorkshopInfoType.INFO ? 0 : 8);
+        root2.setVisibility(this.infoType == WorkshopInfoType.INFO || this.isInformationVisible ? 0 : 8);
         LinearLayout root3 = buttonsContainer.paintButtons.getRoot();
         Intrinsics.checkNotNullExpressionValue(root3, "getRoot(...)");
         root3.setVisibility(this.buttonsType == WorkshopButtonsType.COST_CREATE ? 0 : 8);
@@ -308,7 +331,79 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
     }
 
     /* compiled from: WorkshopResponse.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005J\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005J\u000e\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\n¨\u0006\u000b"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$Companion;", "", "<init>", "()V", "valuesArizona", "", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "valuesRodina", "valueOf", "value", "", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÆ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\n\u0010\n\u001a\u00020\u000bHÖ\u0081\u0004¨\u0006\f"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$GUN_ATTACHMENT;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    public static final class GUN_ATTACHMENT extends WorkshopMenus {
+        public static final GUN_ATTACHMENT INSTANCE;
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof GUN_ATTACHMENT) {
+                GUN_ATTACHMENT gun_attachment = (GUN_ATTACHMENT) obj;
+                return true;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return -42750589;
+        }
+
+        public String toString() {
+            return "GUN_ATTACHMENT";
+        }
+
+        private GUN_ATTACHMENT() {
+            super(0, ru.mrlargha.feature.workshop.R.string.workshop_gun_attachment_mode, ru.mrlargha.feature.workshop.R.string.workshop_gun_attachment_description, ru.mrlargha.feature.workshop.R.string.workshop_gun_attachment_sharpening_slot, ru.mrlargha.feature.workshop.R.string.workshop_gun_grindstone_slot, ru.mrlargha.feature.workshop.R.string.workshop_gun_attachment_slot, R.string.workshop_sharpen_item_action, null);
+        }
+
+        static {
+            GUN_ATTACHMENT gun_attachment = new GUN_ATTACHMENT();
+            INSTANCE = gun_attachment;
+            gun_attachment.setGunWorkshopMode(GunWorkshopMode.ATTACHMENT).setInfoType(WorkshopInfoType.CHANCE_COST).setButtonsType(WorkshopButtonsType.CREATE).setInformationVisible(true);
+        }
+    }
+
+    /* compiled from: WorkshopResponse.kt */
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÆ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\n\u0010\n\u001a\u00020\u000bHÖ\u0081\u0004¨\u0006\f"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$GUN_WEAPON;", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    public static final class GUN_WEAPON extends WorkshopMenus {
+        public static final GUN_WEAPON INSTANCE;
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof GUN_WEAPON) {
+                GUN_WEAPON gun_weapon = (GUN_WEAPON) obj;
+                return true;
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return -46772612;
+        }
+
+        public String toString() {
+            return "GUN_WEAPON";
+        }
+
+        private GUN_WEAPON() {
+            super(0, ru.mrlargha.feature.workshop.R.string.workshop_gun_weapon_mode, ru.mrlargha.feature.workshop.R.string.workshop_gun_weapon_description, ru.mrlargha.feature.workshop.R.string.workshop_gun_weapon_sharpening_slot, ru.mrlargha.feature.workshop.R.string.workshop_gun_materials_slot, ru.mrlargha.feature.workshop.R.string.workshop_gun_skin_slot, R.string.workshop_sharpen_item_action, null);
+        }
+
+        static {
+            GUN_WEAPON gun_weapon = new GUN_WEAPON();
+            INSTANCE = gun_weapon;
+            gun_weapon.setGunWorkshopMode(GunWorkshopMode.WEAPON).setInfoType(WorkshopInfoType.CHANCE_COST).setButtonsType(WorkshopButtonsType.CREATE).setInformationVisible(true);
+        }
+    }
+
+    /* compiled from: WorkshopResponse.kt */
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005J\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005J\f\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005J\u000e\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u000b¨\u0006\f"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/WorkshopMenus$Companion;", "", "<init>", "()V", "valuesArizona", "", "Lru/mrlargha/feature/workshop/presentation/WorkshopMenus;", "valuesRodina", "valuesGunWorkshop", "valueOf", "value", "", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -323,7 +418,11 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
         }
 
         public final List<WorkshopMenus> valuesRodina() {
-            return CollectionsKt.listOf((Object[]) new WorkshopMenus[]{SHARPING.INSTANCE, REPAIR.INSTANCE});
+            return CollectionsKt.listOf((Object[]) new WorkshopMenus[]{SHARPING.INSTANCE, REPAIR.INSTANCE, TRANSFER.INSTANCE});
+        }
+
+        public final List<WorkshopMenus> valuesGunWorkshop() {
+            return CollectionsKt.listOf((Object[]) new WorkshopMenus[]{GUN_ATTACHMENT.INSTANCE, GUN_WEAPON.INSTANCE});
         }
 
         public final WorkshopMenus valueOf(String value) {
@@ -342,6 +441,12 @@ public abstract class WorkshopMenus extends WorkshopMenusModels {
             }
             if (Intrinsics.areEqual(value, TRANSFER.INSTANCE.getClass().getName())) {
                 return TRANSFER.INSTANCE;
+            }
+            if (Intrinsics.areEqual(value, GUN_ATTACHMENT.INSTANCE.getClass().getName())) {
+                return GUN_ATTACHMENT.INSTANCE;
+            }
+            if (Intrinsics.areEqual(value, GUN_WEAPON.INSTANCE.getClass().getName())) {
+                return GUN_WEAPON.INSTANCE;
             }
             throw new IllegalArgumentException("No object ru.mrlargha.feature.workshop.presentation.WorkshopMenusArizona." + value);
         }

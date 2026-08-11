@@ -1,0 +1,28 @@
+package com.arizonagames.feature.arizona.bank.data.remote;
+
+import android.app.Activity;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
+/* compiled from: BankRetrofitClient.kt */
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\f\u001a\u00020\r¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006\u0010"}, d2 = {"Lcom/arizonagames/feature/arizona/bank/data/remote/BankRetrofitClient;", "", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "retrofit", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getRetrofit", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "apiService", "Lcom/arizonagames/feature/arizona/bank/data/remote/BankApiService;", "getApiService", "()Lcom/arizonagames/feature/arizona/bank/data/remote/BankApiService;", "bank"}, k = 1, mv = {2, 4, 0}, xi = 48)
+/* loaded from: classes3.dex */
+public final class BankRetrofitClient {
+    private final BankApiService apiService;
+    private final ArizonaRetrofit retrofit;
+
+    public BankRetrofitClient(Activity targetActivity, int i) {
+        Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
+        ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
+        this.retrofit = arizonaRetrofit;
+        this.apiService = (BankApiService) ArizonaRetrofit.create$default(arizonaRetrofit, BankApiService.class, false, null, null, 14, null);
+    }
+
+    public final ArizonaRetrofit getRetrofit() {
+        return this.retrofit;
+    }
+
+    public final BankApiService getApiService() {
+        return this.apiService;
+    }
+}

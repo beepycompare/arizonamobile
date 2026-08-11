@@ -12,24 +12,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemQuestTaskBinding;
 import ru.mrlargha.commonui.elements.quest.domain.QuestTask;
 import ru.mrlargha.commonui.elements.quest.presentation.adapter.QuestRewardAdapter;
 /* compiled from: QuestTaskViewHolder.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\u0018\u00002\u00020\u0001BE\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0018\u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005\u0012\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\b0\n\u0012\u0006\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ&\u0010\u000f\u001a\u00020\b2\u0006\u0010\u0010\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u0014J \u0010\u0015\u001a\u00020\b2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00172\u0006\u0010\u0019\u001a\u00020\u0007H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0004\u001a\u0014\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\b0\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\b0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/viewHolder/QuestTaskViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemQuestTaskBinding;", "onItemClicked", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "", "", "onShowClueClicked", "Lkotlin/Function1;", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemQuestTaskBinding;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "bind", "item", "position", "selectedItemPosition", "isVisible", "", "editUi", "doneText", "", "showClueText", "color", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\u0018\u00002\u00020\u0001B?\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0006\u0010\t\u001a\u00020\n¢\u0006\u0004\b\u000b\u0010\fJ\u0016\u0010\r\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u00020\u00062\u0006\u0010\u000f\u001a\u00020\u0010J \u0010\u0011\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00132\u0006\u0010\u0015\u001a\u00020\u0016H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/viewHolder/QuestTaskViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemQuestTaskBinding;", "onItemClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "", "onShowClueClicked", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemQuestTaskBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "bind", "item", "isExpanded", "", "editUi", "doneText", "", "showClueText", "color", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class QuestTaskViewHolder extends RecyclerView.ViewHolder {
     private final ItemQuestTaskBinding binding;
     private final Context context;
-    private final Function2<QuestTask, Integer, Unit> onItemClicked;
+    private final Function1<QuestTask, Unit> onItemClicked;
     private final Function1<QuestTask, Unit> onShowClueClicked;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public QuestTaskViewHolder(ItemQuestTaskBinding binding, Function2<? super QuestTask, ? super Integer, Unit> onItemClicked, Function1<? super QuestTask, Unit> onShowClueClicked, Context context) {
+    public QuestTaskViewHolder(ItemQuestTaskBinding binding, Function1<? super QuestTask, Unit> onItemClicked, Function1<? super QuestTask, Unit> onShowClueClicked, Context context) {
         super(binding.getRoot());
         Intrinsics.checkNotNullParameter(binding, "binding");
         Intrinsics.checkNotNullParameter(onItemClicked, "onItemClicked");
@@ -41,7 +40,7 @@ public final class QuestTaskViewHolder extends RecyclerView.ViewHolder {
         this.context = context;
     }
 
-    public final void bind(final QuestTask item, final int i, int i2, boolean z) {
+    public final void bind(final QuestTask item, boolean z) {
         Intrinsics.checkNotNullParameter(item, "item");
         ItemQuestTaskBinding itemQuestTaskBinding = this.binding;
         QuestRewardAdapter questRewardAdapter = new QuestRewardAdapter();
@@ -95,7 +94,7 @@ public final class QuestTaskViewHolder extends RecyclerView.ViewHolder {
         itemQuestTaskBinding.parentItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.viewHolder.QuestTaskViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                QuestTaskViewHolder.bind$lambda$0$0(QuestTaskViewHolder.this, item, i, view);
+                QuestTaskViewHolder.bind$lambda$0$0(QuestTaskViewHolder.this, item, view);
             }
         });
         itemQuestTaskBinding.btnShowClue.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.viewHolder.QuestTaskViewHolder$$ExternalSyntheticLambda1
@@ -104,29 +103,22 @@ public final class QuestTaskViewHolder extends RecyclerView.ViewHolder {
                 QuestTaskViewHolder.bind$lambda$0$1(QuestTaskViewHolder.this, item, view);
             }
         });
-        if (i == i2) {
+        if (z) {
             ConstraintLayout expandedLayout = itemQuestTaskBinding.expandedLayout;
             Intrinsics.checkNotNullExpressionValue(expandedLayout, "expandedLayout");
             expandedLayout.setVisibility(0);
             itemQuestTaskBinding.ivTaskShow.setImageDrawable(ContextCompat.getDrawable(this.context, R.drawable.ic_quest_close_arrow_grey));
-            if (z) {
-                ConstraintLayout expandedLayout2 = itemQuestTaskBinding.expandedLayout;
-                Intrinsics.checkNotNullExpressionValue(expandedLayout2, "expandedLayout");
-                expandedLayout2.setVisibility(8);
-                itemQuestTaskBinding.ivTaskShow.setImageDrawable(ContextCompat.getDrawable(this.context, R.drawable.ic_quest_open_arrow_grey));
-                return;
-            }
             return;
         }
-        ConstraintLayout expandedLayout3 = itemQuestTaskBinding.expandedLayout;
-        Intrinsics.checkNotNullExpressionValue(expandedLayout3, "expandedLayout");
-        expandedLayout3.setVisibility(8);
+        ConstraintLayout expandedLayout2 = itemQuestTaskBinding.expandedLayout;
+        Intrinsics.checkNotNullExpressionValue(expandedLayout2, "expandedLayout");
+        expandedLayout2.setVisibility(8);
         itemQuestTaskBinding.ivTaskShow.setImageDrawable(ContextCompat.getDrawable(this.context, R.drawable.ic_quest_open_arrow_grey));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void bind$lambda$0$0(QuestTaskViewHolder questTaskViewHolder, QuestTask questTask, int i, View view) {
-        questTaskViewHolder.onItemClicked.invoke(questTask, Integer.valueOf(i));
+    public static final void bind$lambda$0$0(QuestTaskViewHolder questTaskViewHolder, QuestTask questTask, View view) {
+        questTaskViewHolder.onItemClicked.invoke(questTask);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

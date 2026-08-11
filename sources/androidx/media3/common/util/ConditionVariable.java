@@ -1,5 +1,5 @@
 package androidx.media3.common.util;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ConditionVariable {
     private final Clock clock;
     private boolean isOpen;

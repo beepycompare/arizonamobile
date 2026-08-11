@@ -5,7 +5,7 @@ import com.facebook.internal.Validate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class TokenCachingStrategy {
     public static final String EXPIRATION_DATE_KEY = "com.facebook.TokenCachingStrategy.ExpirationDate";
     private static final long INVALID_BUNDLE_MILLISECONDS = Long.MIN_VALUE;

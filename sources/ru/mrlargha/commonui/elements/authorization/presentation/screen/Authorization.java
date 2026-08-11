@@ -50,10 +50,12 @@ import ru.mrlargha.commonui.elements.authorization.presentation.screen.Registrat
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: Authorization.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001f\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 J2\u00020\u0001:\u0001JB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010$\u001a\u00020%H\u0002J\b\u0010&\u001a\u00020%H\u0002J\b\u0010'\u001a\u00020%H\u0002J\f\u0010(\u001a\u00020%*\u00020)H\u0002J\u0016\u0010*\u001a\u00020%2\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u0019J\n\u0010-\u001a\u0004\u0018\u00010\u0019H\u0002J\b\u0010.\u001a\u00020%H\u0002J\b\u0010/\u001a\u00020%H\u0002J\b\u00100\u001a\u00020%H\u0002J\b\u00101\u001a\u00020%H\u0002J\b\u00102\u001a\u00020%H\u0002J\b\u00103\u001a\u00020%H\u0002J\b\u00104\u001a\u00020%H\u0002J\b\u00105\u001a\u00020%H\u0002J\u0018\u00106\u001a\u00020%2\u0006\u00107\u001a\u00020\u00052\u0006\u00108\u001a\u00020\u0019H\u0002J\u0010\u00109\u001a\u00020%2\u0006\u0010\u001d\u001a\u00020\u0019H\u0002J\n\u0010:\u001a\u0004\u0018\u00010\u0019H\u0002J\u0012\u0010;\u001a\u00020%2\b\u0010\u001e\u001a\u0004\u0018\u00010\u0019H\u0002J\n\u0010<\u001a\u0004\u0018\u00010\u0019H\u0002J\n\u0010=\u001a\u0004\u0018\u00010\u0019H\u0002J\n\u0010>\u001a\u0004\u0018\u00010\u0019H\u0002J\u0006\u0010?\u001a\u00020%J\u0010\u0010@\u001a\u00020%2\u0006\u0010A\u001a\u00020\u001cH\u0016J\b\u0010B\u001a\u00020%H\u0002J\b\u0010C\u001a\u00020\u001cH\u0002J\b\u0010D\u001a\u00020%H\u0002J \u0010E\u001a\u00020%2\u0006\u0010F\u001a\u00020\u00192\u0006\u0010G\u001a\u00020\u00192\u0006\u0010\u001f\u001a\u00020\u001cH\u0002J\n\u0010H\u001a\u0004\u0018\u00010IH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00190!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00190!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006K"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/Authorization;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "authorization", "Landroidx/constraintlayout/widget/ConstraintLayout;", "authorizationBinding", "Lru/mrlargha/commonui/databinding/AuthorizationBinding;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "sharedPreferences", "Landroid/content/SharedPreferences;", "arizonaLogotypeUri", "", "rodinaLogotypeUri", "isLoginError", "", "localPassword", "localUsername", "rememberMe", "arizonaServers", "", "rodinaServers", "recoveryHandlerId", "setFilter", "", "restoreSavedCreds", "loginAction", "checkRaisingContent", "Landroid/widget/EditText;", "onServerMessage", "actionType", "data", "getPassword", "checkBoxEnabled", "resetLoginText", "checkboxDisable", "enableError", "disableError", "disableLoading", "enableLoginButton", "disableLoginButton", "installServerLogotype", "serverId", "logotypeUri", "setLocalPassword", "getLocalPassword", "setLocalUsername", "getLocalUsername", "getUsername", "getServerId", "hideLoader", "setVisible", "visible", "setRegisteredState", "getRegisteredState", "setRegistrationWindow", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "getUserAuthData", "Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount$ContainerData;", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001f\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 L2\u00020\u0001:\u0001LB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010&\u001a\u00020'H\u0002J\b\u0010(\u001a\u00020'H\u0002J\b\u0010)\u001a\u00020'H\u0002J\f\u0010*\u001a\u00020'*\u00020+H\u0002J\u0016\u0010,\u001a\u00020'2\u0006\u0010-\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u001bJ\n\u0010/\u001a\u0004\u0018\u00010\u001bH\u0002J\b\u00100\u001a\u00020'H\u0002J\b\u00101\u001a\u00020'H\u0002J\b\u00102\u001a\u00020'H\u0002J\b\u00103\u001a\u00020'H\u0002J\b\u00104\u001a\u00020'H\u0002J\b\u00105\u001a\u00020'H\u0002J\b\u00106\u001a\u00020'H\u0002J\b\u00107\u001a\u00020'H\u0002J\u0018\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020\u00052\u0006\u0010:\u001a\u00020\u001bH\u0002J\u0010\u0010;\u001a\u00020'2\u0006\u0010\u001f\u001a\u00020\u001bH\u0002J\n\u0010<\u001a\u0004\u0018\u00010\u001bH\u0002J\u0012\u0010=\u001a\u00020'2\b\u0010 \u001a\u0004\u0018\u00010\u001bH\u0002J\n\u0010>\u001a\u0004\u0018\u00010\u001bH\u0002J\n\u0010?\u001a\u0004\u0018\u00010\u001bH\u0002J\n\u0010@\u001a\u0004\u0018\u00010\u001bH\u0002J\u0006\u0010A\u001a\u00020'J\u0010\u0010B\u001a\u00020'2\u0006\u0010C\u001a\u00020\u001eH\u0016J\b\u0010D\u001a\u00020'H\u0002J\b\u0010E\u001a\u00020\u001eH\u0002J\b\u0010F\u001a\u00020'H\u0002J \u0010G\u001a\u00020'2\u0006\u0010H\u001a\u00020\u001b2\u0006\u0010I\u001a\u00020\u001b2\u0006\u0010!\u001a\u00020\u001eH\u0002J\n\u0010J\u001a\u0004\u0018\u00010KH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u001b0#X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u001b0#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/Authorization;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "authorization", "Landroidx/constraintlayout/widget/ConstraintLayout;", "authorizationBinding", "Lru/mrlargha/commonui/databinding/AuthorizationBinding;", "loginButtonCooldown", "Lru/mrlargha/commonui/elements/authorization/presentation/screen/AuthorizationButtonCooldown;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "sharedPreferences", "Landroid/content/SharedPreferences;", "arizonaLogotypeUri", "", "rodinaLogotypeUri", "isLoginError", "", "localPassword", "localUsername", "rememberMe", "arizonaServers", "", "rodinaServers", "recoveryHandlerId", "setFilter", "", "restoreSavedCreds", "loginAction", "checkRaisingContent", "Landroid/widget/EditText;", "onServerMessage", "actionType", "data", "getPassword", "checkBoxEnabled", "resetLoginText", "checkboxDisable", "enableError", "disableError", "disableLoading", "enableLoginButton", "disableLoginButton", "installServerLogotype", "serverId", "logotypeUri", "setLocalPassword", "getLocalPassword", "setLocalUsername", "getLocalUsername", "getUsername", "getServerId", "hideLoader", "setVisible", "visible", "setRegisteredState", "getRegisteredState", "setRegistrationWindow", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "getUserAuthData", "Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount$ContainerData;", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Authorization implements InterfaceController {
+    private static final long ALREADY_IN_GAME_COOLDOWN_MILLIS = 2000;
     public static final Companion Companion = new Companion(null);
+    private static final long LOGIN_ERROR_COOLDOWN_MILLIS = 5000;
     public static final String NEW_ACCOUNT = "NEW_ACCOUNT";
     public static final String REGDATA = "REGDATA";
     private static final String SERVER_ID = "SERVER_ID";
@@ -67,6 +69,7 @@ public final class Authorization implements InterfaceController {
     private boolean isLoginError;
     private String localPassword;
     private String localUsername;
+    private final AuthorizationButtonCooldown loginButtonCooldown;
     private final IBackendNotifier notifier;
     private final int recoveryHandlerId;
     private boolean rememberMe;
@@ -88,6 +91,9 @@ public final class Authorization implements InterfaceController {
         AuthorizationBinding bind = AuthorizationBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.authorizationBinding = bind;
+        ConstraintLayout authLoginButton = bind.authLoginButton;
+        Intrinsics.checkNotNullExpressionValue(authLoginButton, "authLoginButton");
+        this.loginButtonCooldown = new AuthorizationButtonCooldown(authLoginButton);
         InterfaceController orCreateInterface = InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.VIDEO_BACKGROUND.getId(), targetActivity, i);
         Intrinsics.checkNotNull(orCreateInterface, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground");
         this.videoBinding = ((RegistrationVideoBackground) orCreateInterface).getMainBinding();
@@ -106,7 +112,7 @@ public final class Authorization implements InterfaceController {
         this.rodinaServers = MapsKt.mapOf(TuplesKt.to(0, "Тестовы"), TuplesKt.to(1, "Центральный"), TuplesKt.to(2, "Южный"), TuplesKt.to(3, "Северный"), TuplesKt.to(4, "Восточный"), TuplesKt.to(5, "Западный"), TuplesKt.to(6, "Приморский"), TuplesKt.to(7, "Федеральный"), TuplesKt.to(101, "Москва"), TuplesKt.to(102, "Санкт-Петербург"), TuplesKt.to(103, "Екатеринбург"));
         this.recoveryHandlerId = RegistrationInterfaceType.RECOVERY_HANDLER.getId();
         this.videoBinding.video.addView(bind.auth, -1, -1);
-        bind.authForgotPassword.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda4
+        bind.authForgotPassword.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$0(Authorization.this, view);
@@ -115,13 +121,13 @@ public final class Authorization implements InterfaceController {
         if (getUserAuthData() == null) {
             setRegistrationWindow();
         }
-        bind.authRememberCheckbox.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda5
+        bind.authRememberCheckbox.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$1(Authorization.this, view);
             }
         });
-        bind.authLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda6
+        bind.authLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization.this.loginAction();
@@ -136,7 +142,7 @@ public final class Authorization implements InterfaceController {
         EditText authPasswordEdit = bind.authPasswordEdit;
         Intrinsics.checkNotNullExpressionValue(authPasswordEdit, "authPasswordEdit");
         checkRaisingContent(authPasswordEdit);
-        bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
+        bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda10
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
                 Authorization._init_$lambda$4(Authorization.this);
@@ -166,7 +172,7 @@ public final class Authorization implements InterfaceController {
                 Authorization.this.enableLoginButton();
             }
         });
-        bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda8
+        bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$6(Authorization.this, view);
@@ -272,7 +278,7 @@ public final class Authorization implements InterfaceController {
         EditText editText = authorizationBinding.authUsernameEdit;
         InputFilter[] filters = editText.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
-        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda1
+        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$0;
@@ -283,7 +289,7 @@ public final class Authorization implements InterfaceController {
         EditText editText2 = authorizationBinding.authSurnameEdit;
         InputFilter[] filters2 = editText2.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters2, "getFilters(...)");
-        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda2
+        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$1;
@@ -466,8 +472,6 @@ public final class Authorization implements InterfaceController {
         });
     }
 
-    /* JADX WARN: Type inference failed for: r9v108, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$1] */
-    /* JADX WARN: Type inference failed for: r9v20, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$3] */
     public final void onServerMessage(int i, String data) {
         String obj;
         String obj2;
@@ -498,29 +502,16 @@ public final class Authorization implements InterfaceController {
                     countDownTimer2.cancel();
                 }
                 if (Intrinsics.areEqual(data, "error")) {
-                    disableLoginButton();
                     disableLoading();
                     enableError();
                     Activity activity = this.targetActivity;
                     Toast.makeText(activity, activity.getString(R.string.auth_invalid_credentials), 0).show();
-                    new CountDownTimer() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$1
-                        @Override // android.os.CountDownTimer
-                        public void onTick(long j) {
+                    this.loginButtonCooldown.start(5000L, new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda4
+                        @Override // kotlin.jvm.functions.Function0
+                        public final Object invoke() {
+                            return Authorization.onServerMessage$lambda$0(Authorization.this);
                         }
-
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        {
-                            super(5000L, 1000L);
-                        }
-
-                        @Override // android.os.CountDownTimer
-                        public void onFinish() {
-                            Authorization.this.isLoginError = false;
-                            Authorization.this.enableLoginButton();
-                            Authorization.this.disableError();
-                            cancel();
-                        }
-                    }.start();
+                    });
                 }
                 if (Intrinsics.areEqual(data, "user_not_found")) {
                     if (this.timer != null) {
@@ -548,10 +539,10 @@ public final class Authorization implements InterfaceController {
                         countDownTimer4.cancel();
                     }
                     this.authorizationBinding.loaderContainer.setVisibility(0);
-                    this.authorizationBinding.loaderContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda3
+                    this.authorizationBinding.loaderContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda5
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            Authorization.onServerMessage$lambda$0(Authorization.this, view);
+                            Authorization.onServerMessage$lambda$1(Authorization.this, view);
                         }
                     });
                     int length = this.authorizationBinding.authSurnameEdit.getText().toString().length();
@@ -634,24 +625,12 @@ public final class Authorization implements InterfaceController {
                     this.authorizationBinding.authUsernameError.setVisibility(0);
                     this.authorizationBinding.authSurnameError.setVisibility(0);
                     this.isLoginError = true;
-                    disableLoginButton();
-                    new CountDownTimer() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$onServerMessage$3
-                        @Override // android.os.CountDownTimer
-                        public void onTick(long j) {
+                    this.loginButtonCooldown.start(2000L, new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda6
+                        @Override // kotlin.jvm.functions.Function0
+                        public final Object invoke() {
+                            return Authorization.onServerMessage$lambda$2(Authorization.this);
                         }
-
-                        /* JADX INFO: Access modifiers changed from: package-private */
-                        {
-                            super(2000L, 1000L);
-                        }
-
-                        @Override // android.os.CountDownTimer
-                        public void onFinish() {
-                            Authorization.this.isLoginError = false;
-                            Authorization.this.enableLoginButton();
-                            cancel();
-                        }
-                    }.start();
+                    });
                     Toast.makeText(this.targetActivity.getApplicationContext(), this.targetActivity.getString(R.string.auth_player_already_in_game), 0).show();
                 }
             } else {
@@ -661,9 +640,21 @@ public final class Authorization implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onServerMessage$lambda$0(Authorization authorization, View view) {
+    public static final Unit onServerMessage$lambda$0(Authorization authorization) {
+        authorization.disableError();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void onServerMessage$lambda$1(Authorization authorization, View view) {
         Activity activity = authorization.targetActivity;
         Toast.makeText(activity, activity.getString(R.string.loading), 0).show();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit onServerMessage$lambda$2(Authorization authorization) {
+        authorization.isLoginError = false;
+        return Unit.INSTANCE;
     }
 
     private final String getPassword() {
@@ -711,11 +702,11 @@ public final class Authorization implements InterfaceController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void enableLoginButton() {
-        this.authorizationBinding.authLoginButton.setBackgroundResource(R.drawable.authorization_border_red);
+        this.loginButtonCooldown.showEnabled();
     }
 
     private final void disableLoginButton() {
-        this.authorizationBinding.authLoginButton.setBackgroundResource(R.drawable.authorization_border);
+        this.loginButtonCooldown.showDisabled();
     }
 
     private final void installServerLogotype(int i, String str) {
@@ -755,7 +746,7 @@ public final class Authorization implements InterfaceController {
     }
 
     /* compiled from: Authorization.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/Authorization$Companion;", "", "<init>", "()V", Authorization.REGDATA, "", privacyInteractor.SP_NAME, Authorization.SERVER_ID, Authorization.NEW_ACCOUNT, "TAG", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/Authorization$Companion;", "", "<init>", "()V", Authorization.REGDATA, "", privacyInteractor.SP_NAME, Authorization.SERVER_ID, Authorization.NEW_ACCOUNT, "TAG", "LOGIN_ERROR_COOLDOWN_MILLIS", "", "ALREADY_IN_GAME_COOLDOWN_MILLIS", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -1,7 +1,7 @@
 package com.liulishuo.okdownload.core.breakpoint;
 
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BlockInfo {
     private final long contentLength;
     private final AtomicLong currentOffset;

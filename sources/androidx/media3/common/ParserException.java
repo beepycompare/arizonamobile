@@ -1,7 +1,7 @@
 package androidx.media3.common;
 
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ParserException extends IOException {
     public final boolean contentIsMalformed;
     public final int dataType;

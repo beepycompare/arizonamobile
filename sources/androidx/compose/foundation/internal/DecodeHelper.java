@@ -213,7 +213,7 @@ public final class DecodeHelper {
 
     /* renamed from: decodeULong-s-VKNKU  reason: not valid java name */
     private final long m685decodeULongsVKNKU() {
-        return ULong.m10078constructorimpl(this.parcel.readLong());
+        return ULong.m10095constructorimpl(this.parcel.readLong());
     }
 
     private final float decodeFloat() {

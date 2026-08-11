@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:layout_gravity="top|center_horizontal" android:layout_width="@dimen/_430sdp" android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView android:scrollbarSize="@dimen/_2sdp" android:scrollbarThumbVertical="@drawable/donate_scrollbar_thumb" android:scrollbarTrackVertical="@drawable/donate_scrollbar_track" android:scrollbarStyle="outsideOverlay" android:layout_gravity="start|top" android:id="@+id/bank_currency_list" android:paddingTop="@dimen/_10sdp" android:scrollbars="vertical" android:fadingEdgeLength="@dimen/_20sdp" android:layout_width="@dimen/_420sdp" android:layout_height="match_parent" android:layout_marginBottom="@dimen/_50sdp" android:fadeScrollbars="false" android:overScrollMode="never" android:requiresFadingEdge="vertical" android:paddingEnd="@dimen/_15sdp"/>
+    </FrameLayout>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom|center_horizontal" android:id="@+id/bank_currency_balance_bar" android:layout_width="wrap_content" android:layout_height="@dimen/_24sdp" android:layout_marginTop="@dimen/_156sdp" android:layout_marginBottom="@dimen/_20sdp" android:paddingStart="@dimen/_10sdp" android:paddingEnd="@dimen/_10sdp" app:backgroundMainColor="#6a5c72" app:backgroundTransparency="70" app:corners="@dimen/_14sdp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <TextView android:textSize="@dimen/_7sdp" android:textColor="#ecd6d6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bank_currency_your_balance" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffffff" android:id="@+id/bank_currency_balance_dollars" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_8sdp"/>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

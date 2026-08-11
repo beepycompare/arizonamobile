@@ -16,7 +16,6 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
@@ -273,7 +272,7 @@ public final class CatchApp implements MobileController {
                 if (intRef.element != 0) {
                     Ref.IntRef intRef2 = intRef;
                     intRef2.element -= 60;
-                    mobilePhoneCatchAppPageBinding.leftTime.setText((intRef.element / 86400) + " д. " + ((intRef.element % 86400) / DateCalculationsKt.SECONDS_PER_HOUR) + " ч. " + ((intRef.element % DateCalculationsKt.SECONDS_PER_HOUR) / 60) + " м.");
+                    mobilePhoneCatchAppPageBinding.leftTime.setText((intRef.element / 86400) + " д. " + ((intRef.element % 86400) / 3600) + " ч. " + ((intRef.element % 3600) / 60) + " м.");
                 }
             }
 

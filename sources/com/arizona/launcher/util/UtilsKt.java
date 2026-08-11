@@ -45,7 +45,7 @@ public final class UtilsKt {
 
     public static final void checkItemsNameLauncher(Context context, boolean z) {
         Intrinsics.checkNotNullParameter(context, "context");
-        ru.mrlargha.commonui.utils.UtilsKt.checkItemsName(context, z);
+        ru.mrlargha.commonui.utils.UtilsKt.checkItemsName$default(context, z, null, 4, null);
     }
 
     public static /* synthetic */ void getItemsJson$default(Context context, int i, File file, int i2, Object obj) {

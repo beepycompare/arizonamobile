@@ -15,7 +15,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class NativeAppCallAttachmentStore implements NativeAppCallContentProvider.AttachmentDataSource {
     static final String ATTACHMENTS_DIR_NAME = "com.facebook.NativeAppCallAttachmentStore.files";
     private static final String TAG = "com.facebook.NativeAppCallAttachmentStore";

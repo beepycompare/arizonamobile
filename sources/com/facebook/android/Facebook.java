@@ -35,7 +35,7 @@ import java.net.MalformedURLException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Facebook {
     @Deprecated
     public static final String ATTRIBUTION_ID_COLUMN_NAME = "aid";
@@ -77,7 +77,7 @@ public class Facebook {
     private long accessExpiresMillisecondsAfterEpoch = 0;
     private long lastAccessUpdateMillisecondsAfterEpoch = 0;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface DialogListener {
         void onCancel();
 
@@ -88,7 +88,7 @@ public class Facebook {
         void onFacebookError(FacebookError facebookError);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ServiceListener {
         void onComplete(Bundle bundle);
 
@@ -98,7 +98,7 @@ public class Facebook {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetterTokenCachingStrategy extends TokenCachingStrategy {
         private SetterTokenCachingStrategy() {
         }
@@ -134,7 +134,7 @@ public class Facebook {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class TokenRefreshConnectionHandler extends Handler {
         WeakReference<TokenRefreshServiceConnection> connectionWeakReference;
         WeakReference<Facebook> facebookWeakReference;
@@ -182,7 +182,7 @@ public class Facebook {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class TokenRefreshServiceConnection implements ServiceConnection {
         final Context applicationsContext;
         final Messenger messageReceiver;
@@ -366,8 +366,8 @@ public class Facebook {
         this.pendingAuthorizationPermissions = null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x004c  */
     @Deprecated
     /*
         Code decompiled incorrectly, please refer to instructions dump.

@@ -8,7 +8,7 @@ import com.liulishuo.okdownload.core.listener.assist.ListenerAssist;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class UnifiedListenerManager {
     final List<Integer> autoRemoveListenerIdList = new ArrayList();
     final DownloadListener hostListener = new DownloadListener() { // from class: com.liulishuo.okdownload.UnifiedListenerManager.1

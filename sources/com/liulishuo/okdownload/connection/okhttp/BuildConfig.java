@@ -1,5 +1,5 @@
 package com.liulishuo.okdownload.connection.okhttp;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class BuildConfig {
     @Deprecated
     public static final String APPLICATION_ID = "com.liulishuo.okdownload.connection.okhttp";

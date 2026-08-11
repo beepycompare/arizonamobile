@@ -25,12 +25,14 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.battle_pass_view.databinding.ItemRewardBinding;
 /* compiled from: RewardItemAdapter.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 \u00192\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u0018\u0019B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\f\u001a\u00020\r2\b\u0010\u000e\u001a\u0004\u0018\u00010\u000bJ\u001c\u0010\u000f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\tH\u0016J\u001c\u0010\u0013\u001a\u00020\r2\n\u0010\u0014\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\tH\u0016J\u000e\u0010\u0016\u001a\u00020\r2\u0006\u0010\u0017\u001a\u00020\tR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/feature/battle_pass_view/RewardResponse;", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$RewardItemViewHolder;", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "type", "", "arizonaPath", "", "setPath", "", "path", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "setType", "int", "RewardItemViewHolder", "Companion", "battle-pass-view"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 \u001d2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\u001c\u001dB\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u000bJ\u000e\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0012\u001a\u00020\rJ\u001c\u0010\u0013\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\tH\u0016J\u001c\u0010\u0017\u001a\u00020\u000f2\n\u0010\u0018\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0019\u001a\u00020\tH\u0016J\u000e\u0010\u001a\u001a\u00020\u000f2\u0006\u0010\u001b\u001a\u00020\tR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/feature/battle_pass_view/RewardResponse;", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$RewardItemViewHolder;", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "type", "", "arizonaPath", "", "usesDynamicContract", "", "setPath", "", "path", "setDynamicContract", "enabled", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "setType", "int", "RewardItemViewHolder", "Companion", "battle-pass-view"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardItemViewHolder> {
+    private static final String DEFAULT_IMAGE_PATH = "systems/battle_pass_sound/image/";
     private String arizonaPath;
     private final Context context;
     private int type;
+    private boolean usesDynamicContract;
     public static final Companion Companion = new Companion(null);
     private static final RewardItemAdapter$Companion$COMPARATOR$1 COMPARATOR = new DiffUtil.ItemCallback<RewardResponse>() { // from class: ru.mrlargha.feature.battle_pass_view.RewardItemAdapter$Companion$COMPARATOR$1
         @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
@@ -53,7 +55,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
         super(COMPARATOR);
         Intrinsics.checkNotNullParameter(context, "context");
         this.context = context;
-        this.arizonaPath = "systems/battle_pass_sound/image/";
+        this.arizonaPath = DEFAULT_IMAGE_PATH;
     }
 
     public final void setPath(String str) {
@@ -62,6 +64,13 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
             return;
         }
         this.arizonaPath = str;
+    }
+
+    public final void setDynamicContract(boolean z) {
+        if (this.usesDynamicContract != z) {
+            this.arizonaPath = DEFAULT_IMAGE_PATH;
+        }
+        this.usesDynamicContract = z;
     }
 
     /* compiled from: RewardItemAdapter.kt */
@@ -83,20 +92,55 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
         }
 
         public final void bind(RewardResponse item, int i) {
-            Object m9898constructorimpl;
+            String projectResourceUrl$default;
+            String str;
+            String info;
+            Object m9915constructorimpl;
             Intrinsics.checkNotNullParameter(item, "item");
             ItemRewardBinding itemRewardBinding = this.binding;
             RewardItemAdapter rewardItemAdapter = this.this$0;
-            if (i == 0) {
-                itemRewardBinding.cvReward.setBackground(ContextCompat.getColor(this.context, ru.mrlargha.feature.battlepassWinter2025.R.color.battlepass5));
+            int color = ContextCompat.getColor(this.context, ru.mrlargha.feature.battlepassWinter2025.R.color.battlepass5);
+            if (rewardItemAdapter.usesDynamicContract) {
+                List<String> colors = item.getColors();
+                if (colors == null) {
+                    colors = CollectionsKt.emptyList();
+                }
+                ArrayList arrayList = new ArrayList();
+                for (String str2 : colors) {
+                    Integer backendColorOrNull = RewardItemAdapterKt.toBackendColorOrNull(str2);
+                    if (backendColorOrNull != null) {
+                        arrayList.add(backendColorOrNull);
+                    }
+                }
+                ArrayList arrayList2 = arrayList;
+                if (arrayList2.size() >= 2) {
+                    CustomCardView cvReward = itemRewardBinding.cvReward;
+                    Intrinsics.checkNotNullExpressionValue(cvReward, "cvReward");
+                    CustomCardView.setBackground$default(cvReward, CollectionsKt.toIntArray(arrayList2), null, null, 6, null);
+                } else if (arrayList2.size() == 1) {
+                    itemRewardBinding.cvReward.setBackground(((Number) arrayList2.get(0)).intValue());
+                } else {
+                    itemRewardBinding.cvReward.setBackground(color);
+                }
             } else if (i == 13) {
                 if (UtilsKt.isArizonaType()) {
                     itemRewardBinding.cvReward.setBackground(Color.parseColor("#86E1FF"));
                 } else {
                     itemRewardBinding.cvReward.setBackground(Color.parseColor("#567A97"));
                 }
+            } else {
+                itemRewardBinding.cvReward.setBackground(color);
             }
-            String str = UtilsKt.isArizonaType() ? FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false) + StringsKt.removePrefix(rewardItemAdapter.arizonaPath, (CharSequence) "/") : FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/training/image/";
+            if (UtilsKt.isArizonaType()) {
+                projectResourceUrl$default = FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false);
+            } else {
+                projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+            }
+            if (rewardItemAdapter.usesDynamicContract) {
+                str = projectResourceUrl$default + StringsKt.removePrefix(rewardItemAdapter.arizonaPath, (CharSequence) "/");
+            } else {
+                str = UtilsKt.isArizonaType() ? projectResourceUrl$default + StringsKt.removePrefix(rewardItemAdapter.arizonaPath, (CharSequence) "/") : projectResourceUrl$default + "systems/training/image/";
+            }
             TextView textView = itemRewardBinding.tvRewardDesc;
             String title = item.getTitle();
             if (title == null) {
@@ -104,43 +148,47 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
             }
             textView.setText(title);
             Glide.with(this.context).load(str + item.getSysName() + ".webp").fitCenter().diskCacheStrategy(DiskCacheStrategy.ALL).into(itemRewardBinding.ivReward);
-            String info = UtilsKt.isArizonaType() ? item.getInfo() : item.getDescription();
+            if (rewardItemAdapter.usesDynamicContract) {
+                info = item.getDescription();
+            } else {
+                info = UtilsKt.isArizonaType() ? item.getInfo() : item.getDescription();
+            }
             this.binding.tvDopInfo.setText(info != null ? info : "");
             TextView tvDopInfo = this.binding.tvDopInfo;
             Intrinsics.checkNotNullExpressionValue(tvDopInfo, "tvDopInfo");
-            String str2 = info;
-            tvDopInfo.setVisibility(!(str2 == null || StringsKt.isBlank(str2)) ? 0 : 8);
-            if (UtilsKt.isArizonaType()) {
+            String str3 = info;
+            tvDopInfo.setVisibility(!(str3 == null || StringsKt.isBlank(str3)) ? 0 : 8);
+            if (UtilsKt.isArizonaType() || rewardItemAdapter.usesDynamicContract) {
                 return;
             }
-            List<String> colors = item.getColors();
-            if (colors == null) {
-                colors = CollectionsKt.emptyList();
+            List<String> colors2 = item.getColors();
+            if (colors2 == null) {
+                colors2 = CollectionsKt.emptyList();
             }
-            ArrayList arrayList = new ArrayList();
-            for (String str3 : colors) {
+            ArrayList arrayList3 = new ArrayList();
+            for (String str4 : colors2) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9898constructorimpl = Result.m9898constructorimpl(Integer.valueOf(Color.parseColor(str3)));
+                    m9915constructorimpl = Result.m9915constructorimpl(Integer.valueOf(Color.parseColor(str4)));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                    m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
                 }
-                if (Result.m9904isFailureimpl(m9898constructorimpl)) {
-                    m9898constructorimpl = null;
+                if (Result.m9921isFailureimpl(m9915constructorimpl)) {
+                    m9915constructorimpl = null;
                 }
-                Integer num = (Integer) m9898constructorimpl;
+                Integer num = (Integer) m9915constructorimpl;
                 if (num != null) {
-                    arrayList.add(num);
+                    arrayList3.add(num);
                 }
             }
-            ArrayList arrayList2 = arrayList;
-            if (arrayList2.size() >= 2) {
-                CustomCardView cvReward = itemRewardBinding.cvReward;
-                Intrinsics.checkNotNullExpressionValue(cvReward, "cvReward");
-                CustomCardView.setBackground$default(cvReward, CollectionsKt.toIntArray(arrayList2), null, null, 6, null);
-            } else if (arrayList2.size() == 1) {
-                itemRewardBinding.cvReward.setBackground(((Number) arrayList2.get(0)).intValue());
+            ArrayList arrayList4 = arrayList3;
+            if (arrayList4.size() >= 2) {
+                CustomCardView cvReward2 = itemRewardBinding.cvReward;
+                Intrinsics.checkNotNullExpressionValue(cvReward2, "cvReward");
+                CustomCardView.setBackground$default(cvReward2, CollectionsKt.toIntArray(arrayList4), null, null, 6, null);
+            } else if (arrayList4.size() == 1) {
+                itemRewardBinding.cvReward.setBackground(((Number) arrayList4.get(0)).intValue());
             }
         }
     }
@@ -167,7 +215,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
     }
 
     /* compiled from: RewardItemAdapter.kt */
-    @Metadata(d1 = {"\u0000\u0013\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\b\u0003*\u0001\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion;", "", "<init>", "()V", "COMPARATOR", "ru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1;", "battle-pass-view"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0019\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\b\u0003*\u0001\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0010\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\b¨\u0006\t"}, d2 = {"Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion;", "", "<init>", "()V", "DEFAULT_IMAGE_PATH", "", "COMPARATOR", "ru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1", "Lru/mrlargha/feature/battle_pass_view/RewardItemAdapter$Companion$COMPARATOR$1;", "battle-pass-view"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

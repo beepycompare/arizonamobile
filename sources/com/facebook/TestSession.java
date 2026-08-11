@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TestSession extends Session {
     static final /* synthetic */ boolean $assertionsDisabled = true;
     private static final String LOG_TAG = "FacebookSDK.TestSession";
@@ -34,19 +34,19 @@ public class TestSession extends Session {
     private boolean wasAskedToExtendAccessToken;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface FqlResponse extends GraphObject {
         GraphObjectList<FqlResult> getData();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface FqlResult extends GraphObject {
         GraphObjectList<GraphObject> getFqlResultSet();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Mode {
         PRIVATE,
         SHARED;
@@ -62,7 +62,7 @@ public class TestSession extends Session {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface TestAccount extends GraphObject {
         String getAccessToken();
 
@@ -74,7 +74,7 @@ public class TestSession extends Session {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class TestTokenCachingStrategy extends TokenCachingStrategy {
         private Bundle bundle;
 
@@ -102,7 +102,7 @@ public class TestSession extends Session {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface UserAccount extends GraphObject {
         String getName();
 

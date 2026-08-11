@@ -3,6 +3,7 @@ package com.miami.game.core.connection.resolver;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -45,7 +46,7 @@ public final class FirebaseConfigHelper$fetchAll$2 extends SuspendLambda impleme
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Map map;
+        ConcurrentHashMap concurrentHashMap;
         String fetchLink;
         boolean hasReserve;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -66,8 +67,8 @@ public final class FirebaseConfigHelper$fetchAll$2 extends SuspendLambda impleme
             fetchLink = FirebaseConfigHelper.INSTANCE.fetchLink((FirebaseConfigLinks) obj3);
             linkedHashMap.put(obj3, fetchLink);
         }
-        map = FirebaseConfigHelper.linkCache;
-        map.putAll(linkedHashMap);
+        concurrentHashMap = FirebaseConfigHelper.linkCache;
+        concurrentHashMap.putAll(linkedHashMap);
         return linkedHashMap;
     }
 }

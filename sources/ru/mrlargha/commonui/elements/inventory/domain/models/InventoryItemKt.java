@@ -31,6 +31,6 @@ public final class InventoryItemKt {
         Integer enchant = inventoryItemEntity.getEnchant();
         Integer breaks = inventoryItemEntity.getBreaks();
         Integer isActive = inventoryItemEntity.isActive();
-        return new InventoryItem(slot, item, id, text, item_type, amount, background, color, bits, available, enchant, inventoryItemEntity.getBlackout(), inventoryItemEntity.getTime(), inventoryItemEntity.getItemStrength(), isActive, breaks, inventoryType, acsSlot, null, isColored, isLocked, inventoryItemEntity.getEffect(), inventoryItemEntity.getEffectType(), inventoryItemEntity.getQuality(), inventoryItemEntity.getCustom_icon(), inventoryItemEntity.getLoading());
+        return new InventoryItem(slot, item, id, text, item_type, amount, background, color, bits, available, enchant, inventoryItemEntity.getBlackout(), inventoryItemEntity.getTime(), inventoryItemEntity.getItemStrength(), isActive, breaks, inventoryType, acsSlot, null, isColored, isLocked, inventoryItemEntity.getEffect(), inventoryItemEntity.getEffectType(), inventoryItemEntity.getQuality(), inventoryItemEntity.getCustom_icon(), inventoryItemEntity.getLoading(), null, 67108864, null);
     }
 }

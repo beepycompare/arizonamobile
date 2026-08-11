@@ -160,7 +160,7 @@ public class SearchBarAnimationHelper {
         ofFloat2.addUpdateListener(MultiViewUpdateListener.alphaListener(view));
         ofFloat2.setInterpolator(AnimationUtils.LINEAR_INTERPOLATOR);
         ofFloat2.setDuration(250L);
-        ofFloat2.setStartDelay(ON_LOAD_ANIM_CENTER_VIEW_DEFAULT_FADE_OUT_START_DELAY_MS);
+        ofFloat2.setStartDelay(750L);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(ofFloat, ofFloat2);
         return animatorSet;
@@ -203,14 +203,14 @@ public class SearchBarAnimationHelper {
         view.post(new Runnable() { // from class: com.google.android.material.search.SearchBarAnimationHelper$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                SearchBarAnimationHelper.this.m9586x1b96b119(searchBar, view, appBarLayout, z);
+                SearchBarAnimationHelper.this.m9603x1b96b119(searchBar, view, appBarLayout, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startExpandAnimation$0$com-google-android-material-search-SearchBarAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m9586x1b96b119(SearchBar searchBar, View view, AppBarLayout appBarLayout, boolean z) {
+    public /* synthetic */ void m9603x1b96b119(SearchBar searchBar, View view, AppBarLayout appBarLayout, boolean z) {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(getFadeOutChildrenAnimator(searchBar, view), getExpandAnimator(searchBar, view, appBarLayout));
         animatorSet.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchBarAnimationHelper.3

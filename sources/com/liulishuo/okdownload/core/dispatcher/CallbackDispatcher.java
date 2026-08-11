@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CallbackDispatcher {
     private static final String TAG = "CallbackDispatcher";
     private final DownloadListener transmit;
@@ -141,7 +141,7 @@ public class CallbackDispatcher {
         return this.transmit;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static class DefaultTransmitListener implements DownloadListener {
         private final Handler uiHandler;
 

@@ -5,7 +5,7 @@ import com.liulishuo.okdownload.core.cause.EndCause;
 import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public interface DownloadListener {
     void connectEnd(DownloadTask downloadTask, int i, int i2, Map<String, List<String>> map);
 

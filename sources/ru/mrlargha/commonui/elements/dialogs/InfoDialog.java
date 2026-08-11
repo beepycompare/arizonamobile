@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.elements.dialogs;
 
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.graphics.Color;
 import android.text.SpannableString;
@@ -7,6 +8,8 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Strictness;
@@ -25,7 +28,7 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: InfoDialog.kt */
-@Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 ,2\u00020\u0001:\u0002+,B?\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\u0005¢\u0006\u0004\b\f\u0010\rJ\b\u0010\u0018\u001a\u00020\u0019H\u0002J\b\u0010\u001a\u001a\u00020\u0019H\u0002J\u0010\u0010\u001b\u001a\u00020\u00192\u0006\u0010\u001c\u001a\u00020\u0005H\u0002J\b\u0010\u001d\u001a\u00020\u0019H\u0002J \u0010\u001e\u001a\u00020\u00192\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0002J\u0010\u0010%\u001a\u00020\u00192\u0006\u0010&\u001a\u00020\u0005H\u0002J\f\u0010'\u001a\u00020(*\u00020\u0007H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010**\u00020\u0007H\u0002R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006-"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/InfoDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "", "info", "leftButtonText", "rightButtonText", "sampDialogId", "<init>", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/InfoDialogBinding;", FirebaseAnalytics.Param.CONTENT, "Lru/mrlargha/commonui/elements/dialogs/ResolvedInfoDialogContent;", "parsedBody", "Lru/mrlargha/commonui/elements/dialogs/DialogListItemTabsContent;", "selectedTabIndex", "setupListItemTabs", "", "setupButtons", "selectTab", FirebaseAnalytics.Param.INDEX, "renderListItemTabs", "updateListItemTab", "card", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "text", "Landroid/widget/TextView;", "selected", "", "dismiss", "responseButtonId", "resolveInfoDialogCaption", "Landroid/text/SpannableString;", "parseInfoDialogCaption", "Lru/mrlargha/commonui/elements/dialogs/InfoDialog$InfoDialogCaption;", "InfoDialogCaption", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 42\u00020\u0001:\u000234B?\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\u0005¢\u0006\u0004\b\f\u0010\rJ\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0016J\b\u0010 \u001a\u00020\u001dH\u0002J\b\u0010!\u001a\u00020\u001dH\u0002J\b\u0010\"\u001a\u00020\u001dH\u0002J\b\u0010#\u001a\u00020\u001dH\u0002J\u0010\u0010$\u001a\u00020\u001d2\u0006\u0010%\u001a\u00020\u0005H\u0002J\b\u0010&\u001a\u00020\u001dH\u0002J \u0010'\u001a\u00020\u001d2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u001fH\u0002J\u0010\u0010-\u001a\u00020\u001d2\u0006\u0010.\u001a\u00020\u0005H\u0002J\f\u0010/\u001a\u000200*\u00020\u0007H\u0002J\u000e\u00101\u001a\u0004\u0018\u000102*\u00020\u0007H\u0002R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/InfoDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "", "info", "leftButtonText", "rightButtonText", "sampDialogId", "<init>", "(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/InfoDialogBinding;", FirebaseAnalytics.Param.CONTENT, "Lru/mrlargha/commonui/elements/dialogs/ResolvedInfoDialogContent;", "parsedBody", "Lru/mrlargha/commonui/elements/dialogs/DialogListItemTabsContent;", "animatedBarContent", "Lru/mrlargha/commonui/elements/dialogs/InfoDialogAnimatedBarContent;", "selectedTabIndex", "animatedBarAnimator", "Landroid/animation/ValueAnimator;", "setVisibility", "", "visible", "", "setupAnimatedBar", "startAnimatedBar", "setupListItemTabs", "setupButtons", "selectTab", FirebaseAnalytics.Param.INDEX, "renderListItemTabs", "updateListItemTab", "card", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "text", "Landroid/widget/TextView;", "selected", "dismiss", "responseButtonId", "resolveInfoDialogCaption", "Landroid/text/SpannableString;", "parseInfoDialogCaption", "Lru/mrlargha/commonui/elements/dialogs/InfoDialog$InfoDialogCaption;", "InfoDialogCaption", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InfoDialog extends AbstractDialog {
     private static final Companion Companion = new Companion(null);
@@ -36,6 +39,8 @@ public final class InfoDialog extends AbstractDialog {
     private static final String UNSELECTED_TAB_BG = "#00FFFFFF";
     private static final String UNSELECTED_TAB_BORDER = "#00FFFFFF";
     private static final String UNSELECTED_TAB_TEXT = "#FFFFFF";
+    private ValueAnimator animatedBarAnimator;
+    private final InfoDialogAnimatedBarContent animatedBarContent;
     private final InfoDialogBinding binding;
     private final ResolvedInfoDialogContent content;
     private final View dialogLayout;
@@ -63,7 +68,9 @@ public final class InfoDialog extends AbstractDialog {
         this.content = resolveInfoDialogContent;
         DialogListItemTabsContent parseDialogListItemTabs$default = DialogListItemTabsKt.parseDialogListItemTabs$default(resolveInfoDialogContent.getBody(), 0, 2, null);
         this.parsedBody = parseDialogListItemTabs$default;
-        bind.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda0
+        InfoDialogAnimatedBarContent parseInfoDialogAnimatedBar = InfoDialogAnimatedBarKt.parseInfoDialogAnimatedBar(parseDialogListItemTabs$default.getText());
+        this.animatedBarContent = parseInfoDialogAnimatedBar;
+        bind.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InfoDialog._init_$lambda$0(view);
@@ -72,14 +79,71 @@ public final class InfoDialog extends AbstractDialog {
         Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
         addViewToConstraintLayout(dialogLayout, -1, -1);
         bind.caption.setText(resolveInfoDialogCaption(resolveInfoDialogContent.getHeader()));
-        bind.infoText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, parseDialogListItemTabs$default.getText(), 0.0f, null, 3, null));
+        bind.infoText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, parseInfoDialogAnimatedBar.getText(), 0.0f, null, 3, null));
         TextView infoText = bind.infoText;
         Intrinsics.checkNotNullExpressionValue(infoText, "infoText");
-        infoText.setVisibility(StringsKt.isBlank(parseDialogListItemTabs$default.getText()) ? 8 : 0);
+        infoText.setVisibility(StringsKt.isBlank(parseInfoDialogAnimatedBar.getText()) ? 8 : 0);
         bind.infoText.setMovementMethod(new ScrollingMovementMethod());
+        setupAnimatedBar();
         setupListItemTabs();
         setupButtons();
         setVisibility(true);
+        startAnimatedBar();
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void setVisibility(boolean z) {
+        ValueAnimator valueAnimator;
+        if (!z && (valueAnimator = this.animatedBarAnimator) != null) {
+            valueAnimator.cancel();
+        }
+        super.setVisibility(z);
+    }
+
+    private final void setupAnimatedBar() {
+        InfoDialogBinding infoDialogBinding = this.binding;
+        InfoDialogAnimatedBar animatedBar = this.animatedBarContent.getAnimatedBar();
+        LinearLayout infoDialogAnimatedBar = infoDialogBinding.infoDialogAnimatedBar;
+        Intrinsics.checkNotNullExpressionValue(infoDialogAnimatedBar, "infoDialogAnimatedBar");
+        infoDialogAnimatedBar.setVisibility(animatedBar != null ? 0 : 8);
+        if (animatedBar != null) {
+            infoDialogBinding.infoDialogAnimatedBarLabel.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, animatedBar.getLabel(), 0.0f, null, 3, null));
+            TextView infoDialogAnimatedBarLabel = infoDialogBinding.infoDialogAnimatedBarLabel;
+            Intrinsics.checkNotNullExpressionValue(infoDialogAnimatedBarLabel, "infoDialogAnimatedBarLabel");
+            infoDialogAnimatedBarLabel.setVisibility(StringsKt.isBlank(animatedBar.getLabel()) ? 8 : 0);
+            infoDialogBinding.infoDialogAnimatedBarProgress.setPercentWidth(0.0f);
+        }
+    }
+
+    private final void startAnimatedBar() {
+        InfoDialogAnimatedBar animatedBar = this.animatedBarContent.getAnimatedBar();
+        if (animatedBar == null) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.animatedBarAnimator;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.setDuration(animatedBar.getDurationMs());
+        ofFloat.setInterpolator(new LinearInterpolator());
+        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda0
+            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                InfoDialog.startAnimatedBar$lambda$0$0(InfoDialog.this, valueAnimator2);
+            }
+        });
+        ofFloat.start();
+        this.animatedBarAnimator = ofFloat;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void startAnimatedBar$lambda$0$0(InfoDialog infoDialog, ValueAnimator animator) {
+        Intrinsics.checkNotNullParameter(animator, "animator");
+        CustomCardView customCardView = infoDialog.binding.infoDialogAnimatedBarProgress;
+        Object animatedValue = animator.getAnimatedValue();
+        Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Float");
+        customCardView.setPercentWidth(((Float) animatedValue).floatValue());
     }
 
     private final void setupListItemTabs() {
@@ -101,13 +165,13 @@ public final class InfoDialog extends AbstractDialog {
             str = "";
         }
         textView.setText(ChatEmoji.toSpannable$default(chatEmoji, str, 0.0f, null, 3, null));
-        infoDialogBinding.infoDialogListItemTabPrimary.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda4
+        infoDialogBinding.infoDialogListItemTabPrimary.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InfoDialog.this.selectTab(0);
             }
         });
-        infoDialogBinding.infoDialogListItemTabSecondary.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda5
+        infoDialogBinding.infoDialogListItemTabSecondary.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InfoDialog.this.selectTab(1);
@@ -122,7 +186,7 @@ public final class InfoDialog extends AbstractDialog {
             infoDialogBinding.buttons.button1.setVisibility(8);
         } else {
             infoDialogBinding.buttons.tvAccept.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, this.content.getPrimaryButton(), 0.0f, null, 3, null));
-            infoDialogBinding.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda1
+            infoDialogBinding.buttons.button1.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     InfoDialog.this.dismiss(1);
@@ -133,14 +197,14 @@ public final class InfoDialog extends AbstractDialog {
             infoDialogBinding.buttons.button2.setVisibility(8);
         } else {
             infoDialogBinding.buttons.tvCancel.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, this.content.getSecondaryButton(), 0.0f, null, 3, null));
-            infoDialogBinding.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda2
+            infoDialogBinding.buttons.button2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     InfoDialog.this.dismiss(0);
                 }
             });
         }
-        infoDialogBinding.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda3
+        infoDialogBinding.btnCancel.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.InfoDialog$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InfoDialog.this.dismiss(0);
@@ -183,6 +247,10 @@ public final class InfoDialog extends AbstractDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void dismiss(int i) {
+        ValueAnimator valueAnimator = this.animatedBarAnimator;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
         getNotifier().onDialogResponseWrapper(getSampDialogId(), i, DialogListItemTabsKt.resolveDialogListItemTabResponse(i == 1, this.parsedBody.getTitles().size(), this.selectedTabIndex), new byte[0]);
         getNotifier().destroyDialog();
     }
@@ -195,7 +263,7 @@ public final class InfoDialog extends AbstractDialog {
     }
 
     private final InfoDialogCaption parseInfoDialogCaption(String str) {
-        Object m9898constructorimpl;
+        Object m9915constructorimpl;
         String obj = StringsKt.trim((CharSequence) str).toString();
         if (StringsKt.startsWith$default(obj, "{", false, 2, (Object) null) && StringsKt.endsWith$default(obj, "}", false, 2, (Object) null)) {
             try {
@@ -204,12 +272,12 @@ public final class InfoDialog extends AbstractDialog {
                 jsonReader.setStrictness(Strictness.LENIENT);
                 InfoDialogCaption infoDialogCaption = (InfoDialogCaption) MapperKt.getGson().fromJson(jsonReader, InfoDialogCaption.class);
                 jsonReader.close();
-                m9898constructorimpl = Result.m9898constructorimpl(infoDialogCaption);
+                m9915constructorimpl = Result.m9915constructorimpl(infoDialogCaption);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9904isFailureimpl(m9898constructorimpl) ? null : m9898constructorimpl;
+            return Result.m9921isFailureimpl(m9915constructorimpl) ? null : m9915constructorimpl;
         }
         return null;
     }

@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import kotlin.UByte$$ExternalSyntheticBackport0;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MdtaMetadataEntry implements Metadata.Entry {
     public static final byte AUXILIARY_TRACKS_SAMPLES_INTERLEAVED = 1;
     public static final byte AUXILIARY_TRACKS_SAMPLES_NOT_INTERLEAVED = 0;

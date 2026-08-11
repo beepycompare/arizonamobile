@@ -1,5 +1,5 @@
 package com.facebook;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppEventsConstants {
     public static final String EVENT_NAME_ACHIEVED_LEVEL = "fb_mobile_level_achieved";
     public static final String EVENT_NAME_ACTIVATED_APP = "fb_mobile_activate_app";

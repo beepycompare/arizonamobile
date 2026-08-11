@@ -6,12 +6,12 @@ import com.liulishuo.okdownload.core.cause.EndCause;
 import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
 import com.liulishuo.okdownload.core.listener.assist.ListenerModelHandler;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class Listener1Assist implements ListenerAssist, ListenerModelHandler.ModelCreator<Listener1Model> {
     private Listener1Callback callback;
     private final ListenerModelHandler<Listener1Model> modelHandler;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Listener1Callback {
         void connected(DownloadTask downloadTask, int i, long j, long j2);
 
@@ -125,7 +125,7 @@ public class Listener1Assist implements ListenerAssist, ListenerModelHandler.Mod
         return new Listener1Model(i);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Listener1Model implements ListenerModelHandler.ListenerModel {
         int blockCount;
         final AtomicLong currentOffset = new AtomicLong();

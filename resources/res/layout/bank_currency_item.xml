@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bank_currency_card" android:paddingTop="@dimen/_8sdp" android:paddingBottom="@dimen/_8sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/_160sdp" android:paddingStart="@dimen/_8sdp" android:paddingEnd="@dimen/_8sdp" app:backgroundMainColor="#c72406" app:backgroundSecondColor="#ff5035" app:corners="@dimen/_16sdp" app:gradientAngle="325">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/_12sdp" android:textColor="#ffffff" android:id="@+id/bank_currency_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_currency_price_badge" android:layout_width="wrap_content" android:layout_height="@dimen/_20sdp" android:layout_marginTop="@dimen/_6sdp" android:paddingStart="@dimen/_4sdp" android:paddingEnd="@dimen/_8sdp" app:backgroundMainColor="#63210f" app:corners="@dimen/_10sdp">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+                <ImageView android:id="@+id/bank_currency_icon" android:layout_width="@dimen/_15sdp" android:layout_height="@dimen/_15sdp" android:importantForAccessibility="no"/>
+                <TextView android:textSize="@dimen/_9sdp" android:textColor="#ffffff" android:id="@+id/bank_currency_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_6sdp"/>
+                <ImageView android:id="@+id/bank_currency_trend_arrow" android:layout_width="@dimen/_7sdp" android:layout_height="@dimen/_7sdp" android:src="@drawable/bank_currency_ic_arrow_up_design" android:importantForAccessibility="no" android:layout_marginStart="@dimen/_6sdp"/>
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="#b7ff00" android:id="@+id/bank_currency_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp"/>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/_16sdp" android:layout_marginTop="@dimen/_6sdp">
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_currency_day_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#ffffff" app:corners="@dimen/_5sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#15182a" android:gravity="center" android:id="@+id/bank_currency_day_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/bank_currency_range_day" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_currency_week_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_4sdp" app:backgroundMainColor="#f06652" app:backgroundTransparency="54" app:corners="@dimen/_5sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffe1da" android:gravity="center" android:id="@+id/bank_currency_week_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/bank_currency_range_week" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_currency_month_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_4sdp" app:backgroundMainColor="#f06652" app:backgroundTransparency="54" app:corners="@dimen/_5sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffe1da" android:gravity="center" android:id="@+id/bank_currency_month_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/bank_currency_range_month" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+        </FrameLayout>
+        <FrameLayout android:id="@+id/bank_currency_chart_container" android:layout_width="match_parent" android:layout_height="@dimen/_38sdp" android:layout_marginTop="@dimen/_6sdp">
+            <com.arizonagames.feature.arizona.bank.views.BankCurrencyChartView android:id="@+id/bank_currency_chart" android:layout_width="match_parent" android:layout_height="match_parent"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="start|top" android:id="@+id/bank_currency_chart_point_card" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="@dimen/_20sdp" android:paddingStart="@dimen/_2sdp" android:paddingEnd="@dimen/_5sdp" app:backgroundMainColor="@color/white" app:borderMainColor="#d9e3ff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="wrap_content" android:layout_height="@dimen/_17sdp" android:paddingStart="@dimen/_4sdp" android:paddingEnd="@dimen/_4sdp" app:backgroundMainColor="#091525" app:corners="@dimen/_4sdp">
+                        <TextView android:textSize="@dimen/_5sdp" android:textColor="#9dff00" android:gravity="center" android:id="@+id/bank_currency_chart_point_value" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="$ 0" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    <TextView android:textSize="@dimen/_5sdp" android:textColor="#091525" android:id="@+id/bank_currency_chart_point_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="24.05.2025 12:00" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_4sdp"/>
+                </LinearLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        </FrameLayout>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_currency_available_card" android:layout_width="match_parent" android:layout_height="@dimen/_22sdp" android:layout_marginTop="@dimen/_5sdp" app:backgroundMainColor="#f06652" app:backgroundTransparency="46" app:corners="@dimen/_8sdp">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="#fff0ea" android:gravity="center_vertical" android:id="@+id/bank_currency_available" android:layout_width="wrap_content" android:layout_height="match_parent" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_currency_own_balance_card" android:layout_width="match_parent" android:layout_height="@dimen/_22sdp" android:layout_marginTop="@dimen/_5sdp" app:backgroundMainColor="#f06652" app:backgroundTransparency="46" app:corners="@dimen/_8sdp">
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="#fff0ea" android:gravity="center" android:id="@+id/bank_currency_own_balance" android:layout_width="match_parent" android:layout_height="match_parent" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_27sdp" android:layout_marginTop="@dimen/_6sdp">
+            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_currency_buy_button" android:layout_width="match_parent" android:layout_height="@dimen/_23sdp" app:backgroundMainColor="#fff000" app:corners="@dimen/_7sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#1a1a1a" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/bank_currency_buy" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <TextView android:layout_gravity="end|top" android:id="@+id/bank_currency_buy_percent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/BankCurrencyPercentBadgeStyle"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_6sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_currency_sell_button" android:layout_width="match_parent" android:layout_height="@dimen/_23sdp" app:backgroundMainColor="#f06652" app:backgroundTransparency="35" app:corners="@dimen/_7sdp">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffffff" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/bank_currency_sell" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <TextView android:layout_gravity="end|top" android:id="@+id/bank_currency_sell_percent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/BankCurrencyPercentBadgeStyle"/>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:layout_gravity="end" android:id="@+id/info" android:layout_width="@dimen/_14sdp" android:layout_height="@dimen/_14sdp" android:src="@drawable/bank_ic_info"/>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

@@ -26,7 +26,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.LockSupport;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class MultiPointOutputStream {
     private static final ExecutorService FILE_IO_EXECUTOR = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkDownload file io", false));
     private static final String TAG = "MultiPointOutputStream";
@@ -289,7 +289,7 @@ public class MultiPointOutputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class StreamsState {
         boolean isNoMoreStream;
         List<Integer> noMoreStreamBlockList = new ArrayList();

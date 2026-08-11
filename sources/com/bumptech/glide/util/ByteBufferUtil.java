@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ByteBufferUtil {
     private static final AtomicReference<byte[]> BUFFER_REF = new AtomicReference<>();
     private static final int BUFFER_SIZE = 16384;
@@ -181,7 +181,7 @@ public final class ByteBufferUtil {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class SafeArray {
         final byte[] data;
         final int limit;
@@ -194,7 +194,7 @@ public final class ByteBufferUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class ByteBufferStream extends InputStream {
         private static final int UNSET = -1;
         private final ByteBuffer byteBuffer;

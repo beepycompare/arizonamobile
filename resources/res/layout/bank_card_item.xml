@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/card_root" android:padding="@dimen/_10sdp" android:layout_width="@dimen/_145sdp" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/_8sdp" app:backgroundMainColor="#ffffff" app:backgroundTransparency="10" app:corners="@dimen/_14sdp">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/card_logo" android:layout_width="@dimen/_26sdp" android:layout_height="@dimen/_26sdp" android:src="@drawable/bank_card_logo_placeholder"/>
+        <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffffff" android:id="@+id/card_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:fontFamily="@font/heading_now_66_bold"/>
+        <TextView android:id="@+id/card_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_4sdp" style="@style/BankCaptionStyle"/>
+        <TextView android:textSize="@dimen/_10sdp" android:textColor="#ffd45c" android:id="@+id/card_amount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:fontFamily="@font/heading_now_66_bold"/>
+    </LinearLayout>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

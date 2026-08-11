@@ -20,51 +20,51 @@ public final class Parser<Output extends Copyable<Output>> {
     private final ParserStructure<Output> commands;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ Parser m11545boximpl(ParserStructure parserStructure) {
+    public static final /* synthetic */ Parser m11562boximpl(ParserStructure parserStructure) {
         return new Parser(parserStructure);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: constructor-impl */
-    public static <Output extends Copyable<Output>> ParserStructure<Output> m11546constructorimpl(ParserStructure<? super Output> commands) {
+    public static <Output extends Copyable<Output>> ParserStructure<Output> m11563constructorimpl(ParserStructure<? super Output> commands) {
         Intrinsics.checkNotNullParameter(commands, "commands");
         return commands;
     }
 
     /* renamed from: equals-impl */
-    public static boolean m11547equalsimpl(ParserStructure<? super Output> parserStructure, Object obj) {
-        return (obj instanceof Parser) && Intrinsics.areEqual(parserStructure, ((Parser) obj).m11556unboximpl());
+    public static boolean m11564equalsimpl(ParserStructure<? super Output> parserStructure, Object obj) {
+        return (obj instanceof Parser) && Intrinsics.areEqual(parserStructure, ((Parser) obj).m11573unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m11548equalsimpl0(ParserStructure<? super Output> parserStructure, ParserStructure<? super Output> parserStructure2) {
+    public static final boolean m11565equalsimpl0(ParserStructure<? super Output> parserStructure, ParserStructure<? super Output> parserStructure2) {
         return Intrinsics.areEqual(parserStructure, parserStructure2);
     }
 
     /* renamed from: hashCode-impl */
-    public static int m11549hashCodeimpl(ParserStructure<? super Output> parserStructure) {
+    public static int m11566hashCodeimpl(ParserStructure<? super Output> parserStructure) {
         return parserStructure.hashCode();
     }
 
     /* renamed from: toString-impl */
-    public static String m11555toStringimpl(ParserStructure<? super Output> parserStructure) {
+    public static String m11572toStringimpl(ParserStructure<? super Output> parserStructure) {
         return "Parser(commands=" + parserStructure + ')';
     }
 
     public boolean equals(Object obj) {
-        return m11547equalsimpl(this.commands, obj);
+        return m11564equalsimpl(this.commands, obj);
     }
 
     public int hashCode() {
-        return m11549hashCodeimpl(this.commands);
+        return m11566hashCodeimpl(this.commands);
     }
 
     public String toString() {
-        return m11555toStringimpl(this.commands);
+        return m11572toStringimpl(this.commands);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ ParserStructure m11556unboximpl() {
+    public final /* synthetic */ ParserStructure m11573unboximpl() {
         return this.commands;
     }
 
@@ -73,7 +73,7 @@ public final class Parser<Output extends Copyable<Output>> {
     }
 
     /* renamed from: parse-impl */
-    private static final void m11554parseimpl(ParserStructure<? super Output> parserStructure, CharSequence charSequence, int i, Output output, boolean z, Function1<? super ParseError, Unit> function1, Function2<? super Integer, ? super Output, Unit> function2) {
+    private static final void m11571parseimpl(ParserStructure<? super Output> parserStructure, CharSequence charSequence, int i, Output output, boolean z, Function1<? super ParseError, Unit> function1, Function2<? super Integer, ? super Output, Unit> function2) {
         List mutableListOf = CollectionsKt.mutableListOf(new ParserState(output, parserStructure, i));
         while (true) {
             ParserState parserState = (ParserState) CollectionsKt.removeLastOrNull(mutableListOf);
@@ -87,14 +87,14 @@ public final class Parser<Output extends Copyable<Output>> {
             int i2 = 0;
             while (true) {
                 if (i2 < size) {
-                    Object mo11533consumeFANa98k = ((ParserOperation) parserStructure2.getOperations().get(i2)).mo11533consumeFANa98k(copyable, charSequence, inputPosition);
-                    if (mo11533consumeFANa98k instanceof Integer) {
-                        inputPosition = ((Number) mo11533consumeFANa98k).intValue();
+                    Object mo11550consumeFANa98k = ((ParserOperation) parserStructure2.getOperations().get(i2)).mo11550consumeFANa98k(copyable, charSequence, inputPosition);
+                    if (mo11550consumeFANa98k instanceof Integer) {
+                        inputPosition = ((Number) mo11550consumeFANa98k).intValue();
                         i2++;
-                    } else if (mo11533consumeFANa98k instanceof ParseError) {
-                        function1.invoke((ParseError) mo11533consumeFANa98k);
+                    } else if (mo11550consumeFANa98k instanceof ParseError) {
+                        function1.invoke((ParseError) mo11550consumeFANa98k);
                     } else {
-                        throw new IllegalStateException(("Unexpected parse result: " + mo11533consumeFANa98k).toString());
+                        throw new IllegalStateException(("Unexpected parse result: " + mo11550consumeFANa98k).toString());
                     }
                 } else if (parserStructure2.getFollowedBy().isEmpty()) {
                     if (z || inputPosition == charSequence.length()) {
@@ -120,15 +120,15 @@ public final class Parser<Output extends Copyable<Output>> {
     }
 
     /* renamed from: match-impl$default */
-    public static /* synthetic */ Copyable m11551matchimpl$default(ParserStructure parserStructure, CharSequence charSequence, Copyable copyable, int i, int i2, Object obj) {
+    public static /* synthetic */ Copyable m11568matchimpl$default(ParserStructure parserStructure, CharSequence charSequence, Copyable copyable, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             i = 0;
         }
-        return m11550matchimpl(parserStructure, charSequence, copyable, i);
+        return m11567matchimpl(parserStructure, charSequence, copyable, i);
     }
 
     /* renamed from: match-impl */
-    public static final Output m11550matchimpl(ParserStructure<? super Output> parserStructure, CharSequence input, Output initialContainer, int i) {
+    public static final Output m11567matchimpl(ParserStructure<? super Output> parserStructure, CharSequence input, Output initialContainer, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         Intrinsics.checkNotNullParameter(initialContainer, "initialContainer");
         ArrayList arrayList = new ArrayList();
@@ -143,14 +143,14 @@ public final class Parser<Output extends Copyable<Output>> {
                 int i2 = 0;
                 while (true) {
                     if (i2 < size) {
-                        Object mo11533consumeFANa98k = ((ParserOperation) parserStructure2.getOperations().get(i2)).mo11533consumeFANa98k(output, input, inputPosition);
-                        if (mo11533consumeFANa98k instanceof Integer) {
-                            inputPosition = ((Number) mo11533consumeFANa98k).intValue();
+                        Object mo11550consumeFANa98k = ((ParserOperation) parserStructure2.getOperations().get(i2)).mo11550consumeFANa98k(output, input, inputPosition);
+                        if (mo11550consumeFANa98k instanceof Integer) {
+                            inputPosition = ((Number) mo11550consumeFANa98k).intValue();
                             i2++;
-                        } else if (mo11533consumeFANa98k instanceof ParseError) {
-                            arrayList.add((ParseError) mo11533consumeFANa98k);
+                        } else if (mo11550consumeFANa98k instanceof ParseError) {
+                            arrayList.add((ParseError) mo11550consumeFANa98k);
                         } else {
-                            throw new IllegalStateException(("Unexpected parse result: " + mo11533consumeFANa98k).toString());
+                            throw new IllegalStateException(("Unexpected parse result: " + mo11550consumeFANa98k).toString());
                         }
                     } else if (parserStructure2.getFollowedBy().isEmpty()) {
                         if (inputPosition == input.length()) {
@@ -186,11 +186,11 @@ public final class Parser<Output extends Copyable<Output>> {
     }
 
     /* renamed from: matchOrNull-impl$default */
-    public static /* synthetic */ Copyable m11553matchOrNullimpl$default(ParserStructure parserStructure, CharSequence charSequence, Copyable copyable, int i, int i2, Object obj) {
+    public static /* synthetic */ Copyable m11570matchOrNullimpl$default(ParserStructure parserStructure, CharSequence charSequence, Copyable copyable, int i, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             i = 0;
         }
-        return m11552matchOrNullimpl(parserStructure, charSequence, copyable, i);
+        return m11569matchOrNullimpl(parserStructure, charSequence, copyable, i);
     }
 
     /* compiled from: Parser.kt */
@@ -223,7 +223,7 @@ public final class Parser<Output extends Copyable<Output>> {
     }
 
     /* renamed from: matchOrNull-impl */
-    public static final Output m11552matchOrNullimpl(ParserStructure<? super Output> parserStructure, CharSequence input, Output initialContainer, int i) {
+    public static final Output m11569matchOrNullimpl(ParserStructure<? super Output> parserStructure, CharSequence input, Output initialContainer, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         Intrinsics.checkNotNullParameter(initialContainer, "initialContainer");
         List mutableListOf = CollectionsKt.mutableListOf(new ParserState(initialContainer, parserStructure, i));
@@ -239,14 +239,14 @@ public final class Parser<Output extends Copyable<Output>> {
             int i2 = 0;
             while (true) {
                 if (i2 < size) {
-                    Object mo11533consumeFANa98k = ((ParserOperation) parserStructure2.getOperations().get(i2)).mo11533consumeFANa98k(output, input, inputPosition);
-                    if (mo11533consumeFANa98k instanceof Integer) {
-                        inputPosition = ((Number) mo11533consumeFANa98k).intValue();
+                    Object mo11550consumeFANa98k = ((ParserOperation) parserStructure2.getOperations().get(i2)).mo11550consumeFANa98k(output, input, inputPosition);
+                    if (mo11550consumeFANa98k instanceof Integer) {
+                        inputPosition = ((Number) mo11550consumeFANa98k).intValue();
                         i2++;
-                    } else if (!(mo11533consumeFANa98k instanceof ParseError)) {
-                        throw new IllegalStateException(("Unexpected parse result: " + mo11533consumeFANa98k).toString());
+                    } else if (!(mo11550consumeFANa98k instanceof ParseError)) {
+                        throw new IllegalStateException(("Unexpected parse result: " + mo11550consumeFANa98k).toString());
                     } else {
-                        ParseError parseError = (ParseError) mo11533consumeFANa98k;
+                        ParseError parseError = (ParseError) mo11550consumeFANa98k;
                     }
                 } else if (parserStructure2.getFollowedBy().isEmpty()) {
                     if (inputPosition == input.length()) {

@@ -104,7 +104,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         boolean onMenuItemClick(MenuItem menuItem);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<Toolbar> {
         private int mCollapseContentDescriptionId;
         private int mCollapseIconId;

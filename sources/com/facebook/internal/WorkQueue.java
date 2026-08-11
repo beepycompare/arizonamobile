@@ -3,7 +3,7 @@ package com.facebook.internal;
 import com.facebook.Settings;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public class WorkQueue {
     static final /* synthetic */ boolean $assertionsDisabled = true;
     public static final int DEFAULT_MAX_CONCURRENT = 8;
@@ -15,7 +15,7 @@ public class WorkQueue {
     private final Object workLock;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface WorkItem {
         boolean cancel();
 
@@ -25,7 +25,7 @@ public class WorkQueue {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public class WorkNode implements WorkItem {
         static final /* synthetic */ boolean $assertionsDisabled = true;
         private final Runnable callback;

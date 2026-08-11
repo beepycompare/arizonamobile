@@ -22,7 +22,7 @@ public class ForwardingTimeout extends Timeout {
     }
 
     /* renamed from: setDelegate  reason: collision with other method in class */
-    public final /* synthetic */ void m11792setDelegate(Timeout timeout) {
+    public final /* synthetic */ void m11809setDelegate(Timeout timeout) {
         Intrinsics.checkNotNullParameter(timeout, "<set-?>");
         this.delegate = timeout;
     }

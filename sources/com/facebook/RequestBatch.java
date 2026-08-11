@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RequestBatch extends AbstractList<Request> {
     private static AtomicInteger idGenerator = new AtomicInteger();
     private String batchApplicationId;
@@ -17,7 +17,7 @@ public class RequestBatch extends AbstractList<Request> {
     private List<Request> requests;
     private int timeoutInMilliseconds;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Callback {
         void onBatchCompleted(RequestBatch requestBatch);
     }

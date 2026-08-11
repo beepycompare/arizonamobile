@@ -59,7 +59,7 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public /* bridge */ /* synthetic */ void mo11506invokeOnClose(Function1 function1) {
+    public /* bridge */ /* synthetic */ void mo11523invokeOnClose(Function1 function1) {
         invokeOnClose((Function1<? super Throwable, Unit>) function1);
     }
 
@@ -121,13 +121,13 @@ public final class RxObservableCoroutine<T> extends AbstractCoroutine<Unit> impl
     /* renamed from: trySend-JP2dKIU */
     public Object mo9057trySendJP2dKIU(T t) {
         if (!Mutex.tryLock$default(this.mutex, null, 1, null)) {
-            return ChannelResult.Companion.m11460failurePtdJZtk();
+            return ChannelResult.Companion.m11477failurePtdJZtk();
         }
         Throwable doLockedNext = doLockedNext(t);
         if (doLockedNext == null) {
-            return ChannelResult.Companion.m11461successJP2dKIU(Unit.INSTANCE);
+            return ChannelResult.Companion.m11478successJP2dKIU(Unit.INSTANCE);
         }
-        return ChannelResult.Companion.m11459closedJP2dKIU(doLockedNext);
+        return ChannelResult.Companion.m11476closedJP2dKIU(doLockedNext);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */

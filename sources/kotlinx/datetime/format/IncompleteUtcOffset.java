@@ -7,7 +7,6 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.datetime.UtcOffset;
 import kotlinx.datetime.UtcOffsetJvmKt;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import kotlinx.datetime.internal.format.parser.Copyable;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: UtcOffsetFormat.kt */
@@ -88,7 +87,7 @@ public final class IncompleteUtcOffset implements UtcOffsetFieldContainer, Copya
         Intrinsics.checkNotNullParameter(offset, "offset");
         setOffsetIsNegative(Boolean.valueOf(offset.getTotalSeconds() < 0));
         int abs = Math.abs(offset.getTotalSeconds());
-        setOffsetHours(Integer.valueOf(abs / DateCalculationsKt.SECONDS_PER_HOUR));
+        setOffsetHours(Integer.valueOf(abs / 3600));
         setOffsetMinutesOfHour(Integer.valueOf((abs / 60) % 60));
         setOffsetSecondsOfMinute(Integer.valueOf(abs % 60));
     }

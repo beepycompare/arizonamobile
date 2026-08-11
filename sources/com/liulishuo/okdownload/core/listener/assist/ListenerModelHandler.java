@@ -4,7 +4,7 @@ import android.util.SparseArray;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.listener.assist.ListenerModelHandler.ListenerModel;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ListenerModelHandler<T extends ListenerModel> implements ListenerAssist {
     private Boolean alwaysRecoverModel;
     private final ModelCreator<T> creator;
@@ -12,14 +12,14 @@ public class ListenerModelHandler<T extends ListenerModel> implements ListenerAs
     volatile T singleTaskModel;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ListenerModel {
         int getId();
 
         void onInfoValid(BreakpointInfo breakpointInfo);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ModelCreator<T extends ListenerModel> {
         T create(int i);
     }

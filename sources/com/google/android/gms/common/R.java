@@ -12,7 +12,7 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class string {
-        public static int common_google_play_services_unknown_issue = 0x7f120132;
+        public static int common_google_play_services_unknown_issue = 0x7f1201d2;
 
         private string() {
         }

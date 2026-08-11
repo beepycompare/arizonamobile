@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 class BaseCircleIndicator extends LinearLayout {
     private static final int DEFAULT_INDICATOR_WIDTH = 5;
     protected Animator mAnimatorIn;
@@ -31,7 +31,7 @@ class BaseCircleIndicator extends LinearLayout {
     protected int mIndicatorWidth;
     protected int mLastPosition;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public interface IndicatorCreatedListener {
         void onIndicatorCreated(View view, int i);
     }
@@ -267,7 +267,7 @@ class BaseCircleIndicator extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class ReverseInterpolator implements Interpolator {
         protected ReverseInterpolator() {
         }

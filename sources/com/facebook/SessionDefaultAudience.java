@@ -1,7 +1,7 @@
 package com.facebook;
 
 import com.facebook.internal.NativeProtocol;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum SessionDefaultAudience {
     NONE(null),
     ONLY_ME(NativeProtocol.AUDIENCE_ME),

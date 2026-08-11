@@ -1,5 +1,6 @@
 package ru.mrlargha.feature.workshop.presentation;
 
+import androidx.media3.container.MdtaMetadataEntry;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +21,7 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItemKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WorkshopScreen.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.workshop.presentation.WorkshopScreen$inventoryList$1", f = "WorkshopScreen.kt", i = {}, l = {69}, m = "invokeSuspend", n = {}, nl = {70}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.workshop.presentation.WorkshopScreen$inventoryList$1", f = "WorkshopScreen.kt", i = {}, l = {77}, m = "invokeSuspend", n = {}, nl = {MdtaMetadataEntry.TYPE_INDICATOR_UNSIGNED_INT64}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class WorkshopScreen$inventoryList$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<InventoryItem>>, Object> {
     int label;

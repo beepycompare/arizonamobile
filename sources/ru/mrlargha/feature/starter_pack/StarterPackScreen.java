@@ -14,7 +14,6 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
@@ -204,8 +203,8 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
 
     private final String formatDuration(int i) {
         int i2 = i / 86400;
-        int i3 = (i % 86400) / DateCalculationsKt.SECONDS_PER_HOUR;
-        int i4 = (i % DateCalculationsKt.SECONDS_PER_HOUR) / 60;
+        int i3 = (i % 86400) / 3600;
+        int i4 = (i % 3600) / 60;
         ArrayList arrayList = new ArrayList();
         if (i2 > 0) {
             String string = getTargetActivity().getString(ru.mrlargha.commonui.R.string.starter_pack_duration_day, new Object[]{Integer.valueOf(i2)});

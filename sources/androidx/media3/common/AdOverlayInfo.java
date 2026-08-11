@@ -6,7 +6,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AdOverlayInfo {
     public static final int PURPOSE_CLOSE_AD = 2;
     public static final int PURPOSE_CONTROLS = 1;
@@ -19,7 +19,7 @@ public final class AdOverlayInfo {
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public @interface Purpose {
     }
 

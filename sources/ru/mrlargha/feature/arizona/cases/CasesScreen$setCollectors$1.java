@@ -34,7 +34,7 @@ import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesPrizeModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.compositionLocalMapKey, ComposerKt.providerKey, 214}, m = "invokeSuspend", n = {}, nl = {ComposerKt.providerKey, ComposerKt.providerMapsKey, 260}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.compositionLocalMapKey, ComposerKt.providerKey, 214}, m = "invokeSuspend", n = {}, nl = {ComposerKt.providerKey, ComposerKt.providerMapsKey, 262}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesScreen$setCollectors$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -177,6 +177,7 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
         }
 
         public final Object emit(Pair<? extends List<CasesModel>, CasesInfoModel> pair, Continuation<? super Unit> continuation) {
+            T t;
             CasesSharedPreference casesSharedPreference;
             CasesSharedPreference casesSharedPreference2;
             List<CasesModel> component1 = pair.component1();
@@ -184,78 +185,84 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
             Log.d("Case", "setCollectors: ");
             if (component2 != null) {
                 List<CasesModel> list = component1;
-                if (!(list instanceof Collection) || !list.isEmpty()) {
-                    Iterator<T> it = list.iterator();
-                    while (true) {
-                        if (!it.hasNext()) {
-                            break;
-                        } else if (((CasesModel) it.next()).getId() == component2.getCaseId()) {
-                            if (component2.getLegendary() == 0) {
-                                casesSharedPreference2 = this.this$0.casesSharedPreference;
-                                casesSharedPreference2.setHaveSpecialCase(false);
-                            }
-                            CasesScreen casesScreen = this.this$0;
-                            List<CasesPrizeModel> prizes = component1.get(component2.getCaseId()).getPrizes();
-                            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(prizes, 10));
-                            for (CasesPrizeModel casesPrizeModel : prizes) {
-                                arrayList.add(casesPrizeModel.toModel());
-                            }
-                            casesScreen.prizesList = arrayList;
-                            this.this$0.setLoadingScreen(false);
-                            int unix = component1.get(component2.getCaseId()).getUnix();
-                            int price = component1.get(component2.getCaseId()).getPrice();
-                            CasesInfoModel copy$default = CasesInfoModel.copy$default(component2, 0, 0, 0, 0, 0, component1.get(component2.getCaseId()).getDiscount(), component1.get(component2.getCaseId()).getDiscountCount(), Boxing.boxInt(price), Boxing.boxInt(component1.get(component2.getCaseId()).getCurrency()), Boxing.boxInt(unix), 31, null);
-                            this.this$0.sendEventToPage(StringKt.toStringJson(copy$default), CasesId.MAIN_PAGE_INIT.getSubId(), CasesPages.MAIN);
-                            this.this$0.initInfo(copy$default);
-                            casesSharedPreference = this.this$0.casesSharedPreference;
-                            if (!casesSharedPreference.isHaveSpecialCase()) {
-                                CollectionsKt.drop(list, 1);
-                            }
-                            List mutableList = CollectionsKt.toMutableList((Collection) component1);
-                            CollectionsKt.removeAll(mutableList, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda0
-                                @Override // kotlin.jvm.functions.Function1
-                                public final Object invoke(Object obj) {
-                                    return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$2(CasesInfoModel.this, (CasesModel) obj));
-                                }
-                            });
-                            CasesScreen casesScreen2 = this.this$0;
-                            List<CasesModel> list2 = mutableList;
-                            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
-                            for (CasesModel casesModel : list2) {
-                                arrayList2.add(casesModel.toModel());
-                            }
-                            casesScreen2.sendEventToPage(StringKt.toStringJson(arrayList2), CasesId.SET_SAME_CASES.getSubId(), CasesPages.MAIN);
-                            List mutableList2 = CollectionsKt.toMutableList((Collection) component1.get(component2.getCaseId()).getPrizes());
-                            CollectionsKt.removeAll(mutableList2, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda1
-                                @Override // kotlin.jvm.functions.Function1
-                                public final Object invoke(Object obj) {
-                                    return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$4((CasesPrizeModel) obj));
-                                }
-                            });
-                            CasesScreen casesScreen3 = this.this$0;
-                            List<CasesPrizeModel> list3 = mutableList2;
-                            ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list3, 10));
-                            for (CasesPrizeModel casesPrizeModel2 : list3) {
-                                arrayList3.add(casesPrizeModel2.toModel());
-                            }
-                            CasesScreen.sendEventToPage$default(casesScreen3, StringKt.toStringJson(arrayList3), CasesId.SET_GUARANTEED_LIST.getSubId(), null, 4, null);
-                            List mutableList3 = CollectionsKt.toMutableList((Collection) component1.get(component2.getCaseId()).getPrizes());
-                            CollectionsKt.removeAll(mutableList3, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda2
-                                @Override // kotlin.jvm.functions.Function1
-                                public final Object invoke(Object obj) {
-                                    return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$6((CasesPrizeModel) obj));
-                                }
-                            });
-                            CasesScreen casesScreen4 = this.this$0;
-                            List<CasesPrizeModel> list4 = mutableList3;
-                            ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
-                            for (CasesPrizeModel casesPrizeModel3 : list4) {
-                                arrayList4.add(casesPrizeModel3.toModel());
-                            }
-                            CasesScreen.sendEventToPage$default(casesScreen4, StringKt.toStringJson(arrayList4), CasesId.SET_CAN_WIN_LIST.getSubId(), null, 4, null);
-                        }
+                Iterator<T> it = list.iterator();
+                while (true) {
+                    if (!it.hasNext()) {
+                        t = null;
+                        break;
+                    }
+                    t = it.next();
+                    if (((CasesModel) t).getId() == component2.getCaseId()) {
+                        break;
                     }
                 }
+                CasesModel casesModel = (CasesModel) t;
+                if (casesModel == null) {
+                    return Unit.INSTANCE;
+                }
+                if (component2.getLegendary() == 0) {
+                    casesSharedPreference2 = this.this$0.casesSharedPreference;
+                    casesSharedPreference2.setHaveSpecialCase(false);
+                }
+                CasesScreen casesScreen = this.this$0;
+                List<CasesPrizeModel> prizes = casesModel.getPrizes();
+                ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(prizes, 10));
+                for (CasesPrizeModel casesPrizeModel : prizes) {
+                    arrayList.add(casesPrizeModel.toModel());
+                }
+                casesScreen.prizesList = arrayList;
+                this.this$0.setLoadingScreen(false);
+                int unix = casesModel.getUnix();
+                int price = casesModel.getPrice();
+                CasesInfoModel copy$default = CasesInfoModel.copy$default(component2, 0, 0, 0, 0, 0, casesModel.getDiscount(), casesModel.getDiscountCount(), Boxing.boxInt(price), Boxing.boxInt(casesModel.getCurrency()), Boxing.boxInt(unix), 31, null);
+                this.this$0.sendEventToPage(StringKt.toStringJson(copy$default), CasesId.MAIN_PAGE_INIT.getSubId(), CasesPages.MAIN);
+                this.this$0.initInfo(copy$default);
+                casesSharedPreference = this.this$0.casesSharedPreference;
+                if (!casesSharedPreference.isHaveSpecialCase()) {
+                    CollectionsKt.drop(list, 1);
+                }
+                List mutableList = CollectionsKt.toMutableList((Collection) component1);
+                CollectionsKt.removeAll(mutableList, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$2(CasesInfoModel.this, (CasesModel) obj));
+                    }
+                });
+                CasesScreen casesScreen2 = this.this$0;
+                List<CasesModel> list2 = mutableList;
+                ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
+                for (CasesModel casesModel2 : list2) {
+                    arrayList2.add(casesModel2.toModel());
+                }
+                casesScreen2.sendEventToPage(StringKt.toStringJson(arrayList2), CasesId.SET_SAME_CASES.getSubId(), CasesPages.MAIN);
+                List mutableList2 = CollectionsKt.toMutableList((Collection) casesModel.getPrizes());
+                CollectionsKt.removeAll(mutableList2, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda1
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$4((CasesPrizeModel) obj));
+                    }
+                });
+                CasesScreen casesScreen3 = this.this$0;
+                List<CasesPrizeModel> list3 = mutableList2;
+                ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list3, 10));
+                for (CasesPrizeModel casesPrizeModel2 : list3) {
+                    arrayList3.add(casesPrizeModel2.toModel());
+                }
+                CasesScreen.sendEventToPage$default(casesScreen3, StringKt.toStringJson(arrayList3), CasesId.SET_GUARANTEED_LIST.getSubId(), null, 4, null);
+                List mutableList3 = CollectionsKt.toMutableList((Collection) casesModel.getPrizes());
+                CollectionsKt.removeAll(mutableList3, new Function1() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1$2$$ExternalSyntheticLambda2
+                    @Override // kotlin.jvm.functions.Function1
+                    public final Object invoke(Object obj) {
+                        return Boolean.valueOf(CasesScreen$setCollectors$1.AnonymousClass2.emit$lambda$6((CasesPrizeModel) obj));
+                    }
+                });
+                CasesScreen casesScreen4 = this.this$0;
+                List<CasesPrizeModel> list4 = mutableList3;
+                ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                for (CasesPrizeModel casesPrizeModel3 : list4) {
+                    arrayList4.add(casesPrizeModel3.toModel());
+                }
+                CasesScreen.sendEventToPage$default(casesScreen4, StringKt.toStringJson(arrayList4), CasesId.SET_CAN_WIN_LIST.getSubId(), null, 4, null);
             }
             return Unit.INSTANCE;
         }

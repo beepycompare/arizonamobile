@@ -22,7 +22,7 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DownloadDispatcher {
     private static final String TAG = "DownloadDispatcher";
     private volatile ExecutorService executorService;

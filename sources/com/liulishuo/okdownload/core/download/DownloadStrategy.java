@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DownloadStrategy {
     private static final long FOUR_CONNECTION_UPPER_LIMIT = 104857600;
     private static final long ONE_CONNECTION_UPPER_LIMIT = 1048576;
@@ -155,7 +155,7 @@ public class DownloadStrategy {
         DownloadTask.TaskHideWrapper.setBreakpointInfo(downloadTask, afterCompleted);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class FilenameHolder {
         private volatile String filename;
         private final boolean filenameProvidedByConstruct = false;
@@ -200,7 +200,7 @@ public class DownloadStrategy {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class ResumeAvailableResponseCheck {
         private int blockIndex;
         private DownloadConnection.Connected connected;

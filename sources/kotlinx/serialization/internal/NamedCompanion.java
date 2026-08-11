@@ -15,6 +15,6 @@ import kotlinx.serialization.InternalSerializationApi;
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.CLASS})
 @Retention(RetentionPolicy.RUNTIME)
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface NamedCompanion {
 }

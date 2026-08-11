@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.WeakHashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class RequestTracker {
     private static final String TAG = "RequestTracker";
     private boolean isPaused;

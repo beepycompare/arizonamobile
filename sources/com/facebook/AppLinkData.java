@@ -16,7 +16,7 @@ import com.facebook.internal.Validate;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppLinkData {
     private static final String APPLINK_BRIDGE_ARGS_KEY = "bridge_args";
     private static final String APPLINK_METHOD_ARGS_KEY = "method_args";
@@ -32,13 +32,13 @@ public class AppLinkData {
     private Uri targetUri;
     private String version;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface CompletionHandler {
         void onDeferredAppLinkDataFetched(AppLinkData appLinkData);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DeferredAppLinkDataClient extends PlatformServiceClient {
         DeferredAppLinkDataClient(Context context, String str) {
             super(context, 65540, NativeProtocol.MESSAGE_GET_INSTALL_DATA_REPLY, NativeProtocol.PROTOCOL_VERSION_20130618, str);

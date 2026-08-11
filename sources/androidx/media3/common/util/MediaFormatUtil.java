@@ -11,7 +11,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MediaFormatUtil {
     public static final String KEY_MAX_BIT_RATE = "max-bitrate";
     public static final String KEY_PCM_ENCODING_EXTENDED = "exo-pcm-encoding-int";

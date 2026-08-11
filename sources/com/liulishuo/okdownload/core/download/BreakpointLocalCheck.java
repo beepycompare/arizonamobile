@@ -7,7 +7,7 @@ import com.liulishuo.okdownload.core.Util;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreakpointLocalCheck {
     private boolean dirty;
     boolean fileExist;

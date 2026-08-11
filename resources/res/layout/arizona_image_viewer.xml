@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:clipChildren="false" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:layout_width="@dimen/_470sdp" android:layout_height="match_parent" android:layout_marginTop="@dimen/_3sdp" android:layout_marginBottom="@dimen/_3sdp" android:layout_marginVertical="@dimen/_3sdp" app:backgroundMainColor="@color/image_viewer_panel_start" app:backgroundSecondColor="@color/image_viewer_panel_end" app:corners="@dimen/_4sdp" app:gradientAngle="138">
+        <LinearLayout android:orientation="vertical" android:padding="@dimen/_3sdp" android:layout_width="match_parent" android:layout_height="match_parent">
+            <FrameLayout android:background="@color/image_viewer_content_background" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <androidx.viewpager2.widget.ViewPager2 android:orientation="horizontal" android:id="@+id/content_pager" android:background="@color/image_viewer_content_background" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="@string/image_viewer_content"/>
+                <ProgressBar android:layout_gravity="center" android:id="@+id/content_loader" android:layout_width="@dimen/_32sdp" android:layout_height="@dimen/_32sdp" android:importantForAccessibility="no" android:indeterminateTint="@color/image_viewer_indicator_active"/>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|top" android:id="@+id/close_button" android:layout_width="@dimen/_24sdp" android:layout_height="@dimen/_24sdp" android:layout_margin="@dimen/_8sdp" android:contentDescription="@string/image_viewer_close" app:backgroundMainColor="@color/image_viewer_close_background" app:corners="@dimen/_8sdp">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/_9sdp" android:layout_height="@dimen/_9sdp" android:src="@drawable/donate_dialog_close_ic" android:importantForAccessibility="no"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </FrameLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_23sdp" android:layout_marginTop="@dimen/_3sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/previous_button" android:layout_width="@dimen/_23sdp" android:layout_height="@dimen/_23sdp" android:contentDescription="@string/image_viewer_previous" app:backgroundMainColor="@color/image_viewer_navigation_background" app:cornerBottomLeft="@dimen/_4sdp" app:cornerTopLeft="@dimen/_4sdp">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:src="@drawable/image_viewer_previous" android:scaleType="fitXY" android:importantForAccessibility="no"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <com.arizonagames.feature.arizona.imageviewer.ImageViewerPageIndicator android:id="@+id/page_indicator" android:layout_width="0dp" android:layout_height="@dimen/_3sdp" android:layout_marginLeft="@dimen/_3sdp" android:layout_marginRight="@dimen/_3sdp" android:layout_weight="1" android:importantForAccessibility="no" android:layout_marginHorizontal="@dimen/_3sdp"/>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/next_button" android:layout_width="@dimen/_23sdp" android:layout_height="@dimen/_23sdp" android:contentDescription="@string/image_viewer_next" app:backgroundMainColor="@color/image_viewer_navigation_background" app:cornerBottomRight="@dimen/_4sdp" app:cornerTopRight="@dimen/_4sdp">
+                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:src="@drawable/image_viewer_previous" android:scaleType="fitXY" android:rotationY="180" android:importantForAccessibility="no"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

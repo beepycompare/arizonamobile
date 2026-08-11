@@ -1,6 +1,6 @@
 package com.google.common.net;
 @ElementTypesAreNonnullByDefault
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final class HttpHeaders {
     public static final String ACCEPT = "Accept";
     public static final String ACCEPT_CH = "Accept-CH";
@@ -174,7 +174,7 @@ public final class HttpHeaders {
     private HttpHeaders() {
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class ReferrerPolicyValues {
         public static final String NO_REFERRER = "no-referrer";
         public static final String NO_REFFERER_WHEN_DOWNGRADE = "no-referrer-when-downgrade";

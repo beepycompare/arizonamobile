@@ -62,7 +62,7 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
 
     private final <T> T toULongs(Function2<? super ULong, ? super ULong, ? extends T> action) {
         Intrinsics.checkNotNullParameter(action, "action");
-        return action.invoke(ULong.m10072boximpl(ULong.m10078constructorimpl(getMostSignificantBits())), ULong.m10072boximpl(ULong.m10078constructorimpl(getLeastSignificantBits())));
+        return action.invoke(ULong.m10089boximpl(ULong.m10095constructorimpl(getMostSignificantBits())), ULong.m10089boximpl(ULong.m10095constructorimpl(getLeastSignificantBits())));
     }
 
     public String toString() {
@@ -98,8 +98,8 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
     }
 
     /* renamed from: toUByteArray-TcUX1vc  reason: not valid java name */
-    public final byte[] m11416toUByteArrayTcUX1vc() {
-        return UByteArray.m9975constructorimpl(toByteArray());
+    public final byte[] m11433toUByteArrayTcUX1vc() {
+        return UByteArray.m9992constructorimpl(toByteArray());
     }
 
     public boolean equals(Object obj) {
@@ -120,10 +120,10 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
         Intrinsics.checkNotNullParameter(other, "other");
         long j = this.mostSignificantBits;
         if (j != other.mostSignificantBits) {
-            compare2 = Long.compare(ULong.m10078constructorimpl(j) ^ Long.MIN_VALUE, ULong.m10078constructorimpl(other.mostSignificantBits) ^ Long.MIN_VALUE);
+            compare2 = Long.compare(ULong.m10095constructorimpl(j) ^ Long.MIN_VALUE, ULong.m10095constructorimpl(other.mostSignificantBits) ^ Long.MIN_VALUE);
             return compare2;
         }
-        compare = Long.compare(ULong.m10078constructorimpl(this.leastSignificantBits) ^ Long.MIN_VALUE, ULong.m10078constructorimpl(other.leastSignificantBits) ^ Long.MIN_VALUE);
+        compare = Long.compare(ULong.m10095constructorimpl(this.leastSignificantBits) ^ Long.MIN_VALUE, ULong.m10095constructorimpl(other.leastSignificantBits) ^ Long.MIN_VALUE);
         return compare;
     }
 
@@ -167,7 +167,7 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
         }
 
         /* renamed from: fromULongs-eb3DHEI  reason: not valid java name */
-        public final Uuid m11418fromULongseb3DHEI(long j, long j2) {
+        public final Uuid m11435fromULongseb3DHEI(long j, long j2) {
             return fromLongs(j, j2);
         }
 
@@ -183,7 +183,7 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
         }
 
         /* renamed from: fromUByteArray-GBYM_sE  reason: not valid java name */
-        public final Uuid m11417fromUByteArrayGBYM_sE(byte[] ubyteArray) {
+        public final Uuid m11434fromUByteArrayGBYM_sE(byte[] ubyteArray) {
             Intrinsics.checkNotNullParameter(ubyteArray, "ubyteArray");
             return fromByteArray(ubyteArray);
         }

@@ -39,7 +39,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Utility {
     private static final String APPLICATION_FIELDS = "fields";
     public static final int DEFAULT_STREAM_BUFFER_SIZE = 8192;
@@ -51,7 +51,7 @@ public final class Utility {
     private static final String[] APP_SETTING_FIELDS = {SUPPORTS_ATTRIBUTION, SUPPORTS_IMPLICIT_SDK_LOGGING};
     private static Map<String, FetchedAppSettings> fetchedAppSettings = new ConcurrentHashMap();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class FetchedAppSettings {
         private boolean supportsAttribution;
         private boolean supportsImplicitLogging;

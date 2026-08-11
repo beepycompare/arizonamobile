@@ -7,13 +7,13 @@ import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.cause.EndCause;
 import com.liulishuo.okdownload.core.listener.assist.Listener4Assist.Listener4Model;
 import com.liulishuo.okdownload.core.listener.assist.ListenerModelHandler;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class Listener4Assist<T extends Listener4Model> implements ListenerAssist {
     private AssistExtend assistExtend;
     Listener4Callback callback;
     private final ListenerModelHandler<T> modelHandler;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface AssistExtend {
         boolean dispatchBlockEnd(DownloadTask downloadTask, int i, Listener4Model listener4Model);
 
@@ -24,7 +24,7 @@ public class Listener4Assist<T extends Listener4Model> implements ListenerAssist
         boolean dispatchTaskEnd(DownloadTask downloadTask, EndCause endCause, Exception exc, Listener4Model listener4Model);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Listener4Callback {
         void blockEnd(DownloadTask downloadTask, int i, BlockInfo blockInfo);
 
@@ -120,7 +120,7 @@ public class Listener4Assist<T extends Listener4Model> implements ListenerAssist
         this.modelHandler.setAlwaysRecoverAssistModelIfNotSet(z);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Listener4Model implements ListenerModelHandler.ListenerModel {
         SparseArray<Long> blockCurrentOffsetMap;
         long currentOffset;

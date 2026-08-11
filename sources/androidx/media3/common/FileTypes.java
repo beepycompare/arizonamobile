@@ -78,7 +78,7 @@ public final class FileTypes {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public @interface Type {
     }
 

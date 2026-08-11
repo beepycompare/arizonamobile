@@ -4,7 +4,7 @@ import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.core.Util;
 import com.liulishuo.okdownload.core.cause.EndCause;
 import com.liulishuo.okdownload.core.listener.assist.Listener1Assist;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class DownloadListener3 extends DownloadListener1 {
     protected abstract void canceled(DownloadTask downloadTask);
 
@@ -22,7 +22,7 @@ public abstract class DownloadListener3 extends DownloadListener1 {
     }
 
     /* renamed from: com.liulishuo.okdownload.core.listener.DownloadListener3$1  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$liulishuo$okdownload$core$cause$EndCause;
 

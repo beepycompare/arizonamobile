@@ -1,5 +1,5 @@
 package com.facebook.android;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FacebookError extends RuntimeException {
     private static final long serialVersionUID = 1;
     private int mErrorCode;

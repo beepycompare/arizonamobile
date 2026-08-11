@@ -3,7 +3,7 @@ package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
-import androidx.compose.ui.spatial.RectListKt;
+import androidx.media3.container.MdtaMetadataEntry;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -17,31 +17,33 @@ import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.databinding.ItemSubInventoryBinding;
-import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
+import ru.mrlargha.commonui.utils.InventoryIconRequest;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SubInventoryViewHolder.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1", f = "SubInventoryViewHolder.kt", i = {}, l = {59}, m = "invokeSuspend", n = {}, nl = {RectListKt.BitOffsetForGesturable}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1", f = "SubInventoryViewHolder.kt", i = {}, l = {72}, m = "invokeSuspend", n = {}, nl = {MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class SubInventoryViewHolder$bind$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-    final /* synthetic */ InventoryItem $itemVal;
+    final /* synthetic */ InventoryIconRequest $iconRequest;
+    final /* synthetic */ long $requestGeneration;
     final /* synthetic */ ItemSubInventoryBinding $this_with;
     int label;
     final /* synthetic */ SubInventoryViewHolder this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public SubInventoryViewHolder$bind$1$1(ItemSubInventoryBinding itemSubInventoryBinding, SubInventoryViewHolder subInventoryViewHolder, InventoryItem inventoryItem, Continuation<? super SubInventoryViewHolder$bind$1$1> continuation) {
+    public SubInventoryViewHolder$bind$1$1(long j, SubInventoryViewHolder subInventoryViewHolder, ItemSubInventoryBinding itemSubInventoryBinding, InventoryIconRequest inventoryIconRequest, Continuation<? super SubInventoryViewHolder$bind$1$1> continuation) {
         super(2, continuation);
-        this.$this_with = itemSubInventoryBinding;
+        this.$requestGeneration = j;
         this.this$0 = subInventoryViewHolder;
-        this.$itemVal = inventoryItem;
+        this.$this_with = itemSubInventoryBinding;
+        this.$iconRequest = inventoryIconRequest;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new SubInventoryViewHolder$bind$1$1(this.$this_with, this.this$0, this.$itemVal, continuation);
+        return new SubInventoryViewHolder$bind$1$1(this.$requestGeneration, this.this$0, this.$this_with, this.$iconRequest, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -51,13 +53,14 @@ public final class SubInventoryViewHolder$bind$1$1 extends SuspendLambda impleme
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        long j;
         ItemSubInventoryBinding itemSubInventoryBinding;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            obj = BuildersKt.withContext(Dispatchers.getIO(), new SubInventoryViewHolder$bind$1$1$bitmap$1(this.$itemVal, null), this);
+            obj = BuildersKt.withContext(Dispatchers.getIO(), new SubInventoryViewHolder$bind$1$1$bitmap$1(this.$iconRequest, null), this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
@@ -67,6 +70,11 @@ public final class SubInventoryViewHolder$bind$1$1 extends SuspendLambda impleme
             ResultKt.throwOnFailure(obj);
         }
         Bitmap bitmap = (Bitmap) obj;
+        long j2 = this.$requestGeneration;
+        j = this.this$0.imageRequestGeneration;
+        if (j2 != j) {
+            return Unit.INSTANCE;
+        }
         ItemSubInventoryBinding itemSubInventoryBinding2 = this.$this_with;
         if (bitmap != null) {
             ImageView ivItemImage = itemSubInventoryBinding2.ivItemImage;

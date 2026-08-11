@@ -4,11 +4,11 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class drawable {
-        public static int accept_button_active = 0x7f080328;
-        public static int accept_button_not_active = 0x7f080329;
-        public static int input = 0x7f080bcf;
-        public static int input_password = 0x7f080bd0;
-        public static int input_port = 0x7f080bd1;
+        public static int accept_button_active = 0x7f08032f;
+        public static int accept_button_not_active = 0x7f080330;
+        public static int input = 0x7f080c29;
+        public static int input_password = 0x7f080c2a;
+        public static int input_port = 0x7f080c2b;
 
         private drawable() {
         }

@@ -9,7 +9,7 @@ import java.net.HttpURLConnection;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RequestAsyncTask extends AsyncTask<Void, Void, List<Response>> {
     private static final String TAG = "com.facebook.RequestAsyncTask";
     private static Method executeOnExecutorMethod;

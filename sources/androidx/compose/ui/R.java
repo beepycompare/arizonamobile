@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class color {
-        public static int vector_tint_color = 0x7f060451;
-        public static int vector_tint_theme_color = 0x7f060452;
+        public static int vector_tint_color = 0x7f06045e;
+        public static int vector_tint_theme_color = 0x7f06045f;
 
         private color() {
         }
@@ -45,14 +45,14 @@ public final class R {
         public static int accessibility_custom_action_7 = 0x7f0a003d;
         public static int accessibility_custom_action_8 = 0x7f0a003e;
         public static int accessibility_custom_action_9 = 0x7f0a003f;
-        public static int androidx_compose_ui_view_compose_view_context = 0x7f0a00de;
-        public static int androidx_compose_ui_view_composition_context = 0x7f0a00df;
-        public static int auto_clear_focus_behavior_tag = 0x7f0a0141;
-        public static int compose_view_saveable_id_tag = 0x7f0a03ec;
-        public static int consume_window_insets_tag = 0x7f0a03f3;
-        public static int hide_in_inspector_tag = 0x7f0a06e9;
-        public static int inspection_slot_table_set = 0x7f0a07a6;
-        public static int wrapped_composition_tag = 0x7f0a1149;
+        public static int androidx_compose_ui_view_compose_view_context = 0x7f0a00e2;
+        public static int androidx_compose_ui_view_composition_context = 0x7f0a00e3;
+        public static int auto_clear_focus_behavior_tag = 0x7f0a0148;
+        public static int compose_view_saveable_id_tag = 0x7f0a0533;
+        public static int consume_window_insets_tag = 0x7f0a053a;
+        public static int hide_in_inspector_tag = 0x7f0a0842;
+        public static int inspection_slot_table_set = 0x7f0a0907;
+        public static int wrapped_composition_tag = 0x7f0a12c7;
 
         private id() {
         }
@@ -61,25 +61,25 @@ public final class R {
     /* loaded from: classes2.dex */
     public static final class string {
         public static int androidx_compose_ui_autofill = 0x7f12002b;
-        public static int close_drawer = 0x7f12011e;
-        public static int close_sheet = 0x7f120121;
-        public static int default_error_message = 0x7f12015a;
-        public static int default_popup_window_title = 0x7f12015f;
-        public static int dropdown_menu = 0x7f1201a7;
-        public static int in_progress = 0x7f120351;
-        public static int indeterminate = 0x7f120352;
-        public static int navigation_menu = 0x7f1204b3;
-        public static int not_selected = 0x7f1204c9;
-        public static int range_end = 0x7f12054e;
-        public static int range_start = 0x7f12054f;
-        public static int selected = 0x7f120596;
-        public static int snackbar_pane_title = 0x7f1205c1;
-        public static int state_empty = 0x7f1205ce;
-        public static int state_off = 0x7f1205cf;
-        public static int state_on = 0x7f1205d0;
-        public static int switch_role = 0x7f1205d8;
-        public static int tab = 0x7f1205d9;
-        public static int template_percent = 0x7f1205e2;
+        public static int close_drawer = 0x7f1201be;
+        public static int close_sheet = 0x7f1201c1;
+        public static int default_error_message = 0x7f1201fa;
+        public static int default_popup_window_title = 0x7f1201ff;
+        public static int dropdown_menu = 0x7f120247;
+        public static int in_progress = 0x7f1203f9;
+        public static int indeterminate = 0x7f1203fa;
+        public static int navigation_menu = 0x7f120566;
+        public static int not_selected = 0x7f12057c;
+        public static int range_end = 0x7f120608;
+        public static int range_start = 0x7f120609;
+        public static int selected = 0x7f120650;
+        public static int snackbar_pane_title = 0x7f12067b;
+        public static int state_empty = 0x7f120689;
+        public static int state_off = 0x7f12068a;
+        public static int state_on = 0x7f12068b;
+        public static int switch_role = 0x7f120693;
+        public static int tab = 0x7f120694;
+        public static int template_percent = 0x7f12069d;
 
         private string() {
         }
@@ -87,8 +87,8 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class style {
-        public static int DialogWindowTheme = 0x7f130146;
-        public static int FloatingDialogWindowTheme = 0x7f130169;
+        public static int DialogWindowTheme = 0x7f130157;
+        public static int FloatingDialogWindowTheme = 0x7f13017a;
 
         private style() {
         }

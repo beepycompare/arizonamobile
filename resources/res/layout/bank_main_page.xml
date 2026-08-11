@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:paddingTop="@dimen/_20sdp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView android:id="@+id/bank_main_page_account_content" android:paddingBottom="@dimen/_16sdp" android:visibility="visible" android:scrollbars="none" android:fadingEdgeLength="@dimen/_20sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginBottom="@dimen/_50sdp" android:fillViewport="true" android:requiresFadingEdge="vertical">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="@dimen/_420sdp" android:layout_height="wrap_content">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_accounts_card" android:paddingTop="@dimen/_12sdp" android:paddingBottom="@dimen/_12sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/_14sdp" android:paddingEnd="@dimen/_14sdp" app:backgroundMainColor="#26ffffff" app:corners="@dimen/_18sdp">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="@dimen/_26sdp" app:backgroundMainColor="#4dffffff" app:corners="@dimen/_5sdp">
+                        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center_vertical" android:id="@+id/bank_main_accounts_tab_indicator" android:visibility="invisible" android:layout_width="@dimen/_1sdp" android:layout_height="@dimen/_18sdp" app:backgroundMainColor="#ffffff" app:corners="@dimen/_4sdp"/>
+                            <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center" android:orientation="horizontal" android:id="@+id/bank_main_accounts_tabs_container" android:paddingLeft="@dimen/_20sdp" android:paddingRight="@dimen/_20sdp" android:scrollbars="none" android:fadingEdgeLength="@dimen/_12sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_5sdp" android:layout_marginRight="@dimen/_5sdp" android:requiresFadingEdge="horizontal" android:layout_marginHorizontal="@dimen/_5sdp" android:paddingHorizontal="@dimen/_20sdp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                            <ImageView android:layout_gravity="start|center_vertical" android:id="@+id/bank_main_accounts_scroll_left" android:visibility="gone" android:layout_width="@dimen/_20sdp" android:layout_height="match_parent" android:src="@drawable/arrow_right_ic" android:scaleType="center" android:rotation="180" android:importantForAccessibility="no"/>
+                            <ImageView android:layout_gravity="end|center_vertical" android:id="@+id/bank_main_accounts_scroll_right" android:visibility="gone" android:layout_width="@dimen/_20sdp" android:layout_height="match_parent" android:src="@drawable/arrow_right_ic" android:scaleType="center" android:importantForAccessibility="no"/>
+                        </FrameLayout>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    <TextView android:textSize="@dimen/_18sdp" android:id="@+id/bank_main_accounts_balance_billions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp" android:text="M 228" style="@style/BankAmountGoldStyle"/>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_12sdp">
+                        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_main_accounts_withdraw_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#ffe600" app:corners="@dimen/_8sdp">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_take_off" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#171717" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="СНЯТЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                            <TextView android:layout_gravity="end|top" android:id="@+id/bank_main_accounts_withdraw_commission" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2%" style="@style/BankWarningBadgeStyle"/>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_6sdp">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_main_accounts_top_up_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#33ffffff" app:corners="@dimen/_8sdp">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_replenish" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#f5f7ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ПОПОЛНИТЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_6sdp">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_main_accounts_transfer_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#33ffffff" app:corners="@dimen/_8sdp">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_translate" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#f5f7ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ПЕРЕВЕСТИ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                            <TextView android:layout_gravity="end|top" android:id="@+id/bank_main_accounts_transfer_commission" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5%" style="@style/BankWarningBadgeStyle"/>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_6sdp">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_main_accounts_history_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#33ffffff" app:corners="@dimen/_8sdp">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_history" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#f5f7ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ИСТОРИЯ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_organization_card" android:paddingTop="@dimen/_12sdp" android:paddingBottom="@dimen/_12sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:paddingStart="@dimen/_14sdp" android:paddingEnd="@dimen/_14sdp" app:backgroundMainColor="#26ffffff" app:corners="@dimen/_18sdp">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/_8sdp" android:textColor="#e8e0ff" android:id="@+id/bank_main_organization_title" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Счет моей организации" android:layout_weight="1" style="@style/BankCaptionStyle"/>
+                        <ImageView android:id="@+id/bank_main_organization_logo" android:layout_width="wrap_content" android:layout_height="@dimen/_18sdp" android:scaleType="fitCenter" android:adjustViewBounds="true" android:contentDescription="@null"/>
+                        <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffffff" android:id="@+id/bank_main_organization_name" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                    </LinearLayout>
+                    <TextView android:textSize="@dimen/_18sdp" android:id="@+id/tv_cost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:text="M 228" style="@style/BankAmountGoldStyle"/>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_12sdp">
+                        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_main_organization_withdraw_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#ffe600" app:corners="@dimen/_8sdp">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_take_off" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#171717" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="СНЯТЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                            <TextView android:layout_gravity="end|top" android:id="@+id/bank_main_organization_withdraw_commission" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2%" style="@style/BankWarningBadgeStyle"/>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_6sdp">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_main_organization_top_up_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#33ffffff" app:corners="@dimen/_8sdp">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_replenish" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#f5f7ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ПОПОЛНИТЬ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        </FrameLayout>
+                        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_6sdp">
+                            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/bank_main_organization_history_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#33ffffff" app:corners="@dimen/_8sdp">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_history" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#f5f7ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ИСТОРИЯ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                                </LinearLayout>
+                            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_pension_card" android:paddingTop="@dimen/_12sdp" android:paddingBottom="@dimen/_14sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp" android:paddingStart="@dimen/_14sdp" android:paddingEnd="@dimen/_14sdp" app:backgroundMainColor="#26ffffff" app:backgroundTransparency="18" app:corners="@dimen/_18sdp">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/_14sdp" android:textColor="#ffffff" android:id="@+id/bank_main_pension_title" android:layout_width="0dp" android:layout_height="wrap_content" android:text="ПЕНСИОННЫЙ СЧЕТ" android:includeFontPadding="false" android:layout_weight="1" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:id="@+id/bank_main_pension_info_button" android:layout_width="@dimen/_14sdp" android:layout_height="@dimen/_14sdp" android:text="i" style="@style/BankInfoChipStyle"/>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@+id/bank_main_pension_locked_state" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp">
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_pension_buy_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" app:backgroundMainColor="#ffe600" app:corners="@dimen/_8sdp">
+                            <TextView android:textSize="@dimen/_8sdp" android:textColor="#171717" android:gravity="center" android:id="@+id/bank_main_pension_buy_button_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="ОТКРЫТЬ ЗА :kk: 2" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@+id/bank_main_pension_open_state" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_10sdp">
+                        <TextView android:id="@+id/bank_main_pension_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=":k: 133.25" style="@style/BankAmountBaseStyle"/>
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_pension_withdraw_button" android:layout_width="match_parent" android:layout_height="@dimen/_28sdp" android:layout_marginTop="@dimen/_10sdp" app:backgroundMainColor="#33ffffff" app:corners="@dimen/_8sdp">
+                            <TextView android:textSize="@dimen/_8sdp" android:textColor="#f5f7ff" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="СНЯТЬ 5%" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_horizontal" android:id="@+id/bank_main_page_taxes_content" android:visibility="gone" android:fadingEdgeLength="@dimen/_20sdp" android:layout_width="@dimen/_420sdp" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_50sdp" android:layout_weight="1" android:requiresFadingEdge="vertical" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" app:spanCount="2"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom|center_horizontal" android:id="@+id/bank_main_page_switcher" android:padding="@dimen/_2sdp" android:layout_width="@dimen/_330sdp" android:layout_height="@dimen/_32sdp" android:layout_marginBottom="@dimen/_20sdp" app:backgroundMainColor="#4fffffff" app:backgroundTransparency="15" app:corners="@dimen/_8sdp">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_page_section_indicator" android:visibility="invisible" android:layout_width="@dimen/_1sdp" android:layout_height="match_parent" app:backgroundMainColor="#ffffff" app:corners="@dimen/_8sdp"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_page_account_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_margin="@dimen/_2sdp" android:layout_weight="1" app:backgroundMainColor="#00000000" app:corners="@dimen/_8sdp">
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#1f2024" android:id="@+id/bank_main_page_account_tab_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="ОСНОВНОЕ" style="@style/BankTabTextStyle"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_main_page_taxes_tab" android:layout_width="0dp" android:layout_height="match_parent" android:layout_margin="@dimen/_2sdp" android:layout_weight="1" app:backgroundMainColor="#00000000" app:corners="@dimen/_10sdp">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <TextView android:textSize="@dimen/_8sdp" android:id="@+id/bank_main_page_taxes_tab_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="ОПЛАТА НАЛОГОВ" style="@style/BankTabTextStyle"/>
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/bank_main_page_taxes_tab_warning" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:layout_marginEnd="@dimen/_8sdp" app:backgroundMainColor="#ff3300" app:corners="@dimen/_10sdp">
+                            <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_exclamation_mark"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </FrameLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+        </FrameLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

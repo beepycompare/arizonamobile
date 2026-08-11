@@ -27,6 +27,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
+import kotlin.text.StringsKt;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.ghetto.data.MapData;
 import ru.mrlargha.arizonaui.ghetto.data.TerritoryOrderKt;
@@ -341,7 +342,7 @@ public final class GridOverlayView extends View {
         if (list != null) {
             this._mapData = list;
         }
-        if (this._mapData.isEmpty() || this._uniqueData.isEmpty()) {
+        if (this._mapData.isEmpty()) {
             return;
         }
         calculateCells();
@@ -351,16 +352,18 @@ public final class GridOverlayView extends View {
     /* JADX WARN: Type inference failed for: r9v1 */
     /* JADX WARN: Type inference failed for: r9v5, types: [java.lang.Object] */
     private final void calculateCells() {
-        Object obj;
         T t;
+        Object obj;
+        T t2;
+        MapData copy;
         ArrayList arrayList = new ArrayList();
-        new ArrayList();
         List<Number> mutableList = CollectionsKt.toMutableList((Collection) TerritoryOrderKt.getTerritoryOrder());
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(mutableList, 10));
         for (Number number : mutableList) {
             int intValue = number.intValue();
             Iterator<T> it = this._uniqueData.iterator();
             while (true) {
+                t = 0;
                 if (!it.hasNext()) {
                     obj = null;
                     break;
@@ -375,18 +378,22 @@ public final class GridOverlayView extends View {
             Iterator<T> it2 = this._mapData.iterator();
             while (true) {
                 if (!it2.hasNext()) {
-                    t = 0;
+                    t2 = 0;
                     break;
                 }
-                t = it2.next();
-                if (((MapData) t).getId() == intValue) {
+                t2 = it2.next();
+                if (((MapData) t2).getId() == intValue) {
                     break;
                 }
             }
-            objectRef.element = t;
+            objectRef.element = t2;
             if (uniqData != null) {
                 MapData mapData = (MapData) objectRef.element;
-                objectRef.element = mapData != null ? MapData.copy$default(mapData, 0, 0, 0L, 0, true, Long.valueOf(uniqData.getBalance()), Integer.valueOf(uniqData.getUkrop()), null, null, 399, null) : 0;
+                if (mapData != null) {
+                    copy = mapData.copy((r29 & 1) != 0 ? mapData.id : 0, (r29 & 2) != 0 ? mapData.fraction_id : 0, (r29 & 4) != 0 ? mapData.money : 0L, (r29 & 8) != 0 ? mapData.respects : 0, (r29 & 16) != 0 ? mapData.isUniq : true, (r29 & 32) != 0 ? mapData.balance : Long.valueOf(uniqData.getBalance()), (r29 & 64) != 0 ? mapData.drugs : Integer.valueOf(uniqData.getUkrop()), (r29 & 128) != 0 ? mapData.respawn_fraction_id : null, (r29 & 256) != 0 ? mapData.drugden : null, (r29 & 512) != 0 ? mapData.businessName : null, (r29 & 1024) != 0 ? mapData.businessColor : null, (r29 & 2048) != 0 ? mapData.paydayMoney : null, (r29 & 4096) != 0 ? mapData.businessType : null);
+                    t = copy;
+                }
+                objectRef.element = t;
             }
             arrayList2.add((MapData) objectRef.element);
         }
@@ -406,49 +413,74 @@ public final class GridOverlayView extends View {
     private final Bitmap getBitmap(int i) {
         Bitmap drawableToBitmap;
         if (this.bitmapCache.get(Integer.valueOf(i)) == null) {
-            if (i == -2) {
-                Context context = getContext();
-                Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
-                drawableToBitmap = drawableToBitmap(context, R.drawable.ghetto_guns);
-            } else if (i == -1) {
-                Context context2 = getContext();
-                Intrinsics.checkNotNullExpressionValue(context2, "getContext(...)");
-                drawableToBitmap = drawableToBitmap(context2, R.drawable.ghetto_plant);
-            } else if (i != 25) {
+            if (i != 25) {
                 switch (i) {
-                    case 11:
+                    case -6:
+                        Context context = getContext();
+                        Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
+                        drawableToBitmap = drawableToBitmap(context, R.drawable.ghetto_business_ic_armor);
+                        break;
+                    case -5:
+                        Context context2 = getContext();
+                        Intrinsics.checkNotNullExpressionValue(context2, "getContext(...)");
+                        drawableToBitmap = drawableToBitmap(context2, R.drawable.ghetto_business_ic_hospital);
+                        break;
+                    case -4:
                         Context context3 = getContext();
                         Intrinsics.checkNotNullExpressionValue(context3, "getContext(...)");
-                        drawableToBitmap = drawableToBitmap(context3, R.drawable.ghetto_resp_ic_1);
+                        drawableToBitmap = drawableToBitmap(context3, R.drawable.ghetto_business_ic_event);
                         break;
-                    case 12:
+                    case -3:
                         Context context4 = getContext();
                         Intrinsics.checkNotNullExpressionValue(context4, "getContext(...)");
-                        drawableToBitmap = drawableToBitmap(context4, R.drawable.ghetto_resp_ic_5);
+                        drawableToBitmap = drawableToBitmap(context4, R.drawable.ghetto_business_ic_first_aid);
                         break;
-                    case 13:
+                    case -2:
                         Context context5 = getContext();
                         Intrinsics.checkNotNullExpressionValue(context5, "getContext(...)");
-                        drawableToBitmap = drawableToBitmap(context5, R.drawable.ghetto_resp_ic_4);
+                        drawableToBitmap = drawableToBitmap(context5, R.drawable.ghetto_guns);
                         break;
-                    case 14:
+                    case -1:
                         Context context6 = getContext();
                         Intrinsics.checkNotNullExpressionValue(context6, "getContext(...)");
-                        drawableToBitmap = drawableToBitmap(context6, R.drawable.ghetto_resp_ic_2);
-                        break;
-                    case 15:
-                        Context context7 = getContext();
-                        Intrinsics.checkNotNullExpressionValue(context7, "getContext(...)");
-                        drawableToBitmap = drawableToBitmap(context7, R.drawable.ghetto_resp_ic_3);
+                        drawableToBitmap = drawableToBitmap(context6, R.drawable.ghetto_plant);
                         break;
                     default:
-                        drawableToBitmap = null;
-                        break;
+                        switch (i) {
+                            case 11:
+                                Context context7 = getContext();
+                                Intrinsics.checkNotNullExpressionValue(context7, "getContext(...)");
+                                drawableToBitmap = drawableToBitmap(context7, R.drawable.ghetto_resp_ic_1);
+                                break;
+                            case 12:
+                                Context context8 = getContext();
+                                Intrinsics.checkNotNullExpressionValue(context8, "getContext(...)");
+                                drawableToBitmap = drawableToBitmap(context8, R.drawable.ghetto_resp_ic_5);
+                                break;
+                            case 13:
+                                Context context9 = getContext();
+                                Intrinsics.checkNotNullExpressionValue(context9, "getContext(...)");
+                                drawableToBitmap = drawableToBitmap(context9, R.drawable.ghetto_resp_ic_4);
+                                break;
+                            case 14:
+                                Context context10 = getContext();
+                                Intrinsics.checkNotNullExpressionValue(context10, "getContext(...)");
+                                drawableToBitmap = drawableToBitmap(context10, R.drawable.ghetto_resp_ic_2);
+                                break;
+                            case 15:
+                                Context context11 = getContext();
+                                Intrinsics.checkNotNullExpressionValue(context11, "getContext(...)");
+                                drawableToBitmap = drawableToBitmap(context11, R.drawable.ghetto_resp_ic_3);
+                                break;
+                            default:
+                                drawableToBitmap = null;
+                                break;
+                        }
                 }
             } else {
-                Context context8 = getContext();
-                Intrinsics.checkNotNullExpressionValue(context8, "getContext(...)");
-                drawableToBitmap = drawableToBitmap(context8, R.drawable.ghetto_resp_ic_6);
+                Context context12 = getContext();
+                Intrinsics.checkNotNullExpressionValue(context12, "getContext(...)");
+                drawableToBitmap = drawableToBitmap(context12, R.drawable.ghetto_resp_ic_6);
             }
             this.bitmapCache.put(Integer.valueOf(i), drawableToBitmap);
         }
@@ -462,63 +494,159 @@ public final class GridOverlayView extends View {
         return gridOverlayView.calculateCell(i, i2, z, mapData);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0030  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0038  */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x004d, code lost:
+        if ((r17 != null ? kotlin.jvm.internal.Intrinsics.areEqual((java.lang.Object) r17.getDrugden(), (java.lang.Object) true) : false) != false) goto L17;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x007c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x009a  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x00e6  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x00eb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final Cell calculateCell(int i, int i2, boolean z, MapData mapData) {
-        int parseColor;
+        Integer num;
         boolean z2;
-        Bitmap bitmap;
-        Bitmap bitmap2;
         boolean z3;
+        int parseColor;
+        boolean z4;
+        Bitmap bitmap;
+        boolean z5;
+        String businessType;
+        String obj;
+        int intValue;
         int i3 = this.gridSize;
         int i4 = i / i3;
         int i5 = i % i3;
-        if (mapData != null) {
-            Boolean drugden = mapData.getDrugden();
-            if (drugden != null ? drugden.booleanValue() : false) {
-                parseColor = Color.parseColor(ColorsKt.ghettoColors(-2));
-                z2 = true;
-                if (!z) {
-                    bitmap2 = getBitmap(-1);
-                } else {
-                    bitmap = null;
-                    if (mapData != null) {
-                        Integer respawn_fraction_id = mapData.getRespawn_fraction_id();
-                        if ((respawn_fraction_id != null ? respawn_fraction_id.intValue() : 0) > 10) {
-                            Integer respawn_fraction_id2 = mapData.getRespawn_fraction_id();
-                            if (respawn_fraction_id2 != null) {
-                                bitmap = getBitmap(respawn_fraction_id2.intValue());
-                                z3 = true;
-                                return new Cell(i4, i5, parseColor, bitmap, true, z, z3);
-                            }
-                            z3 = z2;
-                            return new Cell(i4, i5, parseColor, bitmap, true, z, z3);
-                        }
+        Bitmap bitmap2 = null;
+        if (mapData == null || (businessType = mapData.getBusinessType()) == null || (obj = StringsKt.trim((CharSequence) businessType).toString()) == null || (num = StringsKt.toIntOrNull(obj)) == null || (intValue = num.intValue()) < 0 || intValue >= 6) {
+            num = null;
+        }
+        if (num == null || num.intValue() != 5) {
+            if (num == null) {
+            }
+            z2 = false;
+            if (num == null) {
+                String businessName = mapData != null ? mapData.getBusinessName() : null;
+                if ((businessName == null || StringsKt.isBlank(businessName)) && !z2 && !z) {
+                    z3 = false;
+                    if (z2) {
+                        parseColor = Color.parseColor(ColorsKt.ghettoColors(-2));
+                        z4 = true;
+                    } else {
+                        parseColor = Color.parseColor(ColorsKt.ghettoColors(i2));
+                        z4 = false;
                     }
-                    if (mapData != null) {
-                        Boolean drugden2 = mapData.getDrugden();
-                        if (drugden2 != null ? drugden2.booleanValue() : false) {
+                    if (num != null && num.intValue() == 0) {
+                        bitmap2 = getBitmap(-3);
+                    } else if (num != null && num.intValue() == 1) {
+                        bitmap2 = getBitmap(-4);
+                    } else if (num != null && num.intValue() == 2) {
+                        bitmap2 = getBitmap(-5);
+                    } else if (num != null && num.intValue() == 3) {
+                        bitmap2 = getBitmap(-6);
+                    } else if (num != null && num.intValue() == 4) {
+                        bitmap2 = getBitmap(-1);
+                    } else if (num != null && num.intValue() == 5) {
+                        bitmap2 = getBitmap(-2);
+                    } else if (z) {
+                        bitmap2 = getBitmap(-1);
+                    } else {
+                        if (mapData != null) {
+                            Integer respawn_fraction_id = mapData.getRespawn_fraction_id();
+                            if ((respawn_fraction_id != null ? respawn_fraction_id.intValue() : 0) > 10) {
+                                Integer respawn_fraction_id2 = mapData.getRespawn_fraction_id();
+                                if (respawn_fraction_id2 != null) {
+                                    bitmap = getBitmap(respawn_fraction_id2.intValue());
+                                    z5 = true;
+                                    return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
+                                }
+                            }
+                        }
+                        if (mapData != null ? Intrinsics.areEqual((Object) mapData.getDrugden(), (Object) true) : false) {
                             bitmap2 = getBitmap(-2);
                         }
                     }
-                    z3 = z2;
-                    return new Cell(i4, i5, parseColor, bitmap, true, z, z3);
+                    bitmap = bitmap2;
+                    z5 = z4;
+                    return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
                 }
-                bitmap = bitmap2;
-                z3 = z2;
-                return new Cell(i4, i5, parseColor, bitmap, true, z, z3);
             }
+            z3 = true;
+            if (z2) {
+            }
+            if (num != null) {
+                bitmap2 = getBitmap(-3);
+                bitmap = bitmap2;
+                z5 = z4;
+                return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
+            }
+            if (num != null) {
+                bitmap2 = getBitmap(-4);
+                bitmap = bitmap2;
+                z5 = z4;
+                return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
+            }
+            if (num != null) {
+                bitmap2 = getBitmap(-5);
+                bitmap = bitmap2;
+                z5 = z4;
+                return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
+            }
+            if (num != null) {
+                bitmap2 = getBitmap(-6);
+                bitmap = bitmap2;
+                z5 = z4;
+                return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
+            }
+            if (num != null) {
+                bitmap2 = getBitmap(-1);
+                bitmap = bitmap2;
+                z5 = z4;
+                return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
+            }
+            if (num != null) {
+                bitmap2 = getBitmap(-2);
+                bitmap = bitmap2;
+                z5 = z4;
+                return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
+            }
+            if (z) {
+            }
+            bitmap = bitmap2;
+            z5 = z4;
+            return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
         }
-        parseColor = Color.parseColor(ColorsKt.ghettoColors(i2));
-        z2 = false;
-        if (!z) {
+        z2 = true;
+        if (num == null) {
+        }
+        z3 = true;
+        if (z2) {
+        }
+        if (num != null) {
+        }
+        if (num != null) {
+        }
+        if (num != null) {
+        }
+        if (num != null) {
+        }
+        if (num != null) {
+        }
+        if (num != null) {
+        }
+        if (z) {
         }
         bitmap = bitmap2;
-        z3 = z2;
-        return new Cell(i4, i5, parseColor, bitmap, true, z, z3);
+        z5 = z4;
+        return new Cell(i4, i5, parseColor, bitmap, true, z3, z5);
     }
 
     private final void setCellData(List<Cell> list) {
@@ -595,8 +723,9 @@ public final class GridOverlayView extends View {
             canvas.drawRect(rectF3, this.paint);
             Bitmap bitmap = cell.getBitmap();
             if (bitmap != null) {
-                float width = (rectF2.width() * 0.65f) / 2.0f;
-                float height = (rectF2.height() * 0.65f) / 2.0f;
+                float min = Math.min((rectF2.width() * 0.65f) / bitmap.getWidth(), (rectF2.height() * 0.65f) / bitmap.getHeight());
+                float width = (bitmap.getWidth() * min) / 2.0f;
+                float height = (bitmap.getHeight() * min) / 2.0f;
                 canvas.drawBitmap(bitmap, (Rect) null, new RectF(rectF2.centerX() - width, rectF2.centerY() - height, rectF2.centerX() + width, rectF2.centerY() + height), (Paint) null);
             }
         }

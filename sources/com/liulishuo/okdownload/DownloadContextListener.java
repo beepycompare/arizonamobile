@@ -1,7 +1,7 @@
 package com.liulishuo.okdownload;
 
 import com.liulishuo.okdownload.core.cause.EndCause;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public interface DownloadContextListener {
     void queueEnd(DownloadContext downloadContext);
 

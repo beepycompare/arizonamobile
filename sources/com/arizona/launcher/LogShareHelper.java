@@ -1,10 +1,12 @@
 package com.arizona.launcher;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
 import android.widget.Toast;
 import androidx.core.content.FileProvider;
+import com.arizona.launcher.LogcatHelper;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.RandomAccessFile;
@@ -23,7 +25,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: LogShareHelper.kt */
-@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0000\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0007b\u0002\b\u0013J\u0014\u0010\u0014\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0007b\u0002\b\u0013J\u001e\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00160\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0017\u001a\u00020\u0005H\u0002J$\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00160\r2\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00070\rH\u0002J \u0010\u001a\u001a\u00020\u00102\u0006\u0010\u001b\u001a\u00020\u00162\u0006\u0010\u001c\u001a\u00020\u00162\u0006\u0010\u001d\u001a\u00020\u0005H\u0002J\u0018\u0010\u001e\u001a\u00020\u00102\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0005H\u0002J&\u0010\"\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010#\u001a\b\u0012\u0004\u0012\u00020\u00160\r2\u0006\u0010$\u001a\u00020%H\u0002J\u0018\u0010&\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010'\u001a\u00020(H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00070\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00070\rX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b*\u0012\b\b+\u0012\u0004\b\u0003\u0010\u0002¨\u0006)"}, d2 = {"Lcom/arizona/launcher/LogShareHelper;", "", "<init>", "()V", "RECENT_LOG_SHARE_LIMIT_BYTES", "", "RECENT_SHARE_DIR", "", "COPY_BUFFER_SIZE", "", "isPreparingRecentShare", "Ljava/util/concurrent/atomic/AtomicBoolean;", "fullLogPaths", "", "recentLogPaths", "shareAllLogs", "", "activity", "Landroid/app/Activity;", "Lkotlin/jvm/JvmStatic;", "shareRecentLogs", "createRecentLogCopies", "Ljava/io/File;", "maxTotalBytes", "resolveLogFiles", "relativePaths", "copyTail", "sourceFile", "outputFile", "maxBytes", "skipPartialFirstLine", "input", "Ljava/io/RandomAccessFile;", "sourceLength", "shareFiles", "files", "showEmptyMessage", "", "showError", "error", "", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0003\n\u0000\n\u0002\u0018\u0002\n\u0000\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0007b\u0002\b\u0013J\u0014\u0010\u0014\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0007b\u0002\b\u0013J\u0010\u0010\u0015\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u001e\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u0005H\u0002J$\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00170\r2\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00070\rH\u0002J \u0010\u001b\u001a\u00020\u00102\u0006\u0010\u001c\u001a\u00020\u00172\u0006\u0010\u001d\u001a\u00020\u00172\u0006\u0010\u001e\u001a\u00020\u0005H\u0002J\u0018\u0010\u001f\u001a\u00020\u00102\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0005H\u0002J&\u0010#\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00170\r2\u0006\u0010%\u001a\u00020&H\u0002J\u0018\u0010'\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010(\u001a\u00020)H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u00070\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00070\rX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b+\u0012\b\b,\u0012\u0004\b\u0003\u0010\u0002¨\u0006*"}, d2 = {"Lcom/arizona/launcher/LogShareHelper;", "", "<init>", "()V", "RECENT_LOG_SHARE_LIMIT_BYTES", "", "RECENT_SHARE_DIR", "", "COPY_BUFFER_SIZE", "", "isPreparingRecentShare", "Ljava/util/concurrent/atomic/AtomicBoolean;", "fullLogPaths", "", "recentLogPaths", "shareAllLogs", "", "activity", "Landroid/app/Activity;", "Lkotlin/jvm/JvmStatic;", "shareRecentLogs", "flushCurrentLog", "createRecentLogCopies", "Ljava/io/File;", "maxTotalBytes", "resolveLogFiles", "relativePaths", "copyTail", "sourceFile", "outputFile", "maxBytes", "skipPartialFirstLine", "input", "Ljava/io/RandomAccessFile;", "sourceLength", "shareFiles", "files", "showEmptyMessage", "", "showError", "error", "", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class LogShareHelper {
     public static final int $stable = 0;
@@ -40,20 +42,21 @@ public final class LogShareHelper {
 
     @JvmStatic
     public static final void shareAllLogs(Activity activity) {
-        Object m9898constructorimpl;
+        Object m9915constructorimpl;
         Intrinsics.checkNotNullParameter(activity, "activity");
         LogShareHelper logShareHelper = INSTANCE;
         try {
             Result.Companion companion = Result.Companion;
+            logShareHelper.flushCurrentLog(activity);
             logShareHelper.shareFiles(activity, logShareHelper.resolveLogFiles(activity, fullLogPaths), false);
-            m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
+            m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
-        if (m9901exceptionOrNullimpl != null) {
-            INSTANCE.showError(activity, m9901exceptionOrNullimpl);
+        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
+        if (m9918exceptionOrNullimpl != null) {
+            INSTANCE.showError(activity, m9918exceptionOrNullimpl);
         }
     }
 
@@ -72,19 +75,20 @@ public final class LogShareHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit shareRecentLogs$lambda$0(final Activity activity) {
-        final Object m9898constructorimpl;
+        final Object m9915constructorimpl;
         LogShareHelper logShareHelper = INSTANCE;
         try {
             Result.Companion companion = Result.Companion;
-            m9898constructorimpl = Result.m9898constructorimpl(logShareHelper.createRecentLogCopies(activity, 2097152L));
+            logShareHelper.flushCurrentLog(activity);
+            m9915constructorimpl = Result.m9915constructorimpl(logShareHelper.createRecentLogCopies(activity, 2097152L));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
         }
         activity.runOnUiThread(new Runnable() { // from class: com.arizona.launcher.LogShareHelper$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                LogShareHelper.shareRecentLogs$lambda$0$1(activity, m9898constructorimpl);
+                LogShareHelper.shareRecentLogs$lambda$0$1(activity, m9915constructorimpl);
             }
         });
         return Unit.INSTANCE;
@@ -92,30 +96,40 @@ public final class LogShareHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void shareRecentLogs$lambda$0$1(Activity activity, Object obj) {
-        Object m9898constructorimpl;
+        Object m9915constructorimpl;
         isPreparingRecentShare.set(false);
         if (activity.isFinishing() || activity.isDestroyed()) {
             return;
         }
-        if (Result.m9905isSuccessimpl(obj)) {
+        if (Result.m9922isSuccessimpl(obj)) {
             List<? extends File> list = (List) obj;
             LogShareHelper logShareHelper = INSTANCE;
             try {
                 Result.Companion companion = Result.Companion;
                 logShareHelper.shareFiles(activity, list, true);
-                m9898constructorimpl = Result.m9898constructorimpl(Unit.INSTANCE);
+                m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
-            if (m9901exceptionOrNullimpl != null) {
-                INSTANCE.showError(activity, m9901exceptionOrNullimpl);
+            Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
+            if (m9918exceptionOrNullimpl != null) {
+                INSTANCE.showError(activity, m9918exceptionOrNullimpl);
             }
         }
-        Throwable m9901exceptionOrNullimpl2 = Result.m9901exceptionOrNullimpl(obj);
-        if (m9901exceptionOrNullimpl2 != null) {
-            INSTANCE.showError(activity, m9901exceptionOrNullimpl2);
+        Throwable m9918exceptionOrNullimpl2 = Result.m9918exceptionOrNullimpl(obj);
+        if (m9918exceptionOrNullimpl2 != null) {
+            INSTANCE.showError(activity, m9918exceptionOrNullimpl2);
+        }
+    }
+
+    private final void flushCurrentLog(Activity activity) {
+        LogcatHelper.Companion companion = LogcatHelper.Companion;
+        Context applicationContext = activity.getApplicationContext();
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
+        LogcatHelper companion2 = companion.getInstance(applicationContext);
+        if (companion2 != null) {
+            companion2.flush();
         }
     }
 

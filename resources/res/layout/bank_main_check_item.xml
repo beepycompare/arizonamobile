@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:padding="@dimen/_12sdp" android:layout_width="@dimen/_300sdp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp" app:backgroundMainColor="#dde5ff" app:backgroundTransparency="18" app:corners="@dimen/_18sdp"/>

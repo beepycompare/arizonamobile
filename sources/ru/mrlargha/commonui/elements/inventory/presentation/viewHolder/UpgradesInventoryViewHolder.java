@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 
+import android.graphics.Bitmap;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.DragEvent;
@@ -13,9 +14,11 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.Pair;
+import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -36,24 +39,57 @@ import ru.mrlargha.commonui.elements.inventory.presentation.adapter.UpgradesInve
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
 import ru.mrlargha.commonui.utils.ConstantsKt;
 import ru.mrlargha.commonui.utils.InventoryDragState;
+import ru.mrlargha.commonui.utils.InventoryIconRequest;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: UpgradesInventoryViewHolder.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0007\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eBU\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007\u0012\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007\u0012\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0004\b\r\u0010\u000eJ\u000e\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u000bJ\u0018\u0010\u0015\u001a\u00020\t2\u0006\u0010\u0016\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J\u0010\u0010\u0019\u001a\u00020\t2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J%\u0010\u001a\u001a\u00020\t2\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u00182\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u0018H\u0002¢\u0006\u0002\u0010\u001dR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/UpgradesInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "type", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter$Companion$Type;", "binding", "Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;", "onItemDropped", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "", "onLongClicked", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "onItemClicked", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter$Companion$Type;Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "countDownTimer", "Landroid/os/CountDownTimer;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "itemVal", "checkIsAccess", CommonUrlParts.MODEL, "position", "", "itemIsAccess", "setAccessHint", "imageRes", "titleRes", "(Ljava/lang/Integer;Ljava/lang/Integer;)V", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u000b\u0018\u0000 )2\u00020\u0001:\u0001)BU\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007\u0012\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007\u0012\u0012\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007¢\u0006\u0004\b\r\u0010\u000eJ\u000e\u0010\u0016\u001a\u00020\t2\u0006\u0010\u0017\u001a\u00020\u000bJ\u0006\u0010\u0018\u001a\u00020\tJ\u0010\u0010\u0019\u001a\u00020\t2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0018\u0010\u001c\u001a\u00020\t2\u0006\u0010\u001d\u001a\u00020\u000b2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002J\u0010\u0010 \u001a\u00020\t2\u0006\u0010!\u001a\u00020\u001fH\u0002J\u0010\u0010\"\u001a\u00020\t2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002J\u0010\u0010#\u001a\u00020\t2\u0006\u0010$\u001a\u00020\u001fH\u0002J%\u0010%\u001a\u00020\t2\n\b\u0002\u0010&\u001a\u0004\u0018\u00010\u001f2\n\b\u0002\u0010'\u001a\u0004\u0018\u00010\u001fH\u0002¢\u0006\u0002\u0010(R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\t0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/UpgradesInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "type", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter$Companion$Type;", "binding", "Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;", "onItemDropped", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "", "onLongClicked", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "onItemClicked", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter$Companion$Type;Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "countDownTimer", "Landroid/os/CountDownTimer;", "loadImageJob", "Lkotlinx/coroutines/Job;", "imageRequestGeneration", "", "effectLoadJob", "bind", "itemVal", "recycle", "clearAsyncResources", "clearEffects", "", "checkEmptySlotHint", CommonUrlParts.MODEL, "position", "", "itemIsArizonaVehicle", "inventoryType", "itemIsAccess", "itemIsGun", "slot", "setEmptySlotHint", "imageRes", "titleRes", "(Ljava/lang/Integer;Ljava/lang/Integer;)V", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
     private static final int ACCESS_KNIFE_ITEM_ID = 8;
     private static final int ACCESS_LEFT_ITEM_ID = 6;
     private static final int ACCESS_RIGHT_ITEM_ID = 7;
     public static final Companion Companion = new Companion(null);
+    private static final int GUN_AK47_SLOT = 2;
+    private static final int GUN_DESERT_EAGLE_SLOT = 0;
+    private static final int GUN_M4_SLOT = 3;
+    private static final int GUN_SAWED_OFF_SLOT = 4;
+    private static final int GUN_TEC9_SLOT = 5;
+    private static final int GUN_UZI_SLOT = 1;
     private final ItemSubInventoryBinding binding;
     private CountDownTimer countDownTimer;
+    private Job effectLoadJob;
+    private long imageRequestGeneration;
     private Job loadImageJob;
     private final Function1<InventoryItem, Unit> onItemClicked;
     private final Function1<DraggedItem, Unit> onItemDropped;
     private final Function1<InventoryItem, Unit> onLongClicked;
     private final UpgradesInventoryAdapter.Companion.Type type;
+
+    /* compiled from: UpgradesInventoryViewHolder.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    public static final /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+        static {
+            int[] iArr = new int[UpgradesInventoryAdapter.Companion.Type.values().length];
+            try {
+                iArr[UpgradesInventoryAdapter.Companion.Type.ACCESS.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[UpgradesInventoryAdapter.Companion.Type.GUN.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[UpgradesInventoryAdapter.Companion.Type.NONE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            $EnumSwitchMapping$0 = iArr;
+        }
+    }
 
     public /* synthetic */ UpgradesInventoryViewHolder(UpgradesInventoryAdapter.Companion.Type type, ItemSubInventoryBinding itemSubInventoryBinding, Function1 function1, Function1 function12, Function1 function13, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? UpgradesInventoryAdapter.Companion.Type.NONE : type, itemSubInventoryBinding, function1, function12, function13);
@@ -75,16 +111,14 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
         this.onItemClicked = onItemClicked;
     }
 
-    /* JADX WARN: Type inference failed for: r0v49, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$bind$1$6] */
+    /* JADX WARN: Type inference failed for: r2v17, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$bind$1$5] */
     public final void bind(final InventoryItem itemVal) {
-        Object obj;
+        String valueOf;
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         final ItemSubInventoryBinding itemSubInventoryBinding = this.binding;
-        Job job = this.loadImageJob;
-        if (job != null) {
-            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
-        }
+        clearAsyncResources(false);
+        ItemsInfo itemInfo = UtilsKt.getItemInfo(itemVal.getItem());
         if (itemVal.getItem() != null) {
             TextView tvItemNum = itemSubInventoryBinding.tvItemNum;
             Intrinsics.checkNotNullExpressionValue(tvItemNum, "tvItemNum");
@@ -92,7 +126,7 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             TextView tvDescriptionText = itemSubInventoryBinding.tvDescriptionText;
             Intrinsics.checkNotNullExpressionValue(tvDescriptionText, "tvDescriptionText");
             tvDescriptionText.setVisibility(0);
-            itemSubInventoryBinding.tvDescriptionText.setText(itemVal.getText());
+            itemSubInventoryBinding.tvDescriptionText.setText(UtilKt.inventoryItemDisplayText(itemVal.getText(), itemVal.getItem_type(), itemVal.getEnchant()));
             ImageView ivItemImage = itemSubInventoryBinding.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
             ivItemImage.setVisibility(0);
@@ -117,11 +151,26 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             TextView tvItemNum2 = itemSubInventoryBinding.tvItemNum;
             Intrinsics.checkNotNullExpressionValue(tvItemNum2, "tvItemNum");
             tvItemNum2.setVisibility(0);
-            itemSubInventoryBinding.tvItemNum.setText(String.valueOf(getPosition() + 1));
+            TextView textView = itemSubInventoryBinding.tvItemNum;
+            if (this.type == UpgradesInventoryAdapter.Companion.Type.GUN) {
+                valueOf = String.valueOf(itemVal.getSlot() + 1);
+            } else {
+                valueOf = String.valueOf(getPosition() + 1);
+            }
+            textView.setText(valueOf);
         }
-        if (itemVal.getItem() != null) {
-            launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new UpgradesInventoryViewHolder$bind$1$2(itemSubInventoryBinding, this, itemVal, null), 3, null);
-            this.loadImageJob = launch$default;
+        InventoryIconRequest inventoryIconRequest = UtilsKt.toInventoryIconRequest(itemVal, false);
+        if (inventoryIconRequest != null) {
+            itemSubInventoryBinding.ivItemImage.setImageResource(R.drawable.ic_empty_item);
+            Bitmap cachedInventoryIcon = UtilsKt.getCachedInventoryIcon(inventoryIconRequest);
+            if (cachedInventoryIcon == null) {
+                launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new UpgradesInventoryViewHolder$bind$1$2(this.imageRequestGeneration, this, inventoryIconRequest, itemSubInventoryBinding, itemVal, null), 3, null);
+                this.loadImageJob = launch$default;
+            } else {
+                ImageView ivItemImage2 = itemSubInventoryBinding.ivItemImage;
+                Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
+                UtilsKt.setImage(ivItemImage2, cachedInventoryIcon);
+            }
             TextView tvTitleText = itemSubInventoryBinding.tvTitleText;
             Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
             tvTitleText.setVisibility(8);
@@ -192,36 +241,21 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
         });
         AppCompatImageView ivActiveItem = itemSubInventoryBinding.ivActiveItem;
         Intrinsics.checkNotNullExpressionValue(ivActiveItem, "ivActiveItem");
-        AppCompatImageView appCompatImageView = ivActiveItem;
-        Iterator<T> it = UtilsKt.getItemsName().iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                obj = null;
-                break;
-            }
-            obj = it.next();
-            int id = ((ItemsInfo) obj).getId();
-            Integer item = itemVal.getItem();
-            if (item != null && id == item.intValue()) {
-                break;
-            }
-        }
-        ItemsInfo itemsInfo = (ItemsInfo) obj;
-        appCompatImageView.setVisibility(itemsInfo != null && itemsInfo.getActive() == 1 ? 0 : 8);
+        ivActiveItem.setVisibility(itemInfo != null && itemInfo.getActive() == 1 ? 0 : 8);
         if (itemVal.getTime() != null && itemVal.getTime().longValue() > 0) {
             final long longValue = (itemVal.getTime().longValue() * 1000) - System.currentTimeMillis();
             CountDownTimer countDownTimer = this.countDownTimer;
             if (countDownTimer != null) {
                 countDownTimer.cancel();
             }
-            this.countDownTimer = new CountDownTimer(longValue) { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$bind$1$6
+            this.countDownTimer = new CountDownTimer(longValue) { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.UpgradesInventoryViewHolder$bind$1$5
                 @Override // android.os.CountDownTimer
                 public void onTick(long j) {
-                    TextView textView = itemSubInventoryBinding.tvTitleText;
+                    TextView textView2 = itemSubInventoryBinding.tvTitleText;
                     StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
                     String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Integer.valueOf((int) (j / DurationKt.MILLIS_IN_HOUR)), Integer.valueOf((int) ((j % DurationKt.MILLIS_IN_HOUR) / 60000)), Integer.valueOf((int) ((j % 60000) / 1000))}, 3));
                     Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-                    textView.setText(format);
+                    textView2.setText(format);
                 }
 
                 @Override // android.os.CountDownTimer
@@ -245,6 +279,7 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             if (countDownTimer3 != null) {
                 countDownTimer3.cancel();
             }
+            this.countDownTimer = null;
         }
         if (itemVal.isLocked()) {
             itemSubInventoryBinding.ivItemImage.setImageResource(R.drawable.ic_locked_item);
@@ -263,8 +298,8 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             Intrinsics.checkNotNullExpressionValue(cvColoredItem2, "cvColoredItem");
             cvColoredItem2.setVisibility(8);
         }
-        UtilKt.setInventoryItemEffect(itemSubInventoryBinding, itemVal.getItem());
-        checkIsAccess(itemVal, getPosition());
+        this.effectLoadJob = UtilKt.setInventoryItemEffect(itemSubInventoryBinding, itemVal);
+        checkEmptySlotHint(itemVal, getPosition());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -318,12 +353,61 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
         }
     }
 
-    private final void checkIsAccess(InventoryItem inventoryItem, int i) {
-        if (this.type == UpgradesInventoryAdapter.Companion.Type.ACCESS && !UtilsKt.isArizonaType() && inventoryItem.getItem() == null) {
-            itemIsAccess(i);
-        } else {
-            setAccessHint(null, null);
+    public final void recycle() {
+        clearAsyncResources(true);
+    }
+
+    private final void clearAsyncResources(boolean z) {
+        ItemSubInventoryBinding itemSubInventoryBinding = this.binding;
+        this.imageRequestGeneration++;
+        Job job = this.loadImageJob;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
+        this.loadImageJob = null;
+        Job job2 = this.effectLoadJob;
+        if (job2 != null) {
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+        }
+        this.effectLoadJob = null;
+        CountDownTimer countDownTimer = this.countDownTimer;
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+        this.countDownTimer = null;
+        itemSubInventoryBinding.ivItemImage.setImageDrawable(null);
+        if (z) {
+            UtilKt.clearInventoryItemEffect(itemSubInventoryBinding);
+        }
+    }
+
+    private final void checkEmptySlotHint(InventoryItem inventoryItem, int i) {
+        int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
+        if (i2 == 1) {
+            if (inventoryItem.getItem() == null) {
+                itemIsAccess(i);
+            } else {
+                setEmptySlotHint$default(this, null, null, 3, null);
+            }
+        } else if (i2 == 2) {
+            if (inventoryItem.getItem() == null) {
+                itemIsGun(inventoryItem.getSlot());
+            } else {
+                setEmptySlotHint$default(this, null, null, 3, null);
+            }
+        } else if (i2 != 3) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            if (inventoryItem.getItem() == null) {
+                itemIsArizonaVehicle(inventoryItem.getInventoryType());
+            } else {
+                setEmptySlotHint$default(this, null, null, 3, null);
+            }
+        }
+    }
+
+    private final void itemIsArizonaVehicle(int i) {
+        setEmptySlotHint$default(this, UpgradesInventoryViewHolderKt.resolveArizonaVehicleEmptySlotIcon(i, UtilsKt.isArizonaType()), null, 2, null);
     }
 
     private final void itemIsAccess(int i) {
@@ -342,10 +426,28 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             valueOf = Integer.valueOf(R.drawable.inventory_access_ic_knife);
             valueOf2 = Integer.valueOf(R.string.knife);
         }
-        setAccessHint(valueOf, valueOf2);
+        setEmptySlotHint(valueOf, valueOf2);
     }
 
-    private final void setAccessHint(Integer num, Integer num2) {
+    private final void itemIsGun(int i) {
+        Pair pair;
+        if (i == 0) {
+            pair = TuplesKt.to(Integer.valueOf(R.drawable.inventory_gun_ic_desert_eagle), Integer.valueOf(R.string.inventory_gun_slot_desert_eagle));
+        } else if (i == 1) {
+            pair = TuplesKt.to(Integer.valueOf(R.drawable.inventory_gun_ic_uzi), Integer.valueOf(R.string.inventory_gun_slot_uzi));
+        } else if (i == 2) {
+            pair = TuplesKt.to(Integer.valueOf(R.drawable.inventory_gun_ic_ak47), Integer.valueOf(R.string.inventory_gun_slot_ak47));
+        } else if (i == 3) {
+            pair = TuplesKt.to(Integer.valueOf(R.drawable.inventory_gun_ic_m4), Integer.valueOf(R.string.inventory_gun_slot_m4));
+        } else if (i == 4) {
+            pair = TuplesKt.to(Integer.valueOf(R.drawable.inventory_gun_ic_sawed_off), Integer.valueOf(R.string.inventory_gun_slot_sawed_off));
+        } else {
+            pair = i != 5 ? null : TuplesKt.to(Integer.valueOf(R.drawable.inventory_gun_ic_tec9), Integer.valueOf(R.string.inventory_gun_slot_tec9));
+        }
+        setEmptySlotHint(pair != null ? (Integer) pair.getFirst() : null, pair != null ? (Integer) pair.getSecond() : null);
+    }
+
+    private final void setEmptySlotHint(Integer num, Integer num2) {
         ItemSubInventoryBinding itemSubInventoryBinding = this.binding;
         if (num != null) {
             itemSubInventoryBinding.ivItemDefaultImage.setImageResource(num.intValue());
@@ -371,18 +473,18 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
         tvTitleText2.setVisibility(8);
     }
 
-    static /* synthetic */ void setAccessHint$default(UpgradesInventoryViewHolder upgradesInventoryViewHolder, Integer num, Integer num2, int i, Object obj) {
+    static /* synthetic */ void setEmptySlotHint$default(UpgradesInventoryViewHolder upgradesInventoryViewHolder, Integer num, Integer num2, int i, Object obj) {
         if ((i & 1) != 0) {
             num = null;
         }
         if ((i & 2) != 0) {
             num2 = null;
         }
-        upgradesInventoryViewHolder.setAccessHint(num, num2);
+        upgradesInventoryViewHolder.setEmptySlotHint(num, num2);
     }
 
     /* compiled from: UpgradesInventoryViewHolder.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/UpgradesInventoryViewHolder$Companion;", "", "<init>", "()V", "ACCESS_LEFT_ITEM_ID", "", "ACCESS_RIGHT_ITEM_ID", "ACCESS_KNIFE_ITEM_ID", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/UpgradesInventoryViewHolder$Companion;", "", "<init>", "()V", "ACCESS_LEFT_ITEM_ID", "", "ACCESS_RIGHT_ITEM_ID", "ACCESS_KNIFE_ITEM_ID", "GUN_DESERT_EAGLE_SLOT", "GUN_UZI_SLOT", "GUN_AK47_SLOT", "GUN_M4_SLOT", "GUN_SAWED_OFF_SLOT", "GUN_TEC9_SLOT", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

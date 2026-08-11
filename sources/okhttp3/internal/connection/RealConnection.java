@@ -286,7 +286,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
 
     @Override // okhttp3.internal.http.ExchangeCodec.Carrier
     /* renamed from: cancel */
-    public void mo11765cancel() {
+    public void mo11782cancel() {
         _UtilJvmKt.closeQuietly(this.rawSocket);
     }
 

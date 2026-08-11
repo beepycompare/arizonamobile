@@ -9,7 +9,7 @@ import com.liulishuo.okdownload.core.listener.assist.Listener1Assist;
 import com.liulishuo.okdownload.core.listener.assist.ListenerAssist;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class DownloadListener1 implements DownloadListener, Listener1Assist.Listener1Callback, ListenerAssist {
     final Listener1Assist assist;
 

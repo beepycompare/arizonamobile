@@ -2,7 +2,7 @@ package com.liulishuo.okdownload.core.exception;
 
 import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ResumeFailedException extends IOException {
     private final ResumeFailedCause resumeFailedCause;
 

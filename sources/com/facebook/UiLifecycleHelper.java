@@ -12,7 +12,7 @@ import com.facebook.Session;
 import com.facebook.internal.NativeProtocol;
 import com.facebook.widget.FacebookDialog;
 import java.util.UUID;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class UiLifecycleHelper {
     private static final String ACTIVITY_NULL_MESSAGE = "activity cannot be null";
     private static final String DIALOG_CALL_BUNDLE_SAVE_KEY = "com.facebook.UiLifecycleHelper.pendingFacebookDialogCallKey";
@@ -23,7 +23,7 @@ public class UiLifecycleHelper {
     private FacebookDialog.PendingCall pendingFacebookDialogCall;
     private final BroadcastReceiver receiver;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class ActiveSessionBroadcastReceiver extends BroadcastReceiver {
         private ActiveSessionBroadcastReceiver() {
         }

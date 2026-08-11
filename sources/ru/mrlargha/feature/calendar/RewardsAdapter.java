@@ -111,9 +111,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r1 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r1);
         r1 = r1.getNeedToPlay();
-        r2 = r12.updateInfo;
-        kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
-        r1 = ((r1 - r2.getPlayed()) % 86400) / kotlinx.datetime.internal.DateCalculationsKt.SECONDS_PER_HOUR;
+        kotlin.jvm.internal.Intrinsics.checkNotNull(r12.updateInfo);
         r2 = r12.updateInfo;
         kotlin.jvm.internal.Intrinsics.checkNotNull(r2);
         r2 = r2.getNeedToPlay();
@@ -132,7 +130,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
         r0.timePgb.setVisibility(0);
         r0.doneContainer.setVisibility(8);
         r0.rewardDescription.setVisibility(0);
-        r0.rewardDescription.setText("Осталось отыграть " + r1 + " ч. " + (((r2 - r9.getPlayed()) % kotlinx.datetime.internal.DateCalculationsKt.SECONDS_PER_HOUR) / 60) + " м.");
+        r0.rewardDescription.setText("Осталось отыграть " + (((r1 - r2.getPlayed()) % 86400) / 3600) + " ч. " + (((r2 - r9.getPlayed()) % 3600) / 60) + " м.");
         r0.getButton.setVisibility(8);
         r0.getButton.setBackgroundResource(ru.mrlargha.feature.calendar.R.drawable.daily_reward_get_button_unavailable_bg);
         r0.getButtonText.setTextColor(android.graphics.Color.parseColor("#10FFFFFF"));

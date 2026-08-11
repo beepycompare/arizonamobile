@@ -2,7 +2,7 @@ package androidx.cardview;
 /* loaded from: classes.dex */
 public final class R {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static final class attr {
         public static int cardBackgroundColor = 0x7f0400c1;
         public static int cardCornerRadius = 0x7f0400c2;
@@ -42,12 +42,12 @@ public final class R {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public static final class style {
-        public static int Base_CardView = 0x7f13001a;
-        public static int CardView = 0x7f13013d;
-        public static int CardView_Dark = 0x7f13013e;
-        public static int CardView_Light = 0x7f13013f;
+        public static int Base_CardView = 0x7f13002b;
+        public static int CardView = 0x7f13014e;
+        public static int CardView_Dark = 0x7f13014f;
+        public static int CardView_Light = 0x7f130150;
 
         private style() {
         }

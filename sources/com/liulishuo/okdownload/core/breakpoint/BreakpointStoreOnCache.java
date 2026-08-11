@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreakpointStoreOnCache implements DownloadStore {
     public static final int FIRST_ID = 1;
     private final List<Integer> fileDirtyList;

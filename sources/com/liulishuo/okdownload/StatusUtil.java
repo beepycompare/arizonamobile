@@ -5,10 +5,10 @@ import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointStore;
 import com.liulishuo.okdownload.core.dispatcher.DownloadDispatcher;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class StatusUtil {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum Status {
         PENDING,
         RUNNING,

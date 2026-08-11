@@ -3,7 +3,7 @@ package androidx.media3.common.util;
 import androidx.media3.common.C;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class TimestampAdjuster {
     private static final long MAX_PTS_PLUS_ONE = 8589934592L;
     public static final long MODE_NO_OFFSET = Long.MAX_VALUE;

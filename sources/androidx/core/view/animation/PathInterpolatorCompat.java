@@ -3,7 +3,7 @@ package androidx.core.view.animation;
 import android.graphics.Path;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PathInterpolatorCompat {
     private PathInterpolatorCompat() {
     }

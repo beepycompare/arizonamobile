@@ -2,7 +2,7 @@ package com.liulishuo.okdownload.core.breakpoint;
 
 import com.liulishuo.okdownload.DownloadTask;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface BreakpointStore {
     BreakpointInfo createAndInsert(DownloadTask downloadTask) throws IOException;
 

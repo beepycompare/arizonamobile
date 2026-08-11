@@ -6,17 +6,17 @@ import android.view.Surface;
 import androidx.media3.common.util.TimestampIterator;
 import java.util.List;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface VideoGraph {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Factory {
         VideoGraph create(Context context, ColorInfo colorInfo, DebugViewProvider debugViewProvider, Listener listener, Executor executor, long j, boolean z);
 
         boolean supportsMultipleInputs();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Listener {
         default void onEnded(long j) {
         }

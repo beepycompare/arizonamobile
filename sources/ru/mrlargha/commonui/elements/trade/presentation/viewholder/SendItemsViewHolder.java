@@ -29,12 +29,13 @@ import ru.mrlargha.commonui.utils.InventoryDragState;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: SendItemsViewHolder.kt */
-@Metadata(d1 = {"\u0000W\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000*\u0001\u0019\u0018\u00002\u00020\u0001BG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\u0016\u0010\u001d\u001a\u00020\u00072\u0006\u0010\u001e\u001a\u00020\u00062\u0006\u0010\u001f\u001a\u00020 R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u0014\u001a\u00020\u0015¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001aR\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/viewholder/SendItemsViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemInventoryBinding;", "onItemClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "onItemDropped", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "context", "Landroid/content/Context;", "recyclerView", "Landroidx/recyclerview/widget/RecyclerView;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemInventoryBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroid/content/Context;Landroidx/recyclerview/widget/RecyclerView;)V", "scrollSpeed", "", "edgeHeight", "scrollDirection", "scrollHandler", "Landroid/os/Handler;", "getScrollHandler", "()Landroid/os/Handler;", "scrollRunnable", "ru/mrlargha/commonui/elements/trade/presentation/viewholder/SendItemsViewHolder$scrollRunnable$1", "Lru/mrlargha/commonui/elements/trade/presentation/viewholder/SendItemsViewHolder$scrollRunnable$1;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "itemVal", "isDragEnabled", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Y\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002*\u0001\u0019\u0018\u00002\u00020\u0001BG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r¢\u0006\u0004\b\u000e\u0010\u000fJ\u0016\u0010\u001e\u001a\u00020\u00072\u0006\u0010\u001f\u001a\u00020\u00062\u0006\u0010 \u001a\u00020!J\u0006\u0010\"\u001a\u00020\u0007R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u0014\u001a\u00020\u0015¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0010\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001aR\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/viewholder/SendItemsViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemInventoryBinding;", "onItemClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "onItemDropped", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "context", "Landroid/content/Context;", "recyclerView", "Landroidx/recyclerview/widget/RecyclerView;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemInventoryBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroid/content/Context;Landroidx/recyclerview/widget/RecyclerView;)V", "scrollSpeed", "", "edgeHeight", "scrollDirection", "scrollHandler", "Landroid/os/Handler;", "getScrollHandler", "()Landroid/os/Handler;", "scrollRunnable", "ru/mrlargha/commonui/elements/trade/presentation/viewholder/SendItemsViewHolder$scrollRunnable$1", "Lru/mrlargha/commonui/elements/trade/presentation/viewholder/SendItemsViewHolder$scrollRunnable$1;", "loadImageJob", "Lkotlinx/coroutines/Job;", "effectLoadJob", "bind", "itemVal", "isDragEnabled", "", "recycle", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
     private final ItemInventoryBinding binding;
     private final Context context;
     private final int edgeHeight;
+    private Job effectLoadJob;
     private Job loadImageJob;
     private final Function1<InventoryItem, Unit> onItemClicked;
     private final Function1<DraggedItem, Unit> onItemDropped;
@@ -86,6 +87,12 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         ItemInventoryBinding itemInventoryBinding = this.binding;
+        Job job = this.effectLoadJob;
+        boolean z2 = true;
+        Object obj = null;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
         itemInventoryBinding.getRoot().setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.viewholder.SendItemsViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLongClickListener
             public final boolean onLongClick(View view) {
@@ -108,11 +115,9 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
                 SendItemsViewHolder.bind$lambda$0$2(InventoryItem.this, this, view);
             }
         });
-        Job job = this.loadImageJob;
-        boolean z2 = true;
-        Object obj = null;
-        if (job != null) {
-            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        Job job2 = this.loadImageJob;
+        if (job2 != null) {
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
         }
         if (itemVal.getItem() != null) {
             launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new SendItemsViewHolder$bind$1$4(itemInventoryBinding, this, itemVal, null), 3, null);
@@ -143,7 +148,7 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
             z2 = false;
         }
         appCompatImageView.setVisibility(z2 ? 0 : 8);
-        UtilKt.setInventoryItemEffect(itemInventoryBinding, itemVal.getItem());
+        this.effectLoadJob = UtilKt.setInventoryItemEffect(itemInventoryBinding, itemVal);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -214,5 +219,21 @@ public final class SendItemsViewHolder extends RecyclerView.ViewHolder {
             return;
         }
         sendItemsViewHolder.onItemClicked.invoke(inventoryItem);
+    }
+
+    public final void recycle() {
+        ItemInventoryBinding itemInventoryBinding = this.binding;
+        Job job = this.loadImageJob;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
+        this.loadImageJob = null;
+        Job job2 = this.effectLoadJob;
+        if (job2 != null) {
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+        }
+        this.effectLoadJob = null;
+        this.scrollHandler.removeCallbacks(this.scrollRunnable);
+        UtilKt.clearInventoryItemEffect(itemInventoryBinding);
     }
 }

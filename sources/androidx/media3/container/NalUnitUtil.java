@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class NalUnitUtil {
     public static final int EXTENDED_SAR = 255;
     public static final int H264_NAL_UNIT_TYPE_AUD = 9;
@@ -84,7 +84,7 @@ public final class NalUnitUtil {
         return (i == 1 || i == 9 || i == 14) ? false : true;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class SpsData {
         public final int bitDepthChromaMinus8;
         public final int bitDepthLumaMinus8;
@@ -254,7 +254,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class H265SpsData {
         public final int bitDepthChromaMinus8;
         public final int bitDepthLumaMinus8;
@@ -293,7 +293,7 @@ public final class NalUnitUtil {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class PpsData {
         public final boolean bottomFieldPicOrderInFramePresentFlag;
         public final int picParameterSetId;

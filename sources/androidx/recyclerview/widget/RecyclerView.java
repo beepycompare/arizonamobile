@@ -3792,7 +3792,7 @@ public class RecyclerView extends ViewGroup implements ScrollingView, NestedScro
     }
 
     private float getSplineFlingDistance(int i) {
-        double log = Math.log((Math.abs(i) * INFLEXION) / (this.mPhysicalCoef * SCROLL_FRICTION));
+        double log = Math.log((Math.abs(i) * 0.35f) / (this.mPhysicalCoef * SCROLL_FRICTION));
         float f = DECELERATION_RATE;
         return (float) (this.mPhysicalCoef * SCROLL_FRICTION * Math.exp((f / (f - 1.0d)) * log));
     }

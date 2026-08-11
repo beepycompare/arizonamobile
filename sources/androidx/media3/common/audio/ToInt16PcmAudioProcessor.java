@@ -3,7 +3,7 @@ package androidx.media3.common.audio;
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class ToInt16PcmAudioProcessor extends BaseAudioProcessor {
     @Override // androidx.media3.common.audio.BaseAudioProcessor
     public AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) throws AudioProcessor.UnhandledAudioFormatException {

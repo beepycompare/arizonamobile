@@ -5,7 +5,6 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -74,7 +73,7 @@ public final class UnboundLocalDateTime {
         if (getMonth() > 2) {
             month = !InstantKt.isLeapYear(getYear()) ? month - 2 : (-1) + month;
         }
-        return buildInstant.invoke(Long.valueOf((((month - 719528) * 86400) + (((getHour() * DateCalculationsKt.SECONDS_PER_HOUR) + (getMinute() * 60)) + getSecond())) - i), Integer.valueOf(getNanosecond()));
+        return buildInstant.invoke(Long.valueOf((((month - 719528) * 86400) + (((getHour() * 3600) + (getMinute() * 60)) + getSecond())) - i), Integer.valueOf(getNanosecond()));
     }
 
     public String toString() {
@@ -119,12 +118,10 @@ public final class UnboundLocalDateTime {
             long j8 = j6 + j;
             int i2 = (int) j7;
             int i3 = ((i2 * 5) + 2) / BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER;
-            int i4 = ((i3 + 2) % 12) + 1;
-            int i5 = (i2 - (((i3 * 306) + 5) / 10)) + 1;
-            int i6 = i / DateCalculationsKt.SECONDS_PER_HOUR;
-            int i7 = i - (i6 * DateCalculationsKt.SECONDS_PER_HOUR);
-            int i8 = i7 / 60;
-            return new UnboundLocalDateTime((int) (j8 + (i3 / 10)), i4, i5, i6, i8, i7 - (i8 * 60), instant.getNanosecondsOfSecond());
+            int i4 = i / 3600;
+            int i5 = i - (i4 * 3600);
+            int i6 = i5 / 60;
+            return new UnboundLocalDateTime((int) (j8 + (i3 / 10)), ((i3 + 2) % 12) + 1, (i2 - (((i3 * 306) + 5) / 10)) + 1, i4, i6, i5 - (i6 * 60), instant.getNanosecondsOfSecond());
         }
     }
 }

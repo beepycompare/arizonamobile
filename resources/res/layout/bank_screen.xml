@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/bank_screen" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_content" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_content_frame" android:background="@drawable/bank_screen_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ImageView android:layout_gravity="bottom" android:id="@+id/bank_card_issue_preview_bg" android:layout_width="@dimen/_500sdp" android:layout_height="match_parent" android:src="@drawable/bank_card_issue_preview_bg" android:scaleType="fitXY" android:adjustViewBounds="true" android:contentDescription="@null"/>
+            <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/_14sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/_14sdp" android:paddingEnd="@dimen/_14sdp">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/bank_logo" android:layout_width="wrap_content" android:layout_height="@dimen/_24sdp" android:src="@drawable/bank_logo" android:adjustViewBounds="true"/>
+                    <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_20sdp" android:layout_marginRight="@dimen/_20sdp" android:layout_weight="1" android:layout_marginHorizontal="@dimen/_20sdp">
+                        <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@+id/bank_tabs_recycler" android:layout_width="match_parent" android:layout_height="match_parent" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                    </FrameLayout>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/button_close" android:layout_width="@dimen/_26sdp" android:layout_height="@dimen/_26sdp" app:backgroundMainColor="#33ffffff" app:borderMainColor="#4dffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+                        <LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <ImageView android:layout_width="@dimen/_12sdp" android:layout_height="wrap_content" android:src="@drawable/bank_ic_close" android:adjustViewBounds="true"/>
+                        </LinearLayout>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                </LinearLayout>
+                <FrameLayout android:id="@+id/bank_page_container" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+                    <include android:visibility="gone" layout="@layout/bank_main_page"/>
+                    <include android:visibility="gone" layout="@layout/bank_deposit_page"/>
+                    <include android:visibility="gone" layout="@layout/bank_currency_page"/>
+                    <include android:visibility="gone" layout="@layout/bank_other_page"/>
+                    <include android:visibility="gone" layout="@layout/bank_lottery_page"/>
+                    <include android:visibility="gone" layout="@layout/bank_card_issue_page"/>
+                </FrameLayout>
+            </LinearLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <include android:visibility="gone" layout="@layout/bank_pension_account_modal"/>
+                <include android:visibility="gone" layout="@layout/bank_payment_modal"/>
+                <include android:visibility="gone" layout="@layout/bank_payment_confirmation_modal"/>
+                <include android:visibility="gone" layout="@layout/bank_house_tax_payment_modal"/>
+                <include android:visibility="gone" layout="@layout/bank_transfer_modal"/>
+            </FrameLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

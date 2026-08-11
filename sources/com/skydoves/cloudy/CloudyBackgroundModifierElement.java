@@ -24,7 +24,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: copy-Bx497Mc$default  reason: not valid java name */
-    public static /* synthetic */ CloudyBackgroundModifierElement m9848copyBx497Mc$default(CloudyBackgroundModifierElement cloudyBackgroundModifierElement, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, Function1 function1, int i2, Object obj) {
+    public static /* synthetic */ CloudyBackgroundModifierElement m9865copyBx497Mc$default(CloudyBackgroundModifierElement cloudyBackgroundModifierElement, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, Function1 function1, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             sky = cloudyBackgroundModifierElement.sky;
         }
@@ -46,7 +46,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
         }
         long j2 = j;
         CloudyProgressive cloudyProgressive2 = cloudyProgressive;
-        return cloudyBackgroundModifierElement.m9850copyBx497Mc(sky, i, cloudyProgressive2, j2, z, function12);
+        return cloudyBackgroundModifierElement.m9867copyBx497Mc(sky, i, cloudyProgressive2, j2, z, function12);
     }
 
     public final Sky component1() {
@@ -62,7 +62,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: component4-0d7_KjU  reason: not valid java name */
-    public final long m9849component40d7_KjU() {
+    public final long m9866component40d7_KjU() {
         return this.tint;
     }
 
@@ -75,7 +75,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: copy-Bx497Mc  reason: not valid java name */
-    public final CloudyBackgroundModifierElement m9850copyBx497Mc(Sky sky, int i, CloudyProgressive progressive, long j, boolean z, Function1<? super CloudyState, Unit> onStateChanged) {
+    public final CloudyBackgroundModifierElement m9867copyBx497Mc(Sky sky, int i, CloudyProgressive progressive, long j, boolean z, Function1<? super CloudyState, Unit> onStateChanged) {
         Intrinsics.checkNotNullParameter(sky, "sky");
         Intrinsics.checkNotNullParameter(progressive, "progressive");
         Intrinsics.checkNotNullParameter(onStateChanged, "onStateChanged");
@@ -129,7 +129,7 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     }
 
     /* renamed from: getTint-0d7_KjU  reason: not valid java name */
-    public final long m9851getTint0d7_KjU() {
+    public final long m9868getTint0d7_KjU() {
         return this.tint;
     }
 
@@ -160,6 +160,6 @@ final class CloudyBackgroundModifierElement extends ModifierNodeElement<CloudyBa
     @Override // androidx.compose.ui.node.ModifierNodeElement
     public void update(CloudyBackgroundModifierNode node) {
         Intrinsics.checkNotNullParameter(node, "node");
-        node.m9852updateBx497Mc(this.sky, this.radius, this.progressive, this.tint, this.cpuBlurEnabled, this.onStateChanged);
+        node.m9869updateBx497Mc(this.sky, this.radius, this.progressive, this.tint, this.cpuBlurEnabled, this.onStateChanged);
     }
 }

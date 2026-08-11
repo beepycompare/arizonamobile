@@ -18,7 +18,6 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.HudElementTimeBinding;
@@ -126,7 +125,7 @@ public final class TimeElement {
         if (playedToday > 3600) {
             TextView textView = hudElementTimeBinding.tvTodayTime;
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Integer.valueOf(playedToday / DateCalculationsKt.SECONDS_PER_HOUR), Integer.valueOf((playedToday % DateCalculationsKt.SECONDS_PER_HOUR) / 60), Integer.valueOf(playedToday % 60)}, 3));
+            String format = String.format("%02d:%02d:%02d", Arrays.copyOf(new Object[]{Integer.valueOf(playedToday / 3600), Integer.valueOf((playedToday % 3600) / 60), Integer.valueOf(playedToday % 60)}, 3));
             Intrinsics.checkNotNullExpressionValue(format, "format(...)");
             textView.setText(format);
         } else {

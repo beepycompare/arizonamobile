@@ -628,7 +628,7 @@ public final class SieveCache<K, V> {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m10078constructorimpl(ULong.m10078constructorimpl(getCount()) * 32) ^ Long.MIN_VALUE, ULong.m10078constructorimpl(ULong.m10078constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m10095constructorimpl(ULong.m10095constructorimpl(getCount()) * 32) ^ Long.MIN_VALUE, ULong.m10095constructorimpl(ULong.m10095constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

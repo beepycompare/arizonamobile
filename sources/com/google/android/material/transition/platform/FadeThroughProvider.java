@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 /* loaded from: classes4.dex */
 public final class FadeThroughProvider implements VisibilityAnimatorProvider {
     static final float FADE_THROUGH_THRESHOLD = 0.35f;
-    private float progressThreshold = FADE_THROUGH_THRESHOLD;
+    private float progressThreshold = 0.35f;
 
     public float getProgressThreshold() {
         return this.progressThreshold;

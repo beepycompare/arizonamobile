@@ -13,7 +13,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DownloadUrlConnection implements DownloadConnection, DownloadConnection.Connected {
     private static final String TAG = "DownloadUrlConnection";
     private Configuration configuration;
@@ -146,7 +146,7 @@ public class DownloadUrlConnection implements DownloadConnection, DownloadConnec
         return this.connection.getRequestProperty(str);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Factory implements DownloadConnection.Factory {
         private final Configuration configuration;
 
@@ -168,7 +168,7 @@ public class DownloadUrlConnection implements DownloadConnection, DownloadConnec
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Configuration {
         private Integer connectTimeout;
         private Proxy proxy;
@@ -190,7 +190,7 @@ public class DownloadUrlConnection implements DownloadConnection, DownloadConnec
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static final class RedirectHandler implements IRedirectHandler {
         String redirectLocation;
 

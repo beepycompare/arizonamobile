@@ -9,7 +9,7 @@ import com.bumptech.glide.request.transition.Transition;
 import com.bumptech.glide.util.Util;
 import java.util.List;
 import java.util.Queue;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class ListPreloader<T> implements AbsListView.OnScrollListener {
     private int lastEnd;
     private int lastStart;
@@ -22,14 +22,14 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
     private int lastFirstVisible = -1;
     private boolean isIncreasing = true;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface PreloadModelProvider<U> {
         List<U> getPreloadItems(int i);
 
         RequestBuilder<?> getPreloadRequestBuilder(U u);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public interface PreloadSizeProvider<T> {
         int[] getPreloadSize(T t, int i, int i2);
     }
@@ -127,7 +127,7 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class PreloadTargetQueue {
         final Queue<PreloadTarget> queue;
 
@@ -148,7 +148,7 @@ public class ListPreloader<T> implements AbsListView.OnScrollListener {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class PreloadTarget implements Target<Object> {
         int photoHeight;
         int photoWidth;

@@ -21,7 +21,7 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class DownloadContext {
     private static final Executor SERIAL_EXECUTOR = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 30, TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkDownload Serial", false));
     private static final String TAG = "DownloadContext";
@@ -128,7 +128,7 @@ public class DownloadContext {
         return new Builder(this.set, new ArrayList(Arrays.asList(this.tasks))).setListener(this.contextListener);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
         final ArrayList<DownloadTask> boundTaskList;
         private DownloadContextListener listener;
@@ -223,7 +223,7 @@ public class DownloadContext {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class QueueSet {
         private Boolean autoCallbackToUIThread;
         private Integer flushBufferSize;
@@ -385,7 +385,7 @@ public class DownloadContext {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class QueueAttachListener extends DownloadListener2 {
         private final DownloadContextListener contextListener;
         private final DownloadContext hostContext;
@@ -412,7 +412,7 @@ public class DownloadContext {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class AlterContext {
         private final DownloadContext context;
 

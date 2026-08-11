@@ -121,7 +121,7 @@ public class LinearSmoothScroller extends RecyclerView.SmoothScroller {
         this.mTargetVector = computeScrollVectorForPosition;
         this.mInterimTargetDx = (int) (computeScrollVectorForPosition.x * 10000.0f);
         this.mInterimTargetDy = (int) (computeScrollVectorForPosition.y * 10000.0f);
-        action.update((int) (this.mInterimTargetDx * TARGET_SEEK_EXTRA_SCROLL_RATIO), (int) (this.mInterimTargetDy * TARGET_SEEK_EXTRA_SCROLL_RATIO), (int) (calculateTimeForScrolling(10000) * TARGET_SEEK_EXTRA_SCROLL_RATIO), this.mLinearInterpolator);
+        action.update((int) (this.mInterimTargetDx * 1.2f), (int) (this.mInterimTargetDy * 1.2f), (int) (calculateTimeForScrolling(10000) * 1.2f), this.mLinearInterpolator);
     }
 
     public int calculateDtToFit(int i, int i2, int i3, int i4, int i5) {

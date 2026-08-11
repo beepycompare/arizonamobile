@@ -29,7 +29,7 @@ public final class PurpleWavesBattlePassUi extends BindingBattlePassUi {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private PurpleWavesBattlePassUi(Context context, WinterBattlepassLayoutBinding winterBattlepassLayoutBinding) {
-        super(context, r2, winterBattlepassLayoutBinding, r4, r5, r6, new BattlePassTasksPageViews(r16, r17, commonTaskRecycleView, r19, r20, tasksTimeText, remainingTimeText, levelPassText, mainExperienceText, r25, r26, taskInfoTitle, taskInfoDesc, itemCount, progressInPercentText, r31, taskInfoProgressBar, taskItemsRewardsList, r34, taskInfoPremiumLockContainer, btnBuyPremiumLock));
+        super(context, r2, winterBattlepassLayoutBinding, r4, r5, r6, new BattlePassTasksPageViews(r16, r17, commonTaskRecycleView, r19, r20, r21, tasksTimeText, remainingTimeText, levelPassText, mainExperienceText, r26, r27, taskInfoTitle, taskInfoDesc, itemCount, progressInPercentText, r32, taskInfoProgressBar, taskItemsRewardsList, r35, buttonTaskInfoText, taskInfoPremiumLockContainer, btnBuyPremiumLock));
         ConstraintLayout root = winterBattlepassLayoutBinding.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
         ConstraintLayout constraintLayout = root;
@@ -108,6 +108,9 @@ public final class PurpleWavesBattlePassUi extends BindingBattlePassUi {
         LinearLayout taskContainerListIsEmpty = winterBattlepassLayoutBinding.battlepassTasksPage.taskContainerListIsEmpty;
         Intrinsics.checkNotNullExpressionValue(taskContainerListIsEmpty, "taskContainerListIsEmpty");
         LinearLayout linearLayout2 = taskContainerListIsEmpty;
+        ProgressBar tasksLoading = winterBattlepassLayoutBinding.battlepassTasksPage.tasksLoading;
+        Intrinsics.checkNotNullExpressionValue(tasksLoading, "tasksLoading");
+        ProgressBar progressBar = tasksLoading;
         RelativeLayout currTaskInfoContainer = winterBattlepassLayoutBinding.battlepassTasksPage.currTaskInfoContainer;
         Intrinsics.checkNotNullExpressionValue(currTaskInfoContainer, "currTaskInfoContainer");
         RelativeLayout relativeLayout = currTaskInfoContainer;
@@ -143,6 +146,8 @@ public final class PurpleWavesBattlePassUi extends BindingBattlePassUi {
         RelativeLayout buttonTaskInfoGetReward = winterBattlepassLayoutBinding.battlepassTasksPage.buttonTaskInfoGetReward;
         Intrinsics.checkNotNullExpressionValue(buttonTaskInfoGetReward, "buttonTaskInfoGetReward");
         RelativeLayout relativeLayout2 = buttonTaskInfoGetReward;
+        TextView buttonTaskInfoText = winterBattlepassLayoutBinding.battlepassTasksPage.buttonTaskInfoText;
+        Intrinsics.checkNotNullExpressionValue(buttonTaskInfoText, "buttonTaskInfoText");
         CustomCardView taskInfoPremiumLockContainer = winterBattlepassLayoutBinding.battlepassTasksPage.taskInfoPremiumLockContainer;
         Intrinsics.checkNotNullExpressionValue(taskInfoPremiumLockContainer, "taskInfoPremiumLockContainer");
         TextView btnBuyPremiumLock = winterBattlepassLayoutBinding.battlepassTasksPage.btnBuyPremiumLock;

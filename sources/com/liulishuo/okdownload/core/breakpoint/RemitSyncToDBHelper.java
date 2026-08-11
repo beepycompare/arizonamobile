@@ -1,7 +1,7 @@
 package com.liulishuo.okdownload.core.breakpoint;
 
 import com.liulishuo.okdownload.core.breakpoint.RemitSyncExecutor;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class RemitSyncToDBHelper {
     long delayMillis;
     private final RemitSyncExecutor executor;

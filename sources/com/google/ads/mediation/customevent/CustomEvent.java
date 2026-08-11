@@ -1,6 +1,6 @@
 package com.google.ads.mediation.customevent;
 @Deprecated
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public interface CustomEvent {
     void destroy();
 }

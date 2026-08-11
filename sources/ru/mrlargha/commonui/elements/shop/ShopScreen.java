@@ -163,7 +163,7 @@ public final class ShopScreen extends SAMPUIElement implements InterfaceControll
         List<InventoryItem> list2 = list;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
         for (InventoryItem inventoryItem : list2) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, this.currentItemsType, null, null, false, false, null, null, null, null, null, 67043327, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, this.currentItemsType, null, null, false, false, null, null, null, null, null, null, 134152191, null));
         }
         this.pagingList.addAll(arrayList);
         this.shopAdapter.submitList(this.pagingList);

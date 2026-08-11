@@ -1150,7 +1150,7 @@ public final class GameTestScriptRunner {
     }
 
     private final int resolveSpawnSelectionId(String str, int i) {
-        int m9898constructorimpl;
+        int m9915constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             GameTestScriptRunner gameTestScriptRunner = this;
@@ -1167,22 +1167,22 @@ public final class GameTestScriptRunner {
                     return ComparisonsKt.compareValues(Integer.valueOf(((JSONObject) t2).optInt("favorite", 0)), Integer.valueOf(((JSONObject) t).optInt("favorite", 0)));
                 }
             }), i);
-            m9898constructorimpl = Result.m9898constructorimpl(Integer.valueOf(jSONObject != null ? jSONObject.optInt("id") : 0));
+            m9915constructorimpl = Result.m9915constructorimpl(Integer.valueOf(jSONObject != null ? jSONObject.optInt("id") : 0));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
-        if (m9901exceptionOrNullimpl != null) {
+        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
+        if (m9918exceptionOrNullimpl != null) {
             GameTestRuntime gameTestRuntime = this.runtime;
-            String message = m9901exceptionOrNullimpl.getMessage();
+            String message = m9918exceptionOrNullimpl.getMessage();
             if (message == null) {
                 message = "";
             }
             gameTestRuntime.log("Failed to parse SPAWN_SELECTION list, falling back to id=0: " + message);
-            m9898constructorimpl = 0;
+            m9915constructorimpl = 0;
         }
-        return ((Number) m9898constructorimpl).intValue();
+        return ((Number) m9915constructorimpl).intValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

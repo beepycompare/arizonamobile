@@ -3,7 +3,7 @@ package com.facebook.internal;
 import com.facebook.Settings;
 import com.facebook.android.Facebook;
 import java.util.Collection;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ServerProtocol {
     public static final String BATCHED_REST_METHOD_URL_BASE = "method/";
     private static final String DIALOG_AUTHORITY_FORMAT = "m.%s";

@@ -50,12 +50,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class InputFieldKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit InputField_rAjV9yQ$lambda$1(MutableState mutableState, float f, int i, int i2, Composer composer, int i3) {
-        m9784InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+        m9801InputFieldrAjV9yQ(mutableState, f, i, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
         return Unit.INSTANCE;
     }
 
     /* renamed from: InputField-rAjV9yQ  reason: not valid java name */
-    public static final void m9784InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
+    public static final void m9801InputFieldrAjV9yQ(final MutableState<String> state, final float f, final int i, Composer composer, final int i2) {
         int i3;
         Intrinsics.checkNotNullParameter(state, "state");
         Composer startRestartGroup = composer.startRestartGroup(-155401538);
@@ -109,7 +109,7 @@ public final class InputFieldKt {
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, (i3 >> 6) & 14), (String) null, SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             Modifier m1122width3ABfNKs = SizeKt.m1122width3ABfNKs(Modifier.Companion, f);
             String value = state.getValue();
-            TextStyle m7621copyp1EtxEg$default = TextStyle.m7621copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(24.0f), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(24.0f), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
+            TextStyle m7621copyp1EtxEg$default = TextStyle.m7621copyp1EtxEg$default(MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9864dpToSp8Feqmps(Dp.m8160constructorimpl(24.0f), startRestartGroup, 6), null, null, null, null, null, 0L, null, null, null, 0L, null, null, null, 0, 0, TypeKt.m9864dpToSp8Feqmps(Dp.m8160constructorimpl(24.0f), startRestartGroup, 6), null, null, null, 0, 0, null, 16646140, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -295204344, "CC(remember):InputField.kt#9igjgp");
             boolean z = (i4 & 14) == 4;
             Object rememberedValue = startRestartGroup.rememberedValue();
@@ -125,7 +125,7 @@ public final class InputFieldKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m1122width3ABfNKs, false, false, m7621copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m9783getLambda$1682333503$dialogs(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
+            BasicTextFieldKt.BasicTextField(value, (Function1<? super String, Unit>) rememberedValue, m1122width3ABfNKs, false, false, m7621copyp1EtxEg$default, (KeyboardOptions) null, (KeyboardActions) null, true, 0, 0, (VisualTransformation) null, (Function1<? super TextLayoutResult, Unit>) null, (MutableInteractionSource) null, (Brush) null, (Function3<? super Function2<? super Composer, ? super Integer, Unit>, ? super Composer, ? super Integer, Unit>) ComposableSingletons$InputFieldKt.INSTANCE.m9800getLambda$1682333503$dialogs(), startRestartGroup, 100663296, (int) ProfileVerifier.CompilationStatus.RESULT_CODE_ERROR_CANT_WRITE_PROFILE_VERIFICATION_RESULT_CACHE_FILE, 32472);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

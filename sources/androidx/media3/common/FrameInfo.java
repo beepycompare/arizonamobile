@@ -1,7 +1,7 @@
 package androidx.media3.common;
 
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class FrameInfo {
     public final Format format;
     public final long offsetToAddUs;

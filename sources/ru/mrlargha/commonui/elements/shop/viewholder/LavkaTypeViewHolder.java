@@ -25,10 +25,11 @@ import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: LavkaTypeViewHolder.kt */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010\f\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u0006R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lru/mrlargha/commonui/elements/shop/viewholder/LavkaTypeViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemInventoryBinding;", "onItemClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "<init>", "(Lru/mrlargha/commonui/databinding/ItemInventoryBinding;Lkotlin/jvm/functions/Function1;)V", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "itemVal", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001B#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010\r\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u00020\u0006J\u0006\u0010\u000f\u001a\u00020\u0007R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lru/mrlargha/commonui/elements/shop/viewholder/LavkaTypeViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemInventoryBinding;", "onItemClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "<init>", "(Lru/mrlargha/commonui/databinding/ItemInventoryBinding;Lkotlin/jvm/functions/Function1;)V", "loadImageJob", "Lkotlinx/coroutines/Job;", "effectLoadJob", "bind", "itemVal", "recycle", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
     private final ItemInventoryBinding binding;
+    private Job effectLoadJob;
     private Job loadImageJob;
     private final Function1<InventoryItem, Unit> onItemClicked;
 
@@ -47,17 +48,21 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
         Long amount;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         ItemInventoryBinding itemInventoryBinding = this.binding;
+        Job job = this.effectLoadJob;
+        Object obj = null;
+        boolean z = true;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
         itemInventoryBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.shop.viewholder.LavkaTypeViewHolder$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LavkaTypeViewHolder.bind$lambda$0$0(InventoryItem.this, this, view);
             }
         });
-        Job job = this.loadImageJob;
-        Object obj = null;
-        boolean z = true;
-        if (job != null) {
-            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        Job job2 = this.loadImageJob;
+        if (job2 != null) {
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
         }
         if (itemVal.getItem() != null) {
             itemInventoryBinding.tvTitleText.setIncludeFontPadding(true);
@@ -125,7 +130,7 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
             Intrinsics.checkNotNullExpressionValue(viewCenter2, "viewCenter");
             viewCenter2.setVisibility(0);
         }
-        UtilKt.setInventoryItemEffect(itemInventoryBinding, itemVal.getItem());
+        this.effectLoadJob = UtilKt.setInventoryItemEffect(itemInventoryBinding, itemVal);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -135,5 +140,20 @@ public final class LavkaTypeViewHolder extends RecyclerView.ViewHolder {
             return;
         }
         lavkaTypeViewHolder.onItemClicked.invoke(inventoryItem);
+    }
+
+    public final void recycle() {
+        ItemInventoryBinding itemInventoryBinding = this.binding;
+        Job job = this.loadImageJob;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
+        this.loadImageJob = null;
+        Job job2 = this.effectLoadJob;
+        if (job2 != null) {
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+        }
+        this.effectLoadJob = null;
+        UtilKt.clearInventoryItemEffect(itemInventoryBinding);
     }
 }

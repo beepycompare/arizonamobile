@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AccessToken implements Serializable {
     static final /* synthetic */ boolean $assertionsDisabled = true;
     static final String ACCESS_TOKEN_KEY = "access_token";
@@ -33,7 +33,7 @@ public final class AccessToken implements Serializable {
     private final AccessTokenSource source;
     private final String token;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class SerializationProxyV1 implements Serializable {
         private static final long serialVersionUID = -2488473066578201069L;
         private final Date expires;

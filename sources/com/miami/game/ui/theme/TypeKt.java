@@ -60,7 +60,7 @@ public final class TypeKt {
     }
 
     /* renamed from: dpToSp-8Feqmps  reason: not valid java name */
-    public static final long m9847dpToSp8Feqmps(float f, Composer composer, int i) {
+    public static final long m9864dpToSp8Feqmps(float f, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 927535330, "C(dpToSp)N(dp:c#ui.unit.Dp)73@2421L7:Type.kt#3dgxrl");
         if (ComposerKt.isTraceInProgress()) {
             ComposerKt.traceEventStart(927535330, i, -1, "com.miami.game.ui.theme.dpToSp (Type.kt:73)");

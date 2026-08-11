@@ -30,8 +30,8 @@ public final class SemaphoreKt {
         return Semaphore(i, i2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x003d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -87,7 +87,6 @@ public final class SemaphoreKt {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final SemaphoreSegment createSegment(long j, SemaphoreSegment semaphoreSegment) {
         return new SemaphoreSegment(j, semaphoreSegment, 0);
     }

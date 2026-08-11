@@ -98,37 +98,37 @@ public final class ComposableSingletons$DebugGameTestScriptCardKt {
     });
 
     /* renamed from: getLambda$-1734159728$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9820getLambda$1734159728$settings() {
+    public final Function2<Composer, Integer, Unit> m9837getLambda$1734159728$settings() {
         return f66lambda$1734159728;
     }
 
     /* renamed from: getLambda$-1804383392$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9821getLambda$1804383392$settings() {
+    public final Function3<RowScope, Composer, Integer, Unit> m9838getLambda$1804383392$settings() {
         return f67lambda$1804383392;
     }
 
     /* renamed from: getLambda$-1910135413$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9822getLambda$1910135413$settings() {
+    public final Function3<RowScope, Composer, Integer, Unit> m9839getLambda$1910135413$settings() {
         return f68lambda$1910135413;
     }
 
     /* renamed from: getLambda$-1963712254$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9823getLambda$1963712254$settings() {
+    public final Function2<Composer, Integer, Unit> m9840getLambda$1963712254$settings() {
         return f69lambda$1963712254;
     }
 
     /* renamed from: getLambda$-335067231$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9824getLambda$335067231$settings() {
+    public final Function2<Composer, Integer, Unit> m9841getLambda$335067231$settings() {
         return f70lambda$335067231;
     }
 
     /* renamed from: getLambda$-562951057$settings  reason: not valid java name */
-    public final Function2<Composer, Integer, Unit> m9825getLambda$562951057$settings() {
+    public final Function2<Composer, Integer, Unit> m9842getLambda$562951057$settings() {
         return f71lambda$562951057;
     }
 
     /* renamed from: getLambda$-738926742$settings  reason: not valid java name */
-    public final Function3<RowScope, Composer, Integer, Unit> m9826getLambda$738926742$settings() {
+    public final Function3<RowScope, Composer, Integer, Unit> m9843getLambda$738926742$settings() {
         return f72lambda$738926742;
     }
 

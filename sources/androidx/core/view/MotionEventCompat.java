@@ -2,7 +2,7 @@ package androidx.core.view;
 
 import android.view.MotionEvent;
 import androidx.annotation.ReplaceWith;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MotionEventCompat {
     @Deprecated
     public static final int ACTION_HOVER_ENTER = 9;

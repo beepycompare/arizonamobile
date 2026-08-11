@@ -2,11 +2,11 @@ package com.arizona.launcher;
 
 import android.content.Context;
 import android.os.Process;
+import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,14 +24,12 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.io.CloseableKt;
-import kotlin.io.TextStreamsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.sequences.SequencesKt;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 /* compiled from: LogcatHelper.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u0000 &2\u00020\u0001:\u0003$%&B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u0003J\u0006\u0010\u0010\u001a\u00020\u000fJ\u000e\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u000e\u001a\u00020\u0012J\b\u0010\u0013\u001a\u00020\u000fH\u0002J\u0018\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\u0015\u001a\u00020\f2\u0006\u0010\u0016\u001a\u00020\tH\u0002J\b\u0010\u0017\u001a\u00020\u000fH\u0002J\u0010\u0010\u0018\u001a\u00020\u000f2\u0006\u0010\u0019\u001a\u00020\fH\u0002J\u000e\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\f0\u001bH\u0002J\u0018\u0010\u001c\u001a\u00020\u000f2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0002J\u0018\u0010!\u001a\u00020\f2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0002J\u0018\u0010\"\u001a\u00020\u000f2\u0006\u0010\u0015\u001a\u00020\f2\u0006\u0010#\u001a\u00020\fH\u0002R\u0014\u0010\u0006\u001a\b\u0018\u00010\u0007R\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b(\u0012\b\b)\u0012\u0004\b\u0003\u0010\u0000¨\u0006'"}, d2 = {"Lcom/arizona/launcher/LogcatHelper;", "", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "mLogDumper", "Lcom/arizona/launcher/LogcatHelper$LogDumper;", "mPId", "", "recentLogLines", "Ljava/util/ArrayDeque;", "", "recentLogLinesLock", "init", "", TtmlNode.START, "clean", "", "cleanCrashLog", "cleanFile", "fileName", "maxSizeMb", "installCrashHandler", "recordRecentLine", "line", "getRecentLinesSnapshot", "", "writeCrashReport", "thread", "Ljava/lang/Thread;", "throwable", "", "buildCrashReport", "appendReport", "report", "LogDumper", "CrashFileUncaughtExceptionHandler", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u0000 '2\u00020\u0001:\u0003%&'B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0002\u001a\u00020\u0003J\u0006\u0010\u0010\u001a\u00020\u000fJ\u000e\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u000e\u001a\u00020\u0012J\u0006\u0010\u0013\u001a\u00020\u000fJ\b\u0010\u0014\u001a\u00020\u000fH\u0002J\u0018\u0010\u0015\u001a\u00020\u000f2\u0006\u0010\u0016\u001a\u00020\f2\u0006\u0010\u0017\u001a\u00020\tH\u0002J\b\u0010\u0018\u001a\u00020\u000fH\u0002J\u0010\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\fH\u0002J\u000e\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\f0\u001cH\u0002J\u0018\u0010\u001d\u001a\u00020\u000f2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0002J\u0018\u0010\"\u001a\u00020\f2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0002J\u0018\u0010#\u001a\u00020\u000f2\u0006\u0010\u0016\u001a\u00020\f2\u0006\u0010$\u001a\u00020\fH\u0002R\u0014\u0010\u0006\u001a\b\u0018\u00010\u0007R\u00020\u0000X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b)\u0012\b\b*\u0012\u0004\b\u0003\u0010\u0000¨\u0006("}, d2 = {"Lcom/arizona/launcher/LogcatHelper;", "", "context", "Landroid/content/Context;", "<init>", "(Landroid/content/Context;)V", "mLogDumper", "Lcom/arizona/launcher/LogcatHelper$LogDumper;", "mPId", "", "recentLogLines", "Ljava/util/ArrayDeque;", "", "recentLogLinesLock", "init", "", TtmlNode.START, "clean", "", "flush", "cleanCrashLog", "cleanFile", "fileName", "maxSizeMb", "installCrashHandler", "recordRecentLine", "line", "getRecentLinesSnapshot", "", "writeCrashReport", "thread", "Ljava/lang/Thread;", "throwable", "", "buildCrashReport", "appendReport", "report", "LogDumper", "CrashFileUncaughtExceptionHandler", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class LogcatHelper {
     private static final int CRASH_BUFFER_LINES = 100;
@@ -39,6 +37,7 @@ public final class LogcatHelper {
     private static final String CRASH_SECTION_DIVIDER = "==================== APP CRASH ====================";
     private static LogcatHelper INSTANCE = null;
     private static final String MAIN_LOG_FILE_NAME = "samp.log";
+    private static final int MAX_LOG_LINE_CHARS = 2048;
     private static String PATH_LOGCAT;
     private LogDumper mLogDumper;
     private final int mPId;
@@ -103,7 +102,14 @@ public final class LogcatHelper {
     }
 
     public final void clean(boolean z) {
-        cleanFile(MAIN_LOG_FILE_NAME, z ? 512 : 64);
+        cleanFile(MAIN_LOG_FILE_NAME, 16);
+    }
+
+    public final void flush() {
+        LogDumper logDumper = this.mLogDumper;
+        if (logDumper != null) {
+            logDumper.flush();
+        }
     }
 
     private final void cleanCrashLog() {
@@ -116,51 +122,8 @@ public final class LogcatHelper {
             return;
         }
         File file = new File(str2, str);
-        File file2 = new File(str2, str + ".tmp");
-        if (file.exists()) {
-            if (file.length() > i * 1048576) {
-                file.delete();
-            } else if (file.length() > (i / 2) * 1048576) {
-                try {
-                    InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8);
-                    BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
-                    int count = SequencesKt.count(TextStreamsKt.lineSequence(bufferedReader));
-                    CloseableKt.closeFinally(bufferedReader, null);
-                    int i2 = count / 2;
-                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(file2), Charsets.UTF_8);
-                    BufferedWriter bufferedWriter = outputStreamWriter instanceof BufferedWriter ? (BufferedWriter) outputStreamWriter : new BufferedWriter(outputStreamWriter, 8192);
-                    BufferedWriter bufferedWriter2 = bufferedWriter;
-                    InputStreamReader inputStreamReader2 = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8);
-                    BufferedReader bufferedReader2 = inputStreamReader2 instanceof BufferedReader ? (BufferedReader) inputStreamReader2 : new BufferedReader(inputStreamReader2, 8192);
-                    try {
-                        for (String str3 : SequencesKt.drop(TextStreamsKt.lineSequence(bufferedReader2), i2)) {
-                            bufferedWriter2.write(str3);
-                            bufferedWriter2.newLine();
-                        }
-                        Unit unit = Unit.INSTANCE;
-                        CloseableKt.closeFinally(bufferedReader2, null);
-                        Unit unit2 = Unit.INSTANCE;
-                        CloseableKt.closeFinally(bufferedWriter, null);
-                        if (file.delete()) {
-                            if (file2.renameTo(file)) {
-                                return;
-                            }
-                            System.out.println((Object) "The temporary file could not be renamed.");
-                            return;
-                        }
-                        System.out.println((Object) "The temporary file could not be removed.");
-                    } catch (Throwable th) {
-                        try {
-                            throw th;
-                        } catch (Throwable th2) {
-                            CloseableKt.closeFinally(bufferedReader2, th);
-                            throw th2;
-                        }
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+        if (file.exists() && file.length() > i * PlaybackStateCompat.ACTION_SET_CAPTIONING_ENABLED && !file.delete()) {
+            System.out.println((Object) "The oversized log file could not be removed.");
         }
     }
 
@@ -194,10 +157,7 @@ public final class LogcatHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public final void writeCrashReport(Thread thread, Throwable th) {
         cleanCrashLog();
-        LogDumper logDumper = this.mLogDumper;
-        if (logDumper != null) {
-            logDumper.flush();
-        }
+        flush();
         String buildCrashReport = buildCrashReport(thread, th);
         appendReport(MAIN_LOG_FILE_NAME, buildCrashReport);
         appendReport(CRASH_LOG_FILE_NAME, buildCrashReport);
@@ -323,8 +283,8 @@ public final class LogcatHelper {
                         while (this.mRunning && (readLine = bufferedReader.readLine()) != null && readLine != null) {
                             try {
                                 if (readLine.length() != 0 && !StringsKt.contains$default((CharSequence) readLine, (CharSequence) "AudioTrack", false, 2, (Object) null) && this.writer != null && StringsKt.contains$default((CharSequence) readLine, (CharSequence) this.mPID, false, 2, (Object) null)) {
-                                    if (readLine.length() > 8192) {
-                                        readLine = readLine.substring(0, 8192);
+                                    if (readLine.length() > 2048) {
+                                        readLine = readLine.substring(0, 2048);
                                         Intrinsics.checkNotNullExpressionValue(readLine, "substring(...)");
                                     }
                                     synchronized (this.writerLock) {
@@ -456,10 +416,12 @@ public final class LogcatHelper {
         public void uncaughtException(Thread thread, Throwable throwable) {
             Intrinsics.checkNotNullParameter(thread, "thread");
             Intrinsics.checkNotNullParameter(throwable, "throwable");
-            try {
-                LogcatHelper.this.writeCrashReport(thread, throwable);
-            } catch (Throwable th) {
-                th.printStackTrace();
+            if (!(throwable instanceof OutOfMemoryError)) {
+                try {
+                    LogcatHelper.this.writeCrashReport(thread, throwable);
+                } catch (Throwable th) {
+                    th.printStackTrace();
+                }
             }
             Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.delegate;
             if (uncaughtExceptionHandler != null) {
@@ -474,7 +436,7 @@ public final class LogcatHelper {
     }
 
     /* compiled from: LogcatHelper.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\r\u001a\u0004\u0018\u00010\u000b2\u0006\u0010\u000e\u001a\u00020\u000fR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lcom/arizona/launcher/LogcatHelper$Companion;", "", "<init>", "()V", "MAIN_LOG_FILE_NAME", "", "CRASH_LOG_FILE_NAME", "CRASH_BUFFER_LINES", "", "CRASH_SECTION_DIVIDER", "INSTANCE", "Lcom/arizona/launcher/LogcatHelper;", "PATH_LOGCAT", "getInstance", "context", "Landroid/content/Context;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u000e\u001a\u0004\u0018\u00010\f2\u0006\u0010\u000f\u001a\u00020\u0010R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lcom/arizona/launcher/LogcatHelper$Companion;", "", "<init>", "()V", "MAIN_LOG_FILE_NAME", "", "CRASH_LOG_FILE_NAME", "CRASH_BUFFER_LINES", "", "MAX_LOG_LINE_CHARS", "CRASH_SECTION_DIVIDER", "INSTANCE", "Lcom/arizona/launcher/LogcatHelper;", "PATH_LOGCAT", "getInstance", "context", "Landroid/content/Context;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

@@ -1,5 +1,5 @@
 package com.facebook;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum SessionState {
     CREATED(Category.CREATED_CATEGORY),
     CREATED_TOKEN_LOADED(Category.CREATED_CATEGORY),
@@ -11,7 +11,7 @@ public enum SessionState {
     
     private final Category category;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private enum Category {
         CREATED_CATEGORY,
         OPENED_CATEGORY,

@@ -7,7 +7,7 @@ import com.liulishuo.okdownload.core.exception.InterruptException;
 import com.liulishuo.okdownload.core.exception.RetryException;
 import com.liulishuo.okdownload.core.interceptor.Interceptor;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RetryInterceptor implements Interceptor.Connect, Interceptor.Fetch {
     @Override // com.liulishuo.okdownload.core.interceptor.Interceptor.Connect
     public DownloadConnection.Connected interceptConnect(DownloadChain downloadChain) throws IOException {

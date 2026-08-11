@@ -9,7 +9,7 @@ import com.liulishuo.okdownload.core.file.MultiPointOutputStream;
 import com.liulishuo.okdownload.core.interceptor.Interceptor;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FetchDataInterceptor implements Interceptor.Fetch {
     private final int blockIndex;
     private final CallbackDispatcher dispatcher = OkDownload.with().callbackDispatcher();

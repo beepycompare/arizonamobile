@@ -1,5 +1,5 @@
 package com.liulishuo.okdownload.core.cause;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public enum ResumeFailedCause {
     INFO_DIRTY,
     FILE_NOT_EXIST,

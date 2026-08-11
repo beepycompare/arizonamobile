@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.checkerframework.dataflow.qual.Pure;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MimeTypes {
     public static final String APPLICATION_AIT = "application/vnd.dvb.ait";
     public static final String APPLICATION_CAMERA_MOTION = "application/x-camera-motion";
@@ -872,7 +872,7 @@ public final class MimeTypes {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Mp4aObjectType {
         public final int audioObjectTypeIndication;
         public final int objectTypeIndication;
@@ -904,7 +904,7 @@ public final class MimeTypes {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class CustomMimeType {
         public final String codecPrefix;
         public final String mimeType;

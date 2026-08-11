@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringWriter;
 import java.nio.charset.Charset;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 final class Util {
     static final Charset US_ASCII = Charset.forName(StringPart.DEFAULT_CHARSET);
     static final Charset UTF_8 = Charset.forName("UTF-8");

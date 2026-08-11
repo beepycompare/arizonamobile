@@ -17,19 +17,19 @@ public final class T {
     public static final class a extends Lambda implements Function1<Throwable, Unit> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Task<T>.TaskResultProvider f1500a;
+        public final /* synthetic */ Task<T>.TaskResultProvider f1455a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(Task<T>.TaskResultProvider taskResultProvider) {
             super(1);
-            this.f1500a = taskResultProvider;
+            this.f1455a = taskResultProvider;
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(Throwable th) {
             Throwable error = th;
             Intrinsics.checkNotNullParameter(error, "error");
-            this.f1500a.setTaskErrorResult(error);
+            this.f1455a.setTaskErrorResult(error);
             return Unit.INSTANCE;
         }
     }
@@ -39,17 +39,17 @@ public final class T {
     public static final class b<T> extends Lambda implements Function1<T, Unit> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Task<T>.TaskResultProvider f1501a;
+        public final /* synthetic */ Task<T>.TaskResultProvider f1456a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public b(Task<T>.TaskResultProvider taskResultProvider) {
             super(1);
-            this.f1501a = taskResultProvider;
+            this.f1456a = taskResultProvider;
         }
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(Object obj) {
-            this.f1501a.setTaskSuccessResult(obj);
+            this.f1456a.setTaskSuccessResult(obj);
             return Unit.INSTANCE;
         }
     }

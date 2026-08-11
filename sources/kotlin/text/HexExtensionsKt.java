@@ -249,7 +249,7 @@ public final class HexExtensionsKt {
 
     private static final int checkFormatLength(long j) {
         if (0 > j || j > SieveCacheKt.NodeLinkMask) {
-            throw new IllegalArgumentException("The resulting string length is too big: " + ((Object) ULong.m10124toStringimpl(ULong.m10078constructorimpl(j))));
+            throw new IllegalArgumentException("The resulting string length is too big: " + ((Object) ULong.m10141toStringimpl(ULong.m10095constructorimpl(j))));
         }
         return (int) j;
     }

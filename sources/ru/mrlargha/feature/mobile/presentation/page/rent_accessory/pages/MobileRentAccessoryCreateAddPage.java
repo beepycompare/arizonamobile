@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.TuplesKt;
+import kotlin.Unit;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
@@ -251,26 +252,27 @@ public final class MobileRentAccessoryCreateAddPage {
         this.bindingPage.tvItemOutOf.setText(this.parentContainer.getTargetActivity().getString(R.string.out_of, new Object[]{Integer.valueOf(this.chosenItems.size()), Integer.valueOf(this.items.size())}));
         TextView tvItemOutOf = this.bindingPage.tvItemOutOf;
         Intrinsics.checkNotNullExpressionValue(tvItemOutOf, "tvItemOutOf");
-        tvItemOutOf.setVisibility(this.currentBar == Companion.TopBar.SET ? 0 : 8);
         int i = 0;
+        tvItemOutOf.setVisibility(this.currentBar == Companion.TopBar.SET ? 0 : 8);
+        int i2 = 0;
         for (Object obj : this.items) {
-            int i2 = i + 1;
-            if (i < 0) {
+            int i3 = i2 + 1;
+            if (i2 < 0) {
                 CollectionsKt.throwIndexOverflow();
             }
             MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding = (MobileRentAccessoryElementItemBinding) obj;
-            MobileRentAccessoryGetModelItem mobileRentAccessoryGetModelItem = (MobileRentAccessoryGetModelItem) CollectionsKt.getOrNull(this.chosenItems, i);
+            MobileRentAccessoryGetModelItem mobileRentAccessoryGetModelItem = (MobileRentAccessoryGetModelItem) CollectionsKt.getOrNull(this.chosenItems, i2);
             if (mobileRentAccessoryGetModelItem != null) {
                 BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new MobileRentAccessoryCreateAddPage$initItems$1$1$1(mobileRentAccessoryElementItemBinding, mobileRentAccessoryGetModelItem, null), 3, null);
                 ImageView ivItem = mobileRentAccessoryElementItemBinding.ivItem;
                 Intrinsics.checkNotNullExpressionValue(ivItem, "ivItem");
-                ivItem.setVisibility(0);
+                ivItem.setVisibility(i);
                 ImageView ivIcon = mobileRentAccessoryElementItemBinding.ivIcon;
                 Intrinsics.checkNotNullExpressionValue(ivIcon, "ivIcon");
                 ivIcon.setVisibility(8);
                 TextView tvCount = mobileRentAccessoryElementItemBinding.tvCount;
                 Intrinsics.checkNotNullExpressionValue(tvCount, "tvCount");
-                tvCount.setVisibility(mobileRentAccessoryGetModelItem.getEnchanted() > 0 ? 0 : 8);
+                tvCount.setVisibility((mobileRentAccessoryGetModelItem.getEnchanted() > 0 ? 1 : i) != 0 ? i : 8);
                 mobileRentAccessoryElementItemBinding.tvCount.setText("+" + mobileRentAccessoryGetModelItem.getEnchanted());
                 CustomCardView btnDelete = mobileRentAccessoryElementItemBinding.btnDelete;
                 Intrinsics.checkNotNullExpressionValue(btnDelete, "btnDelete");
@@ -282,33 +284,37 @@ public final class MobileRentAccessoryCreateAddPage {
                 Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
                 ImageView ivEffectForeground = mobileRentAccessoryElementItemBinding.ivEffectForeground;
                 Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-                UtilKt.setEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground, Integer.valueOf(mobileRentAccessoryGetModelItem.getItemId()));
-            } else {
-                ImageView ivIcon2 = mobileRentAccessoryElementItemBinding.ivIcon;
-                Intrinsics.checkNotNullExpressionValue(ivIcon2, "ivIcon");
-                ivIcon2.setVisibility(0);
-                ImageView ivItem2 = mobileRentAccessoryElementItemBinding.ivItem;
-                Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
-                ivItem2.setVisibility(8);
-                mobileRentAccessoryElementItemBinding.ivIcon.setImageResource(R.drawable.mp_ic_plus);
-                TextView tvCount2 = mobileRentAccessoryElementItemBinding.tvCount;
-                Intrinsics.checkNotNullExpressionValue(tvCount2, "tvCount");
-                tvCount2.setVisibility(8);
-                CustomCardView btnDelete2 = mobileRentAccessoryElementItemBinding.btnDelete;
-                Intrinsics.checkNotNullExpressionValue(btnDelete2, "btnDelete");
-                btnDelete2.setVisibility(8);
-                CustomCardView container = mobileRentAccessoryElementItemBinding.container;
-                Intrinsics.checkNotNullExpressionValue(container, "container");
-                CustomCardView.setBackground$default(container, Color.parseColor("#33FFFFFF"), Color.parseColor("#0DFFFFFF"), null, null, 12, null);
-                ImageView ivEffectBackgroundTop2 = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
-                Intrinsics.checkNotNullExpressionValue(ivEffectBackgroundTop2, "ivEffectBackgroundTop");
-                ImageView ivEffectBackground2 = mobileRentAccessoryElementItemBinding.ivEffectBackground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
-                ImageView ivEffectForeground2 = mobileRentAccessoryElementItemBinding.ivEffectForeground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
-                UtilKt.setEffect(ivEffectBackgroundTop2, ivEffectBackground2, ivEffectForeground2, -1);
+                if (UtilKt.setEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground, Integer.valueOf(mobileRentAccessoryGetModelItem.getItemId())) != null) {
+                    i2 = i3;
+                    i = 0;
+                }
             }
-            i = i2;
+            ImageView ivIcon2 = mobileRentAccessoryElementItemBinding.ivIcon;
+            Intrinsics.checkNotNullExpressionValue(ivIcon2, "ivIcon");
+            ivIcon2.setVisibility(0);
+            ImageView ivItem2 = mobileRentAccessoryElementItemBinding.ivItem;
+            Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
+            ivItem2.setVisibility(8);
+            mobileRentAccessoryElementItemBinding.ivIcon.setImageResource(R.drawable.mp_ic_plus);
+            TextView tvCount2 = mobileRentAccessoryElementItemBinding.tvCount;
+            Intrinsics.checkNotNullExpressionValue(tvCount2, "tvCount");
+            tvCount2.setVisibility(8);
+            CustomCardView btnDelete2 = mobileRentAccessoryElementItemBinding.btnDelete;
+            Intrinsics.checkNotNullExpressionValue(btnDelete2, "btnDelete");
+            btnDelete2.setVisibility(8);
+            CustomCardView container = mobileRentAccessoryElementItemBinding.container;
+            Intrinsics.checkNotNullExpressionValue(container, "container");
+            CustomCardView.setBackground$default(container, Color.parseColor("#33FFFFFF"), Color.parseColor("#0DFFFFFF"), null, null, 12, null);
+            ImageView ivEffectBackgroundTop2 = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
+            Intrinsics.checkNotNullExpressionValue(ivEffectBackgroundTop2, "ivEffectBackgroundTop");
+            ImageView ivEffectBackground2 = mobileRentAccessoryElementItemBinding.ivEffectBackground;
+            Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
+            ImageView ivEffectForeground2 = mobileRentAccessoryElementItemBinding.ivEffectForeground;
+            Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
+            UtilKt.setEffect(ivEffectBackgroundTop2, ivEffectBackground2, ivEffectForeground2, (Integer) (-1));
+            Unit unit = Unit.INSTANCE;
+            i2 = i3;
+            i = 0;
         }
         if (!this.chosenItems.isEmpty()) {
             this.isItemSuc = true;

@@ -25,7 +25,6 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
@@ -48,7 +47,7 @@ import ru.mrlargha.commonui.elements.quest.presentation.adapter.QuestTaskAdapter
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 /* compiled from: NewQuestScreen.kt */
-@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0010 \n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u00014B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020\u001eH\u0002J\u0018\u0010\"\u001a\u00020\u001e2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0006H\u0016J\b\u0010&\u001a\u00020\u001eH\u0002J\u0010\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020 H\u0002J\u0010\u0010)\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020 H\u0002J\u0018\u0010*\u001a\u00020\u001e2\u0006\u0010+\u001a\u00020\u00062\u0006\u0010#\u001a\u00020$H\u0002J\b\u0010,\u001a\u00020\u001eH\u0002J\b\u0010-\u001a\u00020\u001eH\u0002J\b\u0010.\u001a\u00020\u001eH\u0002J\u0016\u0010/\u001a\u00020\u001e2\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u001b01H\u0002J\u0010\u00102\u001a\u00020\u001e2\u0006\u00103\u001a\u00020\u0006H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "questScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/SeasonalRodinaQuestScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "mainHandler", "Landroid/os/Handler;", "submitQuestTasksRunnable", "Ljava/lang/Runnable;", "questActivityAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestActivityAdapter;", "questStageAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestStageAdapter;", "questTaskAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestTaskAdapter;", "questTaskList", "", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "backgroundId", "setVisible", "", "visible", "", "initAdapters", "onBackendMessageHandled", "data", "", "subId", "changeBackground", "firstInterfaceVisibility", "isVisible", "secondInterfaceVisibility", "sendData", "indexKey", "closeScreen", "scheduleQuestTaskSubmit", "cancelPendingQuestTaskUpdates", "submitQuestTasks", "tasks", "", "notifyQuestTaskChanged", "position", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000v\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\u00020\u00012\u00020\u0002:\u00012B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020\u001eH\u0002J\u0018\u0010\"\u001a\u00020\u001e2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0006H\u0016J\b\u0010&\u001a\u00020\u001eH\u0002J\u0010\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020 H\u0002J\u0010\u0010)\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020 H\u0002J\u0018\u0010*\u001a\u00020\u001e2\u0006\u0010+\u001a\u00020\u00062\u0006\u0010#\u001a\u00020$H\u0002J\b\u0010,\u001a\u00020\u001eH\u0002J\b\u0010-\u001a\u00020\u001eH\u0002J\b\u0010.\u001a\u00020\u001eH\u0002J\u0016\u0010/\u001a\u00020\u001e2\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u001b01H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lru/mrlargha/commonui/elements/quest/presentation/NewQuestScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "questScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/SeasonalRodinaQuestScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "mainHandler", "Landroid/os/Handler;", "submitQuestTasksRunnable", "Ljava/lang/Runnable;", "questActivityAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestActivityAdapter;", "questStageAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestStageAdapter;", "questTaskAdapter", "Lru/mrlargha/commonui/elements/quest/presentation/adapter/QuestTaskAdapter;", "questTaskList", "", "Lru/mrlargha/commonui/elements/quest/domain/QuestTask;", "backgroundId", "setVisible", "", "visible", "", "initAdapters", "onBackendMessageHandled", "data", "", "subId", "changeBackground", "firstInterfaceVisibility", "isVisible", "secondInterfaceVisibility", "sendData", "indexKey", "closeScreen", "scheduleQuestTaskSubmit", "cancelPendingQuestTaskUpdates", "submitQuestTasks", "tasks", "", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class NewQuestScreen extends SAMPUIElement implements InterfaceController {
     private int backgroundId;
@@ -179,10 +178,10 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     private final void initAdapters() {
         this.binding.rvQuestActivity.setAdapter(this.questActivityAdapter);
         this.binding.rvQuestStages.setAdapter(this.questStageAdapter);
-        this.questTaskAdapter = new QuestTaskAdapter(getTargetActivity(), new Function2() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda0
-            @Override // kotlin.jvm.functions.Function2
-            public final Object invoke(Object obj, Object obj2) {
-                return NewQuestScreen.initAdapters$lambda$0(NewQuestScreen.this, (QuestTask) obj, ((Integer) obj2).intValue());
+        this.questTaskAdapter = new QuestTaskAdapter(getTargetActivity(), new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return NewQuestScreen.initAdapters$lambda$0(NewQuestScreen.this, (QuestTask) obj);
             }
         }, new Function1() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
@@ -200,58 +199,14 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0043  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0047  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final Unit initAdapters$lambda$0(NewQuestScreen newQuestScreen, QuestTask item, int i) {
-        QuestTaskAdapter questTaskAdapter;
+    public static final Unit initAdapters$lambda$0(NewQuestScreen newQuestScreen, QuestTask item) {
         Intrinsics.checkNotNullParameter(item, "item");
-        QuestTaskAdapter questTaskAdapter2 = newQuestScreen.questTaskAdapter;
-        QuestTaskAdapter questTaskAdapter3 = null;
-        if (questTaskAdapter2 == null) {
+        QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
+        if (questTaskAdapter == null) {
             Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-            questTaskAdapter2 = null;
+            questTaskAdapter = null;
         }
-        int selectedItemPosition = questTaskAdapter2.getSelectedItemPosition();
-        if (i == selectedItemPosition) {
-            QuestTaskAdapter questTaskAdapter4 = newQuestScreen.questTaskAdapter;
-            if (questTaskAdapter4 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-                questTaskAdapter4 = null;
-            }
-            if (questTaskAdapter4.getExpandedViewVisible()) {
-                QuestTaskAdapter questTaskAdapter5 = newQuestScreen.questTaskAdapter;
-                if (questTaskAdapter5 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-                    questTaskAdapter5 = null;
-                }
-                questTaskAdapter5.setExpandedViewVisible(false);
-                questTaskAdapter = newQuestScreen.questTaskAdapter;
-                if (questTaskAdapter != null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-                } else {
-                    questTaskAdapter3 = questTaskAdapter;
-                }
-                questTaskAdapter3.setSelectedItemPosition(i);
-                newQuestScreen.notifyQuestTaskChanged(selectedItemPosition);
-                newQuestScreen.notifyQuestTaskChanged(i);
-                return Unit.INSTANCE;
-            }
-        }
-        QuestTaskAdapter questTaskAdapter6 = newQuestScreen.questTaskAdapter;
-        if (questTaskAdapter6 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-            questTaskAdapter6 = null;
-        }
-        questTaskAdapter6.setExpandedViewVisible(i == selectedItemPosition);
-        questTaskAdapter = newQuestScreen.questTaskAdapter;
-        if (questTaskAdapter != null) {
-        }
-        questTaskAdapter3.setSelectedItemPosition(i);
-        newQuestScreen.notifyQuestTaskChanged(selectedItemPosition);
-        newQuestScreen.notifyQuestTaskChanged(i);
+        questTaskAdapter.toggleSelection(item);
         return Unit.INSTANCE;
     }
 
@@ -263,20 +218,11 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         } else if (item.getProgress() != item.getMaxProgress() || item.getRewardReceived() != 1) {
             newQuestScreen.sendData(2, StringKt.toStringJson(new QuestTaskRequest(item.getStageId(), item.getId())));
             QuestTaskAdapter questTaskAdapter = newQuestScreen.questTaskAdapter;
-            QuestTaskAdapter questTaskAdapter2 = null;
             if (questTaskAdapter == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
                 questTaskAdapter = null;
             }
-            int selectedItemPosition = questTaskAdapter.getSelectedItemPosition();
-            QuestTaskAdapter questTaskAdapter3 = newQuestScreen.questTaskAdapter;
-            if (questTaskAdapter3 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-            } else {
-                questTaskAdapter2 = questTaskAdapter3;
-            }
-            questTaskAdapter2.setSelectedItemPosition(-1);
-            newQuestScreen.notifyQuestTaskChanged(selectedItemPosition);
+            questTaskAdapter.clearSelection();
         }
         return Unit.INSTANCE;
     }
@@ -422,56 +368,12 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void submitQuestTasks(List<QuestTask> list) {
-        List list2 = CollectionsKt.toList(list);
-        int size = list2.size();
         QuestTaskAdapter questTaskAdapter = this.questTaskAdapter;
-        QuestTaskAdapter questTaskAdapter2 = null;
         if (questTaskAdapter == null) {
             Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
             questTaskAdapter = null;
         }
-        int selectedItemPosition = questTaskAdapter.getSelectedItemPosition();
-        if (selectedItemPosition < 0 || selectedItemPosition >= size) {
-            QuestTaskAdapter questTaskAdapter3 = this.questTaskAdapter;
-            if (questTaskAdapter3 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-                questTaskAdapter3 = null;
-            }
-            questTaskAdapter3.setSelectedItemPosition(-1);
-            QuestTaskAdapter questTaskAdapter4 = this.questTaskAdapter;
-            if (questTaskAdapter4 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-                questTaskAdapter4 = null;
-            }
-            questTaskAdapter4.setExpandedViewVisible(false);
-        }
-        QuestTaskAdapter questTaskAdapter5 = this.questTaskAdapter;
-        if (questTaskAdapter5 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-        } else {
-            questTaskAdapter2 = questTaskAdapter5;
-        }
-        questTaskAdapter2.submitList(list2);
-    }
-
-    private final void notifyQuestTaskChanged(int i) {
-        if (i >= 0) {
-            QuestTaskAdapter questTaskAdapter = this.questTaskAdapter;
-            QuestTaskAdapter questTaskAdapter2 = null;
-            if (questTaskAdapter == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-                questTaskAdapter = null;
-            }
-            if (i < questTaskAdapter.getItemCount()) {
-                QuestTaskAdapter questTaskAdapter3 = this.questTaskAdapter;
-                if (questTaskAdapter3 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("questTaskAdapter");
-                } else {
-                    questTaskAdapter2 = questTaskAdapter3;
-                }
-                questTaskAdapter2.notifyItemChanged(i);
-            }
-        }
+        questTaskAdapter.submitTasks(list);
     }
 
     /* compiled from: NewQuestScreen.kt */

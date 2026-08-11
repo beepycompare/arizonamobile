@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 
 import android.graphics.Bitmap;
-import android.util.Log;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -11,29 +10,26 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
-import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
+import ru.mrlargha.commonui.utils.InventoryIconRequest;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: MainInventoryViewHolder.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/graphics/Bitmap;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$4$bitmap$1", f = "MainInventoryViewHolder.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$4$bitmap$1", f = "MainInventoryViewHolder.kt", i = {}, l = {166}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class MainInventoryViewHolder$bind$1$4$bitmap$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Bitmap>, Object> {
-    final /* synthetic */ InventoryItem $itemVal;
-    private /* synthetic */ Object L$0;
+    final /* synthetic */ InventoryIconRequest $iconRequest;
     int label;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public MainInventoryViewHolder$bind$1$4$bitmap$1(InventoryItem inventoryItem, Continuation<? super MainInventoryViewHolder$bind$1$4$bitmap$1> continuation) {
+    public MainInventoryViewHolder$bind$1$4$bitmap$1(InventoryIconRequest inventoryIconRequest, Continuation<? super MainInventoryViewHolder$bind$1$4$bitmap$1> continuation) {
         super(2, continuation);
-        this.$itemVal = inventoryItem;
+        this.$iconRequest = inventoryIconRequest;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        MainInventoryViewHolder$bind$1$4$bitmap$1 mainInventoryViewHolder$bind$1$4$bitmap$1 = new MainInventoryViewHolder$bind$1$4$bitmap$1(this.$itemVal, continuation);
-        mainInventoryViewHolder$bind$1$4$bitmap$1.L$0 = obj;
-        return mainInventoryViewHolder$bind$1$4$bitmap$1;
+        return new MainInventoryViewHolder$bind$1$4$bitmap$1(this.$iconRequest, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -43,20 +39,18 @@ final class MainInventoryViewHolder$bind$1$4$bitmap$1 extends SuspendLambda impl
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Bitmap iconFromArchiveWithFormat;
-        CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
-        IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (this.label != 0) {
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i = this.label;
+        if (i != 0) {
+            if (i == 1) {
+                ResultKt.throwOnFailure(obj);
+                return obj;
+            }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        boolean isArizonaType = UtilsKt.isArizonaType();
-        InventoryItem inventoryItem = this.$itemVal;
-        if (isArizonaType) {
-            return UtilsKt.getIconFromArchive$default("items", inventoryItem.getItem().intValue(), (String) null, 4, (Object) null);
-        }
-        Log.d("TAG", "bind: " + inventoryItem.getCustomIcon());
-        String customIcon = this.$itemVal.getCustomIcon();
-        return (customIcon == null || (iconFromArchiveWithFormat = UtilsKt.getIconFromArchiveWithFormat("custom_icon", customIcon)) == null) ? UtilsKt.getIconFromArchive$default("items", this.$itemVal.getItem().intValue(), (String) null, 4, (Object) null) : iconFromArchiveWithFormat;
+        this.label = 1;
+        Object loadInventoryIcon = UtilsKt.loadInventoryIcon(this.$iconRequest, this);
+        return loadInventoryIcon == coroutine_suspended ? coroutine_suspended : loadInventoryIcon;
     }
 }

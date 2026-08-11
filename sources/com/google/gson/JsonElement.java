@@ -5,7 +5,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public abstract class JsonElement {
     public abstract JsonElement deepCopy();
 

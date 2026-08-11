@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class SkiaImageRegionDecoder implements ImageRegionDecoder {
     private static final String ASSET_PREFIX = "file:///android_asset/";
     private static final String FILE_PREFIX = "file://";

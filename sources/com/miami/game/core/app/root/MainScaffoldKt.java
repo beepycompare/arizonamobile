@@ -103,13 +103,13 @@ public final class MainScaffoldKt {
                         Function2<Composer, Integer, Unit> lambda$1170228028$app_root = i7 != 0 ? ComposableSingletons$MainScaffoldKt.INSTANCE.getLambda$1170228028$app_root() : obj2;
                         if (i4 != 0) {
                             function28 = lambda$1170228028$app_root;
-                            function29 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9765getLambda$863503316$app_root();
+                            function29 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9782getLambda$863503316$app_root();
                         } else {
                             function28 = lambda$1170228028$app_root;
                             function29 = obj3;
                         }
                         if (i5 != 0) {
-                            function24 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9764getLambda$1632204659$app_root();
+                            function24 = ComposableSingletons$MainScaffoldKt.INSTANCE.m9781getLambda$1632204659$app_root();
                         }
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventStart(-521208120, i3, -1, "com.miami.game.core.app.root.MainScaffold (MainScaffold.kt:16)");

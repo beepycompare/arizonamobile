@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class OkDownloadProvider extends ContentProvider {
     public static Context context;
 

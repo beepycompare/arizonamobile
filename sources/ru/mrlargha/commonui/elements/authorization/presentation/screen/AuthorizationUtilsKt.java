@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.InputFilter;
 import android.text.Spanned;
 import android.widget.Toast;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -12,11 +13,27 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 /* compiled from: AuthorizationUtils.kt */
-@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\u001a\u0014\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u001a\u0012\u0010\t\u001a\u00020\b*\u00020\n2\u0006\u0010\u000b\u001a\u00020\f\"\u0010\u0010\u0000\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"authToast", "Landroid/widget/Toast;", "TOAST_SHOW_TIME", "", "getRuLettersFilter", "Landroid/text/InputFilter;", "onFindRuLetters", "Lkotlin/Function0;", "", "showErrorToast", "Landroid/content/Context;", "messages", "", "CommonUI"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\u0010\f\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\u0014\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u001a\u0014\u0010\t\u001a\u00020\u00052\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u001a\"\u0010\u000b\u001a\u0004\u0018\u00010\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0010H\u0000\u001a\f\u0010\u0012\u001a\u00020\u0013*\u00020\u0014H\u0000\u001a\u0012\u0010\u0015\u001a\u00020\b*\u00020\u00162\u0006\u0010\u0017\u001a\u00020\f\"\u0010\u0010\u0000\u001a\u0004\u0018\u00010\u0001X\u0082\u000e¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"authToast", "Landroid/widget/Toast;", "TOAST_SHOW_TIME", "", "getRuLettersFilter", "Landroid/text/InputFilter;", "onFindRuLetters", "Lkotlin/Function0;", "", "getRegistrationPasswordFilter", "onInvalidCharacter", "filterRegistrationPasswordCharacters", "", "source", "", TtmlNode.START, "", TtmlNode.END, "isAllowedRegistrationPasswordCharacter", "", "", "showErrorToast", "Landroid/content/Context;", "messages", "CommonUI"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class AuthorizationUtilsKt {
     private static final long TOAST_SHOW_TIME = 2000;
     private static Toast authToast;
+
+    public static final boolean isAllowedRegistrationPasswordCharacter(char c) {
+        if (1072 > c || c >= 1104) {
+            if (1040 > c || c >= 1072) {
+                if ('a' > c || c >= '{') {
+                    if ('A' > c || c >= '[') {
+                        return '0' <= c && c < ':';
+                    }
+                    return true;
+                }
+                return true;
+            }
+            return true;
+        }
+        return true;
+    }
 
     public static final InputFilter getRuLettersFilter(final Function0<Unit> onFindRuLetters) {
         Intrinsics.checkNotNullParameter(onFindRuLetters, "onFindRuLetters");
@@ -45,6 +62,48 @@ public final class AuthorizationUtilsKt {
         if (z) {
             function0.invoke();
         }
+        if (z) {
+            return sb2;
+        }
+        return null;
+    }
+
+    public static final InputFilter getRegistrationPasswordFilter(final Function0<Unit> onInvalidCharacter) {
+        Intrinsics.checkNotNullParameter(onInvalidCharacter, "onInvalidCharacter");
+        return new InputFilter() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.AuthorizationUtilsKt$$ExternalSyntheticLambda1
+            @Override // android.text.InputFilter
+            public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
+                return AuthorizationUtilsKt.getRegistrationPasswordFilter$lambda$0(Function0.this, charSequence, i, i2, spanned, i3, i4);
+            }
+        };
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final CharSequence getRegistrationPasswordFilter$lambda$0(Function0 function0, CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
+        Intrinsics.checkNotNull(charSequence);
+        String filterRegistrationPasswordCharacters = filterRegistrationPasswordCharacters(charSequence, i, i2);
+        if (filterRegistrationPasswordCharacters != null) {
+            function0.invoke();
+        } else {
+            filterRegistrationPasswordCharacters = null;
+        }
+        return filterRegistrationPasswordCharacters;
+    }
+
+    public static final String filterRegistrationPasswordCharacters(CharSequence source, int i, int i2) {
+        Intrinsics.checkNotNullParameter(source, "source");
+        StringBuilder sb = new StringBuilder();
+        boolean z = false;
+        while (i < i2) {
+            char charAt = source.charAt(i);
+            if (isAllowedRegistrationPasswordCharacter(charAt)) {
+                sb.append(charAt);
+            } else {
+                z = true;
+            }
+            i++;
+        }
+        String sb2 = sb.toString();
         if (z) {
             return sb2;
         }

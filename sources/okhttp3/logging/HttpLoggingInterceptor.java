@@ -168,7 +168,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to var", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.LEVEL, imports = {}))
     /* renamed from: -deprecated_level  reason: not valid java name */
-    public final Level m11774deprecated_level() {
+    public final Level m11791deprecated_level() {
         return this.level;
     }
 

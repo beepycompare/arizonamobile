@@ -1,7 +1,7 @@
 package com.liulishuo.okdownload.core;
 
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class IdentifiedTask {
     public static final File EMPTY_FILE = new File("");
     public static final String EMPTY_URL = "";

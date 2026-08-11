@@ -1,5 +1,5 @@
 package com.liulishuo.okdownload.core.listener.assist;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface ListenerAssist {
     boolean isAlwaysRecoverAssistModel();
 

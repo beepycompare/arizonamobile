@@ -135,7 +135,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         BOTH
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<MaterialButton> {
         private int mIconPaddingId;
         private boolean mPropertiesMapped = false;
@@ -234,7 +234,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         post(new Runnable() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                MaterialButton.this.m9512x69e9bdf6(runnable);
+                MaterialButton.this.m9529x69e9bdf6(runnable);
             }
         });
         return true;
@@ -242,7 +242,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeRunAfterWidthAnimation$0$com-google-android-material-button-MaterialButton  reason: not valid java name */
-    public /* synthetic */ void m9512x69e9bdf6(Runnable runnable) {
+    public /* synthetic */ void m9529x69e9bdf6(Runnable runnable) {
         runnable.run();
         recoverOriginalLayoutParams();
         requestLayout();
@@ -684,14 +684,14 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     }
 
     /* renamed from: setIconSize */
-    public void m9514xc9d1887c(final int i) {
+    public void m9531xc9d1887c(final int i) {
         if (i < 0) {
             throw new IllegalArgumentException("iconSize cannot be less than 0");
         }
         if (this.iconSize == i || maybeRunAfterWidthAnimation(new Runnable() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                MaterialButton.this.m9514xc9d1887c(i);
+                MaterialButton.this.m9531xc9d1887c(i);
             }
         })) {
             return;
@@ -707,11 +707,11 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     }
 
     /* renamed from: setIcon */
-    public void m9517x11712a47(final Drawable drawable) {
+    public void m9534x11712a47(final Drawable drawable) {
         if (this.icon == drawable || maybeRunAfterWidthAnimation(new Runnable() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MaterialButton.this.m9513x85a2f9c(drawable);
+                MaterialButton.this.m9530x85a2f9c(drawable);
             }
         })) {
             return;
@@ -723,7 +723,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     }
 
     public void setIconResource(int i) {
-        m9517x11712a47(i != 0 ? AppCompatResources.getDrawable(getContext(), i) : null);
+        m9534x11712a47(i != 0 ? AppCompatResources.getDrawable(getContext(), i) : null);
     }
 
     public Drawable getIcon() {
@@ -760,7 +760,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         if (this.secondaryIcon == drawable || maybeRunAfterWidthAnimation(new Runnable() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MaterialButton.this.m9517x11712a47(drawable);
+                MaterialButton.this.m9534x11712a47(drawable);
             }
         })) {
             return;
@@ -1368,7 +1368,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
                 materialButtonHelper.setCornerSizeChangeListener(new MaterialShapeDrawable.OnCornerSizeChangeListener() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda4
                     @Override // com.google.android.material.shape.MaterialShapeDrawable.OnCornerSizeChangeListener
                     public final void onCornerSizeChange(float f) {
-                        MaterialButton.this.m9515x6fa58539(f);
+                        MaterialButton.this.m9532x6fa58539(f);
                     }
                 });
             } else {
@@ -1377,7 +1377,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
             post(new Runnable() { // from class: com.google.android.material.button.MaterialButton$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MaterialButton.this.m9516xb330a2fa();
+                    MaterialButton.this.m9533xb330a2fa();
                 }
             });
         }
@@ -1385,7 +1385,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOpticalCenterEnabled$4$com-google-android-material-button-MaterialButton  reason: not valid java name */
-    public /* synthetic */ void m9515x6fa58539(float f) {
+    public /* synthetic */ void m9532x6fa58539(float f) {
         int i = (int) (f * 0.11f);
         if (this.opticalCenterShift != i) {
             this.opticalCenterShift = i;
@@ -1396,7 +1396,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOpticalCenterEnabled$5$com-google-android-material-button-MaterialButton  reason: not valid java name */
-    public /* synthetic */ void m9516xb330a2fa() {
+    public /* synthetic */ void m9533xb330a2fa() {
         this.opticalCenterShift = getOpticalCenterShift();
         updatePaddingsAndSizeForWidthAnimation();
         invalidate();

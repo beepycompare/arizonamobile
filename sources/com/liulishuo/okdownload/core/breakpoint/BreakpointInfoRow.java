@@ -2,7 +2,7 @@ package com.liulishuo.okdownload.core.breakpoint;
 
 import android.database.Cursor;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreakpointInfoRow {
     private final boolean chunked;
     private final String etag;

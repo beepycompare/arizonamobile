@@ -33,7 +33,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AuthorizationClient implements Serializable {
     static final String EVENT_EXTRAS_APP_CALL_ID = "call_id";
     static final String EVENT_EXTRAS_DEFAULT_AUDIENCE = "default_audience";
@@ -76,7 +76,7 @@ public class AuthorizationClient implements Serializable {
     AuthorizationRequest pendingRequest;
     transient StartActivityDelegate startActivityDelegate;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class AuthDialogBuilder extends WebDialog.Builder {
         private static final String OAUTH_DIALOG = "oauth";
         static final String REDIRECT_URI = "fbconnect://success";
@@ -102,7 +102,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public abstract class AuthHandler implements Serializable {
         private static final long serialVersionUID = 1;
         Map<String, String> methodLoggingExtras;
@@ -138,7 +138,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AuthorizationRequest implements Serializable {
         private static final long serialVersionUID = 1;
         private final String applicationId;
@@ -214,7 +214,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface BackgroundProcessingListener {
         void onBackgroundProcessingStarted();
 
@@ -222,7 +222,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class GetTokenAuthHandler extends AuthHandler {
         private static final long serialVersionUID = 1;
         private transient GetTokenClient getTokenClient;
@@ -287,7 +287,7 @@ public class AuthorizationClient implements Serializable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     abstract class KatanaAuthHandler extends AuthHandler {
         private static final long serialVersionUID = 1;
 
@@ -309,7 +309,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class KatanaLoginDialogAuthHandler extends KatanaAuthHandler {
         private static final long serialVersionUID = 1;
         private String applicationId;
@@ -399,7 +399,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class KatanaProxyAuthHandler extends KatanaAuthHandler {
         private static final long serialVersionUID = 1;
         private String applicationId;
@@ -482,13 +482,13 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnCompletedListener {
         void onCompleted(Result result);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Result implements Serializable {
         private static final long serialVersionUID = 1;
         final Code code;
@@ -499,7 +499,7 @@ public class AuthorizationClient implements Serializable {
         final AccessToken token;
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public enum Code {
             SUCCESS(FirebaseAnalytics.Param.SUCCESS),
             CANCEL(FacebookDialog.COMPLETION_GESTURE_CANCEL),
@@ -552,7 +552,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface StartActivityDelegate {
         Activity getActivityContext();
 
@@ -560,7 +560,7 @@ public class AuthorizationClient implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class WebViewAuthHandler extends AuthHandler {
         private static final long serialVersionUID = 1;
         private String applicationId;

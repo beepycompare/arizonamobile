@@ -5,6 +5,7 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewParent;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
@@ -36,18 +38,21 @@ import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassConv
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassLayoutBinding;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassLevelSetsLayoutBinding;
 /* compiled from: BattlePassPurchaseController.kt */
-@Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u0007\n\u0002\b\u0007\b\u0000\u0018\u0000 M2\u00020\u0001:\u0001MBw\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\r\u00126\u0010\u000f\u001a2\u0012\u0013\u0012\u00110\u0011¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0014\u0012\u0013\u0012\u00110\u0011¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0015\u0012\u0004\u0012\u00020\u00160\u0010¢\u0006\u0004\b\u0017\u0010\u0018J\u0006\u0010\u001f\u001a\u00020\u0016J\u0010\u0010 \u001a\u00020\u00162\b\u0010!\u001a\u0004\u0018\u00010\"J\b\u0010#\u001a\u00020$H\u0002J\u000e\u0010%\u001a\u00020\u00162\u0006\u0010&\u001a\u00020\u0011J\u000e\u0010'\u001a\u00020\u00162\u0006\u0010(\u001a\u00020\u0011J\u0014\u0010)\u001a\u00020\u00162\f\u0010*\u001a\b\u0012\u0004\u0012\u00020,0+J\u0014\u0010-\u001a\u00020\u00162\f\u0010.\u001a\b\u0012\u0004\u0012\u00020/0+J\u000e\u00100\u001a\u00020\u00162\u0006\u00101\u001a\u000202J0\u00103\u001a\u00020\u00162\u0006\u00104\u001a\u0002052\u0006\u00106\u001a\u0002072\u0006\u00108\u001a\u0002052\u0006\u00109\u001a\u0002052\u0006\u0010:\u001a\u00020,H\u0002J*\u0010;\u001a\u00020\u00162\b\u0010<\u001a\u0004\u0018\u0001052\u0006\u00109\u001a\u0002052\u0006\u00104\u001a\u0002052\u0006\u0010=\u001a\u00020/H\u0002J\u0010\u0010>\u001a\u00020\u00162\u0006\u0010?\u001a\u000202H\u0002J\u0010\u0010@\u001a\u00020\r2\u0006\u0010A\u001a\u000202H\u0002J\u0012\u0010B\u001a\u00020\u00162\b\u0010C\u001a\u0004\u0018\u00010\rH\u0002J$\u0010D\u001a\u00020\u0016*\u0002052\u0006\u0010E\u001a\u00020\r2\u0006\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020\u000bH\u0002J\u0014\u0010I\u001a\u00020\u0016*\u0002052\u0006\u0010J\u001a\u00020\u000bH\u0002J\u0010\u0010K\u001a\u00020\r2\u0006\u0010L\u001a\u00020\u0011H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R>\u0010\u000f\u001a2\u0012\u0013\u0012\u00110\u0011¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0014\u0012\u0013\u0012\u00110\u0011¢\u0006\f\b\u0012\u0012\b\b\u0013\u0012\u0004\b\b(\u0015\u0012\u0004\u0012\u00020\u00160\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u001a\u001a\u00020\u000b2\u0006\u0010\u0019\u001a\u00020\u000b@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u001e\u0010\u001c\u001a\u00020\u000b2\u0006\u0010\u0019\u001a\u00020\u000b@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001bR\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u001eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006N"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/BattlePassPurchaseController;", "", "targetActivity", "Landroid/app/Activity;", "binding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;", "premiumAction", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassPremiumActionViews;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "isArizona", "", "levelSetBuyText", "", "levelSetUnavailableText", "notifyClick", "Lkotlin/Function2;", "", "Lkotlin/ParameterName;", "name", "id", "subId", "", "<init>", "(Landroid/app/Activity;Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;Lru/mrlargha/feature/battlepassWinter2025/BattlePassPremiumActionViews;Lkotlinx/coroutines/CoroutineScope;ZLjava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function2;)V", "value", "isLevelPageLocked", "()Z", "isPremiumPageLocked", "blockTimerJob", "Lkotlinx/coroutines/Job;", "setupLevelBuyPage", "setupBuyPremiumPage", "info", "Lru/mrlargha/feature/battlepassWinter2025/data/MainBattlePassInfo;", "buildRodinaPremiumRewardsText", "", "updatePremiumButtonsVisibility", "premium", "updateLevelSetButtonsAvailability", FirebaseAnalytics.Param.LEVEL, "updateBattlePassPremium", "premiumList", "", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassPremiumData;", "updateLevelSetsInfo", "levelSets", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassLevelSetData;", "checkAvailableBp", "targetUnixTime", "", "bindPremiumPrice", "discountText", "Landroid/widget/TextView;", "discountPercentBox", "Landroid/view/View;", "discountPercentText", "priceText", "premiumData", "setupLevelSetText", "lvlText", "levelData", "startLeftTimer", "remainingMillis", "setLeftTime", "leftTime", "updateBlockTime", "time", "setLevelSetButtonState", "text", "visualAlpha", "", "enabled", "setLevelSetButtonAvailability", "isAvailable", "formatRubPrice", FirebaseAnalytics.Param.PRICE, "Companion", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0012\n\u0002\u0010\u0007\n\u0002\b\u0007\b\u0000\u0018\u0000 U2\u00020\u0001:\u0001UB\u0091\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\r\u0012\u0006\u0010\u000e\u001a\u00020\r\u0012\u0018\u0010\u000f\u001a\u0014\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00120\u0010\u00126\u0010\u0013\u001a2\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u00020\u00120\u0010¢\u0006\u0004\b\u0019\u0010\u001aJ\u0006\u0010$\u001a\u00020\u0012J\u0010\u0010%\u001a\u00020\u00122\b\u0010&\u001a\u0004\u0018\u00010'J\b\u0010(\u001a\u00020)H\u0002J\u000e\u0010*\u001a\u00020\u00122\u0006\u0010+\u001a\u00020\u0014J\u000e\u0010,\u001a\u00020\u00122\u0006\u0010-\u001a\u00020\u0014J\u0014\u0010.\u001a\u00020\u00122\f\u0010/\u001a\b\u0012\u0004\u0012\u00020100J\u0014\u00102\u001a\u00020\u00122\f\u00103\u001a\b\u0012\u0004\u0012\u00020400J\u000e\u00105\u001a\u00020\u00122\u0006\u00106\u001a\u000207J0\u00108\u001a\u00020\u00122\u0006\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020<2\u0006\u0010=\u001a\u00020:2\u0006\u0010>\u001a\u00020:2\u0006\u0010?\u001a\u000201H\u0002J*\u0010@\u001a\u00020\u00122\b\u0010A\u001a\u0004\u0018\u00010:2\u0006\u0010>\u001a\u00020:2\u0006\u00109\u001a\u00020:2\u0006\u0010B\u001a\u000204H\u0002J\u0010\u0010C\u001a\u00020\u00122\u0006\u0010D\u001a\u000207H\u0002J\u0010\u0010E\u001a\u00020\r2\u0006\u0010F\u001a\u000207H\u0002J\u0012\u0010G\u001a\u00020\u00122\b\u0010H\u001a\u0004\u0018\u00010\rH\u0002J\b\u0010I\u001a\u00020\u0012H\u0002J\u0010\u0010J\u001a\u00020\u00122\u0006\u0010K\u001a\u00020\u000bH\u0002J$\u0010L\u001a\u00020\u0012*\u00020:2\u0006\u0010M\u001a\u00020\r2\u0006\u0010N\u001a\u00020O2\u0006\u0010P\u001a\u00020\u000bH\u0002J\u0014\u0010Q\u001a\u00020\u0012*\u00020:2\u0006\u0010R\u001a\u00020\u000bH\u0002J\u0010\u0010S\u001a\u00020\r2\u0006\u0010T\u001a\u00020\u0014H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u000f\u001a\u0014\u0012\u0004\u0012\u00020\u0011\u0012\u0004\u0012\u00020\r\u0012\u0004\u0012\u00020\u00120\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R>\u0010\u0013\u001a2\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0017\u0012\u0013\u0012\u00110\u0014¢\u0006\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\b(\u0018\u0012\u0004\u0012\u00020\u00120\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\u001c\u001a\u00020\u000b2\u0006\u0010\u001b\u001a\u00020\u000b@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u001e\u0010\u001e\u001a\u00020\u000b2\u0006\u0010\u001b\u001a\u00020\u000b@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001dR\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010!\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\"R\u0010\u0010#\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/BattlePassPurchaseController;", "", "targetActivity", "Landroid/app/Activity;", "binding", "Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;", "premiumAction", "Lru/mrlargha/feature/battlepassWinter2025/BattlePassPremiumActionViews;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "isArizona", "", "levelSetBuyText", "", "levelSetUnavailableText", "loadArizonaPremiumImage", "Lkotlin/Function2;", "Landroid/widget/ImageView;", "", "notifyClick", "", "Lkotlin/ParameterName;", "name", "id", "subId", "<init>", "(Landroid/app/Activity;Lru/mrlargha/feature/battlepassWinter2025/databinding/WinterBattlepassLayoutBinding;Lru/mrlargha/feature/battlepassWinter2025/BattlePassPremiumActionViews;Lkotlinx/coroutines/CoroutineScope;ZLjava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;)V", "value", "isLevelPageLocked", "()Z", "isPremiumPageLocked", "blockTimerJob", "Lkotlinx/coroutines/Job;", "currentBattlePassLevel", "Ljava/lang/Integer;", "blockTimerText", "setupLevelBuyPage", "setupBuyPremiumPage", "info", "Lru/mrlargha/feature/battlepassWinter2025/data/MainBattlePassInfo;", "buildRodinaPremiumRewardsText", "", "updatePremiumButtonsVisibility", "premium", "updateLevelSetButtonsAvailability", FirebaseAnalytics.Param.LEVEL, "updateBattlePassPremium", "premiumList", "", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassPremiumData;", "updateLevelSetsInfo", "levelSets", "Lru/mrlargha/feature/battlepassWinter2025/data/BattlePassLevelSetData;", "checkAvailableBp", "targetUnixTime", "", "bindPremiumPrice", "discountText", "Landroid/widget/TextView;", "discountPercentBox", "Landroid/view/View;", "discountPercentText", "priceText", "premiumData", "setupLevelSetText", "lvlText", "levelData", "startLeftTimer", "remainingMillis", "setLeftTime", "leftTime", "updateBlockTime", "time", "refreshLevelSetButtonStates", "updateMinimumLevelLockVisuals", "isLocked", "setLevelSetButtonState", "text", "visualAlpha", "", "enabled", "setLevelSetButtonAvailability", "isAvailable", "formatRubPrice", FirebaseAnalytics.Param.PRICE, "Companion", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class BattlePassPurchaseController {
     @Deprecated
     public static final String BUY_TEXT = "Купить";
-    private static final Companion Companion = new Companion(null);
     @Deprecated
     public static final int FRONTEND_LEVEL_SETS_MINIMUM_SIZE = 4;
     @Deprecated
     public static final int FRONTEND_PREMIUM_MINIMUM_SIZE = 2;
     @Deprecated
     public static final String LEVEL_COUNT_MISMATCH_MESSAGE = "Количество уровней не соответствует серверу, обратитесь в поддержку!";
+    @Deprecated
+    public static final float LOCKED_ICON_ALPHA = 0.35f;
+    @Deprecated
+    public static final int MIN_LEVEL_TO_BUY_LEVELS = 10;
     @Deprecated
     public static final String PREMIUM_BOUGHT_TEXT = "КУПЛЕНО";
     @Deprecated
@@ -64,24 +69,30 @@ public final class BattlePassPurchaseController {
     public static final String UNAVAILABLE_TEXT = "Недоступно";
     private final WinterBattlepassLayoutBinding binding;
     private Job blockTimerJob;
+    private String blockTimerText;
+    private Integer currentBattlePassLevel;
     private final boolean isArizona;
     private boolean isLevelPageLocked;
     private boolean isPremiumPageLocked;
     private final String levelSetBuyText;
     private final String levelSetUnavailableText;
+    private final Function2<ImageView, String, Unit> loadArizonaPremiumImage;
     private final Function2<Integer, Integer, Unit> notifyClick;
     private final BattlePassPremiumActionViews premiumAction;
     private final CoroutineScope scope;
     private final Activity targetActivity;
+    private static final Companion Companion = new Companion(null);
+    private static final List<String> ARIZONA_PREMIUM_IMAGE_IDS = CollectionsKt.listOf((Object[]) new String[]{"1001", "1002", "1003"});
 
     /* JADX WARN: Multi-variable type inference failed */
-    public BattlePassPurchaseController(Activity targetActivity, WinterBattlepassLayoutBinding binding, BattlePassPremiumActionViews premiumAction, CoroutineScope scope, boolean z, String levelSetBuyText, String levelSetUnavailableText, Function2<? super Integer, ? super Integer, Unit> notifyClick) {
+    public BattlePassPurchaseController(Activity targetActivity, WinterBattlepassLayoutBinding binding, BattlePassPremiumActionViews premiumAction, CoroutineScope scope, boolean z, String levelSetBuyText, String levelSetUnavailableText, Function2<? super ImageView, ? super String, Unit> loadArizonaPremiumImage, Function2<? super Integer, ? super Integer, Unit> notifyClick) {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         Intrinsics.checkNotNullParameter(binding, "binding");
         Intrinsics.checkNotNullParameter(premiumAction, "premiumAction");
         Intrinsics.checkNotNullParameter(scope, "scope");
         Intrinsics.checkNotNullParameter(levelSetBuyText, "levelSetBuyText");
         Intrinsics.checkNotNullParameter(levelSetUnavailableText, "levelSetUnavailableText");
+        Intrinsics.checkNotNullParameter(loadArizonaPremiumImage, "loadArizonaPremiumImage");
         Intrinsics.checkNotNullParameter(notifyClick, "notifyClick");
         this.targetActivity = targetActivity;
         this.binding = binding;
@@ -90,7 +101,9 @@ public final class BattlePassPurchaseController {
         this.isArizona = z;
         this.levelSetBuyText = levelSetBuyText;
         this.levelSetUnavailableText = levelSetUnavailableText;
+        this.loadArizonaPremiumImage = loadArizonaPremiumImage;
         this.notifyClick = notifyClick;
+        this.currentBattlePassLevel = z ? 0 : null;
     }
 
     public final boolean isLevelPageLocked() {
@@ -127,13 +140,15 @@ public final class BattlePassPurchaseController {
                 BattlePassPurchaseController.setupLevelBuyPage$lambda$0$3(BattlePassPurchaseController.this, view);
             }
         });
-        if (this.isArizona) {
+        if (!this.isArizona) {
+            winterBattlepassLevelSetsLayoutBinding.passName1.setText(RODINA_PASS_TEXT);
+            winterBattlepassLevelSetsLayoutBinding.passName2.setText(RODINA_PASS_TEXT);
+            winterBattlepassLevelSetsLayoutBinding.passName3.setText(RODINA_PASS_TEXT);
+            winterBattlepassLevelSetsLayoutBinding.passName4.setText(RODINA_PASS_TEXT);
             return;
         }
-        winterBattlepassLevelSetsLayoutBinding.passName1.setText(RODINA_PASS_TEXT);
-        winterBattlepassLevelSetsLayoutBinding.passName2.setText(RODINA_PASS_TEXT);
-        winterBattlepassLevelSetsLayoutBinding.passName3.setText(RODINA_PASS_TEXT);
-        winterBattlepassLevelSetsLayoutBinding.passName4.setText(RODINA_PASS_TEXT);
+        updateMinimumLevelLockVisuals(true);
+        refreshLevelSetButtonStates();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -160,8 +175,27 @@ public final class BattlePassPurchaseController {
         WinterBattlepassBuyPremiumLayoutBinding winterBattlepassBuyPremiumLayoutBinding = this.binding.battlepassLevelPremiumPage;
         LinearLayout rodinaPremiumPlusExtraBenefits = winterBattlepassBuyPremiumLayoutBinding.rodinaPremiumPlusExtraBenefits;
         Intrinsics.checkNotNullExpressionValue(rodinaPremiumPlusExtraBenefits, "rodinaPremiumPlusExtraBenefits");
+        final int i = 0;
         rodinaPremiumPlusExtraBenefits.setVisibility(!this.isArizona ? 0 : 8);
-        if (!this.isArizona) {
+        LinearLayout arizonaPremiumExtraBenefit = winterBattlepassBuyPremiumLayoutBinding.arizonaPremiumExtraBenefit;
+        Intrinsics.checkNotNullExpressionValue(arizonaPremiumExtraBenefit, "arizonaPremiumExtraBenefit");
+        arizonaPremiumExtraBenefit.setVisibility(this.isArizona ? 0 : 8);
+        LinearLayout arizonaPremiumPlusExtraBenefits = winterBattlepassBuyPremiumLayoutBinding.arizonaPremiumPlusExtraBenefits;
+        Intrinsics.checkNotNullExpressionValue(arizonaPremiumPlusExtraBenefits, "arizonaPremiumPlusExtraBenefits");
+        arizonaPremiumPlusExtraBenefits.setVisibility(this.isArizona ? 0 : 8);
+        LinearLayout premiumPlusImages = winterBattlepassBuyPremiumLayoutBinding.premiumPlusImages;
+        Intrinsics.checkNotNullExpressionValue(premiumPlusImages, "premiumPlusImages");
+        premiumPlusImages.setVisibility(this.isArizona ? 0 : 8);
+        if (this.isArizona) {
+            winterBattlepassBuyPremiumLayoutBinding.premiumBenefitRewardsText.setText(R.string.battlepass_arizona_premium_benefit_rewards);
+            winterBattlepassBuyPremiumLayoutBinding.premiumBenefitProgressText.setText(R.string.battlepass_arizona_premium_benefit_progress);
+            winterBattlepassBuyPremiumLayoutBinding.premiumBenefitTasksText.setText(R.string.battlepass_arizona_premium_benefit_tasks);
+            winterBattlepassBuyPremiumLayoutBinding.premiumPlusBenefitAllText.setText(R.string.battlepass_arizona_premium_plus_benefit_all);
+            winterBattlepassBuyPremiumLayoutBinding.premiumPlusBenefitLevelsText.setText(R.string.battlepass_arizona_premium_plus_benefit_levels);
+            winterBattlepassBuyPremiumLayoutBinding.vipText.setText(R.string.battlepass_arizona_premium_plus_benefit_vip);
+            winterBattlepassBuyPremiumLayoutBinding.premiumPlusBenefitC5Text.setText(R.string.battlepass_arizona_premium_plus_benefit_c5);
+            winterBattlepassBuyPremiumLayoutBinding.premiumPlusBenefitCeoText.setText(R.string.battlepass_arizona_premium_plus_benefit_ceo);
+        } else {
             winterBattlepassBuyPremiumLayoutBinding.premiumBenefitRewardsText.setText(buildRodinaPremiumRewardsText());
             winterBattlepassBuyPremiumLayoutBinding.premiumBenefitProgressText.setText(R.string.battlepass_rodina_premium_benefit_progress);
             winterBattlepassBuyPremiumLayoutBinding.premiumPlusBenefitAllText.setText(R.string.battlepass_rodina_premium_plus_benefit_all);
@@ -193,7 +227,28 @@ public final class BattlePassPurchaseController {
                 BattlePassPurchaseController.setupBuyPremiumPage$lambda$0$1(BattlePassPurchaseController.this, view);
             }
         });
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new BattlePassPurchaseController$setupBuyPremiumPage$1$3(winterBattlepassBuyPremiumLayoutBinding, this, null), 3, null);
+        if (!this.isArizona) {
+            BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new BattlePassPurchaseController$setupBuyPremiumPage$1$4(winterBattlepassBuyPremiumLayoutBinding, this, null), 3, null);
+            return;
+        }
+        for (Object obj : CollectionsKt.zip(CollectionsKt.listOf((Object[]) new ImageView[]{winterBattlepassBuyPremiumLayoutBinding.premiumImage1, winterBattlepassBuyPremiumLayoutBinding.premiumImage2, winterBattlepassBuyPremiumLayoutBinding.premiumImage3}), ARIZONA_PREMIUM_IMAGE_IDS)) {
+            int i2 = i + 1;
+            if (i < 0) {
+                CollectionsKt.throwIndexOverflow();
+            }
+            Pair pair = (Pair) obj;
+            Object component1 = pair.component1();
+            Intrinsics.checkNotNullExpressionValue(component1, "component1(...)");
+            ImageView imageView = (ImageView) component1;
+            this.loadArizonaPremiumImage.invoke(imageView, (String) pair.component2());
+            imageView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.BattlePassPurchaseController$$ExternalSyntheticLambda6
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    BattlePassPurchaseController.setupBuyPremiumPage$lambda$0$2$0(BattlePassPurchaseController.this, i, view);
+                }
+            });
+            i = i2;
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -204,6 +259,11 @@ public final class BattlePassPurchaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupBuyPremiumPage$lambda$0$1(BattlePassPurchaseController battlePassPurchaseController, View view) {
         battlePassPurchaseController.notifyClick.invoke(1, 6);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupBuyPremiumPage$lambda$0$2$0(BattlePassPurchaseController battlePassPurchaseController, int i, View view) {
+        battlePassPurchaseController.notifyClick.invoke(Integer.valueOf(i + 1), 32);
     }
 
     private final CharSequence buildRodinaPremiumRewardsText() {
@@ -236,20 +296,9 @@ public final class BattlePassPurchaseController {
     }
 
     public final void updateLevelSetButtonsAvailability(int i) {
-        WinterBattlepassLevelSetsLayoutBinding winterBattlepassLevelSetsLayoutBinding = this.binding.battlepassLevelSetsPage;
-        TextView silverPriceButton = winterBattlepassLevelSetsLayoutBinding.silverPriceButton;
-        Intrinsics.checkNotNullExpressionValue(silverPriceButton, "silverPriceButton");
-        int i2 = i + 10;
-        setLevelSetButtonAvailability(silverPriceButton, i2 <= 100);
-        TextView goldPriceButton = winterBattlepassLevelSetsLayoutBinding.goldPriceButton;
-        Intrinsics.checkNotNullExpressionValue(goldPriceButton, "goldPriceButton");
-        setLevelSetButtonAvailability(goldPriceButton, i2 <= 100);
-        TextView epicPriceButton = winterBattlepassLevelSetsLayoutBinding.epicPriceButton;
-        Intrinsics.checkNotNullExpressionValue(epicPriceButton, "epicPriceButton");
-        setLevelSetButtonAvailability(epicPriceButton, i + 20 <= 100);
-        TextView legendaryPriceButton = winterBattlepassLevelSetsLayoutBinding.legendaryPriceButton;
-        Intrinsics.checkNotNullExpressionValue(legendaryPriceButton, "legendaryPriceButton");
-        setLevelSetButtonAvailability(legendaryPriceButton, i <= 100);
+        this.currentBattlePassLevel = Integer.valueOf(i);
+        updateMinimumLevelLockVisuals(this.isArizona && i < 10);
+        refreshLevelSetButtonStates();
     }
 
     public final void updateBattlePassPremium(List<BattlePassPremiumData> premiumList) {
@@ -384,18 +433,75 @@ public final class BattlePassPurchaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updateBlockTime(String str) {
+        this.blockTimerText = str;
+        refreshLevelSetButtonStates();
+    }
+
+    private final void refreshLevelSetButtonStates() {
         WinterBattlepassLevelSetsLayoutBinding winterBattlepassLevelSetsLayoutBinding = this.binding.battlepassLevelSetsPage;
         List<TextView> listOf = CollectionsKt.listOf((Object[]) new TextView[]{winterBattlepassLevelSetsLayoutBinding.silverPriceButton, winterBattlepassLevelSetsLayoutBinding.goldPriceButton, winterBattlepassLevelSetsLayoutBinding.epicPriceButton, winterBattlepassLevelSetsLayoutBinding.legendaryPriceButton});
-        if (str != null) {
-            for (TextView textView : listOf) {
-                Intrinsics.checkNotNull(textView);
-                setLevelSetButtonState(textView, str, 0.5f, false);
+        Integer num = this.currentBattlePassLevel;
+        if (!this.isArizona || num == null || num.intValue() >= 10) {
+            if (this.blockTimerText != null) {
+                for (TextView textView : listOf) {
+                    Intrinsics.checkNotNull(textView);
+                    String str = this.blockTimerText;
+                    if (str == null) {
+                        str = "";
+                    }
+                    setLevelSetButtonState(textView, str, 0.5f, false);
+                }
+                return;
+            } else if (num != null) {
+                TextView silverPriceButton = winterBattlepassLevelSetsLayoutBinding.silverPriceButton;
+                Intrinsics.checkNotNullExpressionValue(silverPriceButton, "silverPriceButton");
+                setLevelSetButtonAvailability(silverPriceButton, num.intValue() + 10 <= 100);
+                TextView goldPriceButton = winterBattlepassLevelSetsLayoutBinding.goldPriceButton;
+                Intrinsics.checkNotNullExpressionValue(goldPriceButton, "goldPriceButton");
+                setLevelSetButtonAvailability(goldPriceButton, num.intValue() + 10 <= 100);
+                TextView epicPriceButton = winterBattlepassLevelSetsLayoutBinding.epicPriceButton;
+                Intrinsics.checkNotNullExpressionValue(epicPriceButton, "epicPriceButton");
+                setLevelSetButtonAvailability(epicPriceButton, num.intValue() + 20 <= 100);
+                TextView legendaryPriceButton = winterBattlepassLevelSetsLayoutBinding.legendaryPriceButton;
+                Intrinsics.checkNotNullExpressionValue(legendaryPriceButton, "legendaryPriceButton");
+                setLevelSetButtonAvailability(legendaryPriceButton, num.intValue() <= 100);
+                return;
+            } else {
+                return;
             }
-            return;
         }
         for (TextView textView2 : listOf) {
             Intrinsics.checkNotNull(textView2);
-            setLevelSetButtonState(textView2, this.levelSetBuyText, 1.0f, true);
+            setLevelSetButtonState(textView2, this.levelSetUnavailableText, 0.6f, false);
+        }
+    }
+
+    private final void updateMinimumLevelLockVisuals(boolean z) {
+        int i;
+        int paintFlags;
+        if (this.isArizona) {
+            WinterBattlepassLevelSetsLayoutBinding winterBattlepassLevelSetsLayoutBinding = this.binding.battlepassLevelSetsPage;
+            for (TextView textView : CollectionsKt.listOf((Object[]) new TextView[]{winterBattlepassLevelSetsLayoutBinding.silverPriceText, winterBattlepassLevelSetsLayoutBinding.goldPriceText, winterBattlepassLevelSetsLayoutBinding.epicPriceText, winterBattlepassLevelSetsLayoutBinding.legendaryPriceText})) {
+                if (z) {
+                    paintFlags = textView.getPaintFlags() | 16;
+                } else {
+                    paintFlags = textView.getPaintFlags() & (-17);
+                }
+                textView.setPaintFlags(paintFlags);
+            }
+            for (ImageView imageView : CollectionsKt.listOf((Object[]) new ImageView[]{winterBattlepassLevelSetsLayoutBinding.silverSetIcon, winterBattlepassLevelSetsLayoutBinding.goldSetIcon, winterBattlepassLevelSetsLayoutBinding.epicSetIcon, winterBattlepassLevelSetsLayoutBinding.legendarySetIcon})) {
+                imageView.setAlpha(z ? 0.35f : 1.0f);
+            }
+            Activity activity = this.targetActivity;
+            if (z) {
+                i = R.color.winter_bp_level_set_text_muted;
+            } else {
+                i = R.color.winter_bp_white;
+            }
+            int color = ContextCompat.getColor(activity, i);
+            for (TextView textView2 : CollectionsKt.listOf((Object[]) new TextView[]{winterBattlepassLevelSetsLayoutBinding.silverLvlText, winterBattlepassLevelSetsLayoutBinding.goldLvlText, winterBattlepassLevelSetsLayoutBinding.epicLvlText, winterBattlepassLevelSetsLayoutBinding.legendaryLvlText})) {
+                textView2.setTextColor(color);
+            }
         }
     }
 
@@ -422,7 +528,7 @@ public final class BattlePassPurchaseController {
     }
 
     /* compiled from: BattlePassPurchaseController.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\t\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/BattlePassPurchaseController$Companion;", "", "<init>", "()V", "FRONTEND_LEVEL_SETS_MINIMUM_SIZE", "", "FRONTEND_PREMIUM_MINIMUM_SIZE", "RODINA_PASS_TEXT", "", "PREMIUM_PAGE_BUY_TEXT", "PREMIUM_NAV_BUY_TEXT", "PREMIUM_PLUS_BUY_TEXT", "PREMIUM_BOUGHT_TEXT", "BUY_TEXT", "UNAVAILABLE_TEXT", "PREMIUM_COUNT_MISMATCH_MESSAGE", "LEVEL_COUNT_MISMATCH_MESSAGE", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\b\f\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u0017\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\fX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/BattlePassPurchaseController$Companion;", "", "<init>", "()V", "FRONTEND_LEVEL_SETS_MINIMUM_SIZE", "", "FRONTEND_PREMIUM_MINIMUM_SIZE", "MIN_LEVEL_TO_BUY_LEVELS", "LOCKED_ICON_ALPHA", "", "ARIZONA_PREMIUM_IMAGE_IDS", "", "", "getARIZONA_PREMIUM_IMAGE_IDS", "()Ljava/util/List;", "RODINA_PASS_TEXT", "PREMIUM_PAGE_BUY_TEXT", "PREMIUM_NAV_BUY_TEXT", "PREMIUM_PLUS_BUY_TEXT", "PREMIUM_BOUGHT_TEXT", "BUY_TEXT", "UNAVAILABLE_TEXT", "PREMIUM_COUNT_MISMATCH_MESSAGE", "LEVEL_COUNT_MISMATCH_MESSAGE", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     private static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -430,6 +536,10 @@ public final class BattlePassPurchaseController {
         }
 
         private Companion() {
+        }
+
+        public final List<String> getARIZONA_PREMIUM_IMAGE_IDS() {
+            return BattlePassPurchaseController.ARIZONA_PREMIUM_IMAGE_IDS;
         }
     }
 }

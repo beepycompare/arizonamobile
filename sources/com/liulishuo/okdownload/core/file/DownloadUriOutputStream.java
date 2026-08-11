@@ -87,7 +87,7 @@ public class DownloadUriOutputStream implements DownloadOutputStream {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Factory implements DownloadOutputStream.Factory {
         @Override // com.liulishuo.okdownload.core.file.DownloadOutputStream.Factory
         public boolean supportSeek() {

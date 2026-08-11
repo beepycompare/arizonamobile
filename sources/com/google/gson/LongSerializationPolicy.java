@@ -1,7 +1,7 @@
 package com.google.gson;
 
 import com.google.gson.internal.bind.TypeAdapters;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public enum LongSerializationPolicy {
     DEFAULT { // from class: com.google.gson.LongSerializationPolicy.1
         @Override // com.google.gson.LongSerializationPolicy

@@ -3,6 +3,7 @@ package ru.mrlargha.commonui.utils;
 import android.content.Context;
 import android.util.Log;
 import java.io.File;
+import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,10 +17,11 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.elements.inventory.domain.InventoryCatalogKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Utils.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$getItemsJson$1", f = "Utils.kt", i = {0, 0, 0}, l = {355}, m = "invokeSuspend", n = {"fileName", "jsonFile", "json"}, nl = {377}, s = {"L$0", "L$1", "L$2"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$getItemsJson$1", f = "Utils.kt", i = {0, 0, 0}, l = {634}, m = "invokeSuspend", n = {"fileName", "jsonFile", "json"}, nl = {662}, s = {"L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes6.dex */
 public final class UtilsKt$getItemsJson$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ File $baseDir;
@@ -122,6 +124,8 @@ public final class UtilsKt$getItemsJson$1 extends SuspendLambda implements Funct
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
+            Object obj2;
+            Object obj3;
             IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (this.label != 0) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -129,10 +133,22 @@ public final class UtilsKt$getItemsJson$1 extends SuspendLambda implements Funct
             ResultKt.throwOnFailure(obj);
             int i = this.$type;
             if (i == 1) {
-                UtilsKt.setItemsName(MapperKt.toListModel(this.$json, ItemsInfo.class));
+                List listModel = MapperKt.toListModel(this.$json, ItemsInfo.class);
+                obj2 = UtilsKt.inventoryCatalogLoadLock;
+                synchronized (obj2) {
+                    UtilsKt.setItemsName(InventoryCatalogKt.normalizeInventoryCatalog(listModel));
+                    UtilsKt.inventoryCatalogSourceKey = null;
+                    Unit unit = Unit.INSTANCE;
+                }
                 UtilsKt.getItemsJson(this.$context, 2, this.$baseDir);
             } else if (i == 3) {
-                UtilsKt.setItemsName(MapperKt.toListModel(this.$json, ItemsInfo.class));
+                List listModel2 = MapperKt.toListModel(this.$json, ItemsInfo.class);
+                obj3 = UtilsKt.inventoryCatalogLoadLock;
+                synchronized (obj3) {
+                    UtilsKt.setItemsName(InventoryCatalogKt.normalizeInventoryCatalog(listModel2));
+                    UtilsKt.inventoryCatalogSourceKey = null;
+                    Unit unit2 = Unit.INSTANCE;
+                }
                 UtilsKt.getItemsJson(this.$context, 2, this.$baseDir);
             }
             return Unit.INSTANCE;

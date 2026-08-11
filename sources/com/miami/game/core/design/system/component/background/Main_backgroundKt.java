@@ -32,7 +32,7 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes5.dex */
 public final class Main_backgroundKt {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit BackgroundImage$lambda$0(int i, boolean z, ImageBitmap imageBitmap, File file, int i2, int i3, Composer composer, int i4) {
+    public static final Unit BackgroundImage$lambda$1(int i, boolean z, ImageBitmap imageBitmap, File file, int i2, int i3, Composer composer, int i4) {
         BackgroundImage(i, z, imageBitmap, file, i2, composer, RecomposeScopeImplKt.updateChangedFlags(i3 | 1));
         return Unit.INSTANCE;
     }
@@ -42,8 +42,9 @@ public final class Main_backgroundKt {
         Context context;
         String str;
         int i5;
+        String str2;
         Composer startRestartGroup = composer.startRestartGroup(1841108206);
-        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(default,isBlur,imageBitmap,file,version)18@787L7,24@945L29,20@800L182:main_background.kt#nlkwnv");
+        ComposerKt.sourceInformation(startRestartGroup, "C(BackgroundImage)N(default,isBlur,imageBitmap,file,version)18@787L7,25@1034L29,21@889L182:main_background.kt#nlkwnv");
         if ((i3 & 6) == 0) {
             i4 = (startRestartGroup.changed(i) ? 4 : 2) | i3;
         } else {
@@ -71,40 +72,44 @@ public final class Main_backgroundKt {
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             Context context2 = (Context) consume;
+            String cacheRevision = file != null ? LauncherBackgroundPolicy.INSTANCE.cacheRevision(file, i2) : null;
             ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, i4 & 14), (String) null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getCrop(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             if (file != null) {
-                startRestartGroup.startReplaceGroup(1722561634);
-                ComposerKt.sourceInformation(startRestartGroup, "28@1015L418");
-                SingletonAsyncImageKt.m9219AsyncImage10Xjiaw(new ImageRequest.Builder(context2).data(file).memoryCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).diskCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + i2).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+                startRestartGroup.startReplaceGroup(1722650232);
+                ComposerKt.sourceInformation(startRestartGroup, "29@1104L428");
+                SingletonAsyncImageKt.m9219AsyncImage10Xjiaw(new ImageRequest.Builder(context2).data(file).memoryCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + cacheRevision).diskCacheKey("launcher_bg_base_" + file.getAbsolutePath() + "_" + cacheRevision).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
                 context = context2;
-                str = "_";
+                str = cacheRevision;
                 i5 = 1;
+                str2 = "_";
             } else if (imageBitmap == null) {
                 context = context2;
-                str = "_";
+                str = cacheRevision;
                 i5 = 1;
-                startRestartGroup.startReplaceGroup(1723205876);
+                str2 = "_";
+                startRestartGroup.startReplaceGroup(1723304084);
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(1723025022);
-                ComposerKt.sourceInformation(startRestartGroup, "39@1480L182");
+                startRestartGroup.startReplaceGroup(1723123230);
+                ComposerKt.sourceInformation(startRestartGroup, "40@1579L182");
+                str = cacheRevision;
                 context = context2;
-                str = "_";
                 i5 = 1;
+                str2 = "_";
                 ImageKt.m345Image5hnEew(imageBitmap, null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, ContentScale.Companion.getCrop(), 0.0f, null, 0, startRestartGroup, ((i4 >> 6) & 14) | 25008, 232);
                 startRestartGroup.endReplaceGroup();
             }
             if (z && file != null) {
-                startRestartGroup.startReplaceGroup(1723253895);
-                ComposerKt.sourceInformation(startRestartGroup, "47@1711L477");
-                ImageRequest.Builder diskCacheKey = new ImageRequest.Builder(context).data(file).memoryCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2).diskCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str + i2);
+                startRestartGroup.startReplaceGroup(1723352413);
+                ComposerKt.sourceInformation(startRestartGroup, "48@1810L487");
+                ImageRequest.Builder diskCacheKey = new ImageRequest.Builder(context).data(file).memoryCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str2 + str).diskCacheKey("launcher_bg_blur_" + file.getAbsolutePath() + str2 + str);
                 Transformation[] transformationArr = new Transformation[i5];
                 transformationArr[0] = new CoilBlurTransformation(0, 0, 3, null);
                 SingletonAsyncImageKt.m9219AsyncImage10Xjiaw(ImageRequestsKt.transformations(diskCacheKey, transformationArr).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, i5, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
                 startRestartGroup.endReplaceGroup();
             } else {
-                startRestartGroup.startReplaceGroup(1723727668);
+                startRestartGroup.startReplaceGroup(1723835796);
                 startRestartGroup.endReplaceGroup();
             }
             if (ComposerKt.isTraceInProgress()) {
@@ -116,7 +121,7 @@ public final class Main_backgroundKt {
             endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.core.design.system.component.background.Main_backgroundKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    return Main_backgroundKt.BackgroundImage$lambda$0(i, z, imageBitmap, file, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
+                    return Main_backgroundKt.BackgroundImage$lambda$1(i, z, imageBitmap, file, i2, i3, (Composer) obj, ((Integer) obj2).intValue());
                 }
             });
         }

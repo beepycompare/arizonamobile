@@ -1,5 +1,5 @@
 package com.facebook;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum SessionLoginBehavior {
     SSO_WITH_FALLBACK(true, true),
     SSO_ONLY(true, false),

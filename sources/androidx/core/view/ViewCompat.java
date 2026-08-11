@@ -1927,8 +1927,9 @@ public class ViewCompat {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    private static class Api21Impl {
+    public static class Api21Impl {
         private Api21Impl() {
         }
 
@@ -1984,8 +1985,9 @@ public class ViewCompat {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    private static class Api23Impl {
+    public static class Api23Impl {
         private Api23Impl() {
         }
 

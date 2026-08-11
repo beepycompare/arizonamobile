@@ -3,7 +3,6 @@ package com.google.firebase.crashlytics.internal.settings;
 import com.google.firebase.crashlytics.internal.common.CurrentTimeProvider;
 import com.google.firebase.crashlytics.internal.settings.Settings;
 import kotlin.time.DurationKt;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
 class DefaultSettingsJsonTransform implements SettingsJsonTransform {
@@ -14,6 +13,6 @@ class DefaultSettingsJsonTransform implements SettingsJsonTransform {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Settings defaultSettings(CurrentTimeProvider currentTimeProvider) {
-        return new Settings(currentTimeProvider.getCurrentTimeMillis() + DurationKt.MILLIS_IN_HOUR, new Settings.SessionData(8, 4), new Settings.FeatureFlagData(true, false, false), 0, DateCalculationsKt.SECONDS_PER_HOUR, 10.0d, 1.2d, 60);
+        return new Settings(currentTimeProvider.getCurrentTimeMillis() + DurationKt.MILLIS_IN_HOUR, new Settings.SessionData(8, 4), new Settings.FeatureFlagData(true, false, false), 0, 3600, 10.0d, 1.2d, 60);
     }
 }

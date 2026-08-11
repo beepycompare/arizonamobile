@@ -40,7 +40,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public abstract class PickerFragment<T extends GraphObject> extends Fragment {
     private static final String ACTIVITY_CIRCLE_SHOW_KEY = "com.facebook.android.PickerFragment.ActivityCircleShown";
     public static final String DONE_BUTTON_TEXT_BUNDLE_KEY = "com.facebook.widget.PickerFragment.DoneButtonText";
@@ -84,13 +84,13 @@ public abstract class PickerFragment<T extends GraphObject> extends Fragment {
         }
     };
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface GraphObjectFilter<T> {
         boolean includeItem(T t);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public abstract class LoadingStrategy {
         protected static final int CACHED_RESULT_REFRESH_DELAY = 2000;
         protected GraphObjectAdapter<T> adapter;
@@ -194,7 +194,7 @@ public abstract class PickerFragment<T extends GraphObject> extends Fragment {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     class MultiSelectionStrategy extends PickerFragment<T>.SelectionStrategy {
         private Set<String> selectedIds;
 
@@ -262,27 +262,27 @@ public abstract class PickerFragment<T extends GraphObject> extends Fragment {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface OnDataChangedListener {
         void onDataChanged(PickerFragment<?> pickerFragment);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface OnDoneButtonClickedListener {
         void onDoneButtonClicked(PickerFragment<?> pickerFragment);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface OnErrorListener {
         void onError(PickerFragment<?> pickerFragment, FacebookException facebookException);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface OnSelectionChangedListener {
         void onSelectionChanged(PickerFragment<?> pickerFragment);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     abstract class PickerFragmentAdapter<U extends GraphObject> extends GraphObjectAdapter<T> {
         public PickerFragmentAdapter(Context context) {
             super(context);
@@ -301,7 +301,7 @@ public abstract class PickerFragment<T extends GraphObject> extends Fragment {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public abstract class SelectionStrategy {
         SelectionStrategy() {
         }
@@ -323,7 +323,7 @@ public abstract class PickerFragment<T extends GraphObject> extends Fragment {
         abstract void toggleSelection(String str);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     class SingleSelectionStrategy extends PickerFragment<T>.SelectionStrategy {
         private String selectedId;
 

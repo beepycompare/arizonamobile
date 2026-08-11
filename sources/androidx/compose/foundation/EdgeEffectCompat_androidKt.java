@@ -24,6 +24,6 @@ public final class EdgeEffectCompat_androidKt {
     public static final float flingDistance(Density density, float f) {
         double density2 = density.getDensity() * 386.0878f * 160.0f * 0.84f;
         float f2 = PlatformFlingScrollFriction;
-        return (float) (f2 * density2 * Math.exp((DecelerationRate / DecelMinusOne) * Math.log((Math.abs(f) * Inflection) / (f2 * density2))));
+        return (float) (f2 * density2 * Math.exp((DecelerationRate / DecelMinusOne) * Math.log((Math.abs(f) * 0.35f) / (f2 * density2))));
     }
 }

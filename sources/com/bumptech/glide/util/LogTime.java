@@ -1,7 +1,7 @@
 package com.bumptech.glide.util;
 
 import android.os.SystemClock;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LogTime {
     private static final double MILLIS_MULTIPLIER = 1.0d / Math.pow(10.0d, 6.0d);
 

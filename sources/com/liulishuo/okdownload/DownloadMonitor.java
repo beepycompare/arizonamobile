@@ -3,7 +3,7 @@ package com.liulishuo.okdownload;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.cause.EndCause;
 import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface DownloadMonitor {
     void taskDownloadFromBeginning(DownloadTask downloadTask, BreakpointInfo breakpointInfo, ResumeFailedCause resumeFailedCause);
 

@@ -1,5 +1,5 @@
 package com.facebook;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public enum AccessTokenSource {
     NONE(false),
     FACEBOOK_APPLICATION_WEB(true),

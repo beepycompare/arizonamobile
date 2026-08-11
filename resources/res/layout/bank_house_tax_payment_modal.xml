@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bank_house_tax_payment_modal" android:background="#66030a1f" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:padding="@dimen/_14sdp" android:layout_width="@dimen/_338sdp" android:layout_height="wrap_content" app:backgroundMainColor="#35576a" app:backgroundSecondColor="#7ec8ca" app:corners="@dimen/_12sdp" app:gradientAngle="335">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_13sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ОПЛАТА" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <ImageView android:layout_gravity="end|top" android:id="@+id/bank_house_tax_payment_close" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:layout_marginTop="@dimen/_4sdp" android:src="@drawable/bank_ic_close"/>
+            </FrameLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="@dimen/_66sdp" android:layout_marginTop="@dimen/_12sdp" app:backgroundMainColor="#5f2abf" app:backgroundSecondColor="#8a18d4" app:corners="@dimen/_10sdp" app:gradientAngle="345">
+                <FrameLayout android:paddingTop="@dimen/_10sdp" android:paddingBottom="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/_12sdp" android:paddingEnd="@dimen/_12sdp">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent">
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ОПЛАТИТЬ НАЛОГ\10СЕМЕЙНОЙ КВАРТИРЫ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffd4a8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp" android:text="✱ 4 325" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                    </LinearLayout>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|bottom" android:layout_width="@dimen/_94sdp" android:layout_height="@dimen/_52sdp" app:backgroundMainColor="#7b61ff" app:backgroundSecondColor="#e980a9" app:corners="@dimen/_8sdp" app:gradientAngle="20">
+                        <TextView android:textSize="@dimen/_12sdp" android:textColor="#fff1ff" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="HOME" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                </FrameLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_house_tax_payment_method_switch" android:padding="@dimen/_4sdp" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_14sdp" app:backgroundMainColor="#d9f0f1" app:backgroundTransparency="18" app:corners="@dimen/_10sdp">
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_house_tax_payment_cash" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#ffffff" app:corners="@dimen/_7sdp">
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#2e3646" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="НАЛИЧНЫЕ" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffffff" android:gravity="center" android:id="@+id/bank_house_tax_payment_bank_account" android:layout_width="0dp" android:layout_height="match_parent" android:text="С БАНКОВСКОГО СЧЕТА" android:layout_weight="1" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                </LinearLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <TextView android:textSize="@dimen/_8sdp" android:textColor="#d7eef1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_14sdp" android:text="Введите сумму для оплаты" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_34sdp" android:layout_marginTop="@dimen/_8sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#2b4357" app:borderMainColor="#6596a5b3" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/_10sdp" android:paddingRight="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="@dimen/_10sdp">
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#97aab7" android:layout_width="0dp" android:layout_height="wrap_content" android:text="СУММА" android:layout_weight="1" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:textSize="@dimen/_8sdp" android:textColor="#fff000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✱" android:fontFamily="@font/heading_now_66_bold"/>
+                    </LinearLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_4sdp" app:backgroundMainColor="#5d7583" app:borderMainColor="#fff000" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/_10sdp" android:paddingRight="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="@dimen/_10sdp">
+                        <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffffff" android:layout_width="0dp" android:layout_height="wrap_content" android:text="15" android:layout_weight="1" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₽" android:fontFamily="@font/heading_now_66_bold"/>
+                    </LinearLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginStart="@dimen/_4sdp" app:backgroundMainColor="#5b7280" app:borderMainColor="#6596a5b3" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/_10sdp" android:paddingRight="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="@dimen/_10sdp">
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#c3d3db" android:layout_width="0dp" android:layout_height="wrap_content" android:text="СУММА" android:layout_weight="1" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffb173" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✱" android:fontFamily="@font/heading_now_66_bold"/>
+                    </LinearLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_house_tax_payment_pay" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_14sdp" app:backgroundMainColor="#fff000" app:corners="@dimen/_8sdp">
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="#15182a" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="ОПЛАТИТЬ" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp">
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="#223140" android:gravity="center" android:background="@drawable/bank_chip_placeholder" android:layout_width="@dimen/_16sdp" android:layout_height="@dimen/_16sdp" android:text="i" android:fontFamily="@font/heading_now_66_bold"/>
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="При налоге свыше " android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_8sdp"/>
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffd4a8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✱ 4 325" android:fontFamily="@font/heading_now_66_bold"/>
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="квартиру забирает государство" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_4sdp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

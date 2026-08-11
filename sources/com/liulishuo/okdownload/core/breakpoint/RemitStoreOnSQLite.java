@@ -7,7 +7,7 @@ import com.liulishuo.okdownload.core.breakpoint.RemitSyncExecutor;
 import com.liulishuo.okdownload.core.cause.EndCause;
 import java.io.IOException;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RemitStoreOnSQLite implements RemitSyncExecutor.RemitAgent, DownloadStore {
     private static final String TAG = "RemitStoreOnSQLite";
     private final BreakpointStoreOnSQLite onSQLiteWrapper;

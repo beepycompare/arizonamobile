@@ -47,7 +47,7 @@ public final class PinkCodexBattlePassUi extends BindingBattlePassUi {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private PinkCodexBattlePassUi(Context context, WinterBattlepassPinkCodexHostBinding winterBattlepassPinkCodexHostBinding) {
-        super(context, r2, battlepass, r4, r5, r6, new BattlePassTasksPageViews(r18, r19, rodinaTasksList, r21, r22, rodinaTasksResetTimeText, rodinaTasksRemainingTimeText, levelText, experienceText, r27, r28, rodinaTasksInfoTitle, rodinaTasksInfoDescription, rodinaTasksInfoCount, rodinaTasksInfoPercent, r33, rodinaTasksInfoProgress, rodinaTasksRewardsList, r36, rodinaTasksPremiumLockContainer, rodinaTasksBuyPremiumLockButton));
+        super(context, r2, battlepass, r4, r5, r6, new BattlePassTasksPageViews(r18, r19, rodinaTasksList, r21, r22, r23, rodinaTasksResetTimeText, rodinaTasksRemainingTimeText, levelText, experienceText, r28, r29, rodinaTasksInfoTitle, rodinaTasksInfoDescription, rodinaTasksInfoCount, rodinaTasksInfoPercent, r34, rodinaTasksInfoProgress, rodinaTasksRewardsList, r37, rodinaTasksClaimButtonText, rodinaTasksPremiumLockContainer, rodinaTasksBuyPremiumLockButton));
         FrameLayout root = winterBattlepassPinkCodexHostBinding.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
         FrameLayout frameLayout = root;
@@ -118,6 +118,9 @@ public final class PinkCodexBattlePassUi extends BindingBattlePassUi {
         LinearLayout rodinaTasksEmptyState = winterBattlepassPinkCodexHostBinding.rodinaTasksPage.rodinaTasksEmptyState;
         Intrinsics.checkNotNullExpressionValue(rodinaTasksEmptyState, "rodinaTasksEmptyState");
         LinearLayout linearLayout2 = rodinaTasksEmptyState;
+        ProgressBar rodinaTasksLoading = winterBattlepassPinkCodexHostBinding.rodinaTasksPage.rodinaTasksLoading;
+        Intrinsics.checkNotNullExpressionValue(rodinaTasksLoading, "rodinaTasksLoading");
+        ProgressBar progressBar = rodinaTasksLoading;
         FrameLayout rodinaTasksCurrentTaskContainer = winterBattlepassPinkCodexHostBinding.rodinaTasksPage.rodinaTasksCurrentTaskContainer;
         Intrinsics.checkNotNullExpressionValue(rodinaTasksCurrentTaskContainer, "rodinaTasksCurrentTaskContainer");
         FrameLayout frameLayout2 = rodinaTasksCurrentTaskContainer;
@@ -153,6 +156,8 @@ public final class PinkCodexBattlePassUi extends BindingBattlePassUi {
         CustomCardView rodinaTasksClaimButton = winterBattlepassPinkCodexHostBinding.rodinaTasksPage.rodinaTasksClaimButton;
         Intrinsics.checkNotNullExpressionValue(rodinaTasksClaimButton, "rodinaTasksClaimButton");
         CustomCardView customCardView2 = rodinaTasksClaimButton;
+        TextView rodinaTasksClaimButtonText = winterBattlepassPinkCodexHostBinding.rodinaTasksPage.rodinaTasksClaimButtonText;
+        Intrinsics.checkNotNullExpressionValue(rodinaTasksClaimButtonText, "rodinaTasksClaimButtonText");
         CustomCardView rodinaTasksPremiumLockContainer = winterBattlepassPinkCodexHostBinding.rodinaTasksPage.rodinaTasksPremiumLockContainer;
         Intrinsics.checkNotNullExpressionValue(rodinaTasksPremiumLockContainer, "rodinaTasksPremiumLockContainer");
         CustomCardView rodinaTasksBuyPremiumLockButton = winterBattlepassPinkCodexHostBinding.rodinaTasksPage.rodinaTasksBuyPremiumLockButton;

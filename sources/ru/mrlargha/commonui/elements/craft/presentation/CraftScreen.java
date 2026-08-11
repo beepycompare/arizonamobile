@@ -167,7 +167,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.tuningItems = CollectionsKt.emptyList();
         frameLayout.setClickable(true);
         addViewToConstraintLayout(frameLayout, -1, -1);
-        UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
+        UtilsKt.checkItemsName$default(activity, UtilsKt.isArizonaType(), null, 4, null);
         updateItemCounts();
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener

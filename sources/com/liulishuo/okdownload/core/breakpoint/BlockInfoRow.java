@@ -1,7 +1,7 @@
 package com.liulishuo.okdownload.core.breakpoint;
 
 import android.database.Cursor;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BlockInfoRow {
     private final int breakpointId;
     private final long contentLength;

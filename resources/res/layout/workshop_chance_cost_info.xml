@@ -6,7 +6,7 @@
         <TextView android:textSize="@dimen/_8sdp" android:textStyle="italic" android:textColor="@color/white" android:gravity="center" android:id="@+id/tvEndCount" android:background="@drawable/border_radius_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pfdregular" android:paddingStart="@dimen/_4sdp" android:paddingEnd="@dimen/_4sdp" android:layout_marginStart="4dp" android:backgroundTint="@color/black_type1"/>
     </LinearLayout>
     <LinearLayout android:id="@+id/layoutFields" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <include android:id="@+id/successChanceField" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="1" layout="@layout/item_info_cost"/>
-        <include android:id="@+id/costField" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="1" android:layout_marginStart="4dp" layout="@layout/item_info_cost"/>
+        <include android:id="@+id/successChanceField" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="9" layout="@layout/item_info_cost"/>
+        <include android:id="@+id/costField" android:layout_width="0dp" android:layout_height="@dimen/_24sdp" android:layout_weight="11" android:layout_marginStart="4dp" layout="@layout/item_info_cost"/>
     </LinearLayout>
 </LinearLayout>

@@ -21,6 +21,7 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.Group;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -70,7 +71,6 @@ import ru.mrlargha.commonui.elements.inventory.domain.ChangeToSlotGuard;
 import ru.mrlargha.commonui.elements.inventory.domain.GuardInfoResponse;
 import ru.mrlargha.commonui.elements.inventory.domain.GuardInventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.GuardItemRequest;
-import ru.mrlargha.commonui.elements.inventory.domain.InventoryApi;
 import ru.mrlargha.commonui.elements.inventory.domain.InventoryEditResponse;
 import ru.mrlargha.commonui.elements.inventory.domain.InventoryResponse;
 import ru.mrlargha.commonui.elements.inventory.domain.models.GuardInfo;
@@ -98,11 +98,12 @@ import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.RodinaItemTypes;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.recycle_view.GridEdgeSpacingItemDecoration;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: InventoryScreen.kt */
-@Metadata(d1 = {"\u0000é\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u000e\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0010\u000e\n\u0002\b\u001e\n\u0002\u0010\t\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n*\u0001\u001c\u0018\u0000 ×\u00012\u00020\u00012\u00020\u0002:\u0004Ö\u0001×\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010Y\u001a\u00020ZH\u0002J\b\u0010[\u001a\u00020ZH\u0002J\u0018\u0010\\\u001a\u00020Z2\u0006\u0010]\u001a\u00020\u00062\u0006\u0010^\u001a\u00020\u0006H\u0002J\u0010\u0010_\u001a\u00020Z2\u0006\u0010`\u001a\u00020\u001fH\u0002J\u0010\u0010a\u001a\u00020Z2\u0006\u0010`\u001a\u00020\u001fH\u0002J\b\u0010b\u001a\u00020ZH\u0002J\b\u0010c\u001a\u00020ZH\u0002J\b\u0010d\u001a\u00020ZH\u0002J\b\u0010e\u001a\u00020ZH\u0002J\b\u0010f\u001a\u00020ZH\u0002J\b\u0010g\u001a\u00020ZH\u0002J\u0018\u0010h\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060i2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0017\u0010k\u001a\u00020l2\b\u0010m\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u0010nJ\u0010\u0010o\u001a\u00020Z2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0010\u0010p\u001a\u00020\u00162\u0006\u0010q\u001a\u00020rH\u0002J\b\u0010s\u001a\u00020ZH\u0002J\u0018\u0010t\u001a\u00020\u00162\u0006\u0010u\u001a\u00020\u00062\u0006\u0010q\u001a\u00020rH\u0002J\u0010\u0010v\u001a\u00020Z2\u0006\u0010w\u001a\u00020\u0016H\u0002J\u0010\u0010x\u001a\u00020Z2\u0006\u0010y\u001a\u00020\u0006H\u0002J\b\u0010z\u001a\u00020ZH\u0002J\b\u0010{\u001a\u00020\u0016H\u0002J\u0010\u0010|\u001a\u00020\u00162\u0006\u0010y\u001a\u00020\u0006H\u0002J\b\u0010}\u001a\u00020\u0016H\u0002J\u0010\u0010~\u001a\u00020Z2\u0006\u0010u\u001a\u00020\u0006H\u0002J\u000e\u0010\u007f\u001a\b\u0012\u0004\u0012\u00020\u00110iH\u0002J\t\u0010\u0080\u0001\u001a\u00020\u0006H\u0002J\t\u0010\u0081\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010\u0082\u0001\u001a\u00020\u00062\u0007\u0010\u0083\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010\u0084\u0001\u001a\u00020Z2\u0007\u0010\u0085\u0001\u001a\u00020\u0016H\u0002J\u0013\u0010\u0086\u0001\u001a\u00020Z2\b\u0010\u0087\u0001\u001a\u00030\u0088\u0001H\u0002J\t\u0010\u0089\u0001\u001a\u00020ZH\u0002J\t\u0010\u008a\u0001\u001a\u00020ZH\u0002J\u0011\u0010\u008b\u0001\u001a\u00020Z2\u0006\u0010`\u001a\u00020\u0011H\u0002J\t\u0010\u008c\u0001\u001a\u00020ZH\u0002J\t\u0010\u008d\u0001\u001a\u00020ZH\u0002J\u0018\u0010\u008e\u0001\u001a\u00020Z2\r\u0010\u008f\u0001\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0018\u0010\u0090\u0001\u001a\u00020Z2\r\u0010\u008f\u0001\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\t\u0010\u0091\u0001\u001a\u00020ZH\u0002J\u001b\u0010\u0092\u0001\u001a\u00020Z2\u0007\u0010\u0093\u0001\u001a\u00020l2\u0007\u0010\u0094\u0001\u001a\u00020\u0006H\u0002J\t\u0010\u0095\u0001\u001a\u00020ZH\u0002J\t\u0010\u0096\u0001\u001a\u00020ZH\u0002J$\u0010\u0097\u0001\u001a\u00020Z2\u0007\u0010\u0098\u0001\u001a\u00020\u00062\u0007\u0010\u0099\u0001\u001a\u00020\u00062\u0007\u0010\u009a\u0001\u001a\u00020\u0006H\u0002J\u0018\u0010\u009b\u0001\u001a\u00020Z2\r\u0010\u008f\u0001\u001a\b\u0012\u0004\u0012\u0002020\u0010H\u0002J\t\u0010\u009c\u0001\u001a\u00020ZH\u0002J\t\u0010\u009d\u0001\u001a\u00020ZH\u0002J\t\u0010\u009e\u0001\u001a\u00020ZH\u0002J\u001b\u0010\u009f\u0001\u001a\u00020Z2\b\u0010\u0087\u0001\u001a\u00030\u0088\u00012\u0006\u0010]\u001a\u00020\u0006H\u0016J\u0012\u0010 \u0001\u001a\u00020Z2\u0007\u0010¡\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010¢\u0001\u001a\u00020Z2\u0007\u0010¡\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010£\u0001\u001a\u00020\u00162\u0007\u0010¤\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010¥\u0001\u001a\u00020Z2\b\u0010¦\u0001\u001a\u00030§\u0001H\u0002J\t\u0010¨\u0001\u001a\u00020ZH\u0002J\t\u0010©\u0001\u001a\u00020ZH\u0002J\t\u0010ª\u0001\u001a\u00020ZH\u0002J\t\u0010«\u0001\u001a\u00020ZH\u0002J\u0012\u0010¬\u0001\u001a\u00020Z2\u0007\u0010\u00ad\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010®\u0001\u001a\u00020Z2\u0007\u0010\u00ad\u0001\u001a\u00020\u0006H\u0002J\u0018\u0010¯\u0001\u001a\u00020Z2\r\u0010\u008f\u0001\u001a\b\u0012\u0004\u0012\u00020\u00060\u0010H\u0002J\u0018\u0010°\u0001\u001a\u00020Z2\r\u0010\u008f\u0001\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010H\u0002J\u0013\u0010±\u0001\u001a\u00020Z2\b\u0010\u0087\u0001\u001a\u00030\u0088\u0001H\u0002J\u0011\u0010²\u0001\u001a\u00020Z2\b\u0010\u0087\u0001\u001a\u00030\u0088\u0001J\u0013\u0010³\u0001\u001a\u00020Z2\b\u0010`\u001a\u0004\u0018\u00010\u0011H\u0002J\t\u0010´\u0001\u001a\u00020ZH\u0002J\u0019\u0010µ\u0001\u001a\b\u0012\u0004\u0012\u00020\u00110i2\b\u0010¶\u0001\u001a\u00030·\u0001H\u0002J\u0013\u0010¸\u0001\u001a\u00020Z2\b\u0010¶\u0001\u001a\u00030·\u0001H\u0002J\u001a\u0010¹\u0001\u001a\u00020Z2\u0006\u0010`\u001a\u00020\u00112\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u0012\u0010»\u0001\u001a\u00020Z2\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u0012\u0010¼\u0001\u001a\u00020Z2\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u001a\u0010½\u0001\u001a\u00020Z2\u0006\u0010`\u001a\u00020\u00112\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u0012\u0010¾\u0001\u001a\u00020Z2\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u001a\u0010¿\u0001\u001a\u00020Z2\u0006\u0010`\u001a\u00020\u00112\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u0012\u0010À\u0001\u001a\u00020Z2\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u0012\u0010Á\u0001\u001a\u00020Z2\u0007\u0010º\u0001\u001a\u00020\u0016H\u0002J\u0013\u0010Â\u0001\u001a\u00020Z2\b\u0010Ã\u0001\u001a\u00030Ä\u0001H\u0002J\t\u0010Å\u0001\u001a\u00020ZH\u0002J\u001b\u0010Æ\u0001\u001a\u00020Z2\u0007\u0010\u0087\u0001\u001a\u00020\u00062\u0007\u0010Ç\u0001\u001a\u00020\u0006H\u0016J\u001c\u0010Æ\u0001\u001a\u00020Z2\u0007\u0010\u0087\u0001\u001a\u00020\u00062\b\u0010Ç\u0001\u001a\u00030§\u0001H\u0016J(\u0010È\u0001\u001a\u00020Z2\b\u0010\u0093\u0001\u001a\u00030É\u00012\b\u0010Ê\u0001\u001a\u00030\u0088\u00012\t\b\u0002\u0010Ë\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010Ì\u0001\u001a\u00020Z2\b\u0010Í\u0001\u001a\u00030Î\u0001H\u0002J\u001b\u0010Ï\u0001\u001a\u00020Z2\u0007\u0010Ð\u0001\u001a\u00020\u00112\u0007\u0010Ñ\u0001\u001a\u00020\u0011H\u0002J\t\u0010Ò\u0001\u001a\u00020ZH\u0002J\u001b\u0010Ó\u0001\u001a\u00020Z2\b\u0010\u0087\u0001\u001a\u00030\u0088\u00012\u0006\u0010]\u001a\u00020\u0006H\u0002J\u0012\u0010Ô\u0001\u001a\u00020Z2\u0007\u0010Õ\u0001\u001a\u00020\u0016H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001dR\u0014\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u001f0\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\u00020%X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0014\u0010(\u001a\u00020)X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R\u0014\u0010,\u001a\u00020)X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b-\u0010+R\u0014\u0010.\u001a\u00020#X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b/\u00100R\u0014\u00101\u001a\b\u0012\u0004\u0012\u0002020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00103\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00104\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00105\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010;\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010?\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010I\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010J\u001a\u00020KX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010L\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010M\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010N\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010O\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010P\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010Q\u001a\u00020R¢\u0006\b\n\u0000\u001a\u0004\bS\u0010TR\u0011\u0010U\u001a\u00020V¢\u0006\b\n\u0000\u001a\u0004\bW\u0010X¨\u0006Ø\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "mainInventorySwipeStartX", "", "mainInventorySwipeStartY", "isMainInventorySwipeHandled", "", "isMainInventoryItemDragging", "mainInventoryDragPageHandler", "Landroid/os/Handler;", "pendingMainInventoryDragPageDirection", "mainInventoryDragPageRunnable", "ru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$mainInventoryDragPageRunnable$1", "Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$mainInventoryDragPageRunnable$1;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "isMainInventoryTabsEnabled", "currentMainInventoryPage", "isMainInventoryTabsUpdating", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "getApi", "()Lru/mrlargha/commonui/elements/inventory/domain/InventoryApi;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "initMainInventoryTabs", "submitMainInventory", "syncMainInventoryTabs", "getVisibleMainInventoryPages", "", "pageCount", "createMainInventoryTab", "Landroid/view/View;", "pageIndex", "(Ljava/lang/Integer;)Landroid/view/View;", "updateMainInventoryPaginationArrows", "handleMainInventoryPageSwipe", "event", "Landroid/view/MotionEvent;", "resetMainInventorySwipe", "handleMainInventoryArrowTouch", TypedValues.CycleType.S_WAVE_OFFSET, "setMainInventoryDragActive", "isActive", "handleMainInventoryDragPageEdge", "direction", "cancelMainInventoryDragPageSwitch", "canSwipeMainInventoryPages", "canDragSwitchMainInventoryPage", "isMainInventoryPagingAvailable", "switchMainInventoryPage", "getCurrentMainInventoryPageItems", "getMainInventoryPageCount", "getMainInventoryType", "getMainInventoryGlobalPosition", "position", "updateMainInventoryTabsVisibility", "isVisible", "saveMainInventoryTabsMode", "data", "", "refreshMainInventoryTabsMode", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessageHandled", "getArzWarehouseType", "id", "getRodWarehouseType", "isWarehouseType", "type", "applyWarehouseMoney", "money", "", "resetWarehouseMoney", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "setSkinType", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "updateWalletInventoryList", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ì\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0011\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0010\u000e\n\u0002\b\u001e\n\u0002\u0010\t\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\n*\u0002\u0013#\u0018\u0000 Þ\u00012\u00020\u00012\u00020\u0002:\u0004Ý\u0001Þ\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\b\u0010\\\u001a\u00020]H\u0002J\b\u0010^\u001a\u00020]H\u0002J\u0018\u0010_\u001a\u00020]2\u0006\u0010`\u001a\u00020\u00062\u0006\u0010a\u001a\u00020\u0006H\u0002J\u0010\u0010b\u001a\u00020]2\u0006\u0010c\u001a\u00020&H\u0002J\u0010\u0010d\u001a\u00020]2\u0006\u0010c\u001a\u00020&H\u0002J\b\u0010e\u001a\u00020]H\u0002J\b\u0010f\u001a\u00020]H\u0002J\b\u0010g\u001a\u00020]H\u0002J\b\u0010h\u001a\u00020]H\u0002J\b\u0010i\u001a\u00020]H\u0002J\u0010\u0010j\u001a\u00020]2\u0006\u0010k\u001a\u00020\u0010H\u0002J\u0010\u0010l\u001a\u00020]2\u0006\u0010k\u001a\u00020\u0010H\u0002J\b\u0010m\u001a\u00020]H\u0002J\u0018\u0010n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00060o2\u0006\u0010p\u001a\u00020\u0006H\u0002J\u0017\u0010q\u001a\u00020r2\b\u0010s\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u0010tJ\u0010\u0010u\u001a\u00020]2\u0006\u0010p\u001a\u00020\u0006H\u0002J\u0010\u0010v\u001a\u00020\u00102\u0006\u0010w\u001a\u00020xH\u0002J\b\u0010y\u001a\u00020]H\u0002J\u0018\u0010z\u001a\u00020\u00102\u0006\u0010{\u001a\u00020\u00062\u0006\u0010w\u001a\u00020xH\u0002J\u0010\u0010|\u001a\u00020]2\u0006\u0010}\u001a\u00020\u0010H\u0002J\u0010\u0010~\u001a\u00020]2\u0006\u0010\u007f\u001a\u00020\u0006H\u0002J\t\u0010\u0080\u0001\u001a\u00020]H\u0002J\t\u0010\u0081\u0001\u001a\u00020\u0010H\u0002J\u0011\u0010\u0082\u0001\u001a\u00020\u00102\u0006\u0010\u007f\u001a\u00020\u0006H\u0002J\t\u0010\u0083\u0001\u001a\u00020\u0010H\u0002J\u0011\u0010\u0084\u0001\u001a\u00020]2\u0006\u0010{\u001a\u00020\u0006H\u0002J\u000f\u0010\u0085\u0001\u001a\b\u0012\u0004\u0012\u00020\u00190oH\u0002J\t\u0010\u0086\u0001\u001a\u00020\u0006H\u0002J\t\u0010\u0087\u0001\u001a\u00020\u0006H\u0002J\u0014\u0010\u0088\u0001\u001a\u0004\u0018\u00010\u00192\u0007\u0010\u0089\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010\u008a\u0001\u001a\u00020]2\u0007\u0010\u008b\u0001\u001a\u00020\u0010H\u0002J\u0013\u0010\u008c\u0001\u001a\u00020]2\b\u0010\u008d\u0001\u001a\u00030\u008e\u0001H\u0002J\t\u0010\u008f\u0001\u001a\u00020]H\u0002J\t\u0010\u0090\u0001\u001a\u00020]H\u0002J\u0011\u0010\u0091\u0001\u001a\u00020]2\u0006\u0010c\u001a\u00020\u0019H\u0002J\t\u0010\u0092\u0001\u001a\u00020]H\u0002J\t\u0010\u0093\u0001\u001a\u00020]H\u0002J\u0018\u0010\u0094\u0001\u001a\u00020]2\r\u0010\u0095\u0001\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018H\u0002J\u0018\u0010\u0096\u0001\u001a\u00020]2\r\u0010\u0095\u0001\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018H\u0002J\t\u0010\u0097\u0001\u001a\u00020]H\u0002J\u001b\u0010\u0098\u0001\u001a\u00020]2\u0007\u0010\u0099\u0001\u001a\u00020r2\u0007\u0010\u009a\u0001\u001a\u00020\u0006H\u0002J\t\u0010\u009b\u0001\u001a\u00020]H\u0002J\t\u0010\u009c\u0001\u001a\u00020]H\u0002J$\u0010\u009d\u0001\u001a\u00020]2\u0007\u0010\u009e\u0001\u001a\u00020\u00062\u0007\u0010\u009f\u0001\u001a\u00020\u00062\u0007\u0010 \u0001\u001a\u00020\u0006H\u0002J\u0018\u0010¡\u0001\u001a\u00020]2\r\u0010\u0095\u0001\u001a\b\u0012\u0004\u0012\u0002090\u0018H\u0002J\t\u0010¢\u0001\u001a\u00020]H\u0002J\t\u0010£\u0001\u001a\u00020]H\u0002J\t\u0010¤\u0001\u001a\u00020]H\u0002J\u001b\u0010¥\u0001\u001a\u00020]2\b\u0010\u008d\u0001\u001a\u00030\u008e\u00012\u0006\u0010`\u001a\u00020\u0006H\u0016J\u0012\u0010¦\u0001\u001a\u00020]2\u0007\u0010§\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010¨\u0001\u001a\u00020]2\u0007\u0010§\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010©\u0001\u001a\u00020\u00102\u0007\u0010ª\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010«\u0001\u001a\u00020]2\b\u0010¬\u0001\u001a\u00030\u00ad\u0001H\u0002J\t\u0010®\u0001\u001a\u00020]H\u0002J\t\u0010¯\u0001\u001a\u00020]H\u0002J\t\u0010°\u0001\u001a\u00020]H\u0002J\t\u0010±\u0001\u001a\u00020]H\u0002J\u0012\u0010²\u0001\u001a\u00020]2\u0007\u0010³\u0001\u001a\u00020\u0006H\u0002J\u0012\u0010´\u0001\u001a\u00020]2\u0007\u0010³\u0001\u001a\u00020\u0006H\u0002J\u0018\u0010µ\u0001\u001a\u00020]2\r\u0010\u0095\u0001\u001a\b\u0012\u0004\u0012\u00020\u00060\u0018H\u0002J\u0018\u0010¶\u0001\u001a\u00020]2\r\u0010\u0095\u0001\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018H\u0002J\u0013\u0010·\u0001\u001a\u00020]2\b\u0010\u008d\u0001\u001a\u00030\u008e\u0001H\u0002J\u0011\u0010¸\u0001\u001a\u00020]2\b\u0010\u008d\u0001\u001a\u00030\u008e\u0001J\u0013\u0010¹\u0001\u001a\u00020]2\b\u0010c\u001a\u0004\u0018\u00010\u0019H\u0002J\t\u0010º\u0001\u001a\u00020]H\u0002J\u0019\u0010»\u0001\u001a\b\u0012\u0004\u0012\u00020\u00190o2\b\u0010¼\u0001\u001a\u00030½\u0001H\u0002J\u0013\u0010¾\u0001\u001a\u00020]2\b\u0010¼\u0001\u001a\u00030½\u0001H\u0002J\u001a\u0010¿\u0001\u001a\u00020]2\u0006\u0010c\u001a\u00020\u00192\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u0012\u0010Á\u0001\u001a\u00020]2\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u0012\u0010Â\u0001\u001a\u00020]2\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u001a\u0010Ã\u0001\u001a\u00020]2\u0006\u0010c\u001a\u00020\u00192\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u001a\u0010Ä\u0001\u001a\u00020]2\u0006\u0010c\u001a\u00020\u00192\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u0012\u0010Å\u0001\u001a\u00020]2\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u001a\u0010Æ\u0001\u001a\u00020]2\u0006\u0010c\u001a\u00020\u00192\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u0012\u0010Ç\u0001\u001a\u00020]2\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u0012\u0010È\u0001\u001a\u00020]2\u0007\u0010À\u0001\u001a\u00020\u0010H\u0002J\u0013\u0010É\u0001\u001a\u00020]2\b\u0010Ê\u0001\u001a\u00030Ë\u0001H\u0002J\t\u0010Ì\u0001\u001a\u00020]H\u0002J\u001b\u0010Í\u0001\u001a\u00020]2\u0007\u0010\u008d\u0001\u001a\u00020\u00062\u0007\u0010Î\u0001\u001a\u00020\u0006H\u0016J\u001c\u0010Í\u0001\u001a\u00020]2\u0007\u0010\u008d\u0001\u001a\u00020\u00062\b\u0010Î\u0001\u001a\u00030\u00ad\u0001H\u0016J(\u0010Ï\u0001\u001a\u00020]2\b\u0010\u0099\u0001\u001a\u00030Ð\u00012\b\u0010Ñ\u0001\u001a\u00030\u008e\u00012\t\b\u0002\u0010Ò\u0001\u001a\u00020\u0006H\u0002J\u0013\u0010Ó\u0001\u001a\u00020]2\b\u0010Ô\u0001\u001a\u00030Õ\u0001H\u0002J\u001b\u0010Ö\u0001\u001a\u00020]2\u0007\u0010×\u0001\u001a\u00020\u00192\u0007\u0010Ø\u0001\u001a\u00020\u0019H\u0002J\t\u0010Ù\u0001\u001a\u00020]H\u0002J\u001b\u0010Ú\u0001\u001a\u00020]2\b\u0010\u008d\u0001\u001a\u00030\u008e\u00012\u0006\u0010`\u001a\u00020\u0006H\u0002J\u0012\u0010Û\u0001\u001a\u00020]2\u0007\u0010Ü\u0001\u001a\u00020\u0010H\u0016R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0004\n\u0002\u0010$R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020&0\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\u00020,X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b-\u0010.R\u0014\u0010/\u001a\u000200X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u00102R\u0014\u00103\u001a\u000200X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b4\u00102R\u0014\u00105\u001a\u00020*X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b6\u00107R\u0014\u00108\u001a\b\u0012\u0004\u0012\u0002090\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010;\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010<\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010@\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010A\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010B\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010F\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010I\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010J\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010K\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010L\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010M\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010N\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010O\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010P\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010Q\u001a\u00020RX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010S\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010T\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010U\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010V\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010W\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010X\u001a\u00020Y¢\u0006\b\n\u0000\u001a\u0004\bZ\u0010[¨\u0006ß\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen;", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "inventoryScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/MainInventoryBinding;", "mainInventoryEdgeSpacingDecoration", "Lru/mrlargha/commonui/utils/recycle_view/GridEdgeSpacingItemDecoration;", "isMainInventoryEdgeSpacingAttached", "", "isMainInventoryVerticalScrollEnabled", "mainInventoryLayoutManager", "ru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$mainInventoryLayoutManager$1", "Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$mainInventoryLayoutManager$1;", "person", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "mainInventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "mainInventorySwipeStartX", "", "mainInventorySwipeStartY", "isMainInventorySwipeHandled", "isMainInventoryItemDragging", "mainInventoryDragPageHandler", "Landroid/os/Handler;", "pendingMainInventoryDragPageDirection", "mainInventoryDragPageRunnable", "ru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$mainInventoryDragPageRunnable$1", "Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$mainInventoryDragPageRunnable$1;", "menuItemList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryMenuData;", "inventoryMenuAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryMenuAdapter;", "mainInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "subInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "getSubInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/SubInventoryAdapter;", "accessoriesInventoryAdapter", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "getAccessoriesInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/UpgradesInventoryAdapter;", "upgradesInventoryAdapter", "getUpgradesInventoryAdapter", "walletInventoryAdapter", "getWalletInventoryAdapter", "()Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "guardInfoList", "Lru/mrlargha/commonui/elements/inventory/domain/models/GuardInfo;", "guardAccessoriesList", "guardInventoryList", "guardWeaponList", "guardNumber", "guardSubInventoryAdapter", "guardInventoryAdapter", "vehicleSubList", "vehicleTechnicalList", "vehicleVisualList", "vehicleAccessoriesAdapter", "vehicleTechAdapter", "vehicleVisualAdapter", "warehouseList", "warehouseAdapter", "isAccessoriesListVisible", "isUpgradesListVisible", "isWalletListVisible", "isTechnicalListVisible", "isVisualListVisible", "isMainInventoryTabsEnabled", "currentMainInventoryPage", "isMainInventoryTabsUpdating", "selectedInventoryItem", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "currentWarehouse", "vehicleVisibilityState", "currentModSkin", "currentSkin", "clickedMenuButtons", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "initRetrofit", "", "initClickListeners", "sendRequestToClicks", "subId", "button", "menuClickHandlerArz", "item", "menuClickHandlerRod", "initViewSize", "observeClickBtnInventoryGuard", "initAdapters", "initMainInventoryTabs", "submitMainInventory", "updateMainInventoryEdgeSpacing", "isEnabled", "updateMainInventoryVerticalScroll", "syncMainInventoryTabs", "getVisibleMainInventoryPages", "", "pageCount", "createMainInventoryTab", "Landroid/view/View;", "pageIndex", "(Ljava/lang/Integer;)Landroid/view/View;", "updateMainInventoryPaginationArrows", "handleMainInventoryPageSwipe", "event", "Landroid/view/MotionEvent;", "resetMainInventorySwipe", "handleMainInventoryArrowTouch", TypedValues.CycleType.S_WAVE_OFFSET, "setMainInventoryDragActive", "isActive", "handleMainInventoryDragPageEdge", "direction", "cancelMainInventoryDragPageSwitch", "canSwipeMainInventoryPages", "canDragSwitchMainInventoryPage", "isMainInventoryPagingAvailable", "switchMainInventoryPage", "getCurrentMainInventoryPageItems", "getMainInventoryPageCount", "getMainInventoryType", "getMainInventoryDropTarget", "position", "updateMainInventoryTabsVisibility", "isVisible", "saveMainInventoryTabsMode", "data", "", "refreshMainInventoryTabsMode", "defaultInventoryScreen", "showSelectorDialog", "btnTechnicalPressed", "btnVisualPressed", "addItemsVehicleTechList", "list", "addItemsVehicleVisList", "guardsTypeClickListeners", "setItemBackground", "view", "res", "setVisibilityBtnGuards", "defaultGuardScreen", "editMainUi", "viewParent", "margin", "viewItem", "guardInfoSetUi", "observeGuardAccessories", "initObservers", "refreshItemVisibility", "onBackendMessageHandled", "getArzWarehouseType", "id", "getRodWarehouseType", "isWarehouseType", "type", "applyWarehouseMoney", "money", "", "resetWarehouseMoney", "showGuardScreen", "showVehicleScreen", "showWarehouseScreen", "getAndShowMenuButtonsArz", "bits", "getAndShowMenuButtonsRod", "addMenuCategories", "addInfoToDatabase", "setSkinType", "addAccessPages", "updateInfoToDatabase", "addLockedItems", "editResponseInfo", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryResponse;", "updateWalletInventoryList", "colorItem", "isColorItem", "changeGuardSubList", "changeGunImprovementsItem", "changeGunSkinItem", "changeCaseArmorItem", "changeSkinItem", "changeVehicleSubList", "changeVisualVehicleList", "changeTechVehicleList", "addTopBars", "skin", "Lru/mrlargha/commonui/elements/inventory/domain/models/Skin;", "getUserInfo", "onUpdateData", "value", "observeUserSkin", "Landroid/widget/ImageView;", "url", "defaultImage", "addVehicleInfo", "userBars", "Lru/mrlargha/commonui/elements/inventory/domain/models/VehicleInfoBars;", "sendGuardData", "fromItem", "toItem", "closeAllInventoryScreens", "sendRequestTo", "setVisible", "visible", "Spawner", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryScreen extends BaseInventory implements InterfaceController {
     private static final float MAIN_INVENTORY_DISABLED_ARROW_ALPHA = 0.25f;
@@ -111,10 +112,10 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private static final int MAIN_INVENTORY_MAX_VISIBLE_PAGE_BUTTONS = 5;
     private static final int MAIN_INVENTORY_MIN_PAGE_COUNT = 2;
     private static final int MAIN_INVENTORY_PAGE_SIZE = 15;
+    private static final int MAIN_INVENTORY_SPAN_COUNT = 5;
     private static final float MAIN_INVENTORY_SWIPE_HORIZONTAL_RATIO = 1.25f;
     private static boolean isDialogVisible;
     private final UpgradesInventoryAdapter accessoriesInventoryAdapter;
-    private final InventoryApi api;
     private final MainInventoryBinding binding;
     private boolean clickedMenuButtons;
     private final ArizonaRetrofit client;
@@ -133,10 +134,12 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private InventoryMenuAdapter inventoryMenuAdapter;
     private final ConstraintLayout inventoryScreen;
     private boolean isAccessoriesListVisible;
+    private boolean isMainInventoryEdgeSpacingAttached;
     private boolean isMainInventoryItemDragging;
     private boolean isMainInventorySwipeHandled;
     private boolean isMainInventoryTabsEnabled;
     private boolean isMainInventoryTabsUpdating;
+    private boolean isMainInventoryVerticalScrollEnabled;
     private boolean isTechnicalListVisible;
     private boolean isUpgradesListVisible;
     private boolean isVisualListVisible;
@@ -144,6 +147,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     private final MainInventoryAdapter mainInventoryAdapter;
     private final Handler mainInventoryDragPageHandler;
     private final InventoryScreen$mainInventoryDragPageRunnable$1 mainInventoryDragPageRunnable;
+    private final GridEdgeSpacingItemDecoration mainInventoryEdgeSpacingDecoration;
+    private final InventoryScreen$mainInventoryLayoutManager$1 mainInventoryLayoutManager;
     private List<InventoryItem> mainInventoryList;
     private float mainInventorySwipeStartX;
     private float mainInventorySwipeStartY;
@@ -183,9 +188,11 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Type inference failed for: r5v6, types: [ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$mainInventoryDragPageRunnable$1] */
-    public InventoryScreen(Activity targetActivity, int i) {
+    /* JADX WARN: Type inference failed for: r5v4, types: [ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$mainInventoryLayoutManager$1] */
+    /* JADX WARN: Type inference failed for: r5v9, types: [ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$mainInventoryDragPageRunnable$1] */
+    public InventoryScreen(final Activity targetActivity, int i) {
         super(targetActivity, i);
+        UpgradesInventoryAdapter.Companion.Type type;
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         View inflate = targetActivity.getLayoutInflater().inflate(R.layout.main_inventory, (ViewGroup) null);
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
@@ -194,6 +201,16 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         MainInventoryBinding bind = MainInventoryBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
+        this.mainInventoryEdgeSpacingDecoration = new GridEdgeSpacingItemDecoration(targetActivity.getResources().getDimensionPixelSize(R.dimen._20sdp), targetActivity.getResources().getDimensionPixelSize(R.dimen._24sdp));
+        this.isMainInventoryVerticalScrollEnabled = true;
+        this.mainInventoryLayoutManager = new GridLayoutManager(targetActivity) { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$mainInventoryLayoutManager$1
+            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+            public boolean canScrollVertically() {
+                boolean z;
+                z = this.isMainInventoryVerticalScrollEnabled;
+                return z && super.canScrollVertically();
+            }
+        };
         InventoryPersonSectionBinding personSection = bind.personSection;
         Intrinsics.checkNotNullExpressionValue(personSection, "personSection");
         this.person = new InventoryPersonSection(this, personSection);
@@ -245,99 +262,109 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             public final Object invoke(Object obj) {
                 return InventoryScreen.mainInventoryAdapter$lambda$1(InventoryScreen.this, (InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda36
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda37
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.mainInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
-        }, new InventoryScreen$mainInventoryAdapter$4(this)));
-        this.subInventoryAdapter = new SubInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda37
+        }, new InventoryScreen$mainInventoryAdapter$4(this), new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda38
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return InventoryScreen.mainInventoryAdapter$lambda$3(InventoryScreen.this, (InventoryItem) obj);
+            }
+        }));
+        this.subInventoryAdapter = new SubInventoryAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda39
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.subInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda38
+        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda40
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.subInventoryAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda39
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda41
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.subInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
         });
-        this.accessoriesInventoryAdapter = new UpgradesInventoryAdapter(UpgradesInventoryAdapter.Companion.Type.ACCESS, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda40
+        this.accessoriesInventoryAdapter = new UpgradesInventoryAdapter(UpgradesInventoryAdapter.Companion.Type.ACCESS, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda42
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.accessoriesInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda41
+        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda43
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.accessoriesInventoryAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda42
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.accessoriesInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
         });
-        this.upgradesInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda5
+        if (UtilsKt.isArizonaType()) {
+            type = UpgradesInventoryAdapter.Companion.Type.GUN;
+        } else {
+            type = UpgradesInventoryAdapter.Companion.Type.NONE;
+        }
+        this.upgradesInventoryAdapter = new UpgradesInventoryAdapter(type, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.upgradesInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda6
+        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.upgradesInventoryAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda7
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.upgradesInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
-        }, 1, null);
+        });
         RecyclerView rvWalletInventory = bind.personSection.rvWalletInventory;
         Intrinsics.checkNotNullExpressionValue(rvWalletInventory, "rvWalletInventory");
-        this.walletInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda8
+        this.walletInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.walletInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, rvWalletInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda9
+        }, rvWalletInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.walletInventoryAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda10
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.walletInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
-        }, null, 32, null));
+        }, null, null, 96, null));
         this.guardInfoList = new ArrayList();
         this.guardAccessoriesList = new ArrayList();
         this.guardInventoryList = new ArrayList();
         this.guardWeaponList = new ArrayList();
-        this.guardSubInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda12
+        this.guardSubInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.guardSubInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda13
+        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.guardSubInventoryAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda14
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.guardSubInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
         }, 1, null);
-        Function1 function12 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda15
+        Function1 function12 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.guardInventoryAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
@@ -345,70 +372,70 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         };
         RecyclerView rvGuardInventory = bind.rvGuardInventory;
         Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
-        this.guardInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function12, rvGuardInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda17
+        this.guardInventoryAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function12, rvGuardInventory, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda18
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.guardInventoryAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda18
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda19
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.guardInventoryAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
-        }, null, 32, null));
+        }, null, null, 96, null));
         this.vehicleSubList = new ArrayList();
         this.vehicleTechnicalList = new ArrayList();
         this.vehicleVisualList = new ArrayList();
-        this.vehicleAccessoriesAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda19
+        this.vehicleAccessoriesAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda20
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleAccessoriesAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda20
+        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda21
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleAccessoriesAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda21
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda23
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleAccessoriesAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
         }, 1, null);
-        this.vehicleTechAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda23
+        this.vehicleTechAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda24
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleTechAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda24
+        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda25
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleTechAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda25
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda26
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleTechAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
         }, 1, null);
-        this.vehicleVisualAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda26
+        this.vehicleVisualAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleVisualAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
             }
-        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda27
+        }, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda29
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleVisualAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda29
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda30
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.vehicleVisualAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
         }, 1, null);
         this.warehouseList = new ArrayList();
-        Function1 function13 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda30
+        Function1 function13 = new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda31
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.warehouseAdapter$lambda$0(InventoryScreen.this, (DraggedItem) obj);
@@ -416,22 +443,20 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         };
         RecyclerView rvWarehouse = bind.layoutWarehouse.rvWarehouse;
         Intrinsics.checkNotNullExpressionValue(rvWarehouse, "rvWarehouse");
-        this.warehouseAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function13, rvWarehouse, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda31
+        this.warehouseAdapter = new MainInventoryAdapter(new MainInventoryAdapter.Params(function13, rvWarehouse, activity, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda32
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.warehouseAdapter$lambda$1((InventoryItem) obj);
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda32
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda34
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return InventoryScreen.warehouseAdapter$lambda$2(InventoryScreen.this, (InventoryItem) obj);
             }
-        }, null, 32, null));
-        this.isMainInventoryTabsEnabled = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS_ENABLED", UtilsKt.isArizonaType());
+        }, null, null, 96, null));
+        this.isMainInventoryTabsEnabled = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS", false);
         this.db = AppDatabase.Companion.invoke(activity);
-        ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
-        this.client = arizonaRetrofit;
-        this.api = (InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, null, 14, null);
+        this.client = new ArizonaRetrofit(targetActivity, i);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         ImageView btnWallet = bind.personSection.btnWallet;
         Intrinsics.checkNotNullExpressionValue(btnWallet, "btnWallet");
@@ -439,11 +464,13 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         RecyclerView rvSubInventory = bind.personSection.rvSubInventory;
         Intrinsics.checkNotNullExpressionValue(rvSubInventory, "rvSubInventory");
         rvSubInventory.setVisibility(0);
-        UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
         initAdapters();
         initMainInventoryTabs();
         initClickListeners();
         setVisible(false);
+        ProgressBar progressBar = bind.progressBar;
+        Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
+        progressBar.setVisibility(0);
         initRetrofit();
         LinearLayout root = bind.personSection.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
@@ -470,17 +497,14 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         Intrinsics.checkNotNullExpressionValue(rvWalletInventory2, "rvWalletInventory");
         rvWalletInventory2.setVisibility(8);
         bind.layoutGuards.btnGuardTypeOne.setBackgroundResource(R.drawable.btn_guard_1_white);
-        ProgressBar progressBar = bind.progressBar;
-        Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
-        progressBar.setVisibility(0);
-        bind.layoutGuards.layoutGuardInfo.setOnDragListener(new View.OnDragListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda34
+        bind.layoutGuards.layoutGuardInfo.setOnDragListener(new View.OnDragListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda35
             @Override // android.view.View.OnDragListener
             public final boolean onDrag(View view, DragEvent dragEvent) {
                 return InventoryScreen._init_$lambda$0(InventoryScreen.this, view, dragEvent);
             }
         });
         BaseInventory.Companion.setCurrentBackendId(i);
-        bind.getRoot().post(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda35
+        bind.getRoot().post(new Runnable() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
                 InventoryScreen.this.binding.getRoot().getViewTreeObserver().addOnWindowAttachListener(new ViewTreeObserver.OnWindowAttachListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$2$1
@@ -512,9 +536,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit mainInventoryAdapter$lambda$0(InventoryScreen inventoryScreen, DraggedItem currentItem) {
         Intrinsics.checkNotNullParameter(currentItem, "currentItem");
-        InventoryItem inventoryItem = (InventoryItem) CollectionsKt.getOrNull(inventoryScreen.mainInventoryList, inventoryScreen.getMainInventoryGlobalPosition(currentItem.getPosition()));
-        if (inventoryItem != null) {
-            inventoryScreen.sendData(currentItem.getItemInfo(), inventoryItem);
+        InventoryItem mainInventoryDropTarget = inventoryScreen.getMainInventoryDropTarget(currentItem.getPosition());
+        if (mainInventoryDropTarget != null) {
+            inventoryScreen.sendData(currentItem.getItemInfo(), mainInventoryDropTarget);
             inventoryScreen.colorItem(currentItem.getItemInfo(), false);
         }
         return Unit.INSTANCE;
@@ -534,6 +558,13 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             inventoryScreen.sendRequestTo(StringKt.toStringJson(new ChangeToSlot(it.getSlot(), it.getInventoryType())), 2);
             inventoryScreen.showSelectorDialog(it);
         }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit mainInventoryAdapter$lambda$3(InventoryScreen inventoryScreen, InventoryItem it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        inventoryScreen.colorItem(it, false);
         return Unit.INSTANCE;
     }
 
@@ -801,10 +832,6 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         return this.client;
     }
 
-    public final InventoryApi getApi() {
-        return this.api;
-    }
-
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean _init_$lambda$0(InventoryScreen inventoryScreen, View view, DragEvent dragEvent) {
         Integer id;
@@ -840,94 +867,104 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void initRetrofit() {
-        if (UtilsKt.getItemsName().isEmpty()) {
-            BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getIO(), null, new InventoryScreen$initRetrofit$1(this, null), 2, null);
-        } else {
-            SAMPUIElement.notifyClick$default(this, 0, 10, null, 4, null);
-        }
+        UtilsKt.checkItemsName(getTargetActivity(), UtilsKt.isArizonaType(), new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda60
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return InventoryScreen.initRetrofit$lambda$0(InventoryScreen.this, ((Boolean) obj).booleanValue());
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit initRetrofit$lambda$0(InventoryScreen inventoryScreen, boolean z) {
+        ProgressBar progressBar = inventoryScreen.binding.progressBar;
+        Intrinsics.checkNotNullExpressionValue(progressBar, "progressBar");
+        progressBar.setVisibility(8);
+        inventoryScreen.getNotifier().clickedWrapper(inventoryScreen.getBackendID(), 0, 10);
+        return Unit.INSTANCE;
     }
 
     private final void initClickListeners() {
         final MainInventoryBinding mainInventoryBinding = this.binding;
-        mainInventoryBinding.layoutGuards.btnGuardMenu.btnGuardMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda43
+        mainInventoryBinding.layoutGuards.btnGuardMenu.btnGuardMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda45
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.initClickListeners$lambda$0$0(InventoryScreen.this, view);
             }
         });
-        this.binding.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda49
+        this.binding.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda50
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.initClickListeners$lambda$0$1(InventoryScreen.this, view);
             }
         });
-        this.binding.layoutGuards.btnGuardInventory.btnGuardInventory.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda50
+        this.binding.layoutGuards.btnGuardInventory.btnGuardInventory.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda51
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.observeClickBtnInventoryGuard();
             }
         });
-        this.binding.layoutGuards.layoutGuardInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda51
+        this.binding.layoutGuards.layoutGuardInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda52
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.initClickListeners$lambda$0$3(InventoryScreen.this, view);
             }
         });
-        this.binding.layoutGuards.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda52
+        this.binding.layoutGuards.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda53
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.initClickListeners$lambda$0$4(view);
             }
         });
-        this.binding.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda53
+        this.binding.parentLayout.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda54
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.initClickListeners$lambda$0$5(view);
             }
         });
-        this.binding.layoutVehicle.btnVehicleTechnical.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda54
+        this.binding.layoutVehicle.btnVehicleTechnical.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda56
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.initClickListeners$lambda$0$6(InventoryScreen.this, view);
             }
         });
-        mainInventoryBinding.layoutVehicle.btnVehicleVisual.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda56
+        mainInventoryBinding.layoutVehicle.btnVehicleVisual.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda57
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.initClickListeners$lambda$0$7(InventoryScreen.this, mainInventoryBinding, view);
             }
         });
-        mainInventoryBinding.btnStats.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda57
+        mainInventoryBinding.btnStats.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda58
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.sendRequestToClicks(6, 0);
             }
         });
-        mainInventoryBinding.btnPassport.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda58
+        mainInventoryBinding.btnPassport.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda59
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.sendRequestToClicks(6, 1);
             }
         });
-        mainInventoryBinding.btnMedbook.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda45
+        mainInventoryBinding.btnMedbook.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda46
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.sendRequestToClicks(6, 2);
             }
         });
-        mainInventoryBinding.btnVipStatus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda46
+        mainInventoryBinding.btnVipStatus.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda47
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.sendRequestToClicks(6, 3);
             }
         });
-        mainInventoryBinding.btnSortItems.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda47
+        mainInventoryBinding.btnSortItems.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda48
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.sendRequestToClicks(6, 4);
             }
         });
-        this.binding.layoutWarehouse.etStoreMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda48
+        this.binding.layoutWarehouse.etStoreMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda49
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.sendRequestTo("", 3);
@@ -1168,10 +1205,13 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         Intrinsics.checkNotNullExpressionValue(rvGuardInventory, "rvGuardInventory");
         rvGuardInventory.setVisibility(0);
         BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_SECURITY_SCREEN.getId());
-        updateMainInventoryTabsVisibility(false);
+        submitMainInventory();
     }
 
     private final void initAdapters() {
+        this.binding.rvMainInventory.setLayoutManager(this.mainInventoryLayoutManager);
+        updateMainInventoryEdgeSpacing(true);
+        this.binding.layoutWarehouse.rvWarehouse.addItemDecoration(new GridEdgeSpacingItemDecoration(0, getTargetActivity().getResources().getDimensionPixelSize(R.dimen._12sdp), 1, null));
         this.binding.rvMainInventory.setItemAnimator(null);
         this.binding.rvCategoryMenu.setAdapter(this.inventoryMenuAdapter);
         this.binding.rvMainInventory.setAdapter(this.mainInventoryAdapter);
@@ -1189,19 +1229,19 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void initMainInventoryTabs() {
         this.binding.inventoryPagination.tabMainInventoryPages.removeAllViews();
-        this.binding.inventoryPagination.getRoot().setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda60
+        this.binding.inventoryPagination.getRoot().setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda62
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 return InventoryScreen.initMainInventoryTabs$lambda$0(InventoryScreen.this, view, motionEvent);
             }
         });
-        this.binding.inventoryPagination.buttonPreviousPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda61
+        this.binding.inventoryPagination.buttonPreviousPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda63
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 InventoryScreen.this.switchMainInventoryPage(-1);
             }
         });
-        this.binding.inventoryPagination.buttonPreviousPage.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda62
+        this.binding.inventoryPagination.buttonPreviousPage.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda64
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 return InventoryScreen.initMainInventoryTabs$lambda$2(InventoryScreen.this, view, motionEvent);
@@ -1282,8 +1322,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0036  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1291,6 +1331,8 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         boolean z;
         syncMainInventoryTabs();
         boolean isMainInventoryPagingAvailable = isMainInventoryPagingAvailable();
+        updateMainInventoryEdgeSpacing(!isMainInventoryPagingAvailable);
+        updateMainInventoryVerticalScroll(!isMainInventoryPagingAvailable);
         if (isMainInventoryPagingAvailable) {
             ConstraintLayout parentLayout = this.binding.parentLayout;
             Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
@@ -1311,6 +1353,38 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         updateMainInventoryTabsVisibility(z);
         MainInventoryAdapter mainInventoryAdapter2 = this.mainInventoryAdapter;
         if (!isMainInventoryPagingAvailable) {
+        }
+    }
+
+    private final void updateMainInventoryEdgeSpacing(boolean z) {
+        if (this.isMainInventoryEdgeSpacingAttached == z) {
+            return;
+        }
+        MainInventoryBinding mainInventoryBinding = this.binding;
+        if (z) {
+            mainInventoryBinding.rvMainInventory.addItemDecoration(this.mainInventoryEdgeSpacingDecoration);
+        } else {
+            mainInventoryBinding.rvMainInventory.removeItemDecoration(this.mainInventoryEdgeSpacingDecoration);
+            this.binding.rvMainInventory.scrollToPosition(0);
+        }
+        this.isMainInventoryEdgeSpacingAttached = z;
+    }
+
+    private final void updateMainInventoryVerticalScroll(boolean z) {
+        if (this.isMainInventoryVerticalScrollEnabled == z) {
+            return;
+        }
+        this.isMainInventoryVerticalScrollEnabled = z;
+        RecyclerView recyclerView = this.binding.rvMainInventory;
+        recyclerView.setVerticalScrollBarEnabled(z);
+        recyclerView.setOverScrollMode(z ? 1 : 2);
+        if (!z) {
+            recyclerView.stopScroll();
+            recyclerView.scrollToPosition(0);
+        }
+        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager != null) {
+            layoutManager.requestLayout();
         }
     }
 
@@ -1495,7 +1569,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final boolean isMainInventoryPagingAvailable() {
         if (this.isMainInventoryTabsEnabled) {
-            return BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY.getId() || BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY_WAREHOUSE.getId();
+            return BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY.getId() || BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY_WAREHOUSE.getId() || BaseInventory.Companion.getCurrentBackendId() == UIElementID.INVENTORY_SECURITY_SCREEN.getId();
         }
         return false;
     }
@@ -1523,7 +1597,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             int nextInt = ((IntIterator) it).nextInt();
             InventoryItem inventoryItem = (InventoryItem) CollectionsKt.getOrNull(this.mainInventoryList, nextInt);
             if (inventoryItem == null) {
-                inventoryItem = InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), nextInt, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, getMainInventoryType(), null, null, false, false, null, null, null, null, null, 67043326, null);
+                inventoryItem = InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), nextInt, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, getMainInventoryType(), null, null, false, false, null, null, null, null, null, null, 134152190, null);
             }
             arrayList.add(inventoryItem);
         }
@@ -1545,8 +1619,33 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         return RodinaBlockType.BLOCK_TYPE_MENU.getId();
     }
 
-    private final int getMainInventoryGlobalPosition(int i) {
-        return isMainInventoryPagingAvailable() ? (this.currentMainInventoryPage * 15) + i : i;
+    private final InventoryItem getMainInventoryDropTarget(int i) {
+        List<InventoryItem> currentList = this.mainInventoryAdapter.getCurrentList();
+        Intrinsics.checkNotNullExpressionValue(currentList, "getCurrentList(...)");
+        InventoryItem inventoryItem = (InventoryItem) CollectionsKt.getOrNull(currentList, i);
+        Object obj = null;
+        if (inventoryItem != null) {
+            if (inventoryItem.isLocked()) {
+                inventoryItem = null;
+            }
+            if (inventoryItem != null) {
+                Iterator<T> it = this.mainInventoryList.iterator();
+                while (true) {
+                    if (!it.hasNext()) {
+                        break;
+                    }
+                    Object next = it.next();
+                    InventoryItem inventoryItem2 = (InventoryItem) next;
+                    if (inventoryItem2.getSlot() == inventoryItem.getSlot() && inventoryItem2.getInventoryType() == inventoryItem.getInventoryType()) {
+                        obj = next;
+                        break;
+                    }
+                }
+                return (InventoryItem) obj;
+            }
+            return null;
+        }
+        return null;
     }
 
     private final void updateMainInventoryTabsVisibility(boolean z) {
@@ -1558,10 +1657,17 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         root.setVisibility(z ? 0 : 8);
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(this.binding.parentLayout);
+        constraintSet.setMargin(R.id.rvMainInventory, 3, z ? getTargetActivity().getResources().getDimensionPixelSize(R.dimen._20sdp) : 0);
         if (z) {
-            constraintSet.connect(R.id.rvMainInventory, 4, R.id.inventoryPagination, 3, getTargetActivity().getResources().getDimensionPixelSize(R.dimen._6sdp));
+            constraintSet.constrainHeight(R.id.rvMainInventory, -2);
+            constraintSet.clear(R.id.rvMainInventory, 4);
+            constraintSet.clear(R.id.inventoryPagination, 4);
+            constraintSet.connect(R.id.inventoryPagination, 3, R.id.rvMainInventory, 4, getTargetActivity().getResources().getDimensionPixelSize(R.dimen._6sdp));
         } else {
-            constraintSet.connect(R.id.rvMainInventory, 4, R.id.guidelineHor2, 4, 0);
+            constraintSet.constrainHeight(R.id.rvMainInventory, 0);
+            constraintSet.clear(R.id.inventoryPagination, 3);
+            constraintSet.connect(R.id.inventoryPagination, 4, R.id.guidelineHor2, 4);
+            constraintSet.connect(R.id.rvMainInventory, 4, 0, 4, 0);
         }
         constraintSet.applyTo(this.binding.parentLayout);
     }
@@ -1572,7 +1678,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         if (!Intrinsics.areEqual(StringsKt.trim((CharSequence) str2).toString(), "1") && !StringsKt.equals(StringsKt.trim((CharSequence) str2).toString(), "true", true)) {
             z = false;
         }
-        getSharedPreferences().edit().putBoolean("MAIN_INVENTORY_TABS_ENABLED", z).apply();
+        getSharedPreferences().edit().putBoolean("MAIN_INVENTORY_TABS", z).apply();
         if (this.isMainInventoryTabsEnabled != z) {
             this.currentMainInventoryPage = 0;
         }
@@ -1581,7 +1687,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void refreshMainInventoryTabsMode() {
-        boolean z = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS_ENABLED", UtilsKt.isArizonaType());
+        boolean z = getSharedPreferences().getBoolean("MAIN_INVENTORY_TABS", false);
         if (this.isMainInventoryTabsEnabled != z) {
             this.currentMainInventoryPage = 0;
         }
@@ -1684,7 +1790,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, 66060286, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, null, 133169150, null));
         }
         list.addAll(arrayList);
         this.vehicleTechnicalList = list;
@@ -1697,7 +1803,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, 66060286, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, null, 133169150, null));
         }
         list.addAll(arrayList);
         this.vehicleVisualList = list;
@@ -1920,7 +2026,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 List<InventoryItem> accessoriesList = guardInfo.getAccessoriesList();
                 ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
                 for (InventoryItem inventoryItem : accessoriesList) {
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67106815, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134215679, null));
                 }
                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(arrayList));
             } else {
@@ -1953,21 +2059,21 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> list = this.mainInventoryList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67106303, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134215167, null));
         }
         this.mainInventoryList = CollectionsKt.toMutableList((Collection) arrayList);
         submitMainInventory();
         List<InventoryItem> subCaseArmorSkinList = getSubCaseArmorSkinList();
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subCaseArmorSkinList, 10));
         for (InventoryItem inventoryItem2 : subCaseArmorSkinList) {
-            arrayList2.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67106303, null));
+            arrayList2.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134215167, null));
         }
         setSubCaseArmorSkinList(CollectionsKt.toMutableList((Collection) arrayList2));
         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
         List<InventoryItem> subUpgradesList = getSubUpgradesList();
         ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subUpgradesList, 10));
         for (InventoryItem inventoryItem3 : subUpgradesList) {
-            arrayList3.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67106303, null));
+            arrayList3.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134215167, null));
         }
         setSubUpgradesList(CollectionsKt.toMutableList((Collection) arrayList3));
         getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
@@ -1975,7 +2081,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> walletInventoryList = getWalletInventoryList();
         ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(walletInventoryList, 10));
         for (InventoryItem inventoryItem4 : walletInventoryList) {
-            arrayList4.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67106303, null));
+            arrayList4.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134215167, null));
         }
         setWalletInventoryList(CollectionsKt.toMutableList((Collection) arrayList4));
         getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
@@ -2007,6 +2113,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> items9;
         Object obj2;
         Object obj3;
+        Integer gunSlot;
         List<GuardInfo> mutableList;
         Object obj4;
         int id12;
@@ -2018,6 +2125,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         int id18;
         int id19;
         int id20;
+        List<InventoryItem> mutableList2;
         Object obj5;
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
@@ -2041,7 +2149,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         }
                     }, 1000L);
                 }
-                CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda59
+                CollectionsKt.removeAll((List) this.mainInventoryList, new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$$ExternalSyntheticLambda61
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj6) {
                         return Boolean.valueOf(InventoryScreen.onBackendMessageHandled$lambda$1((InventoryItem) obj6));
@@ -2080,7 +2188,18 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     if (inventoryResponse.getItems().get(0).getSlot() == 0) {
                         getSubUpgradesList().clear();
                     }
-                    setSubUpgradesList(CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse)));
+                    List<InventoryItem> editResponseInfo = editResponseInfo(inventoryResponse);
+                    if (UtilsKt.isArizonaType()) {
+                        mutableList2 = CollectionsKt.toMutableList((Collection) CollectionsKt.sortedWith(editResponseInfo, new Comparator() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.InventoryScreen$onBackendMessageHandled$$inlined$sortedBy$1
+                            @Override // java.util.Comparator
+                            public final int compare(T t, T t2) {
+                                return ComparisonsKt.compareValues(Integer.valueOf(((InventoryItem) t).getSlot()), Integer.valueOf(((InventoryItem) t2).getSlot()));
+                            }
+                        }));
+                    } else {
+                        mutableList2 = CollectionsKt.toMutableList((Collection) editResponseInfo);
+                    }
+                    setSubUpgradesList(mutableList2);
                 } else {
                     if (!UtilsKt.isArizonaType()) {
                         id13 = RodinaBlockType.BLOCK_TYPE_IMPROV.getId();
@@ -2289,7 +2408,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             arrayList4.add(obj6);
                         }
                     }
-                    List mutableList2 = CollectionsKt.toMutableList((Collection) arrayList4);
+                    List mutableList3 = CollectionsKt.toMutableList((Collection) arrayList4);
                     ArrayList arrayList5 = new ArrayList();
                     for (Object obj7 : this.guardInventoryList) {
                         int id23 = ((InventoryItem) obj7).getId();
@@ -2315,9 +2434,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     }
                     InventoryItem inventoryItem3 = (InventoryItem) obj4;
                     if (inventoryItem3 != null) {
-                        mutableList2.add(inventoryItem3);
+                        mutableList3.add(inventoryItem3);
                     }
-                    arrayList3.add(GuardInfo.copy$default(guardInfo, null, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryItem3, mutableList2, CollectionsKt.toMutableList((Collection) arrayList6), 16383, null));
+                    arrayList3.add(GuardInfo.copy$default(guardInfo, null, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryItem3, mutableList3, CollectionsKt.toMutableList((Collection) arrayList6), 16383, null));
                 }
                 this.guardInfoList = CollectionsKt.toMutableList((Collection) arrayList3);
                 Log.d("TAG_SEND", "GUARD: " + mutableList.get(0).getInventoryList());
@@ -2350,15 +2469,21 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         }
                     }
                     ItemsInfo itemsInfo = (ItemsInfo) obj3;
-                    arrayList7.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null, null, null, null, null, null, null, null, null, null, null, null, inventoryEditResponse.getType(), itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null, null, false, false, itemsInfo != null ? itemsInfo.getEffect() : null, null, null, null, null, 64815087, null));
+                    int type3 = inventoryEditResponse.getType();
+                    Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : inventoryItem4.getItem_type();
+                    Integer valueOf2 = itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : inventoryItem4.getAcsSlot();
+                    if (itemsInfo == null || (gunSlot = itemsInfo.getGun_slot()) == null) {
+                        gunSlot = inventoryItem4.getGunSlot();
+                    }
+                    arrayList7.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type3, valueOf2, null, false, false, null, null, null, null, null, gunSlot, 66912239, null));
                 }
                 arrayList = arrayList7;
             } else {
                 arrayList = null;
             }
             InventoryEditResponse inventoryEditResponse2 = new InventoryEditResponse(type2, arrayList, inventoryEditResponse.getMoney(), 0, 8, null);
-            int type3 = inventoryEditResponse2.getType();
-            if (type3 == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
+            int type4 = inventoryEditResponse2.getType();
+            if (type4 == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
                 List<InventoryItem> items12 = inventoryEditResponse2.getItems();
                 if (items12 != null) {
                     for (InventoryItem inventoryItem5 : items12) {
@@ -2389,7 +2514,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 Log.e("TAG", "response: " + this.mainInventoryAdapter.getCurrentList());
                 List<InventoryItem> items13 = inventoryEditResponse2.getItems();
                 updateInfoToDatabase(items13 != null ? (InventoryItem) CollectionsKt.firstOrNull((List<? extends Object>) items13) : null);
-            } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
+            } else if (type4 == ArizonaBlockType.BLOCK_TYPE_ATTACH.getId()) {
                 this.person.updateAccessories(inventoryEditResponse2);
             } else {
                 if (!UtilsKt.isArizonaType()) {
@@ -2397,7 +2522,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 } else {
                     id2 = ArizonaBlockType.BLOCK_TYPE_GUN.getId();
                 }
-                if (type3 == id2) {
+                if (type4 == id2) {
                     if (!getSubUpgradesList().isEmpty() && (items9 = inventoryEditResponse2.getItems()) != null) {
                         for (InventoryItem inventoryItem7 : items9) {
                             Iterator<InventoryItem> it5 = getSubUpgradesList().iterator();
@@ -2445,7 +2570,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     } else {
                         id3 = ArizonaBlockType.BLOCK_TYPE_IMPROV.getId();
                     }
-                    if (type3 == id3) {
+                    if (type4 == id3) {
                         List<InventoryItem> items14 = inventoryEditResponse2.getItems();
                         if (items14 != null) {
                             for (InventoryItem inventoryItem8 : items14) {
@@ -2475,7 +2600,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         } else {
                             id4 = ArizonaBlockType.BLOCK_TYPE_SKIN.getId();
                         }
-                        if (type3 == id4) {
+                        if (type4 == id4) {
                             List<InventoryItem> items15 = inventoryEditResponse2.getItems();
                             if (items15 != null) {
                                 for (InventoryItem inventoryItem9 : items15) {
@@ -2499,7 +2624,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 }
                                 Unit unit6 = Unit.INSTANCE;
                             }
-                        } else if (type3 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
+                        } else if (type4 == ArizonaBlockType.BLOCK_TYPE_MOD_SKIN.getId()) {
                             List<InventoryItem> items16 = inventoryEditResponse2.getItems();
                             if (items16 != null) {
                                 for (InventoryItem inventoryItem10 : items16) {
@@ -2531,7 +2656,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             } else {
                                 id5 = ArizonaBlockType.BLOCK_TYPE_WALLET.getId();
                             }
-                            if (type3 == id5 || type3 == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || type3 == ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
+                            if (type4 == id5 || type4 == ArizonaBlockType.BLOCK_TYPE_FISHBAG.getId() || type4 == ArizonaBlockType.BLOCK_TYPE_CRYPTO_BAG.getId()) {
                                 Log.e("wallet", "onBackendMessage: " + inventoryEditResponse2.getType());
                                 if (!getWalletInventoryList().isEmpty()) {
                                     this.isWalletListVisible = true;
@@ -2584,7 +2709,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 } else {
                                     id6 = ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId();
                                 }
-                                if (type3 == id6) {
+                                if (type4 == id6) {
                                     if (!this.guardWeaponList.isEmpty() && (items8 = inventoryEditResponse2.getItems()) != null) {
                                         for (InventoryItem inventoryItem12 : items8) {
                                             GuardInfo guardInfo2 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
@@ -2612,7 +2737,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                         }
                                         Unit unit9 = Unit.INSTANCE;
                                     }
-                                } else if (type3 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
+                                } else if (type4 == ArizonaBlockType.BLOCK_TYPE_ACTOR_ATTACH.getId()) {
                                     GuardInfo guardInfo3 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                                     if (guardInfo3 == null) {
                                         return;
@@ -2646,13 +2771,13 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                     } else {
                                         id7 = ArizonaBlockType.BLOCK_TYPE_ACTOR_INVENTORY.getId();
                                     }
-                                    if (type3 != id7) {
+                                    if (type4 != id7) {
                                         if (!UtilsKt.isArizonaType()) {
                                             id8 = RodinaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
                                         } else {
                                             id8 = ArizonaBlockType.BLOCK_TYPE_VISUAL_TUNING.getId();
                                         }
-                                        if (type3 == id8) {
+                                        if (type4 == id8) {
                                             if (!this.vehicleVisualList.isEmpty() && (items5 = inventoryEditResponse2.getItems()) != null) {
                                                 for (InventoryItem inventoryItem14 : items5) {
                                                     Iterator<InventoryItem> it14 = this.vehicleVisualList.iterator();
@@ -2682,7 +2807,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                             } else {
                                                 id9 = ArizonaBlockType.BLOCK_TYPE_TECH_TUNING.getId();
                                             }
-                                            if (type3 == id9) {
+                                            if (type4 == id9) {
                                                 if (!this.vehicleTechnicalList.isEmpty() && (items4 = inventoryEditResponse2.getItems()) != null) {
                                                     for (InventoryItem inventoryItem15 : items4) {
                                                         Iterator<InventoryItem> it15 = this.vehicleTechnicalList.iterator();
@@ -2712,7 +2837,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                 } else {
                                                     id10 = ArizonaBlockType.BLOCK_TYPE_VEH_SKIN.getId();
                                                 }
-                                                if (type3 == id10) {
+                                                if (type4 == id10) {
                                                     if (!this.vehicleSubList.isEmpty() && (items3 = inventoryEditResponse2.getItems()) != null) {
                                                         for (InventoryItem inventoryItem16 : items3) {
                                                             Iterator<InventoryItem> it16 = this.vehicleSubList.iterator();
@@ -2736,7 +2861,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                         }
                                                         Unit unit13 = Unit.INSTANCE;
                                                     }
-                                                } else if (type3 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
+                                                } else if (type4 == ArizonaBlockType.BLOCK_TYPE_VEH_MODIFICATION.getId()) {
                                                     if (!this.vehicleSubList.isEmpty() && (items2 = inventoryEditResponse2.getItems()) != null) {
                                                         for (InventoryItem inventoryItem17 : items2) {
                                                             Iterator<InventoryItem> it17 = this.vehicleSubList.iterator();
@@ -2765,7 +2890,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                                     } else {
                                                         id11 = RodinaBlockType.BLOCK_TYPE_VEH_NUMBER.getId();
                                                     }
-                                                    if (type3 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
+                                                    if (type4 == id11 && !this.vehicleSubList.isEmpty() && (items = inventoryEditResponse2.getItems()) != null) {
                                                         for (InventoryItem inventoryItem18 : items) {
                                                             Iterator<InventoryItem> it18 = this.vehicleSubList.iterator();
                                                             int i14 = 0;
@@ -2893,12 +3018,12 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             InventoryItem inventoryItem22 = this.selectedInventoryItem;
             if (isEmpty) {
                 if (inventoryItem22 != null) {
-                    new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67108607, null), 0);
+                    new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134217471, null), 0);
                 }
             } else if (inventoryItem22 != null) {
                 Activity targetActivity = getTargetActivity();
                 int currentBackendId = BaseInventory.Companion.getCurrentBackendId();
-                InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, 67108607, null);
+                InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134217471, null);
                 GuardInfo guardInfo6 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                 new SelectorDialog(targetActivity, currentBackendId, copy$default, (guardInfo6 == null || (id = guardInfo6.getId()) == null) ? 0 : id.intValue());
             }
@@ -2908,15 +3033,15 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         } else if (i == 6) {
             Object fromJson9 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) BlockType.class);
             Intrinsics.checkNotNullExpressionValue(fromJson9, "fromJson(...)");
-            int type4 = ((BlockType) fromJson9).getType();
-            if (type4 == 1) {
+            int type5 = ((BlockType) fromJson9).getType();
+            if (type5 == 1) {
                 RecyclerView rvAccessoriesInventory = this.binding.personSection.rvAccessoriesInventory;
                 Intrinsics.checkNotNullExpressionValue(rvAccessoriesInventory, "rvAccessoriesInventory");
                 if (rvAccessoriesInventory.getVisibility() == 0) {
                     return;
                 }
                 this.binding.personSection.btnAccessories.performClick();
-            } else if (type4 == 2) {
+            } else if (type5 == 2) {
                 RecyclerView rvUpgradesInventory = this.binding.personSection.rvUpgradesInventory;
                 Intrinsics.checkNotNullExpressionValue(rvUpgradesInventory, "rvUpgradesInventory");
                 if (rvUpgradesInventory.getVisibility() == 0) {
@@ -2944,7 +3069,6 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             if (Intrinsics.areEqual(data, "true")) {
                 BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_SECURITY_SCREEN.getId());
                 setVisible(true);
-                updateMainInventoryTabsVisibility(false);
                 return;
             }
             setVisible(false);
@@ -3106,7 +3230,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
 
     private final void showGuardScreen() {
         MainInventoryBinding mainInventoryBinding = this.binding;
-        updateMainInventoryTabsVisibility(false);
+        submitMainInventory();
         ConstraintLayout parentLayout = mainInventoryBinding.layoutGuards.parentLayout;
         Intrinsics.checkNotNullExpressionValue(parentLayout, "parentLayout");
         parentLayout.setVisibility(0);
@@ -3249,20 +3373,27 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void addLockedItems() {
-        int nextMultipleOfFive = UtilsKt.nextMultipleOfFive(this.mainInventoryList.size()) - this.mainInventoryList.size();
+        int nextMultipleOfFive;
+        if (this.isMainInventoryTabsEnabled) {
+            nextMultipleOfFive = getMainInventoryPageCount() * 15;
+        } else {
+            nextMultipleOfFive = UtilsKt.nextMultipleOfFive(this.mainInventoryList.size());
+        }
+        int size = nextMultipleOfFive - this.mainInventoryList.size();
         InventoryItem inventoryItem = (InventoryItem) CollectionsKt.lastOrNull((List<? extends Object>) this.mainInventoryList);
         int slot = inventoryItem != null ? inventoryItem.getSlot() : -1;
-        IntRange intRange = new IntRange(1, nextMultipleOfFive);
+        IntRange intRange = new IntRange(1, size);
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, 66060286, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, getMainInventoryType(), null, null, false, true, null, null, null, null, null, null, 133103614, null));
         }
         this.mainInventoryList.addAll(arrayList);
         initObservers();
     }
 
     private final List<InventoryItem> editResponseInfo(InventoryResponse inventoryResponse) {
+        Integer gunSlot;
         List<ItemsInfo> itemsName = UtilsKt.getItemsName();
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(itemsName, 10)), 16));
         for (Object obj : itemsName) {
@@ -3273,13 +3404,12 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         for (InventoryItem inventoryItem : items) {
             ItemsInfo itemsInfo = (ItemsInfo) linkedHashMap.get(inventoryItem.getItem());
             int type = inventoryResponse.getType();
-            String str = null;
-            Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null;
-            Integer valueOf2 = itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null;
-            if (itemsInfo != null) {
-                str = itemsInfo.getEffect();
+            Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : inventoryItem.getItem_type();
+            Integer valueOf2 = itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : inventoryItem.getAcsSlot();
+            if (itemsInfo == null || (gunSlot = itemsInfo.getGun_slot()) == null) {
+                gunSlot = inventoryItem.getGunSlot();
             }
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type, valueOf2, null, false, false, str, null, null, null, null, 64815087, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type, valueOf2, null, false, false, null, null, null, null, null, gunSlot, 66912239, null));
         }
         return arrayList;
     }
@@ -3362,27 +3492,40 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                                 if (item_type == null || item_type.intValue() != id9) {
                                     int id10 = ItemTypes.ITEM_TYPE_VEH_NUMBER.getId();
                                     if (item_type == null || item_type.intValue() != id10) {
-                                        int id11 = ItemTypes.ITEM_TYPE_IMPROV_GUN.getId();
+                                        int id11 = ItemTypes.ITEM_TYPE_VEH_NUMBER_FRAME.getId();
                                         if (item_type == null || item_type.intValue() != id11) {
-                                            int id12 = ItemTypes.ITEM_TYPE_GUN.getId();
+                                            int id12 = ItemTypes.ITEM_TYPE_IMPROV_GUN.getId();
                                             if (item_type == null || item_type.intValue() != id12) {
-                                                int id13 = ItemTypes.ITEM_TYPE_CROSSHAIR.getId();
+                                                int id13 = ItemTypes.ITEM_TYPE_GUN.getId();
                                                 if (item_type == null || item_type.intValue() != id13) {
-                                                    int id14 = ItemTypes.ITEM_TYPE_INCREASED_MAGAZINE.getId();
+                                                    int id14 = ItemTypes.ITEM_TYPE_CROSSHAIR.getId();
                                                     if (item_type == null || item_type.intValue() != id14) {
-                                                        return;
+                                                        int id15 = ItemTypes.ITEM_TYPE_INCREASED_MAGAZINE.getId();
+                                                        if (item_type == null || item_type.intValue() != id15) {
+                                                            int id16 = ItemTypes.ITEM_TYPE_GUN_SKIN.getId();
+                                                            if (item_type != null && item_type.intValue() == id16) {
+                                                                ConstraintLayout parentLayout2 = this.binding.layoutGuards.parentLayout;
+                                                                Intrinsics.checkNotNullExpressionValue(parentLayout2, "parentLayout");
+                                                                if (parentLayout2.getVisibility() == 0) {
+                                                                    return;
+                                                                }
+                                                                changeGunSkinItem(inventoryItem, z);
+                                                                return;
+                                                            }
+                                                            return;
+                                                        }
                                                     }
                                                 }
                                             }
-                                        }
-                                        ConstraintLayout parentLayout2 = this.binding.layoutGuards.parentLayout;
-                                        Intrinsics.checkNotNullExpressionValue(parentLayout2, "parentLayout");
-                                        if (parentLayout2.getVisibility() == 0) {
-                                            changeGuardSubList(z);
-                                            return;
-                                        } else {
-                                            changeGunImprovementsItem(z);
-                                            return;
+                                            ConstraintLayout parentLayout3 = this.binding.layoutGuards.parentLayout;
+                                            Intrinsics.checkNotNullExpressionValue(parentLayout3, "parentLayout");
+                                            if (parentLayout3.getVisibility() == 0) {
+                                                changeGuardSubList(z);
+                                                return;
+                                            } else {
+                                                changeGunImprovementsItem(z);
+                                                return;
+                                            }
                                         }
                                     }
                                 }
@@ -3399,18 +3542,18 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             return;
         }
         Integer item_type2 = inventoryItem.getItem_type();
-        int id15 = RodinaItemTypes.ITEM_TYPE_ATTACH.getId();
-        if (item_type2 != null && item_type2.intValue() == id15) {
+        int id17 = RodinaItemTypes.ITEM_TYPE_ATTACH.getId();
+        if (item_type2 != null && item_type2.intValue() == id17) {
             this.person.changeAccessoriesItem(inventoryItem, z);
             return;
         }
-        int id16 = RodinaItemTypes.ITEM_TYPE_IMPROV.getId();
-        if (item_type2 != null && item_type2.intValue() == id16) {
+        int id18 = RodinaItemTypes.ITEM_TYPE_IMPROV.getId();
+        if (item_type2 != null && item_type2.intValue() == id18) {
             changeCaseArmorItem(inventoryItem, z);
             return;
         }
-        int id17 = RodinaItemTypes.ITEM_TYPE_SKIN.getId();
-        if (item_type2 != null && item_type2.intValue() == id17) {
+        int id19 = RodinaItemTypes.ITEM_TYPE_SKIN.getId();
+        if (item_type2 != null && item_type2.intValue() == id19) {
             changeSkinItem(z);
         }
     }
@@ -3422,7 +3565,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
             for (InventoryItem inventoryItem : accessoriesList) {
                 if (inventoryItem.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || inventoryItem.getInventoryType() == RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId()) {
-                    inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
+                    inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, null, 133693439, null);
                 }
                 arrayList.add(inventoryItem);
             }
@@ -3448,11 +3591,16 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subUpgradesList, 10));
         for (InventoryItem inventoryItem2 : subUpgradesList) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, null, 133693439, null);
             }
             arrayList.add(inventoryItem2);
         }
         setSubUpgradesList(CollectionsKt.toMutableList((Collection) arrayList));
+        getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
+    }
+
+    private final void changeGunSkinItem(InventoryItem inventoryItem, boolean z) {
+        setSubUpgradesList(CollectionsKt.toMutableList((Collection) InventorySlotHighlightKt.highlightGunSkinSlot(getSubUpgradesList(), InventorySlotHighlightKt.resolveGunSkinSlot(inventoryItem, UtilsKt.getItemsName()), z)));
         getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
     }
 
@@ -3463,7 +3611,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             int slot = inventoryItem2.getSlot();
             Integer acsSlot = inventoryItem.getAcsSlot();
             if (acsSlot != null && slot == acsSlot.intValue() && (inventoryItem2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_IMPROV.getId() || inventoryItem2.getInventoryType() == RodinaBlockType.BLOCK_TYPE_IMPROV.getId())) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, null, 133693439, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3475,14 +3623,14 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> subSkinList = getSubSkinList();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subSkinList, 10));
         for (InventoryItem inventoryItem : subSkinList) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, null, 133693439, null));
         }
         setSubSkinList(CollectionsKt.toMutableList((Collection) arrayList));
         List<InventoryItem> subCaseArmorSkinList = getSubCaseArmorSkinList();
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subCaseArmorSkinList, 10));
         for (InventoryItem inventoryItem2 : subCaseArmorSkinList) {
             if (inventoryItem2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId() || inventoryItem2.getInventoryType() == RodinaBlockType.BLOCK_TYPE_SKIN.getId()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, null, 133693439, null);
             }
             arrayList2.add(inventoryItem2);
         }
@@ -3491,65 +3639,9 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     private final void changeVehicleSubList(InventoryItem inventoryItem, boolean z) {
-        Integer item_type = inventoryItem.getItem_type();
-        int id = ItemTypes.ITEM_TYPE_VEH_SKIN.getId();
-        int i = 0;
-        if (item_type != null && item_type.intValue() == id) {
-            List<InventoryItem> list = this.vehicleSubList;
-            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            for (Object obj : list) {
-                int i2 = i + 1;
-                if (i < 0) {
-                    CollectionsKt.throwIndexOverflow();
-                }
-                InventoryItem inventoryItem2 = (InventoryItem) obj;
-                if (i == 0) {
-                    inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
-                }
-                arrayList.add(inventoryItem2);
-                i = i2;
-            }
-            this.vehicleSubList = CollectionsKt.toMutableList((Collection) arrayList);
-        } else {
-            int id2 = ItemTypes.ITEM_TYPE_VEH_MODIFICATION.getId();
-            if (item_type != null && item_type.intValue() == id2) {
-                List<InventoryItem> list2 = this.vehicleSubList;
-                ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
-                for (Object obj2 : list2) {
-                    int i3 = i + 1;
-                    if (i < 0) {
-                        CollectionsKt.throwIndexOverflow();
-                    }
-                    InventoryItem inventoryItem3 = (InventoryItem) obj2;
-                    if (i == 1) {
-                        inventoryItem3 = InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
-                    }
-                    arrayList2.add(inventoryItem3);
-                    i = i3;
-                }
-                this.vehicleSubList = CollectionsKt.toMutableList((Collection) arrayList2);
-            } else {
-                int id3 = ItemTypes.ITEM_TYPE_VEH_NUMBER.getId();
-                if (item_type != null && item_type.intValue() == id3) {
-                    List<InventoryItem> list3 = this.vehicleSubList;
-                    ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list3, 10));
-                    for (Object obj3 : list3) {
-                        int i4 = i + 1;
-                        if (i < 0) {
-                            CollectionsKt.throwIndexOverflow();
-                        }
-                        InventoryItem inventoryItem4 = (InventoryItem) obj3;
-                        if (i == 2) {
-                            inventoryItem4 = InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
-                        }
-                        arrayList3.add(inventoryItem4);
-                        i = i4;
-                    }
-                    this.vehicleSubList = CollectionsKt.toMutableList((Collection) arrayList3);
-                }
-            }
-        }
-        this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(this.vehicleSubList));
+        List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) InventorySlotHighlightKt.highlightArizonaVehicleSlot(this.vehicleSubList, inventoryItem.getItem_type(), z));
+        this.vehicleSubList = mutableList;
+        this.vehicleAccessoriesAdapter.submitList(CollectionsKt.toList(mutableList));
     }
 
     private final void changeVisualVehicleList(boolean z) {
@@ -3570,7 +3662,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, null, 133693439, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3597,7 +3689,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, null, 133693439, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3760,7 +3852,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
     }
 
     /* compiled from: InventoryScreen.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\u0011\u001a\u00020\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0013\"\u0004\b\u0014\u0010\u0015¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$Companion;", "", "<init>", "()V", "MAIN_INVENTORY_PAGE_SIZE", "", "MAIN_INVENTORY_MIN_PAGE_COUNT", "MAIN_INVENTORY_MAX_VISIBLE_PAGE_BUTTONS", "MAIN_INVENTORY_ELLIPSIS", "", "MAIN_INVENTORY_DISABLED_ARROW_ALPHA", "", "MAIN_INVENTORY_SWIPE_HORIZONTAL_RATIO", "MAIN_INVENTORY_DRAG_PAGE_SWITCH_DELAY_MS", "", "MAIN_INVENTORY_PAGE_BACKGROUND_COLOR", "MAIN_INVENTORY_PAGE_SELECTED_TEXT_COLOR", "isDialogVisible", "", "()Z", "setDialogVisible", "(Z)V", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\u0012\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0014\"\u0004\b\u0015\u0010\u0016¨\u0006\u0017"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/InventoryScreen$Companion;", "", "<init>", "()V", "MAIN_INVENTORY_PAGE_SIZE", "", "MAIN_INVENTORY_SPAN_COUNT", "MAIN_INVENTORY_MIN_PAGE_COUNT", "MAIN_INVENTORY_MAX_VISIBLE_PAGE_BUTTONS", "MAIN_INVENTORY_ELLIPSIS", "", "MAIN_INVENTORY_DISABLED_ARROW_ALPHA", "", "MAIN_INVENTORY_SWIPE_HORIZONTAL_RATIO", "MAIN_INVENTORY_DRAG_PAGE_SWITCH_DELAY_MS", "", "MAIN_INVENTORY_PAGE_BACKGROUND_COLOR", "MAIN_INVENTORY_PAGE_SELECTED_TEXT_COLOR", "isDialogVisible", "", "()Z", "setDialogVisible", "(Z)V", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

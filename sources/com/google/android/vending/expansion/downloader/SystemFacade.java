@@ -10,7 +10,7 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import androidx.collection.SieveCacheKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 class SystemFacade {
     private Context mContext;
     private NotificationManager mNotificationManager;

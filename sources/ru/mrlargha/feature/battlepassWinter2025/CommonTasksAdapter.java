@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -15,14 +16,11 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScopeKt;
-import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.feature.battlepassWinter2025.data.CategoryType;
 import ru.mrlargha.feature.battlepassWinter2025.data.CommonTaskInfo;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassCommonTaskItemBinding;
 /* compiled from: CommonTasksAdapter.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001BA\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\b\u0001\u0010\u0007\u001a\u00020\u0006:\u0002\b\b\u0012\u001a\b\u0002\u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\f0\n¢\u0006\u0004\b\r\u0010\u000eJ\u0018\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0006H\u0016J\u0018\u0010\u001a\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\u00022\u0006\u0010\u001c\u001a\u00020\u0006H\u0016J\u0010\u0010\u001d\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\u0002H\u0016J\b\u0010\u001e\u001a\u00020\u0006H\u0016J\u000e\u0010\u001f\u001a\u00020\f2\u0006\u0010 \u001a\u00020!J\u000e\u0010\"\u001a\u00020\f2\u0006\u0010\u001c\u001a\u00020\u0006J\u0014\u0010#\u001a\u00020\f2\f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u000b0%J\u0006\u0010&\u001a\u00020\fR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0015\u0010\u0007\u001a\u00020\u00068\u0002X\u0083\u0004\u0092\u0002\u0002\b\b¢\u0006\u0002\n\u0000R \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\f0\nX\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010\u000f\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u0010j\b\u0012\u0004\u0012\u00020\u000b`\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R!\u0010\u0014\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u0010j\b\u0012\u0004\u0012\u00020\u000b`\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013¨\u0006'"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/CommonTasksAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/battlepassWinter2025/RodinaBattlePassCommonTaskViewHolder;", "isArizona", "", "colorMaxProgress", "", "itemLayout", "Landroidx/annotation/LayoutRes;", "onSelectTask", "Lkotlin/Function2;", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskInfo;", "", "<init>", "(ZIILkotlin/jvm/functions/Function2;)V", "allTasksList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "getAllTasksList", "()Ljava/util/ArrayList;", "currentTasksList", "getCurrentTasksList", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "onViewRecycled", "getItemCount", "filterList", "categoryType", "Lru/mrlargha/feature/battlepassWinter2025/data/CategoryType;", "selectTask", "addAllTasks", "tasks", "", "clearAllTasksList", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001BA\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\f\b\u0001\u0010\u0007\u001a\u00020\u0006:\u0002\b\b\u0012\u001a\b\u0002\u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\f0\n¢\u0006\u0004\b\r\u0010\u000eJ\u0018\u0010\u0016\u001a\u00020\u00022\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u0006H\u0016J\u0018\u0010\u001a\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\u00022\u0006\u0010\u001c\u001a\u00020\u0006H\u0016J\u0010\u0010\u001d\u001a\u00020\f2\u0006\u0010\u001b\u001a\u00020\u0002H\u0016J\b\u0010\u001e\u001a\u00020\u0006H\u0016J)\u0010\u001f\u001a\u00020\f2\u0006\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020\u00042\n\b\u0002\u0010#\u001a\u0004\u0018\u00010\u0006¢\u0006\u0002\u0010$J\r\u0010%\u001a\u0004\u0018\u00010\u0006¢\u0006\u0002\u0010&J\b\u0010'\u001a\u0004\u0018\u00010\u000bJ\u000e\u0010(\u001a\u00020\f2\u0006\u0010\u001c\u001a\u00020\u0006J\u0014\u0010)\u001a\u00020\f2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u000b0+J\u0006\u0010,\u001a\u00020\fR\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0015\u0010\u0007\u001a\u00020\u00068\u0002X\u0083\u0004\u0092\u0002\u0002\b\b¢\u0006\u0002\n\u0000R \u0010\t\u001a\u0014\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\f0\nX\u0082\u0004¢\u0006\u0002\n\u0000R!\u0010\u000f\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u0010j\b\u0012\u0004\u0012\u00020\u000b`\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R!\u0010\u0014\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\u0010j\b\u0012\u0004\u0012\u00020\u000b`\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013¨\u0006-"}, d2 = {"Lru/mrlargha/feature/battlepassWinter2025/CommonTasksAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/feature/battlepassWinter2025/RodinaBattlePassCommonTaskViewHolder;", "isArizona", "", "colorMaxProgress", "", "itemLayout", "Landroidx/annotation/LayoutRes;", "onSelectTask", "Lkotlin/Function2;", "Lru/mrlargha/feature/battlepassWinter2025/data/CommonTaskInfo;", "", "<init>", "(ZIILkotlin/jvm/functions/Function2;)V", "allTasksList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "getAllTasksList", "()Ljava/util/ArrayList;", "currentTasksList", "getCurrentTasksList", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "onViewRecycled", "getItemCount", "filterList", "categoryType", "Lru/mrlargha/feature/battlepassWinter2025/data/CategoryType;", "ignoreCategoryMatch", "preferredTaskId", "(Lru/mrlargha/feature/battlepassWinter2025/data/CategoryType;ZLjava/lang/Integer;)V", "selectedTaskId", "()Ljava/lang/Integer;", "selectedTask", "selectTask", "addAllTasks", "tasks", "", "clearAllTasksList", "battle-pass"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattlePassCommonTaskViewHolder> {
     private final ArrayList<CommonTaskInfo> allTasksList;
@@ -143,25 +141,109 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
         return this.currentTasksList.size();
     }
 
-    public final void filterList(CategoryType categoryType) {
+    public static /* synthetic */ void filterList$default(CommonTasksAdapter commonTasksAdapter, CategoryType categoryType, boolean z, Integer num, int i, Object obj) {
+        if ((i & 2) != 0) {
+            z = false;
+        }
+        if ((i & 4) != 0) {
+            num = null;
+        }
+        commonTasksAdapter.filterList(categoryType, z, num);
+    }
+
+    public final void filterList(CategoryType categoryType, boolean z, Integer num) {
         Intrinsics.checkNotNullParameter(categoryType, "categoryType");
-        for (CommonTaskInfo commonTaskInfo : this.allTasksList) {
-            commonTaskInfo.setSelected(false);
+        Iterator<T> it = this.allTasksList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                break;
+            }
+            ((CommonTaskInfo) it.next()).setSelected(false);
         }
         this.currentTasksList.clear();
         ArrayList<CommonTaskInfo> arrayList = this.currentTasksList;
         ArrayList arrayList2 = new ArrayList();
         for (Object obj : this.allTasksList) {
-            CommonTaskInfo commonTaskInfo2 = (CommonTaskInfo) obj;
-            if (commonTaskInfo2.getCategoryType() == categoryType.getValue() && commonTaskInfo2.isVisible()) {
+            CommonTaskInfo commonTaskInfo = (CommonTaskInfo) obj;
+            if (commonTaskInfo.isVisible() && (z || commonTaskInfo.getCategoryType() == categoryType.getValue())) {
                 arrayList2.add(obj);
             }
         }
         arrayList.addAll(arrayList2);
-        if (!this.currentTasksList.isEmpty()) {
-            this.currentTasksList.get(0).setSelected(true);
+        Iterator<CommonTaskInfo> it2 = this.currentTasksList.iterator();
+        int i = 0;
+        while (true) {
+            if (!it2.hasNext()) {
+                i = -1;
+                break;
+            }
+            int id = it2.next().getId();
+            if (num != null && id == num.intValue()) {
+                break;
+            }
+            i++;
+        }
+        Integer valueOf = Integer.valueOf(i);
+        if (valueOf.intValue() < 0) {
+            valueOf = null;
+        }
+        CommonTaskInfo commonTaskInfo2 = (CommonTaskInfo) CollectionsKt.getOrNull(this.currentTasksList, valueOf != null ? valueOf.intValue() : 0);
+        if (commonTaskInfo2 != null) {
+            commonTaskInfo2.setSelected(true);
         }
         notifyDataSetChanged();
+    }
+
+    public final Integer selectedTaskId() {
+        Object obj;
+        Object obj2;
+        Iterator<T> it = this.currentTasksList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            if (((CommonTaskInfo) obj).isSelected()) {
+                break;
+            }
+        }
+        CommonTaskInfo commonTaskInfo = (CommonTaskInfo) obj;
+        if (commonTaskInfo != null) {
+            return Integer.valueOf(commonTaskInfo.getId());
+        }
+        Iterator<T> it2 = this.allTasksList.iterator();
+        while (true) {
+            if (!it2.hasNext()) {
+                obj2 = null;
+                break;
+            }
+            obj2 = it2.next();
+            if (((CommonTaskInfo) obj2).isSelected()) {
+                break;
+            }
+        }
+        CommonTaskInfo commonTaskInfo2 = (CommonTaskInfo) obj2;
+        if (commonTaskInfo2 != null) {
+            return Integer.valueOf(commonTaskInfo2.getId());
+        }
+        return null;
+    }
+
+    public final CommonTaskInfo selectedTask() {
+        Object obj;
+        Iterator<T> it = this.currentTasksList.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            if (((CommonTaskInfo) obj).isSelected()) {
+                break;
+            }
+        }
+        return (CommonTaskInfo) obj;
     }
 
     public final void selectTask(int i) {
@@ -180,7 +262,9 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
 
     public final void addAllTasks(List<CommonTaskInfo> tasks) {
         Intrinsics.checkNotNullParameter(tasks, "tasks");
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new CommonTasksAdapter$addAllTasks$1(this, tasks, null), 3, null);
+        this.allTasksList.clear();
+        this.allTasksList.addAll(tasks);
+        notifyDataSetChanged();
     }
 
     public final void clearAllTasksList() {

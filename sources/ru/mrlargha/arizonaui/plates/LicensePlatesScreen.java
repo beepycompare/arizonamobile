@@ -1,26 +1,40 @@
 package ru.mrlargha.arizonaui.plates;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.os.CountDownTimer;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.arizona.launcher.UpdateActivity;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
+import kotlin.ranges.RangesKt;
+import kotlin.text.StringsKt;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.databinding.AzAmericanPlateNumberScreenBinding;
+import ru.mrlargha.arizonaui.databinding.AzArizonaPlateScreenBinding;
 import ru.mrlargha.arizonaui.databinding.AzByPlateScreenBinding;
 import ru.mrlargha.arizonaui.databinding.AzChooseRegionScreenBinding;
 import ru.mrlargha.arizonaui.databinding.AzKzPlateScreenBinding;
@@ -32,22 +46,33 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: LicensePlatesScreen.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0014\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 02\u00020\u0001:\u000201B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0011\u001a\u00020\u0012H\u0002J\b\u0010\u0013\u001a\u00020\u0012H\u0002J\u0010\u0010\u0014\u001a\u00020\u00122\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\b\u0010\u0017\u001a\u00020\u0012H\u0002J\b\u0010\u0018\u001a\u00020\u0012H\u0002J\b\u0010\u0019\u001a\u00020\u0012H\u0002J\b\u0010\u001a\u001a\u00020\u0012H\u0002J\b\u0010\u001b\u001a\u00020\u0012H\u0002J\b\u0010\u001c\u001a\u00020\u0012H\u0002J\b\u0010\u001d\u001a\u00020\u0012H\u0002J\b\u0010\u001e\u001a\u00020\u0012H\u0002J\b\u0010\u001f\u001a\u00020\u0012H\u0002J\b\u0010 \u001a\u00020\u0012H\u0002J\b\u0010!\u001a\u00020\u0012H\u0002J\b\u0010\"\u001a\u00020\u0012H\u0002J\b\u0010#\u001a\u00020\u0012H\u0002J\b\u0010$\u001a\u00020\u0012H\u0002J\b\u0010%\u001a\u00020\u0012H\u0002J\b\u0010&\u001a\u00020\u0012H\u0002J\b\u0010'\u001a\u00020\u0012H\u0002J\b\u0010(\u001a\u00020\u0012H\u0002J\u0016\u0010)\u001a\u00020\u00122\f\u0010*\u001a\b\u0012\u0004\u0012\u00020,0+H\u0002J\u0018\u0010-\u001a\u00020\u00122\u0006\u0010.\u001a\u00020\u00162\u0006\u0010/\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00050\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00062"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "platesScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "platesBinding", "Lru/mrlargha/arizonaui/databinding/AzLicencePlateScreenBinding;", "currentRegion", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$LicensePlatesRegion;", "usaPlates", "Ljava/util/LinkedList;", FirebaseAnalytics.Param.INDEX, "usaPlatesAction", "", "chooseRegionAction", "installPlateNumber", "number", "", "rusPlatesAction", "uaPlatesAction", "byPlatesAction", "kzPlatesAction", "showKzPlatesScreen", "hideKzPlatesScreen", "showUaPlatesScreen", "hideUaPlatesScreen", "showByPlatesScreen", "hideByPlatesScreen", "showRusPlatesScreen", "hideRusPlatesScreen", "showChooseRegionScreen", "hideChooseRegionScreen", "showUSAPlatesScreen", "hideUSAPlatesScreen", "hideMainScreen", "showMainScreen", "updatePrices", "response", "", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$UpdatePricesResponse;", "onBackendMessageHandled", "data", "subId", "Companion", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u0000 J2\u00020\u0001:\u0002JKB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0015\u001a\u00020\u0016H\u0002J\b\u0010\u0017\u001a\u00020\u0016H\u0002J\u0010\u0010\u0018\u001a\u00020\u00162\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\b\u0010\u001b\u001a\u00020\u001cH\u0002J1\u0010\u001d\u001a\u00020\u00162\u0006\u0010\u001e\u001a\u00020\u001c2\b\u0010\u001f\u001a\u0004\u0018\u00010\u001c2\u0006\u0010 \u001a\u00020\u001a2\b\u0010!\u001a\u0004\u0018\u00010\u0005H\u0002¢\u0006\u0002\u0010\"J \u0010#\u001a\u00020\u001a2\u0006\u0010 \u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u0005H\u0002J\u001f\u0010&\u001a\u00020\u00162\u0006\u0010\u001f\u001a\u00020\u001c2\b\u0010!\u001a\u0004\u0018\u00010\u0005H\u0002¢\u0006\u0002\u0010'J\u0012\u0010(\u001a\u0004\u0018\u00010)2\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\b\u0010*\u001a\u00020\u0016H\u0002J\b\u0010+\u001a\u00020\u0016H\u0002J\b\u0010,\u001a\u00020\u0016H\u0002J\b\u0010-\u001a\u00020\u0016H\u0002J\u0010\u0010.\u001a\u00020\u00162\u0006\u0010/\u001a\u00020\u000fH\u0002J\b\u00100\u001a\u00020\u0016H\u0002J\b\u00101\u001a\u00020\u0016H\u0002J\b\u00102\u001a\u00020\u0016H\u0002J\b\u00103\u001a\u00020\u0016H\u0002J\b\u00104\u001a\u00020\u0016H\u0002J\b\u00105\u001a\u00020\u0016H\u0002J\b\u00106\u001a\u00020\u0016H\u0002J\b\u00107\u001a\u00020\u0016H\u0002J\b\u00108\u001a\u00020\u0016H\u0002J\b\u00109\u001a\u00020\u0016H\u0002J\b\u0010:\u001a\u00020\u0016H\u0002J\b\u0010;\u001a\u00020\u0016H\u0002J\b\u0010<\u001a\u00020\u0016H\u0002J\b\u0010=\u001a\u00020\u0016H\u0002J\b\u0010>\u001a\u00020\u0016H\u0002J\b\u0010?\u001a\u00020\u0016H\u0002J\b\u0010@\u001a\u00020\u0016H\u0002J\u0016\u0010A\u001a\u00020\u00162\f\u0010B\u001a\b\u0012\u0004\u0012\u00020D0CH\u0002J\u0018\u0010E\u001a\u00020\u00162\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010F\u001a\u00020\u0005H\u0016J\u0010\u0010G\u001a\u00020\u00162\u0006\u0010H\u001a\u00020IH\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00050\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006L"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "platesScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "platesBinding", "Lru/mrlargha/arizonaui/databinding/AzLicencePlateScreenBinding;", "currentRegion", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$LicensePlatesRegion;", "currentUiMode", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$LicensePlateUiMode;", "usaPlates", "Ljava/util/LinkedList;", FirebaseAnalytics.Param.INDEX, "activeGenerationAnimation", "Landroid/animation/AnimatorSet;", "usaPlatesAction", "", "chooseRegionAction", "installPlateNumber", "data", "", "getStandardPlateNumberView", "Landroid/widget/TextView;", "startGenerationAnimation", "numberView", "regionView", "number", "regionIndex", "(Landroid/widget/TextView;Landroid/widget/TextView;Ljava/lang/String;Ljava/lang/Integer;)V", "buildNumberAnimationFrame", TypedValues.AttributesType.S_FRAME, "fixedCharacterCount", "setFinalRegion", "(Landroid/widget/TextView;Ljava/lang/Integer;)V", "parseGeneratedPlate", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$GeneratedPlateResponse;", "rusPlatesAction", "uaPlatesAction", "byPlatesAction", "kzPlatesAction", "showUiMode", UpdateActivity.UPDATE_MODE, "hideAllPlateScreens", "resetArizonaPlate", "cancelGenerationAnimation", "showKzPlatesScreen", "hideKzPlatesScreen", "showUaPlatesScreen", "hideUaPlatesScreen", "showByPlatesScreen", "hideByPlatesScreen", "showRusPlatesScreen", "hideRusPlatesScreen", "showChooseRegionScreen", "hideChooseRegionScreen", "showUSAPlatesScreen", "hideUSAPlatesScreen", "hideMainScreen", "showMainScreen", "updatePrices", "response", "", "Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$UpdatePricesResponse;", "onBackendMessageHandled", "subId", "setVisibility", "visible", "", "Companion", "Spawner", "ArizonaUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class LicensePlatesScreen extends SAMPUIElement {
-    public static final Companion Companion = new Companion(null);
+    private static final String ARIZONA_COUNTRY_CODE = "arz";
+    private static final long GENERATION_ANIMATION_DURATION_MS = 4000;
+    private static final int GENERATION_ANIMATION_FRAMES = 48;
+    private static final String NUMBER_CHARACTER_POOL = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private static final String REGION_EMOJI_COLOR = "#3D83BE";
+    private static final String UNKNOWN_REGION_COLOR = "#E11A1A";
+    private AnimatorSet activeGenerationAnimation;
     private Companion.LicensePlatesRegion currentRegion;
+    private Companion.LicensePlateUiMode currentUiMode;
     private int index;
     private final AzLicencePlateScreenBinding platesBinding;
     private final ConstraintLayout platesScreen;
     private final LinkedList<Integer> usaPlates;
+    public static final Companion Companion = new Companion(null);
+    private static final List<String> REGION_EMOJI_POOL = CollectionsKt.listOf((Object[]) new String[]{":boom:", ":rocket:", ":red_flag:", ":moai:", ":gun:", ":soccer:", ":eyes:", ":eye:", ":skull:", ":u2620:", ":ghost:", ":goblin:", ":alien:", ":clown:", ":u1f4b2:", ":u1f51e:", ":na:", ":nb:", ":nc:", ":nd:", ":ne:", ":nf:", ":ng:", ":nh:", ":ni:", ":nj:"});
 
     /* compiled from: LicensePlatesScreen.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+        public static final /* synthetic */ int[] $EnumSwitchMapping$1;
 
         static {
             int[] iArr = new int[Companion.LicensePlatesRegion.values().length];
@@ -72,6 +97,16 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             } catch (NoSuchFieldError unused5) {
             }
             $EnumSwitchMapping$0 = iArr;
+            int[] iArr2 = new int[Companion.LicensePlateUiMode.values().length];
+            try {
+                iArr2[Companion.LicensePlateUiMode.STANDARD.ordinal()] = 1;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr2[Companion.LicensePlateUiMode.ARIZONA.ordinal()] = 2;
+            } catch (NoSuchFieldError unused7) {
+            }
+            $EnumSwitchMapping$1 = iArr2;
         }
     }
 
@@ -87,11 +122,13 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.platesBinding = bind;
         this.currentRegion = Companion.LicensePlatesRegion.COUNTRY_RUSSIA;
+        this.currentUiMode = Companion.LicensePlateUiMode.STANDARD;
         LinkedList<Integer> linkedList = new LinkedList<>();
         this.usaPlates = linkedList;
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         linkedList.addAll(SetsKt.linkedSetOf(Integer.valueOf(R.drawable.number_usa), Integer.valueOf(R.drawable.number_alabama), Integer.valueOf(R.drawable.number_alaska), Integer.valueOf(R.drawable.number_arizona), Integer.valueOf(R.drawable.number_arkansas), Integer.valueOf(R.drawable.number_colorado), Integer.valueOf(R.drawable.number_connecticut), Integer.valueOf(R.drawable.number_delaware), Integer.valueOf(R.drawable.number_florida), Integer.valueOf(R.drawable.number_georgia), Integer.valueOf(R.drawable.number_hawaii), Integer.valueOf(R.drawable.number_idaho), Integer.valueOf(R.drawable.number_illinois), Integer.valueOf(R.drawable.number_indiana), Integer.valueOf(R.drawable.number_iowa), Integer.valueOf(R.drawable.number_kansas), Integer.valueOf(R.drawable.number_louisiane), Integer.valueOf(R.drawable.number_maine), Integer.valueOf(R.drawable.number_maryland), Integer.valueOf(R.drawable.number_massachusetts), Integer.valueOf(R.drawable.number_michigan), Integer.valueOf(R.drawable.number_minnesota), Integer.valueOf(R.drawable.number_mississippi), Integer.valueOf(R.drawable.number_missouri), Integer.valueOf(R.drawable.number_montana), Integer.valueOf(R.drawable.number_nebraska), Integer.valueOf(R.drawable.number_nevada), Integer.valueOf(R.drawable.number_new_hampshire), Integer.valueOf(R.drawable.number_new_jersey), Integer.valueOf(R.drawable.number_new_mexico), Integer.valueOf(R.drawable.number_new_york), Integer.valueOf(R.drawable.number_north_carolina), Integer.valueOf(R.drawable.number_north_dakota), Integer.valueOf(R.drawable.number_ohio), Integer.valueOf(R.drawable.number_oklahoma), Integer.valueOf(R.drawable.number_oregon), Integer.valueOf(R.drawable.number_pennsylvania), Integer.valueOf(R.drawable.number_rhode_island), Integer.valueOf(R.drawable.number_south_carolina), Integer.valueOf(R.drawable.number_south_dakota), Integer.valueOf(R.drawable.number_tennessee), Integer.valueOf(R.drawable.number_texas), Integer.valueOf(R.drawable.number_utah), Integer.valueOf(R.drawable.number_vermont), Integer.valueOf(R.drawable.number_virginia), Integer.valueOf(R.drawable.number_washington), Integer.valueOf(R.drawable.number_west_virginia), Integer.valueOf(R.drawable.number_wisconsin), Integer.valueOf(R.drawable.number_wyoming)));
+        ChatEmoji.INSTANCE.init(targetActivity);
         bind.usaPlateMainButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -110,6 +147,19 @@ public final class LicensePlatesScreen extends SAMPUIElement {
                 SAMPUIElement.notifyClick$default(LicensePlatesScreen.this, 0, 0, null, 4, null);
             }
         });
+        bind.arizonaPlateScreen.closeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda4
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                SAMPUIElement.notifyClick$default(LicensePlatesScreen.this, 0, 0, null, 4, null);
+            }
+        });
+        bind.arizonaPlateScreen.getNumberButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda5
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                LicensePlatesScreen.lambda$0$4(LicensePlatesScreen.this, view);
+            }
+        });
+        showUiMode(Companion.LicensePlateUiMode.STANDARD);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -130,27 +180,33 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         licensePlatesScreen.chooseRegionAction();
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void lambda$0$4(LicensePlatesScreen licensePlatesScreen, View view) {
+        licensePlatesScreen.resetArizonaPlate();
+        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest(ARIZONA_COUNTRY_CODE, "")));
+    }
+
     private final void usaPlatesAction() {
         final AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding = this.platesBinding.usaPlatesScreen;
-        azAmericanPlateNumberScreenBinding.swipeLeftButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda18
+        azAmericanPlateNumberScreenBinding.swipeLeftButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.usaPlatesAction$lambda$0$0(LicensePlatesScreen.this, azAmericanPlateNumberScreenBinding, view);
             }
         });
-        azAmericanPlateNumberScreenBinding.swipeRightButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda19
+        azAmericanPlateNumberScreenBinding.swipeRightButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.usaPlatesAction$lambda$0$1(LicensePlatesScreen.this, azAmericanPlateNumberScreenBinding, view);
             }
         });
-        azAmericanPlateNumberScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda20
+        azAmericanPlateNumberScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.usaPlatesAction$lambda$0$2(LicensePlatesScreen.this, view);
             }
         });
-        azAmericanPlateNumberScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda21
+        azAmericanPlateNumberScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.usaPlatesAction$lambda$0$3(AzAmericanPlateNumberScreenBinding.this, this, view);
@@ -204,37 +260,37 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
     private final void chooseRegionAction() {
         final AzChooseRegionScreenBinding azChooseRegionScreenBinding = this.platesBinding.chooseRegionScreen;
-        azChooseRegionScreenBinding.chooseRusNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda7
+        azChooseRegionScreenBinding.chooseRusNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.chooseRegionAction$lambda$0$0(AzChooseRegionScreenBinding.this, view);
             }
         });
-        azChooseRegionScreenBinding.chooseByNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda8
+        azChooseRegionScreenBinding.chooseByNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.chooseRegionAction$lambda$0$1(AzChooseRegionScreenBinding.this, view);
             }
         });
-        azChooseRegionScreenBinding.chooseKzNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda9
+        azChooseRegionScreenBinding.chooseKzNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.chooseRegionAction$lambda$0$2(AzChooseRegionScreenBinding.this, view);
             }
         });
-        azChooseRegionScreenBinding.chooseUaNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda10
+        azChooseRegionScreenBinding.chooseUaNumbers.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.chooseRegionAction$lambda$0$3(AzChooseRegionScreenBinding.this, view);
             }
         });
-        azChooseRegionScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda12
+        azChooseRegionScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.chooseRegionAction$lambda$0$4(AzChooseRegionScreenBinding.this, this, view);
             }
         });
-        azChooseRegionScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda13
+        azChooseRegionScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.chooseRegionAction$lambda$0$5(LicensePlatesScreen.this, view);
@@ -301,116 +357,234 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         licensePlatesScreen.showMainScreen();
     }
 
-    /* JADX WARN: Type inference failed for: r0v5, types: [ru.mrlargha.arizonaui.plates.LicensePlatesScreen$installPlateNumber$1$timer$1] */
     private final void installPlateNumber(String str) {
-        final TextView textView;
-        AzLicencePlateScreenBinding azLicencePlateScreenBinding = this.platesBinding;
+        String number;
+        TextView standardPlateNumberView;
+        Companion.GeneratedPlateResponse parseGeneratedPlate = parseGeneratedPlate(str);
+        if (parseGeneratedPlate == null || (number = parseGeneratedPlate.getNumber()) == null) {
+            return;
+        }
+        if (StringsKt.isBlank(number)) {
+            number = null;
+        }
+        if (number == null) {
+            return;
+        }
+        boolean z = this.currentUiMode == Companion.LicensePlateUiMode.ARIZONA || parseGeneratedPlate.getRegion() != null;
+        if (z && this.currentUiMode != Companion.LicensePlateUiMode.ARIZONA) {
+            showUiMode(Companion.LicensePlateUiMode.ARIZONA);
+        }
+        if (z) {
+            standardPlateNumberView = this.platesBinding.arizonaPlateScreen.plateNumber;
+        } else {
+            standardPlateNumberView = getStandardPlateNumberView();
+        }
+        Intrinsics.checkNotNull(standardPlateNumberView);
+        startGenerationAnimation(standardPlateNumberView, z ? this.platesBinding.arizonaPlateScreen.plateRegion : null, number, parseGeneratedPlate.getRegion());
+    }
+
+    private final TextView getStandardPlateNumberView() {
         int i = WhenMappings.$EnumSwitchMapping$0[this.currentRegion.ordinal()];
         if (i == 1) {
-            textView = azLicencePlateScreenBinding.rusPlateScreen.plateNumber;
+            TextView plateNumber = this.platesBinding.rusPlateScreen.plateNumber;
+            Intrinsics.checkNotNullExpressionValue(plateNumber, "plateNumber");
+            return plateNumber;
         } else if (i == 2) {
-            textView = azLicencePlateScreenBinding.uaPlateScreen.plateNumber;
+            TextView plateNumber2 = this.platesBinding.uaPlateScreen.plateNumber;
+            Intrinsics.checkNotNullExpressionValue(plateNumber2, "plateNumber");
+            return plateNumber2;
         } else if (i == 3) {
-            textView = azLicencePlateScreenBinding.kzPlateScreen.plateNumber;
+            TextView plateNumber3 = this.platesBinding.kzPlateScreen.plateNumber;
+            Intrinsics.checkNotNullExpressionValue(plateNumber3, "plateNumber");
+            return plateNumber3;
         } else if (i == 4) {
-            textView = azLicencePlateScreenBinding.byPlateScreen.plateNumber;
+            TextView plateNumber4 = this.platesBinding.byPlateScreen.plateNumber;
+            Intrinsics.checkNotNullExpressionValue(plateNumber4, "plateNumber");
+            return plateNumber4;
         } else if (i != 5) {
             throw new NoWhenBranchMatchedException();
         } else {
-            textView = azLicencePlateScreenBinding.usaPlatesScreen.plateNumber;
+            TextView plateNumber5 = this.platesBinding.usaPlatesScreen.plateNumber;
+            Intrinsics.checkNotNullExpressionValue(plateNumber5, "plateNumber");
+            return plateNumber5;
         }
-        Intrinsics.checkNotNull(textView);
-        final char[] charArray = str.toCharArray();
-        Intrinsics.checkNotNullExpressionValue(charArray, "toCharArray(...)");
-        int length = charArray.length;
-        String str2 = "";
-        if (1 <= length) {
-            do {
-                length--;
-                str2 = str2 + "X";
-            } while (1 <= length);
-            final char[] charArray2 = str2.toCharArray();
-            Intrinsics.checkNotNullExpressionValue(charArray2, "toCharArray(...)");
-            textView.setText(new String(charArray2));
-            final ValueAnimator ofInt = ValueAnimator.ofInt(0, str.length());
-            ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda4
-                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LicensePlatesScreen.installPlateNumber$lambda$0$0(charArray2, charArray, textView, valueAnimator);
-                }
-            });
-            ofInt.setDuration(2000L);
-            ofInt.start();
-            new CountDownTimer() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$installPlateNumber$1$timer$1
-                @Override // android.os.CountDownTimer
-                public void onTick(long j) {
-                }
+    }
 
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(2000L, 1000L);
-                }
-
-                @Override // android.os.CountDownTimer
-                public void onFinish() {
-                    ofInt.cancel();
-                    SAMPUIElement.notifyClick$default(this, 0, 2, null, 4, null);
-                }
-            }.start();
-        }
-        final char[] charArray22 = str2.toCharArray();
-        Intrinsics.checkNotNullExpressionValue(charArray22, "toCharArray(...)");
-        textView.setText(new String(charArray22));
-        final ValueAnimator ofInt2 = ValueAnimator.ofInt(0, str.length());
-        ofInt2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda4
+    private final void startGenerationAnimation(final TextView textView, final TextView textView2, final String str, final Integer num) {
+        ValueAnimator valueAnimator;
+        cancelGenerationAnimation();
+        ValueAnimator ofInt = ValueAnimator.ofInt(0, 48);
+        ofInt.setDuration(GENERATION_ANIMATION_DURATION_MS);
+        ofInt.setInterpolator(new LinearInterpolator());
+        ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda15
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                LicensePlatesScreen.installPlateNumber$lambda$0$0(charArray22, charArray, textView, valueAnimator);
+            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                LicensePlatesScreen.startGenerationAnimation$lambda$0$0(str, textView, this, valueAnimator2);
             }
         });
-        ofInt2.setDuration(2000L);
-        ofInt2.start();
-        new CountDownTimer() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$installPlateNumber$1$timer$1
-            @Override // android.os.CountDownTimer
-            public void onTick(long j) {
+        if (textView2 != null) {
+            valueAnimator = ValueAnimator.ofInt(0, 48);
+            valueAnimator.setDuration(GENERATION_ANIMATION_DURATION_MS);
+            valueAnimator.setInterpolator(new LinearInterpolator());
+            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda16
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                    LicensePlatesScreen.startGenerationAnimation$lambda$1$0$0(textView2, valueAnimator2);
+                }
+            });
+        } else {
+            valueAnimator = null;
+        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        List listOfNotNull = CollectionsKt.listOfNotNull((Object[]) new ValueAnimator[]{ofInt, valueAnimator});
+        final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
+        animatorSet.playTogether(listOfNotNull);
+        animatorSet.addListener(new AnimatorListenerAdapter() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$startGenerationAnimation$1
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animation) {
+                Intrinsics.checkNotNullParameter(animation, "animation");
+                Ref.BooleanRef.this.element = true;
             }
 
-            /* JADX INFO: Access modifiers changed from: package-private */
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(2000L, 1000L);
-            }
-
-            @Override // android.os.CountDownTimer
-            public void onFinish() {
-                ofInt2.cancel();
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animation) {
+                AnimatorSet animatorSet2;
+                Intrinsics.checkNotNullParameter(animation, "animation");
+                animatorSet2 = this.activeGenerationAnimation;
+                if (animatorSet2 == animation) {
+                    this.activeGenerationAnimation = null;
+                }
+                if (Ref.BooleanRef.this.element) {
+                    return;
+                }
+                textView.setText(str);
+                TextView textView3 = textView2;
+                if (textView3 != null) {
+                    this.setFinalRegion(textView3, num);
+                }
                 SAMPUIElement.notifyClick$default(this, 0, 2, null, 4, null);
             }
-        }.start();
+        });
+        this.activeGenerationAnimation = animatorSet;
+        animatorSet.start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void installPlateNumber$lambda$0$0(char[] cArr, char[] cArr2, TextView textView, ValueAnimator it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        Object animatedValue = it.getAnimatedValue();
+    public static final void startGenerationAnimation$lambda$0$0(String str, TextView textView, LicensePlatesScreen licensePlatesScreen, ValueAnimator animator) {
+        Intrinsics.checkNotNullParameter(animator, "animator");
+        Object animatedValue = animator.getAnimatedValue();
+        Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
+        textView.setText(licensePlatesScreen.buildNumberAnimationFrame(str, ((Integer) animatedValue).intValue(), RangesKt.coerceIn((int) (animator.getAnimatedFraction() * str.length()), 0, str.length())));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void startGenerationAnimation$lambda$1$0$0(TextView textView, ValueAnimator animator) {
+        Intrinsics.checkNotNullParameter(animator, "animator");
+        Object animatedValue = animator.getAnimatedValue();
         Intrinsics.checkNotNull(animatedValue, "null cannot be cast to non-null type kotlin.Int");
         int intValue = ((Integer) animatedValue).intValue();
-        if (intValue != cArr.length) {
-            cArr[intValue] = cArr2[intValue];
-            textView.setText(new String(cArr));
+        List<String> list = REGION_EMOJI_POOL;
+        int size = intValue % list.size();
+        textView.setTextColor(Color.parseColor(REGION_EMOJI_COLOR));
+        textView.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, list.get(size), 0.0f, null, 3, null));
+    }
+
+    private final String buildNumberAnimationFrame(String str, int i, int i2) {
+        StringBuilder sb = new StringBuilder(str.length());
+        String str2 = str;
+        int i3 = 0;
+        int i4 = 0;
+        while (i3 < str2.length()) {
+            char charAt = str2.charAt(i3);
+            int i5 = i4 + 1;
+            if (i4 < i2) {
+                sb.append(charAt);
+            } else {
+                sb.append(NUMBER_CHARACTER_POOL.charAt(((i * 3) + (i4 * 7)) % 36));
+            }
+            i3++;
+            i4 = i5;
+        }
+        return sb.toString();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void setFinalRegion(TextView textView, Integer num) {
+        String str = num != null ? (String) CollectionsKt.getOrNull(REGION_EMOJI_POOL, num.intValue()) : null;
+        if (str == null) {
+            textView.setTextColor(Color.parseColor(UNKNOWN_REGION_COLOR));
+            textView.setText(R.string.plate_unknown_region);
+            return;
+        }
+        textView.setTextColor(Color.parseColor(REGION_EMOJI_COLOR));
+        textView.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, str, 0.0f, null, 3, null));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0091  */
+    /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private final Companion.GeneratedPlateResponse parseGeneratedPlate(String str) {
+        Object m9915constructorimpl;
+        String number;
+        String removeSurrounding;
+        Object obj;
+        try {
+            Result.Companion companion = Result.Companion;
+            LicensePlatesScreen licensePlatesScreen = this;
+        } catch (Throwable th) {
+            Result.Companion companion2 = Result.Companion;
+            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+        }
+        if (MapperKt.isJsonValid(str) && !Intrinsics.areEqual(str, AbstractJsonLexerKt.NULL) && !Intrinsics.areEqual(str, "{}") && str.length() != 0) {
+            obj = MapperKt.getGson().fromJson(str, (Class<Object>) Companion.GeneratedPlateResponse.class);
+            m9915constructorimpl = Result.m9915constructorimpl((Companion.GeneratedPlateResponse) obj);
+            if (Result.m9921isFailureimpl(m9915constructorimpl)) {
+                m9915constructorimpl = null;
+            }
+            Companion.GeneratedPlateResponse generatedPlateResponse = (Companion.GeneratedPlateResponse) m9915constructorimpl;
+            number = generatedPlateResponse == null ? generatedPlateResponse.getNumber() : null;
+            if (number != null || StringsKt.isBlank(number)) {
+                removeSurrounding = StringsKt.removeSurrounding(StringsKt.trim((CharSequence) str).toString(), (CharSequence) "\"");
+                if (!StringsKt.isBlank(removeSurrounding) || StringsKt.startsWith$default(removeSurrounding, "{", false, 2, (Object) null) || StringsKt.startsWith$default(removeSurrounding, "[", false, 2, (Object) null)) {
+                    removeSurrounding = null;
+                }
+                if (removeSurrounding == null) {
+                    return new Companion.GeneratedPlateResponse(removeSurrounding, null, 2, null);
+                }
+                return null;
+            }
+            return generatedPlateResponse;
+        }
+        obj = null;
+        m9915constructorimpl = Result.m9915constructorimpl((Companion.GeneratedPlateResponse) obj);
+        if (Result.m9921isFailureimpl(m9915constructorimpl)) {
+        }
+        Companion.GeneratedPlateResponse generatedPlateResponse2 = (Companion.GeneratedPlateResponse) m9915constructorimpl;
+        number = generatedPlateResponse2 == null ? generatedPlateResponse2.getNumber() : null;
+        if (number != null) {
+        }
+        removeSurrounding = StringsKt.removeSurrounding(StringsKt.trim((CharSequence) str).toString(), (CharSequence) "\"");
+        if (!StringsKt.isBlank(removeSurrounding)) {
+        }
+        removeSurrounding = null;
+        if (removeSurrounding == null) {
         }
     }
 
     private final void rusPlatesAction() {
         final AzRusPlateScreenBinding azRusPlateScreenBinding = this.platesBinding.rusPlateScreen;
-        azRusPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda16
+        azRusPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.rusPlatesAction$lambda$0$0(AzRusPlateScreenBinding.this, this, view);
             }
         });
-        azRusPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda17
+        azRusPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.rusPlatesAction$lambda$0$1(LicensePlatesScreen.this, azRusPlateScreenBinding, view);
@@ -434,13 +608,13 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
     private final void uaPlatesAction() {
         final AzUaPlateScreenBinding azUaPlateScreenBinding = this.platesBinding.uaPlateScreen;
-        azUaPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda5
+        azUaPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.uaPlatesAction$lambda$0$0(AzUaPlateScreenBinding.this, this, view);
             }
         });
-        azUaPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda6
+        azUaPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.uaPlatesAction$lambda$0$1(LicensePlatesScreen.this, azUaPlateScreenBinding, view);
@@ -464,13 +638,13 @@ public final class LicensePlatesScreen extends SAMPUIElement {
 
     private final void byPlatesAction() {
         final AzByPlateScreenBinding azByPlateScreenBinding = this.platesBinding.byPlateScreen;
-        azByPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda14
+        azByPlateScreenBinding.previousButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda17
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.byPlatesAction$lambda$0$0(AzByPlateScreenBinding.this, this, view);
             }
         });
-        azByPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda15
+        azByPlateScreenBinding.completeButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LicensePlatesScreen.byPlatesAction$lambda$0$1(LicensePlatesScreen.this, azByPlateScreenBinding, view);
@@ -520,6 +694,49 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     public static final void kzPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzKzPlateScreenBinding azKzPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_KAZAKHSTAN;
         licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("kz", azKzPlateScreenBinding.enterRegion.getText().toString())));
+    }
+
+    private final void showUiMode(Companion.LicensePlateUiMode licensePlateUiMode) {
+        this.currentUiMode = licensePlateUiMode;
+        cancelGenerationAnimation();
+        hideAllPlateScreens();
+        int i = WhenMappings.$EnumSwitchMapping$1[licensePlateUiMode.ordinal()];
+        if (i == 1) {
+            showMainScreen();
+        } else if (i != 2) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            resetArizonaPlate();
+            this.platesBinding.arizonaPlateScreen.getRoot().setVisibility(0);
+        }
+    }
+
+    private final void hideAllPlateScreens() {
+        AzLicencePlateScreenBinding azLicencePlateScreenBinding = this.platesBinding;
+        azLicencePlateScreenBinding.mainPlatesScreen.setVisibility(8);
+        azLicencePlateScreenBinding.chooseRegionScreen.getRoot().setVisibility(8);
+        azLicencePlateScreenBinding.rusPlateScreen.getRoot().setVisibility(8);
+        azLicencePlateScreenBinding.uaPlateScreen.getRoot().setVisibility(8);
+        azLicencePlateScreenBinding.byPlateScreen.getRoot().setVisibility(8);
+        azLicencePlateScreenBinding.kzPlateScreen.getRoot().setVisibility(8);
+        azLicencePlateScreenBinding.usaPlatesScreen.getRoot().setVisibility(8);
+        azLicencePlateScreenBinding.arizonaPlateScreen.getRoot().setVisibility(8);
+    }
+
+    private final void resetArizonaPlate() {
+        cancelGenerationAnimation();
+        AzArizonaPlateScreenBinding azArizonaPlateScreenBinding = this.platesBinding.arizonaPlateScreen;
+        azArizonaPlateScreenBinding.plateNumber.setText(R.string.plate_unknown_number);
+        azArizonaPlateScreenBinding.plateRegion.setTextColor(Color.parseColor(UNKNOWN_REGION_COLOR));
+        azArizonaPlateScreenBinding.plateRegion.setText(R.string.plate_unknown_region);
+    }
+
+    private final void cancelGenerationAnimation() {
+        AnimatorSet animatorSet = this.activeGenerationAnimation;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        this.activeGenerationAnimation = null;
     }
 
     private final void showKzPlatesScreen() {
@@ -600,14 +817,29 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             installPlateNumber(data);
-        } else if (i != 1) {
-        } else {
+        } else if (i == 1) {
             updatePrices(MapperKt.toListModel(data, Companion.UpdatePricesResponse.class));
+        } else if (i != 2) {
+        } else {
+            String removeSurrounding = StringsKt.removeSurrounding(StringsKt.trim((CharSequence) data).toString(), (CharSequence) "\"");
+            if (Intrinsics.areEqual(removeSurrounding, "0")) {
+                showUiMode(Companion.LicensePlateUiMode.STANDARD);
+            } else if (Intrinsics.areEqual(removeSurrounding, "1")) {
+                showUiMode(Companion.LicensePlateUiMode.ARIZONA);
+            }
         }
     }
 
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void setVisibility(boolean z) {
+        if (!z) {
+            cancelGenerationAnimation();
+        }
+        super.setVisibility(z);
+    }
+
     /* compiled from: LicensePlatesScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\u0004\u0005\u0006B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0007"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion;", "", "<init>", "()V", "LicensePlatesRegion", "UpdatePricesResponse", "BuyNumberRequest", "ArizonaUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0005\u000f\u0010\u0011\u0012\u0013B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u00050\u000eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion;", "", "<init>", "()V", "ARIZONA_COUNTRY_CODE", "", "GENERATION_ANIMATION_DURATION_MS", "", "GENERATION_ANIMATION_FRAMES", "", "NUMBER_CHARACTER_POOL", "REGION_EMOJI_COLOR", "UNKNOWN_REGION_COLOR", "REGION_EMOJI_POOL", "", "LicensePlateUiMode", "LicensePlatesRegion", "UpdatePricesResponse", "BuyNumberRequest", "GeneratedPlateResponse", "ArizonaUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -615,6 +847,43 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         }
 
         private Companion() {
+        }
+
+        /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+        /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+        /* compiled from: LicensePlatesScreen.kt */
+        @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0005\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005¨\u0006\u0006"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$LicensePlateUiMode;", "", "<init>", "(Ljava/lang/String;I)V", "STANDARD", "ARIZONA", "ArizonaUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        /* loaded from: classes6.dex */
+        public static final class LicensePlateUiMode {
+            private static final /* synthetic */ EnumEntries $ENTRIES;
+            private static final /* synthetic */ LicensePlateUiMode[] $VALUES;
+            public static final LicensePlateUiMode STANDARD = new LicensePlateUiMode("STANDARD", 0);
+            public static final LicensePlateUiMode ARIZONA = new LicensePlateUiMode("ARIZONA", 1);
+
+            private static final /* synthetic */ LicensePlateUiMode[] $values() {
+                return new LicensePlateUiMode[]{STANDARD, ARIZONA};
+            }
+
+            public static EnumEntries<LicensePlateUiMode> getEntries() {
+                return $ENTRIES;
+            }
+
+            public static LicensePlateUiMode valueOf(String str) {
+                return (LicensePlateUiMode) Enum.valueOf(LicensePlateUiMode.class, str);
+            }
+
+            public static LicensePlateUiMode[] values() {
+                return (LicensePlateUiMode[]) $VALUES.clone();
+            }
+
+            private LicensePlateUiMode(String str, int i) {
+            }
+
+            static {
+                LicensePlateUiMode[] $values = $values();
+                $VALUES = $values;
+                $ENTRIES = EnumEntriesKt.enumEntries($values);
+            }
         }
 
         /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
@@ -809,6 +1078,80 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             }
 
             public final String getRegion() {
+                return this.region;
+            }
+        }
+
+        /* compiled from: LicensePlatesScreen.kt */
+        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u0005HÆ\u0003¢\u0006\u0002\u0010\u000bJ&\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005HÆ\u0001¢\u0006\u0002\u0010\u0010J\u0014\u0010\u0011\u001a\u00020\u00122\b\u0010\u0013\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0014\u001a\u00020\u0005HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000b¨\u0006\u0016"}, d2 = {"Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$GeneratedPlateResponse;", "", "number", "", TtmlNode.TAG_REGION, "", "<init>", "(Ljava/lang/String;Ljava/lang/Integer;)V", "getNumber", "()Ljava/lang/String;", "getRegion", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "component1", "component2", "copy", "(Ljava/lang/String;Ljava/lang/Integer;)Lru/mrlargha/arizonaui/plates/LicensePlatesScreen$Companion$GeneratedPlateResponse;", "equals", "", "other", "hashCode", "toString", "ArizonaUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        /* loaded from: classes6.dex */
+        public static final class GeneratedPlateResponse {
+            private final String number;
+            private final Integer region;
+
+            public GeneratedPlateResponse() {
+                this(null, null, 3, null);
+            }
+
+            public static /* synthetic */ GeneratedPlateResponse copy$default(GeneratedPlateResponse generatedPlateResponse, String str, Integer num, int i, Object obj) {
+                if ((i & 1) != 0) {
+                    str = generatedPlateResponse.number;
+                }
+                if ((i & 2) != 0) {
+                    num = generatedPlateResponse.region;
+                }
+                return generatedPlateResponse.copy(str, num);
+            }
+
+            public final String component1() {
+                return this.number;
+            }
+
+            public final Integer component2() {
+                return this.region;
+            }
+
+            public final GeneratedPlateResponse copy(String str, Integer num) {
+                return new GeneratedPlateResponse(str, num);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof GeneratedPlateResponse) {
+                    GeneratedPlateResponse generatedPlateResponse = (GeneratedPlateResponse) obj;
+                    return Intrinsics.areEqual(this.number, generatedPlateResponse.number) && Intrinsics.areEqual(this.region, generatedPlateResponse.region);
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                String str = this.number;
+                int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+                Integer num = this.region;
+                return hashCode + (num != null ? num.hashCode() : 0);
+            }
+
+            public String toString() {
+                String str = this.number;
+                return "GeneratedPlateResponse(number=" + str + ", region=" + this.region + ")";
+            }
+
+            public GeneratedPlateResponse(String str, Integer num) {
+                this.number = str;
+                this.region = num;
+            }
+
+            public /* synthetic */ GeneratedPlateResponse(String str, Integer num, int i, DefaultConstructorMarker defaultConstructorMarker) {
+                this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : num);
+            }
+
+            public final String getNumber() {
+                return this.number;
+            }
+
+            public final Integer getRegion() {
                 return this.region;
             }
         }

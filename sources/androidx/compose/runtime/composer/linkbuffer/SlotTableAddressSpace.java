@@ -191,7 +191,7 @@ public final class SlotTableAddressSpace {
         int i = this.unallocatedStart;
         int i2 = this.unallocatedEnd;
         this.unallocatedStart = i2;
-        return ((UInt.m9999constructorimpl(i2) & 4294967295L) << 32) | (UInt.m9999constructorimpl(i) & 4294967295L);
+        return ((UInt.m10016constructorimpl(i2) & 4294967295L) << 32) | (UInt.m10016constructorimpl(i) & 4294967295L);
     }
 
     public final void restoreSlots(int i, int i2) {

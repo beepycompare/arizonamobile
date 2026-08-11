@@ -2,7 +2,6 @@ package com.google.firebase.crashlytics.internal.settings;
 
 import com.google.firebase.crashlytics.internal.common.CurrentTimeProvider;
 import com.google.firebase.crashlytics.internal.settings.Settings;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* loaded from: classes4.dex */
@@ -11,7 +10,7 @@ class SettingsV3JsonTransform implements SettingsJsonTransform {
     public Settings buildFromJson(CurrentTimeProvider currentTimeProvider, JSONObject jSONObject) throws JSONException {
         Settings.SessionData buildSessionDataFrom;
         int optInt = jSONObject.optInt("settings_version", 0);
-        int optInt2 = jSONObject.optInt("cache_duration", DateCalculationsKt.SECONDS_PER_HOUR);
+        int optInt2 = jSONObject.optInt("cache_duration", 3600);
         double optDouble = jSONObject.optDouble("on_demand_upload_rate_per_minute", 10.0d);
         double optDouble2 = jSONObject.optDouble("on_demand_backoff_base", 1.2d);
         int optInt3 = jSONObject.optInt("on_demand_backoff_step_duration_seconds", 60);

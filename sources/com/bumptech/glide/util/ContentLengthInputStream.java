@@ -5,7 +5,7 @@ import android.util.Log;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ContentLengthInputStream extends FilterInputStream {
     private static final String TAG = "ContentLengthStream";
     private static final int UNKNOWN = -1;

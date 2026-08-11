@@ -54,14 +54,14 @@ public class StartCompoundLayout extends LinearLayout {
         checkableImageButton.setOnFocusableChangedListener(new CheckableImageButton.OnFocusableChangedListener() { // from class: com.google.android.material.textfield.StartCompoundLayout$$ExternalSyntheticLambda0
             @Override // com.google.android.material.internal.CheckableImageButton.OnFocusableChangedListener
             public final void onFocusableChanged(View view, boolean z) {
-                StartCompoundLayout.this.m9631xfae35022(view, z);
+                StartCompoundLayout.this.m9648xfae35022(view, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-textfield-StartCompoundLayout  reason: not valid java name */
-    public /* synthetic */ void m9631xfae35022(View view, boolean z) {
+    public /* synthetic */ void m9648xfae35022(View view, boolean z) {
         IconHelper.updateIconTooltip(this.startIconView, this.startIconOnLongClickListener, getStartIconContentDescription());
     }
 

@@ -7,7 +7,7 @@ import com.liulishuo.okdownload.core.cause.EndCause;
 import com.liulishuo.okdownload.core.listener.assist.Listener4Assist;
 import com.liulishuo.okdownload.core.listener.assist.Listener4SpeedAssistExtend;
 import com.liulishuo.okdownload.core.listener.assist.ListenerModelHandler;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class DownloadListener4WithSpeed extends DownloadListener4 implements Listener4SpeedAssistExtend.Listener4SpeedCallback {
     @Override // com.liulishuo.okdownload.core.listener.assist.Listener4Assist.Listener4Callback
     public final void blockEnd(DownloadTask downloadTask, int i, BlockInfo blockInfo) {
@@ -39,7 +39,7 @@ public abstract class DownloadListener4WithSpeed extends DownloadListener4 imple
         this(new Listener4SpeedAssistExtend());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static class Listener4WithSpeedModelCreator implements ListenerModelHandler.ModelCreator<Listener4SpeedAssistExtend.Listener4SpeedModel> {
         private Listener4WithSpeedModelCreator() {
         }

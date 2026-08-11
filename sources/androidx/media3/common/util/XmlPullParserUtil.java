@@ -2,7 +2,7 @@ package androidx.media3.common.util;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class XmlPullParserUtil {
     private XmlPullParserUtil() {
     }

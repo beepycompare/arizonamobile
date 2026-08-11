@@ -16,50 +16,50 @@ public final class ParseResult {
     private final Object value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ParseResult m11535boximpl(Object obj) {
+    public static final /* synthetic */ ParseResult m11552boximpl(Object obj) {
         return new ParseResult(obj);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static Object m11536constructorimpl(Object obj) {
+    public static Object m11553constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m11537equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof ParseResult) && Intrinsics.areEqual(obj, ((ParseResult) obj2).m11542unboximpl());
+    public static boolean m11554equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof ParseResult) && Intrinsics.areEqual(obj, ((ParseResult) obj2).m11559unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m11538equalsimpl0(Object obj, Object obj2) {
+    public static final boolean m11555equalsimpl0(Object obj, Object obj2) {
         return Intrinsics.areEqual(obj, obj2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m11539hashCodeimpl(Object obj) {
+    public static int m11556hashCodeimpl(Object obj) {
         return obj.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m11541toStringimpl(Object obj) {
+    public static String m11558toStringimpl(Object obj) {
         return "ParseResult(value=" + obj + ')';
     }
 
     public boolean equals(Object obj) {
-        return m11537equalsimpl(this.value, obj);
+        return m11554equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m11539hashCodeimpl(this.value);
+        return m11556hashCodeimpl(this.value);
     }
 
     public String toString() {
-        return m11541toStringimpl(this.value);
+        return m11558toStringimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m11542unboximpl() {
+    public final /* synthetic */ Object m11559unboximpl() {
         return this.value;
     }
 
@@ -75,14 +75,14 @@ public final class ParseResult {
         }
 
         /* renamed from: Ok-Qi1bsqg  reason: not valid java name */
-        public final Object m11544OkQi1bsqg(int i) {
-            return ParseResult.m11536constructorimpl(Integer.valueOf(i));
+        public final Object m11561OkQi1bsqg(int i) {
+            return ParseResult.m11553constructorimpl(Integer.valueOf(i));
         }
 
         /* renamed from: Error-Rg3Co2E  reason: not valid java name */
-        public final Object m11543ErrorRg3Co2E(int i, Function0<String> message) {
+        public final Object m11560ErrorRg3Co2E(int i, Function0<String> message) {
             Intrinsics.checkNotNullParameter(message, "message");
-            return ParseResult.m11536constructorimpl(new ParseError(i, message));
+            return ParseResult.m11553constructorimpl(new ParseError(i, message));
         }
     }
 
@@ -95,7 +95,7 @@ public final class ParseResult {
     }
 
     /* renamed from: match-impl  reason: not valid java name */
-    public static final <T> T m11540matchimpl(Object obj, Function1<? super Integer, ? extends T> onSuccess, Function1<? super ParseError, ? extends T> onFailure) {
+    public static final <T> T m11557matchimpl(Object obj, Function1<? super Integer, ? extends T> onSuccess, Function1<? super ParseError, ? extends T> onFailure) {
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onFailure, "onFailure");
         if (obj instanceof Integer) {

@@ -5,7 +5,7 @@ import com.facebook.LoggingBehavior;
 import com.facebook.Settings;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Logger {
     public static final String LOG_TAG_BASE = "FacebookSDK.";
     private static final HashMap<String, String> stringsToReplace = new HashMap<>();

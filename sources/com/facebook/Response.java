@@ -19,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Response {
     static final /* synthetic */ boolean $assertionsDisabled = true;
     private static final String BODY_KEY = "body";
@@ -36,14 +36,14 @@ public class Response {
     private final boolean isFromCache;
     private final Request request;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface PagedResults extends GraphObject {
         GraphObjectList<GraphObject> getData();
 
         PagingInfo getPaging();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum PagingDirection {
         NEXT,
         PREVIOUS;
@@ -58,7 +58,7 @@ public class Response {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface PagingInfo extends GraphObject {
         String getNext();
 

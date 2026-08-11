@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class PackageInfoCompat {
     public static long getLongVersionCode(PackageInfo packageInfo) {
         if (Build.VERSION.SDK_INT >= 28) {

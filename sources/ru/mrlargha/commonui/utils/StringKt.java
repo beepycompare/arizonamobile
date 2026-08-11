@@ -15,7 +15,6 @@ import kotlin.text.CharsKt;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
-import kotlinx.datetime.internal.DateCalculationsKt;
 /* compiled from: String.kt */
 @Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0006\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\u001e\u0010\u0003\u001a\u0002H\u0004\"\n\b\u0000\u0010\u0004\u0018\u0001*\u00020\u0002*\u00020\u0001H\u0086\b¢\u0006\u0002\u0010\u0005\u001a\n\u0010\u0006\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\b\u001a\u00020\u0007*\u00020\u0001\u001a\n\u0010\t\u001a\u00020\u0001*\u00020\u0001\u001a\n\u0010\n\u001a\u00020\u0001*\u00020\u0001\u001a\u0012\u0010\u000b\u001a\u00020\f*\u00020\u00012\u0006\u0010\r\u001a\u00020\u000e\u001a\n\u0010\u000f\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\u0010\u001a\u00020\u0001*\u00020\u0007\u001a\n\u0010\u0010\u001a\u00020\u0001*\u00020\u0011¨\u0006\u0012"}, d2 = {"toStringJson", "", "", "fromStringJson", ExifInterface.GPS_DIRECTION_TRUE, "(Ljava/lang/String;)Ljava/lang/Object;", "getEmojiByUnicode", "", "emojiWithTextLength", "emojiToUnicodeFormat", "unicodeFormatToEmoji", "openLink", "", "context", "Landroid/content/Context;", "formatSecondsToHhMmSs", "thousandsCut", "", "CommonUI"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -115,7 +114,7 @@ public final class StringKt {
     }
 
     public static final String formatSecondsToHhMmSs(int i) {
-        String padStart = StringsKt.padStart(String.valueOf(i / DateCalculationsKt.SECONDS_PER_HOUR), 2, '0');
+        String padStart = StringsKt.padStart(String.valueOf(i / 3600), 2, '0');
         String padStart2 = StringsKt.padStart(String.valueOf((i / 60) % 60), 2, '0');
         return padStart + StringUtils.PROCESS_POSTFIX_DELIMITER + padStart2 + StringUtils.PROCESS_POSTFIX_DELIMITER + StringsKt.padStart(String.valueOf(i % 60), 2, '0');
     }

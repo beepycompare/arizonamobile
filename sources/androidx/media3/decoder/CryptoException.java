@@ -1,5 +1,5 @@
 package androidx.media3.decoder;
-/* loaded from: classes6.dex */
+/* loaded from: classes2.dex */
 public class CryptoException extends Exception {
     public final int errorCode;
 

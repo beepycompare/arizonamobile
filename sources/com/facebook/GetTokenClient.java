@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import com.facebook.internal.NativeProtocol;
 import com.facebook.internal.PlatformServiceClient;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class GetTokenClient extends PlatformServiceClient {
     /* JADX INFO: Access modifiers changed from: package-private */
     public GetTokenClient(Context context, String str) {

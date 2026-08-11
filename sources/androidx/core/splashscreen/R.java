@@ -32,9 +32,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class drawable {
-        public static int compat_splash_screen = 0x7f0805ec;
-        public static int compat_splash_screen_no_icon_background = 0x7f0805ed;
-        public static int icon_background = 0x7f080bc5;
+        public static int compat_splash_screen = 0x7f08063e;
+        public static int compat_splash_screen_no_icon_background = 0x7f08063f;
+        public static int icon_background = 0x7f080c1e;
 
         private drawable() {
         }
@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0e2e;
+        public static int splashscreen_icon_view = 0x7f0a0fa4;
 
         private id() {
         }
@@ -58,7 +58,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int splash_screen_view = 0x7f0d027b;
+        public static int splash_screen_view = 0x7f0d029e;
 
         private layout() {
         }
@@ -66,16 +66,16 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class style {
-        public static int Base_Theme_SplashScreen = 0x7f130089;
-        public static int Base_Theme_SplashScreen_DayNight = 0x7f13008a;
-        public static int Base_Theme_SplashScreen_Light = 0x7f13008b;
-        public static int Base_v21_Theme_SplashScreen = 0x7f130138;
-        public static int Base_v21_Theme_SplashScreen_Light = 0x7f130139;
-        public static int Base_v27_Theme_SplashScreen = 0x7f13013a;
-        public static int Base_v27_Theme_SplashScreen_Light = 0x7f13013b;
-        public static int Theme_SplashScreen = 0x7f1303c2;
-        public static int Theme_SplashScreen_Common = 0x7f1303c3;
-        public static int Theme_SplashScreen_IconBackground = 0x7f1303c4;
+        public static int Base_Theme_SplashScreen = 0x7f13009a;
+        public static int Base_Theme_SplashScreen_DayNight = 0x7f13009b;
+        public static int Base_Theme_SplashScreen_Light = 0x7f13009c;
+        public static int Base_v21_Theme_SplashScreen = 0x7f130149;
+        public static int Base_v21_Theme_SplashScreen_Light = 0x7f13014a;
+        public static int Base_v27_Theme_SplashScreen = 0x7f13014b;
+        public static int Base_v27_Theme_SplashScreen_Light = 0x7f13014c;
+        public static int Theme_SplashScreen = 0x7f1303d3;
+        public static int Theme_SplashScreen_Common = 0x7f1303d4;
+        public static int Theme_SplashScreen_IconBackground = 0x7f1303d5;
 
         private style() {
         }

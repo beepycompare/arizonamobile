@@ -11,7 +11,7 @@ import com.liulishuo.okdownload.core.download.DownloadStrategy;
 import com.liulishuo.okdownload.core.file.DownloadOutputStream;
 import com.liulishuo.okdownload.core.file.DownloadUriOutputStream;
 import com.liulishuo.okdownload.core.file.ProcessFileStrategy;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class OkDownload {
     static volatile OkDownload singleton;
     private final BreakpointStore breakpointStore;
@@ -102,7 +102,7 @@ public class OkDownload {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         private CallbackDispatcher callbackDispatcher;
         private DownloadConnection.Factory connectionFactory;

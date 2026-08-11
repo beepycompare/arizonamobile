@@ -7,7 +7,7 @@ import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
 import com.liulishuo.okdownload.core.exception.FileBusyAfterRunException;
 import com.liulishuo.okdownload.core.exception.ServerCanceledException;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreakpointRemoteCheck {
     private boolean acceptRange;
     ResumeFailedCause failedCause;

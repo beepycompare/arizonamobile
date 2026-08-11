@@ -5,7 +5,7 @@ import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.core.Util;
 import com.liulishuo.okdownload.core.cause.EndCause;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreakpointStoreOnSQLite implements DownloadStore {
     private static final String TAG = "BreakpointStoreOnSQLite";
     protected final BreakpointSQLiteHelper helper;

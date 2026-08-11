@@ -25,7 +25,7 @@ final class ContinuationConsumer<T> extends AtomicBoolean implements java.util.f
         if (compareAndSet(false, true)) {
             Continuation<T> continuation = this.continuation;
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m9898constructorimpl(t));
+            continuation.resumeWith(Result.m9915constructorimpl(t));
         }
     }
 

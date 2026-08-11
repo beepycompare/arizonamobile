@@ -3,7 +3,7 @@ package androidx.core.widget;
 import android.view.View;
 import android.widget.PopupWindow;
 import androidx.annotation.ReplaceWith;
-/* loaded from: classes6.dex */
+/* loaded from: classes.dex */
 public final class PopupWindowCompat {
     private PopupWindowCompat() {
     }

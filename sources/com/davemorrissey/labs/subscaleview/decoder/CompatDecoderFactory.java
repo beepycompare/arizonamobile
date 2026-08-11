@@ -2,7 +2,7 @@ package com.davemorrissey.labs.subscaleview.decoder;
 
 import android.graphics.Bitmap;
 import java.lang.reflect.InvocationTargetException;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class CompatDecoderFactory<T> implements DecoderFactory<T> {
     private final Bitmap.Config bitmapConfig;
     private final Class<? extends T> clazz;

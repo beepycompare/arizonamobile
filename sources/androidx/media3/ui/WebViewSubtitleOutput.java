@@ -143,10 +143,8 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
         Object obj;
         String str3;
         StringBuilder sb = new StringBuilder();
-        String cssRgba = HtmlUtils.toCssRgba(this.style.foregroundColor);
-        String convertTextSizeToCss = convertTextSizeToCss(this.defaultTextSizeType, this.defaultTextSize);
-        float f2 = CSS_LINE_HEIGHT;
-        sb.append(Util.formatInvariant("<body><div style='-webkit-user-select:none;position:fixed;top:0;bottom:0;left:0;right:0;color:%s;font-size:%s;line-height:%.2f;text-shadow:%s;'>", cssRgba, convertTextSizeToCss, Float.valueOf((float) CSS_LINE_HEIGHT), convertCaptionStyleToCssTextShadow(this.style)));
+        float f2 = 1.2f;
+        sb.append(Util.formatInvariant("<body><div style='-webkit-user-select:none;position:fixed;top:0;bottom:0;left:0;right:0;color:%s;font-size:%s;line-height:%.2f;text-shadow:%s;'>", HtmlUtils.toCssRgba(this.style.foregroundColor), convertTextSizeToCss(this.defaultTextSizeType, this.defaultTextSize), Float.valueOf(1.2f), convertCaptionStyleToCssTextShadow(this.style)));
         HashMap hashMap = new HashMap();
         hashMap.put(HtmlUtils.cssAllClassDescendantsSelector(DEFAULT_BACKGROUND_CSS_CLASS), Util.formatInvariant("background-color:%s;", HtmlUtils.toCssRgba(this.style.backgroundColor)));
         int i3 = 0;
@@ -175,8 +173,8 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
                     String str5 = str;
                     String convertAlignmentToCss = convertAlignmentToCss(cue.textAlignment);
                     String convertVerticalTypeToCss = convertVerticalTypeToCss(cue.verticalType);
-                    String convertTextSizeToCss2 = convertTextSizeToCss(cue.textSizeType, cue.textSize);
-                    String cssRgba2 = HtmlUtils.toCssRgba(!cue.windowColorSet ? cue.windowColor : this.style.windowColor);
+                    String convertTextSizeToCss = convertTextSizeToCss(cue.textSizeType, cue.textSize);
+                    String cssRgba = HtmlUtils.toCssRgba(!cue.windowColorSet ? cue.windowColor : this.style.windowColor);
                     i2 = cue.verticalType;
                     String str6 = TtmlNode.RIGHT;
                     if (i2 == 1) {
@@ -200,7 +198,7 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
                         String str10 = (String) hashMap.put(str9, (String) hashMap.get(str9));
                         Preconditions.checkState(str10 == null || str10.equals(hashMap.get(str9)));
                     }
-                    sb.append(Util.formatInvariant("<div style='position:absolute;z-index:%s;%s:%.2f%%;%s:%s;%s:%s;text-align:%s;writing-mode:%s;font-size:%s;background-color:%s;transform:translate(%s%%,%s%%)%s;'>", Integer.valueOf(i3), obj, Float.valueOf(f3), str2, str4, str8, str5, convertAlignmentToCss, convertVerticalTypeToCss, convertTextSizeToCss2, cssRgba2, Integer.valueOf(anchorTypeToTranslatePercent), Integer.valueOf(i), getBlockShearTransformFunction(cue))).append(Util.formatInvariant("<span class='%s'>", DEFAULT_BACKGROUND_CSS_CLASS));
+                    sb.append(Util.formatInvariant("<div style='position:absolute;z-index:%s;%s:%.2f%%;%s:%s;%s:%s;text-align:%s;writing-mode:%s;font-size:%s;background-color:%s;transform:translate(%s%%,%s%%)%s;'>", Integer.valueOf(i3), obj, Float.valueOf(f3), str2, str4, str8, str5, convertAlignmentToCss, convertVerticalTypeToCss, convertTextSizeToCss, cssRgba, Integer.valueOf(anchorTypeToTranslatePercent), Integer.valueOf(i), getBlockShearTransformFunction(cue))).append(Util.formatInvariant("<span class='%s'>", DEFAULT_BACKGROUND_CSS_CLASS));
                     if (cue.multiRowAlignment == null) {
                         sb.append(Util.formatInvariant("<span style='display:inline-block; text-align:%s;'>", convertAlignmentToCss(cue.multiRowAlignment))).append(convert.html).append("</span>");
                     } else {
@@ -230,8 +228,8 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
             String str52 = str;
             String convertAlignmentToCss2 = convertAlignmentToCss(cue.textAlignment);
             String convertVerticalTypeToCss2 = convertVerticalTypeToCss(cue.verticalType);
-            String convertTextSizeToCss22 = convertTextSizeToCss(cue.textSizeType, cue.textSize);
-            String cssRgba22 = HtmlUtils.toCssRgba(!cue.windowColorSet ? cue.windowColor : this.style.windowColor);
+            String convertTextSizeToCss2 = convertTextSizeToCss(cue.textSizeType, cue.textSize);
+            String cssRgba2 = HtmlUtils.toCssRgba(!cue.windowColorSet ? cue.windowColor : this.style.windowColor);
             i2 = cue.verticalType;
             String str62 = TtmlNode.RIGHT;
             if (i2 == 1) {
@@ -246,7 +244,7 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
             SpannedToHtmlConverter.HtmlAndCss convert2 = SpannedToHtmlConverter.convert(cue.text, getContext().getResources().getDisplayMetrics().density);
             while (r10.hasNext()) {
             }
-            sb.append(Util.formatInvariant("<div style='position:absolute;z-index:%s;%s:%.2f%%;%s:%s;%s:%s;text-align:%s;writing-mode:%s;font-size:%s;background-color:%s;transform:translate(%s%%,%s%%)%s;'>", Integer.valueOf(i3), obj, Float.valueOf(f3), str2, str42, str82, str52, convertAlignmentToCss2, convertVerticalTypeToCss2, convertTextSizeToCss22, cssRgba22, Integer.valueOf(anchorTypeToTranslatePercent), Integer.valueOf(i), getBlockShearTransformFunction(cue))).append(Util.formatInvariant("<span class='%s'>", DEFAULT_BACKGROUND_CSS_CLASS));
+            sb.append(Util.formatInvariant("<div style='position:absolute;z-index:%s;%s:%.2f%%;%s:%s;%s:%s;text-align:%s;writing-mode:%s;font-size:%s;background-color:%s;transform:translate(%s%%,%s%%)%s;'>", Integer.valueOf(i3), obj, Float.valueOf(f3), str2, str42, str82, str52, convertAlignmentToCss2, convertVerticalTypeToCss2, convertTextSizeToCss2, cssRgba2, Integer.valueOf(anchorTypeToTranslatePercent), Integer.valueOf(i), getBlockShearTransformFunction(cue))).append(Util.formatInvariant("<span class='%s'>", DEFAULT_BACKGROUND_CSS_CLASS));
             if (cue.multiRowAlignment == null) {
             }
             sb.append("</span></div>");

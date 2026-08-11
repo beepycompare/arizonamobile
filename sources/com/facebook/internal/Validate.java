@@ -1,7 +1,7 @@
 package com.facebook.internal;
 
 import java.util.Collection;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class Validate {
     public static void containsNoNullOrEmpty(Collection<String> collection, String str) {
         notNull(collection, str);

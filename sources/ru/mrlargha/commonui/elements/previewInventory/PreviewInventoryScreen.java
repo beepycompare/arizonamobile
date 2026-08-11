@@ -13,14 +13,17 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
@@ -39,6 +42,7 @@ import ru.mrlargha.commonui.elements.inventory.presentation.adapter.SubInventory
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.UpgradesInventoryAdapter;
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
 import ru.mrlargha.commonui.utils.GsonStore;
+import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: PreviewInventoryScreen.kt */
@@ -89,7 +93,7 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
             }
         });
         this.subInventoryAdapter = subInventoryAdapter;
-        UpgradesInventoryAdapter upgradesInventoryAdapter = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda3
+        UpgradesInventoryAdapter upgradesInventoryAdapter = new UpgradesInventoryAdapter(UpgradesInventoryAdapter.Companion.Type.ACCESS, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$0((DraggedItem) obj);
@@ -104,9 +108,9 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
             public final Object invoke(Object obj) {
                 return PreviewInventoryScreen.accessoriesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
             }
-        }, 1, null);
+        });
         this.accessoriesInventoryAdapter = upgradesInventoryAdapter;
-        UpgradesInventoryAdapter upgradesInventoryAdapter2 = new UpgradesInventoryAdapter(null, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda6
+        UpgradesInventoryAdapter upgradesInventoryAdapter2 = new UpgradesInventoryAdapter(UtilsKt.isArizonaType() ? UpgradesInventoryAdapter.Companion.Type.GUN : UpgradesInventoryAdapter.Companion.Type.NONE, new Function1() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return PreviewInventoryScreen.upgradesInventoryAdapter$lambda$0((DraggedItem) obj);
@@ -121,10 +125,10 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
             public final Object invoke(Object obj) {
                 return PreviewInventoryScreen.upgradesInventoryAdapter$lambda$2(PreviewInventoryScreen.this, (InventoryItem) obj);
             }
-        }, 1, null);
+        });
         this.upgradesInventoryAdapter = upgradesInventoryAdapter2;
         addViewToConstraintLayout(constraintLayout, -1, -1);
-        UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType());
+        UtilsKt.checkItemsName$default(activity, UtilsKt.isArizonaType(), null, 4, null);
         setVisible(false);
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.previewInventory.PreviewInventoryScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
@@ -210,8 +214,6 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessageHandled(String data, int i) {
-        Skin skin;
-        String str;
         Intrinsics.checkNotNullParameter(data, "data");
         if (i != 0) {
             if (i != 1) {
@@ -219,12 +221,9 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
             }
             Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) Skin.class);
             Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
-            this.binding.tvScreenTitle.setText(getTargetActivity().getString(R.string.preview_inventory_title, new Object[]{((Skin) fromJson).getName()}));
-            if (UtilsKt.isArizonaType()) {
-                str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
-            } else {
-                str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
-            }
+            Skin skin = (Skin) fromJson;
+            this.binding.tvScreenTitle.setText(getTargetActivity().getString(R.string.preview_inventory_title, new Object[]{skin.getName()}));
+            String str = UtilsKt.isArizonaType() ? FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp" : FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/inventory/skins/512/" + skin.getSkin().getModel() + ".webp";
             AppCompatImageView ivCharacterImage = this.binding.ivCharacterImage;
             Intrinsics.checkNotNullExpressionValue(ivCharacterImage, "ivCharacterImage");
             observeUserSkin(ivCharacterImage, str);
@@ -235,17 +234,11 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         InventoryResponse inventoryResponse = (InventoryResponse) fromJson2;
         int type = inventoryResponse.getType();
         if (type == ArizonaBlockType.BLOCK_TYPE_USER_PREVIEW_ATTACH.getId()) {
-            if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                this.subAccessoriesList.clear();
-            }
-            List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+            List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) PreviewInventorySlotSyncKt.mergePreviewSlotItems(this.subAccessoriesList, editResponseInfo(inventoryResponse), inventoryResponse.getType(), UtilsKt.isArizonaType() ? 9 : 0, inventoryResponse.getMaxSlot()));
             this.subAccessoriesList = mutableList;
             this.accessoriesInventoryAdapter.submitList(CollectionsKt.toList(mutableList));
         } else if (type == ArizonaBlockType.BLOCK_TYPE_USER_PREVIEW_GUN_IMPROV.getId()) {
-            if (inventoryResponse.getItems().get(0).getSlot() == 0) {
-                this.subUpgradesList.clear();
-            }
-            List<InventoryItem> mutableList2 = CollectionsKt.toMutableList((Collection) editResponseInfo(inventoryResponse));
+            List<InventoryItem> mutableList2 = CollectionsKt.toMutableList((Collection) PreviewInventorySlotSyncKt.mergePreviewSlotItems(this.subUpgradesList, editResponseInfo(inventoryResponse), inventoryResponse.getType(), UtilsKt.isArizonaType() ? 6 : 0, inventoryResponse.getMaxSlot()));
             this.subUpgradesList = mutableList2;
             this.upgradesInventoryAdapter.submitList(CollectionsKt.toList(mutableList2));
         } else if (type == ArizonaBlockType.BLOCK_TYPE_USER_PREVIEW_IMPROV.getId()) {
@@ -271,10 +264,23 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
     }
 
     private final List<InventoryItem> editResponseInfo(InventoryResponse inventoryResponse) {
+        Integer gunSlot;
+        List<ItemsInfo> itemsName = UtilsKt.getItemsName();
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(itemsName, 10)), 16));
+        for (Object obj : itemsName) {
+            linkedHashMap.put(Integer.valueOf(((ItemsInfo) obj).getId()), obj);
+        }
         List<InventoryItem> items = inventoryResponse.getItems();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
         for (InventoryItem inventoryItem : items) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, null, null, 67043327, null));
+            ItemsInfo itemsInfo = (ItemsInfo) linkedHashMap.get(inventoryItem.getItem());
+            int type = inventoryResponse.getType();
+            Integer valueOf = itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : inventoryItem.getItem_type();
+            Integer valueOf2 = itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : inventoryItem.getAcsSlot();
+            if (itemsInfo == null || (gunSlot = itemsInfo.getGun_slot()) == null) {
+                gunSlot = inventoryItem.getGunSlot();
+            }
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type, valueOf2, null, false, false, null, null, null, null, null, gunSlot, 66912239, null));
         }
         return arrayList;
     }

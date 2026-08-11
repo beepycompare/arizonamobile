@@ -48,7 +48,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Request {
     private static final String ACCESS_TOKEN_PARAM = "access_token";
     private static final String ATTACHED_FILES_PARAM = "attached_files";
@@ -98,34 +98,34 @@ public class Request {
     private Session session;
     private Object tag;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Callback {
         void onCompleted(Response response);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface GraphPlaceListCallback {
         void onCompleted(List<GraphPlace> list, Response response);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface GraphUserCallback {
         void onCompleted(GraphUser graphUser, Response response);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface GraphUserListCallback {
         void onCompleted(List<GraphUser> list, Response response);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface KeyValueSerializer {
         void writeString(String str, String str2) throws IOException;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ParcelFileDescriptorWithMimeType implements Parcelable {
         public static final Parcelable.Creator<ParcelFileDescriptorWithMimeType> CREATOR = new Parcelable.Creator<ParcelFileDescriptorWithMimeType>() { // from class: com.facebook.Request.ParcelFileDescriptorWithMimeType.1
             /* JADX WARN: Can't rename method to resolve collision */
@@ -178,7 +178,7 @@ public class Request {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Serializer implements KeyValueSerializer {
         private boolean firstWrite = true;
         private final Logger logger;

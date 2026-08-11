@@ -21,7 +21,6 @@ import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.datetime.internal.DateCalculationsKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.event.data.QuestData;
 import ru.mrlargha.feature.event.R;
@@ -233,8 +232,8 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
     /* JADX INFO: Access modifiers changed from: private */
     public final String formatSeconds(int i, Context context) {
         int i2 = i / 86400;
-        int i3 = (i % 86400) / DateCalculationsKt.SECONDS_PER_HOUR;
-        int i4 = (i % DateCalculationsKt.SECONDS_PER_HOUR) / 60;
+        int i3 = (i % 86400) / 3600;
+        int i4 = (i % 3600) / 60;
         int i5 = i % 60;
         ArrayList arrayList = new ArrayList();
         if (i2 > 0) {

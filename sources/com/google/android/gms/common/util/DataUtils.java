@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.text.TextUtils;
 import java.io.ByteArrayOutputStream;
 /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DataUtils {
     public static void copyStringToBuffer(String str, CharArrayBuffer charArrayBuffer) {
         if (TextUtils.isEmpty(str)) {

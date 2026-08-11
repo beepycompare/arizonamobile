@@ -125,7 +125,7 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.google.android.material.timepicker.TimePickerTextInputPresenter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                TimePickerTextInputPresenter.this.m9639x9cf2bb63(view);
+                TimePickerTextInputPresenter.this.m9656x9cf2bb63(view);
             }
         };
         chipTextInputComboView2.setOnClickListener(onClickListener);
@@ -156,7 +156,7 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-timepicker-TimePickerTextInputPresenter  reason: not valid java name */
-    public /* synthetic */ void m9639x9cf2bb63(View view) {
+    public /* synthetic */ void m9656x9cf2bb63(View view) {
         onSelectionChanged(((Integer) view.getTag(R.id.selection_type)).intValue());
     }
 
@@ -279,7 +279,7 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
         materialButtonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() { // from class: com.google.android.material.timepicker.TimePickerTextInputPresenter$$ExternalSyntheticLambda0
             @Override // com.google.android.material.button.MaterialButtonToggleGroup.OnButtonCheckedListener
             public final void onButtonChecked(MaterialButtonToggleGroup materialButtonToggleGroup2, int i, boolean z) {
-                TimePickerTextInputPresenter.this.m9640xe359ee16(materialButtonToggleGroup2, i, z);
+                TimePickerTextInputPresenter.this.m9657xe359ee16(materialButtonToggleGroup2, i, z);
             }
         });
         this.toggle.setVisibility(0);
@@ -288,7 +288,7 @@ public class TimePickerTextInputPresenter implements TimePickerView.OnSelectionC
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setupPeriodToggle$1$com-google-android-material-timepicker-TimePickerTextInputPresenter  reason: not valid java name */
-    public /* synthetic */ void m9640xe359ee16(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z) {
+    public /* synthetic */ void m9657xe359ee16(MaterialButtonToggleGroup materialButtonToggleGroup, int i, boolean z) {
         if (z) {
             this.time.setPeriod(i == R.id.material_clock_period_pm_button ? 1 : 0);
         }

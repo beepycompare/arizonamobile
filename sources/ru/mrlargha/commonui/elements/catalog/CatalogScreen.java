@@ -79,6 +79,7 @@ public final class CatalogScreen extends SAMPUIElement {
     }
 
     private final void setupTitleData(CatalogInfoModel catalogInfoModel) {
+        this.catalogAdapter.setCatalogImageBasePath(catalogInfoModel.getUrl());
         CatalogLayoutBinding catalogLayoutBinding = this.binding;
         catalogLayoutBinding.catalogTitleText.setText(catalogInfoModel.getTitle());
         catalogLayoutBinding.catalogDescText.setText(StringsKt.replace$default(catalogInfoModel.getDesc(), "</br>", "\n", false, 4, (Object) null));
@@ -125,7 +126,9 @@ public final class CatalogScreen extends SAMPUIElement {
         if (z) {
             return;
         }
+        this.catalogItemList = CollectionsKt.emptyList();
         this.catalogAdapter.clearCatalogItems();
+        this.catalogAdapter.setCatalogImageBasePath(null);
     }
 
     private final void setupListeners() {

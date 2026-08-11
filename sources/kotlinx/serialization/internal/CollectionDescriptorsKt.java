@@ -3,7 +3,7 @@ package kotlinx.serialization.internal;
 import kotlin.Metadata;
 /* compiled from: CollectionDescriptors.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\"\u000f\u0010\u0000\u001a\u00020\u0001X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010\u0002\u001a\u00020\u0001X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010\u0003\u001a\u00020\u0001X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010\u0004\u001a\u00020\u0001X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010\u0005\u001a\u00020\u0001X\u0080Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010\u0006\u001a\u00020\u0001X\u0080Ô\b¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"ARRAY_NAME", "", "ARRAY_LIST_NAME", "LINKED_HASH_SET_NAME", "HASH_SET_NAME", "LINKED_HASH_MAP_NAME", "HASH_MAP_NAME", "kotlinx-serialization-core"}, k = 2, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class CollectionDescriptorsKt {
     public static final String ARRAY_LIST_NAME = "kotlin.collections.ArrayList";
     public static final String ARRAY_NAME = "kotlin.Array";

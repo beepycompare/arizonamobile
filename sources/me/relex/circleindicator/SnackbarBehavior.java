@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.snackbar.Snackbar;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class SnackbarBehavior extends CoordinatorLayout.Behavior<BaseCircleIndicator> {
     public SnackbarBehavior() {
     }

@@ -245,7 +245,7 @@ public class ChangeTransform extends Transition {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class Transforms {
         final float mRotationX;
         final float mRotationY;

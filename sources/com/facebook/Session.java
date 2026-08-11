@@ -46,7 +46,7 @@ import kotlin.time.DurationKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Session implements Serializable {
     private static /* synthetic */ int[] $SWITCH_TABLE$com$facebook$SessionState = null;
     public static final String ACTION_ACTIVE_SESSION_CLOSED = "com.facebook.sdk.ACTIVE_SESSION_CLOSED";
@@ -90,7 +90,7 @@ public class Session implements Serializable {
         }
     };
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AuthorizationRequest implements Serializable {
         private static final long serialVersionUID = 1;
         private String applicationId;
@@ -105,7 +105,7 @@ public class Session implements Serializable {
         private StatusCallback statusCallback;
         private String validateSameFbidAsToken;
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         private static class AuthRequestSerializationProxyV1 implements Serializable {
             private static final long serialVersionUID = -8748347685113614927L;
             private final String applicationId;
@@ -322,7 +322,7 @@ public class Session implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class AutoPublishAsyncTask extends AsyncTask<Void, Void, Void> {
         private final Context mApplicationContext;
         private final String mApplicationId;
@@ -353,7 +353,7 @@ public class Session implements Serializable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private String applicationId;
         private final Context context;
@@ -378,7 +378,7 @@ public class Session implements Serializable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NewPermissionsRequest extends AuthorizationRequest {
         private static final long serialVersionUID = 1;
 
@@ -427,7 +427,7 @@ public class Session implements Serializable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class OpenRequest extends AuthorizationRequest {
         private static final long serialVersionUID = 1;
 
@@ -481,7 +481,7 @@ public class Session implements Serializable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class SerializationProxyV1 implements Serializable {
         private static final long serialVersionUID = 7663436173185080063L;
         private final String applicationId;
@@ -506,20 +506,20 @@ public class Session implements Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface StartActivityDelegate {
         Activity getActivityContext();
 
         void startActivityForResult(Intent intent, int i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface StatusCallback {
         void call(Session session, SessionState sessionState, Exception exc);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class TokenRefreshRequest implements ServiceConnection {
         final Messenger messageReceiver;
         Messenger messageSender = null;
@@ -571,7 +571,7 @@ public class Session implements Serializable {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class TokenRefreshRequestHandler extends Handler {
         private WeakReference<TokenRefreshRequest> refreshRequestWeakReference;
         private WeakReference<Session> sessionWeakReference;

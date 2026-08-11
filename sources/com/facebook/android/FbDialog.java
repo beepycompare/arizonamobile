@@ -8,7 +8,7 @@ import com.facebook.FacebookOperationCanceledException;
 import com.facebook.android.Facebook;
 import com.facebook.widget.WebDialog;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FbDialog extends WebDialog {
     private Facebook.DialogListener mListener;
 

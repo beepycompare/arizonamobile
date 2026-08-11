@@ -30,7 +30,7 @@ import com.facebook.model.GraphUser;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public class LoginButton extends Button {
     private static final String TAG = "com.facebook.widget.LoginButton";
     private String applicationId;
@@ -47,7 +47,7 @@ public class LoginButton extends Button {
     private Session userInfoSession;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public class LoginButtonCallback implements Session.StatusCallback {
         private LoginButtonCallback() {
         }
@@ -69,7 +69,7 @@ public class LoginButton extends Button {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static class LoginButtonProperties {
         private OnErrorListener onErrorListener;
         private Session.StatusCallback sessionStatusCallback;
@@ -153,7 +153,7 @@ public class LoginButton extends Button {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public class LoginClickListener implements View.OnClickListener {
         private LoginClickListener() {
         }
@@ -209,12 +209,12 @@ public class LoginButton extends Button {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface OnErrorListener {
         void onError(FacebookException facebookException);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface UserInfoChangedCallback {
         void onUserInfoFetched(GraphUser graphUser);
     }

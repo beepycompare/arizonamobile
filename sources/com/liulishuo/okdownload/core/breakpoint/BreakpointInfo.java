@@ -6,7 +6,7 @@ import com.liulishuo.okdownload.core.download.DownloadStrategy;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreakpointInfo {
     private final List<BlockInfo> blockInfoList = new ArrayList();
     private boolean chunked;

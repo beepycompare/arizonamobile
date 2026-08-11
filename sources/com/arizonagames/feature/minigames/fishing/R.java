@@ -4,62 +4,62 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int fishing_accept_bg = 0x7f080917;
-        public static int fishing_bg = 0x7f080918;
-        public static int fishing_bomb = 0x7f080919;
-        public static int fishing_computer_bg = 0x7f08091a;
-        public static int fishing_computer_element_one = 0x7f08091b;
-        public static int fishing_computer_element_two = 0x7f08091c;
-        public static int fishing_computer_trash_element = 0x7f08091d;
-        public static int fishing_exit_ic = 0x7f08091e;
-        public static int fishing_factory_bg = 0x7f08091f;
-        public static int fishing_factory_detail_1 = 0x7f080920;
-        public static int fishing_factory_trash_1 = 0x7f080921;
-        public static int fishing_factory_trash_2 = 0x7f080922;
-        public static int fishing_farm_bg = 0x7f080923;
-        public static int fishing_farm_hay_1 = 0x7f080924;
-        public static int fishing_farm_trash_1 = 0x7f080925;
-        public static int fishing_farm_trash_2 = 0x7f080926;
-        public static int fishing_fish_1 = 0x7f080927;
-        public static int fishing_fish_2 = 0x7f080928;
-        public static int fishing_fish_3 = 0x7f080929;
-        public static int fishing_fish_4 = 0x7f08092a;
-        public static int fishing_halloween1 = 0x7f08092b;
-        public static int fishing_halloween10 = 0x7f08092c;
-        public static int fishing_halloween2 = 0x7f08092d;
-        public static int fishing_halloween3 = 0x7f08092e;
-        public static int fishing_halloween4 = 0x7f08092f;
-        public static int fishing_halloween5 = 0x7f080930;
-        public static int fishing_halloween6 = 0x7f080931;
-        public static int fishing_halloween7 = 0x7f080932;
-        public static int fishing_halloween8 = 0x7f080933;
-        public static int fishing_halloween9 = 0x7f080934;
-        public static int fishing_halloween_bg = 0x7f080935;
-        public static int fishing_lines = 0x7f080936;
-        public static int fishing_new_year1 = 0x7f080937;
-        public static int fishing_new_year_bg = 0x7f080938;
-        public static int fishing_new_year_trash1 = 0x7f080939;
-        public static int fishing_new_year_trash2 = 0x7f08093a;
-        public static int fishing_ranch_1 = 0x7f08093b;
-        public static int fishing_ranch_bg = 0x7f08093c;
-        public static int fishing_ranch_trash_1 = 0x7f08093d;
-        public static int fishing_ranch_trash_2 = 0x7f08093e;
-        public static int fishing_road_repair = 0x7f08093f;
-        public static int fishing_road_repair_bg = 0x7f080940;
-        public static int fishing_road_repair_trash = 0x7f080941;
-        public static int fishing_search_docs = 0x7f080942;
-        public static int fishing_search_docs_bg = 0x7f080943;
-        public static int fishing_search_docs_trash_1 = 0x7f080944;
-        public static int fishing_search_docs_trash_2 = 0x7f080945;
-        public static int fishing_space_bg = 0x7f080946;
-        public static int fishing_space_one = 0x7f080947;
-        public static int fishing_space_trash_one = 0x7f080948;
-        public static int fishing_space_trash_two = 0x7f080949;
-        public static int fishing_trash_1 = 0x7f08094a;
-        public static int fishing_trash_2 = 0x7f08094b;
-        public static int fishing_trash_3 = 0x7f08094c;
-        public static int fishing_trash_4 = 0x7f08094d;
-        public static int fishing_trash_5 = 0x7f08094e;
+        public static int fishing_accept_bg = 0x7f080969;
+        public static int fishing_bg = 0x7f08096a;
+        public static int fishing_bomb = 0x7f08096b;
+        public static int fishing_computer_bg = 0x7f08096c;
+        public static int fishing_computer_element_one = 0x7f08096d;
+        public static int fishing_computer_element_two = 0x7f08096e;
+        public static int fishing_computer_trash_element = 0x7f08096f;
+        public static int fishing_exit_ic = 0x7f080970;
+        public static int fishing_factory_bg = 0x7f080971;
+        public static int fishing_factory_detail_1 = 0x7f080972;
+        public static int fishing_factory_trash_1 = 0x7f080973;
+        public static int fishing_factory_trash_2 = 0x7f080974;
+        public static int fishing_farm_bg = 0x7f080975;
+        public static int fishing_farm_hay_1 = 0x7f080976;
+        public static int fishing_farm_trash_1 = 0x7f080977;
+        public static int fishing_farm_trash_2 = 0x7f080978;
+        public static int fishing_fish_1 = 0x7f080979;
+        public static int fishing_fish_2 = 0x7f08097a;
+        public static int fishing_fish_3 = 0x7f08097b;
+        public static int fishing_fish_4 = 0x7f08097c;
+        public static int fishing_halloween1 = 0x7f08097d;
+        public static int fishing_halloween10 = 0x7f08097e;
+        public static int fishing_halloween2 = 0x7f08097f;
+        public static int fishing_halloween3 = 0x7f080980;
+        public static int fishing_halloween4 = 0x7f080981;
+        public static int fishing_halloween5 = 0x7f080982;
+        public static int fishing_halloween6 = 0x7f080983;
+        public static int fishing_halloween7 = 0x7f080984;
+        public static int fishing_halloween8 = 0x7f080985;
+        public static int fishing_halloween9 = 0x7f080986;
+        public static int fishing_halloween_bg = 0x7f080987;
+        public static int fishing_lines = 0x7f080988;
+        public static int fishing_new_year1 = 0x7f080989;
+        public static int fishing_new_year_bg = 0x7f08098a;
+        public static int fishing_new_year_trash1 = 0x7f08098b;
+        public static int fishing_new_year_trash2 = 0x7f08098c;
+        public static int fishing_ranch_1 = 0x7f08098d;
+        public static int fishing_ranch_bg = 0x7f08098e;
+        public static int fishing_ranch_trash_1 = 0x7f08098f;
+        public static int fishing_ranch_trash_2 = 0x7f080990;
+        public static int fishing_road_repair = 0x7f080991;
+        public static int fishing_road_repair_bg = 0x7f080992;
+        public static int fishing_road_repair_trash = 0x7f080993;
+        public static int fishing_search_docs = 0x7f080994;
+        public static int fishing_search_docs_bg = 0x7f080995;
+        public static int fishing_search_docs_trash_1 = 0x7f080996;
+        public static int fishing_search_docs_trash_2 = 0x7f080997;
+        public static int fishing_space_bg = 0x7f080998;
+        public static int fishing_space_one = 0x7f080999;
+        public static int fishing_space_trash_one = 0x7f08099a;
+        public static int fishing_space_trash_two = 0x7f08099b;
+        public static int fishing_trash_1 = 0x7f08099c;
+        public static int fishing_trash_2 = 0x7f08099d;
+        public static int fishing_trash_3 = 0x7f08099e;
+        public static int fishing_trash_4 = 0x7f08099f;
+        public static int fishing_trash_5 = 0x7f0809a0;
 
         private drawable() {
         }
@@ -68,15 +68,15 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int accept_mask = 0x7f0a001e;
-        public static int description = 0x7f0a045b;
-        public static int exit_button = 0x7f0a055a;
-        public static int fishing_item = 0x7f0a05ca;
-        public static int fishing_layout = 0x7f0a05cb;
-        public static int fishing_rc = 0x7f0a05cc;
-        public static int item_img = 0x7f0a07ca;
-        public static int left_line = 0x7f0a08b7;
-        public static int main_title = 0x7f0a093c;
-        public static int rc_container = 0x7f0a0be8;
+        public static int description = 0x7f0a05af;
+        public static int exit_button = 0x7f0a06b0;
+        public static int fishing_item = 0x7f0a0720;
+        public static int fishing_layout = 0x7f0a0721;
+        public static int fishing_rc = 0x7f0a0722;
+        public static int item_img = 0x7f0a092b;
+        public static int left_line = 0x7f0a0a1a;
+        public static int main_title = 0x7f0a0aa1;
+        public static int rc_container = 0x7f0a0d55;
 
         private id() {
         }
@@ -84,8 +84,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class layout {
-        public static int fishing_item = 0x7f0d0100;
-        public static int fishing_layout = 0x7f0d0101;
+        public static int fishing_item = 0x7f0d0122;
+        public static int fishing_layout = 0x7f0d0123;
 
         private layout() {
         }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@+id/bank_card_issue_intro_state" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_gravity="center" android:paddingTop="@dimen/_12sdp" android:layout_width="wrap_content" android:layout_height="match_parent" android:paddingStart="@dimen/_18sdp" android:paddingEnd="@dimen/_18sdp">
+            <ImageView android:layout_gravity="bottom" android:layout_width="@dimen/_280sdp" android:layout_height="match_parent" android:src="@drawable/bank_card_issue_preview" android:scaleType="fitEnd" android:adjustViewBounds="true" android:contentDescription="@null"/>
+            <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="@dimen/_204sdp" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_28sdp">
+                <TextView android:textSize="@dimen/_23sdp" android:textColor="#ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ОТКРЫТИЕ СЧЕТА" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="#eaf0ff" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp" android:text="Оформите банковскую карту, чтобы автоматически создать личный счет и пользоваться услугами банка." android:includeFontPadding="false" android:lineSpacingExtra="@dimen/_2sdp" android:fontFamily="@font/heading_now_64_regular"/>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_card_issue_intro_button" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_12sdp" app:backgroundMainColor="#ffe600" app:corners="@dimen/_9sdp">
+                    <TextView android:textSize="@dimen/_7sdp" android:textColor="#171717" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="ОФОРМИТЬ БАНКОВСКУЮ КАРТУ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <androidx.core.widget.NestedScrollView android:id="@+id/bank_card_issue_form_content" android:paddingTop="@dimen/_10sdp" android:paddingBottom="@dimen/_10sdp" android:visibility="visible" android:scrollbars="none" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="@dimen/_360sdp" android:layout_height="wrap_content">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="@dimen/_30sdp" android:paddingStart="@dimen/_10sdp" android:paddingEnd="@dimen/_8sdp" app:backgroundMainColor="#33ffffff" app:backgroundTransparency="10" app:corners="@dimen/_8sdp">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#c9d3f1" android:gravity="center" android:layout_gravity="center" android:id="@+id/bank_card_issue_header_text" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="ПРОВЕРЬТЕ ЛИЧНЫЕ ДАННЫЕ И ПОСТАВЬТЕ ГАЛОЧКИ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#15182a" android:gravity="center" android:layout_gravity="end|center_vertical" android:background="@drawable/bank_chip_placeholder" android:layout_width="@dimen/_12sdp" android:layout_height="@dimen/_12sdp" android:text="i" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                </FrameLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_12sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_card_issue_identity_card" android:paddingTop="@dimen/_8sdp" android:paddingBottom="@dimen/_8sdp" android:layout_width="0dp" android:layout_height="@dimen/_62sdp" android:layout_weight="1" android:paddingStart="@dimen/_12sdp" android:paddingEnd="@dimen/_10sdp" app:backgroundMainColor="#26ffffff" app:corners="@dimen/_16sdp" app:gradientAngle="335">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+                            <TextView android:textSize="@dimen/_8sdp" android:textColor="#e6dfff" android:id="@+id/bank_card_issue_identity_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Личные данные" android:includeFontPadding="false" android:alpha="0.9" android:fontFamily="@font/heading_now_64_regular"/>
+                            <TextView android:textSize="@dimen/_18sdp" android:textColor="#ffffff" android:ellipsize="end" android:id="@+id/bank_card_issue_identity_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_4sdp" android:maxLines="1" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+                        </LinearLayout>
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/bank_card_issue_identity_check" android:layout_width="@dimen/_20sdp" android:layout_height="@dimen/_20sdp" app:backgroundMainColor="#fff000" app:corners="@dimen/_4sdp">
+                            <ImageView android:id="@+id/bank_card_issue_identity_checkmark" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/_5sdp" android:src="@drawable/bank_ic_check_mark"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </FrameLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_card_issue_policy_card" android:layout_width="0dp" android:layout_height="@dimen/_62sdp" android:layout_weight="0.9" android:paddingStart="@dimen/_12sdp" android:paddingEnd="@dimen/_10sdp" android:layout_marginStart="@dimen/_8sdp" app:backgroundMainColor="#26ffffff" app:corners="@dimen/_16sdp" app:gradientAngle="335">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                        <TextView android:textSize="@dimen/_8sdp" android:textColor="#f3f6ff" android:gravity="center_vertical" android:id="@+id/bank_card_issue_policy_text" android:layout_width="@dimen/_110sdp" android:layout_height="match_parent" android:text="Соглашаюсь с политикой банка" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+                        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/bank_card_issue_policy_check" android:layout_width="@dimen/_20sdp" android:layout_height="@dimen/_20sdp" app:backgroundMainColor="#d5e4fa" app:backgroundTransparency="50" app:corners="@dimen/_4sdp">
+                            <ImageView android:id="@+id/bank_card_issue_policy_checkmark" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/_5sdp" android:src="@drawable/bank_ic_check_mark"/>
+                        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    </FrameLayout>
+                </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            </LinearLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_card_issue_signature_card" android:layout_width="match_parent" android:layout_height="@dimen/_50sdp" android:layout_marginTop="@dimen/_8sdp" android:paddingStart="@dimen/_12sdp" android:paddingEnd="@dimen/_10sdp" app:backgroundMainColor="#26ffffff" app:corners="@dimen/_16sdp" app:gradientAngle="345">
+                <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffffff" android:gravity="center_vertical" android:id="@+id/bank_card_issue_signature_text" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="Ваша подпись" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/bank_card_issue_signature_check" android:visibility="gone" android:layout_width="@dimen/_20sdp" android:layout_height="@dimen/_20sdp" app:backgroundMainColor="#fff000" app:backgroundTransparency="25" app:corners="@dimen/_4sdp">
+                        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/_5sdp" android:src="@drawable/bank_ic_check_mark"/>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/bank_card_issue_signature" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="@dimen/_20sdp" app:backgroundMainColor="#fff000" app:backgroundTransparency="25" app:corners="@dimen/_4sdp">
+                        <LinearLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_8sdp" android:layout_marginRight="@dimen/_8sdp" android:layout_marginHorizontal="@dimen/_8sdp">
+                            <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_10sdp" android:src="@drawable/bank_ic_withdraw" android:adjustViewBounds="true" android:layout_marginEnd="@dimen/_4sdp"/>
+                            <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/black" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Подписать" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                        </LinearLayout>
+                    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+                </FrameLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_card_issue_submit_button" android:layout_width="match_parent" android:layout_height="@dimen/_30sdp" android:layout_marginTop="@dimen/_10sdp" app:backgroundMainColor="#fff000" app:corners="@dimen/_8sdp">
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#171717" android:gravity="center" android:id="@+id/bank_card_issue_submit_button_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="ОФОРМИТЬ КАРТУ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

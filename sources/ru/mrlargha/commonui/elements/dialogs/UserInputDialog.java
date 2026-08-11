@@ -22,13 +22,11 @@ import androidx.autofill.HintConstants;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.Result;
 import kotlin.ResultKt;
 import kotlin.collections.ArraysKt;
-import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
@@ -37,13 +35,13 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.InputDialogBinding;
+import ru.mrlargha.commonui.elements.dialogs.UserInputDialogResponseCodec;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: UserInputDialog.kt */
-@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u0000 :2\u00020\u0001:\u0001:BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u0005\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0004\b\u0010\u0010\u0011J\u0010\u0010 \u001a\u00020!2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u0018\u0010\"\u001a\u00020\u000f2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010#\u001a\u00020\u000fH\u0002J\b\u0010$\u001a\u00020%H\u0002J\b\u0010&\u001a\u00020%H\u0002J\u0010\u0010'\u001a\u00020%2\u0006\u0010(\u001a\u00020\u0005H\u0002J\b\u0010)\u001a\u00020\u000fH\u0002J\u0012\u0010*\u001a\u00020%2\b\u0010+\u001a\u0004\u0018\u00010\u000fH\u0002J\u001d\u0010,\u001a\b\u0012\u0004\u0012\u00020.0-2\b\u0010/\u001a\u0004\u0018\u000100H\u0002¢\u0006\u0002\u00101J\n\u00102\u001a\u0004\u0018\u00010\u000fH\u0002J\u0010\u00103\u001a\u00020%2\u0006\u00104\u001a\u00020\u000fH\u0002J\u0010\u00105\u001a\u00020%2\u0006\u00106\u001a\u00020\fH\u0016J\b\u00107\u001a\u00020%H\u0002J\b\u00108\u001a\u00020%H\u0002J\u0010\u00109\u001a\u00020%2\u0006\u0010\u0017\u001a\u00020\u000fH\u0016R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006;"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "info", "leftButtonText", "rightButtonText", "passwordMode", "", "sampDialogId", "hintInput", "", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;ZILjava/lang/String;)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/InputDialogBinding;", "text", "isKeyboardShowing", "keyboardLayoutListenerAttached", "placeholderModel", "Lru/mrlargha/commonui/elements/dialogs/DialogPlaceholderModel;", "dialogRect", "Landroid/graphics/Rect;", "keyboardLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "setupHintInput", "Landroid/text/TextWatcher;", "resolveMainInputHint", "moneyTitle", "bindHeaderInfo", "", "updateTransferCommission", "updateKeyboardOffset", "keyboardTop", "getResponseInput", "restoreInputHistory", "input", "buildMoneyInputFilters", "", "Landroid/text/InputFilter;", "limits", "Lru/mrlargha/commonui/elements/dialogs/DialogWithdrawLimitModel;", "(Lru/mrlargha/commonui/elements/dialogs/DialogWithdrawLimitModel;)[Landroid/text/InputFilter;", "getPassword", "savePassword", HintConstants.AUTOFILL_HINT_NEW_PASSWORD, "setVisibility", "visible", "addKeyboardLayoutListener", "removeKeyboardLayoutListener", "consumeUserInput", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u0000 =2\u00020\u0001:\u0001=BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0007\u0012\u0006\u0010\n\u001a\u00020\u0007\u0012\u0006\u0010\u000b\u001a\u00020\f\u0012\u0006\u0010\r\u001a\u00020\u0005\u0012\u0006\u0010\u000e\u001a\u00020\u000f¢\u0006\u0004\b\u0010\u0010\u0011J\u0010\u0010 \u001a\u00020!2\u0006\u0010\u000e\u001a\u00020\u000fH\u0002J\u0018\u0010\"\u001a\u00020\u000f2\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010#\u001a\u00020\u000fH\u0002J\b\u0010$\u001a\u00020%H\u0002J\b\u0010&\u001a\u00020%H\u0002J\u0010\u0010'\u001a\u00020%2\u0006\u0010(\u001a\u00020\u0005H\u0002J\b\u0010)\u001a\u00020\u000fH\u0002J\u0012\u0010*\u001a\u00020%2\b\u0010+\u001a\u0004\u0018\u00010\u000fH\u0002J\u0010\u0010,\u001a\u00020%2\u0006\u0010-\u001a\u00020.H\u0002J\u001d\u0010/\u001a\b\u0012\u0004\u0012\u000201002\b\u00102\u001a\u0004\u0018\u000103H\u0002¢\u0006\u0002\u00104J\n\u00105\u001a\u0004\u0018\u00010\u000fH\u0002J\u0010\u00106\u001a\u00020%2\u0006\u00107\u001a\u00020\u000fH\u0002J\u0010\u00108\u001a\u00020%2\u0006\u00109\u001a\u00020\fH\u0016J\b\u0010:\u001a\u00020%H\u0002J\b\u0010;\u001a\u00020%H\u0002J\u0010\u0010<\u001a\u00020%2\u0006\u0010\u0017\u001a\u00020\u000fH\u0016R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u0014*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006>"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialog;", "Lru/mrlargha/commonui/elements/dialogs/AbstractDialog;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "caption", "Landroid/text/SpannableString;", "info", "leftButtonText", "rightButtonText", "passwordMode", "", "sampDialogId", "hintInput", "", "<init>", "(Landroid/app/Activity;ILandroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;Landroid/text/SpannableString;ZILjava/lang/String;)V", "dialogLayout", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/InputDialogBinding;", "text", "isKeyboardShowing", "keyboardLayoutListenerAttached", "placeholderModel", "Lru/mrlargha/commonui/elements/dialogs/DialogPlaceholderModel;", "dialogRect", "Landroid/graphics/Rect;", "keyboardLayoutListener", "Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;", "setupHintInput", "Landroid/text/TextWatcher;", "resolveMainInputHint", "moneyTitle", "bindHeaderInfo", "", "updateTransferCommission", "updateKeyboardOffset", "keyboardTop", "getResponseInput", "restoreInputHistory", "input", "applyDecodedInput", "decodedInput", "Lru/mrlargha/commonui/elements/dialogs/UserInputDialogResponseCodec$DecodedInput;", "buildMoneyInputFilters", "", "Landroid/text/InputFilter;", "limits", "Lru/mrlargha/commonui/elements/dialogs/DialogWithdrawLimitModel;", "(Lru/mrlargha/commonui/elements/dialogs/DialogWithdrawLimitModel;)[Landroid/text/InputFilter;", "getPassword", "savePassword", HintConstants.AUTOFILL_HINT_NEW_PASSWORD, "setVisibility", "visible", "addKeyboardLayoutListener", "removeKeyboardLayoutListener", "consumeUserInput", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UserInputDialog extends AbstractDialog {
-    private static final String INPUT_PART_SEPARATOR = "\n";
     private static final int PASSWORD_SEND_RETRY_COUNT = 2;
     public static final String PASSWORD_SP_NAME = "PASSWORD_SP_FIELD";
     private static final String TAG = "UserInputDialog";
@@ -408,22 +406,22 @@ public final class UserInputDialog extends AbstractDialog {
     }
 
     private final String getResponseInput() {
+        String obj;
         Editable text = this.binding.userInput.getText();
-        String obj = text != null ? text.toString() : null;
-        if (obj == null) {
-            obj = "";
+        String str = null;
+        String obj2 = text != null ? text.toString() : null;
+        if (obj2 == null) {
+            obj2 = "";
         }
-        LinearLayout findPlayerInputRow = this.binding.findPlayerInputRow;
-        Intrinsics.checkNotNullExpressionValue(findPlayerInputRow, "findPlayerInputRow");
-        if (findPlayerInputRow.getVisibility() == 0) {
-            String[] strArr = new String[2];
-            Editable text2 = this.binding.findPlayerInput.getText();
-            String obj2 = text2 != null ? text2.toString() : null;
-            strArr[0] = obj2 != null ? obj2 : "";
-            strArr[1] = obj;
-            return CollectionsKt.joinToString$default(CollectionsKt.listOf((Object[]) strArr), INPUT_PART_SEPARATOR, null, null, 0, null, null, 62, null);
+        Editable text2 = this.binding.findPlayerInput.getText();
+        if (text2 != null && (obj = text2.toString()) != null) {
+            LinearLayout findPlayerInputRow = this.binding.findPlayerInputRow;
+            Intrinsics.checkNotNullExpressionValue(findPlayerInputRow, "findPlayerInputRow");
+            if (findPlayerInputRow.getVisibility() == 0) {
+                str = obj;
+            }
         }
-        return obj;
+        return UserInputDialogResponseCodec.INSTANCE.encode(obj2, str);
     }
 
     private final void restoreInputHistory(String str) {
@@ -431,15 +429,20 @@ public final class UserInputDialog extends AbstractDialog {
         if (str2 == null || str2.length() == 0) {
             return;
         }
-        List split$default = StringsKt.split$default((CharSequence) str2, new String[]{INPUT_PART_SEPARATOR}, false, 2, 2, (Object) null);
+        UserInputDialogResponseCodec userInputDialogResponseCodec = UserInputDialogResponseCodec.INSTANCE;
         LinearLayout findPlayerInputRow = this.binding.findPlayerInputRow;
         Intrinsics.checkNotNullExpressionValue(findPlayerInputRow, "findPlayerInputRow");
-        if (findPlayerInputRow.getVisibility() == 0 && split$default.size() == 2) {
-            this.binding.findPlayerInput.setText((CharSequence) split$default.get(0));
-            this.binding.userInput.setText((CharSequence) split$default.get(1));
-            return;
+        applyDecodedInput(userInputDialogResponseCodec.decode(str, findPlayerInputRow.getVisibility() == 0));
+    }
+
+    private final void applyDecodedInput(UserInputDialogResponseCodec.DecodedInput decodedInput) {
+        String findPlayerInput = decodedInput.getFindPlayerInput();
+        if (findPlayerInput != null) {
+            EditText findPlayerInput2 = this.binding.findPlayerInput;
+            Intrinsics.checkNotNullExpressionValue(findPlayerInput2, "findPlayerInput");
+            findPlayerInput2.setText(findPlayerInput);
         }
-        this.binding.userInput.setText(str2);
+        this.binding.userInput.setText(decodedInput.getMainInput());
     }
 
     private final InputFilter[] buildMoneyInputFilters(DialogWithdrawLimitModel dialogWithdrawLimitModel) {
@@ -516,22 +519,16 @@ public final class UserInputDialog extends AbstractDialog {
     public void consumeUserInput(String text) {
         Intrinsics.checkNotNullParameter(text, "text");
         setVisibility(true);
-        String str = text;
-        List split$default = StringsKt.split$default((CharSequence) str, new String[]{INPUT_PART_SEPARATOR}, false, 2, 2, (Object) null);
+        UserInputDialogResponseCodec userInputDialogResponseCodec = UserInputDialogResponseCodec.INSTANCE;
         LinearLayout findPlayerInputRow = this.binding.findPlayerInputRow;
         Intrinsics.checkNotNullExpressionValue(findPlayerInputRow, "findPlayerInputRow");
-        if (findPlayerInputRow.getVisibility() == 0 && split$default.size() == 2) {
-            this.binding.findPlayerInput.setText((CharSequence) split$default.get(0));
-            this.binding.userInput.setText((CharSequence) split$default.get(1));
-        } else {
-            this.binding.userInput.setText(str);
-        }
+        applyDecodedInput(userInputDialogResponseCodec.decode(text, findPlayerInputRow.getVisibility() == 0));
         this.text = text;
         this.binding.buttons.button1.callOnClick();
     }
 
     /* compiled from: UserInputDialog.kt */
-    @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\r\u001a\u0004\u0018\u00010\u000e*\u00020\u0007H\u0002J\u001c\u0010\u000f\u001a\u00020\u0007*\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u0014\u0010\u0014\u001a\u00020\u0005*\u00020\u00102\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0018\u0010\u0017\u001a\u00020\u00162\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0018\u001a\u00020\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00070\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0019"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialog$Companion;", "", "<init>", "()V", "PASSWORD_SEND_RETRY_COUNT", "", "TAG", "", "INPUT_PART_SEPARATOR", "PASSWORD_SP_NAME", "passwordDialogShowTimes", "inputHistory", "", "toModelOrNull", "Lru/mrlargha/commonui/elements/dialogs/DialogPlaceholderModel;", "activeBadgeText", "Lru/mrlargha/commonui/elements/dialogs/DialogInputHeaderInfo;", "commissionPercent", "hasAmountInput", "", "commissionPercentFor", "amount", "", "calculateCommission", "percent", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\f\u001a\u0004\u0018\u00010\r*\u00020\u0007H\u0002J\u001c\u0010\u000e\u001a\u00020\u0007*\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\u0014\u0010\u0013\u001a\u00020\u0005*\u00020\u000f2\u0006\u0010\u0014\u001a\u00020\u0015H\u0002J\u0018\u0010\u0016\u001a\u00020\u00152\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0017\u001a\u00020\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00070\u000bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialog$Companion;", "", "<init>", "()V", "PASSWORD_SEND_RETRY_COUNT", "", "TAG", "", "PASSWORD_SP_NAME", "passwordDialogShowTimes", "inputHistory", "", "toModelOrNull", "Lru/mrlargha/commonui/elements/dialogs/DialogPlaceholderModel;", "activeBadgeText", "Lru/mrlargha/commonui/elements/dialogs/DialogInputHeaderInfo;", "commissionPercent", "hasAmountInput", "", "commissionPercentFor", "amount", "", "calculateCommission", "percent", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -547,22 +544,22 @@ public final class UserInputDialog extends AbstractDialog {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final DialogPlaceholderModel toModelOrNull(String str) {
-            Object m9898constructorimpl;
+            Object m9915constructorimpl;
             Object obj;
             try {
                 Result.Companion companion = Result.Companion;
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
             }
             if (MapperKt.isJsonValid(str) && !Intrinsics.areEqual(str, AbstractJsonLexerKt.NULL) && !Intrinsics.areEqual(str, "{}") && str.length() != 0) {
                 obj = MapperKt.getGson().fromJson(str, (Class<Object>) DialogPlaceholderModel.class);
-                m9898constructorimpl = Result.m9898constructorimpl((DialogPlaceholderModel) obj);
-                return Result.m9904isFailureimpl(m9898constructorimpl) ? null : m9898constructorimpl;
+                m9915constructorimpl = Result.m9915constructorimpl((DialogPlaceholderModel) obj);
+                return Result.m9921isFailureimpl(m9915constructorimpl) ? null : m9915constructorimpl;
             }
             obj = null;
-            m9898constructorimpl = Result.m9898constructorimpl((DialogPlaceholderModel) obj);
-            return Result.m9904isFailureimpl(m9898constructorimpl) ? null : m9898constructorimpl;
+            m9915constructorimpl = Result.m9915constructorimpl((DialogPlaceholderModel) obj);
+            return Result.m9921isFailureimpl(m9915constructorimpl) ? null : m9915constructorimpl;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -620,22 +617,22 @@ public final class UserInputDialog extends AbstractDialog {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final long calculateCommission(long j, int i) {
-            Long m9898constructorimpl;
+            Long m9915constructorimpl;
             if (j <= 0 || i <= 0) {
                 return 0L;
             }
             try {
                 Result.Companion companion = Result.Companion;
                 Companion companion2 = this;
-                m9898constructorimpl = Result.m9898constructorimpl(Long.valueOf(Math.multiplyExact(j, i) / 100));
+                m9915constructorimpl = Result.m9915constructorimpl(Long.valueOf(Math.multiplyExact(j, i) / 100));
             } catch (Throwable th) {
                 Result.Companion companion3 = Result.Companion;
-                m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9904isFailureimpl(m9898constructorimpl)) {
-                m9898constructorimpl = Long.MAX_VALUE;
+            if (Result.m9921isFailureimpl(m9915constructorimpl)) {
+                m9915constructorimpl = Long.MAX_VALUE;
             }
-            return ((Number) m9898constructorimpl).longValue();
+            return ((Number) m9915constructorimpl).longValue();
         }
     }
 }

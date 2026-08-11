@@ -137,8 +137,8 @@ public final class PolicyTextKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 686536832, "C23@796L13,24@849L10,21@723L217,29@1027L10,30@1076L13,31@1129L11,27@953L210:PolicyText.kt#18sjrx");
-            TextKt.m3157TextNvy7gAk("Соглашаюсь с ", null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), startRestartGroup, 390, 0, 131050);
-            TextKt.m3157TextNvy7gAk(text1, null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU(), null, TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), startRestartGroup, i3 & 14, 0, 131050);
+            TextKt.m3157TextNvy7gAk("Соглашаюсь с ", null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9864dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), startRestartGroup, 390, 0, 131050);
+            TextKt.m3157TextNvy7gAk(text1, null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU(), null, TypeKt.m9864dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), startRestartGroup, i3 & 14, 0, 131050);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -189,8 +189,8 @@ public final class PolicyTextKt {
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1850425310, "C39@1328L13,40@1381L10,37@1266L206,45@1559L10,46@1608L13,47@1661L11,43@1485L210:PolicyText.kt#18sjrx");
             composer2 = startRestartGroup;
-            TextKt.m3157TextNvy7gAk("и ", null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, 390, 0, 131050);
-            TextKt.m3157TextNvy7gAk(text2, null, MaterialTheme.INSTANCE.getColorScheme(composer2, 6).m2322getPrimary0d7_KjU(), null, TypeKt.m9847dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, 6).getBodySmall(), composer2, (i3 >> 3) & 14, 0, 131050);
+            TextKt.m3157TextNvy7gAk("и ", null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9864dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, 390, 0, 131050);
+            TextKt.m3157TextNvy7gAk(text2, null, MaterialTheme.INSTANCE.getColorScheme(composer2, 6).m2322getPrimary0d7_KjU(), null, TypeKt.m9864dpToSp8Feqmps(Dp.m8160constructorimpl(14.0f), composer2, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, 6).getBodySmall(), composer2, (i3 >> 3) & 14, 0, 131050);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

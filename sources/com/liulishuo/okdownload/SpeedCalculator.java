@@ -2,7 +2,7 @@ package com.liulishuo.okdownload;
 
 import android.os.SystemClock;
 import com.liulishuo.okdownload.core.Util;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class SpeedCalculator {
     long allIncreaseBytes;
     long beginTimestamp;

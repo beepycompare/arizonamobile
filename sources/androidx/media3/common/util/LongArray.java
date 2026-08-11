@@ -1,7 +1,7 @@
 package androidx.media3.common.util;
 
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class LongArray {
     private static final int DEFAULT_INITIAL_CAPACITY = 32;
     private int size;

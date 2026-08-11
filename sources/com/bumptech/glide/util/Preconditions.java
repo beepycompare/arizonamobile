@@ -2,7 +2,7 @@ package com.bumptech.glide.util;
 
 import android.text.TextUtils;
 import java.util.Collection;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Preconditions {
     private Preconditions() {
     }

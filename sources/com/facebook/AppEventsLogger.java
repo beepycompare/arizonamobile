@@ -32,7 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AppEventsLogger {
     public static final String ACTION_APP_EVENTS_FLUSHED = "com.facebook.sdk.APP_EVENTS_FLUSHED";
     public static final String APP_EVENTS_EXTRA_FLUSH_RESULT = "com.facebook.sdk.APP_EVENTS_FLUSH_RESULT";
@@ -53,13 +53,13 @@ public class AppEventsLogger {
     private static Object staticLock = new Object();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AccessTokenAppIdPair implements Serializable {
         private static final long serialVersionUID = 1;
         private final String accessToken;
         private final String applicationId;
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         private static class SerializationProxyV1 implements Serializable {
             private static final long serialVersionUID = -2488473066578201069L;
             private final String accessToken;
@@ -117,14 +117,14 @@ public class AppEventsLogger {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class AppEvent implements Serializable {
         private static final long serialVersionUID = 1;
         private static final HashSet<String> validatedIdentifiers = new HashSet<>();
         private boolean isImplicit;
         private JSONObject jsonObject;
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         private static class SerializationProxyV1 implements Serializable {
             private static final long serialVersionUID = -2488473066578201069L;
             private final boolean isImplicit;
@@ -231,7 +231,7 @@ public class AppEventsLogger {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum FlushBehavior {
         AUTO,
         EXPLICIT_ONLY;
@@ -247,7 +247,7 @@ public class AppEventsLogger {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum FlushReason {
         EXPLICIT,
         TIMER,
@@ -267,7 +267,7 @@ public class AppEventsLogger {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum FlushResult {
         SUCCESS,
         SERVER_ERROR,
@@ -285,7 +285,7 @@ public class AppEventsLogger {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class FlushStatistics {
         public int numEvents;
         public FlushResult result;
@@ -301,7 +301,7 @@ public class AppEventsLogger {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class PersistedEvents {
         static final String PERSISTED_EVENTS_FILENAME = "AppEventsLogger.persistedevents";
         private static Object staticLock = new Object();
@@ -418,7 +418,7 @@ public class AppEventsLogger {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class SessionEventsState {
         public static final String ENCODED_EVENTS_KEY = "encoded_events";
         public static final String EVENT_COUNT_KEY = "event_count";

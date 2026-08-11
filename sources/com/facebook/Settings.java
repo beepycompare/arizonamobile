@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Settings {
     private static final String ANALYTICS_EVENT = "event";
     private static final String ATTRIBUTION_ID_COLUMN_NAME = "aid";

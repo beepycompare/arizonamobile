@@ -7,12 +7,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class AsyncFacebookRunner {
     Facebook fb;
 
     @Deprecated
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface RequestListener {
         void onComplete(String str, Object obj);
 

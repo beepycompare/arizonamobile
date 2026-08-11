@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:background="@drawable/az_plate_wall_bg" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/_70sdp">
+            <ImageView android:layout_width="@dimen/_38sdp" android:layout_height="@dimen/_38sdp" android:src="@drawable/licence_plates_logo" android:contentDescription="@null"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/_6sdp">
+                <TextView android:textSize="@dimen/_7sdp" android:textColor="#909090" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/plate_receive" android:textAllCaps="true" android:fontFamily="@font/pfdregular"/>
+                <TextView android:textSize="@dimen/_13sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/plate_vehicle_numbers" android:includeFontPadding="false" android:lineSpacingExtra="@dimen/_1sdp" android:textAllCaps="true" android:fontFamily="@font/pfdbold"/>
+            </LinearLayout>
+        </LinearLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/plate_random_number_hint" android:fontFamily="@font/pfdregular"/>
+                <Space android:layout_width="@dimen/_1sdp" android:layout_height="@dimen/_16sdp"/>
+                <FrameLayout android:layout_width="@dimen/_405sdp" android:layout_height="@dimen/_102sdp">
+                    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/az_plate_arizona" android:scaleType="fitCenter" android:contentDescription="@null"/>
+                    <TextView android:textSize="@dimen/_56sdp" android:textStyle="bold" android:textColor="#1e1e1e" android:gravity="center" android:layout_gravity="start|center_vertical" android:id="@+id/plate_number" android:layout_width="@dimen/_298sdp" android:layout_height="match_parent" android:layout_marginTop="@dimen/_4sdp" android:text="@string/plate_unknown_number" android:maxLines="1" android:includeFontPadding="false" android:fontFamily="@font/pfdbold"/>
+                    <TextView android:textSize="@dimen/_30sdp" android:textStyle="bold" android:textColor="#e11a1a" android:gravity="center" android:layout_gravity="end|top" android:id="@+id/plate_region" android:layout_width="@dimen/_86sdp" android:layout_height="@dimen/_56sdp" android:layout_marginTop="@dimen/_16sdp" android:text="@string/plate_unknown_region" android:includeFontPadding="false" android:fontFamily="@font/pfdbold" android:layout_marginEnd="@dimen/_23sdp"/>
+                </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/_28sdp" android:layout_marginBottom="@dimen/_46sdp">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/close_button" android:background="@drawable/previous_button_license_plates" android:focusable="true" android:clickable="true" android:layout_width="@dimen/_115sdp" android:layout_height="match_parent" app:corners="@dimen/_6sdp">
+                <TextView android:textSize="@dimen/_7sdp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/plate_close_menu" android:textAllCaps="true" android:fontFamily="@font/pfdindisplaypro_italic"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <Space android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_1sdp"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/get_number_button" android:background="@drawable/complete_button_license_plates" android:focusable="true" android:clickable="true" android:layout_width="@dimen/_115sdp" android:layout_height="match_parent" android:backgroundTint="#fff600" app:corners="@dimen/_6sdp">
+                <TextView android:textSize="@dimen/_7sdp" android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/plate_get_number" android:textAllCaps="true" android:fontFamily="@font/pfdindisplaypro_italic"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

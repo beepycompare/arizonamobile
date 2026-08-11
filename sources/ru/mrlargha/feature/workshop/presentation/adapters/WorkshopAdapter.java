@@ -14,12 +14,13 @@ import kotlin.math.MathKt;
 import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 /* compiled from: WorkshopAdapter.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\u0018\u0000 \u001c2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0001\u001cB#\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\u0018\u0010\u0013\u001a\u00020\u00032\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0016J\u0010\u0010\u0018\u001a\u00020\u00062\u0006\u0010\u0019\u001a\u00020\u0003H\u0016J\u0018\u0010\u001a\u001a\u00020\u00062\u0006\u0010\u0019\u001a\u00020\u00032\u0006\u0010\u001b\u001a\u00020\u0017H\u0016R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u00020\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u000e\"\u0004\b\u0012\u0010\u0010¨\u0006\u001d"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopViewHolder;", "onItemClicked", "Lkotlin/Function1;", "", "context", "Landroid/content/Context;", "<init>", "(Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "fixingScreen", "", "getFixingScreen", "()Z", "setFixingScreen", "(Z)V", "isArizona", "setArizona", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onViewAttachedToWindow", "holder", "onBindViewHolder", "position", "Companion", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\u0018\u0000  2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0001 B#\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\u001c\u0010\u0014\u001a\u00020\u00062\u0014\u0010\u0015\u001a\u0010\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\f\u0018\u00010\u0005J\u0018\u0010\u0016\u001a\u00020\u00032\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0016J\u0010\u0010\u001b\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u0003H\u0016J\u0018\u0010\u001d\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001e\u001a\u00020\u001aH\u0016J\u0010\u0010\u001f\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u0003H\u0016R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u00020\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\fX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u000e\"\u0004\b\u0012\u0010\u0010R\u001c\u0010\u0013\u001a\u0010\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\f\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "Lru/mrlargha/feature/workshop/presentation/adapters/WorkshopViewHolder;", "onItemClicked", "Lkotlin/Function1;", "", "context", "Landroid/content/Context;", "<init>", "(Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "fixingScreen", "", "getFixingScreen", "()Z", "setFixingScreen", "(Z)V", "isArizona", "setArizona", "itemEligibilityPredicate", "setItemEligibilityPredicate", "predicate", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onViewAttachedToWindow", "holder", "onBindViewHolder", "position", "onViewRecycled", "Companion", "workshop"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class WorkshopAdapter extends ListAdapter<InventoryItem, WorkshopViewHolder> {
     private final Context context;
     private boolean fixingScreen;
     private boolean isArizona;
+    private Function1<? super InventoryItem, Boolean> itemEligibilityPredicate;
     private final Function1<InventoryItem, Unit> onItemClicked;
     public static final Companion Companion = new Companion(null);
     private static final WorkshopAdapter$Companion$COMPARATOR$1 COMPARATOR = new DiffUtil.ItemCallback<InventoryItem>() { // from class: ru.mrlargha.feature.workshop.presentation.adapters.WorkshopAdapter$Companion$COMPARATOR$1
@@ -64,6 +65,11 @@ public final class WorkshopAdapter extends ListAdapter<InventoryItem, WorkshopVi
         this.isArizona = z;
     }
 
+    public final void setItemEligibilityPredicate(Function1<? super InventoryItem, Boolean> function1) {
+        this.itemEligibilityPredicate = function1;
+        notifyItemRangeChanged(0, getItemCount());
+    }
+
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public WorkshopViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         Intrinsics.checkNotNullParameter(parent, "parent");
@@ -88,7 +94,14 @@ public final class WorkshopAdapter extends ListAdapter<InventoryItem, WorkshopVi
         Intrinsics.checkNotNullParameter(holder, "holder");
         InventoryItem item = getItem(i);
         Intrinsics.checkNotNullExpressionValue(item, "getItem(...)");
-        holder.bind(item);
+        holder.bind(item, this.itemEligibilityPredicate);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewRecycled(WorkshopViewHolder holder) {
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        holder.recycle();
+        super.onViewRecycled((WorkshopAdapter) holder);
     }
 
     /* compiled from: WorkshopAdapter.kt */

@@ -6,7 +6,7 @@ import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class DownloadListener2 implements DownloadListener {
     @Override // com.liulishuo.okdownload.DownloadListener
     public void connectEnd(DownloadTask downloadTask, int i, int i2, Map<String, List<String>> map) {

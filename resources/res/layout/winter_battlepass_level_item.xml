@@ -21,6 +21,9 @@
                 <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/black" android:id="@+id/tv_usually_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/heading_now_64_regular"/>
             </ru.mrlargha.commonui.utils.ui.CustomCardView>
             <ImageView android:layout_gravity="bottom|center_horizontal" android:id="@+id/item_level_lock_usually" android:visibility="gone" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_13sdp" android:layout_marginBottom="@dimen/_5sdp" android:src="@drawable/ic_battlepass_lock" android:tint="?attr/winterBpLevelLockFree"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/item_level_description_usually" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/_16sdp" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginRight="@dimen/_6sdp" android:layout_marginBottom="@dimen/_4sdp" android:layout_marginHorizontal="@dimen/_6sdp" app:backgroundMainColor="@color/winter_bp_white_70" app:borderMainColor="@color/winter_bp_white" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_3sdp">
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/winter_bp_text_dark" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/battlepass_description" android:fontFamily="@font/heading_now_64_regular"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
         </FrameLayout>
     </ru.mrlargha.commonui.utils.ui.CustomCardView>
     <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/_23sdp">
@@ -58,6 +61,9 @@
                 <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/black" android:id="@+id/tv_premium_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/heading_now_64_regular"/>
             </ru.mrlargha.commonui.utils.ui.CustomCardView>
             <ImageView android:layout_gravity="bottom|center_horizontal" android:id="@+id/item_level_lock_premium" android:visibility="gone" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_13sdp" android:layout_marginBottom="@dimen/_5sdp" android:src="@drawable/ic_battlepass_lock" android:tint="?attr/winterBpLevelLockPremium"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="bottom" android:id="@+id/item_level_description_premium" android:visibility="gone" android:layout_width="match_parent" android:layout_height="@dimen/_16sdp" android:layout_marginLeft="@dimen/_6sdp" android:layout_marginRight="@dimen/_6sdp" android:layout_marginBottom="@dimen/_4sdp" android:layout_marginHorizontal="@dimen/_6sdp" app:backgroundMainColor="@color/winter_bp_white_70" app:borderMainColor="@color/winter_bp_white" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_3sdp">
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/winter_bp_text_dark" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/battlepass_description" android:fontFamily="@font/heading_now_64_regular"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
         </FrameLayout>
     </ru.mrlargha.commonui.utils.ui.CustomCardView>
 </LinearLayout>

@@ -126,11 +126,13 @@ public final class TradeEditText {
             }
             setIcon(R.drawable.ic_rubble);
         } else if (i == 1) {
-            setIcon(R.drawable.trade_euro_ic);
+            setIcon(R.drawable.currency_ic_arizona);
         } else if (i == 2) {
             setIcon(R.drawable.trade_bitcoin_ic);
         } else if (i == 3) {
             setIcon(R.drawable.trade_asc_ic);
+        } else if (i == 4) {
+            setIcon(R.drawable.bank_currency_ic_sp_500);
         } else if (i != 10) {
         } else {
             setIcon(R.drawable.ic_rubble);

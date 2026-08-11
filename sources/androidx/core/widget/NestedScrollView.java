@@ -800,7 +800,7 @@ public class NestedScrollView extends FrameLayout implements NestedScrollingPare
     }
 
     private float getSplineFlingDistance(int i) {
-        double log = Math.log((Math.abs(i) * INFLEXION) / (this.mPhysicalCoeff * SCROLL_FRICTION));
+        double log = Math.log((Math.abs(i) * 0.35f) / (this.mPhysicalCoeff * SCROLL_FRICTION));
         float f = DECELERATION_RATE;
         return (float) (this.mPhysicalCoeff * SCROLL_FRICTION * Math.exp((f / (f - 1.0d)) * log));
     }

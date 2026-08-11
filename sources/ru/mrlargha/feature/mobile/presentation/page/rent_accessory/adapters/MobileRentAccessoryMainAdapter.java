@@ -54,7 +54,7 @@ import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.models.Mobile
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.models.MobileRentAccessorySendModel;
 import ru.mrlargha.feature.mobile.presentation.page.rent_accessory.pages.MobileRentAccessoryMainPage;
 /* compiled from: MobileRentAccessoryMainAdapter.kt */
-@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \"2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002!\"B\u0081\u0001\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012K\u0010\u0006\u001aG\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0013\u0012\u00110\f¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\r\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u0007\u0012#\u0010\u0011\u001a\u001f\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00140\u0012¢\u0006\u0004\b\u0015\u0010\u0016J\u000e\u0010\u0019\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u0018J\u001c\u0010\u001b\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0004\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u000eH\u0016J\u001c\u0010\u001e\u001a\u00020\u00102\n\u0010\u001f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010 \u001a\u00020\u000eH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000RS\u0010\u0006\u001aG\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0013\u0012\u00110\f¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\r\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010\u0011\u001a\u001f\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00140\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006#"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryModel;", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter$MainViewHolder;", "parent", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/RentAccessoryPage;", "sendEvent", "Lkotlin/Function3;", "Lru/mrlargha/feature/mobile/presentation/MobilePHoneSendSubIds;", "Lkotlin/ParameterName;", "name", "event", "", "data", "", "id", "", "getCategory", "Lkotlin/Function1;", "categoryId", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryCategoryModel;", "<init>", "(Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/RentAccessoryPage;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;)V", "currentTopBar", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/pages/MobileRentAccessoryMainPage$Companion$TopBar;", "setCurrentTopBar", "topBar", "onCreateViewHolder", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "MainViewHolder", "Companion", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 #2\u0012\u0012\u0004\u0012\u00020\u0002\u0012\b\u0012\u00060\u0003R\u00020\u00000\u0001:\u0002\"#B\u0081\u0001\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012K\u0010\u0006\u001aG\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0013\u0012\u00110\f¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\r\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u0007\u0012#\u0010\u0011\u001a\u001f\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00140\u0012¢\u0006\u0004\b\u0015\u0010\u0016J\u000e\u0010\u0019\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u0018J\u001c\u0010\u001b\u001a\u00060\u0003R\u00020\u00002\u0006\u0010\u0004\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u000eH\u0016J\u001c\u0010\u001e\u001a\u00020\u00102\n\u0010\u001f\u001a\u00060\u0003R\u00020\u00002\u0006\u0010 \u001a\u00020\u000eH\u0016J\u0014\u0010!\u001a\u00020\u00102\n\u0010\u001f\u001a\u00060\u0003R\u00020\u0000H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000RS\u0010\u0006\u001aG\u0012\u0013\u0012\u00110\b¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000b\u0012\u0013\u0012\u00110\f¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\r\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u000f\u0012\u0004\u0012\u00020\u00100\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R+\u0010\u0011\u001a\u001f\u0012\u0013\u0012\u00110\u000e¢\u0006\f\b\t\u0012\b\b\n\u0012\u0004\b\b(\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00140\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryModel;", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter$MainViewHolder;", "parent", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/RentAccessoryPage;", "sendEvent", "Lkotlin/Function3;", "Lru/mrlargha/feature/mobile/presentation/MobilePHoneSendSubIds;", "Lkotlin/ParameterName;", "name", "event", "", "data", "", "id", "", "getCategory", "Lkotlin/Function1;", "categoryId", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryCategoryModel;", "<init>", "(Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/RentAccessoryPage;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function1;)V", "currentTopBar", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/pages/MobileRentAccessoryMainPage$Companion$TopBar;", "setCurrentTopBar", "topBar", "onCreateViewHolder", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "onViewRecycled", "MainViewHolder", "Companion", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRentAccessoryModel, MainViewHolder> {
     public static final Companion Companion = new Companion(null);
@@ -97,7 +97,7 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
     }
 
     /* compiled from: MobileRentAccessoryMainAdapter.kt */
-    @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u0010\u0010\u0017\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0010\u0010\u0018\u001a\u00020\u00142\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0016\u0010\u001b\u001a\u00020\u00142\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u001d0\u0010H\u0002J\u0017\u0010\u001e\u001a\u0004\u0018\u00010\u00142\u0006\u0010\u001f\u001a\u00020 H\u0002¢\u0006\u0002\u0010!J\u0010\u0010\"\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0010\u0010#\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0010\u0010$\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u000f\u001a\r\u0012\t\u0012\u00070\u0011¢\u0006\u0002\b\u00120\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006%"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter$MainViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryItemBinding;", "<init>", "(Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter;Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryItemBinding;)V", "getBinding", "()Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryItemBinding;", "context", "Landroid/content/Context;", "kotlin.jvm.PlatformType", "scope", "Lkotlinx/coroutines/CoroutineScope;", "rentTimerJob", "Lkotlinx/coroutines/Job;", "items", "", "Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryElementItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryModel;", "initTopBar", "startRentTimer", "time", "", "initItems", "itemList", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryModelItem;", "initCategory", "categoryId", "", "(I)Lkotlin/Unit;", "initDesc", "initButtons", "setupListeners", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016J\u0006\u0010\u0017\u001a\u00020\u0014J\u0010\u0010\u0018\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0010\u0010\u0019\u001a\u00020\u00142\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0016\u0010\u001c\u001a\u00020\u00142\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001e0\u0010H\u0002J\u0017\u0010\u001f\u001a\u0004\u0018\u00010\u00142\u0006\u0010 \u001a\u00020!H\u0002¢\u0006\u0002\u0010\"J\u0010\u0010#\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0010\u0010$\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0010\u0010%\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0016H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0019\u0010\u000f\u001a\r\u0012\t\u0012\u00070\u0011¢\u0006\u0002\b\u00120\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter$MainViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryItemBinding;", "<init>", "(Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/adapters/MobileRentAccessoryMainAdapter;Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryItemBinding;)V", "getBinding", "()Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryItemBinding;", "context", "Landroid/content/Context;", "kotlin.jvm.PlatformType", "scope", "Lkotlinx/coroutines/CoroutineScope;", "rentTimerJob", "Lkotlinx/coroutines/Job;", "items", "", "Lru/mrlargha/feature/mobile/databinding/MobileRentAccessoryElementItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryModel;", "recycle", "initTopBar", "startRentTimer", "time", "", "initItems", "itemList", "Lru/mrlargha/feature/mobile/presentation/page/rent_accessory/models/MobileRentAccessoryModelItem;", "initCategory", "categoryId", "", "(I)Lkotlin/Unit;", "initDesc", "initButtons", "setupListeners", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public final class MainViewHolder extends RecyclerView.ViewHolder {
         private final MobileRentAccessoryItemBinding binding;
@@ -130,6 +130,23 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
             initDesc(model);
             initButtons(model);
             setupListeners(model);
+        }
+
+        public final void recycle() {
+            Job job = this.rentTimerJob;
+            if (job != null) {
+                Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+            }
+            this.rentTimerJob = null;
+            for (MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding : this.items) {
+                ImageView ivEffectBackgroundTop = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
+                Intrinsics.checkNotNullExpressionValue(ivEffectBackgroundTop, "ivEffectBackgroundTop");
+                ImageView ivEffectBackground = mobileRentAccessoryElementItemBinding.ivEffectBackground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
+                ImageView ivEffectForeground = mobileRentAccessoryElementItemBinding.ivEffectForeground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
+                UtilKt.clearEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground);
+            }
         }
 
         /* JADX WARN: Removed duplicated region for block: B:39:0x0132  */
@@ -227,25 +244,27 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
         }
 
         private final void initItems(List<MobileRentAccessoryModelItem> list) {
-            int i = 0;
+            int i;
+            int i2 = 0;
+            int i3 = 0;
             for (Object obj : this.items) {
-                int i2 = i + 1;
-                if (i < 0) {
+                int i4 = i3 + 1;
+                if (i3 < 0) {
                     CollectionsKt.throwIndexOverflow();
                 }
                 MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding = (MobileRentAccessoryElementItemBinding) obj;
-                MobileRentAccessoryModelItem mobileRentAccessoryModelItem = (MobileRentAccessoryModelItem) CollectionsKt.getOrNull(list, i);
+                MobileRentAccessoryModelItem mobileRentAccessoryModelItem = (MobileRentAccessoryModelItem) CollectionsKt.getOrNull(list, i3);
                 if (mobileRentAccessoryModelItem != null) {
                     BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new MobileRentAccessoryMainAdapter$MainViewHolder$initItems$1$1$1$1(mobileRentAccessoryElementItemBinding, mobileRentAccessoryModelItem, null), 3, null);
                     ImageView ivItem = mobileRentAccessoryElementItemBinding.ivItem;
                     Intrinsics.checkNotNullExpressionValue(ivItem, "ivItem");
-                    ivItem.setVisibility(0);
+                    ivItem.setVisibility(i2);
                     ImageView ivIcon = mobileRentAccessoryElementItemBinding.ivIcon;
                     Intrinsics.checkNotNullExpressionValue(ivIcon, "ivIcon");
                     ivIcon.setVisibility(8);
                     TextView tvCount = mobileRentAccessoryElementItemBinding.tvCount;
                     Intrinsics.checkNotNullExpressionValue(tvCount, "tvCount");
-                    tvCount.setVisibility(mobileRentAccessoryModelItem.getEnchanted() > 0 ? 0 : 8);
+                    tvCount.setVisibility((mobileRentAccessoryModelItem.getEnchanted() > 0 ? 1 : i2) != 0 ? i2 : 8);
                     mobileRentAccessoryElementItemBinding.tvCount.setText("+" + mobileRentAccessoryModelItem.getEnchanted());
                     mobileRentAccessoryElementItemBinding.container.setBackground(mobileRentAccessoryModelItem.getColorId());
                     ImageView ivEffectBackgroundTop = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
@@ -254,29 +273,35 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
                     Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
                     ImageView ivEffectForeground = mobileRentAccessoryElementItemBinding.ivEffectForeground;
                     Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-                    UtilKt.setEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground, Integer.valueOf(mobileRentAccessoryModelItem.getItemID()));
-                } else {
-                    TextView tvCount2 = mobileRentAccessoryElementItemBinding.tvCount;
-                    Intrinsics.checkNotNullExpressionValue(tvCount2, "tvCount");
-                    tvCount2.setVisibility(8);
-                    ImageView ivItem2 = mobileRentAccessoryElementItemBinding.ivItem;
-                    Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
-                    ivItem2.setVisibility(8);
-                    ImageView ivIcon2 = mobileRentAccessoryElementItemBinding.ivIcon;
-                    Intrinsics.checkNotNullExpressionValue(ivIcon2, "ivIcon");
-                    ivIcon2.setVisibility(0);
-                    CustomCardView container = mobileRentAccessoryElementItemBinding.container;
-                    Intrinsics.checkNotNullExpressionValue(container, "container");
-                    CustomCardView.setBackground$default(container, Color.parseColor("#33FFFFFF"), Color.parseColor("#0DFFFFFF"), null, null, 12, null);
-                    ImageView ivEffectBackgroundTop2 = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
-                    Intrinsics.checkNotNullExpressionValue(ivEffectBackgroundTop2, "ivEffectBackgroundTop");
-                    ImageView ivEffectBackground2 = mobileRentAccessoryElementItemBinding.ivEffectBackground;
-                    Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
-                    ImageView ivEffectForeground2 = mobileRentAccessoryElementItemBinding.ivEffectForeground;
-                    Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
-                    UtilKt.setEffect(ivEffectBackgroundTop2, ivEffectBackground2, ivEffectForeground2, -1);
+                    if (UtilKt.setEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground, Integer.valueOf(mobileRentAccessoryModelItem.getItemID())) != null) {
+                        i = 0;
+                        i2 = i;
+                        i3 = i4;
+                    }
                 }
-                i = i2;
+                TextView tvCount2 = mobileRentAccessoryElementItemBinding.tvCount;
+                Intrinsics.checkNotNullExpressionValue(tvCount2, "tvCount");
+                tvCount2.setVisibility(8);
+                ImageView ivItem2 = mobileRentAccessoryElementItemBinding.ivItem;
+                Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
+                ivItem2.setVisibility(8);
+                ImageView ivIcon2 = mobileRentAccessoryElementItemBinding.ivIcon;
+                Intrinsics.checkNotNullExpressionValue(ivIcon2, "ivIcon");
+                i = 0;
+                ivIcon2.setVisibility(0);
+                CustomCardView container = mobileRentAccessoryElementItemBinding.container;
+                Intrinsics.checkNotNullExpressionValue(container, "container");
+                CustomCardView.setBackground$default(container, Color.parseColor("#33FFFFFF"), Color.parseColor("#0DFFFFFF"), null, null, 12, null);
+                ImageView ivEffectBackgroundTop2 = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
+                Intrinsics.checkNotNullExpressionValue(ivEffectBackgroundTop2, "ivEffectBackgroundTop");
+                ImageView ivEffectBackground2 = mobileRentAccessoryElementItemBinding.ivEffectBackground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
+                ImageView ivEffectForeground2 = mobileRentAccessoryElementItemBinding.ivEffectForeground;
+                Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
+                UtilKt.setEffect(ivEffectBackgroundTop2, ivEffectBackground2, ivEffectForeground2, (Integer) (-1));
+                Unit unit = Unit.INSTANCE;
+                i2 = i;
+                i3 = i4;
             }
         }
 
@@ -533,6 +558,13 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
         MobileRentAccessoryModel mobileRentAccessoryModel = getCurrentList().get(i);
         Intrinsics.checkNotNullExpressionValue(mobileRentAccessoryModel, "get(...)");
         holder.onBind(mobileRentAccessoryModel);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewRecycled(MainViewHolder holder) {
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        holder.recycle();
+        super.onViewRecycled((MobileRentAccessoryMainAdapter) holder);
     }
 
     /* compiled from: MobileRentAccessoryMainAdapter.kt */

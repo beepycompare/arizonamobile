@@ -1,5 +1,5 @@
 package me.relex.circleindicator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class Config {
     int unselectedBackgroundId;
     int width = -1;
@@ -11,7 +11,7 @@ public class Config {
     int orientation = 0;
     int gravity = 17;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Builder {
         private final Config mConfig = new Config();
 

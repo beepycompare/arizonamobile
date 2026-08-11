@@ -10,7 +10,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class PlatformServiceClient implements ServiceConnection {
     private final String applicationId;
     private final Context context;
@@ -22,7 +22,7 @@ public abstract class PlatformServiceClient implements ServiceConnection {
     private boolean running;
     private Messenger sender;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface CompletedListener {
         void completed(Bundle bundle);
     }

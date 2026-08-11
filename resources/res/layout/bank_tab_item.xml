@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/tab_card" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginTop="@dimen/_4sdp" android:layout_marginEnd="@dimen/_4sdp" app:backgroundMainColor="#ffffff" app:backgroundTransparency="0" app:corners="@dimen/_8sdp">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent" android:paddingStart="@dimen/_12sdp" android:paddingEnd="@dimen/_12sdp">
+            <TextView android:textSize="@dimen/_10sdp" android:textColor="#ffffff" android:gravity="center" android:id="@+id/tab_text" android:layout_width="wrap_content" android:layout_height="match_parent" android:minWidth="@dimen/_60sdp" android:text="Вкладка" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <ImageView android:id="@+id/tab_lock" android:visibility="gone" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/ic_lock" android:layout_marginStart="@dimen/_2sdp"/>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <TextView android:textSize="@dimen/_5sdp" android:textColor="#ffffff" android:gravity="center" android:layout_gravity="end|top" android:id="@+id/tab_hot_badge" android:background="@drawable/bank_warning_badge" android:paddingLeft="@dimen/_4sdp" android:paddingRight="@dimen/_4sdp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/_12sdp" android:text="@string/bank_lottery_hot_badge" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:paddingHorizontal="@dimen/_4sdp"/>
+</FrameLayout>

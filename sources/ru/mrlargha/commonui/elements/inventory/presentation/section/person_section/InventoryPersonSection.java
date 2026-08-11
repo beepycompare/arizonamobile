@@ -1,10 +1,12 @@
 package ru.mrlargha.commonui.elements.inventory.presentation.section.person_section;
 
+import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,13 +25,13 @@ import ru.mrlargha.commonui.elements.inventory.domain.models.AccessPagesModel;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.BaseInventory;
 import ru.mrlargha.commonui.elements.inventory.presentation.BlockType;
+import ru.mrlargha.commonui.elements.inventory.presentation.InventorySlotHighlightKt;
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
 import ru.mrlargha.commonui.utils.ConstantsKt;
-import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: InventoryPersonSection.kt */
-@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\r\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0010\u001a\u00020\u0011H\u0002J\b\u0010\u0012\u001a\u00020\u0011H\u0002J\u0014\u0010\u0013\u001a\u00020\u00112\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015J\b\u0010\u0017\u001a\u00020\u0011H\u0002J\b\u0010\u0018\u001a\u00020\u0011H\u0002J\b\u0010\u0019\u001a\u00020\u0011H\u0002J\b\u0010\u001a\u001a\u00020\u0011H\u0002J\u0006\u0010\u001b\u001a\u00020\u0011J\u000e\u0010\u001c\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u001eJ\u0016\u0010\u001f\u001a\u00020\u00112\u0006\u0010 \u001a\u00020\u00162\u0006\u0010!\u001a\u00020\"J\b\u0010#\u001a\u00020\u0011H\u0002J\b\u0010$\u001a\u00020\u0011H\u0002J\b\u0010%\u001a\u00020\u0011H\u0002J\b\u0010&\u001a\u00020\u0011H\u0002J\b\u0010'\u001a\u00020\u0011H\u0002J\b\u0010(\u001a\u00020\u0011H\u0002J\u0006\u0010)\u001a\u00020\u0011J\u0006\u0010*\u001a\u00020\u0011J\u0006\u0010+\u001a\u00020\u0011J\b\u0010,\u001a\u00020\u0011H\u0002J\u0006\u0010-\u001a\u00020\u0011J\u0006\u0010.\u001a\u00020\u0011R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006/"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "", "inventory", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "binding", "Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;)V", "getInventory", "()Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "getBinding", "()Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "currentPersonType", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonType;", "currentPage", "", "setupListeners", "", "initAdapters", "initSub", "list", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "accessoriesNotVisible", "accessoriesVisible", "btnAccessoriesPressed", "setPageNumber", "updateSet", "updateAccessories", "newResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryEditResponse;", "changeAccessoriesItem", "item", "isColorItem", "", "upgradesNotVisible", "upgradesVisible", "btnUpgradesPressed", "walletNotVisible", "walletVisible", "btnWalletPressed", "openFishing", "openWallet", "closeWalletLocally", "setPersonTypeVisible", "defaultPersonSection", "refresh", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u000f\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0010\u001a\u00020\u0011H\u0002J\b\u0010\u0012\u001a\u00020\u0011H\u0002J\u0014\u0010\u0013\u001a\u00020\u00112\f\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015J\b\u0010\u0017\u001a\u00020\u0011H\u0002J\b\u0010\u0018\u001a\u00020\u0011H\u0002J\b\u0010\u0019\u001a\u00020\u0011H\u0002J\b\u0010\u001a\u001a\u00020\u0011H\u0002J\u0006\u0010\u001b\u001a\u00020\u0011J\u000e\u0010\u001c\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u001eJ\u0016\u0010\u001f\u001a\u00020\u00112\u0006\u0010 \u001a\u00020\u00162\u0006\u0010!\u001a\u00020\"J\b\u0010#\u001a\u00020\u0011H\u0002J\b\u0010$\u001a\u00020\u0011H\u0002J\b\u0010%\u001a\u00020\u0011H\u0002J\b\u0010&\u001a\u00020\u0011H\u0002J\b\u0010'\u001a\u00020\u0011H\u0002J\b\u0010(\u001a\u00020\u0011H\u0002J\u0006\u0010)\u001a\u00020\u0011J\u0006\u0010*\u001a\u00020\u0011J\u0006\u0010+\u001a\u00020\u0011J\b\u0010,\u001a\u00020\u0011H\u0002J\u0006\u0010-\u001a\u00020\u0011J\u0006\u0010.\u001a\u00020\u0011J\u0010\u0010/\u001a\u00020\u00112\u0006\u00100\u001a\u00020\"H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u00061"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonSection;", "", "inventory", "Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "binding", "Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;)V", "getInventory", "()Lru/mrlargha/commonui/elements/inventory/presentation/BaseInventory;", "getBinding", "()Lru/mrlargha/commonui/databinding/InventoryPersonSectionBinding;", "currentPersonType", "Lru/mrlargha/commonui/elements/inventory/presentation/section/person_section/InventoryPersonType;", "currentPage", "", "setupListeners", "", "initAdapters", "initSub", "list", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "accessoriesNotVisible", "accessoriesVisible", "btnAccessoriesPressed", "setPageNumber", "updateSet", "updateAccessories", "newResponse", "Lru/mrlargha/commonui/elements/inventory/domain/InventoryEditResponse;", "changeAccessoriesItem", "item", "isColorItem", "", "upgradesNotVisible", "upgradesVisible", "btnUpgradesPressed", "walletNotVisible", "walletVisible", "btnWalletPressed", "openFishing", "openWallet", "closeWalletLocally", "setPersonTypeVisible", "defaultPersonSection", "refresh", "setUpgradesButtonSelected", "isSelected", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryPersonSection {
     private final InventoryPersonSectionBinding binding;
@@ -48,6 +50,7 @@ public final class InventoryPersonSection {
         this.currentPersonType = InventoryPersonType.NONE;
         AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
         this.currentPage = accessPages != null ? accessPages.getPage() : 1;
+        setUpgradesButtonSelected(false);
         setupListeners();
         initAdapters();
     }
@@ -165,7 +168,7 @@ public final class InventoryPersonSection {
         InventoryPersonSectionBinding inventoryPersonSectionBinding = this.binding;
         BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY.getId());
         inventoryPersonSectionBinding.btnAccessories.setBackgroundResource(R.drawable.ic_btn_accessories_white);
-        inventoryPersonSectionBinding.btnUpgrades.setBackgroundResource(R.drawable.ic_btn_upgrades);
+        setUpgradesButtonSelected(false);
         inventoryPersonSectionBinding.btnWallet.setBackgroundResource(R.drawable.ic_btn_wallet_grey);
         if (BaseInventory.Companion.getAccessPages() != null) {
             updateSet();
@@ -183,7 +186,8 @@ public final class InventoryPersonSection {
     public final void updateSet() {
         AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
         this.currentPage = accessPages != null ? accessPages.getPage() : 1;
-        this.inventory.getAccessoriesInventoryAdapter().submitList(this.inventory.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
+        BaseInventory baseInventory = this.inventory;
+        this.inventory.getAccessoriesInventoryAdapter().submitList(baseInventory.getCurrentSectionList(9, CollectionsKt.toList(baseInventory.getSubAccessoriesList())));
         setPageNumber();
     }
 
@@ -240,60 +244,28 @@ public final class InventoryPersonSection {
         AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
         BaseInventory baseInventory2 = this.inventory;
         if (accessPages != null) {
-            this.inventory.getAccessoriesInventoryAdapter().submitList(baseInventory2.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
-        } else {
-            baseInventory2.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
+            this.inventory.getAccessoriesInventoryAdapter().submitList(baseInventory2.getCurrentSectionList(9, CollectionsKt.toList(baseInventory2.getSubAccessoriesList())));
+            return;
         }
+        baseInventory2.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
     }
 
     public final void changeAccessoriesItem(InventoryItem item, boolean z) {
-        Object obj;
         Intrinsics.checkNotNullParameter(item, "item");
         BaseInventory baseInventory = this.inventory;
-        Iterator<T> it = UtilsKt.getItemsName().iterator();
-        while (true) {
-            if (!it.hasNext()) {
-                obj = null;
-                break;
-            }
-            obj = it.next();
-            int id = ((ItemsInfo) obj).getId();
-            Integer item2 = item.getItem();
-            if (item2 != null && id == item2.intValue()) {
-                break;
-            }
-        }
-        ItemsInfo itemsInfo = (ItemsInfo) obj;
-        int acs_slot = itemsInfo != null ? itemsInfo.getAcs_slot() : -1;
-        List<InventoryItem> subAccessoriesList = baseInventory.getSubAccessoriesList();
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subAccessoriesList, 10));
-        Iterator<T> it2 = subAccessoriesList.iterator();
-        while (true) {
-            if (!it2.hasNext()) {
-                break;
-            }
-            InventoryItem inventoryItem = (InventoryItem) it2.next();
-            AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
-            if (accessPages == null) {
-                accessPages = new AccessPagesModel(3, 1);
-            }
-            if (inventoryItem.getSlot() == ((accessPages.getPage() - 1) * 6) + acs_slot) {
-                inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, null, null, 66584575, null);
-            }
-            arrayList.add(inventoryItem);
-        }
-        baseInventory.setSubAccessoriesList(CollectionsKt.toMutableList((Collection) arrayList));
-        AccessPagesModel accessPages2 = BaseInventory.Companion.getAccessPages();
+        Integer resolveAccessorySlot = InventorySlotHighlightKt.resolveAccessorySlot(item, UtilsKt.getItemsName());
+        baseInventory.setSubAccessoriesList(CollectionsKt.toMutableList((Collection) InventorySlotHighlightKt.highlightAccessorySlot(baseInventory.getSubAccessoriesList(), resolveAccessorySlot != null ? Integer.valueOf(baseInventory.resolveAccessoryPageSlot$CommonUI(resolveAccessorySlot.intValue())) : null, z)));
+        AccessPagesModel accessPages = BaseInventory.Companion.getAccessPages();
         BaseInventory baseInventory2 = this.inventory;
-        if (accessPages2 != null) {
-            this.inventory.getAccessoriesInventoryAdapter().submitList(baseInventory2.getCurrentSectionList(UtilsKt.isArizonaType() ? 6 : 9, CollectionsKt.toList(this.inventory.getSubAccessoriesList())));
+        if (accessPages != null) {
+            this.inventory.getAccessoriesInventoryAdapter().submitList(baseInventory2.getCurrentSectionList(9, CollectionsKt.toList(baseInventory2.getSubAccessoriesList())));
         } else {
             baseInventory2.getAccessoriesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubAccessoriesList()));
         }
     }
 
     private final void upgradesNotVisible() {
-        this.binding.btnUpgrades.setBackgroundResource(R.drawable.ic_btn_upgrades);
+        setUpgradesButtonSelected(false);
         this.currentPersonType = InventoryPersonType.NONE;
     }
 
@@ -310,7 +282,7 @@ public final class InventoryPersonSection {
     private final void btnUpgradesPressed() {
         InventoryPersonSectionBinding inventoryPersonSectionBinding = this.binding;
         BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY.getId());
-        inventoryPersonSectionBinding.btnUpgrades.setBackgroundResource(R.drawable.ic_btn_upgrades_white);
+        setUpgradesButtonSelected(true);
         inventoryPersonSectionBinding.btnAccessories.setBackgroundResource(R.drawable.ic_btn_accessories_red);
         inventoryPersonSectionBinding.btnWallet.setBackgroundResource(R.drawable.ic_btn_wallet_grey);
         this.inventory.getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(this.inventory.getSubUpgradesList()));
@@ -348,7 +320,7 @@ public final class InventoryPersonSection {
     private final void btnWalletPressed() {
         InventoryPersonSectionBinding inventoryPersonSectionBinding = this.binding;
         inventoryPersonSectionBinding.btnWallet.setBackgroundResource(R.drawable.ic_btn_wallet_white);
-        inventoryPersonSectionBinding.btnUpgrades.setBackgroundResource(R.drawable.ic_btn_upgrades);
+        setUpgradesButtonSelected(false);
         inventoryPersonSectionBinding.btnAccessories.setBackgroundResource(R.drawable.ic_btn_accessories_red);
         inventoryPersonSectionBinding.rvWalletInventory.scheduleLayoutAnimation();
         BaseInventory.Companion.setCurrentBackendId(UIElementID.INVENTORY_WALLET_SCREEN.getId());
@@ -415,5 +387,31 @@ public final class InventoryPersonSection {
     public final void refresh() {
         this.currentPersonType = InventoryPersonType.NONE;
         setPersonTypeVisible();
+    }
+
+    private final void setUpgradesButtonSelected(boolean z) {
+        int i;
+        int i2;
+        TextView textView = this.binding.btnUpgrades;
+        if (UtilsKt.isArizonaType()) {
+            textView.setText(textView.getContext().getString(R.string.inventory_equipment_tab));
+            textView.setContentDescription(textView.getText());
+            textView.setTextColor(z ? Color.rgb(18, 21, 22) : -1);
+            if (z) {
+                i2 = R.drawable.ic_btn_equipment_white;
+            } else {
+                i2 = R.drawable.ic_btn_equipment;
+            }
+            textView.setBackgroundResource(i2);
+            return;
+        }
+        textView.setText("");
+        textView.setContentDescription(null);
+        if (z) {
+            i = R.drawable.ic_btn_upgrades_white;
+        } else {
+            i = R.drawable.ic_btn_upgrades;
+        }
+        textView.setBackgroundResource(i);
     }
 }

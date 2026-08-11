@@ -8,7 +8,7 @@ import kotlinx.serialization.descriptors.SerialDescriptor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JsonElementMarker.kt */
 @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public final /* synthetic */ class JsonElementMarker$origin$1 extends FunctionReferenceImpl implements Function2<SerialDescriptor, Integer, Boolean> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public JsonElementMarker$origin$1(Object obj) {

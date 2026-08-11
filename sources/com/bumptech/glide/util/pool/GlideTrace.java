@@ -2,7 +2,7 @@ package com.bumptech.glide.util.pool;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import okhttp3.internal.ws.WebSocketProtocol;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GlideTrace {
     private static final AtomicInteger COOKIE_CREATOR = null;
     private static final int MAX_LENGTH = 127;

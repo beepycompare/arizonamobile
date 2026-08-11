@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bank_tax_pay_all_item" android:layout_width="match_parent" android:layout_height="@dimen/_30sdp" android:layout_marginLeft="@dimen/_3sdp" android:layout_marginTop="@dimen/_8sdp" android:layout_marginRight="@dimen/_3sdp" android:layout_marginBottom="@dimen/_3sdp" android:layout_marginHorizontal="@dimen/_3sdp" app:backgroundMainColor="#fff000" app:corners="@dimen/_7sdp">
+    <TextView android:textSize="@dimen/_7sdp" android:textColor="#15182a" android:gravity="center" android:id="@+id/bank_tax_pay_all_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/bank_pay_all_taxes" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

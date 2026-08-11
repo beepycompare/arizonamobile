@@ -258,7 +258,7 @@ public final class ChatEmoji {
         if (charSequence == null) {
             return new SpannableString("");
         }
-        return RichTextBarSpanKt.withRichTextBars(applyIconFont(withItemIcons(tagsColor(tagsHtml(parseEmojiInText(charSequence))), f), f, f2));
+        return RichTextColorBoxSpanKt.withRichTextColorBoxes(RichTextBarSpanKt.withRichTextBars(applyIconFont(withItemIcons(tagsColor(tagsHtml(parseEmojiInText(charSequence))), f), f, f2)));
     }
 
     private final SpannableString withItemIcons(SpannableString spannableString, float f) {

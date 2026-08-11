@@ -26,6 +26,7 @@
             <ImageView android:layout_width="@dimen/_56sdp" android:layout_height="@dimen/_56sdp" android:src="@drawable/ic_empty_tasks" android:contentDescription="@null"/>
             <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/winter_bp_pink_text_dark" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_8sdp" android:text="@string/battlepass_all_tasks_completed" android:fontFamily="@font/heading_now_64_regular"/>
         </LinearLayout>
+        <ProgressBar android:layout_gravity="center" android:id="@+id/rodina_tasks_loading" android:visibility="gone" android:layout_width="@dimen/_32sdp" android:layout_height="@dimen/_32sdp" android:indeterminate="true" style="?android:attr/progressBarStyle"/>
     </FrameLayout>
     <Space android:layout_width="@dimen/_19sdp" android:layout_height="match_parent"/>
     <LinearLayout android:orientation="vertical" android:id="@+id/rodina_tasks_right_panel" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="6">
@@ -55,7 +56,7 @@
                     <androidx.recyclerview.widget.RecyclerView android:orientation="horizontal" android:id="@+id/rodina_tasks_rewards_list" android:layout_width="match_parent" android:layout_height="@dimen/_54sdp" android:layout_marginTop="@dimen/_6sdp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
                     <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
                     <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/rodina_tasks_claim_button" android:layout_width="match_parent" android:layout_height="@dimen/_22sdp" app:backgroundMainColor="@color/winter_bp_pink_info_surface_opaque" app:corners="@dimen/_4sdp">
-                        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/winter_bp_pink_text_dark" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/battlepass_claim" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_65"/>
+                        <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/winter_bp_pink_text_dark" android:gravity="center" android:id="@+id/rodina_tasks_claim_button_text" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/battlepass_claim" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_65"/>
                     </ru.mrlargha.commonui.utils.ui.CustomCardView>
                 </LinearLayout>
             </ru.mrlargha.commonui.utils.ui.CustomCardView>

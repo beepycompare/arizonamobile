@@ -96,8 +96,9 @@ public final class WindowInsetsControllerCompat {
         this.mImpl.removeOnControllableInsetsChangedListener(onControllableInsetsChangedListener);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    private static class Impl {
+    public static class Impl {
         static final int KEY_BEHAVIOR = 356039078;
 
         void addOnControllableInsetsChangedListener(OnControllableInsetsChangedListener onControllableInsetsChangedListener) {

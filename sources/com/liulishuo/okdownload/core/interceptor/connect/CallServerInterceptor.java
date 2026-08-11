@@ -5,7 +5,7 @@ import com.liulishuo.okdownload.core.connection.DownloadConnection;
 import com.liulishuo.okdownload.core.download.DownloadChain;
 import com.liulishuo.okdownload.core.interceptor.Interceptor;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CallServerInterceptor implements Interceptor.Connect {
     @Override // com.liulishuo.okdownload.core.interceptor.Interceptor.Connect
     public DownloadConnection.Connected interceptConnect(DownloadChain downloadChain) throws IOException {

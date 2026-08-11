@@ -4,7 +4,7 @@ import com.google.common.net.HttpHeaders;
 import com.liulishuo.okdownload.core.connection.DownloadConnection;
 import java.io.IOException;
 import java.net.ProtocolException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RedirectUtil {
     static final int HTTP_PERMANENT_REDIRECT = 308;
     static final int HTTP_TEMPORARY_REDIRECT = 307;

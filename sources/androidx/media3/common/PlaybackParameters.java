@@ -3,7 +3,7 @@ package androidx.media3.common;
 import android.os.Bundle;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class PlaybackParameters {
     public final float pitch;
     private final int scaledUsPerMs;

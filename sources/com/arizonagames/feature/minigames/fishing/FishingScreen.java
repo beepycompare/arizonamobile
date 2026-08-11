@@ -232,7 +232,7 @@ public final class FishingScreen extends SAMPUIElement {
             layoutParams.matchConstraintDefaultWidth = 0;
             layoutParams.matchConstraintPercentWidth = 1.0f;
             layoutParams.dimensionRatio = COMPUTER_GRID_ASPECT_RATIO;
-            layoutParams.verticalBias = COMPUTER_GRID_VERTICAL_BIAS;
+            layoutParams.verticalBias = 0.45f;
         }
         constraintLayout.setLayoutParams(layoutParams);
     }

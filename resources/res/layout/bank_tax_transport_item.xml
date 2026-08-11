@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bank_tax_transport_item" android:background="@drawable/bank_tax_card_blue" android:layout_width="match_parent" android:layout_height="@dimen/_70sdp" android:layout_marginLeft="@dimen/_3sdp" android:layout_marginTop="@dimen/_2sdp" android:layout_marginRight="@dimen/_3sdp" android:layout_marginBottom="@dimen/_2sdp" android:layout_marginHorizontal="@dimen/_3sdp" android:layout_marginVertical="@dimen/_2sdp">
+    <ImageView android:id="@+id/bank_tax_image" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:alpha="0.92"/>
+    <FrameLayout android:id="@+id/bank_tax_transport_content" android:paddingTop="@dimen/_10sdp" android:paddingBottom="@dimen/_10sdp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/_12sdp" android:paddingEnd="@dimen/_12sdp">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <TextView android:textSize="@dimen/_8sdp" android:textColor="#ffffff" android:id="@+id/bank_tax_transport_title" android:layout_width="@dimen/_80sdp" android:layout_height="wrap_content" android:text="ОПЛАТИТЬ НАЛОГИ НА ТРАНСПОРТ" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <TextView android:textSize="@dimen/_8sdp" android:textColor="#fff1d8" android:gravity="bottom" android:id="@+id/bank_tax_transport_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4 325" android:includeFontPadding="false" android:layout_weight="1" android:fontFamily="@font/heading_now_66_bold"/>
+        </LinearLayout>
+    </FrameLayout>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/bank_tax_transport_disabled_overlay" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#33000000" app:corners="@dimen/_8sdp"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|top" android:id="@+id/bank_tax_transport_lock" android:visibility="gone" android:layout_width="@dimen/_15sdp" android:layout_height="@dimen/_15sdp" android:layout_marginTop="@dimen/_5sdp" android:layout_marginEnd="@dimen/_5sdp" app:backgroundMainColor="#000000" app:corners="@dimen/_5sdp">
+        <ImageView android:layout_gravity="center" android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_8sdp" android:src="@drawable/ic_lock" android:tint="#ffffff"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

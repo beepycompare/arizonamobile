@@ -5,11 +5,11 @@ import java.io.InputStream;
 import java.net.ProtocolException;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface DownloadConnection {
     public static final int NO_RESPONSE_CODE = 0;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Connected {
         InputStream getInputStream() throws IOException;
 
@@ -22,7 +22,7 @@ public interface DownloadConnection {
         Map<String, List<String>> getResponseHeaderFields();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface Factory {
         DownloadConnection create(String str) throws IOException;
     }

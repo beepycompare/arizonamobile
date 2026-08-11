@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 import me.relex.circleindicator.BaseCircleIndicator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CircleIndicator3 extends BaseCircleIndicator {
     private final RecyclerView.AdapterDataObserver mAdapterDataObserver;
     private final ViewPager2.OnPageChangeCallback mInternalPageChangeCallback;

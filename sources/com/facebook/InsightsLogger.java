@@ -6,7 +6,7 @@ import com.facebook.internal.Logger;
 import java.math.BigDecimal;
 import java.util.Currency;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class InsightsLogger {
     private static final String EVENT_NAME_LOG_CONVERSION_PIXEL = "fb_log_offsite_pixel";
     private static final String EVENT_PARAMETER_PIXEL_ID = "fb_offsite_pixel_id";

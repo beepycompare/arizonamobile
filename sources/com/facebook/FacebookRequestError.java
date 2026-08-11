@@ -5,7 +5,7 @@ import com.facebook.internal.Utility;
 import java.net.HttpURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class FacebookRequestError {
     private static final String BODY_KEY = "body";
     private static final String CODE_KEY = "code";
@@ -50,7 +50,7 @@ public final class FacebookRequestError {
     private static final Range HTTP_RANGE_CLIENT_ERROR = new Range(400, 499, null);
     private static final Range HTTP_RANGE_SERVER_ERROR = new Range(500, 599, null);
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Category {
         AUTHENTICATION_RETRY,
         AUTHENTICATION_REOPEN_SESSION,
@@ -71,7 +71,7 @@ public final class FacebookRequestError {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class Range {
         private final int end;
         private final int start;

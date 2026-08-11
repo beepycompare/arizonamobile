@@ -33,26 +33,26 @@ public final class SingleOnErrorReturn$subscribe$wrappedObserver$1<T> implements
     /* JADX WARN: Multi-variable type inference failed */
     @Override // ru.rustore.sdk.reactive.single.SingleObserver
     public void onError(Throwable e) {
-        Object m9898constructorimpl;
+        Object m9915constructorimpl;
         Function1 function1;
         Intrinsics.checkNotNullParameter(e, "e");
         if (this.disposed.compareAndSet(false, true)) {
             try {
                 Result.Companion companion = Result.Companion;
                 function1 = ((SingleOnErrorReturn) this.this$0).mapper;
-                m9898constructorimpl = Result.m9898constructorimpl(function1.invoke(e));
+                m9915constructorimpl = Result.m9915constructorimpl(function1.invoke(e));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
             }
             SingleObserver<T> singleObserver = this.$downstream;
-            if (Result.m9905isSuccessimpl(m9898constructorimpl)) {
-                singleObserver.onSuccess(m9898constructorimpl);
+            if (Result.m9922isSuccessimpl(m9915constructorimpl)) {
+                singleObserver.onSuccess(m9915constructorimpl);
             }
             SingleObserver<T> singleObserver2 = this.$downstream;
-            Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
-            if (m9901exceptionOrNullimpl != null) {
-                singleObserver2.onError(m9901exceptionOrNullimpl);
+            Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
+            if (m9918exceptionOrNullimpl != null) {
+                singleObserver2.onError(m9918exceptionOrNullimpl);
             }
         }
     }

@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DownloadTask extends IdentifiedTask implements Comparable<DownloadTask> {
     private final boolean autoCallbackToUIThread;
     private final Integer connectionCount;
@@ -349,7 +349,7 @@ public class DownloadTask extends IdentifiedTask implements Comparable<DownloadT
         return downloadTask.getPriority() - getPriority();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         public static final boolean DEFAULT_AUTO_CALLBACK_TO_UI_THREAD = true;
         public static final int DEFAULT_FLUSH_BUFFER_SIZE = 16384;
@@ -546,7 +546,7 @@ public class DownloadTask extends IdentifiedTask implements Comparable<DownloadT
         return new MockTaskForCompare(i, this);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class TaskHideWrapper {
         public static long getLastCallbackProcessTs(DownloadTask downloadTask) {
             return downloadTask.getLastCallbackProcessTs();
@@ -561,7 +561,7 @@ public class DownloadTask extends IdentifiedTask implements Comparable<DownloadT
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class MockTaskForCompare extends IdentifiedTask {
         final String filename;
         final int id;

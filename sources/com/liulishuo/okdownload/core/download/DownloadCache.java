@@ -10,7 +10,7 @@ import com.liulishuo.okdownload.core.exception.ServerCanceledException;
 import com.liulishuo.okdownload.core.file.MultiPointOutputStream;
 import java.io.IOException;
 import java.net.SocketException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DownloadCache {
     private volatile boolean fileBusyAfterRun;
     private final MultiPointOutputStream outputStream;
@@ -141,7 +141,7 @@ public class DownloadCache {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static class PreError extends DownloadCache {
         /* JADX INFO: Access modifiers changed from: package-private */
         public PreError(IOException iOException) {

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.json.JSONException;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public class IabHelper {
     public static final int BILLING_RESPONSE_RESULT_BILLING_UNAVAILABLE = 3;
     public static final int BILLING_RESPONSE_RESULT_DEVELOPER_ERROR = 5;
@@ -67,27 +67,27 @@ public class IabHelper {
     boolean mAsyncInProgress = false;
     String mAsyncOperation = "";
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface OnConsumeFinishedListener {
         void onConsumeFinished(Purchase purchase, IabResult iabResult);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface OnConsumeMultiFinishedListener {
         void onConsumeMultiFinished(List<Purchase> list, List<IabResult> list2);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface OnIabPurchaseFinishedListener {
         void onIabPurchaseFinished(IabResult iabResult, Purchase purchase);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface OnIabSetupFinishedListener {
         void onIabSetupFinished(IabResult iabResult);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface QueryInventoryFinishedListener {
         void onQueryInventoryFinished(IabResult iabResult, Inventory inventory);
     }

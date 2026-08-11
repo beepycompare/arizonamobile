@@ -3,7 +3,7 @@ package com.liulishuo.okdownload.core.breakpoint;
 import android.util.SparseArray;
 import com.liulishuo.okdownload.DownloadTask;
 import java.util.HashMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class KeyToIdMap {
     private final SparseArray<String> idToKeyMap;
     private final HashMap<String, Integer> keyToIdMap;

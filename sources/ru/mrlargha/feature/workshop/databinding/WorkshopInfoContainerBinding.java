@@ -3,7 +3,7 @@ package ru.mrlargha.feature.workshop.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -11,19 +11,19 @@ import ru.mrlargha.feature.workshop.R;
 /* loaded from: classes6.dex */
 public final class WorkshopInfoContainerBinding implements ViewBinding {
     public final WorkshopInfoBinding info;
-    private final FrameLayout rootView;
+    private final LinearLayout rootView;
     public final RecyclerView rvColors;
     public final WorkshopChanceCostInfoBinding sharpingInfoContainer;
 
-    private WorkshopInfoContainerBinding(FrameLayout frameLayout, WorkshopInfoBinding workshopInfoBinding, RecyclerView recyclerView, WorkshopChanceCostInfoBinding workshopChanceCostInfoBinding) {
-        this.rootView = frameLayout;
+    private WorkshopInfoContainerBinding(LinearLayout linearLayout, WorkshopInfoBinding workshopInfoBinding, RecyclerView recyclerView, WorkshopChanceCostInfoBinding workshopChanceCostInfoBinding) {
+        this.rootView = linearLayout;
         this.info = workshopInfoBinding;
         this.rvColors = recyclerView;
         this.sharpingInfoContainer = workshopChanceCostInfoBinding;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public FrameLayout getRoot() {
+    public LinearLayout getRoot() {
         return this.rootView;
     }
 
@@ -48,7 +48,7 @@ public final class WorkshopInfoContainerBinding implements ViewBinding {
             int i2 = R.id.rvColors;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i2);
             if (recyclerView != null && (findChildViewById = ViewBindings.findChildViewById(view, (i2 = R.id.sharping_info_container))) != null) {
-                return new WorkshopInfoContainerBinding((FrameLayout) view, bind, recyclerView, WorkshopChanceCostInfoBinding.bind(findChildViewById));
+                return new WorkshopInfoContainerBinding((LinearLayout) view, bind, recyclerView, WorkshopChanceCostInfoBinding.bind(findChildViewById));
             }
             i = i2;
         }

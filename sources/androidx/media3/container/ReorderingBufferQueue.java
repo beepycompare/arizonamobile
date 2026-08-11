@@ -8,7 +8,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class ReorderingBufferQueue {
     private BuffersWithTimestamp lastQueuedBuffer;
     private final OutputConsumer outputConsumer;
@@ -17,7 +17,7 @@ public final class ReorderingBufferQueue {
     private final PriorityQueue<BuffersWithTimestamp> pendingBuffers = new PriorityQueue<>();
     private int reorderingQueueSize = -1;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface OutputConsumer {
         void consume(long j, ParsableByteArray parsableByteArray);
     }
@@ -100,7 +100,7 @@ public final class ReorderingBufferQueue {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class BuffersWithTimestamp implements Comparable<BuffersWithTimestamp> {
         public long presentationTimeUs = C.TIME_UNSET;
         public final List<ParsableByteArray> nalBuffers = new ArrayList();

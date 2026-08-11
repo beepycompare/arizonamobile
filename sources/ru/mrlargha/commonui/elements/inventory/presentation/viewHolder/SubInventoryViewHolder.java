@@ -1,7 +1,7 @@
 package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 
+import android.graphics.Bitmap;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,14 +31,17 @@ import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
 import ru.mrlargha.commonui.utils.ArizonaBlockType;
 import ru.mrlargha.commonui.utils.InventoryDragState;
+import ru.mrlargha.commonui.utils.InventoryIconRequest;
 import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: SubInventoryViewHolder.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001BK\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\u0011\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\tJ\b\u0010\u0013\u001a\u00020\u0007H\u0002J\b\u0010\u0014\u001a\u00020\u0007H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/SubInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;", "onItemDropped", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "", "onLongClicked", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "onItemClicked", "<init>", "(Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "countDownTimer", "Landroid/os/CountDownTimer;", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "itemVal", "setDefaultCell", "setGreyColor", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u00002\u00020\u0001BK\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005¢\u0006\u0004\b\u000b\u0010\fJ\u000e\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u0015\u001a\u00020\tJ\u0006\u0010\u0016\u001a\u00020\u0007J\u0010\u0010\u0017\u001a\u00020\u00072\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\b\u0010\u001a\u001a\u00020\u0007H\u0002J\b\u0010\u001b\u001a\u00020\u0007H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/SubInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;", "onItemDropped", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "", "onLongClicked", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "onItemClicked", "<init>", "(Lru/mrlargha/commonui/databinding/ItemSubInventoryBinding;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "countDownTimer", "Landroid/os/CountDownTimer;", "loadImageJob", "Lkotlinx/coroutines/Job;", "imageRequestGeneration", "", "effectLoadJob", "bind", "itemVal", "recycle", "clearAsyncResources", "clearEffects", "", "setDefaultCell", "setGreyColor", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
     private final ItemSubInventoryBinding binding;
     private CountDownTimer countDownTimer;
+    private Job effectLoadJob;
+    private long imageRequestGeneration;
     private Job loadImageJob;
     private final Function1<InventoryItem, Unit> onItemClicked;
     private final Function1<DraggedItem, Unit> onItemDropped;
@@ -58,18 +61,15 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         this.onItemClicked = onItemClicked;
     }
 
-    /* JADX WARN: Type inference failed for: r1v51, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
+    /* JADX WARN: Type inference failed for: r0v51, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
     public final void bind(final InventoryItem itemVal) {
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         final ItemSubInventoryBinding itemSubInventoryBinding = this.binding;
+        clearAsyncResources(false);
         TextView tvItemNum = itemSubInventoryBinding.tvItemNum;
         Intrinsics.checkNotNullExpressionValue(tvItemNum, "tvItemNum");
         tvItemNum.setVisibility(8);
-        Job job = this.loadImageJob;
-        if (job != null) {
-            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
-        }
         if (itemVal.getItem() != null) {
             ImageView ivItemImage = itemSubInventoryBinding.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
@@ -83,9 +83,18 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
             TextView tvDescriptionText = itemSubInventoryBinding.tvDescriptionText;
             Intrinsics.checkNotNullExpressionValue(tvDescriptionText, "tvDescriptionText");
             tvDescriptionText.setVisibility(0);
-            itemSubInventoryBinding.tvDescriptionText.setText(itemVal.getText());
-            launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new SubInventoryViewHolder$bind$1$1(itemSubInventoryBinding, this, itemVal, null), 3, null);
-            this.loadImageJob = launch$default;
+            itemSubInventoryBinding.tvDescriptionText.setText(UtilKt.inventoryItemDisplayText(itemVal.getText(), itemVal.getItem_type(), itemVal.getEnchant()));
+            itemSubInventoryBinding.ivItemImage.setImageResource(R.drawable.ic_empty_item);
+            InventoryIconRequest inventoryIconRequest = UtilsKt.toInventoryIconRequest(itemVal, false);
+            Bitmap cachedInventoryIcon = inventoryIconRequest != null ? UtilsKt.getCachedInventoryIcon(inventoryIconRequest) : null;
+            if (cachedInventoryIcon != null) {
+                ImageView ivItemImage2 = itemSubInventoryBinding.ivItemImage;
+                Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
+                UtilsKt.setImage(ivItemImage2, cachedInventoryIcon);
+            } else if (inventoryIconRequest != null) {
+                launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new SubInventoryViewHolder$bind$1$1(this.imageRequestGeneration, this, itemSubInventoryBinding, inventoryIconRequest, null), 3, null);
+                this.loadImageJob = launch$default;
+            }
             itemSubInventoryBinding.getRoot().setOnLongClickListener(new View.OnLongClickListener() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
@@ -99,7 +108,6 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
             TextView tvDescriptionText2 = itemSubInventoryBinding.tvDescriptionText;
             Intrinsics.checkNotNullExpressionValue(tvDescriptionText2, "tvDescriptionText");
             tvDescriptionText2.setVisibility(8);
-            Log.d("sub_inventory", "bind: " + itemVal.getSlot() + ": " + getPosition());
             int inventoryType = itemVal.getInventoryType();
             if (inventoryType == RodinaBlockType.BLOCK_TYPE_IMPROV.getId() || inventoryType == ArizonaBlockType.BLOCK_TYPE_IMPROV.getId() || inventoryType == ArizonaBlockType.BLOCK_TYPE_USER_PREVIEW_IMPROV.getId()) {
                 if (getPosition() == 0 && UtilsKt.isArizonaType()) {
@@ -197,6 +205,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
             if (countDownTimer3 != null) {
                 countDownTimer3.cancel();
             }
+            this.countDownTimer = null;
         }
         Integer available = itemVal.getAvailable();
         if (available != null && available.intValue() == 0) {
@@ -208,7 +217,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         View viewColored = itemSubInventoryBinding.viewColored;
         Intrinsics.checkNotNullExpressionValue(viewColored, "viewColored");
         viewColored.setVisibility(itemVal.isColored() ? 0 : 8);
-        UtilKt.setInventoryItemEffect(itemSubInventoryBinding, itemVal.getItem());
+        this.effectLoadJob = UtilKt.setInventoryItemEffect(itemSubInventoryBinding, itemVal);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -260,6 +269,34 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void bind$lambda$0$2(SubInventoryViewHolder subInventoryViewHolder, InventoryItem inventoryItem, View view) {
         subInventoryViewHolder.onItemClicked.invoke(inventoryItem);
+    }
+
+    public final void recycle() {
+        clearAsyncResources(true);
+    }
+
+    private final void clearAsyncResources(boolean z) {
+        ItemSubInventoryBinding itemSubInventoryBinding = this.binding;
+        this.imageRequestGeneration++;
+        Job job = this.loadImageJob;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
+        this.loadImageJob = null;
+        Job job2 = this.effectLoadJob;
+        if (job2 != null) {
+            Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
+        }
+        this.effectLoadJob = null;
+        CountDownTimer countDownTimer = this.countDownTimer;
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+        this.countDownTimer = null;
+        itemSubInventoryBinding.ivItemImage.setImageDrawable(null);
+        if (z) {
+            UtilKt.clearInventoryItemEffect(itemSubInventoryBinding);
+        }
     }
 
     private final void setDefaultCell() {

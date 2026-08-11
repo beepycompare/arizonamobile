@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreakpointSQLiteHelper extends SQLiteOpenHelper {
     private static final String BLOCK_TABLE_NAME = "block";
     private static final String BREAKPOINT_TABLE_NAME = "breakpoint";

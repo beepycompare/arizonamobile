@@ -24,6 +24,8 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
     public final TextView itemLevelBtnPremiumText;
     public final CustomCardView itemLevelBtnUsually;
     public final TextView itemLevelBtnUsuallyText;
+    public final CustomCardView itemLevelDescriptionPremium;
+    public final CustomCardView itemLevelDescriptionUsually;
     public final ImageView itemLevelIcPremium;
     public final ImageView itemLevelIcUsually;
     public final ImageView itemLevelLockPremium;
@@ -48,7 +50,7 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
     public final CustomCardView viewAfterLevel;
     public final CustomCardView viewBeforeLevel;
 
-    private WinterBattlepassLevelItemBinding(LinearLayout linearLayout, View view, View view2, View view3, View view4, FrameLayout frameLayout, CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, TextView textView, CustomCardView customCardView4, TextView textView2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, TextView textView3, TextView textView4, FrameLayout frameLayout2, CustomCardView customCardView5, LinearLayout linearLayout2, LinearLayout linearLayout3, FrameLayout frameLayout3, CustomCardView customCardView6, ImageView imageView5, TextView textView5, CustomCardView customCardView7, CustomCardView customCardView8, CustomCardView customCardView9, TextView textView6, TextView textView7, CustomCardView customCardView10, CustomCardView customCardView11, CustomCardView customCardView12) {
+    private WinterBattlepassLevelItemBinding(LinearLayout linearLayout, View view, View view2, View view3, View view4, FrameLayout frameLayout, CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, TextView textView, CustomCardView customCardView4, TextView textView2, CustomCardView customCardView5, CustomCardView customCardView6, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, TextView textView3, TextView textView4, FrameLayout frameLayout2, CustomCardView customCardView7, LinearLayout linearLayout2, LinearLayout linearLayout3, FrameLayout frameLayout3, CustomCardView customCardView8, ImageView imageView5, TextView textView5, CustomCardView customCardView9, CustomCardView customCardView10, CustomCardView customCardView11, TextView textView6, TextView textView7, CustomCardView customCardView12, CustomCardView customCardView13, CustomCardView customCardView14) {
         this.rootView = linearLayout;
         this.boost1 = view;
         this.boost2 = view2;
@@ -61,6 +63,8 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
         this.itemLevelBtnPremiumText = textView;
         this.itemLevelBtnUsually = customCardView4;
         this.itemLevelBtnUsuallyText = textView2;
+        this.itemLevelDescriptionPremium = customCardView5;
+        this.itemLevelDescriptionUsually = customCardView6;
         this.itemLevelIcPremium = imageView;
         this.itemLevelIcUsually = imageView2;
         this.itemLevelLockPremium = imageView3;
@@ -68,21 +72,21 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
         this.itemLevelNamePremium = textView3;
         this.itemLevelNameUsually = textView4;
         this.itemLevelPremiumContainer = frameLayout2;
-        this.itemLevelPremiumContainerFull = customCardView5;
+        this.itemLevelPremiumContainerFull = customCardView7;
         this.itemLevelReceivedPremium = linearLayout2;
         this.itemLevelReceivedUsually = linearLayout3;
         this.itemLevelUsuallyContainer = frameLayout3;
-        this.itemLevelUsuallyContainerFull = customCardView6;
+        this.itemLevelUsuallyContainerFull = customCardView8;
         this.levelContainer = imageView5;
         this.levelText = textView5;
-        this.premiumContainerCount = customCardView7;
-        this.qualityButton = customCardView8;
-        this.qualityButton1 = customCardView9;
+        this.premiumContainerCount = customCardView9;
+        this.qualityButton = customCardView10;
+        this.qualityButton1 = customCardView11;
         this.tvPremiumCount = textView6;
         this.tvUsuallyCount = textView7;
-        this.usuallyCountContainer = customCardView10;
-        this.viewAfterLevel = customCardView11;
-        this.viewBeforeLevel = customCardView12;
+        this.usuallyCountContainer = customCardView12;
+        this.viewAfterLevel = customCardView13;
+        this.viewBeforeLevel = customCardView14;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -130,73 +134,81 @@ public final class WinterBattlepassLevelItemBinding implements ViewBinding {
                                     i = R.id.item_level_btn_usually_text;
                                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView2 != null) {
-                                        i = R.id.item_level_ic_premium;
-                                        ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
-                                        if (imageView != null) {
-                                            i = R.id.item_level_ic_usually;
-                                            ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                            if (imageView2 != null) {
-                                                i = R.id.item_level_lock_premium;
-                                                ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                if (imageView3 != null) {
-                                                    i = R.id.item_level_lock_usually;
-                                                    ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                    if (imageView4 != null) {
-                                                        i = R.id.item_level_name_premium;
-                                                        TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                        if (textView3 != null) {
-                                                            i = R.id.item_level_name_usually;
-                                                            TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                            if (textView4 != null) {
-                                                                i = R.id.item_level_premium_container;
-                                                                FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
-                                                                if (frameLayout2 != null) {
-                                                                    i = R.id.item_level_premium_container_full;
-                                                                    CustomCardView customCardView5 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                    if (customCardView5 != null) {
-                                                                        i = R.id.item_level_received_premium;
-                                                                        LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                                        if (linearLayout != null) {
-                                                                            i = R.id.item_level_received_usually;
-                                                                            LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                                            if (linearLayout2 != null) {
-                                                                                i = R.id.item_level_usually_container;
-                                                                                FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(view, i);
-                                                                                if (frameLayout3 != null) {
-                                                                                    i = R.id.item_level_usually_container_full;
-                                                                                    CustomCardView customCardView6 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                                    if (customCardView6 != null) {
-                                                                                        i = R.id.level_container;
-                                                                                        ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(view, i);
-                                                                                        if (imageView5 != null) {
-                                                                                            i = R.id.level_text;
-                                                                                            TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                            if (textView5 != null) {
-                                                                                                i = R.id.premium_container_count;
-                                                                                                CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                                                if (customCardView7 != null) {
-                                                                                                    i = R.id.quality_button;
-                                                                                                    CustomCardView customCardView8 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                                                    if (customCardView8 != null) {
-                                                                                                        i = R.id.quality_button1;
+                                        i = R.id.item_level_description_premium;
+                                        CustomCardView customCardView5 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                        if (customCardView5 != null) {
+                                            i = R.id.item_level_description_usually;
+                                            CustomCardView customCardView6 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                            if (customCardView6 != null) {
+                                                i = R.id.item_level_ic_premium;
+                                                ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                if (imageView != null) {
+                                                    i = R.id.item_level_ic_usually;
+                                                    ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                    if (imageView2 != null) {
+                                                        i = R.id.item_level_lock_premium;
+                                                        ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                        if (imageView3 != null) {
+                                                            i = R.id.item_level_lock_usually;
+                                                            ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                            if (imageView4 != null) {
+                                                                i = R.id.item_level_name_premium;
+                                                                TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                if (textView3 != null) {
+                                                                    i = R.id.item_level_name_usually;
+                                                                    TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                    if (textView4 != null) {
+                                                                        i = R.id.item_level_premium_container;
+                                                                        FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
+                                                                        if (frameLayout2 != null) {
+                                                                            i = R.id.item_level_premium_container_full;
+                                                                            CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                            if (customCardView7 != null) {
+                                                                                i = R.id.item_level_received_premium;
+                                                                                LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                if (linearLayout != null) {
+                                                                                    i = R.id.item_level_received_usually;
+                                                                                    LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                                                    if (linearLayout2 != null) {
+                                                                                        i = R.id.item_level_usually_container;
+                                                                                        FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(view, i);
+                                                                                        if (frameLayout3 != null) {
+                                                                                            i = R.id.item_level_usually_container_full;
+                                                                                            CustomCardView customCardView8 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                                            if (customCardView8 != null) {
+                                                                                                i = R.id.level_container;
+                                                                                                ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                                                                                if (imageView5 != null) {
+                                                                                                    i = R.id.level_text;
+                                                                                                    TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                    if (textView5 != null) {
+                                                                                                        i = R.id.premium_container_count;
                                                                                                         CustomCardView customCardView9 = (CustomCardView) ViewBindings.findChildViewById(view, i);
                                                                                                         if (customCardView9 != null) {
-                                                                                                            i = R.id.tv_premium_count;
-                                                                                                            TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                            if (textView6 != null) {
-                                                                                                                i = R.id.tv_usually_count;
-                                                                                                                TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                                if (textView7 != null) {
-                                                                                                                    i = R.id.usually_count_container;
-                                                                                                                    CustomCardView customCardView10 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                                                                    if (customCardView10 != null) {
-                                                                                                                        i = R.id.view_after_level;
-                                                                                                                        CustomCardView customCardView11 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                                                                        if (customCardView11 != null) {
-                                                                                                                            i = R.id.view_before_level;
+                                                                                                            i = R.id.quality_button;
+                                                                                                            CustomCardView customCardView10 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                                                            if (customCardView10 != null) {
+                                                                                                                i = R.id.quality_button1;
+                                                                                                                CustomCardView customCardView11 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                                                                if (customCardView11 != null) {
+                                                                                                                    i = R.id.tv_premium_count;
+                                                                                                                    TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                    if (textView6 != null) {
+                                                                                                                        i = R.id.tv_usually_count;
+                                                                                                                        TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                                        if (textView7 != null) {
+                                                                                                                            i = R.id.usually_count_container;
                                                                                                                             CustomCardView customCardView12 = (CustomCardView) ViewBindings.findChildViewById(view, i);
                                                                                                                             if (customCardView12 != null) {
-                                                                                                                                return new WinterBattlepassLevelItemBinding((LinearLayout) view, findChildViewById4, findChildViewById, findChildViewById2, findChildViewById3, frameLayout, customCardView, customCardView2, customCardView3, textView, customCardView4, textView2, imageView, imageView2, imageView3, imageView4, textView3, textView4, frameLayout2, customCardView5, linearLayout, linearLayout2, frameLayout3, customCardView6, imageView5, textView5, customCardView7, customCardView8, customCardView9, textView6, textView7, customCardView10, customCardView11, customCardView12);
+                                                                                                                                i = R.id.view_after_level;
+                                                                                                                                CustomCardView customCardView13 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                if (customCardView13 != null) {
+                                                                                                                                    i = R.id.view_before_level;
+                                                                                                                                    CustomCardView customCardView14 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                                                                                    if (customCardView14 != null) {
+                                                                                                                                        return new WinterBattlepassLevelItemBinding((LinearLayout) view, findChildViewById4, findChildViewById, findChildViewById2, findChildViewById3, frameLayout, customCardView, customCardView2, customCardView3, textView, customCardView4, textView2, customCardView5, customCardView6, imageView, imageView2, imageView3, imageView4, textView3, textView4, frameLayout2, customCardView7, linearLayout, linearLayout2, frameLayout3, customCardView8, imageView5, textView5, customCardView9, customCardView10, customCardView11, textView6, textView7, customCardView12, customCardView13, customCardView14);
+                                                                                                                                    }
+                                                                                                                                }
                                                                                                                             }
                                                                                                                         }
                                                                                                                     }

@@ -16,7 +16,7 @@ public final class InventoryPersonSectionBinding implements ViewBinding {
     public final ImageView btnAccessories;
     public final ImageView btnSetLeft;
     public final ImageView btnSetRight;
-    public final ImageView btnUpgrades;
+    public final TextView btnUpgrades;
     public final ImageView btnWallet;
     public final FrameLayout layoutAcsUpg;
     public final LinearLayout linearButtons;
@@ -28,7 +28,7 @@ public final class InventoryPersonSectionBinding implements ViewBinding {
     public final LinearLayout setContainer;
     public final TextView tvSetNumber;
 
-    private InventoryPersonSectionBinding(LinearLayout rootView, ImageView btnAccessories, ImageView btnSetLeft, ImageView btnSetRight, ImageView btnUpgrades, ImageView btnWallet, FrameLayout layoutAcsUpg, LinearLayout linearButtons, RecyclerView rvAccessoriesInventory, RecyclerView rvSubInventory, RecyclerView rvUpgradesInventory, RecyclerView rvWalletInventory, LinearLayout setContainer, TextView tvSetNumber) {
+    private InventoryPersonSectionBinding(LinearLayout rootView, ImageView btnAccessories, ImageView btnSetLeft, ImageView btnSetRight, TextView btnUpgrades, ImageView btnWallet, FrameLayout layoutAcsUpg, LinearLayout linearButtons, RecyclerView rvAccessoriesInventory, RecyclerView rvSubInventory, RecyclerView rvUpgradesInventory, RecyclerView rvWalletInventory, LinearLayout setContainer, TextView tvSetNumber) {
         this.rootView = rootView;
         this.btnAccessories = btnAccessories;
         this.btnSetLeft = btnSetLeft;
@@ -73,11 +73,11 @@ public final class InventoryPersonSectionBinding implements ViewBinding {
                 ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                 if (imageView3 != null) {
                     i = R.id.btnUpgrades;
-                    ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                    if (imageView4 != null) {
+                    TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView != null) {
                         i = R.id.btnWallet;
-                        ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                        if (imageView5 != null) {
+                        ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                        if (imageView4 != null) {
                             i = R.id.layoutAcsUpg;
                             FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
                             if (frameLayout != null) {
@@ -100,9 +100,9 @@ public final class InventoryPersonSectionBinding implements ViewBinding {
                                                     LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                                                     if (linearLayout2 != null) {
                                                         i = R.id.tv_set_number;
-                                                        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                        if (textView != null) {
-                                                            return new InventoryPersonSectionBinding((LinearLayout) rootView, imageView, imageView2, imageView3, imageView4, imageView5, frameLayout, linearLayout, recyclerView, recyclerView2, recyclerView3, recyclerView4, linearLayout2, textView);
+                                                        TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                        if (textView2 != null) {
+                                                            return new InventoryPersonSectionBinding((LinearLayout) rootView, imageView, imageView2, imageView3, textView, imageView4, frameLayout, linearLayout, recyclerView, recyclerView2, recyclerView3, recyclerView4, linearLayout2, textView2);
                                                         }
                                                     }
                                                 }

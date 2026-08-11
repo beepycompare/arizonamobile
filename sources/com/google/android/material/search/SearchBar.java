@@ -647,7 +647,7 @@ public class SearchBar extends Toolbar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startOnLoadAnimation$0$com-google-android-material-search-SearchBar  reason: not valid java name */
-    public /* synthetic */ void m9585x9ebe9dc4() {
+    public /* synthetic */ void m9602x9ebe9dc4() {
         this.searchBarAnimationHelper.startOnLoadAnimation(this);
     }
 
@@ -655,7 +655,7 @@ public class SearchBar extends Toolbar {
         post(new Runnable() { // from class: com.google.android.material.search.SearchBar$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SearchBar.this.m9585x9ebe9dc4();
+                SearchBar.this.m9602x9ebe9dc4();
             }
         });
     }

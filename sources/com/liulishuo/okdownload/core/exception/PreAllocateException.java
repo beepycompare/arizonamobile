@@ -1,7 +1,7 @@
 package com.liulishuo.okdownload.core.exception;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class PreAllocateException extends IOException {
     private final long freeSpace;
     private final long requireSpace;

@@ -13,12 +13,12 @@ import kotlinx.serialization.ExperimentalSerializationApi;
 @ExperimentalSerializationApi
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.PROPERTY})
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes.dex */
+/* loaded from: classes6.dex */
 public @interface JsonNames {
 
     /* compiled from: JsonAnnotations.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    /* loaded from: classes.dex */
+    /* loaded from: classes6.dex */
     public static final /* synthetic */ class Impl implements JsonNames {
         private final /* synthetic */ String[] names;
 

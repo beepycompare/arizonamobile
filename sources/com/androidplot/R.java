@@ -143,7 +143,7 @@ public final class R {
         public static int ap_gray = 0x7f06001f;
         public static int ap_transparent = 0x7f060020;
         public static int ap_white = 0x7f060021;
-        public static int off_white = 0x7f06041b;
+        public static int off_white = 0x7f060428;
 
         private color() {
         }
@@ -157,36 +157,36 @@ public final class R {
         public static int absolute_from_left = 0x7f0a0012;
         public static int absolute_from_right = 0x7f0a0013;
         public static int absolute_from_top = 0x7f0a0014;
-        public static int bar = 0x7f0a0196;
-        public static int bottom_middle = 0x7f0a0210;
-        public static int candlestick = 0x7f0a0306;
-        public static int center = 0x7f0a0378;
-        public static int fill = 0x7f0a05a9;
-        public static int increment_by_pixels = 0x7f0a077b;
-        public static int increment_by_val = 0x7f0a077c;
-        public static int left = 0x7f0a089c;
-        public static int left_bottom = 0x7f0a08a9;
-        public static int left_middle = 0x7f0a08b9;
-        public static int left_top = 0x7f0a08c0;
-        public static int line_and_point = 0x7f0a08dc;
-        public static int negative_ninety_degrees = 0x7f0a0a8f;
-        public static int ninety_degrees = 0x7f0a0a9c;
-        public static int none = 0x7f0a0aa2;
-        public static int one_hundred_eighty_degrees = 0x7f0a0ac8;
-        public static int relative = 0x7f0a0c2e;
-        public static int relative_from_bottom = 0x7f0a0c2f;
-        public static int relative_from_center = 0x7f0a0c30;
-        public static int relative_from_left = 0x7f0a0c31;
-        public static int relative_from_right = 0x7f0a0c32;
-        public static int relative_from_top = 0x7f0a0c33;
-        public static int right = 0x7f0a0c60;
-        public static int right_bottom = 0x7f0a0c6d;
-        public static int right_middle = 0x7f0a0c7b;
-        public static int right_top = 0x7f0a0c80;
-        public static int subdivide = 0x7f0a0e87;
-        public static int top_middle = 0x7f0a0f72;
-        public static int use_background_thread = 0x7f0a10e4;
-        public static int use_main_thread = 0x7f0a10e5;
+        public static int bar = 0x7f0a02d5;
+        public static int bottom_middle = 0x7f0a034f;
+        public static int candlestick = 0x7f0a0448;
+        public static int center = 0x7f0a04bf;
+        public static int fill = 0x7f0a06ff;
+        public static int increment_by_pixels = 0x7f0a08d9;
+        public static int increment_by_val = 0x7f0a08da;
+        public static int left = 0x7f0a09ff;
+        public static int left_bottom = 0x7f0a0a0c;
+        public static int left_middle = 0x7f0a0a1c;
+        public static int left_top = 0x7f0a0a23;
+        public static int line_and_point = 0x7f0a0a41;
+        public static int negative_ninety_degrees = 0x7f0a0bf4;
+        public static int ninety_degrees = 0x7f0a0c02;
+        public static int none = 0x7f0a0c08;
+        public static int one_hundred_eighty_degrees = 0x7f0a0c2e;
+        public static int relative = 0x7f0a0d9b;
+        public static int relative_from_bottom = 0x7f0a0d9c;
+        public static int relative_from_center = 0x7f0a0d9d;
+        public static int relative_from_left = 0x7f0a0d9e;
+        public static int relative_from_right = 0x7f0a0d9f;
+        public static int relative_from_top = 0x7f0a0da0;
+        public static int right = 0x7f0a0dcf;
+        public static int right_bottom = 0x7f0a0ddc;
+        public static int right_middle = 0x7f0a0dea;
+        public static int right_top = 0x7f0a0def;
+        public static int subdivide = 0x7f0a0ffd;
+        public static int top_middle = 0x7f0a10ed;
+        public static int use_background_thread = 0x7f0a1260;
+        public static int use_main_thread = 0x7f0a1261;
 
         private id() {
         }
@@ -197,10 +197,10 @@ public final class R {
         public static int APDefacto = 0x7f130001;
         public static int APDefacto_Dark = 0x7f130002;
         public static int APDefacto_Light = 0x7f130003;
-        public static int FullScreenGraph = 0x7f13016a;
-        public static int FullScreenGraph_Minimalist = 0x7f13016b;
-        public static int FullScreenGraph_Minimalist_Dark = 0x7f13016c;
-        public static int FullScreenGraph_Minimalist_Light = 0x7f13016d;
+        public static int FullScreenGraph = 0x7f13017b;
+        public static int FullScreenGraph_Minimalist = 0x7f13017c;
+        public static int FullScreenGraph_Minimalist_Dark = 0x7f13017d;
+        public static int FullScreenGraph_Minimalist_Light = 0x7f13017e;
 
         private style() {
         }

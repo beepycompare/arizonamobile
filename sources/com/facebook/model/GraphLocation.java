@@ -1,5 +1,5 @@
 package com.facebook.model;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public interface GraphLocation extends GraphObject {
     String getCity();
 

@@ -8,7 +8,7 @@ import com.liulishuo.okdownload.core.cause.ResumeFailedCause;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DownloadListenerBunch implements DownloadListener {
     final DownloadListener[] listenerList;
 
@@ -116,7 +116,7 @@ public class DownloadListenerBunch implements DownloadListener {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         private List<DownloadListener> listenerList = new ArrayList();
 

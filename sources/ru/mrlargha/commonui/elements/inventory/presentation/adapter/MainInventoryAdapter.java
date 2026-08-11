@@ -23,9 +23,10 @@ import ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInven
 import ru.mrlargha.commonui.utils.ConstantsKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: MainInventoryAdapter.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 \u001e2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0002\u001e\u001fB\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\u0013\u001a\u00020\u00142\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00020\u0016J\u0018\u0010\u0017\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u000eH\u0016J\u0018\u0010\u001b\u001a\u00020\u00142\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u000eH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\b\u001a\u00020\tX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\n\"\u0004\b\u000b\u0010\fR\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012¨\u0006 "}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder;", "params", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;)V", "isWalletVisible", "", "()Z", "setWalletVisible", "(Z)V", "maxItems", "", "getMaxItems", "()I", "setMaxItems", "(I)V", "submit", "", "list", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "Companion", "Params", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u0000 $2\u000e\u0012\u0004\u0012\u00020\u0002\u0012\u0004\u0012\u00020\u00030\u0001:\u0002$%B\u000f\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0014\u0010\u0015\u001a\u00020\u00162\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00020\u0018J\u0018\u0010\u0019\u001a\u00020\u00032\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u0010H\u0016J\u0018\u0010\u001d\u001a\u00020\u00162\u0006\u0010\u001e\u001a\u00020\u00032\u0006\u0010\u001f\u001a\u00020\u0010H\u0016J\u0010\u0010 \u001a\u00020\u00162\u0006\u0010\u001e\u001a\u00020\u0003H\u0016J$\u0010!\u001a\u00020\u00162\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00020\u00182\f\u0010#\u001a\b\u0012\u0004\u0012\u00020\u00020\u0018H\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\u0010X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014¨\u0006&"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter;", "Landroidx/recyclerview/widget/ListAdapter;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder;", "params", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "<init>", "(Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;)V", "iconPreloader", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/InventoryIconPreloader;", "isWalletVisible", "", "()Z", "setWalletVisible", "(Z)V", "maxItems", "", "getMaxItems", "()I", "setMaxItems", "(I)V", "submit", "", "list", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "onViewRecycled", "onCurrentListChanged", "previousList", "currentList", "Companion", "Params", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainInventoryViewHolder> {
+    private final InventoryIconPreloader iconPreloader;
     private boolean isWalletVisible;
     private int maxItems;
     private final Params params;
@@ -51,6 +52,7 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
         super(COMPARATOR);
         Intrinsics.checkNotNullParameter(params, "params");
         this.params = params;
+        this.iconPreloader = new InventoryIconPreloader();
         this.maxItems = -1;
     }
 
@@ -96,7 +98,7 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
         Intrinsics.checkNotNullParameter(parent, "parent");
         ItemInventoryBinding inflate = ItemInventoryBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
-        return new MainInventoryViewHolder(inflate, new Params(this.params.getOnItemDropped(), this.params.getRecyclerView(), this.params.getContext(), this.params.getOnLongClicked(), this.params.getOnItemClicked(), this.params.getOnDragPageEdgeChanged()));
+        return new MainInventoryViewHolder(inflate, new Params(this.params.getOnItemDropped(), this.params.getRecyclerView(), this.params.getContext(), this.params.getOnLongClicked(), this.params.getOnItemClicked(), this.params.getOnDragPageEdgeChanged(), this.params.getOnDragEnded()));
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -114,6 +116,21 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
         holder.bind(item, this.isWalletVisible);
     }
 
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onViewRecycled(MainInventoryViewHolder holder) {
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        holder.recycle();
+        super.onViewRecycled((MainInventoryAdapter) holder);
+    }
+
+    @Override // androidx.recyclerview.widget.ListAdapter
+    public void onCurrentListChanged(List<InventoryItem> previousList, List<InventoryItem> currentList) {
+        Intrinsics.checkNotNullParameter(previousList, "previousList");
+        Intrinsics.checkNotNullParameter(currentList, "currentList");
+        super.onCurrentListChanged(previousList, currentList);
+        this.iconPreloader.preload(currentList, !UtilsKt.isArizonaType());
+    }
+
     /* compiled from: MainInventoryAdapter.kt */
     @Metadata(d1 = {"\u0000\u0013\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\b\u0003*\u0001\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0010\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Companion;", "", "<init>", "()V", "COMPARATOR", "ru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Companion$COMPARATOR$1", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Companion$COMPARATOR$1;", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
@@ -127,20 +144,21 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
     }
 
     /* compiled from: MainInventoryAdapter.kt */
-    @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0013\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001Bm\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003\u0012\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003\u0012\u0014\b\u0002\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\u000f\u0010\u0010J\u0015\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\t\u0010\u001b\u001a\u00020\u0007HÆ\u0003J\t\u0010\u001c\u001a\u00020\tHÆ\u0003J\u0015\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\u0015\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\u0015\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003Ju\u0010 \u001a\u00020\u00002\u0014\b\u0002\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u00032\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u00032\u0014\b\u0002\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0001J\u0014\u0010!\u001a\u00020\"2\b\u0010#\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010$\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010%\u001a\u00020&HÖ\u0081\u0004R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u001d\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0012R\u001d\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0012R\u001d\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0012¨\u0006'"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "", "onItemDropped", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "", "recyclerView", "Landroidx/recyclerview/widget/RecyclerView;", "context", "Landroid/content/Context;", "onLongClicked", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "onItemClicked", "onDragPageEdgeChanged", "", "<init>", "(Lkotlin/jvm/functions/Function1;Landroidx/recyclerview/widget/RecyclerView;Landroid/content/Context;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "getOnItemDropped", "()Lkotlin/jvm/functions/Function1;", "getRecyclerView", "()Landroidx/recyclerview/widget/RecyclerView;", "getContext", "()Landroid/content/Context;", "getOnLongClicked", "getOnItemClicked", "getOnDragPageEdgeChanged", "component1", "component2", "component3", "component4", "component5", "component6", "copy", "equals", "", "other", "hashCode", "toString", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0016\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u0083\u0001\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003\u0012\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003\u0012\u0014\b\u0002\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003\u0012\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\u0010\u0010\u0011J\u0015\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\t\u0010\u001d\u001a\u00020\u0007HÆ\u0003J\t\u0010\u001e\u001a\u00020\tHÆ\u0003J\u0015\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\u0015\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\u0015\u0010!\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\u0015\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0003J\u008b\u0001\u0010#\u001a\u00020\u00002\u0014\b\u0002\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u00032\u0014\b\u0002\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u00032\u0014\b\u0002\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u00032\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003HÆ\u0001J\u0014\u0010$\u001a\u00020%2\b\u0010&\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010'\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010(\u001a\u00020)HÖ\u0081\u0004R\u001d\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u001d\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0013R\u001d\u0010\f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0013R\u001d\u0010\r\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0013R\u001d\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0013¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "", "onItemDropped", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/DraggedItem;", "", "recyclerView", "Landroidx/recyclerview/widget/RecyclerView;", "context", "Landroid/content/Context;", "onLongClicked", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "onItemClicked", "onDragPageEdgeChanged", "", "onDragEnded", "<init>", "(Lkotlin/jvm/functions/Function1;Landroidx/recyclerview/widget/RecyclerView;Landroid/content/Context;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V", "getOnItemDropped", "()Lkotlin/jvm/functions/Function1;", "getRecyclerView", "()Landroidx/recyclerview/widget/RecyclerView;", "getContext", "()Landroid/content/Context;", "getOnLongClicked", "getOnItemClicked", "getOnDragPageEdgeChanged", "getOnDragEnded", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "copy", "equals", "", "other", "hashCode", "toString", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Params {
         private final Context context;
+        private final Function1<InventoryItem, Unit> onDragEnded;
         private final Function1<Integer, Unit> onDragPageEdgeChanged;
         private final Function1<InventoryItem, Unit> onItemClicked;
         private final Function1<DraggedItem, Unit> onItemDropped;
         private final Function1<InventoryItem, Unit> onLongClicked;
         private final RecyclerView recyclerView;
 
-        public static /* synthetic */ Params copy$default(Params params, Function1 function1, RecyclerView recyclerView, Context context, Function1 function12, Function1 function13, Function1 function14, int i, Object obj) {
-            Function1<DraggedItem, Unit> function15 = function1;
+        public static /* synthetic */ Params copy$default(Params params, Function1 function1, RecyclerView recyclerView, Context context, Function1 function12, Function1 function13, Function1 function14, Function1 function15, int i, Object obj) {
+            Function1<DraggedItem, Unit> function16 = function1;
             if ((i & 1) != 0) {
-                function15 = params.onItemDropped;
+                function16 = params.onItemDropped;
             }
             if ((i & 2) != 0) {
                 recyclerView = params.recyclerView;
@@ -148,21 +166,27 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
             if ((i & 4) != 0) {
                 context = params.context;
             }
-            Function1<InventoryItem, Unit> function16 = function12;
+            Function1<InventoryItem, Unit> function17 = function12;
             if ((i & 8) != 0) {
-                function16 = params.onLongClicked;
+                function17 = params.onLongClicked;
             }
-            Function1<InventoryItem, Unit> function17 = function13;
+            Function1<InventoryItem, Unit> function18 = function13;
             if ((i & 16) != 0) {
-                function17 = params.onItemClicked;
+                function18 = params.onItemClicked;
             }
-            Function1<Integer, Unit> function18 = function14;
+            Function1<Integer, Unit> function19 = function14;
             if ((i & 32) != 0) {
-                function18 = params.onDragPageEdgeChanged;
+                function19 = params.onDragPageEdgeChanged;
             }
-            Function1 function19 = function17;
-            Function1 function110 = function18;
-            return params.copy(function15, recyclerView, context, function16, function19, function110);
+            Function1<InventoryItem, Unit> function110 = function15;
+            if ((i & 64) != 0) {
+                function110 = params.onDragEnded;
+            }
+            Function1 function111 = function19;
+            Function1 function112 = function110;
+            Function1 function113 = function18;
+            Context context2 = context;
+            return params.copy(function16, recyclerView, context2, function17, function113, function111, function112);
         }
 
         public final Function1<DraggedItem, Unit> component1() {
@@ -189,14 +213,19 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
             return this.onDragPageEdgeChanged;
         }
 
-        public final Params copy(Function1<? super DraggedItem, Unit> onItemDropped, RecyclerView recyclerView, Context context, Function1<? super InventoryItem, Unit> onLongClicked, Function1<? super InventoryItem, Unit> onItemClicked, Function1<? super Integer, Unit> onDragPageEdgeChanged) {
+        public final Function1<InventoryItem, Unit> component7() {
+            return this.onDragEnded;
+        }
+
+        public final Params copy(Function1<? super DraggedItem, Unit> onItemDropped, RecyclerView recyclerView, Context context, Function1<? super InventoryItem, Unit> onLongClicked, Function1<? super InventoryItem, Unit> onItemClicked, Function1<? super Integer, Unit> onDragPageEdgeChanged, Function1<? super InventoryItem, Unit> onDragEnded) {
             Intrinsics.checkNotNullParameter(onItemDropped, "onItemDropped");
             Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
             Intrinsics.checkNotNullParameter(context, "context");
             Intrinsics.checkNotNullParameter(onLongClicked, "onLongClicked");
             Intrinsics.checkNotNullParameter(onItemClicked, "onItemClicked");
             Intrinsics.checkNotNullParameter(onDragPageEdgeChanged, "onDragPageEdgeChanged");
-            return new Params(onItemDropped, recyclerView, context, onLongClicked, onItemClicked, onDragPageEdgeChanged);
+            Intrinsics.checkNotNullParameter(onDragEnded, "onDragEnded");
+            return new Params(onItemDropped, recyclerView, context, onLongClicked, onItemClicked, onDragPageEdgeChanged, onDragEnded);
         }
 
         public boolean equals(Object obj) {
@@ -205,13 +234,13 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
             }
             if (obj instanceof Params) {
                 Params params = (Params) obj;
-                return Intrinsics.areEqual(this.onItemDropped, params.onItemDropped) && Intrinsics.areEqual(this.recyclerView, params.recyclerView) && Intrinsics.areEqual(this.context, params.context) && Intrinsics.areEqual(this.onLongClicked, params.onLongClicked) && Intrinsics.areEqual(this.onItemClicked, params.onItemClicked) && Intrinsics.areEqual(this.onDragPageEdgeChanged, params.onDragPageEdgeChanged);
+                return Intrinsics.areEqual(this.onItemDropped, params.onItemDropped) && Intrinsics.areEqual(this.recyclerView, params.recyclerView) && Intrinsics.areEqual(this.context, params.context) && Intrinsics.areEqual(this.onLongClicked, params.onLongClicked) && Intrinsics.areEqual(this.onItemClicked, params.onItemClicked) && Intrinsics.areEqual(this.onDragPageEdgeChanged, params.onDragPageEdgeChanged) && Intrinsics.areEqual(this.onDragEnded, params.onDragEnded);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((((((this.onItemDropped.hashCode() * 31) + this.recyclerView.hashCode()) * 31) + this.context.hashCode()) * 31) + this.onLongClicked.hashCode()) * 31) + this.onItemClicked.hashCode()) * 31) + this.onDragPageEdgeChanged.hashCode();
+            return (((((((((((this.onItemDropped.hashCode() * 31) + this.recyclerView.hashCode()) * 31) + this.context.hashCode()) * 31) + this.onLongClicked.hashCode()) * 31) + this.onItemClicked.hashCode()) * 31) + this.onDragPageEdgeChanged.hashCode()) * 31) + this.onDragEnded.hashCode();
         }
 
         public String toString() {
@@ -220,23 +249,26 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
             Context context = this.context;
             Function1<InventoryItem, Unit> function12 = this.onLongClicked;
             Function1<InventoryItem, Unit> function13 = this.onItemClicked;
-            return "Params(onItemDropped=" + function1 + ", recyclerView=" + recyclerView + ", context=" + context + ", onLongClicked=" + function12 + ", onItemClicked=" + function13 + ", onDragPageEdgeChanged=" + this.onDragPageEdgeChanged + ")";
+            Function1<Integer, Unit> function14 = this.onDragPageEdgeChanged;
+            return "Params(onItemDropped=" + function1 + ", recyclerView=" + recyclerView + ", context=" + context + ", onLongClicked=" + function12 + ", onItemClicked=" + function13 + ", onDragPageEdgeChanged=" + function14 + ", onDragEnded=" + this.onDragEnded + ")";
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        public Params(Function1<? super DraggedItem, Unit> onItemDropped, RecyclerView recyclerView, Context context, Function1<? super InventoryItem, Unit> onLongClicked, Function1<? super InventoryItem, Unit> onItemClicked, Function1<? super Integer, Unit> onDragPageEdgeChanged) {
+        public Params(Function1<? super DraggedItem, Unit> onItemDropped, RecyclerView recyclerView, Context context, Function1<? super InventoryItem, Unit> onLongClicked, Function1<? super InventoryItem, Unit> onItemClicked, Function1<? super Integer, Unit> onDragPageEdgeChanged, Function1<? super InventoryItem, Unit> onDragEnded) {
             Intrinsics.checkNotNullParameter(onItemDropped, "onItemDropped");
             Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
             Intrinsics.checkNotNullParameter(context, "context");
             Intrinsics.checkNotNullParameter(onLongClicked, "onLongClicked");
             Intrinsics.checkNotNullParameter(onItemClicked, "onItemClicked");
             Intrinsics.checkNotNullParameter(onDragPageEdgeChanged, "onDragPageEdgeChanged");
+            Intrinsics.checkNotNullParameter(onDragEnded, "onDragEnded");
             this.onItemDropped = onItemDropped;
             this.recyclerView = recyclerView;
             this.context = context;
             this.onLongClicked = onLongClicked;
             this.onItemClicked = onItemClicked;
             this.onDragPageEdgeChanged = onDragPageEdgeChanged;
+            this.onDragEnded = onDragEnded;
         }
 
         public final Function1<DraggedItem, Unit> getOnItemDropped() {
@@ -251,7 +283,7 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
             return this.context;
         }
 
-        public /* synthetic */ Params(Function1 function1, RecyclerView recyclerView, Context context, Function1 function12, Function1 function13, Function1 function14, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        public /* synthetic */ Params(Function1 function1, RecyclerView recyclerView, Context context, Function1 function12, Function1 function13, Function1 function14, Function1 function15, int i, DefaultConstructorMarker defaultConstructorMarker) {
             this(function1, recyclerView, context, (i & 8) != 0 ? new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.adapter.MainInventoryAdapter$Params$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj) {
@@ -270,7 +302,12 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
                     unit = Unit.INSTANCE;
                     return unit;
                 }
-            } : function14);
+            } : function14, (i & 64) != 0 ? new Function1() { // from class: ru.mrlargha.commonui.elements.inventory.presentation.adapter.MainInventoryAdapter$Params$$ExternalSyntheticLambda3
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    return MainInventoryAdapter.Params._init_$lambda$3((InventoryItem) obj);
+                }
+            } : function15);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -295,6 +332,16 @@ public final class MainInventoryAdapter extends ListAdapter<InventoryItem, MainI
 
         public final Function1<Integer, Unit> getOnDragPageEdgeChanged() {
             return this.onDragPageEdgeChanged;
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public static final Unit _init_$lambda$3(InventoryItem it) {
+            Intrinsics.checkNotNullParameter(it, "it");
+            return Unit.INSTANCE;
+        }
+
+        public final Function1<InventoryItem, Unit> getOnDragEnded() {
+            return this.onDragEnded;
         }
     }
 }

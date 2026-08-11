@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import com.facebook.AuthorizationClient;
 import com.facebook.android.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LoginActivity extends Activity {
     private static final String EXTRA_REQUEST = "request";
     private static final String NULL_CALLING_PKG_ERROR_MSG = "Cannot call LoginActivity with a null calling package. This can occur if the launchMode of the caller is singleInstance.";

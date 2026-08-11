@@ -8,10 +8,10 @@ import java.util.Map;
 import java.util.Set;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 class JsonUtil {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     private static final class JSONObjectEntry implements Map.Entry<String, Object> {
         private final String key;
         private final Object value;

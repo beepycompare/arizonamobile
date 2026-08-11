@@ -2,7 +2,7 @@ package androidx.media3.common.text;
 
 import android.text.Spannable;
 import android.text.style.RelativeSizeSpan;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class SpanUtil {
     public static void addOrReplaceSpan(Spannable spannable, Object obj, int i, int i2, int i3) {
         for (Object obj2 : spannable.getSpans(i, i2, obj.getClass())) {

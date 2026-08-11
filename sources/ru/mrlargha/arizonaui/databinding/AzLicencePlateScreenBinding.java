@@ -15,6 +15,7 @@ public final class AzLicencePlateScreenBinding implements ViewBinding {
     public final TextView adviceDescription;
     public final AppCompatImageView adviceIc;
     public final TextView adviceTitle;
+    public final AzArizonaPlateScreenBinding arizonaPlateScreen;
     public final AppCompatImageView backButton;
     public final Guideline bottomLine;
     public final AzByPlateScreenBinding byPlateScreen;
@@ -39,11 +40,12 @@ public final class AzLicencePlateScreenBinding implements ViewBinding {
     public final AzAmericanPlateNumberScreenBinding usaPlatesScreen;
     public final TextView usaPriceText;
 
-    private AzLicencePlateScreenBinding(ConstraintLayout constraintLayout, TextView textView, AppCompatImageView appCompatImageView, TextView textView2, AppCompatImageView appCompatImageView2, Guideline guideline, AzByPlateScreenBinding azByPlateScreenBinding, ConstraintLayout constraintLayout2, AzChooseRegionScreenBinding azChooseRegionScreenBinding, TextView textView3, AzKzPlateScreenBinding azKzPlateScreenBinding, Guideline guideline2, ConstraintLayout constraintLayout3, AppCompatImageView appCompatImageView3, ConstraintLayout constraintLayout4, Guideline guideline3, Guideline guideline4, AzRusPlateScreenBinding azRusPlateScreenBinding, ConstraintLayout constraintLayout5, TextView textView4, TextView textView5, Guideline guideline5, AzUaPlateScreenBinding azUaPlateScreenBinding, ConstraintLayout constraintLayout6, AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, TextView textView6) {
+    private AzLicencePlateScreenBinding(ConstraintLayout constraintLayout, TextView textView, AppCompatImageView appCompatImageView, TextView textView2, AzArizonaPlateScreenBinding azArizonaPlateScreenBinding, AppCompatImageView appCompatImageView2, Guideline guideline, AzByPlateScreenBinding azByPlateScreenBinding, ConstraintLayout constraintLayout2, AzChooseRegionScreenBinding azChooseRegionScreenBinding, TextView textView3, AzKzPlateScreenBinding azKzPlateScreenBinding, Guideline guideline2, ConstraintLayout constraintLayout3, AppCompatImageView appCompatImageView3, ConstraintLayout constraintLayout4, Guideline guideline3, Guideline guideline4, AzRusPlateScreenBinding azRusPlateScreenBinding, ConstraintLayout constraintLayout5, TextView textView4, TextView textView5, Guideline guideline5, AzUaPlateScreenBinding azUaPlateScreenBinding, ConstraintLayout constraintLayout6, AzAmericanPlateNumberScreenBinding azAmericanPlateNumberScreenBinding, TextView textView6) {
         this.rootView = constraintLayout;
         this.adviceDescription = textView;
         this.adviceIc = appCompatImageView;
         this.adviceTitle = textView2;
+        this.arizonaPlateScreen = azArizonaPlateScreenBinding;
         this.backButton = appCompatImageView2;
         this.bottomLine = guideline;
         this.byPlateScreen = azByPlateScreenBinding;
@@ -92,6 +94,7 @@ public final class AzLicencePlateScreenBinding implements ViewBinding {
         View findChildViewById4;
         View findChildViewById5;
         View findChildViewById6;
+        View findChildViewById7;
         int i = R.id.advice_description;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
@@ -100,22 +103,23 @@ public final class AzLicencePlateScreenBinding implements ViewBinding {
             if (appCompatImageView != null) {
                 i = R.id.advice_title;
                 TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
-                if (textView2 != null) {
+                if (textView2 != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = R.id.arizona_plate_screen))) != null) {
+                    AzArizonaPlateScreenBinding bind = AzArizonaPlateScreenBinding.bind(findChildViewById);
                     i = R.id.back_button;
                     AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView2 != null) {
                         i = R.id.bottom_line;
                         Guideline guideline = (Guideline) ViewBindings.findChildViewById(view, i);
-                        if (guideline != null && (findChildViewById = ViewBindings.findChildViewById(view, (i = R.id.by_plate_screen))) != null) {
-                            AzByPlateScreenBinding bind = AzByPlateScreenBinding.bind(findChildViewById);
+                        if (guideline != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = R.id.by_plate_screen))) != null) {
+                            AzByPlateScreenBinding bind2 = AzByPlateScreenBinding.bind(findChildViewById2);
                             i = R.id.choose_plate_container;
                             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
-                            if (constraintLayout != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = R.id.choose_region_screen))) != null) {
-                                AzChooseRegionScreenBinding bind2 = AzChooseRegionScreenBinding.bind(findChildViewById2);
+                            if (constraintLayout != null && (findChildViewById3 = ViewBindings.findChildViewById(view, (i = R.id.choose_region_screen))) != null) {
+                                AzChooseRegionScreenBinding bind3 = AzChooseRegionScreenBinding.bind(findChildViewById3);
                                 i = R.id.cis_price_text;
                                 TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
-                                if (textView3 != null && (findChildViewById3 = ViewBindings.findChildViewById(view, (i = R.id.kz_plate_screen))) != null) {
-                                    AzKzPlateScreenBinding bind3 = AzKzPlateScreenBinding.bind(findChildViewById3);
+                                if (textView3 != null && (findChildViewById4 = ViewBindings.findChildViewById(view, (i = R.id.kz_plate_screen))) != null) {
+                                    AzKzPlateScreenBinding bind4 = AzKzPlateScreenBinding.bind(findChildViewById4);
                                     i = R.id.left_line;
                                     Guideline guideline2 = (Guideline) ViewBindings.findChildViewById(view, i);
                                     if (guideline2 != null) {
@@ -131,8 +135,8 @@ public final class AzLicencePlateScreenBinding implements ViewBinding {
                                                 if (guideline3 != null) {
                                                     i = R.id.right_line;
                                                     Guideline guideline4 = (Guideline) ViewBindings.findChildViewById(view, i);
-                                                    if (guideline4 != null && (findChildViewById4 = ViewBindings.findChildViewById(view, (i = R.id.rus_plate_screen))) != null) {
-                                                        AzRusPlateScreenBinding bind4 = AzRusPlateScreenBinding.bind(findChildViewById4);
+                                                    if (guideline4 != null && (findChildViewById5 = ViewBindings.findChildViewById(view, (i = R.id.rus_plate_screen))) != null) {
+                                                        AzRusPlateScreenBinding bind5 = AzRusPlateScreenBinding.bind(findChildViewById5);
                                                         i = R.id.sng_plate_main_button;
                                                         ConstraintLayout constraintLayout4 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                                                         if (constraintLayout4 != null) {
@@ -144,16 +148,16 @@ public final class AzLicencePlateScreenBinding implements ViewBinding {
                                                                 if (textView5 != null) {
                                                                     i = R.id.top_line;
                                                                     Guideline guideline5 = (Guideline) ViewBindings.findChildViewById(view, i);
-                                                                    if (guideline5 != null && (findChildViewById5 = ViewBindings.findChildViewById(view, (i = R.id.ua_plate_screen))) != null) {
-                                                                        AzUaPlateScreenBinding bind5 = AzUaPlateScreenBinding.bind(findChildViewById5);
+                                                                    if (guideline5 != null && (findChildViewById6 = ViewBindings.findChildViewById(view, (i = R.id.ua_plate_screen))) != null) {
+                                                                        AzUaPlateScreenBinding bind6 = AzUaPlateScreenBinding.bind(findChildViewById6);
                                                                         i = R.id.usa_plate_main_button;
                                                                         ConstraintLayout constraintLayout5 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
-                                                                        if (constraintLayout5 != null && (findChildViewById6 = ViewBindings.findChildViewById(view, (i = R.id.usa_plates_screen))) != null) {
-                                                                            AzAmericanPlateNumberScreenBinding bind6 = AzAmericanPlateNumberScreenBinding.bind(findChildViewById6);
+                                                                        if (constraintLayout5 != null && (findChildViewById7 = ViewBindings.findChildViewById(view, (i = R.id.usa_plates_screen))) != null) {
+                                                                            AzAmericanPlateNumberScreenBinding bind7 = AzAmericanPlateNumberScreenBinding.bind(findChildViewById7);
                                                                             i = R.id.usa_price_text;
                                                                             TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                             if (textView6 != null) {
-                                                                                return new AzLicencePlateScreenBinding(constraintLayout2, textView, appCompatImageView, textView2, appCompatImageView2, guideline, bind, constraintLayout, bind2, textView3, bind3, guideline2, constraintLayout2, appCompatImageView3, constraintLayout3, guideline3, guideline4, bind4, constraintLayout4, textView4, textView5, guideline5, bind5, constraintLayout5, bind6, textView6);
+                                                                                return new AzLicencePlateScreenBinding(constraintLayout2, textView, appCompatImageView, textView2, bind, appCompatImageView2, guideline, bind2, constraintLayout, bind3, textView3, bind4, guideline2, constraintLayout2, appCompatImageView3, constraintLayout3, guideline3, guideline4, bind5, constraintLayout4, textView4, textView5, guideline5, bind6, constraintLayout5, bind7, textView6);
                                                                             }
                                                                         }
                                                                     }

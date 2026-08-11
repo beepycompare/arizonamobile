@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 import me.relex.circleindicator.BaseCircleIndicator;
-/* loaded from: classes4.dex */
+/* loaded from: classes6.dex */
 public class CircleIndicator2 extends BaseCircleIndicator {
     private final RecyclerView.AdapterDataObserver mAdapterDataObserver;
     private final RecyclerView.OnScrollListener mInternalOnScrollListener;

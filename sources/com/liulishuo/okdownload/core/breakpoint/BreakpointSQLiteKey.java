@@ -1,5 +1,5 @@
 package com.liulishuo.okdownload.core.breakpoint;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface BreakpointSQLiteKey {
     public static final String BLOCK_INDEX = "block_index";
     public static final String CHUNKED = "chunked";

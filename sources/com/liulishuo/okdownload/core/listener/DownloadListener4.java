@@ -10,7 +10,7 @@ import com.liulishuo.okdownload.core.listener.assist.ListenerAssist;
 import com.liulishuo.okdownload.core.listener.assist.ListenerModelHandler;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class DownloadListener4 implements DownloadListener, Listener4Assist.Listener4Callback, ListenerAssist {
     final Listener4Assist assist;
 
@@ -80,7 +80,7 @@ public abstract class DownloadListener4 implements DownloadListener, Listener4As
         this.assist.taskEnd(downloadTask, endCause, exc);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static class Listener4ModelCreator implements ListenerModelHandler.ModelCreator<Listener4Assist.Listener4Model> {
         Listener4ModelCreator() {
         }

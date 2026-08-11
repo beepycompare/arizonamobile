@@ -1,8 +1,8 @@
 package com.davemorrissey.labs.subscaleview;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class R {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class attr {
         public static int assetName = 0x7f04004d;
         public static int panEnabled = 0x7f040503;
@@ -15,7 +15,7 @@ public final class R {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class styleable {
         public static int[] SubsamplingScaleImageView = {com.arizona21.game.R.attr.assetName, com.arizona21.game.R.attr.panEnabled, com.arizona21.game.R.attr.quickScaleEnabled, com.arizona21.game.R.attr.src, com.arizona21.game.R.attr.tileBackgroundColor, com.arizona21.game.R.attr.zoomEnabled};
         public static int SubsamplingScaleImageView_assetName = 0x00000000;

@@ -57,14 +57,14 @@ public final class MaterialCalendarGridView extends GridView {
         post(new Runnable() { // from class: com.google.android.material.datepicker.MaterialCalendarGridView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MaterialCalendarGridView.this.m9572x267001b4();
+                MaterialCalendarGridView.this.m9589x267001b4();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onAttachedToWindow$0$com-google-android-material-datepicker-MaterialCalendarGridView  reason: not valid java name */
-    public /* synthetic */ void m9572x267001b4() {
+    public /* synthetic */ void m9589x267001b4() {
         ensureFocusRingSelector(getAdapter2());
     }
 

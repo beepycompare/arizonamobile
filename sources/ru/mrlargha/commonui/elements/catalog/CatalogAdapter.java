@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.elements.catalog;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +27,10 @@ import ru.mrlargha.commonui.elements.hud.presentation.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: CatalogAdapter.kt */
-@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B#\u0012\u001a\b\u0002\u0010\u0003\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0004¢\u0006\u0004\b\b\u0010\tJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0006H\u0016J,\u0010\u0011\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\u00022\u001a\b\u0001\u0010\u0013\u001a\u00020\u0006:\u0010\b\u0014\u0012\f\b\u0015\u0012\b\b\fJ\u0004\b\b(\u0016H\u0016J\b\u0010\u0017\u001a\u00020\u0006H\u0016J\u0014\u0010\u0018\u001a\u00020\u00072\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u001aJ\u0014\u0010\u001b\u001a\u00020\u00072\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u001aJ\u0006\u0010\u001c\u001a\u00020\u0007J\u000e\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u0006J\u000e\u0010 \u001a\u00020\u00072\u0006\u0010\u0013\u001a\u00020\u0006R \u0010\u0003\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\n\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u000bj\b\u0012\u0004\u0012\u00020\u0005`\fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lru/mrlargha/commonui/elements/catalog/CatalogAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/catalog/CatalogItemViewHolder;", "onSelectItem", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/catalog/models/CatalogItemModel;", "", "", "<init>", "(Lkotlin/jvm/functions/Function2;)V", "catalogItemList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "Landroid/annotation/SuppressLint;", "value", "RecyclerView", "getItemCount", "setSearchItems", "catalogItems", "", "addCatalogItems", "clearCatalogItems", "removeItemById", "", "id", "selectCatalogItem", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001B#\u0012\u001a\b\u0002\u0010\u0003\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0004¢\u0006\u0004\b\b\u0010\tJ\u0018\u0010\u000f\u001a\u00020\u00022\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0006H\u0016J,\u0010\u0013\u001a\u00020\u00072\u0006\u0010\u0014\u001a\u00020\u00022\u001a\b\u0001\u0010\u0015\u001a\u00020\u0006:\u0010\b\u0016\u0012\f\b\u0017\u0012\b\b\fJ\u0004\b\b(\u0018H\u0016J\b\u0010\u0019\u001a\u00020\u0006H\u0016J\u0014\u0010\u001a\u001a\u00020\u00072\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00050\u001cJ\u0014\u0010\u001d\u001a\u00020\u00072\f\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00050\u001cJ\u0010\u0010\u001e\u001a\u00020\u00072\b\u0010\u001f\u001a\u0004\u0018\u00010\u000eJ\u0006\u0010 \u001a\u00020\u0007J\u000e\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020\u0006J\u000e\u0010$\u001a\u00020\u00072\u0006\u0010\u0015\u001a\u00020\u0006R \u0010\u0003\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\n\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u000bj\b\u0012\u0004\u0012\u00020\u0005`\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006%"}, d2 = {"Lru/mrlargha/commonui/elements/catalog/CatalogAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/catalog/CatalogItemViewHolder;", "onSelectItem", "Lkotlin/Function2;", "Lru/mrlargha/commonui/elements/catalog/models/CatalogItemModel;", "", "", "<init>", "(Lkotlin/jvm/functions/Function2;)V", "catalogItemList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "catalogImageBasePath", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "onBindViewHolder", "holder", "position", "Landroid/annotation/SuppressLint;", "value", "RecyclerView", "getItemCount", "setSearchItems", "catalogItems", "", "addCatalogItems", "setCatalogImageBasePath", "path", "clearCatalogItems", "removeItemById", "", "id", "selectCatalogItem", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHolder> {
+    private String catalogImageBasePath;
     private final ArrayList<CatalogItemModel> catalogItemList;
     private final Function2<CatalogItemModel, Integer, Unit> onSelectItem;
 
@@ -78,6 +80,12 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
         Intrinsics.checkNotNullExpressionValue(catalogItemModel, "get(...)");
         final CatalogItemModel catalogItemModel2 = catalogItemModel;
         final CatalogItemLayoutBinding binding = holder.getBinding();
+        ProgressBar catalogProgressBar = binding.catalogProgressBar;
+        Intrinsics.checkNotNullExpressionValue(catalogProgressBar, "catalogProgressBar");
+        catalogProgressBar.setVisibility(0);
+        ImageView catalogImage = binding.catalogImage;
+        Intrinsics.checkNotNullExpressionValue(catalogImage, "catalogImage");
+        catalogImage.setVisibility(8);
         if (catalogItemModel2.getColor() != null && ((color = catalogItemModel2.getColor()) == null || color.intValue() != -1)) {
             binding.getRoot().setBackground(UtilsKt.toRgb(catalogItemModel2.getColor().intValue()));
         } else {
@@ -107,40 +115,47 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
 
                 @Override // com.squareup.picasso.Callback
                 public void onSuccess() {
-                    ProgressBar catalogProgressBar = CatalogItemLayoutBinding.this.catalogProgressBar;
-                    Intrinsics.checkNotNullExpressionValue(catalogProgressBar, "catalogProgressBar");
-                    catalogProgressBar.setVisibility(8);
-                    ImageView catalogImage = CatalogItemLayoutBinding.this.catalogImage;
-                    Intrinsics.checkNotNullExpressionValue(catalogImage, "catalogImage");
-                    catalogImage.setVisibility(0);
+                    ProgressBar catalogProgressBar2 = CatalogItemLayoutBinding.this.catalogProgressBar;
+                    Intrinsics.checkNotNullExpressionValue(catalogProgressBar2, "catalogProgressBar");
+                    catalogProgressBar2.setVisibility(8);
+                    ImageView catalogImage2 = CatalogItemLayoutBinding.this.catalogImage;
+                    Intrinsics.checkNotNullExpressionValue(catalogImage2, "catalogImage");
+                    catalogImage2.setVisibility(0);
                 }
             });
         } else {
-            String str = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + (catalogItemModel2.getUrl() != null ? catalogItemModel2.getUrl() : "systems/battlepass/items/");
-            if (StringsKt.contains$default((CharSequence) catalogItemModel2.getImg(), (CharSequence) ".gif", false, 2, (Object) null)) {
-                ImageView catalogImage = binding.catalogImage;
-                Intrinsics.checkNotNullExpressionValue(catalogImage, "catalogImage");
-                ru.mrlargha.commonui.utils.UtilsKt.gifLoadFromCdn$default(catalogImage, str, null, 2, null);
-                ProgressBar catalogProgressBar = binding.catalogProgressBar;
-                Intrinsics.checkNotNullExpressionValue(catalogProgressBar, "catalogProgressBar");
-                catalogProgressBar.setVisibility(8);
+            final String buildCatalogImageUrl = CatalogImageUrlKt.buildCatalogImageUrl(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), catalogItemModel2.getImg(), catalogItemModel2.getUrl(), this.catalogImageBasePath);
+            if (StringsKt.endsWith(catalogItemModel2.getImg(), ".gif", true)) {
                 ImageView catalogImage2 = binding.catalogImage;
                 Intrinsics.checkNotNullExpressionValue(catalogImage2, "catalogImage");
-                catalogImage2.setVisibility(0);
+                ru.mrlargha.commonui.utils.UtilsKt.gifLoadFromCdn$default(catalogImage2, buildCatalogImageUrl, null, 2, null);
+                ProgressBar catalogProgressBar2 = binding.catalogProgressBar;
+                Intrinsics.checkNotNullExpressionValue(catalogProgressBar2, "catalogProgressBar");
+                catalogProgressBar2.setVisibility(8);
+                ImageView catalogImage3 = binding.catalogImage;
+                Intrinsics.checkNotNullExpressionValue(catalogImage3, "catalogImage");
+                catalogImage3.setVisibility(0);
             } else {
-                Picasso.get().load(str + catalogItemModel2.getImg()).error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$2
+                Picasso.get().load(buildCatalogImageUrl).error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$2
                     @Override // com.squareup.picasso.Callback
-                    public void onError(Exception exc) {
+                    public void onSuccess() {
+                        ProgressBar catalogProgressBar3 = CatalogItemLayoutBinding.this.catalogProgressBar;
+                        Intrinsics.checkNotNullExpressionValue(catalogProgressBar3, "catalogProgressBar");
+                        catalogProgressBar3.setVisibility(8);
+                        ImageView catalogImage4 = CatalogItemLayoutBinding.this.catalogImage;
+                        Intrinsics.checkNotNullExpressionValue(catalogImage4, "catalogImage");
+                        catalogImage4.setVisibility(0);
                     }
 
                     @Override // com.squareup.picasso.Callback
-                    public void onSuccess() {
-                        ProgressBar catalogProgressBar2 = CatalogItemLayoutBinding.this.catalogProgressBar;
-                        Intrinsics.checkNotNullExpressionValue(catalogProgressBar2, "catalogProgressBar");
-                        catalogProgressBar2.setVisibility(8);
-                        ImageView catalogImage3 = CatalogItemLayoutBinding.this.catalogImage;
-                        Intrinsics.checkNotNullExpressionValue(catalogImage3, "catalogImage");
-                        catalogImage3.setVisibility(0);
+                    public void onError(Exception exc) {
+                        Log.e("CatalogAdapter", "Unable to load catalog image: " + buildCatalogImageUrl, exc);
+                        ProgressBar catalogProgressBar3 = CatalogItemLayoutBinding.this.catalogProgressBar;
+                        Intrinsics.checkNotNullExpressionValue(catalogProgressBar3, "catalogProgressBar");
+                        catalogProgressBar3.setVisibility(8);
+                        ImageView catalogImage4 = CatalogItemLayoutBinding.this.catalogImage;
+                        Intrinsics.checkNotNullExpressionValue(catalogImage4, "catalogImage");
+                        catalogImage4.setVisibility(0);
                     }
                 });
             }
@@ -199,6 +214,22 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
         Intrinsics.checkNotNullParameter(catalogItems, "catalogItems");
         this.catalogItemList.addAll(catalogItems);
         notifyDataSetChanged();
+    }
+
+    public final void setCatalogImageBasePath(String str) {
+        String obj;
+        String str2 = null;
+        if (str != null && (obj = StringsKt.trim((CharSequence) str).toString()) != null && obj.length() > 0) {
+            str2 = obj;
+        }
+        if (Intrinsics.areEqual(this.catalogImageBasePath, str2)) {
+            return;
+        }
+        this.catalogImageBasePath = str2;
+        if (this.catalogItemList.isEmpty()) {
+            return;
+        }
+        notifyItemRangeChanged(0, this.catalogItemList.size());
     }
 
     public final void clearCatalogItems() {

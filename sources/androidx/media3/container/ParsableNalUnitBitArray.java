@@ -1,7 +1,7 @@
 package androidx.media3.container;
 
 import com.google.common.base.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class ParsableNalUnitBitArray {
     private int bitOffset;
     private int byteLimit;

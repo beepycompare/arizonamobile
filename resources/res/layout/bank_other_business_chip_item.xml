@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content" android:layout_height="match_parent" android:minWidth="@dimen/_64sdp" android:paddingStart="@dimen/_8sdp" android:paddingEnd="@dimen/_8sdp" android:layout_marginEnd="@dimen/_3sdp" app:backgroundMainColor="#ffffff" app:backgroundTransparency="0" app:corners="@dimen/_3sdp">
+    <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:gravity="center" android:layout_gravity="center" android:id="@+id/bank_other_id_chip_text" android:layout_width="wrap_content" android:layout_height="match_parent" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

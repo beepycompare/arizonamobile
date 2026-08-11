@@ -11,7 +11,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Arrays;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class TrackGroup {
     private static final String FIELD_FORMATS = Util.intToStringMaxRadix(0);
     private static final String FIELD_ID = Util.intToStringMaxRadix(1);

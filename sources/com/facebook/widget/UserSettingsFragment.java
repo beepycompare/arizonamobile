@@ -28,7 +28,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public class UserSettingsFragment extends FacebookFragment {
     private static final String FIELDS = "fields";
     private static final String ID = "id";

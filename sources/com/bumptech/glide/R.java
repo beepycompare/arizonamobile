@@ -1,10 +1,10 @@
 package com.bumptech.glide;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class R {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class id {
-        public static int glide_custom_view_target_tag = 0x7f0a060b;
+        public static int glide_custom_view_target_tag = 0x7f0a0762;
 
         private id() {
         }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content" android:layout_height="@dimen/_18sdp" android:layout_marginEnd="@dimen/_10sdp" app:backgroundMainColor="#00000000" app:corners="@dimen/_4sdp">
+    <TextView android:id="@+id/bank_main_account_tab_text" android:layout_width="wrap_content" android:layout_height="match_parent" android:paddingStart="@dimen/_12sdp" android:paddingEnd="@dimen/_12sdp" style="@style/BankTopAccountTabItemStyle"/>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

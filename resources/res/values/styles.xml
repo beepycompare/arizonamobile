@@ -143,6 +143,118 @@
     </style>
     <style name="AppTheme.PopupOverlay" parent="@style/ThemeOverlay.AppCompat.Light">
     </style>
+    <style name="BankAmountBaseStyle" parent="">
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankAmountGoldStyle" parent="@style/BankAmountBaseStyle">
+        <item name="android:textColor">#ffcb3c</item>
+    </style>
+    <style name="BankAmountMutedStyle" parent="@style/BankAmountBaseStyle">
+        <item name="android:textColor">#e8ecff</item>
+        <item name="android:alpha">0.82</item>
+    </style>
+    <style name="BankAmountPeachStyle" parent="@style/BankAmountBaseStyle">
+        <item name="android:textColor">#ffd0b3</item>
+    </style>
+    <style name="BankBadgeStyle" parent="">
+        <item name="android:textSize">@dimen/_6sdp</item>
+        <item name="android:textColor">#1a2036</item>
+        <item name="android:background">@drawable/bank_chip_placeholder</item>
+        <item name="android:paddingLeft">@dimen/_6sdp</item>
+        <item name="android:paddingTop">@dimen/_2sdp</item>
+        <item name="android:paddingRight">@dimen/_6sdp</item>
+        <item name="android:paddingBottom">@dimen/_2sdp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankBodyStyle" parent="">
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textColor">#f5f7ff</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/heading_now_64_regular</item>
+    </style>
+    <style name="BankButtonTextStyle" parent="">
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankCaptionStyle" parent="">
+        <item name="android:textSize">@dimen/_7sdp</item>
+        <item name="android:textColor">#c8d0ec</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/heading_now_64_regular</item>
+    </style>
+    <style name="BankCurrencyPercentBadgeStyle" parent="@style/BankWarningBadgeStyle">
+        <item name="android:textSize">@dimen/_5sdp</item>
+        <item name="android:paddingLeft">@dimen/_3sdp</item>
+        <item name="android:paddingTop">@dimen/_1sdp</item>
+        <item name="android:paddingRight">@dimen/_3sdp</item>
+        <item name="android:paddingBottom">@dimen/_1sdp</item>
+    </style>
+    <style name="BankHistoryHeaderTextStyle" parent="">
+        <item name="android:textSize">@dimen/_5sdp</item>
+        <item name="android:textColor">#93abba</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankHistoryRowTextStyle" parent="">
+        <item name="android:textSize">@dimen/_7sdp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankInfoChipStyle" parent="">
+        <item name="android:textSize">@dimen/_7sdp</item>
+        <item name="android:textColor">#21243a</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bank_chip_placeholder</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankSectionTitleStyle" parent="">
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/heading_now_65</item>
+    </style>
+    <style name="BankTabTextStyle" parent="">
+        <item name="android:textSize">@dimen/_9sdp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankTopAccountTabItemStyle" parent="">
+        <item name="android:textSize">@dimen/_7sdp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankTopTabTextStyle" parent="">
+        <item name="android:textSize">@dimen/_7sdp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+    </style>
+    <style name="BankWarningBadgeStyle" parent="@style/BankBadgeStyle">
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bank_warning_badge</item>
+    </style>
     <style name="Base.AlertDialog.AppCompat" parent="@android:style/Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="buttonIconDimen">@dimen/abc_alert_dialog_button_dimen</item>
@@ -8155,6 +8267,20 @@
         <item name="winterBpWelcomeIntroText">@string/battlepass_welcome_intro_arizona</item>
         <item name="winterBpWelcomeText">@color/winter_bp_white</item>
         <item name="winterBpWelcomeTextColors">#FFFFFFFF,#FFFFF600</item>
+    </style>
+    <style name="TradeCurrencyOptionTextStyle" parent="">
+        <item name="android:textSize">@dimen/_7sdp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:drawablePadding">@dimen/_4sdp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/heading_now_66_bold</item>
+        <item name="android:paddingStart">@dimen/_8sdp</item>
+        <item name="android:paddingEnd">@dimen/_8sdp</item>
     </style>
     <style name="TransparentBackgroundDialog" parent="@style/Theme.MaterialComponents.Dialog.Alert">
         <item name="android:backgroundTint">@color/ap_transparent</item>

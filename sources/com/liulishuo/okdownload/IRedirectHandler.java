@@ -4,7 +4,7 @@ import com.liulishuo.okdownload.core.connection.DownloadConnection;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface IRedirectHandler {
     String getRedirectLocation();
 

@@ -153,7 +153,7 @@ public final class AwaitKt$awaitOne$2$1<T> implements Subscriber<T> {
                     }
                 });
                 Result.Companion companion = Result.Companion;
-                this.$cont.resumeWith(Result.m9898constructorimpl(t));
+                this.$cont.resumeWith(Result.m9915constructorimpl(t));
             } else if (i != 3 && i != 4 && i != 5) {
                 throw new NoWhenBranchMatchedException();
             } else {
@@ -172,7 +172,7 @@ public final class AwaitKt$awaitOne$2$1<T> implements Subscriber<T> {
                     });
                     if (this.$cont.isActive()) {
                         Result.Companion companion2 = Result.Companion;
-                        this.$cont.resumeWith(Result.m9898constructorimpl(ResultKt.createFailure(new IllegalArgumentException("More than one onNext value for " + this.$mode))));
+                        this.$cont.resumeWith(Result.m9915constructorimpl(ResultKt.createFailure(new IllegalArgumentException("More than one onNext value for " + this.$mode))));
                         return;
                     }
                     return;
@@ -193,13 +193,13 @@ public final class AwaitKt$awaitOne$2$1<T> implements Subscriber<T> {
                     return;
                 }
                 Result.Companion companion = Result.Companion;
-                this.$cont.resumeWith(Result.m9898constructorimpl(this.value));
+                this.$cont.resumeWith(Result.m9915constructorimpl(this.value));
             } else if (mode == Mode.FIRST_OR_DEFAULT || this.$mode == Mode.SINGLE_OR_DEFAULT) {
                 Result.Companion companion2 = Result.Companion;
-                this.$cont.resumeWith(Result.m9898constructorimpl(this.$default));
+                this.$cont.resumeWith(Result.m9915constructorimpl(this.$default));
             } else if (this.$cont.isActive()) {
                 Result.Companion companion3 = Result.Companion;
-                this.$cont.resumeWith(Result.m9898constructorimpl(ResultKt.createFailure(new NoSuchElementException("No value received via onNext for " + this.$mode))));
+                this.$cont.resumeWith(Result.m9915constructorimpl(ResultKt.createFailure(new NoSuchElementException("No value received via onNext for " + this.$mode))));
             }
         }
     }
@@ -208,7 +208,7 @@ public final class AwaitKt$awaitOne$2$1<T> implements Subscriber<T> {
     public void onError(Throwable th) {
         if (tryEnterTerminalState("onError")) {
             Result.Companion companion = Result.Companion;
-            this.$cont.resumeWith(Result.m9898constructorimpl(ResultKt.createFailure(th)));
+            this.$cont.resumeWith(Result.m9915constructorimpl(ResultKt.createFailure(th)));
         }
     }
 

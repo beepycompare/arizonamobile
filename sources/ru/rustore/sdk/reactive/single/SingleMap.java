@@ -40,26 +40,26 @@ final class SingleMap<T, R> extends Single<R> {
 
             @Override // ru.rustore.sdk.reactive.single.SingleObserver
             public void onSuccess(T t) {
-                Object m9898constructorimpl;
+                Object m9915constructorimpl;
                 Function1 function1;
                 SingleMap<T, R> singleMap = this;
                 try {
                     Result.Companion companion = Result.Companion;
                     SingleMap$subscribe$wrappedObserver$1<T> singleMap$subscribe$wrappedObserver$1 = this;
                     function1 = ((SingleMap) singleMap).mapper;
-                    m9898constructorimpl = Result.m9898constructorimpl(function1.invoke(t));
+                    m9915constructorimpl = Result.m9915constructorimpl(function1.invoke(t));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                    m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
                 }
                 SingleObserver<R> singleObserver = downstream;
-                if (Result.m9905isSuccessimpl(m9898constructorimpl)) {
-                    singleObserver.onSuccess(m9898constructorimpl);
+                if (Result.m9922isSuccessimpl(m9915constructorimpl)) {
+                    singleObserver.onSuccess(m9915constructorimpl);
                 }
                 SingleObserver<R> singleObserver2 = downstream;
-                Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
-                if (m9901exceptionOrNullimpl != null) {
-                    singleObserver2.onError(m9901exceptionOrNullimpl);
+                Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
+                if (m9918exceptionOrNullimpl != null) {
+                    singleObserver2.onError(m9918exceptionOrNullimpl);
                 }
             }
         });

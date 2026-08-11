@@ -8,7 +8,7 @@ import com.google.common.primitives.Ints;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class TrackSelectionOverride {
     public final TrackGroup mediaTrackGroup;
     public final ImmutableList<Integer> trackIndices;

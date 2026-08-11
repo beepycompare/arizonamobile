@@ -42,7 +42,7 @@ final class DialogSignBackendUiPreviewProvider implements BackendUiPreviewProvid
     @Override // com.arizona.game.debug.backend.BackendUiPreviewProvider
     public boolean preview(GTASA gtasa, BackendFixture fixture) {
         String message;
-        Boolean m9898constructorimpl;
+        Boolean m9915constructorimpl;
         Intrinsics.checkNotNullParameter(gtasa, "gtasa");
         Intrinsics.checkNotNullParameter(fixture, "fixture");
         BackendFixtureEvent backendFixtureEvent = (BackendFixtureEvent) CollectionsKt.firstOrNull((List<? extends Object>) fixture.getEvents());
@@ -78,19 +78,19 @@ final class DialogSignBackendUiPreviewProvider implements BackendUiPreviewProvid
                     byte[] bytes5 = optString5.getBytes(Charsets.UTF_8);
                     Intrinsics.checkNotNullExpressionValue(bytes5, "getBytes(...)");
                     gtasa.showPlayerDialog(optInt, optInt2, bytes, bytes2, bytes3, bytes4, bytes5);
-                    m9898constructorimpl = Result.m9898constructorimpl(true);
+                    m9915constructorimpl = Result.m9915constructorimpl(true);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9898constructorimpl = Result.m9898constructorimpl(ResultKt.createFailure(th));
+                    m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9901exceptionOrNullimpl = Result.m9901exceptionOrNullimpl(m9898constructorimpl);
-                if (m9901exceptionOrNullimpl != null) {
-                    Log.e(TAG, "Unable to preview dialog sign fixture '" + fixture.getName() + "'", m9901exceptionOrNullimpl);
+                Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
+                if (m9918exceptionOrNullimpl != null) {
+                    Log.e(TAG, "Unable to preview dialog sign fixture '" + fixture.getName() + "'", m9918exceptionOrNullimpl);
                 }
-                if (Result.m9904isFailureimpl(m9898constructorimpl)) {
-                    m9898constructorimpl = false;
+                if (Result.m9921isFailureimpl(m9915constructorimpl)) {
+                    m9915constructorimpl = false;
                 }
-                return ((Boolean) m9898constructorimpl).booleanValue();
+                return ((Boolean) m9915constructorimpl).booleanValue();
             }
         }
         return false;
