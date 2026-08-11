@@ -408,7 +408,7 @@ public class FirebaseMessaging {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public synchronized void syncWithDelaySecondsInternal(long j) {
-        enqueueTaskWithDelaySeconds(new SyncTask(this, Math.min(Math.max((long) MIN_DELAY_SEC, 2 * j), MAX_DELAY_SEC)), j);
+        enqueueTaskWithDelaySeconds(new SyncTask(this, Math.min(Math.max(30L, 2 * j), MAX_DELAY_SEC)), j);
         this.syncScheduledOrRunning = true;
     }
 

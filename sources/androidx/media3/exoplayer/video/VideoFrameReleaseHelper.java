@@ -144,7 +144,7 @@ public final class VideoFrameReleaseHelper {
                     long j5 = vSyncSampler.sampledVsyncTimeNs;
                     long j6 = this.vsyncSampler.vsyncDurationNs;
                     if (j5 != C.TIME_UNSET && j6 != C.TIME_UNSET) {
-                        return findClosestVsyncAndUpdateHysteresis(j3, j5, j6) - ((j6 * VSYNC_OFFSET_PERCENTAGE) / 100);
+                        return findClosestVsyncAndUpdateHysteresis(j3, j5, j6) - ((j6 * 80) / 100);
                     }
                 }
                 return j3;
