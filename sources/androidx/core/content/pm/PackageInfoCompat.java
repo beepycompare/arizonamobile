@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public final class PackageInfoCompat {
     public static long getLongVersionCode(PackageInfo packageInfo) {
         if (Build.VERSION.SDK_INT >= 28) {
@@ -120,7 +120,7 @@ public final class PackageInfoCompat {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes5.dex */
     public static class Api28Impl {
         private Api28Impl() {
         }

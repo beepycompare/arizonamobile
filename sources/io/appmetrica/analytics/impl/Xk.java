@@ -10,8 +10,8 @@ public final class Xk implements ServiceModuleReporterComponentContext {
     public final Ck f843a;
     public final Bk b;
 
-    public Xk(C0448n5 c0448n5, F4 f4) {
-        this.f843a = new Ck(c0448n5, null, 2, null);
+    public Xk(C0447n5 c0447n5, F4 f4) {
+        this.f843a = new Ck(c0447n5, null, 2, null);
         this.b = new Bk(f4);
     }
 

@@ -1,7 +1,7 @@
 package com.google.android.play.core.splitinstall;
 
 import android.os.Bundle;
-import androidx.core.app.NotificationCompat;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.play:feature-delivery@@2.1.0 */
@@ -25,8 +25,8 @@ final class zzy implements Runnable {
         zze = zzaa.zze(this.zza.getLanguages());
         Bundle bundle = new Bundle();
         bundle.putInt("session_id", 0);
-        bundle.putInt(NotificationCompat.CATEGORY_STATUS, 5);
-        bundle.putInt("error_code", 0);
+        bundle.putInt("status", 5);
+        bundle.putInt(UpdateAnalyticsContract.ERROR_CODE_PARAM, 0);
         if (!moduleNames.isEmpty()) {
             bundle.putStringArrayList("module_names", new ArrayList<>(moduleNames));
         }

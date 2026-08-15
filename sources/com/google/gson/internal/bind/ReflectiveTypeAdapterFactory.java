@@ -39,7 +39,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     private final ConstructorConstructor constructorConstructor;
     private final Excluder excluder;
@@ -204,7 +204,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class FieldsData {
         static final FieldsData EMPTY = new FieldsData(Collections.emptyMap(), Collections.emptyList());
         final Map<String, BoundField> deserializedFields;
@@ -337,7 +337,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class BoundField {
         final Field field;
         final String fieldName;
@@ -356,7 +356,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Adapter<T, A> extends TypeAdapter<T> {
         private final FieldsData fieldsData;
 
@@ -415,7 +415,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class FieldReflectionAdapter<T> extends Adapter<T, T> {
         private final ObjectConstructor<T> constructor;
 
@@ -440,7 +440,7 @@ public final class ReflectiveTypeAdapterFactory implements TypeAdapterFactory {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class RecordAdapter<T> extends Adapter<T, Object[]> {
         static final Map<Class<?>, Object> PRIMITIVE_DEFAULTS = primitiveDefaults();
         private final Map<String, Integer> componentIndices;

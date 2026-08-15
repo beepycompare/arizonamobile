@@ -1,5 +1,5 @@
 package androidx.media3.common;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class VideoFrameProcessingException extends Exception {
     public final long presentationTimeUs;
 

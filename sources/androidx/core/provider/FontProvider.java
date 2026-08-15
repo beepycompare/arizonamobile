@@ -204,7 +204,7 @@ public class FontProvider {
 
     protected static String[] getSelectionArgs(FontRequest fontRequest) {
         String variationSettings = fontRequest.getVariationSettings();
-        return (variationSettings == null || UByte$$ExternalSyntheticBackport0.m9989m(variationSettings)) ? new String[]{fontRequest.getQuery()} : new String[]{fontRequest.getQuery(), VARIABLE_FONT_QUERY_PARAM};
+        return (variationSettings == null || UByte$$ExternalSyntheticBackport0.m9990m(variationSettings)) ? new String[]{fontRequest.getQuery()} : new String[]{fontRequest.getQuery(), VARIABLE_FONT_QUERY_PARAM};
     }
 
     private static List<List<byte[]>> getCertificates(FontRequest fontRequest, Resources resources) {

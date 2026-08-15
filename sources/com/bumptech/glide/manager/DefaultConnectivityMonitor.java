@@ -2,7 +2,7 @@ package com.bumptech.glide.manager;
 
 import android.content.Context;
 import com.bumptech.glide.manager.ConnectivityMonitor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class DefaultConnectivityMonitor implements ConnectivityMonitor {
     private final Context context;
     final ConnectivityMonitor.ConnectivityListener listener;

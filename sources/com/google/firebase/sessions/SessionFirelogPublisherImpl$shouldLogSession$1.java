@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: SessionFirelogPublisher.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "com.google.firebase.sessions.SessionFirelogPublisherImpl", f = "SessionFirelogPublisher.kt", i = {}, l = {98, 104}, m = "shouldLogSession", n = {}, s = {})
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SessionFirelogPublisherImpl$shouldLogSession$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;

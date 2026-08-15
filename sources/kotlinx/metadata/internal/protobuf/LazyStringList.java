@@ -2,7 +2,7 @@ package kotlinx.metadata.internal.protobuf;
 
 import java.util.Collection;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public interface LazyStringList extends ProtocolStringList {
     void add(ByteString byteString);
 

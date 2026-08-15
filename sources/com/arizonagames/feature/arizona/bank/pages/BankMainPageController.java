@@ -116,10 +116,10 @@ public final class BankMainPageController implements BankPageController {
         return this.root;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:67:0x01d8  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x01e4  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01ea  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01f4  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x01d9  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x01e5  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01eb  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01f5  */
     @Override // com.arizonagames.feature.arizona.bank.pages.BankPageController
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -672,7 +672,7 @@ public final class BankMainPageController implements BankPageController {
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x006f, code lost:
         r0 = kotlin.Result.Companion;
-        r5 = kotlin.Result.m9915constructorimpl(kotlin.ResultKt.createFailure(r5));
+        r5 = kotlin.Result.m9916constructorimpl(kotlin.ResultKt.createFailure(r5));
      */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0080  */
     /*
@@ -680,7 +680,7 @@ public final class BankMainPageController implements BankPageController {
     */
     private final Integer parseOrganizationColor(String str) {
         String str2;
-        Throwable m9918exceptionOrNullimpl;
+        Throwable m9919exceptionOrNullimpl;
         String removeSuffix = StringsKt.removeSuffix(StringsKt.removePrefix(StringsKt.trim((CharSequence) str).toString(), (CharSequence) "{"), (CharSequence) "}");
         Object obj = null;
         if (!StringsKt.startsWith$default(removeSuffix, "#", false, 2, (Object) null)) {
@@ -693,10 +693,10 @@ public final class BankMainPageController implements BankPageController {
             }
             Result.Companion companion = Result.Companion;
             BankMainPageController bankMainPageController = this;
-            Object obj2 = Result.m9915constructorimpl(Integer.valueOf(Color.parseColor(str2)));
-            m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(obj2);
+            Object obj2 = Result.m9916constructorimpl(Integer.valueOf(Color.parseColor(str2)));
+            m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(obj2);
             Object obj3 = obj2;
-            if (m9918exceptionOrNullimpl != null) {
+            if (m9919exceptionOrNullimpl != null) {
                 Long longOrNull = StringsKt.toLongOrNull(removeSuffix);
                 if (longOrNull != null) {
                     long longValue = longOrNull.longValue();
@@ -713,10 +713,10 @@ public final class BankMainPageController implements BankPageController {
         str2 = removeSuffix;
         Result.Companion companion2 = Result.Companion;
         BankMainPageController bankMainPageController2 = this;
-        Object obj22 = Result.m9915constructorimpl(Integer.valueOf(Color.parseColor(str2)));
-        m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(obj22);
+        Object obj22 = Result.m9916constructorimpl(Integer.valueOf(Color.parseColor(str2)));
+        m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(obj22);
         Object obj32 = obj22;
-        if (m9918exceptionOrNullimpl != null) {
+        if (m9919exceptionOrNullimpl != null) {
         }
         return (Integer) obj32;
     }

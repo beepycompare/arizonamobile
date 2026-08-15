@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.measurement;
 
+import com.arizona.launcher.updater.archive.install.SafeZipExtractor;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -101,7 +102,7 @@ public final class zzzh {
             sb.append("0");
             return;
         }
-        String str = true != z ? "0123456789abcdef" : "0123456789ABCDEF";
+        String str = true != z ? SafeZipExtractor.HEX_DIGITS : "0123456789ABCDEF";
         for (int numberOfLeadingZeros = (63 - Long.numberOfLeadingZeros(j)) & (-4); numberOfLeadingZeros >= 0; numberOfLeadingZeros -= 4) {
             sb.append(str.charAt((int) ((j >>> numberOfLeadingZeros) & 15)));
         }

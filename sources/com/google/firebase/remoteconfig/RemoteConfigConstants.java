@@ -2,13 +2,13 @@ package com.google.firebase.remoteconfig;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class RemoteConfigConstants {
     public static final String FETCH_REGEX_URL = "https://firebaseremoteconfig.googleapis.com/v1/projects/%s/namespaces/%s:fetch";
     public static final String REALTIME_REGEX_URL = "https://firebaseremoteconfigrealtime.googleapis.com/v1/projects/%s/namespaces/%s:streamFetchInvalidations";
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface ExperimentDescriptionFieldKey {
         public static final String AFFECTED_PARAMETER_KEYS = "affectedParameterKeys";
         public static final String EXPERIMENT_ID = "experimentId";
@@ -16,7 +16,7 @@ public final class RemoteConfigConstants {
     }
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface RequestFieldKey {
         public static final String ANALYTICS_USER_PROPERTIES = "analyticsUserProperties";
         public static final String APP_BUILD = "appBuild";
@@ -35,7 +35,7 @@ public final class RemoteConfigConstants {
     }
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface ResponseFieldKey {
         public static final String ENTRIES = "entries";
         public static final String EXPERIMENT_DESCRIPTIONS = "experimentDescriptions";

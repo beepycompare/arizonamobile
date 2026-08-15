@@ -8,7 +8,7 @@ import com.bumptech.glide.util.Util;
 import java.io.File;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class HardwareConfigState {
     public static final boolean BLOCK_HARDWARE_BITMAPS_WHEN_GL_CONTEXT_MIGHT_NOT_BE_INITIALIZED;
     private static final File FD_SIZE_LIST;

@@ -3,6 +3,7 @@ package com.arizona.launcher.di;
 import com.arizona.launcher.data.repository.SecondaryUpdateApi;
 import com.arizona.launcher.data.repository.UpdateApi;
 import com.arizona.launcher.util.FlavorUtilKt;
+import com.google.common.net.HttpHeaders;
 import dagger.Module;
 import dagger.Provides;
 import kotlin.Metadata;
@@ -33,7 +34,7 @@ public final class UpdateApiModule {
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
                 Intrinsics.checkNotNullParameter(chain, "chain");
-                return chain.proceed(chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
+                return chain.proceed(chain.request().newBuilder().addHeader(HttpHeaders.USER_AGENT, "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
             }
         }).addInterceptor(new DefaultQueryInterceptor()).build()).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");

@@ -34,7 +34,7 @@ public class ObjectCountHashMap<K> {
     }
 
     private static long swapNext(long entry, int newNext) {
-        return (entry & HASH_MASK) | (NEXT_MASK & newNext);
+        return (entry & HASH_MASK) | (4294967295L & newNext);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -251,7 +251,7 @@ public class ObjectCountHashMap<K> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void insertEntry(int entryIndex, @ParametricNullness K key, int value, int hash) {
-        this.entries[entryIndex] = (hash << 32) | NEXT_MASK;
+        this.entries[entryIndex] = (hash << 32) | 4294967295L;
         this.keys[entryIndex] = key;
         this.values[entryIndex] = value;
     }
@@ -296,7 +296,7 @@ public class ObjectCountHashMap<K> {
             int i3 = hash & length;
             int i4 = newTable[i3];
             newTable[i3] = i2;
-            jArr[i2] = (hash << 32) | (i4 & NEXT_MASK);
+            jArr[i2] = (hash << 32) | (i4 & 4294967295L);
         }
         this.threshold = i;
         this.table = newTable;

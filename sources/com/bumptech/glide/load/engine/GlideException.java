@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GlideException extends Exception {
     private static final StackTraceElement[] EMPTY_ELEMENTS = new StackTraceElement[0];
     private static final long serialVersionUID = 1;
@@ -162,7 +162,7 @@ public final class GlideException extends Exception {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class IndentedAppendable implements Appendable {
         private static final String EMPTY_SEQUENCE = "";
         private static final String INDENT = "  ";

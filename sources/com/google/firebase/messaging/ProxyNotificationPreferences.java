@@ -6,7 +6,7 @@ import androidx.media3.exoplayer.offline.DefaultDownloaderFactory$$ExternalSynth
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.tasks.OnSuccessListener;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ProxyNotificationPreferences {
     private static final String FCM_PREFERENCES = "com.google.firebase.messaging";
 

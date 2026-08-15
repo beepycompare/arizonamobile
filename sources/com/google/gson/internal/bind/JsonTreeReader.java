@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class JsonTreeReader extends JsonReader {
     private int[] pathIndices;
     private String[] pathNames;
@@ -281,7 +281,7 @@ public final class JsonTreeReader extends JsonReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.JsonTreeReader$2  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class AnonymousClass2 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 

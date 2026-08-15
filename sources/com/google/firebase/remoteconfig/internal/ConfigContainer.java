@@ -10,7 +10,7 @@ import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigContainer {
     static final String ABT_EXPERIMENTS_KEY = "abt_experiments_key";
     static final String CONFIGS_KEY = "configs_key";
@@ -181,7 +181,7 @@ public class ConfigContainer {
         return this.containerJson.hashCode();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         private JSONArray builderAbtExperiments;
         private JSONObject builderConfigsJson;

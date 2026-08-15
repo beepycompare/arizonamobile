@@ -9,7 +9,7 @@ import android.os.RemoteException;
 import com.bda.controller.IControllerListener;
 import com.bda.controller.IControllerMonitor;
 import com.bda.controller.IControllerService;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class Controller {
     public static final int ACTION_CONNECTED = 1;
     public static final int ACTION_CONNECTING = 2;
@@ -69,7 +69,7 @@ public final class Controller {
     ControllerListener mListener = null;
     ControllerMonitor mMonitor = null;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     class IControllerListenerStub extends IControllerListener.Stub {
         IControllerListenerStub() {
         }
@@ -114,7 +114,7 @@ public final class Controller {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     class IControllerMonitorStub extends IControllerMonitor.Stub {
         IControllerMonitorStub() {
         }
@@ -127,7 +127,7 @@ public final class Controller {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     class KeyRunnable implements Runnable {
         final KeyEvent mEvent;
 
@@ -143,7 +143,7 @@ public final class Controller {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     class MotionRunnable implements Runnable {
         final MotionEvent mEvent;
 
@@ -159,7 +159,7 @@ public final class Controller {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     class ServiceConnection implements android.content.ServiceConnection {
         ServiceConnection() {
         }
@@ -181,7 +181,7 @@ public final class Controller {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     class StateRunnable implements Runnable {
         final StateEvent mEvent;
 

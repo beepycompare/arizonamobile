@@ -14,6 +14,6 @@ import kotlin.annotation.MustBeDocumented;
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.PROPERTY})
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes3.dex */
+/* loaded from: classes6.dex */
 public @interface Transient {
 }

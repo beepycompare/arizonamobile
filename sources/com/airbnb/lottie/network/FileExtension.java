@@ -1,8 +1,10 @@
 package com.airbnb.lottie.network;
+
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 /* loaded from: classes3.dex */
 public enum FileExtension {
     JSON(".json"),
-    ZIP(".zip"),
+    ZIP(OriginalTzArchiveManifestParser.ZIP_SUFFIX),
     GZIP(".gz");
     
     public final String extension;

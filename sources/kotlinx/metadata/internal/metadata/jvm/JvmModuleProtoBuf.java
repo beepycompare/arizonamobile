@@ -20,10 +20,10 @@ import kotlinx.metadata.internal.protobuf.LazyStringList;
 import kotlinx.metadata.internal.protobuf.MessageLiteOrBuilder;
 import kotlinx.metadata.internal.protobuf.Parser;
 import kotlinx.metadata.internal.protobuf.ProtocolStringList;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class JvmModuleProtoBuf {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ModuleOrBuilder extends MessageLiteOrBuilder {
         ProtoBuf.Annotation getAnnotation(int i);
 
@@ -66,7 +66,7 @@ public final class JvmModuleProtoBuf {
         boolean hasStringTable();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface PackagePartsOrBuilder extends MessageLiteOrBuilder {
         int getClassWithJvmPackageNameMultifileFacadeShortNameId(int i);
 
@@ -123,7 +123,7 @@ public final class JvmModuleProtoBuf {
     private JvmModuleProtoBuf() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Module extends GeneratedMessageLite implements ModuleOrBuilder {
         public static final int ANNOTATION_FIELD_NUMBER = 6;
         public static final int JVM_PACKAGE_NAME_FIELD_NUMBER = 3;
@@ -625,7 +625,7 @@ public final class JvmModuleProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Module, Builder> implements ModuleOrBuilder {
             private int bitField0_;
             private List<PackageParts> packageParts_ = Collections.emptyList();
@@ -1308,7 +1308,7 @@ public final class JvmModuleProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class PackageParts extends GeneratedMessageLite implements PackagePartsOrBuilder {
         public static final int CLASS_WITH_JVM_PACKAGE_NAME_MULTIFILE_FACADE_SHORT_NAME_ID_FIELD_NUMBER = 7;
         public static final int CLASS_WITH_JVM_PACKAGE_NAME_PACKAGE_ID_FIELD_NUMBER = 6;
@@ -1883,7 +1883,7 @@ public final class JvmModuleProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<PackageParts, Builder> implements PackagePartsOrBuilder {
             private int bitField0_;
             private Object packageFqName_ = "";

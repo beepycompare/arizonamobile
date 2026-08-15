@@ -17,6 +17,6 @@ public final class Jd extends SafeRunnable {
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        Nd.a(this.f613a).a(new C0117aa(this.b, this.c));
+        Nd.a(this.f613a).a(new C0116aa(this.b, this.c));
     }
 }

@@ -8,10 +8,10 @@ public final class R {
         public static int color4 = 0x7f060055;
         public static int color5 = 0x7f060056;
         public static int color6 = 0x7f060057;
-        public static int gradient = 0x7f0600a7;
-        public static int main = 0x7f060348;
-        public static int main_transparent = 0x7f060349;
-        public static int secondary = 0x7f060445;
+        public static int event_gradient = 0x7f06009c;
+        public static int event_main = 0x7f06009d;
+        public static int event_main_transparent = 0x7f06009e;
+        public static int event_secondary = 0x7f06009f;
 
         private color() {
         }
@@ -19,46 +19,46 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int event_award_recieved = 0x7f0807e9;
-        public static int event_coin = 0x7f0807ea;
-        public static int event_count_container_bg = 0x7f0807eb;
-        public static int event_event_btn_bg = 0x7f0807ec;
-        public static int event_event_btn_bg_transparent = 0x7f0807ed;
-        public static int event_event_btn_bg_white = 0x7f0807ee;
-        public static int event_event_item_bg = 0x7f0807ef;
-        public static int event_event_item_transparent_gray_bg = 0x7f0807f0;
-        public static int event_exp_item = 0x7f0807f1;
-        public static int event_first_place_icon = 0x7f0807f2;
-        public static int event_icon = 0x7f0807f3;
-        public static int event_info_prise = 0x7f0807f4;
-        public static int event_main_bg = 0x7f0807f5;
-        public static int event_main_bg2 = 0x7f0807f6;
-        public static int event_main_grey_bg = 0x7f0807f7;
-        public static int event_main_tab_select_bg = 0x7f0807f8;
-        public static int event_prise_item_bg = 0x7f0807fa;
-        public static int event_prise_item_bg1 = 0x7f0807fb;
-        public static int event_radial_gold_gradient = 0x7f0807fc;
-        public static int event_remaining_time_ic = 0x7f0807fd;
-        public static int event_secon_place_icon = 0x7f0807fe;
-        public static int event_shop_first_place_bg = 0x7f0807ff;
-        public static int event_shop_item_bg = 0x7f080800;
-        public static int event_shop_secon_place_bg = 0x7f080801;
-        public static int event_shop_select_button_bg = 0x7f080802;
-        public static int event_shop_unselect_button_bg = 0x7f080803;
-        public static int event_tab_unselect_bg = 0x7f080804;
-        public static int event_tab_video_back_ic = 0x7f080805;
-        public static int event_task_btn_bg = 0x7f080806;
-        public static int event_task_btn_bg_gold = 0x7f080807;
-        public static int event_task_btn_bg_white = 0x7f080808;
-        public static int event_task_btn_bg_white_transparent = 0x7f080809;
-        public static int event_task_ic_everyday = 0x7f08080a;
-        public static int event_task_ic_lock = 0x7f08080b;
-        public static int event_task_ic_story = 0x7f08080c;
-        public static int event_task_item_bg = 0x7f08080d;
-        public static int event_task_progress_bar_bg = 0x7f08080e;
-        public static int pirates_dollar = 0x7f080ec0;
-        public static int pirates_rating = 0x7f080ec1;
-        public static int pirates_ruble = 0x7f080ec2;
+        public static int event_award_recieved = 0x7f0807eb;
+        public static int event_coin = 0x7f0807ec;
+        public static int event_count_container_bg = 0x7f0807ed;
+        public static int event_dollar = 0x7f0807ee;
+        public static int event_event_btn_bg = 0x7f0807ef;
+        public static int event_event_btn_bg_transparent = 0x7f0807f0;
+        public static int event_event_btn_bg_white = 0x7f0807f1;
+        public static int event_event_item_bg = 0x7f0807f2;
+        public static int event_event_item_transparent_gray_bg = 0x7f0807f3;
+        public static int event_exp_item = 0x7f0807f4;
+        public static int event_first_place_icon = 0x7f0807f5;
+        public static int event_icon = 0x7f0807f6;
+        public static int event_info_prise = 0x7f0807f7;
+        public static int event_main_bg = 0x7f0807f8;
+        public static int event_main_bg2 = 0x7f0807f9;
+        public static int event_main_grey_bg = 0x7f0807fa;
+        public static int event_main_tab_select_bg = 0x7f0807fb;
+        public static int event_prise_item_bg = 0x7f0807fd;
+        public static int event_prise_item_bg1 = 0x7f0807fe;
+        public static int event_radial_gold_gradient = 0x7f0807ff;
+        public static int event_rating = 0x7f080800;
+        public static int event_remaining_time_ic = 0x7f080801;
+        public static int event_ruble = 0x7f080802;
+        public static int event_secon_place_icon = 0x7f080803;
+        public static int event_shop_first_place_bg = 0x7f080804;
+        public static int event_shop_item_bg = 0x7f080805;
+        public static int event_shop_secon_place_bg = 0x7f080806;
+        public static int event_shop_select_button_bg = 0x7f080807;
+        public static int event_shop_unselect_button_bg = 0x7f080808;
+        public static int event_tab_unselect_bg = 0x7f080809;
+        public static int event_tab_video_back_ic = 0x7f08080a;
+        public static int event_task_btn_bg = 0x7f08080b;
+        public static int event_task_btn_bg_gold = 0x7f08080c;
+        public static int event_task_btn_bg_white = 0x7f08080d;
+        public static int event_task_btn_bg_white_transparent = 0x7f08080e;
+        public static int event_task_ic_everyday = 0x7f08080f;
+        public static int event_task_ic_lock = 0x7f080810;
+        public static int event_task_ic_story = 0x7f080811;
+        public static int event_task_item_bg = 0x7f080812;
+        public static int event_task_progress_bar_bg = 0x7f080813;
 
         private drawable() {
         }
@@ -195,17 +195,17 @@ public final class R {
         public static int event_main_screen = 0x7f0d00ee;
         public static int event_prise_item = 0x7f0d00ef;
         public static int event_prise_item_event = 0x7f0d00f0;
-        public static int event_screen = 0x7f0d00f1;
-        public static int event_shop_item = 0x7f0d00f2;
-        public static int event_shop_sceen = 0x7f0d00f3;
-        public static int event_task_item = 0x7f0d00f4;
-        public static int event_task_screen = 0x7f0d00f5;
-        public static int event_topbar = 0x7f0d00f6;
-        public static int event_video_screen = 0x7f0d00f7;
-        public static int pirates_rating_item = 0x7f0d0253;
-        public static int pirates_rating_screen = 0x7f0d0254;
-        public static int pirates_ship_screen = 0x7f0d0255;
-        public static int pirates_ship_upgrade_item = 0x7f0d0256;
+        public static int event_rating_item = 0x7f0d00f1;
+        public static int event_rating_screen = 0x7f0d00f2;
+        public static int event_screen = 0x7f0d00f3;
+        public static int event_ship_screen = 0x7f0d00f4;
+        public static int event_ship_upgrade_item = 0x7f0d00f5;
+        public static int event_shop_item = 0x7f0d00f6;
+        public static int event_shop_sceen = 0x7f0d00f7;
+        public static int event_task_item = 0x7f0d00f8;
+        public static int event_task_screen = 0x7f0d00f9;
+        public static int event_topbar = 0x7f0d00fa;
+        public static int event_video_screen = 0x7f0d00fb;
 
         private layout() {
         }
@@ -213,44 +213,44 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class string {
-        public static int event_attempts = 0x7f12026d;
-        public static int event_available_in = 0x7f12026e;
-        public static int event_award_get = 0x7f12026f;
-        public static int event_award_received = 0x7f120270;
-        public static int event_cancel = 0x7f120271;
-        public static int event_count_amount = 0x7f120272;
-        public static int event_get_reward = 0x7f120273;
-        public static int event_guide_title = 0x7f120274;
-        public static int event_join = 0x7f120275;
-        public static int event_level = 0x7f120276;
-        public static int event_participants = 0x7f120277;
-        public static int event_participants_limit = 0x7f120278;
-        public static int event_players_limit = 0x7f120279;
-        public static int event_preview_level = 0x7f12027a;
-        public static int event_preview_name = 0x7f12027b;
-        public static int event_rating_title = 0x7f12027c;
-        public static int event_received = 0x7f12027d;
-        public static int event_results_in = 0x7f12027e;
-        public static int event_started = 0x7f12027f;
-        public static int event_tab_back = 0x7f120280;
-        public static int event_tab_games = 0x7f120281;
-        public static int event_tab_main = 0x7f120282;
-        public static int event_tab_shop = 0x7f120283;
-        public static int event_tab_tasks = 0x7f120284;
-        public static int event_task_accept = 0x7f120285;
-        public static int event_task_completed = 0x7f120286;
-        public static int event_task_everyday = 0x7f120287;
-        public static int event_task_newyear = 0x7f120288;
-        public static int event_task_story = 0x7f120289;
-        public static int event_task_track = 0x7f12028a;
-        public static int event_time_day_short = 0x7f12028b;
-        public static int event_time_hour_short = 0x7f12028c;
-        public static int event_time_minute_short = 0x7f12028d;
-        public static int event_time_second_short = 0x7f12028e;
-        public static int event_time_zero = 0x7f12028f;
-        public static int event_upgrade_placeholder = 0x7f120290;
-        public static int event_video_error = 0x7f120291;
-        public static int event_video_not_found = 0x7f120292;
+        public static int event_attempts = 0x7f120272;
+        public static int event_available_in = 0x7f120273;
+        public static int event_award_get = 0x7f120274;
+        public static int event_award_received = 0x7f120275;
+        public static int event_cancel = 0x7f120276;
+        public static int event_count_amount = 0x7f120277;
+        public static int event_get_reward = 0x7f120278;
+        public static int event_guide_title = 0x7f120279;
+        public static int event_join = 0x7f12027a;
+        public static int event_level = 0x7f12027b;
+        public static int event_participants = 0x7f12027c;
+        public static int event_participants_limit = 0x7f12027d;
+        public static int event_players_limit = 0x7f12027e;
+        public static int event_preview_level = 0x7f12027f;
+        public static int event_preview_name = 0x7f120280;
+        public static int event_rating_title = 0x7f120281;
+        public static int event_received = 0x7f120282;
+        public static int event_results_in = 0x7f120283;
+        public static int event_started = 0x7f120284;
+        public static int event_tab_back = 0x7f120285;
+        public static int event_tab_games = 0x7f120286;
+        public static int event_tab_main = 0x7f120287;
+        public static int event_tab_shop = 0x7f120288;
+        public static int event_tab_tasks = 0x7f120289;
+        public static int event_task_accept = 0x7f12028a;
+        public static int event_task_completed = 0x7f12028b;
+        public static int event_task_everyday = 0x7f12028c;
+        public static int event_task_newyear = 0x7f12028d;
+        public static int event_task_story = 0x7f12028e;
+        public static int event_task_track = 0x7f12028f;
+        public static int event_time_day_short = 0x7f120290;
+        public static int event_time_hour_short = 0x7f120291;
+        public static int event_time_minute_short = 0x7f120292;
+        public static int event_time_second_short = 0x7f120293;
+        public static int event_time_zero = 0x7f120294;
+        public static int event_upgrade_placeholder = 0x7f120295;
+        public static int event_video_error = 0x7f120296;
+        public static int event_video_not_found = 0x7f120297;
 
         private string() {
         }

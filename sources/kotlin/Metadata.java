@@ -15,12 +15,12 @@ import kotlin.annotation.AnnotationTarget;
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.CLASS})
 @Retention(RetentionPolicy.RUNTIME)
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface Metadata {
 
     /* compiled from: Metadata.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class DefaultImpls {
         @Deprecated(level = DeprecationLevel.WARNING, message = "Bytecode version had no significant use in Kotlin metadata and it will be removed in a future version.")
         public static /* synthetic */ void bv$annotations() {

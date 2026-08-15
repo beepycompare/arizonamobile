@@ -6,6 +6,7 @@ import android.content.res.XmlResourceParser;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.Xml;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
@@ -287,8 +288,8 @@ public class ConstraintLayoutStates {
         for (int i = 0; i < attributeCount; i++) {
             String attributeName = xmlPullParser.getAttributeName(i);
             String attributeValue = xmlPullParser.getAttributeValue(i);
-            if (attributeName != null && attributeValue != null && "id".equals(attributeName)) {
-                int identifier = attributeValue.contains("/") ? context.getResources().getIdentifier(attributeValue.substring(attributeValue.indexOf(47) + 1), "id", context.getPackageName()) : -1;
+            if (attributeName != null && attributeValue != null && TtmlNode.ATTR_ID.equals(attributeName)) {
+                int identifier = attributeValue.contains("/") ? context.getResources().getIdentifier(attributeValue.substring(attributeValue.indexOf(47) + 1), TtmlNode.ATTR_ID, context.getPackageName()) : -1;
                 if (identifier == -1) {
                     if (attributeValue.length() > 1) {
                         identifier = Integer.parseInt(attributeValue.substring(1));

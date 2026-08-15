@@ -11,7 +11,7 @@ public final class F5 implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f541a;
-    public final C0338j b = Na.k().b();
+    public final C0337j b = Na.k().b();
     public final EnumSet c = EnumSet.of(NetworkType.OFFLINE);
     public final String d = "connection based";
 
@@ -21,11 +21,11 @@ public final class F5 implements IExecutionPolicy {
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
     public final boolean canBeExecuted() {
-        C0338j c0338j = this.b;
+        C0337j c0337j = this.b;
         Context context = this.f541a;
-        c0338j.getClass();
-        C0200df c0200df = AbstractC0303hf.f1017a;
-        return !this.c.contains((NetworkType) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", NetworkType.UNDEFINED, new C0277gf()));
+        c0337j.getClass();
+        C0199df c0199df = AbstractC0302hf.f1017a;
+        return !this.c.contains((NetworkType) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", NetworkType.UNDEFINED, new C0276gf()));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy

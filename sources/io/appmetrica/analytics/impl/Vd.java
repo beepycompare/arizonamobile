@@ -9,14 +9,14 @@ public final class Vd {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f811a;
-    public final InterfaceC0428mb b;
+    public final InterfaceC0427mb b;
     public final R9 c;
-    public final C0148bf d;
+    public final C0147bf d;
     public final So e;
     public volatile IdentifiersResult f;
 
-    public Vd(Context context, InterfaceC0428mb interfaceC0428mb) {
-        this(context, interfaceC0428mb, Wd.a(context), new C0148bf(context), new So());
+    public Vd(Context context, InterfaceC0427mb interfaceC0427mb) {
+        this(context, interfaceC0427mb, Wd.a(context), new C0147bf(context), new So());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x0088  */
@@ -52,7 +52,7 @@ public final class Vd {
                 return identifiersResult == null ? identifiersResult : new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "Uuid must be obtained via async API AppMetrica#requestStartupParams(Context, StartupParamsCallback, List<String>)");
             }
         }
-        String a2 = AbstractC0402lb.a(FileUtils.getFileFromSdkStorage(this.d.f910a, "uuid.dat"));
+        String a2 = AbstractC0401lb.a(FileUtils.getFileFromSdkStorage(this.d.f910a, "uuid.dat"));
         this.e.getClass();
         if (!So.a(a2)) {
             a2 = this.d.a(this.b.a(this.f811a));
@@ -73,15 +73,15 @@ public final class Vd {
         }
     }
 
-    public Vd(Context context, InterfaceC0428mb interfaceC0428mb, R9 r9, C0148bf c0148bf, So so) {
+    public Vd(Context context, InterfaceC0427mb interfaceC0427mb, R9 r9, C0147bf c0147bf, So so) {
         this.f811a = context;
-        this.b = interfaceC0428mb;
+        this.b = interfaceC0427mb;
         this.c = r9;
-        this.d = c0148bf;
+        this.d = c0147bf;
         this.e = so;
         try {
             r9.a();
-            c0148bf.a();
+            c0147bf.a();
             r9.b();
         } catch (Throwable unused) {
             this.c.b();

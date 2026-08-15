@@ -4,6 +4,7 @@ import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.collection.SieveCacheKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
+import com.google.common.net.HttpHeaders;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -161,19 +162,19 @@ public final class _UtilJvmKt {
     }
 
     /* renamed from: checkDuration-HG0u8IE  reason: not valid java name */
-    public static final int m11781checkDurationHG0u8IE(String name, long j) {
+    public static final int m11782checkDurationHG0u8IE(String name, long j) {
         Intrinsics.checkNotNullParameter(name, "name");
-        if (Duration.m11318isNegativeimpl(j)) {
+        if (Duration.m11319isNegativeimpl(j)) {
             throw new IllegalStateException((name + " < 0").toString());
         }
-        long m11303getInWholeMillisecondsimpl = Duration.m11303getInWholeMillisecondsimpl(j);
-        if (m11303getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
+        long m11304getInWholeMillisecondsimpl = Duration.m11304getInWholeMillisecondsimpl(j);
+        if (m11304getInWholeMillisecondsimpl > SieveCacheKt.NodeLinkMask) {
             throw new IllegalArgumentException((name + " too large").toString());
         }
-        if (m11303getInWholeMillisecondsimpl == 0 && Duration.m11319isPositiveimpl(j)) {
+        if (m11304getInWholeMillisecondsimpl == 0 && Duration.m11320isPositiveimpl(j)) {
             throw new IllegalArgumentException((name + " too small").toString());
         }
-        return (int) m11303getInWholeMillisecondsimpl;
+        return (int) m11304getInWholeMillisecondsimpl;
     }
 
     public static final Headers toHeaders(List<Header> list) {
@@ -297,7 +298,7 @@ public final class _UtilJvmKt {
 
     public static final long headersContentLength(Response response) {
         Intrinsics.checkNotNullParameter(response, "<this>");
-        String str = response.headers().get("Content-Length");
+        String str = response.headers().get(HttpHeaders.CONTENT_LENGTH);
         if (str != null) {
             return _UtilCommonKt.toLongOrDefault(str, -1L);
         }

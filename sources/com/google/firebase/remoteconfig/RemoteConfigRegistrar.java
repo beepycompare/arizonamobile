@@ -18,7 +18,7 @@ import com.google.firebase.remoteconfig.interop.FirebaseRemoteConfigInterop;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RemoteConfigRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-rc";
 

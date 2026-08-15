@@ -29,7 +29,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public abstract class V2 implements InterfaceC0247fb {
+public abstract class V2 implements InterfaceC0246fb {
     public static final HashSet n = new HashSet(Arrays.asList(1, 13));
     public static final T2 o = new T2();
 
@@ -37,31 +37,31 @@ public abstract class V2 implements InterfaceC0247fb {
     protected final Context f804a;
     protected final Zh b;
     protected final PublicLogger c;
-    protected final C0648uo d;
+    protected final C0647uo d;
     protected final Ug e;
     protected final N6 f;
-    public final C0236f0 g;
+    public final C0235f0 g;
     protected final Qi h;
     public Qb i;
-    public final InterfaceC0201dg j;
-    public final C0298ha k;
-    public final C0380kf l;
+    public final InterfaceC0200dg j;
+    public final C0297ha k;
+    public final C0379kf l;
     public final Gn m;
 
-    public V2(Context context, Qi qi, Zh zh, C0298ha c0298ha, J6 j6, C0648uo c0648uo, Ug ug, N6 n6, C0236f0 c0236f0, C0380kf c0380kf) {
+    public V2(Context context, Qi qi, Zh zh, C0297ha c0297ha, J6 j6, C0647uo c0647uo, Ug ug, N6 n6, C0235f0 c0235f0, C0379kf c0379kf) {
         Context applicationContext = context.getApplicationContext();
         this.f804a = applicationContext;
         this.h = qi;
         this.b = zh;
-        this.k = c0298ha;
-        this.d = c0648uo;
+        this.k = c0297ha;
+        this.d = c0647uo;
         this.e = ug;
         this.f = n6;
-        this.g = c0236f0;
-        this.l = c0380kf;
+        this.g = c0235f0;
+        this.l = c0379kf;
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(zh.b().getApiKey());
         this.c = orCreatePublicLogger;
-        if (AbstractC0394l3.a(zh.b().isLogEnabled())) {
+        if (AbstractC0393l3.a(zh.b().isLogEnabled())) {
             orCreatePublicLogger.setEnabled(true);
         }
         this.j = j6;
@@ -104,10 +104,10 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4("", str, 3, 0, publicLogger);
+        C0188d4 c0188d4 = new C0188d4("", str, 3, 0, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -117,14 +117,14 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         Zh zh = this.b;
         qi.getClass();
-        C0242f6 n2 = C0189d4.n();
-        C0175cg c0175cg = new C0175cg(zh.f852a);
+        C0241f6 n2 = C0188d4.n();
+        C0174cg c0174cg = new C0174cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
             str = zh.f;
         }
-        qi.a(new Ph(n2, false, 1, null, new Zh(c0175cg, counterConfiguration, w8, str)));
+        qi.a(new Ph(n2, false, 1, null, new Zh(c0174cg, counterConfiguration, w8, str)));
     }
 
     public final void d(String str) {
@@ -135,10 +135,10 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4("", str, 6400, 0, publicLogger);
+        C0188d4 c0188d4 = new C0188d4("", str, 6400, 0, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         this.b.e = false;
     }
 
@@ -172,9 +172,9 @@ public abstract class V2 implements InterfaceC0247fb {
         }
         String jSONObject2 = jSONObject.toString();
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(jSONObject2, "", 6144, 0, orCreatePublicLogger);
-        c0189d4.c(str);
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        C0188d4 c0188d4 = new C0188d4(jSONObject2, "", 6144, 0, orCreatePublicLogger);
+        c0188d4.c(str);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -196,14 +196,14 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         Zh zh = this.b;
         qi.getClass();
-        C0242f6 b = C0189d4.b(str, str2);
-        C0175cg c0175cg = new C0175cg(zh.f852a);
+        C0241f6 b = C0188d4.b(str, str2);
+        C0174cg c0174cg = new C0174cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
             str3 = zh.f;
         }
-        qi.a(new Ph(b, false, 1, null, new Zh(c0175cg, counterConfiguration, w8, str3)));
+        qi.a(new Ph(b, false, 1, null, new Zh(c0174cg, counterConfiguration, w8, str3)));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -214,13 +214,13 @@ public abstract class V2 implements InterfaceC0247fb {
     @Override // io.appmetrica.analytics.IReporter
     public final void reportAnr(Map<Thread, StackTraceElement[]> map) {
         StackTraceElement[] stackTraceElementArr;
-        C0262g0 c0262g0 = new C0262g0(new C0288h0(this, map));
+        C0261g0 c0261g0 = new C0261g0(new C0287h0(this, map));
         Ia ia = new Ia();
-        J6 j6 = C0576s4.l().f1194a;
-        Thread a2 = c0262g0.a();
+        J6 j6 = C0575s4.l().f1194a;
+        Thread a2 = c0261g0.a();
         Map map2 = null;
         try {
-            stackTraceElementArr = c0262g0.b();
+            stackTraceElementArr = c0261g0.b();
             if (stackTraceElementArr == null) {
                 try {
                     stackTraceElementArr = a2.getStackTrace();
@@ -232,9 +232,9 @@ public abstract class V2 implements InterfaceC0247fb {
         }
         Zn zn = (Zn) ia.apply(a2, stackTraceElementArr);
         ArrayList arrayList = new ArrayList();
-        TreeMap treeMap = new TreeMap(new C0234eo());
+        TreeMap treeMap = new TreeMap(new C0233eo());
         try {
-            map2 = c0262g0.c();
+            map2 = c0261g0.c();
         } catch (SecurityException unused3) {
         }
         if (map2 != null) {
@@ -257,18 +257,18 @@ public abstract class V2 implements InterfaceC0247fb {
         Zh zh = this.b;
         qi.getClass();
         for (Xi xi : eCommerceEvent.toProto()) {
-            C0189d4 c0189d4 = new C0189d4(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()));
+            C0188d4 c0188d4 = new C0188d4(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()));
             Db db = Db.EVENT_TYPE_UNDEFINED;
-            c0189d4.d = 41000;
-            c0189d4.b = c0189d4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) xi.f841a)));
-            c0189d4.g = xi.b.getBytesTruncated();
-            C0175cg c0175cg = new C0175cg(zh.f852a);
+            c0188d4.d = 41000;
+            c0188d4.b = c0188d4.e(Base64Utils.compressBase64(MessageNano.toByteArray((MessageNano) xi.f841a)));
+            c0188d4.g = xi.b.getBytesTruncated();
+            C0174cg c0174cg = new C0174cg(zh.f852a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
             W8 w8 = zh.c;
             synchronized (zh) {
                 str = zh.f;
             }
-            qi.a(new Ph(c0189d4, false, 1, null, new Zh(c0175cg, counterConfiguration, w8, str)));
+            qi.a(new Ph(c0188d4, false, 1, null, new Zh(c0174cg, counterConfiguration, w8, str)));
         }
     }
 
@@ -280,10 +280,10 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(byteArray, str, 5892, publicLogger);
+        C0188d4 c0188d4 = new C0188d4(byteArray, str, 5892, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         this.c.info("Error received: %s", WrapUtils.wrapToTag(str));
     }
 
@@ -294,31 +294,31 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4("", str, 1, 0, publicLogger);
+        C0188d4 c0188d4 = new C0188d4("", str, 1, 0, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportRevenue(Revenue revenue) {
         String str;
-        C0332ij c0332ij = U2.f787a;
-        c0332ij.getClass();
-        To a2 = c0332ij.a(revenue);
+        C0331ij c0331ij = U2.f787a;
+        c0331ij.getClass();
+        To a2 = c0331ij.a(revenue);
         if (a2.f784a) {
             Qi qi = this.h;
-            C0358jj c0358jj = new C0358jj(revenue, this.c);
+            C0357jj c0357jj = new C0357jj(revenue, this.c);
             Zh zh = this.b;
             qi.getClass();
-            C0189d4 a3 = C0189d4.a(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()), c0358jj);
-            C0175cg c0175cg = new C0175cg(zh.f852a);
+            C0188d4 a3 = C0188d4.a(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()), c0357jj);
+            C0174cg c0174cg = new C0174cg(zh.f852a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
             W8 w8 = zh.c;
             synchronized (zh) {
                 str = zh.f;
             }
-            qi.a(new Ph(a3, false, 1, null, new Zh(c0175cg, counterConfiguration, w8, str)));
+            qi.a(new Ph(a3, false, 1, null, new Zh(c0174cg, counterConfiguration, w8, str)));
             this.c.info("Revenue received for productID: " + WrapUtils.wrapToTag(revenue.productID) + " of quantity: " + WrapUtils.wrapToTag(revenue.quantity) + " with price (in micros): " + revenue.priceMicros + " " + revenue.currency, new Object[0]);
             return;
         }
@@ -327,7 +327,7 @@ public abstract class V2 implements InterfaceC0247fb {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportUnhandledException(Throwable th) {
-        C0622to a2 = AbstractC0700wo.a(th, new X(null, null, this.j.a()), null, (String) this.k.b.a(), (Boolean) this.k.c.a());
+        C0621to a2 = AbstractC0699wo.a(th, new X(null, null, this.j.a()), null, (String) this.k.b.a(), (Boolean) this.k.c.a());
         Qi qi = this.h;
         qi.a(qi.a(a2, this.b));
         this.c.info("Unhandled exception received: " + a2, new Object[0]);
@@ -356,14 +356,14 @@ public abstract class V2 implements InterfaceC0247fb {
             Qi qi = this.h;
             Zh zh = this.b;
             qi.getClass();
-            C0242f6 a3 = C0189d4.a(lo);
-            C0175cg c0175cg = new C0175cg(zh.f852a);
+            C0241f6 a3 = C0188d4.a(lo);
+            C0174cg c0174cg = new C0174cg(zh.f852a);
             CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
             W8 w8 = zh.c;
             synchronized (zh) {
                 str = zh.f;
             }
-            qi.a(new Ph(a3, false, 1, null, new Zh(c0175cg, counterConfiguration, w8, str)));
+            qi.a(new Ph(a3, false, 1, null, new Zh(c0174cg, counterConfiguration, w8, str)));
             this.c.info("User profile received", new Object[0]);
             return;
         }
@@ -383,10 +383,10 @@ public abstract class V2 implements InterfaceC0247fb {
         Db db = Db.EVENT_TYPE_UNDEFINED;
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
-        C0189d4 c0189d4 = new C0189d4("", "", 256, 0, publicLogger);
+        C0188d4 c0188d4 = new C0188d4("", "", 256, 0, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -401,14 +401,14 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4("", (String) null, 8193, 0, publicLogger);
+        C0188d4 c0188d4 = new C0188d4("", (String) null, 8193, 0, publicLogger);
         if (bArr == null) {
             bArr = new byte[0];
         }
-        c0189d4.p = Collections.singletonMap(str, bArr);
+        c0188d4.p = Collections.singletonMap(str, bArr);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -417,18 +417,18 @@ public abstract class V2 implements InterfaceC0247fb {
         Qi qi = this.h;
         Zh zh = this.b;
         qi.getClass();
-        C0189d4 c0189d4 = new C0189d4(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()));
+        C0188d4 c0188d4 = new C0188d4(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()));
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        c0189d4.d = 40962;
-        c0189d4.c(str);
-        c0189d4.b = c0189d4.e(str);
-        C0175cg c0175cg = new C0175cg(zh.f852a);
+        c0188d4.d = 40962;
+        c0188d4.c(str);
+        c0188d4.b = c0188d4.e(str);
+        C0174cg c0174cg = new C0174cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
             str2 = zh.f;
         }
-        qi.a(new Ph(c0189d4, false, 1, null, new Zh(c0175cg, counterConfiguration, w8, str2)));
+        qi.a(new Ph(c0188d4, false, 1, null, new Zh(c0174cg, counterConfiguration, w8, str2)));
         this.c.info("Set user profile ID: " + WrapUtils.wrapToTag(str), new Object[0]);
     }
 
@@ -439,29 +439,29 @@ public abstract class V2 implements InterfaceC0247fb {
         F f = new F(adRevenue, z, this.m, this.c);
         Zh zh = this.b;
         qi.getClass();
-        C0189d4 a2 = C0189d4.a(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()), f);
-        C0175cg c0175cg = new C0175cg(zh.f852a);
+        C0188d4 a2 = C0188d4.a(LoggerStorage.getOrCreatePublicLogger(zh.b.getApiKey()), f);
+        C0174cg c0174cg = new C0174cg(zh.f852a);
         CounterConfiguration counterConfiguration = new CounterConfiguration(zh.b);
         W8 w8 = zh.c;
         synchronized (zh) {
             str = zh.f;
         }
-        qi.a(new Ph(a2, false, 1, null, new Zh(c0175cg, counterConfiguration, w8, str)));
+        qi.a(new Ph(a2, false, 1, null, new Zh(c0174cg, counterConfiguration, w8, str)));
         this.c.info("AdRevenue Received: AdRevenue{adRevenue=" + adRevenue.adRevenue + ", currency='" + WrapUtils.wrapToTag(adRevenue.currency.getCurrencyCode()) + "', adType=" + WrapUtils.wrapToTag(adRevenue.adType) + ", adNetwork='" + WrapUtils.wrapToTag(adRevenue.adNetwork) + "', adUnitId='" + WrapUtils.wrapToTag(adRevenue.adUnitId) + "', adUnitName='" + WrapUtils.wrapToTag(adRevenue.adUnitName) + "', adPlacementId='" + WrapUtils.wrapToTag(adRevenue.adPlacementId) + "', adPlacementName='" + WrapUtils.wrapToTag(adRevenue.adPlacementName) + "', precision='" + WrapUtils.wrapToTag(adRevenue.precision) + "', payload=" + Ib.b(adRevenue.payload) + ", autoCollected=" + z + "}", new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0247fb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0246fb
     public final void b(String str, String str2) {
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(str2), new Object[0]);
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(str2, str, 1, 0, publicLogger);
-        c0189d4.l = G9.JS;
+        C0188d4 c0188d4 = new C0188d4(str2, str, 1, 0, publicLogger);
+        c0188d4.l = G9.JS;
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
     }
 
     public final void a(Map<String, String> map) {
@@ -480,10 +480,10 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(str2, str, 1, 0, publicLogger);
+        C0188d4 c0188d4 = new C0188d4(str2, str, 1, 0, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -491,20 +491,20 @@ public abstract class V2 implements InterfaceC0247fb {
         reportError(str, str2, (Throwable) null);
     }
 
-    public final C0622to a(Throwable th) {
+    public final C0621to a(Throwable th) {
         Throwable th2;
         StackTraceElement[] stackTraceElementArr;
         if (th == null) {
             stackTraceElementArr = null;
             th2 = null;
-        } else if (th instanceof C0109a2) {
+        } else if (th instanceof C0108a2) {
             stackTraceElementArr = th.getStackTrace();
             th2 = null;
         } else {
             th2 = th;
             stackTraceElementArr = null;
         }
-        return AbstractC0700wo.a(th2, new X(null, null, this.j.a()), stackTraceElementArr != null ? Arrays.asList(stackTraceElementArr) : null, (String) this.k.b.a(), (Boolean) this.k.c.a());
+        return AbstractC0699wo.a(th2, new X(null, null, this.j.a()), stackTraceElementArr != null ? Arrays.asList(stackTraceElementArr) : null, (String) this.k.b.a(), (Boolean) this.k.c.a());
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -515,17 +515,17 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(byteArray, str2, 5896, publicLogger);
+        C0188d4 c0188d4 = new C0188d4(byteArray, str2, 5896, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         this.c.info("Error received: id: %s, message: %s", WrapUtils.wrapToTag(str), WrapUtils.wrapToTag(str2));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0247fb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0246fb
     public final void b(String str) {
         Qi qi = this.h;
-        C0242f6 a2 = C0242f6.a(str);
+        C0241f6 a2 = C0241f6.a(str);
         Zh zh = this.b;
         qi.getClass();
         qi.a(Qi.a(a2, zh), zh, 1, (Map) null);
@@ -533,22 +533,22 @@ public abstract class V2 implements InterfaceC0247fb {
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportUnhandledException(PluginErrorDetails pluginErrorDetails) {
-        C0622to a2 = this.l.a(pluginErrorDetails);
+        C0621to a2 = this.l.a(pluginErrorDetails);
         Qi qi = this.h;
-        C0363jo c0363jo = a2.f1223a;
-        String str = c0363jo != null ? (String) WrapUtils.getOrDefault(c0363jo.f1058a, "") : "";
+        C0362jo c0362jo = a2.f1223a;
+        String str = c0362jo != null ? (String) WrapUtils.getOrDefault(c0362jo.f1058a, "") : "";
         byte[] byteArray = MessageNano.toByteArray(this.d.fromModel(a2));
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(byteArray, str, 5891, publicLogger);
+        C0188d4 c0188d4 = new C0188d4(byteArray, str, 5891, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         this.c.info("Crash from plugin received: %s", WrapUtils.wrapToTag(pluginErrorDetails.getMessage()));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0247fb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0246fb
     public final boolean b() {
         return this.b.f();
     }
@@ -559,46 +559,46 @@ public abstract class V2 implements InterfaceC0247fb {
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        qi.a(new C0189d4("", str, 1, 0, publicLogger), this.b, 1, map);
+        qi.a(new C0188d4("", str, 1, 0, publicLogger), this.b, 1, map);
         this.c.info("Event received: " + WrapUtils.wrapToTag(str) + ". With value: " + WrapUtils.wrapToTag(map == null ? null : map.toString()), new Object[0]);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0506pb, io.appmetrica.analytics.impl.InterfaceC0609tb
-    public final void a(C0622to c0622to) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0505pb, io.appmetrica.analytics.impl.InterfaceC0608tb
+    public final void a(C0621to c0621to) {
         pauseSession();
         Qi qi = this.h;
-        Ph a2 = qi.a(c0622to, this.b);
+        Ph a2 = qi.a(c0621to, this.b);
         Zh zh = a2.e;
-        InterfaceC0568rm interfaceC0568rm = qi.e;
-        if (interfaceC0568rm != null) {
-            zh.b.setUuid(((C0543qm) interfaceC0568rm).g());
+        InterfaceC0567rm interfaceC0567rm = qi.e;
+        if (interfaceC0567rm != null) {
+            zh.b.setUuid(((C0542qm) interfaceC0567rm).g());
         } else {
             zh.getClass();
         }
         qi.c.b(a2);
-        this.c.info("Unhandled exception received: " + c0622to, new Object[0]);
+        this.c.info("Unhandled exception received: " + c0621to, new Object[0]);
     }
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportError(PluginErrorDetails pluginErrorDetails, String str) {
-        C0622to c0622to;
-        C0380kf c0380kf = this.l;
+        C0621to c0621to;
+        C0379kf c0379kf = this.l;
         if (pluginErrorDetails != null) {
-            c0622to = c0380kf.a(pluginErrorDetails);
+            c0621to = c0379kf.a(pluginErrorDetails);
         } else {
-            c0380kf.getClass();
-            c0622to = null;
+            c0379kf.getClass();
+            c0621to = null;
         }
-        Tg tg = new Tg(str, c0622to);
+        Tg tg = new Tg(str, c0621to);
         Qi qi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.e.fromModel(tg));
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(byteArray, str, 5896, publicLogger);
+        C0188d4 c0188d4 = new C0188d4(byteArray, str, 5896, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         this.c.info("Error from plugin received: %s", WrapUtils.wrapToTag(str));
     }
 
@@ -613,7 +613,7 @@ public abstract class V2 implements InterfaceC0247fb {
         String value = moduleEvent.getValue();
         String name = moduleEvent.getName();
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(value, name, 8192, moduleEvent.getType(), publicLogger);
+        C0188d4 c0188d4 = new C0188d4(value, name, 8192, moduleEvent.getType(), publicLogger);
         int i = Y8.f856a[moduleEvent.getCategory().ordinal()];
         if (i == 1) {
             g9 = G9.NATIVE;
@@ -622,26 +622,26 @@ public abstract class V2 implements InterfaceC0247fb {
         } else {
             g9 = G9.SYSTEM;
         }
-        c0189d4.l = g9;
-        c0189d4.c = Ib.b(moduleEvent.getEnvironment());
+        c0188d4.l = g9;
+        c0188d4.c = Ib.b(moduleEvent.getEnvironment());
         if (moduleEvent.getExtras() != null) {
-            c0189d4.p = moduleEvent.getExtras();
+            c0188d4.p = moduleEvent.getExtras();
         }
-        this.h.a(c0189d4, this.b, moduleEvent.getServiceDataReporterType(), moduleEvent.getAttributes());
+        this.h.a(c0188d4, this.b, moduleEvent.getServiceDataReporterType(), moduleEvent.getAttributes());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0506pb, io.appmetrica.analytics.impl.InterfaceC0314i0
+    @Override // io.appmetrica.analytics.impl.InterfaceC0505pb, io.appmetrica.analytics.impl.InterfaceC0313i0
     public final void a(X x) {
-        C0210e0 c0210e0 = new C0210e0(x, (String) this.k.b.a(), (Boolean) this.k.c.a());
+        C0209e0 c0209e0 = new C0209e0(x, (String) this.k.b.a(), (Boolean) this.k.c.a());
         Qi qi = this.h;
-        byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0210e0));
+        byte[] byteArray = MessageNano.toByteArray(this.g.fromModel(c0209e0));
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(byteArray, "", 5968, publicLogger);
+        C0188d4 c0188d4 = new C0188d4(byteArray, "", 5968, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         PublicLogger publicLogger2 = this.c;
         StringBuilder sb = new StringBuilder("ANR was reported ");
         Zn zn = x.f835a;
@@ -650,24 +650,24 @@ public abstract class V2 implements InterfaceC0247fb {
 
     @Override // io.appmetrica.analytics.plugins.IPluginReporter
     public final void reportError(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        C0622to c0622to;
-        C0380kf c0380kf = this.l;
+        C0621to c0621to;
+        C0379kf c0379kf = this.l;
         if (pluginErrorDetails != null) {
-            c0622to = c0380kf.a(pluginErrorDetails);
+            c0621to = c0379kf.a(pluginErrorDetails);
         } else {
-            c0380kf.getClass();
-            c0622to = null;
+            c0379kf.getClass();
+            c0621to = null;
         }
-        M6 m6 = new M6(new Tg(str2, c0622to), str);
+        M6 m6 = new M6(new Tg(str2, c0621to), str);
         Qi qi = this.h;
         byte[] byteArray = MessageNano.toByteArray(this.f.fromModel(m6));
         PublicLogger publicLogger = this.c;
         Set set = Q9.f730a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0189d4 c0189d4 = new C0189d4(byteArray, str2, 5896, publicLogger);
+        C0188d4 c0188d4 = new C0188d4(byteArray, str2, 5896, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         this.c.info("Error with identifier: %s from plugin received: %s", str, WrapUtils.wrapToTag(str2));
     }
 }

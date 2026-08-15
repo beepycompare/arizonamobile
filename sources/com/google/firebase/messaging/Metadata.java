@@ -11,7 +11,7 @@ import com.google.firebase.FirebaseApp;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class Metadata {
     private static final String ACTION_C2DM_REGISTER = "com.google.android.c2dm.intent.REGISTER";
     private static final String ACTION_IID_TOKEN_REQUEST = "com.google.iid.TOKEN_REQUEST";

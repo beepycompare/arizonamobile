@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class Store {
     static final String NO_BACKUP_FILE = "com.google.android.gms.appid-no-backup";
     static final String PREFERENCES = "com.google.android.gms.appid";
@@ -75,7 +75,7 @@ class Store {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Token {
         private static final String KEY_APP_VERSION = "appVersion";
         private static final String KEY_TIMESTAMP = "timestamp";

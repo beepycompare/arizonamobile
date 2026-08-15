@@ -13,16 +13,16 @@ public final class Xo implements Wo {
     }
 
     @Override // io.appmetrica.analytics.impl.Wo
-    public final byte[] a(C0297h9 c0297h9, Eh eh) {
-        if (!((C0448n5) eh.l).B() && !TextUtils.isEmpty(c0297h9.b)) {
+    public final byte[] a(C0296h9 c0296h9, Eh eh) {
+        if (!((C0447n5) eh.l).B() && !TextUtils.isEmpty(c0296h9.b)) {
             try {
-                JSONObject jSONObject = new JSONObject(c0297h9.b);
+                JSONObject jSONObject = new JSONObject(c0296h9.b);
                 jSONObject.remove("preloadInfo");
-                c0297h9.b = jSONObject.toString();
+                c0296h9.b = jSONObject.toString();
             } catch (Throwable unused) {
             }
         }
-        return this.f847a.a(c0297h9, eh);
+        return this.f847a.a(c0296h9, eh);
     }
 
     public Xo(V8 v8) {

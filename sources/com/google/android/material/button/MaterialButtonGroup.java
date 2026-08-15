@@ -79,7 +79,7 @@ public class MaterialButtonGroup extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-button-MaterialButtonGroup  reason: not valid java name */
-    public /* synthetic */ int m9536xa7af0300(MaterialButton materialButton, MaterialButton materialButton2) {
+    public /* synthetic */ int m9537xa7af0300(MaterialButton materialButton, MaterialButton materialButton2) {
         int compareTo = Boolean.valueOf(materialButton.isChecked()).compareTo(Boolean.valueOf(materialButton2.isChecked()));
         if (compareTo != 0) {
             return compareTo;
@@ -109,7 +109,7 @@ public class MaterialButtonGroup extends LinearLayout {
         this.childOrderComparator = new Comparator() { // from class: com.google.android.material.button.MaterialButtonGroup$$ExternalSyntheticLambda1
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                return MaterialButtonGroup.this.m9536xa7af0300((MaterialButton) obj, (MaterialButton) obj2);
+                return MaterialButtonGroup.this.m9537xa7af0300((MaterialButton) obj, (MaterialButton) obj2);
             }
         };
         this.childShapesDirty = true;
@@ -160,7 +160,7 @@ public class MaterialButtonGroup extends LinearLayout {
         this.overflowButton.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.button.MaterialButtonGroup$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                MaterialButtonGroup.this.m9535x38fdbfa1(view);
+                MaterialButtonGroup.this.m9536x38fdbfa1(view);
             }
         });
         addView(this.overflowButton);
@@ -169,7 +169,7 @@ public class MaterialButtonGroup extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$initializeButtonOverflow$1$com-google-android-material-button-MaterialButtonGroup  reason: not valid java name */
-    public /* synthetic */ void m9535x38fdbfa1(View view) {
+    public /* synthetic */ void m9536x38fdbfa1(View view) {
         updateOverflowMenuItemsState();
         this.popupMenu.show();
     }
@@ -744,7 +744,7 @@ public class MaterialButtonGroup extends LinearLayout {
     }
 
     public void setOverflowButtonIcon(Drawable drawable) {
-        this.overflowButton.m9534x11712a47(drawable);
+        this.overflowButton.m9535x11712a47(drawable);
     }
 
     public void setOverflowButtonIconResource(int i) {

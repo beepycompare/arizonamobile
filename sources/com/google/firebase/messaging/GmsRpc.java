@@ -22,7 +22,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.ExecutionException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class GmsRpc {
     static final String CMD_RST = "RST";
     static final String CMD_RST_FULL = "RST_FULL";
@@ -194,14 +194,14 @@ public class GmsRpc {
         return task.continueWith(new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.GmsRpc$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return GmsRpc.this.m9754xb80eb67f(task2);
+                return GmsRpc.this.m9755xb80eb67f(task2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$extractResponseWhenComplete$0$com-google-firebase-messaging-GmsRpc  reason: not valid java name */
-    public /* synthetic */ String m9754xb80eb67f(Task task) throws Exception {
+    public /* synthetic */ String m9755xb80eb67f(Task task) throws Exception {
         return handleResponse((Bundle) task.getResult(IOException.class));
     }
 

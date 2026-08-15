@@ -1,6 +1,5 @@
 package io.appmetrica.analytics.networktasks.internal;
 
-import androidx.core.app.NotificationCompat;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public class DefaultResponseParser {
@@ -22,7 +21,7 @@ public class DefaultResponseParser {
         if (bArr != null) {
             try {
                 if (bArr.length > 0) {
-                    return new Response(new JSONObject(new String(bArr, "UTF-8")).optString(NotificationCompat.CATEGORY_STATUS));
+                    return new Response(new JSONObject(new String(bArr, "UTF-8")).optString("status"));
                 }
                 return null;
             } catch (Throwable unused) {

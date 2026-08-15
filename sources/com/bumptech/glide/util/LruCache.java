@@ -3,7 +3,7 @@ package com.bumptech.glide.util;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LruCache<T, Y> {
     private final Map<T, Entry<Y>> cache = new LinkedHashMap(100, 0.75f, true);
     private long currentSize;
@@ -105,7 +105,7 @@ public class LruCache<T, Y> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Entry<Y> {
         final int size;
         final Y value;

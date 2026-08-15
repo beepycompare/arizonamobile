@@ -2,7 +2,7 @@ package com.bumptech.glide.request.target;
 
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class DrawableImageViewTarget extends ImageViewTarget<Drawable> {
     public DrawableImageViewTarget(ImageView imageView) {
         super(imageView);

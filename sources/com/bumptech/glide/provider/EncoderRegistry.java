@@ -3,7 +3,7 @@ package com.bumptech.glide.provider;
 import com.bumptech.glide.load.Encoder;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class EncoderRegistry {
     private final List<Entry<?>> encoders = new ArrayList();
 
@@ -24,7 +24,7 @@ public class EncoderRegistry {
         this.encoders.add(0, new Entry<>(cls, encoder));
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class Entry<T> {
         private final Class<T> dataClass;
         final Encoder<T> encoder;

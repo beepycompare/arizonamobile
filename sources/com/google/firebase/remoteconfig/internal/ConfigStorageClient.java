@@ -10,7 +10,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigStorageClient {
     private static final String JSON_STRING_ENCODING = "UTF-8";
     private static final Map<String, ConfigStorageClient> clientInstances = new HashMap();

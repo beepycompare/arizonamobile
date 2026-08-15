@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Objects;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigSharedPrefsClient {
     private static final String BACKOFF_END_TIME_IN_MILLIS_KEY = "backoff_end_time_in_millis";
     private static final int CUSTOM_SIGNALS_MAX_COUNT = 100;
@@ -203,7 +203,7 @@ public class ConfigSharedPrefsClient {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class BackoffMetadata {
         private Date backoffEndTime;
         private int numFailedFetches;
@@ -250,7 +250,7 @@ public class ConfigSharedPrefsClient {
         setRealtimeBackoffMetadata(0, NO_BACKOFF_TIME);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class RealtimeBackoffMetadata {
         private Date backoffEndTime;
         private int numFailedStreams;

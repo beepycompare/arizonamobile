@@ -1,7 +1,7 @@
 package com.google.firebase.messaging;
 
 import java.util.Locale;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SendException extends Exception {
     public static final int ERROR_INVALID_PARAMETERS = 1;
     public static final int ERROR_SIZE = 2;

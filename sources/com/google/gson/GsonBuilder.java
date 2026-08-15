@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class GsonBuilder {
     static final GsonBuilder DEFAULT;
     private static final boolean DEFAULT_COMPLEX_MAP_KEYS = false;

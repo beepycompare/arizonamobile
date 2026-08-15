@@ -19,27 +19,27 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class C extends Lambda implements Function1<SingleEmitter<Integer>, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0797r f1438a;
+    public final /* synthetic */ C0796r f1438a;
     public final /* synthetic */ AppUpdateInfo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C(C0797r c0797r, AppUpdateInfo appUpdateInfo) {
+    public C(C0796r c0796r, AppUpdateInfo appUpdateInfo) {
         super(1);
-        this.f1438a = c0797r;
+        this.f1438a = c0796r;
         this.b = appUpdateInfo;
     }
 
     public final void a(final SingleEmitter<Integer> emitter) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        C0797r c0797r = this.f1438a;
+        C0796r c0796r = this.f1438a;
         AppUpdateInfo appUpdateInfo = this.b;
         try {
             Result.Companion companion = Result.Companion;
-            Context context = c0797r.f1496a;
+            Context context = c0796r.f1496a;
             Intent intent = new Intent("ru.vk.store.FlexibleAppUpdate");
-            c0797r.b.getClass();
-            intent.putExtras(C0794o.a(appUpdateInfo));
+            c0796r.b.getClass();
+            intent.putExtras(C0793o.a(appUpdateInfo));
             ContextExtensionKt.openActivityForResult(context, intent, new OnReceiveResultCallback() { // from class: ru.rustore.sdk.appupdate.C$$ExternalSyntheticLambda0
                 @Override // ru.rustore.sdk.activitylauncher.OnReceiveResultCallback
                 public final void onReceiveResult(ActivityLauncherResult activityLauncherResult, Bundle bundle) {
@@ -47,14 +47,14 @@ public final class C extends Lambda implements Function1<SingleEmitter<Integer>,
                 }
             });
             appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-            m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
+            m9916constructorimpl = Result.m9916constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-        if (m9918exceptionOrNullimpl != null) {
-            emitter.error(m9918exceptionOrNullimpl);
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+        if (m9919exceptionOrNullimpl != null) {
+            emitter.error(m9919exceptionOrNullimpl);
         }
     }
 

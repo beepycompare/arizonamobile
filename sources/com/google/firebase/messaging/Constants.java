@@ -3,14 +3,14 @@ package com.google.firebase.messaging;
 import android.os.Bundle;
 import androidx.collection.ArrayMap;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Constants {
     public static final String FCM_WAKE_LOCK = "wake:com.google.firebase.messaging";
     public static final String IPC_BUNDLE_KEY_SEND_ERROR = "error";
     public static final String TAG = "FirebaseMessaging";
     public static final long WAKE_LOCK_ACQUIRE_TIMEOUT_MILLIS = TimeUnit.MINUTES.toMillis(3);
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class MessageTypes {
         public static final String DELETED = "deleted_messages";
         public static final String MESSAGE = "gcm";
@@ -21,7 +21,7 @@ public final class Constants {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class MessagePayloadKeys {
         public static final String COLLAPSE_KEY = "collapse_key";
         public static final String DELIVERED_PRIORITY = "google.delivered_priority";
@@ -59,7 +59,7 @@ public final class Constants {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class MessageNotificationKeys {
         public static final String ANALYTICS_DATA = "gcm.n.analytics_data";
         public static final String BODY = "gcm.n.body";
@@ -99,7 +99,7 @@ public final class Constants {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class AnalyticsKeys {
         public static final String ABT_EXPERIMENT = "google.c.a.abt";
         public static final String COMPOSER_ID = "google.c.a.c_id";
@@ -116,7 +116,7 @@ public final class Constants {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class FirelogAnalytics {
         public static final String FCM_LOG_SOURCE = "FCM_CLIENT_EVENT_LOGGING";
 
@@ -124,7 +124,7 @@ public final class Constants {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class ScionAnalytics {
         public static final String EVENT_FIREBASE_CAMPAIGN = "_cmp";
         public static final String EVENT_NOTIFICATION_DISMISS = "_nd";
@@ -145,7 +145,7 @@ public final class Constants {
         public static final String PARAM_TOPIC = "_nt";
         public static final String USER_PROPERTY_FIREBASE_LAST_NOTIFICATION = "_ln";
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public @interface MessageType {
             public static final String DATA_MESSAGE = "data";
             public static final String DISPLAY_NOTIFICATION = "display";

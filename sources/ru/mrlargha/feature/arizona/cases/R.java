@@ -16,24 +16,24 @@ public final class R {
         public static int arizona_cases_prize_item_bg = 0x7f080354;
         public static int arizona_cases_prize_item_bg_pattern = 0x7f080355;
         public static int arizona_cases_prize_select_item_bg_image = 0x7f080356;
-        public static int cases_arrow_icon = 0x7f0805dd;
-        public static int cases_benefit_bg = 0x7f0805de;
-        public static int cases_btn_close_bg = 0x7f0805df;
-        public static int cases_close_icon = 0x7f0805e0;
-        public static int cases_custom_scrollbar_thumb = 0x7f0805e1;
-        public static int cases_custom_scrollbar_track = 0x7f0805e2;
-        public static int cases_info_icon = 0x7f0805e4;
-        public static int cases_mark_ckeck_icon = 0x7f0805e5;
-        public static int cases_new_bg = 0x7f0805e6;
-        public static int cases_prize_select_item_bg = 0x7f0805e7;
-        public static int cases_prizes_arrow_down_up_icon = 0x7f0805e8;
-        public static int cases_prizes_page_bg = 0x7f0805e9;
-        public static int cases_select_x = 0x7f0805ea;
-        public static int cases_top_bar_gold_box_bg = 0x7f0805eb;
-        public static int cases_top_bar_linear_progress = 0x7f0805ec;
-        public static int cases_top_bg = 0x7f0805ed;
-        public static int cases_unselect_x = 0x7f0805ee;
-        public static int done_ic = 0x7f0807b9;
+        public static int cases_arrow_icon = 0x7f0805df;
+        public static int cases_benefit_bg = 0x7f0805e0;
+        public static int cases_btn_close_bg = 0x7f0805e1;
+        public static int cases_close_icon = 0x7f0805e2;
+        public static int cases_custom_scrollbar_thumb = 0x7f0805e3;
+        public static int cases_custom_scrollbar_track = 0x7f0805e4;
+        public static int cases_info_icon = 0x7f0805e6;
+        public static int cases_mark_ckeck_icon = 0x7f0805e7;
+        public static int cases_new_bg = 0x7f0805e8;
+        public static int cases_prize_select_item_bg = 0x7f0805e9;
+        public static int cases_prizes_arrow_down_up_icon = 0x7f0805ea;
+        public static int cases_prizes_page_bg = 0x7f0805eb;
+        public static int cases_select_x = 0x7f0805ec;
+        public static int cases_top_bar_gold_box_bg = 0x7f0805ed;
+        public static int cases_top_bar_linear_progress = 0x7f0805ee;
+        public static int cases_top_bg = 0x7f0805ef;
+        public static int cases_unselect_x = 0x7f0805f0;
+        public static int done_ic = 0x7f0807bb;
 
         private drawable() {
         }
@@ -128,34 +128,34 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class string {
-        public static int cases_available_until = 0x7f120172;
-        public static int cases_badge_new = 0x7f120173;
-        public static int cases_badge_top = 0x7f120174;
-        public static int cases_benefit_percent = 0x7f120175;
-        public static int cases_bonus_quality_info = 0x7f120176;
-        public static int cases_close = 0x7f120177;
-        public static int cases_count_amount = 0x7f120178;
-        public static int cases_count_left = 0x7f120179;
-        public static int cases_error_interface = 0x7f12017a;
-        public static int cases_error_load_data = 0x7f12017b;
-        public static int cases_got = 0x7f12017c;
-        public static int cases_guaranteed_prizes = 0x7f12017d;
-        public static int cases_open = 0x7f12017e;
-        public static int cases_open_all = 0x7f12017f;
-        public static int cases_open_contents = 0x7f120180;
-        public static int cases_open_for = 0x7f120181;
-        public static int cases_opening_case = 0x7f120182;
-        public static int cases_playback_error = 0x7f120183;
-        public static int cases_prizes_title = 0x7f120184;
-        public static int cases_schism = 0x7f120185;
-        public static int cases_schism_done = 0x7f120186;
-        public static int cases_similar_cases = 0x7f120187;
-        public static int cases_skip_video = 0x7f120188;
-        public static int cases_special_case = 0x7f120189;
-        public static int cases_take = 0x7f12018a;
-        public static int cases_title = 0x7f12018b;
-        public static int cases_unavailable = 0x7f12018c;
-        public static int cases_video_not_found = 0x7f12018d;
+        public static int cases_available_until = 0x7f120177;
+        public static int cases_badge_new = 0x7f120178;
+        public static int cases_badge_top = 0x7f120179;
+        public static int cases_benefit_percent = 0x7f12017a;
+        public static int cases_bonus_quality_info = 0x7f12017b;
+        public static int cases_close = 0x7f12017c;
+        public static int cases_count_amount = 0x7f12017d;
+        public static int cases_count_left = 0x7f12017e;
+        public static int cases_error_interface = 0x7f12017f;
+        public static int cases_error_load_data = 0x7f120180;
+        public static int cases_got = 0x7f120181;
+        public static int cases_guaranteed_prizes = 0x7f120182;
+        public static int cases_open = 0x7f120183;
+        public static int cases_open_all = 0x7f120184;
+        public static int cases_open_contents = 0x7f120185;
+        public static int cases_open_for = 0x7f120186;
+        public static int cases_opening_case = 0x7f120187;
+        public static int cases_playback_error = 0x7f120188;
+        public static int cases_prizes_title = 0x7f120189;
+        public static int cases_schism = 0x7f12018a;
+        public static int cases_schism_done = 0x7f12018b;
+        public static int cases_similar_cases = 0x7f12018c;
+        public static int cases_skip_video = 0x7f12018d;
+        public static int cases_special_case = 0x7f12018e;
+        public static int cases_take = 0x7f12018f;
+        public static int cases_title = 0x7f120190;
+        public static int cases_unavailable = 0x7f120191;
+        public static int cases_video_not_found = 0x7f120192;
 
         private string() {
         }

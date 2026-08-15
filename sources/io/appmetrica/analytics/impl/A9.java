@@ -26,8 +26,8 @@ public final class A9 extends MessageNano {
 
     /* renamed from: a  reason: collision with root package name */
     public long f457a;
-    public C0763z9 b;
-    public C0737y9[] c;
+    public C0762z9 b;
+    public C0736y9[] c;
 
     public A9() {
         a();
@@ -47,7 +47,7 @@ public final class A9 extends MessageNano {
     public final A9 a() {
         this.f457a = 0L;
         this.b = null;
-        this.c = C0737y9.b();
+        this.c = C0736y9.b();
         this.cachedSize = -1;
         return this;
     }
@@ -55,21 +55,21 @@ public final class A9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeUInt64Size = CodedOutputByteBufferNano.computeUInt64Size(1, this.f457a) + super.computeSerializedSize();
-        C0763z9 c0763z9 = this.b;
-        if (c0763z9 != null) {
-            computeUInt64Size += CodedOutputByteBufferNano.computeMessageSize(2, c0763z9);
+        C0762z9 c0762z9 = this.b;
+        if (c0762z9 != null) {
+            computeUInt64Size += CodedOutputByteBufferNano.computeMessageSize(2, c0762z9);
         }
-        C0737y9[] c0737y9Arr = this.c;
-        if (c0737y9Arr != null && c0737y9Arr.length > 0) {
+        C0736y9[] c0736y9Arr = this.c;
+        if (c0736y9Arr != null && c0736y9Arr.length > 0) {
             int i2 = 0;
             while (true) {
-                C0737y9[] c0737y9Arr2 = this.c;
-                if (i2 >= c0737y9Arr2.length) {
+                C0736y9[] c0736y9Arr2 = this.c;
+                if (i2 >= c0736y9Arr2.length) {
                     break;
                 }
-                C0737y9 c0737y9 = c0737y9Arr2[i2];
-                if (c0737y9 != null) {
-                    computeUInt64Size = CodedOutputByteBufferNano.computeMessageSize(3, c0737y9) + computeUInt64Size;
+                C0736y9 c0736y9 = c0736y9Arr2[i2];
+                if (c0736y9 != null) {
+                    computeUInt64Size = CodedOutputByteBufferNano.computeMessageSize(3, c0736y9) + computeUInt64Size;
                 }
                 i2++;
             }
@@ -80,21 +80,21 @@ public final class A9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
         codedOutputByteBufferNano.writeUInt64(1, this.f457a);
-        C0763z9 c0763z9 = this.b;
-        if (c0763z9 != null) {
-            codedOutputByteBufferNano.writeMessage(2, c0763z9);
+        C0762z9 c0762z9 = this.b;
+        if (c0762z9 != null) {
+            codedOutputByteBufferNano.writeMessage(2, c0762z9);
         }
-        C0737y9[] c0737y9Arr = this.c;
-        if (c0737y9Arr != null && c0737y9Arr.length > 0) {
+        C0736y9[] c0736y9Arr = this.c;
+        if (c0736y9Arr != null && c0736y9Arr.length > 0) {
             int i2 = 0;
             while (true) {
-                C0737y9[] c0737y9Arr2 = this.c;
-                if (i2 >= c0737y9Arr2.length) {
+                C0736y9[] c0736y9Arr2 = this.c;
+                if (i2 >= c0736y9Arr2.length) {
                     break;
                 }
-                C0737y9 c0737y9 = c0737y9Arr2[i2];
-                if (c0737y9 != null) {
-                    codedOutputByteBufferNano.writeMessage(3, c0737y9);
+                C0736y9 c0736y9 = c0736y9Arr2[i2];
+                if (c0736y9 != null) {
+                    codedOutputByteBufferNano.writeMessage(3, c0736y9);
                 }
                 i2++;
             }
@@ -113,7 +113,7 @@ public final class A9 extends MessageNano {
                 this.f457a = codedInputByteBufferNano.readUInt64();
             } else if (readTag == 18) {
                 if (this.b == null) {
-                    this.b = new C0763z9();
+                    this.b = new C0762z9();
                 }
                 codedInputByteBufferNano.readMessage(this.b);
             } else if (readTag != 26) {
@@ -122,24 +122,24 @@ public final class A9 extends MessageNano {
                 }
             } else {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 26);
-                C0737y9[] c0737y9Arr = this.c;
-                int length = c0737y9Arr == null ? 0 : c0737y9Arr.length;
+                C0736y9[] c0736y9Arr = this.c;
+                int length = c0736y9Arr == null ? 0 : c0736y9Arr.length;
                 int i2 = repeatedFieldArrayLength + length;
-                C0737y9[] c0737y9Arr2 = new C0737y9[i2];
+                C0736y9[] c0736y9Arr2 = new C0736y9[i2];
                 if (length != 0) {
-                    System.arraycopy(c0737y9Arr, 0, c0737y9Arr2, 0, length);
+                    System.arraycopy(c0736y9Arr, 0, c0736y9Arr2, 0, length);
                 }
                 while (length < i2 - 1) {
-                    C0737y9 c0737y9 = new C0737y9();
-                    c0737y9Arr2[length] = c0737y9;
-                    codedInputByteBufferNano.readMessage(c0737y9);
+                    C0736y9 c0736y9 = new C0736y9();
+                    c0736y9Arr2[length] = c0736y9;
+                    codedInputByteBufferNano.readMessage(c0736y9);
                     codedInputByteBufferNano.readTag();
                     length++;
                 }
-                C0737y9 c0737y92 = new C0737y9();
-                c0737y9Arr2[length] = c0737y92;
-                codedInputByteBufferNano.readMessage(c0737y92);
-                this.c = c0737y9Arr2;
+                C0736y9 c0736y92 = new C0736y9();
+                c0736y9Arr2[length] = c0736y92;
+                codedInputByteBufferNano.readMessage(c0736y92);
+                this.c = c0736y9Arr2;
             }
         }
         return this;

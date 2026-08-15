@@ -1,5 +1,5 @@
 package com.google.firebase.messaging.threads;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public enum ThreadPriority {
     LOW_POWER,
     HIGH_SPEED

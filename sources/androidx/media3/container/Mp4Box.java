@@ -4,7 +4,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class Mp4Box {
     public static final int DEFINES_LARGE_SIZE = 1;
     public static final int EXTENDS_TO_END_SIZE = 0;
@@ -172,7 +172,7 @@ public abstract class Mp4Box {
         return getBoxTypeString(this.type);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class LeafBox extends Mp4Box {
         public final ParsableByteArray data;
 
@@ -182,7 +182,7 @@ public abstract class Mp4Box {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ContainerBox extends Mp4Box {
         public final List<ContainerBox> containerChildren;
         public final long endPosition;

@@ -2,7 +2,7 @@ package androidx.core.view;
 
 import android.view.ScaleGestureDetector;
 import androidx.annotation.ReplaceWith;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class ScaleGestureDetectorCompat {
     private ScaleGestureDetectorCompat() {
     }

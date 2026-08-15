@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public class ViewUtils {
     private ViewUtils() {
     }

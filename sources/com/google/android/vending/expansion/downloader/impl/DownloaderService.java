@@ -471,7 +471,7 @@ public abstract class DownloaderService extends CustomIntentService implements I
     }
 
     public String generateTempSaveFileName(String str) {
-        return Helpers.getSaveFilePath(this) + File.separator + str + TEMP_EXT;
+        return Helpers.getSaveFilePath(this) + File.separator + str + ".tmp";
     }
 
     public abstract String getAlarmReceiverClassName();

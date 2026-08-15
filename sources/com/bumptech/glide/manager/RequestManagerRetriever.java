@@ -18,7 +18,7 @@ import com.bumptech.glide.util.Preconditions;
 import com.bumptech.glide.util.Util;
 import java.util.Collection;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RequestManagerRetriever implements Handler.Callback {
     private static final RequestManagerFactory DEFAULT_FACTORY = new RequestManagerFactory() { // from class: com.bumptech.glide.manager.RequestManagerRetriever.1
         @Override // com.bumptech.glide.manager.RequestManagerRetriever.RequestManagerFactory
@@ -33,7 +33,7 @@ public class RequestManagerRetriever implements Handler.Callback {
     private final LifecycleRequestManagerRetriever lifecycleRequestManagerRetriever;
     private final ArrayMap<View, Fragment> tempViewToSupportFragment = new ArrayMap<>();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface RequestManagerFactory {
         RequestManager build(Glide glide, Lifecycle lifecycle, RequestManagerTreeNode requestManagerTreeNode, Context context);
     }

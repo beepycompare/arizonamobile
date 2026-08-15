@@ -21,22 +21,22 @@ import java.util.Map;
 import java.util.Objects;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class O1 implements C1, InterfaceC0624u0 {
+public final class O1 implements C1, InterfaceC0623u0 {
 
     /* renamed from: a  reason: collision with root package name */
     public boolean f696a;
     public final Context b;
     public final B1 c;
-    public final C0550r4 d;
+    public final C0549r4 d;
     public final W1 e;
-    public C0330ih f;
+    public C0329ih f;
     public final Ba g;
-    public final C0600t2 h;
+    public final C0599t2 h;
     public final P1 i;
-    public final C0719xh j;
+    public final C0718xh j;
 
     public O1(Context context, B1 b1) {
-        this(context, b1, new C0603t5(context));
+        this(context, b1, new C0602t5(context));
     }
 
     public static void e(Intent intent) {
@@ -114,39 +114,39 @@ public final class O1 implements C1, InterfaceC0624u0 {
                 na.B.initAsync();
                 na.u.a(na.f683a);
                 na.u.a(new Mo(na.B));
-                NetworkServiceLocator.init(na.f683a, new C0655v5(new Ji(na.h()), new F5(na.f683a)));
+                NetworkServiceLocator.init(na.f683a, new C0654v5(new Ji(na.h()), new F5(na.f683a)));
                 na.l().a(na.q);
                 na.E();
             }
-            AbstractC0748yk.f1301a.e();
+            AbstractC0747yk.f1301a.e();
             Jm jm = Na.I.u;
             jm.a();
             Hm a2 = jm.a();
             Zk p = Na.I.p();
             p.a(new Ek(new Ad(this.e)), a2);
             jm.a(p);
-            ((C0181cm) Na.I.z()).getClass();
+            ((C0180cm) Na.I.z()).getClass();
             a();
             Na.I.m().init();
             Na.I.c().init();
             P1 p1 = this.i;
             Context context = this.b;
-            C0550r4 c0550r4 = this.d;
+            C0549r4 c0549r4 = this.d;
             p1.getClass();
-            this.f = new C0330ih(context, c0550r4);
+            this.f = new C0329ih(context, c0549r4);
             Context context2 = this.b;
-            AbstractC0677w1.f1258a.c(context2);
+            AbstractC0676w1.f1258a.c(context2);
             AppMetrica.getReporter(context2, "20799a27-fa80-4b36-b2db-0f8141f24180");
             Context context3 = this.b;
-            C0330ih c0330ih = this.f;
-            C0483oe r = Na.k().r();
+            C0329ih c0329ih = this.f;
+            C0482oe r = Na.k().r();
             IHandlerExecutor f = Na.k().w().f();
-            C0682w6 c0682w6 = new C0682w6(context3, c0330ih, Db.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE, new Z(), new BlockingExecutor(), "previous", new C0608ta());
-            C0682w6 c0682w62 = new C0682w6(context3, c0330ih, Db.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE, new Ob(), f, "actual", new C0608ta());
+            C0681w6 c0681w6 = new C0681w6(context3, c0329ih, Db.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE, new Z(), new BlockingExecutor(), "previous", new C0607ta());
+            C0681w6 c0681w62 = new C0681w6(context3, c0329ih, Db.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE, new Ob(), f, "actual", new C0607ta());
             File crashesDirectory = FileUtils.getCrashesDirectory(context3);
             if (crashesDirectory != null) {
-                FileObserverC0630u6 fileObserverC0630u6 = new FileObserverC0630u6(crashesDirectory, c0682w62, new C0686wa());
-                f.execute(new RunnableC0666vg(crashesDirectory, c0682w6));
+                FileObserverC0629u6 fileObserverC0629u6 = new FileObserverC0629u6(crashesDirectory, c0681w62, new C0685wa());
+                f.execute(new RunnableC0665vg(crashesDirectory, c0681w6));
                 if (crashesDirectory.exists()) {
                     if (!crashesDirectory.isDirectory() && crashesDirectory.delete()) {
                         crashesDirectory.mkdir();
@@ -154,8 +154,8 @@ public final class O1 implements C1, InterfaceC0624u0 {
                 } else {
                     crashesDirectory.mkdir();
                 }
-                fileObserverC0630u6.startWatching();
-                Na.I.E.storeReference(fileObserverC0630u6);
+                fileObserverC0629u6.startWatching();
+                Na.I.E.storeReference(fileObserverC0629u6);
             }
             r.getClass();
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context3);
@@ -164,14 +164,14 @@ public final class O1 implements C1, InterfaceC0624u0 {
                 r.f1133a.init(context3, new NativeCrashServiceConfig(absolutePath));
                 List<NativeCrash> allCrashes = r.f1133a.getAllCrashes();
                 if (!allCrashes.isEmpty()) {
-                    C0353je b = r.b.b(context3, c0330ih);
+                    C0352je b = r.b.b(context3, c0329ih);
                     for (NativeCrash nativeCrash : allCrashes) {
                         b.newCrash(nativeCrash);
                     }
                 }
-                r.f1133a.setDefaultCrashHandler(r.b.a(context3, c0330ih));
+                r.f1133a.setDefaultCrashHandler(r.b.a(context3, c0329ih));
             }
-            new Y5(CollectionsKt.listOf(new RunnableC0512ph())).run();
+            new Y5(CollectionsKt.listOf(new RunnableC0511ph())).run();
             this.f696a = true;
         } else {
             Na.I.v().a(this.b.getResources().getConfiguration());
@@ -181,7 +181,7 @@ public final class O1 implements C1, InterfaceC0624u0 {
 
     @Override // io.appmetrica.analytics.impl.C1
     public final void onDestroy() {
-        C0300hc l = Na.I.l();
+        C0299hc l = Na.I.l();
         synchronized (l) {
             Iterator it = l.c.iterator();
             while (it.hasNext()) {
@@ -192,15 +192,15 @@ public final class O1 implements C1, InterfaceC0624u0 {
 
     @Override // io.appmetrica.analytics.impl.C1
     public final void pauseUserSession(Bundle bundle) {
-        C0175cg c0175cg;
-        bundle.setClassLoader(C0175cg.class.getClassLoader());
-        String str = C0175cg.c;
+        C0174cg c0174cg;
+        bundle.setClassLoader(C0174cg.class.getClassLoader());
+        String str = C0174cg.c;
         try {
-            c0175cg = (C0175cg) bundle.getParcelable("PROCESS_CFG_OBJ");
+            c0174cg = (C0174cg) bundle.getParcelable("PROCESS_CFG_OBJ");
         } catch (Throwable unused) {
-            c0175cg = null;
+            c0174cg = null;
         }
-        Integer asInteger = c0175cg != null ? c0175cg.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = c0174cg != null ? c0174cg.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.b(asInteger.intValue());
         }
@@ -223,22 +223,22 @@ public final class O1 implements C1, InterfaceC0624u0 {
 
     @Override // io.appmetrica.analytics.impl.C1
     public final void resumeUserSession(Bundle bundle) {
-        C0175cg c0175cg;
-        bundle.setClassLoader(C0175cg.class.getClassLoader());
-        String str = C0175cg.c;
+        C0174cg c0174cg;
+        bundle.setClassLoader(C0174cg.class.getClassLoader());
+        String str = C0174cg.c;
         try {
-            c0175cg = (C0175cg) bundle.getParcelable("PROCESS_CFG_OBJ");
+            c0174cg = (C0174cg) bundle.getParcelable("PROCESS_CFG_OBJ");
         } catch (Throwable unused) {
-            c0175cg = null;
+            c0174cg = null;
         }
-        Integer asInteger = c0175cg != null ? c0175cg.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = c0174cg != null ? c0174cg.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.c(asInteger.intValue());
         }
     }
 
-    public O1(Context context, B1 b1, C0603t5 c0603t5) {
-        this(context, b1, new C0550r4(context, c0603t5), new W1(), Ba.d, Na.k().e(), new P1());
+    public O1(Context context, B1 b1, C0602t5 c0602t5) {
+        this(context, b1, new C0549r4(context, c0602t5), new W1(), Ba.d, Na.k().e(), new P1());
     }
 
     @Override // io.appmetrica.analytics.impl.C1
@@ -261,34 +261,34 @@ public final class O1 implements C1, InterfaceC0624u0 {
         w1.getClass();
     }
 
-    public O1(Context context, B1 b1, C0550r4 c0550r4, W1 w1, Ba ba, C0600t2 c0600t2, P1 p1) {
+    public O1(Context context, B1 b1, C0549r4 c0549r4, W1 w1, Ba ba, C0599t2 c0599t2, P1 p1) {
         this.f696a = false;
         this.b = context;
         this.c = b1;
-        this.d = c0550r4;
+        this.d = c0549r4;
         this.e = w1;
         this.g = ba;
-        this.h = c0600t2;
+        this.h = c0599t2;
         this.i = p1;
-        this.j = new C0719xh();
+        this.j = new C0718xh();
     }
 
     public final void a(Bundle bundle) {
         bundle.setClassLoader(CounterConfiguration.class.getClassLoader());
-        C0242f6.b(bundle);
-        C0330ih c0330ih = this.f;
-        if (c0330ih != null) {
-            c0330ih.a(C0242f6.b(bundle), bundle);
+        C0241f6.b(bundle);
+        C0329ih c0329ih = this.f;
+        if (c0329ih != null) {
+            c0329ih.a(C0241f6.b(bundle), bundle);
         }
     }
 
     @Override // io.appmetrica.analytics.impl.C1
     public final void a(Intent intent, int i) {
-        ((C0676w0) this.c).f1257a.stopSelf(i);
+        ((C0675w0) this.c).f1257a.stopSelf(i);
     }
 
     @Override // io.appmetrica.analytics.impl.C1
     public final void a(Intent intent, int i, int i2) {
-        ((C0676w0) this.c).f1257a.stopSelf(i2);
+        ((C0675w0) this.c).f1257a.stopSelf(i2);
     }
 }

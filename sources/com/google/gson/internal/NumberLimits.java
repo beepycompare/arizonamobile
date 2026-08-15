@@ -2,7 +2,7 @@ package com.google.gson.internal;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class NumberLimits {
     private static final int MAX_NUMBER_STRING_LENGTH = 10000;
 

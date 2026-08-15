@@ -12,36 +12,36 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class Di implements InterfaceC0532qb {
+public final class Di implements InterfaceC0531qb {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f516a;
-    public final C0175cg b;
+    public final C0174cg b;
     public final Qi c;
     public final Handler d;
-    public final C0543qm e;
+    public final C0542qm e;
     public final Tc f;
     public final LinkedHashMap g;
-    public final C0312ho h;
+    public final C0311ho h;
     public final List i;
     public Jc j;
     public B6 k;
 
-    public Di(Context context, C0175cg c0175cg, Qi qi, Handler handler, C0543qm c0543qm) {
+    public Di(Context context, C0174cg c0174cg, Qi qi, Handler handler, C0542qm c0542qm) {
         this.f516a = context;
-        this.b = c0175cg;
+        this.b = c0174cg;
         this.c = qi;
         this.d = handler;
-        this.e = c0543qm;
-        this.f = new Tc(context, c0175cg, qi, c0543qm);
+        this.e = c0542qm;
+        this.f = new Tc(context, c0174cg, qi, c0542qm);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         this.g = linkedHashMap;
-        this.h = new C0312ho(new Fi(linkedHashMap));
+        this.h = new C0311ho(new Fi(linkedHashMap));
         this.i = CollectionsKt.listOf((Object[]) new String[]{"20799a27-fa80-4b36-b2db-0f8141f24180", "0e5e9c33-f8c3-4568-86c5-2e4f57523f72"});
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb, io.appmetrica.analytics.impl.InterfaceC0557rb
-    public final InterfaceC0532qb a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0531qb, io.appmetrica.analytics.impl.InterfaceC0556rb
+    public final InterfaceC0531qb a() {
         return this;
     }
 
@@ -49,9 +49,9 @@ public final class Di implements InterfaceC0532qb {
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0531qb
     /* renamed from: c */
-    public final synchronized Jc b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0443n0 c0443n0) {
+    public final synchronized Jc b(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0442n0 c0442n0) {
         Jc jc;
         jc = this.j;
         if (jc != null) {
@@ -61,14 +61,14 @@ public final class Di implements InterfaceC0532qb {
             this.f.a(appMetricaConfig, publicLogger);
             jc = new Jc(this.f);
             jc.i = new Qb(this.d, jc);
-            C0543qm c0543qm = this.e;
+            C0542qm c0542qm = this.e;
             Zh zh = jc.b;
-            if (c0543qm != null) {
-                zh.b.setUuid(c0543qm.g());
+            if (c0542qm != null) {
+                zh.b.setUuid(c0542qm.g());
             } else {
                 zh.getClass();
             }
-            jc.a(appMetricaConfig, c0443n0);
+            jc.a(appMetricaConfig, c0442n0);
             jc.k();
             this.c.f.c = new Ci(jc);
             this.g.put(appMetricaConfig.apiKey, jc);
@@ -77,54 +77,54 @@ public final class Di implements InterfaceC0532qb {
         return jc;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0531qb
     /* renamed from: d */
-    public final synchronized Jc a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0443n0 c0443n0) {
+    public final synchronized Jc a(AppMetricaConfig appMetricaConfig, PublicLogger publicLogger, C0442n0 c0442n0) {
         Jc jc;
         jc = this.j;
         if (jc != null) {
             this.f.b(appMetricaConfig, publicLogger);
-            jc.a(appMetricaConfig, c0443n0);
-            C0576s4.l().getClass();
+            jc.a(appMetricaConfig, c0442n0);
+            C0575s4.l().getClass();
             this.g.put(appMetricaConfig.apiKey, jc);
         } else {
             this.h.a(appMetricaConfig.apiKey);
             this.f.b(appMetricaConfig, publicLogger);
             jc = new Jc(this.f);
             jc.i = new Qb(this.d, jc);
-            C0543qm c0543qm = this.e;
+            C0542qm c0542qm = this.e;
             Zh zh = jc.b;
-            if (c0543qm != null) {
-                zh.b.setUuid(c0543qm.g());
+            if (c0542qm != null) {
+                zh.b.setUuid(c0542qm.g());
             } else {
                 zh.getClass();
             }
-            jc.a(appMetricaConfig, c0443n0);
+            jc.a(appMetricaConfig, c0442n0);
             jc.k();
             this.c.f.c = new Ci(jc);
             this.g.put(appMetricaConfig.apiKey, jc);
-            C0576s4.l().getClass();
+            C0575s4.l().getClass();
             this.j = jc;
         }
         return jc;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
-    public final synchronized InterfaceC0506pb b(ReporterConfig reporterConfig) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0531qb
+    public final synchronized InterfaceC0505pb b(ReporterConfig reporterConfig) {
         Zc zc;
-        InterfaceC0506pb interfaceC0506pb = (InterfaceC0506pb) this.g.get(reporterConfig.apiKey);
-        zc = interfaceC0506pb;
-        if (interfaceC0506pb == null) {
+        InterfaceC0505pb interfaceC0505pb = (InterfaceC0505pb) this.g.get(reporterConfig.apiKey);
+        zc = interfaceC0505pb;
+        if (interfaceC0505pb == null) {
             if (!this.i.contains(reporterConfig.apiKey)) {
                 this.e.i();
             }
             Context context = this.f516a;
-            Zc zc2 = new Zc(context, this.b, reporterConfig, this.c, new C0298ha(context));
+            Zc zc2 = new Zc(context, this.b, reporterConfig, this.c, new C0297ha(context));
             zc2.i = new Qb(this.d, zc2);
-            C0543qm c0543qm = this.e;
+            C0542qm c0542qm = this.e;
             Zh zh = zc2.b;
-            if (c0543qm != null) {
-                zh.b.setUuid(c0543qm.g());
+            if (c0542qm != null) {
+                zh.b.setUuid(c0542qm.g());
             } else {
                 zh.getClass();
             }
@@ -135,7 +135,7 @@ public final class Di implements InterfaceC0532qb {
         return zc;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0531qb
     public final synchronized void a(ReporterConfig reporterConfig) {
         if (this.g.containsKey(reporterConfig.apiKey)) {
             LoggerStorage.getOrCreatePublicLogger(reporterConfig.apiKey).warning("Reporter with apiKey=%s already exists.", ApiKeyUtils.createPartialApiKey(reporterConfig.apiKey));
@@ -145,8 +145,8 @@ public final class Di implements InterfaceC0532qb {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qb
-    public final synchronized InterfaceC0609tb a(AppMetricaConfig appMetricaConfig) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0531qb
+    public final synchronized InterfaceC0608tb a(AppMetricaConfig appMetricaConfig) {
         B6 b6;
         b6 = this.k;
         if (b6 != null) {

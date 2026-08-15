@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class EnumTypeAdapter<T extends Enum<T>> extends TypeAdapter<T> {
     static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() { // from class: com.google.gson.internal.bind.EnumTypeAdapter.1
         @Override // com.google.gson.TypeAdapterFactory

@@ -244,7 +244,7 @@ public final class TtmlParser implements SubtitleParser {
         String attributeValue;
         do {
             xmlPullParser.next();
-            if (XmlPullParserUtil.isStartTag(xmlPullParser, "image") && (attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, "id")) != null) {
+            if (XmlPullParserUtil.isStartTag(xmlPullParser, "image") && (attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, TtmlNode.ATTR_ID)) != null) {
                 map.put(attributeValue, xmlPullParser.nextText());
             }
         } while (!XmlPullParserUtil.isEndTag(xmlPullParser, TtmlNode.TAG_METADATA));
@@ -275,7 +275,7 @@ public final class TtmlParser implements SubtitleParser {
         TtmlStyle ttmlStyle;
         String attributeValue3;
         TtmlStyle ttmlStyle2;
-        String attributeValue4 = XmlPullParserUtil.getAttributeValue(xmlPullParser, "id");
+        String attributeValue4 = XmlPullParserUtil.getAttributeValue(xmlPullParser, TtmlNode.ATTR_ID);
         if (attributeValue4 == null) {
             return null;
         }
@@ -496,7 +496,7 @@ public final class TtmlParser implements SubtitleParser {
                     c = 65535;
                     break;
                 case 3355:
-                    if (attributeName.equals("id")) {
+                    if (attributeName.equals(TtmlNode.ATTR_ID)) {
                         c = 7;
                         break;
                     }

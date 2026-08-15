@@ -14,7 +14,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class RemoteMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<RemoteMessage> CREATOR = new RemoteMessageCreator();
     public static final int PRIORITY_HIGH = 1;
@@ -25,7 +25,7 @@ public final class RemoteMessage extends AbstractSafeParcelable {
     private Notification notification;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface MessagePriority {
     }
 
@@ -151,7 +151,7 @@ public final class RemoteMessage extends AbstractSafeParcelable {
         return intent;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         private final Bundle bundle;
         private final Map<String, String> data;
@@ -238,7 +238,7 @@ public final class RemoteMessage extends AbstractSafeParcelable {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Notification {
         private final String body;
         private final String[] bodyLocArgs;

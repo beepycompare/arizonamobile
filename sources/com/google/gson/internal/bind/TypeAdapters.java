@@ -37,7 +37,7 @@ import java.util.concurrent.atomic.AtomicIntegerArray;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class TypeAdapters {
     public static final TypeAdapter<AtomicBoolean> ATOMIC_BOOLEAN;
     public static final TypeAdapterFactory ATOMIC_BOOLEAN_FACTORY;
@@ -97,7 +97,7 @@ public final class TypeAdapters {
     public static final TypeAdapterFactory UUID_FACTORY;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface FactorySupplier {
         TypeAdapterFactory get();
     }
@@ -692,7 +692,7 @@ public final class TypeAdapters {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.TypeAdapters$34  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class AnonymousClass34 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 
@@ -760,7 +760,7 @@ public final class TypeAdapters {
         }.nullSafe();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static class FloatAdapter extends TypeAdapter<Number> {
         private final boolean strict;
 
@@ -795,7 +795,7 @@ public final class TypeAdapters {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static class DoubleAdapter extends TypeAdapter<Number> {
         private final boolean strict;
 
@@ -834,7 +834,7 @@ public final class TypeAdapters {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static abstract class IntegerFieldsTypeAdapter<T> extends TypeAdapter<T> {
         private final List<String> fields;
 

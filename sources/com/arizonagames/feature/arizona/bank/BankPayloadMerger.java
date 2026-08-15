@@ -1,6 +1,8 @@
 package com.arizonagames.feature.arizona.bank;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.arizona.launcher.UpdateServiceContract;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -410,7 +412,7 @@ public final class BankPayloadMerger {
     }
 
     private final boolean isPartialBankAccount(JsonObject jsonObject) {
-        if (jsonObject.has("id")) {
+        if (jsonObject.has(TtmlNode.ATTR_ID)) {
             if (!jsonObject.has("buyCost") || jsonObject.has("money") || jsonObject.has("percents")) {
                 if (jsonObject.has("money") && jsonObject.has("percents")) {
                     JsonElement jsonElement = jsonObject.get("percents");
@@ -428,22 +430,22 @@ public final class BankPayloadMerger {
     }
 
     private final boolean isPartialTax(JsonObject jsonObject) {
-        if (jsonObject.has("id") && jsonObject.has(FirebaseAnalytics.Param.TAX) && jsonObject.has("warning") && jsonObject.has("title")) {
+        if (jsonObject.has(TtmlNode.ATTR_ID) && jsonObject.has(FirebaseAnalytics.Param.TAX) && jsonObject.has("warning") && jsonObject.has("title")) {
             return (jsonObject.has("disabled") || jsonObject.has("diasabled")) ? false : true;
         }
         return true;
     }
 
     private final boolean isPartialVehicle(JsonObject jsonObject) {
-        return (jsonObject.has("id") && jsonObject.has("name") && jsonObject.has("cost") && jsonObject.has("reason")) ? false : true;
+        return (jsonObject.has(TtmlNode.ATTR_ID) && jsonObject.has("name") && jsonObject.has("cost") && jsonObject.has("reason")) ? false : true;
     }
 
     private final boolean isPartialCurrency(JsonObject jsonObject) {
-        return (jsonObject.has("id") && jsonObject.has("current") && jsonObject.has("percent") && jsonObject.has("availableMoney")) ? false : true;
+        return (jsonObject.has(TtmlNode.ATTR_ID) && jsonObject.has(UpdateServiceContract.BundleKey.CURRENT) && jsonObject.has("percent") && jsonObject.has("availableMoney")) ? false : true;
     }
 
     private final boolean isPartialChest(JsonObject jsonObject) {
-        return (jsonObject.has("id") && jsonObject.has("disabledTime") && jsonObject.has("error")) ? false : true;
+        return (jsonObject.has(TtmlNode.ATTR_ID) && jsonObject.has("disabledTime") && jsonObject.has("error")) ? false : true;
     }
 
     private final JsonObject asJsonObjectOrNull(JsonElement jsonElement) {
@@ -462,7 +464,7 @@ public final class BankPayloadMerger {
     }
 
     private final String idValue(JsonObject jsonObject) {
-        JsonElement jsonElement = jsonObject.get("id");
+        JsonElement jsonElement = jsonObject.get(TtmlNode.ATTR_ID);
         if (jsonElement == null || jsonElement.isJsonNull()) {
             return null;
         }

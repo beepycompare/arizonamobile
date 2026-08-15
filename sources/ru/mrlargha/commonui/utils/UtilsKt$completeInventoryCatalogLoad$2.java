@@ -49,7 +49,7 @@ public final class UtilsKt$completeInventoryCatalogLoad$2 extends SuspendLambda 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
@@ -63,14 +63,14 @@ public final class UtilsKt$completeInventoryCatalogLoad$2 extends SuspendLambda 
             try {
                 Result.Companion companion = Result.Companion;
                 function1.invoke(Boxing.boxBoolean(z));
-                m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
+                m9916constructorimpl = Result.m9916constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-            if (m9918exceptionOrNullimpl != null) {
-                Log.e("InventoryCatalog", "Inventory catalog callback failed", m9918exceptionOrNullimpl);
+            Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+            if (m9919exceptionOrNullimpl != null) {
+                Log.e("InventoryCatalog", "Inventory catalog callback failed", m9919exceptionOrNullimpl);
             }
         }
         return Unit.INSTANCE;

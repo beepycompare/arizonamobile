@@ -59,6 +59,11 @@
     <string name="apartment">квартира</string>
     <string name="app_name">ARIZONA ONLINE</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="archive_phase_downloading">Скачивание файлов...</string>
+    <string name="archive_phase_extracting">Распаковка файлов...</string>
+    <string name="archive_phase_installing">Установка файлов...</string>
+    <string name="archive_phase_verifying">Проверка загруженных файлов...</string>
+    <string name="archive_phase_waiting_for_network">Ожидание подключения...</string>
     <string name="arizona_currency">ARIZONA (AARRP)</string>
     <string name="arizona_mini_game_search_document_description_txt">Найдите налоговые документы в конвертах</string>
     <string name="arizona_mini_game_search_document_title_txt">Поиск документов</string>
@@ -451,8 +456,8 @@
     <string name="close_menu">Закрыть меню</string>
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
-    <string name="res_0x7f1201c3_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f1201c4_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"be7358267e197369e8e875d8fbeb3c60d6e2d54b\"\n}\n</string>
+    <string name="res_0x7f1201c8_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
+    <string name="res_0x7f1201c9_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"5480ccdb48583639625c6f5723f4710f4520e323\"\n}\n</string>
     <string name="common_api_error">Ошибка API: %1$d</string>
     <string name="common_check_fields">Проверьте правильность введенных полей.</string>
     <string name="common_close">Закрыть</string>
@@ -999,6 +1004,8 @@
     <string name="house_week_profit_stats">Статистика прибыли за неделю</string>
     <string name="how_hear">Откуда узнали о проекте?</string>
     <string name="hud_battle_pass_label">&lt;c0&gt;BATTLE&lt;/c0&gt;\n&lt;c1&gt;PASS&lt;/c1&gt;</string>
+    <string name="hud_boss_frankenstein_title">Франкенштейн</string>
+    <string name="hud_boss_kraken_title">Кракен</string>
     <string name="hud_flight_altitude">Высота полета</string>
     <string name="hud_goals">Голов</string>
     <string name="hud_health">Здоровье</string>

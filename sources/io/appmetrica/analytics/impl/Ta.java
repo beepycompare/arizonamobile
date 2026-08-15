@@ -20,7 +20,7 @@ public class Ta extends P2 {
     }
 
     @Override // io.appmetrica.analytics.impl.P2, io.appmetrica.analytics.impl.Wa
-    public final C0519po a(List<Object> list) {
+    public final C0518po a(List<Object> list) {
         int i;
         int i2 = 0;
         if (list == null || (list.size() <= this.f713a && this.b == null)) {
@@ -33,7 +33,7 @@ public class Ta extends P2 {
                 if (i3 < this.f713a) {
                     Wa wa = this.b;
                     if (wa != null) {
-                        C0519po a2 = wa.a(obj);
+                        C0518po a2 = wa.a(obj);
                         Object obj2 = a2.f1155a;
                         i += a2.b.getBytesTruncated();
                         Oo.a(obj, a2.f1155a);
@@ -48,7 +48,7 @@ public class Ta extends P2 {
             }
             list = arrayList;
         }
-        return new C0519po(list, new E4(i2, i));
+        return new C0518po(list, new E4(i2, i));
     }
 
     public final Wa b() {

@@ -1,6 +1,7 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.ContentValues;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -20,7 +21,7 @@ public final class K7 implements Converter {
         ContentValues contentValues = new ContentValues();
         Long l = j7.f610a;
         if (l != null) {
-            contentValues.put("id", Long.valueOf(l.longValue()));
+            contentValues.put(TtmlNode.ATTR_ID, Long.valueOf(l.longValue()));
         }
         Al al = j7.b;
         if (al != null) {
@@ -48,7 +49,7 @@ public final class K7 implements Converter {
     public final J7 toModel(ContentValues contentValues) {
         Al al;
         int intValue;
-        Long asLong = contentValues.getAsLong("id");
+        Long asLong = contentValues.getAsLong(TtmlNode.ATTR_ID);
         Integer asInteger = contentValues.getAsInteger("type");
         if (asInteger != null) {
             Integer valueOf = Integer.valueOf(asInteger.intValue());

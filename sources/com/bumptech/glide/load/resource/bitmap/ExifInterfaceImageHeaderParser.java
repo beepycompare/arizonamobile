@@ -7,7 +7,7 @@ import com.bumptech.glide.util.ByteBufferUtil;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ExifInterfaceImageHeaderParser implements ImageHeaderParser {
     @Override // com.bumptech.glide.load.ImageHeaderParser
     public boolean hasJpegMpf(InputStream inputStream, ArrayPool arrayPool) throws IOException {

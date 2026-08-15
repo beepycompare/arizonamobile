@@ -1,7 +1,6 @@
 package com.adjust.sdk;
 
 import android.net.Uri;
-import com.google.common.net.HttpHeaders;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -55,7 +54,7 @@ public final class AdjustLinkResolution {
         try {
             httpURLConnection.setInstanceFollowRedirects(false);
             httpURLConnection.connect();
-            String headerField = httpURLConnection.getHeaderField(HttpHeaders.LOCATION);
+            String headerField = httpURLConnection.getHeaderField("Location");
             URL url2 = headerField != null ? new URL(headerField) : null;
             httpURLConnection.disconnect();
             resolveLink(url2, convertToHttps, i + 1, adjustLinkResolutionCallback);

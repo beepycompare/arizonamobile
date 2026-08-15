@@ -1,6 +1,7 @@
 package ru.mrlargha.commonui.utils;
 
 import android.content.Context;
+import com.google.common.net.HttpHeaders;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 import kotlin.Metadata;
@@ -40,7 +41,7 @@ public final class Picasso {
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final Response initPicasso$lambda$0(Interceptor.Chain chain) {
             Intrinsics.checkNotNullParameter(chain, "chain");
-            return chain.proceed(chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
+            return chain.proceed(chain.request().newBuilder().addHeader(HttpHeaders.USER_AGENT, "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
         }
     }
 }

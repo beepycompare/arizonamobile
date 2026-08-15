@@ -8,7 +8,7 @@ import android.content.pm.ServiceInfo;
 import android.util.Log;
 import java.util.ArrayDeque;
 import java.util.Queue;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ServiceStarter {
     static final String ACTION_MESSAGING_EVENT = "com.google.firebase.MESSAGING_EVENT";
     static final int ERROR_ILLEGAL_STATE_EXCEPTION = 402;

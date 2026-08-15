@@ -3,6 +3,7 @@ package androidx.room.util;
 import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.driver.SupportSQLiteConnection;
+import com.arizona.launcher.UpdateServiceContract;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -156,7 +157,7 @@ public final class TableInfo {
         }
 
         /* compiled from: TableInfo.android.kt */
-        @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0007H\u0007¨\u0006\t"}, d2 = {"Landroidx/room/util/TableInfo$Column$Companion;", "", "<init>", "()V", "defaultValueEquals", "", "current", "", "other", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\b\u0010\b\u001a\u0004\u0018\u00010\u0007H\u0007¨\u0006\t"}, d2 = {"Landroidx/room/util/TableInfo$Column$Companion;", "", "<init>", "()V", "defaultValueEquals", "", UpdateServiceContract.BundleKey.CURRENT, "", "other", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
         /* loaded from: classes3.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

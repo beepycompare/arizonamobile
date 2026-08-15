@@ -1,7 +1,7 @@
 package kotlinx.metadata.internal.protobuf;
 
 import com.google.common.base.Ascii;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 final class Utf8 {
     public static final int COMPLETE = 0;
     public static final int MALFORMED = -1;

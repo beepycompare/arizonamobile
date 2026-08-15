@@ -1,6 +1,7 @@
 package com.google.android.gms.internal.measurement;
 
 import android.net.Uri;
+import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
 import com.google.common.base.Optional;
 import com.google.common.util.concurrent.AsyncCallable;
 import com.google.common.util.concurrent.AsyncFunction;
@@ -256,7 +257,7 @@ public final class zzui implements zzuv {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final /* synthetic */ ListenableFuture zzk(Uri uri) {
-        Uri zza = zzuz.zza(uri, ".bak");
+        Uri zza = zzuz.zza(uri, DurableArchiveStateStore.BACKUP_SUFFIX);
         try {
             zzru zzruVar = this.zze;
             if (zzruVar.zzc(zza)) {

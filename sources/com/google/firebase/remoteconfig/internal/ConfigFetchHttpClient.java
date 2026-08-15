@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigFetchHttpClient {
     private static final String API_KEY_HEADER = "X-Goog-Api-Key";
     private static final String ETAG_HEADER = "ETag";

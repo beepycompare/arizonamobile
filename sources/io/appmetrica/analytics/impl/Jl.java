@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes5.dex */
-public final class Jl implements InterfaceC0632u8 {
+public final class Jl implements InterfaceC0631u8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0304hg f619a;
-    public final C0744yg b;
+    public final C0303hg f619a;
+    public final C0743yg b;
 
     public Jl() {
-        this(new C0304hg(), new C0744yg());
+        this(new C0303hg(), new C0743yg());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -29,7 +29,7 @@ public final class Jl implements InterfaceC0632u8 {
         } else {
             xi = null;
         }
-        return Collections.singletonList(new Xi(n8, new C0524q3(C0524q3.b(fromModel, xi))));
+        return Collections.singletonList(new Xi(n8, new C0523q3(C0523q3.b(fromModel, xi))));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -38,9 +38,9 @@ public final class Jl implements InterfaceC0632u8 {
         throw new UnsupportedOperationException();
     }
 
-    public Jl(C0304hg c0304hg, C0744yg c0744yg) {
-        this.f619a = c0304hg;
-        this.b = c0744yg;
+    public Jl(C0303hg c0303hg, C0743yg c0743yg) {
+        this.f619a = c0303hg;
+        this.b = c0743yg;
     }
 
     public final Il a(List<Xi> list) {

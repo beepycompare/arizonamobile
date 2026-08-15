@@ -2,7 +2,7 @@ package com.bumptech.glide.load.engine.bitmap_recycle;
 
 import android.graphics.Bitmap;
 import com.bumptech.glide.util.Util;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class AttributeStrategy implements LruPoolStrategy {
     private final KeyPool keyPool = new KeyPool();
     private final GroupedLinkedMap<Key, Bitmap> groupedMap = new GroupedLinkedMap<>();
@@ -52,7 +52,7 @@ class AttributeStrategy implements LruPoolStrategy {
         return "[" + i + "x" + i2 + "], " + config;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class KeyPool extends BaseKeyPool<Key> {
         KeyPool() {
         }
@@ -72,7 +72,7 @@ class AttributeStrategy implements LruPoolStrategy {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Key implements Poolable {
         private Bitmap.Config config;
         private int height;

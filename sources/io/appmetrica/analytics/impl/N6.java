@@ -14,18 +14,18 @@ public final class N6 implements ProtobufConverter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0449n6 fromModel(M6 m6) {
-        C0449n6 fromModel = this.f681a.fromModel(m6.f661a);
+    public final C0448n6 fromModel(M6 m6) {
+        C0448n6 fromModel = this.f681a.fromModel(m6.f661a);
         fromModel.g = 1;
-        C0423m6 c0423m6 = new C0423m6();
-        fromModel.h = c0423m6;
-        c0423m6.f1095a = StringUtils.correctIllFormedString(m6.b);
+        C0422m6 c0422m6 = new C0422m6();
+        fromModel.h = c0422m6;
+        c0422m6.f1095a = StringUtils.correctIllFormedString(m6.b);
         return fromModel;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0449n6 c0449n6 = (C0449n6) obj;
+        C0448n6 c0448n6 = (C0448n6) obj;
         throw new UnsupportedOperationException();
     }
 
@@ -33,7 +33,7 @@ public final class N6 implements ProtobufConverter {
         this.f681a = ug;
     }
 
-    public final M6 a(C0449n6 c0449n6) {
+    public final M6 a(C0448n6 c0448n6) {
         throw new UnsupportedOperationException();
     }
 }

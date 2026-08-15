@@ -64,6 +64,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.internal.view.SupportMenu;
 import androidx.media3.common.MimeTypes;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.vending.expansion.downloader.DownloadProgressInfo;
 import com.google.android.vending.expansion.downloader.DownloaderClientMarshaller;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
@@ -414,16 +415,16 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
         layoutParams.gravity = 17;
         addContentView((LinearLayout) getLayoutInflater().inflate(Helpers.GetResourceIdentifier(getApplicationContext(), "download", "layout"), (ViewGroup) null), layoutParams);
-        this.mPB = (ProgressBar) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressBar", "id"));
-        this.mStatusText = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "statusText", "id"));
-        this.mProgressFraction = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressAsFraction", "id"));
-        this.mProgressPercent = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressAsPercentage", "id"));
-        this.mAverageSpeed = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressAverageSpeed", "id"));
-        this.mTimeRemaining = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressTimeRemaining", "id"));
-        this.mDashboard = findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "downloaderDashboard", "id"));
-        this.mCellMessage = findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "approveCellular", "id"));
-        this.mPauseButton = (Button) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "pauseButton", "id"));
-        this.mWiFiSettingsButton = (Button) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "wifiSettingsButton", "id"));
+        this.mPB = (ProgressBar) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressBar", TtmlNode.ATTR_ID));
+        this.mStatusText = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "statusText", TtmlNode.ATTR_ID));
+        this.mProgressFraction = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressAsFraction", TtmlNode.ATTR_ID));
+        this.mProgressPercent = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressAsPercentage", TtmlNode.ATTR_ID));
+        this.mAverageSpeed = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressAverageSpeed", TtmlNode.ATTR_ID));
+        this.mTimeRemaining = (TextView) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "progressTimeRemaining", TtmlNode.ATTR_ID));
+        this.mDashboard = findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "downloaderDashboard", TtmlNode.ATTR_ID));
+        this.mCellMessage = findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "approveCellular", TtmlNode.ATTR_ID));
+        this.mPauseButton = (Button) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "pauseButton", TtmlNode.ATTR_ID));
+        this.mWiFiSettingsButton = (Button) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "wifiSettingsButton", TtmlNode.ATTR_ID));
         this.mPauseButton.setOnClickListener(new View.OnClickListener() { // from class: com.wardrumstudios.utils.WarMedia.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -447,7 +448,7 @@ public class WarMedia extends WarGamepad implements MediaPlayer.OnPreparedListen
             public void onClick(View view) {
             }
         });
-        ((Button) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "resumeOverCellular", "id"))).setOnClickListener(new View.OnClickListener() { // from class: com.wardrumstudios.utils.WarMedia.8
+        ((Button) findViewById(Helpers.GetResourceIdentifier(getApplicationContext(), "resumeOverCellular", TtmlNode.ATTR_ID))).setOnClickListener(new View.OnClickListener() { // from class: com.wardrumstudios.utils.WarMedia.8
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 WarMedia.this.mRemoteService.setDownloadFlags(1);

@@ -7,10 +7,10 @@ public final class R1 implements Fk {
     public static final int c = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0624u0 f741a;
+    public final InterfaceC0623u0 f741a;
 
-    public R1(InterfaceC0624u0 interfaceC0624u0) {
-        this.f741a = interfaceC0624u0;
+    public R1(InterfaceC0623u0 interfaceC0623u0) {
+        this.f741a = interfaceC0623u0;
     }
 
     @Override // io.appmetrica.analytics.impl.Fk

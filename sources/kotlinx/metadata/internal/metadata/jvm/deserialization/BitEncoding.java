@@ -1,7 +1,7 @@
 package kotlinx.metadata.internal.metadata.jvm.deserialization;
 
 import java.util.ArrayList;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class BitEncoding {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final boolean FORCE_8TO7_ENCODING;

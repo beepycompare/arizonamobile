@@ -274,7 +274,7 @@ public abstract class Timeline {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Period {
         public AdPlaybackState adPlaybackState = AdPlaybackState.NONE;
         public long durationUs;

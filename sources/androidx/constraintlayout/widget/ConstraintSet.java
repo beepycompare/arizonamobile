@@ -4323,7 +4323,7 @@ public class ConstraintSet {
                 i = 0;
             }
             if (i == 0) {
-                i = context.getResources().getIdentifier(trim, "id", context.getPackageName());
+                i = context.getResources().getIdentifier(trim, TtmlNode.ATTR_ID, context.getPackageName());
             }
             if (i == 0 && view.isInEditMode() && (view.getParent() instanceof ConstraintLayout) && (designInformation = ((ConstraintLayout) view.getParent()).getDesignInformation(0, trim)) != null && (designInformation instanceof Integer)) {
                 i = ((Integer) designInformation).intValue();

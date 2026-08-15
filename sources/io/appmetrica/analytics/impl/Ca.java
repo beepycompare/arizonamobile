@@ -8,7 +8,7 @@ public final class Ca implements ProtobufConverter {
     public final Ne f495a;
 
     public Ca() {
-        this(new C0646um());
+        this(new C0645um());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -24,8 +24,8 @@ public final class Ca implements ProtobufConverter {
         return tm;
     }
 
-    public Ca(C0646um c0646um) {
-        this.f495a = c0646um;
+    public Ca(C0645um c0645um) {
+        this.f495a = c0645um;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter

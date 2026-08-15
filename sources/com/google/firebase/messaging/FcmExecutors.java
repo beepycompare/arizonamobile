@@ -11,7 +11,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class FcmExecutors {
     private static final String THREAD_FILE = "Firebase-Messaging-File";
     static final String THREAD_FILE_IO = "Firebase-Messaging-File-Io";

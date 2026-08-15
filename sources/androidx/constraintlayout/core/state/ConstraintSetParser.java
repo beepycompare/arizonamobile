@@ -1662,7 +1662,7 @@ public class ConstraintSetParser {
         CLObject cLObject;
         String stringOrNull;
         CLElement cLElement = cLArray.get(1);
-        if ((cLElement instanceof CLObject) && (stringOrNull = (cLObject = (CLObject) cLElement).getStringOrNull("id")) != null) {
+        if ((cLElement instanceof CLObject) && (stringOrNull = (cLObject = (CLObject) cLElement).getStringOrNull(TtmlNode.ATTR_ID)) != null) {
             parseGuidelineParams(i, state, stringOrNull, cLObject);
         }
     }

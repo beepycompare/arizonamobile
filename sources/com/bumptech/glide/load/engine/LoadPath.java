@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class LoadPath<Data, ResourceType, Transcode> {
     private final Class<Data> dataClass;
     private final List<? extends DecodePath<Data, ResourceType, Transcode>> decodePaths;

@@ -54,6 +54,7 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.firebase.messaging.Constants;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
@@ -1945,7 +1946,7 @@ public final class ChipKt {
                             i16 = i24;
                         }
                         if ((i3 & 1024) != 0) {
-                            borderStroke3 = FilterChipDefaults.INSTANCE.m2543filterChipBorder_7El2pE(z7, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i16 >> 12) & 14) | 100663296 | ((i16 << 3) & 112), 252);
+                            borderStroke3 = FilterChipDefaults.INSTANCE.m2543filterChipBorder_7El2pE(z7, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i16 >> 12) & 14) | 100663296 | ((i16 << 3) & 112), LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX);
                             i11 &= -15;
                         } else {
                             borderStroke3 = borderStroke;
@@ -2702,7 +2703,7 @@ public final class ChipKt {
                                 selectableChipElevation3 = selectableChipElevation;
                             }
                             if ((i3 & 2048) != 0) {
-                                borderStroke3 = InputChipDefaults.INSTANCE.m2625inputChipBorder_7El2pE(z7, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i26 >> 12) & 14) | 100663296 | ((i26 << 3) & 112), 252);
+                                borderStroke3 = InputChipDefaults.INSTANCE.m2625inputChipBorder_7El2pE(z7, z3, 0L, 0L, 0L, 0L, 0.0f, 0.0f, startRestartGroup, ((i26 >> 12) & 14) | 100663296 | ((i26 << 3) & 112), LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX);
                                 i13 &= -113;
                             } else {
                                 borderStroke3 = borderStroke;

@@ -3,7 +3,7 @@ package com.google.gson.internal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class PreJava9DateFormatProvider {
     private PreJava9DateFormatProvider() {
     }

@@ -104,9 +104,9 @@ public final class R {
         public static int atm_screen_base_layout = 0x7f0d003a;
         public static int atm_screen_chicken = 0x7f0d003b;
         public static int atm_screen_evidence = 0x7f0d003c;
-        public static int item_atm_slot = 0x7f0d0180;
-        public static int item_atm_slot_chicken = 0x7f0d0181;
-        public static int item_atm_slot_evidence = 0x7f0d0182;
+        public static int item_atm_slot = 0x7f0d0184;
+        public static int item_atm_slot_chicken = 0x7f0d0185;
+        public static int item_atm_slot_evidence = 0x7f0d0186;
 
         private layout() {
         }

@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public final class P6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0672vm f715a = new C0672vm();
+    public final C0671vm f715a = new C0671vm();
     public Map b = MapsKt.emptyMap();
     public Map c = MapsKt.emptyMap();
     public IdentifiersResult d;
@@ -109,12 +109,12 @@ public final class P6 {
                 linkedHashMap.put(str, list2);
             }
         }
-        C0672vm c0672vm = this.f715a;
+        C0671vm c0671vm = this.f715a;
         String a2 = Ib.a((Map) linkedHashMap);
         IdentifiersResult identifiersResult = this.d;
         if (identifiersResult == null || (identifierStatus = identifiersResult.status) == null) {
             identifierStatus = IdentifierStatus.UNKNOWN;
         }
-        hashMap.put("appmetrica_custom_sdk_hosts", c0672vm.a(new IdentifiersResult(a2, identifierStatus, identifiersResult != null ? identifiersResult.errorExplanation : null)));
+        hashMap.put("appmetrica_custom_sdk_hosts", c0671vm.a(new IdentifiersResult(a2, identifierStatus, identifiersResult != null ? identifiersResult.errorExplanation : null)));
     }
 }

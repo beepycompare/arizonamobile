@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.FunctionReferenceImpl;
 /* compiled from: DefaultChildBackHandler.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 /* synthetic */ class DefaultChildBackHandler$parentCallback$3 extends FunctionReferenceImpl implements Function0<Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public DefaultChildBackHandler$parentCallback$3(Object obj) {

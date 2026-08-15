@@ -4,8 +4,8 @@ import android.location.Location;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0312ho;
-import io.appmetrica.analytics.impl.C0339j0;
+import io.appmetrica.analytics.impl.C0311ho;
+import io.appmetrica.analytics.impl.C0338j0;
 import io.appmetrica.analytics.impl.D5;
 import io.appmetrica.analytics.impl.Oo;
 import io.appmetrica.analytics.impl.U7;
@@ -53,7 +53,7 @@ public class AppMetricaConfig {
 
     /* loaded from: classes5.dex */
     public static class Builder {
-        private static final C0312ho D = new C0312ho(new C0339j0());
+        private static final C0311ho D = new C0311ho(new C0338j0());
         private Integer A;
         private List B;
         private final HashMap C;

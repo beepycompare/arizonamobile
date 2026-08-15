@@ -10,7 +10,7 @@ import com.google.firebase.messaging.reporting.MessagingClientEvent;
 import com.google.firebase.messaging.reporting.MessagingClientEventExtension;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
     public static final int CODEGEN_VERSION = 2;
     public static final Configurator CONFIG = new AutoProtoEncoderDoNotUseEncoder();
@@ -25,7 +25,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         encoderConfig.registerEncoder(MessagingClientEvent.class, MessagingClientEventEncoder.INSTANCE);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class ProtoEncoderDoNotUseEncoder implements ObjectEncoder<ProtoEncoderDoNotUse> {
         static final ProtoEncoderDoNotUseEncoder INSTANCE = new ProtoEncoderDoNotUseEncoder();
         private static final FieldDescriptor MESSAGINGCLIENTEVENTEXTENSION_DESCRIPTOR = FieldDescriptor.of("messagingClientEventExtension");
@@ -39,7 +39,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class MessagingClientEventExtensionEncoder implements ObjectEncoder<MessagingClientEventExtension> {
         static final MessagingClientEventExtensionEncoder INSTANCE = new MessagingClientEventExtensionEncoder();
         private static final FieldDescriptor MESSAGINGCLIENTEVENT_DESCRIPTOR = FieldDescriptor.builder("messagingClientEvent").withProperty(AtProtobuf.builder().tag(1).build()).build();
@@ -53,7 +53,7 @@ public final class AutoProtoEncoderDoNotUseEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class MessagingClientEventEncoder implements ObjectEncoder<MessagingClientEvent> {
         static final MessagingClientEventEncoder INSTANCE = new MessagingClientEventEncoder();
         private static final FieldDescriptor PROJECTNUMBER_DESCRIPTOR = FieldDescriptor.builder("projectNumber").withProperty(AtProtobuf.builder().tag(1).build()).build();

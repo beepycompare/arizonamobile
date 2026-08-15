@@ -17,7 +17,7 @@ public final class Te implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Xi fromModel(Map<String, String> map) {
-        C0519po a2 = this.f779a.a(map);
+        C0518po a2 = this.f779a.a(map);
         E8 e8 = new E8();
         e8.b = ((E4) a2.b).b;
         Map map2 = (Map) a2.f1155a;
@@ -31,9 +31,9 @@ public final class Te implements Converter {
                 i++;
             }
         }
-        InterfaceC0549r3 interfaceC0549r3 = a2.b;
-        int i2 = ((E4) interfaceC0549r3).f1160a;
-        return new Xi(e8, interfaceC0549r3);
+        InterfaceC0548r3 interfaceC0548r3 = a2.b;
+        int i2 = ((E4) interfaceC0548r3).f1160a;
+        return new Xi(e8, interfaceC0548r3);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter

@@ -1,6 +1,6 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0326ic;
+import io.appmetrica.analytics.impl.C0325ic;
 import io.appmetrica.analytics.impl.Cl;
 import io.appmetrica.analytics.impl.D4;
 import io.appmetrica.analytics.impl.He;
@@ -16,19 +16,19 @@ public final class NumberAttribute {
     private final L6 f1419a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public NumberAttribute(String str, Sb sb, C0326ic c0326ic) {
-        this.f1419a = new L6(str, sb, c0326ic);
+    public NumberAttribute(String str, Sb sb, C0325ic c0325ic) {
+        this.f1419a = new L6(str, sb, c0325ic);
     }
 
     public UserProfileUpdate<? extends Ho> withValue(double d) {
-        return new UserProfileUpdate<>(new He(this.f1419a.c, d, new Sb(), new J4(new C0326ic(new D4(100)))));
+        return new UserProfileUpdate<>(new He(this.f1419a.c, d, new Sb(), new J4(new C0325ic(new D4(100)))));
     }
 
     public UserProfileUpdate<? extends Ho> withValueIfUndefined(double d) {
-        return new UserProfileUpdate<>(new He(this.f1419a.c, d, new Sb(), new Cl(new C0326ic(new D4(100)))));
+        return new UserProfileUpdate<>(new He(this.f1419a.c, d, new Sb(), new Cl(new C0325ic(new D4(100)))));
     }
 
     public UserProfileUpdate<? extends Ho> withValueReset() {
-        return new UserProfileUpdate<>(new Vi(1, this.f1419a.c, new Sb(), new C0326ic(new D4(100))));
+        return new UserProfileUpdate<>(new Vi(1, this.f1419a.c, new Sb(), new C0325ic(new D4(100))));
     }
 }

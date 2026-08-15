@@ -14,7 +14,7 @@ public final class W7 implements ServiceComponentsInitializer {
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer
     public final void onCreate(Context context) {
-        C0585sd c0585sd = Na.I.s;
+        C0584sd c0584sd = Na.I.s;
         List<String> list = this.f823a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (String str : list) {
@@ -22,8 +22,8 @@ public final class W7 implements ServiceComponentsInitializer {
         }
         G5[] g5Arr = (G5[]) arrayList.toArray(new G5[0]);
         G5[] g5Arr2 = (G5[]) Arrays.copyOf(g5Arr, g5Arr.length);
-        synchronized (c0585sd) {
-            CollectionsKt.addAll(c0585sd.f1199a, g5Arr2);
+        synchronized (c0584sd) {
+            CollectionsKt.addAll(c0584sd.f1199a, g5Arr2);
         }
     }
 }

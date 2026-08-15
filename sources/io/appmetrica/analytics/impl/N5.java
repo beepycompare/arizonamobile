@@ -5,19 +5,19 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class N5 implements Z8, InterfaceC0426m9 {
+public final class N5 implements Z8, InterfaceC0425m9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0166c7 f680a;
+    public final C0165c7 f680a;
     public final AtomicLong b;
 
-    public N5(C0166c7 c0166c7) {
-        this.f680a = c0166c7;
-        this.b = new AtomicLong(c0166c7.a(Eo.a()));
-        c0166c7.a(this);
+    public N5(C0165c7 c0165c7) {
+        this.f680a = c0165c7;
+        this.b = new AtomicLong(c0165c7.a(Eo.a()));
+        c0165c7.a(this);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0426m9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0425m9
     public final void a() {
         this.b.set(this.f680a.a(Eo.f536a));
     }
@@ -27,7 +27,7 @@ public final class N5 implements Z8, InterfaceC0426m9 {
         return this.b.get() > 0;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0426m9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0425m9
     public final void b(List<Integer> list) {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {
@@ -40,7 +40,7 @@ public final class N5 implements Z8, InterfaceC0426m9 {
         this.b.addAndGet(-i);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0426m9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0425m9
     public final void a(List<Integer> list) {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {

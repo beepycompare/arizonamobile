@@ -12,10 +12,10 @@ public final class Pn {
     public Pn(Context context) {
         if (new SafePackageManager().hasSystemFeature(context, "android.hardware.telephony")) {
             this.f724a = new Y2(new Sl(context));
-            this.b = new Y2(new C0430md(context));
+            this.b = new Y2(new C0429md(context));
             return;
         }
-        this.f724a = new C0554r8();
-        this.b = new C0554r8();
+        this.f724a = new C0553r8();
+        this.b = new C0553r8();
     }
 }

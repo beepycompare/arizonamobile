@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class LazyStringArrayList extends AbstractList<String> implements LazyStringList, RandomAccess {
     public static final LazyStringList EMPTY = new LazyStringArrayList().getUnmodifiableView();
     private final List<Object> list;
@@ -197,7 +197,7 @@ public class LazyStringArrayList extends AbstractList<String> implements LazyStr
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static class ByteArrayListView extends AbstractList<byte[]> implements RandomAccess {
         private final List<Object> list;
 
@@ -247,7 +247,7 @@ public class LazyStringArrayList extends AbstractList<String> implements LazyStr
         return new ByteArrayListView(this.list);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static class ByteStringListView extends AbstractList<ByteString> implements RandomAccess {
         private final List<Object> list;
 

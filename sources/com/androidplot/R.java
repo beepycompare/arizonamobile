@@ -143,7 +143,7 @@ public final class R {
         public static int ap_gray = 0x7f06001f;
         public static int ap_transparent = 0x7f060020;
         public static int ap_white = 0x7f060021;
-        public static int off_white = 0x7f060428;
+        public static int off_white = 0x7f060429;
 
         private color() {
         }

@@ -16,7 +16,7 @@ import kotlinx.coroutines.Job;
 /* compiled from: AndroidPredictiveBackAnimatableV1.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.AndroidPredictiveBackAnimatableV1$awaitAll$2", f = "AndroidPredictiveBackAnimatableV1.kt", i = {}, l = {127}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class AndroidPredictiveBackAnimatableV1$awaitAll$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<CoroutineScope, Continuation<? super Unit>, Object>[] $actions;
     private /* synthetic */ Object L$0;

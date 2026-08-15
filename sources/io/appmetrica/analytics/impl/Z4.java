@@ -3,6 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,7 +13,7 @@ public final class Z4 extends DatabaseScript {
     /* renamed from: a  reason: collision with root package name */
     public final String f868a = "sessions";
     public final int b = 200;
-    public final String c = "id";
+    public final String c = TtmlNode.ATTR_ID;
     public final String d = "start_time";
     public final String e = "report_request_parameters";
     public final String f = "server_time_offset";

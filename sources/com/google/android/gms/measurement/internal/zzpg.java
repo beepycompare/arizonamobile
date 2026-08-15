@@ -3529,9 +3529,9 @@ public final class zzpg implements zzjg {
                     zzaM();
                 }
                 zzp();
-                String zzJ = zzpk.zzJ(map, HttpHeaders.LAST_MODIFIED);
+                String zzJ = zzpk.zzJ(map, "Last-Modified");
                 zzp();
-                String zzJ2 = zzpk.zzJ(map, HttpHeaders.ETAG);
+                String zzJ2 = zzpk.zzJ(map, "ETag");
                 if (i != 404 && i != 304) {
                     zzh().zzi(str, bArr, zzJ, zzJ2);
                     zzu.zzI(zzba().currentTimeMillis());

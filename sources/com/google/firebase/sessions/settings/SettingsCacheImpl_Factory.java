@@ -5,7 +5,7 @@ import com.google.firebase.sessions.TimeProvider;
 import com.google.firebase.sessions.dagger.internal.Factory;
 import com.google.firebase.sessions.dagger.internal.Provider;
 import kotlin.coroutines.CoroutineContext;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SettingsCacheImpl_Factory implements Factory<SettingsCacheImpl> {
     private final Provider<CoroutineContext> backgroundDispatcherProvider;
     private final Provider<DataStore<SessionConfigs>> sessionConfigsDataStoreProvider;

@@ -2,6 +2,7 @@ package com.google.android.gms.internal.measurement;
 
 import android.accounts.Account;
 import android.content.Context;
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -14,7 +15,7 @@ public final class zzsa {
     private static final Pattern zzc = Pattern.compile("[a-z]+(_[a-z]+)*");
     static final Account zza = zzrv.zza;
     private static final Set zzd = Collections.unmodifiableSet(new HashSet(Arrays.asList("default", "unused", "special", "reserved", "shared", "virtual", "managed")));
-    private static final Set zze = Collections.unmodifiableSet(new HashSet(Arrays.asList("files", "cache", "managed", "directboot-files", "directboot-cache", "external")));
+    private static final Set zze = Collections.unmodifiableSet(new HashSet(Arrays.asList(OriginalTzArchiveManifestParser.FILES_ROOT, "cache", "managed", "directboot-files", "directboot-cache", "external")));
 
     public static zzrz zza(Context context) {
         return new zzrz(context, null);

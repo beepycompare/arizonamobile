@@ -25,7 +25,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GifFrameLoader {
     private final BitmapPool bitmapPool;
     private final List<FrameCallback> callbacks;
@@ -47,13 +47,13 @@ public class GifFrameLoader {
     private Transformation<Bitmap> transformation;
     private int width;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface FrameCallback {
         void onFrameReady();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OnEveryFrameListener {
         void onFrameReady();
     }
@@ -274,7 +274,7 @@ public class GifFrameLoader {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class FrameLoaderCallback implements Handler.Callback {
         static final int MSG_CLEAR = 2;
         static final int MSG_DELAY = 1;
@@ -297,7 +297,7 @@ public class GifFrameLoader {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DelayTarget extends CustomTarget<Bitmap> {
         private final Handler handler;
         final int index;

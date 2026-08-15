@@ -5,9 +5,7 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import coil3.network.internal.UtilsKt;
 import com.android.volley.toolbox.HttpClientStack;
 import com.google.android.gms.actions.SearchIntents;
-import com.google.common.net.HttpHeaders;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.liulishuo.okdownload.core.Util;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
@@ -155,31 +153,31 @@ public final class Request {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "url", imports = {}))
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final HttpUrl m11763deprecated_url() {
+    public final HttpUrl m11764deprecated_url() {
         return this.url;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.METHOD, imports = {}))
     /* renamed from: -deprecated_method  reason: not valid java name */
-    public final String m11762deprecated_method() {
+    public final String m11763deprecated_method() {
         return this.method;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "headers", imports = {}))
     /* renamed from: -deprecated_headers  reason: not valid java name */
-    public final Headers m11761deprecated_headers() {
+    public final Headers m11762deprecated_headers() {
         return this.headers;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = TtmlNode.TAG_BODY, imports = {}))
     /* renamed from: -deprecated_body  reason: not valid java name */
-    public final RequestBody m11759deprecated_body() {
+    public final RequestBody m11760deprecated_body() {
         return this.body;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cacheControl", imports = {}))
     /* renamed from: -deprecated_cacheControl  reason: not valid java name */
-    public final CacheControl m11760deprecated_cacheControl() {
+    public final CacheControl m11761deprecated_cacheControl() {
         return cacheControl();
     }
 
@@ -376,7 +374,7 @@ public final class Request {
         }
 
         public Builder head() {
-            return method(Util.METHOD_HEAD, null);
+            return method("HEAD", null);
         }
 
         public Builder post(RequestBody body) {
@@ -460,11 +458,11 @@ public final class Request {
             if (requestBody == null) {
                 throw new IllegalStateException("cannot gzip a request that has no body");
             }
-            String str = this.headers.get(HttpHeaders.CONTENT_ENCODING);
+            String str = this.headers.get("Content-Encoding");
             if (str != null) {
                 throw new IllegalStateException(("Content-Encoding already set: " + str).toString());
             }
-            this.headers.add(HttpHeaders.CONTENT_ENCODING, "gzip");
+            this.headers.add("Content-Encoding", "gzip");
             this.body = new GzipRequestBody(requestBody);
             return this;
         }

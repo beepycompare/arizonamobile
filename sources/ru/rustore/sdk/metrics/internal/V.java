@@ -17,9 +17,9 @@ public final class V {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f1528a;
-    public final C0809d b;
+    public final C0808d b;
 
-    public V(Context context, C0809d getJobRepeatIntervalUseCase) {
+    public V(Context context, C0808d getJobRepeatIntervalUseCase) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(getJobRepeatIntervalUseCase, "getJobRepeatIntervalUseCase");
         this.f1528a = context;
@@ -44,6 +44,6 @@ public final class V {
         Duration.Companion companion = Duration.Companion;
         Integer JOB_REPEAT_INTERVAL_MINUTES = BuildConfig.JOB_REPEAT_INTERVAL_MINUTES;
         Intrinsics.checkNotNullExpressionValue(JOB_REPEAT_INTERVAL_MINUTES, "JOB_REPEAT_INTERVAL_MINUTES");
-        jobScheduler.schedule(builder.setPeriodic(Duration.m11303getInWholeMillisecondsimpl(DurationKt.toDuration(JOB_REPEAT_INTERVAL_MINUTES.intValue(), DurationUnit.MINUTES))).setPersisted(true).build());
+        jobScheduler.schedule(builder.setPeriodic(Duration.m11304getInWholeMillisecondsimpl(DurationKt.toDuration(JOB_REPEAT_INTERVAL_MINUTES.intValue(), DurationUnit.MINUTES))).setPersisted(true).build());
     }
 }

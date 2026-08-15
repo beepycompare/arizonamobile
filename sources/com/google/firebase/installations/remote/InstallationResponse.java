@@ -1,10 +1,10 @@
 package com.google.firebase.installations.remote;
 
 import com.google.firebase.installations.remote.AutoValue_InstallationResponse;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class InstallationResponse {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Builder {
         public abstract InstallationResponse build();
 
@@ -19,7 +19,7 @@ public abstract class InstallationResponse {
         public abstract Builder setUri(String str);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum ResponseCode {
         OK,
         BAD_CONFIG

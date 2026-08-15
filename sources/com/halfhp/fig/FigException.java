@@ -1,5 +1,5 @@
 package com.halfhp.fig;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class FigException extends Exception {
     public FigException(String str, Throwable th) {
         super(str, th);

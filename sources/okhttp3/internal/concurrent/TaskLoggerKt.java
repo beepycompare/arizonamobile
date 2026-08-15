@@ -2,6 +2,7 @@ package okhttp3.internal.concurrent;
 
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.common.C;
+import com.arizona.launcher.updater.archive.model.ArchiveModelRules;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,11 +63,11 @@ public final class TaskLoggerKt {
     public static final String formatDuration(long j) {
         String str;
         if (j <= -999500000) {
-            str = ((j - 500000000) / C.NANOS_PER_SECOND) + " s ";
+            str = ((j - ArchiveModelRules.MAX_ARCHIVE_SIZE_EXCLUSIVE) / C.NANOS_PER_SECOND) + " s ";
         } else if (j <= -999500) {
             str = ((j - 500000) / 1000000) + " ms";
         } else {
-            str = j <= 0 ? ((j - 500) / 1000) + " µs" : j < 999500 ? ((j + 500) / 1000) + " µs" : j < 999500000 ? ((j + 500000) / 1000000) + " ms" : ((j + 500000000) / C.NANOS_PER_SECOND) + " s ";
+            str = j <= 0 ? ((j - 500) / 1000) + " µs" : j < 999500 ? ((j + 500) / 1000) + " µs" : j < 999500000 ? ((j + 500000) / 1000000) + " ms" : ((j + ArchiveModelRules.MAX_ARCHIVE_SIZE_EXCLUSIVE) / C.NANOS_PER_SECOND) + " s ";
         }
         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
         String format = String.format("%6s", Arrays.copyOf(new Object[]{str}, 1));

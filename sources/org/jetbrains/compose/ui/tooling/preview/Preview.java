@@ -25,7 +25,7 @@ import kotlin.jvm.internal.RepeatableContainer;
 @Repeatable
 @Documented
 @java.lang.annotation.Repeatable(Container.class)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public @interface Preview {
 
     /* compiled from: Preview.kt */
@@ -35,7 +35,7 @@ public @interface Preview {
     @Retention(RetentionPolicy.CLASS)
     @kotlin.annotation.Retention(AnnotationRetention.BINARY)
     @RepeatableContainer
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public @interface Container {
         Preview[] value();
     }

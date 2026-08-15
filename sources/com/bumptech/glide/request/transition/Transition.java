@@ -2,10 +2,10 @@ package com.bumptech.glide.request.transition;
 
 import android.graphics.drawable.Drawable;
 import android.view.View;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface Transition<R> {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ViewAdapter {
         Drawable getCurrentDrawable();
 

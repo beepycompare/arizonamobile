@@ -29,7 +29,7 @@ public final class N implements ServiceConnection {
         }
     }
 
-    public N(Context context, String applicationId, C0798s onSuccess, C0799t onError) {
+    public N(Context context, String applicationId, C0797s onSuccess, C0798t onError) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(applicationId, "applicationId");
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");

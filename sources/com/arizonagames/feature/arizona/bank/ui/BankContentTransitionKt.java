@@ -40,7 +40,7 @@ public final class BankContentTransitionKt {
             view.setTranslationX(0.0f);
             return;
         }
-        view.animate().alpha(0.0f).translationX(coercedDirection(i) * bankContentTransitionOffset(view)).setDuration(CONTENT_EXIT_DURATION_MS).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.arizona.bank.ui.BankContentTransitionKt$$ExternalSyntheticLambda0
+        view.animate().alpha(0.0f).translationX(coercedDirection(i) * bankContentTransitionOffset(view)).setDuration(120L).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() { // from class: com.arizonagames.feature.arizona.bank.ui.BankContentTransitionKt$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 BankContentTransitionKt.hideBankContentTransition$lambda$0(view);

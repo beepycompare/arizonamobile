@@ -17,6 +17,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import coil3.network.internal.UtilsKt;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import com.facebook.AccessTokenSource;
 import com.facebook.FacebookAuthorizationException;
 import com.facebook.FacebookOperationCanceledException;
@@ -167,8 +168,8 @@ public class Facebook {
                 }
             } else if (tokenRefreshServiceConnection.serviceListener != null) {
                 String string2 = message.getData().getString("error");
-                if (message.getData().containsKey("error_code")) {
-                    tokenRefreshServiceConnection.serviceListener.onFacebookError(new FacebookError(string2, null, message.getData().getInt("error_code")));
+                if (message.getData().containsKey(UpdateAnalyticsContract.ERROR_CODE_PARAM)) {
+                    tokenRefreshServiceConnection.serviceListener.onFacebookError(new FacebookError(string2, null, message.getData().getInt(UpdateAnalyticsContract.ERROR_CODE_PARAM)));
                 } else {
                     ServiceListener serviceListener = tokenRefreshServiceConnection.serviceListener;
                     if (string2 == null) {

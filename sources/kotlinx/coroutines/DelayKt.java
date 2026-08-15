@@ -73,7 +73,7 @@ public final class DelayKt {
         cancellableContinuationImpl.initCancellability();
         CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
         if (j < Long.MAX_VALUE) {
-            getDelay(cancellableContinuationImpl2.getContext()).mo11512scheduleResumeAfterDelay(j, cancellableContinuationImpl2);
+            getDelay(cancellableContinuationImpl2.getContext()).mo11513scheduleResumeAfterDelay(j, cancellableContinuationImpl2);
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -83,8 +83,8 @@ public final class DelayKt {
     }
 
     /* renamed from: delay-VtjQ1oo  reason: not valid java name */
-    public static final Object m11439delayVtjQ1oo(long j, Continuation<? super Unit> continuation) {
-        Object delay = delay(m11440toDelayMillisLRDsOJo(j), continuation);
+    public static final Object m11440delayVtjQ1oo(long j, Continuation<? super Unit> continuation) {
+        Object delay = delay(m11441toDelayMillisLRDsOJo(j), continuation);
         return delay == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? delay : Unit.INSTANCE;
     }
 
@@ -95,12 +95,12 @@ public final class DelayKt {
     }
 
     /* renamed from: toDelayMillis-LRDsOJo  reason: not valid java name */
-    public static final long m11440toDelayMillisLRDsOJo(long j) {
-        boolean m11319isPositiveimpl = Duration.m11319isPositiveimpl(j);
-        if (m11319isPositiveimpl) {
+    public static final long m11441toDelayMillisLRDsOJo(long j) {
+        boolean m11320isPositiveimpl = Duration.m11320isPositiveimpl(j);
+        if (m11320isPositiveimpl) {
             Duration.Companion companion = Duration.Companion;
-            return Duration.m11303getInWholeMillisecondsimpl(Duration.m11321plusLRDsOJo(j, DurationKt.toDuration(999999L, DurationUnit.NANOSECONDS)));
-        } else if (m11319isPositiveimpl) {
+            return Duration.m11304getInWholeMillisecondsimpl(Duration.m11322plusLRDsOJo(j, DurationKt.toDuration(999999L, DurationUnit.NANOSECONDS)));
+        } else if (m11320isPositiveimpl) {
             throw new NoWhenBranchMatchedException();
         } else {
             return 0L;

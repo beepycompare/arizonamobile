@@ -11,14 +11,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.android.billingclient:billing@@8.3.0 */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public class Purchase {
     private final String zza;
     private final String zzb;
     private final JSONObject zzc;
 
     /* compiled from: com.android.billingclient:billing@@8.3.0 */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class PendingPurchaseUpdate {
         private final JSONObject mParsedJson;
 
@@ -44,7 +44,7 @@ public class Purchase {
 
     /* compiled from: com.android.billingclient:billing@@8.3.0 */
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public @interface PurchaseState {
         public static final int PENDING = 2;
         public static final int PURCHASED = 1;

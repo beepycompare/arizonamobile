@@ -1,7 +1,7 @@
 package com.google.firebase.remoteconfig.interop.rollouts;
 
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class RolloutsState {
     public abstract Set<RolloutAssignment> getRolloutAssignments();
 

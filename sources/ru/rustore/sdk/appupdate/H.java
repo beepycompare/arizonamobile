@@ -13,13 +13,13 @@ public final class H extends Lambda implements Function1<SingleEmitter<Unit>, Se
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ AppUpdateInfo f1443a;
-    public final /* synthetic */ C0797r b;
+    public final /* synthetic */ C0796r b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public H(C0797r c0797r, AppUpdateInfo appUpdateInfo) {
+    public H(C0796r c0796r, AppUpdateInfo appUpdateInfo) {
         super(1);
         this.f1443a = appUpdateInfo;
-        this.b = c0797r;
+        this.b = c0796r;
     }
 
     @Override // kotlin.jvm.functions.Function1

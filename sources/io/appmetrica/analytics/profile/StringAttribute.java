@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.profile;
 
 import io.appmetrica.analytics.impl.An;
-import io.appmetrica.analytics.impl.C0777zn;
+import io.appmetrica.analytics.impl.C0776zn;
 import io.appmetrica.analytics.impl.Cl;
 import io.appmetrica.analytics.impl.Ho;
-import io.appmetrica.analytics.impl.InterfaceC0493oo;
-import io.appmetrica.analytics.impl.InterfaceC0678w2;
+import io.appmetrica.analytics.impl.InterfaceC0492oo;
+import io.appmetrica.analytics.impl.InterfaceC0677w2;
 import io.appmetrica.analytics.impl.J4;
 import io.appmetrica.analytics.impl.L6;
 import io.appmetrica.analytics.impl.Vi;
@@ -14,13 +14,13 @@ import io.appmetrica.analytics.impl.Vo;
 public class StringAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InterfaceC0493oo f1420a;
+    private final InterfaceC0492oo f1420a;
     private final L6 b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public StringAttribute(String str, C0777zn c0777zn, Vo vo, InterfaceC0678w2 interfaceC0678w2) {
-        this.b = new L6(str, vo, interfaceC0678w2);
-        this.f1420a = c0777zn;
+    public StringAttribute(String str, C0776zn c0776zn, Vo vo, InterfaceC0677w2 interfaceC0677w2) {
+        this.b = new L6(str, vo, interfaceC0677w2);
+        this.f1420a = c0776zn;
     }
 
     public UserProfileUpdate<? extends Ho> withValue(String str) {

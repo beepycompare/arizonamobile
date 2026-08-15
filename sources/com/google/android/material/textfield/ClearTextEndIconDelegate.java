@@ -29,7 +29,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-textfield-ClearTextEndIconDelegate  reason: not valid java name */
-    public /* synthetic */ void m9635xfc81bd94(View view) {
+    public /* synthetic */ void m9636xfc81bd94(View view) {
         EditText editText = this.editText;
         if (editText == null) {
             return;
@@ -46,7 +46,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$com-google-android-material-textfield-ClearTextEndIconDelegate  reason: not valid java name */
-    public /* synthetic */ void m9636x7ae2c173(View view, boolean z) {
+    public /* synthetic */ void m9637x7ae2c173(View view, boolean z) {
         animateIcon(shouldBeVisible());
     }
 
@@ -56,13 +56,13 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
         this.onIconClickListener = new View.OnClickListener() { // from class: com.google.android.material.textfield.ClearTextEndIconDelegate$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ClearTextEndIconDelegate.this.m9635xfc81bd94(view);
+                ClearTextEndIconDelegate.this.m9636xfc81bd94(view);
             }
         };
         this.onFocusChangeListener = new View.OnFocusChangeListener() { // from class: com.google.android.material.textfield.ClearTextEndIconDelegate$$ExternalSyntheticLambda1
             @Override // android.view.View.OnFocusChangeListener
             public final void onFocusChange(View view, boolean z) {
-                ClearTextEndIconDelegate.this.m9636x7ae2c173(view, z);
+                ClearTextEndIconDelegate.this.m9637x7ae2c173(view, z);
             }
         };
         this.animationFadeDuration = MotionUtils.resolveThemeDuration(endCompoundLayout.getContext(), R.attr.motionDurationShort3, 100);
@@ -85,7 +85,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
             editText.post(new Runnable() { // from class: com.google.android.material.textfield.ClearTextEndIconDelegate$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ClearTextEndIconDelegate.this.m9637x26d8c5f4();
+                    ClearTextEndIconDelegate.this.m9638x26d8c5f4();
                 }
             });
         }
@@ -93,7 +93,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$tearDown$2$com-google-android-material-textfield-ClearTextEndIconDelegate  reason: not valid java name */
-    public /* synthetic */ void m9637x26d8c5f4() {
+    public /* synthetic */ void m9638x26d8c5f4() {
         animateIcon(true);
     }
 
@@ -198,7 +198,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.textfield.ClearTextEndIconDelegate$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ClearTextEndIconDelegate.this.m9633xa5c23ba8(valueAnimator);
+                ClearTextEndIconDelegate.this.m9634xa5c23ba8(valueAnimator);
             }
         });
         return ofFloat;
@@ -206,7 +206,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getAlphaAnimator$3$com-google-android-material-textfield-ClearTextEndIconDelegate  reason: not valid java name */
-    public /* synthetic */ void m9633xa5c23ba8(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9634xa5c23ba8(ValueAnimator valueAnimator) {
         this.endIconView.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
@@ -217,7 +217,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.textfield.ClearTextEndIconDelegate$$ExternalSyntheticLambda4
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                ClearTextEndIconDelegate.this.m9634x3819711b(valueAnimator);
+                ClearTextEndIconDelegate.this.m9635x3819711b(valueAnimator);
             }
         });
         return ofFloat;
@@ -225,7 +225,7 @@ public class ClearTextEndIconDelegate extends EndIconDelegate {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getScaleAnimator$4$com-google-android-material-textfield-ClearTextEndIconDelegate  reason: not valid java name */
-    public /* synthetic */ void m9634x3819711b(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9635x3819711b(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         this.endIconView.setScaleX(floatValue);
         this.endIconView.setScaleY(floatValue);

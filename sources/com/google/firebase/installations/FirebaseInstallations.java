@@ -29,7 +29,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseInstallations implements FirebaseInstallationsApi {
     private static final String API_KEY_VALIDATION_MSG = "Please set a valid API key. A Firebase API key is required to communicate with Firebase server APIs: It authenticates your project with Google.Please refer to https://firebase.google.com/support/privacy/init-options.";
     private static final String APP_ID_VALIDATION_MSG = "Please set your Application ID. A valid Firebase App ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.";
@@ -135,7 +135,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.m9737xc18eb11d();
+                FirebaseInstallations.this.m9738xc18eb11d();
             }
         });
         return addGetIdListener;
@@ -143,8 +143,8 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getId$1$com-google-firebase-installations-FirebaseInstallations  reason: not valid java name */
-    public /* synthetic */ void m9737xc18eb11d() {
-        m9738x7147f7aa(false);
+    public /* synthetic */ void m9738xc18eb11d() {
+        m9739x7147f7aa(false);
     }
 
     @Override // com.google.firebase.installations.FirebaseInstallationsApi
@@ -154,7 +154,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.backgroundExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.m9738x7147f7aa(z);
+                FirebaseInstallations.this.m9739x7147f7aa(z);
             }
         });
         return addGetAuthTokenListener;
@@ -240,7 +240,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: doRegistrationOrRefresh */
-    public final void m9738x7147f7aa(final boolean z) {
+    public final void m9739x7147f7aa(final boolean z) {
         PersistedInstallationEntry prefsWithGeneratedIdMultiProcessSafe = getPrefsWithGeneratedIdMultiProcessSafe();
         if (z) {
             prefsWithGeneratedIdMultiProcessSafe = prefsWithGeneratedIdMultiProcessSafe.withClearedAuthToken();
@@ -249,7 +249,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
         this.networkExecutor.execute(new Runnable() { // from class: com.google.firebase.installations.FirebaseInstallations$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                FirebaseInstallations.this.m9736x5a306a82(z);
+                FirebaseInstallations.this.m9737x5a306a82(z);
             }
         });
     }
@@ -266,7 +266,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void m9736x5a306a82(boolean z) {
+    public void m9737x5a306a82(boolean z) {
         PersistedInstallationEntry registerFidWithServer;
         PersistedInstallationEntry multiProcessSafePrefs = getMultiProcessSafePrefs();
         try {
@@ -374,7 +374,7 @@ public class FirebaseInstallations implements FirebaseInstallationsApi {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.installations.FirebaseInstallations$3  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class AnonymousClass3 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$installations$remote$InstallationResponse$ResponseCode;
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$installations$remote$TokenResult$ResponseCode;

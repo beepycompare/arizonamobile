@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: SettingsCache.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "com.google.firebase.sessions.settings.SettingsCacheImpl", f = "SettingsCache.kt", i = {}, l = {98}, m = "updateConfigs", n = {}, s = {})
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SettingsCacheImpl$updateConfigs$1 extends ContinuationImpl {
     int label;
     /* synthetic */ Object result;

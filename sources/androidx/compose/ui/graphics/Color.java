@@ -50,7 +50,7 @@ public final class Color {
 
     /* renamed from: equals-impl0 */
     public static final boolean m5349equalsimpl0(long j, long j2) {
-        return ULong.m10102equalsimpl0(j, j2);
+        return ULong.m10103equalsimpl0(j, j2);
     }
 
     public static /* synthetic */ void getAlpha$annotations() {
@@ -70,7 +70,7 @@ public final class Color {
 
     /* renamed from: hashCode-impl */
     public static int m5355hashCodeimpl(long j) {
-        return ULong.m10107hashCodeimpl(j);
+        return ULong.m10108hashCodeimpl(j);
     }
 
     public boolean equals(Object obj) {
@@ -97,7 +97,7 @@ public final class Color {
 
     /* renamed from: getColorSpace-impl */
     public static final ColorSpace m5352getColorSpaceimpl(long j) {
-        return ColorSpaces.INSTANCE.getColorSpacesArray$ui_graphics()[(int) ULong.m10095constructorimpl(j & 63)];
+        return ColorSpaces.INSTANCE.getColorSpacesArray$ui_graphics()[(int) ULong.m10096constructorimpl(j & 63)];
     }
 
     /* renamed from: convert-vNxB06k */
@@ -110,13 +110,13 @@ public final class Color {
         int i;
         int i2;
         int i3;
-        if (ULong.m10095constructorimpl(63 & j) == 0) {
-            return ((float) UnsignedKt.ulongToDouble(ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 48) & 255))) / 255.0f;
+        if (ULong.m10096constructorimpl(63 & j) == 0) {
+            return ((float) UnsignedKt.ulongToDouble(ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 48) & 255))) / 255.0f;
         }
-        short m10095constructorimpl = (short) ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 48) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
-        int i4 = 32768 & m10095constructorimpl;
-        int i5 = ((65535 & m10095constructorimpl) >>> 10) & 31;
-        int i6 = m10095constructorimpl & 1023;
+        short m10096constructorimpl = (short) ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 48) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
+        int i4 = 32768 & m10096constructorimpl;
+        int i5 = ((65535 & m10096constructorimpl) >>> 10) & 31;
+        int i6 = m10096constructorimpl & 1023;
         if (i5 != 0) {
             int i7 = i6 << 13;
             if (i5 == 31) {
@@ -145,13 +145,13 @@ public final class Color {
         int i;
         int i2;
         int i3;
-        if (ULong.m10095constructorimpl(63 & j) == 0) {
-            return ((float) UnsignedKt.ulongToDouble(ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 40) & 255))) / 255.0f;
+        if (ULong.m10096constructorimpl(63 & j) == 0) {
+            return ((float) UnsignedKt.ulongToDouble(ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 40) & 255))) / 255.0f;
         }
-        short m10095constructorimpl = (short) ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 32) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
-        int i4 = 32768 & m10095constructorimpl;
-        int i5 = ((65535 & m10095constructorimpl) >>> 10) & 31;
-        int i6 = m10095constructorimpl & 1023;
+        short m10096constructorimpl = (short) ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 32) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
+        int i4 = 32768 & m10096constructorimpl;
+        int i5 = ((65535 & m10096constructorimpl) >>> 10) & 31;
+        int i6 = m10096constructorimpl & 1023;
         if (i5 != 0) {
             int i7 = i6 << 13;
             if (i5 == 31) {
@@ -180,13 +180,13 @@ public final class Color {
         int i;
         int i2;
         int i3;
-        if (ULong.m10095constructorimpl(63 & j) == 0) {
-            return ((float) UnsignedKt.ulongToDouble(ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 32) & 255))) / 255.0f;
+        if (ULong.m10096constructorimpl(63 & j) == 0) {
+            return ((float) UnsignedKt.ulongToDouble(ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 32) & 255))) / 255.0f;
         }
-        short m10095constructorimpl = (short) ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 16) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
-        int i4 = 32768 & m10095constructorimpl;
-        int i5 = ((65535 & m10095constructorimpl) >>> 10) & 31;
-        int i6 = m10095constructorimpl & 1023;
+        short m10096constructorimpl = (short) ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 16) & WebSocketProtocol.PAYLOAD_SHORT_MAX);
+        int i4 = 32768 & m10096constructorimpl;
+        int i5 = ((65535 & m10096constructorimpl) >>> 10) & 31;
+        int i6 = m10096constructorimpl & 1023;
         if (i5 != 0) {
             int i7 = i6 << 13;
             if (i5 == 31) {
@@ -214,11 +214,11 @@ public final class Color {
     public static final float m5350getAlphaimpl(long j) {
         float ulongToDouble;
         float f;
-        if (ULong.m10095constructorimpl(63 & j) == 0) {
-            ulongToDouble = (float) UnsignedKt.ulongToDouble(ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 56) & 255));
+        if (ULong.m10096constructorimpl(63 & j) == 0) {
+            ulongToDouble = (float) UnsignedKt.ulongToDouble(ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 56) & 255));
             f = 255.0f;
         } else {
-            ulongToDouble = (float) UnsignedKt.ulongToDouble(ULong.m10095constructorimpl(ULong.m10095constructorimpl(j >>> 6) & 1023));
+            ulongToDouble = (float) UnsignedKt.ulongToDouble(ULong.m10096constructorimpl(ULong.m10096constructorimpl(j >>> 6) & 1023));
             f = 1023.0f;
         }
         return ulongToDouble / f;

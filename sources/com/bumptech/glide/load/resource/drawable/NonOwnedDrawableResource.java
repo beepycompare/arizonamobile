@@ -2,7 +2,7 @@ package com.bumptech.glide.load.resource.drawable;
 
 import android.graphics.drawable.Drawable;
 import com.bumptech.glide.load.engine.Resource;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class NonOwnedDrawableResource extends DrawableResource<Drawable> {
     @Override // com.bumptech.glide.load.engine.Resource
     public void recycle() {

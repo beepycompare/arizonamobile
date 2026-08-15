@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GlideBuilder {
     private GlideExecutor animationExecutor;
     private ArrayPool arrayPool;
@@ -54,15 +54,15 @@ public final class GlideBuilder {
         }
     };
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class LogRequestOrigins implements GlideExperiments.Experiment {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class OverrideGlideThreadPriority implements GlideExperiments.Experiment {
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class UseMediaStoreOpenFileApisIfPossible implements GlideExperiments.Experiment {
     }
 
@@ -258,7 +258,7 @@ public final class GlideBuilder {
         return new Glide(context, this.engine, this.memoryCache, this.bitmapPool, this.arrayPool, new RequestManagerRetriever(this.requestManagerFactory), this.connectivityMonitorFactory, this.logLevel, this.defaultRequestOptionsFactory, this.defaultTransitionOptions, this.defaultRequestListeners, list, appGlideModule, build);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ManualOverrideHardwareBitmapMaxFdCount implements GlideExperiments.Experiment {
         final int fdCount;
 
@@ -267,13 +267,13 @@ public final class GlideBuilder {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class EnableImageDecoderForBitmaps implements GlideExperiments.Experiment {
         EnableImageDecoderForBitmaps() {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class MemoryCategoryInBackground implements GlideExperiments.Experiment {
         private final MemoryCategory memoryCategory;
 

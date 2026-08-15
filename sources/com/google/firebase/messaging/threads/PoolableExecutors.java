@@ -9,7 +9,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class PoolableExecutors {
     private static final ExecutorFactory DEFAULT_INSTANCE;
     private static volatile ExecutorFactory instance;
@@ -27,7 +27,7 @@ public class PoolableExecutors {
         return instance;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static class DefaultExecutorFactory implements ExecutorFactory {
         private static final long CORE_THREAD_TIMEOUT_SECS = 60;
 

@@ -5,7 +5,7 @@ import androidx.media3.common.util.Util;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.dataflow.qual.Pure;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ColorInfo {
     public final int chromaBitdepth;
     public final int colorRange;

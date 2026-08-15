@@ -35,14 +35,14 @@ public class Subscriber {
         this.executor.execute(new Runnable() { // from class: com.google.common.eventbus.Subscriber$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                Subscriber.this.m9664lambda$dispatchEvent$0$comgooglecommoneventbusSubscriber(event);
+                Subscriber.this.m9665lambda$dispatchEvent$0$comgooglecommoneventbusSubscriber(event);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$dispatchEvent$0$com-google-common-eventbus-Subscriber  reason: not valid java name */
-    public /* synthetic */ void m9664lambda$dispatchEvent$0$comgooglecommoneventbusSubscriber(Object obj) {
+    public /* synthetic */ void m9665lambda$dispatchEvent$0$comgooglecommoneventbusSubscriber(Object obj) {
         try {
             invokeSubscriberMethod(obj);
         } catch (InvocationTargetException e) {

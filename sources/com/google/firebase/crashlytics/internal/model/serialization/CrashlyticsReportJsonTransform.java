@@ -4,6 +4,7 @@ import android.util.Base64;
 import android.util.JsonReader;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import coil3.util.UtilsKt;
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import com.facebook.internal.NativeProtocol;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.model.AutoCrashlyticsReportEncoder;
@@ -12,7 +13,6 @@ import com.google.firebase.encoders.DataEncoder;
 import com.google.firebase.encoders.json.JsonDataEncoderBuilder;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
-import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.impl.M2;
@@ -343,7 +343,7 @@ public class CrashlyticsReportJsonTransform {
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
-            if (nextName.equals("files")) {
+            if (nextName.equals(OriginalTzArchiveManifestParser.FILES_ROOT)) {
                 builder.setFiles(parseArray(jsonReader, new ObjectParser() { // from class: com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform$$ExternalSyntheticLambda7
                     @Override // com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform.ObjectParser
                     public final Object parse(JsonReader jsonReader2) {
@@ -475,7 +475,7 @@ public class CrashlyticsReportJsonTransform {
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             nextName.hashCode();
-            if (nextName.equals(BreakpointSQLiteKey.FILENAME)) {
+            if (nextName.equals("filename")) {
                 builder.setFilename(jsonReader.nextString());
             } else if (nextName.equals("contents")) {
                 builder.setContents(Base64.decode(jsonReader.nextString(), 2));

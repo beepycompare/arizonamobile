@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function6;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChildPages.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ComposableSingletons$ChildPagesKt {
     public static final ComposableSingletons$ChildPagesKt INSTANCE = new ComposableSingletons$ChildPagesKt();
 
@@ -109,12 +109,12 @@ public final class ComposableSingletons$ChildPagesKt {
     });
 
     /* renamed from: getLambda-1$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9473getLambda1$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9474getLambda1$extensions_compose_release() {
         return f46lambda1;
     }
 
     /* renamed from: getLambda-2$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9474getLambda2$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9475getLambda2$extensions_compose_release() {
         return f47lambda2;
     }
 }

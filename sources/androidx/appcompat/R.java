@@ -369,32 +369,32 @@ public final class R {
         public static int dim_foreground_material_light = 0x7f060099;
         public static int error_color_material_dark = 0x7f06009a;
         public static int error_color_material_light = 0x7f06009b;
-        public static int foreground_material_dark = 0x7f0600a5;
-        public static int foreground_material_light = 0x7f0600a6;
-        public static int highlighted_text_material_dark = 0x7f0600c0;
-        public static int highlighted_text_material_light = 0x7f0600c1;
-        public static int material_blue_grey_800 = 0x7f06034a;
-        public static int material_blue_grey_900 = 0x7f06034b;
-        public static int material_blue_grey_950 = 0x7f06034c;
-        public static int material_deep_teal_200 = 0x7f06034e;
-        public static int material_deep_teal_500 = 0x7f06034f;
-        public static int material_grey_100 = 0x7f06039a;
-        public static int material_grey_300 = 0x7f06039b;
-        public static int material_grey_50 = 0x7f06039c;
-        public static int material_grey_600 = 0x7f06039d;
-        public static int material_grey_800 = 0x7f06039e;
-        public static int material_grey_850 = 0x7f06039f;
-        public static int material_grey_900 = 0x7f0603a0;
-        public static int primary_dark_material_dark = 0x7f06042c;
-        public static int primary_dark_material_light = 0x7f06042d;
-        public static int primary_material_dark = 0x7f06042e;
-        public static int primary_material_light = 0x7f06042f;
-        public static int primary_text_default_material_dark = 0x7f060430;
-        public static int primary_text_default_material_light = 0x7f060431;
-        public static int primary_text_disabled_material_dark = 0x7f060432;
-        public static int primary_text_disabled_material_light = 0x7f060433;
-        public static int ripple_material_dark = 0x7f06043b;
-        public static int ripple_material_light = 0x7f06043c;
+        public static int foreground_material_dark = 0x7f0600a9;
+        public static int foreground_material_light = 0x7f0600aa;
+        public static int highlighted_text_material_dark = 0x7f0600c3;
+        public static int highlighted_text_material_light = 0x7f0600c4;
+        public static int material_blue_grey_800 = 0x7f06034b;
+        public static int material_blue_grey_900 = 0x7f06034c;
+        public static int material_blue_grey_950 = 0x7f06034d;
+        public static int material_deep_teal_200 = 0x7f06034f;
+        public static int material_deep_teal_500 = 0x7f060350;
+        public static int material_grey_100 = 0x7f06039b;
+        public static int material_grey_300 = 0x7f06039c;
+        public static int material_grey_50 = 0x7f06039d;
+        public static int material_grey_600 = 0x7f06039e;
+        public static int material_grey_800 = 0x7f06039f;
+        public static int material_grey_850 = 0x7f0603a0;
+        public static int material_grey_900 = 0x7f0603a1;
+        public static int primary_dark_material_dark = 0x7f06042d;
+        public static int primary_dark_material_light = 0x7f06042e;
+        public static int primary_material_dark = 0x7f06042f;
+        public static int primary_material_light = 0x7f060430;
+        public static int primary_text_default_material_dark = 0x7f060431;
+        public static int primary_text_default_material_light = 0x7f060432;
+        public static int primary_text_disabled_material_dark = 0x7f060433;
+        public static int primary_text_disabled_material_light = 0x7f060434;
+        public static int ripple_material_dark = 0x7f06043c;
+        public static int ripple_material_light = 0x7f06043d;
         public static int secondary_text_default_material_dark = 0x7f060446;
         public static int secondary_text_default_material_light = 0x7f060447;
         public static int secondary_text_disabled_material_dark = 0x7f060448;
@@ -597,17 +597,17 @@ public final class R {
         public static int abc_textfield_search_activated_mtrl_alpha = 0x7f08032a;
         public static int abc_textfield_search_default_mtrl_alpha = 0x7f08032b;
         public static int abc_textfield_search_material = 0x7f08032c;
-        public static int btn_checkbox_checked_mtrl = 0x7f080557;
-        public static int btn_checkbox_checked_to_unchecked_mtrl_animation = 0x7f080558;
-        public static int btn_checkbox_unchecked_mtrl = 0x7f080559;
-        public static int btn_checkbox_unchecked_to_checked_mtrl_animation = 0x7f08055a;
-        public static int btn_radio_off_mtrl = 0x7f080585;
-        public static int btn_radio_off_to_on_mtrl_animation = 0x7f080586;
-        public static int btn_radio_on_mtrl = 0x7f080587;
-        public static int btn_radio_on_to_off_mtrl_animation = 0x7f080588;
-        public static int test_level_drawable = 0x7f080ffd;
-        public static int tooltip_frame_dark = 0x7f081000;
-        public static int tooltip_frame_light = 0x7f081001;
+        public static int btn_checkbox_checked_mtrl = 0x7f080559;
+        public static int btn_checkbox_checked_to_unchecked_mtrl_animation = 0x7f08055a;
+        public static int btn_checkbox_unchecked_mtrl = 0x7f08055b;
+        public static int btn_checkbox_unchecked_to_checked_mtrl_animation = 0x7f08055c;
+        public static int btn_radio_off_mtrl = 0x7f080587;
+        public static int btn_radio_off_to_on_mtrl_animation = 0x7f080588;
+        public static int btn_radio_on_mtrl = 0x7f080589;
+        public static int btn_radio_on_to_off_mtrl_animation = 0x7f08058a;
+        public static int test_level_drawable = 0x7f080fff;
+        public static int tooltip_frame_dark = 0x7f081002;
+        public static int tooltip_frame_light = 0x7f081003;
 
         private drawable() {
         }
@@ -791,7 +791,7 @@ public final class R {
         public static int abc_shareactionprovider_share_with = 0x7f120019;
         public static int abc_shareactionprovider_share_with_application = 0x7f12001a;
         public static int abc_toolbar_collapse_description = 0x7f12001b;
-        public static int search_menu_title = 0x7f12064b;
+        public static int search_menu_title = 0x7f120652;
 
         private string() {
         }

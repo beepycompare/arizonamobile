@@ -31,7 +31,7 @@ public final class Throttler {
     public Throttler(long j) {
         this.allocatedUntil = j;
         this.waitByteCount = PlaybackStateCompat.ACTION_PLAY_FROM_URI;
-        this.maxByteCount = PlaybackStateCompat.ACTION_SET_REPEAT_MODE;
+        this.maxByteCount = 262144L;
         ReentrantLock reentrantLock = new ReentrantLock();
         this.lock = reentrantLock;
         Condition newCondition = reentrantLock.newCondition();

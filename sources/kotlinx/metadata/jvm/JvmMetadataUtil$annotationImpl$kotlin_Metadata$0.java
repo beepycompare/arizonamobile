@@ -7,7 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: JvmMetadataUtil.kt */
 @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public /* synthetic */ class JvmMetadataUtil$annotationImpl$kotlin_Metadata$0 implements Metadata {
     private final /* synthetic */ int[] bytecodeVersion;
     private final /* synthetic */ String[] data1;

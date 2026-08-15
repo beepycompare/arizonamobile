@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Serializable {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final Comparator<Comparable> NATURAL_ORDER = new Comparator<Comparable>() { // from class: com.google.gson.internal.LinkedTreeMap.1
@@ -350,7 +350,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Node<K, V> implements Map.Entry<K, V> {
         final boolean allowNullValue;
         int height;
@@ -459,7 +459,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public abstract class LinkedTreeMapIterator<T> implements Iterator<T> {
         int expectedModCount;
         Node<K, V> lastReturned = null;
@@ -500,7 +500,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     class EntrySet extends AbstractSet<Map.Entry<K, V>> {
         EntrySet() {
         }
@@ -545,7 +545,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     final class KeySet extends AbstractSet<K> {
         KeySet() {
         }

@@ -7,7 +7,7 @@ import com.google.gson.stream.MalformedJsonException;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class JsonParser {
     public static JsonElement parseString(String str) throws JsonSyntaxException {
         return parseReader(new StringReader(str));

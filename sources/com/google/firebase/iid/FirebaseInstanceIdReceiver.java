@@ -10,7 +10,7 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FcmBroadcastProcessor;
 import com.google.firebase.messaging.MessagingAnalytics;
 import java.util.concurrent.ExecutionException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FirebaseInstanceIdReceiver extends CloudMessagingReceiver {
     private static final String TAG = "FirebaseMessaging";
 

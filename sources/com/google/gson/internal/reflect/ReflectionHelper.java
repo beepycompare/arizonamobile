@@ -7,7 +7,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ReflectionHelper {
     private static final RecordHelper RECORD_HELPER;
 
@@ -135,7 +135,7 @@ public class ReflectionHelper {
         throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.14.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", reflectiveOperationException);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static abstract class RecordHelper {
         abstract Method getAccessor(Class<?> cls, Field field);
 
@@ -149,7 +149,7 @@ public class ReflectionHelper {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static class RecordSupportedHelper extends RecordHelper {
         private final Method getName;
         private final Method getRecordComponents;
@@ -212,7 +212,7 @@ public class ReflectionHelper {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static class RecordNotSupportedHelper extends RecordHelper {
         @Override // com.google.gson.internal.reflect.ReflectionHelper.RecordHelper
         boolean isRecord(Class<?> cls) {

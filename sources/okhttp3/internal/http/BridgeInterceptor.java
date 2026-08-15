@@ -43,11 +43,11 @@ public final class BridgeInterceptor implements Interceptor {
             }
             long contentLength = body2.contentLength();
             if (contentLength == -1) {
-                newBuilder.header("Transfer-Encoding", "chunked");
-                newBuilder.removeHeader("Content-Length");
+                newBuilder.header(com.google.common.net.HttpHeaders.TRANSFER_ENCODING, "chunked");
+                newBuilder.removeHeader(com.google.common.net.HttpHeaders.CONTENT_LENGTH);
             } else {
-                newBuilder.header("Content-Length", String.valueOf(contentLength));
-                newBuilder.removeHeader("Transfer-Encoding");
+                newBuilder.header(com.google.common.net.HttpHeaders.CONTENT_LENGTH, String.valueOf(contentLength));
+                newBuilder.removeHeader(com.google.common.net.HttpHeaders.TRANSFER_ENCODING);
             }
         }
         boolean z = false;
@@ -57,24 +57,24 @@ public final class BridgeInterceptor implements Interceptor {
         if (request.header(com.google.common.net.HttpHeaders.CONNECTION) == null) {
             newBuilder.header(com.google.common.net.HttpHeaders.CONNECTION, com.google.common.net.HttpHeaders.KEEP_ALIVE);
         }
-        if (request.header(com.google.common.net.HttpHeaders.ACCEPT_ENCODING) == null && request.header("Range") == null) {
-            newBuilder.header(com.google.common.net.HttpHeaders.ACCEPT_ENCODING, "gzip");
+        if (request.header("Accept-Encoding") == null && request.header("Range") == null) {
+            newBuilder.header("Accept-Encoding", "gzip");
             z = true;
         }
         List<Cookie> loadForRequest = this.cookieJar.loadForRequest(request.url());
         if (!loadForRequest.isEmpty()) {
             newBuilder.header(com.google.common.net.HttpHeaders.COOKIE, cookieHeader(loadForRequest));
         }
-        if (request.header("User-Agent") == null) {
-            newBuilder.header("User-Agent", _UtilCommonKt.USER_AGENT);
+        if (request.header(com.google.common.net.HttpHeaders.USER_AGENT) == null) {
+            newBuilder.header(com.google.common.net.HttpHeaders.USER_AGENT, _UtilCommonKt.USER_AGENT);
         }
         Request build = newBuilder.build();
         Response proceed = chain.proceed(build);
         HttpHeaders.receiveHeaders(this.cookieJar, build.url(), proceed.headers());
         Response.Builder request2 = proceed.newBuilder().request(build);
-        if (z && StringsKt.equals("gzip", Response.header$default(proceed, com.google.common.net.HttpHeaders.CONTENT_ENCODING, null, 2, null), true) && HttpHeaders.promisesBody(proceed) && (body = proceed.body()) != null) {
+        if (z && StringsKt.equals("gzip", Response.header$default(proceed, "Content-Encoding", null, 2, null), true) && HttpHeaders.promisesBody(proceed) && (body = proceed.body()) != null) {
             GzipSource gzipSource = new GzipSource(body.source());
-            request2.headers(proceed.headers().newBuilder().removeAll(com.google.common.net.HttpHeaders.CONTENT_ENCODING).removeAll("Content-Length").build());
+            request2.headers(proceed.headers().newBuilder().removeAll("Content-Encoding").removeAll(com.google.common.net.HttpHeaders.CONTENT_LENGTH).build());
             request2.body(new RealResponseBody(Response.header$default(proceed, "Content-Type", null, 2, null), -1L, Okio.buffer(gzipSource)));
         }
         return request2.build();

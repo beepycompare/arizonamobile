@@ -812,8 +812,8 @@ public class Request {
                         processGraphObjectProperty(String.format("%s[%s]", str, next), jSONObject.opt(next), keyValueSerializer, z);
                     }
                     return;
-                } else if (jSONObject.has("id")) {
-                    processGraphObjectProperty(str, jSONObject.optString("id"), keyValueSerializer, z);
+                } else if (jSONObject.has(TtmlNode.ATTR_ID)) {
+                    processGraphObjectProperty(str, jSONObject.optString(TtmlNode.ATTR_ID), keyValueSerializer, z);
                     return;
                 } else if (jSONObject.has("url")) {
                     processGraphObjectProperty(str, jSONObject.optString("url"), keyValueSerializer, z);

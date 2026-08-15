@@ -2,7 +2,7 @@ package com.bumptech.glide.request.target;
 
 import com.bumptech.glide.util.Util;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class SimpleTarget<Z> extends BaseTarget<Z> {
     private final int height;
     private final int width;

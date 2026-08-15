@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class CodedOutputStream {
     public static final int DEFAULT_BUFFER_SIZE = 4096;
     public static final int LITTLE_ENDIAN_32_SIZE = 4;
@@ -141,7 +141,7 @@ public final class CodedOutputStream {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static class ByteBufferOutputStream extends OutputStream {
         private final ByteBuffer byteBuffer;
 
@@ -585,7 +585,7 @@ public final class CodedOutputStream {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static class OutOfSpaceException extends IOException {
         private static final long serialVersionUID = -6947486886997889499L;
 

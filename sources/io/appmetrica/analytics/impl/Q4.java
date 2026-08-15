@@ -13,5 +13,5 @@ public abstract class Q4 {
         return this.f727a;
     }
 
-    public abstract boolean a(C0242f6 c0242f6, L4 l4);
+    public abstract boolean a(C0241f6 c0241f6, L4 l4);
 }

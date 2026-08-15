@@ -1,5 +1,6 @@
 package kotlin.sequences;
 
+import com.arizona.launcher.UpdateServiceContract;
 import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -14,7 +15,7 @@ import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [R] */
 /* compiled from: _Sequences.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "R", "Lkotlin/sequences/SequenceScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2", f = "_Sequences.kt", i = {0, 0, 0, 0}, l = {3163}, m = "invokeSuspend", n = {"$this$result", "iterator", "current", "next"}, nl = {3164}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
+@DebugMetadata(c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2", f = "_Sequences.kt", i = {0, 0, 0, 0}, l = {3163}, m = "invokeSuspend", n = {"$this$result", "iterator", UpdateServiceContract.BundleKey.CURRENT, "next"}, nl = {3164}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
 /* loaded from: classes5.dex */
 public final class SequencesKt___SequencesKt$zipWithNext$2<R> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Sequence<T> $this_zipWithNext;

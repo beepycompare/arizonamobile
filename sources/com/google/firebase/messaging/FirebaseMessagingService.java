@@ -11,7 +11,7 @@ import com.google.firebase.messaging.Constants;
 import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseMessagingService extends EnhancedIntentService {
     public static final String ACTION_DIRECT_BOOT_REMOTE_INTENT = "com.google.firebase.messaging.RECEIVE_DIRECT_BOOT";
     static final String ACTION_NEW_TOKEN = "com.google.firebase.messaging.NEW_TOKEN";

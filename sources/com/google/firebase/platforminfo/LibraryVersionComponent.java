@@ -5,10 +5,10 @@ import com.google.firebase.components.Component;
 import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.Dependency;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class LibraryVersionComponent {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface VersionExtractor<T> {
         String extract(T t);
     }

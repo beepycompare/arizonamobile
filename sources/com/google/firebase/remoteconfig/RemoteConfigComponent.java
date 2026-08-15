@@ -34,7 +34,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
     public static final String ACTIVATE_FILE_NAME = "activate";
     public static final long CONNECTION_TIMEOUT_IN_SECONDS = 60;

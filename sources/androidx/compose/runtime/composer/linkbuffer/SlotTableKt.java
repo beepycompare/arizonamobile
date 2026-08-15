@@ -207,7 +207,7 @@ public final class SlotTableKt {
         slotTableBuilder.startNewGroup(MovableContentKt.movableContentKey, content$runtime == Composer.Companion.getEmpty() ? 0 : 16777216, content$runtime, null, null);
         slotTableBuilder.addFlags(268435456);
         slotTableBuilder.append(movableContentStateReference.getParameter$runtime());
-        slotTableBuilder.moveFrom(slotTableEditor, UInt.m10016constructorimpl(slotTableEditor.firstChildOf(LinkAnchorKt.asLinkAnchor(movableContentStateReference.getAnchor$runtime()).getAddress())) & 4294967295L);
+        slotTableBuilder.moveFrom(slotTableEditor, UInt.m10017constructorimpl(slotTableEditor.firstChildOf(LinkAnchorKt.asLinkAnchor(movableContentStateReference.getAnchor$runtime()).getAddress())) & 4294967295L);
         slotTableBuilder.endGroup();
         SlotTable build = slotTableBuilder.build();
         MovableContentState movableContentState = new MovableContentState(build);
@@ -390,6 +390,6 @@ public final class SlotTableKt {
     }
 
     private static final long toGroupHandle(int i) {
-        return UInt.m10016constructorimpl(i) & 4294967295L;
+        return UInt.m10017constructorimpl(i) & 4294967295L;
     }
 }

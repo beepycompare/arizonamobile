@@ -12,7 +12,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FcmBroadcastProcessor {
     private static final String EXTRA_BINARY_DATA = "rawData";
     private static final String EXTRA_BINARY_DATA_BASE_64 = "gcm.rawData64";

@@ -15,11 +15,11 @@ import kotlinx.metadata.internal.protobuf.FieldSet;
 import kotlinx.metadata.internal.protobuf.Internal;
 import kotlinx.metadata.internal.protobuf.MessageLite;
 import kotlinx.metadata.internal.protobuf.WireFormat;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public abstract class GeneratedMessageLite extends AbstractMessageLite implements Serializable {
     private static final long serialVersionUID = 1;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ExtendableMessageOrBuilder<MessageType extends ExtendableMessage> extends MessageLiteOrBuilder {
         <Type> Type getExtension(GeneratedExtension<MessageType, Type> generatedExtension);
 
@@ -52,7 +52,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
         return codedInputStream.skipField(i, codedOutputStream);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Builder<MessageType extends GeneratedMessageLite, BuilderType extends Builder> extends AbstractMessageLite.Builder<BuilderType> {
         private ByteString unknownFields = ByteString.EMPTY;
 
@@ -86,7 +86,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static abstract class ExtendableMessage<MessageType extends ExtendableMessage<MessageType>> extends GeneratedMessageLite implements ExtendableMessageOrBuilder<MessageType> {
         private final FieldSet<ExtensionDescriptor> extensions;
 
@@ -154,7 +154,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public class ExtensionWriter {
             private final Iterator<Map.Entry<ExtensionDescriptor, Object>> iter;
             private final boolean messageSetWireFormat;
@@ -213,7 +213,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static abstract class ExtendableBuilder<MessageType extends ExtendableMessage<MessageType>, BuilderType extends ExtendableBuilder<MessageType, BuilderType>> extends Builder<MessageType, BuilderType> implements ExtendableMessageOrBuilder<MessageType> {
         private FieldSet<ExtensionDescriptor> extensions = FieldSet.emptySet();
         private boolean extensionsIsMutable;
@@ -414,7 +414,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: kotlinx.metadata.internal.protobuf.GeneratedMessageLite$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
@@ -441,7 +441,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class ExtensionDescriptor implements FieldSet.FieldDescriptorLite<ExtensionDescriptor> {
         final Internal.EnumLiteMap<?> enumTypeMap;
         final boolean isPacked;
@@ -525,7 +525,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static class GeneratedExtension<ContainingType extends MessageLite, Type> {
         final ContainingType containingTypeDefaultInstance;
         final Type defaultValue;
@@ -603,7 +603,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class SerializedForm implements Serializable {
         private static final long serialVersionUID = 0;
         private byte[] asBytes;

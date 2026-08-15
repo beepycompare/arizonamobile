@@ -7,7 +7,7 @@ import android.text.format.Formatter;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import com.bumptech.glide.util.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MemorySizeCalculator {
     static final int BYTES_PER_ARGB_8888_PIXEL = 4;
     private static final int LOW_MEMORY_BYTE_ARRAY_POOL_DIVISOR = 2;
@@ -17,7 +17,7 @@ public final class MemorySizeCalculator {
     private final Context context;
     private final int memoryCacheSize;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface ScreenDimensions {
         int getHeightPixels();
 
@@ -81,7 +81,7 @@ public final class MemorySizeCalculator {
         return activityManager.isLowRamDevice();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         static final int ARRAY_POOL_SIZE_BYTES = 4194304;
         static final int BITMAP_POOL_TARGET_SCREENS;
@@ -156,7 +156,7 @@ public final class MemorySizeCalculator {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class DisplayMetricsScreenDimensions implements ScreenDimensions {
         private final DisplayMetrics displayMetrics;
 

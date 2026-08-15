@@ -3,7 +3,7 @@ package com.bumptech.glide.load.engine;
 import com.bumptech.glide.load.Key;
 import com.bumptech.glide.util.Preconditions;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class EngineResource<Z> implements Resource<Z> {
     private int acquired;
     private final boolean isMemoryCacheable;
@@ -13,7 +13,7 @@ class EngineResource<Z> implements Resource<Z> {
     private final ResourceListener listener;
     private final Resource<Z> resource;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     interface ResourceListener {
         void onResourceReleased(Key key, EngineResource<?> engineResource);
     }

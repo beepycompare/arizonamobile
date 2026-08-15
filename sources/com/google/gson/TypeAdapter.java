@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 import java.io.Writer;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class TypeAdapter<T> {
     public abstract T read(JsonReader jsonReader) throws IOException;
 
@@ -60,7 +60,7 @@ public abstract class TypeAdapter<T> {
         return !(this instanceof NullSafeTypeAdapter) ? new NullSafeTypeAdapter() : this;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private final class NullSafeTypeAdapter extends TypeAdapter<T> {
         private NullSafeTypeAdapter() {
         }

@@ -6,7 +6,7 @@ import com.google.errorprone.annotations.CheckReturnValue;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 @CheckReturnValue
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ParsableBitArray {
     private int bitOffset;
     private int byteLimit;

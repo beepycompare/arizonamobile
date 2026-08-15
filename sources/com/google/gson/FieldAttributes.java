@@ -6,7 +6,7 @@ import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FieldAttributes {
     private final Field field;
 

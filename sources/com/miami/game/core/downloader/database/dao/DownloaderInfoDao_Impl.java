@@ -1,5 +1,6 @@
 package com.miami.game.core.downloader.database.dao;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.room.EntityInsertAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.coroutines.FlowUtil;
@@ -22,7 +23,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
 import kotlinx.coroutines.flow.Flow;
 /* compiled from: DownloaderInfoDao_Impl.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010 \n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\u0018\u0000 #2\u00020\u0001:\u0001#B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\fJ\u0018\u0010\r\u001a\u0004\u0018\u00010\b2\u0006\u0010\u000e\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u000fJ\u001e\u0010\u0010\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u0014J\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\b0\u0011H\u0096@¢\u0006\u0002\u0010\u0016J\u0014\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00110\u0018H\u0016J\u000e\u0010\u0019\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u0016J\u001e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u000e\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u001cJ\u000e\u0010\u001d\u001a\u00020\u001eH\u0096@¢\u0006\u0002\u0010\u0016J\u0016\u0010\u001f\u001a\u00020\u001b2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao_Impl;", "Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfDownloaderInfoDbModel", "Landroidx/room/EntityInsertAdapter;", "Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;", "insert", "", "data", "(Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "get", "id", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotCompletedTasks", "", "isCompleted", "", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAll", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllFlow", "Lkotlinx/coroutines/flow/Flow;", "getCountAllTasks", "updateCompleted", "", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "wipeData", "", "deleteDownloaderInfo", "name", "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "downloader-database"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0010 \n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\u0018\u0000 #2\u00020\u0001:\u0001#B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\bH\u0096@¢\u0006\u0002\u0010\fJ\u0018\u0010\r\u001a\u0004\u0018\u00010\b2\u0006\u0010\u000e\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u000fJ\u001e\u0010\u0010\u001a\n\u0012\u0004\u0012\u00020\n\u0018\u00010\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u0014J\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\b0\u0011H\u0096@¢\u0006\u0002\u0010\u0016J\u0014\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00110\u0018H\u0016J\u000e\u0010\u0019\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010\u0016J\u001e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u000e\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\u0013H\u0096@¢\u0006\u0002\u0010\u001cJ\u000e\u0010\u001d\u001a\u00020\u001eH\u0096@¢\u0006\u0002\u0010\u0016J\u0016\u0010\u001f\u001a\u00020\u001b2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao_Impl;", "Lcom/miami/game/core/downloader/database/dao/DownloaderInfoDao;", "__db", "Landroidx/room/RoomDatabase;", "<init>", "(Landroidx/room/RoomDatabase;)V", "__insertAdapterOfDownloaderInfoDbModel", "Landroidx/room/EntityInsertAdapter;", "Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;", "insert", "", "data", "(Lcom/miami/game/core/downloader/database/entity/DownloaderInfoDbModel;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "get", TtmlNode.ATTR_ID, "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllNotCompletedTasks", "", "isCompleted", "", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAll", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllFlow", "Lkotlinx/coroutines/flow/Flow;", "getCountAllTasks", "updateCompleted", "", "(JZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "wipeData", "", "deleteDownloaderInfo", "name", "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "downloader-database"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
     public static final Companion Companion = new Companion(null);
@@ -136,7 +137,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         boolean z = true;
         try {
             prepare.mo9068bindLong(1, j);
-            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
+            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, TtmlNode.ATTR_ID);
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "path");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "name_from_game_info_file");
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "size_from_game_info_file");
@@ -208,7 +209,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
+            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, TtmlNode.ATTR_ID);
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "path");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "name_from_game_info_file");
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "size_from_game_info_file");
@@ -244,7 +245,7 @@ public final class DownloaderInfoDao_Impl implements DownloaderInfoDao {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
+            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, TtmlNode.ATTR_ID);
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "path");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "name_from_game_info_file");
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "size_from_game_info_file");

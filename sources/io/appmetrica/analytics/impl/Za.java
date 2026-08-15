@@ -5,15 +5,15 @@ import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
 public final class Za implements HostRetryInfoProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0769zf f871a;
-    public final EnumC0638ue b;
+    public final C0768zf f871a;
+    public final EnumC0637ue b;
 
-    public Za(C0769zf c0769zf, EnumC0638ue enumC0638ue) {
-        this.f871a = c0769zf;
-        this.b = enumC0638ue;
+    public Za(C0768zf c0768zf, EnumC0637ue enumC0637ue) {
+        this.f871a = c0768zf;
+        this.b = enumC0637ue;
     }
 
-    public final EnumC0638ue a() {
+    public final EnumC0637ue a() {
         return this.b;
     }
 

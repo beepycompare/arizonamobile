@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class J3 implements InterfaceC0322i8 {
+public final class J3 implements InterfaceC0321i8 {
 
     /* renamed from: a  reason: collision with root package name */
     public final I3 f607a;
@@ -18,7 +18,7 @@ public final class J3 implements InterfaceC0322i8 {
         return new J3(i3, list);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0322i8
+    @Override // io.appmetrica.analytics.impl.InterfaceC0321i8
     public final Object b() {
         return this.f607a;
     }
@@ -65,7 +65,7 @@ public final class J3 implements InterfaceC0322i8 {
         return new J3(i3, list);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0322i8
+    @Override // io.appmetrica.analytics.impl.InterfaceC0321i8
     public final List<I3> a() {
         return this.b;
     }

@@ -6,15 +6,15 @@ public final class X0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ Revenue f836a;
-    public final /* synthetic */ C0651v1 b;
+    public final /* synthetic */ C0650v1 b;
 
-    public X0(C0651v1 c0651v1, Revenue revenue) {
-        this.b = c0651v1;
+    public X0(C0650v1 c0650v1, Revenue revenue) {
+        this.b = c0650v1;
         this.f836a = revenue;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0651v1.a(this.b).reportRevenue(this.f836a);
+        C0650v1.a(this.b).reportRevenue(this.f836a);
     }
 }

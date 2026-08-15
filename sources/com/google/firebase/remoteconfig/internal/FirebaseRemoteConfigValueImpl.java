@@ -4,7 +4,7 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.adjust.sdk.Constants;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigValue;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseRemoteConfigValueImpl implements FirebaseRemoteConfigValue {
     private static final String ILLEGAL_ARGUMENT_STRING_FORMAT = "[Value: %s] cannot be converted to a %s.";
     private final int source;

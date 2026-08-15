@@ -6,10 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 @Target({ElementType.LOCAL_VARIABLE})
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface LoopTranslation {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum LoopStyle {
         JAVA_ITERATOR,
         FAST_ENUMERATION

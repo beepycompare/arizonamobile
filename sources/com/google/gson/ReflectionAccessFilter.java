@@ -1,7 +1,7 @@
 package com.google.gson;
 
 import com.google.gson.internal.ReflectionAccessFilterHelper;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public interface ReflectionAccessFilter {
     public static final ReflectionAccessFilter BLOCK_INACCESSIBLE_JAVA = new ReflectionAccessFilter() { // from class: com.google.gson.ReflectionAccessFilter.1
         @Override // com.google.gson.ReflectionAccessFilter
@@ -56,7 +56,7 @@ public interface ReflectionAccessFilter {
         }
     };
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes5.dex */
     public enum FilterResult {
         ALLOW,
         INDECISIVE,

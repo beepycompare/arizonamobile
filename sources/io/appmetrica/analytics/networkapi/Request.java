@@ -5,7 +5,6 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import coil3.network.internal.UtilsKt;
 import com.android.volley.toolbox.HttpClientStack;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.liulishuo.okdownload.core.Util;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.Metadata;
@@ -59,7 +58,7 @@ public final class Request {
 
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-    @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0010\u000e\n\u0002\b\r\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001R\u0017\u0010\u0007\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000e¨\u0006\u000f"}, d2 = {"Lio/appmetrica/analytics/networkapi/Request$Method;", "", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Ljava/lang/String;", "getMethodName", "()Ljava/lang/String;", "methodName", UtilsKt.HTTP_METHOD_GET, "POST", Util.METHOD_HEAD, "PUT", "DELETE", HttpClientStack.HttpPatch.METHOD_NAME, "OPTIONS", "network-api_release"}, k = 1, mv = {1, 9, 0})
+    @Metadata(d1 = {"\u0000\u0010\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0010\u000e\n\u0002\b\r\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001R\u0017\u0010\u0007\u001a\u00020\u00028\u0006¢\u0006\f\n\u0004\b\u0003\u0010\u0004\u001a\u0004\b\u0005\u0010\u0006j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000e¨\u0006\u000f"}, d2 = {"Lio/appmetrica/analytics/networkapi/Request$Method;", "", "", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Ljava/lang/String;", "getMethodName", "()Ljava/lang/String;", "methodName", UtilsKt.HTTP_METHOD_GET, "POST", "HEAD", "PUT", "DELETE", HttpClientStack.HttpPatch.METHOD_NAME, "OPTIONS", "network-api_release"}, k = 1, mv = {1, 9, 0})
     /* loaded from: classes5.dex */
     public static final class Method {
         public static final Method DELETE;
@@ -80,7 +79,7 @@ public final class Request {
             GET = method;
             Method method2 = new Method("POST", 1, "POST");
             POST = method2;
-            Method method3 = new Method(Util.METHOD_HEAD, 2, Util.METHOD_HEAD);
+            Method method3 = new Method("HEAD", 2, "HEAD");
             HEAD = method3;
             Method method4 = new Method("PUT", 3, "PUT");
             PUT = method4;

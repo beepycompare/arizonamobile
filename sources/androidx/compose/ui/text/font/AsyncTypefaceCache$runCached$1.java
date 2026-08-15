@@ -1,6 +1,5 @@
 package androidx.compose.ui.text.font;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FontListFontFamilyTypefaceAdapter.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.text.font.AsyncTypefaceCache", f = "FontListFontFamilyTypefaceAdapter.kt", i = {0, 0}, l = {Constants.STATUS_PRECONDITION_FAILED}, m = "runCached", n = {"key", "forever"}, s = {"L$0", "Z$0"}, v = 1)
+@DebugMetadata(c = "androidx.compose.ui.text.font.AsyncTypefaceCache", f = "FontListFontFamilyTypefaceAdapter.kt", i = {0, 0}, l = {412}, m = "runCached", n = {"key", "forever"}, s = {"L$0", "Z$0"}, v = 1)
 /* loaded from: classes2.dex */
 public final class AsyncTypefaceCache$runCached$1 extends ContinuationImpl {
     Object L$0;

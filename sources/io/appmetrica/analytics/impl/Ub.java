@@ -24,7 +24,7 @@ import kotlin.io.CloseableKt;
 import kotlin.jvm.internal.ArrayIteratorKt;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Ub implements InterfaceC0350jb, Closeable {
+public final class Ub implements InterfaceC0349jb, Closeable {
     public static final Tb g = new Tb();
 
     /* renamed from: a  reason: collision with root package name */
@@ -202,37 +202,37 @@ public final class Ub implements InterfaceC0350jb, Closeable {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final void flushAsync() {
         this.f.flushAsync();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final boolean getBoolean(String str, boolean z) {
         Object b = b(str);
         return b instanceof Boolean ? ((Boolean) b).booleanValue() : z;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final int getInt(String str, int i) {
         Object b = b(str);
         return b instanceof Integer ? ((Number) b).intValue() : i;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final long getLong(String str, long j) {
         Object b = b(str);
         return b instanceof Long ? ((Number) b).longValue() : j;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final String getString(String str, String str2) {
         Object b = b(str);
         return b instanceof String ? (String) b : str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
-    public final InterfaceC0350jb remove(String str) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
+    public final InterfaceC0349jb remove(String str) {
         synchronized (this.d) {
             d();
             this.c.remove(str);
@@ -241,7 +241,7 @@ public final class Ub implements InterfaceC0350jb, Closeable {
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final Set<String> b() {
         HashSet hashSet;
         synchronized (this.d) {
@@ -270,42 +270,42 @@ public final class Ub implements InterfaceC0350jb, Closeable {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final void a() {
         this.f.flush();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
-    public final InterfaceC0350jb a(String str, String str2) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
+    public final InterfaceC0349jb a(String str, String str2) {
         a(str, (Object) str2);
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
-    public final InterfaceC0350jb a(String str, long j) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
+    public final InterfaceC0349jb a(String str, long j) {
         a(str, Long.valueOf(j));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
-    public final InterfaceC0350jb a(String str, int i) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
+    public final InterfaceC0349jb a(String str, int i) {
         a(str, Integer.valueOf(i));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
-    public final InterfaceC0350jb a(String str, boolean z) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
+    public final InterfaceC0349jb a(String str, boolean z) {
         a(str, Boolean.valueOf(z));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
-    public final InterfaceC0350jb a(String str, float f) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
+    public final InterfaceC0349jb a(String str, float f) {
         a(str, Float.valueOf(f));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0349jb
     public final boolean a(String str) {
         boolean containsKey;
         synchronized (this.d) {

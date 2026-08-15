@@ -11,7 +11,7 @@ import com.bumptech.glide.load.PreferredColorSpace;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.bumptech.glide.load.resource.bitmap.Downsampler;
 import com.bumptech.glide.load.resource.bitmap.HardwareConfigState;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DefaultOnHeaderDecodedListener implements ImageDecoder.OnHeaderDecodedListener {
     private static final String TAG = "ImageDecoder";
     private final DecodeFormat decodeFormat;

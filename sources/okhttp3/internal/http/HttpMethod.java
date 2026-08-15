@@ -3,7 +3,6 @@ package okhttp3.internal.http;
 import coil3.network.internal.UtilsKt;
 import com.android.volley.toolbox.HttpClientStack;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.liulishuo.okdownload.core.Util;
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.Intrinsics;
@@ -31,7 +30,7 @@ public final class HttpMethod {
     @JvmStatic
     public static final boolean permitsRequestBody(String method) {
         Intrinsics.checkNotNullParameter(method, "method");
-        return (Intrinsics.areEqual(method, UtilsKt.HTTP_METHOD_GET) || Intrinsics.areEqual(method, Util.METHOD_HEAD)) ? false : true;
+        return (Intrinsics.areEqual(method, UtilsKt.HTTP_METHOD_GET) || Intrinsics.areEqual(method, "HEAD")) ? false : true;
     }
 
     public final boolean redirectsWithBody(String method) {

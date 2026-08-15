@@ -20,7 +20,7 @@ import com.bumptech.glide.util.Preconditions;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GifDrawable extends Drawable implements GifFrameLoader.FrameCallback, Animatable, Animatable2Compat {
     private static final int GRAVITY = 119;
     public static final int LOOP_FOREVER = -1;
@@ -297,7 +297,7 @@ public class GifDrawable extends Drawable implements GifFrameLoader.FrameCallbac
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class GifState extends Drawable.ConstantState {
         final GifFrameLoader frameLoader;
 

@@ -25,10 +25,10 @@ public final class Ek implements ServiceContext {
 
     /* renamed from: a  reason: collision with root package name */
     public final ModuleServiceLifecycleController f533a;
-    public final C0612te b = new C0612te(getContext());
-    public final C0767zd c = new C0767zd();
-    public final C0231el d = new C0231el(getContext(), new C0206dl(new Z1()));
-    public final C0154bl e = new C0154bl(getContext(), Na.k().y(), Na.k().B().f(getContext()));
+    public final C0611te b = new C0611te(getContext());
+    public final C0766zd c = new C0766zd();
+    public final C0230el d = new C0230el(getContext(), new C0205dl(new Z1()));
+    public final C0153bl e = new C0153bl(getContext(), Na.k().y(), Na.k().B().f(getContext()));
     public final S9 f = new S9();
     public final H6 g = new H6();
 
@@ -36,19 +36,19 @@ public final class Ek implements ServiceContext {
         this.f533a = moduleServiceLifecycleController;
     }
 
-    public final C0612te a() {
+    public final C0611te a() {
         return this.b;
     }
 
-    public final C0767zd b() {
+    public final C0766zd b() {
         return this.c;
     }
 
-    public final C0154bl c() {
+    public final C0153bl c() {
         return this.e;
     }
 
-    public final C0231el d() {
+    public final C0230el d() {
         return this.d;
     }
 
@@ -69,20 +69,20 @@ public final class Ek implements ServiceContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
     public final ChargeTypeProvider getChargeTypeProvider() {
-        C0213e3 c0213e3;
+        C0212e3 c0212e3;
         Na na = Na.I;
-        C0213e3 c0213e32 = na.e;
-        if (c0213e32 == null) {
+        C0212e3 c0212e32 = na.e;
+        if (c0212e32 == null) {
             synchronized (na) {
-                c0213e3 = na.e;
-                if (c0213e3 == null) {
-                    c0213e3 = new C0213e3(na.d.a(), na.l().f1014a);
-                    na.e = c0213e3;
+                c0212e3 = na.e;
+                if (c0212e3 == null) {
+                    c0212e3 = new C0212e3(na.d.a(), na.l().f1014a);
+                    na.e = c0212e3;
                 }
             }
-            return c0213e3;
+            return c0212e3;
         }
-        return c0213e32;
+        return c0212e32;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext

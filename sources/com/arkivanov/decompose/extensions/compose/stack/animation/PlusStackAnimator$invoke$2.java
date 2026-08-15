@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: StackAnimator.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class PlusStackAnimator$invoke$2 implements Function3<Modifier, Composer, Integer, Unit> {
     final /* synthetic */ Function3<Modifier, Composer, Integer, Unit> $content;
     final /* synthetic */ Direction $direction;

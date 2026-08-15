@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseInstallationServiceClient {
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String API_KEY_HEADER = "x-goog-api-key";
@@ -283,7 +283,7 @@ public class FirebaseInstallationServiceClient {
             httpURLConnection.addRequestProperty("Content-Type", JSON_CONTENT_TYPE);
             httpURLConnection.addRequestProperty("Accept", JSON_CONTENT_TYPE);
             httpURLConnection.addRequestProperty("Content-Encoding", GZIP_CONTENT_ENCODING);
-            httpURLConnection.addRequestProperty("Cache-Control", CACHE_CONTROL_DIRECTIVE);
+            httpURLConnection.addRequestProperty("Cache-Control", "no-cache");
             httpURLConnection.addRequestProperty(X_ANDROID_PACKAGE_HEADER_KEY, this.context.getPackageName());
             HeartBeatController heartBeatController = this.heartBeatProvider.get();
             if (heartBeatController != null) {

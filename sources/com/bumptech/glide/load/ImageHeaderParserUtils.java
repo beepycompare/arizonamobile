@@ -10,24 +10,24 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ImageHeaderParserUtils {
     private static final int MARK_READ_LIMIT = 5242880;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface JpegMpfReader {
         boolean getHasJpegMpfAndRewind(ImageHeaderParser imageHeaderParser) throws IOException;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface OrientationReader {
         int getOrientationAndRewind(ImageHeaderParser imageHeaderParser) throws IOException;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface TypeReader {
         ImageHeaderParser.ImageType getTypeAndRewind(ImageHeaderParser imageHeaderParser) throws IOException;
     }

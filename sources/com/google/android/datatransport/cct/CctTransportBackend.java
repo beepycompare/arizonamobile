@@ -226,7 +226,7 @@ public final class CctTransportBackend implements TransportBackend {
         httpURLConnection.setDoOutput(true);
         httpURLConnection.setInstanceFollowRedirects(false);
         httpURLConnection.setRequestMethod("POST");
-        httpURLConnection.setRequestProperty("User-Agent", String.format("datatransport/%s android/", "3.3.0"));
+        httpURLConnection.setRequestProperty(HttpHeaders.USER_AGENT, String.format("datatransport/%s android/", "3.3.0"));
         httpURLConnection.setRequestProperty("Content-Encoding", GZIP_CONTENT_ENCODING);
         httpURLConnection.setRequestProperty("Content-Type", JSON_CONTENT_TYPE);
         httpURLConnection.setRequestProperty("Accept-Encoding", GZIP_CONTENT_ENCODING);
@@ -247,7 +247,7 @@ public final class CctTransportBackend implements TransportBackend {
                 Logging.d(LOG_TAG, "Content-Type: %s", httpURLConnection.getHeaderField("Content-Type"));
                 Logging.d(LOG_TAG, "Content-Encoding: %s", httpURLConnection.getHeaderField("Content-Encoding"));
                 if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
-                    return new HttpResponse(responseCode, new URL(httpURLConnection.getHeaderField(HttpHeaders.LOCATION)), 0L);
+                    return new HttpResponse(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
                 }
                 if (responseCode != 200) {
                     return new HttpResponse(responseCode, null, 0L);

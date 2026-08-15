@@ -4,7 +4,7 @@ import android.util.Base64;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.UUID;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RandomFidGenerator {
     private static final int FID_LENGTH = 22;
     private static final byte FID_4BIT_PREFIX = Byte.parseByte("01110000", 2);

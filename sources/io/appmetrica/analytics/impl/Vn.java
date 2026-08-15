@@ -9,7 +9,7 @@ public final class Vn implements TempCacheStorage {
     /* renamed from: a  reason: collision with root package name */
     public final TempCacheStorage f816a;
 
-    public Vn(Context context, EnumC0647un enumC0647un, TempCacheStorage tempCacheStorage) {
+    public Vn(Context context, EnumC0646un enumC0646un, TempCacheStorage tempCacheStorage) {
         this.f816a = tempCacheStorage;
     }
 

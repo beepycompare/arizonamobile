@@ -16,7 +16,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class CustomViewTarget<T extends View, Z> implements Target<Z> {
     private static final String TAG = "CustomViewTarget";
     private static final int VIEW_TAG_ID = R.id.glide_custom_view_target_tag;
@@ -171,7 +171,7 @@ public abstract class CustomViewTarget<T extends View, Z> implements Target<Z> {
         this.isAttachStateListenerAdded = false;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class SizeDeterminer {
         private static final int PENDING_SIZE = 0;
         static Integer maxDisplayLength;
@@ -286,7 +286,7 @@ public abstract class CustomViewTarget<T extends View, Z> implements Target<Z> {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class SizeDeterminerLayoutListener implements ViewTreeObserver.OnPreDrawListener {
             private final WeakReference<SizeDeterminer> sizeDeterminerRef;
 

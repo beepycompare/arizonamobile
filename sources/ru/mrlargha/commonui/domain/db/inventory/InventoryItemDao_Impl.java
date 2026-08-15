@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.domain.db.inventory;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.room.EntityDeleteOrUpdateAdapter;
 import androidx.room.EntityInsertAdapter;
 import androidx.room.RoomDatabase;
@@ -387,7 +388,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         try {
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "slot");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item");
-            int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
+            int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, TtmlNode.ATTR_ID);
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
@@ -572,7 +573,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
         try {
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "slot");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item");
-            int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
+            int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, TtmlNode.ATTR_ID);
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
@@ -740,7 +741,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             prepare.mo9068bindLong(1, i);
             int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "slot");
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item");
-            int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
+            int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, TtmlNode.ATTR_ID);
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");

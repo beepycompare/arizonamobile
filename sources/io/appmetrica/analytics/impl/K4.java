@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.HashMap;
 /* loaded from: classes5.dex */
-public abstract class K4 extends AbstractC0121ae {
+public abstract class K4 extends AbstractC0120ae {
     public final Object f;
 
     public K4(int i, String str, Object obj, Vo vo, W2 w2) {
@@ -10,7 +10,7 @@ public abstract class K4 extends AbstractC0121ae {
         this.f = obj;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0121ae, io.appmetrica.analytics.impl.Ho
+    @Override // io.appmetrica.analytics.impl.AbstractC0120ae, io.appmetrica.analytics.impl.Ho
     public final void a(Go go) {
         if (f()) {
             W2 w2 = this.d;

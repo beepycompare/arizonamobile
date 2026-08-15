@@ -5,7 +5,7 @@ import com.bumptech.glide.RequestManager;
 import java.util.Collections;
 import java.util.Set;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RequestManagerFragment extends Fragment {
     @Deprecated
     public RequestManager getRequestManager() {

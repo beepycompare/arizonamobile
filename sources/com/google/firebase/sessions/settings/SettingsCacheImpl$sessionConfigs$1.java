@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.FlowKt;
 /* compiled from: SettingsCache.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/google/firebase/sessions/settings/SessionConfigs;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "com.google.firebase.sessions.settings.SettingsCacheImpl$sessionConfigs$1", f = "SettingsCache.kt", i = {}, l = {64}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SettingsCacheImpl$sessionConfigs$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super SessionConfigs>, Object> {
     int label;
     final /* synthetic */ SettingsCacheImpl this$0;

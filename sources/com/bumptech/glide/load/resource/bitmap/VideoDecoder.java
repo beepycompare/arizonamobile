@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import kotlin.UByte$$ExternalSyntheticBackport0;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
     public static final long DEFAULT_FRAME = -1;
     static final int DEFAULT_FRAME_OPTION = 2;
@@ -62,7 +62,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
     private static final List<String> PIXEL_T_BUILD_ID_PREFIXES_REQUIRING_HDR_180_ROTATION_FIX = Collections.unmodifiableList(Arrays.asList("TP1A", "TD1A.220804.031"));
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface MediaInitializer<T> {
         void initializeExtractor(MediaExtractor mediaExtractor, T t) throws IOException;
 
@@ -118,7 +118,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
             return BitmapResource.obtain(decodeFrame(t, build, longValue, num.intValue(), i, i2, downsampleStrategy2), this.bitmapPool);
         } finally {
             if (Build.VERSION.SDK_INT >= 29) {
-                UByte$$ExternalSyntheticBackport0.m9988m((Object) build);
+                UByte$$ExternalSyntheticBackport0.m9989m((Object) build);
             } else {
                 build.release();
             }
@@ -252,7 +252,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         return false;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class MediaMetadataRetrieverFactory {
         MediaMetadataRetrieverFactory() {
         }
@@ -262,7 +262,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class AssetFileDescriptorInitializer implements MediaInitializer<AssetFileDescriptor> {
         private AssetFileDescriptorInitializer() {
         }
@@ -278,7 +278,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ParcelFileDescriptorInitializer implements MediaInitializer<ParcelFileDescriptor> {
         @Override // com.bumptech.glide.load.resource.bitmap.VideoDecoder.MediaInitializer
         public void initializeRetriever(MediaMetadataRetriever mediaMetadataRetriever, ParcelFileDescriptor parcelFileDescriptor) {
@@ -291,7 +291,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class ByteBufferInitializer implements MediaInitializer<ByteBuffer> {
         ByteBufferInitializer() {
         }
@@ -332,7 +332,7 @@ public class VideoDecoder<T> implements ResourceDecoder<T, Bitmap> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class VideoDecoderException extends RuntimeException {
         private static final long serialVersionUID = -2556382523004027815L;
 

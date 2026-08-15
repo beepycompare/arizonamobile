@@ -8,7 +8,7 @@ import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.model.ModelLoader;
 import java.io.InputStream;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ResourceUriLoader<DataT> implements ModelLoader<Uri, DataT> {
     private static final int INVALID_RESOURCE_ID = 0;
     private static final String TAG = "ResourceUriLoader";
@@ -81,7 +81,7 @@ public final class ResourceUriLoader<DataT> implements ModelLoader<Uri, DataT> {
         return "android.resource".equals(uri.getScheme()) && this.context.getPackageName().equals(uri.getAuthority());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class InputStreamFactory implements ModelLoaderFactory<Uri, InputStream> {
         private final Context context;
 
@@ -99,7 +99,7 @@ public final class ResourceUriLoader<DataT> implements ModelLoader<Uri, DataT> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Uri, AssetFileDescriptor> {
         private final Context context;
 

@@ -12,7 +12,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class ActiveResources {
     final Map<Key, ResourceWeakReference> activeEngineResources;
     private volatile DequeuedResourceCallback cb;
@@ -23,7 +23,7 @@ final class ActiveResources {
     private final ReferenceQueue<EngineResource<?>> resourceReferenceQueue;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface DequeuedResourceCallback {
         void onResourceDequeued();
     }
@@ -132,7 +132,7 @@ final class ActiveResources {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ResourceWeakReference extends WeakReference<EngineResource<?>> {
         final boolean isCacheable;
         final Key key;

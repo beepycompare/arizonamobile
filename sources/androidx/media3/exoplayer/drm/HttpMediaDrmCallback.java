@@ -11,6 +11,7 @@ import coil3.util.UtilsKt;
 import com.android.internal.http.multipart.FilePart;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.net.HttpHeaders;
 import com.google.common.net.MediaType;
 import com.google.common.primitives.Bytes;
 import java.nio.charset.StandardCharsets;
@@ -60,7 +61,7 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
     @Override // androidx.media3.exoplayer.drm.MediaDrmCallback
     public MediaDrmCallback.Response executeProvisionRequest(UUID uuid, ExoMediaDrm.ProvisionRequest provisionRequest) throws MediaDrmCallbackException {
         byte[] concat = Bytes.concat("{\"signedRequest\":\"".getBytes(StandardCharsets.UTF_8), provisionRequest.getData(), "\"}".getBytes(StandardCharsets.UTF_8));
-        return DrmUtil.executePost(this.dataSourceFactory.createDataSource(), provisionRequest.getDefaultUrl(), concat, ImmutableMap.of("Content-Type", MediaType.JSON_UTF_8.toString(), "Content-Length", String.valueOf(concat.length)));
+        return DrmUtil.executePost(this.dataSourceFactory.createDataSource(), provisionRequest.getDefaultUrl(), concat, ImmutableMap.of("Content-Type", MediaType.JSON_UTF_8.toString(), HttpHeaders.CONTENT_LENGTH, String.valueOf(concat.length)));
     }
 
     @Override // androidx.media3.exoplayer.drm.MediaDrmCallback

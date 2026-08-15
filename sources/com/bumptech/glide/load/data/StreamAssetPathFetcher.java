@@ -3,7 +3,7 @@ package com.bumptech.glide.load.data;
 import android.content.res.AssetManager;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StreamAssetPathFetcher extends AssetPathFetcher<InputStream> {
     public StreamAssetPathFetcher(AssetManager assetManager, String str) {
         super(assetManager, str);

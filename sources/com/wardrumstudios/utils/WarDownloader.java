@@ -13,6 +13,7 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.LinearLayout;
 import androidx.core.app.NotificationCompat;
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -879,7 +880,7 @@ public class WarDownloader {
                         this.downloadFileList[i2].downloaded = false;
                         this.downloadFileList[i2].downloadsize = 0;
                         CDownloadFileList cDownloadFileList = this.downloadFileList[i2];
-                        cDownloadFileList.unzipped = true ^ cDownloadFileList.filename.contains(".zip");
+                        cDownloadFileList.unzipped = true ^ cDownloadFileList.filename.contains(OriginalTzArchiveManifestParser.ZIP_SUFFIX);
                         i2++;
                     }
                 }

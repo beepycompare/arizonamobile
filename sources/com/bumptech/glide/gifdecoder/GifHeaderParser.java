@@ -5,7 +5,7 @@ import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class GifHeaderParser {
     static final int DEFAULT_FRAME_DELAY = 10;
     private static final int DESCRIPTOR_MASK_INTERLACE_FLAG = 64;
@@ -103,7 +103,7 @@ public class GifHeaderParser {
                 } else if (read2 == LABEL_GRAPHIC_CONTROL_EXTENSION) {
                     this.header.currentFrame = new GifFrame();
                     readGraphicControlExt();
-                } else if (read2 == LABEL_COMMENT_EXTENSION) {
+                } else if (read2 == 254) {
                     skip();
                 } else if (read2 == 255) {
                     readBlock();

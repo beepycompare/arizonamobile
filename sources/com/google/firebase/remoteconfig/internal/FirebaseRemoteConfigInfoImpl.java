@@ -2,7 +2,7 @@ package com.google.firebase.remoteconfig.internal;
 
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigInfo;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseRemoteConfigInfoImpl implements FirebaseRemoteConfigInfo {
     private final FirebaseRemoteConfigSettings configSettings;
     private final int lastFetchStatus;
@@ -29,7 +29,7 @@ public class FirebaseRemoteConfigInfoImpl implements FirebaseRemoteConfigInfo {
         return this.configSettings;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         private FirebaseRemoteConfigSettings builderConfigSettings;
         private int builderLastFetchStatus;

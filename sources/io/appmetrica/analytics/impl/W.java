@@ -16,7 +16,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class W implements InterfaceC0170cb {
+public final class W implements InterfaceC0169cb {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f817a;
@@ -44,7 +44,7 @@ public final class W implements InterfaceC0170cb {
     }
 
     public static final Void f(W w) {
-        w.m = new AdvertisingIdsHolder(w.a(w.n.f637a, new T(w)), w.a(w.n.b, new U(w)), w.a(w.n.c, new V(w, new C0742ye())));
+        w.m = new AdvertisingIdsHolder(w.a(w.n.f637a, new T(w)), w.a(w.n.b, new U(w)), w.a(w.n.c, new V(w, new C0741ye())));
         w.b.executeDelayed((FutureTask) w.j.getValue(), w.k, TimeUnit.SECONDS);
         return null;
     }
@@ -68,7 +68,7 @@ public final class W implements InterfaceC0170cb {
         return this.m;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0170cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0169cb
     public final synchronized void init() {
         if (this.i == null) {
             this.n = this.l.a();
@@ -83,20 +83,20 @@ public final class W implements InterfaceC0170cb {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0170cb, io.appmetrica.analytics.impl.Mm
+    @Override // io.appmetrica.analytics.impl.InterfaceC0169cb, io.appmetrica.analytics.impl.Mm
     public final synchronized void a(Hm hm) {
         this.l.a(hm);
         a();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0170cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0169cb
     public final synchronized void b(boolean z) {
         this.o = true;
         this.l.b.update(z);
         a();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0170cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0169cb
     public final synchronized void c(boolean z) {
         if (!this.o) {
             b(z);
@@ -140,7 +140,7 @@ public final class W implements InterfaceC0170cb {
         if (a3.mStatus == identifierStatus2) {
             a3 = new AdTrackingInfoResult(huawei.mAdTrackingInfo, a3.mStatus, a3.mErrorExplanation);
         }
-        AdTrackingInfoResult a4 = a(this.n.c, new V(this, new C0441mo(3, 500)));
+        AdTrackingInfoResult a4 = a(this.n.c, new V(this, new C0440mo(3, 500)));
         AdTrackingInfoResult yandex = this.m.getYandex();
         if (a4.mStatus == identifierStatus2) {
             a4 = new AdTrackingInfoResult(yandex.mAdTrackingInfo, a4.mStatus, a4.mErrorExplanation);

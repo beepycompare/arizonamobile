@@ -18,7 +18,7 @@ import kotlinx.coroutines.Job;
 /* compiled from: MaterialPredictiveBackAnimatable.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
 @DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$finish$2", f = "MaterialPredictiveBackAnimatable.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_E_AC3}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class MaterialPredictiveBackAnimatable$finish$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ float $progress;
     final /* synthetic */ float $velocityFactor;
@@ -76,7 +76,7 @@ final class MaterialPredictiveBackAnimatable$finish$2 extends SuspendLambda impl
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$finish$2$1", f = "MaterialPredictiveBackAnimatable.kt", i = {}, l = {TsExtractor.TS_STREAM_TYPE_DTS_HD}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$finish$2$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ float $progress;
         final /* synthetic */ float $velocityFactor;
@@ -128,7 +128,7 @@ final class MaterialPredictiveBackAnimatable$finish$2 extends SuspendLambda impl
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
     @DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$finish$2$2", f = "MaterialPredictiveBackAnimatable.kt", i = {}, l = {137}, m = "invokeSuspend", n = {}, s = {})
     /* renamed from: com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.MaterialPredictiveBackAnimatable$finish$2$2  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         int label;
         final /* synthetic */ MaterialPredictiveBackAnimatable this$0;

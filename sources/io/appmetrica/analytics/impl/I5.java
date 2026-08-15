@@ -1,10 +1,11 @@
 package io.appmetrica.analytics.impl;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import java.util.List;
 /* loaded from: classes5.dex */
 public abstract class I5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List f591a = CollectionUtils.createSortedListWithoutRepetitions("id", "session_id", "session_type", "number_in_session", "type", "global_number", "time", "event_description");
+    public static final List f591a = CollectionUtils.createSortedListWithoutRepetitions(TtmlNode.ATTR_ID, "session_id", "session_type", "number_in_session", "type", "global_number", "time", "event_description");
 }

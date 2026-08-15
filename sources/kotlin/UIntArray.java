@@ -18,23 +18,23 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
     private final int[] storage;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ UIntArray m10069boximpl(int[] iArr) {
+    public static final /* synthetic */ UIntArray m10070boximpl(int[] iArr) {
         return new UIntArray(iArr);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int[] m10071constructorimpl(int[] storage) {
+    public static int[] m10072constructorimpl(int[] storage) {
         Intrinsics.checkNotNullParameter(storage, "storage");
         return storage;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m10074equalsimpl(int[] iArr, Object obj) {
-        return (obj instanceof UIntArray) && Intrinsics.areEqual(iArr, ((UIntArray) obj).m10085unboximpl());
+    public static boolean m10075equalsimpl(int[] iArr, Object obj) {
+        return (obj instanceof UIntArray) && Intrinsics.areEqual(iArr, ((UIntArray) obj).m10086unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m10075equalsimpl0(int[] iArr, int[] iArr2) {
+    public static final boolean m10076equalsimpl0(int[] iArr, int[] iArr2) {
         return Intrinsics.areEqual(iArr, iArr2);
     }
 
@@ -42,12 +42,12 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m10078hashCodeimpl(int[] iArr) {
+    public static int m10079hashCodeimpl(int[] iArr) {
         return Arrays.hashCode(iArr);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m10082toStringimpl(int[] iArr) {
+    public static String m10083toStringimpl(int[] iArr) {
         return "UIntArray(storage=" + Arrays.toString(iArr) + ')';
     }
 
@@ -57,7 +57,7 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
     }
 
     /* renamed from: add-WZ4Q5Ns  reason: not valid java name */
-    public boolean m10083addWZ4Q5Ns(int i) {
+    public boolean m10084addWZ4Q5Ns(int i) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
@@ -73,12 +73,12 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
 
     @Override // java.util.Collection
     public boolean equals(Object obj) {
-        return m10074equalsimpl(this.storage, obj);
+        return m10075equalsimpl(this.storage, obj);
     }
 
     @Override // java.util.Collection
     public int hashCode() {
-        return m10078hashCodeimpl(this.storage);
+        return m10079hashCodeimpl(this.storage);
     }
 
     @Override // java.util.Collection
@@ -108,18 +108,18 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
     }
 
     public String toString() {
-        return m10082toStringimpl(this.storage);
+        return m10083toStringimpl(this.storage);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int[] m10085unboximpl() {
+    public final /* synthetic */ int[] m10086unboximpl() {
         return this.storage;
     }
 
     @Override // java.util.Collection
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof UInt) {
-            return m10084containsWZ4Q5Ns(((UInt) obj).m10068unboximpl());
+            return m10085containsWZ4Q5Ns(((UInt) obj).m10069unboximpl());
         }
         return false;
     }
@@ -129,39 +129,39 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int[] m10070constructorimpl(int i) {
-        return m10071constructorimpl(new int[i]);
+    public static int[] m10071constructorimpl(int i) {
+        return m10072constructorimpl(new int[i]);
     }
 
     /* renamed from: get-pVg5ArA  reason: not valid java name */
-    public static final int m10076getpVg5ArA(int[] iArr, int i) {
-        return UInt.m10016constructorimpl(iArr[i]);
+    public static final int m10077getpVg5ArA(int[] iArr, int i) {
+        return UInt.m10017constructorimpl(iArr[i]);
     }
 
     /* renamed from: set-VXSXFK8  reason: not valid java name */
-    public static final void m10081setVXSXFK8(int[] iArr, int i, int i2) {
+    public static final void m10082setVXSXFK8(int[] iArr, int i, int i2) {
         iArr[i] = i2;
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static int m10077getSizeimpl(int[] iArr) {
+    public static int m10078getSizeimpl(int[] iArr) {
         return iArr.length;
     }
 
     @Override // java.util.Collection
     /* renamed from: getSize */
     public int size() {
-        return m10077getSizeimpl(this.storage);
+        return m10078getSizeimpl(this.storage);
     }
 
     /* renamed from: iterator-impl  reason: not valid java name */
-    public static java.util.Iterator<UInt> m10080iteratorimpl(int[] iArr) {
+    public static java.util.Iterator<UInt> m10081iteratorimpl(int[] iArr) {
         return new Iterator(iArr);
     }
 
     @Override // java.util.Collection, java.lang.Iterable
     public java.util.Iterator<UInt> iterator() {
-        return m10080iteratorimpl(this.storage);
+        return m10081iteratorimpl(this.storage);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -184,7 +184,7 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
 
         @Override // java.util.Iterator
         public /* bridge */ /* synthetic */ UInt next() {
-            return UInt.m10010boximpl(m10086nextpVg5ArA());
+            return UInt.m10011boximpl(m10087nextpVg5ArA());
         }
 
         @Override // java.util.Iterator
@@ -193,31 +193,31 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
         }
 
         /* renamed from: next-pVg5ArA  reason: not valid java name */
-        public int m10086nextpVg5ArA() {
+        public int m10087nextpVg5ArA() {
             int i = this.index;
             int[] iArr = this.array;
             if (i < iArr.length) {
                 this.index = i + 1;
-                return UInt.m10016constructorimpl(iArr[i]);
+                return UInt.m10017constructorimpl(iArr[i]);
             }
             throw new NoSuchElementException(String.valueOf(this.index));
         }
     }
 
     /* renamed from: contains-WZ4Q5Ns  reason: not valid java name */
-    public boolean m10084containsWZ4Q5Ns(int i) {
-        return m10072containsWZ4Q5Ns(this.storage, i);
+    public boolean m10085containsWZ4Q5Ns(int i) {
+        return m10073containsWZ4Q5Ns(this.storage, i);
     }
 
     /* renamed from: contains-WZ4Q5Ns  reason: not valid java name */
-    public static boolean m10072containsWZ4Q5Ns(int[] iArr, int i) {
+    public static boolean m10073containsWZ4Q5Ns(int[] iArr, int i) {
         return ArraysKt.contains(iArr, i);
     }
 
     @Override // java.util.Collection
     public boolean containsAll(Collection<?> elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
-        return m10073containsAllimpl(this.storage, elements);
+        return m10074containsAllimpl(this.storage, elements);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x001c  */
@@ -225,14 +225,14 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static boolean m10073containsAllimpl(int[] iArr, Collection<UInt> elements) {
+    public static boolean m10074containsAllimpl(int[] iArr, Collection<UInt> elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
         Collection<UInt> collection = elements;
         if (collection.isEmpty()) {
             return true;
         }
         for (Object obj : collection) {
-            if (!(obj instanceof UInt) || !ArraysKt.contains(iArr, ((UInt) obj).m10068unboximpl())) {
+            if (!(obj instanceof UInt) || !ArraysKt.contains(iArr, ((UInt) obj).m10069unboximpl())) {
                 return false;
             }
             while (r4.hasNext()) {
@@ -242,12 +242,12 @@ public final class UIntArray implements Collection<UInt>, KMappedMarker {
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static boolean m10079isEmptyimpl(int[] iArr) {
+    public static boolean m10080isEmptyimpl(int[] iArr) {
         return iArr.length == 0;
     }
 
     @Override // java.util.Collection
     public boolean isEmpty() {
-        return m10079isEmptyimpl(this.storage);
+        return m10080isEmptyimpl(this.storage);
     }
 }

@@ -1,8 +1,8 @@
 package io.appmetrica.analytics;
 
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0312ho;
-import io.appmetrica.analytics.impl.C0339j0;
+import io.appmetrica.analytics.impl.C0311ho;
+import io.appmetrica.analytics.impl.C0338j0;
 import io.appmetrica.analytics.impl.D5;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class ReporterConfig {
 
     /* loaded from: classes5.dex */
     public static class Builder {
-        private static final C0312ho l = new C0312ho(new C0339j0());
+        private static final C0311ho l = new C0311ho(new C0338j0());
 
         /* renamed from: a  reason: collision with root package name */
         private final D5 f221a;

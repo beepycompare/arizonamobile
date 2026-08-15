@@ -14,7 +14,7 @@ import com.bumptech.glide.util.Preconditions;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class GlideBitmapFactory {
     private static final String TAG = "GlideBitmapFactory";
 
@@ -199,7 +199,7 @@ final class GlideBitmapFactory {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class GainmapCopier {
         private static final ColorMatrixColorFilter OPAQUE_FILTER = new ColorMatrixColorFilter(new float[]{0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 255.0f});
 
@@ -239,7 +239,7 @@ final class GlideBitmapFactory {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class GainmapDecoderWorkaroundStateCalculator {
         private static final GlideSuppliers.GlideSupplier<Boolean> REQUIRES_GAIN_MAP_FIX = GlideSuppliers.memorize(new GlideSuppliers.GlideSupplier() { // from class: com.bumptech.glide.load.resource.bitmap.GlideBitmapFactory$GainmapDecoderWorkaroundStateCalculator$$ExternalSyntheticLambda0
             @Override // com.bumptech.glide.util.GlideSuppliers.GlideSupplier

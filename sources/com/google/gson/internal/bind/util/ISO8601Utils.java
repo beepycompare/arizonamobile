@@ -8,7 +8,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ISO8601Utils {
     private static final String UTC_ID = "UTC";
     private static final TimeZone TIMEZONE_UTC = TimeZone.getTimeZone(UTC_ID);

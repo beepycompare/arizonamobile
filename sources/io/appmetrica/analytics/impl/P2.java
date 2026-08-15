@@ -14,5 +14,5 @@ public abstract class P2 implements Wa {
     }
 
     @Override // io.appmetrica.analytics.impl.Wa
-    public abstract /* synthetic */ C0519po a(Object obj);
+    public abstract /* synthetic */ C0518po a(Object obj);
 }

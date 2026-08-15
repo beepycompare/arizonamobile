@@ -36,7 +36,7 @@ public final class Z6 {
         ArrayList<ContentValues> arrayList;
         Mj mj;
         Kj kj;
-        C0189d4 c0189d4;
+        C0188d4 c0188d4;
         Integer num;
         int i2 = 0;
         try {
@@ -50,9 +50,9 @@ public final class Z6 {
             } catch (Throwable th2) {
                 th = th2;
                 try {
-                    C0541qk c0541qk = Oj.f708a;
-                    c0541qk.getClass();
-                    c0541qk.a(new Pj("select_rows_to_delete_exception", th));
+                    C0540qk c0540qk = Oj.f708a;
+                    c0540qk.getClass();
+                    c0540qk.a(new Pj("select_rows_to_delete_exception", th));
                     Oo.a(cursor);
                     arrayList = null;
                     i2 = sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, str, strArr);
@@ -93,10 +93,10 @@ public final class Z6 {
                                     jSONArray.put(asInteger);
                                     Db a2 = Db.a(asInteger2.intValue());
                                     if (a2 == null) {
-                                        Map map = AbstractC0537qg.f1166a;
+                                        Map map = AbstractC0536qg.f1166a;
                                         num = null;
                                     } else {
-                                        num = (Integer) AbstractC0537qg.c.get(a2);
+                                        num = (Integer) AbstractC0536qg.c.get(a2);
                                     }
                                     jSONArray2.put(num);
                                 }
@@ -107,15 +107,15 @@ public final class Z6 {
                             String jSONObject2 = put.toString();
                             Set set = Q9.f730a;
                             Db db = Db.EVENT_TYPE_UNDEFINED;
-                            c0189d4 = new C0189d4(jSONObject2, "", 12290, 0, orCreatePublicLogger);
+                            c0188d4 = new C0188d4(jSONObject2, "", 12290, 0, orCreatePublicLogger);
                         } catch (Throwable unused) {
-                            c0189d4 = null;
+                            c0188d4 = null;
                         }
-                        if (c0189d4 != null && kj.c != null) {
+                        if (c0188d4 != null && kj.c != null) {
                             try {
                                 CounterConfiguration counterConfiguration = new CounterConfiguration(kj.f632a);
                                 counterConfiguration.setReporterType(kj.c);
-                                kj.d.f690a.reportData(1, c0189d4.d(new Zh(new C0175cg(kj.b, (ResultReceiver) null), counterConfiguration, new W8(new Wl(LoggerStorage.getOrCreatePublicLogger(kj.f632a), "Crash Environment")), null).c()));
+                                kj.d.f690a.reportData(1, c0188d4.d(new Zh(new C0174cg(kj.b, (ResultReceiver) null), counterConfiguration, new W8(new Wl(LoggerStorage.getOrCreatePublicLogger(kj.f632a), "Crash Environment")), null).c()));
                             } catch (Throwable unused2) {
                             }
                         }

@@ -13,9 +13,9 @@ public final class dp {
 
     public dp(Context context) {
         this.f953a = context;
-        C0738ya c0738ya = new C0738ya(context, "appmetrica_vital.dat", Na.k().w().e(), 0L, 8, null);
-        this.c = new Zo(Na.k().y(), c0738ya);
-        this.d = new Zo(new C0769zf(Na.k().B().e(context)), c0738ya);
+        C0737ya c0737ya = new C0737ya(context, "appmetrica_vital.dat", Na.k().w().e(), 0L, 8, null);
+        this.c = new Zo(Na.k().y(), c0737ya);
+        this.d = new Zo(new C0768zf(Na.k().B().e(context)), c0737ya);
     }
 
     public final Zo a() {

@@ -6,12 +6,12 @@ import kotlin.jvm.internal.Lambda;
 public final class Zb extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0119ac f872a;
+    public final /* synthetic */ C0118ac f872a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Zb(C0119ac c0119ac) {
+    public Zb(C0118ac c0118ac) {
         super(0);
-        this.f872a = c0119ac;
+        this.f872a = c0118ac;
     }
 
     @Override // kotlin.jvm.functions.Function0

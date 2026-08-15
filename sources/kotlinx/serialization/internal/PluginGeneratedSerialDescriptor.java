@@ -116,7 +116,6 @@ public class PluginGeneratedSerialDescriptor implements SerialDescriptor, Cached
         return this.indices.keySet();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final KSerializer[] childSerializers_delegate$lambda$0(PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor) {
         KSerializer<?>[] childSerializers;
         GeneratedSerializer<?> generatedSerializer = pluginGeneratedSerialDescriptor.generatedSerializer;
@@ -131,7 +130,6 @@ public class PluginGeneratedSerialDescriptor implements SerialDescriptor, Cached
         return (SerialDescriptor[]) this.typeParameterDescriptors$delegate.getValue();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final SerialDescriptor[] typeParameterDescriptors_delegate$lambda$0(PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor) {
         ArrayList arrayList;
         KSerializer<?>[] typeParametersSerializers;

@@ -61,25 +61,25 @@ public final class R {
     /* loaded from: classes2.dex */
     public static final class string {
         public static int androidx_compose_ui_autofill = 0x7f12002b;
-        public static int close_drawer = 0x7f1201be;
-        public static int close_sheet = 0x7f1201c1;
-        public static int default_error_message = 0x7f1201fa;
-        public static int default_popup_window_title = 0x7f1201ff;
-        public static int dropdown_menu = 0x7f120247;
-        public static int in_progress = 0x7f1203f9;
-        public static int indeterminate = 0x7f1203fa;
-        public static int navigation_menu = 0x7f120566;
-        public static int not_selected = 0x7f12057c;
-        public static int range_end = 0x7f120608;
-        public static int range_start = 0x7f120609;
-        public static int selected = 0x7f120650;
-        public static int snackbar_pane_title = 0x7f12067b;
-        public static int state_empty = 0x7f120689;
-        public static int state_off = 0x7f12068a;
-        public static int state_on = 0x7f12068b;
-        public static int switch_role = 0x7f120693;
-        public static int tab = 0x7f120694;
-        public static int template_percent = 0x7f12069d;
+        public static int close_drawer = 0x7f1201c3;
+        public static int close_sheet = 0x7f1201c6;
+        public static int default_error_message = 0x7f1201ff;
+        public static int default_popup_window_title = 0x7f120204;
+        public static int dropdown_menu = 0x7f12024c;
+        public static int in_progress = 0x7f120400;
+        public static int indeterminate = 0x7f120401;
+        public static int navigation_menu = 0x7f12056d;
+        public static int not_selected = 0x7f120583;
+        public static int range_end = 0x7f12060f;
+        public static int range_start = 0x7f120610;
+        public static int selected = 0x7f120657;
+        public static int snackbar_pane_title = 0x7f120682;
+        public static int state_empty = 0x7f120690;
+        public static int state_off = 0x7f120691;
+        public static int state_on = 0x7f120692;
+        public static int switch_role = 0x7f12069a;
+        public static int tab = 0x7f12069b;
+        public static int template_percent = 0x7f1206a4;
 
         private string() {
         }

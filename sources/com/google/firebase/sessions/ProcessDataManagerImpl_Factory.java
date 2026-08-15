@@ -3,7 +3,7 @@ package com.google.firebase.sessions;
 import android.content.Context;
 import com.google.firebase.sessions.dagger.internal.Factory;
 import com.google.firebase.sessions.dagger.internal.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ProcessDataManagerImpl_Factory implements Factory<ProcessDataManagerImpl> {
     private final Provider<Context> appContextProvider;
     private final Provider<UuidGenerator> uuidGeneratorProvider;

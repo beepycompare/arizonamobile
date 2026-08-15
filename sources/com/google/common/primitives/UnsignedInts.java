@@ -23,7 +23,7 @@ public final class UnsignedInts {
     }
 
     public static long toLong(int value) {
-        return value & INT_MASK;
+        return value & 4294967295L;
     }
 
     private UnsignedInts() {
@@ -164,7 +164,7 @@ public final class UnsignedInts {
     public static int parseUnsignedInt(String string, int radix) {
         Preconditions.checkNotNull(string);
         long parseLong = Long.parseLong(string, radix);
-        if ((INT_MASK & parseLong) == parseLong) {
+        if ((4294967295L & parseLong) == parseLong) {
             return (int) parseLong;
         }
         throw new NumberFormatException("Input " + string + " in base " + radix + " is not in the range of an unsigned integer");
@@ -175,6 +175,6 @@ public final class UnsignedInts {
     }
 
     public static String toString(int x, int radix) {
-        return Long.toString(x & INT_MASK, radix);
+        return Long.toString(x & 4294967295L, radix);
     }
 }

@@ -3,7 +3,7 @@ package com.bumptech.glide.load.engine;
 import com.bumptech.glide.load.Key;
 import java.security.MessageDigest;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class DataCacheKey implements Key {
     private final Key signature;
     private final Key sourceKey;

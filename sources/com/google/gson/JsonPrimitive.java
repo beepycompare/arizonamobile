@@ -5,7 +5,7 @@ import com.google.gson.internal.NumberLimits;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class JsonPrimitive extends JsonElement {
     private final Object value;
 

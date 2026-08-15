@@ -2,11 +2,11 @@ package com.google.firebase.installations.local;
 
 import com.google.firebase.installations.local.AutoValue_PersistedInstallationEntry;
 import com.google.firebase.installations.local.PersistedInstallation;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class PersistedInstallationEntry {
     public static PersistedInstallationEntry INSTANCE = builder().build();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Builder {
         public abstract PersistedInstallationEntry build();
 

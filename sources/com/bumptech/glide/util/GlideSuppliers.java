@@ -1,8 +1,8 @@
 package com.bumptech.glide.util;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class GlideSuppliers {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     public interface GlideSupplier<T> {
         T get();
     }

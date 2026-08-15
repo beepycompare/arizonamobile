@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import java.io.File;
 import java.net.URL;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 interface ModelTypes<T> {
     T load(Bitmap bitmap);
 

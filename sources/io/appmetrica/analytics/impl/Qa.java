@@ -32,9 +32,9 @@ public final class Qa implements Hg {
                 build.startConnection(new Oa(pa, build, dg));
                 return;
             } catch (Throwable th) {
-                C0541qk c0541qk = Oj.f708a;
-                c0541qk.getClass();
-                c0541qk.a(new Pj("Failed to get referrer from Google Play referrer library", th));
+                C0540qk c0540qk = Oj.f708a;
+                c0540qk.getClass();
+                c0540qk.a(new Pj("Failed to get referrer from Google Play referrer library", th));
                 dg.a(new Jg("Failed to get referrer from Google Play referrer library", th));
                 return;
             }

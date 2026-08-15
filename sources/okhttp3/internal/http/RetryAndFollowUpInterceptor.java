@@ -251,7 +251,7 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
     private final Request buildRedirectRequest(Response response, String str) {
         String header$default;
         HttpUrl resolve;
-        if (!this.client.followRedirects() || (header$default = Response.header$default(response, com.google.common.net.HttpHeaders.LOCATION, null, 2, null)) == null || (resolve = response.request().url().resolve(header$default)) == null) {
+        if (!this.client.followRedirects() || (header$default = Response.header$default(response, "Location", null, 2, null)) == null || (resolve = response.request().url().resolve(header$default)) == null) {
             return null;
         }
         if (Intrinsics.areEqual(resolve.scheme(), response.request().url().scheme()) || this.client.followSslRedirects()) {
@@ -265,8 +265,8 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
                     newBuilder.method(str, z ? response.request().body() : null);
                 }
                 if (!z) {
-                    newBuilder.removeHeader("Transfer-Encoding");
-                    newBuilder.removeHeader("Content-Length");
+                    newBuilder.removeHeader(com.google.common.net.HttpHeaders.TRANSFER_ENCODING);
+                    newBuilder.removeHeader(com.google.common.net.HttpHeaders.CONTENT_LENGTH);
                     newBuilder.removeHeader("Content-Type");
                 }
             }

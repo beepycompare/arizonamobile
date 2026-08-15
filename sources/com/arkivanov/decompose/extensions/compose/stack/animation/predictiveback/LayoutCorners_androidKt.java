@@ -29,7 +29,7 @@ import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: LayoutCorners.android.kt */
 @Metadata(d1 = {"\u0000V\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a5\u0010\u0000\u001a\u00020\u0001*\u00020\u00012\"\u0010\u0002\u001a\u001e\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00010\u0003¢\u0006\u0002\b\u0005¢\u0006\u0002\b\u0006H\u0001¢\u0006\u0002\u0010\u0007\u001a\u0016\u0010\b\u001a\u0004\u0018\u00010\t*\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0002\u001a\"\u0010\r\u001a\u00020\u00042\u0006\u0010\u000e\u001a\u00020\t2\b\u0010\u000f\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002\u001a\u001f\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u00162\u0006\u0010\u0017\u001a\u00020\u0018H\u0002¢\u0006\u0002\b\u0019\u001a\u0018\u0010\u001a\u001a\u00020\u00102\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u0010H\u0002¨\u0006\u001e²\u0006\f\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u008a\u008e\u0002"}, d2 = {"withLayoutCorners", "Landroidx/compose/ui/Modifier;", "block", "Lkotlin/Function2;", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/predictiveback/LayoutCorners;", "Landroidx/compose/runtime/Composable;", "Lkotlin/ExtensionFunctionType;", "(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;", "getScreenInfo", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/predictiveback/ScreenInfo;", "Landroid/content/Context;", "density", "Landroidx/compose/ui/unit/Density;", "getLayoutCorners", "screenInfo", "positionOnScreen", "Landroidx/compose/ui/geometry/Rect;", "layoutDirection", "Landroidx/compose/ui/unit/LayoutDirection;", "getLayoutCorner", "Lcom/arkivanov/decompose/extensions/compose/stack/animation/predictiveback/LayoutCorner;", "radius", "Landroidx/compose/ui/unit/Dp;", "isFixed", "", "getLayoutCorner-_Y4kl1M", "getBoundsOnScreen", "rootView", "Landroid/view/View;", "boundsInRoot", "extensions-compose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class LayoutCorners_androidKt {
 
     /* compiled from: LayoutCorners.android.kt */
@@ -167,27 +167,27 @@ public final class LayoutCorners_androidKt {
         float component4 = rect.component4();
         int i = (component12 > 0.0f ? 1 : (component12 == 0.0f ? 0 : -1));
         boolean z = false;
-        LayoutCorner m9489getLayoutCorner_Y4kl1M = m9489getLayoutCorner_Y4kl1M(component1.m9483getTopLeftlTKBWiU(), i <= 0 && component22 <= 0.0f);
+        LayoutCorner m9490getLayoutCorner_Y4kl1M = m9490getLayoutCorner_Y4kl1M(component1.m9484getTopLeftlTKBWiU(), i <= 0 && component22 <= 0.0f);
         int i2 = (component32 > component2 ? 1 : (component32 == component2 ? 0 : -1));
-        LayoutCorner m9489getLayoutCorner_Y4kl1M2 = m9489getLayoutCorner_Y4kl1M(component1.m9484getTopRightlTKBWiU(), i2 >= 0 && component22 <= 0.0f);
-        LayoutCorner m9489getLayoutCorner_Y4kl1M3 = m9489getLayoutCorner_Y4kl1M(component1.m9482getBottomRightlTKBWiU(), i2 >= 0 && component4 >= ((float) component3));
-        Dp m9481getBottomLeftlTKBWiU = component1.m9481getBottomLeftlTKBWiU();
+        LayoutCorner m9490getLayoutCorner_Y4kl1M2 = m9490getLayoutCorner_Y4kl1M(component1.m9485getTopRightlTKBWiU(), i2 >= 0 && component22 <= 0.0f);
+        LayoutCorner m9490getLayoutCorner_Y4kl1M3 = m9490getLayoutCorner_Y4kl1M(component1.m9483getBottomRightlTKBWiU(), i2 >= 0 && component4 >= ((float) component3));
+        Dp m9482getBottomLeftlTKBWiU = component1.m9482getBottomLeftlTKBWiU();
         if (i <= 0 && component4 >= component3) {
             z = true;
         }
-        LayoutCorner m9489getLayoutCorner_Y4kl1M4 = m9489getLayoutCorner_Y4kl1M(m9481getBottomLeftlTKBWiU, z);
+        LayoutCorner m9490getLayoutCorner_Y4kl1M4 = m9490getLayoutCorner_Y4kl1M(m9482getBottomLeftlTKBWiU, z);
         int i3 = WhenMappings.$EnumSwitchMapping$0[layoutDirection.ordinal()];
         if (i3 != 1) {
             if (i3 != 2) {
                 throw new NoWhenBranchMatchedException();
             }
-            return new LayoutCorners(m9489getLayoutCorner_Y4kl1M2, m9489getLayoutCorner_Y4kl1M, m9489getLayoutCorner_Y4kl1M4, m9489getLayoutCorner_Y4kl1M3);
+            return new LayoutCorners(m9490getLayoutCorner_Y4kl1M2, m9490getLayoutCorner_Y4kl1M, m9490getLayoutCorner_Y4kl1M4, m9490getLayoutCorner_Y4kl1M3);
         }
-        return new LayoutCorners(m9489getLayoutCorner_Y4kl1M, m9489getLayoutCorner_Y4kl1M2, m9489getLayoutCorner_Y4kl1M3, m9489getLayoutCorner_Y4kl1M4);
+        return new LayoutCorners(m9490getLayoutCorner_Y4kl1M, m9490getLayoutCorner_Y4kl1M2, m9490getLayoutCorner_Y4kl1M3, m9490getLayoutCorner_Y4kl1M4);
     }
 
     /* renamed from: getLayoutCorner-_Y4kl1M  reason: not valid java name */
-    private static final LayoutCorner m9489getLayoutCorner_Y4kl1M(Dp dp, boolean z) {
+    private static final LayoutCorner m9490getLayoutCorner_Y4kl1M(Dp dp, boolean z) {
         if (dp == null) {
             return new LayoutCorner(0.0f, false, 3, null);
         }

@@ -1,7 +1,7 @@
 package androidx.media3.common.util;
 
 import android.os.Trace;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TraceUtil {
     private TraceUtil() {
     }

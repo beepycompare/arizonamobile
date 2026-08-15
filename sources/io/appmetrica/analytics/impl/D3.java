@@ -15,13 +15,13 @@ public final class D3 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f507a;
-    public final C0691wf b;
+    public final C0690wf b;
     public final String c;
     public final SafePackageManager d;
 
-    public D3(Context context, C0691wf c0691wf, String str, SafePackageManager safePackageManager) {
+    public D3(Context context, C0690wf c0690wf, String str, SafePackageManager safePackageManager) {
         this.f507a = context;
-        this.b = c0691wf;
+        this.b = c0690wf;
         this.c = str;
         this.d = safePackageManager;
     }

@@ -8,7 +8,7 @@ import com.bumptech.glide.util.Util;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class FirstFrameWaiter implements FrameWaiter {
     volatile boolean isFirstFrameSet;
     final Set<Activity> pendingActivities = Collections.newSetFromMap(new WeakHashMap());

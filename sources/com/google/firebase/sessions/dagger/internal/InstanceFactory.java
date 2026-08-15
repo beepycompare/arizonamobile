@@ -1,7 +1,7 @@
 package com.google.firebase.sessions.dagger.internal;
 
 import com.google.firebase.sessions.dagger.Lazy;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class InstanceFactory<T> implements Factory<T>, Lazy<T> {
     private static final InstanceFactory<Object> NULL_INSTANCE_FACTORY = new InstanceFactory<>(null);
     private final T instance;

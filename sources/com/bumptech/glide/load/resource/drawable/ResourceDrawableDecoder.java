@@ -12,7 +12,7 @@ import com.bumptech.glide.load.ResourceDecoder;
 import com.bumptech.glide.load.engine.Resource;
 import com.bumptech.glide.util.Preconditions;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ResourceDrawableDecoder implements ResourceDecoder<Uri, Drawable> {
     private static final String ANDROID_PACKAGE_NAME = "android";
     private static final int ID_PATH_SEGMENTS = 1;

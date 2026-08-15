@@ -8,11 +8,11 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
 @Documented
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface Property {
 
     @Target({ElementType.METHOD})
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface Suppress {
         String reason() default "";
     }

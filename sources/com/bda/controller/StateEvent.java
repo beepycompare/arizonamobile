@@ -2,7 +2,7 @@ package com.bda.controller;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class StateEvent extends BaseEvent implements Parcelable {
     public static final int ACTION_CONNECTED = 1;
     public static final int ACTION_CONNECTING = 2;
@@ -24,7 +24,7 @@ public class StateEvent extends BaseEvent implements Parcelable {
     final int mAction;
     final int mState;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     static class ParcelableCreator implements Parcelable.Creator<StateEvent> {
         ParcelableCreator() {
         }

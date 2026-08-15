@@ -7,10 +7,10 @@ public final class R9 {
 
     /* renamed from: a  reason: collision with root package name */
     public final ReentrantLock f744a;
-    public final C0634ua b;
+    public final C0633ua b;
 
     public R9(Context context, String str) {
-        this(new ReentrantLock(), new C0634ua(context, str));
+        this(new ReentrantLock(), new C0633ua(context, str));
     }
 
     public final void a() {
@@ -24,16 +24,16 @@ public final class R9 {
     }
 
     public final void c() {
-        C0634ua c0634ua = this.b;
-        synchronized (c0634ua) {
-            c0634ua.b();
-            c0634ua.f1231a.delete();
+        C0633ua c0633ua = this.b;
+        synchronized (c0633ua) {
+            c0633ua.b();
+            c0633ua.f1231a.delete();
         }
         this.f744a.unlock();
     }
 
-    public R9(ReentrantLock reentrantLock, C0634ua c0634ua) {
+    public R9(ReentrantLock reentrantLock, C0633ua c0633ua) {
         this.f744a = reentrantLock;
-        this.b = c0634ua;
+        this.b = c0633ua;
     }
 }

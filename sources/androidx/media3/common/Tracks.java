@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Tracks {
     public static final Tracks EMPTY = new Tracks(ImmutableList.of());
     private static final String FIELD_TRACK_GROUPS = Util.intToStringMaxRadix(0);
     private final ImmutableList<Group> groups;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Group {
         private final boolean adaptiveSupported;
         public final int length;

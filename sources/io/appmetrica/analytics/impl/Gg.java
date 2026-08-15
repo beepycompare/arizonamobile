@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes5.dex */
 public final class Gg {
-    public static C0141b8 a(String str) {
+    public static C0140b8 a(String str) {
         HashMap hashMap;
         HashMap b = b(str);
         if (b.isEmpty()) {
@@ -22,7 +22,7 @@ public final class Gg {
                 hashMap.put(Uri.decode((String) entry.getKey()), Uri.decode((String) entry.getValue()));
             }
         }
-        return new C0141b8(decode, hashMap, str);
+        return new C0140b8(decode, hashMap, str);
     }
 
     public static HashMap b(String str) {

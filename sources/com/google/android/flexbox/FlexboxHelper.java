@@ -35,7 +35,7 @@ public class FlexboxHelper {
     }
 
     long makeCombinedLong(int widthMeasureSpec, int heightMeasureSpec) {
-        return (widthMeasureSpec & MEASURE_SPEC_WIDTH_MASK) | (heightMeasureSpec << 32);
+        return (widthMeasureSpec & 4294967295L) | (heightMeasureSpec << 32);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

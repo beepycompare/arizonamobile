@@ -1,5 +1,6 @@
 package androidx.media3.common.util;
 
+import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,7 +16,7 @@ public final class AtomicFile {
 
     public AtomicFile(File file) {
         this.baseName = file;
-        this.backupName = new File(file.getPath() + ".bak");
+        this.backupName = new File(file.getPath() + DurableArchiveStateStore.BACKUP_SUFFIX);
     }
 
     public boolean exists() {

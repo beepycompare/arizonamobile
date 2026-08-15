@@ -149,7 +149,7 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     public static void modifyRequestToAcceptGzipResponse(HttpRequest httpRequest) {
-        httpRequest.addHeader(HttpHeaders.ACCEPT_ENCODING, "gzip");
+        httpRequest.addHeader("Accept-Encoding", "gzip");
     }
 
     public static AndroidHttpClient newInstance(String str) {

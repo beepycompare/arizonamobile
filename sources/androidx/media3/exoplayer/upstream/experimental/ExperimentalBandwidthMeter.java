@@ -20,6 +20,7 @@ import androidx.media3.exoplayer.upstream.TimeToFirstByteEstimator;
 import androidx.media3.exoplayer.upstream.experimental.SplitParallelSampleBandwidthEstimator;
 import androidx.media3.extractor.ts.PsExtractor;
 import androidx.media3.extractor.ts.TsExtractor;
+import com.arizona.launcher.updater.archive.download.ArchiveResumableHttpEngine;
 import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Ascii;
@@ -1796,7 +1797,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case 20:
             case 187:
             case ComposerKt.providerValuesKey /* 203 */:
-            case ComposerKt.referenceKey /* 206 */:
+            case 206:
                 return new int[]{4, 3, 4, 4, 2, 2};
             case 21:
             case 175:
@@ -2092,9 +2093,9 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{2, 4, 4, 1, 2, 2};
             case 200:
                 return new int[]{2, 2, 1, 2, 2, 2};
-            case ComposerKt.providerKey /* 201 */:
+            case 201:
                 return new int[]{2, 3, 2, 1, 2, 2};
-            case 205:
+            case ArchiveResumableHttpEngine.HTTP_RESET_CONTENT /* 205 */:
                 return new int[]{3, 2, 1, 2, 2, 2};
             case ComposerKt.reuseKey /* 207 */:
                 return new int[]{3, 4, 1, 0, 2, 2};

@@ -223,7 +223,7 @@ public final class RealRoutePlanner implements RoutePlanner {
     }
 
     private final Request createTunnelRequest(Route route) throws IOException {
-        Request build = new Request.Builder().url(route.address().url()).method("CONNECT", null).header(HttpHeaders.HOST, _UtilJvmKt.toHostHeader(route.address().url(), true)).header("Proxy-Connection", HttpHeaders.KEEP_ALIVE).header("User-Agent", _UtilCommonKt.USER_AGENT).build();
+        Request build = new Request.Builder().url(route.address().url()).method("CONNECT", null).header(HttpHeaders.HOST, _UtilJvmKt.toHostHeader(route.address().url(), true)).header("Proxy-Connection", HttpHeaders.KEEP_ALIVE).header(HttpHeaders.USER_AGENT, _UtilCommonKt.USER_AGENT).build();
         Request authenticate = route.address().proxyAuthenticator().authenticate(route, new Response.Builder().request(build).protocol(Protocol.HTTP_1_1).code(407).message("Preemptive Authenticate").sentRequestAtMillis(-1L).receivedResponseAtMillis(-1L).header(HttpHeaders.PROXY_AUTHENTICATE, "OkHttp-Preemptive").build());
         return authenticate == null ? build : authenticate;
     }

@@ -9,7 +9,7 @@ public final class Pb implements Function, Consumer {
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
     /* renamed from: a */
     public final Lb apply(File file) {
-        String a2 = AbstractC0402lb.a(file);
+        String a2 = AbstractC0401lb.a(file);
         long lastModified = file.lastModified();
         if (!StringUtils.isNullOrEmpty(a2)) {
             try {

@@ -7,7 +7,7 @@ import android.system.Os;
 import android.system.OsConstants;
 import com.bumptech.glide.load.data.DataRewinder;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFileDescriptor> {
     private final InternalRewinder rewinder;
 
@@ -29,7 +29,7 @@ public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFi
         return this.rewinder.rewind();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Factory implements DataRewinder.Factory<ParcelFileDescriptor> {
         @Override // com.bumptech.glide.load.data.DataRewinder.Factory
         public DataRewinder<ParcelFileDescriptor> build(ParcelFileDescriptor parcelFileDescriptor) {
@@ -43,7 +43,7 @@ public final class ParcelFileDescriptorRewinder implements DataRewinder<ParcelFi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class InternalRewinder {
         private final ParcelFileDescriptor parcelFileDescriptor;
 

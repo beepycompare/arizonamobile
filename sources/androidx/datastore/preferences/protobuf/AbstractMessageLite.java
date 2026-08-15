@@ -199,7 +199,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class LimitedInputStream extends FilterInputStream {
             private int limit;
 

@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigCacheClient {
     static final long DISK_READ_TIMEOUT_IN_SECONDS = 5;
     private Task<ConfigContainer> cachedContainerTask = null;
@@ -57,7 +57,7 @@ public class ConfigCacheClient {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$put$0$com-google-firebase-remoteconfig-internal-ConfigCacheClient  reason: not valid java name */
-    public /* synthetic */ Void m9764xddaae01c(ConfigContainer configContainer) throws Exception {
+    public /* synthetic */ Void m9765xddaae01c(ConfigContainer configContainer) throws Exception {
         return this.storageClient.write(configContainer);
     }
 
@@ -65,19 +65,19 @@ public class ConfigCacheClient {
         return Tasks.call(this.executor, new Callable() { // from class: com.google.firebase.remoteconfig.internal.ConfigCacheClient$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return ConfigCacheClient.this.m9764xddaae01c(configContainer);
+                return ConfigCacheClient.this.m9765xddaae01c(configContainer);
             }
         }).onSuccessTask(this.executor, new SuccessContinuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigCacheClient$$ExternalSyntheticLambda1
             @Override // com.google.android.gms.tasks.SuccessContinuation
             public final Task then(Object obj) {
-                return ConfigCacheClient.this.m9765x9820809d(z, configContainer, (Void) obj);
+                return ConfigCacheClient.this.m9766x9820809d(z, configContainer, (Void) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$put$1$com-google-firebase-remoteconfig-internal-ConfigCacheClient  reason: not valid java name */
-    public /* synthetic */ Task m9765x9820809d(boolean z, ConfigContainer configContainer, Void r3) throws Exception {
+    public /* synthetic */ Task m9766x9820809d(boolean z, ConfigContainer configContainer, Void r3) throws Exception {
         if (z) {
             updateInMemoryConfigContainer(configContainer);
         }
@@ -150,7 +150,7 @@ public class ConfigCacheClient {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class AwaitListener<TResult> implements OnSuccessListener<TResult>, OnFailureListener, OnCanceledListener {
         private final CountDownLatch latch;
 

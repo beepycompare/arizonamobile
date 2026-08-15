@@ -23,9 +23,9 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class color {
-        public static int notification_action_color_filter = 0x7f060425;
-        public static int notification_icon_bg_color = 0x7f060426;
-        public static int ripple_material_light = 0x7f06043c;
+        public static int notification_action_color_filter = 0x7f060426;
+        public static int notification_icon_bg_color = 0x7f060427;
+        public static int ripple_material_light = 0x7f06043d;
         public static int secondary_text_default_material_light = 0x7f060447;
 
         private color() {
@@ -63,18 +63,18 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class drawable {
-        public static int notification_action_background = 0x7f080dce;
-        public static int notification_bg = 0x7f080dcf;
-        public static int notification_bg_low = 0x7f080dd0;
-        public static int notification_bg_low_normal = 0x7f080dd1;
-        public static int notification_bg_low_pressed = 0x7f080dd2;
-        public static int notification_bg_normal = 0x7f080dd3;
-        public static int notification_bg_normal_pressed = 0x7f080dd4;
-        public static int notification_icon_background = 0x7f080dd5;
-        public static int notification_template_icon_bg = 0x7f080dd7;
-        public static int notification_template_icon_low_bg = 0x7f080dd8;
-        public static int notification_tile_bg = 0x7f080dda;
-        public static int notify_panel_notification_icon_bg = 0x7f080ddc;
+        public static int notification_action_background = 0x7f080dd3;
+        public static int notification_bg = 0x7f080dd4;
+        public static int notification_bg_low = 0x7f080dd5;
+        public static int notification_bg_low_normal = 0x7f080dd6;
+        public static int notification_bg_low_pressed = 0x7f080dd7;
+        public static int notification_bg_normal = 0x7f080dd8;
+        public static int notification_bg_normal_pressed = 0x7f080dd9;
+        public static int notification_icon_background = 0x7f080dda;
+        public static int notification_template_icon_bg = 0x7f080ddc;
+        public static int notification_template_icon_low_bg = 0x7f080ddd;
+        public static int notification_tile_bg = 0x7f080ddf;
+        public static int notify_panel_notification_icon_bg = 0x7f080de1;
 
         private drawable() {
         }
@@ -125,12 +125,12 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class layout {
-        public static int notification_action = 0x7f0d0240;
-        public static int notification_action_tombstone = 0x7f0d0241;
-        public static int notification_template_custom_big = 0x7f0d0248;
-        public static int notification_template_icon_group = 0x7f0d0249;
-        public static int notification_template_part_chronometer = 0x7f0d024d;
-        public static int notification_template_part_time = 0x7f0d024e;
+        public static int notification_action = 0x7f0d0244;
+        public static int notification_action_tombstone = 0x7f0d0245;
+        public static int notification_template_custom_big = 0x7f0d024c;
+        public static int notification_template_icon_group = 0x7f0d024d;
+        public static int notification_template_part_chronometer = 0x7f0d0251;
+        public static int notification_template_part_time = 0x7f0d0252;
 
         private layout() {
         }
@@ -138,7 +138,7 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class string {
-        public static int status_bar_notification_info_overflow = 0x7f12068c;
+        public static int status_bar_notification_info_overflow = 0x7f120693;
 
         private string() {
         }

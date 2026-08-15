@@ -1,7 +1,7 @@
 package com.google.firebase.sessions.dagger.internal;
 
 import com.google.firebase.sessions.dagger.Lazy;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DoubleCheck<T> implements Provider<T>, Lazy<T> {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final Object UNINITIALIZED = new Object();

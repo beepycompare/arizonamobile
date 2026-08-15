@@ -12,6 +12,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.audio.AudioManagerCompat;
 import androidx.media3.common.util.Util;
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
@@ -114,7 +115,7 @@ public class SpatializerWrapper {
         if (Build.VERSION.SDK_INT >= 36) {
             return ((Spatializer) Preconditions.checkNotNull(this.spatializer)).getSpatializedChannelMasks();
         }
-        return ImmutableList.of(252);
+        return ImmutableList.of(Integer.valueOf((int) LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX));
     }
 
     public void release() {

@@ -2,6 +2,7 @@ package com.google.android.play.core.splitinstall;
 
 import android.os.Bundle;
 import android.os.RemoteException;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.splitinstall.internal.zzbp;
 import java.util.List;
@@ -93,7 +94,7 @@ class zzbb extends zzbp {
     public final void zzl(Bundle bundle) throws RemoteException {
         com.google.android.play.core.splitinstall.internal.zzu zzuVar;
         this.zzb.zza.zzu(this.zza);
-        int i = bundle.getInt("error_code");
+        int i = bundle.getInt(UpdateAnalyticsContract.ERROR_CODE_PARAM);
         zzuVar = zzbc.zzb;
         zzuVar.zzb("onError(%d)", Integer.valueOf(i));
         this.zza.trySetException(new SplitInstallException(i));

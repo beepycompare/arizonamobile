@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AnimatedImageDecoder {
     private final ArrayPool arrayPool;
     private final List<ImageHeaderParser> imageHeaderParsers;
@@ -60,7 +60,7 @@ public final class AnimatedImageDecoder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class AnimatedImageDrawableResource implements Resource<Drawable> {
         private static final int ESTIMATED_NUMBER_OF_FRAMES = 2;
         private final AnimatedImageDrawable imageDrawable;
@@ -92,7 +92,7 @@ public final class AnimatedImageDecoder {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class StreamAnimatedImageDecoder implements ResourceDecoder<InputStream, Drawable> {
         private final AnimatedImageDecoder delegate;
 
@@ -111,7 +111,7 @@ public final class AnimatedImageDecoder {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ByteBufferAnimatedImageDecoder implements ResourceDecoder<ByteBuffer, Drawable> {
         private final AnimatedImageDecoder delegate;
 

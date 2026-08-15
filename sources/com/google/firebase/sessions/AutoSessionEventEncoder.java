@@ -7,7 +7,7 @@ import com.google.firebase.encoders.config.Configurator;
 import com.google.firebase.encoders.config.EncoderConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AutoSessionEventEncoder implements Configurator {
     public static final int CODEGEN_VERSION = 2;
     public static final Configurator CONFIG = new AutoSessionEventEncoder();
@@ -25,7 +25,7 @@ public final class AutoSessionEventEncoder implements Configurator {
         encoderConfig.registerEncoder(ProcessDetails.class, ProcessDetailsEncoder.INSTANCE);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class SessionEventEncoder implements ObjectEncoder<SessionEvent> {
         static final SessionEventEncoder INSTANCE = new SessionEventEncoder();
         private static final FieldDescriptor EVENTTYPE_DESCRIPTOR = FieldDescriptor.of("eventType");
@@ -43,7 +43,7 @@ public final class AutoSessionEventEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class SessionInfoEncoder implements ObjectEncoder<SessionInfo> {
         static final SessionInfoEncoder INSTANCE = new SessionInfoEncoder();
         private static final FieldDescriptor SESSIONID_DESCRIPTOR = FieldDescriptor.of("sessionId");
@@ -69,7 +69,7 @@ public final class AutoSessionEventEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class DataCollectionStatusEncoder implements ObjectEncoder<DataCollectionStatus> {
         static final DataCollectionStatusEncoder INSTANCE = new DataCollectionStatusEncoder();
         private static final FieldDescriptor PERFORMANCE_DESCRIPTOR = FieldDescriptor.of("performance");
@@ -87,7 +87,7 @@ public final class AutoSessionEventEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class ApplicationInfoEncoder implements ObjectEncoder<ApplicationInfo> {
         static final ApplicationInfoEncoder INSTANCE = new ApplicationInfoEncoder();
         private static final FieldDescriptor APPID_DESCRIPTOR = FieldDescriptor.of(RemoteConfigConstants.RequestFieldKey.APP_ID);
@@ -111,7 +111,7 @@ public final class AutoSessionEventEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class AndroidApplicationInfoEncoder implements ObjectEncoder<AndroidApplicationInfo> {
         static final AndroidApplicationInfoEncoder INSTANCE = new AndroidApplicationInfoEncoder();
         private static final FieldDescriptor PACKAGENAME_DESCRIPTOR = FieldDescriptor.of(RemoteConfigConstants.RequestFieldKey.PACKAGE_NAME);
@@ -135,7 +135,7 @@ public final class AutoSessionEventEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class ProcessDetailsEncoder implements ObjectEncoder<ProcessDetails> {
         static final ProcessDetailsEncoder INSTANCE = new ProcessDetailsEncoder();
         private static final FieldDescriptor PROCESSNAME_DESCRIPTOR = FieldDescriptor.of("processName");

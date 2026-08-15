@@ -6,6 +6,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import androidx.collection.ArraySet;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.AccountType;
 import com.google.android.gms.common.internal.Preconditions;
@@ -89,7 +90,7 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
         for (int i = 0; i < length; i++) {
             hashSet.add(new Scope(jSONArray.getString(i)));
         }
-        GoogleSignInAccount zab = zab(jSONObject.optString("id"), jSONObject.has("tokenId") ? jSONObject.optString("tokenId") : null, jSONObject.has("email") ? jSONObject.optString("email") : null, jSONObject.has("displayName") ? jSONObject.optString("displayName") : null, jSONObject.has("givenName") ? jSONObject.optString("givenName") : null, jSONObject.has("familyName") ? jSONObject.optString("familyName") : null, parse, Long.valueOf(parseLong), jSONObject.getString("obfuscatedIdentifier"), hashSet);
+        GoogleSignInAccount zab = zab(jSONObject.optString(TtmlNode.ATTR_ID), jSONObject.has("tokenId") ? jSONObject.optString("tokenId") : null, jSONObject.has("email") ? jSONObject.optString("email") : null, jSONObject.has("displayName") ? jSONObject.optString("displayName") : null, jSONObject.has("givenName") ? jSONObject.optString("givenName") : null, jSONObject.has("familyName") ? jSONObject.optString("familyName") : null, parse, Long.valueOf(parseLong), jSONObject.getString("obfuscatedIdentifier"), hashSet);
         zab.zah = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return zab;
     }
@@ -206,7 +207,7 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
         JSONObject jSONObject = new JSONObject();
         try {
             if (getId() != null) {
-                jSONObject.put("id", getId());
+                jSONObject.put(TtmlNode.ATTR_ID, getId());
             }
             if (getIdToken() != null) {
                 jSONObject.put("tokenId", getIdToken());

@@ -1,6 +1,5 @@
 package com.miami.game.core.settings.game_test;
 
-import androidx.compose.runtime.ComposerKt;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
@@ -9,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GameTestScriptRunner.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.settings.game_test.GameTestScriptRunner", f = "GameTestScriptRunner.kt", i = {0, 1, 2, 2, 2}, l = {175, DownloaderService.STATUS_WAITING_FOR_NETWORK, 237}, m = "executeLoginAndSpawn", n = {"step", "step", "step", "spawnEvent", "closeBackendName"}, nl = {186, ComposerKt.providerKey, 247}, s = {"L$0", "L$0", "L$0", "L$1", "L$2"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.settings.game_test.GameTestScriptRunner", f = "GameTestScriptRunner.kt", i = {0, 1, 2, 2, 2}, l = {175, DownloaderService.STATUS_WAITING_FOR_NETWORK, 237}, m = "executeLoginAndSpawn", n = {"step", "step", "step", "spawnEvent", "closeBackendName"}, nl = {186, 201, 247}, s = {"L$0", "L$0", "L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes5.dex */
 public final class GameTestScriptRunner$executeLoginAndSpawn$1 extends ContinuationImpl {
     Object L$0;

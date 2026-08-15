@@ -18,7 +18,7 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.List;
 @Deprecated
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class AnimatedWebpDecoder {
     private final ArrayPool arrayPool;
     private final List<ImageHeaderParser> imageHeaderParsers;
@@ -57,7 +57,7 @@ public final class AnimatedWebpDecoder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class AnimatedImageDrawableResource implements Resource<Drawable> {
         private static final int ESTIMATED_NUMBER_OF_FRAMES = 2;
         private final AnimatedImageDrawable imageDrawable;
@@ -89,7 +89,7 @@ public final class AnimatedWebpDecoder {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class StreamAnimatedWebpDecoder implements ResourceDecoder<InputStream, Drawable> {
         private final AnimatedWebpDecoder delegate;
 
@@ -108,7 +108,7 @@ public final class AnimatedWebpDecoder {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ByteBufferAnimatedWebpDecoder implements ResourceDecoder<ByteBuffer, Drawable> {
         private final AnimatedWebpDecoder delegate;
 

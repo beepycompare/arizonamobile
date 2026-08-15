@@ -14,9 +14,11 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.arizona.common.model.AvatarData;
+import com.google.common.net.HttpHeaders;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.List;
@@ -162,7 +164,7 @@ public final class MessengerChat implements MobileController {
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
                 Intrinsics.checkNotNullParameter(chain, "chain");
-                return chain.proceed(chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
+                return chain.proceed(chain.request().newBuilder().addHeader(HttpHeaders.USER_AGENT, "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
             }
         });
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
@@ -290,7 +292,7 @@ public final class MessengerChat implements MobileController {
     }
 
     private final void prepareInput() {
-        if (this.contactInfo.m11950isBlocked()) {
+        if (this.contactInfo.m11951isBlocked()) {
             showBlockContact();
         }
         final MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding = this.pageBinding.inputFieldChatLayout;
@@ -727,7 +729,7 @@ public final class MessengerChat implements MobileController {
 
     private final byte[] getUserIdJson() {
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("id", this.contactInfo.getId());
+        jSONObject.put(TtmlNode.ATTR_ID, this.contactInfo.getId());
         String jSONObject2 = jSONObject.toString();
         Intrinsics.checkNotNullExpressionValue(jSONObject2, "toString(...)");
         byte[] bytes = jSONObject2.getBytes(Charsets.UTF_8);
@@ -737,7 +739,7 @@ public final class MessengerChat implements MobileController {
 
     private final byte[] messageIdToJson(int i) {
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("id", i);
+        jSONObject.put(TtmlNode.ATTR_ID, i);
         String jSONObject2 = jSONObject.toString();
         Intrinsics.checkNotNullExpressionValue(jSONObject2, "toString(...)");
         byte[] bytes = jSONObject2.getBytes(Charsets.UTF_8);
@@ -818,7 +820,7 @@ public final class MessengerChat implements MobileController {
             if (changeMenuItem != -1) {
                 this.startedMenuList.set(changeMenuItem, getBlockMenuItem());
             }
-            if (this.contactInfo.m11950isBlocked()) {
+            if (this.contactInfo.m11951isBlocked()) {
                 showBlockContact();
             } else {
                 showInputLayout();

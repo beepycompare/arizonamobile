@@ -3,26 +3,26 @@ package io.appmetrica.analytics.impl;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class I3 implements InterfaceC0425m8 {
+public final class I3 implements InterfaceC0424m8 {
 
     /* renamed from: a  reason: collision with root package name */
     public final Map f589a;
-    public final EnumC0399l8 b;
+    public final EnumC0398l8 b;
 
-    public I3(Map<String, String> map, EnumC0399l8 enumC0399l8) {
+    public I3(Map<String, String> map, EnumC0398l8 enumC0398l8) {
         this.f589a = map;
-        this.b = enumC0399l8;
+        this.b = enumC0398l8;
     }
 
-    public final I3 a(Map<String, String> map, EnumC0399l8 enumC0399l8) {
-        return new I3(map, enumC0399l8);
+    public final I3 a(Map<String, String> map, EnumC0398l8 enumC0398l8) {
+        return new I3(map, enumC0398l8);
     }
 
     public final Map<String, String> b() {
         return this.f589a;
     }
 
-    public final EnumC0399l8 c() {
+    public final EnumC0398l8 c() {
         return this.b;
     }
 
@@ -50,19 +50,19 @@ public final class I3 implements InterfaceC0425m8 {
         return "Candidate(clids=" + this.f589a + ", source=" + this.b + ')';
     }
 
-    public static I3 a(I3 i3, Map map, EnumC0399l8 enumC0399l8, int i, Object obj) {
+    public static I3 a(I3 i3, Map map, EnumC0398l8 enumC0398l8, int i, Object obj) {
         if ((i & 1) != 0) {
             map = i3.f589a;
         }
         if ((i & 2) != 0) {
-            enumC0399l8 = i3.b;
+            enumC0398l8 = i3.b;
         }
         i3.getClass();
-        return new I3(map, enumC0399l8);
+        return new I3(map, enumC0398l8);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0425m8
-    public final EnumC0399l8 a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0424m8
+    public final EnumC0398l8 a() {
         return this.b;
     }
 }

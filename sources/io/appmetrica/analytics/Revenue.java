@@ -1,6 +1,6 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0312ho;
+import io.appmetrica.analytics.impl.C0311ho;
 import io.appmetrica.analytics.impl.Ce;
 import java.util.Currency;
 /* loaded from: classes5.dex */
@@ -14,7 +14,7 @@ public class Revenue {
 
     /* loaded from: classes5.dex */
     public static class Builder {
-        private static final C0312ho g = new C0312ho(new Ce("revenue currency"));
+        private static final C0311ho g = new C0311ho(new Ce("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
         final long f222a;

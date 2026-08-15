@@ -1,6 +1,7 @@
 package androidx.core.util;
 
 import android.util.Log;
+import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,7 +17,7 @@ public class AtomicFile {
     public AtomicFile(File file) {
         this.mBaseName = file;
         this.mNewName = new File(file.getPath() + ".new");
-        this.mLegacyBackupName = new File(file.getPath() + ".bak");
+        this.mLegacyBackupName = new File(file.getPath() + DurableArchiveStateStore.BACKUP_SUFFIX);
     }
 
     public File getBaseFile() {

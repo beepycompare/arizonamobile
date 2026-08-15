@@ -3,7 +3,6 @@ package com.google.firebase.crashlytics.internal.common;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import androidx.core.app.NotificationCompat;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.Logger;
 /* loaded from: classes4.dex */
@@ -51,7 +50,7 @@ class BatteryState {
     }
 
     private static boolean isPowerConnected(Intent intent) {
-        int intExtra = intent.getIntExtra(NotificationCompat.CATEGORY_STATUS, -1);
+        int intExtra = intent.getIntExtra("status", -1);
         if (intExtra == -1) {
             return false;
         }

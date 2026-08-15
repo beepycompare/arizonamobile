@@ -1,6 +1,7 @@
 package com.google.gson.internal.bind;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
@@ -26,7 +27,7 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class JavaTimeTypeAdapters implements TypeAdapters.FactorySupplier {
     private static final TypeAdapter<Duration> DURATION = new TypeAdapters.IntegerFieldsTypeAdapter<Duration>("seconds", "nanos") { // from class: com.google.gson.internal.bind.JavaTimeTypeAdapters.1
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -143,7 +144,7 @@ public final class JavaTimeTypeAdapters implements TypeAdapters.FactorySupplier 
                 nextName.hashCode();
                 if (nextName.equals("totalSeconds")) {
                     num = Integer.valueOf(jsonReader.nextInt());
-                } else if (nextName.equals("id")) {
+                } else if (nextName.equals(TtmlNode.ATTR_ID)) {
                     str = jsonReader.nextString();
                 } else {
                     jsonReader.skipValue();
@@ -169,7 +170,7 @@ public final class JavaTimeTypeAdapters implements TypeAdapters.FactorySupplier 
                 return;
             }
             jsonWriter.beginObject();
-            jsonWriter.name("id");
+            jsonWriter.name(TtmlNode.ATTR_ID);
             jsonWriter.value(zoneId.getId());
             jsonWriter.endObject();
         }

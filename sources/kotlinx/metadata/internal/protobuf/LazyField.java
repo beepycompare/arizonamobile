@@ -2,7 +2,7 @@ package kotlinx.metadata.internal.protobuf;
 
 import java.util.Iterator;
 import java.util.Map;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class LazyField extends LazyFieldLite {
     private final MessageLite defaultInstance;
 
@@ -33,7 +33,7 @@ public class LazyField extends LazyFieldLite {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static class LazyEntry<K> implements Map.Entry<K, Object> {
         private Map.Entry<K, LazyField> entry;
 
@@ -68,7 +68,7 @@ public class LazyField extends LazyFieldLite {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static class LazyIterator<K> implements Iterator<Map.Entry<K, Object>> {
         private Iterator<Map.Entry<K, Object>> iterator;
 

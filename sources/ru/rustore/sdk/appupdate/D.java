@@ -21,30 +21,30 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class D extends Lambda implements Function1<SingleEmitter<Unit>, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0797r f1439a;
+    public final /* synthetic */ C0796r f1439a;
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public D(C0797r c0797r, int i) {
+    public D(C0796r c0796r, int i) {
         super(1);
-        this.f1439a = c0797r;
+        this.f1439a = c0796r;
         this.b = i;
     }
 
     public final void a(final SingleEmitter<Unit> emitter) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        C0797r c0797r = this.f1439a;
+        C0796r c0796r = this.f1439a;
         int i = this.b;
         try {
             Result.Companion companion = Result.Companion;
-            if (!RuStoreUtils.INSTANCE.isRuStoreInstalled(c0797r.f1496a)) {
+            if (!RuStoreUtils.INSTANCE.isRuStoreInstalled(c0796r.f1496a)) {
                 emitter.error(new RuStoreNotInstalledException());
             }
-            Context context = c0797r.f1496a;
+            Context context = c0796r.f1496a;
             Intent intent = new Intent("ru.vk.store.FlexibleAppUpdate");
             intent.putExtra("RUN_INSTALL", true);
-            intent.putExtra("PACKAGE_NAME", c0797r.f1496a.getPackageName());
+            intent.putExtra("PACKAGE_NAME", c0796r.f1496a.getPackageName());
             intent.putExtra("AppUpdateType", i);
             ContextExtensionKt.openActivityForResult(context, intent, new OnReceiveResultCallback() { // from class: ru.rustore.sdk.appupdate.D$$ExternalSyntheticLambda0
                 @Override // ru.rustore.sdk.activitylauncher.OnReceiveResultCallback
@@ -52,14 +52,14 @@ public final class D extends Lambda implements Function1<SingleEmitter<Unit>, Un
                     D.a(SingleEmitter.this, activityLauncherResult, bundle);
                 }
             });
-            m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
+            m9916constructorimpl = Result.m9916constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-        if (m9918exceptionOrNullimpl != null) {
-            emitter.error(m9918exceptionOrNullimpl);
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+        if (m9919exceptionOrNullimpl != null) {
+            emitter.error(m9919exceptionOrNullimpl);
         }
     }
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.RandomAccess;
-/* loaded from: classes2.dex */
+/* loaded from: classes5.dex */
 public class NonNullElementWrapperList<E> extends AbstractList<E> implements RandomAccess {
     private final ArrayList<E> delegate;
 

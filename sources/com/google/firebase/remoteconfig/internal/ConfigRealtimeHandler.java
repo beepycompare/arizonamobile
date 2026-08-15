@@ -8,7 +8,7 @@ import com.google.firebase.remoteconfig.ConfigUpdateListenerRegistration;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigRealtimeHandler {
     private final ConfigCacheClient activatedCacheClient;
     private final ConfigFetchHandler configFetchHandler;
@@ -59,7 +59,7 @@ public class ConfigRealtimeHandler {
         this.listeners.remove(configUpdateListener);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public class ConfigUpdateListenerRegistrationInternal implements ConfigUpdateListenerRegistration {
         private final ConfigUpdateListener listener;
 

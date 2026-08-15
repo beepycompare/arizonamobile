@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
 import java.util.Map;
 import java.util.Objects;
 /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class CloudMessage extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CloudMessage> CREATOR = new zza();
     public static final int PRIORITY_HIGH = 1;
@@ -29,7 +29,7 @@ public final class CloudMessage extends AbstractSafeParcelable {
     /* compiled from: com.google.android.gms:play-services-cloud-messaging@@17.2.0 */
     @Target({ElementType.TYPE_PARAMETER, ElementType.TYPE_USE})
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface MessagePriority {
     }
 

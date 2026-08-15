@@ -6,7 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.media3.common.util.Log;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class StandaloneDatabaseProvider extends SQLiteOpenHelper implements DatabaseProvider {
     public static final String DATABASE_NAME = "exoplayer_internal.db";
     private static final String TAG = "SADatabaseProvider";

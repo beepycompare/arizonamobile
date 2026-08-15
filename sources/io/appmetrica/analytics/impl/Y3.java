@@ -9,30 +9,30 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class Y3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0175cg f852a;
+    public final C0174cg f852a;
     public final CounterConfiguration b;
 
-    public Y3(C0175cg c0175cg, CounterConfiguration counterConfiguration) {
-        this.f852a = c0175cg;
+    public Y3(C0174cg c0174cg, CounterConfiguration counterConfiguration) {
+        this.f852a = c0174cg;
         this.b = counterConfiguration;
     }
 
     public static Y3 a(Context context, Bundle bundle) {
-        C0175cg c0175cg;
+        C0174cg c0174cg;
         CounterConfiguration fromBundle;
-        String str = C0175cg.c;
+        String str = C0174cg.c;
         if (bundle != null) {
             try {
-                c0175cg = (C0175cg) bundle.getParcelable("PROCESS_CFG_OBJ");
+                c0174cg = (C0174cg) bundle.getParcelable("PROCESS_CFG_OBJ");
             } catch (Throwable unused) {
             }
             fromBundle = CounterConfiguration.fromBundle(bundle);
-            if (fromBundle == null && c0175cg != null && context.getPackageName().equals(c0175cg.f930a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && c0175cg.f930a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
-                return new Y3(c0175cg, fromBundle);
+            if (fromBundle == null && c0174cg != null && context.getPackageName().equals(c0174cg.f930a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && c0174cg.f930a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
+                return new Y3(c0174cg, fromBundle);
             }
             return null;
         }
-        c0175cg = null;
+        c0174cg = null;
         fromBundle = CounterConfiguration.fromBundle(bundle);
         if (fromBundle == null) {
         }
@@ -47,7 +47,7 @@ public class Y3 {
         return "ClientConfiguration{mProcessConfiguration=" + this.f852a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public final C0175cg a() {
+    public final C0174cg a() {
         return this.f852a;
     }
 }

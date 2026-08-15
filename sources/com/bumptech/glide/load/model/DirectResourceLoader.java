@@ -14,13 +14,13 @@ import com.bumptech.glide.load.resource.drawable.ResourceDrawableDecoder;
 import com.bumptech.glide.signature.ObjectKey;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, DataT> {
     private final Context context;
     private final ResourceOpener<DataT> resourceOpener;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface ResourceOpener<DataT> {
         void close(DataT datat) throws IOException;
 
@@ -64,7 +64,7 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Integer, AssetFileDescriptor>, ResourceOpener<AssetFileDescriptor> {
         private final Context context;
 
@@ -99,7 +99,7 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class InputStreamFactory implements ModelLoaderFactory<Integer, InputStream>, ResourceOpener<InputStream> {
         private final Context context;
 
@@ -134,7 +134,7 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DrawableFactory implements ModelLoaderFactory<Integer, Drawable>, ResourceOpener<Drawable> {
         private final Context context;
 
@@ -168,7 +168,7 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ResourceDataFetcher<DataT> implements DataFetcher<DataT> {
         private DataT data;
         private final int resourceId;

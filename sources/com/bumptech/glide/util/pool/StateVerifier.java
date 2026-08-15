@@ -1,5 +1,5 @@
 package com.bumptech.glide.util.pool;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public abstract class StateVerifier {
     private static final boolean DEBUG = false;
 
@@ -15,7 +15,7 @@ public abstract class StateVerifier {
     private StateVerifier() {
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     private static class DefaultStateVerifier extends StateVerifier {
         private volatile boolean isReleased;
 
@@ -36,7 +36,7 @@ public abstract class StateVerifier {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     private static class DebugStateVerifier extends StateVerifier {
         private volatile RuntimeException recycledAtStackTraceException;
 

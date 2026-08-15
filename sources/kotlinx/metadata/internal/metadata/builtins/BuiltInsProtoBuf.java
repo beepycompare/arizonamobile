@@ -5,7 +5,7 @@ import kotlinx.metadata.internal.metadata.ProtoBuf;
 import kotlinx.metadata.internal.protobuf.ExtensionRegistryLite;
 import kotlinx.metadata.internal.protobuf.GeneratedMessageLite;
 import kotlinx.metadata.internal.protobuf.WireFormat;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class BuiltInsProtoBuf {
     public static final int CLASS_ANNOTATION_FIELD_NUMBER = 150;
     public static final int COMPILE_TIME_VALUE_FIELD_NUMBER = 151;

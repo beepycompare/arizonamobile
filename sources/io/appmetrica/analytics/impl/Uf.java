@@ -15,7 +15,7 @@ public final class Uf {
             if (StringUtils.isNullOrEmpty(preloadInfo.getTrackingId())) {
                 publicLogger.error("Required field \"PreloadInfo.trackingId\" is empty!\nThis preload info will be skipped.", new Object[0]);
             } else {
-                this.f795a = new Qf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, EnumC0399l8.d);
+                this.f795a = new Qf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, EnumC0398l8.d);
             }
         }
     }

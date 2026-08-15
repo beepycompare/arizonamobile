@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnable, Comparable<DecodeJob<?>>, FactoryPools.Poolable {
     public static final Option<Supplier<Integer>> GLIDE_THREAD_PRIORITY_OVERRIDE = Option.memory("glide_thread_priority_override");
     private static final String TAG = "DecodeJob";
@@ -70,7 +70,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     private final ReleaseManager releaseManager = new ReleaseManager();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Callback<R> {
         void onLoadFailed(GlideException glideException);
 
@@ -80,13 +80,13 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface DiskCacheProvider {
         DiskCache getDiskCache();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum RunReason {
         INITIALIZE,
         SWITCH_TO_SOURCE_SERVICE,
@@ -94,7 +94,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum Stage {
         INITIALIZE,
         RESOURCE_CACHE,
@@ -550,7 +550,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.load.engine.DecodeJob$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$EncodeStrategy;
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$engine$DecodeJob$RunReason;
@@ -607,7 +607,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class DecodeCallback<Z> implements DecodePath.DecodeCallback<Z> {
         private final DataSource dataSource;
 
@@ -622,7 +622,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ReleaseManager {
         private boolean isEncodeComplete;
         private boolean isFailed;
@@ -658,7 +658,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Runnabl
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class DeferredEncodeManager<Z> {
         private ResourceEncoder<Z> encoder;
         private Key key;

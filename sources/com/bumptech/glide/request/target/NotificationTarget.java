@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.RemoteViews;
 import com.bumptech.glide.request.transition.Transition;
 import com.bumptech.glide.util.Preconditions;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class NotificationTarget extends CustomTarget<Bitmap> {
     private final Context context;
     private final Notification notification;

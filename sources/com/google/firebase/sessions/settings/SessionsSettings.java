@@ -21,7 +21,7 @@ import kotlin.time.DurationUnit;
 /* compiled from: SessionsSettings.kt */
 @Singleton
 @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0006\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\u0003\b\u0001\u0018\u0000 \u001a2\u00020\u0001:\u0001\u001aB\u001d\b\u0007\u0012\b\b\u0001\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0001\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010\u0013\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\fH\u0002J\u0017\u0010\u0014\u001a\u00020\b2\u0006\u0010\u000f\u001a\u00020\u0010H\u0002¢\u0006\u0004\b\u0015\u0010\u0016J\u000e\u0010\u0017\u001a\u00020\u0018H\u0086@¢\u0006\u0002\u0010\u0019R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0007\u001a\u00020\b8F¢\u0006\u0006\u001a\u0004\b\t\u0010\nR\u0011\u0010\u000b\u001a\u00020\f8F¢\u0006\u0006\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u000f\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001b"}, d2 = {"Lcom/google/firebase/sessions/settings/SessionsSettings;", "", "localOverrideSettings", "Lcom/google/firebase/sessions/settings/SettingsProvider;", "remoteSettings", "<init>", "(Lcom/google/firebase/sessions/settings/SettingsProvider;Lcom/google/firebase/sessions/settings/SettingsProvider;)V", "sessionsEnabled", "", "getSessionsEnabled", "()Z", "samplingRate", "", "getSamplingRate", "()D", "sessionRestartTimeout", "Lkotlin/time/Duration;", "getSessionRestartTimeout-UwyO8pc", "()J", "isValidSamplingRate", "isValidSessionRestartTimeout", "isValidSessionRestartTimeout-LRDsOJo", "(J)Z", "updateSettings", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SessionsSettings {
     public static final Companion Companion = new Companion(null);
     private final SettingsProvider localOverrideSettings;
@@ -71,19 +71,19 @@ public final class SessionsSettings {
     }
 
     /* renamed from: getSessionRestartTimeout-UwyO8pc  reason: not valid java name */
-    public final long m9778getSessionRestartTimeoutUwyO8pc() {
-        Duration mo9776getSessionRestartTimeoutFghU774 = this.localOverrideSettings.mo9776getSessionRestartTimeoutFghU774();
-        if (mo9776getSessionRestartTimeoutFghU774 != null) {
-            long m11338unboximpl = mo9776getSessionRestartTimeoutFghU774.m11338unboximpl();
-            if (m9777isValidSessionRestartTimeoutLRDsOJo(m11338unboximpl)) {
-                return m11338unboximpl;
+    public final long m9779getSessionRestartTimeoutUwyO8pc() {
+        Duration mo9777getSessionRestartTimeoutFghU774 = this.localOverrideSettings.mo9777getSessionRestartTimeoutFghU774();
+        if (mo9777getSessionRestartTimeoutFghU774 != null) {
+            long m11339unboximpl = mo9777getSessionRestartTimeoutFghU774.m11339unboximpl();
+            if (m9778isValidSessionRestartTimeoutLRDsOJo(m11339unboximpl)) {
+                return m11339unboximpl;
             }
         }
-        Duration mo9776getSessionRestartTimeoutFghU7742 = this.remoteSettings.mo9776getSessionRestartTimeoutFghU774();
-        if (mo9776getSessionRestartTimeoutFghU7742 != null) {
-            long m11338unboximpl2 = mo9776getSessionRestartTimeoutFghU7742.m11338unboximpl();
-            if (m9777isValidSessionRestartTimeoutLRDsOJo(m11338unboximpl2)) {
-                return m11338unboximpl2;
+        Duration mo9777getSessionRestartTimeoutFghU7742 = this.remoteSettings.mo9777getSessionRestartTimeoutFghU774();
+        if (mo9777getSessionRestartTimeoutFghU7742 != null) {
+            long m11339unboximpl2 = mo9777getSessionRestartTimeoutFghU7742.m11339unboximpl();
+            if (m9778isValidSessionRestartTimeoutLRDsOJo(m11339unboximpl2)) {
+                return m11339unboximpl2;
             }
         }
         Duration.Companion companion = Duration.Companion;
@@ -91,8 +91,8 @@ public final class SessionsSettings {
     }
 
     /* renamed from: isValidSessionRestartTimeout-LRDsOJo  reason: not valid java name */
-    private final boolean m9777isValidSessionRestartTimeoutLRDsOJo(long j) {
-        return Duration.m11319isPositiveimpl(j) && Duration.m11314isFiniteimpl(j);
+    private final boolean m9778isValidSessionRestartTimeoutLRDsOJo(long j) {
+        return Duration.m11320isPositiveimpl(j) && Duration.m11315isFiniteimpl(j);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0044, code lost:
@@ -148,7 +148,7 @@ public final class SessionsSettings {
 
     /* compiled from: SessionsSettings.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u0011\u0010\u0004\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u0006\u0010\u0007¨\u0006\b"}, d2 = {"Lcom/google/firebase/sessions/settings/SessionsSettings$Companion;", "", "<init>", "()V", "instance", "Lcom/google/firebase/sessions/settings/SessionsSettings;", "getInstance", "()Lcom/google/firebase/sessions/settings/SessionsSettings;", "com.google.firebase-firebase-sessions"}, k = 1, mv = {2, 0, 0}, xi = 48)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

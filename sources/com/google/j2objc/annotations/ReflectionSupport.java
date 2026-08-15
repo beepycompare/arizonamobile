@@ -8,10 +8,10 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE, ElementType.PACKAGE})
 @Documented
 @Retention(RetentionPolicy.CLASS)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface ReflectionSupport {
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum Level {
         NATIVE_ONLY,
         FULL

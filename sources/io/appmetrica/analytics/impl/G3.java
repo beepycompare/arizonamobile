@@ -10,7 +10,7 @@ public final class G3 implements O5 {
     public final Map<String, String> invoke(ContentValues contentValues) {
         String asString = contentValues.getAsString("clids");
         HashMap c = Ib.c(asString);
-        if (AbstractC0311hn.a(c)) {
+        if (AbstractC0310hn.a(c)) {
             return c;
         }
         Gj.a("Passed clids (" + asString + ") are invalid.", new Object[0]);

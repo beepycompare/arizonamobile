@@ -1,5 +1,5 @@
 package com.arkivanov.decompose;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class R {
     private R() {
     }

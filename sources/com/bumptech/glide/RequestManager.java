@@ -28,7 +28,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class RequestManager implements ComponentCallbacks2, LifecycleListener, ModelTypes<RequestBuilder<Drawable>> {
     private static final RequestOptions DECODE_TYPE_BITMAP = RequestOptions.decodeTypeOf(Bitmap.class).lock();
     private static final RequestOptions DECODE_TYPE_GIF = RequestOptions.decodeTypeOf(GifDrawable.class).lock();
@@ -86,7 +86,7 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener, M
     }
 
     protected synchronized void setRequestOptions(RequestOptions requestOptions) {
-        this.requestOptions = requestOptions.mo9494clone().autoClone();
+        this.requestOptions = requestOptions.mo9495clone().autoClone();
     }
 
     private synchronized void updateRequestOptions(RequestOptions requestOptions) {
@@ -339,7 +339,7 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener, M
         this.targetTracker.clear();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private class RequestManagerConnectivityListener implements ConnectivityMonitor.ConnectivityListener {
         private final RequestTracker requestTracker;
 
@@ -357,7 +357,7 @@ public class RequestManager implements ComponentCallbacks2, LifecycleListener, M
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class ClearTarget extends CustomViewTarget<View, Object> {
         @Override // com.bumptech.glide.request.target.Target
         public void onLoadFailed(Drawable drawable) {

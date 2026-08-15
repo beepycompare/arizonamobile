@@ -1,5 +1,5 @@
 package com.google.firebase.sessions.dagger.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Providers {
     public static <T> Provider<T> asDaggerProvider(final javax.inject.Provider<T> provider) {
         Preconditions.checkNotNull(provider);

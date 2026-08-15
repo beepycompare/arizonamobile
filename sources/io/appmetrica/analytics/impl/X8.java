@@ -17,16 +17,16 @@ import kotlin.jvm.internal.StringCompanionObject;
 public final class X8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0502p7 f840a;
-    public final C0448n5 b;
+    public final C0501p7 f840a;
+    public final C0447n5 b;
     public final AtomicLong c;
     public final List d;
     public final Z6 e;
     public final ReentrantReadWriteLock.WriteLock f;
 
-    public X8(C0502p7 c0502p7, C0448n5 c0448n5, AtomicLong atomicLong, ArrayList arrayList, Z6 z6, ReentrantReadWriteLock reentrantReadWriteLock) {
-        this.f840a = c0502p7;
-        this.b = c0448n5;
+    public X8(C0501p7 c0501p7, C0447n5 c0447n5, AtomicLong atomicLong, ArrayList arrayList, Z6 z6, ReentrantReadWriteLock reentrantReadWriteLock) {
+        this.f840a = c0501p7;
+        this.b = c0447n5;
         this.c = atomicLong;
         this.d = arrayList;
         this.e = z6;
@@ -38,9 +38,9 @@ public final class X8 {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
             return this.e.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", Arrays.copyOf(new Object[]{CollectionsKt.joinToString$default(Q9.i, ", ", null, null, 0, null, null, 62, null), CollectionsKt.joinToString$default(Q9.j, ", ", null, null, 0, null, null, 62, null), 10}, 3)), null, 2, this.b.b.b, true).b;
         } catch (Throwable th) {
-            C0541qk c0541qk = Oj.f708a;
-            c0541qk.getClass();
-            c0541qk.a(new Pj("deleteExcessiveReports exception", th));
+            C0540qk c0540qk = Oj.f708a;
+            c0540qk.getClass();
+            c0540qk.a(new Pj("deleteExcessiveReports exception", th));
             return 0;
         }
     }
@@ -75,8 +75,8 @@ public final class X8 {
                         }
                         writableDatabase.setTransactionSuccessful();
                         if (i != 0) {
-                            for (InterfaceC0426m9 interfaceC0426m9 : this.d) {
-                                interfaceC0426m9.a();
+                            for (InterfaceC0425m9 interfaceC0425m9 : this.d) {
+                                interfaceC0425m9.a();
                             }
                         }
                         Unit unit = Unit.INSTANCE;
@@ -97,11 +97,11 @@ public final class X8 {
     public final void a(ContentValues contentValues) {
         Integer asInteger = contentValues.getAsInteger("type");
         if (Q9.d.contains(Db.a(asInteger != null ? asInteger.intValue() : -1))) {
-            C0657v7 model = new C0683w7(null, 1, null).toModel(contentValues);
+            C0656v7 model = new C0682w7(null, 1, null).toModel(contentValues);
             PublicLogger publicLogger = this.b.m;
             Db db = model.d;
-            C0631u7 c0631u7 = model.g;
-            publicLogger.info(AbstractC0562rg.a("Event saved to db", db, c0631u7.b, c0631u7.c), new Object[0]);
+            C0630u7 c0630u7 = model.g;
+            publicLogger.info(AbstractC0561rg.a("Event saved to db", db, c0630u7.b, c0630u7.c), new Object[0]);
         }
     }
 
@@ -112,8 +112,8 @@ public final class X8 {
             Integer asInteger = ((ContentValues) it.next()).getAsInteger("type");
             arrayList.add(Integer.valueOf(asInteger != null ? asInteger.intValue() : -1));
         }
-        for (InterfaceC0426m9 interfaceC0426m9 : this.d) {
-            interfaceC0426m9.a(arrayList);
+        for (InterfaceC0425m9 interfaceC0425m9 : this.d) {
+            interfaceC0425m9.a(arrayList);
         }
         ((A5) this.b.p).e();
     }

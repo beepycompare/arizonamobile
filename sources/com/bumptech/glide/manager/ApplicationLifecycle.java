@@ -1,5 +1,5 @@
 package com.bumptech.glide.manager;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class ApplicationLifecycle implements Lifecycle {
     @Override // com.bumptech.glide.manager.Lifecycle
     public void removeListener(LifecycleListener lifecycleListener) {

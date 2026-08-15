@@ -3,7 +3,7 @@ package com.bumptech.glide.load.engine;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class ResourceRecycler {
     private final Handler handler = new Handler(Looper.getMainLooper(), new ResourceRecyclerCallback());
     private boolean isRecycling;
@@ -18,7 +18,7 @@ class ResourceRecycler {
         this.handler.obtainMessage(1, resource).sendToTarget();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ResourceRecyclerCallback implements Handler.Callback {
         static final int RECYCLE_RESOURCE = 1;
 

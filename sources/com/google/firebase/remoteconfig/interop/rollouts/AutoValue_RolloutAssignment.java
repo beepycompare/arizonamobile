@@ -1,7 +1,7 @@
 package com.google.firebase.remoteconfig.interop.rollouts;
 
 import com.google.firebase.remoteconfig.interop.rollouts.RolloutAssignment;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_RolloutAssignment extends RolloutAssignment {
     private final String parameterKey;
     private final String parameterValue;
@@ -64,7 +64,7 @@ final class AutoValue_RolloutAssignment extends RolloutAssignment {
         return ((int) (j ^ (j >>> 32))) ^ ((((((((this.rolloutId.hashCode() ^ 1000003) * 1000003) ^ this.variantId.hashCode()) * 1000003) ^ this.parameterKey.hashCode()) * 1000003) ^ this.parameterValue.hashCode()) * 1000003);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static final class Builder extends RolloutAssignment.Builder {
         private String parameterKey;
         private String parameterValue;

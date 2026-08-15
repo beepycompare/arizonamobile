@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class PersistedInstallation {
     private static final String AUTH_TOKEN_KEY = "AuthToken";
     private static final String EXPIRES_IN_SECONDS_KEY = "ExpiresInSecs";
@@ -23,7 +23,7 @@ public class PersistedInstallation {
     private File dataFile;
     private final FirebaseApp firebaseApp;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum RegistrationStatus {
         ATTEMPT_MIGRATION,
         NOT_GENERATED,

@@ -11,7 +11,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: DefaultComponentContext.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 /* synthetic */ class DefaultComponentContext$componentContextFactory$1 implements ComponentContextFactory, FunctionAdapter {
     public static final DefaultComponentContext$componentContextFactory$1 INSTANCE = new DefaultComponentContext$componentContextFactory$1();
 

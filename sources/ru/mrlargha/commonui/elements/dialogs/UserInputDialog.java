@@ -544,22 +544,22 @@ public final class UserInputDialog extends AbstractDialog {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final DialogPlaceholderModel toModelOrNull(String str) {
-            Object m9915constructorimpl;
+            Object m9916constructorimpl;
             Object obj;
             try {
                 Result.Companion companion = Result.Companion;
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
             }
             if (MapperKt.isJsonValid(str) && !Intrinsics.areEqual(str, AbstractJsonLexerKt.NULL) && !Intrinsics.areEqual(str, "{}") && str.length() != 0) {
                 obj = MapperKt.getGson().fromJson(str, (Class<Object>) DialogPlaceholderModel.class);
-                m9915constructorimpl = Result.m9915constructorimpl((DialogPlaceholderModel) obj);
-                return Result.m9921isFailureimpl(m9915constructorimpl) ? null : m9915constructorimpl;
+                m9916constructorimpl = Result.m9916constructorimpl((DialogPlaceholderModel) obj);
+                return Result.m9922isFailureimpl(m9916constructorimpl) ? null : m9916constructorimpl;
             }
             obj = null;
-            m9915constructorimpl = Result.m9915constructorimpl((DialogPlaceholderModel) obj);
-            return Result.m9921isFailureimpl(m9915constructorimpl) ? null : m9915constructorimpl;
+            m9916constructorimpl = Result.m9916constructorimpl((DialogPlaceholderModel) obj);
+            return Result.m9922isFailureimpl(m9916constructorimpl) ? null : m9916constructorimpl;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -617,22 +617,22 @@ public final class UserInputDialog extends AbstractDialog {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final long calculateCommission(long j, int i) {
-            Long m9915constructorimpl;
+            Long m9916constructorimpl;
             if (j <= 0 || i <= 0) {
                 return 0L;
             }
             try {
                 Result.Companion companion = Result.Companion;
                 Companion companion2 = this;
-                m9915constructorimpl = Result.m9915constructorimpl(Long.valueOf(Math.multiplyExact(j, i) / 100));
+                m9916constructorimpl = Result.m9916constructorimpl(Long.valueOf(Math.multiplyExact(j, i) / 100));
             } catch (Throwable th) {
                 Result.Companion companion3 = Result.Companion;
-                m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9921isFailureimpl(m9915constructorimpl)) {
-                m9915constructorimpl = Long.MAX_VALUE;
+            if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+                m9916constructorimpl = Long.MAX_VALUE;
             }
-            return ((Number) m9915constructorimpl).longValue();
+            return ((Number) m9916constructorimpl).longValue();
         }
     }
 }

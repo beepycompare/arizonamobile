@@ -1,6 +1,7 @@
 package kotlinx.coroutines.channels;
 
 import androidx.exifinterface.media.ExifInterface;
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -15,7 +16,7 @@ import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [E] */
 /* compiled from: Deprecated.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u0002H\n"}, d2 = {"<anonymous>", "", ExifInterface.LONGITUDE_EAST, "it"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$filterNot$1", f = "Deprecated.kt", i = {0}, l = {252}, m = "invokeSuspend", n = {"it"}, s = {"L$0"}, v = 1)
+@DebugMetadata(c = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$filterNot$1", f = "Deprecated.kt", i = {0}, l = {LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX}, m = "invokeSuspend", n = {"it"}, s = {"L$0"}, v = 1)
 /* loaded from: classes5.dex */
 public final class ChannelsKt__DeprecatedKt$filterNot$1<E> extends SuspendLambda implements Function2<E, Continuation<? super Boolean>, Object> {
     final /* synthetic */ Function2<E, Continuation<? super Boolean>, Object> $predicate;

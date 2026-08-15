@@ -32,12 +32,12 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int installation_cancelled = 0x7f12040b;
-        public static int installation_failed = 0x7f12040c;
-        public static int installing_module = 0x7f12040d;
-        public static int ok = 0x7f120585;
-        public static int progress = 0x7f1205d2;
-        public static int retry = 0x7f120640;
+        public static int installation_cancelled = 0x7f120412;
+        public static int installation_failed = 0x7f120413;
+        public static int installing_module = 0x7f120414;
+        public static int ok = 0x7f12058c;
+        public static int progress = 0x7f1205d9;
+        public static int retry = 0x7f120647;
 
         private string() {
         }

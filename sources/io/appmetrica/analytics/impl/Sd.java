@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class Sd {
     public static ArrayList a() {
         Bd bd;
-        List<String> a2 = C0576s4.l().m.a();
+        List<String> a2 = C0575s4.l().m.a();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(a2, 10));
         for (String str : a2) {
             ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
@@ -17,7 +17,7 @@ public final class Sd {
             if (loadAndInstantiateClassWithDefaultConstructor == null) {
                 bd = new Bd(str, false);
             } else {
-                C0576s4.l().m().b.add((ModuleClientEntryPoint) loadAndInstantiateClassWithDefaultConstructor);
+                C0575s4.l().m().b.add((ModuleClientEntryPoint) loadAndInstantiateClassWithDefaultConstructor);
                 bd = new Bd(str, true);
             }
             arrayList.add(bd);

@@ -3,7 +3,7 @@ package com.google.firebase.installations;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.installations.internal.FidListener;
 import com.google.firebase.installations.internal.FidListenerHandle;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface FirebaseInstallationsApi {
     void clearFidCache();
 

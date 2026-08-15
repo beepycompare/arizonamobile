@@ -3,7 +3,7 @@ package com.bumptech.glide.load.resource.bitmap;
 import android.graphics.Bitmap;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import java.security.MessageDigest;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class FitCenter extends BitmapTransformation {
     private static final String ID = "com.bumptech.glide.load.resource.bitmap.FitCenter";
     private static final byte[] ID_BYTES = ID.getBytes(CHARSET);

@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Gson {
     private static final String JSON_NON_EXECUTABLE_PREFIX = ")]}'\n";
     final List<TypeAdapterFactory> builderFactories;
@@ -457,7 +457,7 @@ public final class Gson {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class FutureTypeAdapter<T> extends SerializationDelegatingTypeAdapter<T> {
         private TypeAdapter<T> delegate = null;
 

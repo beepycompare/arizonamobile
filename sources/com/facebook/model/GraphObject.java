@@ -1,5 +1,6 @@
 package com.facebook.model;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.facebook.FacebookGraphObjectException;
 import com.facebook.internal.Utility;
 import com.facebook.internal.Validate;
@@ -505,14 +506,14 @@ public interface GraphObject {
         }
 
         public static boolean hasSameId(GraphObject graphObject, GraphObject graphObject2) {
-            if (graphObject == null || graphObject2 == null || !graphObject.asMap().containsKey("id") || !graphObject2.asMap().containsKey("id")) {
+            if (graphObject == null || graphObject2 == null || !graphObject.asMap().containsKey(TtmlNode.ATTR_ID) || !graphObject2.asMap().containsKey(TtmlNode.ATTR_ID)) {
                 return false;
             }
             if (graphObject.equals(graphObject2)) {
                 return true;
             }
-            Object property = graphObject.getProperty("id");
-            Object property2 = graphObject2.getProperty("id");
+            Object property = graphObject.getProperty(TtmlNode.ATTR_ID);
+            Object property2 = graphObject2.getProperty(TtmlNode.ATTR_ID);
             if (property == null || property2 == null || !(property instanceof String) || !(property2 instanceof String)) {
                 return false;
             }

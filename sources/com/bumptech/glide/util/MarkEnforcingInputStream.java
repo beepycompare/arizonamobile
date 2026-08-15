@@ -3,7 +3,7 @@ package com.bumptech.glide.util;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class MarkEnforcingInputStream extends FilterInputStream {
     private static final int END_OF_STREAM = -1;
     private static final int UNSET = Integer.MIN_VALUE;

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes5.dex */
 public abstract class W4 extends E5 {
-    public W4(BaseRequestConfig.ComponentLoader<Object, Object, C0139b6> componentLoader, Hm hm, BaseRequestConfig.BaseRequestArguments<F4, Object> baseRequestArguments) {
+    public W4(BaseRequestConfig.ComponentLoader<Object, Object, C0138b6> componentLoader, Hm hm, BaseRequestConfig.BaseRequestArguments<F4, Object> baseRequestArguments) {
         super(componentLoader, hm, baseRequestArguments);
     }
 

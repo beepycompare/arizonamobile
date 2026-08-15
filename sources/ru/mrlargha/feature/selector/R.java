@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int selector_arrow_ic = 0x7f080f53;
-        public static int selector_line_ic = 0x7f080f54;
+        public static int selector_arrow_ic = 0x7f080f55;
+        public static int selector_line_ic = 0x7f080f56;
 
         private drawable() {
         }
@@ -46,10 +46,10 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class string {
-        public static int buy = 0x7f12013d;
-        public static int cancel = 0x7f120145;
-        public static int default_number = 0x7f1201fb;
-        public static int name_colon = 0x7f120560;
+        public static int buy = 0x7f120142;
+        public static int cancel = 0x7f12014a;
+        public static int default_number = 0x7f120200;
+        public static int name_colon = 0x7f120567;
 
         private string() {
         }

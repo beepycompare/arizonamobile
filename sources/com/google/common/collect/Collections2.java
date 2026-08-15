@@ -1,5 +1,6 @@
 package com.google.common.collect;
 
+import com.arizona.launcher.updater.apk.LauncherApkDownloader;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
@@ -230,7 +231,7 @@ public final class Collections2 {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static StringBuilder newStringBuilderForCollection(int size) {
         CollectPreconditions.checkNonnegative(size, "size");
-        return new StringBuilder((int) Math.min(size * 8, 1073741824L));
+        return new StringBuilder((int) Math.min(size * 8, (long) LauncherApkDownloader.DEFAULT_MAX_APK_BYTES));
     }
 
     public static <E extends Comparable<? super E>> Collection<List<E>> orderedPermutations(Iterable<E> elements) {

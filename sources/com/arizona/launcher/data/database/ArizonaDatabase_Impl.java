@@ -1,5 +1,6 @@
 package com.arizona.launcher.data.database;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.room.InvalidationTracker;
 import androidx.room.RoomMasterTable;
 import androidx.room.RoomOpenDelegate;
@@ -144,7 +145,7 @@ public final class ArizonaDatabase_Impl extends ArizonaDatabase {
                     return new RoomOpenDelegate.ValidationResult(false, "lastplayed(com.arizona.launcher.model.servers.LastPlayedServer).\n Expected:\n" + tableInfo2 + "\n Found:\n" + read2);
                 }
                 LinkedHashMap linkedHashMap3 = new LinkedHashMap();
-                linkedHashMap3.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, 1));
+                linkedHashMap3.put(TtmlNode.ATTR_ID, new TableInfo.Column(TtmlNode.ATTR_ID, "INTEGER", true, 1, null, 1));
                 linkedHashMap3.put("date", new TableInfo.Column("date", "INTEGER", false, 0, null, 1));
                 linkedHashMap3.put("title", new TableInfo.Column("title", "TEXT", true, 0, null, 1));
                 linkedHashMap3.put("text", new TableInfo.Column("text", "TEXT", true, 0, null, 1));
@@ -156,7 +157,7 @@ public final class ArizonaDatabase_Impl extends ArizonaDatabase {
                     return new RoomOpenDelegate.ValidationResult(false, "notifications(com.arizona.launcher.model.servers.NotificationHistoryData).\n Expected:\n" + tableInfo3 + "\n Found:\n" + read3);
                 }
                 LinkedHashMap linkedHashMap4 = new LinkedHashMap();
-                linkedHashMap4.put("id", new TableInfo.Column("id", "INTEGER", true, 0, null, 1));
+                linkedHashMap4.put(TtmlNode.ATTR_ID, new TableInfo.Column(TtmlNode.ATTR_ID, "INTEGER", true, 0, null, 1));
                 linkedHashMap4.put("address", new TableInfo.Column("address", "TEXT", true, 1, null, 1));
                 linkedHashMap4.put("port", new TableInfo.Column("port", "INTEGER", true, 0, null, 1));
                 linkedHashMap4.put("hasPassword", new TableInfo.Column("hasPassword", "INTEGER", true, 0, null, 1));

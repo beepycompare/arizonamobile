@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GlideUrl implements Key {
     private static final String ALLOWED_URI_CHARS = "@#&=*+-_.,:!?()/~'%;$[]";
     private volatile byte[] cacheKeyBytes;

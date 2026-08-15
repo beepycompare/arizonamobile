@@ -6,7 +6,7 @@ import com.google.firebase.components.ComponentFactory;
 import com.google.firebase.components.Dependency;
 import java.util.Iterator;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DefaultUserAgentPublisher implements UserAgentPublisher {
     private final GlobalLibraryVersionRegistrar gamesSDKRegistrar;
     private final String javaSDKVersionUserAgent;

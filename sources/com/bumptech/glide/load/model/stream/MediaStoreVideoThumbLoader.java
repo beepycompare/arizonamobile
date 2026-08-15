@@ -11,7 +11,7 @@ import com.bumptech.glide.load.model.MultiModelLoaderFactory;
 import com.bumptech.glide.load.resource.bitmap.VideoDecoder;
 import com.bumptech.glide.signature.ObjectKey;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MediaStoreVideoThumbLoader implements ModelLoader<Uri, InputStream> {
     private final Context context;
 
@@ -37,7 +37,7 @@ public class MediaStoreVideoThumbLoader implements ModelLoader<Uri, InputStream>
         return MediaStoreUtil.isMediaStoreVideoUri(uri);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Factory implements ModelLoaderFactory<Uri, InputStream> {
         private final Context context;
 

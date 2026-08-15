@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class JsonElementTypeAdapter extends TypeAdapter<JsonElement> {
     public static final JsonElementTypeAdapter ADAPTER = new JsonElementTypeAdapter();
 
@@ -23,7 +23,7 @@ public class JsonElementTypeAdapter extends TypeAdapter<JsonElement> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.gson.internal.bind.JsonElementTypeAdapter$1  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$google$gson$stream$JsonToken;
 

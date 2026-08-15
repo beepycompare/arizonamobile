@@ -6,7 +6,6 @@ import androidx.compose.ui.input.pointer.PointerEvent;
 import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerEventPass;
 import androidx.compose.ui.input.pointer.PointerInputChange;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -20,7 +19,7 @@ import kotlin.jvm.internal.Ref;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TapGestureDetector.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$waitForLongPress$2", f = "TapGestureDetector.kt", i = {0, 1}, l = {Constants.STATUS_PRECONDITION_FAILED, 435}, m = "invokeSuspend", n = {"$this$withTimeout", "$this$withTimeout"}, s = {"L$0", "L$0"}, v = 1)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$waitForLongPress$2", f = "TapGestureDetector.kt", i = {0, 1}, l = {412, 435}, m = "invokeSuspend", n = {"$this$withTimeout", "$this$withTimeout"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes.dex */
 public final class TapGestureDetectorKt$waitForLongPress$2 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ PointerEventPass $pass;

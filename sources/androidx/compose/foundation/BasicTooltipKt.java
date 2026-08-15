@@ -40,6 +40,7 @@ import androidx.compose.ui.window.PopupPositionProvider;
 import androidx.compose.ui.window.PopupProperties;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
+import com.arizona.launcher.updater.archive.download.ArchiveResumableHttpEngine;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
@@ -875,7 +876,7 @@ public final class BasicTooltipKt {
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* compiled from: BasicTooltip.kt */
                     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-                    @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1$1", f = "BasicTooltip.kt", i = {}, l = {205}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+                    @DebugMetadata(c = "androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1$1", f = "BasicTooltip.kt", i = {}, l = {ArchiveResumableHttpEngine.HTTP_RESET_CONTENT}, m = "invokeSuspend", n = {}, s = {}, v = 1)
                     /* renamed from: androidx.compose.foundation.BasicTooltipKt$handleGestures$1$1$1$1  reason: invalid class name and collision with other inner class name */
                     /* loaded from: classes.dex */
                     public static final class C00021 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

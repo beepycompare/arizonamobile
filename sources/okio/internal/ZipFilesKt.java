@@ -276,24 +276,24 @@ public final class ZipFilesKt {
         int readShortLe2 = bufferedSource.readShortLe() & UShort.MAX_VALUE;
         int readShortLe3 = bufferedSource.readShortLe() & UShort.MAX_VALUE;
         int readShortLe4 = bufferedSource.readShortLe() & UShort.MAX_VALUE;
-        long readIntLe2 = bufferedSource.readIntLe() & MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE;
+        long readIntLe2 = bufferedSource.readIntLe() & 4294967295L;
         final Ref.LongRef longRef = new Ref.LongRef();
-        longRef.element = bufferedSource.readIntLe() & MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE;
+        longRef.element = bufferedSource.readIntLe() & 4294967295L;
         final Ref.LongRef longRef2 = new Ref.LongRef();
-        longRef2.element = bufferedSource.readIntLe() & MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE;
+        longRef2.element = bufferedSource.readIntLe() & 4294967295L;
         int readShortLe5 = bufferedSource.readShortLe() & UShort.MAX_VALUE;
         int readShortLe6 = bufferedSource.readShortLe() & UShort.MAX_VALUE;
         int readShortLe7 = bufferedSource.readShortLe() & UShort.MAX_VALUE;
         bufferedSource.skip(8L);
         final Ref.LongRef longRef3 = new Ref.LongRef();
-        longRef3.element = bufferedSource.readIntLe() & MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE;
+        longRef3.element = bufferedSource.readIntLe() & 4294967295L;
         String readUtf8 = bufferedSource.readUtf8(readShortLe5);
         if (StringsKt.contains$default((CharSequence) readUtf8, (char) 0, false, 2, (Object) null)) {
             throw new IOException("bad zip: filename contains 0x00");
         }
-        long j = longRef2.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? 8L : 0L;
-        long j2 = longRef.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? j + 8 : j;
-        if (longRef3.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE) {
+        long j = longRef2.element == 4294967295L ? 8L : 0L;
+        long j2 = longRef.element == 4294967295L ? j + 8 : j;
+        if (longRef3.element == 4294967295L) {
             j2 += 8;
         }
         final long j3 = j2;
@@ -336,9 +336,9 @@ public final class ZipFilesKt {
             if (j2 < j) {
                 throw new IOException("bad zip: zip64 extra too short");
             }
-            longRef.element = longRef.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? bufferedSource.readLongLe() : longRef.element;
-            longRef2.element = longRef2.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? bufferedSource.readLongLe() : 0L;
-            longRef3.element = longRef3.element == MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE ? bufferedSource.readLongLe() : 0L;
+            longRef.element = longRef.element == 4294967295L ? bufferedSource.readLongLe() : longRef.element;
+            longRef2.element = longRef2.element == 4294967295L ? bufferedSource.readLongLe() : 0L;
+            longRef3.element = longRef3.element == 4294967295L ? bufferedSource.readLongLe() : 0L;
         }
         return Unit.INSTANCE;
     }
@@ -369,7 +369,7 @@ public final class ZipFilesKt {
             throw new IOException("unsupported zip: spanned");
         }
         bufferedSource.skip(4L);
-        return new EocdRecord(readShortLe3, MAX_ZIP_ENTRY_AND_ARCHIVE_SIZE & bufferedSource.readIntLe(), bufferedSource.readShortLe() & UShort.MAX_VALUE);
+        return new EocdRecord(readShortLe3, 4294967295L & bufferedSource.readIntLe(), bufferedSource.readShortLe() & UShort.MAX_VALUE);
     }
 
     private static final EocdRecord readZip64EocdRecord(BufferedSource bufferedSource, EocdRecord eocdRecord) throws IOException {

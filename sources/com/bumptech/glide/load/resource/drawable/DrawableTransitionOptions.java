@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import com.bumptech.glide.TransitionOptions;
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
 import com.bumptech.glide.request.transition.TransitionFactory;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DrawableTransitionOptions extends TransitionOptions<DrawableTransitionOptions, Drawable> {
     public static DrawableTransitionOptions withCrossFade() {
         return new DrawableTransitionOptions().crossFade();

@@ -1,5 +1,5 @@
 package androidx.core.content;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class UnusedAppRestrictionsConstants {
     public static final int API_30 = 4;
     public static final int API_30_BACKPORT = 3;

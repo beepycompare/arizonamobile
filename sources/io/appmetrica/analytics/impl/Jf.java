@@ -9,7 +9,7 @@ import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
 import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Jf implements InterfaceC0669vj {
+public final class Jf implements InterfaceC0668vj {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f614a;
@@ -48,7 +48,7 @@ public final class Jf implements InterfaceC0669vj {
                                 Gj.a("Tracking id from Satellite is not a number.", new Object[0]);
                             }
                             Gj.a("Preload info from Satellite: {tracking id = %s, additional parameters = %s}", string, jSONObject2);
-                            Qf qf = new Qf(string, jSONObject2, !TextUtils.isEmpty(string), false, EnumC0399l8.e);
+                            Qf qf = new Qf(string, jSONObject2, !TextUtils.isEmpty(string), false, EnumC0398l8.e);
                             Oo.a(cursor);
                             return qf;
                         }
@@ -58,7 +58,7 @@ public final class Jf implements InterfaceC0669vj {
                             Gj.a("Tracking id from Satellite is not a number.", new Object[0]);
                         }
                         Gj.a("Preload info from Satellite: {tracking id = %s, additional parameters = %s}", string, jSONObject22);
-                        Qf qf2 = new Qf(string, jSONObject22, !TextUtils.isEmpty(string), false, EnumC0399l8.e);
+                        Qf qf2 = new Qf(string, jSONObject22, !TextUtils.isEmpty(string), false, EnumC0398l8.e);
                         Oo.a(cursor);
                         return qf2;
                     }

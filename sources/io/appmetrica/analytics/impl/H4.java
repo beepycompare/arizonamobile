@@ -7,7 +7,7 @@ public final class H4 extends I4 {
         super(li);
     }
 
-    public final void a(Db db, List<AbstractC0305hh> list) {
+    public final void a(Db db, List<AbstractC0304hh> list) {
         if (!Q9.h.contains(db)) {
             list.add(this.f590a.s);
         }

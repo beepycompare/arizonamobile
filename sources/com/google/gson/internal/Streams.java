@@ -15,7 +15,7 @@ import java.io.Flushable;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Streams {
     private Streams() {
         throw new UnsupportedOperationException();
@@ -57,7 +57,7 @@ public final class Streams {
         return appendable instanceof Writer ? (Writer) appendable : new AppendableWriter(appendable);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class AppendableWriter extends Writer {
         private final Appendable appendable;
         private final CurrentWrite currentWrite = new CurrentWrite();
@@ -111,7 +111,7 @@ public final class Streams {
             return this;
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         private static class CurrentWrite implements CharSequence {
             private String cachedString;
             private char[] chars;

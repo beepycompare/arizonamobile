@@ -17,6 +17,7 @@ import androidx.constraintlayout.core.widgets.HelperWidget;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.R;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -278,7 +279,7 @@ public abstract class ConstraintHelper extends View {
             } catch (Exception unused) {
             }
         }
-        return i == 0 ? this.myContext.getResources().getIdentifier(str, "id", this.myContext.getPackageName()) : i;
+        return i == 0 ? this.myContext.getResources().getIdentifier(str, TtmlNode.ATTR_ID, this.myContext.getPackageName()) : i;
     }
 
     private int findId(ConstraintLayout constraintLayout, String str) {

@@ -1,7 +1,7 @@
 package com.google.firebase.messaging.reporting;
 
 import com.google.firebase.encoders.proto.ProtoEnum;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class MessagingClientEvent {
     private static final MessagingClientEvent DEFAULT_INSTANCE = new Builder().build();
     private final String analytics_label_;
@@ -106,7 +106,7 @@ public final class MessagingClientEvent {
         return DEFAULT_INSTANCE;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder {
         private long project_number_ = 0;
         private String message_id_ = "";
@@ -207,7 +207,7 @@ public final class MessagingClientEvent {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum MessageType implements ProtoEnum {
         UNKNOWN(0),
         DATA_MESSAGE(1),
@@ -226,7 +226,7 @@ public final class MessagingClientEvent {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum SDKPlatform implements ProtoEnum {
         UNKNOWN_OS(0),
         ANDROID(1),
@@ -245,7 +245,7 @@ public final class MessagingClientEvent {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum Event implements ProtoEnum {
         UNKNOWN_EVENT(0),
         MESSAGE_DELIVERED(1),

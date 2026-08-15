@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class Personalization {
     public static final String ANALYTICS_ORIGIN_PERSONALIZATION = "fp";
     public static final String ARM_INDEX = "armIndex";

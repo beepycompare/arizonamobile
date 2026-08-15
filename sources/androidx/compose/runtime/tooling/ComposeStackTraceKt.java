@@ -156,7 +156,7 @@ public final class ComposeStackTraceKt {
     }
 
     public static final List<ComposeStackTraceFrame> filterInternalFramesByGroupKey(ComposeStackTrace composeStackTrace) {
-        int[] iArr = {ComposerKt.providerKey, ComposerKt.compositionLocalMapKey, ComposerKt.providerMapsKey, ComposerKt.referenceKey, ComposerKt.reuseKey, GapComposerKt.nodeKey, ComposerKt.defaultsKey, MovableContentKt.movableContentKey, 200};
+        int[] iArr = {201, ComposerKt.compositionLocalMapKey, ComposerKt.providerMapsKey, 206, ComposerKt.reuseKey, GapComposerKt.nodeKey, ComposerKt.defaultsKey, MovableContentKt.movableContentKey, 200};
         int size = composeStackTrace.getFrames().size();
         ArrayList arrayList = new ArrayList();
         int i = 0;

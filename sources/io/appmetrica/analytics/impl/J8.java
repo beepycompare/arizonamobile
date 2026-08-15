@@ -14,7 +14,7 @@ public final class J8 extends MessageNano {
 
     /* renamed from: a  reason: collision with root package name */
     public byte[] f611a;
-    public C0736y8 b;
+    public C0735y8 b;
     public byte[] c;
     public E8 d;
 
@@ -51,9 +51,9 @@ public final class J8 extends MessageNano {
         if (!Arrays.equals(bArr, bArr2)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f611a);
         }
-        C0736y8 c0736y8 = this.b;
-        if (c0736y8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, c0736y8);
+        C0735y8 c0735y8 = this.b;
+        if (c0735y8 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, c0735y8);
         }
         if (!Arrays.equals(this.c, bArr2)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(3, this.c);
@@ -69,9 +69,9 @@ public final class J8 extends MessageNano {
         if (!Arrays.equals(bArr, bArr2)) {
             codedOutputByteBufferNano.writeBytes(1, this.f611a);
         }
-        C0736y8 c0736y8 = this.b;
-        if (c0736y8 != null) {
-            codedOutputByteBufferNano.writeMessage(2, c0736y8);
+        C0735y8 c0735y8 = this.b;
+        if (c0735y8 != null) {
+            codedOutputByteBufferNano.writeMessage(2, c0735y8);
         }
         if (!Arrays.equals(this.c, bArr2)) {
             codedOutputByteBufferNano.writeBytes(3, this.c);
@@ -94,7 +94,7 @@ public final class J8 extends MessageNano {
                 this.f611a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 if (this.b == null) {
-                    this.b = new C0736y8();
+                    this.b = new C0735y8();
                 }
                 codedInputByteBufferNano.readMessage(this.b);
             } else if (readTag == 26) {

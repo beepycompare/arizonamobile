@@ -176,7 +176,7 @@ public final class CasesMainPage implements CasesBasePage {
         this.isHasCost = false;
         arizonaCasesMainPageBinding.animateContainer.setVisibility(4);
         this.baseModel = casesInfoModel;
-        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11914getCountLeft());
+        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11915getCountLeft());
         setSelectXType(true);
         hidePrizePage$default(this, false, 1, null);
         Picasso picasso = Picasso.get();
@@ -197,7 +197,7 @@ public final class CasesMainPage implements CasesBasePage {
                 ArizonaCasesMainPageBinding.this.animateContainer.animate().translationY(0.0f).alpha(1.0f).setDuration(400L).setInterpolator(new DecelerateInterpolator()).start();
             }
         });
-        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11915getCurrency().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11916getCurrency().ordinal()];
         if (i == 1) {
             arizonaCasesMainPageBinding.ivMoneyIc.setImageResource(R.drawable.ic_rubble);
             arizonaCasesMainPageBinding.ivMoneyIc.setImageTintList(ColorStateList.valueOf(-16777216));

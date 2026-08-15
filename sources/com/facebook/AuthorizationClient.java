@@ -8,6 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.webkit.CookieSyncManager;
+import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import com.facebook.Request;
 import com.facebook.RequestBatch;
 import com.facebook.android.R;
@@ -329,7 +331,7 @@ public class AuthorizationClient implements Serializable {
             String string3 = extras.getString(NativeProtocol.STATUS_ERROR_JSON);
             if (string3 != null) {
                 try {
-                    string = new JSONObject(string3).getString("error_code");
+                    string = new JSONObject(string3).getString(UpdateAnalyticsContract.ERROR_CODE_PARAM);
                 } catch (JSONException unused) {
                 }
                 return Result.createErrorResult(authorizationRequest, string2, intent.getStringExtra(NativeProtocol.STATUS_ERROR_DESCRIPTION), string);
@@ -412,9 +414,9 @@ public class AuthorizationClient implements Serializable {
             Bundle extras = intent.getExtras();
             String string = extras.getString("error");
             if (string == null) {
-                string = extras.getString("error_type");
+                string = extras.getString(UpdateAnalyticsContract.ERROR_TYPE_PARAM);
             }
-            String string2 = extras.getString("error_code");
+            String string2 = extras.getString(UpdateAnalyticsContract.ERROR_CODE_PARAM);
             String string3 = extras.getString("error_message");
             if (string3 == null) {
                 string3 = extras.getString("error_description");
@@ -877,14 +879,14 @@ public class AuthorizationClient implements Serializable {
 
     Request createGetPermissionsRequest(String str) {
         Bundle bundle = new Bundle();
-        bundle.putString("fields", "id");
+        bundle.putString("fields", TtmlNode.ATTR_ID);
         bundle.putString("access_token", str);
         return new Request(null, "me/permissions", bundle, HttpMethod.GET, null);
     }
 
     Request createGetProfileIdRequest(String str) {
         Bundle bundle = new Bundle();
-        bundle.putString("fields", "id");
+        bundle.putString("fields", TtmlNode.ATTR_ID);
         bundle.putString("access_token", str);
         return new Request(null, "me", bundle, HttpMethod.GET, null);
     }

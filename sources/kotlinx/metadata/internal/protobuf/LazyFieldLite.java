@@ -1,7 +1,7 @@
 package kotlinx.metadata.internal.protobuf;
 
 import java.io.IOException;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class LazyFieldLite {
     private ByteString bytes;
     private ExtensionRegistryLite extensionRegistry;

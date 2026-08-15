@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.Executor;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class SingletonConnectivityReceiver {
     private static final String TAG = "ConnectivityMonitor";
     private static volatile SingletonConnectivityReceiver instance;
@@ -25,7 +25,7 @@ final class SingletonConnectivityReceiver {
     final Set<ConnectivityMonitor.ConnectivityListener> listeners = new HashSet();
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface FrameworkConnectivityMonitor {
         boolean register();
 
@@ -97,7 +97,7 @@ final class SingletonConnectivityReceiver {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FrameworkConnectivityMonitorPostApi24 implements FrameworkConnectivityMonitor {
         private final GlideSuppliers.GlideSupplier<ConnectivityManager> connectivityManager;
         boolean isConnected;
@@ -105,7 +105,7 @@ final class SingletonConnectivityReceiver {
         private final ConnectivityManager.NetworkCallback networkCallback = new AnonymousClass1();
 
         /* renamed from: com.bumptech.glide.manager.SingletonConnectivityReceiver$FrameworkConnectivityMonitorPostApi24$1  reason: invalid class name */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         class AnonymousClass1 extends ConnectivityManager.NetworkCallback {
             AnonymousClass1() {
             }
@@ -164,7 +164,7 @@ final class SingletonConnectivityReceiver {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class FrameworkConnectivityMonitorPreApi24 implements FrameworkConnectivityMonitor {
         static final Executor EXECUTOR = AsyncTask.SERIAL_EXECUTOR;
         private final GlideSuppliers.GlideSupplier<ConnectivityManager> connectivityManager;

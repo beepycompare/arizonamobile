@@ -43,7 +43,6 @@ import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.metadata.icy.IcyHeaders;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.Arrays;
@@ -938,7 +937,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
                     this.dataSpec = buildDataSpec;
                     long open = this.dataSource.open(buildDataSpec);
                     if (!this.loadCanceled) {
-                        List<String> list = this.dataSource.getResponseHeaders().get(HttpHeaders.ETAG);
+                        List<String> list = this.dataSource.getResponseHeaders().get("ETag");
                         str = (list == null || list.isEmpty()) ? null : list.get(0);
                         if (open != -1) {
                             open += j;
@@ -1016,7 +1015,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         private DataSpec buildDataSpec(long j, String str) {
             Map<String, String> map = ProgressiveMediaPeriod.ICY_METADATA_HEADERS;
             if (str != null && !str.startsWith("W/")) {
-                map = ImmutableMap.builder().putAll(map).put(HttpHeaders.IF_RANGE, str).buildKeepingLast();
+                map = ImmutableMap.builder().putAll(map).put("If-Range", str).buildKeepingLast();
             }
             return new DataSpec.Builder().setUri(this.uri).setPosition(j).setKey(ProgressiveMediaPeriod.this.customCacheKey).setFlags(6).setHttpRequestHeaders(map).build();
         }

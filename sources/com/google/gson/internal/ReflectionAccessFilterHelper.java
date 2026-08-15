@@ -4,7 +4,7 @@ import com.google.gson.ReflectionAccessFilter;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Method;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ReflectionAccessFilterHelper {
     private ReflectionAccessFilterHelper() {
     }
@@ -44,7 +44,7 @@ public class ReflectionAccessFilterHelper {
         return AccessChecker.INSTANCE.canAccess(accessibleObject, obj);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static abstract class AccessChecker {
         static final AccessChecker INSTANCE;
 

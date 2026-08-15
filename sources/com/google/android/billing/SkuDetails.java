@@ -3,7 +3,7 @@ package com.google.android.billing;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SkuDetails {
     String mDescription;
     String mItemType;

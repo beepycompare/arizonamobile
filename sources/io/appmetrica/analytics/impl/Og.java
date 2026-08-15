@@ -21,7 +21,7 @@ public final class Og implements H {
 
     @Override // io.appmetrica.analytics.impl.H
     public final AdTrackingInfoResult a(Context context) {
-        return a(context, new C0742ye());
+        return a(context, new C0741ye());
     }
 
     public final AdTrackingInfoResult b(Context context) {
@@ -54,27 +54,27 @@ public final class Og implements H {
     }
 
     @Override // io.appmetrica.analytics.impl.H
-    public final AdTrackingInfoResult a(Context context, InterfaceC0152bj interfaceC0152bj) {
+    public final AdTrackingInfoResult a(Context context, InterfaceC0151bj interfaceC0151bj) {
         AdTrackingInfoResult adTrackingInfoResult;
         AdTrackingInfoResult adTrackingInfoResult2;
         if (ReflectionUtils.detectClassExists("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider")) {
-            C0441mo c0441mo = (C0441mo) interfaceC0152bj;
-            c0441mo.c = 0;
+            C0440mo c0440mo = (C0440mo) interfaceC0151bj;
+            c0440mo.c = 0;
             adTrackingInfoResult = null;
-            while (c0441mo.b()) {
+            while (c0440mo.b()) {
                 try {
                     return this.b(context);
                 } catch (InvocationTargetException e) {
                     adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f705a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
                     adTrackingInfoResult = adTrackingInfoResult2;
                     try {
-                        Thread.sleep(((C0441mo) interfaceC0152bj).b);
+                        Thread.sleep(((C0440mo) interfaceC0151bj).b);
                     } catch (InterruptedException unused) {
                     }
                 } catch (Throwable th) {
                     adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f705a + " adv_id: " + th.getMessage());
                     adTrackingInfoResult = adTrackingInfoResult2;
-                    Thread.sleep(((C0441mo) interfaceC0152bj).b);
+                    Thread.sleep(((C0440mo) interfaceC0151bj).b);
                 }
             }
         } else {

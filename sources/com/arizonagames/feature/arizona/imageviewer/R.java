@@ -4,14 +4,14 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class color {
-        public static int image_viewer_close_background = 0x7f0600d1;
-        public static int image_viewer_content_background = 0x7f0600d2;
-        public static int image_viewer_indicator_active = 0x7f0600d3;
-        public static int image_viewer_indicator_pending = 0x7f0600d4;
-        public static int image_viewer_indicator_visited = 0x7f0600d5;
-        public static int image_viewer_navigation_background = 0x7f0600d6;
-        public static int image_viewer_panel_end = 0x7f0600d7;
-        public static int image_viewer_panel_start = 0x7f0600d8;
+        public static int image_viewer_close_background = 0x7f0600d4;
+        public static int image_viewer_content_background = 0x7f0600d5;
+        public static int image_viewer_indicator_active = 0x7f0600d6;
+        public static int image_viewer_indicator_pending = 0x7f0600d7;
+        public static int image_viewer_indicator_visited = 0x7f0600d8;
+        public static int image_viewer_navigation_background = 0x7f0600d9;
+        public static int image_viewer_panel_end = 0x7f0600da;
+        public static int image_viewer_panel_start = 0x7f0600db;
 
         private color() {
         }
@@ -19,7 +19,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int image_viewer_previous = 0x7f080c23;
+        public static int image_viewer_previous = 0x7f080c28;
 
         private drawable() {
         }
@@ -51,10 +51,10 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int image_viewer_close = 0x7f1203f5;
-        public static int image_viewer_content = 0x7f1203f6;
-        public static int image_viewer_next = 0x7f1203f7;
-        public static int image_viewer_previous = 0x7f1203f8;
+        public static int image_viewer_close = 0x7f1203fc;
+        public static int image_viewer_content = 0x7f1203fd;
+        public static int image_viewer_next = 0x7f1203fe;
+        public static int image_viewer_previous = 0x7f1203ff;
 
         private string() {
         }

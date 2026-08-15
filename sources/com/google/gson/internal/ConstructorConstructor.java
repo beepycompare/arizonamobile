@@ -23,7 +23,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ConstructorConstructor {
     private final Map<Type, InstanceCreator<?>> instanceCreators;
     private final List<ReflectionAccessFilter> reflectionFilters;
@@ -46,7 +46,7 @@ public final class ConstructorConstructor {
     }
 
     /* renamed from: $r8$lambda$emGBdOG-cRs8pZGsKocRtr0g63Q  reason: not valid java name */
-    public static /* synthetic */ TreeMap m9779$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q() {
+    public static /* synthetic */ TreeMap m9780$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q() {
         return new TreeMap();
     }
 
@@ -277,7 +277,7 @@ public final class ConstructorConstructor {
             return new ObjectConstructor() { // from class: com.google.gson.internal.ConstructorConstructor$$ExternalSyntheticLambda12
                 @Override // com.google.gson.internal.ObjectConstructor
                 public final Object construct() {
-                    return ConstructorConstructor.m9779$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q();
+                    return ConstructorConstructor.m9780$r8$lambda$emGBdOGcRs8pZGsKocRtr0g63Q();
                 }
             };
         }
@@ -335,7 +335,7 @@ public final class ConstructorConstructor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class ThrowingObjectConstructor<T> implements ObjectConstructor<T> {
         private final String exceptionMessage;
 
@@ -350,7 +350,7 @@ public final class ConstructorConstructor {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class InstanceCreatorConstructor<T> implements ObjectConstructor<T> {
         private final InstanceCreator<T> instanceCreator;
         private final Type type;

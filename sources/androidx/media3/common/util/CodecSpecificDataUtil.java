@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CodecSpecificDataUtil {
     private static final String CODEC_ID_AC4 = "ac-4";
     private static final String CODEC_ID_APV1 = "apv1";
@@ -571,7 +571,7 @@ public final class CodecSpecificDataUtil {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x00ca, code lost:
         if (r3.equals(androidx.media3.common.util.CodecSpecificDataUtil.CODEC_ID_AC4) == false) goto L11;
      */
     /*

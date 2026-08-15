@@ -1,5 +1,5 @@
 package com.google.firebase.remoteconfig.interop.rollouts;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface RolloutsStateSubscriber {
     void onRolloutsStateChanged(RolloutsState rolloutsState);
 }

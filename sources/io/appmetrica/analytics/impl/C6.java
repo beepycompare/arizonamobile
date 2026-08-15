@@ -10,9 +10,9 @@ public final class C6 {
     public final Qi f491a;
     public final Zh b;
 
-    public C6(C0175cg c0175cg, W8 w8, Qi qi, AppMetricaConfig appMetricaConfig) {
+    public C6(C0174cg c0174cg, W8 w8, Qi qi, AppMetricaConfig appMetricaConfig) {
         this.f491a = qi;
-        this.b = new Zh(c0175cg, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), w8, appMetricaConfig.userProfileID);
+        this.b = new Zh(c0174cg, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), w8, appMetricaConfig.userProfileID);
     }
 
     public final Zh a() {

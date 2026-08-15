@@ -1,6 +1,7 @@
 package okhttp3.internal.http1;
 
 import com.facebook.widget.FacebookDialog;
+import com.google.common.net.HttpHeaders;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.EOFException;
 import java.io.IOException;
@@ -22,7 +23,6 @@ import okhttp3.internal._UtilCommonKt;
 import okhttp3.internal._UtilJvmKt;
 import okhttp3.internal.connection.BufferedSocket;
 import okhttp3.internal.http.ExchangeCodec;
-import okhttp3.internal.http.HttpHeaders;
 import okhttp3.internal.http.RequestLine;
 import okhttp3.internal.http.StatusLine;
 import okio.Buffer;
@@ -72,11 +72,11 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
     }
 
     private final boolean isChunked(Response response) {
-        return StringsKt.equals("chunked", Response.header$default(response, "Transfer-Encoding", null, 2, null), true);
+        return StringsKt.equals("chunked", Response.header$default(response, HttpHeaders.TRANSFER_ENCODING, null, 2, null), true);
     }
 
     private final boolean isChunked(Request request) {
-        return StringsKt.equals("chunked", request.header("Transfer-Encoding"), true);
+        return StringsKt.equals("chunked", request.header(HttpHeaders.TRANSFER_ENCODING), true);
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
@@ -102,7 +102,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void cancel() {
-        getCarrier().mo11782cancel();
+        getCarrier().mo11783cancel();
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec
@@ -117,7 +117,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
     @Override // okhttp3.internal.http.ExchangeCodec
     public long reportedContentLength(Response response) {
         Intrinsics.checkNotNullParameter(response, "response");
-        if (HttpHeaders.promisesBody(response)) {
+        if (okhttp3.internal.http.HttpHeaders.promisesBody(response)) {
             if (isChunked(response)) {
                 return -1L;
             }
@@ -129,7 +129,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
     @Override // okhttp3.internal.http.ExchangeCodec
     public Source openResponseBodySource(Response response) {
         Intrinsics.checkNotNullParameter(response, "response");
-        if (HttpHeaders.promisesBody(response)) {
+        if (okhttp3.internal.http.HttpHeaders.promisesBody(response)) {
             if (isChunked(response)) {
                 return newChunkedSource(response.request().url());
             }
@@ -433,7 +433,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
                 if (trailers.size() <= 0 || (okHttpClient = this.this$0.client) == null || (cookieJar = okHttpClient.cookieJar()) == null) {
                     return;
                 }
-                HttpHeaders.receiveHeaders(cookieJar, this.url, trailers);
+                okhttp3.internal.http.HttpHeaders.receiveHeaders(cookieJar, this.url, trailers);
                 return;
             }
             throw new IllegalStateException("state: " + http1ExchangeCodec.state);

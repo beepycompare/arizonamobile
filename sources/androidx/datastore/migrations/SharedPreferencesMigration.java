@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.datastore.core.DataMigration;
 import androidx.exifinterface.media.ExifInterface;
+import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
@@ -351,7 +352,7 @@ public final class SharedPreferencesMigration<T> implements DataMigration<T> {
     }
 
     private final File getSharedPrefsBackup(File file) {
-        return new File(file.getPath() + ".bak");
+        return new File(file.getPath() + DurableArchiveStateStore.BACKUP_SUFFIX);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

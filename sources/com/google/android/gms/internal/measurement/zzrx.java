@@ -4,6 +4,7 @@ import android.accounts.Account;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 import java.io.File;
 import java.io.IOException;
@@ -125,7 +126,7 @@ public final class zzrx extends zzsy {
                         }
                         throw new zzsi(String.format("Path must start with a valid logical location: %s", uri));
                     case 97434231:
-                        if (str2.equals("files")) {
+                        if (str2.equals(OriginalTzArchiveManifestParser.FILES_ROOT)) {
                             externalFilesDir = zzry.zza(context);
                             File file22 = new File(externalFilesDir, TextUtils.join(File.separator, arrayList.subList(1, arrayList.size())));
                             if (!zzky.zzc(context)) {

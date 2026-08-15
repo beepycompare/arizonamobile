@@ -7,7 +7,6 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
@@ -19,218 +18,237 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
+import android.os.RemoteException;
+import android.os.SystemClock;
 import android.util.Log;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import androidx.media3.exoplayer.upstream.CmcdData;
-import coil3.util.UtilsKt;
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import androidx.media3.exoplayer.offline.DownloadService;
+import com.arizona.game.BuildConfig;
 import com.arizona.game.R;
+import com.arizona.launcher.ArchiveForegroundPromotion;
+import com.arizona.launcher.UpdateAnalyticsReporter;
+import com.arizona.launcher.UpdateOperationBeginResult;
 import com.arizona.launcher.UpdateService;
-import com.arizona.launcher.downloader.FilesChek;
+import com.arizona.launcher.UpdateServiceContract;
+import com.arizona.launcher.updater.apk.LauncherApkDownloader;
+import com.arizona.launcher.updater.apk.LauncherApkProgress;
+import com.arizona.launcher.updater.apk.LauncherUpdateConfig;
+import com.arizona.launcher.updater.archive.download.ArchiveDownloadGuardTaggingInterceptor;
+import com.arizona.launcher.updater.archive.download.ArchiveDownloadNetworkGuardInterceptor;
+import com.arizona.launcher.updater.archive.download.SafeArchiveDns;
+import com.arizona.launcher.updater.archive.model.ArchiveGpu;
+import com.arizona.launcher.updater.archive.model.ArchiveManifest;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveInstallerPhase;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveMetadataFinalizationResult;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCoordinator;
+import com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater;
+import com.arizona.launcher.updater.archive.orchestrator.ArchivePayloadAuditResult;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStartupGuard;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStartupInspection;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStateMaintenance;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageRequirementsSnapshot;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageSpaceChecker;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckBlockCode;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckDecision;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateSessionSnapshot;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateSessionState;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateTransactionLock;
+import com.arizona.launcher.updater.archive.planner.ArchivePlanReason;
+import com.arizona.launcher.updater.archive.planner.ArchivePlanType;
+import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
+import com.arizona.launcher.updater.http.UpdateMetadataFetcher;
 import com.arizona.launcher.util.FileServers;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
-import com.liulishuo.okdownload.DownloadContext;
-import com.liulishuo.okdownload.DownloadTask;
-import com.liulishuo.okdownload.OkDownload;
-import com.liulishuo.okdownload.SpeedCalculator;
-import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
-import com.liulishuo.okdownload.core.breakpoint.LauncherBreakpointStoreOnSQLite;
-import com.liulishuo.okdownload.core.cause.EndCause;
-import com.liulishuo.okdownload.core.connection.DownloadOkHttp3Connection;
-import com.liulishuo.okdownload.core.dispatcher.DownloadDispatcher;
-import com.liulishuo.okdownload.core.listener.assist.Listener1Assist;
-import com.liulishuo.okdownload.kotlin.listener.DownloadListener1ExtensionKt;
 import dagger.hilt.android.AndroidEntryPoint;
 import java.io.File;
-import java.io.IOException;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import kotlin.Lazy;
-import kotlin.LazyKt;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
-import kotlin.collections.SetsKt;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.Boxing;
+import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function3;
-import kotlin.jvm.functions.Function4;
+import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.BuildersKt__Builders_concurrentKt;
+import kotlin.ranges.RangesKt;
+import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.GlobalScope;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.SupervisorKt;
 import okhttp3.ConnectionPool;
+import okhttp3.Dns;
 import okhttp3.OkHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000û\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000*\u0001-\b\u0007\u0018\u0000 \u007f2\u00020\u0001:\r\u007f\u0080\u0001\u0081\u0001\u0082\u0001\u0083\u0001\u0084\u0001\u0085\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010/\u001a\u000200H\u0016J(\u00101\u001a\u0002002\u0006\u00102\u001a\u0002032\n\b\u0002\u00104\u001a\u0004\u0018\u0001052\n\b\u0002\u00106\u001a\u0004\u0018\u00010\u0012H\u0002J\b\u00107\u001a\u000208H\u0002J\u0010\u00109\u001a\u0002082\u0006\u00102\u001a\u000203H\u0002J\b\u0010:\u001a\u000200H\u0002J\b\u0010;\u001a\u000200H\u0002J\"\u0010<\u001a\u00020=2\b\u0010>\u001a\u0004\u0018\u00010?2\u0006\u0010@\u001a\u00020=2\u0006\u0010A\u001a\u00020=H\u0016J\b\u0010B\u001a\u000200H\u0002J\b\u0010C\u001a\u000208H\u0002J\b\u0010D\u001a\u000208H\u0002J\n\u0010E\u001a\u0004\u0018\u00010FH\u0002J\b\u0010G\u001a\u000208H\u0002J\u0010\u0010H\u001a\u00020I2\u0006\u0010J\u001a\u000208H\u0002J\b\u0010K\u001a\u000200H\u0002J\u0012\u0010L\u001a\u0004\u0018\u00010M2\u0006\u0010>\u001a\u00020?H\u0016J\u0010\u0010N\u001a\u0002082\u0006\u0010>\u001a\u00020?H\u0016J\u0010\u0010O\u001a\u0002002\u0006\u0010>\u001a\u00020?H\u0016J\b\u0010P\u001a\u000200H\u0016J\u0012\u0010Q\u001a\u0002002\b\u0010R\u001a\u0004\u0018\u00010?H\u0016J\u000e\u0010S\u001a\u0002002\u0006\u0010T\u001a\u00020\u0012J\b\u0010U\u001a\u000208H\u0002J\b\u0010V\u001a\u000200H\u0002J\u0006\u0010W\u001a\u000200JF\u0010X\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020Z0Y2\u0006\u0010[\u001a\u00020\u001e2\b\b\u0002\u0010\\\u001a\u00020\u00122\b\b\u0002\u0010]\u001a\u00020\u00122\u0014\b\u0002\u0010^\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020Z0YH\u0002J\u0014\u0010_\u001a\u0004\u0018\u00010\u00122\b\u0010`\u001a\u0004\u0018\u00010\u0012H\u0002J\u001c\u0010a\u001a\u0002082\b\u0010b\u001a\u0004\u0018\u00010\u00122\b\u0010c\u001a\u0004\u0018\u00010\u0012H\u0002J\b\u0010d\u001a\u000200H\u0002J\u0018\u0010e\u001a\u0012\u0012\u0004\u0012\u00020=0fj\b\u0012\u0004\u0012\u00020=`gH\u0002J \u0010h\u001a\u0002002\u0016\u0010i\u001a\u0012\u0012\u0004\u0012\u00020=0fj\b\u0012\u0004\u0012\u00020=`gH\u0002J\b\u0010j\u001a\u000200H\u0002J\u0010\u0010k\u001a\u0002002\u0006\u0010J\u001a\u000208H\u0002J\u0018\u0010l\u001a\u0002002\u0006\u0010m\u001a\u00020n2\u0006\u0010o\u001a\u00020\u0014H\u0002J\b\u0010p\u001a\u00020\u0012H\u0002J\u0010\u0010q\u001a\u0002002\u0006\u0010r\u001a\u00020\bH\u0002J\u0010\u0010s\u001a\u0002082\u0006\u0010t\u001a\u00020uH\u0002J\u0010\u0010v\u001a\u0002002\u0006\u0010T\u001a\u00020\u0012H\u0002J\u0010\u0010w\u001a\u0002002\u0006\u00102\u001a\u000203H\u0002J\u0010\u0010y\u001a\u0002002\u0006\u0010T\u001a\u00020\u0012H\u0002J&\u0010z\u001a\u0002002\u0006\u0010T\u001a\u00020\u00122\b\b\u0002\u0010{\u001a\u00020=2\f\u0010|\u001a\b\u0012\u0004\u0012\u0002000}J\u0010\u0010~\u001a\u0002002\u0006\u00102\u001a\u000203H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\"\u001a\u00020#8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b&\u0010'\u001a\u0004\b$\u0010%R\u000e\u0010(\u001a\u00020)X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0004\n\u0002\u0010.R\u000e\u0010x\u001a\u00020=X\u0082\u000e¢\u0006\u0002\n\u0000Ê\u0001\u0003\b\u0087\u0001Ê\u0001\u000e\b\u0088\u0001\u0012\t\b\u0089\u0001\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0086\u0001"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "sharedRequestQueue", "Lcom/android/volley/RequestQueue;", "getSharedRequestQueue", "()Lcom/android/volley/RequestQueue;", "sharedRequestQueue$delegate", "Lkotlin/Lazy;", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "firstLaunchAnalyticsLock", "", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "logDownloadError", "error", "Lcom/arizona/launcher/UpdateService$DownloadErrorEvent;", "failureDetails", "Lcom/arizona/launcher/DownloadFailureDetails;", "serverUrl", "isFirstLauncherStartErrorSession", "", "shouldLogFirstLaunchDownloadError", "finishFirstLauncherStartErrorSession", "createNotificationChannel", "onStartCommand", "", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT, "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isDeviceOnline", "isDeviceNetworkValidated", "activeNetworkCapabilities", "Landroid/net/NetworkCapabilities;", "isAppInForeground", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "buildExpectedFileInfo", "", "Lcom/arizona/launcher/UpdateService$ExpectedFile;", "sources", "dir", "destDir", "out", "hostOf", "url", "sameHost", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "b", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "deleteExistingDownloadTarget", "destFile", "Ljava/io/File;", "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "attemptsLeft", "onFinish", "Lkotlin/Function0;", "notifyCheckUpdateAndDownloadUnreachable", "Companion", "Errno", "DownloadErrorEvent", "UpdateStatus", "GameStatus", "ExpectedFile", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000²\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0010\u0003\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 ý\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\fý\u0001þ\u0001ÿ\u0001\u0080\u0002\u0081\u0002\u0082\u0002B\u0007¢\u0006\u0004\b\u0006\u0010\u0007J\b\u00109\u001a\u00020:H\u0016J\b\u0010;\u001a\u00020&H\u0002J\b\u0010<\u001a\u00020=H\u0002J\b\u0010>\u001a\u00020?H\u0002J\u0018\u0010@\u001a\u0004\u0018\u00010A2\u0006\u0010B\u001a\u00020CH\u0082@¢\u0006\u0002\u0010DJ.\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020H2\u0006\u0010J\u001a\u00020K2\u0006\u0010B\u001a\u00020CH\u0082@¢\u0006\u0002\u0010LJ\u0018\u0010M\u001a\u00020:2\u0006\u0010N\u001a\u00020F2\u0006\u0010O\u001a\u00020PH\u0002J\u0017\u0010Q\u001a\u0004\u0018\u00010C2\u0006\u0010J\u001a\u00020KH\u0002¢\u0006\u0002\u0010RJ\u0018\u0010S\u001a\u00020&2\u0006\u0010J\u001a\u00020K2\u0006\u0010T\u001a\u00020CH\u0002J\u0018\u0010U\u001a\u00020:2\u0006\u0010J\u001a\u00020K2\u0006\u0010T\u001a\u00020CH\u0002J\b\u0010V\u001a\u00020:H\u0002J\"\u0010W\u001a\u00020X2\b\u0010Y\u001a\u0004\u0018\u00010Z2\u0006\u0010[\u001a\u00020X2\u0006\u0010\\\u001a\u00020XH\u0016J\u0012\u0010]\u001a\u00020^2\b\b\u0002\u0010_\u001a\u00020&H\u0002J\b\u0010`\u001a\u00020&H\u0002J\b\u0010a\u001a\u00020&H\u0002J\n\u0010b\u001a\u0004\u0018\u00010cH\u0002J\b\u0010d\u001a\u00020&H\u0002J\u0010\u0010e\u001a\u00020f2\u0006\u0010g\u001a\u00020&H\u0002J\b\u0010h\u001a\u00020:H\u0002J\u0012\u0010i\u001a\u0004\u0018\u00010j2\u0006\u0010Y\u001a\u00020ZH\u0016J\u0010\u0010k\u001a\u00020&2\u0006\u0010Y\u001a\u00020ZH\u0016J\u0010\u0010l\u001a\u00020:2\u0006\u0010Y\u001a\u00020ZH\u0016J\b\u0010m\u001a\u00020:H\u0016J\u0012\u0010n\u001a\u00020:2\b\u0010o\u001a\u0004\u0018\u00010ZH\u0016J\b\u0010p\u001a\u00020:H\u0002J\b\u0010q\u001a\u00020:H\u0002J\u0017\u0010r\u001a\u0004\u0018\u00010C2\u0006\u0010s\u001a\u00020&H\u0016¢\u0006\u0002\u0010tJ\u0018\u0010u\u001a\u00020&2\u0006\u0010s\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0018\u0010v\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0010\u0010w\u001a\u00020:2\u0006\u0010s\u001a\u00020&H\u0016J\u0018\u0010x\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010G\u001a\u00020HH\u0016J\u0018\u0010y\u001a\u00020:2\u0006\u0010I\u001a\u00020H2\u0006\u0010z\u001a\u00020HH\u0016J\u0010\u0010{\u001a\u00020:2\u0006\u0010s\u001a\u00020&H\u0016J\u0018\u0010|\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010}\u001a\u00020HH\u0016J\u0018\u0010~\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010\u007f\u001a\u00020&H\u0016J\u0011\u0010\u0080\u0001\u001a\u00020K2\u0006\u0010s\u001a\u00020&H\u0002J\u0012\u0010\u0081\u0001\u001a\u00020:2\u0007\u0010\u0082\u0001\u001a\u00020&H\u0002J3\u0010\u0083\u0001\u001a\u00020:2\b\u0010\u0084\u0001\u001a\u00030\u0085\u00012\u0007\u0010\u0086\u0001\u001a\u00020&2\t\b\u0002\u0010\u0087\u0001\u001a\u00020&2\n\b\u0002\u0010}\u001a\u0004\u0018\u00010HH\u0002J\t\u0010\u0088\u0001\u001a\u00020&H\u0002J\t\u0010\u0089\u0001\u001a\u00020:H\u0002J\u0007\u0010\u008a\u0001\u001a\u00020:J\t\u0010\u008b\u0001\u001a\u00020&H\u0016J\f\u0010\u008c\u0001\u001a\u0005\u0018\u00010\u008d\u0001H\u0016J\u0011\u0010\u008e\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010\u0090\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010\u0091\u0001\u001a\u00020:2\u0006\u0010T\u001a\u00020CH\u0016J\u001d\u0010\u0092\u0001\u001a\u00020:2\u0007\u0010\u0093\u0001\u001a\u00020&2\t\u0010\u0094\u0001\u001a\u0004\u0018\u00010KH\u0016J\t\u0010\u0095\u0001\u001a\u00020:H\u0016J\u001b\u0010\u0096\u0001\u001a\u00020:2\u0007\u0010\u0097\u0001\u001a\u00020H2\u0007\u0010\u0098\u0001\u001a\u00020&H\u0016J\u0012\u0010\u0099\u0001\u001a\u00020:2\u0007\u0010\u009a\u0001\u001a\u00020HH\u0016J\t\u0010\u009b\u0001\u001a\u00020:H\u0016J\t\u0010\u009c\u0001\u001a\u00020:H\u0016J\u0013\u0010\u009d\u0001\u001a\u00020&2\b\u0010\u009e\u0001\u001a\u00030\u009f\u0001H\u0016J\n\u0010 \u0001\u001a\u00030¡\u0001H\u0016J\u001b\u0010¢\u0001\u001a\u00020:2\u0007\u0010£\u0001\u001a\u00020C2\u0007\u0010¤\u0001\u001a\u00020&H\u0016J\f\u0010¥\u0001\u001a\u0005\u0018\u00010¦\u0001H\u0016J\u0012\u0010§\u0001\u001a\u00030¨\u00012\u0006\u0010B\u001a\u00020CH\u0016J\u001d\u0010©\u0001\u001a\u00030ª\u00012\n\u0010«\u0001\u001a\u0005\u0018\u00010¬\u0001H\u0096@¢\u0006\u0003\u0010\u00ad\u0001J\u0013\u0010®\u0001\u001a\u00020:2\b\u0010\u009e\u0001\u001a\u00030\u009f\u0001H\u0016J\u0018\u0010¯\u0001\u001a\u00020:2\r\u0010\u0084\u0001\u001a\b0°\u0001j\u0003`±\u0001H\u0016J\u0018\u0010²\u0001\u001a\u00020:2\r\u0010\u0084\u0001\u001a\b0°\u0001j\u0003`±\u0001H\u0016J\t\u0010³\u0001\u001a\u00020:H\u0016J\u0013\u0010´\u0001\u001a\u00020:2\b\u0010µ\u0001\u001a\u00030¶\u0001H\u0016J-\u0010·\u0001\u001a\u0004\u0018\u00010&2\f\b\u0002\u0010¸\u0001\u001a\u0005\u0018\u00010¹\u00012\f\b\u0002\u0010º\u0001\u001a\u0005\u0018\u00010¹\u0001H\u0002¢\u0006\u0003\u0010»\u0001J\u0012\u0010¼\u0001\u001a\u00030¨\u00012\u0006\u0010B\u001a\u00020CH\u0002JI\u0010½\u0001\u001a\u00020:2\u0006\u0010}\u001a\u00020H2\t\b\u0002\u0010¾\u0001\u001a\u00020\u001f2\f\b\u0002\u0010¿\u0001\u001a\u0005\u0018\u00010À\u00012\u000b\b\u0002\u0010Á\u0001\u001a\u0004\u0018\u00010C2\n\b\u0002\u0010B\u001a\u0004\u0018\u00010CH\u0002¢\u0006\u0003\u0010Â\u0001J\u0011\u0010Ã\u0001\u001a\u00020:2\u0006\u0010g\u001a\u00020&H\u0002J1\u0010Ä\u0001\u001a\u00020:2\b\u0010Å\u0001\u001a\u00030Æ\u00012\t\b\u0002\u0010Ç\u0001\u001a\u00020\n2\u000b\b\u0002\u0010È\u0001\u001a\u0004\u0018\u00010&H\u0002¢\u0006\u0003\u0010É\u0001J\u000b\u0010Ê\u0001\u001a\u0004\u0018\u00010\u001bH\u0002J\t\u0010Ë\u0001\u001a\u00020&H\u0002J\t\u0010Ì\u0001\u001a\u00020HH\u0002J\u0013\u0010Ì\u0001\u001a\u00020H2\b\u0010Í\u0001\u001a\u00030Î\u0001H\u0002J\u0012\u0010Ï\u0001\u001a\u00020:2\u0007\u0010Ç\u0001\u001a\u00020\nH\u0002J\u0013\u0010Ð\u0001\u001a\u00020:2\b\u0010Ñ\u0001\u001a\u00030Ò\u0001H\u0002J\t\u0010Ó\u0001\u001a\u00020:H\u0002J\t\u0010Ô\u0001\u001a\u00020:H\u0002J\u0011\u0010Õ\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010Ö\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010×\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010Ø\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\t\u0010Ù\u0001\u001a\u00020:H\u0016J#\u0010Ú\u0001\u001a\u00020:2\u0006\u0010B\u001a\u00020C2\u0007\u0010Û\u0001\u001a\u00020&2\u0007\u0010Ü\u0001\u001a\u00020&H\u0016J\t\u0010Ý\u0001\u001a\u00020&H\u0016J\f\u0010Þ\u0001\u001a\u0005\u0018\u00010¹\u0001H\u0016J\t\u0010ß\u0001\u001a\u00020:H\u0016J5\u0010à\u0001\u001a\u00020:2\u0007\u0010á\u0001\u001a\u00020C2\t\u0010â\u0001\u001a\u0004\u0018\u00010C2\u0007\u0010ã\u0001\u001a\u00020X2\u0007\u0010ä\u0001\u001a\u00020&H\u0016¢\u0006\u0003\u0010å\u0001J\u0012\u0010æ\u0001\u001a\u00020:2\u0007\u0010â\u0001\u001a\u00020CH\u0016J7\u0010ç\u0001\u001a\u00020:2\u0006\u0010B\u001a\u00020C2\u0007\u0010Ü\u0001\u001a\u00020&2\u0007\u0010è\u0001\u001a\u00020&2\u0007\u0010é\u0001\u001a\u00020&2\t\u0010ê\u0001\u001a\u0004\u0018\u00010HH\u0016J\u0013\u0010ë\u0001\u001a\u00020:2\b\u0010\u0084\u0001\u001a\u00030ì\u0001H\u0016J\t\u0010í\u0001\u001a\u00020:H\u0002J\u0011\u0010î\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010ï\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010ð\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\"\u0010ñ\u0001\u001a\u00020:2\r\u0010\u0084\u0001\u001a\b0°\u0001j\u0003`±\u00012\b\u0010ò\u0001\u001a\u00030ó\u0001H\u0016J\u0013\u0010ô\u0001\u001a\u00020:2\b\u0010õ\u0001\u001a\u00030ö\u0001H\u0016J\t\u0010÷\u0001\u001a\u00020:H\u0016J\t\u0010ø\u0001\u001a\u00020:H\u0016J\u0012\u0010ù\u0001\u001a\u00020:2\u0007\u0010Ç\u0001\u001a\u00020&H\u0016J\u0014\u0010ú\u0001\u001a\u00020:2\t\b\u0002\u0010û\u0001\u001a\u00020&H\u0002J\u0013\u0010ü\u0001\u001a\u00020:2\b\u0010\u0084\u0001\u001a\u00030\u0085\u0001H\u0002R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\f0\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082.¢\u0006\u0002\n\u0000Ê\u0001\u0003\b\u0084\u0002Ê\u0001\u000e\b\u0085\u0002\u0012\t\b\u0086\u0002\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0083\u0002"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "Lcom/arizona/launcher/LauncherUpdateServiceHost;", "Lcom/arizona/launcher/GameUpdateServiceHost;", "Lcom/arizona/launcher/ArchiveUpdateServiceHost;", "Lcom/arizona/launcher/FileCheckServiceHost;", "<init>", "()V", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "serviceHandlerThread", "Landroid/os/HandlerThread;", "archiveSession", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionState;", "archiveStorageSpaceChecker", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageSpaceChecker;", "transferProgress", "Lcom/arizona/launcher/UpdateTransferProgress;", "archiveInstallerPhase", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveInstallerPhase;", "archiveNetworkPending", "Ljava/util/concurrent/atomic/AtomicBoolean;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mainHandler", "Landroid/os/Handler;", "serviceAlive", "serviceScope", "Lkotlinx/coroutines/CoroutineScope;", "foregroundServiceActive", "", "updateOperationCoordinator", "Lcom/arizona/launcher/UpdateOperationCoordinator;", "analyticsReporter", "Lcom/arizona/launcher/UpdateAnalyticsReporter;", "metadataFetcher", "Lcom/arizona/launcher/updater/http/UpdateMetadataFetcher;", "gameUpdateFlow", "Lcom/arizona/launcher/GameUpdateServiceFlow;", "archiveUpdateFlow", "Lcom/arizona/launcher/ArchiveUpdateServiceFlow;", "fileCheckFlow", "Lcom/arizona/launcher/FileCheckServiceFlow;", "launcherUpdateFlow", "Lcom/arizona/launcher/LauncherUpdateServiceFlow;", "archiveStateStore", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore;", "archiveStateMaintenance", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStateMaintenance;", "onCreate", "", "isGameDownloadRetryEnabled", "detectArchiveStartupGuard", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStartupGuard;", "selectedArchiveGpu", "Lcom/arizona/launcher/updater/archive/model/ArchiveGpu;", "runPrimaryGameCheckPreflight", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision$Block;", "operationToken", "", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "prepareGameUpdateCheck", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "response", "", "server", "kind", "Lcom/arizona/launcher/UpdateOperationKind;", "(Ljava/lang/String;Ljava/lang/String;Lcom/arizona/launcher/UpdateOperationKind;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onPreparedGameUpdateCheck", "decision", "snapshot", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionSnapshot;", "beginUpdateOperation", "(Lcom/arizona/launcher/UpdateOperationKind;)Ljava/lang/Long;", "isCurrentUpdateOperation", "token", "finishUpdateOperation", "createNotificationChannel", "onStartCommand", "", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT, "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult;", "allowAcceptedStartFromBackground", "isDeviceOnline", "isDeviceNetworkValidated", "activeNetworkCapabilities", "Landroid/net/NetworkCapabilities;", "isAppInForeground", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "releaseServiceResources", "requestCheckUpdate", "beginGameCheckOperation", "combined", "(Z)Ljava/lang/Long;", "isCurrentGameCheckOperation", "finishGameCheckOperation", "onGameCheckStarted", "onGameMetadataLoaded", "onGameCheckMirrorRetry", "source", "completeGameCheckServerEmpty", "completeGameCheckMetadataFailed", "detail", "completePreparedGameCheck", "successfully", "gameCheckOperationKind", "notifyGameUpdateCheckCompleted", "preparedSuccessfully", "notifyGameUpdateCheckUnreachable", "error", "Lcom/arizona/launcher/UpdateAnalyticsErrorEvent;", "includeStatus", "resetUpdateStatus", UpdateServiceContract.BundleKey.IS_GAME_DATA_UPDATE_EXISTS, "resetGameStatus", "updateGameData", "isArchiveServiceAlive", "activeUpdateOperation", "Lcom/arizona/launcher/UpdateOperationSnapshot;", "beginArchiveOperation", "()Ljava/lang/Long;", "isCurrentArchiveOperation", "finishArchiveOperation", "onArchiveRequestCoalesced", "activeDownload", "activeOperationKind", "onArchiveStartupCorrupt", "requestArchiveManifestRefresh", "reason", "warning", "setArchiveBenchmarkMode", UpdateActivity.UPDATE_MODE, "onArchiveDownloadSelected", "onArchiveNoWork", "hasEnoughSpaceForArchive", DownloadService.KEY_REQUIREMENTS, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirementsSnapshot;", "promoteArchiveForeground", "Lcom/arizona/launcher/ArchiveForegroundPromotion;", "beginArchiveProgress", "downloadBytes", "finalizationOnly", "createArchivePackageUpdater", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater;", "createArchiveMirrorCoordinator", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveMirrorExecutionCoordinator;", "finalizeArchiveMetadata", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveMetadataFinalizationResult;", "manifest", "Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;", "(Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "expandArchiveRuntimeRequirements", "recordArchiveExecutionException", "Ljava/lang/Exception;", "Lkotlin/Exception;", "recordArchiveFinalizationException", "completeArchiveSuccess", "completeArchiveFailure", "failure", "Lcom/arizona/launcher/ArchiveServiceFailure;", "archiveStorageUsesSingleDevice", "gameRoot", "Ljava/io/File;", "downloadStorageRoot", "(Ljava/io/File;Ljava/io/File;)Ljava/lang/Boolean;", "archiveMirrorExecutionCoordinator", "notifyArchiveUpdateFailure", "errno", "failureDetails", "Lcom/arizona/launcher/DownloadFailureDetails;", "requiredFreeSpaceBytes", "(Ljava/lang/String;Lcom/arizona/launcher/UpdateService$Errno;Lcom/arizona/launcher/DownloadFailureDetails;Ljava/lang/Long;Ljava/lang/Long;)V", "updateStatusInfoAndProgress", "populateUpdateStatusSnapshot", "bundle", "Landroid/os/Bundle;", "status", "archiveIndeterminate", "(Landroid/os/Bundle;Lcom/arizona/launcher/UpdateService$UpdateStatus;Ljava/lang/Boolean;)V", "visibleArchiveInstallerPhase", "isArchiveProgressIndeterminate", UpdateServiceContract.BundleKey.TIME_LEFT, "progress", "Lcom/arizona/launcher/UpdateTransferProgressSnapshot;", "setUpdateStatus", "sendToActivity", "message", "Landroid/os/Message;", "requestLauncherUpdateCheck", "requestLauncherApkDownload", "beginLauncherCheckOperation", "beginLauncherApkOperation", "isCurrentLauncherCheckOperation", "isCurrentLauncherApkOperation", "setLauncherOperationHealthy", "completeLauncherCheck", "needsUpdate", FirebaseAnalytics.Param.SUCCESS, "promoteLauncherForeground", "externalFilesRoot", "beginLauncherProgress", "updateLauncherProgress", "downloadedBytes", "totalBytes", "attempt", "resumed", "(JLjava/lang/Long;IZ)V", "completeLauncherProgress", "completeLauncherApk", "markServerUnreachable", "deferResult", "failedServer", "recordLauncherException", "", "requestFullFileCheck", "beginFileCheckOperation", "isCurrentFileCheckOperation", "finishFileCheckOperation", "onFileCheckAuditFailure", "fallback", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePayloadAuditResult$Unavailable;", "onFileCheckRepairScheduled", "result", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePayloadAuditResult$RepairScheduled;", "markFileCheckRecoveryRequired", "markGameUpdateRequiredAfterFileCheck", "completeFullFileCheck", "requestCheckUpdateAndDownload", "restartMirrorCycle", "notifyCheckUpdateAndDownloadUnreachable", "Companion", "Errno", "UpdateStatus", "GameStatus", "ForegroundPromotionResult", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
-public final class UpdateService extends Hilt_UpdateService {
+public final class UpdateService extends Hilt_UpdateService implements LauncherUpdateServiceHost, GameUpdateServiceHost, ArchiveUpdateServiceHost, FileCheckServiceHost {
     public static final String ACTION_START_FOREGROUND_SERVICE = "Start foreground";
     public static final String ACTION_STOP_FOREGROUND_SERVICE = "Stop foreground";
+    public static final String ARCHIVE_STORAGE_SAME_DEVICE_MSG = "archiveStorageSameDevice";
     private static final int BYTE_TO_KILOBYTE_DIVIDER = 1024;
     public static final int CHECK_AND_UPDATE = 10;
     public static final int CHECK_LAUNCHER_UPDATE = 3;
     public static final int CHECK_STATE_ERROR = 9;
     public static final int CHECK_UPDATE = 0;
-    private static final int CURRENT_PROGRESS = 2;
-    private static final String DOWNLOAD_ERROR_EVENT = "error_download";
-    private static final String DOWNLOAD_ERROR_FIRST_LAUNCH_EVENT = "error_download_first_launch";
-    private static final String ERRNO_CODE_PARAM = "errno_code";
     public static final String ERRNO_MSG = "errno";
-    private static final String ERRNO_NAME_PARAM = "errno_name";
-    private static final String ERROR_CODE_PARAM = "error_code";
-    private static final String ERROR_CONTEXT_PARAM = "error_context";
-    private static final String ERROR_SUBTYPE_PARAM = "error_subtype";
-    private static final String ERROR_TYPE_PARAM = "error_type";
-    private static final String EVENT_TAG_PARAM = "event_tag";
-    private static final String FIRST_LAUNCH_DEDUPED_PARAM = "first_launch_deduped";
-    private static final String FIRST_LAUNCH_EVENT_TAG = "first_launch";
-    private static final String FIRST_LAUNCH_PARAM = "first_launch";
-    private static final String FIRST_START_ERROR_SESSION_KEY = "firstStartErrorSession";
-    private static final String FIRST_START_KEY = "firstStart";
-    private static final String FIRST_START_REPORTED_ERROR_CODES_KEY = "firstStartReportedErrorCodes";
     private static final int FOREGROUND_NOTIFICATION_ID = 1;
     public static final int FULL_CHECK = 8;
     public static final int GAME_STATUS = 5;
-    private static final String HTTP_STATUS_PARAM = "http_status";
-    private static final String LAUNCHER_PREFERENCE_FILE_KEY = "SP_NAME";
-    private static final String LEGACY_CALL_SITE_PARAM = ".kt";
+    private static final long LAUNCHER_RESULT_DELAY_MS = 3750;
+    public static final String NEED_DOWNLOAD_FREE_SPACE_SIZE_MSG = "needDownloadFreeSpaceSize";
+    public static final String NEED_FREE_SPACE_SIZE_MSG = "needFreeSpaceSize";
+    public static final String NEED_GAME_FREE_SPACE_SIZE_MSG = "needGameFreeSpaceSize";
     public static final String NEED_UPDATE_MSG = "needUpdateMsg";
-    private static final String NETWORK_INTERNET_CAPABLE_PARAM = "network_internet_capable";
-    private static final String NETWORK_VALIDATED_PARAM = "network_validated";
-    private static final String PREFERENCE_FILE_KEY = "downloadPreference";
-    private static final String SERVER_HOST_PARAM = "server_host";
-    private static final String SOURCE_LINE_PARAM = "source_line";
+    private static final String RETRY_FLAG_ARIZONA = "launcher_download_retry_arizona_enabled";
+    private static final String RETRY_FLAG_BRAZIL = "launcher_download_retry_brazil_enabled";
+    private static final String RETRY_FLAG_RODINA = "launcher_download_retry_rodina_enabled";
     private static final String TAG = "UPDATE_SERVICE";
-    private static final String TASK_ID_LIST_KEY = "taskIdList";
-    private static final long TIMEOUT_DOWNLOADER = 15000;
     public static final int UPDATE_GAME_DATA = 2;
     public static final int UPDATE_INFO = 7;
     public static final int UPDATE_LAUNCHER = 6;
     private static final String UPDATE_SERVICE_CHANNEL_ID = "UpdateServiceChannelID";
     public static final int UPDATE_STATUS = 4;
-    private FilesChek filesChek;
-    private long lastDownloadedBytes;
-    private Messenger mActivityMessenger;
-    private DownloadContext mDownloadContext;
-    private long mDownloadedLength;
+    private static volatile String benchmarkObservedDownloadMode;
+    private static volatile Boolean benchmarkRetryEnabledOverride;
+    private UpdateAnalyticsReporter analyticsReporter;
+    private ArchiveStateMaintenance archiveStateMaintenance;
+    private DurableArchiveStateStore archiveStateStore;
+    private ArchiveUpdateServiceFlow archiveUpdateFlow;
+    private FileCheckServiceFlow fileCheckFlow;
+    private volatile boolean foregroundServiceActive;
+    private GameUpdateServiceFlow gameUpdateFlow;
+    private LauncherUpdateServiceFlow launcherUpdateFlow;
+    private volatile Messenger mActivityMessenger;
     private IncomingHandler mInHandler;
     private Messenger mMessenger;
-    private SpeedCalculator mSpeedCalculator;
-    private long mTotalLength;
-    private long mUpdateFilesNeedSize;
-    private int retry;
-    private SharedPreferences updatePreferences;
+    private UpdateMetadataFetcher metadataFetcher;
+    private HandlerThread serviceHandlerThread;
     public static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
     private AtomicReference<UpdateStatus> mUpdateStatus = new AtomicReference<>(UpdateStatus.Undefined);
     private AtomicReference<GameStatus> mGameStatus = new AtomicReference<>(GameStatus.Undefined);
-    private List<String> mUpdateFiles = new ArrayList();
-    private Errno mLastOperationStatus = Errno.NoError;
-    private JSONArray mDataInfo = new JSONArray();
-    private final Handler mainHandler = new Handler(Looper.getMainLooper());
-    private final Lazy sharedRequestQueue$delegate = LazyKt.lazy(new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
-        @Override // kotlin.jvm.functions.Function0
-        public final Object invoke() {
-            RequestQueue newRequestQueue;
-            newRequestQueue = Volley.newRequestQueue(UpdateService.this.getApplicationContext());
-            return newRequestQueue;
+    private final ArchiveUpdateSessionState archiveSession = new ArchiveUpdateSessionState(null, null, 3, null);
+    private final ArchiveStorageSpaceChecker archiveStorageSpaceChecker = ArchiveStorageSpaceChecker.Companion.android(new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(Object obj, Object obj2) {
+            return UpdateService.archiveStorageSpaceChecker$lambda$0((String) obj, (Exception) obj2);
         }
     });
-    private final Object firstLaunchAnalyticsLock = new Object();
-    private final UpdateService$checkTimeoutRunnable$1 checkTimeoutRunnable = new Runnable() { // from class: com.arizona.launcher.UpdateService$checkTimeoutRunnable$1
-        @Override // java.lang.Runnable
-        public void run() {
-            long j;
-            long j2;
-            long j3;
-            long j4;
-            Handler handler;
-            long j5;
-            long j6;
-            DownloadContext downloadContext;
-            j = UpdateService.this.lastDownloadedBytes;
-            j2 = UpdateService.this.lastDownloadedBytes;
-            Log.d("checkTimeoutRunnable", j + " / " + j2);
-            j3 = UpdateService.this.lastDownloadedBytes;
-            if (j3 != 0) {
-                j5 = UpdateService.this.mDownloadedLength;
-                j6 = UpdateService.this.lastDownloadedBytes;
-                if (j5 <= j6) {
-                    DownloadDispatcher downloadDispatcher = OkDownload.with().downloadDispatcher();
-                    Intrinsics.checkNotNullExpressionValue(downloadDispatcher, "downloadDispatcher(...)");
-                    synchronized (downloadDispatcher) {
-                        OkDownload.with().downloadDispatcher().cancelAll();
-                        Unit unit = Unit.INSTANCE;
-                    }
-                    downloadContext = UpdateService.this.mDownloadContext;
-                    if (downloadContext != null) {
-                        downloadContext.stop();
-                    }
-                    UpdateService.this.mDownloadContext = null;
-                    return;
-                }
-            }
-            UpdateService updateService = UpdateService.this;
-            j4 = updateService.mDownloadedLength;
-            updateService.lastDownloadedBytes = j4 + 1;
-            handler = UpdateService.this.mainHandler;
-            handler.postDelayed(this, 15000L);
-        }
-    };
+    private final UpdateTransferProgress transferProgress = new UpdateTransferProgress(null, 1, null);
+    private final AtomicReference<ArchiveInstallerPhase> archiveInstallerPhase = new AtomicReference<>(null);
+    private final AtomicBoolean archiveNetworkPending = new AtomicBoolean(false);
+    private volatile Errno mLastOperationStatus = Errno.NoError;
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
+    private final AtomicBoolean serviceAlive = new AtomicBoolean(false);
+    private final CoroutineScope serviceScope = CoroutineScopeKt.CoroutineScope(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null).plus(Dispatchers.getMain().getImmediate()));
+    private final UpdateOperationCoordinator updateOperationCoordinator = new UpdateOperationCoordinator(0, 1, null);
 
     /* compiled from: UpdateService.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+        public static final /* synthetic */ int[] $EnumSwitchMapping$1;
+        public static final /* synthetic */ int[] $EnumSwitchMapping$2;
 
         static {
-            int[] iArr = new int[EndCause.values().length];
+            int[] iArr = new int[ArchiveInstallerPhase.values().length];
             try {
-                iArr[EndCause.ERROR.ordinal()] = 1;
+                iArr[ArchiveInstallerPhase.WAITING_FOR_NETWORK.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                iArr[EndCause.CANCELED.ordinal()] = 2;
+                iArr[ArchiveInstallerPhase.VERIFYING.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
+            try {
+                iArr[ArchiveInstallerPhase.EXTRACTING.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[ArchiveInstallerPhase.COMMITTING.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[ArchiveInstallerPhase.RETIRING.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr[ArchiveInstallerPhase.DOWNLOADING.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
             $EnumSwitchMapping$0 = iArr;
+            int[] iArr2 = new int[ArchiveServiceFailureKind.values().length];
+            try {
+                iArr2[ArchiveServiceFailureKind.CONNECTION.ordinal()] = 1;
+            } catch (NoSuchFieldError unused7) {
+            }
+            try {
+                iArr2[ArchiveServiceFailureKind.CORRUPTED.ordinal()] = 2;
+            } catch (NoSuchFieldError unused8) {
+            }
+            try {
+                iArr2[ArchiveServiceFailureKind.INSUFFICIENT_STORAGE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused9) {
+            }
+            try {
+                iArr2[ArchiveServiceFailureKind.FOREGROUND_UNAVAILABLE.ordinal()] = 4;
+            } catch (NoSuchFieldError unused10) {
+            }
+            try {
+                iArr2[ArchiveServiceFailureKind.RECOVERY_BLOCKED.ordinal()] = 5;
+            } catch (NoSuchFieldError unused11) {
+            }
+            $EnumSwitchMapping$1 = iArr2;
+            int[] iArr3 = new int[Errno.values().length];
+            try {
+                iArr3[Errno.ConnectionRefused.ordinal()] = 1;
+            } catch (NoSuchFieldError unused12) {
+            }
+            try {
+                iArr3[Errno.InsufficientStorage.ordinal()] = 2;
+            } catch (NoSuchFieldError unused13) {
+            }
+            try {
+                iArr3[Errno.ForegroundServiceUnavailable.ordinal()] = 3;
+            } catch (NoSuchFieldError unused14) {
+            }
+            try {
+                iArr3[Errno.ArchiveRecoveryBlocked.ordinal()] = 4;
+            } catch (NoSuchFieldError unused15) {
+            }
+            $EnumSwitchMapping$2 = iArr3;
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public final boolean isGameDownloadRetryEnabled() {
+        return true;
+    }
+
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u001d\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u00063"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "CURRENT_PROGRESS", "TIMEOUT_DOWNLOADER", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "PREFERENCE_FILE_KEY", "TASK_ID_LIST_KEY", "LAUNCHER_PREFERENCE_FILE_KEY", "FIRST_START_KEY", "FIRST_START_ERROR_SESSION_KEY", "FIRST_START_REPORTED_ERROR_CODES_KEY", "DOWNLOAD_ERROR_EVENT", "DOWNLOAD_ERROR_FIRST_LAUNCH_EVENT", "LEGACY_CALL_SITE_PARAM", "SOURCE_LINE_PARAM", "ERROR_CODE_PARAM", "ERROR_TYPE_PARAM", "ERROR_SUBTYPE_PARAM", "HTTP_STATUS_PARAM", "ERROR_CONTEXT_PARAM", "ERRNO_CODE_PARAM", "ERRNO_NAME_PARAM", "EVENT_TAG_PARAM", "FIRST_LAUNCH_PARAM", "FIRST_LAUNCH_EVENT_TAG", "FIRST_LAUNCH_DEDUPED_PARAM", "SERVER_HOST_PARAM", "NETWORK_INTERNET_CAPABLE_PARAM", "NETWORK_VALIDATED_PARAM", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0010\t\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001f\u0010%\u001a\u00020&2\b\u0010'\u001a\u0004\u0018\u00010\"2\b\u0010(\u001a\u0004\u0018\u00010\"¢\u0006\u0002\u0010)J\b\u0010*\u001a\u0004\u0018\u00010\u0005R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0012\u0010!\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0004\n\u0002\u0010#R\u0010\u0010$\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006+"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "LAUNCHER_RESULT_DELAY_MS", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "NEED_FREE_SPACE_SIZE_MSG", "NEED_GAME_FREE_SPACE_SIZE_MSG", "NEED_DOWNLOAD_FREE_SPACE_SIZE_MSG", "ARCHIVE_STORAGE_SAME_DEVICE_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "RETRY_FLAG_ARIZONA", "RETRY_FLAG_RODINA", "RETRY_FLAG_BRAZIL", "benchmarkRetryEnabledOverride", "", "Ljava/lang/Boolean;", "benchmarkObservedDownloadMode", "setBenchmarkDownloadModesForTests", "", "retryEnabled", "archiveEnabled", "(Ljava/lang/Boolean;Ljava/lang/Boolean;)V", "getBenchmarkObservedDownloadModeForTests", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -239,12 +257,20 @@ public final class UpdateService extends Hilt_UpdateService {
 
         private Companion() {
         }
+
+        public final void setBenchmarkDownloadModesForTests(Boolean bool, Boolean bool2) {
+            throw new IllegalStateException("Benchmark download-mode overrides are disabled in this build".toString());
+        }
+
+        public final String getBenchmarkObservedDownloadModeForTests() {
+            throw new IllegalStateException("Benchmark download-mode observation is disabled in this build".toString());
+        }
     }
 
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000b\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000f¨\u0006\u0010"}, d2 = {"Lcom/arizona/launcher/UpdateService$Errno;", "", "code", "", "description", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getCode", "()I", "getDescription", "()Ljava/lang/String;", "NoError", "UpdateServerUnreachable", "ConnectionRefused", "CorruptedFilesFound", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000e\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012¨\u0006\u0013"}, d2 = {"Lcom/arizona/launcher/UpdateService$Errno;", "", "code", "", "description", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getCode", "()I", "getDescription", "()Ljava/lang/String;", "NoError", "UpdateServerUnreachable", "ConnectionRefused", "CorruptedFilesFound", "InsufficientStorage", "ForegroundServiceUnavailable", "ArchiveRecoveryBlocked", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Errno {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -255,9 +281,12 @@ public final class UpdateService extends Hilt_UpdateService {
         public static final Errno UpdateServerUnreachable = new Errno("UpdateServerUnreachable", 1, 1, "Сервер обновления недоступен или не найден");
         public static final Errno ConnectionRefused = new Errno("ConnectionRefused", 2, 2, "Соединение с сервером было прервано во время загрузки");
         public static final Errno CorruptedFilesFound = new Errno("CorruptedFilesFound", 3, 3, "Найдены поврежденные или неудаляемые игровые файлы");
+        public static final Errno InsufficientStorage = new Errno("InsufficientStorage", 4, 4, "Недостаточно места для установки игровых файлов");
+        public static final Errno ForegroundServiceUnavailable = new Errno("ForegroundServiceUnavailable", 5, 5, "Не удалось безопасно продолжить фоновое обновление");
+        public static final Errno ArchiveRecoveryBlocked = new Errno("ArchiveRecoveryBlocked", 6, 6, "Архивную установку нельзя безопасно восстановить автоматически");
 
         private static final /* synthetic */ Errno[] $values() {
-            return new Errno[]{NoError, UpdateServerUnreachable, ConnectionRefused, CorruptedFilesFound};
+            return new Errno[]{NoError, UpdateServerUnreachable, ConnectionRefused, CorruptedFilesFound, InsufficientStorage, ForegroundServiceUnavailable, ArchiveRecoveryBlocked};
         }
 
         public static EnumEntries<Errno> getEntries() {
@@ -287,83 +316,6 @@ public final class UpdateService extends Hilt_UpdateService {
 
         static {
             Errno[] $values = $values();
-            $VALUES = $values;
-            $ENTRIES = EnumEntriesKt.enumEntries($values);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-    /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-    /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u001b\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B)\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\u0006\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\fR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011j\u0002\b\u0012j\u0002\b\u0013j\u0002\b\u0014j\u0002\b\u0015j\u0002\b\u0016j\u0002\b\u0017j\u0002\b\u0018j\u0002\b\u0019j\u0002\b\u001aj\u0002\b\u001bj\u0002\b\u001cj\u0002\b\u001dj\u0002\b\u001ej\u0002\b\u001fj\u0002\b j\u0002\b!j\u0002\b\"¨\u0006#"}, d2 = {"Lcom/arizona/launcher/UpdateService$DownloadErrorEvent;", "", "code", "", UpdateService.ERRNO_MSG, "Lcom/arizona/launcher/UpdateService$Errno;", "legacyCallSite", "context", "", "<init>", "(Ljava/lang/String;IILcom/arizona/launcher/UpdateService$Errno;ILjava/lang/String;)V", "getCode", "()I", "getErrno", "()Lcom/arizona/launcher/UpdateService$Errno;", "getLegacyCallSite", "getContext", "()Ljava/lang/String;", "GAME_UPDATE_SERVER_EMPTY", "GAME_UPDATE_REQUEST_FAILED", "GAME_DATA_SERVER_EMPTY", "GAME_DATA_FILE_LIST_EMPTY", "GAME_DATA_DELETE_TARGET_FAILED", "GAME_DATA_DOWNLOAD_FAILED", "GAME_DATA_DOWNLOAD_CANCELED", "GAME_DATA_DOWNLOAD_NOT_COMPLETED", "GAME_DATA_VALIDATION_FAILED", "LAUNCHER_UPDATE_CHECK_SERVER_EMPTY", "LAUNCHER_UPDATE_CHECK_JSON_INVALID", "LAUNCHER_UPDATE_CHECK_REQUEST_FAILED", "LAUNCHER_APK_SERVER_EMPTY", "LAUNCHER_APK_DOWNLOAD_FAILED", "LAUNCHER_APK_DOWNLOAD_CANCELED", "CHECK_AND_DOWNLOAD_SERVER_EMPTY", "CHECK_AND_DOWNLOAD_REQUEST_FAILED", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    /* loaded from: classes3.dex */
-    public static final class DownloadErrorEvent {
-        private static final /* synthetic */ EnumEntries $ENTRIES;
-        private static final /* synthetic */ DownloadErrorEvent[] $VALUES;
-        private final int code;
-        private final String context;
-        private final Errno errno;
-        private final int legacyCallSite;
-        public static final DownloadErrorEvent GAME_UPDATE_SERVER_EMPTY = new DownloadErrorEvent("GAME_UPDATE_SERVER_EMPTY", 0, 1001, Errno.UpdateServerUnreachable, 337, "Не найден URL сервера для проверки игровых файлов");
-        public static final DownloadErrorEvent GAME_UPDATE_REQUEST_FAILED = new DownloadErrorEvent("GAME_UPDATE_REQUEST_FAILED", 1, 1002, Errno.UpdateServerUnreachable, 404, "Запрос update json для игровых файлов завершился ошибкой");
-        public static final DownloadErrorEvent GAME_DATA_SERVER_EMPTY = new DownloadErrorEvent("GAME_DATA_SERVER_EMPTY", 2, 1003, Errno.UpdateServerUnreachable, 478, "Не найден URL сервера перед скачиванием игровых файлов");
-        public static final DownloadErrorEvent GAME_DATA_FILE_LIST_EMPTY = new DownloadErrorEvent("GAME_DATA_FILE_LIST_EMPTY", 3, 1004, Errno.ConnectionRefused, 495, "Запуск скачивания без списка файлов для обновления");
-        public static final DownloadErrorEvent GAME_DATA_DELETE_TARGET_FAILED = new DownloadErrorEvent("GAME_DATA_DELETE_TARGET_FAILED", 4, 1005, Errno.CorruptedFilesFound, 536, "Не удалось удалить старый файл перед повторной загрузкой");
-        public static final DownloadErrorEvent GAME_DATA_DOWNLOAD_FAILED = new DownloadErrorEvent("GAME_DATA_DOWNLOAD_FAILED", 5, 1006, Errno.ConnectionRefused, 592, "Скачивание игровых файлов завершилось ошибкой");
-        public static final DownloadErrorEvent GAME_DATA_DOWNLOAD_CANCELED = new DownloadErrorEvent("GAME_DATA_DOWNLOAD_CANCELED", 6, 1007, Errno.ConnectionRefused, 592, "Скачивание игровых файлов было отменено");
-        public static final DownloadErrorEvent GAME_DATA_DOWNLOAD_NOT_COMPLETED = new DownloadErrorEvent("GAME_DATA_DOWNLOAD_NOT_COMPLETED", 7, 1008, Errno.ConnectionRefused, 592, "Скачивание игровых файлов завершилось без успешного статуса");
-        public static final DownloadErrorEvent GAME_DATA_VALIDATION_FAILED = new DownloadErrorEvent("GAME_DATA_VALIDATION_FAILED", 8, 1009, Errno.CorruptedFilesFound, 644, "После скачивания проверка файлов нашла повреждения");
-        public static final DownloadErrorEvent LAUNCHER_UPDATE_CHECK_SERVER_EMPTY = new DownloadErrorEvent("LAUNCHER_UPDATE_CHECK_SERVER_EMPTY", 9, 1010, Errno.UpdateServerUnreachable, 807, "Не найден URL сервера для проверки обновления лаунчера");
-        public static final DownloadErrorEvent LAUNCHER_UPDATE_CHECK_JSON_INVALID = new DownloadErrorEvent("LAUNCHER_UPDATE_CHECK_JSON_INVALID", 10, 1011, Errno.UpdateServerUnreachable, 868, "Ответ app_version json не удалось разобрать");
-        public static final DownloadErrorEvent LAUNCHER_UPDATE_CHECK_REQUEST_FAILED = new DownloadErrorEvent("LAUNCHER_UPDATE_CHECK_REQUEST_FAILED", 11, 1012, Errno.UpdateServerUnreachable, 868, "Запрос app_version json завершился ошибкой");
-        public static final DownloadErrorEvent LAUNCHER_APK_SERVER_EMPTY = new DownloadErrorEvent("LAUNCHER_APK_SERVER_EMPTY", 12, 1013, Errno.UpdateServerUnreachable, 900, "Не найден URL сервера перед скачиванием APK лаунчера");
-        public static final DownloadErrorEvent LAUNCHER_APK_DOWNLOAD_FAILED = new DownloadErrorEvent("LAUNCHER_APK_DOWNLOAD_FAILED", 13, 1014, Errno.UpdateServerUnreachable, 960, "Скачивание APK лаунчера завершилось ошибкой");
-        public static final DownloadErrorEvent LAUNCHER_APK_DOWNLOAD_CANCELED = new DownloadErrorEvent("LAUNCHER_APK_DOWNLOAD_CANCELED", 14, 1015, Errno.UpdateServerUnreachable, 960, "Скачивание APK лаунчера было отменено");
-        public static final DownloadErrorEvent CHECK_AND_DOWNLOAD_SERVER_EMPTY = new DownloadErrorEvent("CHECK_AND_DOWNLOAD_SERVER_EMPTY", 15, 1016, Errno.UpdateServerUnreachable, 1110, "Не найден URL сервера в combined flow проверки и загрузки");
-        public static final DownloadErrorEvent CHECK_AND_DOWNLOAD_REQUEST_FAILED = new DownloadErrorEvent("CHECK_AND_DOWNLOAD_REQUEST_FAILED", 16, 1017, Errno.UpdateServerUnreachable, 1238, "Combined flow не получил update json после доступных попыток");
-
-        private static final /* synthetic */ DownloadErrorEvent[] $values() {
-            return new DownloadErrorEvent[]{GAME_UPDATE_SERVER_EMPTY, GAME_UPDATE_REQUEST_FAILED, GAME_DATA_SERVER_EMPTY, GAME_DATA_FILE_LIST_EMPTY, GAME_DATA_DELETE_TARGET_FAILED, GAME_DATA_DOWNLOAD_FAILED, GAME_DATA_DOWNLOAD_CANCELED, GAME_DATA_DOWNLOAD_NOT_COMPLETED, GAME_DATA_VALIDATION_FAILED, LAUNCHER_UPDATE_CHECK_SERVER_EMPTY, LAUNCHER_UPDATE_CHECK_JSON_INVALID, LAUNCHER_UPDATE_CHECK_REQUEST_FAILED, LAUNCHER_APK_SERVER_EMPTY, LAUNCHER_APK_DOWNLOAD_FAILED, LAUNCHER_APK_DOWNLOAD_CANCELED, CHECK_AND_DOWNLOAD_SERVER_EMPTY, CHECK_AND_DOWNLOAD_REQUEST_FAILED};
-        }
-
-        public static EnumEntries<DownloadErrorEvent> getEntries() {
-            return $ENTRIES;
-        }
-
-        public static DownloadErrorEvent valueOf(String str) {
-            return (DownloadErrorEvent) Enum.valueOf(DownloadErrorEvent.class, str);
-        }
-
-        public static DownloadErrorEvent[] values() {
-            return (DownloadErrorEvent[]) $VALUES.clone();
-        }
-
-        private DownloadErrorEvent(String str, int i, int i2, Errno errno, int i3, String str2) {
-            this.code = i2;
-            this.errno = errno;
-            this.legacyCallSite = i3;
-            this.context = str2;
-        }
-
-        public final int getCode() {
-            return this.code;
-        }
-
-        public final Errno getErrno() {
-            return this.errno;
-        }
-
-        public final int getLegacyCallSite() {
-            return this.legacyCallSite;
-        }
-
-        public final String getContext() {
-            return this.context;
-        }
-
-        static {
-            DownloadErrorEvent[] $values = $values();
             $VALUES = $values;
             $ENTRIES = EnumEntriesKt.enumEntries($values);
         }
@@ -448,121 +400,508 @@ public final class UpdateService extends Hilt_UpdateService {
         }
     }
 
-    private final RequestQueue getSharedRequestQueue() {
-        return (RequestQueue) this.sharedRequestQueue$delegate.getValue();
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit archiveStorageSpaceChecker$lambda$0(String message, Exception error) {
+        Intrinsics.checkNotNullParameter(message, "message");
+        Intrinsics.checkNotNullParameter(error, "error");
+        Log.e(TAG, message, error);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: UpdateService.kt */
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\br\u0018\u00002\u00020\u0001:\u0003\u0002\u0003\u0004\u0082\u0001\u0002\u0005\u0006¨\u0006\u0007À\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult;", "", "Ready", "Rejected", "Reason", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Ready;", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Rejected;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes3.dex */
+    public interface ForegroundPromotionResult {
+
+        /* compiled from: UpdateService.kt */
+        @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0083\u0004J\n\u0010\b\u001a\u00020\tHÖ\u0081\u0004J\n\u0010\n\u001a\u00020\u000bHÖ\u0081\u0004Ê\u0001\f\b\r\u0012\b\b\u000e\u0012\u0004\b\u0003\u0010\u0002¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Ready;", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        /* loaded from: classes3.dex */
+        public static final class Ready implements ForegroundPromotionResult {
+            public static final int $stable = 0;
+            public static final Ready INSTANCE = new Ready();
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof Ready) {
+                    Ready ready = (Ready) obj;
+                    return true;
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return -1261397347;
+            }
+
+            public String toString() {
+                return "Ready";
+            }
+
+            private Ready() {
+            }
+        }
+
+        /* compiled from: UpdateService.kt */
+        @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B!\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0010\b\u0002\u0010\u0004\u001a\n\u0018\u00010\u0005j\u0004\u0018\u0001`\u0006¢\u0006\u0004\b\u0007\u0010\bJ\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\u0011\u0010\u000e\u001a\n\u0018\u00010\u0005j\u0004\u0018\u0001`\u0006HÆ\u0003J%\u0010\u000f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\u0010\b\u0002\u0010\u0004\u001a\n\u0018\u00010\u0005j\u0004\u0018\u0001`\u0006HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0013HÖ\u0083\u0004J\n\u0010\u0014\u001a\u00020\u0015HÖ\u0081\u0004J\n\u0010\u0016\u001a\u00020\u0017HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0019\u0010\u0004\u001a\n\u0018\u00010\u0005j\u0004\u0018\u0001`\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fÊ\u0001\f\b\u0019\u0012\b\b\u001a\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0018"}, d2 = {"Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Rejected;", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult;", "reason", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Reason;", "cause", "Ljava/lang/Exception;", "Lkotlin/Exception;", "<init>", "(Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Reason;Ljava/lang/Exception;)V", "getReason", "()Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Reason;", "getCause", "()Ljava/lang/Exception;", "component1", "component2", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        /* loaded from: classes3.dex */
+        public static final class Rejected implements ForegroundPromotionResult {
+            public static final int $stable = 8;
+            private final Exception cause;
+            private final Reason reason;
+
+            public static /* synthetic */ Rejected copy$default(Rejected rejected, Reason reason, Exception exc, int i, Object obj) {
+                if ((i & 1) != 0) {
+                    reason = rejected.reason;
+                }
+                if ((i & 2) != 0) {
+                    exc = rejected.cause;
+                }
+                return rejected.copy(reason, exc);
+            }
+
+            public final Reason component1() {
+                return this.reason;
+            }
+
+            public final Exception component2() {
+                return this.cause;
+            }
+
+            public final Rejected copy(Reason reason, Exception exc) {
+                Intrinsics.checkNotNullParameter(reason, "reason");
+                return new Rejected(reason, exc);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof Rejected) {
+                    Rejected rejected = (Rejected) obj;
+                    return this.reason == rejected.reason && Intrinsics.areEqual(this.cause, rejected.cause);
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                int hashCode = this.reason.hashCode() * 31;
+                Exception exc = this.cause;
+                return hashCode + (exc == null ? 0 : exc.hashCode());
+            }
+
+            public String toString() {
+                Reason reason = this.reason;
+                return "Rejected(reason=" + reason + ", cause=" + this.cause + ")";
+            }
+
+            public Rejected(Reason reason, Exception exc) {
+                Intrinsics.checkNotNullParameter(reason, "reason");
+                this.reason = reason;
+                this.cause = exc;
+            }
+
+            public /* synthetic */ Rejected(Reason reason, Exception exc, int i, DefaultConstructorMarker defaultConstructorMarker) {
+                this(reason, (i & 2) != 0 ? null : exc);
+            }
+
+            public final Reason getReason() {
+                return this.reason;
+            }
+
+            public final Exception getCause() {
+                return this.cause;
+            }
+        }
+
+        /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+        /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+        /* compiled from: UpdateService.kt */
+        @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult$Reason;", "", "<init>", "(Ljava/lang/String;I)V", "APP_IN_BACKGROUND", "SYSTEM_REJECTED", "UNEXPECTED_ERROR", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        /* loaded from: classes3.dex */
+        public static final class Reason {
+            private static final /* synthetic */ EnumEntries $ENTRIES;
+            private static final /* synthetic */ Reason[] $VALUES;
+            public static final Reason APP_IN_BACKGROUND = new Reason("APP_IN_BACKGROUND", 0);
+            public static final Reason SYSTEM_REJECTED = new Reason("SYSTEM_REJECTED", 1);
+            public static final Reason UNEXPECTED_ERROR = new Reason("UNEXPECTED_ERROR", 2);
+
+            private static final /* synthetic */ Reason[] $values() {
+                return new Reason[]{APP_IN_BACKGROUND, SYSTEM_REJECTED, UNEXPECTED_ERROR};
+            }
+
+            public static EnumEntries<Reason> getEntries() {
+                return $ENTRIES;
+            }
+
+            public static Reason valueOf(String str) {
+                return (Reason) Enum.valueOf(Reason.class, str);
+            }
+
+            public static Reason[] values() {
+                return (Reason[]) $VALUES.clone();
+            }
+
+            private Reason(String str, int i) {
+            }
+
+            static {
+                Reason[] $values = $values();
+                $VALUES = $values;
+                $ENTRIES = EnumEntriesKt.enumEntries($values);
+            }
+        }
     }
 
     @Override // com.arizona.launcher.Hilt_UpdateService, android.app.Service
     public void onCreate() {
-        UpdateService updateService = this;
-        LauncherBreakpointStoreOnSQLite launcherBreakpointStoreOnSQLite = new LauncherBreakpointStoreOnSQLite(updateService);
-        SharedPreferences sharedPreferences = getSharedPreferences("update_data", 0);
-        Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
-        this.updatePreferences = sharedPreferences;
-        try {
-            OkDownload.setSingletonInstance(new OkDownload.Builder(getApplicationContext()).downloadStore(launcherBreakpointStoreOnSQLite).connectionFactory(new DownloadOkHttp3Connection.Factory().setBuilder(new OkHttpClient.Builder().connectTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).retryOnConnectionFailure(true).connectionPool(new ConnectionPool(5, 10L, TimeUnit.SECONDS)).build().newBuilder())).build());
-            Log.d(TAG, "Init OkDownload instance with OkHttp backend");
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
+        DurableArchiveStateStore durableArchiveStateStore;
+        UpdateMetadataFetcher updateMetadataFetcher;
+        UpdateAnalyticsReporter updateAnalyticsReporter;
+        super.onCreate();
+        this.serviceAlive.set(true);
+        this.analyticsReporter = UpdateAnalyticsReporter.Companion.createAndroid$default(UpdateAnalyticsReporter.Companion, this, null, 2, null);
+        this.archiveStateStore = DurableArchiveStateStore.Companion.forAndroid(new File(getNoBackupFilesDir(), "archive-updater"));
+        Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                File externalFilesDir;
+                externalFilesDir = UpdateService.this.getExternalFilesDir(null);
+                return externalFilesDir;
+            }
+        };
+        DurableArchiveStateStore durableArchiveStateStore2 = this.archiveStateStore;
+        if (durableArchiveStateStore2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("archiveStateStore");
+            durableArchiveStateStore = null;
+        } else {
+            durableArchiveStateStore = durableArchiveStateStore2;
         }
+        this.archiveStateMaintenance = new ArchiveStateMaintenance(function0, durableArchiveStateStore, null, null, 12, null);
+        OkHttpClient build = new OkHttpClient.Builder().connectTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).retryOnConnectionFailure(true).connectionPool(new ConnectionPool(5, 10L, TimeUnit.SECONDS)).dns(new SafeArchiveDns(Dns.SYSTEM, false)).addInterceptor(new ArchiveDownloadGuardTaggingInterceptor()).addNetworkInterceptor(new ArchiveDownloadNetworkGuardInterceptor(false)).build();
+        this.metadataFetcher = UpdateMetadataFetcher.Companion.create(build);
+        UpdateMetadataFetcher updateMetadataFetcher2 = this.metadataFetcher;
+        if (updateMetadataFetcher2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("metadataFetcher");
+            updateMetadataFetcher2 = null;
+        }
+        this.gameUpdateFlow = new GameUpdateServiceFlow(this.serviceScope, new GameUpdateCheckRunner(updateMetadataFetcher2, new UpdateService$onCreate$gameUpdateCheckRunner$1(this), new UpdateService$onCreate$gameUpdateCheckRunner$2(this), new UpdateService$onCreate$gameUpdateCheckRunner$3(FileServers.INSTANCE), new UpdateService$onCreate$gameUpdateCheckRunner$4(FileServers.INSTANCE)), this.archiveSession, this, new UpdateService$onCreate$2(FileServers.INSTANCE), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return Integer.valueOf(UpdateService.onCreate$lambda$1());
+            }
+        }, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                String jsonName;
+                jsonName = UpdateJsonProvider.INSTANCE.getJsonName(UpdateService.this);
+                return jsonName;
+            }
+        }, new UpdateService$onCreate$5(this), new UpdateService$onCreate$6(this), new UpdateService$onCreate$7(this));
+        this.archiveUpdateFlow = new ArchiveUpdateServiceFlow(this.serviceScope, this.archiveSession, this, null, 8, null);
+        CoroutineScope coroutineScope = this.serviceScope;
+        UpdateService updateService = this;
+        ArchiveStateMaintenance archiveStateMaintenance = this.archiveStateMaintenance;
+        if (archiveStateMaintenance == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("archiveStateMaintenance");
+            archiveStateMaintenance = null;
+        }
+        this.fileCheckFlow = new FileCheckServiceFlow(coroutineScope, updateService, new UpdateService$onCreate$8(archiveStateMaintenance), null, 8, null);
+        LauncherApkDownloader launcherApkDownloader = new LauncherApkDownloader(build, null, null, null, false, 0, 0L, 0L, null, null, 1006, null);
+        CoroutineScope coroutineScope2 = this.serviceScope;
+        UpdateMetadataFetcher updateMetadataFetcher3 = this.metadataFetcher;
+        if (updateMetadataFetcher3 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("metadataFetcher");
+            updateMetadataFetcher = null;
+        } else {
+            updateMetadataFetcher = updateMetadataFetcher3;
+        }
+        LauncherUpdateConfig launcherUpdateConfig = new LauncherUpdateConfig(BuildConfig.VERSION_CODE, BuildConfig.VERSION_NAME, "release", BuildConfig.FLAVOR);
+        UpdateAnalyticsReporter updateAnalyticsReporter2 = this.analyticsReporter;
+        if (updateAnalyticsReporter2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+            updateAnalyticsReporter = null;
+        } else {
+            updateAnalyticsReporter = updateAnalyticsReporter2;
+        }
+        this.launcherUpdateFlow = new LauncherUpdateServiceFlow(coroutineScope2, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, updateAnalyticsReporter, this, new UpdateService$onCreate$9(FileServers.INSTANCE), new UpdateService$onCreate$10(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return UpdateService.onCreate$lambda$3(UpdateService.this, (Function0) obj);
+            }
+        });
         HandlerThread handlerThread = new HandlerThread("ServiceStartArguments", 10);
         handlerThread.start();
+        this.serviceHandlerThread = handlerThread;
         createNotificationChannel();
+        this.archiveSession.initializeStartupGuard(detectArchiveStartupGuard());
         resetGameStatus();
-        Looper looper = handlerThread.getLooper();
-        Intrinsics.checkNotNullExpressionValue(looper, "getLooper(...)");
-        this.mInHandler = new IncomingHandler(this, looper);
-        this.mMessenger = new Messenger(this.mInHandler);
-        SharedPreferences sharedPreferences2 = this.updatePreferences;
-        if (sharedPreferences2 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-            sharedPreferences2 = null;
+        HandlerThread handlerThread2 = this.serviceHandlerThread;
+        if (handlerThread2 != null) {
+            Looper looper = handlerThread2.getLooper();
+            Intrinsics.checkNotNullExpressionValue(looper, "getLooper(...)");
+            this.mInHandler = new IncomingHandler(this, looper);
+            this.mMessenger = new Messenger(this.mInHandler);
+            return;
         }
-        this.filesChek = new FilesChek(TAG, sharedPreferences2, updateService);
+        throw new IllegalStateException("Required value was null.".toString());
     }
 
-    static /* synthetic */ void logDownloadError$default(UpdateService updateService, DownloadErrorEvent downloadErrorEvent, DownloadFailureDetails downloadFailureDetails, String str, int i, Object obj) {
-        if ((i & 2) != 0) {
-            downloadFailureDetails = null;
-        }
-        if ((i & 4) != 0) {
-            str = null;
-        }
-        updateService.logDownloadError(downloadErrorEvent, downloadFailureDetails, str);
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final int onCreate$lambda$1() {
+        return FileServers.INSTANCE.getGame_servers().length;
     }
 
-    private final void logDownloadError(DownloadErrorEvent downloadErrorEvent, DownloadFailureDetails downloadFailureDetails, String str) {
-        Bundle bundle = new Bundle();
-        bundle.putInt(LEGACY_CALL_SITE_PARAM, downloadErrorEvent.getLegacyCallSite());
-        bundle.putInt(SOURCE_LINE_PARAM, downloadErrorEvent.getLegacyCallSite());
-        bundle.putInt(ERRNO_MSG, downloadErrorEvent.getErrno().getCode());
-        bundle.putInt(ERRNO_CODE_PARAM, downloadErrorEvent.getErrno().getCode());
-        bundle.putString(ERRNO_NAME_PARAM, downloadErrorEvent.getErrno().name());
-        bundle.putInt(ERROR_CODE_PARAM, downloadErrorEvent.getCode());
-        bundle.putString(ERROR_TYPE_PARAM, downloadErrorEvent.name());
-        if (downloadFailureDetails != null) {
-            bundle.putString(ERROR_SUBTYPE_PARAM, downloadFailureDetails.subtypeFor(downloadErrorEvent.name()));
-            Integer httpStatus = downloadFailureDetails.getHttpStatus();
-            if (httpStatus != null) {
-                bundle.putInt(HTTP_STATUS_PARAM, httpStatus.intValue());
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit onCreate$lambda$3(UpdateService updateService, final Function0 block) {
+        Intrinsics.checkNotNullParameter(block, "block");
+        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                Function0.this.invoke();
             }
-        }
-        bundle.putString(ERROR_CONTEXT_PARAM, downloadErrorEvent.getContext());
-        if (str == null) {
-            str = FileServers.INSTANCE.getCurrentServer();
-        }
-        String hostOf = hostOf(str);
-        if (hostOf == null) {
-            hostOf = "";
-        }
-        bundle.putString(SERVER_HOST_PARAM, hostOf);
-        bundle.putBoolean(NETWORK_INTERNET_CAPABLE_PARAM, isDeviceOnline());
-        bundle.putBoolean(NETWORK_VALIDATED_PARAM, isDeviceNetworkValidated());
-        UpdateService updateService = this;
-        FirebaseAnalytics.getInstance(updateService).logEvent(DOWNLOAD_ERROR_EVENT, bundle);
-        if (shouldLogFirstLaunchDownloadError(downloadErrorEvent)) {
-            Bundle bundle2 = new Bundle(bundle);
-            bundle2.putString(EVENT_TAG_PARAM, "first_launch");
-            bundle2.putBoolean("first_launch", true);
-            bundle2.putBoolean(FIRST_LAUNCH_DEDUPED_PARAM, true);
-            FirebaseAnalytics.getInstance(updateService).logEvent(DOWNLOAD_ERROR_FIRST_LAUNCH_EVENT, bundle2);
+        });
+        return Unit.INSTANCE;
+    }
+
+    private final ArchiveStartupGuard detectArchiveStartupGuard() {
+        try {
+            ArchiveStateMaintenance archiveStateMaintenance = this.archiveStateMaintenance;
+            if (archiveStateMaintenance == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("archiveStateMaintenance");
+                archiveStateMaintenance = null;
+            }
+            ArchiveStartupInspection inspectStartup = archiveStateMaintenance.inspectStartup(ArchiveUpdateTransactionLock.INSTANCE.isLocked());
+            String corruptReason = inspectStartup.getCorruptReason();
+            if (corruptReason != null) {
+                Log.e(TAG, "Archive journal is corrupt at service startup: " + corruptReason);
+            }
+            return inspectStartup.getGuard();
+        } catch (Exception e) {
+            Log.e(TAG, "Unable to inspect archive journal at service startup", e);
+            return ArchiveStartupGuard.CORRUPT_STATE;
         }
     }
 
-    private final boolean isFirstLauncherStartErrorSession() {
-        SharedPreferences sharedPreferences = getSharedPreferences("SP_NAME", 0);
-        return sharedPreferences.getBoolean("firstStartErrorSession", false) || sharedPreferences.getBoolean("firstStart", true);
+    /* JADX INFO: Access modifiers changed from: private */
+    public final ArchiveGpu selectedArchiveGpu() {
+        String jsonName = UpdateJsonProvider.INSTANCE.getJsonName(this);
+        return Intrinsics.areEqual(jsonName, "dxt.game.json") ? ArchiveGpu.ADRENO : Intrinsics.areEqual(jsonName, "pvr.game.json") ? ArchiveGpu.POWERVR : ArchiveGpu.MALI;
     }
 
-    private final boolean shouldLogFirstLaunchDownloadError(DownloadErrorEvent downloadErrorEvent) {
-        boolean z;
-        synchronized (this.firstLaunchAnalyticsLock) {
-            z = false;
-            if (isFirstLauncherStartErrorSession()) {
-                SharedPreferences sharedPreferences = getSharedPreferences("SP_NAME", 0);
-                String valueOf = String.valueOf(downloadErrorEvent.getCode());
-                Set<String> stringSet = sharedPreferences.getStringSet(FIRST_START_REPORTED_ERROR_CODES_KEY, SetsKt.emptySet());
-                if (stringSet == null) {
-                    stringSet = SetsKt.emptySet();
-                }
-                if (!stringSet.contains(valueOf)) {
-                    SharedPreferences.Editor edit = sharedPreferences.edit();
-                    Set<String> mutableSet = CollectionsKt.toMutableSet(stringSet);
-                    mutableSet.add(valueOf);
-                    Unit unit = Unit.INSTANCE;
-                    edit.putStringSet(FIRST_START_REPORTED_ERROR_CODES_KEY, mutableSet).apply();
-                    z = true;
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0030  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x004b  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x007d A[Catch: all -> 0x003a, Exception -> 0x003d, CancellationException -> 0x0040, TryCatch #4 {all -> 0x003a, blocks: (B:12:0x0036, B:33:0x0073, B:35:0x007d, B:36:0x0080, B:38:0x0084, B:39:0x00b0, B:41:0x00b4, B:44:0x00e4, B:45:0x00e9, B:50:0x00ef, B:55:0x0127), top: B:58:0x002e }] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0080 A[Catch: all -> 0x003a, Exception -> 0x003d, CancellationException -> 0x0040, TryCatch #4 {all -> 0x003a, blocks: (B:12:0x0036, B:33:0x0073, B:35:0x007d, B:36:0x0080, B:38:0x0084, B:39:0x00b0, B:41:0x00b4, B:44:0x00e4, B:45:0x00e9, B:50:0x00ef, B:55:0x0127), top: B:58:0x002e }] */
+    /* JADX WARN: Type inference failed for: r12v5 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object runPrimaryGameCheckPreflight(long j, Continuation<? super ArchiveUpdateCheckDecision.Block> continuation) {
+        UpdateService$runPrimaryGameCheckPreflight$1 updateService$runPrimaryGameCheckPreflight$1;
+        int i;
+        long j2;
+        ArchivePayloadAuditResult archivePayloadAuditResult;
+        try {
+            if (continuation instanceof UpdateService$runPrimaryGameCheckPreflight$1) {
+                updateService$runPrimaryGameCheckPreflight$1 = (UpdateService$runPrimaryGameCheckPreflight$1) continuation;
+                if ((updateService$runPrimaryGameCheckPreflight$1.label & Integer.MIN_VALUE) != 0) {
+                    updateService$runPrimaryGameCheckPreflight$1.label -= Integer.MIN_VALUE;
+                    Object obj = updateService$runPrimaryGameCheckPreflight$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = updateService$runPrimaryGameCheckPreflight$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        if (!isCurrentUpdateOperation(UpdateOperationKind.CHECK_UPDATE, j)) {
+                            return null;
+                        }
+                        long elapsedRealtime = SystemClock.elapsedRealtime();
+                        try {
+                            ArchiveStateMaintenance archiveStateMaintenance = this.archiveStateMaintenance;
+                            if (archiveStateMaintenance == null) {
+                                Intrinsics.throwUninitializedPropertyAccessException("archiveStateMaintenance");
+                                archiveStateMaintenance = null;
+                            }
+                            updateService$runPrimaryGameCheckPreflight$1.J$0 = j;
+                            updateService$runPrimaryGameCheckPreflight$1.J$1 = elapsedRealtime;
+                            updateService$runPrimaryGameCheckPreflight$1.label = 1;
+                            obj = archiveStateMaintenance.auditMetadataAndPrepareRepair(updateService$runPrimaryGameCheckPreflight$1);
+                            if (obj == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            j2 = elapsedRealtime;
+                        } catch (CancellationException e) {
+                            throw e;
+                        } catch (Exception e2) {
+                            e = e2;
+                            j2 = elapsedRealtime;
+                            Log.e(TAG, "Primary archive metadata audit failed", e);
+                            ArchiveUpdateCheckDecision.Block block = new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "primary archive metadata audit failed: " + e.getMessage());
+                            Log.i(TAG, "Primary archive metadata audit durationMs=" + (SystemClock.elapsedRealtime() - j2));
+                            return block;
+                        } catch (Throwable th) {
+                            th = th;
+                            this = elapsedRealtime;
+                            Log.i(TAG, "Primary archive metadata audit durationMs=" + (SystemClock.elapsedRealtime() - this));
+                            throw th;
+                        }
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        j2 = updateService$runPrimaryGameCheckPreflight$1.J$1;
+                        long j3 = updateService$runPrimaryGameCheckPreflight$1.J$0;
+                        try {
+                            ResultKt.throwOnFailure(obj);
+                        } catch (CancellationException e3) {
+                            throw e3;
+                        } catch (Exception e4) {
+                            e = e4;
+                            Log.e(TAG, "Primary archive metadata audit failed", e);
+                            ArchiveUpdateCheckDecision.Block block2 = new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "primary archive metadata audit failed: " + e.getMessage());
+                            Log.i(TAG, "Primary archive metadata audit durationMs=" + (SystemClock.elapsedRealtime() - j2));
+                            return block2;
+                        }
+                    }
+                    archivePayloadAuditResult = (ArchivePayloadAuditResult) obj;
+                    if (!Intrinsics.areEqual(archivePayloadAuditResult, ArchivePayloadAuditResult.Valid.INSTANCE)) {
+                        Unit unit = Unit.INSTANCE;
+                    } else if (archivePayloadAuditResult instanceof ArchivePayloadAuditResult.RepairScheduled) {
+                        Boxing.boxInt(Log.w(TAG, "Archive metadata audit scheduled repair for packages=" + ((ArchivePayloadAuditResult.RepairScheduled) archivePayloadAuditResult).getMismatchedPackageIds() + " first=" + ((ArchivePayloadAuditResult.RepairScheduled) archivePayloadAuditResult).getFirstMismatch()));
+                    } else if (!(archivePayloadAuditResult instanceof ArchivePayloadAuditResult.Unavailable)) {
+                        throw new NoWhenBranchMatchedException();
+                    } else {
+                        Boxing.boxInt(Log.d(TAG, "Archive metadata audit unavailable: " + ((ArchivePayloadAuditResult.Unavailable) archivePayloadAuditResult).getReason()));
+                    }
+                    Log.i(TAG, "Primary archive metadata audit durationMs=" + (SystemClock.elapsedRealtime() - j2));
+                    return null;
                 }
             }
+            if (i != 0) {
+            }
+            archivePayloadAuditResult = (ArchivePayloadAuditResult) obj;
+            if (!Intrinsics.areEqual(archivePayloadAuditResult, ArchivePayloadAuditResult.Valid.INSTANCE)) {
+            }
+            Log.i(TAG, "Primary archive metadata audit durationMs=" + (SystemClock.elapsedRealtime() - j2));
+            return null;
+        } catch (Throwable th2) {
+            th = th2;
         }
-        return z;
+        updateService$runPrimaryGameCheckPreflight$1 = new UpdateService$runPrimaryGameCheckPreflight$1(this, continuation);
+        Object obj2 = updateService$runPrimaryGameCheckPreflight$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = updateService$runPrimaryGameCheckPreflight$1.label;
     }
 
-    private final void finishFirstLauncherStartErrorSession() {
-        synchronized (this.firstLaunchAnalyticsLock) {
-            getSharedPreferences("SP_NAME", 0).edit().putBoolean("firstStart", false).putBoolean("firstStartErrorSession", false).remove(FIRST_START_REPORTED_ERROR_CODES_KEY).apply();
-            Unit unit = Unit.INSTANCE;
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0042  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object prepareGameUpdateCheck(String str, String str2, UpdateOperationKind updateOperationKind, long j, Continuation<? super ArchiveUpdateCheckDecision> continuation) {
+        UpdateService$prepareGameUpdateCheck$1 updateService$prepareGameUpdateCheck$1;
+        int i;
+        try {
+            if (continuation instanceof UpdateService$prepareGameUpdateCheck$1) {
+                updateService$prepareGameUpdateCheck$1 = (UpdateService$prepareGameUpdateCheck$1) continuation;
+                if ((updateService$prepareGameUpdateCheck$1.label & Integer.MIN_VALUE) != 0) {
+                    updateService$prepareGameUpdateCheck$1.label -= Integer.MIN_VALUE;
+                    Object obj = updateService$prepareGameUpdateCheck$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = updateService$prepareGameUpdateCheck$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        updateService$prepareGameUpdateCheck$1.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                        updateService$prepareGameUpdateCheck$1.L$1 = SpillingKt.nullOutSpilledVariable(str2);
+                        updateService$prepareGameUpdateCheck$1.L$2 = SpillingKt.nullOutSpilledVariable(updateOperationKind);
+                        updateService$prepareGameUpdateCheck$1.J$0 = j;
+                        updateService$prepareGameUpdateCheck$1.label = 1;
+                        obj = ArchiveUpdateTransactionLock.INSTANCE.withLock(new UpdateService$prepareGameUpdateCheck$decision$1(this, str, str2, updateOperationKind, j, null), updateService$prepareGameUpdateCheck$1);
+                        if (obj == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        long j2 = updateService$prepareGameUpdateCheck$1.J$0;
+                        UpdateOperationKind updateOperationKind2 = (UpdateOperationKind) updateService$prepareGameUpdateCheck$1.L$2;
+                        String str3 = (String) updateService$prepareGameUpdateCheck$1.L$1;
+                        String str4 = (String) updateService$prepareGameUpdateCheck$1.L$0;
+                        ResultKt.throwOnFailure(obj);
+                    }
+                    return (ArchiveUpdateCheckDecision) obj;
+                }
+            }
+            if (i != 0) {
+            }
+            return (ArchiveUpdateCheckDecision) obj;
+        } catch (CancellationException e) {
+            throw e;
+        } catch (Exception e2) {
+            Log.e(TAG, "Archive update check failed", e2);
+            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, e2.getMessage());
         }
+        updateService$prepareGameUpdateCheck$1 = new UpdateService$prepareGameUpdateCheck$1(this, continuation);
+        Object obj2 = updateService$prepareGameUpdateCheck$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = updateService$prepareGameUpdateCheck$1.label;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void onPreparedGameUpdateCheck(ArchiveUpdateCheckDecision archiveUpdateCheckDecision, ArchiveUpdateSessionSnapshot archiveUpdateSessionSnapshot) {
+        if (archiveUpdateCheckDecision instanceof ArchiveUpdateCheckDecision.UseArchive) {
+            ArchiveUpdateCheckDecision.UseArchive useArchive = (ArchiveUpdateCheckDecision.UseArchive) archiveUpdateCheckDecision;
+            ArchivePlanType type = useArchive.getPlan().getType();
+            ArchivePlanReason reason = useArchive.getPlan().getReason();
+            Log.i(TAG, "Archive plan=" + type + " reason=" + reason + " downloadBytes=" + archiveUpdateSessionSnapshot.getStorageRequirements().getDownloadBytes());
+            resetGameStatus();
+        } else if (!(archiveUpdateCheckDecision instanceof ArchiveUpdateCheckDecision.Block)) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            this.mLastOperationStatus = Errno.ArchiveRecoveryBlocked;
+            ArchiveUpdateCheckDecision.Block block = (ArchiveUpdateCheckDecision.Block) archiveUpdateCheckDecision;
+            ArchiveUpdateCheckBlockCode code = block.getCode();
+            String detail = block.getDetail();
+            if (detail == null) {
+                detail = "";
+            }
+            Log.e(TAG, "Archive updater blocked: " + code + ": " + detail);
+            this.mGameStatus.set(GameStatus.UpdateRequired);
+        }
+        setUpdateStatus(UpdateStatus.Undefined);
+    }
+
+    private final Long beginUpdateOperation(UpdateOperationKind updateOperationKind) {
+        if (!this.serviceAlive.get()) {
+            Log.i(TAG, "Ignore " + updateOperationKind + " after service destruction");
+            return null;
+        }
+        UpdateOperationBeginResult begin = this.updateOperationCoordinator.begin(updateOperationKind);
+        if (begin instanceof UpdateOperationBeginResult.Started) {
+            return Long.valueOf(((UpdateOperationBeginResult.Started) begin).getOperation().getToken());
+        }
+        if (!(begin instanceof UpdateOperationBeginResult.Busy)) {
+            throw new NoWhenBranchMatchedException();
+        }
+        UpdateOperationBeginResult.Busy busy = (UpdateOperationBeginResult.Busy) begin;
+        Log.i(TAG, "Coalesce " + updateOperationKind + " while " + busy.getActive().getKind() + " is active");
+        if (busy.getActive().getKind() == UpdateOperationKind.ARCHIVE_UPDATE) {
+            updateStatusInfoAndProgress(isArchiveProgressIndeterminate());
+        }
+        return null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final boolean isCurrentUpdateOperation(UpdateOperationKind updateOperationKind, long j) {
+        return this.serviceAlive.get() && this.updateOperationCoordinator.isCurrent(updateOperationKind, j);
+    }
+
+    private final void finishUpdateOperation(UpdateOperationKind updateOperationKind, long j) {
+        this.updateOperationCoordinator.finish(updateOperationKind, j);
     }
 
     private final void createNotificationChannel() {
@@ -590,43 +929,63 @@ public final class UpdateService extends Hilt_UpdateService {
                 }
             } else if (action.equals(ACTION_START_FOREGROUND_SERVICE)) {
                 Log.d(TAG, "Receive ACTION_START_FOREGROUND_SERVICE");
-                startForegroundService();
+                if (startForegroundService(true) instanceof ForegroundPromotionResult.Rejected) {
+                    stopSelf(i2);
+                    return 2;
+                }
                 return 2;
             }
         }
         return onStartCommand;
     }
 
-    private final void startForegroundService() {
-        if (Build.VERSION.SDK_INT >= 26) {
+    static /* synthetic */ ForegroundPromotionResult startForegroundService$default(UpdateService updateService, boolean z, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = false;
+        }
+        return updateService.startForegroundService(z);
+    }
+
+    private final ForegroundPromotionResult startForegroundService(boolean z) {
+        ForegroundPromotionResult.Reason reason;
+        if (Build.VERSION.SDK_INT < 26 || this.foregroundServiceActive) {
+            return ForegroundPromotionResult.Ready.INSTANCE;
+        }
+        if (z || isAppInForeground()) {
             try {
                 Log.i(TAG, "startForegroundService");
                 Notification createNotification = createNotification(true);
-                if (isAppInForeground()) {
-                    if (Build.VERSION.SDK_INT >= 29) {
-                        startForeground(1, createNotification, 1);
-                    } else {
-                        startForeground(1, createNotification);
-                    }
+                if (Build.VERSION.SDK_INT >= 29) {
+                    startForeground(1, createNotification, 1);
+                } else {
+                    startForeground(1, createNotification);
                 }
+                this.foregroundServiceActive = true;
+                return ForegroundPromotionResult.Ready.INSTANCE;
             } catch (Exception e) {
-                FirebaseCrashlytics.getInstance().recordException(e);
-                e.printStackTrace();
+                Exception exc = e;
+                FirebaseCrashlytics.getInstance().recordException(exc);
                 if (Build.VERSION.SDK_INT >= 31 && (e instanceof ForegroundServiceStartNotAllowedException)) {
-                    Log.e(TAG, "Foreground service cannot be started: " + e.getMessage());
-                    return;
+                    reason = ForegroundPromotionResult.Reason.SYSTEM_REJECTED;
+                } else {
+                    reason = ForegroundPromotionResult.Reason.UNEXPECTED_ERROR;
                 }
-                Log.e(TAG, "An error occurred: " + e.getMessage());
+                Log.e(TAG, "Foreground service cannot be started: " + e.getMessage(), exc);
+                return new ForegroundPromotionResult.Rejected(reason, e);
             }
         }
+        Log.w(TAG, "Foreground promotion rejected because the app is in background");
+        return new ForegroundPromotionResult.Rejected(ForegroundPromotionResult.Reason.APP_IN_BACKGROUND, null, 2, null);
     }
 
-    private final boolean isDeviceOnline() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final boolean isDeviceOnline() {
         NetworkCapabilities activeNetworkCapabilities = activeNetworkCapabilities();
         return activeNetworkCapabilities != null && activeNetworkCapabilities.hasCapability(12);
     }
 
-    private final boolean isDeviceNetworkValidated() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final boolean isDeviceNetworkValidated() {
         NetworkCapabilities activeNetworkCapabilities = activeNetworkCapabilities();
         return activeNetworkCapabilities != null && activeNetworkCapabilities.hasCapability(16);
     }
@@ -658,21 +1017,47 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     private final Notification createNotification(boolean z) {
+        String str;
         Intent intent;
+        UpdateTransferProgressSnapshot snapshot = this.transferProgress.snapshot();
+        ArchiveInstallerPhase visibleArchiveInstallerPhase = visibleArchiveInstallerPhase();
+        switch (visibleArchiveInstallerPhase == null ? -1 : WhenMappings.$EnumSwitchMapping$0[visibleArchiveInstallerPhase.ordinal()]) {
+            case -1:
+            case 6:
+                str = "Осталось времени: " + timeLeft();
+                break;
+            case 0:
+            default:
+                throw new NoWhenBranchMatchedException();
+            case 1:
+                str = getString(R.string.archive_phase_waiting_for_network);
+                break;
+            case 2:
+                str = getString(R.string.archive_phase_verifying);
+                break;
+            case 3:
+                str = getString(R.string.archive_phase_extracting);
+                break;
+            case 4:
+            case 5:
+                str = getString(R.string.archive_phase_installing);
+                break;
+        }
+        Intrinsics.checkNotNull(str);
         Intent launchIntentForPackage = getPackageManager().getLaunchIntentForPackage(getPackageName());
         Intent intent2 = null;
         if (launchIntentForPackage != null && (intent = launchIntentForPackage.setPackage(null)) != null) {
             intent2 = intent.setFlags(270532608);
         }
         UpdateService updateService = this;
-        Notification build = new NotificationCompat.Builder(updateService, UPDATE_SERVICE_CHANNEL_ID).setContentTitle(getString(R.string.update)).setContentText("Осталось времени: " + timeLeft()).setSmallIcon(R.mipmap.ic_launcher_foreground).setContentIntent(PendingIntent.getActivity(updateService, 0, intent2, 67108864)).setProgress((int) (this.mTotalLength / 1024), (int) (this.mDownloadedLength / 1024), z).build();
+        Notification build = new NotificationCompat.Builder(updateService, UPDATE_SERVICE_CHANNEL_ID).setContentTitle(getString(R.string.update)).setContentText(str).setSmallIcon(R.mipmap.ic_launcher_foreground).setContentIntent(PendingIntent.getActivity(updateService, 0, intent2, 67108864)).setProgress((int) (snapshot.getTotalBytes() / 1024), (int) (snapshot.getDisplayedDownloadedBytes() / 1024), z).build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         return build;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void stopForegroundService() {
+    private final void stopForegroundService() {
         Log.i(TAG, "stopForegroundService");
+        this.foregroundServiceActive = false;
         stopForeground(true);
         stopForeground(1);
         stopSelf();
@@ -705,108 +1090,196 @@ public final class UpdateService extends Hilt_UpdateService {
     @Override // android.app.Service
     public void onDestroy() {
         Log.i(TAG, "onDestroy");
+        releaseServiceResources();
+        super.onDestroy();
     }
 
     @Override // android.app.Service
     public void onTaskRemoved(Intent intent) {
         Log.i(TAG, "onTaskRemoved");
+        releaseServiceResources();
         stopSelf();
-        System.exit(0);
-        throw new RuntimeException("System.exit returned normally, while it was supposed to halt JVM.");
+        super.onTaskRemoved(intent);
     }
 
-    public final void checkUpdate(String server) {
-        Intrinsics.checkNotNullParameter(server, "server");
-        Log.i(TAG, "checkUpdate: requesting server for update json");
-        startForegroundService();
-        setUpdateStatus(UpdateStatus.CheckUpdate);
-        RequestQueue sharedRequestQueue = getSharedRequestQueue();
-        this.mLastOperationStatus = Errno.NoError;
-        if (server.length() == 0) {
-            logDownloadError$default(this, DownloadErrorEvent.GAME_UPDATE_SERVER_EMPTY, null, null, 6, null);
-            this.mLastOperationStatus = Errno.UpdateServerUnreachable;
-            Message obtain = Message.obtain(this.mInHandler, 0);
-            obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-            obtain.replyTo = this.mMessenger;
-            Messenger messenger = this.mActivityMessenger;
-            if (messenger != null) {
-                messenger.send(obtain);
+    private final void releaseServiceResources() {
+        this.foregroundServiceActive = false;
+        this.serviceAlive.set(false);
+        this.archiveNetworkPending.set(false);
+        this.archiveInstallerPhase.set(null);
+        this.updateOperationCoordinator.invalidate();
+        ArchiveUpdateServiceFlow archiveUpdateServiceFlow = this.archiveUpdateFlow;
+        if (archiveUpdateServiceFlow != null) {
+            if (archiveUpdateServiceFlow == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("archiveUpdateFlow");
+                archiveUpdateServiceFlow = null;
             }
-            Log.w(TAG, "Send message server unreachable " + obtain);
-            stopForegroundService();
+            archiveUpdateServiceFlow.cancel();
+        }
+        LauncherUpdateServiceFlow launcherUpdateServiceFlow = this.launcherUpdateFlow;
+        if (launcherUpdateServiceFlow != null) {
+            if (launcherUpdateServiceFlow == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("launcherUpdateFlow");
+                launcherUpdateServiceFlow = null;
+            }
+            launcherUpdateServiceFlow.cancelApkDownload();
+        }
+        CoroutineScopeKt.cancel$default(this.serviceScope, null, 1, null);
+        this.mainHandler.removeCallbacksAndMessages(null);
+        IncomingHandler incomingHandler = this.mInHandler;
+        if (incomingHandler != null) {
+            incomingHandler.removeCallbacksAndMessages(null);
+        }
+        this.mInHandler = null;
+        this.mMessenger = null;
+        this.mActivityMessenger = null;
+        HandlerThread handlerThread = this.serviceHandlerThread;
+        if (handlerThread != null) {
+            handlerThread.quitSafely();
+        }
+        this.serviceHandlerThread = null;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void requestCheckUpdate() {
+        FileServers.INSTANCE.refreshGameServers();
+        GameUpdateServiceFlow gameUpdateServiceFlow = this.gameUpdateFlow;
+        if (gameUpdateServiceFlow == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("gameUpdateFlow");
+            gameUpdateServiceFlow = null;
+        }
+        gameUpdateServiceFlow.requestCheck();
+    }
+
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public Long beginGameCheckOperation(boolean z) {
+        return beginUpdateOperation(gameCheckOperationKind(z));
+    }
+
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public boolean isCurrentGameCheckOperation(boolean z, long j) {
+        return isCurrentUpdateOperation(gameCheckOperationKind(z), j);
+    }
+
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public void finishGameCheckOperation(boolean z, long j) {
+        finishUpdateOperation(gameCheckOperationKind(z), j);
+    }
+
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public void onGameCheckStarted(boolean z) {
+        Log.i(TAG, "checkUpdate: requesting server for update json");
+        startForegroundService$default(this, false, 1, null);
+        setUpdateStatus(UpdateStatus.CheckUpdate);
+        this.mLastOperationStatus = Errno.NoError;
+    }
+
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public void onGameMetadataLoaded(boolean z, String response) {
+        Intrinsics.checkNotNullParameter(response, "response");
+        if (z) {
             return;
         }
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda15
-            @Override // com.android.volley.Response.Listener
-            public final void onResponse(Object obj) {
-                UpdateService.checkUpdate$lambda$0(UpdateService.this, (String) obj);
-            }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
-            @Override // com.android.volley.Response.ErrorListener
-            public final void onErrorResponse(VolleyError volleyError) {
-                UpdateService.checkUpdate$lambda$1(UpdateService.this, volleyError);
-            }
-        });
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
-        stringRequest.setShouldCache(false);
-        sharedRequestQueue.add(stringRequest);
-        Log.v(TAG, "Add to queue " + stringRequest);
+        setUpdateStatus(UpdateStatus.CheckFiles);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void checkUpdate$lambda$0(UpdateService updateService, final String str) {
-        final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                JSONArray checkUpdate$lambda$0$0;
-                checkUpdate$lambda$0$0 = UpdateService.checkUpdate$lambda$0$0(jSONObject, str, (String) obj);
-                return checkUpdate$lambda$0$0;
-            }
-        }.invoke("files");
-        updateService.mDataInfo = jSONArray;
-        Log.v(TAG, "mDataInfo " + jSONArray);
-        updateService.mUpdateFiles = new ArrayList();
-        updateService.mUpdateFilesNeedSize = 0L;
-        updateService.setUpdateStatus(UpdateStatus.CheckFiles);
-        BuildersKt__Builders_commonKt.launch$default(GlobalScope.INSTANCE, Dispatchers.getIO(), null, new UpdateService$checkUpdate$stringRequest$1$1(updateService, null), 2, null);
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public void onGameCheckMirrorRetry(String server, String source) {
+        Intrinsics.checkNotNullParameter(server, "server");
+        Intrinsics.checkNotNullParameter(source, "source");
+        setUpdateStatus(UpdateStatus.CheckUpdate);
+        Log.w(TAG, "Retry " + source + " from mirror: " + server);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final JSONArray checkUpdate$lambda$0$0(JSONObject jSONObject, String str, String str2) {
-        JSONArray jSONArray = jSONObject.getJSONObject("data").getJSONArray("data");
-        int length = jSONArray.length();
-        for (int i = 0; i < length; i++) {
-            if (Intrinsics.areEqual(jSONArray.getJSONObject(i).getString("name"), str2)) {
-                JSONArray jSONArray2 = jSONArray.getJSONObject(i).getJSONArray("data");
-                Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
-                return jSONArray2;
-            }
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public void completeGameCheckServerEmpty(boolean z) {
+        if (z) {
+            notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_SERVER_EMPTY);
+        } else {
+            notifyGameUpdateCheckUnreachable$default(this, UpdateAnalyticsErrorEvent.GAME_UPDATE_SERVER_EMPTY, false, false, null, 8, null);
         }
-        throw new Exception("JSON Corrupted " + str);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void checkUpdate$lambda$1(UpdateService updateService, VolleyError volleyError) {
-        FileServers.INSTANCE.currentServerIsUnreachable();
-        logDownloadError$default(updateService, DownloadErrorEvent.GAME_UPDATE_REQUEST_FAILED, null, null, 6, null);
-        updateService.mLastOperationStatus = Errno.UpdateServerUnreachable;
-        updateService.setUpdateStatus(UpdateStatus.Undefined);
-        Message obtain = Message.obtain(updateService.mInHandler, 0);
-        obtain.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
-        obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
-        obtain.replyTo = updateService.mMessenger;
-        Messenger messenger = updateService.mActivityMessenger;
-        if (messenger != null) {
-            messenger.send(obtain);
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public void completeGameCheckMetadataFailed(boolean z, String detail) {
+        Intrinsics.checkNotNullParameter(detail, "detail");
+        Log.w(TAG, "Game metadata request failed: " + detail);
+        if (z) {
+            notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED);
+        } else {
+            notifyGameUpdateCheckUnreachable$default(this, UpdateAnalyticsErrorEvent.GAME_UPDATE_REQUEST_FAILED, true, false, detail, 4, null);
         }
-        Log.w(TAG, "Send message server unreachable " + obtain);
-        updateService.stopForegroundService();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final boolean isGameDataUpdateExists() {
-        return !this.mUpdateFiles.isEmpty();
+    @Override // com.arizona.launcher.GameUpdateServiceHost
+    public void completePreparedGameCheck(boolean z, boolean z2) {
+        if (!z) {
+            notifyGameUpdateCheckCompleted(z2);
+        } else if (z2) {
+            updateGameData();
+        } else {
+            notifyArchiveUpdateFailure$default(this, "archive update check is blocked", this.mLastOperationStatus, null, null, null, 28, null);
+        }
+    }
+
+    private final UpdateOperationKind gameCheckOperationKind(boolean z) {
+        if (z) {
+            return UpdateOperationKind.CHECK_AND_DOWNLOAD;
+        }
+        return UpdateOperationKind.CHECK_UPDATE;
+    }
+
+    private final void notifyGameUpdateCheckCompleted(boolean z) {
+        Message obtain = Message.obtain(this.mInHandler, 0);
+        obtain.getData().putBoolean("status", z);
+        obtain.getData().putBoolean(UpdateServiceContract.BundleKey.IS_GAME_DATA_UPDATE_EXISTS, isGameDataUpdateExists());
+        obtain.getData().putLong(UpdateServiceContract.BundleKey.TOTAL_SIZE, this.archiveSession.snapshot().getStorageRequirements().getDownloadBytes());
+        obtain.getData().putSerializable("errno", this.mLastOperationStatus);
+        obtain.replyTo = this.mMessenger;
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
+        Log.i(TAG, "Send message check update " + obtain);
+        stopForegroundService();
+    }
+
+    static /* synthetic */ void notifyGameUpdateCheckUnreachable$default(UpdateService updateService, UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, boolean z, boolean z2, String str, int i, Object obj) {
+        if ((i & 4) != 0) {
+            z2 = true;
+        }
+        if ((i & 8) != 0) {
+            str = null;
+        }
+        updateService.notifyGameUpdateCheckUnreachable(updateAnalyticsErrorEvent, z, z2, str);
+    }
+
+    private final void notifyGameUpdateCheckUnreachable(UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, boolean z, boolean z2, String str) {
+        UpdateAnalyticsReporter updateAnalyticsReporter = this.analyticsReporter;
+        if (updateAnalyticsReporter == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+            updateAnalyticsReporter = null;
+        }
+        UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter, updateAnalyticsErrorEvent, null, null, 6, null);
+        this.mLastOperationStatus = Errno.UpdateServerUnreachable;
+        if (z2) {
+            setUpdateStatus(UpdateStatus.Undefined);
+        }
+        Message obtain = Message.obtain(this.mInHandler, 0);
+        if (z) {
+            obtain.getData().putBoolean("status", false);
+        }
+        obtain.getData().putSerializable("errno", this.mLastOperationStatus);
+        obtain.replyTo = this.mMessenger;
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
+        if (str == null) {
+            str = "";
+        }
+        Log.w(TAG, "Send message server unreachable " + obtain + " " + str);
+        stopForegroundService();
+    }
+
+    private final boolean isGameDataUpdateExists() {
+        return this.archiveSession.snapshot().getHasPendingWork();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -817,817 +1290,748 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     public final void updateGameData() {
-        if (isGameDataUpdateExists()) {
-            Log.d(TAG, "updateGameData: game data update exists, downloading game data...");
-            setUpdateStatus(UpdateStatus.DownloadGameData);
-            downloadGameData();
+        ArchiveUpdateServiceFlow archiveUpdateServiceFlow = this.archiveUpdateFlow;
+        if (archiveUpdateServiceFlow == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("archiveUpdateFlow");
+            archiveUpdateServiceFlow = null;
+        }
+        archiveUpdateServiceFlow.requestDownload();
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public boolean isArchiveServiceAlive() {
+        return this.serviceAlive.get();
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public UpdateOperationSnapshot activeUpdateOperation() {
+        return this.updateOperationCoordinator.current();
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public Long beginArchiveOperation() {
+        return beginUpdateOperation(UpdateOperationKind.ARCHIVE_UPDATE);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public boolean isCurrentArchiveOperation(long j) {
+        return isCurrentUpdateOperation(UpdateOperationKind.ARCHIVE_UPDATE, j);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void finishArchiveOperation(long j) {
+        finishUpdateOperation(UpdateOperationKind.ARCHIVE_UPDATE, j);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void onArchiveRequestCoalesced(boolean z, UpdateOperationKind updateOperationKind) {
+        if (z) {
+            Log.i(TAG, "Archive game-data update already active; coalescing duplicate request");
+            updateStatusInfoAndProgress(isArchiveProgressIndeterminate());
             return;
         }
-        Log.d(TAG, "updateGameData: game update status: undefined");
-        setUpdateStatus(UpdateStatus.Undefined);
-        finishFirstLauncherStartErrorSession();
-        Message obtain = Message.obtain(this.mInHandler, 2);
-        obtain.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, true);
-        obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-        obtain.replyTo = this.mMessenger;
-        Messenger messenger = this.mActivityMessenger;
-        if (messenger != null) {
-            messenger.send(obtain);
+        Log.i(TAG, "Coalesce game-data request while " + updateOperationKind + " is active");
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void onArchiveStartupCorrupt() {
+        notifyArchiveUpdateFailure$default(this, "archive journal is corrupt", Errno.ArchiveRecoveryBlocked, null, null, null, 28, null);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void requestArchiveManifestRefresh(String reason, boolean z) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        if (z) {
+            Log.w(TAG, reason);
+        } else {
+            Log.i(TAG, reason);
         }
+        requestCheckUpdateAndDownload$default(this, false, 1, null);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void setArchiveBenchmarkMode(String mode) {
+        Intrinsics.checkNotNullParameter(mode, "mode");
+        benchmarkObservedDownloadMode = mode;
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void onArchiveDownloadSelected() {
+        Log.d(TAG, "updateGameData: game data update exists, downloading game data...");
+        setUpdateStatus(UpdateStatus.DownloadGameData);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void onArchiveNoWork() {
+        Log.d(TAG, "updateGameData: game update status: undefined");
+        this.archiveNetworkPending.set(false);
+        UpdateAnalyticsReporter updateAnalyticsReporter = null;
+        this.archiveInstallerPhase.set(null);
+        setUpdateStatus(UpdateStatus.Undefined);
+        UpdateAnalyticsReporter updateAnalyticsReporter2 = this.analyticsReporter;
+        if (updateAnalyticsReporter2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+        } else {
+            updateAnalyticsReporter = updateAnalyticsReporter2;
+        }
+        updateAnalyticsReporter.finishFirstLaunchSession();
+        Message obtain = Message.obtain(this.mInHandler, 2);
+        obtain.getData().putBoolean("status", true);
+        obtain.getData().putSerializable("errno", this.mLastOperationStatus);
+        obtain.replyTo = this.mMessenger;
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
         Log.v(TAG, "Send message game data updated " + obtain);
+        if (this.mLastOperationStatus == Errno.NoError) {
+            stopForegroundService();
+        }
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public boolean hasEnoughSpaceForArchive(ArchiveStorageRequirementsSnapshot requirements) {
+        Intrinsics.checkNotNullParameter(requirements, "requirements");
+        return this.archiveStorageSpaceChecker.hasEnoughSpace(getExternalFilesDir(null), getExternalCacheDir(), requirements);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public ArchiveForegroundPromotion promoteArchiveForeground() {
+        ForegroundPromotionResult startForegroundService$default = startForegroundService$default(this, false, 1, null);
+        if (Intrinsics.areEqual(startForegroundService$default, ForegroundPromotionResult.Ready.INSTANCE)) {
+            return ArchiveForegroundPromotion.Ready.INSTANCE;
+        }
+        if (!(startForegroundService$default instanceof ForegroundPromotionResult.Rejected)) {
+            throw new NoWhenBranchMatchedException();
+        }
+        return new ArchiveForegroundPromotion.Rejected(((ForegroundPromotionResult.Rejected) startForegroundService$default).getReason().name());
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void beginArchiveProgress(long j, boolean z) {
+        ArchiveInstallerPhase archiveInstallerPhase;
+        this.mLastOperationStatus = Errno.NoError;
+        this.transferProgress.beginArchive(j);
+        this.archiveNetworkPending.set(j > 0 && !z);
+        AtomicReference<ArchiveInstallerPhase> atomicReference = this.archiveInstallerPhase;
+        if (z) {
+            archiveInstallerPhase = ArchiveInstallerPhase.COMMITTING;
+        } else {
+            archiveInstallerPhase = ArchiveInstallerPhase.DOWNLOADING;
+        }
+        atomicReference.set(archiveInstallerPhase);
+        updateStatusInfoAndProgress(z);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public ArchivePackageUpdater createArchivePackageUpdater() {
+        return ArchivePackageUpdater.Companion.create(this, isGameDownloadRetryEnabled());
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public ArchiveMirrorExecutionCoordinator createArchiveMirrorCoordinator(long j) {
+        return archiveMirrorExecutionCoordinator(j);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public Object finalizeArchiveMetadata(ArchiveManifest archiveManifest, Continuation<? super ArchiveMetadataFinalizationResult> continuation) {
+        Log.i(TAG, "Archive payload committed; reconciling archive entry metadata");
+        ArchiveStateMaintenance archiveStateMaintenance = this.archiveStateMaintenance;
+        if (archiveStateMaintenance == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("archiveStateMaintenance");
+            archiveStateMaintenance = null;
+        }
+        return archiveStateMaintenance.finalizePublishedMetadata(archiveManifest, continuation);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void expandArchiveRuntimeRequirements(ArchiveStorageRequirementsSnapshot requirements) {
+        Intrinsics.checkNotNullParameter(requirements, "requirements");
+        UpdateTransferProgressSnapshot expandTotalBytes = this.transferProgress.expandTotalBytes(requirements.getDownloadBytes());
+        if (expandTotalBytes.getTotalBytes() > expandTotalBytes.getDownloadedBytes()) {
+            this.archiveNetworkPending.set(true);
+        }
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void recordArchiveExecutionException(Exception error) {
+        Intrinsics.checkNotNullParameter(error, "error");
+        Exception exc = error;
+        Log.e(TAG, "Archive updater crashed", exc);
+        FirebaseCrashlytics.getInstance().recordException(exc);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void recordArchiveFinalizationException(Exception error) {
+        Intrinsics.checkNotNullParameter(error, "error");
+        Log.e(TAG, "Unable to durably finalize archive install", error);
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void completeArchiveSuccess() {
+        Log.i(TAG, "Archive entry metadata reconciliation complete");
+        this.mLastOperationStatus = Errno.NoError;
+        resetGameStatus();
+        this.archiveNetworkPending.set(false);
+        UpdateAnalyticsReporter updateAnalyticsReporter = null;
+        this.archiveInstallerPhase.set(null);
+        setUpdateStatus(UpdateStatus.Undefined);
+        UpdateAnalyticsReporter updateAnalyticsReporter2 = this.analyticsReporter;
+        if (updateAnalyticsReporter2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+        } else {
+            updateAnalyticsReporter = updateAnalyticsReporter2;
+        }
+        updateAnalyticsReporter.finishFirstLaunchSession();
+        Message obtain = Message.obtain(this.mInHandler, 2);
+        obtain.getData().putBoolean("status", true);
+        obtain.getData().putSerializable("errno", this.mLastOperationStatus);
+        obtain.replyTo = this.mMessenger;
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
+        Log.i(TAG, "Archive game-data transaction committed");
+        stopForegroundService();
+    }
+
+    @Override // com.arizona.launcher.ArchiveUpdateServiceHost
+    public void completeArchiveFailure(ArchiveServiceFailure failure) {
+        Errno errno;
+        Intrinsics.checkNotNullParameter(failure, "failure");
+        this.archiveNetworkPending.set(false);
+        this.archiveInstallerPhase.set(null);
+        String detail = failure.getDetail();
+        int i = WhenMappings.$EnumSwitchMapping$1[failure.getKind().ordinal()];
+        if (i == 1) {
+            errno = Errno.ConnectionRefused;
+        } else if (i == 2) {
+            errno = Errno.CorruptedFilesFound;
+        } else if (i == 3) {
+            errno = Errno.InsufficientStorage;
+        } else if (i == 4) {
+            errno = Errno.ForegroundServiceUnavailable;
+        } else if (i != 5) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            errno = Errno.ArchiveRecoveryBlocked;
+        }
+        notifyArchiveUpdateFailure(detail, errno, failure.getFailureDetails(), failure.getRequiredFreeSpaceBytes(), failure.getOperationToken());
+    }
+
+    static /* synthetic */ Boolean archiveStorageUsesSingleDevice$default(UpdateService updateService, File file, File file2, int i, Object obj) {
+        if ((i & 1) != 0) {
+            file = updateService.getExternalFilesDir(null);
+        }
+        if ((i & 2) != 0) {
+            file2 = updateService.getExternalCacheDir();
+        }
+        return updateService.archiveStorageUsesSingleDevice(file, file2);
+    }
+
+    private final Boolean archiveStorageUsesSingleDevice(File file, File file2) {
+        return this.archiveStorageSpaceChecker.usesSingleStorageDevice(file, file2);
+    }
+
+    private final ArchiveMirrorExecutionCoordinator archiveMirrorExecutionCoordinator(final long j) {
+        ArchiveMirrorExecutionCoordinator.Companion companion = ArchiveMirrorExecutionCoordinator.Companion;
+        DurableArchiveStateStore durableArchiveStateStore = this.archiveStateStore;
+        if (durableArchiveStateStore == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("archiveStateStore");
+            durableArchiveStateStore = null;
+        }
+        return companion.create(durableArchiveStateStore, this.archiveSession, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return Integer.valueOf(UpdateService.archiveMirrorExecutionCoordinator$lambda$0());
+            }
+        }, new UpdateService$archiveMirrorExecutionCoordinator$2(this), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                boolean isCurrentUpdateOperation;
+                isCurrentUpdateOperation = UpdateService.this.isCurrentUpdateOperation(UpdateOperationKind.ARCHIVE_UPDATE, j);
+                return Boolean.valueOf(isCurrentUpdateOperation);
+            }
+        }, new UpdateService$archiveMirrorExecutionCoordinator$4(FileServers.INSTANCE), new UpdateService$archiveMirrorExecutionCoordinator$5(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return UpdateService.archiveMirrorExecutionCoordinator$lambda$2(UpdateService.this, (Function0) obj);
+            }
+        }, new ArchiveMirrorExecutionCallbacks() { // from class: com.arizona.launcher.UpdateService$archiveMirrorExecutionCoordinator$7
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
+            public void onRemainingBytesFallback(String str, Exception error) {
+                Intrinsics.checkNotNullParameter(error, "error");
+                if (str == null) {
+                    str = "";
+                }
+                Log.w("UPDATE_SERVICE", "Unable to recalculate archive bytes before mirror retry for package=" + str, error);
+            }
+
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
+            public void onMirrorProgressReset(long j2) {
+                UpdateTransferProgress updateTransferProgress;
+                AtomicBoolean atomicBoolean;
+                AtomicReference atomicReference;
+                updateTransferProgress = UpdateService.this.transferProgress;
+                updateTransferProgress.resetArchiveMirror(j2);
+                atomicBoolean = UpdateService.this.archiveNetworkPending;
+                atomicBoolean.set(j2 > 0);
+                atomicReference = UpdateService.this.archiveInstallerPhase;
+                atomicReference.set(ArchiveInstallerPhase.DOWNLOADING);
+                UpdateService.this.updateStatusInfoAndProgress(false);
+            }
+
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
+            public void onMirrorSelected(String server) {
+                Intrinsics.checkNotNullParameter(server, "server");
+                Log.w("UPDATE_SERVICE", "Retry archive transaction from the next mirror: " + server);
+            }
+
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
+            public void onPhase(ArchiveInstallerPhase phase, String str) {
+                AtomicReference atomicReference;
+                boolean isArchiveProgressIndeterminate;
+                Intrinsics.checkNotNullParameter(phase, "phase");
+                if (str == null) {
+                    str = "";
+                }
+                Log.i("UPDATE_SERVICE", "Archive phase=" + phase + " package=" + str);
+                atomicReference = UpdateService.this.archiveInstallerPhase;
+                atomicReference.set(phase);
+                UpdateService updateService = UpdateService.this;
+                isArchiveProgressIndeterminate = updateService.isArchiveProgressIndeterminate();
+                updateService.updateStatusInfoAndProgress(isArchiveProgressIndeterminate);
+            }
+
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
+            public void onDownloadProgress(long j2, long j3) {
+                AtomicBoolean atomicBoolean;
+                UpdateTransferProgress updateTransferProgress;
+                boolean isArchiveProgressIndeterminate;
+                long coerceAtLeast = RangesKt.coerceAtLeast(j3, 0L);
+                atomicBoolean = UpdateService.this.archiveNetworkPending;
+                atomicBoolean.set(coerceAtLeast > 0 && RangesKt.coerceAtLeast(j2, 0L) < coerceAtLeast);
+                updateTransferProgress = UpdateService.this.transferProgress;
+                updateTransferProgress.onArchiveProgress(j2, j3);
+                UpdateService updateService = UpdateService.this;
+                isArchiveProgressIndeterminate = updateService.isArchiveProgressIndeterminate();
+                updateService.updateStatusInfoAndProgress(isArchiveProgressIndeterminate);
+            }
+
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
+            public void onRuntimeRequirementsChanged(ArchiveStorageRequirementsSnapshot requirements) {
+                boolean isArchiveProgressIndeterminate;
+                Intrinsics.checkNotNullParameter(requirements, "requirements");
+                UpdateService.this.expandArchiveRuntimeRequirements(requirements);
+                long downloadBytes = requirements.getDownloadBytes();
+                Log.w("UPDATE_SERVICE", "Archive recovery expanded runtime requirements: download=" + downloadBytes + " required=" + requirements.getRequiredFreeSpaceBytes());
+                UpdateService updateService = UpdateService.this;
+                isArchiveProgressIndeterminate = updateService.isArchiveProgressIndeterminate();
+                updateService.updateStatusInfoAndProgress(isArchiveProgressIndeterminate);
+            }
+
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
+            public void onRetry(String packageId, int i, long j2, String failureSubtype, String str) {
+                UpdateAnalyticsReporter updateAnalyticsReporter;
+                Intrinsics.checkNotNullParameter(packageId, "packageId");
+                Intrinsics.checkNotNullParameter(failureSubtype, "failureSubtype");
+                Log.w("UPDATE_SERVICE", "Archive retry package=" + packageId + " attempt=" + i + " delayMs=" + j2 + " subtype=" + failureSubtype);
+                updateAnalyticsReporter = UpdateService.this.analyticsReporter;
+                if (updateAnalyticsReporter == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+                    updateAnalyticsReporter = null;
+                }
+                updateAnalyticsReporter.reportArchivePackageRetry(packageId, i, j2, failureSubtype, str);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final int archiveMirrorExecutionCoordinator$lambda$0() {
+        return FileServers.INSTANCE.getGame_servers().length;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit archiveMirrorExecutionCoordinator$lambda$2(UpdateService updateService, final Function0 block) {
+        Intrinsics.checkNotNullParameter(block, "block");
+        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
+            @Override // java.lang.Runnable
+            public final void run() {
+                Function0.this.invoke();
+            }
+        });
+        return Unit.INSTANCE;
+    }
+
+    static /* synthetic */ void notifyArchiveUpdateFailure$default(UpdateService updateService, String str, Errno errno, DownloadFailureDetails downloadFailureDetails, Long l, Long l2, int i, Object obj) {
+        if ((i & 2) != 0) {
+            errno = Errno.CorruptedFilesFound;
+        }
+        updateService.notifyArchiveUpdateFailure(str, errno, (i & 4) != 0 ? null : downloadFailureDetails, (i & 8) != 0 ? null : l, (i & 16) != 0 ? null : l2);
+    }
+
+    private final void notifyArchiveUpdateFailure(String str, Errno errno, DownloadFailureDetails downloadFailureDetails, Long l, Long l2) {
+        UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent;
+        if (l2 == null || isCurrentUpdateOperation(UpdateOperationKind.ARCHIVE_UPDATE, l2.longValue())) {
+            Log.e(TAG, "Archive updater failed: " + str);
+            this.mLastOperationStatus = errno;
+            this.mGameStatus.set(GameStatus.UpdateRequired);
+            setUpdateStatus(UpdateStatus.Undefined);
+            UpdateAnalyticsReporter updateAnalyticsReporter = this.analyticsReporter;
+            if (updateAnalyticsReporter == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+                updateAnalyticsReporter = null;
+            }
+            int i = WhenMappings.$EnumSwitchMapping$2[errno.ordinal()];
+            if (i == 1) {
+                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_DOWNLOAD_FAILED;
+            } else if (i == 2) {
+                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_STORAGE_INSUFFICIENT;
+            } else if (i == 3) {
+                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_FOREGROUND_UNAVAILABLE;
+            } else if (i == 4) {
+                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_RECOVERY_BLOCKED;
+            } else {
+                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_VALIDATION_FAILED;
+            }
+            updateAnalyticsReporter.reportError(updateAnalyticsErrorEvent, downloadFailureDetails, this.archiveSession.snapshot().getServer());
+            Message obtain = Message.obtain(this.mInHandler, 2);
+            obtain.getData().putBoolean("status", false);
+            obtain.getData().putSerializable("errno", this.mLastOperationStatus);
+            if (l != null) {
+                obtain.getData().putLong("needFreeSpaceSize", l.longValue());
+            }
+            obtain.replyTo = this.mMessenger;
+            Intrinsics.checkNotNull(obtain);
+            sendToActivity(obtain);
+            stopForegroundService();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\t\u0010\n\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000b\u001a\u00020\u0003HÆ\u0003J\u001d\u0010\f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0010\u001a\u00020\u0011HÖ\u0081\u0004J\n\u0010\u0012\u001a\u00020\u0013HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u0014"}, d2 = {"Lcom/arizona/launcher/UpdateService$ExpectedFile;", "", "size", "", "dateMillis", "<init>", "(JJ)V", "getSize", "()J", "getDateMillis", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    /* loaded from: classes3.dex */
-    public static final class ExpectedFile {
-        private final long dateMillis;
-        private final long size;
-
-        public static /* synthetic */ ExpectedFile copy$default(ExpectedFile expectedFile, long j, long j2, int i, Object obj) {
-            if ((i & 1) != 0) {
-                j = expectedFile.size;
-            }
-            if ((i & 2) != 0) {
-                j2 = expectedFile.dateMillis;
-            }
-            return expectedFile.copy(j, j2);
-        }
-
-        public final long component1() {
-            return this.size;
-        }
-
-        public final long component2() {
-            return this.dateMillis;
-        }
-
-        public final ExpectedFile copy(long j, long j2) {
-            return new ExpectedFile(j, j2);
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj instanceof ExpectedFile) {
-                ExpectedFile expectedFile = (ExpectedFile) obj;
-                return this.size == expectedFile.size && this.dateMillis == expectedFile.dateMillis;
-            }
-            return false;
-        }
-
-        public int hashCode() {
-            return (Long.hashCode(this.size) * 31) + Long.hashCode(this.dateMillis);
-        }
-
-        public String toString() {
-            long j = this.size;
-            return "ExpectedFile(size=" + j + ", dateMillis=" + this.dateMillis + ")";
-        }
-
-        public ExpectedFile(long j, long j2) {
-            this.size = j;
-            this.dateMillis = j2;
-        }
-
-        public final long getDateMillis() {
-            return this.dateMillis;
-        }
-
-        public final long getSize() {
-            return this.size;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    static /* synthetic */ Map buildExpectedFileInfo$default(UpdateService updateService, JSONArray jSONArray, String str, String str2, Map map, int i, Object obj) {
-        if ((i & 2) != 0) {
-            str = "";
-        }
-        if ((i & 4) != 0) {
-            str2 = "";
-        }
-        if ((i & 8) != 0) {
-            map = new LinkedHashMap();
-        }
-        return updateService.buildExpectedFileInfo(jSONArray, str, str2, map);
-    }
-
-    private final Map<String, ExpectedFile> buildExpectedFileInfo(JSONArray jSONArray, String str, String str2, Map<String, ExpectedFile> map) {
-        int length = jSONArray.length();
-        for (int i = 0; i < length; i++) {
-            JSONObject jSONObject = jSONArray.getJSONObject(i);
-            String string = jSONObject.getString("type");
-            if (string != null) {
-                int hashCode = string.hashCode();
-                if (hashCode != 99469) {
-                    if (hashCode == 112800) {
-                        if (!string.equals("res")) {
-                        }
-                        map.put(str2 + str + "/" + jSONObject.getString("name"), new ExpectedFile(jSONObject.getLong("size"), jSONObject.optLong("date_change", 0L) * 1000));
-                    } else if (hashCode == 3143036) {
-                        if (!string.equals(UtilsKt.SCHEME_FILE)) {
-                        }
-                        map.put(str2 + str + "/" + jSONObject.getString("name"), new ExpectedFile(jSONObject.getLong("size"), jSONObject.optLong("date_change", 0L) * 1000));
-                    }
-                } else if (string.equals("dir")) {
-                    String string2 = jSONObject.getString("name");
-                    JSONArray jSONArray2 = jSONObject.getJSONArray("data");
-                    Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
-                    buildExpectedFileInfo(jSONArray2, str + "/" + string2, str2, map);
-                }
-            }
-        }
-        return map;
-    }
-
-    private final String hostOf(String str) {
-        String str2 = str;
-        if (str2 == null || StringsKt.isBlank(str2)) {
-            return null;
-        }
-        String substringAfter = StringsKt.substringAfter(str, "://", "");
-        if (substringAfter.length() == 0) {
-            return null;
-        }
-        String lowerCase = StringsKt.substringBefore$default(StringsKt.substringBefore$default(substringAfter, '/', (String) null, 2, (Object) null), (char) AbstractJsonLexerKt.COLON, (String) null, 2, (Object) null).toLowerCase(Locale.ROOT);
-        Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
-        String str3 = lowerCase;
-        return StringsKt.isBlank(str3) ? null : str3;
-    }
-
-    private final boolean sameHost(String str, String str2) {
-        String hostOf;
-        String hostOf2 = hostOf(str);
-        if (hostOf2 == null || (hostOf = hostOf(str2)) == null) {
-            return false;
-        }
-        return Intrinsics.areEqual(hostOf2, hostOf);
-    }
-
-    private final void downloadGameData() {
-        String str;
-        File externalFilesDir;
-        Map map;
-        int i;
-        ExpectedFile expectedFile;
-        String str2;
-        Log.i(TAG, "Downloading game data...");
-        startForegroundService();
-        DownloadContext.Builder commit = new DownloadContext.QueueSet().setMinIntervalMillisCallbackProcess(100).commit();
-        long j = 0;
-        this.mDownloadedLength = 0L;
-        this.lastDownloadedBytes = 0L;
-        this.mTotalLength = 0L;
-        String currentServer = FileServers.INSTANCE.getCurrentServer();
-        this.mLastOperationStatus = Errno.NoError;
-        if (currentServer.length() == 0) {
-            logDownloadError$default(this, DownloadErrorEvent.GAME_DATA_SERVER_EMPTY, null, null, 6, null);
-            this.mLastOperationStatus = Errno.UpdateServerUnreachable;
-            Message obtain = Message.obtain(this.mInHandler, 2);
-            obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-            obtain.replyTo = this.mMessenger;
-            Messenger messenger = this.mActivityMessenger;
-            if (messenger != null) {
-                messenger.send(obtain);
-            }
-            Log.w(TAG, "Server unreachable: " + currentServer);
-            stopForegroundService();
-            return;
-        }
-        final ArrayList<Integer> arrayList = new ArrayList<>();
-        if (this.mUpdateFiles.isEmpty()) {
-            logDownloadError$default(this, DownloadErrorEvent.GAME_DATA_FILE_LIST_EMPTY, null, null, 6, null);
-            this.mLastOperationStatus = Errno.ConnectionRefused;
-            Message obtain2 = Message.obtain(this.mInHandler, 2);
-            obtain2.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-            obtain2.replyTo = this.mMessenger;
-            Messenger messenger2 = this.mActivityMessenger;
-            if (messenger2 != null) {
-                messenger2.send(obtain2);
-            }
-            Log.w(TAG, "Server unreachable: " + currentServer);
-            stopForegroundService();
-            return;
-        }
-        Map buildExpectedFileInfo$default = buildExpectedFileInfo$default(this, this.mDataInfo, null, null, null, 14, null);
-        final HashMap hashMap = new HashMap();
-        int size = this.mUpdateFiles.size();
-        int i2 = 0;
-        while (i2 < size) {
-            String str3 = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i2);
-            if (str3 == null || (str = (String) CollectionsKt.getOrNull(this.mUpdateFiles, i2)) == null) {
-                return;
-            }
-            long j2 = j;
-            String str4 = currentServer + "data/files" + str3;
-            File file = new File((getExternalFilesDir(null) != null ? externalFilesDir.getPath() : null) + str);
-            ExpectedFile expectedFile2 = (ExpectedFile) buildExpectedFileInfo$default.get(str3);
-            File parentFile = file.getParentFile();
-            if (parentFile == null || parentFile.exists() || parentFile.mkdirs()) {
-                map = buildExpectedFileInfo$default;
-            } else {
-                map = buildExpectedFileInfo$default;
-                Log.e(TAG, "Error make directory " + parentFile.getAbsolutePath());
-            }
-            ArrayList<Integer> notFinishedTaskIdList = notFinishedTaskIdList();
-            Long valueOf = expectedFile2 != null ? Long.valueOf(expectedFile2.getSize()) : null;
-            Iterator<Integer> it = notFinishedTaskIdList.iterator();
-            Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
-            boolean z = false;
-            while (true) {
-                Iterator<Integer> it2 = it;
-                if (!it.hasNext()) {
-                    break;
-                }
-                Integer next = it2.next();
-                int i3 = size;
-                Intrinsics.checkNotNullExpressionValue(next, "next(...)");
-                BreakpointInfo breakpointInfo = OkDownload.with().breakpointStore().get(next.intValue());
-                if (breakpointInfo == null || !Intrinsics.areEqual(breakpointInfo.getFile(), file)) {
-                    i = i2;
-                    expectedFile = expectedFile2;
-                    str2 = currentServer;
-                } else {
-                    if (sameHost(breakpointInfo.getUrl(), str4) && valueOf != null && breakpointInfo.getTotalLength() == valueOf.longValue() && file.exists()) {
-                        long totalLength = breakpointInfo.getTotalLength();
-                        long length = file.length();
-                        if (1 <= length && length <= totalLength) {
-                            it = it2;
-                            size = i3;
-                            z = true;
-                        }
-                    }
-                    i = i2;
-                    expectedFile = expectedFile2;
-                    str2 = currentServer;
-                    Log.w(TAG, "Discard partial " + str + " (bp=" + breakpointInfo.getUrl() + " now=" + str4 + ", bpLen=" + breakpointInfo.getTotalLength() + " expected=" + valueOf + ")");
-                }
-                it = it2;
-                size = i3;
-                i2 = i;
-                expectedFile2 = expectedFile;
-                currentServer = str2;
-            }
-            int i4 = size;
-            int i5 = i2;
-            ExpectedFile expectedFile3 = expectedFile2;
-            String str5 = currentServer;
-            if (!z && !deleteExistingDownloadTarget(file)) {
-                this.mLastOperationStatus = Errno.CorruptedFilesFound;
-                resetGameStatus();
-                setUpdateStatus(UpdateStatus.Undefined);
-                logDownloadError$default(this, DownloadErrorEvent.GAME_DATA_DELETE_TARGET_FAILED, null, null, 6, null);
-                Message obtain3 = Message.obtain(this.mInHandler, 2);
-                obtain3.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
-                obtain3.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-                obtain3.replyTo = this.mMessenger;
-                Messenger messenger3 = this.mActivityMessenger;
-                if (messenger3 != null) {
-                    messenger3.send(obtain3);
-                }
-                stopForegroundService();
-                return;
-            }
-            DownloadTask build = new DownloadTask.Builder(str4, file).setPriority(5).setMinIntervalMillisCallbackProcess(300).setConnectionCount(1).setPreAllocateLength(true).build();
-            commit.bindSetTask(build);
-            Log.v(TAG, "Create download " + build);
-            arrayList.add(Integer.valueOf(build.getId()));
-            if (expectedFile3 != null) {
-                ExpectedFile expectedFile4 = expectedFile3.getDateMillis() > j2 ? expectedFile3 : null;
-                if (expectedFile4 != null) {
-                    hashMap.put(Integer.valueOf(build.getId()), Long.valueOf(expectedFile4.getDateMillis()));
-                }
-            }
-            i2 = i5 + 1;
-            j = j2;
-            buildExpectedFileInfo$default = map;
-            size = i4;
-            currentServer = str5;
-        }
-        this.mDownloadContext = commit.build();
-        this.mSpeedCalculator = new SpeedCalculator();
-        saveDownloadTaskIdList(arrayList);
-        this.mLastOperationStatus = Errno.NoError;
-        long j3 = this.mUpdateFilesNeedSize;
-        this.mTotalLength = j3;
-        Log.v(TAG, "Get contentLength " + j3);
-        this.mainHandler.postDelayed(this.checkTimeoutRunnable, 15000L);
-        DownloadContext downloadContext = this.mDownloadContext;
-        if (downloadContext != null) {
-            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
-                @Override // kotlin.jvm.functions.Function4
-                public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    return UpdateService.downloadGameData$lambda$2((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
-                }
-            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
-                @Override // kotlin.jvm.functions.Function3
-                public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    return UpdateService.downloadGameData$lambda$3(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
-                }
-            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
-                @Override // kotlin.jvm.functions.Function4
-                public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    return UpdateService.downloadGameData$lambda$4(UpdateService.this, arrayList, hashMap, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
-                }
-            }, 3, null), false);
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit downloadGameData$lambda$2(DownloadTask connectTask, int i, long j, long j2) {
-        Intrinsics.checkNotNullParameter(connectTask, "connectTask");
-        Log.v(TAG, "Downloading " + connectTask);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit downloadGameData$lambda$3(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
-        Intrinsics.checkNotNullParameter(progressTask, "progressTask");
-        updateService.calcSpeed(progressTask, j);
-        progressTask.addTag(2, Long.valueOf(j));
-        updateService.updateStatusInfoAndProgress(false);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r14v1, types: [com.arizona.launcher.downloader.FilesChek] */
-    /* JADX WARN: Type inference failed for: r1v5, types: [com.arizona.launcher.downloader.FilesChek] */
-    public static final Unit downloadGameData$lambda$4(UpdateService updateService, ArrayList arrayList, HashMap hashMap, DownloadTask task, EndCause endCause, Exception exc, Listener1Assist.Listener1Model model) {
-        DownloadErrorEvent downloadErrorEvent;
-        Intrinsics.checkNotNullParameter(task, "task");
-        Intrinsics.checkNotNullParameter(endCause, "endCause");
-        Intrinsics.checkNotNullParameter(model, "model");
-        Log.v(TAG, "End download " + task + " " + endCause + " " + exc + " " + model);
-        if (endCause != EndCause.COMPLETED && endCause != EndCause.SAME_TASK_BUSY) {
-            updateService.mainHandler.removeCallbacks(updateService.checkTimeoutRunnable);
-            Log.w(TAG, "Status operation after error " + updateService.mLastOperationStatus);
-            if (updateService.mLastOperationStatus == Errno.ConnectionRefused) {
-                Log.v(TAG, "Repeat already requested");
-                return Unit.INSTANCE;
-            }
-            Log.v(TAG, "Request repeat download");
-            if (updateService.isDeviceOnline()) {
-                FileServers.INSTANCE.currentServerIsUnreachable();
-            } else {
-                Log.w(TAG, "Device offline, keep current file server");
-            }
-            int i = WhenMappings.$EnumSwitchMapping$0[endCause.ordinal()];
-            if (i == 1) {
-                downloadErrorEvent = DownloadErrorEvent.GAME_DATA_DOWNLOAD_FAILED;
-            } else if (i == 2) {
-                downloadErrorEvent = DownloadErrorEvent.GAME_DATA_DOWNLOAD_CANCELED;
-            } else {
-                downloadErrorEvent = DownloadErrorEvent.GAME_DATA_DOWNLOAD_NOT_COMPLETED;
-            }
-            updateService.logDownloadError(downloadErrorEvent, endCause == EndCause.ERROR ? DownloadFailureClassifier.INSTANCE.classify(exc) : null, task.getUrl());
-            updateService.mLastOperationStatus = Errno.ConnectionRefused;
-            DownloadDispatcher downloadDispatcher = OkDownload.with().downloadDispatcher();
-            Intrinsics.checkNotNullExpressionValue(downloadDispatcher, "downloadDispatcher(...)");
-            synchronized (downloadDispatcher) {
-                OkDownload.with().downloadDispatcher().cancelAll();
-                Unit unit = Unit.INSTANCE;
-            }
-            Log.v(TAG, "Cancel all download");
-            DownloadContext downloadContext = updateService.mDownloadContext;
-            if (downloadContext != null) {
-                downloadContext.stop();
-            }
-            Log.v(TAG, "Stop download context");
-            arrayList.clear();
-            updateService.resetGameStatus();
-            updateService.updateStatusInfoAndProgress(true);
-            updateService.setUpdateStatus(UpdateStatus.Undefined);
-            Message obtain = Message.obtain(updateService.mInHandler, 2);
-            obtain.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
-            obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
-            obtain.replyTo = updateService.mMessenger;
-            Messenger messenger = updateService.mActivityMessenger;
-            if (messenger != null) {
-                messenger.send(obtain);
-            }
-            Log.w(TAG, "Send message download canceled " + obtain);
-            updateService.stopForegroundService();
-            return Unit.INSTANCE;
-        }
-        if (endCause == EndCause.COMPLETED) {
-            Long l = (Long) hashMap.get(Integer.valueOf(task.getId()));
-            File file = task.getFile();
-            if (l != null && file != null) {
-                SharedPreferences sharedPreferences = updateService.updatePreferences;
-                if (sharedPreferences == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                    sharedPreferences = null;
-                }
-                sharedPreferences.edit().putLong(file.getAbsolutePath(), l.longValue()).apply();
-            }
-        }
-        arrayList.remove(Integer.valueOf(task.getId()));
-        if (!arrayList.isEmpty()) {
-            return Unit.INSTANCE;
-        }
-        Log.v(TAG, "taskIdList empty");
-        updateService.mainHandler.removeCallbacks(updateService.checkTimeoutRunnable);
-        updateService.updateStatusInfoAndProgress(true);
-        updateService.removeDownloadTaskIdList();
-        ?? r1 = updateService.filesChek;
-        if (r1 == 0) {
-            Intrinsics.throwUninitializedPropertyAccessException("filesChek");
-        } else {
-            r7 = r1;
-        }
-        if (!r7.isAllFilesOk(false, false, true, false, updateService.mDataInfo)) {
-            updateService.resetGameStatus();
-            updateService.updateStatusInfoAndProgress(true);
-            updateService.setUpdateStatus(UpdateStatus.Undefined);
-            updateService.mLastOperationStatus = Errno.CorruptedFilesFound;
-            logDownloadError$default(updateService, DownloadErrorEvent.GAME_DATA_VALIDATION_FAILED, null, null, 6, null);
-            Message obtain2 = Message.obtain(updateService.mInHandler, 2);
-            obtain2.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
-            obtain2.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
-            obtain2.replyTo = updateService.mMessenger;
-            Messenger messenger2 = updateService.mActivityMessenger;
-            if (messenger2 != null) {
-                messenger2.send(obtain2);
-            }
-            Log.w(TAG, "Send message file broken " + obtain2);
-            return Unit.INSTANCE;
-        }
-        updateService.mUpdateFiles.clear();
-        updateService.mUpdateFilesNeedSize = 0L;
-        updateService.resetGameStatus();
-        updateService.setUpdateStatus(UpdateStatus.Undefined);
-        updateService.finishFirstLauncherStartErrorSession();
-        Message obtain3 = Message.obtain(updateService.mInHandler, 2);
-        obtain3.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, true);
-        obtain3.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
-        obtain3.replyTo = updateService.mMessenger;
-        Messenger messenger3 = updateService.mActivityMessenger;
-        if (messenger3 != null) {
-            messenger3.send(obtain3);
-        }
-        Log.i(TAG, "Send message download done " + obtain3);
-        DownloadContext downloadContext2 = updateService.mDownloadContext;
-        if (downloadContext2 != null) {
-            downloadContext2.stop();
-        }
-        updateService.stopForegroundService();
-        return Unit.INSTANCE;
-    }
-
-    private final ArrayList<Integer> notFinishedTaskIdList() {
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_FILE_KEY, 0);
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        Set<String> stringSet = sharedPreferences.getStringSet(TASK_ID_LIST_KEY, new LinkedHashSet());
-        if (stringSet != null) {
-            for (String str : stringSet) {
-                Intrinsics.checkNotNull(str);
-                arrayList.add(Integer.valueOf(Integer.parseInt(str)));
-            }
-        }
-        return arrayList;
-    }
-
-    private final void saveDownloadTaskIdList(ArrayList<Integer> arrayList) {
-        Log.i(TAG, "saveDownloadTaskIdList");
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_FILE_KEY, 0);
-        SharedPreferences.Editor edit = sharedPreferences != null ? sharedPreferences.edit() : null;
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        Log.i(TAG, "Save list " + arrayList.size());
-        Iterator<Integer> it = arrayList.iterator();
-        Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
-        while (it.hasNext()) {
-            Integer next = it.next();
-            Intrinsics.checkNotNullExpressionValue(next, "next(...)");
-            linkedHashSet.add(String.valueOf(next.intValue()));
-        }
-        if (edit != null) {
-            edit.remove(TASK_ID_LIST_KEY);
-        }
-        if (edit != null) {
-            edit.putStringSet(TASK_ID_LIST_KEY, linkedHashSet);
-        }
-        if (edit != null) {
-            edit.apply();
-        }
-    }
-
-    private final void removeDownloadTaskIdList() {
-        Log.i(TAG, "removeDownloadTaskIdList");
-        SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_FILE_KEY, 0);
-        SharedPreferences.Editor edit = sharedPreferences != null ? sharedPreferences.edit() : null;
-        if (edit != null) {
-            edit.remove(TASK_ID_LIST_KEY);
-        }
-        if (edit != null) {
-            edit.apply();
-        }
-    }
-
-    private final void updateStatusInfoAndProgress(boolean z) {
+    public final void updateStatusInfoAndProgress(boolean z) {
         NotificationManagerCompat from = NotificationManagerCompat.from(this);
         if (Build.VERSION.SDK_INT >= 26 && ActivityCompat.checkSelfPermission(getApplicationContext(), "android.permission.POST_NOTIFICATIONS") == 0) {
             from.notify(1, createNotification(z));
         }
         Message obtain = Message.obtain(this.mInHandler, 4);
-        obtain.getData().putString(NotificationCompat.CATEGORY_STATUS, "DownloadGameData");
-        obtain.getData().putBoolean("withProgress", !z);
-        obtain.getData().putInt("current", ((int) (this.mDownloadedLength / 1024)) + 1);
-        obtain.getData().putInt("total", (int) (this.mTotalLength / 1024));
-        obtain.getData().putLong("total_all", this.mTotalLength - this.mDownloadedLength);
-        obtain.getData().putLong("current_len", this.mDownloadedLength);
-        obtain.getData().putString("timeLeft", timeLeft());
         Bundle data = obtain.getData();
-        SpeedCalculator speedCalculator = this.mSpeedCalculator;
-        Intrinsics.checkNotNull(speedCalculator);
-        data.putString("speed", speedCalculator.speed());
-        obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
+        Intrinsics.checkNotNullExpressionValue(data, "getData(...)");
+        populateUpdateStatusSnapshot(data, UpdateStatus.DownloadGameData, Boolean.valueOf(z));
         obtain.replyTo = this.mMessenger;
-        Messenger messenger = this.mActivityMessenger;
-        if (messenger != null) {
-            messenger.send(obtain);
-        }
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
     }
 
-    private final void calcSpeed(DownloadTask downloadTask, long j) {
-        Object tag = downloadTask.getTag(2);
-        long longValue = j - (tag == null ? 0L : ((Long) tag).longValue());
-        SpeedCalculator speedCalculator = this.mSpeedCalculator;
-        if (speedCalculator != null) {
-            speedCalculator.downloading(longValue);
+    static /* synthetic */ void populateUpdateStatusSnapshot$default(UpdateService updateService, Bundle bundle, UpdateStatus updateStatus, Boolean bool, int i, Object obj) {
+        if ((i & 2) != 0) {
+            UpdateStatus updateStatus2 = updateService.mUpdateStatus.get();
+            Intrinsics.checkNotNullExpressionValue(updateStatus2, "get(...)");
+            updateStatus = updateStatus2;
         }
-        long j2 = this.mDownloadedLength + longValue;
-        this.mDownloadedLength = j2;
-        Log.d("calcSpeed", String.valueOf(j2));
+        if ((i & 4) != 0) {
+            bool = null;
+        }
+        updateService.populateUpdateStatusSnapshot(bundle, updateStatus, bool);
     }
 
-    private final String timeLeft() {
-        SpeedCalculator speedCalculator;
-        double d;
-        String str;
-        SpeedCalculator speedCalculator2 = this.mSpeedCalculator;
-        if (speedCalculator2 == null) {
-            return "Расчет времени...";
+    private final void populateUpdateStatusSnapshot(Bundle bundle, UpdateStatus updateStatus, Boolean bool) {
+        bundle.putString("status", updateStatus.name());
+        bundle.putSerializable("errno", this.mLastOperationStatus);
+        if (updateStatus != UpdateStatus.DownloadGameData) {
+            return;
         }
-        Intrinsics.checkNotNull(speedCalculator2);
-        if (speedCalculator2.getBytesPerSecondAndFlush() <= 0.1d) {
-            return "0 sec";
+        boolean booleanValue = bool != null ? bool.booleanValue() : isArchiveProgressIndeterminate();
+        UpdateTransferProgressSnapshot snapshot = this.transferProgress.snapshot();
+        long coerceIn = RangesKt.coerceIn(snapshot.getDisplayedDownloadedBytes(), 0L, RangesKt.coerceAtLeast(snapshot.getTotalBytes(), 0L));
+        bundle.putBoolean(UpdateServiceContract.BundleKey.WITH_PROGRESS, !booleanValue);
+        ArchiveInstallerPhase visibleArchiveInstallerPhase = visibleArchiveInstallerPhase();
+        if (visibleArchiveInstallerPhase != null) {
+            bundle.putString(UpdateServiceContract.BundleKey.ARCHIVE_PHASE, visibleArchiveInstallerPhase.name());
         }
-        Intrinsics.checkNotNull(this.mSpeedCalculator);
-        double bytesPerSecondAndFlush = ((this.mTotalLength - this.mDownloadedLength) / (speedCalculator.getBytesPerSecondAndFlush() + 1.0E-5d)) * 1000.0d;
-        double d2 = (bytesPerSecondAndFlush / 1000.0d) % 60.0d;
-        double d3 = (bytesPerSecondAndFlush / 60000.0d) % 60.0d;
-        String str2 = (bytesPerSecondAndFlush / 3600000.0d) % 24.0d >= 1.0d ? ((int) d) + " h, " : "";
-        String str3 = d3 >= 1.0d ? ((int) d3) + " min, " : "";
-        if (d2 < 1.0d) {
-            str = "";
-        } else {
-            str = ((int) d2) + " sec";
-        }
-        String str4 = str2 + str3 + str;
-        return Intrinsics.areEqual(str4, "") ? "0 sec" : str4;
+        bundle.putInt(UpdateServiceContract.BundleKey.CURRENT, ((int) (coerceIn / 1024)) + 1);
+        bundle.putInt(UpdateServiceContract.BundleKey.TOTAL, (int) (snapshot.getTotalBytes() / 1024));
+        bundle.putLong(UpdateServiceContract.BundleKey.TOTAL_ALL, RangesKt.coerceAtLeast(snapshot.getTotalBytes() - coerceIn, 0L));
+        bundle.putLong(UpdateServiceContract.BundleKey.CURRENT_LENGTH, coerceIn);
+        bundle.putString(UpdateServiceContract.BundleKey.TIME_LEFT, timeLeft(snapshot));
+        bundle.putString(UpdateServiceContract.BundleKey.SPEED, snapshot.getSpeedLabel());
+    }
+
+    private final ArchiveInstallerPhase visibleArchiveInstallerPhase() {
+        return ArchiveProgressPresentationPolicy.INSTANCE.selectInstallerPhase(this.archiveInstallerPhase.get(), this.archiveNetworkPending.get());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void setUpdateStatus(UpdateStatus updateStatus) {
+    public final boolean isArchiveProgressIndeterminate() {
+        return visibleArchiveInstallerPhase() != ArchiveInstallerPhase.DOWNLOADING;
+    }
+
+    private final String timeLeft() {
+        return timeLeft(this.transferProgress.snapshot());
+    }
+
+    private final String timeLeft(UpdateTransferProgressSnapshot updateTransferProgressSnapshot) {
+        double d;
+        String str;
+        if (updateTransferProgressSnapshot.getSpeedLabel().length() == 0) {
+            return "Расчет времени...";
+        }
+        Long estimatedRemainingMillis = updateTransferProgressSnapshot.getEstimatedRemainingMillis();
+        if (estimatedRemainingMillis != null) {
+            double longValue = estimatedRemainingMillis.longValue();
+            double d2 = (longValue / 1000.0d) % 60.0d;
+            double d3 = (longValue / 60000.0d) % 60.0d;
+            String str2 = (longValue / 3600000.0d) % 24.0d >= 1.0d ? ((int) d) + " h, " : "";
+            String str3 = d3 >= 1.0d ? ((int) d3) + " min, " : "";
+            if (d2 < 1.0d) {
+                str = "";
+            } else {
+                str = ((int) d2) + " sec";
+            }
+            String str4 = str2 + str3 + str;
+            return Intrinsics.areEqual(str4, "") ? "0 sec" : str4;
+        }
+        return "0 sec";
+    }
+
+    private final void setUpdateStatus(UpdateStatus updateStatus) {
         Log.i(TAG, "setUpdateStatus");
         if (this.mUpdateStatus.get() == updateStatus) {
             return;
         }
         this.mUpdateStatus.set(updateStatus);
         Message obtain = Message.obtain(this.mInHandler, 4);
-        obtain.getData().putString(NotificationCompat.CATEGORY_STATUS, this.mUpdateStatus.get().name());
-        obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
+        obtain.getData().putString("status", this.mUpdateStatus.get().name());
+        obtain.getData().putSerializable("errno", this.mLastOperationStatus);
         obtain.replyTo = this.mMessenger;
-        Messenger messenger = this.mActivityMessenger;
-        if (messenger != null) {
-            messenger.send(obtain);
-        }
-    }
-
-    private final boolean deleteExistingDownloadTarget(File file) {
-        if (!file.isDirectory() && file.exists()) {
-            SharedPreferences sharedPreferences = this.updatePreferences;
-            if (sharedPreferences == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                sharedPreferences = null;
-            }
-            sharedPreferences.edit().remove(file.getAbsolutePath()).apply();
-            if (!file.delete() && file.exists()) {
-                IOException iOException = new IOException("Unable to delete existing file before download: " + file.getAbsolutePath());
-                String message = iOException.getMessage();
-                IOException iOException2 = iOException;
-                Log.e(TAG, message, iOException2);
-                FirebaseCrashlytics firebaseCrashlytics = FirebaseCrashlytics.getInstance();
-                firebaseCrashlytics.setCustomKey("download_delete_failed_path", file.getAbsolutePath());
-                firebaseCrashlytics.setCustomKey("download_delete_failed_exists", file.exists());
-                firebaseCrashlytics.setCustomKey("download_delete_failed_can_read", file.canRead());
-                firebaseCrashlytics.setCustomKey("download_delete_failed_can_write", file.canWrite());
-                firebaseCrashlytics.setCustomKey("download_delete_failed_size", file.length());
-                firebaseCrashlytics.recordException(iOException2);
-                return false;
-            }
-        }
-        return true;
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void checkLauncherUpdate(String str) {
-        RequestQueue sharedRequestQueue = getSharedRequestQueue();
-        String str2 = str + "app_version.json";
-        this.mLastOperationStatus = Errno.NoError;
-        if (str.length() == 0) {
-            logDownloadError$default(this, DownloadErrorEvent.LAUNCHER_UPDATE_CHECK_SERVER_EMPTY, null, null, 6, null);
-            FileServers.INSTANCE.currentServerIsUnreachable();
-            this.mLastOperationStatus = Errno.UpdateServerUnreachable;
-            Message obtain = Message.obtain(this.mInHandler, 3);
-            obtain.getData().putBoolean(NEED_UPDATE_MSG, false);
-            obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-            obtain.replyTo = this.mMessenger;
-            Messenger messenger = this.mActivityMessenger;
-            if (messenger != null) {
-                messenger.send(obtain);
-                return;
-            }
+    public final void sendToActivity(Message message) {
+        Messenger messenger = this.mActivityMessenger;
+        if (messenger == null) {
             return;
         }
-        this.mLastOperationStatus = Errno.NoError;
-        StringRequest stringRequest = new StringRequest(0, str2, new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
-            @Override // com.android.volley.Response.Listener
-            public final void onResponse(Object obj) {
-                UpdateService.checkLauncherUpdate$lambda$0(UpdateService.this, (String) obj);
-            }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
-            @Override // com.android.volley.Response.ErrorListener
-            public final void onErrorResponse(VolleyError volleyError) {
-                UpdateService.this.notifyServerUnreachable(UpdateService.DownloadErrorEvent.LAUNCHER_UPDATE_CHECK_REQUEST_FAILED);
-            }
-        });
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
-        stringRequest.setShouldCache(false);
-        sharedRequestQueue.add(stringRequest);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1734;
-            Message obtain = Message.obtain(updateService.mInHandler, 3);
-            obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
-            obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
-            obtain.replyTo = updateService.mMessenger;
-            Messenger messenger = updateService.mActivityMessenger;
-            if (messenger != null) {
-                messenger.send(obtain);
+            messenger.send(message);
+        } catch (RemoteException e) {
+            if (this.mActivityMessenger == messenger) {
+                this.mActivityMessenger = null;
             }
-        } catch (JSONException unused) {
-            updateService.notifyServerUnreachable(DownloadErrorEvent.LAUNCHER_UPDATE_CHECK_JSON_INVALID);
+            Log.w(TAG, "Unable to send updater message what=" + message.what, e);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void notifyServerUnreachable(DownloadErrorEvent downloadErrorEvent) {
-        FileServers.INSTANCE.currentServerIsUnreachable();
-        logDownloadError$default(this, downloadErrorEvent, null, null, 6, null);
-        this.mLastOperationStatus = Errno.UpdateServerUnreachable;
-        Message obtain = Message.obtain(this.mInHandler, 3);
-        obtain.getData().putBoolean(NEED_UPDATE_MSG, false);
-        obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
-        obtain.replyTo = this.mMessenger;
-        Messenger messenger = this.mActivityMessenger;
-        if (messenger != null) {
-            messenger.send(obtain);
+    public final void requestLauncherUpdateCheck() {
+        FileServers.INSTANCE.refreshLauncherServers();
+        LauncherUpdateServiceFlow launcherUpdateServiceFlow = this.launcherUpdateFlow;
+        if (launcherUpdateServiceFlow == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("launcherUpdateFlow");
+            launcherUpdateServiceFlow = null;
         }
+        launcherUpdateServiceFlow.requestCheck();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void startDownloadNewLauncherApk(String str) {
-        File externalFilesDir;
-        this.retry++;
-        Log.i(TAG, "startDownloadLauncherUpdate");
-        String str2 = "app-arizona-release-" + this.retry + ".apk";
-        Log.d(TAG, "We're waiting " + str2 + " / app-arizona-release.apk file");
-        final File file = new File((getExternalFilesDir(null) != null ? externalFilesDir.getPath() : null) + "/" + str2);
-        if (file.exists()) {
-            file.delete();
+    public final void requestLauncherApkDownload() {
+        FileServers.INSTANCE.refreshLauncherServers();
+        LauncherUpdateServiceFlow launcherUpdateServiceFlow = this.launcherUpdateFlow;
+        if (launcherUpdateServiceFlow == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("launcherUpdateFlow");
+            launcherUpdateServiceFlow = null;
         }
+        launcherUpdateServiceFlow.requestApkDownload();
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public Long beginLauncherCheckOperation() {
+        return beginUpdateOperation(UpdateOperationKind.LAUNCHER_CHECK);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public Long beginLauncherApkOperation() {
+        return beginUpdateOperation(UpdateOperationKind.LAUNCHER_APK);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public boolean isCurrentLauncherCheckOperation(long j) {
+        return isCurrentUpdateOperation(UpdateOperationKind.LAUNCHER_CHECK, j);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public boolean isCurrentLauncherApkOperation(long j) {
+        return isCurrentUpdateOperation(UpdateOperationKind.LAUNCHER_APK, j);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public void setLauncherOperationHealthy() {
         this.mLastOperationStatus = Errno.NoError;
-        if (str.length() == 0) {
-            logDownloadError$default(this, DownloadErrorEvent.LAUNCHER_APK_SERVER_EMPTY, null, null, 6, null);
-            this.mLastOperationStatus = Errno.UpdateServerUnreachable;
-            Message obtain = Message.obtain(this.mInHandler, 6);
-            obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public void completeLauncherCheck(long j, boolean z, boolean z2) {
+        if (isCurrentUpdateOperation(UpdateOperationKind.LAUNCHER_CHECK, j)) {
+            this.mLastOperationStatus = z2 ? Errno.NoError : Errno.UpdateServerUnreachable;
+            finishUpdateOperation(UpdateOperationKind.LAUNCHER_CHECK, j);
+            Message obtain = Message.obtain(this.mInHandler, 3);
+            obtain.getData().putBoolean("needUpdateMsg", z);
+            obtain.getData().putSerializable("errno", this.mLastOperationStatus);
             obtain.replyTo = this.mMessenger;
-            Messenger messenger = this.mActivityMessenger;
-            if (messenger != null) {
-                messenger.send(obtain);
+            Intrinsics.checkNotNull(obtain);
+            sendToActivity(obtain);
+        }
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public boolean promoteLauncherForeground() {
+        ForegroundPromotionResult startForegroundService$default = startForegroundService$default(this, false, 1, null);
+        if (Intrinsics.areEqual(startForegroundService$default, ForegroundPromotionResult.Ready.INSTANCE)) {
+            return true;
+        }
+        if (!(startForegroundService$default instanceof ForegroundPromotionResult.Rejected)) {
+            throw new NoWhenBranchMatchedException();
+        }
+        Log.w(TAG, "Launcher APK foreground promotion rejected: " + ((ForegroundPromotionResult.Rejected) startForegroundService$default).getReason());
+        return false;
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public File externalFilesRoot() {
+        return getExternalFilesDir(null);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public void beginLauncherProgress() {
+        this.transferProgress.beginLauncher();
+        updateStatusInfoAndProgress(true);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public void updateLauncherProgress(long j, Long l, int i, boolean z) {
+        updateStatusInfoAndProgress(this.transferProgress.onLauncherProgress(new LauncherApkProgress(j, l, i, z)).getTotalBytes() <= 0);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public void completeLauncherProgress(long j) {
+        this.transferProgress.complete(j);
+        updateStatusInfoAndProgress(false);
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public void completeLauncherApk(final long j, boolean z, boolean z2, boolean z3, String str) {
+        if (isCurrentUpdateOperation(UpdateOperationKind.LAUNCHER_APK, j)) {
+            if (!z) {
+                this.mLastOperationStatus = Errno.UpdateServerUnreachable;
+                if (z2 && str != null) {
+                    FileServers.INSTANCE.currentLauncherServerIsUnreachable(str);
+                }
+            } else {
+                this.mLastOperationStatus = Errno.NoError;
+            }
+            final Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function0
+                public final Object invoke() {
+                    return Boolean.valueOf(UpdateService.completeLauncherApk$lambda$0(UpdateService.this, j));
+                }
+            };
+            if (!z3) {
+                if (((Boolean) function0.invoke()).booleanValue()) {
+                    stopForegroundService();
+                    return;
+                }
                 return;
             }
-            return;
-        }
-        startForegroundService();
-        DownloadContext.Builder commit = new DownloadContext.QueueSet().setMinIntervalMillisCallbackProcess(100).commit();
-        this.mDownloadedLength = 0L;
-        this.mTotalLength = 0L;
-        this.lastDownloadedBytes = 0L;
-        commit.bindSetTask(new DownloadTask.Builder(str + "launcher_new/app-arizona-release.apk", file).setPriority(5).setMinIntervalMillisCallbackProcess(300).setConnectionCount(1).setPreAllocateLength(true).build());
-        this.mDownloadContext = commit.build();
-        this.mSpeedCalculator = new SpeedCalculator();
-        this.mLastOperationStatus = Errno.NoError;
-        long j = this.mUpdateFilesNeedSize;
-        this.mTotalLength = j;
-        Log.v(TAG, "Get contentLength " + j);
-        this.mainHandler.postDelayed(this.checkTimeoutRunnable, 15000L);
-        DownloadContext downloadContext = this.mDownloadContext;
-        if (downloadContext != null) {
-            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda0
-                @Override // kotlin.jvm.functions.Function4
-                public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    return UpdateService.startDownloadNewLauncherApk$lambda$0((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
+            this.mainHandler.postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
+                @Override // java.lang.Runnable
+                public final void run() {
+                    UpdateService.completeLauncherApk$lambda$1(Function0.this, this);
                 }
-            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
-                @Override // kotlin.jvm.functions.Function3
-                public final Object invoke(Object obj, Object obj2, Object obj3) {
-                    return UpdateService.startDownloadNewLauncherApk$lambda$1(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
-                }
-            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
-                @Override // kotlin.jvm.functions.Function4
-                public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
-                    return UpdateService.startDownloadNewLauncherApk$lambda$2(UpdateService.this, file, r3, (DownloadTask) obj, (EndCause) obj2, (Exception) obj3, (Listener1Assist.Listener1Model) obj4);
-                }
-            }, 3, null), false);
+            }, LAUNCHER_RESULT_DELAY_MS);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit startDownloadNewLauncherApk$lambda$0(DownloadTask connectTask, int i, long j, long j2) {
-        Intrinsics.checkNotNullParameter(connectTask, "connectTask");
-        Log.v(TAG, "Downloading " + connectTask);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit startDownloadNewLauncherApk$lambda$1(UpdateService updateService, DownloadTask progressTask, long j, long j2) {
-        Intrinsics.checkNotNullParameter(progressTask, "progressTask");
-        updateService.mTotalLength = j2;
-        updateService.calcSpeed(progressTask, j);
-        progressTask.addTag(2, Long.valueOf(j));
-        updateService.updateStatusInfoAndProgress(false);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit startDownloadNewLauncherApk$lambda$2(UpdateService updateService, File file, String str, DownloadTask errorTask, EndCause errorCode, Exception exc, Listener1Assist.Listener1Model exception) {
-        DownloadErrorEvent downloadErrorEvent;
-        final UpdateService updateService2;
-        Intrinsics.checkNotNullParameter(errorTask, "errorTask");
-        Intrinsics.checkNotNullParameter(errorCode, "errorCode");
-        Intrinsics.checkNotNullParameter(exception, "exception");
-        Log.e(TAG, "Download error in task: " + errorTask + ", errorCode: " + errorCode + ", errorMessage: " + exc + " - " + exception);
-        updateService.mainHandler.removeCallbacks(updateService.checkTimeoutRunnable);
-        if (errorCode == EndCause.ERROR || errorCode == EndCause.CANCELED) {
-            updateService.mLastOperationStatus = Errno.UpdateServerUnreachable;
-            if (WhenMappings.$EnumSwitchMapping$0[errorCode.ordinal()] == 2) {
-                downloadErrorEvent = DownloadErrorEvent.LAUNCHER_APK_DOWNLOAD_CANCELED;
-            } else {
-                downloadErrorEvent = DownloadErrorEvent.LAUNCHER_APK_DOWNLOAD_FAILED;
-            }
-            updateService2 = updateService;
-            logDownloadError$default(updateService2, downloadErrorEvent, null, null, 6, null);
-            FileServers.INSTANCE.currentServerIsUnreachable();
-            if (file.exists()) {
-                file.delete();
-            }
-        } else {
-            File file2 = new File(file.getParent(), str);
-            if (file2.exists()) {
-                file2.delete();
-            }
-            file.renameTo(file2);
-            updateService2 = updateService;
+    public static final boolean completeLauncherApk$lambda$0(UpdateService updateService, long j) {
+        if (updateService.isCurrentUpdateOperation(UpdateOperationKind.LAUNCHER_APK, j)) {
+            updateService.finishUpdateOperation(UpdateOperationKind.LAUNCHER_APK, j);
+            Message obtain = Message.obtain(updateService.mInHandler, 6);
+            obtain.getData().putSerializable("errno", updateService.mLastOperationStatus);
+            obtain.replyTo = updateService.mMessenger;
+            Intrinsics.checkNotNull(obtain);
+            updateService.sendToActivity(obtain);
+            return true;
         }
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                UpdateService.startDownloadNewLauncherApk$lambda$2$0(UpdateService.this);
-            }
-        }, 3750L);
-        return Unit.INSTANCE;
+        return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void completeLauncherApk$lambda$1(Function0 function0, UpdateService updateService) {
+        if (((Boolean) function0.invoke()).booleanValue()) {
+            updateService.stopForegroundService();
+        }
+    }
+
+    @Override // com.arizona.launcher.LauncherUpdateServiceHost
+    public void recordLauncherException(Throwable error) {
+        Intrinsics.checkNotNullParameter(error, "error");
+        FirebaseCrashlytics.getInstance().recordException(error);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startDownloadNewLauncherApk$lambda$2$0(UpdateService updateService) {
-        Message obtain = Message.obtain(updateService.mInHandler, 6);
-        obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
-        obtain.replyTo = updateService.mMessenger;
-        Messenger messenger = updateService.mActivityMessenger;
-        if (messenger != null) {
-            messenger.send(obtain);
+    public final void requestFullFileCheck() {
+        FileCheckServiceFlow fileCheckServiceFlow = this.fileCheckFlow;
+        if (fileCheckServiceFlow == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("fileCheckFlow");
+            fileCheckServiceFlow = null;
         }
-        updateService.stopForegroundService();
+        fileCheckServiceFlow.requestFullCheck();
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public Long beginFileCheckOperation() {
+        return beginUpdateOperation(UpdateOperationKind.FILE_CHECK);
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public boolean isCurrentFileCheckOperation(long j) {
+        return isCurrentUpdateOperation(UpdateOperationKind.FILE_CHECK, j);
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public boolean finishFileCheckOperation(long j) {
+        return this.updateOperationCoordinator.finish(UpdateOperationKind.FILE_CHECK, j);
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public void onFileCheckAuditFailure(Exception error, ArchivePayloadAuditResult.Unavailable fallback) {
+        Intrinsics.checkNotNullParameter(error, "error");
+        Intrinsics.checkNotNullParameter(fallback, "fallback");
+        Log.w(TAG, "Archive payload full check failed", error);
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public void onFileCheckRepairScheduled(ArchivePayloadAuditResult.RepairScheduled result) {
+        Intrinsics.checkNotNullParameter(result, "result");
+        String joinToString$default = CollectionsKt.joinToString$default(result.getMismatchedPackageIds(), null, null, null, 0, null, null, 63, null);
+        Log.w(TAG, "Archive payload audit scheduled full-ZIP repair for " + joinToString$default + " first=" + result.getFirstMismatch());
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public void markFileCheckRecoveryRequired() {
+        this.archiveSession.markRecoveryRequired();
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public void markGameUpdateRequiredAfterFileCheck() {
+        this.mGameStatus.set(GameStatus.UpdateRequired);
+    }
+
+    @Override // com.arizona.launcher.FileCheckServiceHost
+    public void completeFullFileCheck(boolean z) {
+        Message obtain = Message.obtain(this.mInHandler, 8);
+        obtain.getData().putBoolean("status", z);
+        obtain.replyTo = this.mMessenger;
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1647,235 +2051,157 @@ public final class UpdateService extends Hilt_UpdateService {
 
         @Override // android.os.Handler
         public void handleMessage(Message msg) {
-            FilesChek filesChek;
-            FilesChek filesChek2;
             Intrinsics.checkNotNullParameter(msg, "msg");
             final UpdateService updateService = this.activityRef.get();
             if (updateService != null) {
                 updateService.mActivityMessenger = msg.replyTo;
                 Log.i("UpdateService", String.valueOf(msg.what));
                 int i = msg.what;
-                if (i == 0) {
-                    updateService.checkUpdate(FileServers.INSTANCE.getCurrentServer());
-                    return;
+                if (i != 0) {
+                    switch (i) {
+                        case 2:
+                            updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda2
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    UpdateService.this.updateGameData();
+                                }
+                            });
+                            return;
+                        case 3:
+                            updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda0
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    UpdateService.this.requestLauncherUpdateCheck();
+                                }
+                            });
+                            return;
+                        case 4:
+                            updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda4
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    UpdateService.IncomingHandler.handleMessage$lambda$4(UpdateService.this);
+                                }
+                            });
+                            return;
+                        case 5:
+                            updateService.resetGameStatus();
+                            Message obtain = Message.obtain(updateService.mInHandler, 5);
+                            obtain.getData().putString("status", ((GameStatus) updateService.mGameStatus.get()).name());
+                            obtain.getData().putSerializable("errno", updateService.mLastOperationStatus);
+                            obtain.replyTo = updateService.mMessenger;
+                            Intrinsics.checkNotNull(obtain);
+                            updateService.sendToActivity(obtain);
+                            return;
+                        case 6:
+                            updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda5
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    UpdateService.this.requestLauncherApkDownload();
+                                }
+                            });
+                            return;
+                        case 7:
+                            ArchiveStorageRequirementsSnapshot storageRequirements = updateService.archiveSession.snapshot().getStorageRequirements();
+                            UpdateOperationSnapshot activeUpdateOperation = updateService.activeUpdateOperation();
+                            UpdateOperationKind kind = activeUpdateOperation != null ? activeUpdateOperation.getKind() : null;
+                            Message obtain2 = Message.obtain(updateService.mInHandler, 7);
+                            obtain2.getData().putBoolean(UpdateServiceContract.BundleKey.ARCHIVE_UPDATE_ACTIVE, kind == UpdateOperationKind.ARCHIVE_UPDATE || kind == UpdateOperationKind.CHECK_AND_DOWNLOAD);
+                            obtain2.getData().putLong("needFreeSpaceSize", storageRequirements.getRequiredFreeSpaceBytes());
+                            obtain2.getData().putLong("needGameFreeSpaceSize", storageRequirements.getGameStorageBytes());
+                            obtain2.getData().putLong("needDownloadFreeSpaceSize", storageRequirements.getDownloadStorageBytes());
+                            obtain2.getData().putBoolean("archiveStorageSameDevice", !Intrinsics.areEqual((Object) UpdateService.archiveStorageUsesSingleDevice$default(updateService, null, null, 3, null), (Object) false));
+                            obtain2.replyTo = updateService.mMessenger;
+                            Intrinsics.checkNotNull(obtain2);
+                            updateService.sendToActivity(obtain2);
+                            return;
+                        case 8:
+                            updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda6
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    UpdateService.this.requestFullFileCheck();
+                                }
+                            });
+                            return;
+                        case 9:
+                            updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda7
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    UpdateService.this.requestFullFileCheck();
+                                }
+                            });
+                            return;
+                        case 10:
+                            updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda3
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    UpdateService.this.requestCheckUpdateAndDownload(true);
+                                }
+                            });
+                            return;
+                        default:
+                            return;
+                    }
                 }
-                switch (i) {
-                    case 2:
-                        updateService.updateGameData();
-                        return;
-                    case 3:
-                        updateService.checkLauncherUpdate(FileServers.INSTANCE.getCurrentServer());
-                        return;
-                    case 4:
-                        Message obtain = Message.obtain(updateService.mInHandler, 4);
-                        obtain.getData().putString(NotificationCompat.CATEGORY_STATUS, ((UpdateStatus) updateService.mUpdateStatus.get()).name());
-                        obtain.getData().putSerializable(UpdateService.ERRNO_MSG, updateService.mLastOperationStatus);
-                        obtain.replyTo = updateService.mMessenger;
-                        Messenger messenger = updateService.mActivityMessenger;
-                        if (messenger != null) {
-                            messenger.send(obtain);
-                            return;
-                        }
-                        return;
-                    case 5:
-                        updateService.resetGameStatus();
-                        Message obtain2 = Message.obtain(updateService.mInHandler, 5);
-                        obtain2.getData().putString(NotificationCompat.CATEGORY_STATUS, ((GameStatus) updateService.mGameStatus.get()).name());
-                        obtain2.getData().putSerializable(UpdateService.ERRNO_MSG, updateService.mLastOperationStatus);
-                        obtain2.replyTo = updateService.mMessenger;
-                        Messenger messenger2 = updateService.mActivityMessenger;
-                        if (messenger2 != null) {
-                            messenger2.send(obtain2);
-                            return;
-                        }
-                        return;
-                    case 6:
-                        updateService.startDownloadNewLauncherApk(FileServers.INSTANCE.getCurrentServer());
-                        return;
-                    case 7:
-                        Message obtain3 = Message.obtain(updateService.mInHandler, 7);
-                        obtain3.getData().putLong("needFreeSpaceSize", updateService.mUpdateFilesNeedSize);
-                        obtain3.replyTo = updateService.mMessenger;
-                        Messenger messenger3 = updateService.mActivityMessenger;
-                        if (messenger3 != null) {
-                            messenger3.send(obtain3);
-                            return;
-                        }
-                        return;
-                    case 8:
-                        Message obtain4 = Message.obtain(updateService.mInHandler, 8);
-                        SharedPreferences sharedPreferences = updateService.updatePreferences;
-                        if (sharedPreferences == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                            sharedPreferences = null;
-                        }
-                        sharedPreferences.edit().clear().apply();
-                        Bundle data = obtain4.getData();
-                        FilesChek filesChek3 = updateService.filesChek;
-                        if (filesChek3 == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("filesChek");
-                            filesChek = null;
-                        } else {
-                            filesChek = filesChek3;
-                        }
-                        data.putBoolean(NotificationCompat.CATEGORY_STATUS, FilesChek.isAllFilesOk$default(filesChek, true, true, false, false, updateService.mDataInfo, 8, null));
-                        BuildersKt__Builders_concurrentKt.runBlockingK$default(null, new UpdateService$IncomingHandler$handleMessage$2(updateService, null), 1, null);
-                        obtain4.replyTo = updateService.mMessenger;
-                        Messenger messenger4 = updateService.mActivityMessenger;
-                        if (messenger4 != null) {
-                            messenger4.send(obtain4);
-                            return;
-                        }
-                        return;
-                    case 9:
-                        Message obtain5 = Message.obtain(updateService.mInHandler, 8);
-                        SharedPreferences sharedPreferences2 = updateService.updatePreferences;
-                        if (sharedPreferences2 == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                            sharedPreferences2 = null;
-                        }
-                        sharedPreferences2.edit().clear().apply();
-                        Bundle data2 = obtain5.getData();
-                        FilesChek filesChek4 = updateService.filesChek;
-                        if (filesChek4 == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("filesChek");
-                            filesChek2 = null;
-                        } else {
-                            filesChek2 = filesChek4;
-                        }
-                        data2.putBoolean(NotificationCompat.CATEGORY_STATUS, FilesChek.isAllFilesOk$default(filesChek2, true, true, false, false, updateService.mDataInfo, 8, null));
-                        BuildersKt__Builders_concurrentKt.runBlockingK$default(null, new UpdateService$IncomingHandler$handleMessage$3(updateService, null), 1, null);
-                        obtain5.replyTo = updateService.mMessenger;
-                        Messenger messenger5 = updateService.mActivityMessenger;
-                        if (messenger5 != null) {
-                            messenger5.send(obtain5);
-                            return;
-                        }
-                        return;
-                    case 10:
-                        UpdateService.checkUpdateAndDownload$default(updateService, FileServers.INSTANCE.getCurrentServer(), 0, new Function0() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda0
-                            @Override // kotlin.jvm.functions.Function0
-                            public final Object invoke() {
-                                return UpdateService.IncomingHandler.handleMessage$lambda$0(UpdateService.this);
-                            }
-                        }, 2, null);
-                        return;
-                    default:
-                        return;
-                }
+                updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$IncomingHandler$$ExternalSyntheticLambda1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        UpdateService.this.requestCheckUpdate();
+                    }
+                });
+                return;
             }
             Log.d("UpdateService", "activity is null");
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static final Unit handleMessage$lambda$0(UpdateService updateService) {
-            updateService.updateGameData();
-            return Unit.INSTANCE;
+        public static final void handleMessage$lambda$4(UpdateService updateService) {
+            Message obtain = Message.obtain(updateService.mInHandler, 4);
+            Bundle data = obtain.getData();
+            Intrinsics.checkNotNullExpressionValue(data, "getData(...)");
+            UpdateService.populateUpdateStatusSnapshot$default(updateService, data, null, null, 6, null);
+            obtain.replyTo = updateService.mMessenger;
+            Intrinsics.checkNotNull(obtain);
+            updateService.sendToActivity(obtain);
         }
     }
 
-    public static /* synthetic */ void checkUpdateAndDownload$default(UpdateService updateService, String str, int i, Function0 function0, int i2, Object obj) {
-        if ((i2 & 2) != 0) {
-            i = FileServers.INSTANCE.getGame_servers().length;
+    static /* synthetic */ void requestCheckUpdateAndDownload$default(UpdateService updateService, boolean z, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = false;
         }
-        updateService.checkUpdateAndDownload(str, i, function0);
-    }
-
-    public final void checkUpdateAndDownload(String server, final int i, final Function0<Unit> onFinish) {
-        Intrinsics.checkNotNullParameter(server, "server");
-        Intrinsics.checkNotNullParameter(onFinish, "onFinish");
-        DownloadDispatcher downloadDispatcher = OkDownload.with().downloadDispatcher();
-        Intrinsics.checkNotNullExpressionValue(downloadDispatcher, "downloadDispatcher(...)");
-        synchronized (downloadDispatcher) {
-            OkDownload.with().downloadDispatcher().cancelAll();
-            Unit unit = Unit.INSTANCE;
-        }
-        Log.d(TAG, "checkUpdate (attemptsLeft=" + i + ")");
-        startForegroundService();
-        setUpdateStatus(UpdateStatus.CheckUpdate);
-        RequestQueue sharedRequestQueue = getSharedRequestQueue();
-        this.mLastOperationStatus = Errno.NoError;
-        if (server.length() == 0) {
-            notifyCheckUpdateAndDownloadUnreachable(DownloadErrorEvent.CHECK_AND_DOWNLOAD_SERVER_EMPTY);
-            return;
-        }
-        Log.i(TAG, "checkUpdate: requesting server for update json");
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
-            @Override // com.android.volley.Response.Listener
-            public final void onResponse(Object obj) {
-                UpdateService.checkUpdateAndDownload$lambda$1(UpdateService.this, onFinish, (String) obj);
-            }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
-            @Override // com.android.volley.Response.ErrorListener
-            public final void onErrorResponse(VolleyError volleyError) {
-                UpdateService.checkUpdateAndDownload$lambda$2(UpdateService.this, i, onFinish, volleyError);
-            }
-        });
-        stringRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 1, 1.0f));
-        stringRequest.setShouldCache(false);
-        sharedRequestQueue.add(stringRequest);
-        Log.v(TAG, "Add to queue " + stringRequest);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void checkUpdateAndDownload$lambda$1(UpdateService updateService, Function0 function0, final String str) {
-        final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                JSONArray checkUpdateAndDownload$lambda$1$0;
-                checkUpdateAndDownload$lambda$1$0 = UpdateService.checkUpdateAndDownload$lambda$1$0(jSONObject, str, (String) obj);
-                return checkUpdateAndDownload$lambda$1$0;
-            }
-        }.invoke("files");
-        updateService.mDataInfo = jSONArray;
-        Log.v(TAG, "mDataInfo " + jSONArray);
-        updateService.mUpdateFiles = new ArrayList();
-        updateService.mUpdateFilesNeedSize = 0L;
-        BuildersKt__Builders_commonKt.launch$default(GlobalScope.INSTANCE, Dispatchers.getIO(), null, new UpdateService$checkUpdateAndDownload$stringRequest$1$1(updateService, function0, null), 2, null);
+        updateService.requestCheckUpdateAndDownload(z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final JSONArray checkUpdateAndDownload$lambda$1$0(JSONObject jSONObject, String str, String str2) {
-        JSONArray jSONArray = jSONObject.getJSONObject("data").getJSONArray("data");
-        int length = jSONArray.length();
-        for (int i = 0; i < length; i++) {
-            if (Intrinsics.areEqual(jSONArray.getJSONObject(i).getString("name"), str2)) {
-                JSONArray jSONArray2 = jSONArray.getJSONObject(i).getJSONArray("data");
-                Intrinsics.checkNotNullExpressionValue(jSONArray2, "getJSONArray(...)");
-                return jSONArray2;
-            }
+    public final void requestCheckUpdateAndDownload(boolean z) {
+        Log.i(TAG, "Game-data combined download flow requested");
+        FileServers.INSTANCE.refreshGameServers();
+        if (z) {
+            FileServers.INSTANCE.restartGameServersFromPrimary();
         }
-        throw new Exception("JSON Corrupted " + str);
+        GameUpdateServiceFlow gameUpdateServiceFlow = this.gameUpdateFlow;
+        if (gameUpdateServiceFlow == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("gameUpdateFlow");
+            gameUpdateServiceFlow = null;
+        }
+        gameUpdateServiceFlow.requestCheckAndDownload();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void checkUpdateAndDownload$lambda$2(UpdateService updateService, int i, Function0 function0, VolleyError volleyError) {
-        if (!updateService.isDeviceOnline()) {
-            Log.w(TAG, "Device offline, skip mirror rotation in checkUpdateAndDownload");
-            updateService.notifyCheckUpdateAndDownloadUnreachable(DownloadErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED);
-            return;
+    private final void notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent) {
+        UpdateAnalyticsReporter updateAnalyticsReporter = this.analyticsReporter;
+        if (updateAnalyticsReporter == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+            updateAnalyticsReporter = null;
         }
-        FileServers.INSTANCE.currentServerIsUnreachable();
-        if (i > 1) {
-            updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), i - 1, function0);
-        } else {
-            updateService.notifyCheckUpdateAndDownloadUnreachable(DownloadErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED);
-        }
-    }
-
-    private final void notifyCheckUpdateAndDownloadUnreachable(DownloadErrorEvent downloadErrorEvent) {
-        logDownloadError$default(this, downloadErrorEvent, null, null, 6, null);
+        UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter, updateAnalyticsErrorEvent, null, null, 6, null);
         this.mLastOperationStatus = Errno.UpdateServerUnreachable;
         setUpdateStatus(UpdateStatus.Undefined);
         Message obtain = Message.obtain(this.mInHandler, 2);
-        obtain.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, false);
-        obtain.getData().putSerializable(ERRNO_MSG, this.mLastOperationStatus);
+        obtain.getData().putBoolean("status", false);
+        obtain.getData().putSerializable("errno", this.mLastOperationStatus);
         obtain.replyTo = this.mMessenger;
-        Messenger messenger = this.mActivityMessenger;
-        if (messenger != null) {
-            messenger.send(obtain);
-        }
+        Intrinsics.checkNotNull(obtain);
+        sendToActivity(obtain);
         Log.w(TAG, "Send message server unreachable " + obtain);
         stopForegroundService();
     }

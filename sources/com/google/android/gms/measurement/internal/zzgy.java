@@ -1,7 +1,6 @@
 package com.google.android.gms.measurement.internal;
 
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.common.net.HttpHeaders;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -91,7 +90,7 @@ public final class zzgy implements Runnable {
                     int length = zzv.length;
                     zzk.zzb("Uploading data. size", Integer.valueOf(length));
                     httpURLConnection.setDoOutput(true);
-                    httpURLConnection.addRequestProperty(HttpHeaders.CONTENT_ENCODING, "gzip");
+                    httpURLConnection.addRequestProperty("Content-Encoding", "gzip");
                     httpURLConnection.setFixedLengthStreamingMode(length);
                     httpURLConnection.connect();
                     OutputStream outputStream2 = httpURLConnection.getOutputStream();

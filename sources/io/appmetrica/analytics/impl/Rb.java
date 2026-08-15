@@ -29,11 +29,11 @@ public final class Rb implements Runnable {
             PublicLogger publicLogger = v2.c;
             Set set = Q9.f730a;
             Db db = Db.EVENT_TYPE_UNDEFINED;
-            C0189d4 c0189d4 = new C0189d4("", "", 3, 0, publicLogger);
+            C0188d4 c0188d4 = new C0188d4("", "", 3, 0, publicLogger);
             Qi qi = v2.h;
             Zh zh = v2.b;
             qi.getClass();
-            qi.a(Qi.a(c0189d4, zh), zh, 1, (Map) null);
+            qi.a(Qi.a(c0188d4, zh), zh, 1, (Map) null);
         }
         if (f) {
             return;

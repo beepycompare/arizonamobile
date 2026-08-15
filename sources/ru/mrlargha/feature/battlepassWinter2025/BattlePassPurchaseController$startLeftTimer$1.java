@@ -1,5 +1,6 @@
 package ru.mrlargha.feature.battlepassWinter2025;
 
+import com.arizona.launcher.UpdateServiceContract;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -14,7 +15,7 @@ import kotlinx.coroutines.DelayKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BattlePassPurchaseController.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.BattlePassPurchaseController$startLeftTimer$1", f = "BattlePassPurchaseController.kt", i = {0, 0}, l = {337}, m = "invokeSuspend", n = {"$this$launch", "timeLeft"}, nl = {338}, s = {"L$0", "J$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.BattlePassPurchaseController$startLeftTimer$1", f = "BattlePassPurchaseController.kt", i = {0, 0}, l = {337}, m = "invokeSuspend", n = {"$this$launch", UpdateServiceContract.BundleKey.TIME_LEFT}, nl = {338}, s = {"L$0", "J$0"}, v = 2)
 /* loaded from: classes6.dex */
 public final class BattlePassPurchaseController$startLeftTimer$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ long $remainingMillis;

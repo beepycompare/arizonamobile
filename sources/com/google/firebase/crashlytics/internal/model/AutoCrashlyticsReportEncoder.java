@@ -2,6 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import coil3.util.UtilsKt;
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import com.facebook.internal.NativeProtocol;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
@@ -12,7 +13,6 @@ import com.google.firebase.encoders.config.Configurator;
 import com.google.firebase.encoders.config.EncoderConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
-import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.impl.M2;
@@ -605,7 +605,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
     /* loaded from: classes4.dex */
     private static final class CrashlyticsReportFilesPayloadEncoder implements ObjectEncoder<CrashlyticsReport.FilesPayload> {
         static final CrashlyticsReportFilesPayloadEncoder INSTANCE = new CrashlyticsReportFilesPayloadEncoder();
-        private static final FieldDescriptor FILES_DESCRIPTOR = FieldDescriptor.of("files");
+        private static final FieldDescriptor FILES_DESCRIPTOR = FieldDescriptor.of(OriginalTzArchiveManifestParser.FILES_ROOT);
         private static final FieldDescriptor ORGID_DESCRIPTOR = FieldDescriptor.of("orgId");
 
         private CrashlyticsReportFilesPayloadEncoder() {
@@ -621,7 +621,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
     /* loaded from: classes4.dex */
     private static final class CrashlyticsReportFilesPayloadFileEncoder implements ObjectEncoder<CrashlyticsReport.FilesPayload.File> {
         static final CrashlyticsReportFilesPayloadFileEncoder INSTANCE = new CrashlyticsReportFilesPayloadFileEncoder();
-        private static final FieldDescriptor FILENAME_DESCRIPTOR = FieldDescriptor.of(BreakpointSQLiteKey.FILENAME);
+        private static final FieldDescriptor FILENAME_DESCRIPTOR = FieldDescriptor.of("filename");
         private static final FieldDescriptor CONTENTS_DESCRIPTOR = FieldDescriptor.of("contents");
 
         private CrashlyticsReportFilesPayloadFileEncoder() {

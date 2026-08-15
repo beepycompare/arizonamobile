@@ -2,7 +2,7 @@ package com.bumptech.glide.load;
 
 import com.bumptech.glide.util.Preconditions;
 import java.security.MessageDigest;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Option<T> {
     private static final CacheKeyUpdater<Object> EMPTY_UPDATER = new CacheKeyUpdater<Object>() { // from class: com.bumptech.glide.load.Option.1
         @Override // com.bumptech.glide.load.Option.CacheKeyUpdater
@@ -14,7 +14,7 @@ public final class Option<T> {
     private final String key;
     private volatile byte[] keyBytes;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface CacheKeyUpdater<T> {
         void update(byte[] bArr, T t, MessageDigest messageDigest);
     }

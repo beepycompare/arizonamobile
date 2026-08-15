@@ -3,6 +3,7 @@ package com.bumptech.glide.util;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
+import com.arizona.launcher.updater.archive.install.SafeZipExtractor;
 import com.bumptech.glide.load.model.Model;
 import com.bumptech.glide.request.BaseRequestOptions;
 import com.google.common.base.Ascii;
@@ -11,11 +12,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Queue;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class Util {
     private static final int HASH_ACCUMULATOR = 17;
     private static final int HASH_MULTIPLIER = 31;
-    private static final char[] HEX_CHAR_ARRAY = "0123456789abcdef".toCharArray();
+    private static final char[] HEX_CHAR_ARRAY = SafeZipExtractor.HEX_DIGITS.toCharArray();
     private static final char[] SHA_256_CHARS = new char[64];
     private static volatile Handler mainThreadHandler;
 
@@ -87,7 +88,7 @@ public final class Util {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.bumptech.glide.util.Util$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$Config;
 

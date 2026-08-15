@@ -1,5 +1,6 @@
 package com.miami.game.core.downloader.database;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.room.InvalidationTracker;
 import androidx.room.RoomMasterTable;
 import androidx.room.RoomOpenDelegate;
@@ -89,7 +90,7 @@ public final class DownloaderInfoDatabase_Impl extends DownloaderInfoDatabase {
             public RoomOpenDelegate.ValidationResult onValidateSchema(SQLiteConnection connection) {
                 Intrinsics.checkNotNullParameter(connection, "connection");
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
-                linkedHashMap.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, 1));
+                linkedHashMap.put(TtmlNode.ATTR_ID, new TableInfo.Column(TtmlNode.ATTR_ID, "INTEGER", true, 1, null, 1));
                 linkedHashMap.put("path", new TableInfo.Column("path", "TEXT", false, 0, null, 1));
                 linkedHashMap.put("name_from_game_info_file", new TableInfo.Column("name_from_game_info_file", "TEXT", false, 0, null, 1));
                 linkedHashMap.put("size_from_game_info_file", new TableInfo.Column("size_from_game_info_file", "INTEGER", false, 0, null, 1));

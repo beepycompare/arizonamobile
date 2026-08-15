@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LazyHeaders implements Headers {
     private volatile Map<String, String> combinedHeaders;
     private final Map<String, List<LazyHeaderFactory>> headers;
@@ -69,7 +69,7 @@ public final class LazyHeaders implements Headers {
         return this.headers.hashCode();
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         private static final Map<String, List<LazyHeaderFactory>> DEFAULT_HEADERS;
         private static final String DEFAULT_USER_AGENT;
@@ -169,7 +169,7 @@ public final class LazyHeaders implements Headers {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class StringHeaderFactory implements LazyHeaderFactory {
         private final String value;
 

@@ -5,18 +5,18 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class Internal {
     private static final int DEFAULT_BUFFER_SIZE = 4096;
     public static final byte[] EMPTY_BYTE_ARRAY;
     public static final ByteBuffer EMPTY_BYTE_BUFFER;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface EnumLite {
         int getNumber();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface EnumLiteMap<T extends EnumLite> {
         T findValueByNumber(int i);
     }

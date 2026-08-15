@@ -1,5 +1,6 @@
 package com.miami.game.core.server;
 
+import com.miami.game.core.privacy.privacyInteractor;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {}, l = {109}, m = "firstLaunch", n = {}, nl = {110}, s = {}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor", f = "ServersInteractor.kt", i = {}, l = {109}, m = privacyInteractor.FIRST_LAUNCH_KEY, n = {}, nl = {110}, s = {}, v = 2)
 /* loaded from: classes5.dex */
 public final class ServersInteractor$firstLaunch$1 extends ContinuationImpl {
     int label;

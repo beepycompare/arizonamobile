@@ -85,7 +85,7 @@ public final class K3 implements ProtobufConverter {
 
     public static I3 a(L3 l3) {
         LinkedHashMap linkedHashMap;
-        EnumC0399l8 enumC0399l8;
+        EnumC0398l8 enumC0398l8;
         N3 n3 = l3.f641a;
         if (n3 != null) {
             M3[] m3Arr = n3.f678a;
@@ -99,16 +99,16 @@ public final class K3 implements ProtobufConverter {
         }
         int i = l3.b;
         if (i == 0) {
-            enumC0399l8 = EnumC0399l8.c;
+            enumC0398l8 = EnumC0398l8.c;
         } else if (i == 1) {
-            enumC0399l8 = EnumC0399l8.d;
+            enumC0398l8 = EnumC0398l8.d;
         } else if (i == 2) {
-            enumC0399l8 = EnumC0399l8.e;
+            enumC0398l8 = EnumC0398l8.e;
         } else if (i != 3) {
-            enumC0399l8 = EnumC0399l8.c;
+            enumC0398l8 = EnumC0398l8.c;
         } else {
-            enumC0399l8 = EnumC0399l8.f;
+            enumC0398l8 = EnumC0398l8.f;
         }
-        return new I3(linkedHashMap, enumC0399l8);
+        return new I3(linkedHashMap, enumC0398l8);
     }
 }

@@ -203,14 +203,14 @@ public class SearchBarAnimationHelper {
         view.post(new Runnable() { // from class: com.google.android.material.search.SearchBarAnimationHelper$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                SearchBarAnimationHelper.this.m9603x1b96b119(searchBar, view, appBarLayout, z);
+                SearchBarAnimationHelper.this.m9604x1b96b119(searchBar, view, appBarLayout, z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startExpandAnimation$0$com-google-android-material-search-SearchBarAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m9603x1b96b119(SearchBar searchBar, View view, AppBarLayout appBarLayout, boolean z) {
+    public /* synthetic */ void m9604x1b96b119(SearchBar searchBar, View view, AppBarLayout appBarLayout, boolean z) {
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playSequentially(getFadeOutChildrenAnimator(searchBar, view), getExpandAnimator(searchBar, view, appBarLayout));
         animatorSet.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchBarAnimationHelper.3
@@ -230,7 +230,7 @@ public class SearchBarAnimationHelper {
     }
 
     private Animator getExpandAnimator(final SearchBar searchBar, View view, AppBarLayout appBarLayout) {
-        return getExpandCollapseAnimationHelper(searchBar, view, appBarLayout).setDuration(EXPAND_DURATION_MS).addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchBarAnimationHelper.4
+        return getExpandCollapseAnimationHelper(searchBar, view, appBarLayout).setDuration(300L).addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.search.SearchBarAnimationHelper.4
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
                 searchBar.setVisibility(4);

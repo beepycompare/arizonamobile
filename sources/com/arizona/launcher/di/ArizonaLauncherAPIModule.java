@@ -4,6 +4,7 @@ import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizona.game.BuildConfig;
 import com.arizona.launcher.data.repository.notifications.NotificationsAPI;
 import com.arizona.launcher.util.FlavorUtilKt;
+import com.google.common.net.HttpHeaders;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import dagger.Module;
 import dagger.Provides;
@@ -35,7 +36,7 @@ public final class ArizonaLauncherAPIModule {
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
                 Intrinsics.checkNotNullParameter(chain, "chain");
-                Request build2 = chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build();
+                Request build2 = chain.request().newBuilder().addHeader(HttpHeaders.USER_AGENT, "Arizona Mobile: " + UtilsKt.isArizonaType()).build();
                 return chain.proceed(build2.newBuilder().url(build2.url().newBuilder().addQueryParameter("project", (String) FlavorUtilKt.rodinaOrArizona(new Function0<String>() { // from class: com.arizona.launcher.di.ArizonaLauncherAPIModule$okHttpClient$1$url$1
                     @Override // kotlin.jvm.functions.Function0
                     public final String invoke() {

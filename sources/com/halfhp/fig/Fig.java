@@ -13,7 +13,7 @@ import java.util.HashMap;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class Fig {
     private static final String CFG_ELEMENT_NAME = "config";
     private static final String COLOR_TRANSPARENT_COMPRESSED_HEX = "#0";

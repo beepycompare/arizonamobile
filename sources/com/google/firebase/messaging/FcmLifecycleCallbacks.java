@@ -13,7 +13,7 @@ import com.google.firebase.messaging.Constants;
 import java.util.ArrayDeque;
 import java.util.Queue;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FcmLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
     private static final int RECENTLY_LOGGED_MESSAGE_IDS_MAX_SIZE = 10;
     private final Queue<String> recentlyLoggedMessageIds = new ArrayDeque(10);
@@ -52,17 +52,17 @@ public class FcmLifecycleCallbacks implements Application.ActivityLifecycleCallb
             new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.google.firebase.messaging.FcmLifecycleCallbacks$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FcmLifecycleCallbacks.this.m9741xd8132052(intent);
+                    FcmLifecycleCallbacks.this.m9742xd8132052(intent);
                 }
             });
         } else {
-            m9741xd8132052(intent);
+            m9742xd8132052(intent);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: logNotificationOpen */
-    public void m9741xd8132052(Intent intent) {
+    public void m9742xd8132052(Intent intent) {
         Bundle bundle = null;
         try {
             Bundle extras = intent.getExtras();

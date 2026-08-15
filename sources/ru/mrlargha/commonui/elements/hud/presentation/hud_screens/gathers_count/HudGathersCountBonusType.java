@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.gathers_count;
 
+import com.arizona.launcher.UpdateServiceContract;
 import kotlin.Metadata;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
@@ -12,7 +13,7 @@ public final class HudGathersCountBonusType {
     private static final /* synthetic */ EnumEntries $ENTRIES;
     private static final /* synthetic */ HudGathersCountBonusType[] $VALUES;
     private final String type;
-    public static final HudGathersCountBonusType SPEED = new HudGathersCountBonusType("SPEED", 0, "speed");
+    public static final HudGathersCountBonusType SPEED = new HudGathersCountBonusType("SPEED", 0, UpdateServiceContract.BundleKey.SPEED);
     public static final HudGathersCountBonusType GIFT = new HudGathersCountBonusType("GIFT", 1, "gift");
     public static final HudGathersCountBonusType MAGNET = new HudGathersCountBonusType("MAGNET", 2, "magnet");
 

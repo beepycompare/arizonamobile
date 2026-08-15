@@ -7,12 +7,12 @@ import com.google.android.gms.tasks.Task;
 import java.util.Map;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RequestDeduplicator {
     private final Executor executor;
     private final Map<String, Task<String>> getTokenRequests = new ArrayMap();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     interface GetTokenRequest {
         Task<String> start();
     }
@@ -38,7 +38,7 @@ public class RequestDeduplicator {
         Task continueWithTask = getTokenRequest.start().continueWithTask(this.executor, new Continuation() { // from class: com.google.firebase.messaging.RequestDeduplicator$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return RequestDeduplicator.this.m9756x7161fc54(str, task2);
+                return RequestDeduplicator.this.m9757x7161fc54(str, task2);
             }
         });
         this.getTokenRequests.put(str, continueWithTask);
@@ -47,7 +47,7 @@ public class RequestDeduplicator {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getOrStartGetTokenRequest$0$com-google-firebase-messaging-RequestDeduplicator  reason: not valid java name */
-    public /* synthetic */ Task m9756x7161fc54(String str, Task task) throws Exception {
+    public /* synthetic */ Task m9757x7161fc54(String str, Task task) throws Exception {
         synchronized (this) {
             this.getTokenRequests.remove(str);
         }

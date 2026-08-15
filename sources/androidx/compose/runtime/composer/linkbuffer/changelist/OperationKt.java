@@ -151,7 +151,7 @@ public final class OperationKt {
         slotTableBuilder.startNewGroup(MovableContentKt.movableContentKey, content$runtime != Composer.Companion.getEmpty() ? 16777216 : 0, content$runtime, null, null);
         slotTableBuilder.addFlags(268435456);
         slotTableBuilder.append(movableContentStateReference.getParameter$runtime());
-        slotTableBuilder.moveFrom(slotTableEditor, UInt.m10016constructorimpl(slotTableEditor.getTable().getAddressSpace().getGroups()[LinkAnchorKt.asLinkAnchor(movableContentStateReference.getAnchor$runtime()).getAddress() + 3]) & 4294967295L);
+        slotTableBuilder.moveFrom(slotTableEditor, UInt.m10017constructorimpl(slotTableEditor.getTable().getAddressSpace().getGroups()[LinkAnchorKt.asLinkAnchor(movableContentStateReference.getAnchor$runtime()).getAddress() + 3]) & 4294967295L);
         slotTableBuilder.endGroup();
         SlotTable build = slotTableBuilder.build();
         MovableContentState movableContentState = new MovableContentState(build);

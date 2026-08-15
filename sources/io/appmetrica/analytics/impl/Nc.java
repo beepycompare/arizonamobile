@@ -2,15 +2,15 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Nc implements InterfaceC0706x4 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0706x4
+public final class Nc implements InterfaceC0705x4 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0705x4
     /* renamed from: b */
-    public final Oc a(Context context, C0603t5 c0603t5, C0266g4 c0266g4, G4 g4) {
+    public final Oc a(Context context, C0602t5 c0602t5, C0265g4 c0265g4, G4 g4) {
         Rg rg;
-        Pc pc = new Pc(c0266g4.b, c0266g4.f994a);
+        Pc pc = new Pc(c0265g4.b, c0265g4.f994a);
         Sg sg = new Sg(new Rc());
-        synchronized (c0603t5) {
-            rg = (Rg) c0603t5.a(pc, g4, sg, c0603t5.f1212a);
+        synchronized (c0602t5) {
+            rg = (Rg) c0602t5.a(pc, g4, sg, c0602t5.f1212a);
         }
         return new Oc(context, rg);
     }

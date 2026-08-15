@@ -1,6 +1,5 @@
 package retrofit2;
 
-import com.liulishuo.okdownload.core.Util;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
@@ -57,7 +56,7 @@ public abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMetho
         if (responseType == Response.class) {
             throw Utils.methodError(method, "Response must include generic type (e.g., Response<String>)", new Object[0]);
         }
-        if (requestFactory.httpMethod.equals(Util.METHOD_HEAD) && !Void.class.equals(responseType) && !Utils.isUnit(responseType)) {
+        if (requestFactory.httpMethod.equals("HEAD") && !Void.class.equals(responseType) && !Utils.isUnit(responseType)) {
             throw Utils.methodError(method, "HEAD method must use Void or Unit as response type.", new Object[0]);
         }
         boolean z4 = z;

@@ -6,7 +6,6 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Header;
 import com.android.volley.Request;
 import com.android.volley.toolbox.HttpClientStack;
-import com.liulishuo.okdownload.core.Util;
 import java.io.DataOutputStream;
 import java.io.FilterInputStream;
 import java.io.IOException;
@@ -175,7 +174,7 @@ public class HurlStack extends BaseHttpStack {
                 httpURLConnection.setRequestMethod("DELETE");
                 return;
             case 4:
-                httpURLConnection.setRequestMethod(Util.METHOD_HEAD);
+                httpURLConnection.setRequestMethod("HEAD");
                 return;
             case 5:
                 httpURLConnection.setRequestMethod("OPTIONS");

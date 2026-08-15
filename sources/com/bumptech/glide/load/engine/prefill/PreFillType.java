@@ -3,7 +3,7 @@ package com.bumptech.glide.load.engine.prefill;
 import android.graphics.Bitmap;
 import com.bumptech.glide.util.Preconditions;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PreFillType {
     static final Bitmap.Config DEFAULT_CONFIG = Bitmap.Config.RGB_565;
     private final Bitmap.Config config;
@@ -56,7 +56,7 @@ public final class PreFillType {
         return "PreFillSize{width=" + this.width + ", height=" + this.height + ", config=" + this.config + ", weight=" + this.weight + AbstractJsonLexerKt.END_OBJ;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Builder {
         private Bitmap.Config config;
         private final int height;

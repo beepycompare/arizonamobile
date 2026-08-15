@@ -9,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: InstallationId.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "com.google.firebase.sessions.InstallationId$Companion", f = "InstallationId.kt", i = {0, 1}, l = {31, 39}, m = "create", n = {"firebaseInstallations", "authToken"}, s = {"L$0", "L$0"})
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class InstallationId$Companion$create$1 extends ContinuationImpl {
     Object L$0;
     int label;

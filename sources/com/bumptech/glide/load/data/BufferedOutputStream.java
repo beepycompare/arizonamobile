@@ -3,7 +3,7 @@ package com.bumptech.glide.load.data;
 import com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;
 import java.io.IOException;
 import java.io.OutputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BufferedOutputStream extends OutputStream {
     private ArrayPool arrayPool;
     private byte[] buffer;

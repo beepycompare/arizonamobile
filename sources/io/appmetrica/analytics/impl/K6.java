@@ -8,7 +8,7 @@ public final class K6 extends Ra {
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(List<AbstractC0305hh> list) {
+    public final void a(List<AbstractC0304hh> list) {
         list.add(this.f745a.b);
         list.add(this.f745a.f651a);
         list.add(this.f745a.d);

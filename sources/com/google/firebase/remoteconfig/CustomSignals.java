@@ -2,11 +2,11 @@ package com.google.firebase.remoteconfig;
 
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CustomSignals {
     final Map<String, String> customSignals;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         private Map<String, String> customSignals = new HashMap();
 

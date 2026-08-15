@@ -11,7 +11,7 @@ import kotlin.coroutines.CoroutineContext;
 /* loaded from: classes5.dex */
 public interface DelayWithTimeoutDiagnostics extends Delay {
     /* renamed from: timeoutMessage-LRDsOJo  reason: not valid java name */
-    String m11441timeoutMessageLRDsOJo(long j);
+    String m11442timeoutMessageLRDsOJo(long j);
 
     /* compiled from: Delay.kt */
     @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)

@@ -25,7 +25,7 @@ import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigAutoFetch {
     private static final int MAXIMUM_FETCH_ATTEMPTS = 3;
     private static final String REALTIME_DISABLED_KEY = "featureDisabled";
@@ -207,7 +207,7 @@ public class ConfigAutoFetch {
                 return Tasks.whenAllComplete(fetchNowWithTypeAndAttemptNumber, task).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigAutoFetch$$ExternalSyntheticLambda0
                     @Override // com.google.android.gms.tasks.Continuation
                     public final Object then(Task task2) {
-                        return ConfigAutoFetch.this.m9763xc4c7076e(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
+                        return ConfigAutoFetch.this.m9764xc4c7076e(fetchNowWithTypeAndAttemptNumber, task, j, i2, task2);
                     }
                 });
             } catch (Throwable th) {
@@ -222,7 +222,7 @@ public class ConfigAutoFetch {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$fetchLatestConfig$0$com-google-firebase-remoteconfig-internal-ConfigAutoFetch  reason: not valid java name */
-    public /* synthetic */ Task m9763xc4c7076e(Task task, Task task2, long j, int i, Task task3) throws Exception {
+    public /* synthetic */ Task m9764xc4c7076e(Task task, Task task2, long j, int i, Task task3) throws Exception {
         if (!task.isSuccessful()) {
             return Tasks.forException(new FirebaseRemoteConfigClientException("Failed to auto-fetch config update.", task.getException()));
         }

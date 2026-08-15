@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
     private final Pools.Pool<List<Throwable>> exceptionListPool;
     private final List<ModelLoader<Model, Data>> modelLoaders;
@@ -58,7 +58,7 @@ public class MultiModelLoader<Model, Data> implements ModelLoader<Model, Data> {
         return "MultiModelLoader{modelLoaders=" + Arrays.toString(this.modelLoaders.toArray()) + AbstractJsonLexerKt.END_OBJ;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static class MultiFetcher<Data> implements DataFetcher<Data>, DataFetcher.DataCallback<Data> {
         private DataFetcher.DataCallback<? super Data> callback;
         private int currentIndex;

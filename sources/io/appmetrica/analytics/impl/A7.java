@@ -15,45 +15,45 @@ public final class A7 implements Converter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final E7 fromModel(C0761z7 c0761z7) {
+    public final E7 fromModel(C0760z7 c0760z7) {
         E7 e7 = new E7();
-        Boolean bool = c0761z7.f1311a;
+        Boolean bool = c0760z7.f1311a;
         if (bool != null) {
             e7.f525a = this.f455a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
-        Double d = c0761z7.c;
+        Double d = c0760z7.c;
         if (d != null) {
             e7.c = d.doubleValue();
         }
-        Double d2 = c0761z7.b;
+        Double d2 = c0760z7.b;
         if (d2 != null) {
             e7.b = d2.doubleValue();
         }
-        Long l = c0761z7.h;
+        Long l = c0760z7.h;
         if (l != null) {
             e7.h = l.longValue();
         }
-        Integer num = c0761z7.f;
+        Integer num = c0760z7.f;
         if (num != null) {
             e7.f = num.intValue();
         }
-        Integer num2 = c0761z7.e;
+        Integer num2 = c0760z7.e;
         if (num2 != null) {
             e7.e = num2.intValue();
         }
-        Integer num3 = c0761z7.g;
+        Integer num3 = c0760z7.g;
         if (num3 != null) {
             e7.g = num3.intValue();
         }
-        Integer num4 = c0761z7.d;
+        Integer num4 = c0760z7.d;
         if (num4 != null) {
             e7.d = num4.intValue();
         }
-        String str = c0761z7.i;
+        String str = c0760z7.i;
         if (str != null) {
             e7.i = str;
         }
-        String str2 = c0761z7.j;
+        String str2 = c0760z7.j;
         if (str2 != null) {
             e7.j = str2;
         }
@@ -70,9 +70,9 @@ public final class A7 implements Converter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0761z7 toModel(E7 e7) {
+    public final C0760z7 toModel(E7 e7) {
         if (e7 == null) {
-            return new C0761z7(null, null, null, null, null, null, null, null, null, null);
+            return new C0760z7(null, null, null, null, null, null, null, null, null, null);
         }
         E7 e72 = new E7();
         Boolean a2 = this.f455a.a(e7.f525a);
@@ -95,6 +95,6 @@ public final class A7 implements Converter {
         String str = e7.i;
         String str2 = !Intrinsics.areEqual(str, e72.i) ? str : null;
         String str3 = e7.j;
-        return new C0761z7(a2, d, valueOf, num4, num2, num, num3, l, str2, !Intrinsics.areEqual(str3, e72.j) ? str3 : null);
+        return new C0760z7(a2, d, valueOf, num4, num2, num, num3, l, str2, !Intrinsics.areEqual(str3, e72.j) ? str3 : null);
     }
 }

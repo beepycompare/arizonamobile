@@ -3,7 +3,7 @@ package com.bumptech.glide.load.model;
 import com.bumptech.glide.util.LruCache;
 import com.bumptech.glide.util.Util;
 import java.util.Queue;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ModelCache<A, B> {
     private static final int DEFAULT_SIZE = 250;
     private final LruCache<ModelKey<A>, B> cache;
@@ -41,7 +41,7 @@ public class ModelCache<A, B> {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ModelKey<A> {
         private static final Queue<ModelKey<?>> KEY_QUEUE = Util.createQueue(0);
         private int height;

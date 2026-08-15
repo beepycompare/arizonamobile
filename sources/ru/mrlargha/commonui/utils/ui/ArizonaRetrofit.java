@@ -101,7 +101,7 @@ public final class ArizonaRetrofit {
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
                 Intrinsics.checkNotNullParameter(chain, "chain");
-                return chain.proceed(chain.request().newBuilder().addHeader(HttpHeaders.AUTHORIZATION, TokenManagerKt.getToken()).addHeader("User-Agent", "Arizona Mobile: " + ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()).build());
+                return chain.proceed(chain.request().newBuilder().addHeader(HttpHeaders.AUTHORIZATION, TokenManagerKt.getToken()).addHeader(HttpHeaders.USER_AGENT, "Arizona Mobile: " + ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()).build());
             }
         }).addInterceptor(httpLoggingInterceptor).addInterceptor(new DefaultQueryInterceptor()).build();
     }

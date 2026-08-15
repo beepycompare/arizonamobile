@@ -4,7 +4,7 @@ import com.google.common.base.Ascii;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ExifOrientationStream extends FilterInputStream {
     private static final byte[] EXIF_SEGMENT;
     private static final int ORIENTATION_POSITION;

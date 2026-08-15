@@ -4,10 +4,10 @@ public final class T0 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ boolean f771a;
-    public final /* synthetic */ C0651v1 b;
+    public final /* synthetic */ C0650v1 b;
 
-    public T0(C0651v1 c0651v1, boolean z) {
-        this.b = c0651v1;
+    public T0(C0650v1 c0650v1, boolean z) {
+        this.b = c0650v1;
         this.f771a = z;
     }
 

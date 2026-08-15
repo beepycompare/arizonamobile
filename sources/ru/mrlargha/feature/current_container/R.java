@@ -11,9 +11,9 @@ public final class R {
         public static int auction_container_item = 0x7f080391;
         public static int auction_intput_style = 0x7f080393;
         public static int auction_item_bg = 0x7f080394;
-        public static int ic_auction_container_last_bet_bg = 0x7f080af4;
-        public static int ic_auction_container_timer_bg = 0x7f080af5;
-        public static int item = 0x7f080c4c;
+        public static int ic_auction_container_last_bet_bg = 0x7f080af9;
+        public static int ic_auction_container_timer_bg = 0x7f080afa;
+        public static int item = 0x7f080c51;
 
         private drawable() {
         }
@@ -88,25 +88,25 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class string {
-        public static int auction_bid_hint_az = 0x7f120040;
-        public static int auction_bid_hint_cash = 0x7f120041;
-        public static int auction_cannot_bid_now = 0x7f120042;
-        public static int auction_demon_mask = 0x7f120043;
-        public static int auction_enter_bid_amount = 0x7f120044;
-        public static int auction_finished_cannot_bid = 0x7f120045;
-        public static int auction_for_container = 0x7f120046;
-        public static int auction_last_bid = 0x7f120047;
-        public static int auction_new_bid_must_be_higher = 0x7f120048;
-        public static int auction_not_held = 0x7f120049;
-        public static int auction_ordinary_container = 0x7f12004a;
-        public static int auction_possible_contents = 0x7f12004b;
-        public static int auction_start_label = 0x7f12004c;
-        public static int auction_start_time = 0x7f12004d;
-        public static int auction_starting_price = 0x7f12004e;
-        public static int auction_time_left = 0x7f12004f;
-        public static int container_get_prize_subtitle = 0x7f1201e7;
-        public static int container_get_prize_title = 0x7f1201e8;
-        public static int container_items_count_example = 0x7f1201e9;
+        public static int auction_bid_hint_az = 0x7f120045;
+        public static int auction_bid_hint_cash = 0x7f120046;
+        public static int auction_cannot_bid_now = 0x7f120047;
+        public static int auction_demon_mask = 0x7f120048;
+        public static int auction_enter_bid_amount = 0x7f120049;
+        public static int auction_finished_cannot_bid = 0x7f12004a;
+        public static int auction_for_container = 0x7f12004b;
+        public static int auction_last_bid = 0x7f12004c;
+        public static int auction_new_bid_must_be_higher = 0x7f12004d;
+        public static int auction_not_held = 0x7f12004e;
+        public static int auction_ordinary_container = 0x7f12004f;
+        public static int auction_possible_contents = 0x7f120050;
+        public static int auction_start_label = 0x7f120051;
+        public static int auction_start_time = 0x7f120052;
+        public static int auction_starting_price = 0x7f120053;
+        public static int auction_time_left = 0x7f120054;
+        public static int container_get_prize_subtitle = 0x7f1201ec;
+        public static int container_get_prize_title = 0x7f1201ed;
+        public static int container_items_count_example = 0x7f1201ee;
 
         private string() {
         }

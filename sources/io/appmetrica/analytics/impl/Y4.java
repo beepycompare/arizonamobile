@@ -32,20 +32,20 @@ public final class Y4 extends DatabaseScript {
     public final String u = "open_id";
     public final String v = "extras";
     public final String w = "reports";
-    public final C0683w7 x = new C0683w7(null, 1, null);
+    public final C0682w7 x = new C0682w7(null, 1, null);
 
-    public static boolean a(C0657v7 c0657v7) {
+    public static boolean a(C0656v7 c0656v7) {
         Long l;
         Db db;
         Long l2;
         Long l3;
-        Long l4 = c0657v7.f1246a;
-        if (l4 == null || l4.longValue() < RealConnection.IDLE_CONNECTION_HEALTHY_NS || c0657v7.b == null || (l = c0657v7.c) == null || l.longValue() < 0 || (db = c0657v7.d) == null || db == Db.EVENT_TYPE_UNDEFINED || (l2 = c0657v7.e) == null || l2.longValue() < 0 || (l3 = c0657v7.f) == null || l3.longValue() < 0) {
+        Long l4 = c0656v7.f1246a;
+        if (l4 == null || l4.longValue() < RealConnection.IDLE_CONNECTION_HEALTHY_NS || c0656v7.b == null || (l = c0656v7.c) == null || l.longValue() < 0 || (db = c0656v7.d) == null || db == Db.EVENT_TYPE_UNDEFINED || (l2 = c0656v7.e) == null || l2.longValue() < 0 || (l3 = c0656v7.f) == null || l3.longValue() < 0) {
             return false;
         }
-        Long l5 = c0657v7.g.d;
+        Long l5 = c0656v7.g.d;
         if (l5 == null || l5.longValue() >= 0) {
-            Integer num = c0657v7.g.i;
+            Integer num = c0656v7.g.i;
             return num == null || num.intValue() >= 0;
         }
         return false;
@@ -63,7 +63,7 @@ public final class Y4 extends DatabaseScript {
                 cursor = sQLiteDatabase2.query(this.w, null, null, null, null, null, null, String.valueOf(this.f853a));
                 while (cursor.moveToNext()) {
                     try {
-                        C0657v7 a2 = a(cursor);
+                        C0656v7 a2 = a(cursor);
                         if (a2 != null && a(a2)) {
                             try {
                                 sQLiteDatabase2.insertOrThrow(NotificationStatsStore.KEY_EVENTS, null, this.x.fromModel(a2));
@@ -115,11 +115,11 @@ public final class Y4 extends DatabaseScript {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final C0657v7 a(Cursor cursor) {
+    public final C0656v7 a(Cursor cursor) {
         Al al;
         Integer valueOf;
-        EnumC0168c9 enumC0168c9;
-        EnumC0168c9 enumC0168c92;
+        EnumC0167c9 enumC0167c9;
+        EnumC0167c9 enumC0167c92;
         Integer valueOf2;
         Integer valueOf3;
         G9 g9;
@@ -149,12 +149,12 @@ public final class Y4 extends DatabaseScript {
                     Long valueOf11 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.m)));
                     Integer valueOf12 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.n)));
                     valueOf = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.p)));
-                    enumC0168c9 = EnumC0168c9.NONE;
+                    enumC0167c9 = EnumC0167c9.NONE;
                     if (valueOf != null) {
                     }
-                    enumC0168c9 = EnumC0168c9.AES_VALUE_ENCRYPTION;
+                    enumC0167c9 = EnumC0167c9.AES_VALUE_ENCRYPTION;
                     if (valueOf != null && valueOf.intValue() == 2) {
-                        enumC0168c92 = enumC0168c9;
+                        enumC0167c92 = enumC0167c9;
                         String string5 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                         valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
                         Aa aa = Aa.FIRST_OCCURRENCE;
@@ -194,9 +194,9 @@ public final class Y4 extends DatabaseScript {
                         }
                         g92 = null;
                     }
-                    enumC0168c9 = EnumC0168c9.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
+                    enumC0167c9 = EnumC0167c9.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
                     if (valueOf != null && valueOf.intValue() == 1) {
-                        enumC0168c92 = enumC0168c9;
+                        enumC0167c92 = enumC0167c9;
                         String string52 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                         valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
                         Aa aa3 = Aa.FIRST_OCCURRENCE;
@@ -234,7 +234,7 @@ public final class Y4 extends DatabaseScript {
                         }
                         g92 = null;
                     }
-                    enumC0168c92 = null;
+                    enumC0167c92 = null;
                     String string522 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                     valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
                     Aa aa32 = Aa.FIRST_OCCURRENCE;
@@ -255,7 +255,7 @@ public final class Y4 extends DatabaseScript {
                     g92 = null;
                 }
                 if (valueOf != null) {
-                    enumC0168c92 = enumC0168c9;
+                    enumC0167c92 = enumC0167c9;
                     String string5222 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                     valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
                     Aa aa322 = Aa.FIRST_OCCURRENCE;
@@ -276,7 +276,7 @@ public final class Y4 extends DatabaseScript {
                     g92 = null;
                 }
                 if (valueOf != null) {
-                    enumC0168c92 = enumC0168c9;
+                    enumC0167c92 = enumC0167c9;
                     String string52222 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
                     valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
                     Aa aa3222 = Aa.FIRST_OCCURRENCE;
@@ -312,12 +312,12 @@ public final class Y4 extends DatabaseScript {
             Long valueOf112 = Long.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(this.m)));
             Integer valueOf122 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.n)));
             valueOf = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.p)));
-            enumC0168c9 = EnumC0168c9.NONE;
+            enumC0167c9 = EnumC0167c9.NONE;
             if (valueOf != null) {
             }
-            enumC0168c9 = EnumC0168c9.AES_VALUE_ENCRYPTION;
-            enumC0168c9 = EnumC0168c9.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
-            enumC0168c92 = null;
+            enumC0167c9 = EnumC0167c9.AES_VALUE_ENCRYPTION;
+            enumC0167c9 = EnumC0167c9.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
+            enumC0167c92 = null;
             String string522222 = cursor.getString(cursor.getColumnIndexOrThrow(this.q));
             valueOf2 = Integer.valueOf(cursor.getInt(cursor.getColumnIndexOrThrow(this.r)));
             Aa aa32222 = Aa.FIRST_OCCURRENCE;
@@ -345,10 +345,10 @@ public final class Y4 extends DatabaseScript {
             }
             Integer valueOf14 = Integer.valueOf(i);
             int columnIndex = cursor.getColumnIndex(this.v);
-            return new C0657v7(valueOf4, al, valueOf62, a22, valueOf72, valueOf82, new C0631u7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, enumC0168c92, string522222, aa2222222222, g92, valueOf13, valueOf14, columnIndex >= 0 ? null : cursor.getBlob(columnIndex)));
+            return new C0656v7(valueOf4, al, valueOf62, a22, valueOf72, valueOf82, new C0630u7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, enumC0167c92, string522222, aa2222222222, g92, valueOf13, valueOf14, columnIndex >= 0 ? null : cursor.getBlob(columnIndex)));
             Integer valueOf142 = Integer.valueOf(i);
             int columnIndex2 = cursor.getColumnIndex(this.v);
-            return new C0657v7(valueOf4, al, valueOf62, a22, valueOf72, valueOf82, new C0631u7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, enumC0168c92, string522222, aa2222222222, g92, valueOf13, valueOf142, columnIndex2 >= 0 ? null : cursor.getBlob(columnIndex2)));
+            return new C0656v7(valueOf4, al, valueOf62, a22, valueOf72, valueOf82, new C0630u7(valueOf92, string6, string22, valueOf102, null, string32, string42, valueOf112, valueOf122, null, null, enumC0167c92, string522222, aa2222222222, g92, valueOf13, valueOf142, columnIndex2 >= 0 ? null : cursor.getBlob(columnIndex2)));
         } catch (Throwable unused3) {
             return null;
         }

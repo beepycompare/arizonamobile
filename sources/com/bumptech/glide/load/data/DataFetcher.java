@@ -2,10 +2,10 @@ package com.bumptech.glide.load.data;
 
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.DataSource;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface DataFetcher<T> {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface DataCallback<T> {
         void onDataReady(T t);
 

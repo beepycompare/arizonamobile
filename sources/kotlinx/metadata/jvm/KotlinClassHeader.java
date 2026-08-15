@@ -7,7 +7,7 @@ import kotlin.DeprecationLevel;
 import kotlin.Metadata;
 import kotlin.ReplaceWith;
 @Deprecated(level = DeprecationLevel.ERROR, message = "Kotlin clients should instantiate Metadata annotation directly", replaceWith = @ReplaceWith(expression = "Metadata", imports = {}))
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class KotlinClassHeader implements Metadata {
     @Deprecated
     public static final int CLASS_KIND = 1;

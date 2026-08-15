@@ -9,8 +9,8 @@ public final class Ti extends Q4 {
     }
 
     @Override // io.appmetrica.analytics.impl.Q4
-    public final boolean a(C0242f6 c0242f6, L4 l4) {
-        Bundle bundle = c0242f6.m;
+    public final boolean a(C0241f6 c0241f6, L4 l4) {
+        Bundle bundle = c0241f6.m;
         this.f727a.a(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null);
         return false;
     }

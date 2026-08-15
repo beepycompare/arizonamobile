@@ -1,5 +1,6 @@
 package androidx.compose.ui.contentcapture;
 
+import com.arizona.launcher.updater.archive.download.ArchiveResumableHttpEngine;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AndroidContentCaptureManager.android.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.ui.contentcapture.AndroidContentCaptureManager", f = "AndroidContentCaptureManager.android.kt", i = {}, l = {205, 215}, m = "boundsUpdatesEventLoop$ui", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "androidx.compose.ui.contentcapture.AndroidContentCaptureManager", f = "AndroidContentCaptureManager.android.kt", i = {}, l = {ArchiveResumableHttpEngine.HTTP_RESET_CONTENT, 215}, m = "boundsUpdatesEventLoop$ui", n = {}, s = {}, v = 1)
 /* loaded from: classes2.dex */
 public final class AndroidContentCaptureManager$boundsUpdatesEventLoop$1 extends ContinuationImpl {
     Object L$0;

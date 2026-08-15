@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StreamEncoder implements Encoder<InputStream> {
     private static final String TAG = "StreamEncoder";
     private final ArrayPool byteArrayPool;

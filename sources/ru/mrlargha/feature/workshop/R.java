@@ -54,10 +54,10 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class layout {
-        public static int item_workshop = 0x7f0d01a4;
-        public static int layout_item_fix = 0x7f0d01ad;
-        public static int layout_item_paint = 0x7f0d01ae;
-        public static int layout_item_sharp = 0x7f0d01af;
+        public static int item_workshop = 0x7f0d01a8;
+        public static int layout_item_fix = 0x7f0d01b1;
+        public static int layout_item_paint = 0x7f0d01b2;
+        public static int layout_item_sharp = 0x7f0d01b3;
         public static int potions_screen = 0x7f0d0259;
         public static int workshop_buttons_container = 0x7f0d02ce;
         public static int workshop_chance_cost_info = 0x7f0d02cf;
@@ -72,19 +72,19 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class string {
-        public static int workshop_amount_million_suffix = 0x7f1206e5;
-        public static int workshop_amount_thousand_suffix = 0x7f1206e6;
-        public static int workshop_gun_attachment_description = 0x7f1206ec;
-        public static int workshop_gun_attachment_mode = 0x7f1206ed;
-        public static int workshop_gun_attachment_sharpening_slot = 0x7f1206ee;
-        public static int workshop_gun_attachment_slot = 0x7f1206ef;
-        public static int workshop_gun_grindstone_slot = 0x7f1206f0;
-        public static int workshop_gun_materials_slot = 0x7f1206f1;
-        public static int workshop_gun_skin_slot = 0x7f1206f2;
-        public static int workshop_gun_weapon_description = 0x7f1206f3;
-        public static int workshop_gun_weapon_mode = 0x7f1206f4;
-        public static int workshop_gun_weapon_sharpening_slot = 0x7f1206f5;
-        public static int workshop_information = 0x7f1206f6;
+        public static int workshop_amount_million_suffix = 0x7f1206ec;
+        public static int workshop_amount_thousand_suffix = 0x7f1206ed;
+        public static int workshop_gun_attachment_description = 0x7f1206f3;
+        public static int workshop_gun_attachment_mode = 0x7f1206f4;
+        public static int workshop_gun_attachment_sharpening_slot = 0x7f1206f5;
+        public static int workshop_gun_attachment_slot = 0x7f1206f6;
+        public static int workshop_gun_grindstone_slot = 0x7f1206f7;
+        public static int workshop_gun_materials_slot = 0x7f1206f8;
+        public static int workshop_gun_skin_slot = 0x7f1206f9;
+        public static int workshop_gun_weapon_description = 0x7f1206fa;
+        public static int workshop_gun_weapon_mode = 0x7f1206fb;
+        public static int workshop_gun_weapon_sharpening_slot = 0x7f1206fc;
+        public static int workshop_information = 0x7f1206fd;
 
         private string() {
         }

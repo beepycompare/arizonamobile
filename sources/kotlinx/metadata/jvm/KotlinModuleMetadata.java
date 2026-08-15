@@ -19,7 +19,7 @@ import kotlinx.metadata.jvm.internal.JvmReadUtils;
 /* compiled from: KotlinModuleMetadata.kt */
 @UnstableMetadataApi
 @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0002\b\u0003\b\u0007\u0018\u0000 \u00162\u00020\u0001:\u0002\u0016\u0017B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0002\u0010\u0006J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0007J\b\u0010\u0013\u001a\u00020\u0003H\u0007J\u0006\u0010\u0014\u001a\u00020\u0015R\u001a\u0010\u0002\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000e¨\u0006\u0018"}, d2 = {"Lkotlinx/metadata/jvm/KotlinModuleMetadata;", "", "kmModule", "Lkotlinx/metadata/jvm/KmModule;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "Lkotlinx/metadata/jvm/JvmMetadataVersion;", "(Lkotlinx/metadata/jvm/KmModule;Lkotlinx/metadata/jvm/JvmMetadataVersion;)V", "getKmModule", "()Lkotlinx/metadata/jvm/KmModule;", "setKmModule", "(Lkotlinx/metadata/jvm/KmModule;)V", "getVersion", "()Lkotlinx/metadata/jvm/JvmMetadataVersion;", "setVersion", "(Lkotlinx/metadata/jvm/JvmMetadataVersion;)V", "accept", "", "v", "Lkotlinx/metadata/jvm/KmModuleVisitor;", "toKmModule", "write", "", "Companion", "Writer", "kotlinx-metadata-jvm"}, k = 1, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class KotlinModuleMetadata {
     public static final Companion Companion = new Companion(null);
     private KmModule kmModule;
@@ -99,7 +99,7 @@ public final class KotlinModuleMetadata {
     /* compiled from: KotlinModuleMetadata.kt */
     @Deprecated(level = DeprecationLevel.ERROR, message = "Writer API is deprecated as excessive and cumbersome. Please use KotlinModuleMetadata.write(kmModule, metadataVersion)")
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0000\n\u0002\u0010\u0015\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0005¢\u0006\u0002\u0010\u0002J\u0012\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u0006H\u0007¨\u0006\u0007"}, d2 = {"Lkotlinx/metadata/jvm/KotlinModuleMetadata$Writer;", "", "()V", "write", "", "metadataVersion", "", "kotlinx-metadata-jvm"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Writer {
         public static /* synthetic */ byte[] write$default(Writer writer, int[] iArr, int i, Object obj) {
             if ((i & 1) != 0) {
@@ -123,7 +123,7 @@ public final class KotlinModuleMetadata {
 
     /* compiled from: KotlinModuleMetadata.kt */
     @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006H\u0007J\u001a\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\t2\b\b\u0002\u0010\n\u001a\u00020\u000bH\u0007¨\u0006\f"}, d2 = {"Lkotlinx/metadata/jvm/KotlinModuleMetadata$Companion;", "", "()V", "read", "Lkotlinx/metadata/jvm/KotlinModuleMetadata;", "bytes", "", "write", "kmModule", "Lkotlinx/metadata/jvm/KmModule;", "metadataVersion", "Lkotlinx/metadata/jvm/JvmMetadataVersion;", "kotlinx-metadata-jvm"}, k = 1, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

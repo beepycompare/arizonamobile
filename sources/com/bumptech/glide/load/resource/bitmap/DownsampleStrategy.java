@@ -1,7 +1,7 @@
 package com.bumptech.glide.load.resource.bitmap;
 
 import com.bumptech.glide.load.Option;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class DownsampleStrategy {
     public static final DownsampleStrategy CENTER_OUTSIDE;
     public static final DownsampleStrategy DEFAULT;
@@ -13,7 +13,7 @@ public abstract class DownsampleStrategy {
     public static final DownsampleStrategy FIT_CENTER = new FitCenter();
     public static final DownsampleStrategy CENTER_INSIDE = new CenterInside();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum SampleSizeRounding {
         MEMORY,
         QUALITY
@@ -32,7 +32,7 @@ public abstract class DownsampleStrategy {
         IS_BITMAP_FACTORY_SCALING_SUPPORTED = true;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class FitCenter extends DownsampleStrategy {
         FitCenter() {
         }
@@ -58,7 +58,7 @@ public abstract class DownsampleStrategy {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class CenterOutside extends DownsampleStrategy {
         CenterOutside() {
         }
@@ -74,7 +74,7 @@ public abstract class DownsampleStrategy {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class AtLeast extends DownsampleStrategy {
         AtLeast() {
         }
@@ -94,7 +94,7 @@ public abstract class DownsampleStrategy {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class AtMost extends DownsampleStrategy {
         AtMost() {
         }
@@ -112,7 +112,7 @@ public abstract class DownsampleStrategy {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class None extends DownsampleStrategy {
         @Override // com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
         public float getScaleFactor(int i, int i2, int i3, int i4) {
@@ -128,7 +128,7 @@ public abstract class DownsampleStrategy {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class CenterInside extends DownsampleStrategy {
         CenterInside() {
         }

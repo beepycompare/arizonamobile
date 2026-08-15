@@ -34,7 +34,7 @@ import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesPrizeModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.compositionLocalMapKey, ComposerKt.providerKey, 214}, m = "invokeSuspend", n = {}, nl = {ComposerKt.providerKey, ComposerKt.providerMapsKey, 262}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.compositionLocalMapKey, 201, 214}, m = "invokeSuspend", n = {}, nl = {201, ComposerKt.providerMapsKey, 262}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesScreen$setCollectors$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;

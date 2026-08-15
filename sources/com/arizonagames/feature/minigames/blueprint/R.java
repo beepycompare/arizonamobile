@@ -78,15 +78,15 @@ public final class R {
         public static int blueprint_pipe_two_stage_three = 0x7f08050d;
         public static int blueprint_pipe_two_stage_two = 0x7f08050e;
         public static int blueprint_snowmen_bg = 0x7f08050f;
-        public static int pm_empty = 0x7f080ec5;
-        public static int pm_stage_1 = 0x7f080ec6;
-        public static int pm_stage_2 = 0x7f080ec7;
-        public static int pm_stage_3 = 0x7f080ec8;
-        public static int rpg_empty = 0x7f080f3c;
-        public static int rpg_stage_1 = 0x7f080f3d;
-        public static int rpg_stage_2 = 0x7f080f3e;
-        public static int rpg_stage_3 = 0x7f080f3f;
-        public static int rpg_stage_4 = 0x7f080f40;
+        public static int pm_empty = 0x7f080ec7;
+        public static int pm_stage_1 = 0x7f080ec8;
+        public static int pm_stage_2 = 0x7f080ec9;
+        public static int pm_stage_3 = 0x7f080eca;
+        public static int rpg_empty = 0x7f080f3e;
+        public static int rpg_stage_1 = 0x7f080f3f;
+        public static int rpg_stage_2 = 0x7f080f40;
+        public static int rpg_stage_3 = 0x7f080f41;
+        public static int rpg_stage_4 = 0x7f080f42;
 
         private drawable() {
         }

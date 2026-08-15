@@ -6,6 +6,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.arizona.launcher.util.FlavorUtilKt;
+import com.google.common.net.HttpHeaders;
 import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -22,7 +23,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: MainEntrench.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0}, l = {1260}, m = "invokeSuspend", n = {"request", "it"}, nl = {1261}, s = {"L$2", "I$2"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0}, l = {1297}, m = "invokeSuspend", n = {"request", "it"}, nl = {1298}, s = {"L$2", "I$2"}, v = 2)
 /* loaded from: classes3.dex */
 final class MainEntrench$sendRequests$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $iterations;
@@ -105,7 +106,7 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
                 StringRequest stringRequest = new StringRequest(str, listener, errorListener) { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$1$request$1
                     @Override // com.android.volley.Request
                     public Map<String, String> getHeaders() {
-                        return MapsKt.mutableMapOf(TuplesKt.to("User-Agent", "Arizona Mobile: " + FlavorUtilKt.isArizona()));
+                        return MapsKt.mutableMapOf(TuplesKt.to(HttpHeaders.USER_AGENT, "Arizona Mobile: " + FlavorUtilKt.isArizona()));
                     }
                 };
                 requestQueue.add(stringRequest);

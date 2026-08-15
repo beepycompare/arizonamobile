@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 /* loaded from: classes5.dex */
-public final class Eh extends C0191d6 {
+public final class Eh extends C0190d6 {
     public boolean d;
     public boolean e;
     public int f;
@@ -30,8 +30,8 @@ public final class Eh extends C0191d6 {
     public Set x = new HashSet();
     public boolean y;
 
-    public Eh(C0448n5 c0448n5) {
-        this.l = c0448n5;
+    public Eh(C0447n5 c0447n5) {
+        this.l = c0447n5;
     }
 
     public final void a(int i) {
@@ -114,7 +114,7 @@ public final class Eh extends C0191d6 {
         return this.y;
     }
 
-    @Override // io.appmetrica.analytics.impl.C0191d6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
+    @Override // io.appmetrica.analytics.impl.C0190d6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
     public final String toString() {
         return "ReportRequestConfig{mLocationTracking=" + this.d + ", mFirstActivationAsUpdate=" + this.e + ", mSessionTimeout=" + this.f + ", mDispatchPeriod=" + this.g + ", mLogEnabled=" + this.h + ", mMaxReportsCount=" + this.i + ", dataSendingEnabledFromArguments=" + this.j + ", dataSendingStrategy=" + this.k + ", mPreloadInfoSendingStrategy=" + this.l + ", mApiKey='" + this.m + "', mPermissionsCollectingEnabled=" + this.n + ", mFeaturesCollectingEnabled=" + this.o + ", mClidsFromStartupResponse='" + this.p + "', mReportHosts=" + this.q + ", mAttributionId=" + this.r + ", mPermissionsCollectingIntervalSeconds=" + this.s + ", mPermissionsForceSendIntervalSeconds=" + this.t + ", mClidsFromClientMatchClidsFromStartupRequest=" + this.u + ", mMaxReportsInDbCount=" + this.v + ", mCertificates=" + this.w + "} " + super.toString();
     }
@@ -128,7 +128,7 @@ public final class Eh extends C0191d6 {
     }
 
     public final boolean w() {
-        return ((C0448n5) this.l).B();
+        return ((C0447n5) this.l).B();
     }
 
     public final void a(long j) {

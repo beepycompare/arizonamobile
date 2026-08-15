@@ -40,7 +40,7 @@ public final class Lb {
                 HashMap c = Ib.c(optString);
                 if (c != null) {
                     for (Map.Entry entry : c.entrySet()) {
-                        this.d.put(EnumC0163c4.valueOf((String) entry.getKey()), Integer.valueOf(Integer.parseInt((String) entry.getValue())));
+                        this.d.put(EnumC0162c4.valueOf((String) entry.getKey()), Integer.valueOf(Integer.parseInt((String) entry.getValue())));
                     }
                 }
             } catch (Throwable unused) {
@@ -96,14 +96,14 @@ public final class Lb {
         return this.i;
     }
 
-    public final HashMap<EnumC0163c4, Integer> k() {
+    public final HashMap<EnumC0162c4, Integer> k() {
         return this.d;
     }
 
     public final String l() throws JSONException {
         HashMap hashMap = new HashMap();
         for (Map.Entry entry : this.d.entrySet()) {
-            hashMap.put(((EnumC0163c4) entry.getKey()).name(), (Integer) entry.getValue());
+            hashMap.put(((EnumC0162c4) entry.getKey()).name(), (Integer) entry.getValue());
         }
         return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put("event", new JSONObject().put("jvm_crash", Base64.encodeToString(this.f646a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Ib.b(hashMap)).putOpt("environment", this.j)).toString();
     }
@@ -119,23 +119,23 @@ public final class Lb {
         return CounterConfigurationReporterType.MAIN;
     }
 
-    public Lb(C0242f6 c0242f6, Y3 y3, HashMap<EnumC0163c4, Integer> hashMap) {
-        this.f646a = c0242f6.getValueBytes();
-        this.b = c0242f6.getName();
-        this.c = c0242f6.getBytesTruncated();
+    public Lb(C0241f6 c0241f6, Y3 y3, HashMap<EnumC0162c4, Integer> hashMap) {
+        this.f646a = c0241f6.getValueBytes();
+        this.b = c0241f6.getName();
+        this.c = c0241f6.getBytesTruncated();
         if (hashMap != null) {
             this.d = hashMap;
         } else {
             this.d = new HashMap();
         }
-        C0175cg a2 = y3.a();
+        C0174cg a2 = y3.a();
         this.e = a2.e();
         this.f = a2.f();
         this.g = a2.g();
         CounterConfiguration b = y3.b();
         this.h = b.getApiKey();
         this.i = b.getReporterType();
-        this.j = c0242f6.f();
+        this.j = c0241f6.f();
         this.k = 0L;
     }
 }

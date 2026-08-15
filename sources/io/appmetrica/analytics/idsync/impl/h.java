@@ -16,7 +16,7 @@ public final class h {
     public volatile IdSyncConfig e;
     public volatile boolean f;
     public final long b = TimeUnit.MINUTES.toMillis(1);
-    public final C0104f g = new C0104f(this);
+    public final C0103f g = new C0103f(this);
 
     public h(ServiceContext serviceContext, SdkIdentifiers sdkIdentifiers) {
         this.f427a = serviceContext;
@@ -29,17 +29,17 @@ public final class h {
         if (!Intrinsics.areEqual(this.e, idSyncConfig)) {
             this.e = idSyncConfig;
             if (a(idSyncConfig) && !this.f) {
-                this.f427a.getActivationBarrier().subscribe(idSyncConfig.getLaunchDelay(), this.c, new C0105g(this));
+                this.f427a.getActivationBarrier().subscribe(idSyncConfig.getLaunchDelay(), this.c, new C0104g(this));
                 this.f = true;
             } else if (!a(idSyncConfig) && this.f) {
                 this.f = false;
                 IHandlerExecutor iHandlerExecutor = this.c;
-                C0104f c0104f = this.g;
-                if (c0104f == null) {
+                C0103f c0103f = this.g;
+                if (c0103f == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("syncRunnable");
-                    c0104f = null;
+                    c0103f = null;
                 }
-                iHandlerExecutor.remove(c0104f);
+                iHandlerExecutor.remove(c0103f);
             }
         }
     }

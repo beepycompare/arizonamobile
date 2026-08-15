@@ -19,6 +19,6 @@ public class O2 implements ExternalAttribution {
     }
 
     public final String toString() {
-        return "ExternalAttribution(type=`" + AbstractC0246fa.a(this.f697a.f809a) + "`value=`" + new String(this.f697a.b, Charsets.UTF_8) + "`)";
+        return "ExternalAttribution(type=`" + AbstractC0245fa.a(this.f697a.f809a) + "`value=`" + new String(this.f697a.b, Charsets.UTF_8) + "`)";
     }
 }

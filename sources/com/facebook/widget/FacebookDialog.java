@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.fragment.app.Fragment;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.facebook.FacebookException;
 import com.facebook.FacebookGraphObjectException;
 import com.facebook.NativeAppCallAttachmentStore;
@@ -193,8 +194,8 @@ public class FacebookDialog {
             if (obj instanceof JSONObject) {
                 JSONObject jSONObject = (JSONObject) obj;
                 if (!jSONObject.optBoolean(NativeProtocol.OPEN_GRAPH_CREATE_OBJECT_KEY)) {
-                    if (jSONObject.has("id")) {
-                        return jSONObject.getString("id");
+                    if (jSONObject.has(TtmlNode.ATTR_ID)) {
+                        return jSONObject.getString(TtmlNode.ATTR_ID);
                     }
                     if (jSONObject.has("url")) {
                         return jSONObject.getString("url");

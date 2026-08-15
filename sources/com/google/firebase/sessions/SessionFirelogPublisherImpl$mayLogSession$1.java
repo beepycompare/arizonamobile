@@ -19,7 +19,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* compiled from: SessionFirelogPublisher.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "com.google.firebase.sessions.SessionFirelogPublisherImpl$mayLogSession$1", f = "SessionFirelogPublisher.kt", i = {2}, l = {70, TsExtractor.TS_SYNC_BYTE, 77}, m = "invokeSuspend", n = {"installationId"}, s = {"L$0"})
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class SessionFirelogPublisherImpl$mayLogSession$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ SessionDetails $sessionDetails;
     Object L$0;

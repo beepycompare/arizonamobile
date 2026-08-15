@@ -53,7 +53,7 @@ public final class FlowKt__ShareKt$asFlow$$inlined$transform$1<T> extends Suspen
         @DebugMetadata(c = "kotlinx.coroutines.flow.FlowKt__ShareKt$asFlow$$inlined$transform$1$1", f = "Share.kt", i = {0, 0, 0, 0, 0}, l = {39}, m = "emit", n = {"value", "$completion", "value", "$this$asFlow_u24lambda_u240", "$i$a$-transform-FlowKt__ShareKt$asFlow$1"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 1)
         /* renamed from: kotlinx.coroutines.flow.FlowKt__ShareKt$asFlow$$inlined$transform$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes5.dex */
-        public static final class C00781 extends ContinuationImpl {
+        public static final class C00771 extends ContinuationImpl {
             int I$0;
             Object L$0;
             Object L$1;
@@ -62,7 +62,7 @@ public final class FlowKt__ShareKt$asFlow$$inlined$transform$1<T> extends Suspen
             int label;
             /* synthetic */ Object result;
 
-            public C00781(Continuation continuation) {
+            public C00771(Continuation continuation) {
                 super(continuation);
             }
 
@@ -85,44 +85,44 @@ public final class FlowKt__ShareKt$asFlow$$inlined$transform$1<T> extends Suspen
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final Object emit(T t, Continuation<? super Unit> continuation) {
-            C00781 c00781;
+            C00771 c00771;
             int i;
-            if (continuation instanceof C00781) {
-                c00781 = (C00781) continuation;
-                if ((c00781.label & Integer.MIN_VALUE) != 0) {
-                    c00781.label -= Integer.MIN_VALUE;
-                    Object obj = c00781.result;
+            if (continuation instanceof C00771) {
+                c00771 = (C00771) continuation;
+                if ((c00771.label & Integer.MIN_VALUE) != 0) {
+                    c00771.label -= Integer.MIN_VALUE;
+                    Object obj = c00771.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = c00781.label;
+                    i = c00771.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
                         FlowCollector<T> flowCollector = this.$$this$flow;
-                        c00781.L$0 = SpillingKt.nullOutSpilledVariable(t);
-                        c00781.L$1 = SpillingKt.nullOutSpilledVariable(c00781);
-                        c00781.L$2 = SpillingKt.nullOutSpilledVariable(t);
-                        c00781.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
-                        c00781.I$0 = 0;
-                        c00781.label = 1;
-                        if (flowCollector.emit(t, c00781) == coroutine_suspended) {
+                        c00771.L$0 = SpillingKt.nullOutSpilledVariable(t);
+                        c00771.L$1 = SpillingKt.nullOutSpilledVariable(c00771);
+                        c00771.L$2 = SpillingKt.nullOutSpilledVariable(t);
+                        c00771.L$3 = SpillingKt.nullOutSpilledVariable(flowCollector);
+                        c00771.I$0 = 0;
+                        c00771.label = 1;
+                        if (flowCollector.emit(t, c00771) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                     } else if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        int i2 = c00781.I$0;
-                        FlowCollector flowCollector2 = (FlowCollector) c00781.L$3;
-                        Object obj2 = c00781.L$2;
-                        Continuation continuation2 = (Continuation) c00781.L$1;
-                        Object obj3 = c00781.L$0;
+                        int i2 = c00771.I$0;
+                        FlowCollector flowCollector2 = (FlowCollector) c00771.L$3;
+                        Object obj2 = c00771.L$2;
+                        Continuation continuation2 = (Continuation) c00771.L$1;
+                        Object obj3 = c00771.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
                     return Unit.INSTANCE;
                 }
             }
-            c00781 = new C00781(continuation);
-            Object obj4 = c00781.result;
+            c00771 = new C00771(continuation);
+            Object obj4 = c00771.result;
             Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            i = c00781.label;
+            i = c00771.label;
             if (i != 0) {
             }
             return Unit.INSTANCE;

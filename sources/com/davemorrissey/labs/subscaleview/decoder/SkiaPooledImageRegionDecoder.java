@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Pattern;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     private static final String ASSET_PREFIX = "file:///android_asset/";
     private static final String FILE_PREFIX = "file://";
@@ -275,7 +275,7 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static class DecoderPool {
         private final Semaphore available;
         private final Map<BitmapRegionDecoder, Boolean> decoders;

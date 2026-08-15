@@ -13,39 +13,39 @@ public final class Tc {
     /* renamed from: a  reason: collision with root package name */
     public final Context f777a;
     public final Qi b;
-    public final C0147be c;
-    public final C0298ha d;
+    public final C0146be c;
+    public final C0297ha d;
     public final W8 e;
     public final Zh f;
-    public final C0548r2 g;
+    public final C0547r2 g;
     public final J6 h;
-    public final C0520q i;
-    public final C0380kf j;
-    public final C0648uo k;
+    public final C0519q i;
+    public final C0379kf j;
+    public final C0647uo k;
     public final Ug l;
     public final N6 m;
-    public final C0236f0 n;
+    public final C0235f0 n;
 
-    public Tc(Context context, C0175cg c0175cg, Qi qi, C0543qm c0543qm) {
+    public Tc(Context context, C0174cg c0174cg, Qi qi, C0542qm c0542qm) {
         this.f777a = context;
         this.b = qi;
-        this.c = new C0147be(c0175cg);
-        C0298ha c0298ha = new C0298ha(context);
-        this.d = c0298ha;
+        this.c = new C0146be(c0174cg);
+        C0297ha c0297ha = new C0297ha(context);
+        this.d = c0297ha;
         W8 w8 = new W8(new Wl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment"));
         this.e = w8;
-        this.f = new Zh(c0175cg, new CounterConfiguration(CounterConfigurationReporterType.MAIN), w8);
-        this.g = new C0548r2();
-        this.h = C0576s4.l().n();
-        this.i = new C0520q();
-        this.j = new C0380kf(c0298ha);
-        this.k = new C0648uo();
+        this.f = new Zh(c0174cg, new CounterConfiguration(CounterConfigurationReporterType.MAIN), w8);
+        this.g = new C0547r2();
+        this.h = C0575s4.l().n();
+        this.i = new C0519q();
+        this.j = new C0379kf(c0297ha);
+        this.k = new C0647uo();
         this.l = new Ug();
         this.m = new N6();
-        this.n = new C0236f0();
+        this.n = new C0235f0();
     }
 
-    public final C0236f0 a() {
+    public final C0235f0 a() {
         return this.n;
     }
 
@@ -57,11 +57,11 @@ public final class Tc {
         return this.m;
     }
 
-    public final C0298ha d() {
+    public final C0297ha d() {
         return this.d;
     }
 
-    public final C0380kf e() {
+    public final C0379kf e() {
         return this.j;
     }
 
@@ -81,7 +81,7 @@ public final class Tc {
         return this.b;
     }
 
-    public final C0648uo j() {
+    public final C0647uo j() {
         return this.k;
     }
 

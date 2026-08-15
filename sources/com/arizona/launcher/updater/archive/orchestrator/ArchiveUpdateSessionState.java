@@ -1,0 +1,155 @@
+package com.arizona.launcher.updater.archive.orchestrator;
+
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckDecision;
+import com.arizona.launcher.updater.archive.planner.ArchiveUpdatePlan;
+import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
+import kotlin.Unit;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+/* compiled from: ArchiveUpdateSessionState.kt */
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u00002\u00020\u0001B\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0003J\u0006\u0010\u0013\u001a\u00020\u0011J\u0006\u0010\u0014\u001a\u00020\u0011J\u0016\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u000eJ\u000e\u0010\u001a\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u000eJ\u001d\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u001d2\b\u0010\u001e\u001a\u0004\u0018\u00010\u001d¢\u0006\u0002\u0010\u001fJ\u0006\u0010 \u001a\u00020\u0011J\u0006\u0010!\u001a\u00020\u0011J\u0006\u0010\"\u001a\u00020\u0011J\u0006\u0010#\u001a\u00020\u0016J\b\u0010$\u001a\u00020\u0016H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\t\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0003X\u0082\u000e¢\u0006\u0002\n\u0000Ê\u0001\f\b&\u0012\b\b'\u0012\u0004\b\u0003\u0010\u0000¨\u0006%"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionState;", "", "initialStartupGuard", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStartupGuard;", "storageRequirements", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirementsState;", "<init>", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStartupGuard;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirementsState;)V", "lock", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", "requiresFinalization", "", "server", "", "startupGuard", "initializeStartupGuard", "", "guard", "invalidateForManifestRefresh", "beginMetadataEvaluation", "applyDecision", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionSnapshot;", "decision", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "selectedServer", "updateMirrorServer", "recordRuntimeRequirements", "downloadBytes", "", "requiredFreeSpaceBytes", "(JLjava/lang/Long;)V", "markRecoveryRequired", "markFinalizationRequired", "markCommitted", "snapshot", "snapshotLocked", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+/* loaded from: classes3.dex */
+public final class ArchiveUpdateSessionState {
+    public static final int $stable = 8;
+    private final Object lock;
+    private ArchiveUpdatePlan plan;
+    private boolean requiresFinalization;
+    private String server;
+    private ArchiveStartupGuard startupGuard;
+    private final ArchiveStorageRequirementsState storageRequirements;
+
+    public ArchiveUpdateSessionState() {
+        this(null, null, 3, null);
+    }
+
+    public ArchiveUpdateSessionState(ArchiveStartupGuard initialStartupGuard, ArchiveStorageRequirementsState storageRequirements) {
+        Intrinsics.checkNotNullParameter(initialStartupGuard, "initialStartupGuard");
+        Intrinsics.checkNotNullParameter(storageRequirements, "storageRequirements");
+        this.storageRequirements = storageRequirements;
+        this.lock = new Object();
+        this.startupGuard = initialStartupGuard;
+    }
+
+    public /* synthetic */ ArchiveUpdateSessionState(ArchiveStartupGuard archiveStartupGuard, ArchiveStorageRequirementsState archiveStorageRequirementsState, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? ArchiveStartupGuard.NONE : archiveStartupGuard, (i & 2) != 0 ? new ArchiveStorageRequirementsState() : archiveStorageRequirementsState);
+    }
+
+    public final void initializeStartupGuard(ArchiveStartupGuard guard) {
+        Intrinsics.checkNotNullParameter(guard, "guard");
+        synchronized (this.lock) {
+            this.startupGuard = guard;
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final void invalidateForManifestRefresh() {
+        synchronized (this.lock) {
+            this.plan = null;
+            this.requiresFinalization = false;
+            this.server = null;
+            this.storageRequirements.reset();
+            this.startupGuard = ArchiveStartupGuard.RECOVERY_REQUIRED;
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final void beginMetadataEvaluation() {
+        synchronized (this.lock) {
+            this.storageRequirements.resetPlanned();
+            this.plan = null;
+            this.requiresFinalization = false;
+            this.server = null;
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final ArchiveUpdateSessionSnapshot applyDecision(ArchiveUpdateCheckDecision decision, String selectedServer) {
+        ArchiveStartupGuard archiveStartupGuard;
+        ArchiveUpdateSessionSnapshot snapshotLocked;
+        Intrinsics.checkNotNullParameter(decision, "decision");
+        Intrinsics.checkNotNullParameter(selectedServer, "selectedServer");
+        synchronized (this.lock) {
+            if (decision instanceof ArchiveUpdateCheckDecision.UseArchive) {
+                this.startupGuard = ArchiveStartupGuard.NONE;
+                this.plan = ((ArchiveUpdateCheckDecision.UseArchive) decision).getPlan();
+                this.requiresFinalization = ((ArchiveUpdateCheckDecision.UseArchive) decision).getRequiresFinalization();
+                this.server = selectedServer;
+                this.storageRequirements.applyPlanned(((ArchiveUpdateCheckDecision.UseArchive) decision).getDownloadBytes(), ((ArchiveUpdateCheckDecision.UseArchive) decision).getRequiredFreeSpaceBytes(), ((ArchiveUpdateCheckDecision.UseArchive) decision).getStorageRequirements().getGameBytes(), ((ArchiveUpdateCheckDecision.UseArchive) decision).getStorageRequirements().getDownloadBytes());
+                this.storageRequirements.resetRuntime(((ArchiveUpdateCheckDecision.UseArchive) decision).getDownloadBytes(), ((ArchiveUpdateCheckDecision.UseArchive) decision).getRequiredFreeSpaceBytes());
+            } else if (!(decision instanceof ArchiveUpdateCheckDecision.Block)) {
+                throw new NoWhenBranchMatchedException();
+            } else {
+                if (((ArchiveUpdateCheckDecision.Block) decision).getCode() != ArchiveUpdateCheckBlockCode.STATE_CORRUPT && ((ArchiveUpdateCheckDecision.Block) decision).getCode() != ArchiveUpdateCheckBlockCode.STATE_IO_FAILED) {
+                    archiveStartupGuard = ArchiveStartupGuard.RECOVERY_REQUIRED;
+                    this.startupGuard = archiveStartupGuard;
+                    this.plan = null;
+                    this.requiresFinalization = false;
+                    this.server = null;
+                    this.storageRequirements.reset();
+                }
+                archiveStartupGuard = ArchiveStartupGuard.CORRUPT_STATE;
+                this.startupGuard = archiveStartupGuard;
+                this.plan = null;
+                this.requiresFinalization = false;
+                this.server = null;
+                this.storageRequirements.reset();
+            }
+            snapshotLocked = snapshotLocked();
+        }
+        return snapshotLocked;
+    }
+
+    public final void updateMirrorServer(String selectedServer) {
+        Intrinsics.checkNotNullParameter(selectedServer, "selectedServer");
+        synchronized (this.lock) {
+            this.server = selectedServer;
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final void recordRuntimeRequirements(long j, Long l) {
+        synchronized (this.lock) {
+            this.storageRequirements.recordRuntime(j, l);
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final void markRecoveryRequired() {
+        synchronized (this.lock) {
+            this.startupGuard = ArchiveStartupGuard.RECOVERY_REQUIRED;
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final void markFinalizationRequired() {
+        synchronized (this.lock) {
+            this.startupGuard = ArchiveStartupGuard.RECOVERY_REQUIRED;
+            this.requiresFinalization = true;
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final void markCommitted() {
+        synchronized (this.lock) {
+            this.startupGuard = ArchiveStartupGuard.NONE;
+            this.plan = null;
+            this.requiresFinalization = false;
+            this.server = null;
+            this.storageRequirements.reset();
+            Unit unit = Unit.INSTANCE;
+        }
+    }
+
+    public final ArchiveUpdateSessionSnapshot snapshot() {
+        ArchiveUpdateSessionSnapshot snapshotLocked;
+        synchronized (this.lock) {
+            snapshotLocked = snapshotLocked();
+        }
+        return snapshotLocked;
+    }
+
+    private final ArchiveUpdateSessionSnapshot snapshotLocked() {
+        return new ArchiveUpdateSessionSnapshot(this.plan, this.requiresFinalization, this.server, this.startupGuard, this.storageRequirements.snapshot());
+    }
+}

@@ -1,7 +1,7 @@
 package com.airbnb.lottie.parser.moshi;
 
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 final class JsonScope {
     static final int CLOSED = 8;
     static final int DANGLING_NAME = 4;

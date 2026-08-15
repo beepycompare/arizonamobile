@@ -11,7 +11,7 @@ import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class O8 implements InterfaceC0704x2 {
+public final class O8 implements InterfaceC0703x2 {
 
     /* renamed from: a  reason: collision with root package name */
     public final int f700a = 5;
@@ -30,7 +30,7 @@ public final class O8 implements InterfaceC0704x2 {
     public final String n = "gmail.com";
     public final String o = "googlemail.com";
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0704x2
+    @Override // io.appmetrica.analytics.impl.InterfaceC0703x2
     public final String a(String str) {
         Character lastOrNull;
         String lowerCase = new Regex("^\\++").replace(StringsKt.trim((CharSequence) str).toString(), "").toLowerCase(Locale.ROOT);

@@ -27,8 +27,8 @@ public final class RectListKt {
     public static final int MaxSupportedLastChildOffset = 1023;
     private static final long PackedIntsHighestBit = -9223372034707292160L;
     private static final long PackedIntsLowestBit = 4294967297L;
-    private static final long EverythingButLastChildOffset = ULong.m10095constructorimpl(ULong.m10095constructorimpl(ULong.m10095constructorimpl(1023) << 50) ^ (-1));
-    private static final long EverythingButParentId = ULong.m10095constructorimpl(ULong.m10095constructorimpl(ULong.m10095constructorimpl(33554431) << 25) ^ (-1));
+    private static final long EverythingButLastChildOffset = ULong.m10096constructorimpl(ULong.m10096constructorimpl(ULong.m10096constructorimpl(1023) << 50) ^ (-1));
+    private static final long EverythingButParentId = ULong.m10096constructorimpl(ULong.m10096constructorimpl(ULong.m10096constructorimpl(33554431) << 25) ^ (-1));
     private static final long TombStone = (Math.min(0, 1023) << 50) | 1125899906842623L;
 
     public static final long metaMarkFlags(long j, boolean z, boolean z2) {

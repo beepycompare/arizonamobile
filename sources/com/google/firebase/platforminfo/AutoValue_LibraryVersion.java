@@ -1,9 +1,8 @@
 package com.google.firebase.platforminfo;
 
 import javax.annotation.Nonnull;
-/* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
-public final class AutoValue_LibraryVersion extends LibraryVersion {
+/* loaded from: classes5.dex */
+final class AutoValue_LibraryVersion extends LibraryVersion {
     private final String libraryName;
     private final String version;
 

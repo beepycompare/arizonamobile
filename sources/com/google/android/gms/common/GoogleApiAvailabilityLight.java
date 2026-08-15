@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.text.TextUtils;
 import androidx.core.app.PendingIntentCompat;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
 import com.google.android.vending.expansion.downloader.Constants;
@@ -102,7 +103,7 @@ public class GoogleApiAvailabilityLight {
             }
             String sb2 = sb.toString();
             Intent intent2 = new Intent("android.intent.action.VIEW");
-            Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.gms");
+            Uri.Builder appendQueryParameter = Uri.parse("market://details").buildUpon().appendQueryParameter(TtmlNode.ATTR_ID, "com.google.android.gms");
             if (!TextUtils.isEmpty(sb2)) {
                 appendQueryParameter.appendQueryParameter("pcampaignid", sb2);
             }

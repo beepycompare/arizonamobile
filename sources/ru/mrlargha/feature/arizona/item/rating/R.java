@@ -4,14 +4,14 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int filter_ic = 0x7f080967;
-        public static int rating_card_bg1 = 0x7f080f00;
-        public static int rating_card_bg2 = 0x7f080f01;
-        public static int rating_card_bg3 = 0x7f080f02;
-        public static int rating_ic_filter1 = 0x7f080f03;
-        public static int rating_ic_filter2 = 0x7f080f04;
-        public static int rating_ic_top = 0x7f080f05;
-        public static int search_not_found = 0x7f080f48;
+        public static int filter_ic = 0x7f08096c;
+        public static int rating_card_bg1 = 0x7f080f02;
+        public static int rating_card_bg2 = 0x7f080f03;
+        public static int rating_card_bg3 = 0x7f080f04;
+        public static int rating_ic_filter1 = 0x7f080f05;
+        public static int rating_ic_filter2 = 0x7f080f06;
+        public static int rating_ic_top = 0x7f080f07;
+        public static int search_not_found = 0x7f080f4a;
 
         private drawable() {
         }
@@ -80,22 +80,22 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class string {
-        public static int rating_accessories_title = 0x7f12060b;
-        public static int rating_bonuses = 0x7f12060c;
-        public static int rating_cars_title = 0x7f12060e;
-        public static int rating_close = 0x7f12060f;
-        public static int rating_high_to_low = 0x7f120610;
-        public static int rating_junk = 0x7f120611;
-        public static int rating_legendary = 0x7f120612;
-        public static int rating_low_to_high = 0x7f120613;
-        public static int rating_not_found_accessory = 0x7f120614;
-        public static int rating_not_found_transport = 0x7f120615;
-        public static int rating_place = 0x7f120616;
-        public static int rating_quality = 0x7f120617;
-        public static int rating_rare = 0x7f120618;
-        public static int rating_search_empty = 0x7f120619;
-        public static int rating_search_hint = 0x7f12061a;
-        public static int rating_total = 0x7f12061b;
+        public static int rating_accessories_title = 0x7f120612;
+        public static int rating_bonuses = 0x7f120613;
+        public static int rating_cars_title = 0x7f120615;
+        public static int rating_close = 0x7f120616;
+        public static int rating_high_to_low = 0x7f120617;
+        public static int rating_junk = 0x7f120618;
+        public static int rating_legendary = 0x7f120619;
+        public static int rating_low_to_high = 0x7f12061a;
+        public static int rating_not_found_accessory = 0x7f12061b;
+        public static int rating_not_found_transport = 0x7f12061c;
+        public static int rating_place = 0x7f12061d;
+        public static int rating_quality = 0x7f12061e;
+        public static int rating_rare = 0x7f12061f;
+        public static int rating_search_empty = 0x7f120620;
+        public static int rating_search_hint = 0x7f120621;
+        public static int rating_total = 0x7f120622;
 
         private string() {
         }

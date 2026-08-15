@@ -4,7 +4,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AwaitListener implements OnCompleteListener<Void> {
     private final CountDownLatch latch = new CountDownLatch(1);
 

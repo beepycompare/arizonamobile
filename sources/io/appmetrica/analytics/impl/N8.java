@@ -24,7 +24,7 @@ public final class N8 extends MessageNano {
     public M8 b;
     public K8 c;
     public L8 d;
-    public C0684w8 e;
+    public C0683w8 e;
     public C8 f;
 
     public N8() {
@@ -72,9 +72,9 @@ public final class N8 extends MessageNano {
         if (l8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(4, l8);
         }
-        C0684w8 c0684w8 = this.e;
-        if (c0684w8 != null) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, c0684w8);
+        C0683w8 c0683w8 = this.e;
+        if (c0683w8 != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(5, c0683w8);
         }
         C8 c8 = this.f;
         return c8 != null ? CodedOutputByteBufferNano.computeMessageSize(6, c8) + computeSerializedSize : computeSerializedSize;
@@ -98,9 +98,9 @@ public final class N8 extends MessageNano {
         if (l8 != null) {
             codedOutputByteBufferNano.writeMessage(4, l8);
         }
-        C0684w8 c0684w8 = this.e;
-        if (c0684w8 != null) {
-            codedOutputByteBufferNano.writeMessage(5, c0684w8);
+        C0683w8 c0683w8 = this.e;
+        if (c0683w8 != null) {
+            codedOutputByteBufferNano.writeMessage(5, c0683w8);
         }
         C8 c8 = this.f;
         if (c8 != null) {
@@ -146,7 +146,7 @@ public final class N8 extends MessageNano {
                     codedInputByteBufferNano.readMessage(this.d);
                 } else if (readTag == 42) {
                     if (this.e == null) {
-                        this.e = new C0684w8();
+                        this.e = new C0683w8();
                     }
                     codedInputByteBufferNano.readMessage(this.e);
                 } else if (readTag != 50) {

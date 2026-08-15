@@ -1,5 +1,6 @@
 package com.google.common.io;
 
+import com.arizona.launcher.UpdateServiceContract;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.StandardSystemProperty;
 import com.google.common.base.Throwables;
@@ -176,7 +177,7 @@ abstract class TempFileCreator {
                 Class<?> cls = Class.forName("java.lang.ProcessHandle");
                 Class<?> cls2 = Class.forName("java.lang.ProcessHandle$Info");
                 Class<?> cls3 = Class.forName("java.util.Optional");
-                Method method = cls.getMethod("current", new Class[0]);
+                Method method = cls.getMethod(UpdateServiceContract.BundleKey.CURRENT, new Class[0]);
                 return (String) Objects.requireNonNull(cls3.getMethod("orElse", Object.class).invoke(cls2.getMethod("user", new Class[0]).invoke(cls.getMethod("info", new Class[0]).invoke(method.invoke(null, new Object[0]), new Object[0]), new Object[0]), str));
             } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException unused) {
                 return str;

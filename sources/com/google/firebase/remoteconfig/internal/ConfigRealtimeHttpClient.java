@@ -40,7 +40,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigRealtimeHttpClient {
     private static final String API_KEY_HEADER = "X-Goog-Api-Key";
     static final int[] BACKOFF_TIME_DURATIONS_IN_MINUTES = {2, 4, 8, 16, 32, 64, 128, 256};
@@ -204,14 +204,14 @@ public class ConfigRealtimeHttpClient {
         return Tasks.whenAllComplete(token, id).continueWithTask(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task) {
-                return ConfigRealtimeHttpClient.this.m9771xad28ecdf(token, id, task);
+                return ConfigRealtimeHttpClient.this.m9772xad28ecdf(token, id, task);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createRealtimeConnection$0$com-google-firebase-remoteconfig-internal-ConfigRealtimeHttpClient  reason: not valid java name */
-    public /* synthetic */ Task m9771xad28ecdf(Task task, Task task2, Task task3) throws Exception {
+    public /* synthetic */ Task m9772xad28ecdf(Task task, Task task2, Task task3) throws Exception {
         if (!task.isSuccessful()) {
             return Tasks.forException(new FirebaseRemoteConfigClientException("Firebase Installations failed to get installation auth token for config update listener connection.", task.getException()));
         }
@@ -326,7 +326,7 @@ public class ConfigRealtimeHttpClient {
             Tasks.whenAllComplete(createRealtimeConnection).continueWith(this.scheduledExecutorService, new Continuation() { // from class: com.google.firebase.remoteconfig.internal.ConfigRealtimeHttpClient$$ExternalSyntheticLambda1
                 @Override // com.google.android.gms.tasks.Continuation
                 public final Object then(Task task) {
-                    return ConfigRealtimeHttpClient.this.m9770x5fb1dc1(createRealtimeConnection, task);
+                    return ConfigRealtimeHttpClient.this.m9771x5fb1dc1(createRealtimeConnection, task);
                 }
             });
         }
@@ -355,7 +355,7 @@ public class ConfigRealtimeHttpClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ Task m9770x5fb1dc1(Task task, Task task2) throws Exception {
+    public /* synthetic */ Task m9771x5fb1dc1(Task task, Task task2) throws Exception {
         InputStream inputStream;
         Integer num;
         Throwable th;

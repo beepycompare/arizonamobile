@@ -1,5 +1,6 @@
 package com.arizona.launcher.data.database;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.room.EntityInsertAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RxRoom;
@@ -124,7 +125,7 @@ public final class ServersDAO_Impl implements ServersDAO {
         Intrinsics.checkNotNullParameter(_connection, "_connection");
         SQLiteStatement prepare = _connection.prepare(str);
         try {
-            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "id");
+            int columnIndexOrThrow = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, TtmlNode.ATTR_ID);
             int columnIndexOrThrow2 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "address");
             int columnIndexOrThrow3 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "port");
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "hasPassword");

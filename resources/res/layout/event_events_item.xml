@@ -29,6 +29,6 @@
     </LinearLayout>
     <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/error_overlay" android:background="#cb191d22" android:padding="@dimen/_20sdp" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent">
         <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_20sdp" android:layout_marginBottom="@dimen/_8sdp" android:src="@drawable/event_task_ic_lock" android:adjustViewBounds="true"/>
-        <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/secondary" android:gravity="center" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="@string/event_available_in" android:fontFamily="@font/pfdindisplaypro_regular"/>
+        <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/event_secondary" android:gravity="center" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="@string/event_available_in" android:fontFamily="@font/pfdindisplaypro_regular"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

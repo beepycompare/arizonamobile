@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ColorParser {
     private static final Map<String, Integer> COLOR_MAP;
     private static final String RGB = "rgb";

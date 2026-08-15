@@ -3,13 +3,13 @@ package com.bda.controller;
 import android.os.Parcel;
 import android.os.Parcelable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class BaseEvent implements Parcelable {
     public static final Parcelable.Creator<BaseEvent> CREATOR = new ParcelableCreator();
     final int mControllerId;
     final long mEventTime;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     static class ParcelableCreator implements Parcelable.Creator<BaseEvent> {
         ParcelableCreator() {
         }

@@ -14,7 +14,7 @@ import java.util.TreeSet;
 import java.util.concurrent.Executor;
 import java.util.regex.Pattern;
 import org.json.JSONException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ConfigGetParameterHandler {
     private final ConfigCacheClient activatedConfigsCache;
     private final ConfigCacheClient defaultConfigsCache;

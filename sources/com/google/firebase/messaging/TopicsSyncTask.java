@@ -10,7 +10,7 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class TopicsSyncTask implements Runnable {
     private static final Object TOPIC_SYNC_TASK_LOCK = new Object();
     private static Boolean hasAccessNetworkStatePermission;
@@ -159,7 +159,7 @@ public class TopicsSyncTask implements Runnable {
         return "Missing Permission: " + str + ". This permission should normally be included by the manifest merger, but may needed to be manually added to your manifest";
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     class ConnectivityChangeReceiver extends BroadcastReceiver {
         private TopicsSyncTask task;
 

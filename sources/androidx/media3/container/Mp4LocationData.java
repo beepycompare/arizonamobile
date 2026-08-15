@@ -3,7 +3,7 @@ package androidx.media3.container;
 import androidx.media3.common.Metadata;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Floats;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Mp4LocationData implements Metadata.Entry {
     public final float latitude;
     public final float longitude;

@@ -10,7 +10,6 @@ import android.net.NetworkCapabilities;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -18,6 +17,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.StatFs;
 import android.support.v4.media.session.PlaybackStateCompat;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.Toast;
 import androidx.activity.ComponentActivity;
@@ -36,12 +36,15 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.RendererCapabilities;
+import com.arizona.game.R;
 import com.arizona.launcher.UpdateActivity;
 import com.arizona.launcher.UpdateService;
+import com.arizona.launcher.UpdateServiceContract;
+import com.arizona.launcher.updater.apk.LauncherApkDownloader;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageEstimatorKt;
 import com.arkivanov.decompose.RetainedComponentKt;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import com.liulishuo.okdownload.core.Util;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogExternalUiState;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogExternalUiStateHolder;
 import com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogType;
@@ -70,7 +73,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* compiled from: UpdateActivity.kt */
-@Metadata(d1 = {"\u0000\u0083\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000*\u00015\b\u0007\u0018\u0000 F2\u00020\u0001:\u0002FGB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0015b\u0010\b\u001e\u0012\f\b\u001f\u0012\b\b\fJ\u0004\b\b( J\b\u0010!\u001a\u00020\u001bH\u0014J\b\u0010\"\u001a\u00020\u001bH\u0002J\b\u0010#\u001a\u00020\u001bH\u0002J\b\u0010$\u001a\u00020\u001bH\u0014J\b\u0010%\u001a\u00020\u001bH\u0002J\u0010\u0010&\u001a\u00020\u001b2\u0006\u0010'\u001a\u00020\u000bH\u0002J\b\u0010(\u001a\u00020\u000bH\u0002J\u0010\u0010)\u001a\u00020\u00052\u0006\u0010*\u001a\u00020\u000bH\u0002J\"\u0010+\u001a\u00020\u001b2\u0006\u0010,\u001a\u00020-H\u0003b\u0010\b\u001e\u0012\f\b\u001f\u0012\b\b\fJ\u0004\b\b(.J\b\u0010/\u001a\u00020\u001bH\u0002J\b\u00100\u001a\u00020\u001bH\u0002J\b\u00101\u001a\u00020\u000fH\u0002J\b\u00102\u001a\u00020\u001bH\u0002J\b\u00103\u001a\u00020\u001bH\u0002J\b\u00107\u001a\u00020\u001bH\u0002J\b\u00108\u001a\u00020\u001bH\u0002J\b\u00109\u001a\u00020\u001bH\u0002J\b\u0010:\u001a\u00020\u001bH\u0002J0\u0010;\u001a\u00020\u001b2\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020=2\b\u0010?\u001a\u0004\u0018\u00010@H\u0015b\f\bA\u0012\b\bB\u0012\u0004\b\b(CJ\u0010\u0010D\u001a\u00020\u001b2\u0006\u0010E\u001a\u00020\u0005H\u0002R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R#\u0010\u0013\u001a\u00020\u00148\u0006@\u0006X\u0087.\u0092\u0002\u0002\b\u0019¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u0010\u00104\u001a\u000205X\u0082\u0004¢\u0006\u0004\n\u0002\u00106Ê\u0001\u0002\bIÊ\u0001\f\bJ\u0012\b\bK\u0012\u0004\b\u0003\u0010\u0000¨\u0006H"}, d2 = {"Lcom/arizona/launcher/UpdateActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "tag", "", "kotlin.jvm.PlatformType", "mService", "Landroid/os/Messenger;", "mMessenger", "SAMP_NEED_FREE_SPACE_BYTES", "", "exoplayer", "Landroidx/media3/exoplayer/ExoPlayer;", "mUpdateServiceBound", "", "mUpdateMode", "Lcom/arizona/launcher/UpdateMode;", "mIsStartingUpdate", "rootFactory", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "getRootFactory", "()Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "setRootFactory", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;)V", "Ljavax/inject/Inject;", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "Landroid/annotation/SuppressLint;", "value", "SourceLockedOrientationActivity", "onResume", "startUpdateService", "bindUpdateService", "onDestroy", "startDownloadLauncherUpdate", "checkFreeSpace", "needFreeSpaceSize", "freeSpace", "convertBytesToHumanReadable", "bytes", "updateViewInformation", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "SetTextI18n", "requestUpdateGameData", "requestReUpdateGameData", "isOnline", "setUpdateServiceAsBackground", "resetProgress", "mConnection", "com/arizona/launcher/UpdateActivity$mConnection$1", "Lcom/arizona/launcher/UpdateActivity$mConnection$1;", "requestUpdateInfo", "requestUpdateStatus", "showDialog", "hideDialog", "onActivityResult", "requestCode", "", "resultCode", "data", "Landroid/content/Intent;", "Lkotlin/Deprecated;", "message", "Deprecated in Java", "installApk", "apkPath", "Companion", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008f\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000*\u0001C\b\u0007\u0018\u0000 S2\u00020\u0001:\u0002STB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0015b\u0010\b\u001e\u0012\f\b\u001f\u0012\b\b\fJ\u0004\b\b( J\b\u0010!\u001a\u00020\u001bH\u0014J\b\u0010\"\u001a\u00020\u000fH\u0002J\b\u0010#\u001a\u00020\u000fH\u0002J\b\u0010$\u001a\u00020\u001bH\u0014J\b\u0010%\u001a\u00020\u001bH\u0002J(\u0010&\u001a\u00020\u001b2\u0006\u0010'\u001a\u00020\u000b2\u0006\u0010(\u001a\u00020\u000b2\u0006\u0010)\u001a\u00020\u000b2\u0006\u0010*\u001a\u00020\u000fH\u0002J\u001a\u0010+\u001a\u00020\u000f2\b\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\u000bH\u0002J\u0010\u0010/\u001a\u00020\u001b2\u0006\u00100\u001a\u00020\u000bH\u0002J\u0010\u00101\u001a\u00020\u001b2\u0006\u00102\u001a\u00020\u000fH\u0002J\u0010\u00103\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u000bH\u0002J\"\u00105\u001a\u00020\u001b2\u0006\u00106\u001a\u000207H\u0003b\u0010\b\u001e\u0012\f\b\u001f\u0012\b\b\fJ\u0004\b\b(8J\u0010\u00109\u001a\u00020\u001b2\u0006\u00106\u001a\u000207H\u0002J\f\u0010:\u001a\u00020;*\u00020<H\u0002J\b\u0010=\u001a\u00020\u001bH\u0002J\b\u0010>\u001a\u00020\u001bH\u0002J\b\u0010?\u001a\u00020\u000fH\u0002J\b\u0010@\u001a\u00020\u001bH\u0002J\b\u0010A\u001a\u00020\u001bH\u0002J\b\u0010E\u001a\u00020\u001bH\u0002J\b\u0010F\u001a\u00020\u001bH\u0002J\b\u0010G\u001a\u00020\u001bH\u0002J\b\u0010H\u001a\u00020\u001bH\u0002J0\u0010I\u001a\u00020\u001b2\u0006\u0010J\u001a\u00020;2\u0006\u0010K\u001a\u00020;2\b\u0010L\u001a\u0004\u0018\u00010MH\u0015b\f\bN\u0012\b\bO\u0012\u0004\b\b(PJ\u0010\u0010Q\u001a\u00020\u001b2\u0006\u0010R\u001a\u00020\u0005H\u0002R\u0016\u0010\u0004\u001a\n \u0006*\u0004\u0018\u00010\u00050\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R#\u0010\u0013\u001a\u00020\u00148\u0006@\u0006X\u0087.\u0092\u0002\u0002\b\u0019¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0016\"\u0004\b\u0017\u0010\u0018R\u0010\u0010B\u001a\u00020CX\u0082\u0004¢\u0006\u0004\n\u0002\u0010DÊ\u0001\u0002\bVÊ\u0001\f\bW\u0012\b\bX\u0012\u0004\b\u0003\u0010\u0000¨\u0006U"}, d2 = {"Lcom/arizona/launcher/UpdateActivity;", "Landroidx/appcompat/app/AppCompatActivity;", "<init>", "()V", "tag", "", "kotlin.jvm.PlatformType", "mService", "Landroid/os/Messenger;", "mMessenger", "SAMP_NEED_FREE_SPACE_BYTES", "", "exoplayer", "Landroidx/media3/exoplayer/ExoPlayer;", "mUpdateServiceBound", "", "mUpdateMode", "Lcom/arizona/launcher/UpdateMode;", "mIsStartingUpdate", "rootFactory", "Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "getRootFactory", "()Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;", "setRootFactory", "(Lcom/miami/game/feature/download/screen/ui/DownloadScreenComponent$Factory;)V", "Ljavax/inject/Inject;", "onCreate", "", "savedInstanceState", "Landroid/os/Bundle;", "Landroid/annotation/SuppressLint;", "value", "SourceLockedOrientationActivity", "onResume", "startUpdateService", "bindUpdateService", "onDestroy", "startDownloadLauncherUpdate", "checkFreeSpace", "combinedBytes", "gameBytes", "downloadBytes", "sameStorageDevice", "hasFreeSpace", "root", "Ljava/io/File;", "requiredBytes", "showInsufficientSpaceDialog", "needFreeSpaceSize", "showForegroundServiceUnavailableDialog", "retryCurrentOperation", "convertBytesToHumanReadable", "bytes", "updateViewInformation", NotificationCompat.CATEGORY_MESSAGE, "Landroid/os/Message;", "SetTextI18n", "updateArchiveViewInformation", "labelRes", "", "Lcom/arizona/launcher/ArchiveProgressPresentation;", "requestUpdateGameData", "requestReUpdateGameData", "isOnline", "setUpdateServiceAsBackground", "resetProgress", "mConnection", "com/arizona/launcher/UpdateActivity$mConnection$1", "Lcom/arizona/launcher/UpdateActivity$mConnection$1;", "requestUpdateInfo", "requestUpdateStatus", "showDialog", "hideDialog", "onActivityResult", "requestCode", "resultCode", "data", "Landroid/content/Intent;", "Lkotlin/Deprecated;", "message", "Deprecated in Java", "installApk", "apkPath", "Companion", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateActivity extends Hilt_UpdateActivity {
@@ -86,7 +89,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     public static final int $stable = 8;
     private final String tag = UpdateActivity.class.getCanonicalName();
     private final Messenger mMessenger = new Messenger(new IncomingHandler(this));
-    private final long SAMP_NEED_FREE_SPACE_BYTES = 524288000;
+    private final long SAMP_NEED_FREE_SPACE_BYTES = ArchiveStorageEstimatorKt.ARCHIVE_FREE_SPACE_RESERVE_BYTES;
     private UpdateMode mUpdateMode = UpdateMode.Undefined;
     private final UpdateActivity$mConnection$1 mConnection = new ServiceConnection() { // from class: com.arizona.launcher.UpdateActivity$mConnection$1
         @Override // android.content.ServiceConnection
@@ -121,6 +124,38 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
             UpdateActivity.this.mUpdateServiceBound = false;
         }
     };
+
+    /* compiled from: UpdateActivity.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes3.dex */
+    public static final /* synthetic */ class WhenMappings {
+        public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+
+        static {
+            int[] iArr = new int[ArchiveProgressPresentation.values().length];
+            try {
+                iArr[ArchiveProgressPresentation.DOWNLOADING.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                iArr[ArchiveProgressPresentation.WAITING_FOR_NETWORK.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+            try {
+                iArr[ArchiveProgressPresentation.VERIFYING.ordinal()] = 3;
+            } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[ArchiveProgressPresentation.EXTRACTING.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[ArchiveProgressPresentation.INSTALLING.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
+            $EnumSwitchMapping$0 = iArr;
+        }
+    }
 
     /* compiled from: UpdateActivity.kt */
     @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/UpdateActivity$Companion;", "", "<init>", "()V", "UPDATE_MODE", "", "INSTALL_LAUNCHER", "", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
@@ -180,12 +215,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C102@3821L175,102@3796L200:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C101@3786L175,101@3761L200:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:102)");
+                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:101)");
             }
             CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[0], ComposableLambdaKt.rememberComposableLambda(-413695961, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
@@ -204,12 +239,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C103@3858L124,103@3839L143:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C102@3823L124,102@3804L143:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:103)");
+                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:102)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(-298306341, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
@@ -228,12 +263,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0$0(DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C104@3880L84:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C103@3845L84:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:104)");
+                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:103)");
             }
             DownloadScreenRouteKt.DownloadScreenRoute(downloadScreenComponent, composer, DownloadScreenComponent.$stable);
             if (ComposerKt.isTraceInProgress()) {
@@ -247,40 +282,43 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onResume() {
         super.onResume();
-        startUpdateService();
-        bindUpdateService();
+        if (startUpdateService() && bindUpdateService()) {
+            return;
+        }
+        showForegroundServiceUnavailableDialog(false);
     }
 
-    private final void startUpdateService() {
+    private final boolean startUpdateService() {
         Intent intent = new Intent(this, UpdateService.class);
         intent.setAction(UpdateService.ACTION_START_FOREGROUND_SERVICE);
         try {
             if (Build.VERSION.SDK_INT >= 26) {
                 startForegroundService(intent);
-            } else {
-                startService(intent);
+                return true;
             }
+            startService(intent);
+            return true;
         } catch (RuntimeException e) {
             if (Build.VERSION.SDK_INT >= 31 && (e instanceof ForegroundServiceStartNotAllowedException)) {
                 RuntimeException runtimeException = e;
                 Log.w(this.tag, "Foreground update service start was denied", runtimeException);
                 FirebaseCrashlytics.getInstance().recordException(runtimeException);
-                return;
+                return false;
             }
             throw e;
         }
     }
 
-    private final void bindUpdateService() {
+    private final boolean bindUpdateService() {
         if (this.mUpdateServiceBound) {
-            return;
+            return true;
         }
         boolean bindService = bindService(new Intent(this, UpdateService.class), this.mConnection, 0);
         this.mUpdateServiceBound = bindService;
-        if (bindService) {
-            return;
+        if (!bindService) {
+            Log.w(this.tag, "UpdateService is not running, bindService returned false");
         }
-        Log.w(this.tag, "UpdateService is not running, bindService returned false");
+        return this.mUpdateServiceBound;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -364,7 +402,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
             } else {
                 switch (msg.what) {
                     case 2:
-                        Serializable serializable = msg.getData().getSerializable(UpdateService.ERRNO_MSG);
+                        Serializable serializable = msg.getData().getSerializable("errno");
                         if (serializable == UpdateService.Errno.UpdateServerUnreachable) {
                             updateActivity.showDialog();
                             ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda0
@@ -373,7 +411,7 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                                     return UpdateActivity.IncomingHandler.handleMessage$lambda$0(UpdateActivity.this);
                                 }
                             });
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda1
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda3
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
                                     return UpdateActivity.IncomingHandler.handleMessage$lambda$1(UpdateActivity.this);
@@ -385,13 +423,13 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             return;
                         } else if (serializable == UpdateService.Errno.ConnectionRefused) {
                             updateActivity.showDialog();
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda2
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda4
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
                                     return UpdateActivity.IncomingHandler.handleMessage$lambda$3(UpdateActivity.this);
                                 }
                             });
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda3
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda5
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
                                     return UpdateActivity.IncomingHandler.handleMessage$lambda$4(UpdateActivity.this);
@@ -401,35 +439,61 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                             do {
                             } while (!stateStore2.compareAndSet(stateStore2.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.ConnectionError, "Повторить", "Выйти", "Ошибка", "Соединение с сервером оборвано, \nпроверьте ваше интернет соединение")));
                             return;
-                        } else if (serializable == UpdateService.Errno.CorruptedFilesFound) {
+                        } else if (serializable == UpdateService.Errno.InsufficientStorage) {
+                            updateActivity.showInsufficientSpaceDialog(msg.getData().getLong("needFreeSpaceSize", 0L));
+                            return;
+                        } else if (serializable == UpdateService.Errno.ForegroundServiceUnavailable) {
+                            updateActivity.showForegroundServiceUnavailableDialog(true);
+                            return;
+                        } else if (serializable == UpdateService.Errno.ArchiveRecoveryBlocked) {
                             updateActivity.showDialog();
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda4
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda6
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
                                     return UpdateActivity.IncomingHandler.handleMessage$lambda$6(UpdateActivity.this);
                                 }
                             });
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda5
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda7
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    return UpdateActivity.IncomingHandler.handleMessage$lambda$7(UpdateActivity.this);
+                                    Unit unit;
+                                    unit = Unit.INSTANCE;
+                                    return unit;
                                 }
                             });
                             MutableStateFlow<ErrorDialogExternalUiState> stateStore3 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
-                            } while (!stateStore3.compareAndSet(stateStore3.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.Download, "Повторить", "Выйти", "Загрузка", "Удалены временные и поврежденные файлы")));
+                            } while (!stateStore3.compareAndSet(stateStore3.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.Alert, "", "Выйти", "Требуется восстановление", "Архивную установку нельзя безопасно восстановить автоматически. Переустановите игру или обратитесь в поддержку.")));
                             return;
-                        } else if (!msg.getData().getBoolean(NotificationCompat.CATEGORY_STATUS, false)) {
+                        } else if (serializable == UpdateService.Errno.CorruptedFilesFound) {
                             updateActivity.showDialog();
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda6
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda8
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
                                     return UpdateActivity.IncomingHandler.handleMessage$lambda$9(UpdateActivity.this);
                                 }
                             });
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda9
+                                @Override // kotlin.jvm.functions.Function0
+                                public final Object invoke() {
+                                    return UpdateActivity.IncomingHandler.handleMessage$lambda$10(UpdateActivity.this);
+                                }
+                            });
                             MutableStateFlow<ErrorDialogExternalUiState> stateStore4 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
-                            } while (!stateStore4.compareAndSet(stateStore4.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.ConnectionError, "", "Выйти", "Ошибка подключения", "Ошибка подключения к серверу обновления, \nпроверьте ваше интернет соединение")));
+                            } while (!stateStore4.compareAndSet(stateStore4.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.Download, "Повторить", "Выйти", "Загрузка", "Удалены временные и поврежденные файлы")));
+                            return;
+                        } else if (!msg.getData().getBoolean("status", false)) {
+                            updateActivity.showDialog();
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda10
+                                @Override // kotlin.jvm.functions.Function0
+                                public final Object invoke() {
+                                    return UpdateActivity.IncomingHandler.handleMessage$lambda$12(UpdateActivity.this);
+                                }
+                            });
+                            MutableStateFlow<ErrorDialogExternalUiState> stateStore5 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
+                            do {
+                            } while (!stateStore5.compareAndSet(stateStore5.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.ConnectionError, "", "Выйти", "Ошибка подключения", "Ошибка подключения к серверу обновления, \nпроверьте ваше интернет соединение")));
                             return;
                         } else {
                             updateActivity.setUpdateServiceAsBackground();
@@ -444,74 +508,71 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                     default:
                         return;
                     case 4:
-                        String string = msg.getData().getString(NotificationCompat.CATEGORY_STATUS, "");
+                        String string = msg.getData().getString("status", "");
                         Intrinsics.checkNotNull(string);
                         int i = WhenMappings.$EnumSwitchMapping$0[UpdateService.UpdateStatus.valueOf(string).ordinal()];
                         if (i == 1) {
-                            MutableStateFlow<DownloadExternalUiState> stateStore5 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
+                            MutableStateFlow<DownloadExternalUiState> stateStore6 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
-                                value2 = stateStore5.getValue();
-                            } while (!stateStore5.compareAndSet(value2, DownloadExternalUiState.copy$default(value2, "Ожидание...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
+                                value2 = stateStore6.getValue();
+                            } while (!stateStore6.compareAndSet(value2, DownloadExternalUiState.copy$default(value2, "Ожидание...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
                             updateActivity.requestUpdateGameData();
                             return;
                         } else if (i == 2) {
-                            MutableStateFlow<DownloadExternalUiState> stateStore6 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
+                            MutableStateFlow<DownloadExternalUiState> stateStore7 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
-                                value3 = stateStore6.getValue();
-                            } while (!stateStore6.compareAndSet(value3, DownloadExternalUiState.copy$default(value3, "Проверка обновления...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
+                                value3 = stateStore7.getValue();
+                            } while (!stateStore7.compareAndSet(value3, DownloadExternalUiState.copy$default(value3, "Проверка обновления...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
                             updateActivity.resetProgress();
                             return;
                         } else if (i == 3) {
-                            MutableStateFlow<DownloadExternalUiState> stateStore7 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
+                            MutableStateFlow<DownloadExternalUiState> stateStore8 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
-                                value4 = stateStore7.getValue();
-                            } while (!stateStore7.compareAndSet(value4, DownloadExternalUiState.copy$default(value4, "Проверка файлов...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
+                                value4 = stateStore8.getValue();
+                            } while (!stateStore8.compareAndSet(value4, DownloadExternalUiState.copy$default(value4, "Проверка файлов...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
                             updateActivity.resetProgress();
                             return;
                         } else if (i != 4) {
-                            if (i != 5) {
-                                throw new NoWhenBranchMatchedException();
-                            }
-                            if (msg.getData().getBoolean("withProgress", false)) {
-                                updateActivity.updateViewInformation(msg);
+                            if (i == 5) {
+                                updateActivity.updateArchiveViewInformation(msg);
                                 return;
                             }
-                            return;
+                            throw new NoWhenBranchMatchedException();
                         } else {
-                            MutableStateFlow<DownloadExternalUiState> stateStore8 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
+                            MutableStateFlow<DownloadExternalUiState> stateStore9 = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
-                                value5 = stateStore8.getValue();
-                            } while (!stateStore8.compareAndSet(value5, DownloadExternalUiState.copy$default(value5, "Обновление...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
-                            if (msg.getData().getBoolean("withProgress", false)) {
+                                value5 = stateStore9.getValue();
+                            } while (!stateStore9.compareAndSet(value5, DownloadExternalUiState.copy$default(value5, "Обновление...", "рассчитываем...", "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null)));
+                            if (msg.getData().getBoolean(UpdateServiceContract.BundleKey.WITH_PROGRESS, false)) {
                                 updateActivity.updateViewInformation(msg);
                                 return;
                             }
                             return;
                         }
                     case 5:
-                        String string2 = msg.getData().getString(NotificationCompat.CATEGORY_STATUS, "");
+                        String string2 = msg.getData().getString("status", "");
                         Intrinsics.checkNotNull(string2);
                         UpdateService.GameStatus.valueOf(string2);
                         updateActivity.requestUpdateGameData();
                         return;
                     case 6:
-                        if (msg.getData().getSerializable(UpdateService.ERRNO_MSG) == UpdateService.Errno.UpdateServerUnreachable) {
+                        if (msg.getData().getSerializable("errno") == UpdateService.Errno.UpdateServerUnreachable) {
                             updateActivity.showDialog();
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda7
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda1
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    return UpdateActivity.IncomingHandler.handleMessage$lambda$16(UpdateActivity.this);
+                                    return UpdateActivity.IncomingHandler.handleMessage$lambda$19(UpdateActivity.this);
                                 }
                             });
-                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda8
+                            ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$IncomingHandler$$ExternalSyntheticLambda2
                                 @Override // kotlin.jvm.functions.Function0
                                 public final Object invoke() {
-                                    return UpdateActivity.IncomingHandler.handleMessage$lambda$17(UpdateActivity.this);
+                                    return UpdateActivity.IncomingHandler.handleMessage$lambda$20(UpdateActivity.this);
                                 }
                             });
-                            MutableStateFlow<ErrorDialogExternalUiState> stateStore9 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
+                            MutableStateFlow<ErrorDialogExternalUiState> stateStore10 = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
                             do {
-                            } while (!stateStore9.compareAndSet(stateStore9.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.ConnectionError, "Повторить", "Выйти", "Ошибка подключения", "Ошибка подключения к серверу обновления, \nпроверьте ваше интернет соединение")));
+                            } while (!stateStore10.compareAndSet(stateStore10.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.ConnectionError, "Повторить", "Выйти", "Ошибка подключения", "Ошибка подключения к серверу обновления, \nпроверьте ваше интернет соединение")));
                             return;
                         }
                         Log.d("HAVE_TO_CHECK_1", "We're waiting app-arizona-release.apk file");
@@ -520,7 +581,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
                         updateActivity.installApk(absolutePath);
                         return;
                     case 7:
-                        updateActivity.checkFreeSpace(msg.getData().getLong("needFreeSpaceSize", 0L));
+                        if (msg.getData().getBoolean(UpdateServiceContract.BundleKey.ARCHIVE_UPDATE_ACTIVE, false)) {
+                            updateActivity.requestUpdateStatus();
+                            return;
+                        }
+                        long j = msg.getData().getLong("needFreeSpaceSize", 0L);
+                        updateActivity.checkFreeSpace(j, msg.getData().getLong("needGameFreeSpaceSize", j), msg.getData().getLong("needDownloadFreeSpaceSize", 0L), msg.getData().getBoolean("archiveStorageSameDevice", true));
                         return;
                     case 8:
                         updateActivity.recreate();
@@ -587,14 +653,6 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static final Unit handleMessage$lambda$7(UpdateActivity updateActivity) {
-            updateActivity.mIsStartingUpdate = false;
-            updateActivity.requestUpdateGameData();
-            updateActivity.hideDialog();
-            return Unit.INSTANCE;
-        }
-
-        /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit handleMessage$lambda$9(UpdateActivity updateActivity) {
             updateActivity.setUpdateServiceAsBackground();
             updateActivity.finishAffinity();
@@ -602,13 +660,28 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static final Unit handleMessage$lambda$16(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$10(UpdateActivity updateActivity) {
+            updateActivity.mIsStartingUpdate = false;
+            updateActivity.requestUpdateGameData();
+            updateActivity.hideDialog();
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public static final Unit handleMessage$lambda$12(UpdateActivity updateActivity) {
+            updateActivity.setUpdateServiceAsBackground();
             updateActivity.finishAffinity();
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static final Unit handleMessage$lambda$17(UpdateActivity updateActivity) {
+        public static final Unit handleMessage$lambda$19(UpdateActivity updateActivity) {
+            updateActivity.finishAffinity();
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public static final Unit handleMessage$lambda$20(UpdateActivity updateActivity) {
             updateActivity.startDownloadLauncherUpdate();
             updateActivity.hideDialog();
             return Unit.INSTANCE;
@@ -616,38 +689,105 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final void checkFreeSpace(long j) {
-        long freeSpace = freeSpace();
-        Log.d(this.tag, "Free space " + freeSpace);
-        if (freeSpace < this.SAMP_NEED_FREE_SPACE_BYTES + j) {
-            showDialog();
-            ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda3
-                @Override // kotlin.jvm.functions.Function0
-                public final Object invoke() {
-                    return UpdateActivity.checkFreeSpace$lambda$0(UpdateActivity.this);
-                }
-            });
-            MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
-            do {
-            } while (!stateStore.compareAndSet(stateStore.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.Alert, "", "Выйти", "Недостаточно места", "Недостаточно места для установки ресурсов игры. Требуется " + Util.humanReadableBytes(j, true))));
-            return;
+    public final void checkFreeSpace(long j, long j2, long j3, boolean z) {
+        boolean z2;
+        if (z) {
+            z2 = hasFreeSpace(getExternalFilesDir(null), j);
+        } else {
+            z2 = hasFreeSpace(getExternalFilesDir(null), j2) && hasFreeSpace(getExternalCacheDir(), j3);
         }
-        requestUpdateStatus();
+        Log.d(this.tag, "Archive free space enough=" + z2 + " sameDevice=" + z + " gameRequired=" + j2 + " downloadRequired=" + j3);
+        if (!z2) {
+            showInsufficientSpaceDialog(j);
+        } else {
+            requestUpdateStatus();
+        }
+    }
+
+    private final boolean hasFreeSpace(File file, long j) {
+        if (file != null && j >= 0) {
+            try {
+                try {
+                    return new StatFs(file.getAbsolutePath()).getAvailableBytes() >= Math.addExact(j, this.SAMP_NEED_FREE_SPACE_BYTES);
+                } catch (RuntimeException e) {
+                    Log.e(this.tag, "Unable to inspect free space at " + file.getAbsolutePath(), e);
+                }
+            } catch (ArithmeticException unused) {
+            }
+        }
+        return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void showInsufficientSpaceDialog(long j) {
+        showDialog();
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda5
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return UpdateActivity.showInsufficientSpaceDialog$lambda$0(UpdateActivity.this);
+            }
+        });
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda6
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Unit unit;
+                unit = Unit.INSTANCE;
+                return unit;
+            }
+        });
+        MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
+        do {
+        } while (!stateStore.compareAndSet(stateStore.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.Alert, "", "Выйти", "Недостаточно места", "Недостаточно места для установки ресурсов игры. Требуется " + Formatter.formatFileSize(this, j))));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit checkFreeSpace$lambda$0(UpdateActivity updateActivity) {
+    public static final Unit showInsufficientSpaceDialog$lambda$0(UpdateActivity updateActivity) {
+        updateActivity.setUpdateServiceAsBackground();
         updateActivity.finishAffinity();
         return Unit.INSTANCE;
     }
 
-    private final long freeSpace() {
-        StatFs statFs = new StatFs(Environment.getExternalStorageDirectory().getPath());
-        return statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void showForegroundServiceUnavailableDialog(final boolean z) {
+        showDialog();
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnNegative(new Function0() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda3
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return UpdateActivity.showForegroundServiceUnavailableDialog$lambda$0(UpdateActivity.this);
+            }
+        });
+        ErrorDialogExternalUiStateHolder.INSTANCE.setOnPositive(new Function0() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return UpdateActivity.showForegroundServiceUnavailableDialog$lambda$1(UpdateActivity.this, z);
+            }
+        });
+        MutableStateFlow<ErrorDialogExternalUiState> stateStore = ErrorDialogExternalUiStateHolder.INSTANCE.getStateStore();
+        do {
+        } while (!stateStore.compareAndSet(stateStore.getValue(), new ErrorDialogExternalUiState(ErrorDialogType.Download, "Повторить", "Выйти", "Обновление приостановлено", "Не удалось безопасно продолжить загрузку в фоне. Оставьте лаунчер открытым и повторите.")));
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit showForegroundServiceUnavailableDialog$lambda$0(UpdateActivity updateActivity) {
+        updateActivity.setUpdateServiceAsBackground();
+        updateActivity.finishAffinity();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit showForegroundServiceUnavailableDialog$lambda$1(UpdateActivity updateActivity, boolean z) {
+        updateActivity.hideDialog();
+        if (!updateActivity.startUpdateService() || !updateActivity.bindUpdateService()) {
+            updateActivity.showForegroundServiceUnavailableDialog(z);
+        } else if (z) {
+            updateActivity.mIsStartingUpdate = false;
+            updateActivity.requestUpdateGameData();
+        }
+        return Unit.INSTANCE;
     }
 
     private final String convertBytesToHumanReadable(long j) {
-        if (j >= 1073741824) {
+        if (j >= LauncherApkDownloader.DEFAULT_MAX_APK_BYTES) {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
             String format = String.format("%.2f Gb", Arrays.copyOf(new Object[]{Double.valueOf(j / 1.073741824E9d)}, 1));
             Intrinsics.checkNotNullExpressionValue(format, "format(...)");
@@ -669,22 +809,75 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updateViewInformation(Message message) {
-        DownloadExternalUiState value;
-        String convertBytesToHumanReadable;
-        long j;
-        long j2 = message.getData().getLong("current_len", 0L);
-        long j3 = message.getData().getLong("total_all", 0L);
-        message.getData().getInt("total", 0);
-        message.getData().getInt("current", 0);
-        String string = message.getData().getString("timeLeft", "0 sec");
-        message.getData().getString("speed", "");
+        long j = 0;
+        long j2 = message.getData().getLong(UpdateServiceContract.BundleKey.CURRENT_LENGTH, 0L);
+        long j3 = message.getData().getLong(UpdateServiceContract.BundleKey.TOTAL_ALL, 0L);
+        message.getData().getInt(UpdateServiceContract.BundleKey.TOTAL, 0);
+        message.getData().getInt(UpdateServiceContract.BundleKey.CURRENT, 0);
+        String string = message.getData().getString(UpdateServiceContract.BundleKey.TIME_LEFT, "0 sec");
+        message.getData().getString(UpdateServiceContract.BundleKey.SPEED, "");
+        long j4 = j3 + j2;
         MutableStateFlow<DownloadExternalUiState> stateStore = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
-        do {
-            value = stateStore.getValue();
+        while (true) {
+            DownloadExternalUiState value = stateStore.getValue();
+            DownloadExternalUiState downloadExternalUiState = value;
+            String string2 = getString(R.string.archive_phase_downloading);
+            Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
             Intrinsics.checkNotNull(string);
-            convertBytesToHumanReadable = convertBytesToHumanReadable(j2);
-            j = j3 + j2;
-        } while (!stateStore.compareAndSet(value, DownloadExternalUiState.copy$default(value, "Скачивание файлов..", string, convertBytesToHumanReadable + " / " + convertBytesToHumanReadable(j), j2 / j, false, null, false, false, false, 496, null)));
+            if (stateStore.compareAndSet(value, DownloadExternalUiState.copy$default(downloadExternalUiState, string2, string, convertBytesToHumanReadable(j2) + " / " + convertBytesToHumanReadable(j4), j4 > j ? j2 / j4 : FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, 496, null))) {
+                return;
+            }
+            j = 0;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0069 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x006a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void updateArchiveViewInformation(Message message) {
+        DownloadExternalUiState value;
+        DownloadExternalUiState downloadExternalUiState;
+        String string;
+        ArchiveProgressPresentation fromWirePhase = ArchiveProgressPresentation.Companion.fromWirePhase(message.getData().getString(UpdateServiceContract.BundleKey.ARCHIVE_PHASE));
+        if (fromWirePhase != null) {
+            MutableStateFlow<DownloadExternalUiState> stateStore = DownloadExternalUiStateHolder.INSTANCE.getStateStore();
+            do {
+                value = stateStore.getValue();
+                downloadExternalUiState = value;
+                string = getString(labelRes(fromWirePhase));
+                Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            } while (!stateStore.compareAndSet(value, DownloadExternalUiState.copy$default(downloadExternalUiState, string, fromWirePhase.getShowsTransferDetails() ? downloadExternalUiState.getTimeRemainingString() : "", fromWirePhase.getShowsTransferDetails() ? downloadExternalUiState.getDownloadingStringState() : "", FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, false, null, false, false, false, TypedValues.PositionType.TYPE_PERCENT_HEIGHT, null)));
+            if (message.getData().getBoolean(UpdateServiceContract.BundleKey.WITH_PROGRESS, false)) {
+                return;
+            }
+            if (fromWirePhase == null || fromWirePhase.getShowsTransferDetails()) {
+                updateViewInformation(message);
+            }
+        } else if (message.getData().getBoolean(UpdateServiceContract.BundleKey.WITH_PROGRESS, false)) {
+        }
+    }
+
+    private final int labelRes(ArchiveProgressPresentation archiveProgressPresentation) {
+        int i = WhenMappings.$EnumSwitchMapping$0[archiveProgressPresentation.ordinal()];
+        if (i != 1) {
+            if (i != 2) {
+                if (i != 3) {
+                    if (i != 4) {
+                        if (i != 5) {
+                            throw new NoWhenBranchMatchedException();
+                        }
+                        return R.string.archive_phase_installing;
+                    }
+                    return R.string.archive_phase_extracting;
+                }
+                return R.string.archive_phase_verifying;
+            }
+            return R.string.archive_phase_waiting_for_network;
+        }
+        return R.string.archive_phase_downloading;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -754,7 +947,8 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
         }
     }
 
-    private final void requestUpdateStatus() {
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void requestUpdateStatus() {
         Message obtain = Message.obtain((Handler) null, 4);
         obtain.replyTo = this.mMessenger;
         Messenger messenger = this.mService;

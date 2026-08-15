@@ -12,13 +12,13 @@ public final class Oe extends ECommerceEvent {
     /* renamed from: a  reason: collision with root package name */
     public final int f703a;
     public final Qe b;
-    public final InterfaceC0632u8 c;
+    public final InterfaceC0631u8 c;
 
     public Oe(int i, ECommerceOrder eCommerceOrder) {
         this(i, new Qe(eCommerceOrder), new Pe());
     }
 
-    public final InterfaceC0632u8 a() {
+    public final InterfaceC0631u8 a() {
         return this.c;
     }
 
@@ -27,7 +27,7 @@ public final class Oe extends ECommerceEvent {
         return "order info";
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0407lg
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0406lg
     public final List<Xi> toProto() {
         return (List) this.c.fromModel(this);
     }
@@ -36,9 +36,9 @@ public final class Oe extends ECommerceEvent {
         return "OrderInfoEvent{eventType=" + this.f703a + ", order=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Oe(int i, Qe qe, InterfaceC0632u8 interfaceC0632u8) {
+    public Oe(int i, Qe qe, InterfaceC0631u8 interfaceC0631u8) {
         this.f703a = i;
         this.b = qe;
-        this.c = interfaceC0632u8;
+        this.c = interfaceC0631u8;
     }
 }

@@ -3,6 +3,7 @@ package androidx.graphics.shapes;
 import androidx.collection.FloatFloatPair;
 import androidx.graphics.shapes.RoundedPolygon;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -123,12 +124,12 @@ public final class ShapesKt {
 
     public static final RoundedPolygon star(RoundedPolygon.Companion companion, int i) {
         Intrinsics.checkNotNullParameter(companion, "<this>");
-        return star$default(companion, i, 0.0f, 0.0f, null, null, null, 0.0f, 0.0f, 254, null);
+        return star$default(companion, i, 0.0f, 0.0f, null, null, null, 0.0f, 0.0f, LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_MASK, null);
     }
 
     public static final RoundedPolygon star(RoundedPolygon.Companion companion, int i, float f) {
         Intrinsics.checkNotNullParameter(companion, "<this>");
-        return star$default(companion, i, f, 0.0f, null, null, null, 0.0f, 0.0f, 252, null);
+        return star$default(companion, i, f, 0.0f, null, null, null, 0.0f, 0.0f, LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX, null);
     }
 
     public static final RoundedPolygon star(RoundedPolygon.Companion companion, int i, float f, float f2) {

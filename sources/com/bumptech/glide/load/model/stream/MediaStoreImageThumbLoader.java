@@ -10,7 +10,7 @@ import com.bumptech.glide.load.model.ModelLoaderFactory;
 import com.bumptech.glide.load.model.MultiModelLoaderFactory;
 import com.bumptech.glide.signature.ObjectKey;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class MediaStoreImageThumbLoader implements ModelLoader<Uri, InputStream> {
     private final Context context;
 
@@ -31,7 +31,7 @@ public class MediaStoreImageThumbLoader implements ModelLoader<Uri, InputStream>
         return MediaStoreUtil.isMediaStoreImageUri(uri);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class Factory implements ModelLoaderFactory<Uri, InputStream> {
         private final Context context;
 

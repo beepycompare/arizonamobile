@@ -3,6 +3,7 @@ package com.android.vending.expansion.zipfile;
 import android.content.res.AssetFileDescriptor;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
+import com.arizona.launcher.updater.archive.orchestrator.RemoteOriginalTzArchivePackageIndexSource;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -142,7 +143,10 @@ public class ZipResourceFile {
         if (length < 22) {
             throw new IOException();
         }
-        long j = 65557 > length ? length : 65557L;
+        long j = RemoteOriginalTzArchivePackageIndexSource.ZIP_EOCD_TAIL_BYTES;
+        if (RemoteOriginalTzArchivePackageIndexSource.ZIP_EOCD_TAIL_BYTES > length) {
+            j = length;
+        }
         randomAccessFile.seek(0L);
         int read4LE = read4LE(randomAccessFile);
         if (read4LE == kEOCDSignature) {

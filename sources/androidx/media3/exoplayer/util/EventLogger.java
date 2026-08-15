@@ -24,6 +24,7 @@ import androidx.media3.exoplayer.drm.KeyRequestInfo;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.trackselection.MappingTrackSelector;
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -623,7 +624,7 @@ public class EventLogger implements AnalyticsListener {
                 return "stereo";
             case ComposerKt.providerMapsKey /* 204 */:
                 return "quad";
-            case 252:
+            case LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX /* 252 */:
                 return "5.1";
             case 6396:
                 return "7.1";

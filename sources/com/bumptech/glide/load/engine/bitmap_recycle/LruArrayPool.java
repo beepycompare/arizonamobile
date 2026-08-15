@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LruArrayPool implements ArrayPool {
     private static final int DEFAULT_SIZE = 4194304;
     static final int MAX_OVER_SIZE_MULTIPLE = 8;
@@ -208,7 +208,7 @@ public final class LruArrayPool implements ArrayPool {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class KeyPool extends BaseKeyPool<Key> {
         KeyPool() {
         }
@@ -228,7 +228,7 @@ public final class LruArrayPool implements ArrayPool {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Key implements Poolable {
         private Class<?> arrayClass;
         private final KeyPool pool;

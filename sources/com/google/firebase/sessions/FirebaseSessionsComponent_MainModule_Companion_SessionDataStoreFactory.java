@@ -7,7 +7,7 @@ import com.google.firebase.sessions.dagger.internal.Factory;
 import com.google.firebase.sessions.dagger.internal.Preconditions;
 import com.google.firebase.sessions.dagger.internal.Provider;
 import kotlin.coroutines.CoroutineContext;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FirebaseSessionsComponent_MainModule_Companion_SessionDataStoreFactory implements Factory<DataStore<SessionData>> {
     private final Provider<Context> appContextProvider;
     private final Provider<CoroutineContext> blockingDispatcherProvider;

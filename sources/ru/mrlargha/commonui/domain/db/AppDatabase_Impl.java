@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.domain.db;
 
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.room.InvalidationTracker;
 import androidx.room.RoomMasterTable;
 import androidx.room.RoomOpenDelegate;
@@ -92,7 +93,7 @@ public final class AppDatabase_Impl extends AppDatabase {
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
                 linkedHashMap.put("slot", new TableInfo.Column("slot", "INTEGER", true, 1, null, 1));
                 linkedHashMap.put("item", new TableInfo.Column("item", "INTEGER", false, 0, null, 1));
-                linkedHashMap.put("id", new TableInfo.Column("id", "INTEGER", true, 0, null, 1));
+                linkedHashMap.put(TtmlNode.ATTR_ID, new TableInfo.Column(TtmlNode.ATTR_ID, "INTEGER", true, 0, null, 1));
                 linkedHashMap.put("text", new TableInfo.Column("text", "TEXT", false, 0, null, 1));
                 linkedHashMap.put("item_type", new TableInfo.Column("item_type", "INTEGER", false, 0, null, 1));
                 linkedHashMap.put("amount", new TableInfo.Column("amount", "INTEGER", false, 0, null, 1));

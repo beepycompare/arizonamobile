@@ -10,7 +10,6 @@ import android.net.NetworkInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PowerManager;
-import androidx.core.app.NotificationCompat;
 import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -117,7 +116,7 @@ public final class Requirements implements Parcelable {
         if (registerReceiver == null) {
             return false;
         }
-        int intExtra = registerReceiver.getIntExtra(NotificationCompat.CATEGORY_STATUS, -1);
+        int intExtra = registerReceiver.getIntExtra("status", -1);
         return intExtra == 2 || intExtra == 5;
     }
 

@@ -61,14 +61,14 @@ public class OverflowLinearLayout extends LinearLayout {
         materialButton.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.overflow.OverflowLinearLayout$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                OverflowLinearLayout.this.m9598xc4d03947(popupMenu, dimensionPixelOffset, view);
+                OverflowLinearLayout.this.m9599xc4d03947(popupMenu, dimensionPixelOffset, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-overflow-OverflowLinearLayout  reason: not valid java name */
-    public /* synthetic */ void m9598xc4d03947(PopupMenu popupMenu, int i, View view) {
+    public /* synthetic */ void m9599xc4d03947(PopupMenu popupMenu, int i, View view) {
         handleOverflowButtonClick(popupMenu, i);
     }
 
@@ -81,7 +81,7 @@ public class OverflowLinearLayout extends LinearLayout {
     }
 
     public void setOverflowButtonIcon(Drawable drawable) {
-        this.overflowButton.m9534x11712a47(drawable);
+        this.overflowButton.m9535x11712a47(drawable);
     }
 
     public void setOverflowButtonIconResource(int i) {

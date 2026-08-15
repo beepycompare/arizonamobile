@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class GlideExecutor implements ExecutorService {
     static final String DEFAULT_ANIMATION_EXECUTOR_NAME = "animation";
     static final String DEFAULT_DISK_CACHE_EXECUTOR_NAME = "disk-cache";
@@ -169,7 +169,7 @@ public final class GlideExecutor implements ExecutorService {
         return bestThreadCount;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface UncaughtThrowableStrategy {
         public static final UncaughtThrowableStrategy DEFAULT;
         public static final UncaughtThrowableStrategy IGNORE = new UncaughtThrowableStrategy() { // from class: com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy.1
@@ -205,7 +205,7 @@ public final class GlideExecutor implements ExecutorService {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class DefaultPriorityThreadFactory implements ThreadFactory {
         private DefaultPriorityThreadFactory() {
         }
@@ -223,7 +223,7 @@ public final class GlideExecutor implements ExecutorService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class DefaultThreadFactory implements ThreadFactory {
         private final ThreadFactory delegate;
         private final String name;
@@ -258,7 +258,7 @@ public final class GlideExecutor implements ExecutorService {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Builder {
         public static final long NO_THREAD_TIMEOUT = 0;
         private int corePoolSize;

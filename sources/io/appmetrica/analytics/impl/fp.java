@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class fp implements InterfaceC0718xg {
+public final class fp implements InterfaceC0717xg {
 
     /* renamed from: a  reason: collision with root package name */
     public final Zo f988a;

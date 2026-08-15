@@ -1,7 +1,7 @@
 package com.google.firebase.remoteconfig;
 
 import com.google.firebase.FirebaseException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseRemoteConfigException extends FirebaseException {
     private final Code code;
 
@@ -25,7 +25,7 @@ public class FirebaseRemoteConfigException extends FirebaseException {
         this.code = code;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum Code {
         UNKNOWN(0),
         CONFIG_UPDATE_STREAM_ERROR(1),

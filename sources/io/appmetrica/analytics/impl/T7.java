@@ -13,8 +13,8 @@ public final class T7 implements ClientComponentsInitializer {
 
     @Override // io.appmetrica.analytics.coreapi.internal.clientcomponents.ClientComponentsInitializer
     public final void onCreate() {
-        if (C0576s4.l().f1194a.b()) {
-            C0585sd c0585sd = C0576s4.l().m;
+        if (C0575s4.l().f1194a.b()) {
+            C0584sd c0584sd = C0575s4.l().m;
             List<String> list = this.f775a;
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (String str : list) {
@@ -22,8 +22,8 @@ public final class T7 implements ClientComponentsInitializer {
             }
             G5[] g5Arr = (G5[]) arrayList.toArray(new G5[0]);
             G5[] g5Arr2 = (G5[]) Arrays.copyOf(g5Arr, g5Arr.length);
-            synchronized (c0585sd) {
-                CollectionsKt.addAll(c0585sd.f1199a, g5Arr2);
+            synchronized (c0584sd) {
+                CollectionsKt.addAll(c0584sd.f1199a, g5Arr2);
             }
         }
     }

@@ -2,7 +2,7 @@ package retrofit2;
 
 import coil3.network.internal.UtilsKt;
 import com.android.volley.toolbox.HttpClientStack;
-import com.liulishuo.okdownload.core.Util;
+import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -195,7 +195,7 @@ public final class RequestFactory {
             } else if (annotation instanceof GET) {
                 parseHttpMethodAndPath(UtilsKt.HTTP_METHOD_GET, ((GET) annotation).value(), false);
             } else if (annotation instanceof HEAD) {
-                parseHttpMethodAndPath(Util.METHOD_HEAD, ((HEAD) annotation).value(), false);
+                parseHttpMethodAndPath("HEAD", ((HEAD) annotation).value(), false);
             } else if (annotation instanceof PATCH) {
                 parseHttpMethodAndPath(HttpClientStack.HttpPatch.METHOD_NAME, ((PATCH) annotation).value(), true);
             } else if (annotation instanceof POST) {
@@ -506,7 +506,7 @@ public final class RequestFactory {
                         throw Utils.parameterError(this.method, i, "@Part annotation must supply a name or use MultipartBody.Part parameter type.", new Object[0]);
                     }
                 }
-                Headers of = Headers.of("Content-Disposition", "form-data; name=\"" + value5 + "\"", "Content-Transfer-Encoding", part.encoding());
+                Headers of = Headers.of(HttpHeaders.CONTENT_DISPOSITION, "form-data; name=\"" + value5 + "\"", "Content-Transfer-Encoding", part.encoding());
                 if (Iterable.class.isAssignableFrom(rawType8)) {
                     if (!(type instanceof ParameterizedType)) {
                         throw Utils.parameterError(this.method, i, rawType8.getSimpleName() + " must include generic type (e.g., " + rawType8.getSimpleName() + "<String>)", new Object[0]);

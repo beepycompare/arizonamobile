@@ -266,7 +266,7 @@ public final class Cache implements Closeable, Flushable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "directory", imports = {}))
     /* renamed from: -deprecated_directory  reason: not valid java name */
-    public final File m11649deprecated_directory() {
+    public final File m11650deprecated_directory() {
         return this.cache.getDirectory().toFile();
     }
 
@@ -545,7 +545,7 @@ public final class Cache implements Closeable, Flushable {
         public final Response response(DiskLruCache.Snapshot snapshot) {
             Intrinsics.checkNotNullParameter(snapshot, "snapshot");
             String str = this.responseHeaders.get("Content-Type");
-            String str2 = this.responseHeaders.get("Content-Length");
+            String str2 = this.responseHeaders.get(HttpHeaders.CONTENT_LENGTH);
             return new Response.Builder().request(new Request(this.url, this.varyHeaders, this.requestMethod, null, 8, null)).protocol(this.protocol).code(this.code).message(this.message).headers(this.responseHeaders).body(new CacheResponseBody(snapshot, str, str2)).handshake(this.handshake).sentRequestAtMillis(this.sentRequestMillis).receivedResponseAtMillis(this.receivedResponseMillis).build();
         }
 

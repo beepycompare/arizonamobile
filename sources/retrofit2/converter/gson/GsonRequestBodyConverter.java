@@ -11,7 +11,7 @@ import okhttp3.RequestBody;
 import okio.Buffer;
 import okio.BufferedSink;
 import retrofit2.Converter;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 final class GsonRequestBodyConverter<T> implements Converter<T, RequestBody> {
     static final MediaType MEDIA_TYPE = MediaType.get("application/json; charset=UTF-8");
     private final TypeAdapter<T> adapter;

@@ -15,7 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SyncTask implements Runnable {
     private final FirebaseMessaging firebaseMessaging;
     private final long nextDelaySeconds;
@@ -113,7 +113,7 @@ public class SyncTask implements Runnable {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static class ConnectivityChangeReceiver extends BroadcastReceiver {
         private Context receiverContext;
         private SyncTask task;

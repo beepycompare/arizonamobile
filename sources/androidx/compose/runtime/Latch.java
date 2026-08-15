@@ -58,7 +58,7 @@ public final class Latch {
             int size = list.size();
             for (int i = 0; i < size; i++) {
                 Result.Companion companion = Result.Companion;
-                list.get(i).resumeWith(Result.m9915constructorimpl(Unit.INSTANCE));
+                list.get(i).resumeWith(Result.m9916constructorimpl(Unit.INSTANCE));
             }
             list.clear();
             Unit unit = Unit.INSTANCE;

@@ -45,7 +45,7 @@ public final class Bg {
     public final int hashCode() {
         long j = this.b;
         long j2 = this.c;
-        return AbstractC0167c8.a(this.d) + (((((this.f480a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
+        return AbstractC0166c8.a(this.d) + (((((this.f480a.hashCode() * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31);
     }
 
     public final String toString() {
@@ -57,7 +57,7 @@ public final class Bg {
         cg.f500a = this.f480a;
         cg.c = this.b;
         cg.b = this.c;
-        int a2 = AbstractC0167c8.a(this.d);
+        int a2 = AbstractC0166c8.a(this.d);
         int i = 1;
         if (a2 != 1) {
             i = 2;

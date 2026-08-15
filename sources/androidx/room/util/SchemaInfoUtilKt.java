@@ -2,6 +2,7 @@ package androidx.room.util;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.exoplayer.upstream.CmcdConfiguration;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.SQLiteStatement;
@@ -57,7 +58,7 @@ public final class SchemaInfoUtilKt {
         SQLiteStatement prepare = sQLiteConnection.prepare("PRAGMA foreign_key_list(`" + str + "`)");
         try {
             SQLiteStatement sQLiteStatement = prepare;
-            int columnIndexOf = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, "id");
+            int columnIndexOf = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, TtmlNode.ATTR_ID);
             int columnIndexOf2 = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, "seq");
             int columnIndexOf3 = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, "table");
             int columnIndexOf4 = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, "on_delete");
@@ -91,7 +92,7 @@ public final class SchemaInfoUtilKt {
     }
 
     private static final List<ForeignKeyWithSequence> readForeignKeyFieldMappings(SQLiteStatement sQLiteStatement) {
-        int columnIndexOf = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, "id");
+        int columnIndexOf = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, TtmlNode.ATTR_ID);
         int columnIndexOf2 = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, "seq");
         int columnIndexOf3 = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, "from");
         int columnIndexOf4 = SQLiteStatementUtil.columnIndexOf(sQLiteStatement, TypedValues.TransitionType.S_TO);

@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class drawable {
-        public static int loading_animated_icon = 0x7f080c6c;
+        public static int loading_animated_icon = 0x7f080c71;
 
         private drawable() {
         }

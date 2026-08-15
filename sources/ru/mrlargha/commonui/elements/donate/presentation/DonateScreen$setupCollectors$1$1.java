@@ -87,11 +87,11 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
         @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
         /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes6.dex */
-        public static final class C00811<T> implements FlowCollector {
+        public static final class C00801<T> implements FlowCollector {
             final /* synthetic */ DonateScreenBinding $this_with;
             final /* synthetic */ DonateScreen this$0;
 
-            C00811(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen) {
+            C00801(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen) {
                 this.$this_with = donateScreenBinding;
                 this.this$0 = donateScreen;
             }
@@ -140,7 +140,7 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                     donateCategoryAdapter.submitList(arrayList, new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            DonateScreen$setupCollectors$1$1.AnonymousClass1.C00811.emit$lambda$1(DonateScreen.this);
+                            DonateScreen$setupCollectors$1$1.AnonymousClass1.C00801.emit$lambda$1(DonateScreen.this);
                         }
                     });
                     z = this.this$0.hasInitializedCategory;
@@ -192,7 +192,7 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                     return Unit.INSTANCE;
                 }
                 this.label = 1;
-                if (categoriesState.collect(new C00811(this.$this_with, this.this$0), this) == coroutine_suspended) {
+                if (categoriesState.collect(new C00801(this.$this_with, this.this$0), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

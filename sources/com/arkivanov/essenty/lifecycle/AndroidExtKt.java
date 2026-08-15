@@ -7,12 +7,12 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidExt.kt */
 @Metadata(d1 = {"\u0000\u001c\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\n\u0010\u0000\u001a\u00020\u0001*\u00020\u0002\u001a\n\u0010\u0003\u001a\u00020\u0001*\u00020\u0004\u001a\f\u0010\u0005\u001a\u00020\u0006*\u00020\u0007H\u0002¨\u0006\b"}, d2 = {"asEssentyLifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "Landroidx/lifecycle/Lifecycle;", "essentyLifecycle", "Landroidx/lifecycle/LifecycleOwner;", "toEssentyLifecycleState", "Lcom/arkivanov/essenty/lifecycle/Lifecycle$State;", "Landroidx/lifecycle/Lifecycle$State;", "lifecycle_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AndroidExtKt {
 
     /* compiled from: AndroidExt.kt */
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

@@ -1,7 +1,7 @@
 package kotlinx.metadata.internal.protobuf;
 
 import java.io.IOException;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class InvalidProtocolBufferException extends IOException {
     private static final long serialVersionUID = -1616151763072450476L;
     private MessageLite unfinishedMessage;

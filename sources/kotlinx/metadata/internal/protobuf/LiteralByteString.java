@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import kotlinx.metadata.internal.protobuf.ByteString;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class LiteralByteString extends ByteString {
     protected final byte[] bytes;
     private int hash = 0;
@@ -216,7 +216,7 @@ public class LiteralByteString extends ByteString {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public class LiteralByteIterator implements ByteString.ByteIterator {
         private final int limit;
         private int position;

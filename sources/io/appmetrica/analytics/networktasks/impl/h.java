@@ -51,7 +51,7 @@ public final class h implements Runnable {
                 if (networkTask.onPerformRequest()) {
                     String url = networkTask.getUrl();
                     if (url != null && !TextUtils.isEmpty(StringsKt.trim((CharSequence) url).toString())) {
-                        Request.Builder addHeader = new Request.Builder(url).addHeader(HttpHeaders.ACCEPT, "application/json").addHeader("User-Agent", networkTask.getUserAgent());
+                        Request.Builder addHeader = new Request.Builder(url).addHeader(HttpHeaders.ACCEPT, "application/json").addHeader(HttpHeaders.USER_AGENT, networkTask.getUserAgent());
                         RequestDataHolder requestDataHolder = networkTask.getRequestDataHolder();
                         Iterator<T> it = requestDataHolder.getHeaders().entrySet().iterator();
                         while (it.hasNext()) {

@@ -680,6 +680,8 @@
     <string name="house_week_profit_stats">Weekly profit statistics</string>
     <string name="how_hear">How did you hear about the project?</string>
     <string name="hud_battle_pass_label">&lt;c0&gt;BATTLE&lt;/c0&gt;\n&lt;c1&gt;PASS&lt;/c1&gt;</string>
+    <string name="hud_boss_frankenstein_title">Frankenstein</string>
+    <string name="hud_boss_kraken_title">Kraken</string>
     <string name="hud_prison_label">PRISON</string>
     <string name="i_km">%1$s %2$s km</string>
     <string name="i_percent">%1$s%%</string>

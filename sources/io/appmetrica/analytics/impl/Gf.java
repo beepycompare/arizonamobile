@@ -30,7 +30,7 @@ public final class Gf implements O5 {
                     return null;
                 }
                 Gj.a("Successfully parsed preload info. Tracking id = %s, additionalParams = %s", asString, jSONObject);
-                return new Qf(asString, jSONObject, true, false, EnumC0399l8.f);
+                return new Qf(asString, jSONObject, true, false, EnumC0398l8.f);
             } catch (Throwable th) {
                 ImportantLogger.INSTANCE.info("AppMetrica-Attribution", String.format("Could not parse additional parameters", new Object[0]) + "\n" + StringUtils.throwableToString(th), new Object[0]);
                 return null;

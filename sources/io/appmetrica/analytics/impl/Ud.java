@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public final class Ud {
 
     /* renamed from: a  reason: collision with root package name */
-    public final U5 f793a = C0576s4.l().h();
+    public final U5 f793a = C0575s4.l().h();
 }

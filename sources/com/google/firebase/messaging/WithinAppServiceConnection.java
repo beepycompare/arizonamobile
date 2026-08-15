@@ -18,7 +18,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class WithinAppServiceConnection implements ServiceConnection {
     private WithinAppServiceBinder binder;
     private boolean connectionInProgress;
@@ -28,7 +28,7 @@ class WithinAppServiceConnection implements ServiceConnection {
     private final ScheduledExecutorService scheduledExecutorService;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class BindRequest {
         final Intent intent;
         private final TaskCompletionSource<Void> taskCompletionSource = new TaskCompletionSource<>();
@@ -41,7 +41,7 @@ class WithinAppServiceConnection implements ServiceConnection {
             final ScheduledFuture<?> schedule = scheduledExecutorService.schedule(new Runnable() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    WithinAppServiceConnection.BindRequest.this.m9757x9cf97a38();
+                    WithinAppServiceConnection.BindRequest.this.m9758x9cf97a38();
                 }
             }, 20L, TimeUnit.SECONDS);
             getTask().addOnCompleteListener(scheduledExecutorService, new OnCompleteListener() { // from class: com.google.firebase.messaging.WithinAppServiceConnection$BindRequest$$ExternalSyntheticLambda1
@@ -54,7 +54,7 @@ class WithinAppServiceConnection implements ServiceConnection {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$arrangeTimeout$0$com-google-firebase-messaging-WithinAppServiceConnection$BindRequest  reason: not valid java name */
-        public /* synthetic */ void m9757x9cf97a38() {
+        public /* synthetic */ void m9758x9cf97a38() {
             Log.w(Constants.TAG, "Service took too long to process intent: " + this.intent.getAction() + " finishing.");
             finish();
         }

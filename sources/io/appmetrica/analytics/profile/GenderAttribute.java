@@ -1,9 +1,9 @@
 package io.appmetrica.analytics.profile;
 
 import io.appmetrica.analytics.impl.An;
-import io.appmetrica.analytics.impl.C0129am;
-import io.appmetrica.analytics.impl.C0580s8;
-import io.appmetrica.analytics.impl.C0606t8;
+import io.appmetrica.analytics.impl.C0128am;
+import io.appmetrica.analytics.impl.C0579s8;
+import io.appmetrica.analytics.impl.C0605t8;
 import io.appmetrica.analytics.impl.Cl;
 import io.appmetrica.analytics.impl.Ho;
 import io.appmetrica.analytics.impl.J4;
@@ -13,7 +13,7 @@ import io.appmetrica.analytics.impl.Vi;
 public class GenderAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final L6 f1417a = new L6("appmetrica_gender", new C0606t8(), new C0129am());
+    private final L6 f1417a = new L6("appmetrica_gender", new C0605t8(), new C0128am());
 
     /* loaded from: classes5.dex */
     public enum Gender {
@@ -37,17 +37,17 @@ public class GenderAttribute {
     public UserProfileUpdate<? extends Ho> withValue(Gender gender) {
         String str = this.f1417a.c;
         String stringValue = gender.getStringValue();
-        C0580s8 c0580s8 = new C0580s8();
+        C0579s8 c0579s8 = new C0579s8();
         L6 l6 = this.f1417a;
-        return new UserProfileUpdate<>(new An(str, stringValue, c0580s8, l6.f644a, new J4(l6.b)));
+        return new UserProfileUpdate<>(new An(str, stringValue, c0579s8, l6.f644a, new J4(l6.b)));
     }
 
     public UserProfileUpdate<? extends Ho> withValueIfUndefined(Gender gender) {
         String str = this.f1417a.c;
         String stringValue = gender.getStringValue();
-        C0580s8 c0580s8 = new C0580s8();
+        C0579s8 c0579s8 = new C0579s8();
         L6 l6 = this.f1417a;
-        return new UserProfileUpdate<>(new An(str, stringValue, c0580s8, l6.f644a, new Cl(l6.b)));
+        return new UserProfileUpdate<>(new An(str, stringValue, c0579s8, l6.f644a, new Cl(l6.b)));
     }
 
     public UserProfileUpdate<? extends Ho> withValueReset() {

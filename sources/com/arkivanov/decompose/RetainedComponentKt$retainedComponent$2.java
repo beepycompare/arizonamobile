@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RetainedComponent.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public /* synthetic */ class RetainedComponentKt$retainedComponent$2 extends FunctionReferenceImpl implements Function0<Boolean> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public RetainedComponentKt$retainedComponent$2(Object obj) {

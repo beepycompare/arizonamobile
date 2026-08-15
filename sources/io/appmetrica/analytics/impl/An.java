@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
 public final class An extends K4 {
-    public final InterfaceC0493oo g;
+    public final InterfaceC0492oo g;
 
-    public An(String str, String str2, InterfaceC0493oo interfaceC0493oo, Vo vo, W2 w2) {
+    public An(String str, String str2, InterfaceC0492oo interfaceC0492oo, Vo vo, W2 w2) {
         super(0, str, str2, vo, w2);
-        this.g = interfaceC0493oo;
+        this.g = interfaceC0492oo;
     }
 
     @Override // io.appmetrica.analytics.impl.K4
@@ -14,7 +14,7 @@ public final class An extends K4 {
         io2.d.f636a = str == null ? new byte[0] : str.getBytes();
     }
 
-    public final InterfaceC0493oo h() {
+    public final InterfaceC0492oo h() {
         return this.g;
     }
 }

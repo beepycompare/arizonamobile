@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import coil3.network.internal.UtilsKt;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import com.facebook.internal.Utility;
 import com.google.common.net.HttpHeaders;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -87,7 +88,7 @@ public final class Util {
         }
         Utility.logd("Facebook-Util", String.valueOf(str2) + " URL: " + str);
         HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
-        httpURLConnection.setRequestProperty("User-Agent", String.valueOf(System.getProperties().getProperty("http.agent")) + " FacebookAndroidSDK");
+        httpURLConnection.setRequestProperty(HttpHeaders.USER_AGENT, String.valueOf(System.getProperties().getProperty("http.agent")) + " FacebookAndroidSDK");
         if (!str2.equals(UtilsKt.HTTP_METHOD_GET)) {
             Bundle bundle2 = new Bundle();
             for (String str3 : bundle.keySet()) {
@@ -145,11 +146,11 @@ public final class Util {
         if (jSONObject.has("error")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("error");
             throw new FacebookError(jSONObject2.getString("message"), jSONObject2.getString("type"), 0);
-        } else if (jSONObject.has("error_code") && jSONObject.has("error_msg")) {
-            throw new FacebookError(jSONObject.getString("error_msg"), "", Integer.parseInt(jSONObject.getString("error_code")));
+        } else if (jSONObject.has(UpdateAnalyticsContract.ERROR_CODE_PARAM) && jSONObject.has("error_msg")) {
+            throw new FacebookError(jSONObject.getString("error_msg"), "", Integer.parseInt(jSONObject.getString(UpdateAnalyticsContract.ERROR_CODE_PARAM)));
         } else {
-            if (jSONObject.has("error_code")) {
-                throw new FacebookError("request failed", "", Integer.parseInt(jSONObject.getString("error_code")));
+            if (jSONObject.has(UpdateAnalyticsContract.ERROR_CODE_PARAM)) {
+                throw new FacebookError("request failed", "", Integer.parseInt(jSONObject.getString(UpdateAnalyticsContract.ERROR_CODE_PARAM)));
             }
             if (jSONObject.has("error_msg")) {
                 throw new FacebookError(jSONObject.getString("error_msg"));

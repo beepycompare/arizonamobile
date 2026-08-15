@@ -48,6 +48,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.event.adapters.AwardsAdapter;
 import ru.mrlargha.event.adapters.QuestAdapter;
+import ru.mrlargha.event.adapters.RatingAdapter;
 import ru.mrlargha.event.adapters.ShopAdapter;
 import ru.mrlargha.event.data.AwardItemData;
 import ru.mrlargha.event.data.EasterItem;
@@ -65,14 +66,12 @@ import ru.mrlargha.feature.event.databinding.EventMainResultScreenBinding;
 import ru.mrlargha.feature.event.databinding.EventMainScreenBinding;
 import ru.mrlargha.feature.event.databinding.EventPriseItemEventBinding;
 import ru.mrlargha.feature.event.databinding.EventScreenBinding;
+import ru.mrlargha.feature.event.databinding.EventShipScreenBinding;
+import ru.mrlargha.feature.event.databinding.EventShipUpgradeItemBinding;
 import ru.mrlargha.feature.event.databinding.EventShopSceenBinding;
 import ru.mrlargha.feature.event.databinding.EventTopbarBinding;
-import ru.mrlargha.feature.event.databinding.PiratesShipScreenBinding;
-import ru.mrlargha.feature.event.databinding.PiratesShipUpgradeItemBinding;
-import ru.mrlargha.pirates.UtilKt;
-import ru.mrlargha.pirates.adapters.RatingAdapter;
 /* compiled from: EventScreen.kt */
-@Metadata(d1 = {"\u0000æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003klmB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010.\u001a\u00020/2\u0006\u00100\u001a\u000201H\u0016J\u0018\u00102\u001a\u00020/2\u0006\u00103\u001a\u00020%2\u0006\u00104\u001a\u00020\u0006H\u0016J\u0010\u00105\u001a\u00020/2\u0006\u00103\u001a\u000206H\u0002J\u0016\u00107\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u0002090\u001aH\u0002J\u0010\u0010:\u001a\u00020/2\u0006\u0010;\u001a\u00020%H\u0002J \u0010<\u001a\u00020/2\u0006\u0010=\u001a\u00020>2\u0006\u00103\u001a\u00020?2\u0006\u0010@\u001a\u00020\u0006H\u0002J\u0016\u0010A\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020B0\u001aH\u0002J\u0010\u0010C\u001a\u00020/2\u0006\u00108\u001a\u00020\u001dH\u0002J\u0016\u0010D\u001a\u00020/2\f\u0010E\u001a\b\u0012\u0004\u0012\u00020F0\u001aH\u0002J\u0010\u0010G\u001a\u00020/2\u0006\u00108\u001a\u00020HH\u0002J\u0010\u0010I\u001a\u00020/2\u0006\u00108\u001a\u00020HH\u0002J\u0016\u0010J\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020K0\u001aH\u0002J\u0016\u0010L\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020K0\u001aH\u0002J\u0016\u0010M\u001a\u00020/2\f\u0010N\u001a\b\u0012\u0004\u0012\u00020\u00060\u001aH\u0002J\u0016\u0010O\u001a\u00020/2\f\u0010P\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aH\u0002J\u0010\u0010Q\u001a\u00020/2\u0006\u0010R\u001a\u00020\u0006H\u0002J\u0018\u0010S\u001a\u00020/2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020KH\u0002J\u0018\u0010W\u001a\u00020/2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020KH\u0002J\u000e\u0010X\u001a\u00020%2\u0006\u0010Y\u001a\u00020\u0006J\u0018\u0010Z\u001a\u00020/2\u0006\u0010T\u001a\u00020[2\u0006\u0010\\\u001a\u00020]H\u0002J\b\u0010^\u001a\u00020/H\u0002J\b\u0010_\u001a\u00020/H\u0002J\u0010\u0010`\u001a\u00020/2\u0006\u0010V\u001a\u00020BH\u0002J\u0010\u0010a\u001a\u00020/2\u0006\u0010V\u001a\u00020FH\u0002J\u0018\u0010b\u001a\u00020/2\u0006\u0010c\u001a\u00020%2\u0006\u0010T\u001a\u00020\nH\u0002J\b\u0010d\u001a\u00020/H\u0002J\b\u0010e\u001a\u00020/H\u0002J\b\u0010f\u001a\u00020/H\u0002J\b\u0010g\u001a\u00020/H\u0002J\u0010\u0010h\u001a\u00020/2\u0006\u0010i\u001a\u00020jH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010$\u001a\u00020%¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0011\u0010(\u001a\u00020)¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006n"}, d2 = {"Lru/mrlargha/event/EventScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/event/databinding/EventScreenBinding;", "textSelectedColor", "completeColor", "questAdapter", "Lru/mrlargha/event/adapters/QuestAdapter;", "shopAdapter", "Lru/mrlargha/event/adapters/ShopAdapter;", "levelItemsAdapter", "Lru/mrlargha/event/adapters/AwardsAdapter;", "timersList", "", "Landroid/os/CountDownTimer;", "_bpUsualData", "", "Lru/mrlargha/event/data/AwardItemData;", "battlePassInfo", "Lru/mrlargha/event/data/MainInfo;", "eventPosition", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "ratingAdapter", "Lru/mrlargha/pirates/adapters/RatingAdapter;", "url", "", "getUrl", "()Ljava/lang/String;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/event/EventApi;", "setVisible", "", "visible", "", "onBackendMessageHandled", "data", "subId", "setShipInfo", "Lru/mrlargha/event/data/ShipData;", "setRatingInfo", "info", "Lru/mrlargha/event/data/RatingData;", "setRatingTime", "time", "setShipUpgrade", "elementBinding", "Lru/mrlargha/feature/event/databinding/PiratesShipUpgradeItemBinding;", "Lru/mrlargha/event/data/ShipData$ShipComponent;", "stage", "setListQuest", "Lru/mrlargha/event/data/QuestData;", "setMainPageInfo", "setShopInfo", "items", "Lru/mrlargha/event/data/ShopItem;", "setShopResult", "Lru/mrlargha/event/data/ShopResult;", "setMainResult", "setListEvent", "Lru/mrlargha/event/data/EventData;", "updateListEvent", "updateBpAwards", "awardsStatusList", "updateLevelItems", "pairList", "onClaimItem", "position", "updateEvent", "view", "Lru/mrlargha/feature/event/databinding/EventEventsItemBinding;", "item", "setEvent", "formatSeconds", "seconds", "setPriseItem", "Lru/mrlargha/feature/event/databinding/EventPriseItemEventBinding;", "prise", "Lru/mrlargha/event/data/EasterItem;", "stopVideo", "setVideo", "onTaskItemClick", "onShopItemClick", "onPriseInfo", "text", "setupAdapters", "clearAdapters", "clearTimers", "setupNavigation", "navigateTo", "nav", "Lru/mrlargha/event/EventScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "event"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003klmB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010.\u001a\u00020/2\u0006\u00100\u001a\u000201H\u0016J\u0018\u00102\u001a\u00020/2\u0006\u00103\u001a\u00020%2\u0006\u00104\u001a\u00020\u0006H\u0016J\u0010\u00105\u001a\u00020/2\u0006\u00103\u001a\u000206H\u0002J\u0016\u00107\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u0002090\u001aH\u0002J\u0010\u0010:\u001a\u00020/2\u0006\u0010;\u001a\u00020%H\u0002J \u0010<\u001a\u00020/2\u0006\u0010=\u001a\u00020>2\u0006\u00103\u001a\u00020?2\u0006\u0010@\u001a\u00020\u0006H\u0002J\u0016\u0010A\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020B0\u001aH\u0002J\u0010\u0010C\u001a\u00020/2\u0006\u00108\u001a\u00020\u001dH\u0002J\u0016\u0010D\u001a\u00020/2\f\u0010E\u001a\b\u0012\u0004\u0012\u00020F0\u001aH\u0002J\u0010\u0010G\u001a\u00020/2\u0006\u00108\u001a\u00020HH\u0002J\u0010\u0010I\u001a\u00020/2\u0006\u00108\u001a\u00020HH\u0002J\u0016\u0010J\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020K0\u001aH\u0002J\u0016\u0010L\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020K0\u001aH\u0002J\u0016\u0010M\u001a\u00020/2\f\u0010N\u001a\b\u0012\u0004\u0012\u00020\u00060\u001aH\u0002J\u0016\u0010O\u001a\u00020/2\f\u0010P\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aH\u0002J\u0010\u0010Q\u001a\u00020/2\u0006\u0010R\u001a\u00020\u0006H\u0002J\u0018\u0010S\u001a\u00020/2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020KH\u0002J\u0018\u0010W\u001a\u00020/2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020KH\u0002J\u000e\u0010X\u001a\u00020%2\u0006\u0010Y\u001a\u00020\u0006J\u0018\u0010Z\u001a\u00020/2\u0006\u0010T\u001a\u00020[2\u0006\u0010\\\u001a\u00020]H\u0002J\b\u0010^\u001a\u00020/H\u0002J\b\u0010_\u001a\u00020/H\u0002J\u0010\u0010`\u001a\u00020/2\u0006\u0010V\u001a\u00020BH\u0002J\u0010\u0010a\u001a\u00020/2\u0006\u0010V\u001a\u00020FH\u0002J\u0018\u0010b\u001a\u00020/2\u0006\u0010c\u001a\u00020%2\u0006\u0010T\u001a\u00020\nH\u0002J\b\u0010d\u001a\u00020/H\u0002J\b\u0010e\u001a\u00020/H\u0002J\b\u0010f\u001a\u00020/H\u0002J\b\u0010g\u001a\u00020/H\u0002J\u0010\u0010h\u001a\u00020/2\u0006\u0010i\u001a\u00020jH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010$\u001a\u00020%¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0011\u0010(\u001a\u00020)¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006n"}, d2 = {"Lru/mrlargha/event/EventScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/event/databinding/EventScreenBinding;", "textSelectedColor", "completeColor", "questAdapter", "Lru/mrlargha/event/adapters/QuestAdapter;", "shopAdapter", "Lru/mrlargha/event/adapters/ShopAdapter;", "levelItemsAdapter", "Lru/mrlargha/event/adapters/AwardsAdapter;", "timersList", "", "Landroid/os/CountDownTimer;", "_bpUsualData", "", "Lru/mrlargha/event/data/AwardItemData;", "battlePassInfo", "Lru/mrlargha/event/data/MainInfo;", "eventPosition", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "ratingAdapter", "Lru/mrlargha/event/adapters/RatingAdapter;", "url", "", "getUrl", "()Ljava/lang/String;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/event/EventApi;", "setVisible", "", "visible", "", "onBackendMessageHandled", "data", "subId", "setShipInfo", "Lru/mrlargha/event/data/ShipData;", "setRatingInfo", "info", "Lru/mrlargha/event/data/RatingData;", "setRatingTime", "time", "setShipUpgrade", "elementBinding", "Lru/mrlargha/feature/event/databinding/EventShipUpgradeItemBinding;", "Lru/mrlargha/event/data/ShipData$ShipComponent;", "stage", "setListQuest", "Lru/mrlargha/event/data/QuestData;", "setMainPageInfo", "setShopInfo", "items", "Lru/mrlargha/event/data/ShopItem;", "setShopResult", "Lru/mrlargha/event/data/ShopResult;", "setMainResult", "setListEvent", "Lru/mrlargha/event/data/EventData;", "updateListEvent", "updateBpAwards", "awardsStatusList", "updateLevelItems", "pairList", "onClaimItem", "position", "updateEvent", "view", "Lru/mrlargha/feature/event/databinding/EventEventsItemBinding;", "item", "setEvent", "formatSeconds", "seconds", "setPriseItem", "Lru/mrlargha/feature/event/databinding/EventPriseItemEventBinding;", "prise", "Lru/mrlargha/event/data/EasterItem;", "stopVideo", "setVideo", "onTaskItemClick", "onShopItemClick", "onPriseInfo", "text", "setupAdapters", "clearAdapters", "clearTimers", "setupNavigation", "navigateTo", "nav", "Lru/mrlargha/event/EventScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "event"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class EventScreen extends SAMPUIElement implements InterfaceController {
     private List<AwardItemData> _bpUsualData;
@@ -155,26 +154,26 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         this.textSelectedColor = Color.parseColor("#354463");
-        int color = ContextCompat.getColor(targetActivity, R.color.main);
+        int color = ContextCompat.getColor(targetActivity, R.color.event_main);
         this.completeColor = color;
-        this.questAdapter = new QuestAdapter(color, new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda13
+        this.questAdapter = new QuestAdapter(color, new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return EventScreen.questAdapter$lambda$0(EventScreen.this, (QuestData) obj);
             }
-        }, new Function2() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda14
+        }, new Function2() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return EventScreen.questAdapter$lambda$1(EventScreen.this, (String) obj, (View) obj2);
             }
         });
-        this.shopAdapter = new ShopAdapter(new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda15
+        this.shopAdapter = new ShopAdapter(new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda16
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return EventScreen.shopAdapter$lambda$0(EventScreen.this, (ShopItem) obj);
             }
         });
-        this.levelItemsAdapter = new AwardsAdapter(color, new Function2() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda16
+        this.levelItemsAdapter = new AwardsAdapter(color, new Function2() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return EventScreen.levelItemsAdapter$lambda$0(EventScreen.this, ((Boolean) obj).booleanValue(), ((Integer) obj2).intValue());
@@ -326,40 +325,40 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void setShipInfo(ShipData shipData) {
-        PiratesShipScreenBinding piratesShipScreenBinding = this.binding.ship;
-        piratesShipScreenBinding.progressBar.setPercentWidth(shipData.getExp() / shipData.getMaxExp());
-        piratesShipScreenBinding.currentExp.setText(String.valueOf(shipData.getExp()));
-        piratesShipScreenBinding.maxExp.setText(String.valueOf(shipData.getMaxExp()));
-        piratesShipScreenBinding.level.setText(getTargetActivity().getString(R.string.event_level, new Object[]{Integer.valueOf(shipData.getLevel())}));
-        piratesShipScreenBinding.upgrade1.getRoot().setVisibility(8);
-        piratesShipScreenBinding.upgrade2.getRoot().setVisibility(8);
-        piratesShipScreenBinding.upgrade3.getRoot().setVisibility(8);
-        piratesShipScreenBinding.upgrade4.getRoot().setVisibility(8);
+        EventShipScreenBinding eventShipScreenBinding = this.binding.ship;
+        eventShipScreenBinding.progressBar.setPercentWidth(shipData.getExp() / shipData.getMaxExp());
+        eventShipScreenBinding.currentExp.setText(String.valueOf(shipData.getExp()));
+        eventShipScreenBinding.maxExp.setText(String.valueOf(shipData.getMaxExp()));
+        eventShipScreenBinding.level.setText(getTargetActivity().getString(R.string.event_level, new Object[]{Integer.valueOf(shipData.getLevel())}));
+        eventShipScreenBinding.upgrade1.getRoot().setVisibility(8);
+        eventShipScreenBinding.upgrade2.getRoot().setVisibility(8);
+        eventShipScreenBinding.upgrade3.getRoot().setVisibility(8);
+        eventShipScreenBinding.upgrade4.getRoot().setVisibility(8);
         ShipData.ShipComponent shipComponent = (ShipData.ShipComponent) CollectionsKt.getOrNull(shipData.getComponents(), 0);
         if (shipComponent != null) {
-            piratesShipScreenBinding.upgrade1.getRoot().setVisibility(0);
-            PiratesShipUpgradeItemBinding upgrade1 = piratesShipScreenBinding.upgrade1;
+            eventShipScreenBinding.upgrade1.getRoot().setVisibility(0);
+            EventShipUpgradeItemBinding upgrade1 = eventShipScreenBinding.upgrade1;
             Intrinsics.checkNotNullExpressionValue(upgrade1, "upgrade1");
             setShipUpgrade(upgrade1, shipComponent, shipData.getStage());
         }
         ShipData.ShipComponent shipComponent2 = (ShipData.ShipComponent) CollectionsKt.getOrNull(shipData.getComponents(), 1);
         if (shipComponent2 != null) {
-            piratesShipScreenBinding.upgrade2.getRoot().setVisibility(0);
-            PiratesShipUpgradeItemBinding upgrade2 = piratesShipScreenBinding.upgrade2;
+            eventShipScreenBinding.upgrade2.getRoot().setVisibility(0);
+            EventShipUpgradeItemBinding upgrade2 = eventShipScreenBinding.upgrade2;
             Intrinsics.checkNotNullExpressionValue(upgrade2, "upgrade2");
             setShipUpgrade(upgrade2, shipComponent2, shipData.getStage());
         }
         ShipData.ShipComponent shipComponent3 = (ShipData.ShipComponent) CollectionsKt.getOrNull(shipData.getComponents(), 2);
         if (shipComponent3 != null) {
-            piratesShipScreenBinding.upgrade3.getRoot().setVisibility(0);
-            PiratesShipUpgradeItemBinding upgrade3 = piratesShipScreenBinding.upgrade3;
+            eventShipScreenBinding.upgrade3.getRoot().setVisibility(0);
+            EventShipUpgradeItemBinding upgrade3 = eventShipScreenBinding.upgrade3;
             Intrinsics.checkNotNullExpressionValue(upgrade3, "upgrade3");
             setShipUpgrade(upgrade3, shipComponent3, shipData.getStage());
         }
         ShipData.ShipComponent shipComponent4 = (ShipData.ShipComponent) CollectionsKt.getOrNull(shipData.getComponents(), 3);
         if (shipComponent4 != null) {
-            piratesShipScreenBinding.upgrade4.getRoot().setVisibility(0);
-            PiratesShipUpgradeItemBinding upgrade32 = piratesShipScreenBinding.upgrade3;
+            eventShipScreenBinding.upgrade4.getRoot().setVisibility(0);
+            EventShipUpgradeItemBinding upgrade32 = eventShipScreenBinding.upgrade3;
             Intrinsics.checkNotNullExpressionValue(upgrade32, "upgrade3");
             setShipUpgrade(upgrade32, shipComponent4, shipData.getStage());
         }
@@ -383,11 +382,11 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         this.binding.rating.timedesc.setVisibility(8);
     }
 
-    private final void setShipUpgrade(PiratesShipUpgradeItemBinding piratesShipUpgradeItemBinding, final ShipData.ShipComponent shipComponent, int i) {
+    private final void setShipUpgrade(EventShipUpgradeItemBinding eventShipUpgradeItemBinding, final ShipData.ShipComponent shipComponent, int i) {
         int i2;
-        piratesShipUpgradeItemBinding.text.setText(shipComponent.getTitle());
-        piratesShipUpgradeItemBinding.buttonText.setText(String.valueOf(shipComponent.getPrice()));
-        piratesShipUpgradeItemBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda17
+        eventShipUpgradeItemBinding.text.setText(shipComponent.getTitle());
+        eventShipUpgradeItemBinding.buttonText.setText(String.valueOf(shipComponent.getPrice()));
+        eventShipUpgradeItemBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EventScreen.setShipUpgrade$lambda$0$0(EventScreen.this, shipComponent, view);
@@ -397,7 +396,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         int hashCode = image.hashCode();
         if (hashCode == -1326217028) {
             if (image.equals("dollar")) {
-                i2 = R.drawable.pirates_dollar;
+                i2 = R.drawable.event_dollar;
             }
             i2 = R.drawable.event_coin;
         } else if (hashCode == -522905897) {
@@ -407,11 +406,11 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
             i2 = R.drawable.event_coin;
         } else {
             if (hashCode == 108864568 && image.equals("ruble")) {
-                i2 = UtilsKt.isArizonaType() ? R.drawable.pirates_dollar : R.drawable.pirates_ruble;
+                i2 = UtilsKt.isArizonaType() ? R.drawable.event_dollar : R.drawable.event_ruble;
             }
             i2 = R.drawable.event_coin;
         }
-        piratesShipUpgradeItemBinding.currency.setImageResource(i2);
+        eventShipUpgradeItemBinding.currency.setImageResource(i2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

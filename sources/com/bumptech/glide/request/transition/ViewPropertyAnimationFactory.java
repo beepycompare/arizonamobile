@@ -2,7 +2,7 @@ package com.bumptech.glide.request.transition;
 
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.request.transition.ViewPropertyTransition;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ViewPropertyAnimationFactory<R> implements TransitionFactory<R> {
     private ViewPropertyTransition<R> animation;
     private final ViewPropertyTransition.Animator animator;

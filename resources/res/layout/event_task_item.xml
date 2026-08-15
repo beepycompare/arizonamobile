@@ -26,10 +26,10 @@
             <TextView android:textSize="@dimen/_8sdp" android:textColor="#b1b1b1" android:id="@+id/tv_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:maxLines="3" android:layout_weight="1" android:fontFamily="@font/pfdindisplaypro_regular"/>
             <LinearLayout android:orientation="vertical" android:id="@+id/progress_bar_container" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_8sdp">
-                    <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/main" android:layout_gravity="start" android:id="@+id/tv_task_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pfdindisplaypro_medium"/>
+                    <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/event_main" android:layout_gravity="start" android:id="@+id/tv_task_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pfdindisplaypro_medium"/>
                     <LinearLayout android:layout_gravity="end" android:id="@+id/complete_text_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="match_parent">
-                        <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_8sdp" android:src="@drawable/check_mark" android:adjustViewBounds="true" android:tint="@color/main" android:layout_marginEnd="@dimen/_4sdp"/>
-                        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/main" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/event_task_completed" android:fontFamily="@font/pfdindisplaypro_regular"/>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_8sdp" android:src="@drawable/check_mark" android:adjustViewBounds="true" android:tint="@color/event_main" android:layout_marginEnd="@dimen/_4sdp"/>
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/event_main" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/event_task_completed" android:fontFamily="@font/pfdindisplaypro_regular"/>
                     </LinearLayout>
                     <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_gravity="end" android:id="@+id/tv_complete_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="@font/pfdindisplaypro_regular"/>
                 </FrameLayout>
@@ -45,7 +45,7 @@
         </LinearLayout>
         <LinearLayout android:gravity="center" android:id="@+id/error_overlay" android:background="#cb191d22" android:padding="@dimen/_20sdp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
             <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/_12sdp" android:src="@drawable/event_task_ic_lock" android:adjustViewBounds="true" android:layout_marginStart="@dimen/_12sdp"/>
-            <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/main" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="@string/event_available_in" android:fontFamily="@font/pfdindisplaypro_regular"/>
+            <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/event_main" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="@string/event_available_in" android:fontFamily="@font/pfdindisplaypro_regular"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>

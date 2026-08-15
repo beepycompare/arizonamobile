@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 import java.nio.channels.OverlappingFileLockException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class CrossProcessLock {
     private static final String TAG = "CrossProcessLock";
     private final FileChannel channel;

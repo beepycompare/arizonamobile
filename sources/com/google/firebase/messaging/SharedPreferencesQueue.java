@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SharedPreferencesQueue {
     private final String itemSeparator;
     private final String queueName;

@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import com.arizona.launcher.updater.apk.LauncherApkDownloader;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Set;
@@ -96,7 +97,7 @@ public abstract class zzbz implements Map, Serializable {
     public final String toString() {
         int size = size();
         if (size >= 0) {
-            StringBuilder sb = new StringBuilder((int) Math.min(size * 8, 1073741824L));
+            StringBuilder sb = new StringBuilder((int) Math.min(size * 8, (long) LauncherApkDownloader.DEFAULT_MAX_APK_BYTES));
             sb.append(AbstractJsonLexerKt.BEGIN_OBJ);
             boolean z = true;
             for (Map.Entry entry : entrySet()) {

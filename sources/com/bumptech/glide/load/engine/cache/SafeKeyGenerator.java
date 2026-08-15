@@ -9,7 +9,7 @@ import com.bumptech.glide.util.pool.FactoryPools;
 import com.bumptech.glide.util.pool.StateVerifier;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class SafeKeyGenerator {
     private final LruCache<Key, String> loadIdToSafeHash = new LruCache<>(1000);
     private final Pools.Pool<PoolableDigestContainer> digestPool = FactoryPools.threadSafe(10, new FactoryPools.Factory<PoolableDigestContainer>() { // from class: com.bumptech.glide.load.engine.cache.SafeKeyGenerator.1
@@ -49,7 +49,7 @@ public class SafeKeyGenerator {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class PoolableDigestContainer implements FactoryPools.Poolable {
         final MessageDigest messageDigest;
         private final StateVerifier stateVerifier = StateVerifier.newInstance();

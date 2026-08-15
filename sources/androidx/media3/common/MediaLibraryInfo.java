@@ -1,7 +1,7 @@
 package androidx.media3.common;
 
 import java.util.HashSet;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class MediaLibraryInfo {
     public static final int INTERFACE_VERSION = 9;
     public static final String TAG = "AndroidXMedia3";

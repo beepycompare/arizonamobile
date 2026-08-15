@@ -6,7 +6,7 @@ import com.google.firebase.installations.time.Clock;
 import com.google.firebase.installations.time.SystemClock;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Utils {
     private static final String APP_ID_IDENTIFICATION_SUBSTRING = ":";
     private static Utils singleton;

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.xmlpull.v1.XmlPullParserException;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class DefaultsXmlParser {
     private static final String XML_TAG_ENTRY = "entry";
     private static final String XML_TAG_KEY = "key";

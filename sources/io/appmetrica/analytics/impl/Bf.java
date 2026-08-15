@@ -14,7 +14,7 @@ public final class Bf implements Do {
         List<Cf> list = df.b;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (Cf cf : list) {
-                if (cf.c == EnumC0399l8.d) {
+                if (cf.c == EnumC0398l8.d) {
                     z = false;
                     break;
                 }
@@ -31,7 +31,7 @@ public final class Bf implements Do {
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (Cf cf2 : list) {
                 if (cf2.c == qf.e) {
-                    if (cf.c == EnumC0399l8.d && this.f479a) {
+                    if (cf.c == EnumC0398l8.d && this.f479a) {
                         return CollectionsKt.plus((Collection<? extends Cf>) list, cf);
                     }
                     return null;

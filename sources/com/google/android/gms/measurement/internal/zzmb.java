@@ -1,6 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import android.os.Bundle;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.Map;
@@ -270,7 +271,7 @@ public final class zzmb extends zzg {
         if (!this.zzu.zzc().zzv() || bundle == null || (bundle2 = bundle.getBundle("com.google.app_measurement.screen_service")) == null) {
             return;
         }
-        this.zzd.put(Integer.valueOf(zzddVar.zza), new zzlu(bundle2.getString("name"), bundle2.getString("referrer_name"), bundle2.getLong("id")));
+        this.zzd.put(Integer.valueOf(zzddVar.zza), new zzlu(bundle2.getString("name"), bundle2.getString("referrer_name"), bundle2.getLong(TtmlNode.ATTR_ID)));
     }
 
     public final void zzp(com.google.android.gms.internal.measurement.zzdd zzddVar) {
@@ -325,7 +326,7 @@ public final class zzmb extends zzg {
             return;
         }
         Bundle bundle2 = new Bundle();
-        bundle2.putLong("id", zzluVar.zzc);
+        bundle2.putLong(TtmlNode.ATTR_ID, zzluVar.zzc);
         bundle2.putString("name", zzluVar.zza);
         bundle2.putString("referrer_name", zzluVar.zzb);
         bundle.putBundle("com.google.app_measurement.screen_service", bundle2);

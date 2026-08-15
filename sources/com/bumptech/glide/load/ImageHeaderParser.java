@@ -4,7 +4,7 @@ import com.bumptech.glide.load.engine.bitmap_recycle.ArrayPool;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ImageHeaderParser {
     public static final int UNKNOWN_ORIENTATION = -1;
 
@@ -20,7 +20,7 @@ public interface ImageHeaderParser {
 
     boolean hasJpegMpf(ByteBuffer byteBuffer, ArrayPool arrayPool) throws IOException;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public enum ImageType {
         GIF(true),
         JPEG(false),
@@ -51,7 +51,7 @@ public interface ImageHeaderParser {
     }
 
     /* renamed from: com.bumptech.glide.load.ImageHeaderParser$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$bumptech$glide$load$ImageHeaderParser$ImageType;
 

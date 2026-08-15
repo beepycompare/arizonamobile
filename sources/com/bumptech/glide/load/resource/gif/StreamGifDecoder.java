@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StreamGifDecoder implements ResourceDecoder<InputStream, GifDrawable> {
     private static final String TAG = "StreamGifDecoder";
     private final ArrayPool byteArrayPool;

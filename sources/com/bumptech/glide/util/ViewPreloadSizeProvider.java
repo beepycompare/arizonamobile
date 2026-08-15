@@ -7,7 +7,7 @@ import com.bumptech.glide.request.target.CustomViewTarget;
 import com.bumptech.glide.request.target.SizeReadyCallback;
 import com.bumptech.glide.request.transition.Transition;
 import java.util.Arrays;
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public class ViewPreloadSizeProvider<T> implements ListPreloader.PreloadSizeProvider<T>, SizeReadyCallback {
     private int[] size;
     private SizeViewTarget viewTarget;
@@ -44,7 +44,7 @@ public class ViewPreloadSizeProvider<T> implements ListPreloader.PreloadSizeProv
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes4.dex */
     static final class SizeViewTarget extends CustomViewTarget<View, Object> {
         @Override // com.bumptech.glide.request.target.Target
         public void onLoadFailed(Drawable drawable) {

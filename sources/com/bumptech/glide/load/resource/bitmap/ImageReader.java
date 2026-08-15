@@ -18,7 +18,7 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface ImageReader {
     Bitmap decodeBitmap(BitmapFactory.Options options) throws IOException;
 
@@ -30,7 +30,7 @@ public interface ImageReader {
 
     void stopGrowingBuffers();
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ByteArrayReader implements ImageReader {
         private final ArrayPool byteArrayPool;
         private final byte[] bytes;
@@ -68,7 +68,7 @@ public interface ImageReader {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FileReader implements ImageReader {
         private final ArrayPool byteArrayPool;
         private final File file;
@@ -198,7 +198,7 @@ public interface ImageReader {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ByteBufferReader implements ImageReader {
         private final ByteBuffer buffer;
         private final ArrayPool byteArrayPool;
@@ -240,7 +240,7 @@ public interface ImageReader {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class InputStreamImageReader implements ImageReader {
         private final ArrayPool byteArrayPool;
         private final InputStreamRewinder dataRewinder;
@@ -279,7 +279,7 @@ public interface ImageReader {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ParcelFileDescriptorImageReader implements ImageReader {
         private final ArrayPool byteArrayPool;
         private final ParcelFileDescriptorRewinder dataRewinder;

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import kotlinx.metadata.internal.protobuf.GeneratedMessageLite;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public class ExtensionRegistryLite {
     private static final ExtensionRegistryLite EMPTY = new ExtensionRegistryLite(true);
     private static volatile boolean eagerlyParseMessageSets = false;
@@ -54,7 +54,7 @@ public class ExtensionRegistryLite {
         this.extensionsByNumber = Collections.emptyMap();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     private static final class ObjectIntPair {
         private final int number;
         private final Object object;

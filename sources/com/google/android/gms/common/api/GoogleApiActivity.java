@@ -10,6 +10,7 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import com.google.android.gms.cloudmessaging.CloudMessagingReceiver;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -37,7 +38,7 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             return;
         }
         PendingIntent pendingIntent = (PendingIntent) extras.get(CloudMessagingReceiver.IntentKeys.PENDING_INTENT);
-        Integer num = (Integer) extras.get("error_code");
+        Integer num = (Integer) extras.get(UpdateAnalyticsContract.ERROR_CODE_PARAM);
         if (pendingIntent == null && num == null) {
             Log.e("GoogleApiActivity", "Activity started without resolution");
             finish();

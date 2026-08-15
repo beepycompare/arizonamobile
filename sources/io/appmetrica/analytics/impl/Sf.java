@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 /* loaded from: classes5.dex */
-public final class Sf implements InterfaceC0388kn {
+public final class Sf implements InterfaceC0387kn {
     public final Df a(Qf qf, List<? extends Cf> list) {
         return new Df(qf, list);
     }

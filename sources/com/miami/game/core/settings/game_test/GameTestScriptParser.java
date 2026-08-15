@@ -2,6 +2,7 @@ package com.miami.game.core.settings.game_test;
 
 import androidx.autofill.HintConstants;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
@@ -543,7 +544,7 @@ public final class GameTestScriptParser {
         if (component1 == null && component2 == null) {
             throw new IllegalArgumentException("Click step #" + (i + 1) + " must contain 'backendId' or 'backendName'");
         }
-        int requireInt = requireInt(jSONObject, "id", i);
+        int requireInt = requireInt(jSONObject, TtmlNode.ATTR_ID, i);
         int optInt = jSONObject.optInt("subId", -1);
         String optString = jSONObject.optString("message");
         Intrinsics.checkNotNullExpressionValue(optString, "optString(...)");
@@ -817,7 +818,7 @@ public final class GameTestScriptParser {
         String str5;
         String optString3;
         String str6;
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         BackendMessageMatcher backendMessageMatcher;
         JSONObject optJSONObject = jSONObject.optJSONObject("match");
         if (optJSONObject != null || (optJSONObject = jSONObject.optJSONObject("matcher")) != null) {
@@ -868,17 +869,17 @@ public final class GameTestScriptParser {
             if (str6 != null) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9915constructorimpl = Result.m9915constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
+                    m9916constructorimpl = Result.m9916constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                    m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-                if (m9918exceptionOrNullimpl == null) {
-                    Regex regex = (Regex) m9915constructorimpl;
+                Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+                if (m9919exceptionOrNullimpl == null) {
+                    Regex regex = (Regex) m9916constructorimpl;
                 } else {
                     int i2 = i + 1;
-                    String message = m9918exceptionOrNullimpl.getMessage();
+                    String message = m9919exceptionOrNullimpl.getMessage();
                     if (message == null) {
                         message = "";
                     }

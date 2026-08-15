@@ -2,6 +2,7 @@ package com.airbnb.lottie.network;
 
 import android.util.Pair;
 import com.airbnb.lottie.utils.Logger;
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -40,7 +41,7 @@ public class NetworkCache {
                 return null;
             }
             FileInputStream fileInputStream = new FileInputStream(cachedFile);
-            if (cachedFile.getAbsolutePath().endsWith(".zip")) {
+            if (cachedFile.getAbsolutePath().endsWith(OriginalTzArchiveManifestParser.ZIP_SUFFIX)) {
                 fileExtension = FileExtension.ZIP;
             } else if (cachedFile.getAbsolutePath().endsWith(".gz")) {
                 fileExtension = FileExtension.GZIP;

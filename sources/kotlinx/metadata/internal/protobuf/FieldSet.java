@@ -12,14 +12,14 @@ import kotlinx.metadata.internal.protobuf.LazyField;
 import kotlinx.metadata.internal.protobuf.MessageLite;
 import kotlinx.metadata.internal.protobuf.WireFormat;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<FieldDescriptorType>> {
     private static final FieldSet DEFAULT_INSTANCE = new FieldSet(true);
     private boolean isImmutable;
     private boolean hasLazyField = false;
     private final SmallSortedMap<FieldDescriptorType, Object> fields = SmallSortedMap.newFieldMap(16);
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface FieldDescriptorLite<T extends FieldDescriptorLite<T>> extends Comparable<T> {
         Internal.EnumLiteMap<?> getEnumType();
 
@@ -386,7 +386,7 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: kotlinx.metadata.internal.protobuf.FieldSet$1  reason: invalid class name */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;

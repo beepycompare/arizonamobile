@@ -3,11 +3,11 @@ package com.google.firebase.iid.internal;
 import com.google.android.gms.tasks.Task;
 import java.io.IOException;
 /* compiled from: com.google.firebase:firebase-iid-interop@@17.1.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface FirebaseInstanceIdInternal {
 
     /* compiled from: com.google.firebase:firebase-iid-interop@@17.1.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface NewTokenListener {
         void onNewToken(String str);
     }

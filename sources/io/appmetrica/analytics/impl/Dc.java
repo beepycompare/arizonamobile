@@ -19,23 +19,23 @@ public final class Dc extends Lambda implements Function0 {
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        Vc c0406lf;
+        Vc c0405lf;
         Ec ec = this.f514a;
         Wc wc = ec.f;
         L9 l9 = ec.b;
-        C0279gh c0279gh = ec.f529a;
+        C0278gh c0278gh = ec.f529a;
         F4 f4 = ec.c;
-        C0691wf c0691wf = ec.d;
+        C0690wf c0690wf = ec.d;
         wc.getClass();
         if (FrameworkDetector.isNative()) {
-            C0298ha i = Na.I.i();
+            C0297ha i = Na.I.i();
             Bundle applicationMetaData = i.d.getApplicationMetaData(i.f1013a);
             if (StringUtils.isNullOrEmpty(applicationMetaData != null ? applicationMetaData.getString("io.appmetrica.analytics.plugin_id") : null)) {
-                c0406lf = new C0560re();
-                return c0406lf.a();
+                c0405lf = new C0559re();
+                return c0405lf.a();
             }
         }
-        c0406lf = new C0406lf(l9, c0279gh, f4, c0691wf);
-        return c0406lf.a();
+        c0405lf = new C0405lf(l9, c0278gh, f4, c0690wf);
+        return c0405lf.a();
     }
 }

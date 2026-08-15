@@ -9,7 +9,7 @@ import com.bumptech.glide.load.data.mediastore.MediaStoreUtil;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StreamLocalUriFetcher extends LocalUriFetcher<InputStream> {
     private static final int ID_CONTACTS_CONTACT = 3;
     private static final int ID_CONTACTS_LOOKUP = 1;

@@ -39,6 +39,7 @@ import androidx.compose.ui.layout.MeasurePolicy;
 import androidx.compose.ui.node.ComposeUiNode;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.miami.game.core.design.system.theme.RoundedParallelogramLeftShape;
 import com.miami.game.core.ui.utils.extensions.ClickIndicationType;
@@ -421,7 +422,7 @@ public final class DialogButtonKt {
         float f = onDrawBehind.mo434toPx0680j_4(Dp.m8160constructorimpl(10.0f));
         DrawScope.m5917drawRoundRectZuiqVtQ$default(onDrawBehind, brush, 0L, 0L, CornerRadius.m5057constructorimpl((Float.floatToRawIntBits(f) << 32) | (Float.floatToRawIntBits(f) & 4294967295L)), 0.0f, null, null, 0, 246, null);
         if (!z) {
-            DrawScope.m5918drawRoundRectuAw5IA$default(onDrawBehind, j, 0L, 0L, 0L, null, 0.0f, null, 0, 254, null);
+            DrawScope.m5918drawRoundRectuAw5IA$default(onDrawBehind, j, 0L, 0L, 0L, null, 0.0f, null, 0, LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_MASK, null);
         }
         return Unit.INSTANCE;
     }

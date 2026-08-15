@@ -65,7 +65,7 @@ public final class TextSettingsKt {
                 }
                 Modifier modifier2 = companion;
                 composer2 = startRestartGroup;
-                TextKt.m3157TextNvy7gAk(text, OffsetKt.m1010offsetVpY3zN4$default(companion, 0.0f, Dp.m8160constructorimpl(-Dp.m8160constructorimpl(1.0f)), 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9864dpToSp8Feqmps(Dp.m8160constructorimpl(20.0f), startRestartGroup, 6), null, null, null, 0L, null, TextAlign.m8031boximpl(TextAlign.Companion.m8038getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 130024);
+                TextKt.m3157TextNvy7gAk(text, OffsetKt.m1010offsetVpY3zN4$default(companion, 0.0f, Dp.m8160constructorimpl(-Dp.m8160constructorimpl(1.0f)), 1, null), Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9865dpToSp8Feqmps(Dp.m8160constructorimpl(20.0f), startRestartGroup, 6), null, null, null, 0L, null, TextAlign.m8031boximpl(TextAlign.Companion.m8038getCentere0LSkKk()), 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 0, 130024);
                 if (ComposerKt.isTraceInProgress()) {
                     ComposerKt.traceEventEnd();
                 }

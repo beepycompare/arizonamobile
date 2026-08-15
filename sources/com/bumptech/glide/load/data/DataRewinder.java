@@ -1,10 +1,10 @@
 package com.bumptech.glide.load.data;
 
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface DataRewinder<T> {
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Factory<T> {
         DataRewinder<T> build(T t);
 

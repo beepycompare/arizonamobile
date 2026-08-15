@@ -20,7 +20,7 @@ import com.bumptech.glide.signature.ObjectKey;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT> {
     private final Context context;
     private final Class<DataT> dataClass;
@@ -45,7 +45,7 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class QMediaStoreUriFetcher<DataT> implements DataFetcher<DataT> {
         private static final String[] PROJECTION = {"_data"};
         private final Context context;
@@ -168,21 +168,21 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class InputStreamFactory extends Factory<InputStream> {
         public InputStreamFactory(Context context) {
             super(context, InputStream.class);
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class FileDescriptorFactory extends Factory<ParcelFileDescriptor> {
         public FileDescriptorFactory(Context context) {
             super(context, ParcelFileDescriptor.class);
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static abstract class Factory<DataT> implements ModelLoaderFactory<Uri, DataT> {
         private final Context context;
         private final Class<DataT> dataClass;

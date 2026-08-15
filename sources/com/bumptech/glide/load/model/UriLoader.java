@@ -18,12 +18,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class UriLoader<Data> implements ModelLoader<Uri, Data> {
     private static final Set<String> SCHEMES = Collections.unmodifiableSet(new HashSet(Arrays.asList(UtilsKt.SCHEME_FILE, FirebaseAnalytics.Param.CONTENT, "android.resource")));
     private final LocalUriFetcherFactory<Data> factory;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface LocalUriFetcherFactory<Data> {
         DataFetcher<Data> build(Uri uri);
     }
@@ -42,7 +42,7 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
         return SCHEMES.contains(uri.getScheme());
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class StreamFactory implements ModelLoaderFactory<Uri, InputStream>, LocalUriFetcherFactory<InputStream> {
         private final ContentResolver contentResolver;
         private final boolean useMediaStoreApisIfAvailable;
@@ -71,7 +71,7 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class FileDescriptorFactory implements ModelLoaderFactory<Uri, ParcelFileDescriptor>, LocalUriFetcherFactory<ParcelFileDescriptor> {
         private final ContentResolver contentResolver;
         private final boolean useMediaStoreApisIfAvailable;
@@ -100,7 +100,7 @@ public class UriLoader<Data> implements ModelLoader<Uri, Data> {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Uri, AssetFileDescriptor>, LocalUriFetcherFactory<AssetFileDescriptor> {
         private final ContentResolver contentResolver;
         private final boolean useMediaStoreApisIfAvailable;

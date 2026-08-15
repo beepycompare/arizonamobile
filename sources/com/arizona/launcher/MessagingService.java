@@ -102,9 +102,9 @@ public final class MessagingService extends FirebaseMessagingService {
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
     public void onMessageReceived(RemoteMessage message) {
-        Object m9915constructorimpl;
-        Boolean m9915constructorimpl2;
-        Object m9915constructorimpl3;
+        Object m9916constructorimpl;
+        Boolean m9916constructorimpl2;
+        Object m9916constructorimpl3;
         Intrinsics.checkNotNullParameter(message, "message");
         super.onMessageReceived(message);
         PushNotificationPayload fromRemoteMessage = PushNotificationPayload.Companion.fromRemoteMessage(message);
@@ -116,14 +116,14 @@ public final class MessagingService extends FirebaseMessagingService {
             Result.Companion companion = Result.Companion;
             MessagingService messagingService = this;
             saveNotificationData(ArizonaDatabase.Companion.getInstance(this), fromRemoteMessage);
-            m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
+            m9916constructorimpl = Result.m9916constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-        if (m9918exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to save notification history", m9918exceptionOrNullimpl);
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+        if (m9919exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to save notification history", m9919exceptionOrNullimpl);
         }
         long currentTimeMillis = System.currentTimeMillis();
         MessagingService messagingService2 = this;
@@ -148,19 +148,19 @@ public final class MessagingService extends FirebaseMessagingService {
         try {
             Result.Companion companion3 = Result.Companion;
             MessagingService messagingService3 = this;
-            m9915constructorimpl2 = Result.m9915constructorimpl(Boolean.valueOf(canDisplayNotification(notificationManager)));
+            m9916constructorimpl2 = Result.m9916constructorimpl(Boolean.valueOf(canDisplayNotification(notificationManager)));
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m9915constructorimpl2 = Result.m9915constructorimpl(ResultKt.createFailure(th2));
+            m9916constructorimpl2 = Result.m9916constructorimpl(ResultKt.createFailure(th2));
         }
-        Throwable m9918exceptionOrNullimpl2 = Result.m9918exceptionOrNullimpl(m9915constructorimpl2);
-        if (m9918exceptionOrNullimpl2 != null) {
-            Log.w(TAG, "Failed to check notification display availability", m9918exceptionOrNullimpl2);
+        Throwable m9919exceptionOrNullimpl2 = Result.m9919exceptionOrNullimpl(m9916constructorimpl2);
+        if (m9919exceptionOrNullimpl2 != null) {
+            Log.w(TAG, "Failed to check notification display availability", m9919exceptionOrNullimpl2);
         }
-        if (Result.m9921isFailureimpl(m9915constructorimpl2)) {
-            m9915constructorimpl2 = false;
+        if (Result.m9922isFailureimpl(m9916constructorimpl2)) {
+            m9916constructorimpl2 = false;
         }
-        if (!((Boolean) m9915constructorimpl2).booleanValue()) {
+        if (!((Boolean) m9916constructorimpl2).booleanValue()) {
             Log.w(TAG, "Notification display skipped: notifications are disabled");
             return;
         }
@@ -168,16 +168,16 @@ public final class MessagingService extends FirebaseMessagingService {
             Result.Companion companion5 = Result.Companion;
             MessagingService messagingService4 = this;
             notificationManager.notify(notificationId, contentIntent.build());
-            m9915constructorimpl3 = Result.m9915constructorimpl(Unit.INSTANCE);
+            m9916constructorimpl3 = Result.m9916constructorimpl(Unit.INSTANCE);
         } catch (Throwable th3) {
             Result.Companion companion6 = Result.Companion;
-            m9915constructorimpl3 = Result.m9915constructorimpl(ResultKt.createFailure(th3));
+            m9916constructorimpl3 = Result.m9916constructorimpl(ResultKt.createFailure(th3));
         }
-        Throwable m9918exceptionOrNullimpl3 = Result.m9918exceptionOrNullimpl(m9915constructorimpl3);
-        if (m9918exceptionOrNullimpl3 != null) {
-            Log.w(TAG, "Failed to post notification", m9918exceptionOrNullimpl3);
+        Throwable m9919exceptionOrNullimpl3 = Result.m9919exceptionOrNullimpl(m9916constructorimpl3);
+        if (m9919exceptionOrNullimpl3 != null) {
+            Log.w(TAG, "Failed to post notification", m9919exceptionOrNullimpl3);
         }
-        if (Result.m9922isSuccessimpl(m9915constructorimpl3)) {
+        if (Result.m9923isSuccessimpl(m9916constructorimpl3)) {
             trackNotificationReceived(fromRemoteMessage, currentTimeMillis);
         }
     }
@@ -269,8 +269,8 @@ public final class MessagingService extends FirebaseMessagingService {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final Bitmap loadNotificationImage(String str) {
-        Object m9915constructorimpl;
-        Throwable m9918exceptionOrNullimpl;
+        Object m9916constructorimpl;
+        Throwable m9919exceptionOrNullimpl;
         Uri parse;
         String str2;
         Bitmap bitmap;
@@ -292,7 +292,7 @@ public final class MessagingService extends FirebaseMessagingService {
             }
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
         if (str2 != null) {
             switch (str2.hashCode()) {
@@ -337,19 +337,19 @@ public final class MessagingService extends FirebaseMessagingService {
                     }
                     break;
             }
-            m9915constructorimpl = Result.m9915constructorimpl(bitmap);
-            m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-            if (m9918exceptionOrNullimpl != null) {
-                Log.w(TAG, "Failed to load notification image: " + str, m9918exceptionOrNullimpl);
+            m9916constructorimpl = Result.m9916constructorimpl(bitmap);
+            m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+            if (m9919exceptionOrNullimpl != null) {
+                Log.w(TAG, "Failed to load notification image: " + str, m9919exceptionOrNullimpl);
             }
-            return Result.m9921isFailureimpl(m9915constructorimpl) ? null : m9915constructorimpl;
+            return Result.m9922isFailureimpl(m9916constructorimpl) ? null : m9916constructorimpl;
         }
         bitmap = null;
-        m9915constructorimpl = Result.m9915constructorimpl(bitmap);
-        m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-        if (m9918exceptionOrNullimpl != null) {
+        m9916constructorimpl = Result.m9916constructorimpl(bitmap);
+        m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+        if (m9919exceptionOrNullimpl != null) {
         }
-        return Result.m9921isFailureimpl(m9915constructorimpl) ? null : m9915constructorimpl;
+        return Result.m9922isFailureimpl(m9916constructorimpl) ? null : m9916constructorimpl;
     }
 
     private final Bitmap loadRemoteBitmap(String str) {
@@ -423,25 +423,25 @@ public final class MessagingService extends FirebaseMessagingService {
     }
 
     private final Bitmap loadAppIconBitmap() {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             MessagingService messagingService = this;
             Drawable applicationIcon = getPackageManager().getApplicationIcon(getApplicationInfo());
             Intrinsics.checkNotNullExpressionValue(applicationIcon, "getApplicationIcon(...)");
-            m9915constructorimpl = Result.m9915constructorimpl(toBitmap(applicationIcon, 512));
+            m9916constructorimpl = Result.m9916constructorimpl(toBitmap(applicationIcon, 512));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-        if (m9918exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to load application icon for notification", m9918exceptionOrNullimpl);
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+        if (m9919exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to load application icon for notification", m9919exceptionOrNullimpl);
         }
-        if (Result.m9921isFailureimpl(m9915constructorimpl)) {
-            m9915constructorimpl = null;
+        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+            m9916constructorimpl = null;
         }
-        Bitmap bitmap = (Bitmap) m9915constructorimpl;
+        Bitmap bitmap = (Bitmap) m9916constructorimpl;
         if (bitmap == null) {
             Bitmap decodeResource = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
             if (decodeResource == null) {

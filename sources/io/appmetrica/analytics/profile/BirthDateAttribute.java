@@ -1,9 +1,9 @@
 package io.appmetrica.analytics.profile;
 
 import io.appmetrica.analytics.impl.An;
-import io.appmetrica.analytics.impl.C0129am;
-import io.appmetrica.analytics.impl.C0580s8;
-import io.appmetrica.analytics.impl.C0606t8;
+import io.appmetrica.analytics.impl.C0128am;
+import io.appmetrica.analytics.impl.C0579s8;
+import io.appmetrica.analytics.impl.C0605t8;
 import io.appmetrica.analytics.impl.Cl;
 import io.appmetrica.analytics.impl.Ho;
 import io.appmetrica.analytics.impl.J4;
@@ -18,10 +18,10 @@ import java.util.Locale;
 public class BirthDateAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final L6 f1411a = new L6("appmetrica_birth_date", new C0606t8(), new C0129am());
+    private final L6 f1411a = new L6("appmetrica_birth_date", new C0605t8(), new C0128am());
 
     final UserProfileUpdate a(Calendar calendar, String str, W2 w2) {
-        return new UserProfileUpdate(new An(this.f1411a.c, new SimpleDateFormat(str).format(calendar.getTime()), new C0580s8(), new C0606t8(), w2));
+        return new UserProfileUpdate(new An(this.f1411a.c, new SimpleDateFormat(str).format(calendar.getTime()), new C0579s8(), new C0605t8(), w2));
     }
 
     public UserProfileUpdate<? extends Ho> withAge(int i) {
@@ -47,7 +47,7 @@ public class BirthDateAttribute {
     }
 
     public UserProfileUpdate<? extends Ho> withValueReset() {
-        return new UserProfileUpdate<>(new Vi(0, this.f1411a.c, new C0606t8(), new C0129am()));
+        return new UserProfileUpdate<>(new Vi(0, this.f1411a.c, new C0605t8(), new C0128am()));
     }
 
     public UserProfileUpdate<? extends Ho> withBirthDate(int i) {

@@ -48,7 +48,7 @@ public final class Jm implements Mm {
 
     public final void a(Context context) {
         String optStringOrNull;
-        ProtobufStateStorage<Object> create = ((AbstractC0621tn) C0569rn.a(Lm.class)).create(context);
+        ProtobufStateStorage<Object> create = ((AbstractC0620tn) C0568rn.a(Lm.class)).create(context);
         Zo a2 = Na.k().D().a();
         synchronized (a2) {
             optStringOrNull = JsonUtils.optStringOrNull(a2.f878a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);

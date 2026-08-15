@@ -4,7 +4,6 @@ import android.net.Uri;
 import androidx.media3.common.MediaLibraryInfo;
 import coil3.network.internal.UtilsKt;
 import com.google.common.base.Preconditions;
-import com.liulishuo.okdownload.core.Util;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -150,7 +149,7 @@ public final class DataSpec {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return Util.METHOD_HEAD;
+                    return "HEAD";
                 }
                 throw new IllegalStateException();
             }

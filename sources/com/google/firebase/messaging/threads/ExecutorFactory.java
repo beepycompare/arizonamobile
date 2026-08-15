@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface ExecutorFactory {
     void executeOneOff(String str, String str2, ThreadPriority threadPriority, Runnable runnable);
 

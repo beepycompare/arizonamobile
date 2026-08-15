@@ -1,7 +1,7 @@
 package com.google.firebase.remoteconfig;
 
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_ConfigUpdate extends ConfigUpdate {
     private final Set<String> updatedKeys;
 

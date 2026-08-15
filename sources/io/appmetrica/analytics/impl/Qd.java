@@ -17,6 +17,6 @@ public final class Qd extends Lambda implements Function1 {
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        return ((C0741yd) ((Map.Entry) obj).getValue()).b.parse(this.f733a);
+        return ((C0740yd) ((Map.Entry) obj).getValue()).b.parse(this.f733a);
     }
 }

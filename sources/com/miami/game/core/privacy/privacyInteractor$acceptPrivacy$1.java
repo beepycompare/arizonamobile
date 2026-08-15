@@ -38,11 +38,11 @@ public final class privacyInteractor$acceptPrivacy$1 extends SuspendLambda imple
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (this.label != 0) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        if (this.label == 0) {
+            ResultKt.throwOnFailure(obj);
+            this.this$0.sharedPreferences.edit().putBoolean(privacyInteractor.PRIVACY_ACCEPTED_KEY, true).apply();
+            return Unit.INSTANCE;
         }
-        ResultKt.throwOnFailure(obj);
-        this.this$0.localRepository.getContext().getSharedPreferences(privacyInteractor.SP_NAME, 0).edit().putBoolean("firstOpen", true).apply();
-        return Unit.INSTANCE;
+        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }
 }

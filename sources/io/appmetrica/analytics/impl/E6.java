@@ -12,13 +12,13 @@ import java.io.PrintWriter;
 public final class E6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0686wa f524a;
-    public final C0656v6 b;
+    public final C0685wa f524a;
+    public final C0655v6 b;
     public final Context c;
-    public final C0660va d;
+    public final C0659va d;
 
     public E6(Context context) {
-        this(context, new C0686wa(), new C0656v6(), C0660va.a(context));
+        this(context, new C0685wa(), new C0655v6(), C0659va.a(context));
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(6:3|(5:(10:5|(2:7|(1:9)(1:13))|14|15|16|18|19|20|9b|25)(1:34)|18|19|20|9b)|(1:11)|14|15|16) */
@@ -31,11 +31,11 @@ public final class E6 {
     */
     public final void a(Ph ph) {
         boolean mkdir;
-        C0175cg c0175cg;
+        C0174cg c0174cg;
         String str;
         R9 b;
         PrintWriter printWriter;
-        C0660va c0660va;
+        C0659va c0659va;
         File crashesDirectory = FileUtils.getCrashesDirectory(this.c);
         this.b.getClass();
         if (crashesDirectory == null) {
@@ -49,7 +49,7 @@ public final class E6 {
                     }
                     mkdir = crashesDirectory.mkdir();
                 }
-                str = ph.e.f852a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0175cg.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+                str = ph.e.f852a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0174cg.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
                 b = this.d.b(str);
                 b.f744a.lock();
                 b.b.a();
@@ -58,9 +58,9 @@ public final class E6 {
                 printWriter.write(new Lb(ph.f720a, ph.e, ph.d).l());
                 Oo.a((Closeable) printWriter);
                 b.c();
-                c0660va = this.d;
-                synchronized (c0660va) {
-                    c0660va.b.remove(str);
+                c0659va = this.d;
+                synchronized (c0659va) {
+                    c0659va.b.remove(str);
                 }
                 return;
             }
@@ -68,8 +68,8 @@ public final class E6 {
             printWriter.write(new Lb(ph.f720a, ph.e, ph.d).l());
             Oo.a((Closeable) printWriter);
             b.c();
-            c0660va = this.d;
-            synchronized (c0660va) {
+            c0659va = this.d;
+            synchronized (c0659va) {
             }
         } catch (Throwable unused) {
             Oo.a((Closeable) printWriter);
@@ -80,7 +80,7 @@ public final class E6 {
         if (!mkdir) {
             return;
         }
-        str = ph.e.f852a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0175cg.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+        str = ph.e.f852a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0174cg.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
         b = this.d.b(str);
         b.f744a.lock();
         b.b.a();
@@ -88,10 +88,10 @@ public final class E6 {
         printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
     }
 
-    public E6(Context context, C0686wa c0686wa, C0656v6 c0656v6, C0660va c0660va) {
+    public E6(Context context, C0685wa c0685wa, C0655v6 c0655v6, C0659va c0659va) {
         this.c = context;
-        this.f524a = c0686wa;
-        this.b = c0656v6;
-        this.d = c0660va;
+        this.f524a = c0685wa;
+        this.b = c0655v6;
+        this.d = c0659va;
     }
 }

@@ -1,0 +1,13 @@
+package com.arizona.launcher.updater.archive.download;
+
+import androidx.constraintlayout.core.motion.utils.TypedValues;
+import java.io.File;
+import kotlin.Metadata;
+/* compiled from: ArchiveDownloadResumeSidecar.kt */
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b`\u0018\u00002\u00020\u0001J\u0018\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H&J\u0010\u0010\u0007\u001a\u00020\u00032\u0006\u0010\b\u001a\u00020\u0005H&¨\u0006\tÀ\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/archive/download/ArchiveResumeFileOps;", "", "replaceAtomically", "", "source", "Ljava/io/File;", TypedValues.AttributesType.S_TARGET, "syncDirectory", "directory", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+/* loaded from: classes3.dex */
+public interface ArchiveResumeFileOps {
+    void replaceAtomically(File file, File file2);
+
+    void syncDirectory(File file);
+}

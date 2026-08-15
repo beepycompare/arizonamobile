@@ -22,7 +22,7 @@ import java.util.Map;
 /* loaded from: classes3.dex */
 public class LottieCompositionMoshiParser {
     private static final JsonReader.Options NAMES = JsonReader.Options.of("w", CmcdData.STREAMING_FORMAT_HLS, "ip", "op", "fr", "v", "layers", "assets", "fonts", "chars", "markers");
-    static JsonReader.Options ASSETS_NAMES = JsonReader.Options.of("id", "layers", "w", CmcdData.STREAMING_FORMAT_HLS, TtmlNode.TAG_P, "u");
+    static JsonReader.Options ASSETS_NAMES = JsonReader.Options.of(TtmlNode.ATTR_ID, "layers", "w", CmcdData.STREAMING_FORMAT_HLS, TtmlNode.TAG_P, "u");
     private static final JsonReader.Options FONT_NAMES = JsonReader.Options.of("list");
     private static final JsonReader.Options MARKER_NAMES = JsonReader.Options.of("cm", "tm", "dr");
 

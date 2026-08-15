@@ -1065,7 +1065,7 @@ public class MotionScene {
     private int getId(Context context, String str) {
         int i;
         if (str.contains("/")) {
-            i = context.getResources().getIdentifier(str.substring(str.indexOf(47) + 1), "id", context.getPackageName());
+            i = context.getResources().getIdentifier(str.substring(str.indexOf(47) + 1), TtmlNode.ATTR_ID, context.getPackageName());
         } else {
             i = -1;
         }
@@ -1139,7 +1139,7 @@ public class MotionScene {
                     z = true;
                     break;
                 case 3355:
-                    if (attributeName.equals("id")) {
+                    if (attributeName.equals(TtmlNode.ATTR_ID)) {
                         z = true;
                         break;
                     }

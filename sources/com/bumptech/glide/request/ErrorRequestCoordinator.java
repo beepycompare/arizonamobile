@@ -1,7 +1,7 @@
 package com.bumptech.glide.request;
 
 import com.bumptech.glide.request.RequestCoordinator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ErrorRequestCoordinator implements RequestCoordinator, Request {
     private volatile Request error;
     private final RequestCoordinator parent;

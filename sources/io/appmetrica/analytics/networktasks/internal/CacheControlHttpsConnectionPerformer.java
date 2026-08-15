@@ -1,6 +1,5 @@
 package io.appmetrica.analytics.networktasks.internal;
 
-import com.google.common.net.HttpHeaders;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import io.appmetrica.analytics.networkapi.Response;
 import io.appmetrica.analytics.networktasks.impl.a;
@@ -41,7 +40,7 @@ public class CacheControlHttpsConnectionPerformer {
         } catch (Throwable unused) {
         }
         if (code == 200) {
-            List list = (List) CollectionUtils.getFromMapIgnoreCase(a2.getHeaders(), HttpHeaders.ETAG);
+            List list = (List) CollectionUtils.getFromMapIgnoreCase(a2.getHeaders(), "ETag");
             client.onResponse((list == null || list.size() <= 0 || (r3 = (String) list.get(0)) == null) ? "" : "", a2.getResponseData());
         } else if (code == 304) {
             client.onNotModified();

@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Ordering;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class CueGroup {
     private static final Ordering<Cue> CUES_PRIORITY_COMPARATOR = Ordering.natural().onResultOf(new Function() { // from class: androidx.media3.common.text.CueGroup$$ExternalSyntheticLambda0
         @Override // com.google.common.base.Function

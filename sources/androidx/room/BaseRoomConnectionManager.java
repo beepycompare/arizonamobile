@@ -12,7 +12,6 @@ import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.SQLiteDriver;
 import androidx.sqlite.SQLiteStatement;
-import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -73,7 +72,7 @@ public abstract class BaseRoomConnectionManager {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* compiled from: RoomConnectionManager.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0084\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0001¢\u0006\u0004\b\u0003\u0010\u0004J\u0010\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0016J\u0010\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\u00020\f8WX\u0096\u0005¢\u0006\u0006\u001a\u0004\b\u000b\u0010\r¨\u0006\u000e"}, d2 = {"Landroidx/room/BaseRoomConnectionManager$DriverWrapper;", "Landroidx/sqlite/SQLiteDriver;", "actual", "<init>", "(Landroidx/room/BaseRoomConnectionManager;Landroidx/sqlite/SQLiteDriver;)V", TtmlNode.TEXT_EMPHASIS_MARK_OPEN, "Landroidx/sqlite/SQLiteConnection;", "fileName", "", "openLocked", BreakpointSQLiteKey.FILENAME, "hasConnectionPool", "", "()Z", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0084\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0001¢\u0006\u0004\b\u0003\u0010\u0004J\u0010\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0016J\u0010\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\u00020\f8WX\u0096\u0005¢\u0006\u0006\u001a\u0004\b\u000b\u0010\r¨\u0006\u000e"}, d2 = {"Landroidx/room/BaseRoomConnectionManager$DriverWrapper;", "Landroidx/sqlite/SQLiteDriver;", "actual", "<init>", "(Landroidx/room/BaseRoomConnectionManager;Landroidx/sqlite/SQLiteDriver;)V", TtmlNode.TEXT_EMPHASIS_MARK_OPEN, "Landroidx/sqlite/SQLiteConnection;", "fileName", "", "openLocked", "filename", "hasConnectionPool", "", "()Z", "room-runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public final class DriverWrapper implements SQLiteDriver {
         private final SQLiteDriver actual;
@@ -135,7 +134,7 @@ public abstract class BaseRoomConnectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void configureDatabase(SQLiteConnection sQLiteConnection) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         configureBusyTimeout(sQLiteConnection);
         configureJournalMode(sQLiteConnection);
         configureSynchronousFlag(sQLiteConnection);
@@ -156,19 +155,19 @@ public abstract class BaseRoomConnectionManager {
                         onMigrate(sQLiteConnection, i, getOpenDelegate().getVersion());
                     }
                     SQLite.execSQL(sQLiteConnection, "PRAGMA user_version = " + getOpenDelegate().getVersion());
-                    m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
+                    m9916constructorimpl = Result.m9916constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                    m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
                 }
-                if (Result.m9922isSuccessimpl(m9915constructorimpl)) {
-                    Unit unit = (Unit) m9915constructorimpl;
+                if (Result.m9923isSuccessimpl(m9916constructorimpl)) {
+                    Unit unit = (Unit) m9916constructorimpl;
                     SQLite.execSQL(sQLiteConnection, "END TRANSACTION");
                 }
-                Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-                if (m9918exceptionOrNullimpl != null) {
+                Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+                if (m9919exceptionOrNullimpl != null) {
                     SQLite.execSQL(sQLiteConnection, "ROLLBACK TRANSACTION");
-                    throw m9918exceptionOrNullimpl;
+                    throw m9919exceptionOrNullimpl;
                 }
             }
             onOpen(sQLiteConnection);
@@ -323,7 +322,7 @@ public abstract class BaseRoomConnectionManager {
     }
 
     private final void checkIdentity(SQLiteConnection sQLiteConnection) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         RoomOpenDelegate.ValidationResult onValidateSchema;
         if (hasRoomMasterTable(sQLiteConnection)) {
             SQLiteStatement prepare = sQLiteConnection.prepare(RoomMasterTable.READ_QUERY);
@@ -351,24 +350,24 @@ public abstract class BaseRoomConnectionManager {
             onValidateSchema = getOpenDelegate().onValidateSchema(sQLiteConnection);
         } catch (Throwable th3) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th3));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th3));
         }
         if (!onValidateSchema.isValid) {
             throw new IllegalStateException(("Pre-packaged database has an invalid schema: " + onValidateSchema.expectedFoundMsg).toString());
         }
         getOpenDelegate().onPostMigrate(sQLiteConnection);
         updateIdentity(sQLiteConnection);
-        m9915constructorimpl = Result.m9915constructorimpl(Unit.INSTANCE);
-        if (Result.m9922isSuccessimpl(m9915constructorimpl)) {
-            Unit unit = (Unit) m9915constructorimpl;
+        m9916constructorimpl = Result.m9916constructorimpl(Unit.INSTANCE);
+        if (Result.m9923isSuccessimpl(m9916constructorimpl)) {
+            Unit unit = (Unit) m9916constructorimpl;
             SQLite.execSQL(sQLiteConnection, "END TRANSACTION");
         }
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(m9915constructorimpl);
-        if (m9918exceptionOrNullimpl != null) {
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
+        if (m9919exceptionOrNullimpl != null) {
             SQLite.execSQL(sQLiteConnection, "ROLLBACK TRANSACTION");
-            throw m9918exceptionOrNullimpl;
+            throw m9919exceptionOrNullimpl;
         } else {
-            Result.m9914boximpl(m9915constructorimpl);
+            Result.m9915boximpl(m9916constructorimpl);
         }
     }
 

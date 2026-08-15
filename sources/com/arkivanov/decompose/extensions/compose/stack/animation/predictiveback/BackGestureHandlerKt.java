@@ -20,7 +20,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BackGestureHandler.kt */
 @Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a_\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0014\b\u0002\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u00052\u0014\b\u0002\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u00052\u000e\b\u0002\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00010\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00010\tH\u0001¢\u0006\u0002\u0010\u000b¨\u0006\f"}, d2 = {"BackGestureHandler", "", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "onBackStarted", "Lkotlin/Function1;", "Lcom/arkivanov/essenty/backhandler/BackEvent;", "onBackProgressed", "onBackCancelled", "Lkotlin/Function0;", "onBack", "(Lcom/arkivanov/essenty/backhandler/BackHandler;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)V", "extensions-compose_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BackGestureHandlerKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit BackGestureHandler$lambda$9(BackHandler backHandler, Function1 function1, Function1 function12, Function0 function0, Function0 function02, int i, int i2, Composer composer, int i3) {

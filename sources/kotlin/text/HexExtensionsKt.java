@@ -31,7 +31,7 @@ public final class HexExtensionsKt {
         int[] iArr = new int[256];
         int i = 0;
         for (int i2 = 0; i2 < 256; i2++) {
-            iArr[i2] = LOWER_CASE_HEX_DIGITS.charAt(i2 & 15) | (LOWER_CASE_HEX_DIGITS.charAt(i2 >> 4) << '\b');
+            iArr[i2] = "0123456789abcdef".charAt(i2 & 15) | ("0123456789abcdef".charAt(i2 >> 4) << '\b');
         }
         BYTE_TO_LOWER_CASE_HEX_DIGITS = iArr;
         int[] iArr2 = new int[256];
@@ -249,7 +249,7 @@ public final class HexExtensionsKt {
 
     private static final int checkFormatLength(long j) {
         if (0 > j || j > SieveCacheKt.NodeLinkMask) {
-            throw new IllegalArgumentException("The resulting string length is too big: " + ((Object) ULong.m10141toStringimpl(ULong.m10095constructorimpl(j))));
+            throw new IllegalArgumentException("The resulting string length is too big: " + ((Object) ULong.m10142toStringimpl(ULong.m10096constructorimpl(j))));
         }
         return (int) j;
     }
@@ -603,7 +603,7 @@ public final class HexExtensionsKt {
 
     public static final String toHexString(byte b, HexFormat format) {
         Intrinsics.checkNotNullParameter(format, "format");
-        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : LOWER_CASE_HEX_DIGITS;
+        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : "0123456789abcdef";
         HexFormat.NumberHexFormat number = format.getNumber();
         if (number.isDigitsOnlyAndNoPadding$kotlin_stdlib()) {
             char[] cArr = {str.charAt((b >> 4) & 15), str.charAt(b & Ascii.SI)};
@@ -654,7 +654,7 @@ public final class HexExtensionsKt {
 
     public static final String toHexString(short s, HexFormat format) {
         Intrinsics.checkNotNullParameter(format, "format");
-        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : LOWER_CASE_HEX_DIGITS;
+        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : "0123456789abcdef";
         HexFormat.NumberHexFormat number = format.getNumber();
         if (number.isDigitsOnlyAndNoPadding$kotlin_stdlib()) {
             char[] cArr = {str.charAt((s >> 12) & 15), str.charAt((s >> 8) & 15), str.charAt((s >> 4) & 15), str.charAt(s & 15)};
@@ -705,7 +705,7 @@ public final class HexExtensionsKt {
 
     public static final String toHexString(int i, HexFormat format) {
         Intrinsics.checkNotNullParameter(format, "format");
-        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : LOWER_CASE_HEX_DIGITS;
+        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : "0123456789abcdef";
         HexFormat.NumberHexFormat number = format.getNumber();
         if (number.isDigitsOnlyAndNoPadding$kotlin_stdlib()) {
             char[] cArr = {str.charAt((i >> 28) & 15), str.charAt((i >> 24) & 15), str.charAt((i >> 20) & 15), str.charAt((i >> 16) & 15), str.charAt((i >> 12) & 15), str.charAt((i >> 8) & 15), str.charAt((i >> 4) & 15), str.charAt(i & 15)};
@@ -758,7 +758,7 @@ public final class HexExtensionsKt {
 
     public static final String toHexString(long j, HexFormat format) {
         Intrinsics.checkNotNullParameter(format, "format");
-        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : LOWER_CASE_HEX_DIGITS;
+        String str = format.getUpperCase() ? UPPER_CASE_HEX_DIGITS : "0123456789abcdef";
         HexFormat.NumberHexFormat number = format.getNumber();
         if (number.isDigitsOnlyAndNoPadding$kotlin_stdlib()) {
             char[] cArr = {str.charAt((int) ((j >> 60) & 15)), str.charAt((int) ((j >> 56) & 15)), str.charAt((int) ((j >> 52) & 15)), str.charAt((int) ((j >> 48) & 15)), str.charAt((int) ((j >> 44) & 15)), str.charAt((int) ((j >> 40) & 15)), str.charAt((int) ((j >> 36) & 15)), str.charAt((int) ((j >> 32) & 15)), str.charAt((int) ((j >> 28) & 15)), str.charAt((int) ((j >> 24) & 15)), str.charAt((int) ((j >> 20) & 15)), str.charAt((int) ((j >> 16) & 15)), str.charAt((int) ((j >> 12) & 15)), str.charAt((int) ((j >> 8) & 15)), str.charAt((int) ((j >> 4) & 15)), str.charAt((int) (j & 15))};

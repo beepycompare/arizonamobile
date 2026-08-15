@@ -5,7 +5,6 @@ import androidx.compose.foundation.gestures.DragEvent;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource;
 import androidx.exifinterface.media.ExifInterface;
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -20,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: AnchoredDraggable.kt */
 @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u00020\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0005H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Landroidx/compose/foundation/gestures/AnchoredDragScope;", "it", "Landroidx/compose/foundation/gestures/DraggableAnchors;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2", f = "AnchoredDraggable.kt", i = {}, l = {Constants.STATUS_PRECONDITION_FAILED}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "androidx.compose.foundation.gestures.AnchoredDraggableNode$drag$2", f = "AnchoredDraggable.kt", i = {}, l = {412}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class AnchoredDraggableNode$drag$2<T> extends SuspendLambda implements Function3<AnchoredDragScope, DraggableAnchors<T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<Function1<? super DragEvent.DragDelta, Unit>, Continuation<? super Unit>, Object> $forEachDelta;

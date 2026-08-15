@@ -16,7 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class HttpUrlFetcher implements DataFetcher<InputStream> {
     static final HttpUrlConnectionFactory DEFAULT_CONNECTION_FACTORY = new DefaultHttpUrlConnectionFactory();
     static final int INVALID_STATUS_CODE = -1;
@@ -31,7 +31,7 @@ public class HttpUrlFetcher implements DataFetcher<InputStream> {
     private HttpURLConnection urlConnection;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface HttpUrlConnectionFactory {
         HttpURLConnection build(URL url) throws IOException;
     }
@@ -206,7 +206,7 @@ public class HttpUrlFetcher implements DataFetcher<InputStream> {
         return DataSource.REMOTE;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static class DefaultHttpUrlConnectionFactory implements HttpUrlConnectionFactory {
         DefaultHttpUrlConnectionFactory() {
         }

@@ -14,13 +14,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 /* compiled from: MergedLifecycle.kt */
 @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0007\u0018\u00002\u00020\u0001:\u0001\u0017B!\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0001\u0012\u0006\u0010\u0005\u001a\u00020\u0001¢\u0006\u0004\b\u0006\u0010\u0007B\u0019\b\u0016\u0012\u0006\u0010\u0004\u001a\u00020\u0001\u0012\u0006\u0010\u0005\u001a\u00020\u0001¢\u0006\u0004\b\u0006\u0010\bJ\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0002J\b\u0010\r\u001a\u00020\nH\u0002J\b\u0010\u000e\u001a\u00020\nH\u0002J\b\u0010\u000f\u001a\u00020\nH\u0002J\b\u0010\u0010\u001a\u00020\nH\u0002J\u0011\u0010\u0011\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\u0013H\u0096\u0001J\u0011\u0010\u0014\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\u0013H\u0096\u0001R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u0010\u000b\u001a\u00020\fX\u0096\u0005¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u0016¨\u0006\u0018"}, d2 = {"Lcom/arkivanov/decompose/lifecycle/MergedLifecycle;", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "registry", "Lcom/arkivanov/essenty/lifecycle/LifecycleRegistry;", "lifecycle1", "lifecycle2", "<init>", "(Lcom/arkivanov/essenty/lifecycle/LifecycleRegistry;Lcom/arkivanov/essenty/lifecycle/Lifecycle;Lcom/arkivanov/essenty/lifecycle/Lifecycle;)V", "(Lcom/arkivanov/essenty/lifecycle/Lifecycle;Lcom/arkivanov/essenty/lifecycle/Lifecycle;)V", "moveTo", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arkivanov/essenty/lifecycle/Lifecycle$State;", "moveToDestroyed", "moveToCreated", "moveToStarted", "moveToResumed", "subscribe", "callbacks", "Lcom/arkivanov/essenty/lifecycle/Lifecycle$Callbacks;", "unsubscribe", "getState", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle$State;", "CallbacksImpl", "decompose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MergedLifecycle implements Lifecycle {
     private final LifecycleRegistry registry;
 
     /* compiled from: MergedLifecycle.kt */
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -232,7 +232,7 @@ public final class MergedLifecycle implements Lifecycle {
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: MergedLifecycle.kt */
     @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\t\b\u0002\u0018\u00002\u00020\u0001B\u001b\u0012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\b\u001a\u00020\u0005H\u0016J\b\u0010\t\u001a\u00020\u0005H\u0016J\b\u0010\n\u001a\u00020\u0005H\u0016J\b\u0010\u000b\u001a\u00020\u0005H\u0016J\b\u0010\f\u001a\u00020\u0005H\u0016J\b\u0010\r\u001a\u00020\u0005H\u0016R\u001a\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00050\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/arkivanov/decompose/lifecycle/MergedLifecycle$CallbacksImpl;", "Lcom/arkivanov/essenty/lifecycle/Lifecycle$Callbacks;", "onStateChanged", "Lkotlin/Function1;", "Lcom/arkivanov/essenty/lifecycle/Lifecycle$State;", "", "<init>", "(Lkotlin/jvm/functions/Function1;)V", "onCreate", "onStart", "onResume", "onPause", "onStop", "onDestroy", "decompose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class CallbacksImpl implements Lifecycle.Callbacks {
         private final Function1<Lifecycle.State, Unit> onStateChanged;
 

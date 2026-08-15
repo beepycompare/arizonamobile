@@ -1,7 +1,7 @@
 package com.google.gson.internal;
 
 import java.lang.reflect.Type;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Primitives {
     private Primitives() {
     }

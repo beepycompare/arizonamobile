@@ -5,7 +5,7 @@ import android.util.Log;
 import androidx.exifinterface.media.ExifInterface;
 import com.google.android.gms.common.internal.Objects;
 import java.util.regex.Pattern;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class TopicOperation {
     private static final String OLD_TOPIC_PREFIX = "/topics/";
     static final String OPERATION_PAIR_DIVIDER = "!";

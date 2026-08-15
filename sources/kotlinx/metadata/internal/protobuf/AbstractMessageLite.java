@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import kotlinx.metadata.internal.protobuf.ByteString;
 import kotlinx.metadata.internal.protobuf.MessageLite;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public abstract class AbstractMessageLite implements MessageLite {
     protected int memoizedHashCode = 0;
 
@@ -63,7 +63,7 @@ public abstract class AbstractMessageLite implements MessageLite {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static abstract class Builder<BuilderType extends Builder> implements MessageLite.Builder {
         @Override // kotlinx.metadata.internal.protobuf.MessageLite.Builder
         public abstract BuilderType clone();
@@ -159,7 +159,7 @@ public abstract class AbstractMessageLite implements MessageLite {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class LimitedInputStream extends FilterInputStream {
             private int limit;
 

@@ -216,11 +216,11 @@ public final class CacheInterceptor implements Interceptor {
         }
 
         private final boolean isEndToEnd(String str) {
-            return (StringsKt.equals(com.google.common.net.HttpHeaders.CONNECTION, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.KEEP_ALIVE, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.PROXY_AUTHENTICATE, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.PROXY_AUTHORIZATION, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.TE, str, true) || StringsKt.equals("Trailers", str, true) || StringsKt.equals("Transfer-Encoding", str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.UPGRADE, str, true)) ? false : true;
+            return (StringsKt.equals(com.google.common.net.HttpHeaders.CONNECTION, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.KEEP_ALIVE, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.PROXY_AUTHENTICATE, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.PROXY_AUTHORIZATION, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.TE, str, true) || StringsKt.equals("Trailers", str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.TRANSFER_ENCODING, str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.UPGRADE, str, true)) ? false : true;
         }
 
         private final boolean isContentSpecificHeader(String str) {
-            return StringsKt.equals("Content-Length", str, true) || StringsKt.equals(com.google.common.net.HttpHeaders.CONTENT_ENCODING, str, true) || StringsKt.equals("Content-Type", str, true);
+            return StringsKt.equals(com.google.common.net.HttpHeaders.CONTENT_LENGTH, str, true) || StringsKt.equals("Content-Encoding", str, true) || StringsKt.equals("Content-Type", str, true);
         }
     }
 }

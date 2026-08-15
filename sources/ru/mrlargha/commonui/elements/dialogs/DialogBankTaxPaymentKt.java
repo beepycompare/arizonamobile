@@ -241,18 +241,18 @@ public final class DialogBankTaxPaymentKt {
     }
 
     private static final JsonElement parseJsonElement(String str) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(JsonParser.parseString(str));
+            m9916constructorimpl = Result.m9916constructorimpl(JsonParser.parseString(str));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9921isFailureimpl(m9915constructorimpl)) {
-            m9915constructorimpl = null;
+        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+            m9916constructorimpl = null;
         }
-        return (JsonElement) m9915constructorimpl;
+        return (JsonElement) m9916constructorimpl;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -320,7 +320,7 @@ public final class DialogBankTaxPaymentKt {
             if (!jsonElement2.isJsonObject()) {
                 jsonElement2 = null;
             }
-            if (jsonElement2 != null && (asJsonObject = jsonElement2.getAsJsonObject()) != null && (intValue = intValue(asJsonObject, "id")) != null) {
+            if (jsonElement2 != null && (asJsonObject = jsonElement2.getAsJsonObject()) != null && (intValue = intValue(asJsonObject, TtmlNode.ATTR_ID)) != null) {
                 int intValue2 = intValue.intValue();
                 String stringValue = stringValue(asJsonObject, "name", "title");
                 if (stringValue == null) {
@@ -351,7 +351,7 @@ public final class DialogBankTaxPaymentKt {
             return CollectionsKt.toList(asJsonArray);
         } else if (jsonElement.isJsonObject()) {
             JsonObject asJsonObject = jsonElement.getAsJsonObject();
-            if (asJsonObject.has("id")) {
+            if (asJsonObject.has(TtmlNode.ATTR_ID)) {
                 return CollectionsKt.listOf(asJsonObject);
             }
             Set<Map.Entry<String, JsonElement>> entrySet = asJsonObject.entrySet();
@@ -384,12 +384,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            str2 = Result.m9915constructorimpl(jsonElement.getAsString());
+                            str2 = Result.m9916constructorimpl(jsonElement.getAsString());
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            str2 = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                            str2 = Result.m9916constructorimpl(ResultKt.createFailure(th));
                         }
-                        str = Result.m9921isFailureimpl(str2) ? null : str2;
+                        str = Result.m9922isFailureimpl(str2) ? null : str2;
                     }
                 }
                 if (str != null) {
@@ -419,12 +419,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            num2 = Result.m9915constructorimpl(Integer.valueOf(jsonElement.getAsInt()));
+                            num2 = Result.m9916constructorimpl(Integer.valueOf(jsonElement.getAsInt()));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            num2 = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                            num2 = Result.m9916constructorimpl(ResultKt.createFailure(th));
                         }
-                        num = Result.m9921isFailureimpl(num2) ? null : num2;
+                        num = Result.m9922isFailureimpl(num2) ? null : num2;
                     }
                 }
                 if (num != null) {
@@ -454,12 +454,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            l2 = Result.m9915constructorimpl(Long.valueOf(jsonElement.getAsLong()));
+                            l2 = Result.m9916constructorimpl(Long.valueOf(jsonElement.getAsLong()));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            l2 = Result.m9915constructorimpl(ResultKt.createFailure(th));
+                            l2 = Result.m9916constructorimpl(ResultKt.createFailure(th));
                         }
-                        l = Result.m9921isFailureimpl(l2) ? null : l2;
+                        l = Result.m9922isFailureimpl(l2) ? null : l2;
                     }
                 }
                 if (l != null) {

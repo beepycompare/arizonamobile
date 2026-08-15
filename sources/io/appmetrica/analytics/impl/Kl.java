@@ -9,13 +9,13 @@ public final class Kl extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */
     public final Dj f634a;
-    public final InterfaceC0632u8 b;
+    public final InterfaceC0631u8 b;
 
     public Kl(ECommerceScreen eCommerceScreen) {
         this(new Dj(eCommerceScreen), new Ll());
     }
 
-    public final InterfaceC0632u8 a() {
+    public final InterfaceC0631u8 a() {
         return this.b;
     }
 
@@ -24,7 +24,7 @@ public final class Kl extends ECommerceEvent {
         return "shown screen info";
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0407lg
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0406lg
     public final List<Xi> toProto() {
         return (List) this.b.fromModel(this);
     }
@@ -33,8 +33,8 @@ public final class Kl extends ECommerceEvent {
         return "ShownScreenInfoEvent{screen=" + this.f634a + ", converter=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Kl(Dj dj, InterfaceC0632u8 interfaceC0632u8) {
+    public Kl(Dj dj, InterfaceC0631u8 interfaceC0631u8) {
         this.f634a = dj;
-        this.b = interfaceC0632u8;
+        this.b = interfaceC0631u8;
     }
 }

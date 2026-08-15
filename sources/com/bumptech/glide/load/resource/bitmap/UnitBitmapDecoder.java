@@ -5,7 +5,7 @@ import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.ResourceDecoder;
 import com.bumptech.glide.load.engine.Resource;
 import com.bumptech.glide.util.Util;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UnitBitmapDecoder implements ResourceDecoder<Bitmap, Bitmap> {
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean handles(Bitmap bitmap, Options options) {
@@ -18,7 +18,7 @@ public final class UnitBitmapDecoder implements ResourceDecoder<Bitmap, Bitmap> 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class NonOwnedBitmapResource implements Resource<Bitmap> {
         private final Bitmap bitmap;
 

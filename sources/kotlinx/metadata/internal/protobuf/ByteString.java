@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public abstract class ByteString implements Iterable<Byte> {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     static final int CONCATENATE_BY_COPY_SIZE = 128;
@@ -18,7 +18,7 @@ public abstract class ByteString implements Iterable<Byte> {
     static final int MAX_READ_FROM_CHUNK_SIZE = 8192;
     static final int MIN_READ_FROM_CHUNK_SIZE = 256;
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ByteIterator extends Iterator<Byte> {
         byte nextByte();
     }
@@ -262,7 +262,7 @@ public abstract class ByteString implements Iterable<Byte> {
         return new Output(128);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Output extends OutputStream {
         private static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
         private byte[] buffer;
@@ -377,7 +377,7 @@ public abstract class ByteString implements Iterable<Byte> {
         return new CodedBuilder(i);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     static final class CodedBuilder {
         private final byte[] buffer;
         private final CodedOutputStream output;

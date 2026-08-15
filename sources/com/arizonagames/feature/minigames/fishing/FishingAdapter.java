@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.recyclerview.widget.RecyclerView;
 import com.arizona.common.utils.EasyAnimation;
 import com.arizonagames.feature.minigames.fishing.FishingScreen;
@@ -23,7 +24,7 @@ public final class FishingAdapter extends RecyclerView.Adapter<ViewHolder> {
     private OnItemClickListener onItemClickListener;
 
     /* compiled from: FishingAdapter.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\bf\u0018\u00002\u00020\u0001J \u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH&¨\u0006\nÀ\u0006\u0003"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingAdapter$OnItemClickListener;", "", "callback", "", "id", "", "type", "", "isPressed", "", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\bf\u0018\u00002\u00020\u0001J \u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH&¨\u0006\nÀ\u0006\u0003"}, d2 = {"Lcom/arizonagames/feature/minigames/fishing/FishingAdapter$OnItemClickListener;", "", "callback", "", TtmlNode.ATTR_ID, "", "type", "", "isPressed", "", "fishing"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public interface OnItemClickListener {
         void callback(int i, String str, boolean z);

@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class DefaultImageHeaderParser implements ImageHeaderParser {
     static final int APP2_SEGMENT_TYPE = 226;
     private static final int AVIF_BRAND = 1635150182;
@@ -362,7 +362,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class RandomAccessReader {
         private final ByteBuffer data;
 
@@ -398,7 +398,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface Reader {
         int getUInt16() throws IOException;
 
@@ -408,7 +408,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
 
         long skip(long j) throws IOException;
 
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class EndOfFileException extends IOException {
             private static final long serialVersionUID = 1;
 
@@ -418,7 +418,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class ByteBufferReader implements Reader {
         private final ByteBuffer byteBuffer;
 
@@ -459,7 +459,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
         }
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private static final class StreamReader implements Reader {
         private final InputStream is;
 

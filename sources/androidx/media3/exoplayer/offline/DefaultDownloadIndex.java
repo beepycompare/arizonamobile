@@ -21,7 +21,6 @@ import java.util.List;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes3.dex */
 public final class DefaultDownloadIndex implements WritableDownloadIndex {
-    private static final String COLUMN_CONTENT_LENGTH = "content_length";
     private static final String COLUMN_DATA = "data";
     private static final String COLUMN_ID = "id";
     private static final int COLUMN_INDEX_BYTES_DOWNLOADED = 13;
@@ -59,11 +58,12 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
     private static final String COLUMN_CUSTOM_CACHE_KEY = "custom_cache_key";
     private static final String COLUMN_START_TIME_MS = "start_time_ms";
     private static final String COLUMN_UPDATE_TIME_MS = "update_time_ms";
+    private static final String COLUMN_CONTENT_LENGTH = "content_length";
     private static final String COLUMN_FAILURE_REASON = "failure_reason";
     private static final String COLUMN_PERCENT_DOWNLOADED = "percent_downloaded";
     private static final String COLUMN_BYTES_DOWNLOADED = "bytes_downloaded";
     private static final String COLUMN_KEY_SET_ID = "key_set_id";
-    private static final String[] COLUMNS = {"id", COLUMN_MIME_TYPE, COLUMN_URI, COLUMN_STREAM_KEYS, COLUMN_CUSTOM_CACHE_KEY, "data", "state", COLUMN_START_TIME_MS, COLUMN_UPDATE_TIME_MS, "content_length", "stop_reason", COLUMN_FAILURE_REASON, COLUMN_PERCENT_DOWNLOADED, COLUMN_BYTES_DOWNLOADED, COLUMN_KEY_SET_ID};
+    private static final String[] COLUMNS = {"id", COLUMN_MIME_TYPE, COLUMN_URI, COLUMN_STREAM_KEYS, COLUMN_CUSTOM_CACHE_KEY, "data", "state", COLUMN_START_TIME_MS, COLUMN_UPDATE_TIME_MS, COLUMN_CONTENT_LENGTH, "stop_reason", COLUMN_FAILURE_REASON, COLUMN_PERCENT_DOWNLOADED, COLUMN_BYTES_DOWNLOADED, COLUMN_KEY_SET_ID};
 
     public DefaultDownloadIndex(DatabaseProvider databaseProvider) {
         this(databaseProvider, "");
@@ -223,7 +223,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
         contentValues.put("state", Integer.valueOf(download.state));
         contentValues.put(COLUMN_START_TIME_MS, Long.valueOf(download.startTimeMs));
         contentValues.put(COLUMN_UPDATE_TIME_MS, Long.valueOf(download.updateTimeMs));
-        contentValues.put("content_length", Long.valueOf(download.contentLength));
+        contentValues.put(COLUMN_CONTENT_LENGTH, Long.valueOf(download.contentLength));
         contentValues.put("stop_reason", Integer.valueOf(download.stopReason));
         contentValues.put(COLUMN_FAILURE_REASON, Integer.valueOf(download.failureReason));
         contentValues.put(COLUMN_PERCENT_DOWNLOADED, Float.valueOf(download.getPercentDownloaded()));
@@ -235,7 +235,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
     private List<Download> loadDownloadsFromVersion2(SQLiteDatabase sQLiteDatabase) {
         ArrayList arrayList = new ArrayList();
         if (Util.tableExists(sQLiteDatabase, this.tableName)) {
-            Cursor query = sQLiteDatabase.query(this.tableName, new String[]{"id", "title", COLUMN_URI, COLUMN_STREAM_KEYS, COLUMN_CUSTOM_CACHE_KEY, "data", "state", COLUMN_START_TIME_MS, COLUMN_UPDATE_TIME_MS, "content_length", "stop_reason", COLUMN_FAILURE_REASON, COLUMN_PERCENT_DOWNLOADED, COLUMN_BYTES_DOWNLOADED}, null, null, null, null, null);
+            Cursor query = sQLiteDatabase.query(this.tableName, new String[]{"id", "title", COLUMN_URI, COLUMN_STREAM_KEYS, COLUMN_CUSTOM_CACHE_KEY, "data", "state", COLUMN_START_TIME_MS, COLUMN_UPDATE_TIME_MS, COLUMN_CONTENT_LENGTH, "stop_reason", COLUMN_FAILURE_REASON, COLUMN_PERCENT_DOWNLOADED, COLUMN_BYTES_DOWNLOADED}, null, null, null, null, null);
             while (query.moveToNext()) {
                 try {
                     arrayList.add(getDownloadForCurrentRowV2(query));

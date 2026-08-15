@@ -2,7 +2,7 @@ package com.google.android.play.core.splitinstall;
 
 import android.app.PendingIntent;
 import android.os.Bundle;
-import androidx.core.app.NotificationCompat;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.play:feature-delivery@@2.1.0 */
@@ -16,7 +16,7 @@ public abstract class SplitInstallSessionState {
     }
 
     public static SplitInstallSessionState zzd(Bundle bundle) {
-        return new zza(bundle.getInt("session_id"), bundle.getInt(NotificationCompat.CATEGORY_STATUS), bundle.getInt("error_code"), bundle.getLong("bytes_downloaded"), bundle.getLong("total_bytes_to_download"), bundle.getStringArrayList("module_names"), bundle.getStringArrayList("languages"), (PendingIntent) bundle.getParcelable("user_confirmation_intent"), bundle.getParcelableArrayList("split_file_intents"));
+        return new zza(bundle.getInt("session_id"), bundle.getInt("status"), bundle.getInt(UpdateAnalyticsContract.ERROR_CODE_PARAM), bundle.getLong("bytes_downloaded"), bundle.getLong("total_bytes_to_download"), bundle.getStringArrayList("module_names"), bundle.getStringArrayList("languages"), (PendingIntent) bundle.getParcelable("user_confirmation_intent"), bundle.getParcelableArrayList("split_file_intents"));
     }
 
     public abstract long bytesDownloaded();

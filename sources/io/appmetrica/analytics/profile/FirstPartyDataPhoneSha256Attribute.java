@@ -1,9 +1,9 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0326ic;
-import io.appmetrica.analytics.impl.C0606t8;
-import io.appmetrica.analytics.impl.C0751yn;
-import io.appmetrica.analytics.impl.C0777zn;
+import io.appmetrica.analytics.impl.C0325ic;
+import io.appmetrica.analytics.impl.C0605t8;
+import io.appmetrica.analytics.impl.C0750yn;
+import io.appmetrica.analytics.impl.C0776zn;
 import io.appmetrica.analytics.impl.D4;
 import io.appmetrica.analytics.impl.Dl;
 import io.appmetrica.analytics.impl.Ho;
@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class FirstPartyDataPhoneSha256Attribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final L6 f1415a = new L6("appmetrica_1pd_phone_sha256", new C0606t8(), new C0326ic(new D4(100)));
+    private final L6 f1415a = new L6("appmetrica_1pd_phone_sha256", new C0605t8(), new C0325ic(new D4(100)));
     private final Dl b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -31,8 +31,8 @@ public class FirstPartyDataPhoneSha256Attribute {
     public UserProfileUpdate<? extends Ho> withPhoneValues(Iterable<String> iterable) {
         String str = this.f1415a.c;
         ArrayList a2 = this.b.a(iterable);
-        C0777zn c0777zn = new C0777zn(200, "First party data phones attribute", PublicLogger.getAnonymousInstance());
+        C0776zn c0776zn = new C0776zn(200, "First party data phones attribute", PublicLogger.getAnonymousInstance());
         L6 l6 = this.f1415a;
-        return new UserProfileUpdate<>(new C0751yn(str, a2, 10, c0777zn, l6.f644a, new J4(l6.b)));
+        return new UserProfileUpdate<>(new C0750yn(str, a2, 10, c0776zn, l6.f644a, new J4(l6.b)));
     }
 }

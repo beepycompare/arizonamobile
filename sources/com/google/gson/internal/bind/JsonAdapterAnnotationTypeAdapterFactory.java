@@ -11,14 +11,14 @@ import com.google.gson.reflect.TypeToken;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class JsonAdapterAnnotationTypeAdapterFactory implements TypeAdapterFactory {
     private static final TypeAdapterFactory TREE_TYPE_CLASS_DUMMY_FACTORY = new DummyTypeAdapterFactory();
     private static final TypeAdapterFactory TREE_TYPE_FIELD_DUMMY_FACTORY = new DummyTypeAdapterFactory();
     private final ConcurrentMap<Class<?>, TypeAdapterFactory> adapterFactoryMap = new ConcurrentHashMap();
     private final ConstructorConstructor constructorConstructor;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static class DummyTypeAdapterFactory implements TypeAdapterFactory {
         private DummyTypeAdapterFactory() {
         }

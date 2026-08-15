@@ -21,6 +21,7 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import com.arizona.launcher.UpdateAnalyticsContract;
 import com.facebook.FacebookDialogException;
 import com.facebook.FacebookException;
 import com.facebook.FacebookOperationCanceledException;
@@ -235,13 +236,13 @@ public class WebDialog extends Dialog {
             Bundle parseUrl = Util.parseUrl(str);
             String string = parseUrl.getString("error");
             if (string == null) {
-                string = parseUrl.getString("error_type");
+                string = parseUrl.getString(UpdateAnalyticsContract.ERROR_TYPE_PARAM);
             }
             String string2 = parseUrl.getString("error_msg");
             if (string2 == null) {
                 string2 = parseUrl.getString("error_description");
             }
-            String string3 = parseUrl.getString("error_code");
+            String string3 = parseUrl.getString(UpdateAnalyticsContract.ERROR_CODE_PARAM);
             if (!Utility.isNullOrEmpty(string3)) {
                 try {
                     parseInt = Integer.parseInt(string3);

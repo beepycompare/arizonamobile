@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class JsonWriter implements Closeable, Flushable {
     private static final String[] HTML_SAFE_REPLACEMENT_CHARS;
     private String deferredName;

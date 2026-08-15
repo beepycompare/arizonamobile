@@ -18,11 +18,11 @@ public final class B2 {
                     String optString = optJSONObject2.optString("key", null);
                     if (!TextUtils.isEmpty(optString)) {
                         String optString2 = optJSONObject2.optString("value", null);
-                        arrayList.add(new Pair(optString, optString2 != null ? new C0730y2(optString2) : null));
+                        arrayList.add(new Pair(optString, optString2 != null ? new C0729y2(optString2) : null));
                     }
                 }
             }
-            fm.s = new C0756z2(arrayList);
+            fm.s = new C0755z2(arrayList);
         }
     }
 }

@@ -8,12 +8,12 @@ public final class Cf {
     /* renamed from: a  reason: collision with root package name */
     public final String f499a;
     public final JSONObject b;
-    public final EnumC0399l8 c;
+    public final EnumC0398l8 c;
 
-    public Cf(String str, JSONObject jSONObject, EnumC0399l8 enumC0399l8) {
+    public Cf(String str, JSONObject jSONObject, EnumC0398l8 enumC0398l8) {
         this.f499a = str;
         this.b = jSONObject;
-        this.c = enumC0399l8;
+        this.c = enumC0398l8;
     }
 
     public final String toString() {

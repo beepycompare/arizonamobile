@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Ge extends O2 {
     public static final Fe b = new Fe();
 
-    public Ge(EnumC0220ea enumC0220ea) {
-        super(Fe.a(b, enumC0220ea));
+    public Ge(EnumC0219ea enumC0219ea) {
+        super(Fe.a(b, enumC0219ea));
     }
 }

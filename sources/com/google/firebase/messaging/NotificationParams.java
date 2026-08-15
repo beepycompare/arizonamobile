@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.MissingFormatArgumentException;
 import org.json.JSONArray;
 import org.json.JSONException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class NotificationParams {
     private static final int COLOR_TRANSPARENT_IN_HEX = -16777216;
     private static final int EMPTY_JSON_ARRAY_LENGTH = 1;

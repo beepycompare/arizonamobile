@@ -1076,7 +1076,7 @@ public final class AdXConnect {
 
     public static void setEventParameter(int i, Object obj) {
         try {
-            dict.put(new String[]{CmcdData.OBJECT_TYPE_AUDIO_ONLY, "ci", TtmlNode.TAG_P, "kw", TtmlNode.TAG_P, CmcdConfiguration.KEY_PLAYBACK_RATE, "q", "din", "dout", "nc", "id", CmcdConfiguration.KEY_SESSION_ID, "did", CmcdData.STREAM_TYPE_LIVE}[i], obj);
+            dict.put(new String[]{CmcdData.OBJECT_TYPE_AUDIO_ONLY, "ci", TtmlNode.TAG_P, "kw", TtmlNode.TAG_P, CmcdConfiguration.KEY_PLAYBACK_RATE, "q", "din", "dout", "nc", TtmlNode.ATTR_ID, CmcdConfiguration.KEY_SESSION_ID, "did", CmcdData.STREAM_TYPE_LIVE}[i], obj);
         } catch (Exception e) {
             Log.e("AdXAppTracker", "Exception " + e.getMessage());
         }

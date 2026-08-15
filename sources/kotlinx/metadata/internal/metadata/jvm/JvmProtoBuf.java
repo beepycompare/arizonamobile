@@ -19,7 +19,7 @@ import kotlinx.metadata.internal.protobuf.InvalidProtocolBufferException;
 import kotlinx.metadata.internal.protobuf.MessageLiteOrBuilder;
 import kotlinx.metadata.internal.protobuf.Parser;
 import kotlinx.metadata.internal.protobuf.WireFormat;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class JvmProtoBuf {
     public static final int ANONYMOUS_OBJECT_ORIGIN_NAME_FIELD_NUMBER = 103;
     public static final int CLASS_LOCAL_VARIABLE_FIELD_NUMBER = 102;
@@ -50,7 +50,7 @@ public final class JvmProtoBuf {
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Package, Integer> packageModuleName = GeneratedMessageLite.newSingularGeneratedExtension(ProtoBuf.Package.getDefaultInstance(), 0, null, null, 101, WireFormat.FieldType.INT32, Integer.class);
     public static final GeneratedMessageLite.GeneratedExtension<ProtoBuf.Package, List<ProtoBuf.Property>> packageLocalVariable = GeneratedMessageLite.newRepeatedGeneratedExtension(ProtoBuf.Package.getDefaultInstance(), ProtoBuf.Property.getDefaultInstance(), null, 102, WireFormat.FieldType.MESSAGE, false, ProtoBuf.Property.class);
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface JvmFieldSignatureOrBuilder extends MessageLiteOrBuilder {
         int getDesc();
 
@@ -61,7 +61,7 @@ public final class JvmProtoBuf {
         boolean hasName();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface JvmMethodSignatureOrBuilder extends MessageLiteOrBuilder {
         int getDesc();
 
@@ -72,7 +72,7 @@ public final class JvmProtoBuf {
         boolean hasName();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface JvmPropertySignatureOrBuilder extends MessageLiteOrBuilder {
         JvmMethodSignature getDelegateMethod();
 
@@ -95,7 +95,7 @@ public final class JvmProtoBuf {
         boolean hasSyntheticMethod();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface StringTableTypesOrBuilder extends MessageLiteOrBuilder {
         int getLocalName(int i);
 
@@ -130,7 +130,7 @@ public final class JvmProtoBuf {
         extensionRegistryLite.add(packageLocalVariable);
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class StringTableTypes extends GeneratedMessageLite implements StringTableTypesOrBuilder {
         public static final int LOCAL_NAME_FIELD_NUMBER = 5;
         public static Parser<StringTableTypes> PARSER = new AbstractParser<StringTableTypes>() { // from class: kotlinx.metadata.internal.metadata.jvm.JvmProtoBuf.StringTableTypes.1
@@ -149,7 +149,7 @@ public final class JvmProtoBuf {
         private List<Record> record_;
         private final ByteString unknownFields;
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public interface RecordOrBuilder extends MessageLiteOrBuilder {
             Record.Operation getOperation();
 
@@ -301,7 +301,7 @@ public final class JvmProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Record extends GeneratedMessageLite implements RecordOrBuilder {
             public static final int OPERATION_FIELD_NUMBER = 3;
             public static Parser<Record> PARSER = new AbstractParser<Record>() { // from class: kotlinx.metadata.internal.metadata.jvm.JvmProtoBuf.StringTableTypes.Record.1
@@ -481,7 +481,7 @@ public final class JvmProtoBuf {
                 return PARSER;
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public enum Operation implements Internal.EnumLite {
                 NONE(0, 0),
                 INTERNAL_TO_CLASS_ID(1, 1),
@@ -773,7 +773,7 @@ public final class JvmProtoBuf {
                 return newBuilder(this);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Record, Builder> implements RecordOrBuilder {
                 private int bitField0_;
                 private int predefinedIndex_;
@@ -1317,7 +1317,7 @@ public final class JvmProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<StringTableTypes, Builder> implements StringTableTypesOrBuilder {
             private int bitField0_;
             private List<Record> record_ = Collections.emptyList();
@@ -1577,7 +1577,7 @@ public final class JvmProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class JvmMethodSignature extends GeneratedMessageLite implements JvmMethodSignatureOrBuilder {
         public static final int DESC_FIELD_NUMBER = 2;
         public static final int NAME_FIELD_NUMBER = 1;
@@ -1811,7 +1811,7 @@ public final class JvmProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<JvmMethodSignature, Builder> implements JvmMethodSignatureOrBuilder {
             private int bitField0_;
             private int desc_;
@@ -1976,7 +1976,7 @@ public final class JvmProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class JvmFieldSignature extends GeneratedMessageLite implements JvmFieldSignatureOrBuilder {
         public static final int DESC_FIELD_NUMBER = 2;
         public static final int NAME_FIELD_NUMBER = 1;
@@ -2210,7 +2210,7 @@ public final class JvmProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<JvmFieldSignature, Builder> implements JvmFieldSignatureOrBuilder {
             private int bitField0_;
             private int desc_;
@@ -2375,7 +2375,7 @@ public final class JvmProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class JvmPropertySignature extends GeneratedMessageLite implements JvmPropertySignatureOrBuilder {
         public static final int DELEGATE_METHOD_FIELD_NUMBER = 5;
         public static final int FIELD_FIELD_NUMBER = 1;
@@ -2708,7 +2708,7 @@ public final class JvmProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<JvmPropertySignature, Builder> implements JvmPropertySignatureOrBuilder {
             private int bitField0_;
             private JvmFieldSignature field_ = JvmFieldSignature.getDefaultInstance();

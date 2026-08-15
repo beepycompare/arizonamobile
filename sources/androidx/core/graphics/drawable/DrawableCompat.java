@@ -10,7 +10,7 @@ import androidx.annotation.ReplaceWith;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class DrawableCompat {
     public static Drawable wrap(Drawable drawable) {
         return drawable;

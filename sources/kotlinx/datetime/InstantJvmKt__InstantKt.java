@@ -122,9 +122,9 @@ public final /* synthetic */ class InstantJvmKt__InstantKt {
             long component1 = multiplyAndDivide.component1();
             long component2 = multiplyAndDivide.component2();
             Duration.Companion companion = Duration.Companion;
-            Instant m11397plusLRDsOJo = instant.m11397plusLRDsOJo(DurationKt.toDuration(component1, DurationUnit.SECONDS));
+            Instant m11398plusLRDsOJo = instant.m11398plusLRDsOJo(DurationKt.toDuration(component1, DurationUnit.SECONDS));
             Duration.Companion companion2 = Duration.Companion;
-            return m11397plusLRDsOJo.m11397plusLRDsOJo(DurationKt.toDuration(component2, DurationUnit.NANOSECONDS));
+            return m11398plusLRDsOJo.m11398plusLRDsOJo(DurationKt.toDuration(component2, DurationUnit.NANOSECONDS));
         } catch (Exception e2) {
             e = e2;
             Exception exc = e;

@@ -1,6 +1,5 @@
 package okhttp3.internal.http;
 
-import com.liulishuo.okdownload.core.Util;
 import java.io.EOFException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -190,11 +189,11 @@ public final class HttpHeaders {
 
     public static final boolean promisesBody(Response response) {
         Intrinsics.checkNotNullParameter(response, "<this>");
-        if (Intrinsics.areEqual(response.request().method(), Util.METHOD_HEAD)) {
+        if (Intrinsics.areEqual(response.request().method(), "HEAD")) {
             return false;
         }
         int code = response.code();
-        return (((code >= 100 && code < 200) || code == 204 || code == 304) && _UtilJvmKt.headersContentLength(response) == -1 && !StringsKt.equals("chunked", Response.header$default(response, "Transfer-Encoding", null, 2, null), true)) ? false : true;
+        return (((code >= 100 && code < 200) || code == 204 || code == 304) && _UtilJvmKt.headersContentLength(response) == -1 && !StringsKt.equals("chunked", Response.header$default(response, com.google.common.net.HttpHeaders.TRANSFER_ENCODING, null, 2, null), true)) ? false : true;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "No longer supported", replaceWith = @ReplaceWith(expression = "response.promisesBody()", imports = {}))

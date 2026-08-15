@@ -8,8 +8,8 @@ public final class ap {
     /* renamed from: a  reason: collision with root package name */
     public final bp f896a;
 
-    public ap(C0691wf c0691wf, ep epVar, String str) {
-        this.f896a = new bp(c0691wf, epVar, new cp() { // from class: io.appmetrica.analytics.impl.ap$$ExternalSyntheticLambda0
+    public ap(C0690wf c0690wf, ep epVar, String str) {
+        this.f896a = new bp(c0690wf, epVar, new cp() { // from class: io.appmetrica.analytics.impl.ap$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.cp
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return ap.a(jSONObject, jSONObject2);

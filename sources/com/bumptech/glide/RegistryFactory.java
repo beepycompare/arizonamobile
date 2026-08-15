@@ -79,7 +79,7 @@ import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class RegistryFactory {
     private RegistryFactory() {
     }

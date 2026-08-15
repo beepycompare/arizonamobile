@@ -15,7 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class SqlTimeTypeAdapter extends TypeAdapter<Time> {
     static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() { // from class: com.google.gson.internal.sql.SqlTimeTypeAdapter.1
         @Override // com.google.gson.TypeAdapterFactory

@@ -2,7 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 /* loaded from: classes5.dex */
-public final class U3 implements InterfaceC0388kn {
+public final class U3 implements InterfaceC0387kn {
     public final J3 a(I3 i3, List<I3> list) {
         return new J3(i3, list);
     }

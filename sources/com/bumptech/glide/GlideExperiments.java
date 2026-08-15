@@ -3,12 +3,12 @@ package com.bumptech.glide;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class GlideExperiments {
     private final Map<Class<?>, Experiment> experiments;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Experiment {
     }
 
@@ -25,7 +25,7 @@ public class GlideExperiments {
         return this.experiments.containsKey(cls);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     static final class Builder {
         private final Map<Class<?>, Experiment> experiments = new HashMap();
 

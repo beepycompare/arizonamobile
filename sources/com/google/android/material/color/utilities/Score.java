@@ -58,7 +58,7 @@ public final class Score {
         for (Hct hct : arrayList) {
             double d3 = dArr[MathUtils.sanitizeDegreesInt((int) Math.round(hct.getHue()))];
             if (!z || (hct.getChroma() >= CUTOFF_CHROMA && d3 > CUTOFF_EXCITED_PROPORTION)) {
-                arrayList2.add(new ScoredHCT(hct, (d3 * 100.0d * WEIGHT_PROPORTION) + ((hct.getChroma() - TARGET_CHROMA) * (hct.getChroma() < TARGET_CHROMA ? WEIGHT_CHROMA_BELOW : WEIGHT_CHROMA_ABOVE))));
+                arrayList2.add(new ScoredHCT(hct, (d3 * 100.0d * WEIGHT_PROPORTION) + ((hct.getChroma() - TARGET_CHROMA) * (hct.getChroma() < TARGET_CHROMA ? 0.1d : WEIGHT_CHROMA_ABOVE))));
             }
         }
         Collections.sort(arrayList2, new ScoredComparator());

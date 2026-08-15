@@ -3,7 +3,7 @@ package androidx.media3.datasource;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DataSourceInputStream extends InputStream {
     private final DataSource dataSource;
     private final DataSpec dataSpec;

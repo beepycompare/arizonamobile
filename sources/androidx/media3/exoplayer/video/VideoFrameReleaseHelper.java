@@ -188,7 +188,7 @@ public final class VideoFrameReleaseHelper {
         }
         int i = (frameRate > (-1.0f) ? 1 : (frameRate == (-1.0f) ? 0 : -1));
         if (i != 0 && f != -1.0f) {
-            if (Math.abs(frameRate - this.surfaceMediaFrameRate) < ((!this.frameRateEstimator.isSynced() || this.frameRateEstimator.getMatchingFrameDurationSumNs() < MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS) ? 1.0f : 0.1f)) {
+            if (Math.abs(frameRate - this.surfaceMediaFrameRate) < ((!this.frameRateEstimator.isSynced() || this.frameRateEstimator.getMatchingFrameDurationSumNs() < 5000000000L) ? 1.0f : 0.1f)) {
                 return;
             }
         } else if (i == 0 && this.frameRateEstimator.getFramesWithoutSyncCount() < 30) {

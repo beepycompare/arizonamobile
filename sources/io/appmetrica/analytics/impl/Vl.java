@@ -5,10 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 public final class Vl implements Q6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0502p7 f814a;
+    public final C0501p7 f814a;
 
-    public Vl(C0502p7 c0502p7) {
-        this.f814a = c0502p7;
+    public Vl(C0501p7 c0501p7) {
+        this.f814a = c0501p7;
     }
 
     @Override // io.appmetrica.analytics.impl.Q6

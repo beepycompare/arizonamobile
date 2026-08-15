@@ -896,7 +896,7 @@ public final class GapComposer extends InternalComposer {
         ValueHolder<Object> valueHolder;
         int asInt;
         PersistentCompositionLocalMap currentCompositionLocalScope = currentCompositionLocalScope();
-        startGroup(ComposerKt.providerKey, ComposerKt.getProvider());
+        startGroup(201, ComposerKt.getProvider());
         Object rememberedValue = rememberedValue();
         if (Intrinsics.areEqual(rememberedValue, Composer.Companion.getEmpty())) {
             valueHolder = null;
@@ -969,7 +969,7 @@ public final class GapComposer extends InternalComposer {
         PersistentCompositionLocalMap updateProviderMapGroup;
         int asInt;
         PersistentCompositionLocalMap currentCompositionLocalScope = currentCompositionLocalScope();
-        startGroup(ComposerKt.providerKey, ComposerKt.getProvider());
+        startGroup(201, ComposerKt.getProvider());
         boolean z = true;
         boolean z2 = false;
         if (getInserting()) {
@@ -1023,7 +1023,7 @@ public final class GapComposer extends InternalComposer {
     @Override // androidx.compose.runtime.Composer
     public CompositionContext buildContext() {
         GapComposer gapComposer;
-        startGroup(ComposerKt.referenceKey, ComposerKt.getReference());
+        startGroup(206, ComposerKt.getReference());
         if (getInserting()) {
             SlotWriter.markGroup$default(this.writer, 0, 1, null);
         }

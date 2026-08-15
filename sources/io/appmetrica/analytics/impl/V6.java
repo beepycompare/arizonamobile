@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class V6 implements U6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0769zf f806a;
+    public final C0768zf f806a;
 
-    public V6(C0769zf c0769zf) {
-        this.f806a = c0769zf;
+    public V6(C0768zf c0768zf) {
+        this.f806a = c0768zf;
     }
 
     public final void a(boolean z) {

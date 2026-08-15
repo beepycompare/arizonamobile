@@ -18,16 +18,16 @@ public final class EventScreenBinding implements ViewBinding {
     public final TextView infoText;
     public final FrameLayout infoTextBg;
     public final EventMainScreenBinding main;
-    public final PiratesRatingScreenBinding rating;
+    public final EventRatingScreenBinding rating;
     public final EventMainResultScreenBinding resultMain;
     private final ConstraintLayout rootView;
-    public final PiratesShipScreenBinding ship;
+    public final EventShipScreenBinding ship;
     public final EventShopSceenBinding shop;
     public final EventTaskScreenBinding task;
     public final EventTopbarBinding topElements;
     public final EventVideoScreenBinding video;
 
-    private EventScreenBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, ConstraintLayout constraintLayout2, EventEventsScreenBinding eventEventsScreenBinding, TextView textView, FrameLayout frameLayout, EventMainScreenBinding eventMainScreenBinding, PiratesRatingScreenBinding piratesRatingScreenBinding, EventMainResultScreenBinding eventMainResultScreenBinding, PiratesShipScreenBinding piratesShipScreenBinding, EventShopSceenBinding eventShopSceenBinding, EventTaskScreenBinding eventTaskScreenBinding, EventTopbarBinding eventTopbarBinding, EventVideoScreenBinding eventVideoScreenBinding) {
+    private EventScreenBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, ConstraintLayout constraintLayout2, EventEventsScreenBinding eventEventsScreenBinding, TextView textView, FrameLayout frameLayout, EventMainScreenBinding eventMainScreenBinding, EventRatingScreenBinding eventRatingScreenBinding, EventMainResultScreenBinding eventMainResultScreenBinding, EventShipScreenBinding eventShipScreenBinding, EventShopSceenBinding eventShopSceenBinding, EventTaskScreenBinding eventTaskScreenBinding, EventTopbarBinding eventTopbarBinding, EventVideoScreenBinding eventVideoScreenBinding) {
         this.rootView = constraintLayout;
         this.bg = linearLayout;
         this.easterBattlepassChoose = constraintLayout2;
@@ -35,9 +35,9 @@ public final class EventScreenBinding implements ViewBinding {
         this.infoText = textView;
         this.infoTextBg = frameLayout;
         this.main = eventMainScreenBinding;
-        this.rating = piratesRatingScreenBinding;
+        this.rating = eventRatingScreenBinding;
         this.resultMain = eventMainResultScreenBinding;
-        this.ship = piratesShipScreenBinding;
+        this.ship = eventShipScreenBinding;
         this.shop = eventShopSceenBinding;
         this.task = eventTaskScreenBinding;
         this.topElements = eventTopbarBinding;
@@ -81,7 +81,7 @@ public final class EventScreenBinding implements ViewBinding {
                         i = R.id.rating;
                         View findChildViewById3 = ViewBindings.findChildViewById(view, i);
                         if (findChildViewById3 != null) {
-                            PiratesRatingScreenBinding bind3 = PiratesRatingScreenBinding.bind(findChildViewById3);
+                            EventRatingScreenBinding bind3 = EventRatingScreenBinding.bind(findChildViewById3);
                             i = R.id.result_main;
                             View findChildViewById4 = ViewBindings.findChildViewById(view, i);
                             if (findChildViewById4 != null) {
@@ -89,7 +89,7 @@ public final class EventScreenBinding implements ViewBinding {
                                 i = R.id.ship;
                                 View findChildViewById5 = ViewBindings.findChildViewById(view, i);
                                 if (findChildViewById5 != null) {
-                                    PiratesShipScreenBinding bind5 = PiratesShipScreenBinding.bind(findChildViewById5);
+                                    EventShipScreenBinding bind5 = EventShipScreenBinding.bind(findChildViewById5);
                                     i = R.id.shop;
                                     View findChildViewById6 = ViewBindings.findChildViewById(view, i);
                                     if (findChildViewById6 != null) {

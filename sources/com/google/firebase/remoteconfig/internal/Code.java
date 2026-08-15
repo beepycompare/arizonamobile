@@ -3,7 +3,7 @@ package com.google.firebase.remoteconfig.internal;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.SOURCE)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface Code {
     public static final int ABORTED = 10;
     public static final int ALREADY_EXISTS = 6;

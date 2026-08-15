@@ -11,7 +11,7 @@ import java.io.Reader;
 import java.util.Arrays;
 import java.util.Objects;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class JsonReader implements Closeable {
     static final int BUFFER_SIZE = 1024;
     static final int DEFAULT_NESTING_LIMIT = 255;

@@ -7,11 +7,11 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Ck implements ServiceComponentModuleReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0448n5 f503a;
+    public final C0447n5 f503a;
     public final Vk b;
 
-    public Ck(C0448n5 c0448n5, Vk vk) {
-        this.f503a = c0448n5;
+    public Ck(C0447n5 c0447n5, Vk vk) {
+        this.f503a = c0447n5;
         this.b = vk;
     }
 
@@ -21,7 +21,7 @@ public final class Ck implements ServiceComponentModuleReporter {
         this.f503a.a(Vk.a(serviceModuleCounterReport));
     }
 
-    public /* synthetic */ Ck(C0448n5 c0448n5, Vk vk, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(c0448n5, (i & 2) != 0 ? new Vk() : vk);
+    public /* synthetic */ Ck(C0447n5 c0447n5, Vk vk, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(c0447n5, (i & 2) != 0 ? new Vk() : vk);
     }
 }

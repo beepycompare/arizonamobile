@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import androidx.core.app.NotificationCompat;
 import androidx.exifinterface.media.ExifInterface;
 import com.adjust.sdk.Adjust;
 import com.adjust.sdk.AdjustEvent;
@@ -14,7 +13,6 @@ import com.adjust.sdk.Constants;
 import com.arizona.game.BuildConfig;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
-import com.miami.game.core.privacy.privacyInteractor;
 import io.appmetrica.analytics.AppMetrica;
 import io.appmetrica.analytics.ecommerce.ECommerceAmount;
 import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
@@ -133,7 +131,7 @@ public final class MetricsFunsKt {
     public static final void sendAnalytics(Context context, String event) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(event, "event");
-        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
         if (string == null) {
             string = "";
         }
@@ -182,7 +180,7 @@ public final class MetricsFunsKt {
     public static final void sendTrackUsRequest(Context context, String action) {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
-        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
         if (string == null) {
             string = "";
         }
@@ -233,7 +231,7 @@ public final class MetricsFunsKt {
         PackageInfo packageInfo;
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
-        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
         String str = string != null ? string : "";
         if (StringsKt.isBlank(str)) {
             Log.e("appMetrica", "url is Empty");
@@ -333,9 +331,9 @@ public final class MetricsFunsKt {
         Map map = MapsKt.toMap(arrayList);
         String str2 = (String) map.get("click_id");
         String str3 = (String) map.get("goal");
-        String str4 = (String) map.get(NotificationCompat.CATEGORY_STATUS);
+        String str4 = (String) map.get("status");
         String str5 = (String) map.get("order_id");
-        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
         if (string == null) {
             string = "";
         }
@@ -356,7 +354,7 @@ public final class MetricsFunsKt {
             Pair pair2 = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
             linkedHashMap.put(pair2.getFirst(), pair2.getSecond());
         }
-        HttpUrl build = new HttpUrl.Builder().scheme(Constants.SCHEME).host("trckcppro.com").addPathSegment("api").addPathSegment("postback").addPathSegment("").addQueryParameter("click_id", str2).addQueryParameter("goal", str3).addQueryParameter(NotificationCompat.CATEGORY_STATUS, str4).addQueryParameter("order_id", str5).build();
+        HttpUrl build = new HttpUrl.Builder().scheme(Constants.SCHEME).host("trckcppro.com").addPathSegment("api").addPathSegment("postback").addPathSegment("").addQueryParameter("click_id", str2).addQueryParameter("goal", str3).addQueryParameter("status", str4).addQueryParameter("order_id", str5).build();
         Log.d("Advgame", "url: " + build);
         client.newCall(new Request.Builder().url(build).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.metrics.MetricsFunsKt$sendAdvgameAnalytics$1
             @Override // okhttp3.Callback
@@ -400,7 +398,7 @@ public final class MetricsFunsKt {
         } else {
             str = ExifInterface.GPS_MEASUREMENT_2D;
         }
-        String string = context.getSharedPreferences(privacyInteractor.SP_NAME, 0).getString("referrerUrl", "");
+        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
         String str3 = string != null ? string : "";
         ArrayList arrayList = new ArrayList();
         for (Object obj : StringsKt.split$default((CharSequence) str3, new String[]{"&"}, false, 0, 6, (Object) null)) {

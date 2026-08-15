@@ -6,12 +6,12 @@ import kotlin.text.Charsets;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class Je {
-    public static final V9 a(Je je, EnumC0220ea enumC0220ea, Object obj) {
+    public static final V9 a(Je je, EnumC0219ea enumC0219ea, Object obj) {
         int i;
         Field[] fields;
         je.getClass();
         V9 v9 = new V9();
-        switch (enumC0220ea.ordinal()) {
+        switch (enumC0219ea.ordinal()) {
             case 0:
                 i = 0;
                 break;

@@ -1,7 +1,6 @@
 package androidx.compose.foundation.gestures;
 
 import androidx.compose.foundation.gestures.TransformEvent;
-import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerEvent;
@@ -301,7 +300,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
             /* JADX INFO: Access modifiers changed from: package-private */
             /* compiled from: Transformable.kt */
             @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-            @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$2", f = "Transformable.kt", i = {}, l = {ComposerKt.providerKey}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+            @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$2", f = "Transformable.kt", i = {}, l = {201}, m = "invokeSuspend", n = {}, s = {}, v = 1)
             /* renamed from: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$2  reason: invalid class name */
             /* loaded from: classes.dex */
             public static final class AnonymousClass2 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {

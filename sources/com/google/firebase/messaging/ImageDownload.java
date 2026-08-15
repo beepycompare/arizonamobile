@@ -15,7 +15,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ImageDownload implements Closeable {
     private static final int MAX_IMAGE_SIZE_BYTES = 1048576;
     private volatile Future<?> future;
@@ -43,7 +43,7 @@ public class ImageDownload implements Closeable {
         this.future = executorService.submit(new Runnable() { // from class: com.google.firebase.messaging.ImageDownload$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ImageDownload.this.m9755lambda$start$0$comgooglefirebasemessagingImageDownload(taskCompletionSource);
+                ImageDownload.this.m9756lambda$start$0$comgooglefirebasemessagingImageDownload(taskCompletionSource);
             }
         });
         this.task = taskCompletionSource.getTask();
@@ -51,7 +51,7 @@ public class ImageDownload implements Closeable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$start$0$com-google-firebase-messaging-ImageDownload  reason: not valid java name */
-    public /* synthetic */ void m9755lambda$start$0$comgooglefirebasemessagingImageDownload(TaskCompletionSource taskCompletionSource) {
+    public /* synthetic */ void m9756lambda$start$0$comgooglefirebasemessagingImageDownload(TaskCompletionSource taskCompletionSource) {
         try {
             taskCompletionSource.setResult(blockingDownload());
         } catch (Exception e) {

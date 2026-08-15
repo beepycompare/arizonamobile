@@ -168,7 +168,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to var", replaceWith = @ReplaceWith(expression = FirebaseAnalytics.Param.LEVEL, imports = {}))
     /* renamed from: -deprecated_level  reason: not valid java name */
-    public final Level m11791deprecated_level() {
+    public final Level m11792deprecated_level() {
         return this.level;
     }
 
@@ -216,7 +216,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
                     z2 = z3;
                     this.logger.log("Content-Type: " + contentType);
                 }
-                if (body.contentLength() != -1 && headers.get("Content-Length") == null) {
+                if (body.contentLength() != -1 && headers.get(HttpHeaders.CONTENT_LENGTH) == null) {
                     str3 = "-byte body)";
                     str4 = " ";
                     this.logger.log("Content-Length: " + body.contentLength());
@@ -237,7 +237,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
                         } else {
                             Buffer buffer = new Buffer();
                             body.writeTo(buffer);
-                            if (StringsKt.equals("gzip", headers.get(HttpHeaders.CONTENT_ENCODING), true)) {
+                            if (StringsKt.equals("gzip", headers.get("Content-Encoding"), true)) {
                                 l2 = Long.valueOf(buffer.size());
                                 gzipSource = new GzipSource(buffer);
                                 try {
@@ -328,7 +328,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
                     source.request(Long.MAX_VALUE);
                     long millis2 = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - nanoTime);
                     Buffer buffer3 = source.getBuffer();
-                    if (StringsKt.equals("gzip", headers2.get(HttpHeaders.CONTENT_ENCODING), true)) {
+                    if (StringsKt.equals("gzip", headers2.get("Content-Encoding"), true)) {
                         Long valueOf = Long.valueOf(buffer3.size());
                         gzipSource = new GzipSource(buffer3.clone());
                         try {
@@ -398,7 +398,7 @@ public final class HttpLoggingInterceptor implements Interceptor {
     }
 
     private final boolean bodyHasUnknownEncoding(Headers headers) {
-        String str = headers.get(HttpHeaders.CONTENT_ENCODING);
+        String str = headers.get("Content-Encoding");
         return (str == null || StringsKt.equals(str, "identity", true) || StringsKt.equals(str, "gzip", true)) ? false : true;
     }
 

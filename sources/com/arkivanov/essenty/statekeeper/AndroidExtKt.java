@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AndroidExt.kt */
 @Metadata(d1 = {"\u0000(\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u001a(\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\b\u0002\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\t\u001a0\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u00012\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\b\u0002\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\t\u001a$\u0010\u000b\u001a\u00020\u0003*\u00020\f2\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\b\u0002\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\t\u001a,\u0010\u000b\u001a\u00020\u0003*\u00020\f2\u0006\u0010\n\u001a\u00020\u00012\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u000e\b\u0002\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00070\t\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"KEY_STATE", "", "StateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "savedStateRegistry", "Landroidx/savedstate/SavedStateRegistry;", "discardSavedState", "", "isSavingAllowed", "Lkotlin/Function0;", "key", "stateKeeper", "Landroidx/savedstate/SavedStateRegistryOwner;", "state-keeper_release"}, k = 2, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class AndroidExtKt {
     private static final String KEY_STATE = "STATE_KEEPER_STATE";
 

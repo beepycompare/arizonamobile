@@ -13,7 +13,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.Collection;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
     private final ConstructorConstructor constructorConstructor;
 
@@ -32,7 +32,7 @@ public final class CollectionTypeAdapterFactory implements TypeAdapterFactory {
         return null;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class Adapter<E> extends TypeAdapter<Collection<E>> {
         private final ObjectConstructor<? extends Collection<E>> constructor;
         private final TypeAdapter<E> elementTypeAdapter;

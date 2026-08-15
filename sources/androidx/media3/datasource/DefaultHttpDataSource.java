@@ -244,7 +244,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
                 if (dataSpec.length != -1) {
                     this.bytesToRead = dataSpec.length;
                 } else {
-                    long contentLength = HttpUtil.getContentLength(makeConnection.getHeaderField("Content-Length"), makeConnection.getHeaderField("Content-Range"));
+                    long contentLength = HttpUtil.getContentLength(makeConnection.getHeaderField(HttpHeaders.CONTENT_LENGTH), makeConnection.getHeaderField("Content-Range"));
                     this.bytesToRead = contentLength != -1 ? contentLength - j : -1L;
                 }
             } else {
@@ -327,7 +327,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
                 if (i3 <= 20) {
                     makeConnection = makeConnection(url, i, bArr, j, j2, isFlagSet, false, dataSpec.httpRequestHeaders);
                     int responseCode = makeConnection.getResponseCode();
-                    String headerField = makeConnection.getHeaderField(HttpHeaders.LOCATION);
+                    String headerField = makeConnection.getHeaderField("Location");
                     if ((i == i2 || i == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
                         makeConnection.disconnect();
                         url = handleRedirect(url, headerField, dataSpec);
@@ -372,9 +372,9 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
         }
         String str = this.userAgent;
         if (str != null) {
-            openConnection.setRequestProperty("User-Agent", str);
+            openConnection.setRequestProperty(HttpHeaders.USER_AGENT, str);
         }
-        openConnection.setRequestProperty(HttpHeaders.ACCEPT_ENCODING, z ? "gzip" : "identity");
+        openConnection.setRequestProperty("Accept-Encoding", z ? "gzip" : "identity");
         openConnection.setInstanceFollowRedirects(z2);
         openConnection.setDoOutput(bArr != null);
         openConnection.setRequestMethod(DataSpec.getStringForHttpMethod(i));
@@ -471,7 +471,7 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
     }
 
     private static boolean isCompressed(HttpURLConnection httpURLConnection) {
-        return "gzip".equalsIgnoreCase(httpURLConnection.getHeaderField(HttpHeaders.CONTENT_ENCODING));
+        return "gzip".equalsIgnoreCase(httpURLConnection.getHeaderField("Content-Encoding"));
     }
 
     private static long getCurrentThreadId() {

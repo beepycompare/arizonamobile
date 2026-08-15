@@ -142,7 +142,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.progressindicator.DeterminateDrawable$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DeterminateDrawable.this.m9601x8c297d3e(baseProgressIndicatorSpec, valueAnimator2);
+                DeterminateDrawable.this.m9602x8c297d3e(baseProgressIndicatorSpec, valueAnimator2);
             }
         });
         if (baseProgressIndicatorSpec.hasWavyEffect(true) && baseProgressIndicatorSpec.waveSpeed != 0) {
@@ -153,7 +153,7 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-progressindicator-DeterminateDrawable  reason: not valid java name */
-    public /* synthetic */ void m9601x8c297d3e(BaseProgressIndicatorSpec baseProgressIndicatorSpec, ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9602x8c297d3e(BaseProgressIndicatorSpec baseProgressIndicatorSpec, ValueAnimator valueAnimator) {
         if (baseProgressIndicatorSpec.hasWavyEffect(true) && baseProgressIndicatorSpec.waveSpeed != 0 && isVisible()) {
             invalidateSelf();
         }
@@ -173,14 +173,14 @@ public final class DeterminateDrawable<S extends BaseProgressIndicatorSpec> exte
         this.amplitudeAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.progressindicator.DeterminateDrawable$$ExternalSyntheticLambda0
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DeterminateDrawable.this.m9600x5e685e4b(valueAnimator2);
+                DeterminateDrawable.this.m9601x5e685e4b(valueAnimator2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeInitializeAmplitudeAnimator$1$com-google-android-material-progressindicator-DeterminateDrawable  reason: not valid java name */
-    public /* synthetic */ void m9600x5e685e4b(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9601x5e685e4b(ValueAnimator valueAnimator) {
         this.activeIndicator.amplitudeFraction = this.amplitudeInterpolator.getInterpolation(this.amplitudeAnimator.getAnimatedFraction());
     }
 

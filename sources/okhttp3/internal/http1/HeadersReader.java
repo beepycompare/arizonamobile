@@ -1,6 +1,5 @@
 package okhttp3.internal.http1;
 
-import android.support.v4.media.session.PlaybackStateCompat;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -18,7 +17,7 @@ public final class HeadersReader {
     public HeadersReader(BufferedSource source) {
         Intrinsics.checkNotNullParameter(source, "source");
         this.source = source;
-        this.headerLimit = PlaybackStateCompat.ACTION_SET_REPEAT_MODE;
+        this.headerLimit = 262144L;
     }
 
     public final BufferedSource getSource() {

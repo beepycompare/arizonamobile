@@ -7,7 +7,7 @@ import com.google.firebase.remoteconfig.interop.rollouts.AutoValue_RolloutAssign
 import org.json.JSONException;
 import org.json.JSONObject;
 @Encodable
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class RolloutAssignment {
     private static final String PARAMETER_KEY = "parameterKey";
     private static final String PARAMETER_VALUE = "parameterValue";
@@ -16,7 +16,7 @@ public abstract class RolloutAssignment {
     private static final String TEMPLATE_VERSION = "templateVersion";
     private static final String VARIANT_ID = "variantId";
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Builder {
         public abstract RolloutAssignment build();
 

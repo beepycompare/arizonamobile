@@ -1,7 +1,7 @@
 package com.google.firebase.installations;
 
 import com.google.firebase.installations.InstallationTokenResult;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
     private final String token;
     private final long tokenCreationTimestamp;
@@ -56,7 +56,7 @@ final class AutoValue_InstallationTokenResult extends InstallationTokenResult {
         return new Builder(this);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static final class Builder extends InstallationTokenResult.Builder {
         private byte set$0;
         private String token;

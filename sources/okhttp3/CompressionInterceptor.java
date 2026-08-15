@@ -1,12 +1,12 @@
 package okhttp3;
 
-import com.google.common.net.HttpHeaders;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import okhttp3.Interceptor;
+import okhttp3.internal.http.HttpHeaders;
 import okio.BufferedSource;
 import okio.Okio;
 import okio.Source;
@@ -47,8 +47,8 @@ public class CompressionInterceptor implements Interceptor {
     @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) {
         Intrinsics.checkNotNullParameter(chain, "chain");
-        if (!(this.algorithms.length == 0) && chain.request().header(HttpHeaders.ACCEPT_ENCODING) == null) {
-            return decompress$okhttp(chain.proceed(chain.request().newBuilder().header(HttpHeaders.ACCEPT_ENCODING, this.acceptEncoding).build()));
+        if (!(this.algorithms.length == 0) && chain.request().header("Accept-Encoding") == null) {
+            return decompress$okhttp(chain.proceed(chain.request().newBuilder().header("Accept-Encoding", this.acceptEncoding).build()));
         }
         return chain.proceed(chain.request());
     }
@@ -56,11 +56,11 @@ public class CompressionInterceptor implements Interceptor {
     public final Response decompress$okhttp(Response response) {
         DecompressionAlgorithm lookupDecompressor$okhttp;
         Intrinsics.checkNotNullParameter(response, "response");
-        if (okhttp3.internal.http.HttpHeaders.promisesBody(response)) {
+        if (HttpHeaders.promisesBody(response)) {
             ResponseBody body = response.body();
-            String header$default = Response.header$default(response, HttpHeaders.CONTENT_ENCODING, null, 2, null);
+            String header$default = Response.header$default(response, "Content-Encoding", null, 2, null);
             if (header$default != null && (lookupDecompressor$okhttp = lookupDecompressor$okhttp(header$default)) != null) {
-                return response.newBuilder().removeHeader(HttpHeaders.CONTENT_ENCODING).removeHeader("Content-Length").body(ResponseBody.Companion.create(Okio.buffer(lookupDecompressor$okhttp.decompress(body.source())), body.contentType(), -1L)).build();
+                return response.newBuilder().removeHeader("Content-Encoding").removeHeader(com.google.common.net.HttpHeaders.CONTENT_LENGTH).body(ResponseBody.Companion.create(Okio.buffer(lookupDecompressor$okhttp.decompress(body.source())), body.contentType(), -1L)).build();
             }
         }
         return response;

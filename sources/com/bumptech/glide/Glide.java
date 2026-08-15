@@ -40,7 +40,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class Glide implements ComponentCallbacks2 {
     private static final String DEFAULT_DISK_CACHE_DIR = "image_manager_disk_cache";
     private static final String DESTROYED_ACTIVITY_WARNING = "You cannot start a load on a not yet attached View or a Fragment where getActivity() returns null (which usually occurs when getActivity() is called before the Fragment is attached or after the Fragment is destroyed).";
@@ -64,11 +64,11 @@ public class Glide implements ComponentCallbacks2 {
     private final GlideSuppliers.GlideSupplier<SetMemoryCategoryOnLifecycleCallbacks> setMemoryCategoryCallbacks = GlideSuppliers.memorize(new GlideSuppliers.GlideSupplier() { // from class: com.bumptech.glide.Glide$$ExternalSyntheticLambda0
         @Override // com.bumptech.glide.util.GlideSuppliers.GlideSupplier
         public final Object get() {
-            return Glide.this.m9493lambda$new$0$combumptechglideGlide();
+            return Glide.this.m9494lambda$new$0$combumptechglideGlide();
         }
     });
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface RequestOptionsFactory {
         RequestOptions build();
     }
@@ -79,7 +79,7 @@ public class Glide implements ComponentCallbacks2 {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-bumptech-glide-Glide  reason: not valid java name */
-    public /* synthetic */ SetMemoryCategoryOnLifecycleCallbacks m9493lambda$new$0$combumptechglideGlide() {
+    public /* synthetic */ SetMemoryCategoryOnLifecycleCallbacks m9494lambda$new$0$combumptechglideGlide() {
         return new SetMemoryCategoryOnLifecycleCallbacks();
     }
 
@@ -443,7 +443,7 @@ public class Glide implements ComponentCallbacks2 {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public final class SetMemoryCategoryOnLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityCreated(Activity activity, Bundle bundle) {

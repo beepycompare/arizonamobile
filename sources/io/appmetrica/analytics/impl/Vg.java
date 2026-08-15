@@ -1,12 +1,12 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Vg extends AbstractC0396l5 {
-    public Vg(C0182cn c0182cn) {
-        super(c0182cn);
+public final class Vg extends AbstractC0395l5 {
+    public Vg(C0181cn c0181cn) {
+        super(c0181cn);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0396l5
-    public final <C extends InterfaceC0273gb> InterfaceC0439mm a() {
+    @Override // io.appmetrica.analytics.impl.AbstractC0395l5
+    public final <C extends InterfaceC0272gb> InterfaceC0438mm a() {
         return new Yg(this.f1076a);
     }
 }

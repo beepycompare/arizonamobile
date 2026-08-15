@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.enums.EnumEntries;
@@ -183,7 +184,7 @@ public final class ArizonaSnackbar extends SAMPUIElement {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: ArizonaSnackbar.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0081\u0002\u0018\u0000 \u000b2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u000bB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\n¨\u0006\f"}, d2 = {"Lru/mrlargha/commonui/elements/ArizonaSnackbar$Styles;", "", "id", "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "Info", "Success", "Error", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0081\u0002\u0018\u0000 \u000b2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u000bB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\n¨\u0006\f"}, d2 = {"Lru/mrlargha/commonui/elements/ArizonaSnackbar$Styles;", "", TtmlNode.ATTR_ID, "", "<init>", "(Ljava/lang/String;II)V", "getId", "()I", "Info", "Success", "Error", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Styles {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -226,7 +227,7 @@ public final class ArizonaSnackbar extends SAMPUIElement {
         }
 
         /* compiled from: ArizonaSnackbar.kt */
-        @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/elements/ArizonaSnackbar$Styles$Companion;", "", "<init>", "()V", "getStyle", "Lru/mrlargha/commonui/elements/ArizonaSnackbar$Styles;", "id", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/commonui/elements/ArizonaSnackbar$Styles$Companion;", "", "<init>", "()V", "getStyle", "Lru/mrlargha/commonui/elements/ArizonaSnackbar$Styles;", TtmlNode.ATTR_ID, "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
         /* loaded from: classes6.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

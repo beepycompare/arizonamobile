@@ -9,7 +9,7 @@ import android.provider.MediaStore;
 import androidx.media3.common.MimeTypes;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.io.FileNotFoundException;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class MediaStoreUtil {
     private static final int MINI_THUMB_HEIGHT = 384;
     private static final int MINI_THUMB_WIDTH = 512;

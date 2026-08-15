@@ -4,13 +4,13 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int user_battlepass_logo10 = 0x7f081012;
-        public static int user_battlepass_logo10_old = 0x7f081013;
-        public static int user_battlepass_logo11 = 0x7f081014;
-        public static int user_battlepass_rodina_usual = 0x7f081015;
-        public static int user_battlepass_topbar_bg_rodina = 0x7f081017;
-        public static int user_battlepass_topbar_bg_rodina_old = 0x7f081018;
-        public static int user_battlepass_topbar_pattern = 0x7f081019;
+        public static int user_battlepass_logo10 = 0x7f081014;
+        public static int user_battlepass_logo10_old = 0x7f081015;
+        public static int user_battlepass_logo11 = 0x7f081016;
+        public static int user_battlepass_rodina_usual = 0x7f081017;
+        public static int user_battlepass_topbar_bg_rodina = 0x7f081019;
+        public static int user_battlepass_topbar_bg_rodina_old = 0x7f08101a;
+        public static int user_battlepass_topbar_pattern = 0x7f08101b;
 
         private drawable() {
         }
@@ -40,8 +40,8 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class layout {
-        public static int item_reward = 0x7f0d0196;
-        public static int item_reward_rodina = 0x7f0d0197;
+        public static int item_reward = 0x7f0d019a;
+        public static int item_reward_rodina = 0x7f0d019b;
         public static int user_battlepass = 0x7f0d02af;
         public static int user_battlepass_rodina = 0x7f0d02b0;
 

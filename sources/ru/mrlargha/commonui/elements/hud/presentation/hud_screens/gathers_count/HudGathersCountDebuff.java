@@ -100,7 +100,7 @@ public final class HudGathersCountDebuff {
     }
 
     /* renamed from: getType  reason: collision with other method in class */
-    public final HudGathersCountDebuffType m11873getType() {
+    public final HudGathersCountDebuffType m11874getType() {
         Object obj;
         Iterator<E> it = HudGathersCountDebuffType.getEntries().iterator();
         while (true) {

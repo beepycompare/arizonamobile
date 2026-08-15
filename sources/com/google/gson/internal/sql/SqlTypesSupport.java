@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class SqlTypesSupport {
     public static final DefaultDateTypeAdapter.DateType<? extends Date> DATE_DATE_TYPE;
     public static final TypeAdapterFactory DATE_FACTORY;

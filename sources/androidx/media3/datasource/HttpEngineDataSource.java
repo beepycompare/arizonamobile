@@ -286,7 +286,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
                         if (dataSpec.length != -1) {
                             this.bytesRemaining = dataSpec.length;
                         } else {
-                            long contentLength = HttpUtil.getContentLength(getFirstHeader(asMap, "Content-Length"), getFirstHeader(asMap, "Content-Range"));
+                            long contentLength = HttpUtil.getContentLength(getFirstHeader(asMap, HttpHeaders.CONTENT_LENGTH), getFirstHeader(asMap, "Content-Range"));
                             this.bytesRemaining = contentLength != -1 ? contentLength - j : -1L;
                         }
                     } else {
@@ -438,7 +438,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
         }
         String str = this.userAgent;
         if (str != null) {
-            directExecutorAllowed.addHeader("User-Agent", str);
+            directExecutorAllowed.addHeader(HttpHeaders.USER_AGENT, str);
         }
         directExecutorAllowed.setHttpMethod(dataSpec.getHttpMethodString());
         if (dataSpec.httpBody != null) {
@@ -547,7 +547,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
 
     private static boolean isCompressed(UrlResponseInfo urlResponseInfo) {
         for (Map.Entry entry : urlResponseInfo.getHeaders().getAsList()) {
-            if (((String) entry.getKey()).equalsIgnoreCase(HttpHeaders.CONTENT_ENCODING)) {
+            if (((String) entry.getKey()).equalsIgnoreCase("Content-Encoding")) {
                 return !((String) entry.getValue()).equalsIgnoreCase("identity");
             }
         }

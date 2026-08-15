@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 import okio.Utf8;
 @CheckReturnValue
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ParsableByteArray {
     public static final int INVALID_CODE_POINT = 1114112;
     private byte[] data;

@@ -23,6 +23,6 @@ public final class C0 implements Xc {
         AppMetricaConfig appMetricaConfig = this.b;
         PublicLogger publicLogger = this.c;
         V7 v7 = e0.i;
-        return di.a(appMetricaConfig, publicLogger, new C0443n0(v7.j, v7.h));
+        return di.a(appMetricaConfig, publicLogger, new C0442n0(v7.j, v7.h));
     }
 }

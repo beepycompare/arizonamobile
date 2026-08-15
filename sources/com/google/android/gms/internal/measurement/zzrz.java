@@ -3,6 +3,7 @@ package com.google.android.gms.internal.measurement;
 import android.accounts.Account;
 import android.content.Context;
 import android.net.Uri;
+import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import com.google.common.collect.ImmutableList;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
@@ -10,7 +11,7 @@ import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
 /* loaded from: classes4.dex */
 public final class zzrz {
     private final String zza;
-    private String zzb = "files";
+    private String zzb = OriginalTzArchiveManifestParser.FILES_ROOT;
     private String zzc = "common";
     private final Account zzd = zzsa.zza;
     private String zze = "";

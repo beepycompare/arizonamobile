@@ -2,6 +2,7 @@ package androidx.media3.exoplayer.audio;
 
 import android.os.Build;
 import androidx.media3.common.util.Log;
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.common.collect.ImmutableSet;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -51,10 +52,12 @@ public final class IamfUtil {
 
     static {
         ImmutableSet<Integer> of;
-        if (Build.VERSION.SDK_INT < 32) {
-            of = ImmutableSet.of(12, 252, 6396, 4);
+        int i = Build.VERSION.SDK_INT;
+        Integer valueOf = Integer.valueOf((int) LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX);
+        if (i < 32) {
+            of = ImmutableSet.of(12, (int) valueOf, 6396, 4);
         } else {
-            of = ImmutableSet.of((Integer) 12, (Integer) 252, (Integer) 6396, (Integer) 4, (Integer) 3145980, Integer.valueOf((int) CHANNEL_OUT_ITU_2051_SOUND_SYSTEM_C_2_5_0), 737532, Integer.valueOf((int) CHANNEL_OUT_ITU_2051_SOUND_SYSTEM_E_4_5_1), Integer.valueOf((int) ITU_2051_SOUND_SYSTEM_F_3_7_0), 202070268, Integer.valueOf((int) CHANNEL_OUT_IAMF_9POINT1POINT4), Integer.valueOf((int) CHANNEL_OUT_ITU_2051_SOUND_SYSTEM_H_9_10_3), 743676, 3152124, Integer.valueOf((int) CHANNEL_OUT_IAMF_7POINT1POINT2), Integer.valueOf((int) CHANNEL_OUT_IAMF_3POINT1POINT2), 205215996, Integer.valueOf((int) CHANNEL_OUT_IAMF_9POINT1POINT6));
+            of = ImmutableSet.of((Integer) 12, valueOf, (Integer) 6396, (Integer) 4, (Integer) 3145980, Integer.valueOf((int) CHANNEL_OUT_ITU_2051_SOUND_SYSTEM_C_2_5_0), 737532, Integer.valueOf((int) CHANNEL_OUT_ITU_2051_SOUND_SYSTEM_E_4_5_1), Integer.valueOf((int) ITU_2051_SOUND_SYSTEM_F_3_7_0), 202070268, Integer.valueOf((int) CHANNEL_OUT_IAMF_9POINT1POINT4), Integer.valueOf((int) CHANNEL_OUT_ITU_2051_SOUND_SYSTEM_H_9_10_3), 743676, 3152124, Integer.valueOf((int) CHANNEL_OUT_IAMF_7POINT1POINT2), Integer.valueOf((int) CHANNEL_OUT_IAMF_3POINT1POINT2), 205215996, Integer.valueOf((int) CHANNEL_OUT_IAMF_9POINT1POINT6));
         }
         IAMF_SUPPORTED_CHANNEL_MASKS = of;
     }
@@ -138,7 +141,7 @@ public final class IamfUtil {
                 }
                 return 6396;
             }
-            return 252;
+            return LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_PREFIX;
         }
         return 12;
     }

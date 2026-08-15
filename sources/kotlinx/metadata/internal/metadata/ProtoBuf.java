@@ -25,10 +25,10 @@ import kotlinx.metadata.internal.protobuf.LazyStringList;
 import kotlinx.metadata.internal.protobuf.MessageLiteOrBuilder;
 import kotlinx.metadata.internal.protobuf.Parser;
 import kotlinx.metadata.internal.protobuf.ProtocolStringList;
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class ProtoBuf {
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface AnnotationOrBuilder extends MessageLiteOrBuilder {
         Annotation.Argument getArgument(int i);
 
@@ -41,7 +41,7 @@ public final class ProtoBuf {
         boolean hasId();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ClassOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<Class> {
         int getCompanionObjectName();
 
@@ -172,7 +172,7 @@ public final class ProtoBuf {
         boolean hasVersionRequirementTable();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ConstructorOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<Constructor> {
         int getFlags();
 
@@ -191,7 +191,7 @@ public final class ProtoBuf {
         boolean hasFlags();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ContractOrBuilder extends MessageLiteOrBuilder {
         Effect getEffect(int i);
 
@@ -200,7 +200,7 @@ public final class ProtoBuf {
         List<Effect> getEffectList();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface EffectOrBuilder extends MessageLiteOrBuilder {
         Expression getConclusionOfConditionalEffect();
 
@@ -221,14 +221,14 @@ public final class ProtoBuf {
         boolean hasKind();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface EnumEntryOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<EnumEntry> {
         int getName();
 
         boolean hasName();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ExpressionOrBuilder extends MessageLiteOrBuilder {
         Expression getAndArgument(int i);
 
@@ -263,7 +263,7 @@ public final class ProtoBuf {
         boolean hasValueParameterReference();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface FunctionOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<Function> {
         Type getContextReceiverType(int i);
 
@@ -332,7 +332,7 @@ public final class ProtoBuf {
         boolean hasTypeTable();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface PackageFragmentOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<PackageFragment> {
         Class getClass_(int i);
 
@@ -353,7 +353,7 @@ public final class ProtoBuf {
         boolean hasStrings();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface PackageOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<Package> {
         Function getFunction(int i);
 
@@ -382,7 +382,7 @@ public final class ProtoBuf {
         boolean hasVersionRequirementTable();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface PropertyOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<Property> {
         Type getContextReceiverType(int i);
 
@@ -449,7 +449,7 @@ public final class ProtoBuf {
         boolean hasSetterValueParameter();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface QualifiedNameTableOrBuilder extends MessageLiteOrBuilder {
         QualifiedNameTable.QualifiedName getQualifiedName(int i);
 
@@ -458,7 +458,7 @@ public final class ProtoBuf {
         List<QualifiedNameTable.QualifiedName> getQualifiedNameList();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface StringTableOrBuilder extends MessageLiteOrBuilder {
         String getString(int i);
 
@@ -469,7 +469,7 @@ public final class ProtoBuf {
         ProtocolStringList getStringList();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface TypeAliasOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<TypeAlias> {
         Annotation getAnnotation(int i);
 
@@ -514,7 +514,7 @@ public final class ProtoBuf {
         boolean hasUnderlyingTypeId();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface TypeOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<Type> {
         Type getAbbreviatedType();
 
@@ -575,7 +575,7 @@ public final class ProtoBuf {
         boolean hasTypeParameterName();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface TypeParameterOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<TypeParameter> {
         int getId();
 
@@ -606,7 +606,7 @@ public final class ProtoBuf {
         boolean hasVariance();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface TypeTableOrBuilder extends MessageLiteOrBuilder {
         int getFirstNullable();
 
@@ -619,7 +619,7 @@ public final class ProtoBuf {
         boolean hasFirstNullable();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface ValueParameterOrBuilder extends GeneratedMessageLite.ExtendableMessageOrBuilder<ValueParameter> {
         int getFlags();
 
@@ -646,7 +646,7 @@ public final class ProtoBuf {
         boolean hasVarargElementTypeId();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface VersionRequirementOrBuilder extends MessageLiteOrBuilder {
         int getErrorCode();
 
@@ -673,7 +673,7 @@ public final class ProtoBuf {
         boolean hasVersionKind();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public interface VersionRequirementTableOrBuilder extends MessageLiteOrBuilder {
         VersionRequirement getRequirement(int i);
 
@@ -848,7 +848,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class StringTable extends GeneratedMessageLite implements StringTableOrBuilder {
         public static Parser<StringTable> PARSER = new AbstractParser<StringTable>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.StringTable.1
             @Override // kotlinx.metadata.internal.protobuf.Parser
@@ -1082,7 +1082,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<StringTable, Builder> implements StringTableOrBuilder {
             private int bitField0_;
             private LazyStringList string_ = LazyStringArrayList.EMPTY;
@@ -1260,7 +1260,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class QualifiedNameTable extends GeneratedMessageLite implements QualifiedNameTableOrBuilder {
         public static Parser<QualifiedNameTable> PARSER = new AbstractParser<QualifiedNameTable>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.QualifiedNameTable.1
             @Override // kotlinx.metadata.internal.protobuf.Parser
@@ -1276,7 +1276,7 @@ public final class ProtoBuf {
         private List<QualifiedName> qualifiedName_;
         private final ByteString unknownFields;
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public interface QualifiedNameOrBuilder extends MessageLiteOrBuilder {
             QualifiedName.Kind getKind();
 
@@ -1387,7 +1387,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class QualifiedName extends GeneratedMessageLite implements QualifiedNameOrBuilder {
             public static final int KIND_FIELD_NUMBER = 3;
             public static final int PARENT_QUALIFIED_NAME_FIELD_NUMBER = 1;
@@ -1504,7 +1504,7 @@ public final class ProtoBuf {
                 return PARSER;
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public enum Kind implements Internal.EnumLite {
                 CLASS(0, 0),
                 PACKAGE(1, 1),
@@ -1698,7 +1698,7 @@ public final class ProtoBuf {
                 return newBuilder(this);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<QualifiedName, Builder> implements QualifiedNameOrBuilder {
                 private int bitField0_;
                 private int shortName_;
@@ -2029,7 +2029,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<QualifiedNameTable, Builder> implements QualifiedNameTableOrBuilder {
             private int bitField0_;
             private List<QualifiedName> qualifiedName_ = Collections.emptyList();
@@ -2231,7 +2231,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Annotation extends GeneratedMessageLite implements AnnotationOrBuilder {
         public static final int ARGUMENT_FIELD_NUMBER = 2;
         public static final int ID_FIELD_NUMBER = 1;
@@ -2250,7 +2250,7 @@ public final class ProtoBuf {
         private int memoizedSerializedSize;
         private final ByteString unknownFields;
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public interface ArgumentOrBuilder extends MessageLiteOrBuilder {
             int getNameId();
 
@@ -2360,7 +2360,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Argument extends GeneratedMessageLite implements ArgumentOrBuilder {
             public static final int NAME_ID_FIELD_NUMBER = 1;
             public static Parser<Argument> PARSER = new AbstractParser<Argument>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.Annotation.Argument.1
@@ -2379,7 +2379,7 @@ public final class ProtoBuf {
             private final ByteString unknownFields;
             private Value value_;
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public interface ValueOrBuilder extends MessageLiteOrBuilder {
                 Annotation getAnnotation();
 
@@ -2522,7 +2522,7 @@ public final class ProtoBuf {
                 return PARSER;
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public static final class Value extends GeneratedMessageLite implements ValueOrBuilder {
                 public static final int ANNOTATION_FIELD_NUMBER = 8;
                 public static final int ARRAY_DIMENSION_COUNT_FIELD_NUMBER = 11;
@@ -3109,7 +3109,7 @@ public final class ProtoBuf {
                     return newBuilder(this);
                 }
 
-                /* loaded from: classes5.dex */
+                /* loaded from: classes6.dex */
                 public static final class Builder extends GeneratedMessageLite.Builder<Value, Builder> implements ValueOrBuilder {
                     private int arrayDimensionCount_;
                     private int bitField0_;
@@ -3785,7 +3785,7 @@ public final class ProtoBuf {
                 return newBuilder(this);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Argument, Builder> implements ArgumentOrBuilder {
                 private int bitField0_;
                 private int nameId_;
@@ -4118,7 +4118,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Annotation, Builder> implements AnnotationOrBuilder {
             private List<Argument> argument_ = Collections.emptyList();
             private int bitField0_;
@@ -4354,7 +4354,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Type extends GeneratedMessageLite.ExtendableMessage<Type> implements TypeOrBuilder {
         public static final int ABBREVIATED_TYPE_FIELD_NUMBER = 13;
         public static final int ABBREVIATED_TYPE_ID_FIELD_NUMBER = 14;
@@ -4397,7 +4397,7 @@ public final class ProtoBuf {
         private int typeParameter_;
         private final ByteString unknownFields;
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public interface ArgumentOrBuilder extends MessageLiteOrBuilder {
             Argument.Projection getProjection();
 
@@ -4584,7 +4584,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Argument extends GeneratedMessageLite implements ArgumentOrBuilder {
             public static Parser<Argument> PARSER = new AbstractParser<Argument>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.Type.Argument.1
                 @Override // kotlinx.metadata.internal.protobuf.Parser
@@ -4709,7 +4709,7 @@ public final class ProtoBuf {
                 return PARSER;
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public enum Projection implements Internal.EnumLite {
                 IN(0, 0),
                 OUT(1, 1),
@@ -4908,7 +4908,7 @@ public final class ProtoBuf {
                 return newBuilder(this);
             }
 
-            /* loaded from: classes5.dex */
+            /* loaded from: classes6.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Argument, Builder> implements ArgumentOrBuilder {
                 private int bitField0_;
                 private int typeId_;
@@ -5490,7 +5490,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<Type, Builder> implements TypeOrBuilder {
             private int abbreviatedTypeId_;
             private int bitField0_;
@@ -6160,7 +6160,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class TypeParameter extends GeneratedMessageLite.ExtendableMessage<TypeParameter> implements TypeParameterOrBuilder {
         public static final int ID_FIELD_NUMBER = 1;
         public static final int NAME_FIELD_NUMBER = 2;
@@ -6328,7 +6328,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public enum Variance implements Internal.EnumLite {
             IN(0, 0),
             OUT(1, 1),
@@ -6617,7 +6617,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<TypeParameter, Builder> implements TypeParameterOrBuilder {
             private int bitField0_;
             private int id_;
@@ -7014,7 +7014,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Class extends GeneratedMessageLite.ExtendableMessage<Class> implements ClassOrBuilder {
         public static final int COMPANION_OBJECT_NAME_FIELD_NUMBER = 4;
         public static final int CONSTRUCTOR_FIELD_NUMBER = 8;
@@ -8427,7 +8427,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<Class, Builder> implements ClassOrBuilder {
             private int bitField0_;
             private int companionObjectName_;
@@ -10191,7 +10191,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Package extends GeneratedMessageLite.ExtendableMessage<Package> implements PackageOrBuilder {
         public static final int FUNCTION_FIELD_NUMBER = 3;
         public static Parser<Package> PARSER = new AbstractParser<Package>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.Package.1
@@ -10604,7 +10604,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<Package, Builder> implements PackageOrBuilder {
             private int bitField0_;
             private List<Function> function_ = Collections.emptyList();
@@ -11107,7 +11107,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class TypeTable extends GeneratedMessageLite implements TypeTableOrBuilder {
         public static final int FIRST_NULLABLE_FIELD_NUMBER = 2;
         public static Parser<TypeTable> PARSER = new AbstractParser<TypeTable>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.TypeTable.1
@@ -11375,7 +11375,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TypeTable, Builder> implements TypeTableOrBuilder {
             private int bitField0_;
             private List<Type> type_ = Collections.emptyList();
@@ -11609,7 +11609,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Constructor extends GeneratedMessageLite.ExtendableMessage<Constructor> implements ConstructorOrBuilder {
         public static final int FLAGS_FIELD_NUMBER = 1;
         public static Parser<Constructor> PARSER = new AbstractParser<Constructor>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.Constructor.1
@@ -11927,7 +11927,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<Constructor, Builder> implements ConstructorOrBuilder {
             private int bitField0_;
             private int flags_ = 6;
@@ -12224,7 +12224,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Function extends GeneratedMessageLite.ExtendableMessage<Function> implements FunctionOrBuilder {
         public static final int CONTEXT_RECEIVER_TYPE_FIELD_NUMBER = 10;
         public static final int CONTEXT_RECEIVER_TYPE_ID_FIELD_NUMBER = 11;
@@ -12969,7 +12969,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<Function, Builder> implements FunctionOrBuilder {
             private int bitField0_;
             private int name_;
@@ -13867,7 +13867,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Property extends GeneratedMessageLite.ExtendableMessage<Property> implements PropertyOrBuilder {
         public static final int CONTEXT_RECEIVER_TYPE_FIELD_NUMBER = 12;
         public static final int CONTEXT_RECEIVER_TYPE_ID_FIELD_NUMBER = 13;
@@ -14574,7 +14574,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<Property, Builder> implements PropertyOrBuilder {
             private int bitField0_;
             private int getterFlags_;
@@ -15382,7 +15382,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class ValueParameter extends GeneratedMessageLite.ExtendableMessage<ValueParameter> implements ValueParameterOrBuilder {
         public static final int FLAGS_FIELD_NUMBER = 1;
         public static final int NAME_FIELD_NUMBER = 2;
@@ -15736,7 +15736,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<ValueParameter, Builder> implements ValueParameterOrBuilder {
             private int bitField0_;
             private int flags_;
@@ -16070,7 +16070,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class TypeAlias extends GeneratedMessageLite.ExtendableMessage<TypeAlias> implements TypeAliasOrBuilder {
         public static final int ANNOTATION_FIELD_NUMBER = 8;
         public static final int EXPANDED_TYPE_FIELD_NUMBER = 6;
@@ -16595,7 +16595,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<TypeAlias, Builder> implements TypeAliasOrBuilder {
             private int bitField0_;
             private int expandedTypeId_;
@@ -17197,7 +17197,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class EnumEntry extends GeneratedMessageLite.ExtendableMessage<EnumEntry> implements EnumEntryOrBuilder {
         public static final int NAME_FIELD_NUMBER = 1;
         public static Parser<EnumEntry> PARSER = new AbstractParser<EnumEntry>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.EnumEntry.1
@@ -17413,7 +17413,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<EnumEntry, Builder> implements EnumEntryOrBuilder {
             private int bitField0_;
             private int name_;
@@ -17546,7 +17546,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class VersionRequirement extends GeneratedMessageLite implements VersionRequirementOrBuilder {
         public static final int ERROR_CODE_FIELD_NUMBER = 4;
         public static final int LEVEL_FIELD_NUMBER = 3;
@@ -17687,7 +17687,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public enum Level implements Internal.EnumLite {
             WARNING(0, 0),
             ERROR(1, 1),
@@ -17732,7 +17732,7 @@ public final class ProtoBuf {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public enum VersionKind implements Internal.EnumLite {
             LANGUAGE_VERSION(0, 0),
             COMPILER_VERSION(1, 1),
@@ -17973,7 +17973,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<VersionRequirement, Builder> implements VersionRequirementOrBuilder {
             private int bitField0_;
             private int errorCode_;
@@ -18267,7 +18267,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class VersionRequirementTable extends GeneratedMessageLite implements VersionRequirementTableOrBuilder {
         public static Parser<VersionRequirementTable> PARSER = new AbstractParser<VersionRequirementTable>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.VersionRequirementTable.1
             @Override // kotlinx.metadata.internal.protobuf.Parser
@@ -18506,7 +18506,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<VersionRequirementTable, Builder> implements VersionRequirementTableOrBuilder {
             private int bitField0_;
             private List<VersionRequirement> requirement_ = Collections.emptyList();
@@ -18703,7 +18703,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class PackageFragment extends GeneratedMessageLite.ExtendableMessage<PackageFragment> implements PackageFragmentOrBuilder {
         public static final int CLASS_FIELD_NUMBER = 4;
         public static final int PACKAGE_FIELD_NUMBER = 3;
@@ -19044,7 +19044,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.ExtendableBuilder<PackageFragment, Builder> implements PackageFragmentOrBuilder {
             private int bitField0_;
             private StringTable strings_ = StringTable.getDefaultInstance();
@@ -19400,7 +19400,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Contract extends GeneratedMessageLite implements ContractOrBuilder {
         public static final int EFFECT_FIELD_NUMBER = 1;
         public static Parser<Contract> PARSER = new AbstractParser<Contract>() { // from class: kotlinx.metadata.internal.metadata.ProtoBuf.Contract.1
@@ -19645,7 +19645,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Contract, Builder> implements ContractOrBuilder {
             private int bitField0_;
             private List<Effect> effect_ = Collections.emptyList();
@@ -19847,7 +19847,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Effect extends GeneratedMessageLite implements EffectOrBuilder {
         public static final int CONCLUSION_OF_CONDITIONAL_EFFECT_FIELD_NUMBER = 3;
         public static final int EFFECT_CONSTRUCTOR_ARGUMENT_FIELD_NUMBER = 2;
@@ -19993,7 +19993,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public enum EffectType implements Internal.EnumLite {
             RETURNS_CONSTANT(0, 0),
             CALLS(1, 1),
@@ -20038,7 +20038,7 @@ public final class ProtoBuf {
             }
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public enum InvocationKind implements Internal.EnumLite {
             AT_MOST_ONCE(0, 0),
             EXACTLY_ONCE(1, 1),
@@ -20268,7 +20268,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Effect, Builder> implements EffectOrBuilder {
             private int bitField0_;
             private EffectType effectType_ = EffectType.RETURNS_CONSTANT;
@@ -20585,7 +20585,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public static final class Expression extends GeneratedMessageLite implements ExpressionOrBuilder {
         public static final int AND_ARGUMENT_FIELD_NUMBER = 6;
         public static final int CONSTANT_VALUE_FIELD_NUMBER = 3;
@@ -20748,7 +20748,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public enum ConstantValue implements Internal.EnumLite {
             TRUE(0, 0),
             FALSE(1, 1),
@@ -21048,7 +21048,7 @@ public final class ProtoBuf {
             return newBuilder(this);
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Expression, Builder> implements ExpressionOrBuilder {
             private int bitField0_;
             private int flags_;

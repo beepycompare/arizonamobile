@@ -25,10 +25,10 @@ public final class ResultKt {
         Intrinsics.checkNotNullParameter(block, "block");
         try {
             Result.Companion companion = Result.Companion;
-            return Result.m9915constructorimpl(block.invoke());
+            return Result.m9916constructorimpl(block.invoke());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            return Result.m9915constructorimpl(createFailure(th));
+            return Result.m9916constructorimpl(createFailure(th));
         }
     }
 
@@ -36,10 +36,10 @@ public final class ResultKt {
         Intrinsics.checkNotNullParameter(block, "block");
         try {
             Result.Companion companion = Result.Companion;
-            return Result.m9915constructorimpl(block.invoke(t));
+            return Result.m9916constructorimpl(block.invoke(t));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            return Result.m9915constructorimpl(createFailure(th));
+            return Result.m9916constructorimpl(createFailure(th));
         }
     }
 
@@ -52,79 +52,79 @@ public final class ResultKt {
     /* JADX WARN: Multi-variable type inference failed */
     private static final <R, T extends R> R getOrElse(Object obj, Function1<? super Throwable, ? extends R> onFailure) {
         Intrinsics.checkNotNullParameter(onFailure, "onFailure");
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(obj);
-        return m9918exceptionOrNullimpl == null ? obj : onFailure.invoke(m9918exceptionOrNullimpl);
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(obj);
+        return m9919exceptionOrNullimpl == null ? obj : onFailure.invoke(m9919exceptionOrNullimpl);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     private static final <R, T extends R> R getOrDefault(Object obj, R r) {
-        return Result.m9921isFailureimpl(obj) ? r : obj;
+        return Result.m9922isFailureimpl(obj) ? r : obj;
     }
 
     private static final <R, T> R fold(Object obj, Function1<? super T, ? extends R> onSuccess, Function1<? super Throwable, ? extends R> onFailure) {
         Intrinsics.checkNotNullParameter(onSuccess, "onSuccess");
         Intrinsics.checkNotNullParameter(onFailure, "onFailure");
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(obj);
-        if (m9918exceptionOrNullimpl == null) {
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(obj);
+        if (m9919exceptionOrNullimpl == null) {
             return onSuccess.invoke(obj);
         }
-        return onFailure.invoke(m9918exceptionOrNullimpl);
+        return onFailure.invoke(m9919exceptionOrNullimpl);
     }
 
     private static final <R, T> Object map(Object obj, Function1<? super T, ? extends R> transform) {
         Intrinsics.checkNotNullParameter(transform, "transform");
-        if (Result.m9922isSuccessimpl(obj)) {
+        if (Result.m9923isSuccessimpl(obj)) {
             Result.Companion companion = Result.Companion;
-            return Result.m9915constructorimpl(transform.invoke(obj));
+            return Result.m9916constructorimpl(transform.invoke(obj));
         }
-        return Result.m9915constructorimpl(obj);
+        return Result.m9916constructorimpl(obj);
     }
 
     private static final <R, T> Object mapCatching(Object obj, Function1<? super T, ? extends R> transform) {
         Intrinsics.checkNotNullParameter(transform, "transform");
-        if (Result.m9922isSuccessimpl(obj)) {
+        if (Result.m9923isSuccessimpl(obj)) {
             try {
                 Result.Companion companion = Result.Companion;
-                return Result.m9915constructorimpl(transform.invoke(obj));
+                return Result.m9916constructorimpl(transform.invoke(obj));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                return Result.m9915constructorimpl(createFailure(th));
+                return Result.m9916constructorimpl(createFailure(th));
             }
         }
-        return Result.m9915constructorimpl(obj);
+        return Result.m9916constructorimpl(obj);
     }
 
     private static final <R, T extends R> Object recover(Object obj, Function1<? super Throwable, ? extends R> transform) {
         Intrinsics.checkNotNullParameter(transform, "transform");
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(obj);
-        if (m9918exceptionOrNullimpl == null) {
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(obj);
+        if (m9919exceptionOrNullimpl == null) {
             return obj;
         }
         Result.Companion companion = Result.Companion;
-        return Result.m9915constructorimpl(transform.invoke(m9918exceptionOrNullimpl));
+        return Result.m9916constructorimpl(transform.invoke(m9919exceptionOrNullimpl));
     }
 
     private static final <R, T extends R> Object recoverCatching(Object obj, Function1<? super Throwable, ? extends R> transform) {
         Intrinsics.checkNotNullParameter(transform, "transform");
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(obj);
-        if (m9918exceptionOrNullimpl == null) {
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(obj);
+        if (m9919exceptionOrNullimpl == null) {
             return obj;
         }
         try {
             Result.Companion companion = Result.Companion;
-            return Result.m9915constructorimpl(transform.invoke(m9918exceptionOrNullimpl));
+            return Result.m9916constructorimpl(transform.invoke(m9919exceptionOrNullimpl));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            return Result.m9915constructorimpl(createFailure(th));
+            return Result.m9916constructorimpl(createFailure(th));
         }
     }
 
     @IgnorableReturnValue
     private static final <T> Object onFailure(Object obj, Function1<? super Throwable, Unit> action) {
         Intrinsics.checkNotNullParameter(action, "action");
-        Throwable m9918exceptionOrNullimpl = Result.m9918exceptionOrNullimpl(obj);
-        if (m9918exceptionOrNullimpl != null) {
-            action.invoke(m9918exceptionOrNullimpl);
+        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(obj);
+        if (m9919exceptionOrNullimpl != null) {
+            action.invoke(m9919exceptionOrNullimpl);
         }
         return obj;
     }
@@ -132,7 +132,7 @@ public final class ResultKt {
     @IgnorableReturnValue
     private static final <T> Object onSuccess(Object obj, Function1<? super T, Unit> action) {
         Intrinsics.checkNotNullParameter(action, "action");
-        if (Result.m9922isSuccessimpl(obj)) {
+        if (Result.m9923isSuccessimpl(obj)) {
             action.invoke(obj);
         }
         return obj;

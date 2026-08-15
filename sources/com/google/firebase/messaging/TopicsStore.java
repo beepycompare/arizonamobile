@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.Executor;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class TopicsStore {
     private static final String DIVIDER_QUEUE_OPERATIONS = ",";
     static final String KEY_TOPIC_OPERATIONS_QUEUE = "topic_operation_queue";

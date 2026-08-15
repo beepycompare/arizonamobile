@@ -1,5 +1,6 @@
 package ru.mrlargha.feature.mobile.presentation.page.messenger.api;
 
+import com.google.common.net.HttpHeaders;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import okhttp3.Interceptor;
@@ -26,7 +27,7 @@ public final class MessengerRetrofitClient {
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
                 Intrinsics.checkNotNullParameter(chain, "chain");
-                return chain.proceed(chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
+                return chain.proceed(chain.request().newBuilder().addHeader(HttpHeaders.USER_AGENT, "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
             }
         });
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);

@@ -1,5 +1,6 @@
 package com.miami.game.core.server;
 
+import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.miami.game.core.server.data.FavoriteServerDatabase;
 import com.miami.game.core.server.data.FavoriteServerEntityKt;
@@ -68,7 +69,7 @@ public final class ServersInteractor$favoriteServerStartGame$1 extends SuspendLa
         ServerModel serverModel = this.$serverModel;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default((ServersState) value, serverModel, null, null, null, null, null, false, 0, 254, null)));
+        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default((ServersState) value, serverModel, null, null, null, null, null, false, 0, LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_MASK, null)));
         return Unit.INSTANCE;
     }
 }

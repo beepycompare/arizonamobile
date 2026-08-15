@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* compiled from: FirebaseSessionsDependencies.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 @DebugMetadata(c = "com.google.firebase.sessions.api.FirebaseSessionsDependencies", f = "FirebaseSessionsDependencies.kt", i = {0, 0}, l = {76}, m = "getRegisteredSubscribers$com_google_firebase_firebase_sessions", n = {"destination$iv$iv", "subscriberName"}, s = {"L$0", "L$2"})
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class FirebaseSessionsDependencies$getRegisteredSubscribers$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

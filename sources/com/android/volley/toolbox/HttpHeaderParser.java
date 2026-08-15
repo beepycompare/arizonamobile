@@ -73,9 +73,9 @@ public class HttpHeaderParser {
         }
         String str3 = map.get(HttpHeaders.EXPIRES);
         long parseDateAsEpoch2 = str3 != null ? parseDateAsEpoch(str3) : j;
-        String str4 = map.get(HttpHeaders.LAST_MODIFIED);
+        String str4 = map.get("Last-Modified");
         long parseDateAsEpoch3 = str4 != null ? parseDateAsEpoch(str4) : j;
-        String str5 = map.get(HttpHeaders.ETAG);
+        String str5 = map.get("ETag");
         if (i != 0) {
             long j6 = currentTimeMillis + (j2 * 1000);
             j5 = z ? j6 : (j3 * 1000) + j6;

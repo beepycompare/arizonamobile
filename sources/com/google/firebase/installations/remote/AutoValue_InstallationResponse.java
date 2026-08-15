@@ -1,7 +1,7 @@
 package com.google.firebase.installations.remote;
 
 import com.google.firebase.installations.remote.InstallationResponse;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_InstallationResponse extends InstallationResponse {
     private final TokenResult authToken;
     private final String fid;
@@ -90,7 +90,7 @@ final class AutoValue_InstallationResponse extends InstallationResponse {
         return new Builder(this);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static final class Builder extends InstallationResponse.Builder {
         private TokenResult authToken;
         private String fid;

@@ -81,7 +81,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class color {
-        public static int preference_fallback_accent_color = 0x7f06042b;
+        public static int preference_fallback_accent_color = 0x7f06042c;
 
         private color() {
         }
@@ -103,8 +103,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_arrow_down_24dp = 0x7f080af3;
-        public static int preference_list_divider_material = 0x7f080ecd;
+        public static int ic_arrow_down_24dp = 0x7f080af8;
+        public static int preference_list_divider_material = 0x7f080ecf;
 
         private drawable() {
         }
@@ -137,8 +137,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class layout {
-        public static int expand_button = 0x7f0d0103;
-        public static int image_frame = 0x7f0d0173;
+        public static int expand_button = 0x7f0d0107;
+        public static int image_frame = 0x7f0d0177;
         public static int preference = 0x7f0d025a;
         public static int preference_category = 0x7f0d025b;
         public static int preference_category_material = 0x7f0d025c;
@@ -162,13 +162,13 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int copy = 0x7f1201eb;
-        public static int expand_button_title = 0x7f1202ca;
-        public static int not_set = 0x7f12057d;
-        public static int preference_copied = 0x7f1205cd;
-        public static int summary_collapsed_preference_list = 0x7f120691;
-        public static int v7_preference_off = 0x7f1206c6;
-        public static int v7_preference_on = 0x7f1206c7;
+        public static int copy = 0x7f1201f0;
+        public static int expand_button_title = 0x7f1202cf;
+        public static int not_set = 0x7f120584;
+        public static int preference_copied = 0x7f1205d4;
+        public static int summary_collapsed_preference_list = 0x7f120698;
+        public static int v7_preference_off = 0x7f1206cd;
+        public static int v7_preference_on = 0x7f1206ce;
 
         private string() {
         }

@@ -7,7 +7,7 @@ import okio.Buffer;
 import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.ByteString;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract class JsonReader implements Closeable {
     private static final String[] REPLACEMENT_CHARS = new String[128];
     boolean failOnUnknown;
@@ -17,7 +17,7 @@ public abstract class JsonReader implements Closeable {
     String[] pathNames = new String[32];
     int[] pathIndices = new int[32];
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum Token {
         BEGIN_ARRAY,
         END_ARRAY,
@@ -106,7 +106,7 @@ public abstract class JsonReader implements Closeable {
         return JsonScope.getPath(this.stackSize, this.scopes, this.pathNames, this.pathIndices);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes5.dex */
     public static final class Options {
         final okio.Options doubleQuoteSuffix;
         final String[] strings;

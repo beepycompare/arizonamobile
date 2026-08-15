@@ -206,7 +206,7 @@ public final class FacebookRequestError {
                         optInt = optInt3;
                         i2 = optInt2;
                     } else {
-                        if (!jSONObject2.has(ERROR_CODE_KEY) && !jSONObject2.has(ERROR_MSG_KEY) && !jSONObject2.has(ERROR_REASON_KEY)) {
+                        if (!jSONObject2.has("error_code") && !jSONObject2.has(ERROR_MSG_KEY) && !jSONObject2.has(ERROR_REASON_KEY)) {
                             z = false;
                             str = "body";
                             str2 = null;
@@ -218,7 +218,7 @@ public final class FacebookRequestError {
                         }
                         optString = jSONObject2.optString(ERROR_REASON_KEY, null);
                         optString2 = jSONObject2.optString(ERROR_MSG_KEY, null);
-                        i2 = jSONObject2.optInt(ERROR_CODE_KEY, -1);
+                        i2 = jSONObject2.optInt("error_code", -1);
                         str = "body";
                         optInt = jSONObject2.optInt(ERROR_SUB_CODE_KEY, -1);
                     }

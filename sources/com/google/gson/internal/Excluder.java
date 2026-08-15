@@ -18,7 +18,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Excluder implements TypeAdapterFactory, Cloneable {
     public static final Excluder DEFAULT = new Excluder();
     private static final double IGNORE_VERSIONS = -1.0d;
@@ -31,7 +31,7 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: clone */
-    public Excluder m9780clone() {
+    public Excluder m9781clone() {
         try {
             return (Excluder) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -40,45 +40,45 @@ public final class Excluder implements TypeAdapterFactory, Cloneable {
     }
 
     public Excluder withVersion(double d) {
-        Excluder m9780clone = m9780clone();
-        m9780clone.version = d;
-        return m9780clone;
+        Excluder m9781clone = m9781clone();
+        m9781clone.version = d;
+        return m9781clone;
     }
 
     public Excluder withModifiers(int... iArr) {
-        Excluder m9780clone = m9780clone();
-        m9780clone.modifiers = 0;
+        Excluder m9781clone = m9781clone();
+        m9781clone.modifiers = 0;
         for (int i : iArr) {
-            m9780clone.modifiers = i | m9780clone.modifiers;
+            m9781clone.modifiers = i | m9781clone.modifiers;
         }
-        return m9780clone;
+        return m9781clone;
     }
 
     public Excluder disableInnerClassSerialization() {
-        Excluder m9780clone = m9780clone();
-        m9780clone.serializeInnerClasses = false;
-        return m9780clone;
+        Excluder m9781clone = m9781clone();
+        m9781clone.serializeInnerClasses = false;
+        return m9781clone;
     }
 
     public Excluder excludeFieldsWithoutExposeAnnotation() {
-        Excluder m9780clone = m9780clone();
-        m9780clone.requireExpose = true;
-        return m9780clone;
+        Excluder m9781clone = m9781clone();
+        m9781clone.requireExpose = true;
+        return m9781clone;
     }
 
     public Excluder withExclusionStrategy(ExclusionStrategy exclusionStrategy, boolean z, boolean z2) {
-        Excluder m9780clone = m9780clone();
+        Excluder m9781clone = m9781clone();
         if (z) {
             ArrayList arrayList = new ArrayList(this.serializationStrategies);
-            m9780clone.serializationStrategies = arrayList;
+            m9781clone.serializationStrategies = arrayList;
             arrayList.add(exclusionStrategy);
         }
         if (z2) {
             ArrayList arrayList2 = new ArrayList(this.deserializationStrategies);
-            m9780clone.deserializationStrategies = arrayList2;
+            m9781clone.deserializationStrategies = arrayList2;
             arrayList2.add(exclusionStrategy);
         }
-        return m9780clone;
+        return m9781clone;
     }
 
     @Override // com.google.gson.TypeAdapterFactory

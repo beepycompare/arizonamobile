@@ -6,7 +6,6 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.os.Process;
 import android.util.Log;
-import androidx.compose.runtime.ComposerKt;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.android.vending.expansion.downloader.Helpers;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
@@ -114,7 +113,7 @@ public class DownloadThread {
     private void addRequestHeaders(InnerState innerState, HttpGet httpGet) {
         if (innerState.mContinuingDownload) {
             if (innerState.mHeaderETag != null) {
-                httpGet.addHeader("If-Match", innerState.mHeaderETag);
+                httpGet.addHeader(HttpHeaders.IF_MATCH, innerState.mHeaderETag);
             }
             httpGet.addHeader("Range", "bytes=" + innerState.mBytesSoFar + Constants.FILENAME_SEQUENCE_SEPARATOR);
         }
@@ -229,7 +228,7 @@ public class DownloadThread {
         if (statusCode == 301 || statusCode == 302 || statusCode == 303 || statusCode == 307) {
             handleRedirect(state, httpResponse, statusCode);
         }
-        if (statusCode != (innerState.mContinuingDownload ? ComposerKt.referenceKey : 200)) {
+        if (statusCode != (innerState.mContinuingDownload ? 206 : 200)) {
             handleOtherStatus(state, innerState, statusCode);
         } else {
             state.mRedirectCount = 0;
@@ -244,7 +243,7 @@ public class DownloadThread {
         if (state.mRedirectCount >= 10) {
             throw new StopRequest(497, "too many redirects");
         }
-        Header firstHeader = httpResponse.getFirstHeader(HttpHeaders.LOCATION);
+        Header firstHeader = httpResponse.getFirstHeader("Location");
         if (firstHeader == null) {
             return;
         }
@@ -366,7 +365,7 @@ public class DownloadThread {
 
     private void readResponseHeaders(State state, InnerState innerState, HttpResponse httpResponse) throws StopRequest {
         Header firstHeader;
-        Header firstHeader2 = httpResponse.getFirstHeader("Content-Disposition");
+        Header firstHeader2 = httpResponse.getFirstHeader(HttpHeaders.CONTENT_DISPOSITION);
         if (firstHeader2 != null) {
             innerState.mHeaderContentDisposition = firstHeader2.getValue();
         }
@@ -374,17 +373,17 @@ public class DownloadThread {
         if (firstHeader3 != null) {
             innerState.mHeaderContentLocation = firstHeader3.getValue();
         }
-        Header firstHeader4 = httpResponse.getFirstHeader(HttpHeaders.ETAG);
+        Header firstHeader4 = httpResponse.getFirstHeader("ETag");
         if (firstHeader4 != null) {
             innerState.mHeaderETag = firstHeader4.getValue();
         }
-        Header firstHeader5 = httpResponse.getFirstHeader("Transfer-Encoding");
+        Header firstHeader5 = httpResponse.getFirstHeader(HttpHeaders.TRANSFER_ENCODING);
         String value = firstHeader5 != null ? firstHeader5.getValue() : null;
         Header firstHeader6 = httpResponse.getFirstHeader("Content-Type");
         if (firstHeader6 != null && !firstHeader6.getValue().equals("application/vnd.android.obb")) {
             throw new StopRequest(DownloaderService.STATUS_FILE_DELIVERED_INCORRECTLY, "file delivered with incorrect Mime type");
         }
-        if (value == null && (firstHeader = httpResponse.getFirstHeader("Content-Length")) != null) {
+        if (value == null && (firstHeader = httpResponse.getFirstHeader(HttpHeaders.CONTENT_LENGTH)) != null) {
             innerState.mHeaderContentLength = firstHeader.getValue();
             long parseLong = Long.parseLong(innerState.mHeaderContentLength);
             if (parseLong != -1 && parseLong != this.mInfo.mTotalBytes) {

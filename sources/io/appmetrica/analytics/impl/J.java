@@ -7,13 +7,13 @@ public final class J implements Provider {
 
     /* renamed from: a  reason: collision with root package name */
     public final /* synthetic */ Context f603a;
-    public final /* synthetic */ InterfaceC0152bj b;
+    public final /* synthetic */ InterfaceC0151bj b;
     public final /* synthetic */ K c;
 
-    public J(K k, Context context, InterfaceC0152bj interfaceC0152bj) {
+    public J(K k, Context context, InterfaceC0151bj interfaceC0151bj) {
         this.c = k;
         this.f603a = context;
-        this.b = interfaceC0152bj;
+        this.b = interfaceC0151bj;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider

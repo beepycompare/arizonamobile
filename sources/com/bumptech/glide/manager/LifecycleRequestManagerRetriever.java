@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class LifecycleRequestManagerRetriever {
     private final RequestManagerRetriever.RequestManagerFactory factory;
     final Map<androidx.lifecycle.Lifecycle, RequestManager> lifecycleToRequestManager = new HashMap();
@@ -58,7 +58,7 @@ public final class LifecycleRequestManagerRetriever {
         return only;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     private final class SupportRequestManagerTreeNode implements RequestManagerTreeNode {
         private final FragmentManager childFragmentManager;
 

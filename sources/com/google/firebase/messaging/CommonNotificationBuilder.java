@@ -23,7 +23,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.cloudmessaging.CloudMessagingReceiver;
 import com.google.firebase.messaging.Constants;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class CommonNotificationBuilder {
     private static final String ACTION_RECEIVER = "com.google.android.c2dm.intent.RECEIVE";
     public static final String FCM_FALLBACK_NOTIFICATION_CHANNEL = "fcm_fallback_notification_channel";
@@ -309,7 +309,7 @@ public final class CommonNotificationBuilder {
         return !TextUtils.isEmpty(string) ? string : "FCM-Notification:" + SystemClock.uptimeMillis();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class DisplayNotificationInfo {
         public final int id;
         public final NotificationCompat.Builder notificationBuilder;

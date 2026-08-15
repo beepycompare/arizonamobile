@@ -7,15 +7,15 @@ public final class Fh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f550a;
-    public final C0242f6 b;
+    public final C0241f6 b;
     public final Bundle c;
-    public final C0550r4 d;
+    public final C0549r4 d;
 
-    public Fh(Context context, C0242f6 c0242f6, Bundle bundle, C0550r4 c0550r4) {
+    public Fh(Context context, C0241f6 c0241f6, Bundle bundle, C0549r4 c0549r4) {
         this.f550a = context;
-        this.b = c0242f6;
+        this.b = c0241f6;
         this.c = bundle;
-        this.d = c0550r4;
+        this.d = c0549r4;
     }
 
     @Override // java.lang.Runnable
@@ -25,16 +25,16 @@ public final class Fh implements Runnable {
             if (a2 == null) {
                 return;
             }
-            C0266g4 a3 = C0266g4.a(a2);
+            C0265g4 a3 = C0265g4.a(a2);
             Fj v = Na.I.v();
             v.a(a2.b.getAppVersion(), a2.b.getAppBuildNumber());
             v.a(a2.b.getDeviceType());
             G4 g4 = new G4(new Bm(a2), new F4(a2.b, Ib.c(a2.f852a.f930a.getAsString("PROCESS_CFG_CLIDS"))), a2.f852a.b);
             this.d.a(a3, g4).a(this.b, g4);
         } catch (Throwable th) {
-            C0541qk c0541qk = Oj.f708a;
-            c0541qk.getClass();
-            c0541qk.a(new Pj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
+            C0540qk c0540qk = Oj.f708a;
+            c0540qk.getClass();
+            c0540qk.a(new Pj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
         }
     }
 }

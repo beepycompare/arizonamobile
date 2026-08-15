@@ -3,7 +3,7 @@ package com.bda.controller;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.SparseArray;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MotionEvent extends BaseEvent implements Parcelable {
     public static final int AXIS_LTRIGGER = 17;
     public static final int AXIS_RTRIGGER = 18;
@@ -15,7 +15,7 @@ public final class MotionEvent extends BaseEvent implements Parcelable {
     final SparseArray<Float> mAxis;
     final SparseArray<Float> mPrecision;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     static class ParcelableCreator implements Parcelable.Creator<MotionEvent> {
         ParcelableCreator() {
         }

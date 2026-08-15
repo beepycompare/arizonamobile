@@ -848,7 +848,7 @@ public final class DialogBuyCrypto extends AbstractDialog {
     }
 
     private final long applyCommission(long j, int i) {
-        Long m9915constructorimpl;
+        Long m9916constructorimpl;
         if (j <= 0 || i <= 0) {
             return RangesKt.coerceAtLeast(j, 0L);
         }
@@ -856,15 +856,15 @@ public final class DialogBuyCrypto extends AbstractDialog {
         try {
             Result.Companion companion = Result.Companion;
             DialogBuyCrypto dialogBuyCrypto = this;
-            m9915constructorimpl = Result.m9915constructorimpl(Long.valueOf(Math.multiplyExact(j, j2) / 100));
+            m9916constructorimpl = Result.m9916constructorimpl(Long.valueOf(Math.multiplyExact(j, j2) / 100));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9921isFailureimpl(m9915constructorimpl)) {
-            m9915constructorimpl = Long.MAX_VALUE;
+        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+            m9916constructorimpl = Long.MAX_VALUE;
         }
-        return ((Number) m9915constructorimpl).longValue();
+        return ((Number) m9916constructorimpl).longValue();
     }
 
     private final Long firstMoneyValue(List<Regex> list, String str) {

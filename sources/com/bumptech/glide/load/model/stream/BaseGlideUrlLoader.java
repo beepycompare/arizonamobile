@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class BaseGlideUrlLoader<Model> implements ModelLoader<Model, InputStream> {
     private final ModelLoader<GlideUrl, InputStream> concreteLoader;
     private final ModelCache<Model, GlideUrl> modelCache;

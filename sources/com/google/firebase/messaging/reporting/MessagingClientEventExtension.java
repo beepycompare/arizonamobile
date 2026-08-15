@@ -4,7 +4,7 @@ import com.google.firebase.encoders.annotations.Encodable;
 import com.google.firebase.messaging.ProtoEncoderDoNotUse;
 import java.io.IOException;
 import java.io.OutputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class MessagingClientEventExtension {
     private static final MessagingClientEventExtension DEFAULT_INSTANCE = new Builder().build();
     private final MessagingClientEvent messaging_client_event_;
@@ -40,7 +40,7 @@ public final class MessagingClientEventExtension {
         return DEFAULT_INSTANCE;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder {
         private MessagingClientEvent messaging_client_event_ = null;
 

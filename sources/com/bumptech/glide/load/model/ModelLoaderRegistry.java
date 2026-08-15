@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class ModelLoaderRegistry {
     private final ModelLoaderCache cache;
     private final MultiModelLoaderFactory multiModelLoaderFactory;
@@ -94,7 +94,7 @@ public class ModelLoaderRegistry {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class ModelLoaderCache {
         private final Map<Class<?>, Entry<?>> cachedModelLoaders = new HashMap();
 
@@ -120,7 +120,7 @@ public class ModelLoaderRegistry {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static class Entry<Model> {
             final List<ModelLoader<Model, ?>> loaders;
 

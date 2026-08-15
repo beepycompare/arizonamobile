@@ -23,7 +23,7 @@ import com.google.firebase.sessions.settings.SessionsSettings_Factory;
 import com.google.firebase.sessions.settings.SettingsCacheImpl;
 import com.google.firebase.sessions.settings.SettingsCacheImpl_Factory;
 import kotlin.coroutines.CoroutineContext;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class DaggerFirebaseSessionsComponent {
     private DaggerFirebaseSessionsComponent() {
     }
@@ -32,7 +32,7 @@ public final class DaggerFirebaseSessionsComponent {
         return new Builder();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class Builder implements FirebaseSessionsComponent.Builder {
         private Context appContext;
         private CoroutineContext backgroundDispatcher;
@@ -97,7 +97,7 @@ public final class DaggerFirebaseSessionsComponent {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class FirebaseSessionsComponentImpl implements FirebaseSessionsComponent {
         com.google.firebase.sessions.dagger.internal.Provider<Context> appContextProvider;
         com.google.firebase.sessions.dagger.internal.Provider<ApplicationInfo> applicationInfoProvider;

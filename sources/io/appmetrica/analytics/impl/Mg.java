@@ -8,11 +8,11 @@ import com.adjust.sdk.Constants;
 public final class Mg extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0770zg f667a;
+    public final C0769zg f667a;
 
-    public Mg(Handler handler, C0770zg c0770zg) {
+    public Mg(Handler handler, C0769zg c0769zg) {
         super(handler);
-        this.f667a = c0770zg;
+        this.f667a = c0769zg;
     }
 
     public static void a(ResultReceiver resultReceiver, Bg bg) {

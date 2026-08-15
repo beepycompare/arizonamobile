@@ -2,7 +2,7 @@ package com.google.firebase.remoteconfig.interop.rollouts;
 
 import java.util.Set;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AutoValue_RolloutsState extends RolloutsState {
     private final Set<RolloutAssignment> rolloutAssignments;
 

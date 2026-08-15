@@ -3,6 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import io.appmetrica.analytics.coreapi.internal.data.TempCacheStorage;
 import io.appmetrica.analytics.coreutils.internal.buffering.DeferredBatchExecutor;
 import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
@@ -17,7 +18,7 @@ public final class Un implements TempCacheStorage {
     public final Q6 f801a;
     public final String b;
     public final SystemTimeProvider c = new SystemTimeProvider();
-    public final C0472o3 d = new C0472o3(new Tn(this));
+    public final C0471o3 d = new C0471o3(new Tn(this));
 
     public Un(Q6 q6, String str) {
         this.f801a = q6;
@@ -107,12 +108,12 @@ public final class Un implements TempCacheStorage {
         }
         if (sQLiteDatabase != null) {
             try {
-                cursor = sQLiteDatabase.query(false, this.b, null, "scope=?", new String[]{str}, null, null, "id", String.valueOf(i));
+                cursor = sQLiteDatabase.query(false, this.b, null, "scope=?", new String[]{str}, null, null, TtmlNode.ATTR_ID, String.valueOf(i));
                 if (cursor != null) {
                     while (cursor.moveToNext()) {
                         try {
                             try {
-                                wn = new Wn(cursor.getLong(cursor.getColumnIndexOrThrow("id")), cursor.getString(cursor.getColumnIndexOrThrow("scope")), cursor.getLong(cursor.getColumnIndexOrThrow("timestamp")), cursor.getBlob(cursor.getColumnIndexOrThrow("data")));
+                                wn = new Wn(cursor.getLong(cursor.getColumnIndexOrThrow(TtmlNode.ATTR_ID)), cursor.getString(cursor.getColumnIndexOrThrow("scope")), cursor.getLong(cursor.getColumnIndexOrThrow("timestamp")), cursor.getBlob(cursor.getColumnIndexOrThrow("data")));
                             } catch (Throwable unused2) {
                                 wn = null;
                             }

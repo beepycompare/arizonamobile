@@ -6,6 +6,7 @@ import com.arizona.game.BuildConfig;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
+import com.google.common.net.HttpHeaders;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
@@ -159,7 +160,7 @@ public final class FirebaseConfigHelper {
         }
         try {
             try {
-                Response execute = httpClient.newCall(new Request.Builder().url("https://" + extractHost + "/ping.json").header("User-Agent", "Arizona Mobile").get().build()).execute();
+                Response execute = httpClient.newCall(new Request.Builder().url("https://" + extractHost + "/ping.json").header(HttpHeaders.USER_AGENT, "Arizona Mobile").get().build()).execute();
                 Response response = execute;
                 if (response.isSuccessful()) {
                     ResponseBody body = response.body();
@@ -227,20 +228,20 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean hasReserve(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
+            m9916constructorimpl = Result.m9916constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9922isSuccessimpl(m9915constructorimpl);
+        return Result.m9923isSuccessimpl(m9916constructorimpl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String fetchLink(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         String rawLink = getRawLink(firebaseConfigLinks);
         if (isServiceAvailable(rawLink)) {
             return rawLink;
@@ -248,15 +249,15 @@ public final class FirebaseConfigHelper {
         try {
             Result.Companion companion = Result.Companion;
             FirebaseConfigHelper firebaseConfigHelper = this;
-            m9915constructorimpl = Result.m9915constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
+            m9916constructorimpl = Result.m9916constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9921isFailureimpl(m9915constructorimpl)) {
-            m9915constructorimpl = null;
+        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+            m9916constructorimpl = null;
         }
-        String str = (String) m9915constructorimpl;
+        String str = (String) m9916constructorimpl;
         if (str != null && isServiceAvailable(str)) {
             Log.w("FirebaseSrvHandler", "fetchLink: primary=" + firebaseConfigLinks.getKey() + " down, fall back to reserve");
             return str;
@@ -543,7 +544,7 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence getChannelsState$lambda$0(FirebaseConfigLinks linkType) {
-        Object m9915constructorimpl;
+        Object m9916constructorimpl;
         Intrinsics.checkNotNullParameter(linkType, "linkType");
         String str = linkCache.get(linkType);
         if (str == null) {
@@ -553,15 +554,15 @@ public final class FirebaseConfigHelper {
         String rawLink = firebaseConfigHelper.getRawLink(linkType);
         try {
             Result.Companion companion = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
+            m9916constructorimpl = Result.m9916constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9915constructorimpl = Result.m9915constructorimpl(ResultKt.createFailure(th));
+            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9921isFailureimpl(m9915constructorimpl)) {
-            m9915constructorimpl = null;
+        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+            m9916constructorimpl = null;
         }
-        String str2 = (String) m9915constructorimpl;
+        String str2 = (String) m9916constructorimpl;
         if (!Intrinsics.areEqual(str, rawLink) && Intrinsics.areEqual(str, str2)) {
             return "1";
         }

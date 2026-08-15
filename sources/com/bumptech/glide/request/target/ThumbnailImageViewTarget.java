@@ -3,7 +3,7 @@ package com.bumptech.glide.request.target;
 import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public abstract class ThumbnailImageViewTarget<T> extends ImageViewTarget<T> {
     protected abstract Drawable getDrawable(T t);
 

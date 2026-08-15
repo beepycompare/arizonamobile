@@ -16,7 +16,7 @@ import java.util.Objects;
 import java.util.Properties;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.url._UrlKt;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class GsonTypes {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     static final Type[] EMPTY_TYPE_ARRAY = new Type[0];
@@ -347,7 +347,7 @@ public final class GsonTypes {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class ParameterizedTypeImpl implements ParameterizedType {
         private final Type ownerType;
         private final Type rawType;
@@ -416,7 +416,7 @@ public final class GsonTypes {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class GenericArrayTypeImpl implements GenericArrayType {
         private final Type componentType;
 
@@ -444,7 +444,7 @@ public final class GsonTypes {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class WildcardTypeImpl implements WildcardType {
         private final Type lowerBound;
         private final Type upperBound;

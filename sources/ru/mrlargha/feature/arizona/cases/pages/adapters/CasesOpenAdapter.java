@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
@@ -112,7 +113,7 @@ public final class CasesOpenAdapter extends ListAdapter<CasesGuaranteedPrizeMode
     }
 
     /* compiled from: CasesOpenAdapter.kt */
-    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rJ\u0018\u0010\u000e\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J \u0010\u000f\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\r2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0014"}, d2 = {"Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesOpenAdapter$OpenViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesOpenItemBinding;", "<init>", "(Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesOpenAdapter;Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesOpenItemBinding;)V", "getBinding", "()Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesOpenItemBinding;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/arizona/cases/CasesGuaranteedPrizeModel;", "position", "", "initialize", "setupListeners", "id", "cost", "isHave", "", "cases"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rJ\u0018\u0010\u000e\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\rH\u0002J \u0010\u000f\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\r2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0014"}, d2 = {"Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesOpenAdapter$OpenViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesOpenItemBinding;", "<init>", "(Lru/mrlargha/feature/arizona/cases/pages/adapters/CasesOpenAdapter;Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesOpenItemBinding;)V", "getBinding", "()Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesOpenItemBinding;", "onBind", "", CommonUrlParts.MODEL, "Lru/mrlargha/feature/arizona/cases/CasesGuaranteedPrizeModel;", "position", "", "initialize", "setupListeners", TtmlNode.ATTR_ID, "cost", "isHave", "", "cases"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public final class OpenViewHolder extends RecyclerView.ViewHolder {
         private final ArizonaCasesOpenItemBinding binding;
@@ -204,7 +205,7 @@ public final class CasesOpenAdapter extends ListAdapter<CasesGuaranteedPrizeMode
                     Intrinsics.checkNotNullExpressionValue(ivPrize2, "ivPrize");
                     CasesResponseKt.getCaseImageUrl(ivPrize2, itemsInfo.getIcon());
                 }
-                arizonaCasesOpenItemBinding.tvTitle.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m11912getCount());
+                arizonaCasesOpenItemBinding.tvTitle.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m11913getCount());
             }
             arizonaCasesOpenItemBinding.tvCost.setText("+" + casesGuaranteedPrizeModel.getShards());
             TextView tvClose = arizonaCasesOpenItemBinding.tvClose;

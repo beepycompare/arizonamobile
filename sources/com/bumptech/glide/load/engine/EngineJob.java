@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     private static final EngineResourceFactory DEFAULT_FACTORY = new EngineResourceFactory();
     private final GlideExecutor animationExecutor;
@@ -280,7 +280,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class CallLoadFailed implements Runnable {
         private final ResourceCallback cb;
 
@@ -302,7 +302,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class CallResourceReady implements Runnable {
         private final ResourceCallback cb;
 
@@ -326,7 +326,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ResourceCallbacksAndExecutors implements Iterable<ResourceCallbackAndExecutor> {
         private final List<ResourceCallbackAndExecutor> callbacksAndExecutors;
 
@@ -377,7 +377,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class ResourceCallbackAndExecutor {
         final ResourceCallback cb;
         final Executor executor;
@@ -400,7 +400,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static class EngineResourceFactory {
         EngineResourceFactory() {
         }

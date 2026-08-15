@@ -2,7 +2,7 @@ package com.google.firebase.platforminfo;
 
 import javax.annotation.Nonnull;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class LibraryVersion {
     @Nonnull
     public abstract String getLibraryName();

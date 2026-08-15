@@ -2,7 +2,7 @@ package com.google.firebase.installations;
 
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.installations.local.PersistedInstallationEntry;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class GetIdListener implements StateListener {
     final TaskCompletionSource<String> taskCompletionSource;
 

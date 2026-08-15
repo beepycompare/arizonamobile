@@ -21,14 +21,14 @@ public final class Fj implements SdkEnvironmentProvider {
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f552a;
-    public final C0377kc b = new C0377kc();
+    public final C0376kc b = new C0376kc();
     public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
     public SdkEnvironment d;
     public String e;
 
     public Fj(Context context) {
         this.f552a = context;
-        this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("8.2.0", "50163623", Gj.a()), "phone", C0377kc.a(context.getResources().getConfiguration()));
+        this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("8.2.0", "50163623", Gj.a()), "phone", C0376kc.a(context.getResources().getConfiguration()));
     }
 
     public final synchronized void a(ScreenInfo screenInfo) {
@@ -39,7 +39,7 @@ public final class Fj implements SdkEnvironmentProvider {
                 if (str == null) {
                     Context context = this.f552a;
                     Point point = new Point(screenInfo.getWidth(), screenInfo.getHeight());
-                    SafePackageManager safePackageManager = AbstractC0244f8.f978a;
+                    SafePackageManager safePackageManager = AbstractC0243f8.f978a;
                     try {
                         f = context.getResources().getDisplayMetrics().density;
                     } catch (Throwable unused) {
@@ -48,7 +48,7 @@ public final class Fj implements SdkEnvironmentProvider {
                     if (!Float.isNaN(f) && f != 0.0f) {
                         int i = point.x;
                         int i2 = point.y;
-                        if (AbstractC0244f8.a(context)) {
+                        if (AbstractC0243f8.a(context)) {
                             str = "tv";
                         } else {
                             float f2 = 160.0f * f;
@@ -126,7 +126,7 @@ public final class Fj implements SdkEnvironmentProvider {
 
     public final synchronized void a(Configuration configuration) {
         this.b.getClass();
-        List a2 = C0377kc.a(configuration);
+        List a2 = C0376kc.a(configuration);
         if (!Intrinsics.areEqual(getSdkEnvironment().getLocales(), a2)) {
             this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, null, null, null, a2, 31, null);
             Iterator it = this.c.iterator();
