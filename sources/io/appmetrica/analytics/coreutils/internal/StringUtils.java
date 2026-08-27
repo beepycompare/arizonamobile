@@ -2,7 +2,6 @@ package io.appmetrica.analytics.coreutils.internal;
 
 import android.content.ContentValues;
 import android.text.TextUtils;
-import com.arizona.launcher.updater.archive.install.SafeZipExtractor;
 import com.google.common.base.Ascii;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
@@ -114,8 +113,8 @@ public final class StringUtils {
     public static String toHexString(byte[] bArr) {
         StringBuilder sb = new StringBuilder();
         for (byte b : bArr) {
-            sb.append(SafeZipExtractor.HEX_DIGITS.charAt((b & 240) >> 4));
-            sb.append(SafeZipExtractor.HEX_DIGITS.charAt(b & Ascii.SI));
+            sb.append("0123456789abcdef".charAt((b & 240) >> 4));
+            sb.append("0123456789abcdef".charAt(b & Ascii.SI));
         }
         return sb.toString();
     }

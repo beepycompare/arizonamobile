@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 @Target({ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface ExtraProperty {
     Class<?>[] allowedTypes() default {};
 }

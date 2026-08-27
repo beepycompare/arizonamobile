@@ -129,7 +129,7 @@ public final class ArchiveManifestParser {
                 fail(str2 + ".type", "unsupported package type");
                 throw new KotlinNothingValueException();
             }
-            arrayList.add(new ArchivePackage(requiredString(requireObject, TtmlNode.ATTR_ID), fromWireName, requiredString(requireObject, "url"), requiredWholeLong(requireObject, "archiveSize"), requiredWholeLong(requireObject, "installedSize"), requiredWholeLong(requireObject, "crc32"), requireObject.has(RemoteConfigConstants.ResponseFieldKey.ENTRIES) ? parseEntries(requiredArray(requireObject, RemoteConfigConstants.ResponseFieldKey.ENTRIES), str2) : null));
+            arrayList.add(new ArchivePackage(requiredString(requireObject, TtmlNode.ATTR_ID), fromWireName, requiredString(requireObject, "url"), requiredWholeLong(requireObject, "archiveSize"), requiredWholeLong(requireObject, "installedSize"), requiredWholeLong(requireObject, "crc32"), requireObject.has(RemoteConfigConstants.ResponseFieldKey.ENTRIES) ? parseEntries(requiredArray(requireObject, RemoteConfigConstants.ResponseFieldKey.ENTRIES), str2) : null, true, null, null, null, 1792, null));
             i = i2;
         }
         return arrayList;

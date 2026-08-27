@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Exception extends CrashlyticsReport.Session.Event.Application.Execution.Exception {
     private final CrashlyticsReport.Session.Event.Application.Execution.Exception causedBy;
     private final List<CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame> frames;
@@ -71,7 +71,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Exce
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.Exception.Builder {
         private CrashlyticsReport.Session.Event.Application.Execution.Exception causedBy;
         private List<CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame> frames;

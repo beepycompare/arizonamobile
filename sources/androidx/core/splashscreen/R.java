@@ -34,7 +34,7 @@ public final class R {
     public static final class drawable {
         public static int compat_splash_screen = 0x7f080640;
         public static int compat_splash_screen_no_icon_background = 0x7f080641;
-        public static int icon_background = 0x7f080c23;
+        public static int icon_background = 0x7f080c26;
 
         private drawable() {
         }
@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0fa4;
+        public static int splashscreen_icon_view = 0x7f0a0fac;
 
         private id() {
         }
@@ -58,7 +58,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int splash_screen_view = 0x7f0d029e;
+        public static int splash_screen_view = 0x7f0d02a7;
 
         private layout() {
         }

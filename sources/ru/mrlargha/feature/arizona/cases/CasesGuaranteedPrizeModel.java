@@ -174,7 +174,7 @@ public final class CasesGuaranteedPrizeModel {
     }
 
     /* renamed from: getCount  reason: collision with other method in class */
-    public final String m11913getCount() {
+    public final String m11918getCount() {
         if (this.count > 1) {
             DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(Locale.getDefault());
             decimalFormatSymbols.setGroupingSeparator(' ');

@@ -57,8 +57,9 @@ public final class Streams {
         return appendable instanceof Writer ? (Writer) appendable : new AppendableWriter(appendable);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes5.dex */
-    private static final class AppendableWriter extends Writer {
+    public static final class AppendableWriter extends Writer {
         private final Appendable appendable;
         private final CurrentWrite currentWrite = new CurrentWrite();
 

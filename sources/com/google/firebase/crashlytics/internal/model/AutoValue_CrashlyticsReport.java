@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport extends CrashlyticsReport {
     private final CrashlyticsReport.ApplicationExitInfo appExitInfo;
     private final String appQualitySessionId;
@@ -136,7 +136,7 @@ final class AutoValue_CrashlyticsReport extends CrashlyticsReport {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Builder {
         private CrashlyticsReport.ApplicationExitInfo appExitInfo;
         private String appQualitySessionId;

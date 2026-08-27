@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.common;
 
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class OnDemandCounter {
     private final AtomicInteger recordedOnDemandExceptions = new AtomicInteger();
     private final AtomicInteger droppedOnDemandExceptions = new AtomicInteger();

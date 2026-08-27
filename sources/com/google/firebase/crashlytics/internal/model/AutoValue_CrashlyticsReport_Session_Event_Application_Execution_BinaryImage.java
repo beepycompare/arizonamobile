@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.google.firebase.encoders.annotations.Encodable;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_BinaryImage extends CrashlyticsReport.Session.Event.Application.Execution.BinaryImage {
     private final long baseAddress;
     private final String name;
@@ -64,7 +64,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Bina
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Application.Execution.BinaryImage.Builder {
         private long baseAddress;
         private String name;

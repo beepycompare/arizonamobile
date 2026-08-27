@@ -92,10 +92,10 @@ public final class AndroidArchiveNetworkMonitor implements ArchiveNetworkMonitor
                             networkCallback2 = objectRef2.element;
                         }
                         connectivityManager.unregisterNetworkCallback(networkCallback2);
-                        Result.m9916constructorimpl(Unit.INSTANCE);
+                        Result.m9919constructorimpl(Unit.INSTANCE);
                     } catch (Throwable th2) {
                         Result.Companion companion2 = Result.Companion;
-                        Result.m9916constructorimpl(ResultKt.createFailure(th2));
+                        Result.m9919constructorimpl(ResultKt.createFailure(th2));
                     }
                 }
             }
@@ -138,14 +138,14 @@ public final class AndroidArchiveNetworkMonitor implements ArchiveNetworkMonitor
                     networkCallback = objectRef.element;
                 }
                 connectivityManager.unregisterNetworkCallback(networkCallback);
-                Result.m9916constructorimpl(Unit.INSTANCE);
+                Result.m9919constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                Result.m9916constructorimpl(ResultKt.createFailure(th));
+                Result.m9919constructorimpl(ResultKt.createFailure(th));
             }
             if (cancellableContinuation.isActive()) {
                 Result.Companion companion3 = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m9916constructorimpl(Boolean.valueOf(z)));
+                cancellableContinuation.resumeWith(Result.m9919constructorimpl(Boolean.valueOf(z)));
             }
         }
     }

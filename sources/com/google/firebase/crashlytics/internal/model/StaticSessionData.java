@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.DevelopmentPlatformProvider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class StaticSessionData {
     public abstract AppData appData();
 
@@ -13,7 +13,7 @@ public abstract class StaticSessionData {
         return new AutoValue_StaticSessionData(appData, osData, deviceData);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class AppData {
         public abstract String appIdentifier();
 
@@ -32,7 +32,7 @@ public abstract class StaticSessionData {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class OsData {
         public abstract boolean isRooted();
 
@@ -45,7 +45,7 @@ public abstract class StaticSessionData {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class DeviceData {
         public abstract int arch();
 

@@ -1911,15 +1911,15 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     private final Integer toColorOrNull(String str) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(Integer.valueOf(Color.parseColor(str != null ? StringsKt.trim((CharSequence) str).toString() : null)));
+            m9919constructorimpl = Result.m9919constructorimpl(Integer.valueOf(Color.parseColor(str != null ? StringsKt.trim((CharSequence) str).toString() : null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9922isFailureimpl(m9916constructorimpl) ? null : m9916constructorimpl;
+        return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
     }
 
     private final void openModalWindow(BpModalWindowModel bpModalWindowModel) {

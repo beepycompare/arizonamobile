@@ -7,10 +7,10 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.bda.controller.IControllerListener;
 import com.bda.controller.IControllerMonitor;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public interface IControllerService extends IInterface {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends Binder implements IControllerService {
         private static final String DESCRIPTOR = "com.bda.controller.IControllerService";
         static final int TRANSACTION_allowNewConnections = 12;
@@ -28,7 +28,7 @@ public interface IControllerService extends IInterface {
         static final int TRANSACTION_unregisterListener = 2;
         static final int TRANSACTION_unregisterMonitor = 4;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes4.dex */
         private static class Proxy implements IControllerService {
             private IBinder mRemote;
 

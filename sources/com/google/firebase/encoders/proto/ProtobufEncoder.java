@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class ProtobufEncoder {
     private final ObjectEncoder<Object> fallbackEncoder;
     private final Map<Class<?>, ObjectEncoder<?>> objectEncoders;
@@ -41,7 +41,7 @@ public class ProtobufEncoder {
         return new Builder();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder implements EncoderConfig<Builder> {
         private static final ObjectEncoder<Object> DEFAULT_FALLBACK_ENCODER = new ObjectEncoder() { // from class: com.google.firebase.encoders.proto.ProtobufEncoder$Builder$$ExternalSyntheticLambda0
             @Override // com.google.firebase.encoders.Encoder

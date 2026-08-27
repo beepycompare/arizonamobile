@@ -81,6 +81,9 @@ public final class CraftMenuViewHolder extends RecyclerView.ViewHolder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void bind$lambda$0$2(CraftMenuViewHolder craftMenuViewHolder, CategoryItem categoryItem, View view) {
-        craftMenuViewHolder.onItemClicked.invoke(Integer.valueOf(categoryItem.getCategory()), Integer.valueOf(craftMenuViewHolder.getAdapterPosition()));
+        int bindingAdapterPosition = craftMenuViewHolder.getBindingAdapterPosition();
+        if (bindingAdapterPosition != -1) {
+            craftMenuViewHolder.onItemClicked.invoke(Integer.valueOf(categoryItem.getCategory()), Integer.valueOf(bindingAdapterPosition));
+        }
     }
 }

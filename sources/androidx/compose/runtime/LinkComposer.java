@@ -1129,7 +1129,7 @@ public final class LinkComposer extends InternalComposer {
     public boolean tryImminentInvalidation$runtime(RecomposeScopeImpl recomposeScopeImpl, Object obj) {
         int address;
         Anchor anchor = recomposeScopeImpl.getAnchor();
-        if (anchor != null && (address = LinkAnchorKt.asLinkAnchor(anchor).getAddress()) >= 0 && isComposing$runtime() && isGroupAfterCurrentReaderPosition(UInt.m10017constructorimpl(address) & 4294967295L)) {
+        if (anchor != null && (address = LinkAnchorKt.asLinkAnchor(anchor).getAddress()) >= 0 && isComposing$runtime() && isGroupAfterCurrentReaderPosition(UInt.m10020constructorimpl(address) & 4294967295L)) {
             this.reader.addFlag(address, 67108864);
             if (obj == null || Intrinsics.areEqual(obj, ScopeInvalidated.INSTANCE)) {
                 ScopeMap.m4524setimpl(this.invalidations, recomposeScopeImpl, ScopeInvalidated.INSTANCE);
@@ -1764,9 +1764,9 @@ public final class LinkComposer extends InternalComposer {
                     Pair<MovableContentStateReference, MovableContentStateReference> pair = list2.get(i3);
                     final MovableContentStateReference component1 = pair.component1();
                     MovableContentStateReference component2 = pair.component2();
-                    final long m10017constructorimpl = UInt.m10017constructorimpl(LinkAnchorKt.asLinkAnchor(component1.getAnchor$runtime()).getAddress()) & 4294967295L;
+                    final long m10020constructorimpl = UInt.m10020constructorimpl(LinkAnchorKt.asLinkAnchor(component1.getAnchor$runtime()).getAddress()) & 4294967295L;
                     IntRef intRef = new IntRef(r13, 1, null);
-                    linkComposer.changeListWriter.determineMovableContentNodeIndex(intRef, m10017constructorimpl);
+                    linkComposer.changeListWriter.determineMovableContentNodeIndex(intRef, m10020constructorimpl);
                     if (component2 == null) {
                         SlotTable asLinkBufferSlotTable3 = SlotTableKt.asLinkBufferSlotTable(component1.getSlotStorage$runtime());
                         if (Intrinsics.areEqual(asLinkBufferSlotTable3, linkComposer.builder.getTable())) {
@@ -1774,14 +1774,14 @@ public final class LinkComposer extends InternalComposer {
                         }
                         final SlotTableReader openReader2 = asLinkBufferSlotTable3.openReader();
                         try {
-                            openReader2.reposition(m10017constructorimpl);
+                            openReader2.reposition(m10020constructorimpl);
                             try {
                                 final ChangeList changeList6 = new ChangeList();
                                 Function0 function0 = new Function0() { // from class: androidx.compose.runtime.LinkComposer$$ExternalSyntheticLambda1
                                     @Override // kotlin.jvm.functions.Function0
                                     public final Object invoke() {
                                         Unit insertMovableContentGuarded$lambda$0$0$0$0;
-                                        insertMovableContentGuarded$lambda$0$0$0$0 = LinkComposer.insertMovableContentGuarded$lambda$0$0$0$0(LinkComposer.this, changeList6, openReader2, m10017constructorimpl, component1);
+                                        insertMovableContentGuarded$lambda$0$0$0$0 = LinkComposer.insertMovableContentGuarded$lambda$0$0$0$0(LinkComposer.this, changeList6, openReader2, m10020constructorimpl, component1);
                                         return insertMovableContentGuarded$lambda$0$0$0$0;
                                     }
                                 };
@@ -1833,7 +1833,7 @@ public final class LinkComposer extends InternalComposer {
                                                                                 linkComposer.changeListWriter.copyNodesToNewAnchorLocation(access$collectNodesFrom, intRef);
                                                                                 if (Intrinsics.areEqual(component1.getSlotStorage$runtime(), linkComposer.slotTable)) {
                                                                                     i = i3;
-                                                                                    linkComposer.updateChildNodeCount(UInt.m10017constructorimpl(LinkAnchorKt.asLinkAnchor(component1.getAnchor$runtime()).getAddress()) & 4294967295L, linkComposer.updatedNodeCount(UInt.m10017constructorimpl(LinkAnchorKt.asLinkAnchor(component1.getAnchor$runtime()).getAddress()) & 4294967295L) + access$collectNodesFrom.size());
+                                                                                    linkComposer.updateChildNodeCount(UInt.m10020constructorimpl(LinkAnchorKt.asLinkAnchor(component1.getAnchor$runtime()).getAddress()) & 4294967295L, linkComposer.updatedNodeCount(UInt.m10020constructorimpl(LinkAnchorKt.asLinkAnchor(component1.getAnchor$runtime()).getAddress()) & 4294967295L) + access$collectNodesFrom.size());
                                                                                     linkComposer.changeListWriter.copySlotTableToAnchorLocation(movableContentStateResolve$runtime, linkComposer.parentContext, component2, component1);
                                                                                     openReader = asLinkBufferSlotTable.openReader();
                                                                                     slotTableReader2 = linkComposer.reader;
@@ -2345,7 +2345,7 @@ public final class LinkComposer extends InternalComposer {
                         } else {
                             i3 = i2;
                             i4 = i11;
-                            this.nodeIndex += slotTableReader.isNode(firstChildOf2) ? i : updatedNodeCount(UInt.m10017constructorimpl(firstChildOf2) & j);
+                            this.nodeIndex += slotTableReader.isNode(firstChildOf2) ? i : updatedNodeCount(UInt.m10020constructorimpl(firstChildOf2) & j);
                             if (!slotTableReader.hasObjectKey(firstChildOf2)) {
                                 this.rGroupIndex++;
                             }
@@ -2359,7 +2359,7 @@ public final class LinkComposer extends InternalComposer {
                         }
                     }
                     if (firstChildOf == i5 && i3 == 0) {
-                        this.nodeIndex += !slotTableReader.isNode(firstChildOf2) ? i : updatedNodeCount(UInt.m10017constructorimpl(firstChildOf2) & j);
+                        this.nodeIndex += !slotTableReader.isNode(firstChildOf2) ? i : updatedNodeCount(UInt.m10020constructorimpl(firstChildOf2) & j);
                         if (!slotTableReader.hasObjectKey(firstChildOf2)) {
                             this.rGroupIndex++;
                         }
@@ -2376,7 +2376,7 @@ public final class LinkComposer extends InternalComposer {
                             this.changeListWriter.moveUp();
                         }
                         this.rGroupIndex = this.parentStateStack.pop();
-                        this.nodeIndex = this.parentStateStack.pop() + updatedNodeCount(UInt.m10017constructorimpl(i14) & j);
+                        this.nodeIndex = this.parentStateStack.pop() + updatedNodeCount(UInt.m10020constructorimpl(i14) & j);
                         int groupKey2 = slotTableReader.groupKey(i14);
                         int i15 = this.rGroupIndex;
                         Object groupObjectKey2 = slotTableReader.groupObjectKey(i14);
@@ -2425,7 +2425,7 @@ public final class LinkComposer extends InternalComposer {
             i4 = i11;
             i5 = -1;
             if (firstChildOf == i5) {
-                this.nodeIndex += !slotTableReader.isNode(firstChildOf2) ? i : updatedNodeCount(UInt.m10017constructorimpl(firstChildOf2) & j);
+                this.nodeIndex += !slotTableReader.isNode(firstChildOf2) ? i : updatedNodeCount(UInt.m10020constructorimpl(firstChildOf2) & j);
                 if (!slotTableReader.hasObjectKey(firstChildOf2)) {
                 }
             }
@@ -2441,7 +2441,7 @@ public final class LinkComposer extends InternalComposer {
         slotTableReader.restoreParent(parentGroup);
         if (i11 != 0) {
             slotTableReader.skipToGroupEnd();
-            int updatedNodeCount = updatedNodeCount(UInt.m10017constructorimpl(parentGroup) & j);
+            int updatedNodeCount = updatedNodeCount(UInt.m10020constructorimpl(parentGroup) & j);
             this.nodeIndex = i8 + updatedNodeCount;
             this.groupNodeCount = i9 + updatedNodeCount;
             this.rGroupIndex = i10;
@@ -2600,14 +2600,14 @@ public final class LinkComposer extends InternalComposer {
         } else if ((flagsOf2 & 536870912) == 536870912 || (flagsOf2 & Integer.MIN_VALUE) == Integer.MIN_VALUE) {
             SlotTableReader slotTableReader = linkComposer.reader;
             int i3 = 0;
-            for (long m10017constructorimpl = (UInt.m10017constructorimpl(slotTableReader.firstChildOf(group)) & 4294967295L) | (-4294967296L); GroupHandleKt.getGroup(m10017constructorimpl) != -1; m10017constructorimpl = (UInt.m10017constructorimpl(slotTableReader.nextSiblingOf(GroupHandleKt.getGroup(m10017constructorimpl))) & 4294967295L) | (GroupHandleKt.getGroup(m10017constructorimpl) << 32)) {
-                int group2 = GroupHandleKt.getGroup(m10017constructorimpl);
+            for (long m10020constructorimpl = (UInt.m10020constructorimpl(slotTableReader.firstChildOf(group)) & 4294967295L) | (-4294967296L); GroupHandleKt.getGroup(m10020constructorimpl) != -1; m10020constructorimpl = (UInt.m10020constructorimpl(slotTableReader.nextSiblingOf(GroupHandleKt.getGroup(m10020constructorimpl))) & 4294967295L) | (GroupHandleKt.getGroup(m10020constructorimpl) << 32)) {
+                int group2 = GroupHandleKt.getGroup(m10020constructorimpl);
                 boolean z2 = (linkComposer.reader.flagsOf(group2) & 8388608) == 8388608;
                 if (z2) {
                     linkComposer.changeListWriter.endNodeMovement();
                     linkComposer.changeListWriter.moveDown(linkComposer.reader.node(group2));
                 }
-                i3 += reportFreeMovableContent$reportGroup(linkComposer, m10017constructorimpl, z2 || z, z2 ? 0 : i + i3);
+                i3 += reportFreeMovableContent$reportGroup(linkComposer, m10020constructorimpl, z2 || z, z2 ? 0 : i + i3);
                 if (z2) {
                     linkComposer.changeListWriter.endNodeMovement();
                     linkComposer.changeListWriter.moveUp();
@@ -2932,7 +2932,7 @@ public final class LinkComposer extends InternalComposer {
                     if ((getReaderTable$runtime().getAddressSpace().getGroups()[GroupHandleKt.getGroup(j) + 4] & 8388608) == 8388608) {
                         return;
                     }
-                    j = UInt.m10017constructorimpl(groups[group + 2]) & 4294967295L;
+                    j = UInt.m10020constructorimpl(groups[group + 2]) & 4294967295L;
                 }
             }
         }

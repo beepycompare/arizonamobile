@@ -1,7 +1,7 @@
 package androidx.media3.common.util;
 
 import java.util.concurrent.Executor;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class BackgroundExecutor {
     private static Executor staticInstance;
 

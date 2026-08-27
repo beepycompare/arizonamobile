@@ -55,7 +55,7 @@ public final class Oa implements InstallReferrerStateListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final void a(Oa oa, int i) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         String installReferrer;
         Bg bg;
         Object kg;
@@ -79,19 +79,19 @@ public final class Oa implements InstallReferrerStateListener {
                 if (bg != null) {
                 }
             }
-            m9916constructorimpl = Result.m9916constructorimpl(kg);
+            m9919constructorimpl = Result.m9919constructorimpl(kg);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
-        if (m9919exceptionOrNullimpl != null) {
+        Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
+        if (m9922exceptionOrNullimpl != null) {
             C0540qk c0540qk = Oj.f708a;
             c0540qk.getClass();
-            c0540qk.a(new Pj("Failed to get referrer via Google Play referrer library", m9919exceptionOrNullimpl));
-            m9916constructorimpl = new Jg("Failed to get referrer via Google Play referrer library", m9919exceptionOrNullimpl);
+            c0540qk.a(new Pj("Failed to get referrer via Google Play referrer library", m9922exceptionOrNullimpl));
+            m9919constructorimpl = new Jg("Failed to get referrer via Google Play referrer library", m9922exceptionOrNullimpl);
         }
-        Lg lg = (Lg) m9916constructorimpl;
+        Lg lg = (Lg) m9919constructorimpl;
         try {
             oa.f702a.endConnection();
         } catch (Throwable unused) {

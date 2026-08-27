@@ -33,7 +33,7 @@ public final class ComposableSingletons$NotificationsScreentKt {
     });
 
     /* renamed from: getLambda$-556808038$notifications  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m9831getLambda$556808038$notifications() {
+    public final Function3<BoxScope, Composer, Integer, Unit> m9834getLambda$556808038$notifications() {
         return f64lambda$556808038;
     }
 

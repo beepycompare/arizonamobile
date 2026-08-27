@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CrashlyticsWorkers.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public /* synthetic */ class CrashlyticsWorkers$Companion$checkBlockingThread$1 extends FunctionReferenceImpl implements Function0<Boolean> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public CrashlyticsWorkers$Companion$checkBlockingThread$1(Object obj) {

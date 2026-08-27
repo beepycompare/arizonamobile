@@ -102,17 +102,17 @@ public final class R {
         public static int button_close = 0x7f0a0413;
         public static int button_play = 0x7f0a0426;
         public static int conveyor_game_container = 0x7f0a055c;
-        public static int counter_container = 0x7f0a0568;
-        public static int game_title = 0x7f0a074d;
-        public static int item_container = 0x7f0a0924;
-        public static int iv_default_item = 0x7f0a09a3;
-        public static int iv_item = 0x7f0a09b4;
-        public static int left_container = 0x7f0a0a10;
+        public static int counter_container = 0x7f0a056a;
+        public static int game_title = 0x7f0a0751;
+        public static int item_container = 0x7f0a0927;
+        public static int iv_default_item = 0x7f0a09a2;
+        public static int iv_item = 0x7f0a09b3;
+        public static int left_container = 0x7f0a0a0f;
         public static int left_item = 0x7f0a0a18;
-        public static int rv_boxes = 0x7f0a0ec1;
-        public static int rv_items = 0x7f0a0ec9;
-        public static int top_elements_container = 0x7f0a10e9;
-        public static int tv_hint = 0x7f0a11e5;
+        public static int rv_boxes = 0x7f0a0ec5;
+        public static int rv_items = 0x7f0a0ecd;
+        public static int top_elements_container = 0x7f0a10f2;
+        public static int tv_hint = 0x7f0a1206;
 
         private id() {
         }

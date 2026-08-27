@@ -7,7 +7,7 @@ import com.google.firebase.inject.Provider;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 final class RestrictedComponentContainer implements ComponentContainer {
     private final Set<Qualified<?>> allowedDeferredInterfaces;
     private final Set<Qualified<?>> allowedDirectInterfaces;
@@ -115,7 +115,7 @@ final class RestrictedComponentContainer implements ComponentContainer {
         return this.delegateContainer.setOf(qualified);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     private static class RestrictedPublisher implements Publisher {
         private final Set<Class<?>> allowedPublishedEvents;
         private final Publisher delegate;

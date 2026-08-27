@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     static final Lazy<ScheduledExecutorService> BG_EXECUTOR = new Lazy<>(new Provider() { // from class: com.google.firebase.concurrent.ExecutorsRegistrar$$ExternalSyntheticLambda0
         @Override // com.google.firebase.inject.Provider

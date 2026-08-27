@@ -406,25 +406,25 @@ public final class R {
         public static int card_number = 0x7f0a046e;
         public static int card_root = 0x7f0a0471;
         public static int card_title = 0x7f0a0472;
-        public static int deposit_method_badge = 0x7f0a05a6;
-        public static int deposit_method_icon = 0x7f0a05a7;
-        public static int deposit_method_root = 0x7f0a05a8;
-        public static int deposit_method_title = 0x7f0a05a9;
-        public static int history_amount = 0x7f0a0845;
-        public static int history_icon = 0x7f0a0846;
-        public static int history_root = 0x7f0a0847;
-        public static int history_subtitle = 0x7f0a0848;
-        public static int history_title = 0x7f0a0849;
-        public static int info = 0x7f0a08de;
-        public static int service_icon = 0x7f0a0f30;
-        public static int service_root = 0x7f0a0f31;
-        public static int service_subtitle = 0x7f0a0f32;
-        public static int service_title = 0x7f0a0f33;
-        public static int tab_card = 0x7f0a101f;
-        public static int tab_hot_badge = 0x7f0a1020;
-        public static int tab_lock = 0x7f0a1021;
-        public static int tab_text = 0x7f0a1026;
-        public static int tv_cost = 0x7f0a11c3;
+        public static int deposit_method_badge = 0x7f0a05a8;
+        public static int deposit_method_icon = 0x7f0a05a9;
+        public static int deposit_method_root = 0x7f0a05aa;
+        public static int deposit_method_title = 0x7f0a05ab;
+        public static int history_amount = 0x7f0a0849;
+        public static int history_icon = 0x7f0a084a;
+        public static int history_root = 0x7f0a084b;
+        public static int history_subtitle = 0x7f0a084c;
+        public static int history_title = 0x7f0a084d;
+        public static int info = 0x7f0a08e1;
+        public static int service_icon = 0x7f0a0f36;
+        public static int service_root = 0x7f0a0f37;
+        public static int service_subtitle = 0x7f0a0f38;
+        public static int service_title = 0x7f0a0f39;
+        public static int tab_card = 0x7f0a1027;
+        public static int tab_hot_badge = 0x7f0a1028;
+        public static int tab_lock = 0x7f0a1029;
+        public static int tab_text = 0x7f0a102e;
+        public static int tv_cost = 0x7f0a11e4;
 
         private id() {
         }

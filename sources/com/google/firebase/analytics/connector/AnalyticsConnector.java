@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 /* compiled from: com.google.firebase:firebase-measurement-connector@@20.0.1 */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public interface AnalyticsConnector {
 
     /* compiled from: com.google.firebase:firebase-measurement-connector@@20.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public interface AnalyticsConnectorHandle {
         void registerEventNames(Set<String> set);
 
@@ -19,13 +19,13 @@ public interface AnalyticsConnector {
     }
 
     /* compiled from: com.google.firebase:firebase-measurement-connector@@20.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public interface AnalyticsConnectorListener {
         void onMessageTriggered(int i, Bundle bundle);
     }
 
     /* compiled from: com.google.firebase:firebase-measurement-connector@@20.0.1 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class ConditionalUserProperty {
         public boolean active;
         public long creationTimestamp;

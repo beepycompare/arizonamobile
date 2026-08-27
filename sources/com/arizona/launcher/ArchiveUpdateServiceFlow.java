@@ -120,6 +120,10 @@ public final class ArchiveUpdateServiceFlow {
             } else if (i != 3) {
                 throw new NoWhenBranchMatchedException();
             } else {
+                if (snapshot.getBootstrapPending() != null) {
+                    this.host.requestArchiveManifestRefresh("Clean archive bootstrap requires a complete manifest; starting combined check", false);
+                    return;
+                }
                 boolean hasPendingWork = snapshot.getHasPendingWork();
                 ArchiveUpdateServiceHost archiveUpdateServiceHost2 = this.host;
                 if (!hasPendingWork) {

@@ -4,7 +4,7 @@ import com.google.firebase.events.Event;
 import com.google.firebase.events.EventHandler;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final /* synthetic */ class zza implements EventHandler {
     static final /* synthetic */ zza zza = new zza();
 

@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.settings;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class SettingsJsonConstants {
     static final String APP_STATUS_KEY = "status";
     static final String CACHE_DURATION_KEY = "cache_duration";

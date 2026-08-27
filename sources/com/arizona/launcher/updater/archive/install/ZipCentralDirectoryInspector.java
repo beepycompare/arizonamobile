@@ -4,7 +4,7 @@ import androidx.collection.SieveCacheKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import coil3.util.UtilsKt;
-import com.arizona.launcher.updater.archive.orchestrator.RemoteOriginalTzArchivePackageIndexSource;
+import com.arizona.launcher.updater.archive.orchestrator.RemoteZipIndexFetcher;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
@@ -103,7 +103,7 @@ final class ZipCentralDirectoryInspector {
         if (length < 22) {
             throw inspectorFailure(SafeZipExtractionErrorCode.MALFORMED_ARCHIVE);
         }
-        int min = (int) Math.min(length, (long) RemoteOriginalTzArchivePackageIndexSource.ZIP_EOCD_TAIL_BYTES);
+        int min = (int) Math.min(length, (long) RemoteZipIndexFetcher.ZIP_EOCD_TAIL_BYTES);
         long j = length - min;
         byte[] bArr = new byte[min];
         randomAccessFile.seek(j);

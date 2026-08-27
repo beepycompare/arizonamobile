@@ -1,6 +1,5 @@
 package com.google.common.hash;
 
-import com.arizona.launcher.updater.archive.install.SafeZipExtractor;
 import com.google.common.base.Ascii;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
@@ -10,7 +9,7 @@ import javax.annotation.CheckForNull;
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
 public abstract class HashCode {
-    private static final char[] hexDigits = SafeZipExtractor.HEX_DIGITS.toCharArray();
+    private static final char[] hexDigits = "0123456789abcdef".toCharArray();
 
     public abstract byte[] asBytes();
 

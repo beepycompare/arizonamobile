@@ -33,12 +33,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.nio.charset.Charset;
 import java.util.List;
 @Encodable
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class CrashlyticsReport {
     private static final Charset UTF_8 = Charset.forName("UTF-8");
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface Architecture {
         public static final int ARM64 = 9;
         public static final int ARMV6 = 5;
@@ -48,7 +48,7 @@ public abstract class CrashlyticsReport {
         public static final int X86_64 = 1;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Builder {
         public abstract CrashlyticsReport build();
 
@@ -77,7 +77,7 @@ public abstract class CrashlyticsReport {
         public abstract Builder setSession(Session session);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public enum Type {
         INCOMPLETE,
         JAVA,
@@ -177,10 +177,10 @@ public abstract class CrashlyticsReport {
         return toBuilder().setFirebaseAuthenticationToken(str).build();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class FilesPayload {
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class Builder {
             public abstract FilesPayload build();
 
@@ -199,10 +199,10 @@ public abstract class CrashlyticsReport {
             return new AutoValue_CrashlyticsReport_FilesPayload.Builder();
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class File {
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Builder {
                 public abstract File build();
 
@@ -221,10 +221,10 @@ public abstract class CrashlyticsReport {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class CustomAttribute {
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class Builder {
             public abstract CustomAttribute build();
 
@@ -242,7 +242,7 @@ public abstract class CrashlyticsReport {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class Session {
         public abstract Application getApp();
 
@@ -302,7 +302,7 @@ public abstract class CrashlyticsReport {
             return toBuilder().setAppQualitySessionId(str).build();
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class Builder {
             public abstract Session build();
 
@@ -335,10 +335,10 @@ public abstract class CrashlyticsReport {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class User {
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Builder {
                 public abstract User build();
 
@@ -352,10 +352,10 @@ public abstract class CrashlyticsReport {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class Application {
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Builder {
                 public abstract Application build();
 
@@ -399,10 +399,10 @@ public abstract class CrashlyticsReport {
                 return toBuilder().setOrganization((organization != null ? organization.toBuilder() : Organization.builder()).setClsId(str).build()).build();
             }
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Organization {
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class Builder {
                     public abstract Organization build();
 
@@ -419,10 +419,10 @@ public abstract class CrashlyticsReport {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class OperatingSystem {
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Builder {
                 public abstract OperatingSystem build();
 
@@ -448,10 +448,10 @@ public abstract class CrashlyticsReport {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class Device {
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Builder {
                 public abstract Device build();
 
@@ -497,10 +497,10 @@ public abstract class CrashlyticsReport {
             }
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class Event {
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Builder {
                 public abstract Event build();
 
@@ -535,10 +535,10 @@ public abstract class CrashlyticsReport {
                 return new AutoValue_CrashlyticsReport_Session_Event.Builder();
             }
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Application {
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class Builder {
                     public abstract Application build();
 
@@ -577,10 +577,10 @@ public abstract class CrashlyticsReport {
                     return new AutoValue_CrashlyticsReport_Session_Event_Application.Builder();
                 }
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class Execution {
 
-                    /* loaded from: classes4.dex */
+                    /* loaded from: classes5.dex */
                     public static abstract class Builder {
                         public abstract Execution build();
 
@@ -609,10 +609,10 @@ public abstract class CrashlyticsReport {
                         return new AutoValue_CrashlyticsReport_Session_Event_Application_Execution.Builder();
                     }
 
-                    /* loaded from: classes4.dex */
+                    /* loaded from: classes5.dex */
                     public static abstract class Thread {
 
-                        /* loaded from: classes4.dex */
+                        /* loaded from: classes5.dex */
                         public static abstract class Builder {
                             public abstract Thread build();
 
@@ -633,10 +633,10 @@ public abstract class CrashlyticsReport {
                             return new AutoValue_CrashlyticsReport_Session_Event_Application_Execution_Thread.Builder();
                         }
 
-                        /* loaded from: classes4.dex */
+                        /* loaded from: classes5.dex */
                         public static abstract class Frame {
 
-                            /* loaded from: classes4.dex */
+                            /* loaded from: classes5.dex */
                             public static abstract class Builder {
                                 public abstract Frame build();
 
@@ -667,10 +667,10 @@ public abstract class CrashlyticsReport {
                         }
                     }
 
-                    /* loaded from: classes4.dex */
+                    /* loaded from: classes5.dex */
                     public static abstract class Exception {
 
-                        /* loaded from: classes4.dex */
+                        /* loaded from: classes5.dex */
                         public static abstract class Builder {
                             public abstract Exception build();
 
@@ -700,10 +700,10 @@ public abstract class CrashlyticsReport {
                         }
                     }
 
-                    /* loaded from: classes4.dex */
+                    /* loaded from: classes5.dex */
                     public static abstract class Signal {
 
-                        /* loaded from: classes4.dex */
+                        /* loaded from: classes5.dex */
                         public static abstract class Builder {
                             public abstract Signal build();
 
@@ -725,7 +725,7 @@ public abstract class CrashlyticsReport {
                         }
                     }
 
-                    /* loaded from: classes4.dex */
+                    /* loaded from: classes5.dex */
                     public static abstract class BinaryImage {
                         public abstract long getBaseAddress();
 
@@ -749,7 +749,7 @@ public abstract class CrashlyticsReport {
                             return null;
                         }
 
-                        /* loaded from: classes4.dex */
+                        /* loaded from: classes5.dex */
                         public static abstract class Builder {
                             public abstract BinaryImage build();
 
@@ -768,10 +768,10 @@ public abstract class CrashlyticsReport {
                     }
                 }
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class ProcessDetails {
 
-                    /* loaded from: classes4.dex */
+                    /* loaded from: classes5.dex */
                     public static abstract class Builder {
                         public abstract ProcessDetails build();
 
@@ -798,10 +798,10 @@ public abstract class CrashlyticsReport {
                 }
             }
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Device {
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class Builder {
                     public abstract Device build();
 
@@ -835,10 +835,10 @@ public abstract class CrashlyticsReport {
                 }
             }
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Log {
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class Builder {
                     public abstract Log build();
 
@@ -852,10 +852,10 @@ public abstract class CrashlyticsReport {
                 }
             }
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class RolloutsState {
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class Builder {
                     public abstract RolloutsState build();
 
@@ -870,10 +870,10 @@ public abstract class CrashlyticsReport {
                 }
             }
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class RolloutAssignment {
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class Builder {
                     public abstract RolloutAssignment build();
 
@@ -898,10 +898,10 @@ public abstract class CrashlyticsReport {
                     return new AutoValue_CrashlyticsReport_Session_Event_RolloutAssignment.Builder();
                 }
 
-                /* loaded from: classes4.dex */
+                /* loaded from: classes5.dex */
                 public static abstract class RolloutVariant {
 
-                    /* loaded from: classes4.dex */
+                    /* loaded from: classes5.dex */
                     public static abstract class Builder {
                         public abstract RolloutVariant build();
 
@@ -922,10 +922,10 @@ public abstract class CrashlyticsReport {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static abstract class ApplicationExitInfo {
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class Builder {
             public abstract ApplicationExitInfo build();
 
@@ -970,10 +970,10 @@ public abstract class CrashlyticsReport {
             return new AutoValue_CrashlyticsReport_ApplicationExitInfo.Builder();
         }
 
-        /* loaded from: classes4.dex */
+        /* loaded from: classes5.dex */
         public static abstract class BuildIdMappingForArch {
 
-            /* loaded from: classes4.dex */
+            /* loaded from: classes5.dex */
             public static abstract class Builder {
                 public abstract BuildIdMappingForArch build();
 

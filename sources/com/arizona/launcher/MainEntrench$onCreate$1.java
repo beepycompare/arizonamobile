@@ -1,7 +1,6 @@
 package com.arizona.launcher;
 
 import android.util.Log;
-import androidx.compose.runtime.ComposerKt;
 import com.arizona.launcher.util.FileServers;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import java.util.concurrent.CancellationException;
@@ -16,7 +15,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: MainEntrench.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.MainEntrench$onCreate$1", f = "MainEntrench.kt", i = {}, l = {ComposerKt.compositionLocalMapKey}, m = "invokeSuspend", n = {}, nl = {ComposerKt.providerValuesKey}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.MainEntrench$onCreate$1", f = "MainEntrench.kt", i = {}, l = {200}, m = "invokeSuspend", n = {}, nl = {201}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 final class MainEntrench$onCreate$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;

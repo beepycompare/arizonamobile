@@ -5,17 +5,17 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public interface IControllerListener extends IInterface {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends Binder implements IControllerListener {
         private static final String DESCRIPTOR = "com.bda.controller.IControllerListener";
         static final int TRANSACTION_onKeyEvent = 1;
         static final int TRANSACTION_onMotionEvent = 2;
         static final int TRANSACTION_onStateEvent = 3;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes4.dex */
         private static class Proxy implements IControllerListener {
             private IBinder mRemote;
 

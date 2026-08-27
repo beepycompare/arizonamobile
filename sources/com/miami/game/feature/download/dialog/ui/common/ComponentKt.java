@@ -43,7 +43,7 @@ public final class ComponentKt {
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, startRestartGroup, 0), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(60.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
             composer2 = startRestartGroup;
-            TextKt.m3157TextNvy7gAk("ПРЕДУПРЕЖДЕНИЕ", null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU(), null, TypeKt.m9865dpToSp8Feqmps(Dp.m8160constructorimpl(40.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodyMedium(), composer2, 6, 0, 131050);
+            TextKt.m3157TextNvy7gAk("ПРЕДУПРЕЖДЕНИЕ", null, MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU(), null, TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(40.0f), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodyMedium(), composer2, 6, 0, 131050);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

@@ -29,7 +29,7 @@ import com.google.firebase.sessions.api.FirebaseSessionsDependencies;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseCrashlytics {
     static final int APP_EXCEPTION_CALLBACK_TIMEOUT_MS = 500;
     static final String FIREBASE_CRASHLYTICS_ANALYTICS_ORIGIN = "clx";

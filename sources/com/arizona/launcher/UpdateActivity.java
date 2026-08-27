@@ -215,12 +215,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C101@3786L175,101@3761L200:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C99@3637L175,99@3612L200:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:101)");
+                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:99)");
             }
             CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[0], ComposableLambdaKt.rememberComposableLambda(-413695961, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
@@ -239,12 +239,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C102@3823L124,102@3804L143:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C100@3674L124,100@3655L143:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:102)");
+                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:100)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(-298306341, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
@@ -263,12 +263,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0$0(DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C103@3845L84:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C101@3696L84:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:103)");
+                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:101)");
             }
             DownloadScreenRouteKt.DownloadScreenRoute(downloadScreenComponent, composer, DownloadScreenComponent.$stable);
             if (ComposerKt.isTraceInProgress()) {

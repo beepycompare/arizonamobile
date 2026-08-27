@@ -12,7 +12,6 @@ import com.arizona.launcher.updater.archive.verify.TargetResolution;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -24,15 +23,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ArchiveInstalledPayloadAuditor.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 $2\u00020\u0001:\u0001$B\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J \u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\b\b\u0002\u0010\r\u001a\u00020\u000eJ\"\u0010\u000f\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u0011\u001a\u00020\n2\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\r\u001a\u00020\u000eH\u0002J\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\t\u001a\u00020\nH\u0002J\u0018\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0011\u001a\u00020\n2\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\u0012\u0010\u001a\u001a\u0004\u0018\u00010\u001b2\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\u0018\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\n2\u0006\u0010\u001f\u001a\u00020\nH\u0002J\u001e\u0010 \u001a\u00020\b2\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u00130\"2\u0006\u0010#\u001a\u00020\u001bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b&\u0012\b\b'\u0012\u0004\b\u0003\u0010\u0002¨\u0006%"}, d2 = {"Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditor;", "", "verifier", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadFileVerifier;", "metadataVerifier", "<init>", "(Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadFileVerifier;Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadFileVerifier;)V", "audit", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditResult;", "gameRoot", "Ljava/io/File;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", UpdateActivity.UPDATE_MODE, "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditMode;", "auditPackage", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadMismatch;", "canonicalRoot", "archivePackage", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;", "resolveGameRoot", "Lcom/arizona/launcher/updater/archive/verify/GameRootResolution;", "resolveTarget", "Lcom/arizona/launcher/updater/archive/verify/TargetResolution;", "relativePath", "", "unsafePathReason", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadMismatchReason;", "isStrictChild", "", "candidate", "root", "allPackagesMismatch", "packages", "", "reason", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \"2\u00020\u0001:\u0001\"B#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0005¢\u0006\u0004\b\u0007\u0010\bJ \u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\b\b\u0002\u0010\u000f\u001a\u00020\u0010J\"\u0010\u0011\u001a\u0004\u0018\u00010\u00122\u0006\u0010\u0013\u001a\u00020\f2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u000f\u001a\u00020\u0010H\u0002J\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u000b\u001a\u00020\fH\u0002J\u0018\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0013\u001a\u00020\f2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0012\u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u001e\u0010\u001e\u001a\u00020\n2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00150 2\u0006\u0010!\u001a\u00020\u001dH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b$\u0012\b\b%\u0012\u0004\b\u0003\u0010\u0000¨\u0006#"}, d2 = {"Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditor;", "", "pathSafety", "Lcom/arizona/launcher/updater/archive/io/ArchiveLivePathSafety;", "verifier", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadFileVerifier;", "metadataVerifier", "<init>", "(Lcom/arizona/launcher/updater/archive/io/ArchiveLivePathSafety;Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadFileVerifier;Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadFileVerifier;)V", "audit", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditResult;", "gameRoot", "Ljava/io/File;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", UpdateActivity.UPDATE_MODE, "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditMode;", "auditPackage", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadMismatch;", "canonicalRoot", "archivePackage", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;", "resolveGameRoot", "Lcom/arizona/launcher/updater/archive/verify/GameRootResolution;", "resolveTarget", "Lcom/arizona/launcher/updater/archive/verify/TargetResolution;", "relativePath", "", "unsafePathReason", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadMismatchReason;", "allPackagesMismatch", "packages", "", "reason", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveInstalledPayloadAuditor {
-    public static final int $stable = 0;
-    private static final Companion Companion = new Companion(null);
-    @Deprecated
-    public static final String WORK_ROOT = ".archive-installing";
+    private static final String WORK_ROOT = ".archive-installing";
     private final ArchiveInstalledPayloadFileVerifier metadataVerifier;
+    private final ArchiveLivePathSafety pathSafety;
     private final ArchiveInstalledPayloadFileVerifier verifier;
+    public static final Companion Companion = new Companion(null);
+    public static final int $stable = ArchiveLivePathSafety.$stable;
 
     /* compiled from: ArchiveInstalledPayloadAuditor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
@@ -54,19 +53,17 @@ public final class ArchiveInstalledPayloadAuditor {
         }
     }
 
-    public ArchiveInstalledPayloadAuditor() {
-        this(null, null, 3, null);
-    }
-
-    public ArchiveInstalledPayloadAuditor(ArchiveInstalledPayloadFileVerifier verifier, ArchiveInstalledPayloadFileVerifier metadataVerifier) {
+    public ArchiveInstalledPayloadAuditor(ArchiveLivePathSafety pathSafety, ArchiveInstalledPayloadFileVerifier verifier, ArchiveInstalledPayloadFileVerifier metadataVerifier) {
+        Intrinsics.checkNotNullParameter(pathSafety, "pathSafety");
         Intrinsics.checkNotNullParameter(verifier, "verifier");
         Intrinsics.checkNotNullParameter(metadataVerifier, "metadataVerifier");
+        this.pathSafety = pathSafety;
         this.verifier = verifier;
         this.metadataVerifier = metadataVerifier;
     }
 
-    public /* synthetic */ ArchiveInstalledPayloadAuditor(JvmArchiveInstalledPayloadFileVerifier jvmArchiveInstalledPayloadFileVerifier, JvmArchiveInstalledPayloadMetadataVerifier jvmArchiveInstalledPayloadMetadataVerifier, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i & 1) != 0 ? JvmArchiveInstalledPayloadFileVerifier.INSTANCE : jvmArchiveInstalledPayloadFileVerifier, (i & 2) != 0 ? JvmArchiveInstalledPayloadMetadataVerifier.INSTANCE : jvmArchiveInstalledPayloadMetadataVerifier);
+    public /* synthetic */ ArchiveInstalledPayloadAuditor(ArchiveLivePathSafety archiveLivePathSafety, JvmArchiveInstalledPayloadFileVerifier jvmArchiveInstalledPayloadFileVerifier, JvmArchiveInstalledPayloadMetadataVerifier jvmArchiveInstalledPayloadMetadataVerifier, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(archiveLivePathSafety, (i & 2) != 0 ? JvmArchiveInstalledPayloadFileVerifier.INSTANCE : jvmArchiveInstalledPayloadFileVerifier, (i & 4) != 0 ? JvmArchiveInstalledPayloadMetadataVerifier.INSTANCE : jvmArchiveInstalledPayloadMetadataVerifier);
     }
 
     public static /* synthetic */ ArchiveInstalledPayloadAuditResult audit$default(ArchiveInstalledPayloadAuditor archiveInstalledPayloadAuditor, File file, ArchiveUpdaterState archiveUpdaterState, ArchiveInstalledPayloadAuditMode archiveInstalledPayloadAuditMode, int i, Object obj) {
@@ -147,39 +144,34 @@ public final class ArchiveInstalledPayloadAuditor {
     }
 
     private final GameRootResolution resolveGameRoot(File file) {
+        File normalizedAbsoluteFile = this.pathSafety.normalizedAbsoluteFile(file);
+        if (normalizedAbsoluteFile == null) {
+            return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_UNSAFE);
+        }
         try {
-            File file2 = file.toPath().toAbsolutePath().normalize().toFile();
-            try {
-                File canonicalFile = file.getCanonicalFile();
-                if (Intrinsics.areEqual(file2.getPath(), canonicalFile.getPath())) {
-                    ArchiveLivePathSafety archiveLivePathSafety = ArchiveLivePathSafety.INSTANCE;
-                    Intrinsics.checkNotNull(file2);
-                    if (!archiveLivePathSafety.isSymbolicLink(file2)) {
-                        try {
-                            if (!canonicalFile.exists()) {
-                                return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_MISSING);
-                            }
-                            if (!canonicalFile.isDirectory()) {
-                                return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_NOT_DIRECTORY);
-                            }
-                            if (!canonicalFile.canRead()) {
-                                return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_NOT_READABLE);
-                            }
-                            Intrinsics.checkNotNull(canonicalFile);
-                            return new GameRootResolution.Success(canonicalFile);
-                        } catch (SecurityException unused) {
-                            return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_NOT_READABLE);
-                        }
-                    }
-                }
+            File canonicalFile = file.getCanonicalFile();
+            if (!Intrinsics.areEqual(normalizedAbsoluteFile.getPath(), canonicalFile.getPath()) || this.pathSafety.isSymbolicLink(normalizedAbsoluteFile)) {
                 return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.SYMLINK_LIKE_CANONICAL_MISMATCH);
-            } catch (IOException unused2) {
-                return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_UNSAFE);
-            } catch (SecurityException unused3) {
+            }
+            try {
+                if (!canonicalFile.exists()) {
+                    return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_MISSING);
+                }
+                if (!canonicalFile.isDirectory()) {
+                    return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_NOT_DIRECTORY);
+                }
+                if (!canonicalFile.canRead()) {
+                    return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_NOT_READABLE);
+                }
+                Intrinsics.checkNotNull(canonicalFile);
+                return new GameRootResolution.Success(canonicalFile);
+            } catch (SecurityException unused) {
                 return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_NOT_READABLE);
             }
-        } catch (RuntimeException unused4) {
+        } catch (IOException unused2) {
             return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_UNSAFE);
+        } catch (SecurityException unused3) {
+            return new GameRootResolution.Failure(ArchiveInstalledPayloadMismatchReason.ROOT_NOT_READABLE);
         }
     }
 
@@ -188,46 +180,46 @@ public final class ArchiveInstalledPayloadAuditor {
         if (unsafePathReason != null) {
             return new TargetResolution.Failure(unsafePathReason);
         }
+        ArchiveLivePathSafety archiveLivePathSafety = this.pathSafety;
+        File file2 = file;
+        for (String str2 : StringsKt.split$default((CharSequence) str, new char[]{'/'}, false, 0, 6, (Object) null)) {
+            file2 = new File(file2, str2);
+        }
+        File normalizedAbsoluteFile = archiveLivePathSafety.normalizedAbsoluteFile(file2);
+        if (normalizedAbsoluteFile == null) {
+            return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.PATH_UNSAFE);
+        }
+        if (!this.pathSafety.isStrictChild(normalizedAbsoluteFile, file)) {
+            return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.PATH_ESCAPE);
+        }
+        if (this.pathSafety.isSymbolicLink(normalizedAbsoluteFile)) {
+            return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.SYMLINK_LIKE_CANONICAL_MISMATCH);
+        }
         try {
-            File file2 = file;
-            for (String str2 : StringsKt.split$default((CharSequence) str, new char[]{'/'}, false, 0, 6, (Object) null)) {
-                file2 = new File(file2, str2);
-            }
-            File file3 = file2.toPath().toAbsolutePath().normalize().toFile();
-            Intrinsics.checkNotNull(file3);
-            if (!isStrictChild(file3, file)) {
+            File canonicalFile = normalizedAbsoluteFile.getCanonicalFile();
+            ArchiveLivePathSafety archiveLivePathSafety2 = this.pathSafety;
+            Intrinsics.checkNotNull(canonicalFile);
+            if (!archiveLivePathSafety2.isStrictChild(canonicalFile, file)) {
                 return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.PATH_ESCAPE);
             }
-            if (ArchiveLivePathSafety.INSTANCE.isSymbolicLink(file3)) {
+            if (this.pathSafety.hasUnsafeCanonicalAlias(file, normalizedAbsoluteFile, canonicalFile)) {
                 return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.SYMLINK_LIKE_CANONICAL_MISMATCH);
             }
             try {
-                File canonicalFile = file3.getCanonicalFile();
-                Intrinsics.checkNotNull(canonicalFile);
-                if (!isStrictChild(canonicalFile, file)) {
-                    return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.PATH_ESCAPE);
+                if (!canonicalFile.exists()) {
+                    return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.FILE_MISSING);
                 }
-                if (ArchiveLivePathSafety.INSTANCE.hasUnsafeCanonicalAlias(file, file3, canonicalFile)) {
-                    return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.SYMLINK_LIKE_CANONICAL_MISMATCH);
+                if (!canonicalFile.isFile()) {
+                    return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.NOT_REGULAR_FILE);
                 }
-                try {
-                    if (!canonicalFile.exists()) {
-                        return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.FILE_MISSING);
-                    }
-                    if (!canonicalFile.isFile()) {
-                        return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.NOT_REGULAR_FILE);
-                    }
-                    return new TargetResolution.Success(canonicalFile);
-                } catch (SecurityException unused) {
-                    return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.FILE_NOT_READABLE);
-                }
-            } catch (IOException unused2) {
-                return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.PATH_UNSAFE);
-            } catch (SecurityException unused3) {
+                return new TargetResolution.Success(canonicalFile);
+            } catch (SecurityException unused) {
                 return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.FILE_NOT_READABLE);
             }
-        } catch (RuntimeException unused4) {
+        } catch (IOException unused2) {
             return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.PATH_UNSAFE);
+        } catch (SecurityException unused3) {
+            return new TargetResolution.Failure(ArchiveInstalledPayloadMismatchReason.FILE_NOT_READABLE);
         }
     }
 
@@ -275,12 +267,6 @@ public final class ArchiveInstalledPayloadAuditor {
         return ArchiveInstalledPayloadMismatchReason.PATH_UNSAFE;
     }
 
-    private final boolean isStrictChild(File file, File file2) {
-        Path path = file.toPath();
-        Path path2 = file2.toPath();
-        return !Intrinsics.areEqual(path, path2) && path.startsWith(path2);
-    }
-
     private final ArchiveInstalledPayloadAuditResult allPackagesMismatch(List<ArchivePackageJournalEntry> list, ArchiveInstalledPayloadMismatchReason archiveInstalledPayloadMismatchReason) {
         List<ArchivePackageJournalEntry> list2 = list;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
@@ -291,14 +277,18 @@ public final class ArchiveInstalledPayloadAuditor {
     }
 
     /* compiled from: ArchiveInstalledPayloadAuditor.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0006"}, d2 = {"Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditor$Companion;", "", "<init>", "()V", "WORK_ROOT", "", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0006\u001a\u00020\u0007R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditor$Companion;", "", "<init>", "()V", "WORK_ROOT", "", "forAndroid", "Lcom/arizona/launcher/updater/archive/verify/ArchiveInstalledPayloadAuditor;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
-    private static final class Companion {
+    public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
+        }
+
+        public final ArchiveInstalledPayloadAuditor forAndroid() {
+            return new ArchiveInstalledPayloadAuditor(ArchiveLivePathSafety.Companion.forAndroid(), null, null, 6, null);
         }
     }
 }

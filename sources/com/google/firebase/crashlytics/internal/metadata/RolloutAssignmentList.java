@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class RolloutAssignmentList {
     static final String ROLLOUTS_STATE = "rolloutsState";
     private final int maxEntries;

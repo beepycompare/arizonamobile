@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.Session.Event {
     private final CrashlyticsReport.Session.Event.Application app;
     private final CrashlyticsReport.Session.Event.Device device;
@@ -83,7 +83,7 @@ final class AutoValue_CrashlyticsReport_Session_Event extends CrashlyticsReport.
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.Builder {
         private CrashlyticsReport.Session.Event.Application app;
         private CrashlyticsReport.Session.Event.Device device;

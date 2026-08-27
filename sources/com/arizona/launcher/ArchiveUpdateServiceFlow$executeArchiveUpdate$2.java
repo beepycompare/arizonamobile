@@ -16,7 +16,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function3;
 /* compiled from: ArchiveUpdateServiceFlow.kt */
 @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterResult;", "attemptServer", "", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterListener;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow$executeArchiveUpdate$2", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0}, l = {288}, m = "invokeSuspend", n = {"attemptServer", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow$executeArchiveUpdate$2", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0}, l = {299}, m = "invokeSuspend", n = {"attemptServer", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes3.dex */
 final class ArchiveUpdateServiceFlow$executeArchiveUpdate$2 extends SuspendLambda implements Function3<String, ArchiveUpdaterListener, Continuation<? super ArchiveUpdaterResult>, Object> {
     final /* synthetic */ ArchiveUpdatePlan $plan;

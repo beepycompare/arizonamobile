@@ -6,12 +6,12 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public @interface Encodable {
 
     @Target({ElementType.METHOD})
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface Field {
         boolean inline() default false;
 
@@ -20,7 +20,7 @@ public @interface Encodable {
 
     @Target({ElementType.METHOD})
     @Retention(RetentionPolicy.RUNTIME)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public @interface Ignore {
     }
 }

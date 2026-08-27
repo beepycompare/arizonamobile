@@ -1,7 +1,7 @@
 package com.google.firebase.components;
 
 import com.google.firebase.inject.Provider;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class Lazy<T> implements Provider<T> {
     private static final Object UNINITIALIZED = new Object();
     private volatile Object instance;

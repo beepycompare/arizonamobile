@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.common;
 
 import com.google.firebase.crashlytics.internal.common.InstallIdProvider;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AutoValue_InstallIdProvider_InstallIds extends InstallIdProvider.InstallIds {
     private final String crashlyticsInstallId;
     private final String firebaseAuthenticationToken;

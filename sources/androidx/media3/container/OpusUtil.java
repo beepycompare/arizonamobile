@@ -7,7 +7,7 @@ import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
 import okio.Utf8;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class OpusUtil {
     private static final int DEFAULT_SEEK_PRE_ROLL_SAMPLES = 3840;
     private static final int FULL_CODEC_INITIALIZATION_DATA_BUFFER_COUNT = 3;

@@ -20,7 +20,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class ComponentRuntime implements ComponentContainer, ComponentLoader {
     private static final Provider<Set<Object>> EMPTY_PROVIDER = new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda1
         @Override // com.google.firebase.inject.Provider
@@ -120,7 +120,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
                 this.components.put(component, new Lazy(new Provider() { // from class: com.google.firebase.components.ComponentRuntime$$ExternalSyntheticLambda2
                     @Override // com.google.firebase.inject.Provider
                     public final Object get() {
-                        return ComponentRuntime.this.m9692xc080f8d8(component);
+                        return ComponentRuntime.this.m9695xc080f8d8(component);
                     }
                 }));
             }
@@ -136,7 +136,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$discoverComponents$0$com-google-firebase-components-ComponentRuntime  reason: not valid java name */
-    public /* synthetic */ Object m9692xc080f8d8(Component component) {
+    public /* synthetic */ Object m9695xc080f8d8(Component component) {
         return component.getFactory().create(new RestrictedComponentContainer(component, this));
     }
 
@@ -314,7 +314,7 @@ public class ComponentRuntime implements ComponentContainer, ComponentLoader {
         return this.components.keySet();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private final Executor defaultExecutor;
         private final List<Provider<ComponentRegistrar>> lazyRegistrars = new ArrayList();

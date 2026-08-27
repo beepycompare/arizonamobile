@@ -2,7 +2,7 @@ package androidx.text.emoji.flatbuffer;
 
 import com.google.common.base.Ascii;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class Utf8 {
     private static Utf8 DEFAULT;
 
@@ -23,7 +23,7 @@ public abstract class Utf8 {
         DEFAULT = utf8;
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     static class DecodeUtil {
         private static char highSurrogate(int i) {
             return (char) ((i >>> 10) + okio.Utf8.HIGH_SURROGATE_HEADER);
@@ -94,7 +94,7 @@ public abstract class Utf8 {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     static class UnpairedSurrogateException extends IllegalArgumentException {
         UnpairedSurrogateException(int i, int i2) {
             super("Unpaired surrogate at index " + i + " of " + i2);

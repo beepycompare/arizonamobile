@@ -34,11 +34,11 @@ public final class ArchiveDownloadRedirectGuardState {
         if (str != null) {
             Result.Companion companion = Result.Companion;
             ArchiveDownloadRedirectGuardState archiveDownloadRedirectGuardState = this;
-            Object m9916constructorimpl = Result.m9916constructorimpl(Boolean.valueOf(StringsKt.equals(new URI(str).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(url).getScheme(), Constants.SCHEME, true)));
-            if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-                m9916constructorimpl = true;
+            Object m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(StringsKt.equals(new URI(str).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(url).getScheme(), Constants.SCHEME, true)));
+            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+                m9919constructorimpl = true;
             }
-            if (((Boolean) m9916constructorimpl).booleanValue()) {
+            if (((Boolean) m9919constructorimpl).booleanValue()) {
                 return false;
             }
             this.followUpAttempts++;

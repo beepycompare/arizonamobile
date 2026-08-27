@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_RolloutAssignment_RolloutVariant extends CrashlyticsReport.Session.Event.RolloutAssignment.RolloutVariant {
     private final String rolloutId;
     private final String variantId;
@@ -43,7 +43,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_RolloutAssignment_RolloutV
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.RolloutAssignment.RolloutVariant.Builder {
         private String rolloutId;
         private String variantId;

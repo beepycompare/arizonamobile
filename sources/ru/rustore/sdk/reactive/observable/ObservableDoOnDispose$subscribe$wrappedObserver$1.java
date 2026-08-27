@@ -67,7 +67,7 @@ public final class ObservableDoOnDispose$subscribe$wrappedObserver$1<T> implemen
 
     @Override // ru.rustore.sdk.reactive.core.Disposable
     public void dispose() {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         Function0 function0;
         if (this.disposed.compareAndSet(false, true)) {
             ObservableDoOnDispose<T> observableDoOnDispose = this.this$0;
@@ -76,21 +76,21 @@ public final class ObservableDoOnDispose$subscribe$wrappedObserver$1<T> implemen
                 ObservableDoOnDispose$subscribe$wrappedObserver$1<T> observableDoOnDispose$subscribe$wrappedObserver$1 = this;
                 function0 = ((ObservableDoOnDispose) observableDoOnDispose).onDispose;
                 function0.invoke();
-                m9916constructorimpl = Result.m9916constructorimpl(Unit.INSTANCE);
+                m9919constructorimpl = Result.m9919constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
-            if (m9919exceptionOrNullimpl != null) {
+            Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
+            if (m9922exceptionOrNullimpl != null) {
                 Disposable andSet = this.upstreamDisposable.getAndSet(null);
                 if (andSet != null) {
                     andSet.dispose();
                 }
-                onError(m9919exceptionOrNullimpl);
+                onError(m9922exceptionOrNullimpl);
             }
-            if (Result.m9923isSuccessimpl(m9916constructorimpl)) {
-                Unit unit = (Unit) m9916constructorimpl;
+            if (Result.m9926isSuccessimpl(m9919constructorimpl)) {
+                Unit unit = (Unit) m9919constructorimpl;
                 Disposable andSet2 = this.upstreamDisposable.getAndSet(null);
                 if (andSet2 != null) {
                     andSet2.dispose();

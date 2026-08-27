@@ -32,7 +32,7 @@ public final class FirebaseAnalytics {
     }
 
     /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public enum ConsentType {
         AD_STORAGE,
         ANALYTICS_STORAGE,

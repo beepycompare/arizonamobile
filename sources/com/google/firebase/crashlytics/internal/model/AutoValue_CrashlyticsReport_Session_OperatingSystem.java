@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_Session_OperatingSystem extends CrashlyticsReport.Session.OperatingSystem {
     private final String buildVersion;
     private final boolean jailbroken;
@@ -57,7 +57,7 @@ final class AutoValue_CrashlyticsReport_Session_OperatingSystem extends Crashlyt
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Session.OperatingSystem.Builder {
         private String buildVersion;
         private boolean jailbroken;

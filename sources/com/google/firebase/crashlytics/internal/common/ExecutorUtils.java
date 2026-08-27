@@ -13,7 +13,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ExecutorUtils {
     private static final long DEFAULT_TERMINATION_TIMEOUT = 2;
 

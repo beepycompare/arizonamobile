@@ -1,7 +1,7 @@
 package com.google.firebase.encoders;
 
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface ObjectEncoderContext {
     ObjectEncoderContext add(FieldDescriptor fieldDescriptor, double d) throws IOException;
 

@@ -5,7 +5,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Utils.kt */
 @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0080\b\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\t\u0010\u0007\u001a\u00020\u0001HÂ\u0003J\t\u0010\b\u001a\u00020\u0004HÂ\u0003J\u001d\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00012\b\b\u0002\u0010\u0003\u001a\u00020\u0004HÆ\u0001J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\r\u001a\u00020\u0004HÖ\u0001J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001R\u000e\u0010\u0002\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0003\u001a\u00020\u0004X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lcom/arkivanov/decompose/ItemKey;", "", "value", FirebaseAnalytics.Param.INDEX, "", "<init>", "(Ljava/lang/Object;I)V", "component1", "component2", "copy", "equals", "", "other", "hashCode", "toString", "", "decompose_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ItemKey {
     private final int index;
     private final Object value;

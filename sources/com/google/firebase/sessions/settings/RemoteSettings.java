@@ -63,11 +63,11 @@ public final class RemoteSettings implements SettingsProvider {
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     /* renamed from: getSessionRestartTimeout-FghU774 */
-    public Duration mo9777getSessionRestartTimeoutFghU774() {
+    public Duration mo9780getSessionRestartTimeoutFghU774() {
         Integer sessionRestartTimeout = this.settingsCache.sessionRestartTimeout();
         if (sessionRestartTimeout != null) {
             Duration.Companion companion = Duration.Companion;
-            return Duration.m11291boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
+            return Duration.m11294boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
         }
         return null;
     }
@@ -241,7 +241,7 @@ public final class RemoteSettings implements SettingsProvider {
 
     static {
         Duration.Companion companion = Duration.Companion;
-        defaultCacheDuration = (int) Duration.m11307getInWholeSecondsimpl(DurationKt.toDuration(24, DurationUnit.HOURS));
+        defaultCacheDuration = (int) Duration.m11310getInWholeSecondsimpl(DurationKt.toDuration(24, DurationUnit.HOURS));
         sanitizeRegex = new Regex("com/google/firebase/sessions//");
     }
 }

@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 class CycleDetector {
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class Dep {
         private final Qualified<?> anInterface;
         private final boolean set;
@@ -38,7 +38,7 @@ class CycleDetector {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class ComponentNode {
         private final Component<?> component;
         private final Set<ComponentNode> dependencies = new HashSet();

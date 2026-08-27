@@ -70,9 +70,9 @@ public final class LocalDateFormatKt {
         DateTimeFormatBuilder.WithDate withDate = build;
         DateTimeFormatBuilder.WithYearMonth.year$default(withDate, null, 1, null);
         DateTimeFormatBuilder.WithDate withDate2 = build;
-        DateTimeFormatBuilderKt.m11544char(withDate2, '-');
+        DateTimeFormatBuilderKt.m11547char(withDate2, '-');
         DateTimeFormatBuilder.WithYearMonth.monthNumber$default(withDate, null, 1, null);
-        DateTimeFormatBuilderKt.m11544char(withDate2, '-');
+        DateTimeFormatBuilderKt.m11547char(withDate2, '-');
         DateTimeFormatBuilder.WithDate.day$default(build, null, 1, null);
         return Unit.INSTANCE;
     }

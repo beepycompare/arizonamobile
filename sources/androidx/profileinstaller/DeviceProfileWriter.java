@@ -231,7 +231,7 @@ public class DeviceProfileWriter {
         return this;
     }
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [androidx.profileinstaller.DexProfileData[], byte[]] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [byte[], androidx.profileinstaller.DexProfileData[]] */
     public boolean write() {
         byte[] bArr = this.mTranscodedProfile;
         if (bArr == null) {

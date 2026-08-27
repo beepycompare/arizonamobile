@@ -9,7 +9,7 @@ import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FileStore {
     private static final String CRASHLYTICS_PATH_V1 = ".com.google.firebase.crashlytics.files.v1";
     private static final String CRASHLYTICS_PATH_V2 = ".com.google.firebase.crashlytics.files.v2";

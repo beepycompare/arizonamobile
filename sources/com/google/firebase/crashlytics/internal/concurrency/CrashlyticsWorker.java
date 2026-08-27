@@ -10,7 +10,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashlyticsWorker implements Executor {
     private final ExecutorService executor;
     private final Object tailLock = new Object();

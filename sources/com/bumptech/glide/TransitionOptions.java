@@ -34,7 +34,7 @@ public abstract class TransitionOptions<CHILD extends TransitionOptions<CHILD, T
     }
 
     /* renamed from: clone */
-    public final CHILD m9496clone() {
+    public final CHILD m9499clone() {
         try {
             return (CHILD) super.clone();
         } catch (CloneNotSupportedException e) {

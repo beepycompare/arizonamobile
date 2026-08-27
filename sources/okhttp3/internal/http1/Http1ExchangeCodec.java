@@ -102,7 +102,7 @@ public final class Http1ExchangeCodec implements ExchangeCodec {
 
     @Override // okhttp3.internal.http.ExchangeCodec
     public void cancel() {
-        getCarrier().mo11783cancel();
+        getCarrier().mo11786cancel();
     }
 
     @Override // okhttp3.internal.http.ExchangeCodec

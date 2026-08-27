@@ -44,7 +44,7 @@ public final class DescriptionTextKt {
         int i2;
         Intrinsics.checkNotNullParameter(updateSize, "updateSize");
         Composer startRestartGroup = composer.startRestartGroup(1047179564);
-        ComposerKt.sourceInformation(startRestartGroup, "C(DescriptionText)N(updateSize)63@2238L10,58@2068L253:DescriptionText.kt#18sjrx");
+        ComposerKt.sourceInformation(startRestartGroup, "C(DescriptionText)N(updateSize)63@2237L10,58@2067L253:DescriptionText.kt#18sjrx");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(updateSize) ? 4 : 2) | i;
         } else {
@@ -56,20 +56,20 @@ public final class DescriptionTextKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1047179564, i2, -1, "com.miami.game.feature.download.dialog.ui.setup.DescriptionText (DescriptionText.kt:19)");
             }
-            startRestartGroup.startReplaceGroup(1317217223);
-            ComposerKt.sourceInformation(startRestartGroup, "*25@945L13,26@1003L10,27@1079L10,36@1342L11,37@1390L13,38@1448L10,39@1524L10,49@1794L13,50@1852L10,51@1928L10");
+            startRestartGroup.startReplaceGroup(1317217222);
+            ComposerKt.sourceInformation(startRestartGroup, "*25@945L13,26@1003L10,27@1079L10,36@1341L11,37@1389L13,38@1447L10,39@1523L10,49@1793L13,50@1851L10,51@1927L10");
             AnnotatedString.Builder builder = new AnnotatedString.Builder(0, 1, null);
-            int pushStyle = builder.pushStyle(new SpanStyle(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9865dpToSp8Feqmps(Dp.m8160constructorimpl(16.0f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
+            int pushStyle = builder.pushStyle(new SpanStyle(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(16.0f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
             try {
-                builder.append("Вы собираетесь загрузить файлы игры размером ");
+                builder.append("Вы собираетесь загрузить файлы игры объёмом ");
                 Unit unit = Unit.INSTANCE;
                 builder.pop(pushStyle);
-                pushStyle = builder.pushStyle(new SpanStyle(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU(), TypeKt.m9865dpToSp8Feqmps(Dp.m8160constructorimpl(18.0f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
+                pushStyle = builder.pushStyle(new SpanStyle(MaterialTheme.INSTANCE.getColorScheme(startRestartGroup, 6).m2322getPrimary0d7_KjU(), TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(18.0f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
                 try {
                     builder.append(updateSize);
                     Unit unit2 = Unit.INSTANCE;
                     builder.pop(pushStyle);
-                    pushStyle = builder.pushStyle(new SpanStyle(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9865dpToSp8Feqmps(Dp.m8160constructorimpl(16.0f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
+                    pushStyle = builder.pushStyle(new SpanStyle(Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null), TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(16.0f), startRestartGroup, 6), MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontWeight(), (FontStyle) null, (FontSynthesis) null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall().getFontFamily(), (String) null, 0L, (BaselineShift) null, (TextGeometricTransform) null, (LocaleList) null, 0L, (TextDecoration) null, (Shadow) null, (PlatformSpanStyle) null, (DrawStyle) null, 65496, (DefaultConstructorMarker) null));
                     try {
                         builder.append(". Вы действительно хотите продолжить?");
                         Unit unit3 = Unit.INSTANCE;

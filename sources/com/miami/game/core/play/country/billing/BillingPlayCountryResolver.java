@@ -55,7 +55,7 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
      */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x005f, code lost:
         r7 = kotlin.Result.Companion;
-        r6 = kotlin.Result.m9916constructorimpl(kotlin.ResultKt.createFailure(r6));
+        r6 = kotlin.Result.m9919constructorimpl(kotlin.ResultKt.createFailure(r6));
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0037  */
@@ -68,7 +68,7 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
     public Object getCountryIso(Continuation<? super String> continuation) {
         BillingPlayCountryResolver$getCountryIso$1 billingPlayCountryResolver$getCountryIso$1;
         int i;
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         if (continuation instanceof BillingPlayCountryResolver$getCountryIso$1) {
             billingPlayCountryResolver$getCountryIso$1 = (BillingPlayCountryResolver$getCountryIso$1) continuation;
             if ((billingPlayCountryResolver$getCountryIso$1.label & Integer.MIN_VALUE) != 0) {
@@ -92,9 +92,9 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
                     BillingPlayCountryResolver billingPlayCountryResolver2 = (BillingPlayCountryResolver) billingPlayCountryResolver$getCountryIso$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                m9916constructorimpl = Result.m9916constructorimpl((String) obj);
-                if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-                    return m9916constructorimpl;
+                m9919constructorimpl = Result.m9919constructorimpl((String) obj);
+                if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+                    return m9919constructorimpl;
                 }
                 return null;
             }
@@ -105,8 +105,8 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
         i = billingPlayCountryResolver$getCountryIso$1.label;
         if (i != 0) {
         }
-        m9916constructorimpl = Result.m9916constructorimpl((String) obj2);
-        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+        m9919constructorimpl = Result.m9919constructorimpl((String) obj2);
+        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
         }
     }
 
@@ -115,7 +115,7 @@ public final class BillingPlayCountryResolver implements PlayCountryResolver {
         if (atomicBoolean.compareAndSet(false, true)) {
             billingClient.endConnection();
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m9916constructorimpl(str));
+            cancellableContinuation.resumeWith(Result.m9919constructorimpl(str));
         }
     }
 

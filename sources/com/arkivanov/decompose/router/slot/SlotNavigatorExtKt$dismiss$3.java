@@ -6,7 +6,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 /* compiled from: SlotNavigatorExt.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SlotNavigatorExtKt$dismiss$3 implements Function2<Object, Object, Unit> {
     final /* synthetic */ Function1<Boolean, Unit> $onComplete;
 

@@ -21,20 +21,20 @@ public final class UArraysKt___UArraysJvmKt$asList$3 extends AbstractList<UByte>
     @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof UByte) {
-            return m10441contains7apg3OU(((UByte) obj).m9984unboximpl());
+            return m10444contains7apg3OU(((UByte) obj).m9987unboximpl());
         }
         return false;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public /* bridge */ /* synthetic */ Object get(int i) {
-        return UByte.m9928boximpl(m10442getw2LRezQ(i));
+        return UByte.m9931boximpl(m10445getw2LRezQ(i));
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int indexOf(Object obj) {
         if (obj instanceof UByte) {
-            return m10443indexOf7apg3OU(((UByte) obj).m9984unboximpl());
+            return m10446indexOf7apg3OU(((UByte) obj).m9987unboximpl());
         }
         return -1;
     }
@@ -42,38 +42,38 @@ public final class UArraysKt___UArraysJvmKt$asList$3 extends AbstractList<UByte>
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int lastIndexOf(Object obj) {
         if (obj instanceof UByte) {
-            return m10444lastIndexOf7apg3OU(((UByte) obj).m9984unboximpl());
+            return m10447lastIndexOf7apg3OU(((UByte) obj).m9987unboximpl());
         }
         return -1;
     }
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return UByteArray.m9999getSizeimpl(this.$this_asList);
+        return UByteArray.m10002getSizeimpl(this.$this_asList);
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return UByteArray.m10001isEmptyimpl(this.$this_asList);
+        return UByteArray.m10004isEmptyimpl(this.$this_asList);
     }
 
     /* renamed from: contains-7apg3OU  reason: not valid java name */
-    public boolean m10441contains7apg3OU(byte b) {
-        return UByteArray.m9994contains7apg3OU(this.$this_asList, b);
+    public boolean m10444contains7apg3OU(byte b) {
+        return UByteArray.m9997contains7apg3OU(this.$this_asList, b);
     }
 
     /* renamed from: get-w2LRezQ  reason: not valid java name */
-    public byte m10442getw2LRezQ(int i) {
-        return UByteArray.m9998getw2LRezQ(this.$this_asList, i);
+    public byte m10445getw2LRezQ(int i) {
+        return UByteArray.m10001getw2LRezQ(this.$this_asList, i);
     }
 
     /* renamed from: indexOf-7apg3OU  reason: not valid java name */
-    public int m10443indexOf7apg3OU(byte b) {
+    public int m10446indexOf7apg3OU(byte b) {
         return ArraysKt.indexOf(this.$this_asList, b);
     }
 
     /* renamed from: lastIndexOf-7apg3OU  reason: not valid java name */
-    public int m10444lastIndexOf7apg3OU(byte b) {
+    public int m10447lastIndexOf7apg3OU(byte b) {
         return ArraysKt.lastIndexOf(this.$this_asList, b);
     }
 }

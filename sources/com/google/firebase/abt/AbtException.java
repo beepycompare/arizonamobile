@@ -1,5 +1,5 @@
 package com.google.firebase.abt;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class AbtException extends Exception {
     public AbtException(String str) {
         super(str);

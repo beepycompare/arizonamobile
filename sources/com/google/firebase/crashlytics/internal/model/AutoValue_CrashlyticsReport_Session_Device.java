@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.common.base.Ascii;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_Session_Device extends CrashlyticsReport.Session.Device {
     private final int arch;
     private final int cores;
@@ -95,7 +95,7 @@ final class AutoValue_CrashlyticsReport_Session_Device extends CrashlyticsReport
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Session.Device.Builder {
         private int arch;
         private int cores;

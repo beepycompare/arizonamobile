@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CommonUtils {
     static final String BUILD_IDS_ARCH_RESOURCE_NAME = "com.google.firebase.crashlytics.build_ids_arch";
     static final String BUILD_IDS_BUILD_ID_RESOURCE_NAME = "com.google.firebase.crashlytics.build_ids_build_id";
@@ -68,7 +68,7 @@ public class CommonUtils {
         return Architecture.getValue().ordinal();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     enum Architecture {
         X86_32,
         X86_64,

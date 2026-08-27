@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.ndk;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class SessionFiles {
     public final File app;
     public final File binaryImages;
@@ -12,7 +12,7 @@ final class SessionFiles {
     public final File os;
     public final File session;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     static final class NativeCore {
         public final CrashlyticsReport.ApplicationExitInfo applicationExitInfo;
         public final File minidump;
@@ -31,7 +31,7 @@ final class SessionFiles {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder {
         private File app;
         private File binaryImages;

@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 /* JADX INFO: Add missing generic type declarations: [C] */
 /* compiled from: SlotNavigatorExt.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class SlotNavigatorExtKt$activate$3<C> implements Function2<C, C, Unit> {
     final /* synthetic */ Function0<Unit> $onComplete;
 

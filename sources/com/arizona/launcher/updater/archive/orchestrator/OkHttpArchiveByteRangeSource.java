@@ -1,5 +1,7 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
+import androidx.collection.SieveCacheKt;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.app.NotificationCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
@@ -13,6 +15,7 @@ import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitor;
 import com.arizona.launcher.updater.archive.download.ArchiveRemoteNetworkPolicy;
 import com.arizona.launcher.updater.archive.download.SafeArchiveDns;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeResult;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeStreamResult;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveRangeRetryListener;
 import com.arizona.launcher.updater.archive.range.StrongEtag;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -35,9 +38,11 @@ import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugProbesKt;
 import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.io.CloseableKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
@@ -51,7 +56,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 /* compiled from: ArchiveManifestResolver.kt */
-@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 ,2\u00020\u0001:\u0003*+,B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\u0016\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0096@¢\u0006\u0002\u0010\u0012J\u001e\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0015H\u0082@¢\u0006\u0002\u0010\u0016J \u0010\u0017\u001a\u00020\u000f2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0014\u001a\u00020\u0015H\u0002J0\u0010\u001a\u001a\u0002H\u001b\"\u0004\b\u0000\u0010\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0012\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u0002H\u001b0\u001fH\u0082@¢\u0006\u0002\u0010 J\u001a\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0015H\u0002J\u0014\u0010&\u001a\u0004\u0018\u00010'2\b\u0010(\u001a\u0004\u0018\u00010)H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b.\u0012\b\b/\u0012\u0004\b\u0003\u0010\u0000¨\u0006-"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/OkHttpArchiveByteRangeSource;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeSource;", "retryPolicy", "Lcom/arizona/launcher/DownloadRetryPolicy;", "networkMonitor", "Lcom/arizona/launcher/updater/archive/download/ArchiveNetworkMonitor;", "retryListener", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveRangeRetryListener;", "client", "Lokhttp3/OkHttpClient;", "allowInsecureLoopback", "", "<init>", "(Lcom/arizona/launcher/DownloadRetryPolicy;Lcom/arizona/launcher/updater/archive/download/ArchiveNetworkMonitor;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveRangeRetryListener;Lokhttp3/OkHttpClient;Z)V", RemoteConfigComponent.FETCH_FILE_NAME, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeResult;", "request", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeOnce", "expectedBodyBytes", "", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "validatePartialResponse", "response", "Lokhttp3/Response;", "executeCancellable", ExifInterface.GPS_DIRECTION_TRUE, NotificationCompat.CATEGORY_CALL, "Lokhttp3/Call;", "consume", "Lkotlin/Function1;", "(Lokhttp3/Call;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "readExactly", "", "input", "Ljava/io/InputStream;", "expectedBytes", "parseContentRange", "Lcom/arizona/launcher/updater/archive/orchestrator/OkHttpArchiveByteRangeSource$ParsedContentRange;", "raw", "", "ArchiveHttpHop", "ParsedContentRange", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 ;2\u00020\u0001:\u000489:;B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b¢\u0006\u0004\b\f\u0010\rJ\u0016\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0096@¢\u0006\u0002\u0010\u0012J\u0006\u0010\u0013\u001a\u00020\u0014J*\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0010\u001a\u00020\u00112\u0012\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u001a0\u0018H\u0086@¢\u0006\u0002\u0010\u001bJ\u0018\u0010\u001c\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u001eH\u0002JD\u0010\u001f\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010 \u001a\u00020!2\u0014\u0010\u0017\u001a\u0010\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00182\u000e\b\u0002\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u000b0#H\u0082@¢\u0006\u0002\u0010$J6\u0010%\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010 \u001a\u00020!2\u0016\b\u0002\u0010\u0017\u001a\u0010\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u0018H\u0082@¢\u0006\u0002\u0010&J6\u0010'\u001a\u00020\u000f2\u0006\u0010(\u001a\u00020)2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010 \u001a\u00020!2\u0014\u0010\u0017\u001a\u0010\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u0018H\u0002J0\u0010*\u001a\u0002H+\"\u0004\b\u0000\u0010+2\u0006\u0010,\u001a\u00020-2\u0012\u0010.\u001a\u000e\u0012\u0004\u0012\u00020)\u0012\u0004\u0012\u0002H+0\u0018H\u0082@¢\u0006\u0002\u0010/J\u001a\u00100\u001a\u0004\u0018\u0001012\u0006\u00102\u001a\u00020\u00192\u0006\u00103\u001a\u00020!H\u0002J\u0014\u00104\u001a\u0004\u0018\u0001052\b\u00106\u001a\u0004\u0018\u000107H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b=\u0012\b\b>\u0012\u0004\b\u0003\u0010\u0000¨\u0006<"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/OkHttpArchiveByteRangeSource;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeSource;", "retryPolicy", "Lcom/arizona/launcher/DownloadRetryPolicy;", "networkMonitor", "Lcom/arizona/launcher/updater/archive/download/ArchiveNetworkMonitor;", "retryListener", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveRangeRetryListener;", "client", "Lokhttp3/OkHttpClient;", "allowInsecureLoopback", "", "<init>", "(Lcom/arizona/launcher/DownloadRetryPolicy;Lcom/arizona/launcher/updater/archive/download/ArchiveNetworkMonitor;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveRangeRetryListener;Lokhttp3/OkHttpClient;Z)V", RemoteConfigComponent.FETCH_FILE_NAME, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeResult;", "request", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "asStreamer", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeStreamer;", "stream", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeStreamResult;", "consumer", "Lkotlin/Function1;", "Ljava/io/InputStream;", "", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "isValidRange", "rangeLength", "", "fetchWithRetry", "expectedBodyBytes", "", "bodyHasStarted", "Lkotlin/Function0;", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;ILkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "executeOnce", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeRequest;ILkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "validatePartialResponse", "response", "Lokhttp3/Response;", "executeCancellable", ExifInterface.GPS_DIRECTION_TRUE, NotificationCompat.CATEGORY_CALL, "Lokhttp3/Call;", "consume", "(Lokhttp3/Call;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "readExactly", "", "input", "expectedBytes", "parseContentRange", "Lcom/arizona/launcher/updater/archive/orchestrator/OkHttpArchiveByteRangeSource$ParsedContentRange;", "raw", "", "ArchiveHttpHop", "LimitedInputStream", "ParsedContentRange", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSource {
     @Deprecated
@@ -72,6 +77,11 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
     private static final Set<Integer> REDIRECT_HTTP_STATUSES = SetsKt.setOf((Object[]) new Integer[]{300, 301, 302, 303, 307, 308});
     private static final Regex CONTENT_RANGE = new Regex("bytes ([0-9]+)-([0-9]+)/([0-9]+)");
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean fetchWithRetry$lambda$0() {
+        return false;
+    }
+
     public OkHttpArchiveByteRangeSource(DownloadRetryPolicy retryPolicy, ArchiveNetworkMonitor networkMonitor, ArchiveRangeRetryListener retryListener, OkHttpClient client, boolean z) {
         Intrinsics.checkNotNullParameter(retryPolicy, "retryPolicy");
         Intrinsics.checkNotNullParameter(networkMonitor, "networkMonitor");
@@ -88,155 +98,284 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
         this(downloadRetryPolicy, archiveNetworkMonitor, (i & 4) != 0 ? ArchiveRangeRetryListener.None.INSTANCE : none, (i & 8) != 0 ? new OkHttpClient.Builder().connectTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).retryOnConnectionFailure(true).build() : okHttpClient, (i & 16) != 0 ? false : z);
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(7:12|13|14|15|16|(5:18|19|20|(2:22|(2:26|(2:28|(2:30|(6:32|13|14|15|16|(0))))(2:33|34)))|36)|62) */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x01df, code lost:
-        r0 = e;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x01e0, code lost:
-        r11 = r2;
-        r2 = r4;
-        r4 = r9;
-        r9 = r10;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a9  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0120  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x012d  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x020c  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x023b  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x024c  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x01ca -> B:61:0x01ce). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:74:0x0239 -> B:61:0x01ce). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:83:0x029d -> B:40:0x0101). Please submit an issue!!! */
     @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeSource
+    public Object fetch(ArchiveByteRangeRequest archiveByteRangeRequest, Continuation<? super ArchiveByteRangeResult> continuation) {
+        long endInclusive = (archiveByteRangeRequest.getEndInclusive() - archiveByteRangeRequest.getStartInclusive()) + 1;
+        if (!isValidRange(archiveByteRangeRequest, endInclusive) || endInclusive > MAX_RANGE_BODY_BYTES) {
+            return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.INVALID_REQUEST, null, null, 6, null);
+        }
+        return fetchWithRetry$default(this, archiveByteRangeRequest, (int) endInclusive, null, null, continuation, 8, null);
+    }
+
+    public final ArchiveByteRangeStreamer asStreamer() {
+        return new ArchiveByteRangeStreamer() { // from class: com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource$asStreamer$1
+            @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeStreamer
+            public final Object stream(ArchiveByteRangeRequest archiveByteRangeRequest, Function1<? super InputStream, Unit> function1, Continuation<? super ArchiveByteRangeStreamResult> continuation) {
+                return OkHttpArchiveByteRangeSource.this.stream(archiveByteRangeRequest, function1, continuation);
+            }
+        };
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00a9  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00c3  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object fetch(ArchiveByteRangeRequest archiveByteRangeRequest, Continuation<? super ArchiveByteRangeResult> continuation) {
-        OkHttpArchiveByteRangeSource$fetch$1 okHttpArchiveByteRangeSource$fetch$1;
+    public final Object stream(ArchiveByteRangeRequest archiveByteRangeRequest, final Function1<? super InputStream, Unit> function1, Continuation<? super ArchiveByteRangeStreamResult> continuation) {
+        OkHttpArchiveByteRangeSource$stream$1 okHttpArchiveByteRangeSource$stream$1;
         int i;
-        OkHttpArchiveByteRangeSource$fetch$1 okHttpArchiveByteRangeSource$fetch$12;
         long j;
-        ArchiveByteRangeRequest archiveByteRangeRequest2;
-        int i2;
-        char c;
-        OkHttpArchiveByteRangeSource$fetch$1 okHttpArchiveByteRangeSource$fetch$13;
-        DownloadFailureDetails downloadFailureDetails;
-        ArchiveByteRangeRequest archiveByteRangeRequest3;
-        long j2;
-        int i3;
         ArchiveByteRangeResult archiveByteRangeResult;
-        if (continuation instanceof OkHttpArchiveByteRangeSource$fetch$1) {
-            okHttpArchiveByteRangeSource$fetch$1 = (OkHttpArchiveByteRangeSource$fetch$1) continuation;
-            if ((okHttpArchiveByteRangeSource$fetch$1.label & Integer.MIN_VALUE) != 0) {
-                okHttpArchiveByteRangeSource$fetch$1.label -= Integer.MIN_VALUE;
-                Object obj = okHttpArchiveByteRangeSource$fetch$1.result;
+        if (continuation instanceof OkHttpArchiveByteRangeSource$stream$1) {
+            okHttpArchiveByteRangeSource$stream$1 = (OkHttpArchiveByteRangeSource$stream$1) continuation;
+            if ((okHttpArchiveByteRangeSource$stream$1.label & Integer.MIN_VALUE) != 0) {
+                okHttpArchiveByteRangeSource$stream$1.label -= Integer.MIN_VALUE;
+                OkHttpArchiveByteRangeSource$stream$1 okHttpArchiveByteRangeSource$stream$12 = okHttpArchiveByteRangeSource$stream$1;
+                Object obj = okHttpArchiveByteRangeSource$stream$12.result;
                 Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = okHttpArchiveByteRangeSource$fetch$1.label;
-                int i4 = 1;
+                i = okHttpArchiveByteRangeSource$stream$12.label;
                 if (i != 0) {
                     ResultKt.throwOnFailure(obj);
-                    long endInclusive = (archiveByteRangeRequest.getEndInclusive() - archiveByteRangeRequest.getStartInclusive()) + 1;
-                    if (StringsKt.isBlank(archiveByteRangeRequest.getPackageId()) || archiveByteRangeRequest.getExpectedArchiveSize() <= 0 || archiveByteRangeRequest.getStartInclusive() < 0 || archiveByteRangeRequest.getEndInclusive() < archiveByteRangeRequest.getStartInclusive() || archiveByteRangeRequest.getEndInclusive() >= archiveByteRangeRequest.getExpectedArchiveSize() || endInclusive <= 0 || endInclusive > MAX_RANGE_BODY_BYTES) {
-                        return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.INVALID_REQUEST, null, null, 6, null);
+                    long endInclusive = 1 + (archiveByteRangeRequest.getEndInclusive() - archiveByteRangeRequest.getStartInclusive());
+                    if (!isValidRange(archiveByteRangeRequest, endInclusive) || endInclusive > SieveCacheKt.NodeLinkMask) {
+                        return new ArchiveByteRangeStreamResult.Failure(ArchiveByteRangeErrorCode.INVALID_REQUEST, null, null, 6, null);
                     }
-                    okHttpArchiveByteRangeSource$fetch$12 = okHttpArchiveByteRangeSource$fetch$1;
+                    final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
+                    Function1<? super InputStream, Unit> function12 = new Function1() { // from class: com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource$$ExternalSyntheticLambda1
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj2) {
+                            return OkHttpArchiveByteRangeSource.stream$lambda$0(Ref.BooleanRef.this, function1, (InputStream) obj2);
+                        }
+                    };
+                    Function0<Boolean> function0 = new Function0() { // from class: com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource$$ExternalSyntheticLambda2
+                        @Override // kotlin.jvm.functions.Function0
+                        public final Object invoke() {
+                            boolean z;
+                            z = Ref.BooleanRef.this.element;
+                            return Boolean.valueOf(z);
+                        }
+                    };
+                    okHttpArchiveByteRangeSource$stream$12.L$0 = SpillingKt.nullOutSpilledVariable(archiveByteRangeRequest);
+                    okHttpArchiveByteRangeSource$stream$12.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                    okHttpArchiveByteRangeSource$stream$12.L$2 = SpillingKt.nullOutSpilledVariable(booleanRef);
+                    okHttpArchiveByteRangeSource$stream$12.L$3 = SpillingKt.nullOutSpilledVariable(function12);
+                    okHttpArchiveByteRangeSource$stream$12.L$4 = SpillingKt.nullOutSpilledVariable(function0);
+                    okHttpArchiveByteRangeSource$stream$12.J$0 = endInclusive;
+                    okHttpArchiveByteRangeSource$stream$12.label = 1;
+                    obj = fetchWithRetry(archiveByteRangeRequest, (int) endInclusive, function12, function0, okHttpArchiveByteRangeSource$stream$12);
+                    if (obj == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
                     j = endInclusive;
+                } else if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    j = okHttpArchiveByteRangeSource$stream$12.J$0;
+                    Function0 function02 = (Function0) okHttpArchiveByteRangeSource$stream$12.L$4;
+                    Function1 function13 = (Function1) okHttpArchiveByteRangeSource$stream$12.L$3;
+                    Ref.BooleanRef booleanRef2 = (Ref.BooleanRef) okHttpArchiveByteRangeSource$stream$12.L$2;
+                    Function1 function14 = (Function1) okHttpArchiveByteRangeSource$stream$12.L$1;
+                    ArchiveByteRangeRequest archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$stream$12.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                archiveByteRangeResult = (ArchiveByteRangeResult) obj;
+                if (!(archiveByteRangeResult instanceof ArchiveByteRangeResult.Success)) {
+                    ArchiveByteRangeResult.Success success = (ArchiveByteRangeResult.Success) archiveByteRangeResult;
+                    return new ArchiveByteRangeStreamResult.Success(success.getResponse().getStrongEtag(), success.getResponse().getEffectiveUrl(), j);
+                } else if (!(archiveByteRangeResult instanceof ArchiveByteRangeResult.Failure)) {
+                    throw new NoWhenBranchMatchedException();
+                } else {
+                    ArchiveByteRangeResult.Failure failure = (ArchiveByteRangeResult.Failure) archiveByteRangeResult;
+                    return new ArchiveByteRangeStreamResult.Failure(failure.getCode(), failure.getHttpStatus(), failure.getDetail());
+                }
+            }
+        }
+        okHttpArchiveByteRangeSource$stream$1 = new OkHttpArchiveByteRangeSource$stream$1(this, continuation);
+        OkHttpArchiveByteRangeSource$stream$1 okHttpArchiveByteRangeSource$stream$122 = okHttpArchiveByteRangeSource$stream$1;
+        Object obj2 = okHttpArchiveByteRangeSource$stream$122.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = okHttpArchiveByteRangeSource$stream$122.label;
+        if (i != 0) {
+        }
+        archiveByteRangeResult = (ArchiveByteRangeResult) obj2;
+        if (!(archiveByteRangeResult instanceof ArchiveByteRangeResult.Success)) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit stream$lambda$0(Ref.BooleanRef booleanRef, Function1 function1, InputStream input) {
+        Intrinsics.checkNotNullParameter(input, "input");
+        booleanRef.element = true;
+        function1.invoke(input);
+        return Unit.INSTANCE;
+    }
+
+    private final boolean isValidRange(ArchiveByteRangeRequest archiveByteRangeRequest, long j) {
+        return !StringsKt.isBlank(archiveByteRangeRequest.getPackageId()) && archiveByteRangeRequest.getExpectedArchiveSize() > 0 && archiveByteRangeRequest.getStartInclusive() >= 0 && archiveByteRangeRequest.getEndInclusive() >= archiveByteRangeRequest.getStartInclusive() && archiveByteRangeRequest.getEndInclusive() < archiveByteRangeRequest.getExpectedArchiveSize() && j > 0;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Can't wrap try/catch for region: R(7:12|13|14|15|16|(5:18|19|20|(2:22|(2:28|(2:30|(2:32|(6:34|13|14|15|16|(0))))(2:35|36)))|38)|69) */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x01ce, code lost:
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x01cf, code lost:
+        r21 = r12;
+        r12 = r2;
+        r2 = r11;
+        r11 = r9;
+        r9 = r4;
+        r4 = r21;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002b  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00cc  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01e3  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01fc  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x026a  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x01b7 -> B:48:0x01bc). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:68:0x026a -> B:25:0x00da). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:75:0x02bf -> B:25:0x00da). Please submit an issue!!! */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object fetchWithRetry(ArchiveByteRangeRequest archiveByteRangeRequest, int i, Function1<? super InputStream, Unit> function1, Function0<Boolean> function0, Continuation<? super ArchiveByteRangeResult> continuation) {
+        OkHttpArchiveByteRangeSource$fetchWithRetry$1 okHttpArchiveByteRangeSource$fetchWithRetry$1;
+        int i2;
+        int i3;
+        Function1<? super InputStream, Unit> function12;
+        Function0<Boolean> function02;
+        int i4;
+        OkHttpArchiveByteRangeSource$fetchWithRetry$1 okHttpArchiveByteRangeSource$fetchWithRetry$12;
+        ArchiveByteRangeRequest archiveByteRangeRequest2;
+        boolean z;
+        Function1<? super InputStream, Unit> function13;
+        int i5;
+        char c;
+        OkHttpArchiveByteRangeSource$fetchWithRetry$1 okHttpArchiveByteRangeSource$fetchWithRetry$13;
+        char c2;
+        Function0<Boolean> function03;
+        DownloadFailureDetails downloadFailureDetails;
+        OkHttpArchiveByteRangeSource$fetchWithRetry$1 okHttpArchiveByteRangeSource$fetchWithRetry$14;
+        ArchiveByteRangeRequest archiveByteRangeRequest3;
+        int i6;
+        ArchiveByteRangeResult archiveByteRangeResult;
+        if (continuation instanceof OkHttpArchiveByteRangeSource$fetchWithRetry$1) {
+            okHttpArchiveByteRangeSource$fetchWithRetry$1 = (OkHttpArchiveByteRangeSource$fetchWithRetry$1) continuation;
+            if ((okHttpArchiveByteRangeSource$fetchWithRetry$1.label & Integer.MIN_VALUE) != 0) {
+                okHttpArchiveByteRangeSource$fetchWithRetry$1.label -= Integer.MIN_VALUE;
+                Object obj = okHttpArchiveByteRangeSource$fetchWithRetry$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i2 = okHttpArchiveByteRangeSource$fetchWithRetry$1.label;
+                int i7 = 1;
+                if (i2 != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    i3 = i;
+                    function12 = function1;
+                    function02 = function0;
+                    i4 = 0;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
                     archiveByteRangeRequest2 = archiveByteRangeRequest;
-                    i2 = 0;
-                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetch$12.getContext());
-                    int i5 = (int) j;
-                    okHttpArchiveByteRangeSource$fetch$12.L$0 = archiveByteRangeRequest2;
-                    okHttpArchiveByteRangeSource$fetch$12.L$1 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$2 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$3 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.J$0 = j;
-                    okHttpArchiveByteRangeSource$fetch$12.I$0 = i2;
-                    okHttpArchiveByteRangeSource$fetch$12.label = i4;
-                    obj = executeOnce(archiveByteRangeRequest2, i5, okHttpArchiveByteRangeSource$fetch$12);
+                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
+                    obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
                     if (obj != coroutine_suspended) {
                     }
                     return coroutine_suspended;
-                } else if (i == 1) {
-                    i3 = okHttpArchiveByteRangeSource$fetch$1.I$0;
-                    j2 = okHttpArchiveByteRangeSource$fetch$1.J$0;
-                    archiveByteRangeRequest3 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetch$1.L$0;
+                } else if (i2 == 1) {
+                    i6 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
+                    i5 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
+                    function02 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
+                    function13 = (Function1) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1;
+                    archiveByteRangeRequest3 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
                     try {
                         try {
                             ResultKt.throwOnFailure(obj);
                         } catch (IOException e) {
                             IOException e2 = e;
-                            downloadFailureDetails = DownloadFailureClassifier.INSTANCE.classify(e2);
-                            DownloadRetryDecision decide = this.retryPolicy.decide(downloadFailureDetails.getKind(), i3, this.networkMonitor.hasValidatedNetwork(), downloadFailureDetails.getHttpStatus());
-                            if (!Intrinsics.areEqual(decide, DownloadRetryDecision.WaitForValidatedNetwork.INSTANCE)) {
+                            if (!function02.invoke().booleanValue()) {
+                                return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, DownloadFailureClassifier.INSTANCE.classify(e2).getSubtypeSuffix(), 2, null);
+                            }
+                            DownloadFailureDetails classify = DownloadFailureClassifier.INSTANCE.classify(e2);
+                            DownloadRetryDecision decide = this.retryPolicy.decide(classify.getKind(), i6, this.networkMonitor.hasValidatedNetwork(), classify.getHttpStatus());
+                            if (Intrinsics.areEqual(decide, DownloadRetryDecision.WaitForValidatedNetwork.INSTANCE)) {
                                 ArchiveNetworkMonitor archiveNetworkMonitor = this.networkMonitor;
-                                okHttpArchiveByteRangeSource$fetch$1.L$0 = archiveByteRangeRequest3;
-                                okHttpArchiveByteRangeSource$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(e2);
-                                okHttpArchiveByteRangeSource$fetch$1.L$2 = downloadFailureDetails;
-                                okHttpArchiveByteRangeSource$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(decide);
-                                okHttpArchiveByteRangeSource$fetch$1.J$0 = j2;
-                                okHttpArchiveByteRangeSource$fetch$1.I$0 = i3;
-                                okHttpArchiveByteRangeSource$fetch$1.label = 2;
-                                obj = archiveNetworkMonitor.awaitValidatedNetwork(okHttpArchiveByteRangeSource$fetch$1);
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0 = archiveByteRangeRequest3;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1 = function13;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2 = function02;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3 = SpillingKt.nullOutSpilledVariable(e2);
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4 = classify;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5 = SpillingKt.nullOutSpilledVariable(decide);
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0 = i5;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1 = i6;
+                                c2 = 2;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.label = 2;
+                                obj = archiveNetworkMonitor.awaitValidatedNetwork(okHttpArchiveByteRangeSource$fetchWithRetry$1);
                                 if (obj != coroutine_suspended) {
-                                    int i6 = i3;
-                                    okHttpArchiveByteRangeSource$fetch$12 = okHttpArchiveByteRangeSource$fetch$1;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$14 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
                                     archiveByteRangeRequest2 = archiveByteRangeRequest3;
-                                    j = j2;
-                                    i2 = i6;
+                                    i4 = i6;
+                                    i3 = i5;
+                                    function12 = function13;
+                                    function03 = function02;
+                                    downloadFailureDetails = classify;
                                     if (!((Boolean) obj).booleanValue()) {
-                                    }
-                                    i4 = 1;
-                                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetch$12.getContext());
-                                    int i52 = (int) j;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$0 = archiveByteRangeRequest2;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$1 = null;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$2 = null;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$3 = null;
-                                    okHttpArchiveByteRangeSource$fetch$12.J$0 = j;
-                                    okHttpArchiveByteRangeSource$fetch$12.I$0 = i2;
-                                    okHttpArchiveByteRangeSource$fetch$12.label = i4;
-                                    obj = executeOnce(archiveByteRangeRequest2, i52, okHttpArchiveByteRangeSource$fetch$12);
-                                    if (obj != coroutine_suspended) {
                                     }
                                 }
                             } else if (decide instanceof DownloadRetryDecision.Retry) {
                                 DownloadRetryDecision.Retry retry = (DownloadRetryDecision.Retry) decide;
                                 int nextAttempt = retry.getNextAttempt();
-                                this.retryListener.onRetry(archiveByteRangeRequest3.getPackageId(), retry.getNextAttempt(), retry.getAfterMs(), downloadFailureDetails);
+                                z = true;
+                                this.retryListener.onRetry(archiveByteRangeRequest3.getPackageId(), retry.getNextAttempt(), retry.getAfterMs(), classify);
                                 long afterMs = retry.getAfterMs();
-                                okHttpArchiveByteRangeSource$fetch$1.L$0 = archiveByteRangeRequest3;
-                                okHttpArchiveByteRangeSource$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(e2);
-                                okHttpArchiveByteRangeSource$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(downloadFailureDetails);
-                                okHttpArchiveByteRangeSource$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(decide);
-                                okHttpArchiveByteRangeSource$fetch$1.J$0 = j2;
-                                okHttpArchiveByteRangeSource$fetch$1.I$0 = nextAttempt;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0 = archiveByteRangeRequest3;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1 = function13;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2 = function02;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3 = SpillingKt.nullOutSpilledVariable(e2);
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4 = SpillingKt.nullOutSpilledVariable(classify);
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5 = SpillingKt.nullOutSpilledVariable(decide);
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0 = i5;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1 = nextAttempt;
                                 c = 3;
-                                okHttpArchiveByteRangeSource$fetch$1.label = 3;
-                                if (DelayKt.delay(afterMs, okHttpArchiveByteRangeSource$fetch$1) != coroutine_suspended) {
-                                    okHttpArchiveByteRangeSource$fetch$13 = okHttpArchiveByteRangeSource$fetch$1;
+                                okHttpArchiveByteRangeSource$fetchWithRetry$1.label = 3;
+                                if (DelayKt.delay(afterMs, okHttpArchiveByteRangeSource$fetchWithRetry$1) != coroutine_suspended) {
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$13 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
                                     archiveByteRangeRequest2 = archiveByteRangeRequest3;
-                                    j = j2;
-                                    i2 = nextAttempt;
-                                    i4 = 1;
-                                    okHttpArchiveByteRangeSource$fetch$12 = okHttpArchiveByteRangeSource$fetch$13;
-                                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetch$12.getContext());
-                                    int i522 = (int) j;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$0 = archiveByteRangeRequest2;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$1 = null;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$2 = null;
-                                    okHttpArchiveByteRangeSource$fetch$12.L$3 = null;
-                                    okHttpArchiveByteRangeSource$fetch$12.J$0 = j;
-                                    okHttpArchiveByteRangeSource$fetch$12.I$0 = i2;
-                                    okHttpArchiveByteRangeSource$fetch$12.label = i4;
-                                    obj = executeOnce(archiveByteRangeRequest2, i522, okHttpArchiveByteRangeSource$fetch$12);
+                                    i4 = nextAttempt;
+                                    i3 = i5;
+                                    function12 = function13;
+                                    i7 = 1;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$13;
+                                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
+                                    obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
                                     if (obj != coroutine_suspended) {
                                     }
                                 }
                             } else if (!Intrinsics.areEqual(decide, DownloadRetryDecision.Disabled.INSTANCE) && !Intrinsics.areEqual(decide, DownloadRetryDecision.DoNotRetry.INSTANCE)) {
                                 throw new NoWhenBranchMatchedException();
                             } else {
-                                return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, downloadFailureDetails.getSubtypeSuffix(), 2, null);
+                                return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, classify.getSubtypeSuffix(), 2, null);
                             }
                             return coroutine_suspended;
                         }
@@ -247,129 +386,151 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
                     } catch (CancellationException e3) {
                         throw e3;
                     }
-                } else if (i == 2) {
-                    int i7 = okHttpArchiveByteRangeSource$fetch$1.I$0;
-                    long j3 = okHttpArchiveByteRangeSource$fetch$1.J$0;
-                    DownloadRetryDecision downloadRetryDecision = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetch$1.L$3;
-                    IOException iOException = (IOException) okHttpArchiveByteRangeSource$fetch$1.L$1;
+                } else if (i2 == 2) {
+                    int i8 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
+                    int i9 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
+                    DownloadRetryDecision downloadRetryDecision = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5;
+                    downloadFailureDetails = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
+                    IOException iOException = (IOException) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3;
+                    function03 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
+                    Function1<? super InputStream, Unit> function14 = (Function1) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1;
                     ResultKt.throwOnFailure(obj);
-                    downloadFailureDetails = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetch$1.L$2;
-                    j = j3;
-                    i2 = i7;
-                    okHttpArchiveByteRangeSource$fetch$12 = okHttpArchiveByteRangeSource$fetch$1;
-                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetch$1.L$0;
+                    i4 = i8;
+                    i3 = i9;
+                    function12 = function14;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$14 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
+                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
+                    c2 = 2;
                     if (!((Boolean) obj).booleanValue()) {
-                        return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, downloadFailureDetails.getSubtypeSuffix(), 2, null);
+                        function02 = function03;
+                        i7 = 1;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$14;
+                        JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
+                        obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
+                        if (obj != coroutine_suspended) {
+                        }
+                        return coroutine_suspended;
                     }
-                    i4 = 1;
-                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetch$12.getContext());
-                    int i5222 = (int) j;
-                    okHttpArchiveByteRangeSource$fetch$12.L$0 = archiveByteRangeRequest2;
-                    okHttpArchiveByteRangeSource$fetch$12.L$1 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$2 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$3 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.J$0 = j;
-                    okHttpArchiveByteRangeSource$fetch$12.I$0 = i2;
-                    okHttpArchiveByteRangeSource$fetch$12.label = i4;
-                    obj = executeOnce(archiveByteRangeRequest2, i5222, okHttpArchiveByteRangeSource$fetch$12);
-                    if (obj != coroutine_suspended) {
-                    }
-                    return coroutine_suspended;
-                } else if (i == 3) {
-                    int i8 = okHttpArchiveByteRangeSource$fetch$1.I$0;
-                    long j4 = okHttpArchiveByteRangeSource$fetch$1.J$0;
-                    DownloadRetryDecision downloadRetryDecision2 = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetch$1.L$3;
-                    DownloadFailureDetails downloadFailureDetails2 = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetch$1.L$2;
-                    IOException iOException2 = (IOException) okHttpArchiveByteRangeSource$fetch$1.L$1;
+                    return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, downloadFailureDetails.getSubtypeSuffix(), 2, null);
+                } else if (i2 == 3) {
+                    int i10 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
+                    i5 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
+                    DownloadRetryDecision downloadRetryDecision2 = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5;
+                    DownloadFailureDetails downloadFailureDetails2 = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
+                    IOException iOException2 = (IOException) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3;
+                    function02 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
+                    function13 = (Function1) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1;
                     ResultKt.throwOnFailure(obj);
-                    okHttpArchiveByteRangeSource$fetch$13 = okHttpArchiveByteRangeSource$fetch$1;
-                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetch$1.L$0;
-                    j = j4;
-                    i2 = i8;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$13 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
+                    z = true;
+                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
+                    i4 = i10;
                     c = 3;
-                    i4 = 1;
-                    okHttpArchiveByteRangeSource$fetch$12 = okHttpArchiveByteRangeSource$fetch$13;
-                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetch$12.getContext());
-                    int i52222 = (int) j;
-                    okHttpArchiveByteRangeSource$fetch$12.L$0 = archiveByteRangeRequest2;
-                    okHttpArchiveByteRangeSource$fetch$12.L$1 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$2 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$3 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.J$0 = j;
-                    okHttpArchiveByteRangeSource$fetch$12.I$0 = i2;
-                    okHttpArchiveByteRangeSource$fetch$12.label = i4;
-                    obj = executeOnce(archiveByteRangeRequest2, i52222, okHttpArchiveByteRangeSource$fetch$12);
+                    i3 = i5;
+                    function12 = function13;
+                    i7 = 1;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$13;
+                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
+                    obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
                     if (obj != coroutine_suspended) {
                     }
                     return coroutine_suspended;
-                } else if (i == 4) {
-                    int i9 = okHttpArchiveByteRangeSource$fetch$1.I$1;
-                    int i10 = okHttpArchiveByteRangeSource$fetch$1.I$0;
-                    long j5 = okHttpArchiveByteRangeSource$fetch$1.J$0;
-                    DownloadRetryDecision downloadRetryDecision3 = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetch$1.L$3;
-                    DownloadFailureDetails downloadFailureDetails3 = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetch$1.L$2;
-                    ArchiveByteRangeResult archiveByteRangeResult2 = (ArchiveByteRangeResult) okHttpArchiveByteRangeSource$fetch$1.L$1;
+                } else if (i2 == 4) {
+                    int i11 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$2;
+                    int i12 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
+                    int i13 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
+                    DownloadRetryDecision downloadRetryDecision3 = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5;
+                    DownloadFailureDetails downloadFailureDetails3 = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
+                    ArchiveByteRangeResult archiveByteRangeResult2 = (ArchiveByteRangeResult) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3;
+                    function02 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
+                    Function1<? super InputStream, Unit> function15 = (Function1) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1;
                     ResultKt.throwOnFailure(obj);
-                    okHttpArchiveByteRangeSource$fetch$12 = okHttpArchiveByteRangeSource$fetch$1;
-                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetch$1.L$0;
-                    j = j5;
-                    i2 = i10;
-                    i4 = 1;
-                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetch$12.getContext());
-                    int i522222 = (int) j;
-                    okHttpArchiveByteRangeSource$fetch$12.L$0 = archiveByteRangeRequest2;
-                    okHttpArchiveByteRangeSource$fetch$12.L$1 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$2 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.L$3 = null;
-                    okHttpArchiveByteRangeSource$fetch$12.J$0 = j;
-                    okHttpArchiveByteRangeSource$fetch$12.I$0 = i2;
-                    okHttpArchiveByteRangeSource$fetch$12.label = i4;
-                    obj = executeOnce(archiveByteRangeRequest2, i522222, okHttpArchiveByteRangeSource$fetch$12);
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
+                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
+                    i4 = i12;
+                    i3 = i13;
+                    function12 = function15;
+                    i7 = 1;
+                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
+                    obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
                     if (obj != coroutine_suspended) {
+                        int i14 = i4;
                         archiveByteRangeRequest3 = archiveByteRangeRequest2;
-                        okHttpArchiveByteRangeSource$fetch$1 = okHttpArchiveByteRangeSource$fetch$12;
-                        i3 = i2;
-                        j2 = j;
+                        okHttpArchiveByteRangeSource$fetchWithRetry$1 = okHttpArchiveByteRangeSource$fetchWithRetry$12;
+                        function13 = function12;
+                        i5 = i3;
+                        i6 = i14;
                         archiveByteRangeResult = (ArchiveByteRangeResult) obj;
                         if (archiveByteRangeResult instanceof ArchiveByteRangeResult.Failure) {
                             ArchiveByteRangeResult.Failure failure = (ArchiveByteRangeResult.Failure) archiveByteRangeResult;
-                            if (failure.getCode() == ArchiveByteRangeErrorCode.HTTP_STATUS && CollectionsKt.contains(DownloadRetryPolicy.Companion.getRETRYABLE_HTTP_STATUSES(), failure.getHttpStatus())) {
+                            if (failure.getCode() == ArchiveByteRangeErrorCode.HTTP_STATUS && CollectionsKt.contains(DownloadRetryPolicy.Companion.getRETRYABLE_HTTP_STATUSES(), failure.getHttpStatus()) && !function02.invoke().booleanValue()) {
                                 Integer httpStatus = failure.getHttpStatus();
                                 if (httpStatus == null) {
                                     throw new IllegalArgumentException("Required value was null.".toString());
                                 }
                                 int intValue = httpStatus.intValue();
                                 DownloadFailureDetails downloadFailureDetails4 = new DownloadFailureDetails("HTTP_" + intValue, Boxing.boxInt(intValue), DownloadFailureKind.HTTP);
-                                DownloadRetryDecision decide2 = this.retryPolicy.decide(DownloadFailureKind.HTTP, i3, this.networkMonitor.hasValidatedNetwork(), Boxing.boxInt(intValue));
+                                DownloadRetryDecision decide2 = this.retryPolicy.decide(DownloadFailureKind.HTTP, i6, this.networkMonitor.hasValidatedNetwork(), Boxing.boxInt(intValue));
                                 if (decide2 instanceof DownloadRetryDecision.Retry) {
                                     DownloadRetryDecision.Retry retry2 = (DownloadRetryDecision.Retry) decide2;
                                     int nextAttempt2 = retry2.getNextAttempt();
                                     this.retryListener.onRetry(archiveByteRangeRequest3.getPackageId(), retry2.getNextAttempt(), retry2.getAfterMs(), downloadFailureDetails4);
                                     long afterMs2 = retry2.getAfterMs();
-                                    okHttpArchiveByteRangeSource$fetch$1.L$0 = archiveByteRangeRequest3;
-                                    okHttpArchiveByteRangeSource$fetch$1.L$1 = SpillingKt.nullOutSpilledVariable(archiveByteRangeResult);
-                                    okHttpArchiveByteRangeSource$fetch$1.L$2 = SpillingKt.nullOutSpilledVariable(downloadFailureDetails4);
-                                    okHttpArchiveByteRangeSource$fetch$1.L$3 = SpillingKt.nullOutSpilledVariable(decide2);
-                                    okHttpArchiveByteRangeSource$fetch$1.J$0 = j2;
-                                    okHttpArchiveByteRangeSource$fetch$1.I$0 = nextAttempt2;
-                                    okHttpArchiveByteRangeSource$fetch$1.I$1 = intValue;
-                                    okHttpArchiveByteRangeSource$fetch$1.label = 4;
-                                    if (DelayKt.delay(afterMs2, okHttpArchiveByteRangeSource$fetch$1) != coroutine_suspended) {
-                                        okHttpArchiveByteRangeSource$fetch$12 = okHttpArchiveByteRangeSource$fetch$1;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0 = archiveByteRangeRequest3;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1 = function13;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2 = function02;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3 = SpillingKt.nullOutSpilledVariable(archiveByteRangeResult);
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4 = SpillingKt.nullOutSpilledVariable(downloadFailureDetails4);
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5 = SpillingKt.nullOutSpilledVariable(decide2);
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0 = i5;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1 = nextAttempt2;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.I$2 = intValue;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.label = 4;
+                                    if (DelayKt.delay(afterMs2, okHttpArchiveByteRangeSource$fetchWithRetry$1) != coroutine_suspended) {
+                                        i3 = i5;
+                                        function12 = function13;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
                                         archiveByteRangeRequest2 = archiveByteRangeRequest3;
-                                        j = j2;
-                                        i2 = nextAttempt2;
-                                        i4 = 1;
-                                        JobKt.ensureActive(okHttpArchiveByteRangeSource$fetch$12.getContext());
-                                        int i5222222 = (int) j;
-                                        okHttpArchiveByteRangeSource$fetch$12.L$0 = archiveByteRangeRequest2;
-                                        okHttpArchiveByteRangeSource$fetch$12.L$1 = null;
-                                        okHttpArchiveByteRangeSource$fetch$12.L$2 = null;
-                                        okHttpArchiveByteRangeSource$fetch$12.L$3 = null;
-                                        okHttpArchiveByteRangeSource$fetch$12.J$0 = j;
-                                        okHttpArchiveByteRangeSource$fetch$12.I$0 = i2;
-                                        okHttpArchiveByteRangeSource$fetch$12.label = i4;
-                                        obj = executeOnce(archiveByteRangeRequest2, i5222222, okHttpArchiveByteRangeSource$fetch$12);
+                                        i4 = nextAttempt2;
+                                        i7 = 1;
+                                        JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
+                                        okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
+                                        obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
                                         if (obj != coroutine_suspended) {
                                         }
                                     }
@@ -384,22 +545,43 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
                 }
             }
         }
-        okHttpArchiveByteRangeSource$fetch$1 = new OkHttpArchiveByteRangeSource$fetch$1(this, continuation);
-        Object obj2 = okHttpArchiveByteRangeSource$fetch$1.result;
+        okHttpArchiveByteRangeSource$fetchWithRetry$1 = new OkHttpArchiveByteRangeSource$fetchWithRetry$1(this, continuation);
+        Object obj2 = okHttpArchiveByteRangeSource$fetchWithRetry$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = okHttpArchiveByteRangeSource$fetch$1.label;
-        int i42 = 1;
-        if (i != 0) {
+        i2 = okHttpArchiveByteRangeSource$fetchWithRetry$1.label;
+        int i72 = 1;
+        if (i2 != 0) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final Object executeOnce(ArchiveByteRangeRequest archiveByteRangeRequest, int i, Continuation<? super ArchiveByteRangeResult> continuation) {
-        return BuildersKt.withContext(Dispatchers.getIO(), new OkHttpArchiveByteRangeSource$executeOnce$2(archiveByteRangeRequest, this, i, null), continuation);
+    static /* synthetic */ Object fetchWithRetry$default(OkHttpArchiveByteRangeSource okHttpArchiveByteRangeSource, ArchiveByteRangeRequest archiveByteRangeRequest, int i, Function1 function1, Function0 function0, Continuation continuation, int i2, Object obj) {
+        Function0 function02 = function0;
+        if ((i2 & 8) != 0) {
+            function02 = new Function0() { // from class: com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function0
+                public final Object invoke() {
+                    return Boolean.valueOf(OkHttpArchiveByteRangeSource.fetchWithRetry$lambda$0());
+                }
+            };
+        }
+        return okHttpArchiveByteRangeSource.fetchWithRetry(archiveByteRangeRequest, i, function1, function02, continuation);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    static /* synthetic */ Object executeOnce$default(OkHttpArchiveByteRangeSource okHttpArchiveByteRangeSource, ArchiveByteRangeRequest archiveByteRangeRequest, int i, Function1 function1, Continuation continuation, int i2, Object obj) {
+        if ((i2 & 4) != 0) {
+            function1 = null;
+        }
+        return okHttpArchiveByteRangeSource.executeOnce(archiveByteRangeRequest, i, function1, continuation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final ArchiveByteRangeResult validatePartialResponse(Response response, ArchiveByteRangeRequest archiveByteRangeRequest, int i) {
+    public final Object executeOnce(ArchiveByteRangeRequest archiveByteRangeRequest, int i, Function1<? super InputStream, Unit> function1, Continuation<? super ArchiveByteRangeResult> continuation) {
+        return BuildersKt.withContext(Dispatchers.getIO(), new OkHttpArchiveByteRangeSource$executeOnce$2(archiveByteRangeRequest, this, i, function1, null), continuation);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final ArchiveByteRangeResult validatePartialResponse(Response response, ArchiveByteRangeRequest archiveByteRangeRequest, int i, Function1<? super InputStream, Unit> function1) {
         if (response.code() != 206) {
             return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.HTTP_STATUS, Integer.valueOf(response.code()), null, 4, null);
         }
@@ -423,11 +605,30 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
         if (contentLength >= 0 && contentLength != i) {
             return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.BODY_LENGTH_MISMATCH, null, null, 6, null);
         }
-        byte[] readExactly = readExactly(body.byteStream(), i);
-        if (readExactly == null) {
-            return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.BODY_LENGTH_MISMATCH, null, null, 6, null);
+        StrongEtag parse = StrongEtag.Companion.parse(Response.header$default(response, "ETag", null, 2, null));
+        if (function1 != null) {
+            InputStream byteStream = body.byteStream();
+            try {
+                InputStream inputStream = byteStream;
+                LimitedInputStream limitedInputStream = new LimitedInputStream(inputStream, i);
+                function1.invoke(limitedInputStream);
+                if (limitedInputStream.getRemaining() == 0 && inputStream.read() == -1) {
+                    Unit unit = Unit.INSTANCE;
+                    CloseableKt.closeFinally(byteStream, null);
+                    return new ArchiveByteRangeResult.Success(new ArchiveByteRangeResponse(new byte[0], parse, httpUrl));
+                }
+                ArchiveByteRangeResult.Failure failure = new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.BODY_LENGTH_MISMATCH, null, null, 6, null);
+                CloseableKt.closeFinally(byteStream, null);
+                return failure;
+            } finally {
+            }
+        } else {
+            byte[] readExactly = readExactly(body.byteStream(), i);
+            if (readExactly == null) {
+                return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.BODY_LENGTH_MISMATCH, null, null, 6, null);
+            }
+            return new ArchiveByteRangeResult.Success(new ArchiveByteRangeResponse(readExactly, parse, httpUrl));
         }
-        return new ArchiveByteRangeResult.Success(new ArchiveByteRangeResponse(readExactly, StrongEtag.Companion.parse(Response.header$default(response, "ETag", null, 2, null)), httpUrl));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -550,6 +751,50 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
             public final ArchiveByteRangeResult getResult() {
                 return this.result;
             }
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* compiled from: ArchiveManifestResolver.kt */
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0007\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0003\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0001\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u000b\u001a\u00020\fH\u0016J \u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\f2\u0006\u0010\u0010\u001a\u00020\fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u001e\u0010\b\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\u0004@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\n¨\u0006\u0011"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/OkHttpArchiveByteRangeSource$LimitedInputStream;", "Ljava/io/InputStream;", "delegate", "expectedBytes", "", "<init>", "(Ljava/io/InputStream;J)V", "value", "remaining", "getRemaining", "()J", "read", "", "buffer", "", TypedValues.CycleType.S_WAVE_OFFSET, "length", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes3.dex */
+    public static final class LimitedInputStream extends InputStream {
+        private final InputStream delegate;
+        private long remaining;
+
+        public LimitedInputStream(InputStream delegate, long j) {
+            Intrinsics.checkNotNullParameter(delegate, "delegate");
+            this.delegate = delegate;
+            this.remaining = j;
+        }
+
+        public final long getRemaining() {
+            return this.remaining;
+        }
+
+        @Override // java.io.InputStream
+        public int read() {
+            int read;
+            if (this.remaining > 0 && (read = this.delegate.read()) >= 0) {
+                this.remaining--;
+                return read;
+            }
+            return -1;
+        }
+
+        @Override // java.io.InputStream
+        public int read(byte[] buffer, int i, int i2) {
+            Intrinsics.checkNotNullParameter(buffer, "buffer");
+            long j = this.remaining;
+            if (j <= 0 || i2 <= 0) {
+                return j <= 0 ? -1 : 0;
+            }
+            int read = this.delegate.read(buffer, i, (int) Math.min(i2, j));
+            if (read < 0) {
+                return -1;
+            }
+            this.remaining -= read;
+            return read;
         }
     }
 
@@ -720,12 +965,12 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
             CloseableKt.closeFinally(execute, null);
             if (cancellableContinuationImpl2.isActive()) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9916constructorimpl(invoke));
+                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(invoke));
             }
         } catch (Throwable th) {
             if (cancellableContinuationImpl2.isActive()) {
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9916constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(ResultKt.createFailure(th)));
             }
         }
         Object result = cancellableContinuationImpl.getResult();

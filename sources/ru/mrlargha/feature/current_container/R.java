@@ -11,9 +11,9 @@ public final class R {
         public static int auction_container_item = 0x7f080391;
         public static int auction_intput_style = 0x7f080393;
         public static int auction_item_bg = 0x7f080394;
-        public static int ic_auction_container_last_bet_bg = 0x7f080af9;
-        public static int ic_auction_container_timer_bg = 0x7f080afa;
-        public static int item = 0x7f080c51;
+        public static int ic_auction_container_last_bet_bg = 0x7f080afc;
+        public static int ic_auction_container_timer_bg = 0x7f080afd;
+        public static int item = 0x7f080c54;
 
         private drawable() {
         }
@@ -69,7 +69,7 @@ public final class R {
         public static int cgp_description_container = 0x7f0a04ce;
         public static int cgp_exit_button = 0x7f0a04cf;
         public static int cgp_title = 0x7f0a04d0;
-        public static int cpi_bg = 0x7f0a056a;
+        public static int cpi_bg = 0x7f0a056c;
 
         private id() {
         }

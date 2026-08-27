@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.common.base.Ascii;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_ApplicationExitInfo extends CrashlyticsReport.ApplicationExitInfo {
     private final List<CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch> buildIdMappingForArch;
     private final int importance;
@@ -103,7 +103,7 @@ final class AutoValue_CrashlyticsReport_ApplicationExitInfo extends CrashlyticsR
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.ApplicationExitInfo.Builder {
         private List<CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch> buildIdMappingForArch;
         private int importance;

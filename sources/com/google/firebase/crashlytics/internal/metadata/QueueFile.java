@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class QueueFile implements Closeable {
     static final int HEADER_LENGTH = 16;
     private static final int INITIAL_LENGTH = 4096;
@@ -24,7 +24,7 @@ public class QueueFile implements Closeable {
     private Element last;
     private final RandomAccessFile raf;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ElementReader {
         void read(InputStream inputStream, int i) throws IOException;
     }
@@ -270,7 +270,7 @@ public class QueueFile implements Closeable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public final class ElementInputStream extends InputStream {
         private int position;
         private int remaining;
@@ -382,7 +382,7 @@ public class QueueFile implements Closeable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Element {
         static final int HEADER_LENGTH = 4;
         static final Element NULL = new Element(0, 0);

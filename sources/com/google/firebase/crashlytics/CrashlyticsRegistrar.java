@@ -22,7 +22,7 @@ import com.google.firebase.sessions.api.SessionSubscriber;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-cls";
     private final Qualified<ExecutorService> backgroundExecutorService = Qualified.qualified(Background.class, ExecutorService.class);

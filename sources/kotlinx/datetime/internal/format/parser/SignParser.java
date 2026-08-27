@@ -24,20 +24,20 @@ public final class SignParser<Output> implements ParserOperation<Output> {
 
     @Override // kotlinx.datetime.internal.format.parser.ParserOperation
     /* renamed from: consume-FANa98k */
-    public Object mo11551consumeFANa98k(Output output, CharSequence input, int i) {
+    public Object mo11554consumeFANa98k(Output output, CharSequence input, int i) {
         Intrinsics.checkNotNullParameter(input, "input");
         if (i >= input.length()) {
-            return ParseResult.Companion.m11562OkQi1bsqg(i);
+            return ParseResult.Companion.m11565OkQi1bsqg(i);
         }
         final char charAt = input.charAt(i);
         if (charAt == '-') {
             this.isNegativeSetter.invoke(output, true);
-            return ParseResult.Companion.m11562OkQi1bsqg(i + 1);
+            return ParseResult.Companion.m11565OkQi1bsqg(i + 1);
         } else if (charAt == '+' && this.withPlusSign) {
             this.isNegativeSetter.invoke(output, false);
-            return ParseResult.Companion.m11562OkQi1bsqg(i + 1);
+            return ParseResult.Companion.m11565OkQi1bsqg(i + 1);
         } else {
-            return ParseResult.Companion.m11561ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.SignParser$$ExternalSyntheticLambda0
+            return ParseResult.Companion.m11564ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.SignParser$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return SignParser.consume_FANa98k$lambda$0(SignParser.this, charAt);

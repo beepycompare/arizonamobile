@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [C] */
 /* compiled from: ItemsNavigatorExt.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class ItemsNavigatorExtKt$setActiveItems$1<C> implements Function1<Items<C>, Items<C>> {
     final /* synthetic */ Function1<Map<C, ? extends Items.ActiveLifecycleState>, Map<C, Items.ActiveLifecycleState>> $activeItems;
 

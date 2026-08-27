@@ -9,7 +9,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.concurrency.CrashlyticsTasks;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DataCollectionArbiter {
     private static final String FIREBASE_CRASHLYTICS_COLLECTION_ENABLED = "firebase_crashlytics_collection_enabled";
     private Boolean crashlyticsDataCollectionEnabled;

@@ -8,7 +8,7 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.logging.Logger;
 import javax.annotation.CheckForNull;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class SequentialExecutor implements Executor {
     private static final Logger log = Logger.getLogger(SequentialExecutor.class.getName());
     private final Executor executor;
@@ -18,7 +18,7 @@ public final class SequentialExecutor implements Executor {
     private final QueueWorker worker = new QueueWorker();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public enum WorkerRunningState {
         IDLE,
         QUEUING,
@@ -80,7 +80,7 @@ public final class SequentialExecutor implements Executor {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     private final class QueueWorker implements Runnable {
         @CheckForNull
         Runnable task;

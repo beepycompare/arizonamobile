@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class JsonValueObjectEncoderContext implements ObjectEncoderContext, ValueEncoderContext {
     private final ObjectEncoder<Object> fallbackEncoder;
     private final boolean ignoreNullValues;

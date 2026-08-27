@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.settings;
 
 import com.google.firebase.crashlytics.internal.common.InstallIdProvider;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SettingsRequest {
     public final String buildVersion;
     public final String deviceModel;

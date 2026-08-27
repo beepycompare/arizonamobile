@@ -4,7 +4,7 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.analytics.connector.AnalyticsConnector;
 import java.util.Set;
 /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class zzg implements zza {
     private final AnalyticsConnector.AnalyticsConnectorListener zza;
     private final AppMeasurementSdk zzb;

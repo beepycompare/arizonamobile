@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class IdManager implements InstallIdProvider {
     public static final String DEFAULT_VERSION_NAME = "0.0";
     static final String PREFKEY_ADVERTISING_ID = "crashlytics.advertising.id";

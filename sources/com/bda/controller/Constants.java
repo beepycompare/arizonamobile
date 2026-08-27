@@ -1,9 +1,9 @@
 package com.bda.controller;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class Constants {
     public static final int MSG_SET_ACTIVITY_EVENT = 1;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static final class ActivityEvent {
         public static final int CREATE = 1;
         public static final int DESTROY = 2;

@@ -27,7 +27,7 @@ import java.util.concurrent.Executor;
 import java.util.zip.GZIPOutputStream;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DefaultHeartBeatController implements HeartBeatController, HeartBeatInfo {
     private final Context applicationContext;
     private final Executor backgroundExecutor;
@@ -45,14 +45,14 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda3
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DefaultHeartBeatController.this.m9733x734756b4();
+                return DefaultHeartBeatController.this.m9736x734756b4();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$registerHeartBeat$0$com-google-firebase-heartbeatinfo-DefaultHeartBeatController  reason: not valid java name */
-    public /* synthetic */ Void m9733x734756b4() throws Exception {
+    public /* synthetic */ Void m9736x734756b4() throws Exception {
         synchronized (this) {
             this.storageProvider.get().storeHeartBeat(System.currentTimeMillis(), this.userAgentProvider.get().getUserAgent());
         }
@@ -67,14 +67,14 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DefaultHeartBeatController.this.m9732x341e14f2();
+                return DefaultHeartBeatController.this.m9735x341e14f2();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getHeartBeatsHeader$1$com-google-firebase-heartbeatinfo-DefaultHeartBeatController  reason: not valid java name */
-    public /* synthetic */ String m9732x341e14f2() throws Exception {
+    public /* synthetic */ String m9735x341e14f2() throws Exception {
         String byteArrayOutputStream;
         synchronized (this) {
             HeartBeatInfoStorage heartBeatInfoStorage = this.storageProvider.get();

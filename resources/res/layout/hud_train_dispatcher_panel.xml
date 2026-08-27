@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/train_dispatcher_panel" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|top" android:paddingTop="@dimen/_12sdp" android:paddingBottom="@dimen/_10sdp" android:layout_width="@dimen/_150sdp" android:layout_height="@dimen/_168sdp" android:layout_marginTop="@dimen/_64sdp" android:paddingStart="@dimen/_18sdp" android:paddingEnd="@dimen/_10sdp" app:backgroundMainColor="#d9121212" app:backgroundSecondColor="#00121212" app:gradientAngle="180">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textSize="@dimen/_13sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/train_hud_dispatcher" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="@dimen/_32sdp" android:layout_marginTop="@dimen/_9sdp">
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/white" android:id="@+id/train_dispatcher_locomotives_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                    <TextView android:textSize="@dimen/_5sdp" android:textColor="#85ffffff" android:layout_width="@dimen/_55sdp" android:layout_height="wrap_content" android:text="@string/train_hud_locomotives_on_route" android:maxLines="2" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
+                    <TextView android:textSize="@dimen/_12sdp" android:textColor="@color/white" android:id="@+id/train_dispatcher_stations_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+                    <TextView android:textSize="@dimen/_5sdp" android:textColor="#85ffffff" android:layout_width="@dimen/_55sdp" android:layout_height="wrap_content" android:text="@string/train_hud_stations_on_route" android:maxLines="2" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+                </LinearLayout>
+            </LinearLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/train_dispatcher_call_action" android:layout_width="match_parent" android:layout_height="@dimen/_24sdp" android:layout_marginTop="@dimen/_8sdp" app:backgroundMainColor="#b5ef6b" app:corners="@dimen/_4sdp">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <ImageView android:layout_width="@dimen/_9sdp" android:layout_height="@dimen/_9sdp" android:src="@drawable/ic_phone_messenger" android:tint="#182012" android:contentDescription="@null"/>
+                    <TextView android:textSize="@dimen/_6sdp" android:textColor="#182012" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/train_hud_call_dispatcher" android:includeFontPadding="false" android:fontFamily="@font/heading_now_65_medium" android:layout_marginStart="@dimen/_5sdp"/>
+                </LinearLayout>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="@dimen/_40sdp" android:layout_marginTop="@dimen/_8sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="@dimen/_1sdp" app:backgroundMainColor="#75ffffff" app:corners="@dimen/_1sdp"/>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <ImageView android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/location_icon" android:tint="#ff4655" android:contentDescription="@null"/>
+                    <ImageView android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/location_icon" android:tint="@color/white" android:contentDescription="@null" android:layout_marginStart="@dimen/_18sdp"/>
+                    <ImageView android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/location_icon" android:tint="#f4c63d" android:contentDescription="@null" android:layout_marginStart="@dimen/_18sdp"/>
+                    <ImageView android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/location_icon" android:tint="@color/white" android:contentDescription="@null" android:layout_marginStart="@dimen/_18sdp"/>
+                    <ImageView android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/location_icon" android:tint="#9ef15d" android:contentDescription="@null" android:layout_marginStart="@dimen/_18sdp"/>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="end|bottom" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/_16sdp" android:layout_marginBottom="@dimen/_14sdp" android:layout_marginEnd="@dimen/_18sdp">
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_38sdp" android:layout_height="@dimen/_14sdp" app:backgroundMainColor="@color/white" app:corners="@dimen/_3sdp">
+            <TextView android:textSize="@dimen/_5sdp" android:textColor="#161616" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Backspace" android:includeFontPadding="false" android:fontFamily="@font/heading_now_65_medium"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/train_hud_close_dispatcher" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular" android:layout_marginStart="@dimen/_6sdp"/>
+    </LinearLayout>
+</FrameLayout>

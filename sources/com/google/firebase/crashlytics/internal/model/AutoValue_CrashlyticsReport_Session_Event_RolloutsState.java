@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.model;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.google.firebase.encoders.annotations.Encodable;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_Session_Event_RolloutsState extends CrashlyticsReport.Session.Event.RolloutsState {
     private final List<CrashlyticsReport.Session.Event.RolloutAssignment> rolloutAssignments;
 
@@ -36,7 +36,7 @@ final class AutoValue_CrashlyticsReport_Session_Event_RolloutsState extends Cras
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.Session.Event.RolloutsState.Builder {
         private List<CrashlyticsReport.Session.Event.RolloutAssignment> rolloutAssignments;
 

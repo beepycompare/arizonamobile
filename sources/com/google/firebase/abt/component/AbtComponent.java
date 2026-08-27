@@ -6,7 +6,7 @@ import com.google.firebase.analytics.connector.AnalyticsConnector;
 import com.google.firebase.inject.Provider;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class AbtComponent {
     private final Map<String, FirebaseABTesting> abtOriginInstances = new HashMap();
     private final Provider<AnalyticsConnector> analyticsConnector;

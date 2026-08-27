@@ -3,7 +3,7 @@ package com.google.firebase.concurrent;
 import android.os.Handler;
 import android.os.Looper;
 import java.util.concurrent.Executor;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public enum UiExecutor implements Executor {
     INSTANCE;
     

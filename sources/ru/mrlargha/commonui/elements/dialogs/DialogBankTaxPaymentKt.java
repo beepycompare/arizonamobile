@@ -241,18 +241,18 @@ public final class DialogBankTaxPaymentKt {
     }
 
     private static final JsonElement parseJsonElement(String str) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(JsonParser.parseString(str));
+            m9919constructorimpl = Result.m9919constructorimpl(JsonParser.parseString(str));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-            m9916constructorimpl = null;
+        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+            m9919constructorimpl = null;
         }
-        return (JsonElement) m9916constructorimpl;
+        return (JsonElement) m9919constructorimpl;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -384,12 +384,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            str2 = Result.m9916constructorimpl(jsonElement.getAsString());
+                            str2 = Result.m9919constructorimpl(jsonElement.getAsString());
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            str2 = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                            str2 = Result.m9919constructorimpl(ResultKt.createFailure(th));
                         }
-                        str = Result.m9922isFailureimpl(str2) ? null : str2;
+                        str = Result.m9925isFailureimpl(str2) ? null : str2;
                     }
                 }
                 if (str != null) {
@@ -419,12 +419,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            num2 = Result.m9916constructorimpl(Integer.valueOf(jsonElement.getAsInt()));
+                            num2 = Result.m9919constructorimpl(Integer.valueOf(jsonElement.getAsInt()));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            num2 = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                            num2 = Result.m9919constructorimpl(ResultKt.createFailure(th));
                         }
-                        num = Result.m9922isFailureimpl(num2) ? null : num2;
+                        num = Result.m9925isFailureimpl(num2) ? null : num2;
                     }
                 }
                 if (num != null) {
@@ -454,12 +454,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            l2 = Result.m9916constructorimpl(Long.valueOf(jsonElement.getAsLong()));
+                            l2 = Result.m9919constructorimpl(Long.valueOf(jsonElement.getAsLong()));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            l2 = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                            l2 = Result.m9919constructorimpl(ResultKt.createFailure(th));
                         }
-                        l = Result.m9922isFailureimpl(l2) ? null : l2;
+                        l = Result.m9925isFailureimpl(l2) ? null : l2;
                     }
                 }
                 if (l != null) {

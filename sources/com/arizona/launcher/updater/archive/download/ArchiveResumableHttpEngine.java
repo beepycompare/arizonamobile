@@ -406,16 +406,16 @@ public final class ArchiveResumableHttpEngine {
     /* JADX WARN: Code restructure failed: missing block: B:30:0x00d3, code lost:
         r1 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x0208, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x0206, code lost:
         kotlin.io.CloseableKt.closeFinally(r6, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x020b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x0209, code lost:
         kotlin.io.CloseableKt.closeFinally(r4, r0);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x020e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x020c, code lost:
         return r23;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x020f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x020d, code lost:
         r0 = th;
      */
     /*

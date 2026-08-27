@@ -55,7 +55,7 @@ public final class BankScreen$requestDepositIncomeIfNeeded$1 extends SuspendLamb
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         BankDepositRepository bankDepositRepository;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -63,7 +63,7 @@ public final class BankScreen$requestDepositIncomeIfNeeded$1 extends SuspendLamb
         try {
         } catch (Throwable th) {
             Result.Companion companion = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -88,11 +88,11 @@ public final class BankScreen$requestDepositIncomeIfNeeded$1 extends SuspendLamb
             CoroutineScope coroutineScope2 = (CoroutineScope) this.L$1;
             ResultKt.throwOnFailure(obj);
         }
-        m9916constructorimpl = Result.m9916constructorimpl((BankDepositIncomePayload) obj);
-        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-            m9916constructorimpl = null;
+        m9919constructorimpl = Result.m9919constructorimpl((BankDepositIncomePayload) obj);
+        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+            m9919constructorimpl = null;
         }
-        BankDepositIncomePayload bankDepositIncomePayload2 = (BankDepositIncomePayload) m9916constructorimpl;
+        BankDepositIncomePayload bankDepositIncomePayload2 = (BankDepositIncomePayload) m9919constructorimpl;
         this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
         this.L$1 = SpillingKt.nullOutSpilledVariable(bankDepositIncomePayload2);
         this.label = 2;

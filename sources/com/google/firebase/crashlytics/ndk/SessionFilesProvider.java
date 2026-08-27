@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.ndk;
 import com.google.firebase.crashlytics.internal.NativeSessionFileProvider;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class SessionFilesProvider implements NativeSessionFileProvider {
     private final SessionFiles sessionFiles;
 

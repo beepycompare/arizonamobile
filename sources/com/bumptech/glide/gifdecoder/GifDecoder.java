@@ -13,7 +13,7 @@ public interface GifDecoder {
     public static final int STATUS_PARTIAL_DECODE = 3;
     public static final int TOTAL_ITERATION_COUNT_FOREVER = 0;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public interface BitmapProvider {
         Bitmap obtain(int i, int i2, Bitmap.Config config);
 

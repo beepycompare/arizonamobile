@@ -46,7 +46,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashlyticsController {
     static final String APP_EXCEPTION_MARKER_PREFIX = ".ae";
     static final String FIREBASE_APPLICATION_EXCEPTION = "_ae";
@@ -353,14 +353,14 @@ public class CrashlyticsController {
         this.crashlyticsWorkers.common.submit(new Runnable() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsController$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                CrashlyticsController.this.m9707xe0c67ca9(str);
+                CrashlyticsController.this.m9710xe0c67ca9(str);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$openSession$1$com-google-firebase-crashlytics-internal-common-CrashlyticsController  reason: not valid java name */
-    public /* synthetic */ void m9707xe0c67ca9(String str) {
+    public /* synthetic */ void m9710xe0c67ca9(String str) {
         doOpenSession(str, false);
     }
 

@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DefaultSettingsSpiCall implements SettingsSpiCall {
     static final String ACCEPT_JSON_VALUE = "application/json";
     static final String ANDROID_CLIENT_TYPE = "android";

@@ -19,7 +19,7 @@ import kotlin.text.RegexOption;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ArchivePackage.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\u000fJ\u000e\u0010\u0010\u001a\u00020\r2\u0006\u0010\u0011\u001a\u00020\u000fJ\u000e\u0010\u0012\u001a\u00020\r2\u0006\u0010\u0013\u001a\u00020\u0007J\u0016\u0010\u0014\u001a\u00020\r2\u0006\u0010\u0013\u001a\u00020\u00072\u0006\u0010\u0015\u001a\u00020\u000fJ\u000e\u0010\u0016\u001a\u00020\r2\u0006\u0010\u0017\u001a\u00020\u0007J\u000e\u0010\u0018\u001a\u00020\r2\u0006\u0010\u0019\u001a\u00020\u000fJ\u000e\u0010\u001a\u001a\u00020\u000f2\u0006\u0010\u001b\u001a\u00020\u000fJ\u0018\u0010\u001c\u001a\u00020\r2\u0006\u0010\u001d\u001a\u00020\u000f2\u0006\u0010\u0015\u001a\u00020\u000fH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u001f\u0012\b\b \u0012\u0004\b\u0003\u0010\u0002¨\u0006\u001e"}, d2 = {"Lcom/arizona/launcher/updater/archive/model/ArchiveModelRules;", "", "<init>", "()V", "CURRENT_SCHEMA_VERSION", "", "MAX_ARCHIVE_SIZE_EXCLUSIVE", "", "MAX_UNSIGNED_CRC32", "packageIdRegex", "Lkotlin/text/Regex;", "encodedUnsafePathToken", "requirePackageId", "", TtmlNode.ATTR_ID, "", "requireManifestVersion", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "requireArchiveSize", "size", "requireNonNegativeSize", Constants.ScionAnalytics.PARAM_LABEL, "requireUnsignedCrc32", "crc32", "requirePackageUrl", "value", "entryTarget", "entryPath", "requireSafeSegments", "path", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010J\u000e\u0010\u0011\u001a\u00020\u000e2\u0006\u0010\u0012\u001a\u00020\u0010J\u000e\u0010\u0013\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\u0007J\u0016\u0010\u0015\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0010J\u000e\u0010\u0017\u001a\u00020\u000e2\u0006\u0010\u0018\u001a\u00020\u0007J\u000e\u0010\u0019\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u0010J\u000e\u0010\u001b\u001a\u00020\u000e2\u0006\u0010\u001a\u001a\u00020\u0010J\u000e\u0010\u001c\u001a\u00020\u00102\u0006\u0010\u001d\u001a\u00020\u0010J\u0018\u0010\u001e\u001a\u00020\u000e2\u0006\u0010\u001f\u001a\u00020\u00102\u0006\u0010\u0016\u001a\u00020\u0010H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b!\u0012\b\b\"\u0012\u0004\b\u0003\u0010\u0002¨\u0006 "}, d2 = {"Lcom/arizona/launcher/updater/archive/model/ArchiveModelRules;", "", "<init>", "()V", "CURRENT_SCHEMA_VERSION", "", "MAX_ARCHIVE_SIZE_EXCLUSIVE", "", "MAX_UNSIGNED_CRC32", "packageIdRegex", "Lkotlin/text/Regex;", "encodedUnsafePathToken", "SHA256_HEX", "requirePackageId", "", TtmlNode.ATTR_ID, "", "requireManifestVersion", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "requireArchiveSize", "size", "requireNonNegativeSize", Constants.ScionAnalytics.PARAM_LABEL, "requireUnsignedCrc32", "crc32", "requireSha256Hex", "value", "requirePackageUrl", "entryTarget", "entryPath", "requireSafeSegments", "path", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveModelRules {
     public static final int $stable = 0;
@@ -29,6 +29,7 @@ public final class ArchiveModelRules {
     public static final ArchiveModelRules INSTANCE = new ArchiveModelRules();
     private static final Regex packageIdRegex = new Regex("[A-Za-z0-9][A-Za-z0-9._-]{0,95}");
     private static final Regex encodedUnsafePathToken = new Regex("%(?:2e|2f|5c)", RegexOption.IGNORE_CASE);
+    private static final Regex SHA256_HEX = new Regex("[0-9a-fA-F]{64}");
 
     private ArchiveModelRules() {
     }
@@ -77,8 +78,24 @@ public final class ArchiveModelRules {
         }
     }
 
+    public final String requireSha256Hex(String value) {
+        Intrinsics.checkNotNullParameter(value, "value");
+        String str = value;
+        if (str.length() <= 0 || !Intrinsics.areEqual(value, StringsKt.trim((CharSequence) str).toString())) {
+            throw new IllegalArgumentException("centralDirectorySha256 must be a non-blank trimmed hexadecimal SHA-256".toString());
+        }
+        if (!SHA256_HEX.matches(str)) {
+            throw new IllegalArgumentException("centralDirectorySha256 must be a 64-character hexadecimal SHA-256".toString());
+        }
+        Locale ROOT = Locale.ROOT;
+        Intrinsics.checkNotNullExpressionValue(ROOT, "ROOT");
+        String lowerCase = value.toLowerCase(ROOT);
+        Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
+        return lowerCase;
+    }
+
     public final void requirePackageUrl(String value) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         String host;
         Intrinsics.checkNotNullParameter(value, "value");
         String str = value;
@@ -96,16 +113,16 @@ public final class ArchiveModelRules {
                 try {
                     Result.Companion companion = Result.Companion;
                     ArchiveModelRules archiveModelRules = this;
-                    m9916constructorimpl = Result.m9916constructorimpl(new URI(value));
+                    m9919constructorimpl = Result.m9919constructorimpl(new URI(value));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                    m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
-                if (m9919exceptionOrNullimpl != null) {
-                    throw new IllegalArgumentException("package URL is malformed", m9919exceptionOrNullimpl);
+                Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
+                if (m9922exceptionOrNullimpl != null) {
+                    throw new IllegalArgumentException("package URL is malformed", m9922exceptionOrNullimpl);
                 }
-                URI uri = (URI) m9916constructorimpl;
+                URI uri = (URI) m9919constructorimpl;
                 if (uri.getFragment() != null) {
                     throw new IllegalArgumentException("package URL must not contain a fragment".toString());
                 }

@@ -130,7 +130,7 @@ public final class MoneyElement {
         view.clearAnimation();
         view.setAlpha(0.0f);
         view.setTranslationY(-10.0f);
-        view.animate().alpha(1.0f).translationY(0.0f).setDuration(ANIM_DURATION).setInterpolator(new DecelerateInterpolator()).start();
+        view.animate().alpha(1.0f).translationY(0.0f).setDuration(220L).setInterpolator(new DecelerateInterpolator()).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

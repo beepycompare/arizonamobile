@@ -8,7 +8,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class CrashlyticsTasks {
     private static final Executor DIRECT = new DefaultDownloaderFactory$$ExternalSyntheticLambda0();
 

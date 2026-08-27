@@ -1,5 +1,5 @@
 package androidx.media3.common.util;
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CircularIntArray {
     private int capacityBitmask = 7;
     private int[] elements = new int[8];

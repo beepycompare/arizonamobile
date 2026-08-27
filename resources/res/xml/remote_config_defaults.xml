@@ -174,28 +174,4 @@
         <value>false
         </value>
     </entry>
-    <entry>
-        <key>launcher_archive_staging_arizona_main_url
-        </key>
-        <value>https://mob.maz-ins.com/game/staging/zip_data/
-        </value>
-    </entry>
-    <entry>
-        <key>launcher_archive_staging_arizona_reserve_url
-        </key>
-        <value>https://arz-mob.react-group.tech/game/staging/zip_data/
-        </value>
-    </entry>
-    <entry>
-        <key>launcher_archive_staging_rodina_main_url
-        </key>
-        <value>https://mob.azinternal.com/staging/zip_data/
-        </value>
-    </entry>
-    <entry>
-        <key>launcher_archive_staging_rodina_reserve_url
-        </key>
-        <value>https://rod-mob.react-group.tech/staging/zip_data/
-        </value>
-    </entry>
 </defaults>

@@ -70,7 +70,7 @@ public final class ArchivePackageDownloaderKt$runDrainedOwnedBlockingTask$2<T> e
     /* JADX WARN: Type inference failed for: r2v0, types: [kotlinx.coroutines.Deferred, java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         ?? anonymousClass2;
         Deferred async$default;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
@@ -81,14 +81,14 @@ public final class ArchivePackageDownloaderKt$runDrainedOwnedBlockingTask$2<T> e
             Function0<Unit> function0 = this.$cancelIfOwned;
             try {
                 Result.Companion companion = Result.Companion;
-                m9916constructorimpl = Result.m9916constructorimpl(function0.invoke());
+                m9919constructorimpl = Result.m9919constructorimpl(function0.invoke());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9919exceptionOrNullimpl = Result.m9919exceptionOrNullimpl(m9916constructorimpl);
-            if (m9919exceptionOrNullimpl != null) {
-                e.addSuppressed(m9919exceptionOrNullimpl);
+            Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
+            if (m9922exceptionOrNullimpl != null) {
+                e.addSuppressed(m9922exceptionOrNullimpl);
             }
             this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
             this.L$1 = SpillingKt.nullOutSpilledVariable(anonymousClass2);

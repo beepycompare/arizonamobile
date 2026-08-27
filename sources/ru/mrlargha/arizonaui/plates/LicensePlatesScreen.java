@@ -529,7 +529,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final Companion.GeneratedPlateResponse parseGeneratedPlate(String str) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         String number;
         String removeSurrounding;
         Object obj;
@@ -538,15 +538,15 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             LicensePlatesScreen licensePlatesScreen = this;
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
         if (MapperKt.isJsonValid(str) && !Intrinsics.areEqual(str, AbstractJsonLexerKt.NULL) && !Intrinsics.areEqual(str, "{}") && str.length() != 0) {
             obj = MapperKt.getGson().fromJson(str, (Class<Object>) Companion.GeneratedPlateResponse.class);
-            m9916constructorimpl = Result.m9916constructorimpl((Companion.GeneratedPlateResponse) obj);
-            if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-                m9916constructorimpl = null;
+            m9919constructorimpl = Result.m9919constructorimpl((Companion.GeneratedPlateResponse) obj);
+            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+                m9919constructorimpl = null;
             }
-            Companion.GeneratedPlateResponse generatedPlateResponse = (Companion.GeneratedPlateResponse) m9916constructorimpl;
+            Companion.GeneratedPlateResponse generatedPlateResponse = (Companion.GeneratedPlateResponse) m9919constructorimpl;
             number = generatedPlateResponse == null ? generatedPlateResponse.getNumber() : null;
             if (number != null || StringsKt.isBlank(number)) {
                 removeSurrounding = StringsKt.removeSurrounding(StringsKt.trim((CharSequence) str).toString(), (CharSequence) "\"");
@@ -561,10 +561,10 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             return generatedPlateResponse;
         }
         obj = null;
-        m9916constructorimpl = Result.m9916constructorimpl((Companion.GeneratedPlateResponse) obj);
-        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
+        m9919constructorimpl = Result.m9919constructorimpl((Companion.GeneratedPlateResponse) obj);
+        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
         }
-        Companion.GeneratedPlateResponse generatedPlateResponse2 = (Companion.GeneratedPlateResponse) m9916constructorimpl;
+        Companion.GeneratedPlateResponse generatedPlateResponse2 = (Companion.GeneratedPlateResponse) m9919constructorimpl;
         number = generatedPlateResponse2 == null ? generatedPlateResponse2.getNumber() : null;
         if (number != null) {
         }

@@ -194,14 +194,14 @@ public class SearchViewAnimationHelper {
         this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SearchViewAnimationHelper.this.m9615x94743afc();
+                SearchViewAnimationHelper.this.m9618x94743afc();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startShowAnimationExpand$0$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m9615x94743afc() {
+    public /* synthetic */ void m9618x94743afc() {
         final AnimationCoordinator animationCoordinator = new AnimationCoordinator();
         animationCoordinator.addAnimator(getExpandCollapseAnimatorSet(true));
         for (SpringAnimation springAnimation : getExpandCollapseSpringAnimations(true)) {
@@ -281,14 +281,14 @@ public class SearchViewAnimationHelper {
         this.rootView.post(new Runnable() { // from class: com.google.android.material.search.SearchViewAnimationHelper$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                SearchViewAnimationHelper.this.m9616x4df249eb();
+                SearchViewAnimationHelper.this.m9619x4df249eb();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startShowAnimationTranslate$1$com-google-android-material-search-SearchViewAnimationHelper  reason: not valid java name */
-    public /* synthetic */ void m9616x4df249eb() {
+    public /* synthetic */ void m9619x4df249eb() {
         ClippableRoundedCornerLayout clippableRoundedCornerLayout = this.rootView;
         clippableRoundedCornerLayout.setTranslationY(clippableRoundedCornerLayout.getHeight());
         final AnimatorSet translateAnimatorSet = getTranslateAnimatorSet(true);
@@ -680,7 +680,7 @@ public class SearchViewAnimationHelper {
             ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$DefaultAnimationDelegate$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SearchViewAnimationHelper.DefaultAnimationDelegate.this.m9623x8b5d297b(cornerSize, maxCornerRadii, rect, valueAnimator);
+                    SearchViewAnimationHelper.DefaultAnimationDelegate.this.m9626x8b5d297b(cornerSize, maxCornerRadii, rect, valueAnimator);
                 }
             });
             ofObject.setDuration(z ? 300L : 250L);
@@ -690,7 +690,7 @@ public class SearchViewAnimationHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$getRootViewAnimator$0$com-google-android-material-search-SearchViewAnimationHelper$DefaultAnimationDelegate  reason: not valid java name */
-        public /* synthetic */ void m9623x8b5d297b(float f, float[] fArr, Rect rect, ValueAnimator valueAnimator) {
+        public /* synthetic */ void m9626x8b5d297b(float f, float[] fArr, Rect rect, ValueAnimator valueAnimator) {
             SearchViewAnimationHelper.this.rootView.updateClipBoundsAndCornerRadii(rect, lerpCornerRadii(f, fArr, valueAnimator.getAnimatedFraction()));
         }
 
@@ -746,7 +746,7 @@ public class SearchViewAnimationHelper {
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$DefaultAnimationDelegate$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SearchViewAnimationHelper.DefaultAnimationDelegate.this.m9621xb169caa7(rect, valueAnimator);
+                    SearchViewAnimationHelper.DefaultAnimationDelegate.this.m9624xb169caa7(rect, valueAnimator);
                 }
             });
             animatorSet.playTogether(ofInt);
@@ -754,7 +754,7 @@ public class SearchViewAnimationHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$addEditTextClipAnimator$1$com-google-android-material-search-SearchViewAnimationHelper$DefaultAnimationDelegate  reason: not valid java name */
-        public /* synthetic */ void m9621xb169caa7(Rect rect, ValueAnimator valueAnimator) {
+        public /* synthetic */ void m9624xb169caa7(Rect rect, ValueAnimator valueAnimator) {
             rect.right = ((Integer) valueAnimator.getAnimatedValue()).intValue();
             SearchViewAnimationHelper.this.editText.setClipBounds(rect);
         }
@@ -767,7 +767,7 @@ public class SearchViewAnimationHelper {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$DefaultAnimationDelegate$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SearchViewAnimationHelper.DefaultAnimationDelegate.this.m9622x8539623c(valueAnimator);
+                    SearchViewAnimationHelper.DefaultAnimationDelegate.this.m9625x8539623c(valueAnimator);
                 }
             });
             animatorSet.playTogether(ofFloat);
@@ -775,7 +775,7 @@ public class SearchViewAnimationHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$addTextFadeAnimatorIfNeeded$2$com-google-android-material-search-SearchViewAnimationHelper$DefaultAnimationDelegate  reason: not valid java name */
-        public /* synthetic */ void m9622x8539623c(ValueAnimator valueAnimator) {
+        public /* synthetic */ void m9625x8539623c(ValueAnimator valueAnimator) {
             SearchViewAnimationHelper.this.editText.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
             SearchViewAnimationHelper.this.searchBar.getTextView().setAlpha(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
@@ -967,7 +967,7 @@ public class SearchViewAnimationHelper {
             alphaValueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$ContainedAnimationDelegate$$ExternalSyntheticLambda2
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9617xdc9a02e0(valueAnimator);
+                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9620xdc9a02e0(valueAnimator);
                 }
             });
             return alphaValueAnimator;
@@ -975,7 +975,7 @@ public class SearchViewAnimationHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$getBackgroundAlphaAnimator$0$com-google-android-material-search-SearchViewAnimationHelper$ContainedAnimationDelegate  reason: not valid java name */
-        public /* synthetic */ void m9617xdc9a02e0(ValueAnimator valueAnimator) {
+        public /* synthetic */ void m9620xdc9a02e0(ValueAnimator valueAnimator) {
             SearchViewAnimationHelper.this.setBackgroundAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
 
@@ -997,7 +997,7 @@ public class SearchViewAnimationHelper {
             alphaValueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$ContainedAnimationDelegate$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9619x2edc5246(valueAnimator);
+                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9622x2edc5246(valueAnimator);
                 }
             });
             return alphaValueAnimator;
@@ -1005,7 +1005,7 @@ public class SearchViewAnimationHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$getToolbarAlphaAnimator$1$com-google-android-material-search-SearchViewAnimationHelper$ContainedAnimationDelegate  reason: not valid java name */
-        public /* synthetic */ void m9619x2edc5246(ValueAnimator valueAnimator) {
+        public /* synthetic */ void m9622x2edc5246(ValueAnimator valueAnimator) {
             SearchViewAnimationHelper.this.toolbar.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
 
@@ -1031,7 +1031,7 @@ public class SearchViewAnimationHelper {
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$ContainedAnimationDelegate$$ExternalSyntheticLambda3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9618x67b2b750(valueAnimator);
+                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9621x67b2b750(valueAnimator);
                 }
             });
             return ofInt;
@@ -1039,7 +1039,7 @@ public class SearchViewAnimationHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$getDummyTextViewWidthAnimator$2$com-google-android-material-search-SearchViewAnimationHelper$ContainedAnimationDelegate  reason: not valid java name */
-        public /* synthetic */ void m9618x67b2b750(ValueAnimator valueAnimator) {
+        public /* synthetic */ void m9621x67b2b750(ValueAnimator valueAnimator) {
             setWidth(SearchViewAnimationHelper.this.dummyTextView, ((Integer) valueAnimator.getAnimatedValue()).intValue());
         }
 
@@ -1126,7 +1126,7 @@ public class SearchViewAnimationHelper {
             springAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: com.google.android.material.search.SearchViewAnimationHelper$ContainedAnimationDelegate$$ExternalSyntheticLambda0
                 @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                 public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
-                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9620xf6aa07b8(z, toolbar, dynamicAnimation, z2, f, f2);
+                    SearchViewAnimationHelper.ContainedAnimationDelegate.this.m9623xf6aa07b8(z, toolbar, dynamicAnimation, z2, f, f2);
                 }
             });
             return springAnimation;
@@ -1134,7 +1134,7 @@ public class SearchViewAnimationHelper {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$getToolbarWidthSpringAnimation$3$com-google-android-material-search-SearchViewAnimationHelper$ContainedAnimationDelegate  reason: not valid java name */
-        public /* synthetic */ void m9620xf6aa07b8(boolean z, Toolbar toolbar, DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
+        public /* synthetic */ void m9623xf6aa07b8(boolean z, Toolbar toolbar, DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
             if (z) {
                 setWidth(toolbar, -1);
             }

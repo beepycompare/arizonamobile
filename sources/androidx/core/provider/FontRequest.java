@@ -58,7 +58,7 @@ public final class FontRequest {
     private String createIdentifier(String str, String str2, String str3, String str4, String str5) {
         StringBuilder sb = new StringBuilder();
         sb.append(str).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str2).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str3).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str4);
-        if (str5 != null && !UByte$$ExternalSyntheticBackport0.m9990m(str5)) {
+        if (str5 != null && !UByte$$ExternalSyntheticBackport0.m9993m(str5)) {
             sb.append("-VF");
         }
         return sb.toString();

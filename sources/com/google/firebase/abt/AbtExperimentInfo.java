@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class AbtExperimentInfo {
     static final String EXPERIMENT_ID_KEY = "experimentId";
     static final String TRIGGER_EVENT_KEY = "triggerEvent";

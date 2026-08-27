@@ -118,7 +118,7 @@ import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 import okhttp3.internal.ws.WebSocketProtocol;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class Util {
     private static final String ISM_DASH_FORMAT_EXTENSION = "format=mpd-time-csf";
     private static final String ISM_HLS_FORMAT_EXTENSION = "format=m3u8-aapl";
@@ -2461,7 +2461,7 @@ public final class Util {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class Api24 {
         /* JADX INFO: Access modifiers changed from: private */
         public static void stopForeground(Service service, boolean z) {
@@ -2472,7 +2472,7 @@ public final class Util {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class Api26 {
         private Api26() {
         }
@@ -2487,7 +2487,7 @@ public final class Util {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class Api29 {
         public static void startForeground(Service service, int i, Notification notification, int i2, String str) {
             try {

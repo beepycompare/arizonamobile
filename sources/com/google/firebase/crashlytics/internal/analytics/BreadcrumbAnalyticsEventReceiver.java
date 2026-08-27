@@ -6,7 +6,7 @@ import com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbHandler;
 import com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BreadcrumbAnalyticsEventReceiver implements AnalyticsEventReceiver, BreadcrumbSource {
     private static final String BREADCRUMB_NAME_KEY = "name";
     private static final String BREADCRUMB_PARAMS_KEY = "parameters";

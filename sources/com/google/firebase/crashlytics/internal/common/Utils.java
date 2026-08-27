@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class Utils {
     private static final int BACKGROUND_TIMEOUT_MILLIS = 4000;
     private static final int MAIN_TIMEOUT_MILLIS = 3000;

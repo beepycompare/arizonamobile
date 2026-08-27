@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashpadController {
     private static final String APP_METADATA_FILE = "app.json";
     private static final String DEVICE_METADATA_FILE = "device.json";

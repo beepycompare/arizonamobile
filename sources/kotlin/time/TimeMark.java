@@ -8,38 +8,38 @@ import kotlin.Metadata;
 /* loaded from: classes5.dex */
 public interface TimeMark {
     /* renamed from: elapsedNow-UwyO8pc */
-    long mo11281elapsedNowUwyO8pc();
+    long mo11284elapsedNowUwyO8pc();
 
     boolean hasNotPassedNow();
 
     boolean hasPassedNow();
 
     /* renamed from: minus-LRDsOJo */
-    TimeMark mo11282minusLRDsOJo(long j);
+    TimeMark mo11285minusLRDsOJo(long j);
 
     /* renamed from: plus-LRDsOJo */
-    TimeMark mo11284plusLRDsOJo(long j);
+    TimeMark mo11287plusLRDsOJo(long j);
 
     /* compiled from: TimeSource.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class DefaultImpls {
         /* renamed from: plus-LRDsOJo  reason: not valid java name */
-        public static TimeMark m11409plusLRDsOJo(TimeMark timeMark, long j) {
+        public static TimeMark m11412plusLRDsOJo(TimeMark timeMark, long j) {
             return new AdjustedTimeMark(timeMark, j, null);
         }
 
         /* renamed from: minus-LRDsOJo  reason: not valid java name */
-        public static TimeMark m11408minusLRDsOJo(TimeMark timeMark, long j) {
-            return timeMark.mo11284plusLRDsOJo(Duration.m11337unaryMinusUwyO8pc(j));
+        public static TimeMark m11411minusLRDsOJo(TimeMark timeMark, long j) {
+            return timeMark.mo11287plusLRDsOJo(Duration.m11340unaryMinusUwyO8pc(j));
         }
 
         public static boolean hasPassedNow(TimeMark timeMark) {
-            return !Duration.m11319isNegativeimpl(timeMark.mo11281elapsedNowUwyO8pc());
+            return !Duration.m11322isNegativeimpl(timeMark.mo11284elapsedNowUwyO8pc());
         }
 
         public static boolean hasNotPassedNow(TimeMark timeMark) {
-            return Duration.m11319isNegativeimpl(timeMark.mo11281elapsedNowUwyO8pc());
+            return Duration.m11322isNegativeimpl(timeMark.mo11284elapsedNowUwyO8pc());
         }
     }
 }

@@ -4,7 +4,7 @@ import com.google.firebase.analytics.connector.AnalyticsConnector;
 import com.google.firebase.components.ComponentContainer;
 import com.google.firebase.components.ComponentFactory;
 /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 final /* synthetic */ class zzb implements ComponentFactory {
     static final /* synthetic */ zzb zza = new zzb();
 

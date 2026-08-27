@@ -1,5 +1,5 @@
 package com.bumptech.glide;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public enum MemoryCategory {
     ZERO(0.0f),
     LOW(0.5f),

@@ -25,4 +25,5 @@
     <include android:id="@+id/shooting_gallery" android:visibility="gone" layout="@layout/hud_counter_shooting_gallery"/>
     <include android:id="@+id/combine_condition" android:visibility="gone" layout="@layout/hud_counter_combine_condition"/>
     <include android:id="@+id/escape" android:visibility="gone" layout="@layout/hud_counter_escape"/>
+    <include android:id="@+id/tofu_cooling" android:visibility="gone" layout="@layout/hud_counter_tofu_cooling"/>
 </FrameLayout>

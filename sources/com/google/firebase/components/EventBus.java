@@ -12,7 +12,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 class EventBus implements Subscriber, Publisher {
     private final Executor defaultExecutor;
     private final Map<Class<?>, ConcurrentHashMap<EventHandler<Object>, Executor>> handlerMap = new HashMap();

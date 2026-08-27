@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 final class AutoValue_CrashlyticsReport_FilesPayload extends CrashlyticsReport.FilesPayload {
     private final List<CrashlyticsReport.FilesPayload.File> files;
     private final String orgId;
@@ -52,7 +52,7 @@ final class AutoValue_CrashlyticsReport_FilesPayload extends CrashlyticsReport.F
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class Builder extends CrashlyticsReport.FilesPayload.Builder {
         private List<CrashlyticsReport.FilesPayload.File> files;
         private String orgId;

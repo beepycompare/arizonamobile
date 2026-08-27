@@ -270,9 +270,9 @@ public final class DateTimeComponents {
             });
             DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2 = Format;
             DateTimeFormatBuilder.WithTime.hour$default(withDateTimeComponents2, null, 1, null);
-            DateTimeFormatBuilderKt.m11544char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilderKt.m11547char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
             DateTimeFormatBuilder.WithTime.minute$default(withDateTimeComponents2, null, 1, null);
-            DateTimeFormatBuilderKt.m11544char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilderKt.m11547char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
             DateTimeFormatBuilder.WithTime.second$default(withDateTimeComponents2, null, 1, null);
             DateTimeFormatBuilderKt.optional$default(withDateTimeComponents, null, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function1
@@ -297,21 +297,21 @@ public final class DateTimeComponents {
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$0(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
             Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-            DateTimeFormatBuilderKt.m11544char(alternativeParsing, 't');
+            DateTimeFormatBuilderKt.m11547char(alternativeParsing, 't');
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$1(DateTimeFormatBuilder.WithDateTimeComponents alternativeParsing) {
             Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
-            DateTimeFormatBuilderKt.m11544char(alternativeParsing, 'T');
+            DateTimeFormatBuilderKt.m11547char(alternativeParsing, 'T');
             return Unit.INSTANCE;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit ISO_DATE_TIME_OFFSET$lambda$5$lambda$2(DateTimeFormatBuilder.WithDateTimeComponents optional) {
             Intrinsics.checkNotNullParameter(optional, "$this$optional");
-            DateTimeFormatBuilderKt.m11544char(optional, '.');
+            DateTimeFormatBuilderKt.m11547char(optional, '.');
             optional.secondFraction(1, 9);
             return Unit.INSTANCE;
         }
@@ -350,14 +350,14 @@ public final class DateTimeComponents {
                 }
             });
             Format.day(Padding.NONE);
-            DateTimeFormatBuilderKt.m11544char(withDateTimeComponents, ' ');
+            DateTimeFormatBuilderKt.m11547char(withDateTimeComponents, ' ');
             Format.monthName(MonthNames.Companion.getENGLISH_ABBREVIATED());
-            DateTimeFormatBuilderKt.m11544char(withDateTimeComponents, ' ');
+            DateTimeFormatBuilderKt.m11547char(withDateTimeComponents, ' ');
             DateTimeFormatBuilder.WithYearMonth.year$default(Format, null, 1, null);
-            DateTimeFormatBuilderKt.m11544char(withDateTimeComponents, ' ');
+            DateTimeFormatBuilderKt.m11547char(withDateTimeComponents, ' ');
             DateTimeFormatBuilder.WithDateTimeComponents withDateTimeComponents2 = Format;
             DateTimeFormatBuilder.WithTime.hour$default(withDateTimeComponents2, null, 1, null);
-            DateTimeFormatBuilderKt.m11544char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilderKt.m11547char(withDateTimeComponents, AbstractJsonLexerKt.COLON);
             DateTimeFormatBuilder.WithTime.minute$default(withDateTimeComponents2, null, 1, null);
             DateTimeFormatBuilderKt.optional$default(withDateTimeComponents, null, new Function1() { // from class: kotlinx.datetime.format.DateTimeComponents$Formats$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
@@ -402,7 +402,7 @@ public final class DateTimeComponents {
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final Unit RFC_1123$lambda$13$lambda$8(DateTimeFormatBuilder.WithDateTimeComponents optional) {
             Intrinsics.checkNotNullParameter(optional, "$this$optional");
-            DateTimeFormatBuilderKt.m11544char(optional, AbstractJsonLexerKt.COLON);
+            DateTimeFormatBuilderKt.m11547char(optional, AbstractJsonLexerKt.COLON);
             DateTimeFormatBuilder.WithTime.second$default(optional, null, 1, null);
             return Unit.INSTANCE;
         }
@@ -503,7 +503,7 @@ public final class DateTimeComponents {
     public final Month getMonth() {
         Integer monthNumber = getMonthNumber();
         if (monthNumber != null) {
-            return MonthKt.m11543Month(monthNumber.intValue());
+            return MonthKt.m11546Month(monthNumber.intValue());
         }
         return null;
     }
@@ -531,7 +531,7 @@ public final class DateTimeComponents {
     public final DayOfWeek getDayOfWeek() {
         Integer dayOfWeek = this.contents.getDate().getDayOfWeek();
         if (dayOfWeek != null) {
-            return DayOfWeekKt.m11533DayOfWeek(dayOfWeek.intValue());
+            return DayOfWeekKt.m11536DayOfWeek(dayOfWeek.intValue());
         }
         return null;
     }
@@ -675,7 +675,7 @@ public final class DateTimeComponents {
         try {
             Integer year = getYear();
             Intrinsics.checkNotNull(year);
-            long safeAdd = MathJvmKt.safeAdd(MathJvmKt.safeMultiply(year.intValue() / 10000, (long) DateCalculationsKt.SECONDS_PER_10000_YEARS), ((copy.toLocalDate().m11539toEpochDays() * 86400) + localTime.toSecondOfDay()) - utcOffset.getTotalSeconds());
+            long safeAdd = MathJvmKt.safeAdd(MathJvmKt.safeMultiply(year.intValue() / 10000, (long) DateCalculationsKt.SECONDS_PER_10000_YEARS), ((copy.toLocalDate().m11542toEpochDays() * 86400) + localTime.toSecondOfDay()) - utcOffset.getTotalSeconds());
             Instant.Companion companion = Instant.Companion;
             Integer nanosecond = getNanosecond();
             Instant fromEpochSeconds = companion.fromEpochSeconds(safeAdd, nanosecond != null ? nanosecond.intValue() : 0);

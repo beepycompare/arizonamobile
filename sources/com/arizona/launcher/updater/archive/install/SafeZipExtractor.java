@@ -624,8 +624,8 @@ public final class SafeZipExtractor {
     private final String toLowerHex(byte[] bArr) {
         StringBuilder sb = new StringBuilder(bArr.length * 2);
         for (byte b : bArr) {
-            sb.append(HEX_DIGITS.charAt((b & 255) >>> 4));
-            sb.append(HEX_DIGITS.charAt(b & Ascii.SI));
+            sb.append("0123456789abcdef".charAt((b & 255) >>> 4));
+            sb.append("0123456789abcdef".charAt(b & Ascii.SI));
         }
         return sb.toString();
     }

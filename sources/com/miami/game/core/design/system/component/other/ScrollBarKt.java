@@ -31,7 +31,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class ScrollBarKt {
     /* renamed from: verticalColumnScrollbar-osbwsH8  reason: not valid java name */
-    public static final Modifier m9792verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
+    public static final Modifier m9795verticalColumnScrollbarosbwsH8(Modifier verticalColumnScrollbar, final ScrollState scrollState, float f, boolean z, float f2, float f3, Composer composer, int i, int i2) {
         Intrinsics.checkNotNullParameter(verticalColumnScrollbar, "$this$verticalColumnScrollbar");
         Intrinsics.checkNotNullParameter(scrollState, "scrollState");
         ComposerKt.sourceInformationMarkerStart(composer, 2015743295, "C(verticalColumnScrollbar)N(scrollState,width:c#ui.unit.Dp,showScrollBarTrack,scrollBarCornerRadius,endPadding)27@975L1364:ScrollBar.kt#8aq8qr");

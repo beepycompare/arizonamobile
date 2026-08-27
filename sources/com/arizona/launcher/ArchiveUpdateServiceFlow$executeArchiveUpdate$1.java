@@ -1,6 +1,5 @@
 package com.arizona.launcher;
 
-import com.google.android.vending.licensing.Policy;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveUpdateServiceFlow.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0, 0, 0}, l = {284}, m = "executeArchiveUpdate", n = {"plan", "server", "updater", "operationToken"}, nl = {Policy.RETRY}, s = {"L$0", "L$1", "L$2", "J$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0, 0, 0}, l = {295}, m = "executeArchiveUpdate", n = {"plan", "server", "updater", "operationToken"}, nl = {302}, s = {"L$0", "L$1", "L$2", "J$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveUpdateServiceFlow$executeArchiveUpdate$1 extends ContinuationImpl {
     long J$0;

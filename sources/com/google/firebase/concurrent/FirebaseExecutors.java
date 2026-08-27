@@ -3,7 +3,7 @@ package com.google.firebase.concurrent;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class FirebaseExecutors {
     private FirebaseExecutors() {
     }
@@ -40,7 +40,7 @@ public class FirebaseExecutors {
         return DirectExecutor.INSTANCE;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     private enum DirectExecutor implements Executor {
         INSTANCE;
 

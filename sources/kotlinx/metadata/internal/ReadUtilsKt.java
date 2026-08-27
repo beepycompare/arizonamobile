@@ -25,7 +25,7 @@ public final class ReadUtilsKt {
 
     /* compiled from: ReadUtils.kt */
     @Metadata(k = 3, mv = {1, 9, 0}, xi = 48)
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -118,15 +118,15 @@ public final class ReadUtilsKt {
                 if (i != 2) {
                     if (i != 3) {
                         if (i == 4) {
-                            return new KmAnnotationArgument.ULongValue(ULong.m10096constructorimpl(value.getIntValue()), null);
+                            return new KmAnnotationArgument.ULongValue(ULong.m10099constructorimpl(value.getIntValue()), null);
                         }
                         throw new IllegalStateException(("Cannot read value of unsigned type: " + value.getType()).toString());
                     }
-                    return new KmAnnotationArgument.UIntValue(UInt.m10017constructorimpl((int) value.getIntValue()), null);
+                    return new KmAnnotationArgument.UIntValue(UInt.m10020constructorimpl((int) value.getIntValue()), null);
                 }
-                return new KmAnnotationArgument.UShortValue(UShort.m10203constructorimpl((short) value.getIntValue()), null);
+                return new KmAnnotationArgument.UShortValue(UShort.m10206constructorimpl((short) value.getIntValue()), null);
             }
-            return new KmAnnotationArgument.UByteValue(UByte.m9934constructorimpl((byte) value.getIntValue()), null);
+            return new KmAnnotationArgument.UByteValue(UByte.m9937constructorimpl((byte) value.getIntValue()), null);
         }
         ProtoBuf.Annotation.Argument.Value.Type type2 = value.getType();
         switch (type2 != null ? WhenMappings.$EnumSwitchMapping$0[type2.ordinal()] : -1) {

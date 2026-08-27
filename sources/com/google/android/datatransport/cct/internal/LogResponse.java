@@ -4,7 +4,7 @@ import android.util.JsonReader;
 import android.util.JsonToken;
 import java.io.IOException;
 import java.io.Reader;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public abstract class LogResponse {
     private static final String LOG_TAG = "LogResponseInternal";
 

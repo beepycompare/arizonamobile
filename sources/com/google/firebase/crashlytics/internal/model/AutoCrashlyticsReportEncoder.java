@@ -18,7 +18,7 @@ import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.impl.M2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AutoCrashlyticsReportEncoder implements Configurator {
     public static final int CODEGEN_VERSION = 2;
     public static final Configurator CONFIG = new AutoCrashlyticsReportEncoder();
@@ -82,7 +82,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         encoderConfig.registerEncoder(AutoValue_CrashlyticsReport_FilesPayload_File.class, CrashlyticsReportFilesPayloadFileEncoder.INSTANCE);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportEncoder implements ObjectEncoder<CrashlyticsReport> {
         static final CrashlyticsReportEncoder INSTANCE = new CrashlyticsReportEncoder();
         private static final FieldDescriptor SDKVERSION_DESCRIPTOR = FieldDescriptor.of(RemoteConfigConstants.RequestFieldKey.SDK_VERSION);
@@ -118,7 +118,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEncoder implements ObjectEncoder<CrashlyticsReport.Session> {
         static final CrashlyticsReportSessionEncoder INSTANCE = new CrashlyticsReportSessionEncoder();
         private static final FieldDescriptor GENERATOR_DESCRIPTOR = FieldDescriptor.of("generator");
@@ -154,7 +154,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionApplicationEncoder implements ObjectEncoder<CrashlyticsReport.Session.Application> {
         static final CrashlyticsReportSessionApplicationEncoder INSTANCE = new CrashlyticsReportSessionApplicationEncoder();
         private static final FieldDescriptor IDENTIFIER_DESCRIPTOR = FieldDescriptor.of("identifier");
@@ -180,7 +180,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionApplicationOrganizationEncoder implements ObjectEncoder<CrashlyticsReport.Session.Application.Organization> {
         static final CrashlyticsReportSessionApplicationOrganizationEncoder INSTANCE = new CrashlyticsReportSessionApplicationOrganizationEncoder();
         private static final FieldDescriptor CLSID_DESCRIPTOR = FieldDescriptor.of("clsId");
@@ -194,7 +194,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionUserEncoder implements ObjectEncoder<CrashlyticsReport.Session.User> {
         static final CrashlyticsReportSessionUserEncoder INSTANCE = new CrashlyticsReportSessionUserEncoder();
         private static final FieldDescriptor IDENTIFIER_DESCRIPTOR = FieldDescriptor.of("identifier");
@@ -208,7 +208,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionOperatingSystemEncoder implements ObjectEncoder<CrashlyticsReport.Session.OperatingSystem> {
         static final CrashlyticsReportSessionOperatingSystemEncoder INSTANCE = new CrashlyticsReportSessionOperatingSystemEncoder();
         private static final FieldDescriptor PLATFORM_DESCRIPTOR = FieldDescriptor.of(NotificationStatsPayloadFactory.KEY_PLATFORM);
@@ -228,7 +228,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionDeviceEncoder implements ObjectEncoder<CrashlyticsReport.Session.Device> {
         static final CrashlyticsReportSessionDeviceEncoder INSTANCE = new CrashlyticsReportSessionDeviceEncoder();
         private static final FieldDescriptor ARCH_DESCRIPTOR = FieldDescriptor.of("arch");
@@ -258,7 +258,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event> {
         static final CrashlyticsReportSessionEventEncoder INSTANCE = new CrashlyticsReportSessionEventEncoder();
         private static final FieldDescriptor TIMESTAMP_DESCRIPTOR = FieldDescriptor.of("timestamp");
@@ -282,7 +282,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application> {
         static final CrashlyticsReportSessionEventApplicationEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationEncoder();
         private static final FieldDescriptor EXECUTION_DESCRIPTOR = FieldDescriptor.of("execution");
@@ -308,7 +308,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationExecutionEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution> {
         static final CrashlyticsReportSessionEventApplicationExecutionEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionEncoder();
         private static final FieldDescriptor THREADS_DESCRIPTOR = FieldDescriptor.of("threads");
@@ -330,7 +330,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationExecutionThreadEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Thread> {
         static final CrashlyticsReportSessionEventApplicationExecutionThreadEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionThreadEncoder();
         private static final FieldDescriptor NAME_DESCRIPTOR = FieldDescriptor.of("name");
@@ -348,7 +348,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationExecutionThreadFrameEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Thread.Frame> {
         static final CrashlyticsReportSessionEventApplicationExecutionThreadFrameEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionThreadFrameEncoder();
         private static final FieldDescriptor PC_DESCRIPTOR = FieldDescriptor.of("pc");
@@ -370,7 +370,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationExecutionExceptionEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Exception> {
         static final CrashlyticsReportSessionEventApplicationExecutionExceptionEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionExceptionEncoder();
         private static final FieldDescriptor TYPE_DESCRIPTOR = FieldDescriptor.of("type");
@@ -392,7 +392,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportApplicationExitInfoEncoder implements ObjectEncoder<CrashlyticsReport.ApplicationExitInfo> {
         static final CrashlyticsReportApplicationExitInfoEncoder INSTANCE = new CrashlyticsReportApplicationExitInfoEncoder();
         private static final FieldDescriptor PID_DESCRIPTOR = FieldDescriptor.of("pid");
@@ -422,7 +422,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportApplicationExitInfoBuildIdMappingForArchEncoder implements ObjectEncoder<CrashlyticsReport.ApplicationExitInfo.BuildIdMappingForArch> {
         static final CrashlyticsReportApplicationExitInfoBuildIdMappingForArchEncoder INSTANCE = new CrashlyticsReportApplicationExitInfoBuildIdMappingForArchEncoder();
         private static final FieldDescriptor ARCH_DESCRIPTOR = FieldDescriptor.of("arch");
@@ -440,7 +440,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationExecutionSignalEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.Signal> {
         static final CrashlyticsReportSessionEventApplicationExecutionSignalEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionSignalEncoder();
         private static final FieldDescriptor NAME_DESCRIPTOR = FieldDescriptor.of("name");
@@ -458,7 +458,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationExecutionBinaryImageEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.Execution.BinaryImage> {
         static final CrashlyticsReportSessionEventApplicationExecutionBinaryImageEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationExecutionBinaryImageEncoder();
         private static final FieldDescriptor BASEADDRESS_DESCRIPTOR = FieldDescriptor.of("baseAddress");
@@ -478,7 +478,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportCustomAttributeEncoder implements ObjectEncoder<CrashlyticsReport.CustomAttribute> {
         static final CrashlyticsReportCustomAttributeEncoder INSTANCE = new CrashlyticsReportCustomAttributeEncoder();
         private static final FieldDescriptor KEY_DESCRIPTOR = FieldDescriptor.of("key");
@@ -494,7 +494,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventApplicationProcessDetailsEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Application.ProcessDetails> {
         static final CrashlyticsReportSessionEventApplicationProcessDetailsEncoder INSTANCE = new CrashlyticsReportSessionEventApplicationProcessDetailsEncoder();
         private static final FieldDescriptor PROCESSNAME_DESCRIPTOR = FieldDescriptor.of("processName");
@@ -514,7 +514,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventDeviceEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Device> {
         static final CrashlyticsReportSessionEventDeviceEncoder INSTANCE = new CrashlyticsReportSessionEventDeviceEncoder();
         private static final FieldDescriptor BATTERYLEVEL_DESCRIPTOR = FieldDescriptor.of("batteryLevel");
@@ -538,7 +538,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventLogEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.Log> {
         static final CrashlyticsReportSessionEventLogEncoder INSTANCE = new CrashlyticsReportSessionEventLogEncoder();
         private static final FieldDescriptor CONTENT_DESCRIPTOR = FieldDescriptor.of(FirebaseAnalytics.Param.CONTENT);
@@ -552,7 +552,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventRolloutsStateEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.RolloutsState> {
         static final CrashlyticsReportSessionEventRolloutsStateEncoder INSTANCE = new CrashlyticsReportSessionEventRolloutsStateEncoder();
         private static final FieldDescriptor ASSIGNMENTS_DESCRIPTOR = FieldDescriptor.of("assignments");
@@ -566,7 +566,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventRolloutAssignmentEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.RolloutAssignment> {
         static final CrashlyticsReportSessionEventRolloutAssignmentEncoder INSTANCE = new CrashlyticsReportSessionEventRolloutAssignmentEncoder();
         private static final FieldDescriptor ROLLOUTVARIANT_DESCRIPTOR = FieldDescriptor.of("rolloutVariant");
@@ -586,7 +586,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportSessionEventRolloutAssignmentRolloutVariantEncoder implements ObjectEncoder<CrashlyticsReport.Session.Event.RolloutAssignment.RolloutVariant> {
         static final CrashlyticsReportSessionEventRolloutAssignmentRolloutVariantEncoder INSTANCE = new CrashlyticsReportSessionEventRolloutAssignmentRolloutVariantEncoder();
         private static final FieldDescriptor ROLLOUTID_DESCRIPTOR = FieldDescriptor.of(ConfigContainer.ROLLOUT_METADATA_ID);
@@ -602,7 +602,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportFilesPayloadEncoder implements ObjectEncoder<CrashlyticsReport.FilesPayload> {
         static final CrashlyticsReportFilesPayloadEncoder INSTANCE = new CrashlyticsReportFilesPayloadEncoder();
         private static final FieldDescriptor FILES_DESCRIPTOR = FieldDescriptor.of(OriginalTzArchiveManifestParser.FILES_ROOT);
@@ -618,7 +618,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class CrashlyticsReportFilesPayloadFileEncoder implements ObjectEncoder<CrashlyticsReport.FilesPayload.File> {
         static final CrashlyticsReportFilesPayloadFileEncoder INSTANCE = new CrashlyticsReportFilesPayloadFileEncoder();
         private static final FieldDescriptor FILENAME_DESCRIPTOR = FieldDescriptor.of("filename");

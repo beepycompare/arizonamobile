@@ -6,7 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import androidx.media3.common.MediaLibraryInfo;
 import androidx.media3.common.util.Util;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class VersionTable {
     private static final String COLUMN_FEATURE = "feature";
     private static final String COLUMN_INSTANCE_UID = "instance_uid";

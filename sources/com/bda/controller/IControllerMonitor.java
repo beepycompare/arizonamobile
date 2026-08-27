@@ -5,15 +5,15 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public interface IControllerMonitor extends IInterface {
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public static abstract class Stub extends Binder implements IControllerMonitor {
         private static final String DESCRIPTOR = "com.bda.controller.IControllerMonitor";
         static final int TRANSACTION_onLog = 1;
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes4.dex */
         private static class Proxy implements IControllerMonitor {
             private IBinder mRemote;
 

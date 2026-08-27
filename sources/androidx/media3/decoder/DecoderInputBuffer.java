@@ -26,7 +26,7 @@ public class DecoderInputBuffer extends Buffer {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface BufferReplacementMode {
     }
 
@@ -34,7 +34,7 @@ public class DecoderInputBuffer extends Buffer {
         MediaLibraryInfo.registerModule("media3.decoder");
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class InsufficientCapacityException extends IllegalStateException {
         public final int currentCapacity;
         public final int requiredCapacity;

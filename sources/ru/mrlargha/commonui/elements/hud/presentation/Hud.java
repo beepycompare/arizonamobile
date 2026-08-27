@@ -39,6 +39,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
@@ -56,6 +57,8 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
+import kotlin.jvm.internal.StringCompanionObject;
+import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
@@ -67,6 +70,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.BannerElementBinding;
 import ru.mrlargha.commonui.databinding.HudCaptBinding;
+import ru.mrlargha.commonui.databinding.HudDriftCounterBinding;
 import ru.mrlargha.commonui.databinding.HudElementCasesTimerBinding;
 import ru.mrlargha.commonui.databinding.HudElementChickenChargeBinding;
 import ru.mrlargha.commonui.databinding.HudElementDamageInformerBinding;
@@ -76,6 +80,7 @@ import ru.mrlargha.commonui.databinding.HudElementPaydayBinding;
 import ru.mrlargha.commonui.databinding.HudElementPiratesBinding;
 import ru.mrlargha.commonui.databinding.HudElementPromoBinding;
 import ru.mrlargha.commonui.databinding.HudElementTimeBinding;
+import ru.mrlargha.commonui.databinding.HudFactionCaptureBinding;
 import ru.mrlargha.commonui.databinding.HudFootballBinding;
 import ru.mrlargha.commonui.databinding.HudGathersCountBinding;
 import ru.mrlargha.commonui.databinding.HudImprovingSkillsBinding;
@@ -87,6 +92,7 @@ import ru.mrlargha.commonui.databinding.HudRadarScreenBinding;
 import ru.mrlargha.commonui.databinding.HudTargetPlatePageBinding;
 import ru.mrlargha.commonui.databinding.HudTaximeterBinding;
 import ru.mrlargha.commonui.databinding.HudTimerBinding;
+import ru.mrlargha.commonui.databinding.HudTrainJobBinding;
 import ru.mrlargha.commonui.databinding.RodinaKaptScreenBinding;
 import ru.mrlargha.commonui.elements.hud.interaction_button.InteractionData;
 import ru.mrlargha.commonui.elements.hud.mission_progress.MissionData;
@@ -112,6 +118,8 @@ import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.m
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.models.HudChickenGameRatingModel;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.damage_informer.DamageFeedElement;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.drift_counter.HudDriftCounter;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.faction_capture.FactionCaptureElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.football.HudFootball;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.gathers_count.HudGathersCount;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.imposter_game.ImposterGameElement;
@@ -141,10 +149,11 @@ import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.IconAndSize;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.TextWithIconsKt;
 /* compiled from: Hud.kt */
-@Metadata(d1 = {"\u0000©\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e*\u0001-\u0018\u0000 \u009e\u00012\u00020\u0001:\b\u009b\u0001\u009c\u0001\u009d\u0001\u009e\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010O\u001a\u00020PH\u0002J\b\u0010Q\u001a\u00020PH\u0002J\u0010\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020UH\u0002J\u000e\u0010V\u001a\u00020S2\u0006\u0010W\u001a\u00020UJ\u0010\u0010X\u001a\u00020S2\u0006\u0010Y\u001a\u00020!H\u0016J&\u0010Z\u001a\u00020S2\u0006\u0010[\u001a\u00020\u00052\u0006\u0010\\\u001a\u00020\u00052\u0006\u0010]\u001a\u00020\u00052\u0006\u0010^\u001a\u00020\u0005J\u000e\u0010_\u001a\u00020S2\u0006\u0010`\u001a\u00020\u0005J\u000e\u0010a\u001a\u00020S2\u0006\u0010b\u001a\u00020\u0016J\u000e\u0010c\u001a\u00020S2\u0006\u0010d\u001a\u00020\u0005J\u000e\u0010e\u001a\u00020S2\u0006\u0010f\u001a\u00020UJ\u000e\u0010g\u001a\u00020S2\u0006\u0010f\u001a\u00020UJ\u0010\u0010h\u001a\u00020S2\u0006\u0010Y\u001a\u00020\u0005H\u0002J\u0010\u0010i\u001a\u00020S2\u0006\u0010j\u001a\u00020\u0005H\u0002J\u0010\u0010k\u001a\u00020S2\u0006\u0010l\u001a\u00020mH\u0002J\u0010\u0010n\u001a\u00020S2\u0006\u0010o\u001a\u00020UH\u0002J\b\u0010p\u001a\u00020SH\u0002J\u001e\u0010q\u001a\u00020S2\u0006\u0010r\u001a\u00020U2\f\u0010s\u001a\b\u0012\u0004\u0012\u00020u0tH\u0002J\b\u0010v\u001a\u00020SH\u0002J\u0010\u0010w\u001a\u00020S2\u0006\u0010x\u001a\u00020\u0005H\u0002J\u0010\u0010y\u001a\u00020S2\u0006\u0010z\u001a\u00020{H\u0002J\u0018\u0010|\u001a\u00020S2\u0006\u0010f\u001a\u00020U2\u0006\u0010}\u001a\u00020\u0005H\u0016J\u0010\u0010~\u001a\u00020S2\u0006\u0010f\u001a\u00020UH\u0002J\u0010\u0010\u007f\u001a\u00020!2\u0006\u0010f\u001a\u00020UH\u0002J\u0012\u0010\u0080\u0001\u001a\u00020S2\u0007\u0010l\u001a\u00030\u0081\u0001H\u0002J\u0011\u0010\u0082\u0001\u001a\u00020S2\u0006\u0010Y\u001a\u00020\u0005H\u0002J\t\u0010\u0083\u0001\u001a\u00020SH\u0002J\u0018\u0010\u0084\u0001\u001a\u00020S2\r\u0010f\u001a\t\u0012\u0005\u0012\u00030\u0085\u00010tH\u0002J\u0019\u0010\u0086\u0001\u001a\u00020S2\u000e\u0010\u0087\u0001\u001a\t\u0012\u0005\u0012\u00030\u0085\u00010tH\u0002J\u0011\u0010\u0088\u0001\u001a\u00020S2\u0006\u0010d\u001a\u00020\u0005H\u0002J\u0013\u0010\u0089\u0001\u001a\u00020S2\b\u0010\u0087\u0001\u001a\u00030\u0085\u0001H\u0002J\t\u0010\u008a\u0001\u001a\u00020SH\u0002J\t\u0010\u008b\u0001\u001a\u00020SH\u0002J\t\u0010\u008c\u0001\u001a\u00020SH\u0002J\u0012\u0010\u008d\u0001\u001a\u00020S2\u0007\u0010\u008e\u0001\u001a\u00020UH\u0002J\t\u0010\u008f\u0001\u001a\u00020SH\u0002J\u0012\u0010\u0090\u0001\u001a\u00020S2\u0007\u0010f\u001a\u00030\u0091\u0001H\u0002J\u0012\u0010\u0092\u0001\u001a\u00020S2\u0007\u0010\u0093\u0001\u001a\u00020\u0005H\u0002J\u0012\u0010\u0094\u0001\u001a\u00020S2\u0007\u0010\u0093\u0001\u001a\u00020\u0005H\u0002J\t\u0010\u0095\u0001\u001a\u00020SH\u0002J\t\u0010\u0096\u0001\u001a\u00020SH\u0002J\u0012\u0010\u0097\u0001\u001a\u00020S2\u0007\u0010\u0098\u0001\u001a\u00020\u0005H\u0002J\t\u0010\u0099\u0001\u001a\u00020SH\u0002J\t\u0010\u009a\u0001\u001a\u00020SH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0017\u001a\n \u0019*\u0004\u0018\u00010\u00180\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0004\n\u0002\u0010.R\u0010\u0010/\u001a\u0004\u0018\u000100X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020<X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020>X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020@X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020BX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020DX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020FX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020HX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010I\u001a\u00020JX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010K\u001a\u00020LX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u009f\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "", "handler", "Landroid/os/Handler;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "rodinaSubwindowEventListener", "ru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1;", "rodinaSubwindowManager", "Lru/mrlargha/commonui/elements/hud/presentation/RodinaHudSubwindowManager;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "caseTimer", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/case_timer/CaseTimerElement;", "imposterGameElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/imposter_game/ImposterGameElement;", "chargeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "chickenGame", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_game/HudChickenGame;", "bodycam", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/bodycam/HudBodycam;", "gatherCount", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/gathers_count/HudGathersCount;", "targetPlate", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/target_plate/HudTargetPlate;", "nativeProvider", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/NativeProvider;", "timeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeElement;", "moneyElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/money/MoneyElement;", "damageInformerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/damage_informer/DamageFeedElement;", "paydayElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "football", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/football/HudFootball;", "setupBattlePassButton", "Lru/mrlargha/commonui/databinding/HudLeftMenuBinding;", "setupPrisonButton", "installServerLogotype", "", "uri", "", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", TtmlNode.ATTR_ID, "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessageHandled", "subId", "setLocationVisibility", "isWorkCounterVisible", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "resetHud", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000»\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e*\u0001/\u0018\u0000 ¤\u00012\u00020\u0001:\b¡\u0001¢\u0001£\u0001¤\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010U\u001a\u00020VH\u0002J\b\u0010W\u001a\u00020VH\u0002J\u0010\u0010X\u001a\u00020Y2\u0006\u0010Z\u001a\u00020[H\u0002J\u000e\u0010\\\u001a\u00020Y2\u0006\u0010]\u001a\u00020[J\u0010\u0010^\u001a\u00020Y2\u0006\u0010_\u001a\u00020#H\u0016J&\u0010`\u001a\u00020Y2\u0006\u0010a\u001a\u00020\u00052\u0006\u0010b\u001a\u00020\u00052\u0006\u0010c\u001a\u00020\u00052\u0006\u0010d\u001a\u00020\u0005J\u000e\u0010e\u001a\u00020Y2\u0006\u0010f\u001a\u00020\u0005J\u000e\u0010g\u001a\u00020Y2\u0006\u0010h\u001a\u00020\u0018J\u000e\u0010i\u001a\u00020Y2\u0006\u0010j\u001a\u00020\u0005J\u000e\u0010k\u001a\u00020Y2\u0006\u0010l\u001a\u00020[J\u000e\u0010m\u001a\u00020Y2\u0006\u0010l\u001a\u00020[J\u0010\u0010n\u001a\u00020Y2\u0006\u0010_\u001a\u00020\u0005H\u0002J\u0010\u0010o\u001a\u00020Y2\u0006\u0010p\u001a\u00020\u0005H\u0002J\u0010\u0010q\u001a\u00020Y2\u0006\u0010r\u001a\u00020sH\u0002J\u0010\u0010t\u001a\u00020Y2\u0006\u0010u\u001a\u00020[H\u0002J\b\u0010v\u001a\u00020YH\u0002J\u001e\u0010w\u001a\u00020Y2\u0006\u0010x\u001a\u00020[2\f\u0010y\u001a\b\u0012\u0004\u0012\u00020{0zH\u0002J\b\u0010|\u001a\u00020YH\u0002J\u0010\u0010}\u001a\u00020Y2\u0006\u0010~\u001a\u00020\u0005H\u0002J\u0012\u0010\u007f\u001a\u00020Y2\b\u0010\u0080\u0001\u001a\u00030\u0081\u0001H\u0002J\u001a\u0010\u0082\u0001\u001a\u00020Y2\u0006\u0010l\u001a\u00020[2\u0007\u0010\u0083\u0001\u001a\u00020\u0005H\u0016J\u0011\u0010\u0084\u0001\u001a\u00020Y2\u0006\u0010l\u001a\u00020[H\u0002J\u0011\u0010\u0085\u0001\u001a\u00020#2\u0006\u0010l\u001a\u00020[H\u0002J\u0012\u0010\u0086\u0001\u001a\u00020Y2\u0007\u0010r\u001a\u00030\u0087\u0001H\u0002J\u0011\u0010\u0088\u0001\u001a\u00020Y2\u0006\u0010_\u001a\u00020\u0005H\u0002J\t\u0010\u0089\u0001\u001a\u00020YH\u0002J\u0018\u0010\u008a\u0001\u001a\u00020Y2\r\u0010l\u001a\t\u0012\u0005\u0012\u00030\u008b\u00010zH\u0002J\u0019\u0010\u008c\u0001\u001a\u00020Y2\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u00030\u008b\u00010zH\u0002J\u0011\u0010\u008e\u0001\u001a\u00020Y2\u0006\u0010j\u001a\u00020\u0005H\u0002J\u0013\u0010\u008f\u0001\u001a\u00020Y2\b\u0010\u008d\u0001\u001a\u00030\u008b\u0001H\u0002J\t\u0010\u0090\u0001\u001a\u00020YH\u0002J\t\u0010\u0091\u0001\u001a\u00020YH\u0002J\t\u0010\u0092\u0001\u001a\u00020YH\u0002J\u0012\u0010\u0093\u0001\u001a\u00020Y2\u0007\u0010\u0094\u0001\u001a\u00020[H\u0002J\t\u0010\u0095\u0001\u001a\u00020YH\u0002J\u0012\u0010\u0096\u0001\u001a\u00020Y2\u0007\u0010l\u001a\u00030\u0097\u0001H\u0002J\u0012\u0010\u0098\u0001\u001a\u00020Y2\u0007\u0010\u0099\u0001\u001a\u00020\u0005H\u0002J\u0012\u0010\u009a\u0001\u001a\u00020Y2\u0007\u0010\u0099\u0001\u001a\u00020\u0005H\u0002J\t\u0010\u009b\u0001\u001a\u00020YH\u0002J\t\u0010\u009c\u0001\u001a\u00020YH\u0002J\u0012\u0010\u009d\u0001\u001a\u00020Y2\u0007\u0010\u009e\u0001\u001a\u00020\u0005H\u0002J\t\u0010\u009f\u0001\u001a\u00020YH\u0002J\t\u0010 \u0001\u001a\u00020YH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0010\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0019\u001a\n \u001b*\u0004\u0018\u00010\u001a0\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010.\u001a\u00020/X\u0082\u0004¢\u0006\u0004\n\u0002\u00100R\u0010\u00101\u001a\u0004\u0018\u000102X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020<X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020>X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020@X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020BX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020DX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020FX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020HX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010I\u001a\u00020JX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010K\u001a\u00020LX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010O\u001a\u00020PX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010Q\u001a\u00020RX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010S\u001a\u00020TX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006¥\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "trainHudBinding", "Lru/mrlargha/commonui/databinding/HudTrainJobBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "", "handler", "Landroid/os/Handler;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "rodinaSubwindowEventListener", "ru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1;", "rodinaSubwindowManager", "Lru/mrlargha/commonui/elements/hud/presentation/RodinaHudSubwindowManager;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "caseTimer", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/case_timer/CaseTimerElement;", "imposterGameElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/imposter_game/ImposterGameElement;", "chargeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "chickenGame", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_game/HudChickenGame;", "bodycam", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/bodycam/HudBodycam;", "driftCounter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/drift_counter/HudDriftCounter;", "gatherCount", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/gathers_count/HudGathersCount;", "targetPlate", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/target_plate/HudTargetPlate;", "nativeProvider", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/NativeProvider;", "timeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeElement;", "moneyElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/money/MoneyElement;", "damageInformerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/damage_informer/DamageFeedElement;", "paydayElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "football", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/football/HudFootball;", "factionCapture", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/faction_capture/FactionCaptureElement;", "setupBattlePassButton", "Lru/mrlargha/commonui/databinding/HudLeftMenuBinding;", "setupPrisonButton", "installServerLogotype", "", "uri", "", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", TtmlNode.ATTR_ID, "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessageHandled", "subId", "setLocationVisibility", "isWorkCounterVisible", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "resetHud", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Hud extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
+    private static final float METERS_IN_KILOMETER = 1000.0f;
     private final HudApi api;
     private final IBackendNotifier backendNotifier;
     private final BannerElement bannerElement;
@@ -156,6 +165,8 @@ public final class Hud extends SAMPUIElement {
     private final ArizonaRetrofit client;
     private final HudCounter counter;
     private final DamageFeedElement damageInformerElement;
+    private final HudDriftCounter driftCounter;
+    private final FactionCaptureElement factionCapture;
     private final HudFootball football;
     private final HudGathersCount gatherCount;
     private final GroupAdapter groupAdapter;
@@ -179,15 +190,16 @@ public final class Hud extends SAMPUIElement {
     private boolean streamerState;
     private final HudTargetPlate targetPlate;
     private final TimeElement timeElement;
+    private final HudTrainJobBinding trainHudBinding;
     private CountDownTimer trainTimer;
     private int xPayDay;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$2$15(View view) {
+    public static final void lambda$2$14(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean lambda$2$17(View view, MotionEvent motionEvent) {
+    public static final boolean lambda$2$16(View view, MotionEvent motionEvent) {
         return true;
     }
 
@@ -200,9 +212,12 @@ public final class Hud extends SAMPUIElement {
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
         ConstraintLayout constraintLayout = (ConstraintLayout) inflate;
         this.hud = constraintLayout;
-        final HudPageBinding bind = HudPageBinding.bind(constraintLayout);
+        HudPageBinding bind = HudPageBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
+        HudTrainJobBinding bind2 = HudTrainJobBinding.bind(constraintLayout.findViewById(R.id.hud_train_job));
+        Intrinsics.checkNotNullExpressionValue(bind2, "bind(...)");
+        this.trainHudBinding = bind2;
         IBackendNotifier iBackendNotifier = (IBackendNotifier) targetActivity;
         this.backendNotifier = iBackendNotifier;
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
@@ -213,13 +228,12 @@ public final class Hud extends SAMPUIElement {
         this.missionsProgressAdapter = missionProgressAdapter;
         this.interactionButtonId = -1;
         this.handler = new Handler(Looper.getMainLooper());
-        GroupAdapter groupAdapter = new GroupAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda0
+        this.groupAdapter = new GroupAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.groupAdapter$lambda$0(Hud.this, (GroupItem) obj);
             }
         });
-        this.groupAdapter = groupAdapter;
         BannerElementBinding banner = bind.banner;
         Intrinsics.checkNotNullExpressionValue(banner, "banner");
         Hud hud = this;
@@ -227,7 +241,7 @@ public final class Hud extends SAMPUIElement {
         HudElementPromoBinding promo = bind.promo;
         Intrinsics.checkNotNullExpressionValue(promo, "promo");
         this.promoElement = new PromoElement(promo, hud);
-        ?? r11 = new RodinaHudSubwindowEvents.Listener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$rodinaSubwindowEventListener$1
+        this.rodinaSubwindowEventListener = new RodinaHudSubwindowEvents.Listener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$rodinaSubwindowEventListener$1
             @Override // ru.mrlargha.commonui.elements.hud.presentation.RodinaHudSubwindowEvents.Listener
             public void onBattlePassRewardsBannerVisibilityChanged(boolean z) {
                 RodinaHudSubwindowManager rodinaHudSubwindowManager;
@@ -237,23 +251,22 @@ public final class Hud extends SAMPUIElement {
                 }
             }
         };
-        this.rodinaSubwindowEventListener = r11;
         this.rodinaSubwindowManager = ru.mrlargha.commonui.utils.UtilsKt.isArizonaType() ? null : new RodinaHudSubwindowManager(new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$0(Hud.this, ((Boolean) obj).booleanValue());
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda6
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$1(Hud.this, ((Boolean) obj).booleanValue());
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda7
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$2(Hud.this, ((Boolean) obj).booleanValue());
             }
-        }, new Hud$rodinaSubwindowManager$4(this), new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda8
+        }, new Hud$rodinaSubwindowManager$4(this), new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$3(Hud.this, ((Boolean) obj).booleanValue());
@@ -277,6 +290,9 @@ public final class Hud extends SAMPUIElement {
         this.chargeElement = new ChickenChargeElement(chargeChiken, hud);
         this.chickenGame = new HudChickenGame(bind, hud, hudListener);
         this.bodycam = new HudBodycam(bind);
+        HudDriftCounterBinding driftCounter = bind.driftCounter;
+        Intrinsics.checkNotNullExpressionValue(driftCounter, "driftCounter");
+        this.driftCounter = new HudDriftCounter(driftCounter);
         HudGathersCountBinding gatherCount = bind.gatherCount;
         Intrinsics.checkNotNullExpressionValue(gatherCount, "gatherCount");
         this.gatherCount = new HudGathersCount(gatherCount);
@@ -299,6 +315,9 @@ public final class Hud extends SAMPUIElement {
         HudFootballBinding football = bind.football;
         Intrinsics.checkNotNullExpressionValue(football, "football");
         this.football = new HudFootball(football);
+        HudFactionCaptureBinding factionCapture = bind.factionCapture;
+        Intrinsics.checkNotNullExpressionValue(factionCapture, "factionCapture");
+        this.factionCapture = new FactionCaptureElement(factionCapture);
         ChatEmoji.INSTANCE.init(targetActivity);
         if ((targetActivity.getResources().getConfiguration().screenLayout & 15) >= 3) {
             hudListener.hudScale(0.7f);
@@ -322,7 +341,7 @@ public final class Hud extends SAMPUIElement {
         bind.rouletteContainer.setVisibility(8);
         bind.rouletteTimeContainer.setVisibility(8);
         bind.missionProgressList.setAdapter(missionProgressAdapter);
-        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda9
+        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.this.backendNotifier.clickedWrapper(i, 6, -1);
@@ -330,25 +349,25 @@ public final class Hud extends SAMPUIElement {
         });
         bind.rouletteContainer.setVisibility(8);
         bind.rouletteTimeContainer.setVisibility(8);
-        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda10
+        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.this.backendNotifier.clickedWrapper(i, 6, -1);
             }
         });
-        bind.leftMenu.btnOpenRadialMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda12
+        bind.leftMenu.btnOpenRadialMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$2(targetActivity, this, i, view);
             }
         });
-        bind.leftMenu.btnOpenQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda13
+        bind.leftMenu.btnOpenQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$3(targetActivity, this, i, view);
             }
         });
-        bind.leftMenu.btnOpenBattlePass.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda14
+        bind.leftMenu.btnOpenBattlePass.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda13
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$4(targetActivity, this, i, view);
@@ -360,19 +379,19 @@ public final class Hud extends SAMPUIElement {
                 Hud.lambda$2$5(targetActivity, this, i, view);
             }
         });
-        bind.leftMenu.btnOpenChallenges.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda21
+        bind.leftMenu.btnOpenChallenges.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$6(targetActivity, this, i, view);
             }
         });
-        bind.hudStreamerButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda22
+        bind.hudStreamerButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$7(targetActivity, this, i, view);
             }
         });
-        bind.hudMenuButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda23
+        bind.hudMenuButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$8(targetActivity, this, i, view);
@@ -380,67 +399,64 @@ public final class Hud extends SAMPUIElement {
         });
         ConstraintLayout hudPhoneButton = bind.hudPhoneButton;
         Intrinsics.checkNotNullExpressionValue(hudPhoneButton, "hudPhoneButton");
-        LockerKt.setLockingClickListener(hudPhoneButton, 600L, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda24
+        LockerKt.setLockingClickListener(hudPhoneButton, 600L, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda22
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.lambda$2$9(targetActivity, this, i, (View) obj);
             }
         });
-        bind.hudInventoryButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda25
+        bind.hudInventoryButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$10(targetActivity, this, view);
             }
         });
-        bind.hudDonateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda26
+        bind.hudDonateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$11(targetActivity, this, i, view);
             }
         });
         bind.hudServerInfoContainer.setVisibility(8);
-        bind.ivDoors.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda27
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                Hud.this.backendNotifier.clickedWrapper(i, -1, 1);
-            }
-        });
-        bind.ivHorn.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda28
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                Hud.lambda$2$13(Hud.this, i, bind, view);
-            }
-        });
-        bind.imageButtonInteraction.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda1
+        bind2.trainRoute.routeProgress.setPercentWidth(0.0f);
+        for (CustomCardView customCardView : CollectionsKt.listOf((Object[]) new CustomCardView[]{bind2.trainDoorOpenAction, bind2.trainDoorCloseAction})) {
+            customCardView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda25
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    Hud.this.backendNotifier.clickedWrapper(i, -1, 1);
+                }
+            });
+        }
+        bind.imageButtonInteraction.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 r0.backendNotifier.clickedWrapper(i, 7, Hud.this.interactionButtonId);
             }
         });
-        bind.newMessageContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda3
+        bind.newMessageContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$15(view);
+                Hud.lambda$2$14(view);
             }
         });
-        bind.groupButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda4
+        bind.groupButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.this.changeGroupTableVisibility();
             }
         });
-        bind.groupRv.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda5
+        bind.groupRv.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda4
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                return Hud.lambda$2$17(view, motionEvent);
+                return Hud.lambda$2$16(view, motionEvent);
             }
         });
-        bind.groupRv.setAdapter(groupAdapter);
+        bind.groupRv.setAdapter(this.groupAdapter);
         setVisibility(false);
         if (ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
             return;
         }
-        RodinaHudSubwindowEvents.INSTANCE.register((RodinaHudSubwindowEvents.Listener) r11);
+        RodinaHudSubwindowEvents.INSTANCE.register(this.rodinaSubwindowEventListener);
     }
 
     public final ArizonaRetrofit getClient() {
@@ -553,18 +569,6 @@ public final class Hud extends SAMPUIElement {
     public static final void lambda$2$11(Activity activity, Hud hud, int i, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(activity, R.anim.bounce));
         hud.backendNotifier.clickedWrapper(i, 3, -1);
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$2$13(Hud hud, int i, final HudPageBinding hudPageBinding, View view) {
-        hud.backendNotifier.clickedWrapper(i, -1, 2);
-        hudPageBinding.ivHornState.setImageResource(R.drawable.ic_switch_off);
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda15
-            @Override // java.lang.Runnable
-            public final void run() {
-                HudPageBinding.this.ivHornState.setImageResource(R.drawable.ic_switch_none);
-            }
-        }, 1000L);
     }
 
     private final HudLeftMenuBinding setupBattlePassButton() {
@@ -692,6 +696,9 @@ public final class Hud extends SAMPUIElement {
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void setVisibility(boolean z) {
         super.setVisibility(z);
+        if (!z) {
+            this.driftCounter.clear();
+        }
         updatePayDay();
     }
 
@@ -791,9 +798,10 @@ public final class Hud extends SAMPUIElement {
     }
 
     private final void setTrainsVisibility(int i) {
-        HudPageBinding hudPageBinding = this.binding;
+        HudTrainJobBinding hudTrainJobBinding = this.trainHudBinding;
         if (i == 0) {
-            hudPageBinding.trainDriverContainer.setVisibility(8);
+            hudTrainJobBinding.trainDriverContainer.setVisibility(8);
+            this.trainHudBinding.trainSettings.setVisibility(8);
             CountDownTimer countDownTimer = this.trainTimer;
             if (countDownTimer != null) {
                 if (countDownTimer == null) {
@@ -805,7 +813,7 @@ public final class Hud extends SAMPUIElement {
             }
             return;
         }
-        hudPageBinding.trainDriverContainer.setVisibility(0);
+        hudTrainJobBinding.trainDriverContainer.setVisibility(0);
         startTrainTimer(0);
     }
 
@@ -833,9 +841,9 @@ public final class Hud extends SAMPUIElement {
 
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
-                HudPageBinding hudPageBinding;
-                hudPageBinding = Hud.this.binding;
-                hudPageBinding.trainCurrentTime.setText(ru.mrlargha.commonui.utils.UtilsKt.formatTime(intRef.element * 1000) + " ");
+                HudTrainJobBinding hudTrainJobBinding;
+                hudTrainJobBinding = Hud.this.trainHudBinding;
+                hudTrainJobBinding.trainCurrentTime.setText(ru.mrlargha.commonui.utils.UtilsKt.formatTime(intRef.element * 1000) + " ");
                 intRef.element++;
             }
         };
@@ -844,37 +852,43 @@ public final class Hud extends SAMPUIElement {
     }
 
     private final void setTrainInfo(Companion.TrainInfo trainInfo) {
-        HudPageBinding hudPageBinding = this.binding;
-        hudPageBinding.income.setText(MoneyElementKt.toMoneyFormattedSpannable$default(trainInfo.getSalary(), false, null, null, null, 15, null));
-        TextView textView = hudPageBinding.warningsCount;
-        int warnings = trainInfo.getWarnings();
-        textView.setText(warnings + " / " + trainInfo.getWarningsMax());
+        HudTrainJobBinding hudTrainJobBinding = this.trainHudBinding;
+        hudTrainJobBinding.income.setText(MoneyElementKt.toMoneyFormattedSpannable$default(trainInfo.getSalary(), false, null, null, null, 15, null));
+        hudTrainJobBinding.warningsCount.setText(trainInfo.getWarnings() + " / " + trainInfo.getWarningsMax());
         if (trainInfo.getMaxTime() == 0) {
-            hudPageBinding.trainMaxTime.setVisibility(8);
+            hudTrainJobBinding.trainMaxTime.setVisibility(8);
         } else {
-            hudPageBinding.trainMaxTime.setText("/ " + ru.mrlargha.commonui.utils.UtilsKt.formatTime(trainInfo.getMaxTime() * 1000));
+            hudTrainJobBinding.trainMaxTime.setVisibility(0);
+            hudTrainJobBinding.trainMaxTime.setText("/ " + ru.mrlargha.commonui.utils.UtilsKt.formatTime(trainInfo.getMaxTime() * 1000));
         }
         String speedLimitType = trainInfo.getSpeedLimitType();
         int hashCode = speedLimitType.hashCode();
         if (hashCode != -1039745817) {
             if (hashCode != 1124446108) {
                 if (hashCode == 1952151455 && speedLimitType.equals("critical")) {
-                    hudPageBinding.speedLimit.setTextColor(Color.parseColor("#FFFFFF"));
-                    hudPageBinding.warningIc.setImageResource(R.drawable.hud_train_critical_speed_limit);
-                    hudPageBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+                    hudTrainJobBinding.speedLimitCard.setBackground(Color.parseColor("#E7444F"));
+                    hudTrainJobBinding.speedLimitCard.setBorder(-1);
+                    hudTrainJobBinding.speedLimit.setTextColor(-1);
+                    hudTrainJobBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
                 }
             } else if (speedLimitType.equals("warning")) {
-                hudPageBinding.speedLimit.setTextColor(Color.parseColor("#000000"));
-                hudPageBinding.warningIc.setImageResource(R.drawable.hud_train_warning_speed_limit);
-                hudPageBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+                hudTrainJobBinding.speedLimitCard.setBackground(-1);
+                hudTrainJobBinding.speedLimitCard.setBorder(Color.parseColor("#F4C63D"));
+                hudTrainJobBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
+                hudTrainJobBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
             }
         } else if (speedLimitType.equals(com.adjust.sdk.Constants.NORMAL)) {
-            hudPageBinding.speedLimit.setTextColor(Color.parseColor("#FFFFFF"));
-            hudPageBinding.warningIc.setImageResource(R.drawable.hud_train_normal_speed_limit);
-            hudPageBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+            hudTrainJobBinding.speedLimitCard.setBackground(-1);
+            hudTrainJobBinding.speedLimitCard.setBorder(Color.parseColor("#E7444F"));
+            hudTrainJobBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
+            hudTrainJobBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
         }
-        hudPageBinding.routeProgress.setProgress(trainInfo.getDistance() / trainInfo.getTotalDistance());
-        hudPageBinding.maxKm.setText(((int) trainInfo.getTotalDistance()) + " m");
+        hudTrainJobBinding.trainRoute.routeProgress.setPercentWidth(trainInfo.getTotalDistance() > 0.0f ? RangesKt.coerceIn(trainInfo.getDistance() / trainInfo.getTotalDistance(), 0.0f, 1.0f) : 0.0f);
+        TextView textView = hudTrainJobBinding.trainRoute.maxKm;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
+        String format = String.format(Locale.US, "%.3f km", Arrays.copyOf(new Object[]{Float.valueOf(trainInfo.getTotalDistance() / METERS_IN_KILOMETER)}, 1));
+        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
+        textView.setText(format);
     }
 
     private final void showInteractionButton(String str) {
@@ -929,7 +943,7 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
             ConstraintLayout actionButton = hudPageBinding.actionButton;
             Intrinsics.checkNotNullExpressionValue(actionButton, "actionButton");
-            EasyAnimation.animateClick$default(easyAnimation, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda17
+            EasyAnimation.animateClick$default(easyAnimation, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda15
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit noticeState$lambda$0$0;
@@ -955,7 +969,7 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
             ConstraintLayout actionNoticeWithoutDescriptionButtonClick = hudPageBinding.actionNoticeWithoutDescriptionButtonClick;
             Intrinsics.checkNotNullExpressionValue(actionNoticeWithoutDescriptionButtonClick, "actionNoticeWithoutDescriptionButtonClick");
-            EasyAnimation.animateClick$default(easyAnimation2, actionNoticeWithoutDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda18
+            EasyAnimation.animateClick$default(easyAnimation2, actionNoticeWithoutDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda16
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit noticeState$lambda$0$1;
@@ -975,7 +989,7 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
             ConstraintLayout actionNoticeWithDescriptionButtonClick = hudPageBinding.actionNoticeWithDescriptionButtonClick;
             Intrinsics.checkNotNullExpressionValue(actionNoticeWithDescriptionButtonClick, "actionNoticeWithDescriptionButtonClick");
-            EasyAnimation.animateClick$default(easyAnimation3, actionNoticeWithDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda19
+            EasyAnimation.animateClick$default(easyAnimation3, actionNoticeWithDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda17
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit noticeState$lambda$0$2;
@@ -1054,17 +1068,13 @@ public final class Hud extends SAMPUIElement {
                 e.printStackTrace();
             }
         } else if (i == 5) {
-            ConstraintLayout trainSettings = this.binding.trainSettings;
+            FrameLayout trainSettings = this.trainHudBinding.trainSettings;
             Intrinsics.checkNotNullExpressionValue(trainSettings, "trainSettings");
             trainSettings.setVisibility(Integer.parseInt(data) == 1 ? 0 : 8);
         } else if (i == 6) {
-            int parseInt = Integer.parseInt(data);
-            HudPageBinding hudPageBinding = this.binding;
-            if (parseInt == 1) {
-                hudPageBinding.ivDoorsState.setImageResource(R.drawable.ic_switch_on);
-            } else {
-                hudPageBinding.ivDoorsState.setImageResource(R.drawable.ic_switch_none);
-            }
+            r1 = Integer.parseInt(data) == 1;
+            this.trainHudBinding.trainDoorUnlockedIcon.setAlpha(r1 ? 1.0f : 0.35f);
+            this.trainHudBinding.trainDoorLockedIcon.setAlpha(r1 ? 0.35f : 1.0f);
         } else if (i == 7) {
             this.counter.setTaximeterVisibility(data);
             RodinaHudSubwindowManager rodinaHudSubwindowManager2 = this.rodinaSubwindowManager;
@@ -1147,16 +1157,16 @@ public final class Hud extends SAMPUIElement {
                         Intrinsics.checkNotNull(rodinaKaptScreenBinding);
                         return;
                     }
-                    int parseInt2 = Integer.parseInt(data);
-                    HudPageBinding hudPageBinding2 = this.binding;
-                    if (parseInt2 == 2) {
-                        ConstraintLayout root4 = hudPageBinding2.hudKaptScreen.getRoot();
+                    int parseInt = Integer.parseInt(data);
+                    HudPageBinding hudPageBinding = this.binding;
+                    if (parseInt == 2) {
+                        ConstraintLayout root4 = hudPageBinding.hudKaptScreen.getRoot();
                         Intrinsics.checkNotNullExpressionValue(root4, "getRoot(...)");
                         root4.setVisibility(8);
                         Unit unit2 = Unit.INSTANCE;
                         return;
                     }
-                    RodinaKaptScreenBinding rodinaKaptScreenBinding2 = hudPageBinding2.hudKaptScreen;
+                    RodinaKaptScreenBinding rodinaKaptScreenBinding2 = hudPageBinding.hudKaptScreen;
                     rodinaKaptScreenBinding2.textView42.setVisibility(8);
                     rodinaKaptScreenBinding2.rodinaKaptTimeRemaining.setVisibility(8);
                     rodinaKaptScreenBinding2.textView42Top.setVisibility(0);
@@ -1167,14 +1177,14 @@ public final class Hud extends SAMPUIElement {
                     HudProposalScreen.ProposalResponse proposalResponse = (HudProposalScreen.ProposalResponse) MapperKt.toModel(data, HudProposalScreen.ProposalResponse.class);
                     HudProposalScreen hudProposalScreen = HudProposalScreen.INSTANCE;
                     int id = proposalResponse.getId();
-                    HudPageBinding hudPageBinding3 = this.binding;
+                    HudPageBinding hudPageBinding2 = this.binding;
                     if (id >= 0) {
-                        ConstraintLayout root5 = hudPageBinding3.hudProposalScreen.getRoot();
+                        ConstraintLayout root5 = hudPageBinding2.hudProposalScreen.getRoot();
                         Intrinsics.checkNotNullExpressionValue(root5, "getRoot(...)");
                         root5.setVisibility(0);
                         HudProposalScreenBinding hudProposalScreen2 = this.binding.hudProposalScreen;
                         Intrinsics.checkNotNullExpressionValue(hudProposalScreen2, "hudProposalScreen");
-                        hudProposalScreen.showProposalScreen(hudProposalScreen2, proposalResponse, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda16
+                        hudProposalScreen.showProposalScreen(hudProposalScreen2, proposalResponse, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda14
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
                                 return Hud.onBackendMessageHandled$lambda$3(Hud.this, ((Integer) obj2).intValue());
@@ -1182,7 +1192,7 @@ public final class Hud extends SAMPUIElement {
                         });
                         return;
                     }
-                    ConstraintLayout root6 = hudPageBinding3.hudProposalScreen.getRoot();
+                    ConstraintLayout root6 = hudPageBinding2.hudProposalScreen.getRoot();
                     Intrinsics.checkNotNullExpressionValue(root6, "getRoot(...)");
                     root6.setVisibility(8);
                     hudProposalScreen.stopTimer();
@@ -1190,14 +1200,14 @@ public final class Hud extends SAMPUIElement {
                 } else if (i == BackendHudIds.UNREAD_MESSAGE_COUNT.getSubId()) {
                     UnreadMessageModel unreadMessageModel = (UnreadMessageModel) MapperKt.toModel(data, UnreadMessageModel.class);
                     int unreadMessengerMessages = unreadMessageModel.getUnreadMessengerMessages();
-                    HudPageBinding hudPageBinding4 = this.binding;
+                    HudPageBinding hudPageBinding3 = this.binding;
                     if (unreadMessengerMessages > 0) {
-                        FrameLayout unreadMeassageContainer = hudPageBinding4.unreadMeassageContainer;
+                        FrameLayout unreadMeassageContainer = hudPageBinding3.unreadMeassageContainer;
                         Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer, "unreadMeassageContainer");
                         unreadMeassageContainer.setVisibility(0);
                         this.binding.tvMessageCount.setText(String.valueOf(unreadMessageModel.getUnreadMessengerMessages()));
                     } else {
-                        FrameLayout unreadMeassageContainer2 = hudPageBinding4.unreadMeassageContainer;
+                        FrameLayout unreadMeassageContainer2 = hudPageBinding3.unreadMeassageContainer;
                         Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer2, "unreadMeassageContainer");
                         unreadMeassageContainer2.setVisibility(8);
                     }
@@ -1359,11 +1369,11 @@ public final class Hud extends SAMPUIElement {
                     return;
                 } else if (i == BackendHudIds.IMPOSTER_GAME_VISIBILITY.getSubId()) {
                     boolean areEqual = Intrinsics.areEqual(data, "0");
-                    HudPageBinding hudPageBinding5 = this.binding;
+                    HudPageBinding hudPageBinding4 = this.binding;
                     if (areEqual) {
-                        hudPageBinding5.hideAll.setVisibility(0);
+                        hudPageBinding4.hideAll.setVisibility(0);
                     } else {
-                        hudPageBinding5.hideAll.setVisibility(8);
+                        hudPageBinding4.hideAll.setVisibility(8);
                     }
                     this.imposterGameElement.setVisible(data);
                     return;
@@ -1458,14 +1468,14 @@ public final class Hud extends SAMPUIElement {
                                 } else if (i == BackendHudIds.NOTICE_WARNING.getSubId()) {
                                     String str = data;
                                     int length = str.length();
-                                    HudPageBinding hudPageBinding6 = this.binding;
+                                    HudPageBinding hudPageBinding5 = this.binding;
                                     if (length == 0) {
-                                        FrameLayout root13 = hudPageBinding6.noticeWarning.getRoot();
+                                        FrameLayout root13 = hudPageBinding5.noticeWarning.getRoot();
                                         Intrinsics.checkNotNullExpressionValue(root13, "getRoot(...)");
                                         root13.setVisibility(8);
                                         return;
                                     }
-                                    FrameLayout root14 = hudPageBinding6.noticeWarning.getRoot();
+                                    FrameLayout root14 = hudPageBinding5.noticeWarning.getRoot();
                                     Intrinsics.checkNotNullExpressionValue(root14, "getRoot(...)");
                                     root14.setVisibility(0);
                                     this.binding.noticeWarning.noticeWarningValue.setText(TextWithIconsKt.toTextWithIcons(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, str, 0.0f, null, 3, null), getTargetActivity(), new IconAndSize(R.drawable.ic_rub_gray, 16, 16)));
@@ -1502,6 +1512,9 @@ public final class Hud extends SAMPUIElement {
                                     ImageView btnOpenChallenges = this.binding.leftMenu.btnOpenChallenges;
                                     Intrinsics.checkNotNullExpressionValue(btnOpenChallenges, "btnOpenChallenges");
                                     btnOpenChallenges.setVisibility(r1 ? 0 : 8);
+                                    return;
+                                } else if (i == BackendHudIds.FACTION_CAPTURE.getSubId()) {
+                                    this.factionCapture.event(data);
                                     return;
                                 } else {
                                     return;
@@ -1598,20 +1611,20 @@ public final class Hud extends SAMPUIElement {
     }
 
     private final boolean isWorkCounterVisible(String str) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             Hud hud = this;
-            m9916constructorimpl = Result.m9916constructorimpl(Boolean.valueOf(((TaximeterModel) MapperKt.toModel(str, TaximeterModel.class)).getShow() != 0));
+            m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(((TaximeterModel) MapperKt.toModel(str, TaximeterModel.class)).getShow() != 0));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9919exceptionOrNullimpl(m9916constructorimpl) != null) {
+        if (Result.m9922exceptionOrNullimpl(m9919constructorimpl) != null) {
             Integer intOrNull = StringsKt.toIntOrNull(str);
-            m9916constructorimpl = Boolean.valueOf((intOrNull != null ? intOrNull.intValue() : 0) != 0);
+            m9919constructorimpl = Boolean.valueOf((intOrNull != null ? intOrNull.intValue() : 0) != 0);
         }
-        return ((Boolean) m9916constructorimpl).booleanValue();
+        return ((Boolean) m9919constructorimpl).booleanValue();
     }
 
     private final void setServerID(ServerInfoItem serverInfoItem) {
@@ -1839,7 +1852,7 @@ public final class Hud extends SAMPUIElement {
 
     private final void showProgressBar(String str) {
         HudProgressBarContainerBinding hudProgressBarContainerBinding = this.binding.hudProgressBarLayout;
-        hudProgressBarContainerBinding.tvNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda20
+        hudProgressBarContainerBinding.tvNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda18
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.showProgressBar$lambda$0$0(Hud.this, view);
@@ -1905,11 +1918,14 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* compiled from: Hud.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\u0004\u0005\u0006B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion;", "", "<init>", "()V", "TrainInfo", "NoticeInfo", "NoticeType", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\u0006\u0007\bB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion;", "", "<init>", "()V", "METERS_IN_KILOMETER", "", "TrainInfo", "NoticeInfo", "NoticeType", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
+        }
+
+        private Companion() {
         }
 
         /* compiled from: Hud.kt */
@@ -2063,9 +2079,6 @@ public final class Hud extends SAMPUIElement {
             public final float getTotalDistance() {
                 return this.totalDistance;
             }
-        }
-
-        private Companion() {
         }
 
         /* compiled from: Hud.kt */
@@ -2244,6 +2257,8 @@ public final class Hud extends SAMPUIElement {
         this.chickenGame.isVisible(false);
         this.chargeElement.setVisibility("0");
         this.damageInformerElement.clear();
+        this.factionCapture.event("");
+        this.driftCounter.clear();
     }
 
     private final void scheduleUpdateTimer() {

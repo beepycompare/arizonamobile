@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class HttpGetRequest {
     private static final int DEFAULT_TIMEOUT_MS = 10000;
     private static final String METHOD_GET = "GET";

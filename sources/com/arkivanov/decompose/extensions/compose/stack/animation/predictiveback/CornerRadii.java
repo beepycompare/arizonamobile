@@ -18,7 +18,7 @@ final class CornerRadii {
     }
 
     /* renamed from: copy-WZe73OQ$default  reason: not valid java name */
-    public static /* synthetic */ CornerRadii m9476copyWZe73OQ$default(CornerRadii cornerRadii, Dp dp, Dp dp2, Dp dp3, Dp dp4, int i, Object obj) {
+    public static /* synthetic */ CornerRadii m9479copyWZe73OQ$default(CornerRadii cornerRadii, Dp dp, Dp dp2, Dp dp3, Dp dp4, int i, Object obj) {
         if ((i & 1) != 0) {
             dp = cornerRadii.topLeft;
         }
@@ -31,31 +31,31 @@ final class CornerRadii {
         if ((i & 8) != 0) {
             dp4 = cornerRadii.bottomLeft;
         }
-        return cornerRadii.m9481copyWZe73OQ(dp, dp2, dp3, dp4);
+        return cornerRadii.m9484copyWZe73OQ(dp, dp2, dp3, dp4);
     }
 
     /* renamed from: component1-lTKBWiU  reason: not valid java name */
-    public final Dp m9477component1lTKBWiU() {
+    public final Dp m9480component1lTKBWiU() {
         return this.topLeft;
     }
 
     /* renamed from: component2-lTKBWiU  reason: not valid java name */
-    public final Dp m9478component2lTKBWiU() {
+    public final Dp m9481component2lTKBWiU() {
         return this.topRight;
     }
 
     /* renamed from: component3-lTKBWiU  reason: not valid java name */
-    public final Dp m9479component3lTKBWiU() {
+    public final Dp m9482component3lTKBWiU() {
         return this.bottomRight;
     }
 
     /* renamed from: component4-lTKBWiU  reason: not valid java name */
-    public final Dp m9480component4lTKBWiU() {
+    public final Dp m9483component4lTKBWiU() {
         return this.bottomLeft;
     }
 
     /* renamed from: copy-WZe73OQ  reason: not valid java name */
-    public final CornerRadii m9481copyWZe73OQ(Dp dp, Dp dp2, Dp dp3, Dp dp4) {
+    public final CornerRadii m9484copyWZe73OQ(Dp dp, Dp dp2, Dp dp3, Dp dp4) {
         return new CornerRadii(dp, dp2, dp3, dp4, null);
     }
 
@@ -97,22 +97,22 @@ final class CornerRadii {
     }
 
     /* renamed from: getTopLeft-lTKBWiU  reason: not valid java name */
-    public final Dp m9484getTopLeftlTKBWiU() {
+    public final Dp m9487getTopLeftlTKBWiU() {
         return this.topLeft;
     }
 
     /* renamed from: getTopRight-lTKBWiU  reason: not valid java name */
-    public final Dp m9485getTopRightlTKBWiU() {
+    public final Dp m9488getTopRightlTKBWiU() {
         return this.topRight;
     }
 
     /* renamed from: getBottomRight-lTKBWiU  reason: not valid java name */
-    public final Dp m9483getBottomRightlTKBWiU() {
+    public final Dp m9486getBottomRightlTKBWiU() {
         return this.bottomRight;
     }
 
     /* renamed from: getBottomLeft-lTKBWiU  reason: not valid java name */
-    public final Dp m9482getBottomLeftlTKBWiU() {
+    public final Dp m9485getBottomLeftlTKBWiU() {
         return this.bottomLeft;
     }
 }

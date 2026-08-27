@@ -5,7 +5,7 @@ import com.google.firebase.crashlytics.internal.common.CommonUtils;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class KeysMap {
     private final Map<String, String> keys = new HashMap();
     private final int maxEntries;

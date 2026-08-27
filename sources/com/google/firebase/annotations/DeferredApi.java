@@ -5,6 +5,6 @@ import java.lang.annotation.Inherited;
 import java.lang.annotation.Target;
 @Inherited
 @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public @interface DeferredApi {
 }

@@ -3,7 +3,7 @@ package com.google.firebase.crashlytics.internal.common;
 import com.google.firebase.crashlytics.internal.Logger;
 import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import com.google.firebase.sessions.api.SessionSubscriber;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashlyticsAppQualitySessionsSubscriber implements SessionSubscriber {
     private final CrashlyticsAppQualitySessionsStore appQualitySessionsStore;
     private final DataCollectionArbiter dataCollectionArbiter;

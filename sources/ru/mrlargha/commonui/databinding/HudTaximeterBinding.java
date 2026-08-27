@@ -34,9 +34,10 @@ public final class HudTaximeterBinding implements ViewBinding {
     public final HudCounterSearchCrystalsBinding searchCrystal;
     public final HudCounterShootingGalleryBinding shootingGallery;
     public final HudSupplyBinding supply;
+    public final HudCounterTofuCoolingBinding tofuCooling;
     public final HudCounterZombieModeBinding zombieMode;
 
-    private HudTaximeterBinding(FrameLayout rootView, HudCounterAccumulatedEnergyBinding accumulatedEnergy, HudCounterBaseJumpingBinding baseJumping, HudCounterBrokingIceBinding brokingIce, HudCounterBusConditionBinding busCondition, HudCounterCombineConditionBinding combineCondition, HudCounterConditionPackageBinding conditionPackage, HudCounterConditionSledBinding conditionSled, HudCounterBinding counter, HudCounterDeliveryGiftsBinding deliveryGifts, HudCounterDistanceToHomeBinding distanceToHome, HudCounterEscapeBinding escape, HudCounterFranclinSteinBinding franclinStein, HudCounterGhostsBinding ghosts, HudCounterHalloweenCoinsBinding halloweenCoins, HudTaximeterStopwatchBinding hudTaximeterArmySecond, HudTaximeterContainerBinding hudTaximeterLayoutContainer, HudCounterKilledZombiesBinding killedZombies, HudCounterLordRingsBinding lordRigns, HudCounterNewYearBinding newYearTaxi, HudCounterNoiseLevelBinding noiseLevel, HudCounterRollingSnowballBinding rollingSnowball, HudCounterSearchCrystalsBinding searchCrystal, HudCounterShootingGalleryBinding shootingGallery, HudSupplyBinding supply, HudCounterZombieModeBinding zombieMode) {
+    private HudTaximeterBinding(FrameLayout rootView, HudCounterAccumulatedEnergyBinding accumulatedEnergy, HudCounterBaseJumpingBinding baseJumping, HudCounterBrokingIceBinding brokingIce, HudCounterBusConditionBinding busCondition, HudCounterCombineConditionBinding combineCondition, HudCounterConditionPackageBinding conditionPackage, HudCounterConditionSledBinding conditionSled, HudCounterBinding counter, HudCounterDeliveryGiftsBinding deliveryGifts, HudCounterDistanceToHomeBinding distanceToHome, HudCounterEscapeBinding escape, HudCounterFranclinSteinBinding franclinStein, HudCounterGhostsBinding ghosts, HudCounterHalloweenCoinsBinding halloweenCoins, HudTaximeterStopwatchBinding hudTaximeterArmySecond, HudTaximeterContainerBinding hudTaximeterLayoutContainer, HudCounterKilledZombiesBinding killedZombies, HudCounterLordRingsBinding lordRigns, HudCounterNewYearBinding newYearTaxi, HudCounterNoiseLevelBinding noiseLevel, HudCounterRollingSnowballBinding rollingSnowball, HudCounterSearchCrystalsBinding searchCrystal, HudCounterShootingGalleryBinding shootingGallery, HudSupplyBinding supply, HudCounterTofuCoolingBinding tofuCooling, HudCounterZombieModeBinding zombieMode) {
         this.rootView = rootView;
         this.accumulatedEnergy = accumulatedEnergy;
         this.baseJumping = baseJumping;
@@ -62,6 +63,7 @@ public final class HudTaximeterBinding implements ViewBinding {
         this.searchCrystal = searchCrystal;
         this.shootingGallery = shootingGallery;
         this.supply = supply;
+        this.tofuCooling = tofuCooling;
         this.zombieMode = zombieMode;
     }
 
@@ -179,10 +181,15 @@ public final class HudTaximeterBinding implements ViewBinding {
                                                                                                     View findChildViewById24 = ViewBindings.findChildViewById(rootView, i);
                                                                                                     if (findChildViewById24 != null) {
                                                                                                         HudSupplyBinding bind24 = HudSupplyBinding.bind(findChildViewById24);
-                                                                                                        i = R.id.zombie_mode;
+                                                                                                        i = R.id.tofu_cooling;
                                                                                                         View findChildViewById25 = ViewBindings.findChildViewById(rootView, i);
                                                                                                         if (findChildViewById25 != null) {
-                                                                                                            return new HudTaximeterBinding((FrameLayout) rootView, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, bind9, bind10, bind11, bind12, bind13, bind14, bind15, bind16, bind17, bind18, bind19, bind20, bind21, bind22, bind23, bind24, HudCounterZombieModeBinding.bind(findChildViewById25));
+                                                                                                            HudCounterTofuCoolingBinding bind25 = HudCounterTofuCoolingBinding.bind(findChildViewById25);
+                                                                                                            i = R.id.zombie_mode;
+                                                                                                            View findChildViewById26 = ViewBindings.findChildViewById(rootView, i);
+                                                                                                            if (findChildViewById26 != null) {
+                                                                                                                return new HudTaximeterBinding((FrameLayout) rootView, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, bind9, bind10, bind11, bind12, bind13, bind14, bind15, bind16, bind17, bind18, bind19, bind20, bind21, bind22, bind23, bind24, bind25, HudCounterZombieModeBinding.bind(findChildViewById26));
+                                                                                                            }
                                                                                                         }
                                                                                                     }
                                                                                                 }

@@ -8,7 +8,7 @@ public class GlideExperiments {
     private final Map<Class<?>, Experiment> experiments;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface Experiment {
     }
 

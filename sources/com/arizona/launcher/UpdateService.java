@@ -60,6 +60,7 @@ import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateTransactio
 import com.arizona.launcher.updater.archive.planner.ArchivePlanReason;
 import com.arizona.launcher.updater.archive.planner.ArchivePlanType;
 import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
+import com.arizona.launcher.updater.archive.verify.ArchiveInstalledPayloadAuditor;
 import com.arizona.launcher.updater.http.UpdateMetadataFetcher;
 import com.arizona.launcher.util.FileServers;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
@@ -579,7 +580,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         } else {
             durableArchiveStateStore = durableArchiveStateStore2;
         }
-        this.archiveStateMaintenance = new ArchiveStateMaintenance(function0, durableArchiveStateStore, null, null, 12, null);
+        this.archiveStateMaintenance = new ArchiveStateMaintenance(function0, durableArchiveStateStore, ArchiveInstalledPayloadAuditor.Companion.forAndroid(), null, 8, null);
         OkHttpClient build = new OkHttpClient.Builder().connectTimeout(30L, TimeUnit.SECONDS).readTimeout(60L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).retryOnConnectionFailure(true).connectionPool(new ConnectionPool(5, 10L, TimeUnit.SECONDS)).dns(new SafeArchiveDns(Dns.SYSTEM, false)).addInterceptor(new ArchiveDownloadGuardTaggingInterceptor()).addNetworkInterceptor(new ArchiveDownloadNetworkGuardInterceptor(false)).build();
         this.metadataFetcher = UpdateMetadataFetcher.Companion.create(build);
         UpdateMetadataFetcher updateMetadataFetcher2 = this.metadataFetcher;
@@ -858,6 +859,9 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             ArchivePlanType type = useArchive.getPlan().getType();
             ArchivePlanReason reason = useArchive.getPlan().getReason();
             Log.i(TAG, "Archive plan=" + type + " reason=" + reason + " downloadBytes=" + archiveUpdateSessionSnapshot.getStorageRequirements().getDownloadBytes());
+            resetGameStatus();
+        } else if (archiveUpdateCheckDecision instanceof ArchiveUpdateCheckDecision.Bootstrap) {
+            Log.i(TAG, "Archive clean bootstrap pending downloadBytes=" + ((ArchiveUpdateCheckDecision.Bootstrap) archiveUpdateCheckDecision).getPending().getDownloadBytes());
             resetGameStatus();
         } else if (!(archiveUpdateCheckDecision instanceof ArchiveUpdateCheckDecision.Block)) {
             throw new NoWhenBranchMatchedException();

@@ -9,7 +9,7 @@ import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import org.json.JSONException;
 import org.json.JSONObject;
 @Encodable
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class RolloutAssignment {
     private static final int MAX_PARAMETER_VALUE_LENGTH = 256;
     public static final DataEncoder ROLLOUT_ASSIGNMENT_JSON_ENCODER = new JsonDataEncoderBuilder().configureWith(AutoRolloutAssignmentEncoder.CONFIG).build();

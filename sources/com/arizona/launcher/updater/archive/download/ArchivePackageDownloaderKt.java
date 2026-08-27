@@ -34,7 +34,6 @@ public final class ArchivePackageDownloaderKt {
         return SupervisorKt.supervisorScope(new ArchivePackageDownloaderKt$runDrainedOwnedBlockingTask$2(coroutineDispatcher, function0, function1, null), continuation);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ ArchivePackageDownloadResult.Failure failure$default(ArchivePackageDownloadErrorCode archivePackageDownloadErrorCode, DownloadFailureDetails downloadFailureDetails, int i, Object obj) {
         if ((i & 2) != 0) {
             downloadFailureDetails = null;
@@ -42,7 +41,6 @@ public final class ArchivePackageDownloaderKt {
         return failure(archivePackageDownloadErrorCode, downloadFailureDetails);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     public static final ArchivePackageDownloadResult.Failure failure(ArchivePackageDownloadErrorCode archivePackageDownloadErrorCode, DownloadFailureDetails downloadFailureDetails) {
         return new ArchivePackageDownloadResult.Failure(archivePackageDownloadErrorCode, downloadFailureDetails);
     }

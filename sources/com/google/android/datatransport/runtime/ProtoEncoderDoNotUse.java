@@ -6,7 +6,7 @@ import com.google.firebase.encoders.proto.ProtobufEncoder;
 import java.io.IOException;
 import java.io.OutputStream;
 @Encodable
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class ProtoEncoderDoNotUse {
     private static final ProtobufEncoder ENCODER = ProtobufEncoder.builder().configureWith(AutoProtoEncoderDoNotUseEncoder.CONFIG).build();
 

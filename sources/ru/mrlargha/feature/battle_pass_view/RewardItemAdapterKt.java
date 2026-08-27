@@ -11,7 +11,7 @@ import kotlin.text.StringsKt;
 /* loaded from: classes6.dex */
 public final class RewardItemAdapterKt {
     public static final Integer toBackendColorOrNull(String str) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         Intrinsics.checkNotNullParameter(str, "<this>");
         try {
             Result.Companion companion = Result.Companion;
@@ -23,11 +23,11 @@ public final class RewardItemAdapterKt {
                 Intrinsics.checkNotNullExpressionValue(substring2, "substring(...)");
                 obj = "#" + substring + substring2;
             }
-            m9916constructorimpl = Result.m9916constructorimpl(Integer.valueOf(Color.parseColor(obj)));
+            m9919constructorimpl = Result.m9919constructorimpl(Integer.valueOf(Color.parseColor(obj)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9922isFailureimpl(m9916constructorimpl) ? null : m9916constructorimpl;
+        return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
     }
 }

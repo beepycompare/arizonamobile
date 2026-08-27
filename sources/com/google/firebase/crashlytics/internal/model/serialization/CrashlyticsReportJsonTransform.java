@@ -22,11 +22,11 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashlyticsReportJsonTransform {
     private static final DataEncoder CRASHLYTICS_REPORT_JSON_ENCODER = new JsonDataEncoderBuilder().configureWith(AutoCrashlyticsReportEncoder.CONFIG).ignoreNullValues(true).build();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface ObjectParser<T> {
         T parse(JsonReader jsonReader) throws IOException;
     }

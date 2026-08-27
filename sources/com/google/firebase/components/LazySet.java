@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class LazySet<T> implements Provider<Set<T>> {
     private volatile Set<T> actualSet = null;
     private volatile Set<Provider<T>> providers = Collections.newSetFromMap(new ConcurrentHashMap());

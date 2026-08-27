@@ -1,5 +1,5 @@
 package com.google.firebase.emulators;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class EmulatedServiceSettings {
     private final String host;
     private final int port;

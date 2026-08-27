@@ -14,7 +14,7 @@ import ru.mrlargha.commonui.utils.InventoryIconRequest;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: SubInventoryViewHolder.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/graphics/Bitmap;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1$bitmap$1", f = "SubInventoryViewHolder.kt", i = {}, l = {73}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1$bitmap$1", f = "SubInventoryViewHolder.kt", i = {}, l = {74}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class SubInventoryViewHolder$bind$1$1$bitmap$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Bitmap>, Object> {
     final /* synthetic */ InventoryIconRequest $iconRequest;

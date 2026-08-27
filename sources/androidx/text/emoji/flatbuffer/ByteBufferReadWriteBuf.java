@@ -2,7 +2,7 @@ package androidx.text.emoji.flatbuffer;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ByteBufferReadWriteBuf implements ReadWriteBuf {
     private final ByteBuffer buffer;
 

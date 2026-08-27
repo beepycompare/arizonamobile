@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class FirebaseABTesting {
     static final String ABT_PREFERENCES = "com.google.firebase.abt";
     static final String ORIGIN_LAST_KNOWN_START_TIME_KEY_FORMAT = "%s_lastKnownExperimentStartTime";
@@ -19,7 +19,7 @@ public class FirebaseABTesting {
     private final String originService;
 
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public @interface OriginService {
         public static final String INAPP_MESSAGING = "fiam";
         public static final String REMOTE_CONFIG = "frc";

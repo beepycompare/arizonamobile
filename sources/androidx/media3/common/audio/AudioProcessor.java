@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Objects;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface AudioProcessor {
     public static final ByteBuffer EMPTY_BUFFER = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
 
@@ -29,7 +29,7 @@ public interface AudioProcessor {
 
     void reset();
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class AudioFormat {
         public static final AudioFormat NOT_SET = new AudioFormat(-1, -1, -1);
         public final int bytesPerFrame;
@@ -82,7 +82,7 @@ public interface AudioProcessor {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class StreamMetadata {
         public static final StreamMetadata DEFAULT = new StreamMetadata(0);
         public final long positionOffsetUs;

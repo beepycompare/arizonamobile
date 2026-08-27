@@ -102,7 +102,6 @@ public final class ArchivePackageDownloader {
     public final Object download(ArchiveDownloadRequest archiveDownloadRequest, ArchiveDownloadListener archiveDownloadListener, Continuation<? super ArchivePackageDownloadResult> continuation) {
         ArchivePackageDownloader$download$1 archivePackageDownloader$download$1;
         int i;
-        ArchivePackageDownloadResult.Failure failure;
         ArchivePackageDownloader$download$1 archivePackageDownloader$download$12;
         final Ref.LongRef longRef;
         int i2;
@@ -111,17 +110,13 @@ public final class ArchivePackageDownloader {
         final ArchiveDownloadListener archiveDownloadListener2;
         File file;
         final ArchiveDownloadRequest archiveDownloadRequest2;
-        ArchivePackageDownloadResult.Failure failure2;
         ArchiveDownloadRequest archiveDownloadRequest3;
         DownloadFailureDetails downloadFailureDetails;
         int i5;
         int i6;
-        ArchivePackageDownloadResult.Failure failure3;
         char c;
         ArchiveDownloadListener archiveDownloadListener3;
         ArchiveResumableHttpEngine.AttemptResult attemptResult;
-        ArchivePackageDownloadResult.Failure failure4;
-        ArchivePackageDownloadResult.Failure failure5;
         Object runAttempt;
         if (continuation instanceof ArchivePackageDownloader$download$1) {
             archivePackageDownloader$download$1 = (ArchivePackageDownloader$download$1) continuation;
@@ -147,8 +142,7 @@ public final class ArchivePackageDownloader {
                                     return ArchivePackageDownloaderKt.failure$default(ArchivePackageDownloadErrorCode.DESTINATION_UNAVAILABLE, null, 2, null);
                                 }
                                 if (!ArchiveRemoteNetworkPolicy.INSTANCE.isAllowedUrl(archiveDownloadRequest.getUrl(), this.allowInsecureLoopback)) {
-                                    failure2 = ArchivePackageDownloaderKt.failure(ArchivePackageDownloadErrorCode.RETRY_EXHAUSTED, new DownloadFailureDetails(CodePackage.SECURITY, null, null, 6, null));
-                                    return failure2;
+                                    return ArchivePackageDownloaderKt.access$failure(ArchivePackageDownloadErrorCode.RETRY_EXHAUSTED, new DownloadFailureDetails(CodePackage.SECURITY, null, null, 6, null));
                                 }
                                 archivePackageDownloader$download$12 = archivePackageDownloader$download$1;
                                 longRef = new Ref.LongRef();
@@ -183,8 +177,7 @@ public final class ArchivePackageDownloader {
                                 }
                                 return coroutine_suspended;
                             } catch (IOException e) {
-                                failure = ArchivePackageDownloaderKt.failure(ArchivePackageDownloadErrorCode.DESTINATION_UNAVAILABLE, ArchiveStorageFailureClassifier.INSTANCE.isNoSpace(e) ? new DownloadFailureDetails("STORAGE", null, null, 6, null) : null);
-                                return failure;
+                                return ArchivePackageDownloaderKt.access$failure(ArchivePackageDownloadErrorCode.DESTINATION_UNAVAILABLE, ArchiveStorageFailureClassifier.INSTANCE.isNoSpace(e) ? new DownloadFailureDetails("STORAGE", null, null, 6, null) : null);
                             }
                         }
                     }
@@ -374,39 +367,36 @@ public final class ArchivePackageDownloader {
                                 } else {
                                     ArchiveResumableHttpEngine.AttemptResult.Failed failed = (ArchiveResumableHttpEngine.AttemptResult.Failed) attemptResult;
                                     if (failed.getArtifactResetFailed()) {
-                                        failure5 = ArchivePackageDownloaderKt.failure(ArchivePackageDownloadErrorCode.PARTIAL_RESET_FAILED, classifyFailure(failed));
-                                        return failure5;
-                                    } else if (failed.getContentLengthMismatch()) {
+                                        return ArchivePackageDownloaderKt.access$failure(ArchivePackageDownloadErrorCode.PARTIAL_RESET_FAILED, classifyFailure(failed));
+                                    }
+                                    if (failed.getContentLengthMismatch()) {
                                         return ArchivePackageDownloaderKt.failure$default(ArchivePackageDownloadErrorCode.CONTENT_LENGTH_MISMATCH, downloadFailureDetails2, 2, downloadFailureDetails2);
-                                    } else {
-                                        DownloadFailureDetails classifyFailure = classifyFailure(failed);
-                                        DownloadRetryDecision decide = this.retryPolicy.decide(classifyFailure.getKind(), i3, this.networkMonitor.hasValidatedNetwork(), classifyFailure.getHttpStatus());
-                                        if (Intrinsics.areEqual(decide, DownloadRetryDecision.Disabled.INSTANCE) || Intrinsics.areEqual(decide, DownloadRetryDecision.DoNotRetry.INSTANCE)) {
-                                            failure4 = ArchivePackageDownloaderKt.failure(ArchivePackageDownloadErrorCode.RETRY_EXHAUSTED, classifyFailure);
-                                            return failure4;
-                                        } else if (Intrinsics.areEqual(decide, DownloadRetryDecision.WaitForValidatedNetwork.INSTANCE)) {
-                                            archiveDownloadListener2.onWaitingForNetwork(archiveDownloadRequest3.getPackageId(), classifyFailure);
-                                            ArchiveNetworkMonitor archiveNetworkMonitor = this.networkMonitor;
-                                            archivePackageDownloader$download$12.L$0 = archiveDownloadRequest3;
-                                            archivePackageDownloader$download$12.L$1 = archiveDownloadListener2;
-                                            archivePackageDownloader$download$12.L$2 = SpillingKt.nullOutSpilledVariable(file);
-                                            archivePackageDownloader$download$12.L$3 = longRef;
-                                            archivePackageDownloader$download$12.L$4 = SpillingKt.nullOutSpilledVariable(attemptResult);
-                                            archivePackageDownloader$download$12.L$5 = classifyFailure;
-                                            archivePackageDownloader$download$12.L$6 = SpillingKt.nullOutSpilledVariable(decide);
-                                            archivePackageDownloader$download$12.I$0 = i3;
-                                            archivePackageDownloader$download$12.I$1 = i2;
-                                            archivePackageDownloader$download$12.I$2 = i4;
-                                            i5 = 3;
-                                            archivePackageDownloader$download$12.label = 3;
-                                            obj = archiveNetworkMonitor.awaitValidatedNetwork(archivePackageDownloader$download$12);
-                                            if (obj != coroutine_suspended) {
-                                                i6 = i3;
-                                                downloadFailureDetails = classifyFailure;
-                                                if (((Boolean) obj).booleanValue()) {
-                                                    failure3 = ArchivePackageDownloaderKt.failure(ArchivePackageDownloadErrorCode.NETWORK_MONITOR_FAILED, downloadFailureDetails);
-                                                    return failure3;
-                                                }
+                                    }
+                                    DownloadFailureDetails classifyFailure = classifyFailure(failed);
+                                    DownloadRetryDecision decide = this.retryPolicy.decide(classifyFailure.getKind(), i3, this.networkMonitor.hasValidatedNetwork(), classifyFailure.getHttpStatus());
+                                    if (Intrinsics.areEqual(decide, DownloadRetryDecision.Disabled.INSTANCE) || Intrinsics.areEqual(decide, DownloadRetryDecision.DoNotRetry.INSTANCE)) {
+                                        return ArchivePackageDownloaderKt.access$failure(ArchivePackageDownloadErrorCode.RETRY_EXHAUSTED, classifyFailure);
+                                    }
+                                    if (Intrinsics.areEqual(decide, DownloadRetryDecision.WaitForValidatedNetwork.INSTANCE)) {
+                                        archiveDownloadListener2.onWaitingForNetwork(archiveDownloadRequest3.getPackageId(), classifyFailure);
+                                        ArchiveNetworkMonitor archiveNetworkMonitor = this.networkMonitor;
+                                        archivePackageDownloader$download$12.L$0 = archiveDownloadRequest3;
+                                        archivePackageDownloader$download$12.L$1 = archiveDownloadListener2;
+                                        archivePackageDownloader$download$12.L$2 = SpillingKt.nullOutSpilledVariable(file);
+                                        archivePackageDownloader$download$12.L$3 = longRef;
+                                        archivePackageDownloader$download$12.L$4 = SpillingKt.nullOutSpilledVariable(attemptResult);
+                                        archivePackageDownloader$download$12.L$5 = classifyFailure;
+                                        archivePackageDownloader$download$12.L$6 = SpillingKt.nullOutSpilledVariable(decide);
+                                        archivePackageDownloader$download$12.I$0 = i3;
+                                        archivePackageDownloader$download$12.I$1 = i2;
+                                        archivePackageDownloader$download$12.I$2 = i4;
+                                        i5 = 3;
+                                        archivePackageDownloader$download$12.label = 3;
+                                        obj = archiveNetworkMonitor.awaitValidatedNetwork(archivePackageDownloader$download$12);
+                                        if (obj != coroutine_suspended) {
+                                            i6 = i3;
+                                            downloadFailureDetails = classifyFailure;
+                                            if (!((Boolean) obj).booleanValue()) {
                                                 i3 = i6;
                                                 i7 = i5;
                                                 archiveDownloadRequest2 = archiveDownloadRequest3;
@@ -435,55 +425,57 @@ public final class ArchivePackageDownloader {
                                                 runAttempt = runAttempt(archiveDownloadRequest2, z, function122222, archivePackageDownloader$download$12);
                                                 if (runAttempt != coroutine_suspended) {
                                                 }
+                                            } else {
+                                                return ArchivePackageDownloaderKt.access$failure(ArchivePackageDownloadErrorCode.NETWORK_MONITOR_FAILED, downloadFailureDetails);
                                             }
-                                        } else if (!(decide instanceof DownloadRetryDecision.Retry)) {
-                                            throw new NoWhenBranchMatchedException();
-                                        } else {
-                                            DownloadRetryDecision.Retry retry = (DownloadRetryDecision.Retry) decide;
-                                            i3 = retry.getNextAttempt();
-                                            archiveDownloadListener2.onRetry(archiveDownloadRequest3.getPackageId(), retry.getNextAttempt(), retry.getAfterMs(), classifyFailure);
-                                            int i17 = i2;
-                                            long afterMs = retry.getAfterMs();
-                                            archivePackageDownloader$download$12.L$0 = archiveDownloadRequest3;
+                                        }
+                                    } else if (!(decide instanceof DownloadRetryDecision.Retry)) {
+                                        throw new NoWhenBranchMatchedException();
+                                    } else {
+                                        DownloadRetryDecision.Retry retry = (DownloadRetryDecision.Retry) decide;
+                                        i3 = retry.getNextAttempt();
+                                        archiveDownloadListener2.onRetry(archiveDownloadRequest3.getPackageId(), retry.getNextAttempt(), retry.getAfterMs(), classifyFailure);
+                                        int i17 = i2;
+                                        long afterMs = retry.getAfterMs();
+                                        archivePackageDownloader$download$12.L$0 = archiveDownloadRequest3;
+                                        archivePackageDownloader$download$12.L$1 = archiveDownloadListener2;
+                                        archivePackageDownloader$download$12.L$2 = SpillingKt.nullOutSpilledVariable(file);
+                                        archivePackageDownloader$download$12.L$3 = longRef;
+                                        archivePackageDownloader$download$12.L$4 = SpillingKt.nullOutSpilledVariable(attemptResult);
+                                        archivePackageDownloader$download$12.L$5 = SpillingKt.nullOutSpilledVariable(classifyFailure);
+                                        archivePackageDownloader$download$12.L$6 = SpillingKt.nullOutSpilledVariable(decide);
+                                        archivePackageDownloader$download$12.I$0 = i3;
+                                        archivePackageDownloader$download$12.I$1 = i17;
+                                        archivePackageDownloader$download$12.I$2 = i4;
+                                        archivePackageDownloader$download$12.label = 4;
+                                        if (DelayKt.delay(afterMs, archivePackageDownloader$download$12) != coroutine_suspended) {
+                                            i2 = i17;
+                                            archiveDownloadRequest2 = archiveDownloadRequest3;
+                                            i7 = 3;
+                                            i8 = 1;
+                                            downloadFailureDetails2 = null;
+                                            JobKt.ensureActive(archivePackageDownloader$download$12.getContext());
+                                            if (i2 == 0) {
+                                            }
+                                            Function1<? super Long, Unit> function1222222 = new Function1() { // from class: com.arizona.launcher.updater.archive.download.ArchivePackageDownloader$$ExternalSyntheticLambda2
+                                                @Override // kotlin.jvm.functions.Function1
+                                                public final Object invoke(Object obj2) {
+                                                    return ArchivePackageDownloader.download$lambda$0(Ref.LongRef.this, archiveDownloadListener2, archiveDownloadRequest2, ((Long) obj2).longValue());
+                                                }
+                                            };
+                                            archivePackageDownloader$download$12.L$0 = archiveDownloadRequest2;
                                             archivePackageDownloader$download$12.L$1 = archiveDownloadListener2;
                                             archivePackageDownloader$download$12.L$2 = SpillingKt.nullOutSpilledVariable(file);
                                             archivePackageDownloader$download$12.L$3 = longRef;
-                                            archivePackageDownloader$download$12.L$4 = SpillingKt.nullOutSpilledVariable(attemptResult);
-                                            archivePackageDownloader$download$12.L$5 = SpillingKt.nullOutSpilledVariable(classifyFailure);
-                                            archivePackageDownloader$download$12.L$6 = SpillingKt.nullOutSpilledVariable(decide);
+                                            archivePackageDownloader$download$12.L$4 = downloadFailureDetails2;
+                                            archivePackageDownloader$download$12.L$5 = downloadFailureDetails2;
+                                            archivePackageDownloader$download$12.L$6 = downloadFailureDetails2;
                                             archivePackageDownloader$download$12.I$0 = i3;
-                                            archivePackageDownloader$download$12.I$1 = i17;
+                                            archivePackageDownloader$download$12.I$1 = i2;
                                             archivePackageDownloader$download$12.I$2 = i4;
-                                            archivePackageDownloader$download$12.label = 4;
-                                            if (DelayKt.delay(afterMs, archivePackageDownloader$download$12) != coroutine_suspended) {
-                                                i2 = i17;
-                                                archiveDownloadRequest2 = archiveDownloadRequest3;
-                                                i7 = 3;
-                                                i8 = 1;
-                                                downloadFailureDetails2 = null;
-                                                JobKt.ensureActive(archivePackageDownloader$download$12.getContext());
-                                                if (i2 == 0) {
-                                                }
-                                                Function1<? super Long, Unit> function1222222 = new Function1() { // from class: com.arizona.launcher.updater.archive.download.ArchivePackageDownloader$$ExternalSyntheticLambda2
-                                                    @Override // kotlin.jvm.functions.Function1
-                                                    public final Object invoke(Object obj2) {
-                                                        return ArchivePackageDownloader.download$lambda$0(Ref.LongRef.this, archiveDownloadListener2, archiveDownloadRequest2, ((Long) obj2).longValue());
-                                                    }
-                                                };
-                                                archivePackageDownloader$download$12.L$0 = archiveDownloadRequest2;
-                                                archivePackageDownloader$download$12.L$1 = archiveDownloadListener2;
-                                                archivePackageDownloader$download$12.L$2 = SpillingKt.nullOutSpilledVariable(file);
-                                                archivePackageDownloader$download$12.L$3 = longRef;
-                                                archivePackageDownloader$download$12.L$4 = downloadFailureDetails2;
-                                                archivePackageDownloader$download$12.L$5 = downloadFailureDetails2;
-                                                archivePackageDownloader$download$12.L$6 = downloadFailureDetails2;
-                                                archivePackageDownloader$download$12.I$0 = i3;
-                                                archivePackageDownloader$download$12.I$1 = i2;
-                                                archivePackageDownloader$download$12.I$2 = i4;
-                                                archivePackageDownloader$download$12.label = i8;
-                                                runAttempt = runAttempt(archiveDownloadRequest2, z, function1222222, archivePackageDownloader$download$12);
-                                                if (runAttempt != coroutine_suspended) {
-                                                }
+                                            archivePackageDownloader$download$12.label = i8;
+                                            runAttempt = runAttempt(archiveDownloadRequest2, z, function1222222, archivePackageDownloader$download$12);
+                                            if (runAttempt != coroutine_suspended) {
                                             }
                                         }
                                     }
@@ -510,7 +502,7 @@ public final class ArchivePackageDownloader {
                     archiveDownloadRequest3 = (ArchiveDownloadRequest) archivePackageDownloader$download$1.L$0;
                     archivePackageDownloader$download$12 = archivePackageDownloader$download$1;
                     archiveDownloadListener2 = (ArchiveDownloadListener) archivePackageDownloader$download$1.L$1;
-                    if (((Boolean) obj).booleanValue()) {
+                    if (!((Boolean) obj).booleanValue()) {
                     }
                 }
             }

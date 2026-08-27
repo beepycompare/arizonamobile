@@ -21,7 +21,7 @@ import java.util.Locale;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class SettingsController implements SettingsProvider {
     private static final String PREFS_BUILD_INSTANCE_IDENTIFIER = "existing_instance_identifier";
     private static final String SETTINGS_URL_FORMAT = "https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/%s/settings";
@@ -86,7 +86,7 @@ public class SettingsController implements SettingsProvider {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.crashlytics.internal.settings.SettingsController$1  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public class AnonymousClass1 implements SuccessContinuation<Void, Void> {
         final /* synthetic */ CrashlyticsWorkers val$crashlyticsWorkers;
 
@@ -99,7 +99,7 @@ public class SettingsController implements SettingsProvider {
             JSONObject jSONObject = (JSONObject) this.val$crashlyticsWorkers.network.getExecutor().submit(new Callable() { // from class: com.google.firebase.crashlytics.internal.settings.SettingsController$1$$ExternalSyntheticLambda0
                 @Override // java.util.concurrent.Callable
                 public final Object call() {
-                    return SettingsController.AnonymousClass1.this.m9730xd7ba6dd6();
+                    return SettingsController.AnonymousClass1.this.m9733xd7ba6dd6();
                 }
             }).get();
             if (jSONObject != null) {
@@ -116,7 +116,7 @@ public class SettingsController implements SettingsProvider {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$then$0$com-google-firebase-crashlytics-internal-settings-SettingsController$1  reason: not valid java name */
-        public /* synthetic */ JSONObject m9730xd7ba6dd6() throws Exception {
+        public /* synthetic */ JSONObject m9733xd7ba6dd6() throws Exception {
             return SettingsController.this.settingsSpiCall.invoke(SettingsController.this.settingsRequest, true);
         }
     }

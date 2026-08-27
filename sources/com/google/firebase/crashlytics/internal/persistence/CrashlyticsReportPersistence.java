@@ -23,7 +23,7 @@ import java.util.Locale;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashlyticsReportPersistence {
     private static final String EVENT_COUNTER_FORMAT = "%010d";
     private static final int EVENT_COUNTER_WIDTH = 10;

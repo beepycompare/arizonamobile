@@ -7,7 +7,7 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ChildPagesFactory.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class ChildPagesFactoryKt$childPages$2 extends FunctionReferenceImpl implements Function2<Integer, Pages<?>, ChildNavState.Status> {
     public static final ChildPagesFactoryKt$childPages$2 INSTANCE = new ChildPagesFactoryKt$childPages$2();
 

@@ -129,20 +129,20 @@ class NumbersKt__BigIntegersKt extends NumbersKt__BigDecimalsKt {
     }
 
     /* renamed from: toBigInteger-WZ4Q5Ns  reason: not valid java name */
-    private static final BigInteger m9912toBigIntegerWZ4Q5Ns(int i) {
+    private static final BigInteger m9915toBigIntegerWZ4Q5Ns(int i) {
         BigInteger valueOf = BigInteger.valueOf(i & 4294967295L);
         Intrinsics.checkNotNullExpressionValue(valueOf, "valueOf(...)");
         return valueOf;
     }
 
     /* renamed from: toBigInteger-VKZWuLQ  reason: not valid java name */
-    public static final BigInteger m9911toBigIntegerVKZWuLQ(long j) {
+    public static final BigInteger m9914toBigIntegerVKZWuLQ(long j) {
         if (j >= 0) {
             BigInteger valueOf = BigInteger.valueOf(j);
             Intrinsics.checkNotNullExpressionValue(valueOf, "valueOf(...)");
             return valueOf;
         }
-        BigInteger valueOf2 = BigInteger.valueOf(UByte$$ExternalSyntheticBackport0.m9985m(j, 2L));
+        BigInteger valueOf2 = BigInteger.valueOf(UByte$$ExternalSyntheticBackport0.m9988m(j, 2L));
         Intrinsics.checkNotNullExpressionValue(valueOf2, "valueOf(...)");
         BigInteger shiftLeft = valueOf2.shiftLeft(1);
         int i = (UByte$$ExternalSyntheticBackport0.m$1(j, 2L) > 1L ? 1 : (UByte$$ExternalSyntheticBackport0.m$1(j, 2L) == 1L ? 0 : -1));

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [E] */
 /* compiled from: ChildrenFactory.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 /* synthetic */ class ChildrenFactoryKt$children$9<E> extends FunctionReferenceImpl implements Function1<NavEvent<? extends E>, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ChildrenFactoryKt$children$9(Object obj) {

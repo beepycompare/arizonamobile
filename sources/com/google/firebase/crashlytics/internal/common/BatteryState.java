@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.Logger;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class BatteryState {
     static final int VELOCITY_CHARGING = 2;
     static final int VELOCITY_FULL = 3;

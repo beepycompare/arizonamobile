@@ -9,7 +9,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 final class LimitedConcurrencyExecutorService extends LimitedConcurrencyExecutor implements ExecutorService {
     private final ExecutorService delegate;
 

@@ -688,7 +688,7 @@ public final class ProtoBuf {
     private ProtoBuf() {
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public enum Modality implements Internal.EnumLite {
         FINAL(0, 0),
         OPEN(1, 1),
@@ -738,7 +738,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public enum Visibility implements Internal.EnumLite {
         INTERNAL(0, 0),
         PRIVATE(1, 1),
@@ -798,7 +798,7 @@ public final class ProtoBuf {
         }
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes6.dex */
     public enum MemberKind implements Internal.EnumLite {
         DECLARATION(0, 0),
         FAKE_OVERRIDE(1, 1),
@@ -2720,7 +2720,7 @@ public final class ProtoBuf {
                     return PARSER;
                 }
 
-                /* loaded from: classes5.dex */
+                /* loaded from: classes6.dex */
                 public enum Type implements Internal.EnumLite {
                     BYTE(0, 0),
                     CHAR(1, 1),
@@ -7578,7 +7578,7 @@ public final class ProtoBuf {
             return PARSER;
         }
 
-        /* loaded from: classes5.dex */
+        /* loaded from: classes6.dex */
         public enum Kind implements Internal.EnumLite {
             CLASS(0, 0),
             INTERFACE(1, 1),

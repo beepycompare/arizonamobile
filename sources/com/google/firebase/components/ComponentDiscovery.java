@@ -12,7 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class ComponentDiscovery<T> {
     private static final String COMPONENT_KEY_PREFIX = "com.google.firebase.components:";
     private static final String COMPONENT_SENTINEL_VALUE = "com.google.firebase.components.ComponentRegistrar";
@@ -20,7 +20,7 @@ public final class ComponentDiscovery<T> {
     private final T context;
     private final RegistrarNameRetriever<T> retriever;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     interface RegistrarNameRetriever<T> {
         List<String> retrieve(T t);
     }
@@ -87,7 +87,7 @@ public final class ComponentDiscovery<T> {
         }
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     private static class MetadataRegistrarNameRetriever implements RegistrarNameRetriever<Context> {
         private final Class<? extends Service> discoveryService;
 

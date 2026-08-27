@@ -8,7 +8,7 @@ import com.google.firebase.encoders.config.EncoderConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import java.io.IOException;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class AutoRolloutAssignmentEncoder implements Configurator {
     public static final int CODEGEN_VERSION = 2;
     public static final Configurator CONFIG = new AutoRolloutAssignmentEncoder();
@@ -22,7 +22,7 @@ public final class AutoRolloutAssignmentEncoder implements Configurator {
         encoderConfig.registerEncoder(AutoValue_RolloutAssignment.class, RolloutAssignmentEncoder.INSTANCE);
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class RolloutAssignmentEncoder implements ObjectEncoder<RolloutAssignment> {
         static final RolloutAssignmentEncoder INSTANCE = new RolloutAssignmentEncoder();
         private static final FieldDescriptor ROLLOUTID_DESCRIPTOR = FieldDescriptor.of(ConfigContainer.ROLLOUT_METADATA_ID);

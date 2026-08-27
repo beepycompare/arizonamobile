@@ -57,7 +57,7 @@ public final class BankScreen$requestCurrencyHistoryIfNeeded$1 extends SuspendLa
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         BankApiRepository bankApiRepository;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -65,7 +65,7 @@ public final class BankScreen$requestCurrencyHistoryIfNeeded$1 extends SuspendLa
         try {
         } catch (Throwable th) {
             Result.Companion companion = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -90,11 +90,11 @@ public final class BankScreen$requestCurrencyHistoryIfNeeded$1 extends SuspendLa
             CoroutineScope coroutineScope2 = (CoroutineScope) this.L$1;
             ResultKt.throwOnFailure(obj);
         }
-        m9916constructorimpl = Result.m9916constructorimpl((BankCurrencyHistoryPayload) obj);
-        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-            m9916constructorimpl = null;
+        m9919constructorimpl = Result.m9919constructorimpl((BankCurrencyHistoryPayload) obj);
+        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+            m9919constructorimpl = null;
         }
-        BankCurrencyHistoryPayload bankCurrencyHistoryPayload2 = (BankCurrencyHistoryPayload) m9916constructorimpl;
+        BankCurrencyHistoryPayload bankCurrencyHistoryPayload2 = (BankCurrencyHistoryPayload) m9919constructorimpl;
         this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
         this.L$1 = SpillingKt.nullOutSpilledVariable(bankCurrencyHistoryPayload2);
         this.label = 2;

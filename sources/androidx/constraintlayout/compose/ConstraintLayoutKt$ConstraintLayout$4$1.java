@@ -102,7 +102,7 @@ public final class ConstraintLayoutKt$ConstraintLayout$4$1 extends SuspendLambda
                     obj = hasNext;
                     if (!((Boolean) obj).booleanValue()) {
                         ConstraintSet next = channelIterator.next();
-                        ConstraintSet constraintSet = (ConstraintSet) ChannelResult.m11469getOrNullimpl(this.$channel.mo11458tryReceivePtdJZtk());
+                        ConstraintSet constraintSet = (ConstraintSet) ChannelResult.m11472getOrNullimpl(this.$channel.mo11461tryReceivePtdJZtk());
                         if (constraintSet != null) {
                             next = constraintSet;
                         }

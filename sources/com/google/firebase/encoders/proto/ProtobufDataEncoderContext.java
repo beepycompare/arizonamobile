@@ -15,7 +15,7 @@ import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     private final ObjectEncoder<Object> fallbackEncoder;
     private final Map<Class<?>, ObjectEncoder<?>> objectEncoders;
@@ -175,7 +175,7 @@ public final class ProtobufDataEncoderContext implements ObjectEncoderContext {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.encoders.proto.ProtobufDataEncoderContext$1  reason: invalid class name */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$google$firebase$encoders$proto$Protobuf$IntEncoding;
 

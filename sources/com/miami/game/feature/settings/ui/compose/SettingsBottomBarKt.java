@@ -157,7 +157,7 @@ public final class SettingsBottomBarKt {
             int i4 = i3 >> 6;
             ScalingButtonKt.ScalingButtonLong(onShareLogs, onLongShareLogs, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$124095881$settings(), startRestartGroup, ((i3 >> 3) & 14) | 3072 | (i4 & 112), 4);
             startRestartGroup = startRestartGroup;
-            ScalingButtonKt.ScalingButton(onPrivacyPolicy, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9845getLambda$1935939771$settings(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onPrivacyPolicy, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m9848getLambda$1935939771$settings(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();

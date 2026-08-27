@@ -26,7 +26,7 @@ public final class K {
 
         @Override // kotlin.jvm.functions.Function0
         public final String invoke() {
-            Object m9916constructorimpl;
+            Object m9919constructorimpl;
             K k = K.this;
             try {
                 Result.Companion companion = Result.Companion;
@@ -34,15 +34,15 @@ public final class K {
                 Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
                 String packageName = k.f1446a.getPackageName();
                 Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
-                m9916constructorimpl = Result.m9916constructorimpl(K.a(k, packageManager, packageName).versionName);
+                m9919constructorimpl = Result.m9919constructorimpl(K.a(k, packageManager, packageName).versionName);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-                m9916constructorimpl = null;
+            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+                m9919constructorimpl = null;
             }
-            return (String) m9916constructorimpl;
+            return (String) m9919constructorimpl;
         }
     }
 

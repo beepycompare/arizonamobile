@@ -55,6 +55,9 @@ public final class CraftItemsViewHolder extends RecyclerView.ViewHolder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void bind$lambda$0$0(CraftItemsViewHolder craftItemsViewHolder, CraftItem craftItem, View view) {
-        craftItemsViewHolder.onItemClicked.invoke(craftItem, Integer.valueOf(craftItemsViewHolder.getAdapterPosition()));
+        int bindingAdapterPosition = craftItemsViewHolder.getBindingAdapterPosition();
+        if (bindingAdapterPosition != -1) {
+            craftItemsViewHolder.onItemClicked.invoke(craftItem, Integer.valueOf(bindingAdapterPosition));
+        }
     }
 }

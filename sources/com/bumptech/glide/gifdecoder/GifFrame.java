@@ -1,5 +1,5 @@
 package com.bumptech.glide.gifdecoder;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 class GifFrame {
     static final int DISPOSAL_BACKGROUND = 2;
     static final int DISPOSAL_NONE = 1;

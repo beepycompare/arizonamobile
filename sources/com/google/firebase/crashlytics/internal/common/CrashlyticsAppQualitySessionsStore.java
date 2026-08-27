@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class CrashlyticsAppQualitySessionsStore {
     private static final String AQS_SESSION_ID_FILENAME_PREFIX = "aqs.";
     private static final FilenameFilter AQS_SESSION_ID_FILE_FILTER = new FilenameFilter() { // from class: com.google.firebase.crashlytics.internal.common.CrashlyticsAppQualitySessionsStore$$ExternalSyntheticLambda0

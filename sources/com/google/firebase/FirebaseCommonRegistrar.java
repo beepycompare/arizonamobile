@@ -11,7 +11,7 @@ import com.google.firebase.platforminfo.KotlinDetector;
 import com.google.firebase.platforminfo.LibraryVersionComponent;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     private static final String ANDROID_INSTALLER = "android-installer";
     private static final String ANDROID_PLATFORM = "android-platform";

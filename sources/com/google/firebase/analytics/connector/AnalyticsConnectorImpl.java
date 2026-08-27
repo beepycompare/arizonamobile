@@ -22,7 +22,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class AnalyticsConnectorImpl implements AnalyticsConnector {
     private static volatile AnalyticsConnector zzc;
     final AppMeasurementSdk zza;

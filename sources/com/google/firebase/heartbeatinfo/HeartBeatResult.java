@@ -1,7 +1,7 @@
 package com.google.firebase.heartbeatinfo;
 
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public abstract class HeartBeatResult {
     public abstract List<String> getUsedDates();
 

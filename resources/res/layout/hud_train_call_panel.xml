@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/train_call_panel" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/train_outgoing_call" android:visibility="gone" android:layout_width="@dimen/_128sdp" android:layout_height="@dimen/_44sdp" android:layout_marginBottom="@dimen/_26sdp" android:paddingStart="@dimen/_10sdp" android:paddingEnd="@dimen/_8sdp" android:layout_marginEnd="@dimen/_18sdp" app:backgroundMainColor="#da121212" app:borderMainColor="#2dffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_5sdp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:id="@+id/train_outgoing_call_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_65_medium"/>
+                <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:id="@+id/train_outgoing_call_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+            </LinearLayout>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/train_hang_up_action" android:layout_width="@dimen/_22sdp" android:layout_height="@dimen/_22sdp" app:backgroundMainColor="#f43d4c" app:corners="@dimen/_22sdp">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/ic_phone_messenger" android:tint="@color/white" android:contentDescription="@string/train_hud_hang_up" android:rotation="135"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="end|center_vertical" android:id="@+id/train_incoming_call" android:visibility="gone" android:layout_width="@dimen/_140sdp" android:layout_height="@dimen/_44sdp" android:layout_marginBottom="@dimen/_26sdp" android:paddingStart="@dimen/_10sdp" android:paddingEnd="@dimen/_8sdp" android:layout_marginEnd="@dimen/_18sdp" app:backgroundMainColor="#da121212" app:borderMainColor="#2dffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_5sdp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:id="@+id/train_incoming_call_title" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/train_hud_incoming_passenger_call" android:maxLines="2" android:includeFontPadding="false" android:layout_weight="1" android:fontFamily="@font/heading_now_65_medium"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/train_accept_call_action" android:layout_width="@dimen/_22sdp" android:layout_height="@dimen/_22sdp" app:backgroundMainColor="#82d858" app:corners="@dimen/_22sdp">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/ic_phone_messenger" android:tint="@color/white" android:contentDescription="@string/train_hud_accept_call"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/train_reject_call_action" android:layout_width="@dimen/_22sdp" android:layout_height="@dimen/_22sdp" android:layout_marginStart="@dimen/_5sdp" app:backgroundMainColor="#f43d4c" app:corners="@dimen/_22sdp">
+                <ImageView android:layout_gravity="center" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/ic_phone_messenger" android:tint="@color/white" android:contentDescription="@string/train_hud_reject_call" android:rotation="135"/>
+            </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

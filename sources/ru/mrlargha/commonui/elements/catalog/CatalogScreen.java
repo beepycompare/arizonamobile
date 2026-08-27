@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +34,7 @@ import ru.mrlargha.commonui.elements.catalog.models.CatalogItemModel;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: CatalogScreen.kt */
-@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001#B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0002J\u0018\u0010\u0018\u001a\u00020\u00152\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0005H\u0016J\u0010\u0010\u001c\u001a\u00020\u00152\u0006\u0010\u001d\u001a\u00020\u0005H\u0002J\b\u0010\u001e\u001a\u00020\u0015H\u0002J\u0010\u0010\u001f\u001a\u00020\u00152\u0006\u0010 \u001a\u00020!H\u0016J\b\u0010\"\u001a\u00020\u0015H\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lru/mrlargha/commonui/elements/catalog/CatalogScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "catalogScreen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/CatalogLayoutBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "catalogAdapter", "Lru/mrlargha/commonui/elements/catalog/CatalogAdapter;", "catalogItemList", "", "Lru/mrlargha/commonui/elements/catalog/models/CatalogItemModel;", "setupTitleData", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/catalog/models/CatalogInfoModel;", "onBackendMessageHandled", "data", "", "subId", "removeCatalogItemById", TtmlNode.ATTR_ID, "closeScreen", "setVisibility", "visible", "", "setupListeners", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0005\u0018\u00002\u00020\u0001:\u0001(B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\u0018\u0010\u001a\u001a\u00020\u00172\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u0005H\u0016J\u0010\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\u0010\u0010\u001f\u001a\u00020\u00172\u0006\u0010 \u001a\u00020\u0005H\u0002J\b\u0010!\u001a\u00020\u0017H\u0002J\u0010\u0010\"\u001a\u00020\u00172\u0006\u0010#\u001a\u00020$H\u0016J\b\u0010%\u001a\u00020\u0017H\u0002J\b\u0010&\u001a\u00020\u0017H\u0002J\b\u0010'\u001a\u00020\u0017H\u0002R\u0016\u0010\b\u001a\n \n*\u0004\u0018\u00010\t0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006)"}, d2 = {"Lru/mrlargha/commonui/elements/catalog/CatalogScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "catalogScreen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/CatalogLayoutBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "catalogAdapter", "Lru/mrlargha/commonui/elements/catalog/CatalogAdapter;", "paginationController", "Lru/mrlargha/commonui/elements/catalog/CatalogPaginationController;", "catalogItemList", "", "Lru/mrlargha/commonui/elements/catalog/models/CatalogItemModel;", "setupTitleData", "", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/catalog/models/CatalogInfoModel;", "onBackendMessageHandled", "data", "", "subId", "appendCatalogItems", "removeCatalogItemById", TtmlNode.ATTR_ID, "closeScreen", "setVisibility", "visible", "", "setupPagination", "requestNextPage", "setupListeners", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CatalogScreen extends SAMPUIElement {
     private final CatalogLayoutBinding binding;
@@ -40,6 +42,7 @@ public final class CatalogScreen extends SAMPUIElement {
     private List<CatalogItemModel> catalogItemList;
     private final View catalogScreen;
     private final IBackendNotifier frontendNotifier;
+    private final CatalogPaginationController paginationController;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CatalogScreen(Activity targetActivity, int i) {
@@ -58,6 +61,7 @@ public final class CatalogScreen extends SAMPUIElement {
             }
         });
         this.catalogAdapter = catalogAdapter;
+        this.paginationController = new CatalogPaginationController();
         this.catalogItemList = CollectionsKt.emptyList();
         catalogScreen.setClickable(true);
         Intrinsics.checkNotNullExpressionValue(catalogScreen, "catalogScreen");
@@ -70,6 +74,7 @@ public final class CatalogScreen extends SAMPUIElement {
         });
         bind.catalogListRv.setAdapter(catalogAdapter);
         setupListeners();
+        setupPagination();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -94,16 +99,21 @@ public final class CatalogScreen extends SAMPUIElement {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 0) {
             setupTitleData((CatalogInfoModel) MapperKt.toModel(data, CatalogInfoModel.class));
-        } else if (i != 1) {
-            if (i != 2) {
-                return;
-            }
+        } else if (i == 1) {
+            appendCatalogItems(data);
+        } else if (i == 2) {
             removeCatalogItemById(Integer.parseInt(data));
+        } else if (i != 3) {
         } else {
-            List<CatalogItemModel> listModel = MapperKt.toListModel(data, CatalogItemModel.class);
-            this.catalogItemList = CollectionsKt.plus((Collection) this.catalogItemList, (Iterable) listModel);
-            this.catalogAdapter.addCatalogItems(listModel);
+            this.paginationController.onPageReceived(appendCatalogItems(data));
         }
+    }
+
+    private final int appendCatalogItems(String str) {
+        List<CatalogItemModel> listModel = MapperKt.toListModel(str, CatalogItemModel.class);
+        this.catalogItemList = CollectionsKt.plus((Collection) this.catalogItemList, (Iterable) listModel);
+        this.catalogAdapter.addCatalogItems(listModel);
+        return listModel.size();
     }
 
     private final void removeCatalogItemById(int i) {
@@ -127,9 +137,41 @@ public final class CatalogScreen extends SAMPUIElement {
         if (z) {
             return;
         }
+        this.paginationController.reset();
         this.catalogItemList = CollectionsKt.emptyList();
         this.catalogAdapter.clearCatalogItems();
         this.catalogAdapter.setCatalogImageBasePath(null);
+    }
+
+    private final void setupPagination() {
+        this.binding.catalogListRv.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogScreen$setupPagination$1
+            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+            public void onScrolled(RecyclerView recyclerView, int i, int i2) {
+                Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
+                super.onScrolled(recyclerView, i, i2);
+                if (i2 <= 0) {
+                    return;
+                }
+                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+                GridLayoutManager gridLayoutManager = layoutManager instanceof GridLayoutManager ? (GridLayoutManager) layoutManager : null;
+                if (gridLayoutManager == null) {
+                    return;
+                }
+                int findLastVisibleItemPosition = gridLayoutManager.findLastVisibleItemPosition();
+                if (gridLayoutManager.getItemCount() <= 0 || findLastVisibleItemPosition < gridLayoutManager.getItemCount() - 1) {
+                    return;
+                }
+                CatalogScreen.this.requestNextPage();
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void requestNextPage() {
+        Integer requestNextPage = this.paginationController.requestNextPage();
+        if (requestNextPage != null) {
+            SAMPUIElement.notifyClick$default(this, requestNextPage.intValue(), 3, null, 4, null);
+        }
     }
 
     private final void setupListeners() {

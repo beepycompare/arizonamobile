@@ -130,7 +130,7 @@ public final class PrefetchHandleProvider {
             this.prefetchMetrics = prefetchMetrics;
             this.priorityPrefetchScheduler = priorityPrefetchScheduler;
             this.onItemPremeasured = function1;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11410markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11413markNowz9LOYto();
         }
 
         @Override // androidx.compose.foundation.lazy.layout.LazyLayoutPrefetchState.PrefetchResultScope
@@ -187,18 +187,18 @@ public final class PrefetchHandleProvider {
 
         private final void resetAvailableTimeTo(long j) {
             this.availableTimeNanos = j;
-            this.startTime = TimeSource.Monotonic.INSTANCE.m11410markNowz9LOYto();
+            this.startTime = TimeSource.Monotonic.INSTANCE.m11413markNowz9LOYto();
             this.elapsedTimeNanos = 0L;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 
         private final void updateElapsedAndAvailableTime() {
-            long m11410markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11410markNowz9LOYto();
-            long m11306getInWholeNanosecondsimpl = Duration.m11306getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11421minus6eNON_k(m11410markNowz9LOYto, this.startTime));
-            this.elapsedTimeNanos = m11306getInWholeNanosecondsimpl;
-            long j = this.availableTimeNanos - m11306getInWholeNanosecondsimpl;
+            long m11413markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11413markNowz9LOYto();
+            long m11309getInWholeNanosecondsimpl = Duration.m11309getInWholeNanosecondsimpl(TimeSource.Monotonic.ValueTimeMark.m11424minus6eNON_k(m11413markNowz9LOYto, this.startTime));
+            this.elapsedTimeNanos = m11309getInWholeNanosecondsimpl;
+            long j = this.availableTimeNanos - m11309getInWholeNanosecondsimpl;
             this.availableTimeNanos = j;
-            this.startTime = m11410markNowz9LOYto;
+            this.startTime = m11413markNowz9LOYto;
             AndroidTrace_androidKt.traceValue("compose:lazy:prefetch:available_time_nanos", j);
         }
 

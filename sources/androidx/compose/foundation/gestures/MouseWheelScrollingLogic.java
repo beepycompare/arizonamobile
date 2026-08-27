@@ -175,7 +175,7 @@ public final class MouseWheelScrollingLogic extends NonTouchScrollingLogic {
     private final boolean m554onMouseWheelO0kMr_c(PointerEvent pointerEvent, long j) {
         long mo455calculateMouseWheelScroll8xgXZGE = this.mouseWheelScrollConfig.mo455calculateMouseWheelScroll8xgXZGE(getDensity(), pointerEvent, j);
         if (m553canConsumeDeltaUv8p0NA(getScrollingLogic(), mo455calculateMouseWheelScroll8xgXZGE)) {
-            return ChannelResult.m11474isSuccessimpl(this.channel.mo9057trySendJP2dKIU(new MouseWheelScrollDelta(mo455calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
+            return ChannelResult.m11477isSuccessimpl(this.channel.mo9057trySendJP2dKIU(new MouseWheelScrollDelta(mo455calculateMouseWheelScroll8xgXZGE, ((PointerInputChange) CollectionsKt.first((List<? extends Object>) pointerEvent.getChanges())).getUptimeMillis(), !this.mouseWheelScrollConfig.isSmoothScrollingEnabled() || this.mouseWheelScrollConfig.isPreciseWheelScroll(pointerEvent), null)));
         }
         return isScrolling$foundation();
     }
@@ -196,7 +196,7 @@ public final class MouseWheelScrollingLogic extends NonTouchScrollingLogic {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final MouseWheelScrollDelta sumOrNull$lambda$0(Channel channel) {
-        return (MouseWheelScrollDelta) ChannelResult.m11469getOrNullimpl(channel.mo11458tryReceivePtdJZtk());
+        return (MouseWheelScrollDelta) ChannelResult.m11472getOrNullimpl(channel.mo11461tryReceivePtdJZtk());
     }
 
     /* renamed from: canConsumeDelta-Uv8p0NA  reason: not valid java name */

@@ -5,7 +5,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.Semaphore;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class LimitedConcurrencyExecutor implements Executor {
     private final Executor delegate;
     private final LinkedBlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
@@ -40,14 +40,14 @@ public class LimitedConcurrencyExecutor implements Executor {
         return new Runnable() { // from class: com.google.firebase.concurrent.LimitedConcurrencyExecutor$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                LimitedConcurrencyExecutor.this.m9702x96c64136(runnable);
+                LimitedConcurrencyExecutor.this.m9705x96c64136(runnable);
             }
         };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$decorate$0$com-google-firebase-concurrent-LimitedConcurrencyExecutor  reason: not valid java name */
-    public /* synthetic */ void m9702x96c64136(Runnable runnable) {
+    public /* synthetic */ void m9705x96c64136(Runnable runnable) {
         try {
             runnable.run();
         } finally {

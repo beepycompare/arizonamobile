@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public final class JsonDataEncoderBuilder implements EncoderConfig<JsonDataEncoderBuilder> {
     private static final ObjectEncoder<Object> DEFAULT_FALLBACK_ENCODER = new ObjectEncoder() { // from class: com.google.firebase.encoders.json.JsonDataEncoderBuilder$$ExternalSyntheticLambda0
         @Override // com.google.firebase.encoders.Encoder
@@ -49,7 +49,7 @@ public final class JsonDataEncoderBuilder implements EncoderConfig<JsonDataEncod
         throw new EncodingException("Couldn't find encoder for type " + obj.getClass().getCanonicalName());
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     private static final class TimestampEncoder implements ValueEncoder<Date> {
         private static final DateFormat rfc339;
 

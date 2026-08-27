@@ -11,7 +11,7 @@ import com.google.firebase.crashlytics.internal.DevelopmentPlatformProvider;
 import com.google.firebase.platforminfo.LibraryVersionComponent;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CrashlyticsNdkRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-cls-ndk";
 

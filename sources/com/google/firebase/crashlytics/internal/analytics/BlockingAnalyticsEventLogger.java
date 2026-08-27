@@ -4,7 +4,7 @@ import android.os.Bundle;
 import com.google.firebase.crashlytics.internal.Logger;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BlockingAnalyticsEventLogger implements AnalyticsEventReceiver, AnalyticsEventLogger {
     static final String APP_EXCEPTION_EVENT_NAME = "_ae";
     private final CrashlyticsOriginAnalyticsEventLogger baseAnalyticsEventLogger;

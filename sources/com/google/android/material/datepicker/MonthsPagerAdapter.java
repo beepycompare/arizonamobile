@@ -116,7 +116,7 @@ public class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
         materialCalendarGridView.post(new Runnable() { // from class: com.google.android.material.datepicker.MonthsPagerAdapter$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MonthsPagerAdapter.this.m9592x7f109e0a(materialCalendarGridView, i);
+                MonthsPagerAdapter.this.m9595x7f109e0a(materialCalendarGridView, i);
             }
         });
     }
@@ -124,7 +124,7 @@ public class MonthsPagerAdapter extends RecyclerView.Adapter<ViewHolder> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     /* renamed from: lambda$setInitialKeyboardFocus$0$com-google-android-material-datepicker-MonthsPagerAdapter  reason: not valid java name */
-    public /* synthetic */ void m9592x7f109e0a(MaterialCalendarGridView materialCalendarGridView, int i) {
+    public /* synthetic */ void m9595x7f109e0a(MaterialCalendarGridView materialCalendarGridView, int i) {
         if (!materialCalendarGridView.hasFocus() || i == 0) {
             return;
         }

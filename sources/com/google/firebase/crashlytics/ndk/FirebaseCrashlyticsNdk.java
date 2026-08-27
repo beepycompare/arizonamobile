@@ -7,7 +7,7 @@ import com.google.firebase.crashlytics.internal.NativeSessionFileProvider;
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
 import com.google.firebase.crashlytics.internal.persistence.FileStore;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseCrashlyticsNdk implements CrashlyticsNativeComponent {
     private static FirebaseCrashlyticsNdk instance;
     private final CrashpadController controller;
@@ -16,7 +16,7 @@ public class FirebaseCrashlyticsNdk implements CrashlyticsNativeComponent {
     private SignalHandlerInstaller signalHandlerInstaller;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public interface SignalHandlerInstaller {
         void installHandler();
     }
@@ -52,7 +52,7 @@ public class FirebaseCrashlyticsNdk implements CrashlyticsNativeComponent {
                 SignalHandlerInstaller signalHandlerInstaller = new SignalHandlerInstaller() { // from class: com.google.firebase.crashlytics.ndk.FirebaseCrashlyticsNdk$$ExternalSyntheticLambda0
                     @Override // com.google.firebase.crashlytics.ndk.FirebaseCrashlyticsNdk.SignalHandlerInstaller
                     public final void installHandler() {
-                        FirebaseCrashlyticsNdk.this.m9731x251e82b0(str, str2, j, staticSessionData);
+                        FirebaseCrashlyticsNdk.this.m9734x251e82b0(str, str2, j, staticSessionData);
                     }
                 };
                 this.signalHandlerInstaller = signalHandlerInstaller;
@@ -70,7 +70,7 @@ public class FirebaseCrashlyticsNdk implements CrashlyticsNativeComponent {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$prepareNativeSession$0$com-google-firebase-crashlytics-ndk-FirebaseCrashlyticsNdk  reason: not valid java name */
-    public /* synthetic */ void m9731x251e82b0(String str, String str2, long j, StaticSessionData staticSessionData) {
+    public /* synthetic */ void m9734x251e82b0(String str, String str2, long j, StaticSessionData staticSessionData) {
         Logger.getLogger().d("Initializing native session: " + str);
         if (this.controller.initialize(str, str2, j, staticSessionData)) {
             return;

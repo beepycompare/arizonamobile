@@ -1,7 +1,7 @@
 package com.google.firebase.events;
 
 import java.util.concurrent.Executor;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface Subscriber {
     <T> void subscribe(Class<T> cls, EventHandler<? super T> eventHandler);
 

@@ -19,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class MetaDataStore {
     private static final String KEY_USER_ID = "userId";
     private static final Charset UTF_8 = Charset.forName("UTF-8");

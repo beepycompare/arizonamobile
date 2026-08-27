@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.common;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public enum DeliveryMechanism {
     DEVELOPER(1),
     USER_SIDELOAD(2),

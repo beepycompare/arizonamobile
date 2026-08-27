@@ -2,7 +2,7 @@ package com.bda.controller;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class KeyEvent extends BaseEvent implements Parcelable {
     public static final int ACTION_DOWN = 0;
     public static final int ACTION_UP = 1;
@@ -27,7 +27,7 @@ public final class KeyEvent extends BaseEvent implements Parcelable {
     final int mAction;
     final int mKeyCode;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     static class ParcelableCreator implements Parcelable.Creator<KeyEvent> {
         ParcelableCreator() {
         }

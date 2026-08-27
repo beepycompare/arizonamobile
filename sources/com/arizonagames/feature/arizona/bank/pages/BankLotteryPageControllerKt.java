@@ -52,18 +52,18 @@ public final class BankLotteryPageControllerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Integer parseColorOrNull(String str) {
-        Object m9916constructorimpl;
+        Object m9919constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(Integer.valueOf(Color.parseColor(str)));
+            m9919constructorimpl = Result.m9919constructorimpl(Integer.valueOf(Color.parseColor(str)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-            m9916constructorimpl = null;
+        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+            m9919constructorimpl = null;
         }
-        return (Integer) m9916constructorimpl;
+        return (Integer) m9919constructorimpl;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

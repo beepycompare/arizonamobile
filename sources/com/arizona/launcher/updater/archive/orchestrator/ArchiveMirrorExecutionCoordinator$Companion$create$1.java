@@ -50,6 +50,6 @@ final class ArchiveMirrorExecutionCoordinator$Companion$create$1 extends Suspend
         ResultKt.throwOnFailure(obj);
         ArchiveStateLoadResult load = this.$stateStore.load();
         ArchiveStateLoadResult.Loaded loaded = load instanceof ArchiveStateLoadResult.Loaded ? (ArchiveStateLoadResult.Loaded) load : null;
-        return Boxing.boxLong(ArchiveStorageEstimator.INSTANCE.downloadBytes(archiveUpdatePlan, loaded != null ? loaded.getState() : null));
+        return Boxing.boxLong(ArchiveStorageEstimator.downloadBytes$default(ArchiveStorageEstimator.INSTANCE, archiveUpdatePlan, loaded != null ? loaded.getState() : null, null, 4, null));
     }
 }

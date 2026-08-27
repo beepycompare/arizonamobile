@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [C] */
 /* compiled from: ItemsController.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public /* synthetic */ class ItemsController$init$2<C> extends FunctionReferenceImpl implements Function1<ItemsController.NavEvent<C>, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ItemsController$init$2(Object obj) {

@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.stacktrace;
 
 import java.util.Stack;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class TrimmedThrowableData {
     public final TrimmedThrowableData cause;
     public final String className;

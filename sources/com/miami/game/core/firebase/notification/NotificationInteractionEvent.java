@@ -189,22 +189,22 @@ public final class NotificationInteractionEvent {
         }
 
         public final NotificationInteractionEvent fromJson(JSONObject json) {
-            Object m9916constructorimpl;
+            Object m9919constructorimpl;
             Intrinsics.checkNotNullParameter(json, "json");
             try {
                 Result.Companion companion = Result.Companion;
                 Companion companion2 = this;
                 String optString = json.optString("type");
                 Intrinsics.checkNotNullExpressionValue(optString, "optString(...)");
-                m9916constructorimpl = Result.m9916constructorimpl(NotificationInteractionType.valueOf(optString));
+                m9919constructorimpl = Result.m9919constructorimpl(NotificationInteractionType.valueOf(optString));
             } catch (Throwable th) {
                 Result.Companion companion3 = Result.Companion;
-                m9916constructorimpl = Result.m9916constructorimpl(ResultKt.createFailure(th));
+                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9922isFailureimpl(m9916constructorimpl)) {
-                m9916constructorimpl = null;
+            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+                m9919constructorimpl = null;
             }
-            NotificationInteractionType notificationInteractionType = (NotificationInteractionType) m9916constructorimpl;
+            NotificationInteractionType notificationInteractionType = (NotificationInteractionType) m9919constructorimpl;
             if (notificationInteractionType == null) {
                 return null;
             }

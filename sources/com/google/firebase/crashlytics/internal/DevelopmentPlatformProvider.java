@@ -5,7 +5,7 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.firebase.crashlytics.internal.common.CommonUtils;
 import java.io.IOException;
 import java.io.InputStream;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DevelopmentPlatformProvider {
     private static final String FLUTTER_ASSET_FILE = "flutter_assets/NOTICES.Z";
     private static final String FLUTTER_PLATFORM = "Flutter";
@@ -54,7 +54,7 @@ public class DevelopmentPlatformProvider {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public class DevelopmentPlatform {
         private final String developmentPlatform;
         private final String developmentPlatformVersion;

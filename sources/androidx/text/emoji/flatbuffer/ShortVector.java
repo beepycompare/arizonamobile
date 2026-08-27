@@ -2,7 +2,7 @@ package androidx.text.emoji.flatbuffer;
 
 import java.nio.ByteBuffer;
 import kotlin.UShort;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ShortVector extends BaseVector {
     public ShortVector __assign(int i, ByteBuffer byteBuffer) {
         __reset(i, 2, byteBuffer);

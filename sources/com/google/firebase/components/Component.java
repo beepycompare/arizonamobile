@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class Component<T> {
     private final Set<Dependency> dependencies;
     private final ComponentFactory<T> factory;
@@ -167,7 +167,7 @@ public final class Component<T> {
         }).build();
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class Builder<T> {
         private final Set<Dependency> dependencies;
         private ComponentFactory<T> factory;

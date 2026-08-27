@@ -10,7 +10,7 @@ import kotlin.ranges.RangesKt;
 /* JADX INFO: Add missing generic type declarations: [C] */
 /* compiled from: PagesNavigatorExt.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 176)
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class PagesNavigatorExtKt$setItems$1<C> implements Function1<Pages<? extends C>, Pages<? extends C>> {
     final /* synthetic */ Function1<List<? extends C>, List<C>> $items;
 

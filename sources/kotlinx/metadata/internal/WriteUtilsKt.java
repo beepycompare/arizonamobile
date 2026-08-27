@@ -12,7 +12,7 @@ import kotlinx.metadata.internal.metadata.serialization.StringTable;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* compiled from: WriteUtils.kt */
 @Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\n\u0010\u0003\u001a\u00060\u0004j\u0002`\u0005H\u0000\u001a\u0012\u0010\u0006\u001a\u00020\u0007*\u00020\b2\u0006\u0010\t\u001a\u00020\u0002\u001a\u0012\u0010\n\u001a\u00020\u000b*\u00020\f2\u0006\u0010\t\u001a\u00020\u0002¨\u0006\r"}, d2 = {"getClassNameIndex", "", "Lkotlinx/metadata/internal/metadata/serialization/StringTable;", "name", "", "Lkotlinx/metadata/ClassName;", "writeAnnotation", "Lkotlinx/metadata/internal/metadata/ProtoBuf$Annotation$Builder;", "Lkotlinx/metadata/KmAnnotation;", "strings", "writeAnnotationArgument", "Lkotlinx/metadata/internal/metadata/ProtoBuf$Annotation$Argument$Value$Builder;", "Lkotlinx/metadata/KmAnnotationArgument;", "kotlinx-metadata"}, k = 2, mv = {1, 9, 0}, xi = 48)
-/* loaded from: classes5.dex */
+/* loaded from: classes6.dex */
 public final class WriteUtilsKt {
     public static final ProtoBuf.Annotation.Builder writeAnnotation(KmAnnotation kmAnnotation, StringTable strings) {
         Intrinsics.checkNotNullParameter(kmAnnotation, "<this>");
@@ -59,19 +59,19 @@ public final class WriteUtilsKt {
             newBuilder.setIntValue(((KmAnnotationArgument.BooleanValue) kmAnnotationArgument).getValue().booleanValue() ? 1L : 0L);
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.UByteValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.BYTE);
-            newBuilder.setIntValue(((KmAnnotationArgument.UByteValue) kmAnnotationArgument).m11578getValuew2LRezQ() & 255);
+            newBuilder.setIntValue(((KmAnnotationArgument.UByteValue) kmAnnotationArgument).m11581getValuew2LRezQ() & 255);
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.UShortValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.SHORT);
-            newBuilder.setIntValue(((KmAnnotationArgument.UShortValue) kmAnnotationArgument).m11590getValueMh2AYeg() & WebSocketProtocol.PAYLOAD_SHORT_MAX);
+            newBuilder.setIntValue(((KmAnnotationArgument.UShortValue) kmAnnotationArgument).m11593getValueMh2AYeg() & WebSocketProtocol.PAYLOAD_SHORT_MAX);
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.UIntValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.INT);
-            newBuilder.setIntValue(((KmAnnotationArgument.UIntValue) kmAnnotationArgument).m11582getValuepVg5ArA() & 4294967295L);
+            newBuilder.setIntValue(((KmAnnotationArgument.UIntValue) kmAnnotationArgument).m11585getValuepVg5ArA() & 4294967295L);
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.ULongValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.LONG);
-            newBuilder.setIntValue(((KmAnnotationArgument.ULongValue) kmAnnotationArgument).m11586getValuesVKNKU());
+            newBuilder.setIntValue(((KmAnnotationArgument.ULongValue) kmAnnotationArgument).m11589getValuesVKNKU());
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.StringValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.STRING);

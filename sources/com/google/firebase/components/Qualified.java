@@ -1,12 +1,12 @@
 package com.google.firebase.components;
 
 import java.lang.annotation.Annotation;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public final class Qualified<T> {
     private final Class<? extends Annotation> qualifier;
     private final Class<T> type;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     private @interface Unqualified {
     }
 

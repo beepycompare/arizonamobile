@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class color {
-        public static int vector_tint_color = 0x7f06045e;
-        public static int vector_tint_theme_color = 0x7f06045f;
+        public static int vector_tint_color = 0x7f06046b;
+        public static int vector_tint_theme_color = 0x7f06046c;
 
         private color() {
         }
@@ -50,9 +50,9 @@ public final class R {
         public static int auto_clear_focus_behavior_tag = 0x7f0a0148;
         public static int compose_view_saveable_id_tag = 0x7f0a0533;
         public static int consume_window_insets_tag = 0x7f0a053a;
-        public static int hide_in_inspector_tag = 0x7f0a0842;
-        public static int inspection_slot_table_set = 0x7f0a0907;
-        public static int wrapped_composition_tag = 0x7f0a12c7;
+        public static int hide_in_inspector_tag = 0x7f0a0846;
+        public static int inspection_slot_table_set = 0x7f0a090a;
+        public static int wrapped_composition_tag = 0x7f0a12e6;
 
         private id() {
         }
@@ -66,20 +66,20 @@ public final class R {
         public static int default_error_message = 0x7f1201ff;
         public static int default_popup_window_title = 0x7f120204;
         public static int dropdown_menu = 0x7f12024c;
-        public static int in_progress = 0x7f120400;
-        public static int indeterminate = 0x7f120401;
-        public static int navigation_menu = 0x7f12056d;
-        public static int not_selected = 0x7f120583;
-        public static int range_end = 0x7f12060f;
-        public static int range_start = 0x7f120610;
-        public static int selected = 0x7f120657;
-        public static int snackbar_pane_title = 0x7f120682;
-        public static int state_empty = 0x7f120690;
-        public static int state_off = 0x7f120691;
-        public static int state_on = 0x7f120692;
-        public static int switch_role = 0x7f12069a;
-        public static int tab = 0x7f12069b;
-        public static int template_percent = 0x7f1206a4;
+        public static int in_progress = 0x7f120405;
+        public static int indeterminate = 0x7f120406;
+        public static int navigation_menu = 0x7f120572;
+        public static int not_selected = 0x7f120588;
+        public static int range_end = 0x7f120614;
+        public static int range_start = 0x7f120615;
+        public static int selected = 0x7f12065c;
+        public static int snackbar_pane_title = 0x7f120687;
+        public static int state_empty = 0x7f120695;
+        public static int state_off = 0x7f120696;
+        public static int state_on = 0x7f120697;
+        public static int switch_role = 0x7f12069f;
+        public static int tab = 0x7f1206a0;
+        public static int template_percent = 0x7f1206a9;
 
         private string() {
         }

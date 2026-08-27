@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.common;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class BuildIdInfo {
     private final String arch;
     private final String buildId;

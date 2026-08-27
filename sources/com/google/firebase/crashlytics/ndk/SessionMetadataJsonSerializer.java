@@ -5,7 +5,7 @@ import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.HashMap;
 import org.json.JSONObject;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class SessionMetadataJsonSerializer {
     private SessionMetadataJsonSerializer() {
     }

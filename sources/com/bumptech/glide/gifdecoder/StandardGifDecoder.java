@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.Iterator;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class StandardGifDecoder implements GifDecoder {
     private static final int BYTES_PER_INTEGER = 4;
     private static final int COLOR_TRANSPARENT_BLACK = 0;

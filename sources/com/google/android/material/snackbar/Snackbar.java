@@ -168,7 +168,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         actionView.setOnClickListener(new View.OnClickListener() { // from class: com.google.android.material.snackbar.Snackbar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Snackbar.this.m9632lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
+                Snackbar.this.m9635lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(onClickListener, view);
             }
         });
         return this;
@@ -176,7 +176,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAction$0$com-google-android-material-snackbar-Snackbar  reason: not valid java name */
-    public /* synthetic */ void m9632lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
+    public /* synthetic */ void m9635lambda$setAction$0$comgoogleandroidmaterialsnackbarSnackbar(View.OnClickListener onClickListener, View view) {
         onClickListener.onClick(view);
         dispatchDismiss(1);
     }
@@ -187,7 +187,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
         closeViewOrThrow.setOnClickListener(z ? new View.OnClickListener() { // from class: com.google.android.material.snackbar.Snackbar$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Snackbar.this.m9633x429a879c(view);
+                Snackbar.this.m9636x429a879c(view);
             }
         } : null);
         getSnackbarLayout().removeOrRestorePaddingEnd(z);
@@ -196,7 +196,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setCloseIconVisible$1$com-google-android-material-snackbar-Snackbar  reason: not valid java name */
-    public /* synthetic */ void m9633x429a879c(View view) {
+    public /* synthetic */ void m9636x429a879c(View view) {
         dismiss();
     }
 
@@ -210,7 +210,7 @@ public class Snackbar extends BaseTransientBottomBar<Snackbar> {
     }
 
     public Snackbar setCloseIconDrawable(Drawable drawable) {
-        getCloseViewOrThrow().m9535x11712a47(drawable);
+        getCloseViewOrThrow().m9538x11712a47(drawable);
         return this;
     }
 

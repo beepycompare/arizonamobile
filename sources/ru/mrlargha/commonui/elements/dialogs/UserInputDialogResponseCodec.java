@@ -6,10 +6,11 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* compiled from: UserInputDialogResponseCodec.kt */
-@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\bÀ\u0002\u0018\u00002\u00020\u0001:\u0001\u000eB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\b\u0010\b\u001a\u0004\u0018\u00010\u0005J\u0016\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\rR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialogResponseCodec;", "", "<init>", "()V", "PART_SEPARATOR", "", "encode", "mainInput", "findPlayerInput", "decode", "Lru/mrlargha/commonui/elements/dialogs/UserInputDialogResponseCodec$DecodedInput;", "input", "hasFindPlayerInput", "", "DecodedInput", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\bÀ\u0002\u0018\u00002\u00020\u0001:\u0001\u0011B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u0005J\u0016\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u000fJ\u0018\u0010\u0010\u001a\u00020\u00072\b\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000e\u001a\u00020\u000fR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lru/mrlargha/commonui/elements/dialogs/UserInputDialogResponseCodec;", "", "<init>", "()V", "PART_SEPARATOR", "", "NO_LIST_ITEM", "", "encode", "mainInput", "findPlayerInput", "decode", "Lru/mrlargha/commonui/elements/dialogs/UserInputDialogResponseCodec$DecodedInput;", "input", "hasFindPlayerInput", "", "resolveListItemId", "DecodedInput", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UserInputDialogResponseCodec {
     public static final UserInputDialogResponseCodec INSTANCE = new UserInputDialogResponseCodec();
+    private static final int NO_LIST_ITEM = -1;
     private static final String PART_SEPARATOR = "|";
 
     private UserInputDialogResponseCodec() {
@@ -30,6 +31,21 @@ public final class UserInputDialogResponseCodec {
             return new DecodedInput((String) split$default.get(1), (String) split$default.get(0));
         }
         return new DecodedInput(input, null, 2, null);
+    }
+
+    public final int resolveListItemId(String str, boolean z) {
+        String obj;
+        Integer intOrNull;
+        if (!z || str == null || (obj = StringsKt.trim((CharSequence) str).toString()) == null || (intOrNull = StringsKt.toIntOrNull(obj)) == null) {
+            return -1;
+        }
+        if (intOrNull.intValue() < 0) {
+            intOrNull = null;
+        }
+        if (intOrNull != null) {
+            return intOrNull.intValue();
+        }
+        return -1;
     }
 
     /* compiled from: UserInputDialogResponseCodec.kt */

@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.StartupTime;
 import java.util.concurrent.atomic.AtomicBoolean;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class FirebaseInitProvider extends ContentProvider {
     static final String EMPTY_APPLICATION_ID_PROVIDER_AUTHORITY = "com.google.firebase.firebaseinitprovider";
     private static final String TAG = "FirebaseInitProvider";

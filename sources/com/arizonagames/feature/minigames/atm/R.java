@@ -68,31 +68,31 @@ public final class R {
         public static int centerPanel = 0x7f0a04c2;
         public static int close = 0x7f0a0515;
         public static int contentContainer = 0x7f0a0552;
-        public static int dragLayer = 0x7f0a0630;
-        public static int infoCard = 0x7f0a08e6;
-        public static int infoIcon = 0x7f0a08e7;
-        public static int infoText = 0x7f0a08e9;
-        public static int leftPanel = 0x7f0a0a0a;
-        public static int progressBlock = 0x7f0a0d03;
-        public static int progressIcon = 0x7f0a0d04;
-        public static int progressText = 0x7f0a0d05;
-        public static int progressTitleText = 0x7f0a0d07;
-        public static int rightPanel = 0x7f0a0dda;
-        public static int root = 0x7f0a0e79;
-        public static int slot100Container = 0x7f0a0f72;
-        public static int slot10Container = 0x7f0a0f73;
-        public static int slot1Container = 0x7f0a0f74;
-        public static int slot50Container = 0x7f0a0f75;
-        public static int slotBill1 = 0x7f0a0f76;
-        public static int slotBody = 0x7f0a0f77;
-        public static int slotExtraContainer = 0x7f0a0f78;
-        public static int slotSelectedOverlay = 0x7f0a0f79;
-        public static int slotsRow = 0x7f0a0f7a;
-        public static int statusPanel = 0x7f0a0fe8;
-        public static int statusText = 0x7f0a0fe9;
-        public static int titleText = 0x7f0a10d0;
-        public static int topRow = 0x7f0a10e3;
-        public static int tray = 0x7f0a1117;
+        public static int dragLayer = 0x7f0a0632;
+        public static int infoCard = 0x7f0a08e9;
+        public static int infoIcon = 0x7f0a08ea;
+        public static int infoText = 0x7f0a08ec;
+        public static int leftPanel = 0x7f0a0a09;
+        public static int progressBlock = 0x7f0a0d05;
+        public static int progressIcon = 0x7f0a0d06;
+        public static int progressText = 0x7f0a0d07;
+        public static int progressTitleText = 0x7f0a0d09;
+        public static int rightPanel = 0x7f0a0dde;
+        public static int root = 0x7f0a0e7f;
+        public static int slot100Container = 0x7f0a0f78;
+        public static int slot10Container = 0x7f0a0f79;
+        public static int slot1Container = 0x7f0a0f7a;
+        public static int slot50Container = 0x7f0a0f7b;
+        public static int slotBill1 = 0x7f0a0f7c;
+        public static int slotBody = 0x7f0a0f7d;
+        public static int slotExtraContainer = 0x7f0a0f7e;
+        public static int slotSelectedOverlay = 0x7f0a0f7f;
+        public static int slotsRow = 0x7f0a0f80;
+        public static int statusPanel = 0x7f0a0ff0;
+        public static int statusText = 0x7f0a0ff1;
+        public static int titleText = 0x7f0a10d7;
+        public static int topRow = 0x7f0a10ec;
+        public static int tray = 0x7f0a1138;
 
         private id() {
         }
@@ -104,9 +104,9 @@ public final class R {
         public static int atm_screen_base_layout = 0x7f0d003a;
         public static int atm_screen_chicken = 0x7f0d003b;
         public static int atm_screen_evidence = 0x7f0d003c;
-        public static int item_atm_slot = 0x7f0d0184;
-        public static int item_atm_slot_chicken = 0x7f0d0185;
-        public static int item_atm_slot_evidence = 0x7f0d0186;
+        public static int item_atm_slot = 0x7f0d018d;
+        public static int item_atm_slot_chicken = 0x7f0d018e;
+        public static int item_atm_slot_evidence = 0x7f0d018f;
 
         private layout() {
         }

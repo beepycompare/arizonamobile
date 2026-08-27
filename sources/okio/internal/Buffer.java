@@ -5,7 +5,6 @@ import androidx.collection.SieveCacheKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.upstream.CmcdData;
-import com.arizona.launcher.updater.archive.install.SafeZipExtractor;
 import com.google.common.base.Ascii;
 import java.io.EOFException;
 import kotlin.Metadata;
@@ -32,7 +31,7 @@ public final class Buffer {
     public static final long OVERFLOW_DIGIT_START = -7;
     public static final long OVERFLOW_ZONE = -922337203685477580L;
     public static final int SEGMENTING_THRESHOLD = 4096;
-    private static final byte[] HEX_DIGIT_BYTES = _JvmPlatformKt.asUtf8ToByteArray(SafeZipExtractor.HEX_DIGITS);
+    private static final byte[] HEX_DIGIT_BYTES = _JvmPlatformKt.asUtf8ToByteArray("0123456789abcdef");
     private static final long[] DigitCountToLargestValue = {-1, 9, 99, 999, 9999, 99999, 999999, 9999999, 99999999, 999999999, 9999999999L, 99999999999L, 999999999999L, 9999999999999L, 99999999999999L, 999999999999999L, 9999999999999999L, 99999999999999999L, 999999999999999999L, Long.MAX_VALUE};
 
     public static final byte[] getHEX_DIGIT_BYTES() {

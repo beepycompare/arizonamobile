@@ -1,5 +1,6 @@
 package com.arizona.launcher;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveUpdateServiceFlow.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0}, l = {305}, m = "completeSuccessfully", n = {"archiveManifest", "operationToken"}, nl = {306}, s = {"L$0", "J$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0}, l = {TypedValues.AttributesType.TYPE_PATH_ROTATE}, m = "completeSuccessfully", n = {"archiveManifest", "operationToken"}, nl = {TypedValues.AttributesType.TYPE_EASING}, s = {"L$0", "J$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveUpdateServiceFlow$completeSuccessfully$1 extends ContinuationImpl {
     long J$0;

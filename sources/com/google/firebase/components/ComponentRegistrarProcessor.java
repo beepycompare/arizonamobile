@@ -1,7 +1,7 @@
 package com.google.firebase.components;
 
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public interface ComponentRegistrarProcessor {
     public static final ComponentRegistrarProcessor NOOP = new ComponentRegistrarProcessor() { // from class: com.google.firebase.components.ComponentRegistrarProcessor$$ExternalSyntheticLambda0
         @Override // com.google.firebase.components.ComponentRegistrarProcessor

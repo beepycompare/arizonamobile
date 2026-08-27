@@ -2,7 +2,7 @@ package com.google.firebase.crashlytics.internal.metadata;
 
 import com.google.firebase.crashlytics.internal.persistence.FileStore;
 import java.io.File;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class LogFileManager {
     private static final String LOGFILE_NAME = "userlog";
     static final int MAX_LOG_SIZE = 65536;
@@ -54,7 +54,7 @@ public class LogFileManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static final class NoopLogStore implements FileLogStore {
         @Override // com.google.firebase.crashlytics.internal.metadata.FileLogStore
         public void closeLogFile() {

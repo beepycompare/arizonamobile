@@ -2,11 +2,11 @@ package com.google.firebase.crashlytics;
 
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class CustomKeysAndValues {
     final Map<String, String> keysAndValues;
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes5.dex */
     public static class Builder {
         private Map<String, String> keysAndValues = new HashMap();
 

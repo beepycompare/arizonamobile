@@ -40,7 +40,7 @@ import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class FirebaseApp {
     public static final String DEFAULT_APP_NAME = "[DEFAULT]";
     private static final String LOG_TAG = "FirebaseApp";
@@ -57,7 +57,7 @@ public class FirebaseApp {
     private final List<BackgroundStateChangeListener> backgroundStateChangeListeners = new CopyOnWriteArrayList();
     private final List<FirebaseAppLifecycleListener> lifecycleListeners = new CopyOnWriteArrayList();
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public interface BackgroundStateChangeListener {
         void onBackgroundStateChanged(boolean z);
     }
@@ -230,14 +230,14 @@ public class FirebaseApp {
         this.dataCollectionConfigStorage = new Lazy<>(new Provider() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda0
             @Override // com.google.firebase.inject.Provider
             public final Object get() {
-                return FirebaseApp.this.m9689lambda$new$0$comgooglefirebaseFirebaseApp(context);
+                return FirebaseApp.this.m9692lambda$new$0$comgooglefirebaseFirebaseApp(context);
             }
         });
         this.defaultHeartBeatController = build.getProvider(DefaultHeartBeatController.class);
         addBackgroundStateChangeListener(new BackgroundStateChangeListener() { // from class: com.google.firebase.FirebaseApp$$ExternalSyntheticLambda1
             @Override // com.google.firebase.FirebaseApp.BackgroundStateChangeListener
             public final void onBackgroundStateChanged(boolean z) {
-                FirebaseApp.this.m9690lambda$new$1$comgooglefirebaseFirebaseApp(z);
+                FirebaseApp.this.m9693lambda$new$1$comgooglefirebaseFirebaseApp(z);
             }
         });
         FirebaseTrace.popTrace();
@@ -245,13 +245,13 @@ public class FirebaseApp {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-firebase-FirebaseApp  reason: not valid java name */
-    public /* synthetic */ DataCollectionConfigStorage m9689lambda$new$0$comgooglefirebaseFirebaseApp(Context context) {
+    public /* synthetic */ DataCollectionConfigStorage m9692lambda$new$0$comgooglefirebaseFirebaseApp(Context context) {
         return new DataCollectionConfigStorage(context, getPersistenceKey(), (Publisher) this.componentRuntime.get(Publisher.class));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$com-google-firebase-FirebaseApp  reason: not valid java name */
-    public /* synthetic */ void m9690lambda$new$1$comgooglefirebaseFirebaseApp(boolean z) {
+    public /* synthetic */ void m9693lambda$new$1$comgooglefirebaseFirebaseApp(boolean z) {
         if (z) {
             return;
         }
@@ -351,7 +351,7 @@ public class FirebaseApp {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class UserUnlockReceiver extends BroadcastReceiver {
         private static AtomicReference<UserUnlockReceiver> INSTANCE = new AtomicReference<>();
         private final Context applicationContext;
@@ -386,7 +386,7 @@ public class FirebaseApp {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes2.dex */
     public static class GlobalBackgroundStateListener implements BackgroundDetector.BackgroundStateChangeListener {
         private static AtomicReference<GlobalBackgroundStateListener> INSTANCE = new AtomicReference<>();
 

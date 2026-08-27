@@ -71,8 +71,8 @@ public final class ArchiveManifestResolver {
     /* JADX WARN: Removed duplicated region for block: B:14:0x0053  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x007a  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0121 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0134 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:18:0x0084 -> B:43:0x00cc). Please submit an issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x00a4 -> B:24:0x00b2). Please submit an issue!!! */
     /*
@@ -128,7 +128,7 @@ public final class ArchiveManifestResolver {
                         arrayList = arrayList2;
                         it = it3;
                         try {
-                            arrayList.add(new ArchivePackage(next.getId(), ArchivePackageType.ARCHIVE, next.getUrl(), next.getArchiveSize(), reusableIndex.getInstalledSize(), next.getCrc32(), reusableIndex.getEntries()));
+                            arrayList.add(new ArchivePackage(next.getId(), ArchivePackageType.ARCHIVE, next.getUrl(), next.getArchiveSize(), reusableIndex.getInstalledSize(), next.getCrc32(), reusableIndex.getEntries(), false, next.getCentralDirectorySha256(), reusableIndex.getCentralDirectorySha256(), reusableIndex.getResolvedZipIndexMetadata(), 128, null));
                             if (it.hasNext()) {
                                 next = it.next();
                                 reusableIndex = reusableIndex(next, archiveUpdaterState2);
@@ -163,7 +163,7 @@ public final class ArchiveManifestResolver {
                                         return new ArchiveManifestResolutionResult.Failure(failure.getCode(), originalTzArchivePackageDescriptor.getId(), failure.getDetail());
                                     }
                                 }
-                                arrayList.add(new ArchivePackage(next.getId(), ArchivePackageType.ARCHIVE, next.getUrl(), next.getArchiveSize(), reusableIndex.getInstalledSize(), next.getCrc32(), reusableIndex.getEntries()));
+                                arrayList.add(new ArchivePackage(next.getId(), ArchivePackageType.ARCHIVE, next.getUrl(), next.getArchiveSize(), reusableIndex.getInstalledSize(), next.getCrc32(), reusableIndex.getEntries(), false, next.getCentralDirectorySha256(), reusableIndex.getCentralDirectorySha256(), reusableIndex.getResolvedZipIndexMetadata(), 128, null));
                                 if (it.hasNext()) {
                                 }
                             } else {
@@ -207,7 +207,7 @@ public final class ArchiveManifestResolver {
             }
             ArrayList arrayList2 = arrayList;
             if (j > 0 && !arrayList2.isEmpty()) {
-                return new OriginalTzArchivePackageIndex(arrayList2, j);
+                return new OriginalTzArchivePackageIndex(arrayList2, j, null, null, 12, null);
             }
         } catch (ArithmeticException | IllegalArgumentException unused) {
         }

@@ -13,7 +13,7 @@ import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
 import com.google.firebase.crashlytics.internal.model.serialization.CrashlyticsReportJsonTransform;
 import com.google.firebase.crashlytics.internal.settings.SettingsProvider;
 import java.nio.charset.Charset;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class DataTransportCrashlyticsReportSender {
     private static final String CRASHLYTICS_TRANSPORT_NAME = "FIREBASE_CRASHLYTICS_REPORT";
     private final ReportQueue reportQueue;

@@ -8,6 +8,8 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,10 +30,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.databinding.HudCounterBinding;
 import ru.mrlargha.commonui.databinding.HudCounterItemBinding;
+import ru.mrlargha.commonui.databinding.HudCounterTofuCoolingBinding;
 import ru.mrlargha.commonui.databinding.HudTaximeterBinding;
 import ru.mrlargha.commonui.databinding.HudTaximeterContainerBinding;
 import ru.mrlargha.commonui.databinding.HudTaximeterStopwatchBinding;
@@ -41,7 +45,7 @@ import ru.mrlargha.commonui.elements.hud.presentation.models.TaximeterModel;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: HudCounter.kt */
-@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u0018\u0010\u001c\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001d\u001a\u00020\rJ\u0018\u0010\u001e\u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010\u001f\u001a\u00020\u0003H\u0002J\u0018\u0010 \u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010!\u001a\u00020\u0003H\u0002J\u000e\u0010\"\u001a\u00020\u00192\u0006\u0010\u001f\u001a\u00020\u0003J\u000e\u0010#\u001a\u00020\u00012\u0006\u0010$\u001a\u00020\u001bJ\u000e\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020\u0003J[\u0010(\u001a\u00020\u00192\u0006\u0010)\u001a\u00020\u00032\u0006\u0010*\u001a\u00020\u00032\n\b\u0002\u0010+\u001a\u0004\u0018\u00010\u00032\u0006\u0010,\u001a\u00020\u001b2\n\b\u0002\u0010-\u001a\u0004\u0018\u00010\u001b2\b\b\u0002\u0010.\u001a\u00020\u001b2\b\b\u0002\u0010/\u001a\u00020\r2\b\b\u0002\u00100\u001a\u00020\u0003H\u0002¢\u0006\u0002\u00101J<\u00102\u001a\u00020\u00192\u0006\u00103\u001a\u00020\u00032\u0006\u00104\u001a\u00020\u00032\u0006\u00105\u001a\u00020\u00032\u0006\u00106\u001a\u00020\u001b2\b\b\u0002\u00100\u001a\u00020\u00032\b\b\u0002\u00107\u001a\u00020\rH\u0002JÇ\u0001\u00108\u001a\u00020\u00192\u0006\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020:2\f\b\u0001\u0010+\u001a\u00020\u0003:\u0002\b<2\u000e\b\u0003\u0010=\u001a\u0004\u0018\u00010\u0003:\u0002\b<2\u000e\b\u0003\u0010>\u001a\u0004\u0018\u00010\u0003:\u0002\b<2\f\b\u0001\u0010?\u001a\u00020\u0003:\u0002\b@2\f\b\u0003\u0010A\u001a\u00020\u0003:\u0002\b@2\f\b\u0001\u00100\u001a\u00020\u0003:\u0002\bB2\f\b\u0003\u0010C\u001a\u00020\u0003:\u0002\bB2\n\b\u0002\u0010D\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010F\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010G\u001a\u0004\u0018\u00010\u0003:\u0002\b<2\u000e\b\u0003\u0010H\u001a\u0004\u0018\u00010\u0003:\u0002\b<H\u0002¢\u0006\u0002\u0010IJq\u0010J\u001a\u00020\u00192\u0006\u0010K\u001a\u00020L2\u0006\u0010M\u001a\u00020:2\u000e\b\u0001\u0010N\u001a\u0004\u0018\u00010\u0003:\u0002\b<2\f\b\u0001\u00106\u001a\u00020\u0003:\u0002\b@2\f\b\u0001\u00100\u001a\u00020\u0003:\u0002\bB2\n\b\u0002\u0010D\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010F\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010G\u001a\u0004\u0018\u00010\u0003:\u0002\b<H\u0002¢\u0006\u0002\u0010OJ\b\u0010P\u001a\u00020\u0019H\u0002J\u0016\u0010Q\u001a\b\u0012\u0004\u0012\u00020\u00140R2\u0006\u0010K\u001a\u00020LH\u0002J\n\u0010S\u001a\u00020\u0003*\u00020\u0003J/\u0010T\u001a\u00020\u0019*\u00020U2\u000e\b\u0003\u0010V\u001a\u0004\u0018\u00010\u0003:\u0002\bW2\u000e\b\u0003\u0010X\u001a\u0004\u0018\u00010\u0003:\u0002\bW¢\u0006\u0002\u0010YJ\u000e\u0010Z\u001a\u00020\u00192\u0006\u0010[\u001a\u00020\u001bJ\u0010\u0010\\\u001a\u00020\u00192\u0006\u0010'\u001a\u00020]H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006^"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "", "backendID", "", "binding", "Lru/mrlargha/commonui/databinding/HudTaximeterBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "<init>", "(ILru/mrlargha/commonui/databinding/HudTaximeterBinding;Lru/mrlargha/commonui/core/IBackendNotifier;)V", "taximeterTimer", "Landroid/os/CountDownTimer;", "isRunningTaxiTimer", "", "typeTaximeterValue", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeterValue;", "context", "Landroid/content/Context;", "kotlin.jvm.PlatformType", "firstTextView", "Landroid/widget/TextView;", "secondTextView", "titleTextView", "isTimer", "setTaximeterVisibility", "", "data", "", "setTaximeterCounterType", "isCountDown", "startTaxiTimerCountdown", "seconds", "startTaxiTimerCountUp", "initialElapsedSeconds", "stopTaxiTimer", "setTaxiPrice", "text", "setTaximeterType", "Lru/mrlargha/commonui/databinding/HudTaximeterContainerBinding;", "type", "setTaximeterLayoutType", "sumBg", "timerBg", "bg", "timeTextColor", "sumTitleText", "sumTextColor", "isBigTextSize", TtmlNode.ATTR_TTS_FONT_FAMILY, "(IILjava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V", "setDemorganType", "titleImage", "containerImage", "containerBg", "textColor", "isScaleBg", "setCounterType", "firstItemType", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;", "secondItemType", "Landroidx/annotation/DrawableRes;", "mainItemBg", "secondItemBg", "mainTextColor", "Landroidx/annotation/ColorInt;", "secondTextColor", "Landroidx/annotation/FontRes;", "secondFontFamily", "titleText", "secondTitleText", "iconText", "icon", "secondIcon", "(Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;ILjava/lang/Integer;Ljava/lang/Integer;IIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setCounterItemType", "itemBinding", "Lru/mrlargha/commonui/databinding/HudCounterItemBinding;", "itemType", "itemBg", "(Lru/mrlargha/commonui/databinding/HudCounterItemBinding;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Ljava/lang/Integer;IILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V", "setDefaultCounterType", "getCounterTextList", "", "dpToPx", "updateViewSize", "Landroid/view/View;", "widthRes", "Landroidx/annotation/DimenRes;", "heightRes", "(Landroid/view/View;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setTitle", "title", "setVisible", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeter;", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u0018\u0010\u001c\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001d\u001a\u00020\rJ\u0018\u0010\u001e\u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010\u001f\u001a\u00020\u0003H\u0002J\u0018\u0010 \u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010!\u001a\u00020\u0003H\u0002J\u000e\u0010\"\u001a\u00020\u00192\u0006\u0010\u001f\u001a\u00020\u0003J\u000e\u0010#\u001a\u00020\u00012\u0006\u0010$\u001a\u00020\u001bJ\u000e\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020\u0003J\b\u0010(\u001a\u00020\u0019H\u0002J[\u0010)\u001a\u00020\u00192\u0006\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u00032\n\b\u0002\u0010,\u001a\u0004\u0018\u00010\u00032\u0006\u0010-\u001a\u00020\u001b2\n\b\u0002\u0010.\u001a\u0004\u0018\u00010\u001b2\b\b\u0002\u0010/\u001a\u00020\u001b2\b\b\u0002\u00100\u001a\u00020\r2\b\b\u0002\u00101\u001a\u00020\u0003H\u0002¢\u0006\u0002\u00102J<\u00103\u001a\u00020\u00192\u0006\u00104\u001a\u00020\u00032\u0006\u00105\u001a\u00020\u00032\u0006\u00106\u001a\u00020\u00032\u0006\u00107\u001a\u00020\u001b2\b\b\u0002\u00101\u001a\u00020\u00032\b\b\u0002\u00108\u001a\u00020\rH\u0002JÇ\u0001\u00109\u001a\u00020\u00192\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\f\b\u0001\u0010,\u001a\u00020\u0003:\u0002\b=2\u000e\b\u0003\u0010>\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\u000e\b\u0003\u0010?\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\f\b\u0001\u0010@\u001a\u00020\u0003:\u0002\bA2\f\b\u0003\u0010B\u001a\u00020\u0003:\u0002\bA2\f\b\u0001\u00101\u001a\u00020\u0003:\u0002\bC2\f\b\u0003\u0010D\u001a\u00020\u0003:\u0002\bC2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010F\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010G\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010H\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\u000e\b\u0003\u0010I\u001a\u0004\u0018\u00010\u0003:\u0002\b=H\u0002¢\u0006\u0002\u0010JJq\u0010K\u001a\u00020\u00192\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020;2\u000e\b\u0001\u0010O\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\f\b\u0001\u00107\u001a\u00020\u0003:\u0002\bA2\f\b\u0001\u00101\u001a\u00020\u0003:\u0002\bC2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010G\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010H\u001a\u0004\u0018\u00010\u0003:\u0002\b=H\u0002¢\u0006\u0002\u0010PJ\b\u0010Q\u001a\u00020\u0019H\u0002J\u0016\u0010R\u001a\b\u0012\u0004\u0012\u00020\u00140S2\u0006\u0010L\u001a\u00020MH\u0002J\n\u0010T\u001a\u00020\u0003*\u00020\u0003J/\u0010U\u001a\u00020\u0019*\u00020V2\u000e\b\u0003\u0010W\u001a\u0004\u0018\u00010\u0003:\u0002\bX2\u000e\b\u0003\u0010Y\u001a\u0004\u0018\u00010\u0003:\u0002\bX¢\u0006\u0002\u0010ZJ\u000e\u0010[\u001a\u00020\u00192\u0006\u0010\\\u001a\u00020\u001bJ\u0010\u0010]\u001a\u00020\u00192\u0006\u0010'\u001a\u00020^H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006_"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "", "backendID", "", "binding", "Lru/mrlargha/commonui/databinding/HudTaximeterBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "<init>", "(ILru/mrlargha/commonui/databinding/HudTaximeterBinding;Lru/mrlargha/commonui/core/IBackendNotifier;)V", "taximeterTimer", "Landroid/os/CountDownTimer;", "isRunningTaxiTimer", "", "typeTaximeterValue", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeterValue;", "context", "Landroid/content/Context;", "kotlin.jvm.PlatformType", "firstTextView", "Landroid/widget/TextView;", "secondTextView", "titleTextView", "isTimer", "setTaximeterVisibility", "", "data", "", "setTaximeterCounterType", "isCountDown", "startTaxiTimerCountdown", "seconds", "startTaxiTimerCountUp", "initialElapsedSeconds", "stopTaxiTimer", "setTaxiPrice", "text", "setTaximeterType", "Lru/mrlargha/commonui/databinding/HudTaximeterContainerBinding;", "type", "setupTofuCoolingProgressBar", "setTaximeterLayoutType", "sumBg", "timerBg", "bg", "timeTextColor", "sumTitleText", "sumTextColor", "isBigTextSize", TtmlNode.ATTR_TTS_FONT_FAMILY, "(IILjava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V", "setDemorganType", "titleImage", "containerImage", "containerBg", "textColor", "isScaleBg", "setCounterType", "firstItemType", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;", "secondItemType", "Landroidx/annotation/DrawableRes;", "mainItemBg", "secondItemBg", "mainTextColor", "Landroidx/annotation/ColorInt;", "secondTextColor", "Landroidx/annotation/FontRes;", "secondFontFamily", "titleText", "secondTitleText", "iconText", "icon", "secondIcon", "(Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;ILjava/lang/Integer;Ljava/lang/Integer;IIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setCounterItemType", "itemBinding", "Lru/mrlargha/commonui/databinding/HudCounterItemBinding;", "itemType", "itemBg", "(Lru/mrlargha/commonui/databinding/HudCounterItemBinding;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Ljava/lang/Integer;IILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V", "setDefaultCounterType", "getCounterTextList", "", "dpToPx", "updateViewSize", "Landroid/view/View;", "widthRes", "Landroidx/annotation/DimenRes;", "heightRes", "(Landroid/view/View;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setTitle", "title", "setVisible", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeter;", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class HudCounter {
     private final int backendID;
@@ -240,19 +244,23 @@ public final class HudCounter {
                 iArr2[TypeTaximeter.ESCAPE.ordinal()] = 41;
             } catch (NoSuchFieldError unused43) {
             }
+            try {
+                iArr2[TypeTaximeter.TOFU_COOLING.ordinal()] = 42;
+            } catch (NoSuchFieldError unused44) {
+            }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[HudCounterItemType.values().length];
             try {
                 iArr3[HudCounterItemType.SIMPLE_TEXT.ordinal()] = 1;
-            } catch (NoSuchFieldError unused44) {
-            }
-            try {
-                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused45) {
             }
             try {
-                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused46) {
+            }
+            try {
+                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused47) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -886,9 +894,16 @@ public final class HudCounter {
                 Unit unit41 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
+            case 42:
+                setVisible(valueOf);
+                this.firstTextView = hudTaximeterBinding.tofuCooling.tvFirst;
+                setupTofuCoolingProgressBar();
+                Unit unit42 = Unit.INSTANCE;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
             default:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
-                Unit unit42 = Unit.INSTANCE;
+                Unit unit43 = Unit.INSTANCE;
                 break;
         }
         Intrinsics.checkNotNullExpressionValue(hudTaximeterContainerBinding, "with(...)");
@@ -898,6 +913,58 @@ public final class HudCounter {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setTaximeterType$lambda$0$0$0(HudCounter hudCounter, View view) {
         hudCounter.backendNotifier.clickedWrapper(hudCounter.backendID, 10, 8);
+    }
+
+    private final void setupTofuCoolingProgressBar() {
+        final HudCounterTofuCoolingBinding hudCounterTofuCoolingBinding = this.binding.tofuCooling;
+        Object tag = hudCounterTofuCoolingBinding.tvFirst.getTag(R.id.progress_fill);
+        TextWatcher textWatcher = tag instanceof TextWatcher ? (TextWatcher) tag : null;
+        if (textWatcher != null) {
+            hudCounterTofuCoolingBinding.tvFirst.removeTextChangedListener(textWatcher);
+        }
+        ViewGroup.LayoutParams layoutParams = hudCounterTofuCoolingBinding.progressFill.getLayoutParams();
+        ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null;
+        layoutParams.width = RangesKt.coerceAtLeast(hudCounterTofuCoolingBinding.progressTrack.getLayoutParams().width - ((marginLayoutParams != null ? marginLayoutParams.leftMargin : 0) * 2), 0);
+        hudCounterTofuCoolingBinding.progressFill.setLayoutParams(layoutParams);
+        final Ref.LongRef longRef = new Ref.LongRef();
+        TextView tvFirst = hudCounterTofuCoolingBinding.tvFirst;
+        Intrinsics.checkNotNullExpressionValue(tvFirst, "tvFirst");
+        TextWatcher textWatcher2 = new TextWatcher() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter$setupTofuCoolingProgressBar$lambda$0$$inlined$doOnTextChanged$1
+            @Override // android.text.TextWatcher
+            public void afterTextChanged(Editable editable) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            }
+
+            @Override // android.text.TextWatcher
+            public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+                HudCounter.setupTofuCoolingProgressBar$lambda$0$updateProgress(Ref.LongRef.this, hudCounterTofuCoolingBinding, charSequence);
+            }
+        };
+        tvFirst.addTextChangedListener(textWatcher2);
+        hudCounterTofuCoolingBinding.tvFirst.setTag(R.id.progress_fill, textWatcher2);
+        setupTofuCoolingProgressBar$lambda$0$updateProgress(longRef, hudCounterTofuCoolingBinding, hudCounterTofuCoolingBinding.tvFirst.getText());
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setupTofuCoolingProgressBar$lambda$0$updateProgress(Ref.LongRef longRef, HudCounterTofuCoolingBinding hudCounterTofuCoolingBinding, CharSequence charSequence) {
+        Long longOrNull;
+        List split$default = StringsKt.split$default((CharSequence) String.valueOf(charSequence), new char[]{AbstractJsonLexerKt.COLON}, false, 0, 6, (Object) null);
+        if (split$default.size() == 2 && (longOrNull = StringsKt.toLongOrNull((String) split$default.get(0))) != null) {
+            long longValue = longOrNull.longValue();
+            Long longOrNull2 = StringsKt.toLongOrNull((String) split$default.get(1));
+            if (longOrNull2 != null) {
+                long longValue2 = longOrNull2.longValue();
+                if (longValue < 0 || 0 > longValue2 || longValue2 >= 60) {
+                    return;
+                }
+                long j = (longValue * 60) + longValue2;
+                longRef.element = Math.max(longRef.element, j);
+                hudCounterTofuCoolingBinding.progressFill.setPercentWidth(RangesKt.coerceIn(longRef.element > 0 ? ((float) j) / ((float) longRef.element) : 0.0f, 0.0f, 1.0f));
+            }
+        }
     }
 
     static /* synthetic */ void setTaximeterLayoutType$default(HudCounter hudCounter, int i, int i2, Integer num, String str, String str2, String str3, boolean z, int i3, int i4, Object obj) {
@@ -1217,5 +1284,8 @@ public final class HudCounter {
         FrameLayout root25 = hudTaximeterBinding.escape.getRoot();
         Intrinsics.checkNotNullExpressionValue(root25, "getRoot(...)");
         root25.setVisibility(typeTaximeter == TypeTaximeter.ESCAPE ? 0 : 8);
+        FrameLayout root26 = hudTaximeterBinding.tofuCooling.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root26, "getRoot(...)");
+        root26.setVisibility(typeTaximeter == TypeTaximeter.TOFU_COOLING ? 0 : 8);
     }
 }

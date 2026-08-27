@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 class CLSUUID {
     private static final String ID_SHA = CommonUtils.sha1(UUID.randomUUID().toString() + System.currentTimeMillis());
     private static final AtomicLong sequenceNumber = new AtomicLong(0);

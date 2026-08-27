@@ -35,13 +35,13 @@ public final class SchedulerCoroutineDispatcher extends CoroutineDispatcher impl
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo11512dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo11515dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         this.scheduler.scheduleDirect(runnable);
     }
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo11513scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo11516scheduleResumeAfterDelay(long j, final CancellableContinuation<? super Unit> cancellableContinuation) {
         RxAwaitKt.disposeOnCancellation(cancellableContinuation, this.scheduler.scheduleDirect(new Runnable() { // from class: kotlinx.coroutines.rx2.SchedulerCoroutineDispatcher$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {

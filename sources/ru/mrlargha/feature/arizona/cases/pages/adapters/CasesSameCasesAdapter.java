@@ -132,7 +132,7 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
                     tvNew2.setVisibility(0);
                 }
             }
-            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m11917getCurrency().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m11922getCurrency().ordinal()];
             if (i == 1) {
                 arizonaCasesSameCasesItemBinding.ivRub.setImageResource(R.drawable.blueprint_ic_rub);
                 arizonaCasesSameCasesItemBinding.ivRub.setImageTintList(ColorStateList.valueOf(Color.parseColor("#95FF00")));

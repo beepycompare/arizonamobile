@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.elements.inventory.presentation.viewHolder;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
-import androidx.media3.container.MdtaMetadataEntry;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -22,7 +21,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SubInventoryViewHolder.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1", f = "SubInventoryViewHolder.kt", i = {}, l = {72}, m = "invokeSuspend", n = {}, nl = {MdtaMetadataEntry.TYPE_INDICATOR_8_BIT_UNSIGNED_INT}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$1", f = "SubInventoryViewHolder.kt", i = {}, l = {73}, m = "invokeSuspend", n = {}, nl = {76}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class SubInventoryViewHolder$bind$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryIconRequest $iconRequest;

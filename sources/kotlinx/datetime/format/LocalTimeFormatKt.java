@@ -40,7 +40,7 @@ public final class LocalTimeFormatKt {
         Intrinsics.checkNotNullParameter(build, "$this$build");
         DateTimeFormatBuilder.WithTime.hour$default(build, null, 1, null);
         DateTimeFormatBuilder.WithTime withTime = build;
-        DateTimeFormatBuilderKt.m11544char(withTime, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilderKt.m11547char(withTime, AbstractJsonLexerKt.COLON);
         DateTimeFormatBuilder.WithTime.minute$default(build, null, 1, null);
         DateTimeFormatBuilderKt.alternativeParsing(withTime, new Function1[]{new Function1() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
@@ -64,7 +64,7 @@ public final class LocalTimeFormatKt {
     public static final Unit ISO_TIME_delegate$lambda$4$lambda$3$lambda$2(DateTimeFormatBuilder.WithTime alternativeParsing) {
         Intrinsics.checkNotNullParameter(alternativeParsing, "$this$alternativeParsing");
         DateTimeFormatBuilder.WithTime withTime = alternativeParsing;
-        DateTimeFormatBuilderKt.m11544char(withTime, AbstractJsonLexerKt.COLON);
+        DateTimeFormatBuilderKt.m11547char(withTime, AbstractJsonLexerKt.COLON);
         DateTimeFormatBuilder.WithTime.second$default(alternativeParsing, null, 1, null);
         DateTimeFormatBuilderKt.optional$default(withTime, null, new Function1() { // from class: kotlinx.datetime.format.LocalTimeFormatKt$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
@@ -77,7 +77,7 @@ public final class LocalTimeFormatKt {
 
     public static final Unit ISO_TIME_delegate$lambda$4$lambda$3$lambda$2$lambda$1(DateTimeFormatBuilder.WithTime optional) {
         Intrinsics.checkNotNullParameter(optional, "$this$optional");
-        DateTimeFormatBuilderKt.m11544char(optional, '.');
+        DateTimeFormatBuilderKt.m11547char(optional, '.');
         optional.secondFraction(1, 9);
         return Unit.INSTANCE;
     }

@@ -2,7 +2,7 @@ package com.google.firebase.encoders;
 
 import java.io.IOException;
 import java.io.Writer;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public interface DataEncoder {
     String encode(Object obj);
 

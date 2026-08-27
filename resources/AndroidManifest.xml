@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1736" android:versionName="v17.3.6" android:installLocation="auto" android:compileSdkVersion="37" android:compileSdkVersionCodename="17" package="com.arizona21.game" platformBuildVersionCode="37" platformBuildVersionName="17">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1737" android:versionName="v17.3.7" android:installLocation="auto" android:compileSdkVersion="37" android:compileSdkVersionCodename="17" package="com.arizona21.game" platformBuildVersionCode="37" platformBuildVersionName="17">
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="37"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -72,10 +72,6 @@
         </service>
         <receiver android:name="com.wardrumstudios.utils.WarAlarmReceiver"/>
         <activity android:theme="@style/AppTheme" android:name="com.arizona.launcher.UpdateActivity" android:screenOrientation="landscape" android:configChanges="screenSize|orientation"/>
-        <activity android:theme="@style/AppTheme" android:name="com.arizona.launcher.ui.stories.StoriesActivity" android:exported="false" android:configChanges="screenSize|orientation"/>
-        <activity android:theme="@style/Theme.AppCompat.Translucent" android:name="com.arizona.launcher.ui.notifications.NotificationsActivity" android:configChanges="screenSize|orientation"/>
-        <activity android:name="com.arizona.launcher.ui.servers.ServerInfoActivity" android:configChanges="screenSize|orientation"/>
-        <activity android:name="com.arizona.launcher.MainActivity" android:configChanges="screenSize|orientation" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
         <activity android:theme="@style/Theme.Arizona.Splash" android:name="com.arizona.launcher.MainEntrench" android:exported="true" android:screenOrientation="landscape" android:configChanges="screenSize|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

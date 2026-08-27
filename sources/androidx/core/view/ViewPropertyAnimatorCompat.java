@@ -6,7 +6,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.Interpolator;
 import java.lang.ref.WeakReference;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ViewPropertyAnimatorCompat {
     private final WeakReference<View> mView;
 

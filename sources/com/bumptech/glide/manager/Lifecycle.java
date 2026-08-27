@@ -1,5 +1,5 @@
 package com.bumptech.glide.manager;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public interface Lifecycle {
     void addListener(LifecycleListener lifecycleListener);
 

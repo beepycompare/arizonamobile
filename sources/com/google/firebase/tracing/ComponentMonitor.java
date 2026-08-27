@@ -7,7 +7,7 @@ import com.google.firebase.components.ComponentRegistrar;
 import com.google.firebase.components.ComponentRegistrarProcessor;
 import java.util.ArrayList;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class ComponentMonitor implements ComponentRegistrarProcessor {
     @Override // com.google.firebase.components.ComponentRegistrarProcessor
     public List<Component<?>> processRegistrar(ComponentRegistrar componentRegistrar) {

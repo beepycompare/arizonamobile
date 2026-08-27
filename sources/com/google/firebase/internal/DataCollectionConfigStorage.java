@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat;
 import com.google.firebase.DataCollectionDefaultChange;
 import com.google.firebase.events.Event;
 import com.google.firebase.events.Publisher;
-/* loaded from: classes4.dex */
+/* loaded from: classes2.dex */
 public class DataCollectionConfigStorage {
     public static final String DATA_COLLECTION_DEFAULT_ENABLED = "firebase_data_collection_default_enabled";
     private static final String FIREBASE_APP_PREFS = "com.google.firebase.common.prefs:";

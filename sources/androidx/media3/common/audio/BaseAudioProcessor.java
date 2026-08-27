@@ -3,7 +3,7 @@ package androidx.media3.common.audio;
 import androidx.media3.common.audio.AudioProcessor;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public abstract class BaseAudioProcessor implements AudioProcessor {
     private boolean inputEnded;
     private ByteBuffer buffer = EMPTY_BUFFER;
