@@ -97,7 +97,7 @@ public final class SingleSubscriptionSnapshotFlowManager extends SnapshotFlowMan
             }
         }
         if (sendChannel != null) {
-            ChannelResult.m11467boximpl(sendChannel.mo9057trySendJP2dKIU(Unit.INSTANCE));
+            ChannelResult.m11468boximpl(sendChannel.mo9057trySendJP2dKIU(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }

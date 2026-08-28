@@ -5,7 +5,6 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.app.NotificationCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.arizona.launcher.DownloadFailureClassifier;
 import com.arizona.launcher.DownloadFailureDetails;
 import com.arizona.launcher.DownloadFailureKind;
 import com.arizona.launcher.DownloadRetryDecision;
@@ -217,29 +216,76 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(7:12|13|14|15|16|(5:18|19|20|(2:22|(2:28|(2:30|(2:32|(6:34|13|14|15|16|(0))))(2:35|36)))|38)|69) */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x01ce, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(8:11|12|13|14|15|16|(5:18|19|20|(2:22|(2:28|(2:30|(2:32|(7:34|12|13|14|15|16|(0))))(2:35|36)))|38)|62) */
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x01a3, code lost:
         r0 = e;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x01cf, code lost:
-        r21 = r12;
-        r12 = r2;
-        r2 = r11;
-        r11 = r9;
-        r9 = r4;
-        r4 = r21;
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x01a4, code lost:
+        r25 = r11;
+        r11 = r2;
+        r2 = r10;
+        r10 = r8;
+        r8 = r4;
+        r4 = r25;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x01e3  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01fc  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x026a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x01b7 -> B:48:0x01bc). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:68:0x026a -> B:25:0x00da). Please submit an issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:75:0x02bf -> B:25:0x00da). Please submit an issue!!! */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x01d0, code lost:
+        return new com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeResult.Failure(com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeErrorCode.NETWORK_FAILED, null, com.arizona.launcher.DownloadFailureClassifier.INSTANCE.classify(r0).getSubtypeSuffix(), 2, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x01d1, code lost:
+        r17 = com.arizona.launcher.DownloadFailureClassifier.INSTANCE.classify(r0);
+        r4 = r26.retryPolicy.decide(r17.getKind(), r4, r26.networkMonitor.hasValidatedNetwork(), r17.getHttpStatus());
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x01f4, code lost:
+        if (kotlin.jvm.internal.Intrinsics.areEqual(r4, com.arizona.launcher.DownloadRetryDecision.WaitForValidatedNetwork.INSTANCE) != false) goto L47;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0207, code lost:
+        return new com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeResult.Failure(com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeErrorCode.NETWORK_FAILED, null, r17.getSubtypeSuffix(), 2, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x020a, code lost:
+        if ((r4 instanceof com.arizona.launcher.DownloadRetryDecision.Retry) != false) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x020c, code lost:
+        r6 = (com.arizona.launcher.DownloadRetryDecision.Retry) r4;
+        r7 = r6.getNextAttempt();
+        r26.retryListener.onRetry(r11.getPackageId(), r6.getNextAttempt(), r6.getAfterMs(), r17);
+        r12 = r6.getAfterMs();
+        r2.L$0 = r11;
+        r2.L$1 = r10;
+        r2.L$2 = r9;
+        r2.L$3 = kotlin.coroutines.jvm.internal.SpillingKt.nullOutSpilledVariable(r0);
+        r2.L$4 = kotlin.coroutines.jvm.internal.SpillingKt.nullOutSpilledVariable(r17);
+        r2.L$5 = kotlin.coroutines.jvm.internal.SpillingKt.nullOutSpilledVariable(r4);
+        r2.I$0 = r8;
+        r2.I$1 = r7;
+        r2.label = 2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x024b, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(r12, r2) != r3) goto L53;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x024e, code lost:
+        r4 = r8;
+        r8 = r10;
+        r10 = r2;
+        r2 = r11;
+        r11 = r7;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x025c, code lost:
+        if (kotlin.jvm.internal.Intrinsics.areEqual(r4, com.arizona.launcher.DownloadRetryDecision.Disabled.INSTANCE) != false) goto L60;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x026c, code lost:
+        throw new kotlin.NoWhenBranchMatchedException();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0287, code lost:
+        return new com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeResult.Failure(com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeErrorCode.NETWORK_FAILED, null, r17.getSubtypeSuffix(), 2, null);
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00a3  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00d3  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x01b8  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x01d1  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:45:0x018e -> B:46:0x0193). Please submit an issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:65:0x024e -> B:66:0x0253). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -252,16 +298,9 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
         int i4;
         OkHttpArchiveByteRangeSource$fetchWithRetry$1 okHttpArchiveByteRangeSource$fetchWithRetry$12;
         ArchiveByteRangeRequest archiveByteRangeRequest2;
-        boolean z;
+        ArchiveByteRangeRequest archiveByteRangeRequest3;
         Function1<? super InputStream, Unit> function13;
         int i5;
-        char c;
-        OkHttpArchiveByteRangeSource$fetchWithRetry$1 okHttpArchiveByteRangeSource$fetchWithRetry$13;
-        char c2;
-        Function0<Boolean> function03;
-        DownloadFailureDetails downloadFailureDetails;
-        OkHttpArchiveByteRangeSource$fetchWithRetry$1 okHttpArchiveByteRangeSource$fetchWithRetry$14;
-        ArchiveByteRangeRequest archiveByteRangeRequest3;
         int i6;
         ArchiveByteRangeResult archiveByteRangeResult;
         if (continuation instanceof OkHttpArchiveByteRangeSource$fetchWithRetry$1) {
@@ -303,142 +342,33 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
                     try {
                         try {
                             ResultKt.throwOnFailure(obj);
-                        } catch (IOException e) {
-                            IOException e2 = e;
-                            if (!function02.invoke().booleanValue()) {
-                                return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, DownloadFailureClassifier.INSTANCE.classify(e2).getSubtypeSuffix(), 2, null);
-                            }
-                            DownloadFailureDetails classify = DownloadFailureClassifier.INSTANCE.classify(e2);
-                            DownloadRetryDecision decide = this.retryPolicy.decide(classify.getKind(), i6, this.networkMonitor.hasValidatedNetwork(), classify.getHttpStatus());
-                            if (Intrinsics.areEqual(decide, DownloadRetryDecision.WaitForValidatedNetwork.INSTANCE)) {
-                                ArchiveNetworkMonitor archiveNetworkMonitor = this.networkMonitor;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0 = archiveByteRangeRequest3;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1 = function13;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2 = function02;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3 = SpillingKt.nullOutSpilledVariable(e2);
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4 = classify;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5 = SpillingKt.nullOutSpilledVariable(decide);
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0 = i5;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1 = i6;
-                                c2 = 2;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.label = 2;
-                                obj = archiveNetworkMonitor.awaitValidatedNetwork(okHttpArchiveByteRangeSource$fetchWithRetry$1);
-                                if (obj != coroutine_suspended) {
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$14 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
-                                    archiveByteRangeRequest2 = archiveByteRangeRequest3;
-                                    i4 = i6;
-                                    i3 = i5;
-                                    function12 = function13;
-                                    function03 = function02;
-                                    downloadFailureDetails = classify;
-                                    if (!((Boolean) obj).booleanValue()) {
-                                    }
-                                }
-                            } else if (decide instanceof DownloadRetryDecision.Retry) {
-                                DownloadRetryDecision.Retry retry = (DownloadRetryDecision.Retry) decide;
-                                int nextAttempt = retry.getNextAttempt();
-                                z = true;
-                                this.retryListener.onRetry(archiveByteRangeRequest3.getPackageId(), retry.getNextAttempt(), retry.getAfterMs(), classify);
-                                long afterMs = retry.getAfterMs();
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0 = archiveByteRangeRequest3;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1 = function13;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2 = function02;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3 = SpillingKt.nullOutSpilledVariable(e2);
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4 = SpillingKt.nullOutSpilledVariable(classify);
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5 = SpillingKt.nullOutSpilledVariable(decide);
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0 = i5;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1 = nextAttempt;
-                                c = 3;
-                                okHttpArchiveByteRangeSource$fetchWithRetry$1.label = 3;
-                                if (DelayKt.delay(afterMs, okHttpArchiveByteRangeSource$fetchWithRetry$1) != coroutine_suspended) {
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$13 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
-                                    archiveByteRangeRequest2 = archiveByteRangeRequest3;
-                                    i4 = nextAttempt;
-                                    i3 = i5;
-                                    function12 = function13;
-                                    i7 = 1;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$13;
-                                    JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
-                                    obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
-                                    if (obj != coroutine_suspended) {
-                                    }
-                                }
-                            } else if (!Intrinsics.areEqual(decide, DownloadRetryDecision.Disabled.INSTANCE) && !Intrinsics.areEqual(decide, DownloadRetryDecision.DoNotRetry.INSTANCE)) {
-                                throw new NoWhenBranchMatchedException();
-                            } else {
-                                return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, classify.getSubtypeSuffix(), 2, null);
-                            }
-                            return coroutine_suspended;
+                        } catch (CancellationException e) {
+                            throw e;
                         }
-                        archiveByteRangeResult = (ArchiveByteRangeResult) obj;
-                        if (archiveByteRangeResult instanceof ArchiveByteRangeResult.Failure) {
+                    } catch (IOException e2) {
+                        IOException e3 = e2;
+                        if (!function02.invoke().booleanValue()) {
                         }
-                        return archiveByteRangeResult;
-                    } catch (CancellationException e3) {
-                        throw e3;
                     }
+                    archiveByteRangeResult = (ArchiveByteRangeResult) obj;
+                    if (archiveByteRangeResult instanceof ArchiveByteRangeResult.Failure) {
+                    }
+                    return archiveByteRangeResult;
                 } else if (i2 == 2) {
                     int i8 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
                     int i9 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
                     DownloadRetryDecision downloadRetryDecision = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5;
-                    downloadFailureDetails = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
+                    DownloadFailureDetails downloadFailureDetails = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
                     IOException iOException = (IOException) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3;
-                    function03 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
+                    function02 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
                     Function1<? super InputStream, Unit> function14 = (Function1) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1;
                     ResultKt.throwOnFailure(obj);
+                    okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
+                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
                     i4 = i8;
                     i3 = i9;
                     function12 = function14;
-                    okHttpArchiveByteRangeSource$fetchWithRetry$14 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
-                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
-                    c2 = 2;
-                    if (!((Boolean) obj).booleanValue()) {
-                        function02 = function03;
-                        i7 = 1;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$14;
-                        JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$2 = function02;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$3 = null;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$4 = null;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.L$5 = null;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.I$0 = i3;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.I$1 = i4;
-                        okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
-                        obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
-                        if (obj != coroutine_suspended) {
-                        }
-                        return coroutine_suspended;
-                    }
-                    return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.NETWORK_FAILED, null, downloadFailureDetails.getSubtypeSuffix(), 2, null);
-                } else if (i2 == 3) {
-                    int i10 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
-                    i5 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
-                    DownloadRetryDecision downloadRetryDecision2 = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5;
-                    DownloadFailureDetails downloadFailureDetails2 = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
-                    IOException iOException2 = (IOException) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3;
-                    function02 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
-                    function13 = (Function1) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1;
-                    ResultKt.throwOnFailure(obj);
-                    okHttpArchiveByteRangeSource$fetchWithRetry$13 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
-                    z = true;
-                    archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
-                    i4 = i10;
-                    c = 3;
-                    i3 = i5;
-                    function12 = function13;
                     i7 = 1;
-                    okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$13;
                     JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
                     okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
                     okHttpArchiveByteRangeSource$fetchWithRetry$12.L$1 = function12;
@@ -453,20 +383,20 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
                     if (obj != coroutine_suspended) {
                     }
                     return coroutine_suspended;
-                } else if (i2 == 4) {
-                    int i11 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$2;
-                    int i12 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
-                    int i13 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
-                    DownloadRetryDecision downloadRetryDecision3 = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5;
-                    DownloadFailureDetails downloadFailureDetails3 = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
+                } else if (i2 == 3) {
+                    int i10 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$2;
+                    int i11 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1;
+                    int i12 = okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0;
+                    DownloadRetryDecision downloadRetryDecision2 = (DownloadRetryDecision) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5;
+                    DownloadFailureDetails downloadFailureDetails2 = (DownloadFailureDetails) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4;
                     ArchiveByteRangeResult archiveByteRangeResult2 = (ArchiveByteRangeResult) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3;
                     function02 = (Function0) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2;
                     Function1<? super InputStream, Unit> function15 = (Function1) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1;
                     ResultKt.throwOnFailure(obj);
                     okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
                     archiveByteRangeRequest2 = (ArchiveByteRangeRequest) okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0;
-                    i4 = i12;
-                    i3 = i13;
+                    i4 = i11;
+                    i3 = i12;
                     function12 = function15;
                     i7 = 1;
                     JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
@@ -481,12 +411,12 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
                     okHttpArchiveByteRangeSource$fetchWithRetry$12.label = i7;
                     obj = executeOnce(archiveByteRangeRequest2, i3, function12, okHttpArchiveByteRangeSource$fetchWithRetry$12);
                     if (obj != coroutine_suspended) {
-                        int i14 = i4;
+                        int i13 = i4;
                         archiveByteRangeRequest3 = archiveByteRangeRequest2;
                         okHttpArchiveByteRangeSource$fetchWithRetry$1 = okHttpArchiveByteRangeSource$fetchWithRetry$12;
                         function13 = function12;
                         i5 = i3;
-                        i6 = i14;
+                        i6 = i13;
                         archiveByteRangeResult = (ArchiveByteRangeResult) obj;
                         if (archiveByteRangeResult instanceof ArchiveByteRangeResult.Failure) {
                             ArchiveByteRangeResult.Failure failure = (ArchiveByteRangeResult.Failure) archiveByteRangeResult;
@@ -496,29 +426,29 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
                                     throw new IllegalArgumentException("Required value was null.".toString());
                                 }
                                 int intValue = httpStatus.intValue();
-                                DownloadFailureDetails downloadFailureDetails4 = new DownloadFailureDetails("HTTP_" + intValue, Boxing.boxInt(intValue), DownloadFailureKind.HTTP);
-                                DownloadRetryDecision decide2 = this.retryPolicy.decide(DownloadFailureKind.HTTP, i6, this.networkMonitor.hasValidatedNetwork(), Boxing.boxInt(intValue));
-                                if (decide2 instanceof DownloadRetryDecision.Retry) {
-                                    DownloadRetryDecision.Retry retry2 = (DownloadRetryDecision.Retry) decide2;
-                                    int nextAttempt2 = retry2.getNextAttempt();
-                                    this.retryListener.onRetry(archiveByteRangeRequest3.getPackageId(), retry2.getNextAttempt(), retry2.getAfterMs(), downloadFailureDetails4);
-                                    long afterMs2 = retry2.getAfterMs();
+                                DownloadFailureDetails downloadFailureDetails3 = new DownloadFailureDetails("HTTP_" + intValue, Boxing.boxInt(intValue), DownloadFailureKind.HTTP);
+                                DownloadRetryDecision decide = this.retryPolicy.decide(DownloadFailureKind.HTTP, i6, this.networkMonitor.hasValidatedNetwork(), Boxing.boxInt(intValue));
+                                if (decide instanceof DownloadRetryDecision.Retry) {
+                                    DownloadRetryDecision.Retry retry = (DownloadRetryDecision.Retry) decide;
+                                    int nextAttempt = retry.getNextAttempt();
+                                    this.retryListener.onRetry(archiveByteRangeRequest3.getPackageId(), retry.getNextAttempt(), retry.getAfterMs(), downloadFailureDetails3);
+                                    long afterMs = retry.getAfterMs();
                                     okHttpArchiveByteRangeSource$fetchWithRetry$1.L$0 = archiveByteRangeRequest3;
                                     okHttpArchiveByteRangeSource$fetchWithRetry$1.L$1 = function13;
                                     okHttpArchiveByteRangeSource$fetchWithRetry$1.L$2 = function02;
                                     okHttpArchiveByteRangeSource$fetchWithRetry$1.L$3 = SpillingKt.nullOutSpilledVariable(archiveByteRangeResult);
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4 = SpillingKt.nullOutSpilledVariable(downloadFailureDetails4);
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5 = SpillingKt.nullOutSpilledVariable(decide2);
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$4 = SpillingKt.nullOutSpilledVariable(downloadFailureDetails3);
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.L$5 = SpillingKt.nullOutSpilledVariable(decide);
                                     okHttpArchiveByteRangeSource$fetchWithRetry$1.I$0 = i5;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1 = nextAttempt2;
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.I$1 = nextAttempt;
                                     okHttpArchiveByteRangeSource$fetchWithRetry$1.I$2 = intValue;
-                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.label = 4;
-                                    if (DelayKt.delay(afterMs2, okHttpArchiveByteRangeSource$fetchWithRetry$1) != coroutine_suspended) {
+                                    okHttpArchiveByteRangeSource$fetchWithRetry$1.label = 3;
+                                    if (DelayKt.delay(afterMs, okHttpArchiveByteRangeSource$fetchWithRetry$1) != coroutine_suspended) {
                                         i3 = i5;
                                         function12 = function13;
                                         okHttpArchiveByteRangeSource$fetchWithRetry$12 = okHttpArchiveByteRangeSource$fetchWithRetry$1;
                                         archiveByteRangeRequest2 = archiveByteRangeRequest3;
-                                        i4 = nextAttempt2;
+                                        i4 = nextAttempt;
                                         i7 = 1;
                                         JobKt.ensureActive(okHttpArchiveByteRangeSource$fetchWithRetry$12.getContext());
                                         okHttpArchiveByteRangeSource$fetchWithRetry$12.L$0 = archiveByteRangeRequest2;
@@ -965,12 +895,12 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
             CloseableKt.closeFinally(execute, null);
             if (cancellableContinuationImpl2.isActive()) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(invoke));
+                cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(invoke));
             }
         } catch (Throwable th) {
             if (cancellableContinuationImpl2.isActive()) {
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(ResultKt.createFailure(th)));
             }
         }
         Object result = cancellableContinuationImpl.getResult();

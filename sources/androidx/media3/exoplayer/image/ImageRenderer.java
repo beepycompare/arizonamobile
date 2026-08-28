@@ -272,7 +272,7 @@ public class ImageRenderer extends BaseRenderer {
 
     protected boolean processOutputBuffer(long j, long j2, Bitmap bitmap, long j3) throws ExoPlaybackException {
         long j4 = j3 - j;
-        if (shouldForceRender() || j4 < IMAGE_PRESENTATION_WINDOW_THRESHOLD_US) {
+        if (shouldForceRender() || j4 < 30000) {
             ImageMetadataListener imageMetadataListener = this.imageMetadataListener;
             if (imageMetadataListener != null) {
                 imageMetadataListener.onImageAboutToBeAvailable(j3 - this.outputStreamInfo.streamOffsetUs, (Format) Preconditions.checkNotNull(this.inputFormat));
@@ -405,7 +405,7 @@ public class ImageRenderer extends BaseRenderer {
         this.currentTileIndex++;
         if (!this.readyToOutputTiles) {
             long presentationTimeUs = tileInfo.getPresentationTimeUs();
-            boolean z2 = presentationTimeUs - IMAGE_PRESENTATION_WINDOW_THRESHOLD_US <= j && j <= IMAGE_PRESENTATION_WINDOW_THRESHOLD_US + presentationTimeUs;
+            boolean z2 = presentationTimeUs - 30000 <= j && j <= 30000 + presentationTimeUs;
             TileInfo tileInfo2 = this.tileInfo;
             boolean z3 = tileInfo2 != null && tileInfo2.getPresentationTimeUs() <= j && j < presentationTimeUs;
             boolean isTileLastInGrid = isTileLastInGrid((TileInfo) Preconditions.checkNotNull(this.nextTileInfo));

@@ -183,10 +183,10 @@ public final class SharedSessionRepositoryImpl implements SharedSessionRepositor
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                Flow m11486catch = FlowKt.m11486catch(SharedSessionRepositoryImpl.this.sessionDataStore.getData(), new C00671(SharedSessionRepositoryImpl.this, null));
+                Flow m11487catch = FlowKt.m11487catch(SharedSessionRepositoryImpl.this.sessionDataStore.getData(), new C00671(SharedSessionRepositoryImpl.this, null));
                 final SharedSessionRepositoryImpl sharedSessionRepositoryImpl = SharedSessionRepositoryImpl.this;
                 this.label = 1;
-                if (m11486catch.collect(new FlowCollector() { // from class: com.google.firebase.sessions.SharedSessionRepositoryImpl.1.2
+                if (m11487catch.collect(new FlowCollector() { // from class: com.google.firebase.sessions.SharedSessionRepositoryImpl.1.2
                     @Override // kotlinx.coroutines.flow.FlowCollector
                     public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
                         return emit((SessionData) obj2, (Continuation<? super Unit>) continuation);
@@ -357,7 +357,7 @@ public final class SharedSessionRepositoryImpl implements SharedSessionRepositor
     public final boolean isSessionExpired(SessionData sessionData) {
         Time backgroundTime = sessionData.getBackgroundTime();
         if (backgroundTime != null) {
-            boolean z = Duration.m11295compareToLRDsOJo(this.timeProvider.currentTime().m9778minus5sfh64U(backgroundTime), this.sessionsSettings.m9782getSessionRestartTimeoutUwyO8pc()) > 0;
+            boolean z = Duration.m11296compareToLRDsOJo(this.timeProvider.currentTime().m9778minus5sfh64U(backgroundTime), this.sessionsSettings.m9782getSessionRestartTimeoutUwyO8pc()) > 0;
             if (z) {
                 Log.d(FirebaseSessions.TAG, "Session " + sessionData.getSessionDetails().getSessionId() + " is expired");
             }

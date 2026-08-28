@@ -53,7 +53,7 @@ public final class HomeComponent$onClickShop$1 extends SuspendLambda implements 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         MutableStateFlow mutableStateFlow;
         Object withContext;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
@@ -79,17 +79,17 @@ public final class HomeComponent$onClickShop$1 extends SuspendLambda implements 
                 ResultKt.throwOnFailure(obj);
                 withContext = obj;
             }
-            m9919constructorimpl = Result.m9919constructorimpl(Boxing.boxBoolean(((Boolean) withContext).booleanValue()));
+            m9920constructorimpl = Result.m9920constructorimpl(Boxing.boxBoolean(((Boolean) withContext).booleanValue()));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-        if (m9922exceptionOrNullimpl != null) {
-            Timber.Forest.e(m9922exceptionOrNullimpl, "Failed to check shop availability", new Object[0]);
-            m9919constructorimpl = Boxing.boxBoolean(false);
+        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+        if (m9923exceptionOrNullimpl != null) {
+            Timber.Forest.e(m9923exceptionOrNullimpl, "Failed to check shop availability", new Object[0]);
+            m9920constructorimpl = Boxing.boxBoolean(false);
         }
-        boolean booleanValue = ((Boolean) m9919constructorimpl).booleanValue();
+        boolean booleanValue = ((Boolean) m9920constructorimpl).booleanValue();
         mutableStateFlow = this.this$0.stateStore;
         while (true) {
             Object value = mutableStateFlow.getValue();

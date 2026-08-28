@@ -32,7 +32,7 @@ public final class D extends Lambda implements Function1<SingleEmitter<Unit>, Un
     }
 
     public final void a(final SingleEmitter<Unit> emitter) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
         C0796r c0796r = this.f1439a;
         int i = this.b;
@@ -52,14 +52,14 @@ public final class D extends Lambda implements Function1<SingleEmitter<Unit>, Un
                     D.a(SingleEmitter.this, activityLauncherResult, bundle);
                 }
             });
-            m9919constructorimpl = Result.m9919constructorimpl(Unit.INSTANCE);
+            m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-        if (m9922exceptionOrNullimpl != null) {
-            emitter.error(m9922exceptionOrNullimpl);
+        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+        if (m9923exceptionOrNullimpl != null) {
+            emitter.error(m9923exceptionOrNullimpl);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
+import com.arizona.launcher.UpdateServiceContract;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeResult;
 import com.arizona.launcher.updater.archive.orchestrator.RemoteZipIndexFetchResult;
 import com.arizona.launcher.updater.archive.range.ArchiveObservedRepresentationFence;
@@ -24,7 +25,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: RemoteZipIndexFetcher.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \u00132\u00020\u0001:\u0001\u0013B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J&\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0086@¢\u0006\u0002\u0010\u000fJ\f\u0010\u0010\u001a\u00020\u0011*\u00020\u0012H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u0015\u0012\b\b\u0016\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0014"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/RemoteZipIndexFetcher;", "", "byteRangeSource", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeSource;", "parser", "Lcom/arizona/launcher/updater/archive/range/RemoteZipIndexParser;", "<init>", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeSource;Lcom/arizona/launcher/updater/archive/range/RemoteZipIndexParser;)V", RemoteConfigComponent.FETCH_FILE_NAME, "Lcom/arizona/launcher/updater/archive/orchestrator/RemoteZipIndexFetchResult;", "packageId", "", "archiveUrl", "archiveSize", "", "(Ljava/lang/String;Ljava/lang/String;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toIndexFailure", "Lcom/arizona/launcher/updater/archive/orchestrator/RemoteZipIndexFetchResult$Failure;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeResult$Failure;", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \u00172\u00020\u0001:\u0001\u0017B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J&\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\f\u001a\u00020\u000b2\u0006\u0010\r\u001a\u00020\u000eH\u0086@¢\u0006\u0002\u0010\u000fJ\u0016\u0010\u0010\u001a\u00020\u0011*\u00020\u00122\b\b\u0002\u0010\u0013\u001a\u00020\u000eH\u0002J\u0018\u0010\u0014\u001a\u00020\u000e2\u0006\u0010\u0015\u001a\u00020\u000e2\u0006\u0010\u0016\u001a\u00020\u000eH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u0019\u0012\b\b\u001a\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0018"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/RemoteZipIndexFetcher;", "", "byteRangeSource", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeSource;", "parser", "Lcom/arizona/launcher/updater/archive/range/RemoteZipIndexParser;", "<init>", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeSource;Lcom/arizona/launcher/updater/archive/range/RemoteZipIndexParser;)V", RemoteConfigComponent.FETCH_FILE_NAME, "Lcom/arizona/launcher/updater/archive/orchestrator/RemoteZipIndexFetchResult;", "packageId", "", "archiveUrl", "archiveSize", "", "(Ljava/lang/String;Ljava/lang/String;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toIndexFailure", "Lcom/arizona/launcher/updater/archive/orchestrator/RemoteZipIndexFetchResult$Failure;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeResult$Failure;", "networkBytes", "addFetched", UpdateServiceContract.BundleKey.CURRENT, "extra", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class RemoteZipIndexFetcher {
     @Deprecated
@@ -48,11 +49,11 @@ public final class RemoteZipIndexFetcher {
     /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0078  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0169  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x01a9  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x01d7  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0220  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x016f  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0239  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x0282  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -125,14 +126,14 @@ public final class RemoteZipIndexFetcher {
                         c2 = 1;
                         archiveByteRangeResult2 = (ArchiveByteRangeResult) obj;
                         if (archiveByteRangeResult2 instanceof ArchiveByteRangeResult.Success) {
-                            if (archiveByteRangeResult2 instanceof ArchiveByteRangeResult.Failure) {
-                                return remoteZipIndexFetcher.toIndexFailure((ArchiveByteRangeResult.Failure) archiveByteRangeResult2);
+                            if (!(archiveByteRangeResult2 instanceof ArchiveByteRangeResult.Failure)) {
+                                throw new NoWhenBranchMatchedException();
                             }
-                            throw new NoWhenBranchMatchedException();
+                            return remoteZipIndexFetcher.toIndexFailure((ArchiveByteRangeResult.Failure) archiveByteRangeResult2, response.getBytes().length);
                         }
                         ArchiveByteRangeResponse response2 = ((ArchiveByteRangeResult.Success) archiveByteRangeResult2).getResponse();
                         if (!Intrinsics.areEqual(response2.getStrongEtag(), strongEtag) || !Intrinsics.areEqual(response2.getEffectiveUrl(), response.getEffectiveUrl())) {
-                            return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_REPRESENTATION_CHANGED, "ZIP representation changed between Range requests");
+                            return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_REPRESENTATION_CHANGED, "ZIP representation changed between Range requests", remoteZipIndexFetcher.addFetched(response.getBytes().length, response2.getBytes().length));
                         }
                         try {
                             j6 = Math.addExact(j5, response2.getBytes().length);
@@ -152,7 +153,7 @@ public final class RemoteZipIndexFetcher {
                             RemoteZipIndexParseResult.Failure failure = (RemoteZipIndexParseResult.Failure) parseCentralDirectory;
                             strArr[0] = failure.getCode().name();
                             strArr[c2] = failure.getEntryPath();
-                            return new RemoteZipIndexFetchResult.Failure(archiveManifestResolutionErrorCode, CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr), StringUtils.PROCESS_POSTFIX_DELIMITER, null, null, 0, null, null, 62, null));
+                            return new RemoteZipIndexFetchResult.Failure(archiveManifestResolutionErrorCode, CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr), StringUtils.PROCESS_POSTFIX_DELIMITER, null, null, 0, null, null, 62, null), length);
                         }
                         RemoteZipIndex index = ((RemoteZipIndexParseResult.Success) parseCentralDirectory).getIndex();
                         StrongEtag strongEtag2 = response.getStrongEtag();
@@ -173,7 +174,7 @@ public final class RemoteZipIndexFetcher {
                 archiveByteRangeResult = (ArchiveByteRangeResult) obj;
                 if (archiveByteRangeResult instanceof ArchiveByteRangeResult.Success) {
                     if (archiveByteRangeResult instanceof ArchiveByteRangeResult.Failure) {
-                        return toIndexFailure((ArchiveByteRangeResult.Failure) archiveByteRangeResult);
+                        return toIndexFailure$default(this, (ArchiveByteRangeResult.Failure) archiveByteRangeResult, 0L, 1, null);
                     }
                     throw new NoWhenBranchMatchedException();
                 }
@@ -184,7 +185,7 @@ public final class RemoteZipIndexFetcher {
                     if (!(parseEocdTail instanceof RemoteZipDirectoryLocationResult.Failure)) {
                         throw new NoWhenBranchMatchedException();
                     }
-                    return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_INDEX_INVALID, ((RemoteZipDirectoryLocationResult.Failure) parseEocdTail).getCode().name());
+                    return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_INDEX_INVALID, ((RemoteZipDirectoryLocationResult.Failure) parseEocdTail).getCode().name(), response.getBytes().length);
                 }
                 location = ((RemoteZipDirectoryLocationResult.Success) parseEocdTail).getLocation();
                 try {
@@ -200,7 +201,7 @@ public final class RemoteZipIndexFetcher {
                     } else {
                         StrongEtag strongEtag3 = response.getStrongEtag();
                         if (strongEtag3 == null) {
-                            return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_REPRESENTATION_CHANGED, "two-range ZIP index requires a strong ETag");
+                            return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_REPRESENTATION_CHANGED, "two-range ZIP index requires a strong ETag", response.getBytes().length);
                         }
                         ArchiveByteRangeSource archiveByteRangeSource2 = remoteZipIndexFetcher.byteRangeSource;
                         ArchiveByteRangeRequest archiveByteRangeRequest2 = new ArchiveByteRangeRequest(str3, str4, location.getCentralDirectoryOffset(), addExact - j3, j4, strongEtag3);
@@ -228,7 +229,7 @@ public final class RemoteZipIndexFetcher {
                         return coroutine_suspended;
                     }
                 } catch (ArithmeticException unused2) {
-                    return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_INDEX_INVALID, "central directory bounds overflow");
+                    return new RemoteZipIndexFetchResult.Failure(ArchiveManifestResolutionErrorCode.REMOTE_INDEX_INVALID, "central directory bounds overflow", response.getBytes().length);
                 }
             }
         }
@@ -244,7 +245,14 @@ public final class RemoteZipIndexFetcher {
         }
     }
 
-    private final RemoteZipIndexFetchResult.Failure toIndexFailure(ArchiveByteRangeResult.Failure failure) {
+    static /* synthetic */ RemoteZipIndexFetchResult.Failure toIndexFailure$default(RemoteZipIndexFetcher remoteZipIndexFetcher, ArchiveByteRangeResult.Failure failure, long j, int i, Object obj) {
+        if ((i & 1) != 0) {
+            j = 0;
+        }
+        return remoteZipIndexFetcher.toIndexFailure(failure, j);
+    }
+
+    private final RemoteZipIndexFetchResult.Failure toIndexFailure(ArchiveByteRangeResult.Failure failure, long j) {
         ArchiveManifestResolutionErrorCode archiveManifestResolutionErrorCode;
         if (failure.getCode() == ArchiveByteRangeErrorCode.HTTP_STATUS && CollectionsKt.contains(SetsKt.setOf((Object[]) new Integer[]{200, 412, 416}), failure.getHttpStatus())) {
             archiveManifestResolutionErrorCode = ArchiveManifestResolutionErrorCode.REMOTE_REPRESENTATION_CHANGED;
@@ -256,7 +264,15 @@ public final class RemoteZipIndexFetcher {
         Integer httpStatus = failure.getHttpStatus();
         strArr[1] = httpStatus != null ? String.valueOf(httpStatus.intValue()) : null;
         strArr[2] = failure.getDetail();
-        return new RemoteZipIndexFetchResult.Failure(archiveManifestResolutionErrorCode, CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr), StringUtils.PROCESS_POSTFIX_DELIMITER, null, null, 0, null, null, 62, null));
+        return new RemoteZipIndexFetchResult.Failure(archiveManifestResolutionErrorCode, CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr), StringUtils.PROCESS_POSTFIX_DELIMITER, null, null, 0, null, null, 62, null), j);
+    }
+
+    private final long addFetched(long j, long j2) {
+        try {
+            return Math.addExact(j, j2);
+        } catch (ArithmeticException unused) {
+            return Long.MAX_VALUE;
+        }
     }
 
     /* compiled from: RemoteZipIndexFetcher.kt */

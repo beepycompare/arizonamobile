@@ -1,5 +1,6 @@
 package com.arizona.launcher;
 
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: DownloadRetryPolicy.kt */
@@ -94,7 +95,7 @@ public final class DownloadRetryConfig {
     }
 
     public /* synthetic */ DownloadRetryConfig(boolean z, int i, long j, long j2, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i2 & 1) != 0 ? true : z, (i2 & 2) != 0 ? 3 : i, (i2 & 4) != 0 ? 2000L : j, (i2 & 8) != 0 ? 30000L : j2);
+        this((i2 & 1) != 0 ? true : z, (i2 & 2) != 0 ? 3 : i, (i2 & 4) != 0 ? 2000L : j, (i2 & 8) != 0 ? ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS : j2);
     }
 
     public final boolean getEnabled() {

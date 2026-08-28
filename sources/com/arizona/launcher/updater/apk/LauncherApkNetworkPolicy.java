@@ -105,19 +105,19 @@ public final class LauncherApkNetworkPolicy {
     }
 
     private final InetAddress toLiteralInetAddressOrNull(String str) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         String str2 = str;
         boolean matches = IPV4_LITERAL.matches(str2);
         boolean contains$default = StringsKt.contains$default((CharSequence) str2, (char) AbstractJsonLexerKt.COLON, false, 2, (Object) null);
         if (matches || contains$default) {
             try {
                 Result.Companion companion = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(InetAddress.getByName(str));
+                m9920constructorimpl = Result.m9920constructorimpl(InetAddress.getByName(str));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+            return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
         }
         return null;
     }

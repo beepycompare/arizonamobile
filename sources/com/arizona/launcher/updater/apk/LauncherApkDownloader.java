@@ -679,10 +679,10 @@ public final class LauncherApkDownloader {
                         Result.Companion companion = Result.Companion;
                         LauncherApkDownloader launcherApkDownloader = this;
                         this.onCallCreated.invoke(newCall);
-                        Result.m9919constructorimpl(Unit.INSTANCE);
+                        Result.m9920constructorimpl(Unit.INSTANCE);
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        Result.m9919constructorimpl(ResultKt.createFailure(th));
+                        Result.m9920constructorimpl(ResultKt.createFailure(th));
                     }
                     final CompletableDeferred CompletableDeferred$default = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
                     try {
@@ -720,7 +720,7 @@ public final class LauncherApkDownloader {
                                         if (cancellableContinuationImpl2.isActive()) {
                                             Result.Companion companion3 = Result.Companion;
                                             attemptFailure = this.toAttemptFailure(error);
-                                            cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
+                                            cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
                                         }
                                     } finally {
                                         CompletableDeferred$default.complete(Unit.INSTANCE);
@@ -756,7 +756,7 @@ public final class LauncherApkDownloader {
                                                         CloseableKt.closeFinally(response2, null);
                                                         if (cancellableContinuationImpl2.isActive()) {
                                                             Result.Companion companion3 = Result.Companion;
-                                                            cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(consumeResponse));
+                                                            cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(consumeResponse));
                                                         }
                                                         CompletableDeferred$default.complete(Unit.INSTANCE);
                                                         return;
@@ -769,14 +769,14 @@ public final class LauncherApkDownloader {
                                             } catch (RuntimeException e) {
                                                 if (cancellableContinuationImpl2.isActive()) {
                                                     Result.Companion companion4 = Result.Companion;
-                                                    cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(new IOException("Unexpected launcher APK transport failure", e)), false, false))));
+                                                    cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(new IOException("Unexpected launcher APK transport failure", e)), false, false))));
                                                 }
                                                 CompletableDeferred$default.complete(Unit.INSTANCE);
                                             }
                                         } catch (LauncherApkDownloader.LauncherApkStorageException e2) {
                                             if (cancellableContinuationImpl2.isActive()) {
                                                 Result.Companion companion5 = Result.Companion;
-                                                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(e2.getIoCause()), false, false))));
+                                                cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(e2.getIoCause()), false, false))));
                                             }
                                             CompletableDeferred$default.complete(Unit.INSTANCE);
                                         } catch (LauncherApkDownloader.PayloadIntegrityException e3) {
@@ -788,14 +788,14 @@ public final class LauncherApkDownloader {
                                                 }
                                                 LauncherApkDownloader.HopOutcome.Terminal terminal = new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Integrity(message), true, true));
                                                 Result.Companion companion6 = Result.Companion;
-                                                cancellableContinuation2.resumeWith(Result.m9919constructorimpl(terminal));
+                                                cancellableContinuation2.resumeWith(Result.m9920constructorimpl(terminal));
                                             }
                                             CompletableDeferred$default.complete(Unit.INSTANCE);
                                         } catch (IOException e4) {
                                             if (cancellableContinuationImpl2.isActive()) {
                                                 Result.Companion companion7 = Result.Companion;
                                                 attemptFailure = this.toAttemptFailure(e4);
-                                                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
+                                                cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
                                             }
                                             CompletableDeferred$default.complete(Unit.INSTANCE);
                                         }
@@ -809,7 +809,7 @@ public final class LauncherApkDownloader {
                             CompletableDeferred$default.complete(Unit.INSTANCE);
                             if (cancellableContinuationImpl2.isActive()) {
                                 Result.Companion companion3 = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(new HopOutcome.Terminal(new AttemptOutcome.Failed(new LauncherApkDownloadError.Network(new IOException("Unable to enqueue launcher APK request", e)), true, false))));
+                                cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(new HopOutcome.Terminal(new AttemptOutcome.Failed(new LauncherApkDownloadError.Network(new IOException("Unable to enqueue launcher APK request", e)), true, false))));
                             }
                         }
                         result = cancellableContinuationImpl.getResult();
@@ -1307,7 +1307,7 @@ public final class LauncherApkDownloader {
     /* JADX INFO: Access modifiers changed from: private */
     public final ValidatedRequest validateRequest(LauncherApkDownloadRequest launcherApkDownloadRequest) {
         String str;
-        Boolean m9919constructorimpl;
+        Boolean m9920constructorimpl;
         String obj;
         HttpUrl parse = HttpUrl.Companion.parse(launcherApkDownloadRequest.getUrl());
         if (parse == null) {
@@ -1341,15 +1341,15 @@ public final class LauncherApkDownloader {
                             try {
                                 Result.Companion companion = Result.Companion;
                                 LauncherApkDownloader launcherApkDownloader = this;
-                                m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(!Intrinsics.areEqual(absoluteFile.getCanonicalPath(), file.getAbsolutePath())));
+                                m9920constructorimpl = Result.m9920constructorimpl(Boolean.valueOf(!Intrinsics.areEqual(absoluteFile.getCanonicalPath(), file.getAbsolutePath())));
                             } catch (Throwable th) {
                                 Result.Companion companion2 = Result.Companion;
-                                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
                             }
-                            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-                                m9919constructorimpl = true;
+                            if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+                                m9920constructorimpl = true;
                             }
-                            if (((Boolean) m9919constructorimpl).booleanValue()) {
+                            if (((Boolean) m9920constructorimpl).booleanValue()) {
                                 return null;
                             }
                         }
@@ -1411,10 +1411,10 @@ public final class LauncherApkDownloader {
             Result.Companion companion = Result.Companion;
             LauncherApkDownloader launcherApkDownloader = this;
             discardArtifacts(file);
-            Result.m9919constructorimpl(Unit.INSTANCE);
+            Result.m9920constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            Result.m9919constructorimpl(ResultKt.createFailure(th));
+            Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
     }
 
@@ -1429,7 +1429,7 @@ public final class LauncherApkDownloader {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final boolean isSymbolicLink(File file) {
-        Boolean m9919constructorimpl;
+        Boolean m9920constructorimpl;
         File parentFile;
         boolean z;
         File canonicalFile;
@@ -1439,21 +1439,21 @@ public final class LauncherApkDownloader {
             parentFile = file.getParentFile();
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
         if (parentFile != null && (canonicalFile = parentFile.getCanonicalFile()) != null && Intrinsics.areEqual(file.getCanonicalPath(), new File(canonicalFile, file.getName()).getAbsolutePath())) {
             z = false;
-            m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(z));
-            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-                m9919constructorimpl = true;
+            m9920constructorimpl = Result.m9920constructorimpl(Boolean.valueOf(z));
+            if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+                m9920constructorimpl = true;
             }
-            return ((Boolean) m9919constructorimpl).booleanValue();
+            return ((Boolean) m9920constructorimpl).booleanValue();
         }
         z = true;
-        m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(z));
-        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+        m9920constructorimpl = Result.m9920constructorimpl(Boolean.valueOf(z));
+        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
         }
-        return ((Boolean) m9919constructorimpl).booleanValue();
+        return ((Boolean) m9920constructorimpl).booleanValue();
     }
 
     private final AttemptOutcome.Failed toHttpFailure(Response response) {
@@ -1533,10 +1533,10 @@ public final class LauncherApkDownloader {
             Result.Companion companion = Result.Companion;
             LauncherApkDownloader launcherApkDownloader = this;
             launcherApkDownloadObserver.onProgress(launcherApkProgress);
-            Result.m9919constructorimpl(Unit.INSTANCE);
+            Result.m9920constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            Result.m9919constructorimpl(ResultKt.createFailure(th));
+            Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
     }
 
@@ -1545,10 +1545,10 @@ public final class LauncherApkDownloader {
             Result.Companion companion = Result.Companion;
             LauncherApkDownloader launcherApkDownloader = this;
             launcherApkDownloadObserver.onRetry(launcherApkRetry);
-            Result.m9919constructorimpl(Unit.INSTANCE);
+            Result.m9920constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            Result.m9919constructorimpl(ResultKt.createFailure(th));
+            Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
     }
 

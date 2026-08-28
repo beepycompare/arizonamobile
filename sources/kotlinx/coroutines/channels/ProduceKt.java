@@ -51,7 +51,7 @@ public final class ProduceKt {
                         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(produceKt$awaitClose$1), 1);
                         cancellableContinuationImpl.initCancellability();
                         final CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
-                        producerScope.mo11527invokeOnClose(new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.channels.ProduceKt$awaitClose$4$1
+                        producerScope.mo11528invokeOnClose(new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.channels.ProduceKt$awaitClose$4$1
                             @Override // kotlin.jvm.functions.Function1
                             public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
                                 invoke2(th);
@@ -61,7 +61,7 @@ public final class ProduceKt {
                             /* renamed from: invoke  reason: avoid collision after fix types in other method */
                             public final void invoke2(Throwable th) {
                                 Result.Companion companion = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(Unit.INSTANCE));
+                                cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(Unit.INSTANCE));
                             }
                         });
                         Object result = cancellableContinuationImpl.getResult();

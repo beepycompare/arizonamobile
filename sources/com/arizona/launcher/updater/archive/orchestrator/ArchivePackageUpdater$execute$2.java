@@ -1,6 +1,7 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
 import com.arizona.launcher.updater.archive.planner.ArchiveUpdatePlan;
+import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -14,11 +15,12 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchivePackageUpdater.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterResult;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$execute$2", f = "ArchivePackageUpdater.kt", i = {0}, l = {140}, m = "invokeSuspend", n = {"$this$supervisorScope"}, nl = {-1}, s = {"L$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$execute$2", f = "ArchivePackageUpdater.kt", i = {0}, l = {141}, m = "invokeSuspend", n = {"$this$supervisorScope"}, nl = {147}, s = {"L$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchivePackageUpdater$execute$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ArchiveUpdaterResult>, Object> {
     final /* synthetic */ ArchiveUpdaterListener $listener;
     final /* synthetic */ ArchiveUpdatePlan $plan;
+    final /* synthetic */ Map<String, Long> $plannedArchiveDownloadBytesByPackage;
     final /* synthetic */ String $serverBaseUrl;
     private /* synthetic */ Object L$0;
     int label;
@@ -26,17 +28,18 @@ public final class ArchivePackageUpdater$execute$2 extends SuspendLambda impleme
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ArchivePackageUpdater$execute$2(ArchivePackageUpdater archivePackageUpdater, ArchiveUpdatePlan archiveUpdatePlan, String str, ArchiveUpdaterListener archiveUpdaterListener, Continuation<? super ArchivePackageUpdater$execute$2> continuation) {
+    public ArchivePackageUpdater$execute$2(ArchivePackageUpdater archivePackageUpdater, ArchiveUpdatePlan archiveUpdatePlan, String str, ArchiveUpdaterListener archiveUpdaterListener, Map<String, Long> map, Continuation<? super ArchivePackageUpdater$execute$2> continuation) {
         super(2, continuation);
         this.this$0 = archivePackageUpdater;
         this.$plan = archiveUpdatePlan;
         this.$serverBaseUrl = str;
         this.$listener = archiveUpdaterListener;
+        this.$plannedArchiveDownloadBytesByPackage = map;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        ArchivePackageUpdater$execute$2 archivePackageUpdater$execute$2 = new ArchivePackageUpdater$execute$2(this.this$0, this.$plan, this.$serverBaseUrl, this.$listener, continuation);
+        ArchivePackageUpdater$execute$2 archivePackageUpdater$execute$2 = new ArchivePackageUpdater$execute$2(this.this$0, this.$plan, this.$serverBaseUrl, this.$listener, this.$plannedArchiveDownloadBytesByPackage, continuation);
         archivePackageUpdater$execute$2.L$0 = obj;
         return archivePackageUpdater$execute$2;
     }
@@ -62,7 +65,7 @@ public final class ArchivePackageUpdater$execute$2 extends SuspendLambda impleme
         ResultKt.throwOnFailure(obj);
         this.L$0 = SpillingKt.nullOutSpilledVariable(coroutineScope);
         this.label = 1;
-        executeTransaction = this.this$0.executeTransaction(coroutineScope, this.$plan, this.$serverBaseUrl, this.$listener, this);
+        executeTransaction = this.this$0.executeTransaction(coroutineScope, this.$plan, this.$serverBaseUrl, this.$listener, this.$plannedArchiveDownloadBytesByPackage, this);
         return executeTransaction == coroutine_suspended ? coroutine_suspended : executeTransaction;
     }
 }

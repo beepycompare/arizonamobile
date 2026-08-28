@@ -95,7 +95,7 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
             String projectResourceUrl$default;
             String str;
             String info;
-            Object m9919constructorimpl;
+            Object m9920constructorimpl;
             Intrinsics.checkNotNullParameter(item, "item");
             ItemRewardBinding itemRewardBinding = this.binding;
             RewardItemAdapter rewardItemAdapter = this.this$0;
@@ -169,15 +169,15 @@ public final class RewardItemAdapter extends ListAdapter<RewardResponse, RewardI
             for (String str4 : colors2) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9919constructorimpl = Result.m9919constructorimpl(Integer.valueOf(Color.parseColor(str4)));
+                    m9920constructorimpl = Result.m9920constructorimpl(Integer.valueOf(Color.parseColor(str4)));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                    m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
                 }
-                if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-                    m9919constructorimpl = null;
+                if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+                    m9920constructorimpl = null;
                 }
-                Integer num = (Integer) m9919constructorimpl;
+                Integer num = (Integer) m9920constructorimpl;
                 if (num != null) {
                     arrayList3.add(num);
                 }

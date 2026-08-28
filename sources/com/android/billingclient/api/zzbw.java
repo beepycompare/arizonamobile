@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.text.TextUtils;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.internal.play_billing.zziu;
 import com.google.android.gms.internal.play_billing.zziw;
 import com.google.android.gms.internal.play_billing.zziy;
@@ -363,7 +364,7 @@ public final class zzbw implements ServiceConnection {
                 }
             };
             zzav = billingClientImpl.zzav();
-            if (BillingClientImpl.zzK(callable, 30000L, runnable, zzav, billingClientImpl.zzJ()) == null) {
+            if (BillingClientImpl.zzK(callable, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, runnable, zzav, billingClientImpl.zzJ()) == null) {
                 int i2 = this.zze;
                 zzay = billingClientImpl.zzay();
                 billingClientImpl.zzbf(zzjd.MISSING_RESULT_FROM_EXECUTE_ASYNC, zzay, i2);

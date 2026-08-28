@@ -95,7 +95,7 @@ public final class ArchiveModelRules {
     }
 
     public final void requirePackageUrl(String value) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         String host;
         Intrinsics.checkNotNullParameter(value, "value");
         String str = value;
@@ -113,16 +113,16 @@ public final class ArchiveModelRules {
                 try {
                     Result.Companion companion = Result.Companion;
                     ArchiveModelRules archiveModelRules = this;
-                    m9919constructorimpl = Result.m9919constructorimpl(new URI(value));
+                    m9920constructorimpl = Result.m9920constructorimpl(new URI(value));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                    m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-                if (m9922exceptionOrNullimpl != null) {
-                    throw new IllegalArgumentException("package URL is malformed", m9922exceptionOrNullimpl);
+                Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+                if (m9923exceptionOrNullimpl != null) {
+                    throw new IllegalArgumentException("package URL is malformed", m9923exceptionOrNullimpl);
                 }
-                URI uri = (URI) m9919constructorimpl;
+                URI uri = (URI) m9920constructorimpl;
                 if (uri.getFragment() != null) {
                     throw new IllegalArgumentException("package URL must not contain a fragment".toString());
                 }

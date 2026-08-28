@@ -13,9 +13,9 @@ import kotlin.time.TimeSource;
 public final class MeasureTimeKt {
     public static final long measureTime(Function0<Unit> block) {
         Intrinsics.checkNotNullParameter(block, "block");
-        long m11413markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11413markNowz9LOYto();
+        long m11414markNowz9LOYto = TimeSource.Monotonic.INSTANCE.m11414markNowz9LOYto();
         block.invoke();
-        return TimeSource.Monotonic.ValueTimeMark.m11418elapsedNowUwyO8pc(m11413markNowz9LOYto);
+        return TimeSource.Monotonic.ValueTimeMark.m11419elapsedNowUwyO8pc(m11414markNowz9LOYto);
     }
 
     public static final long measureTime(TimeSource timeSource, Function0<Unit> block) {
@@ -23,31 +23,31 @@ public final class MeasureTimeKt {
         Intrinsics.checkNotNullParameter(block, "block");
         TimeMark markNow = timeSource.markNow();
         block.invoke();
-        return markNow.mo11284elapsedNowUwyO8pc();
+        return markNow.mo11285elapsedNowUwyO8pc();
     }
 
     public static final long measureTime(TimeSource.Monotonic monotonic, Function0<Unit> block) {
         Intrinsics.checkNotNullParameter(monotonic, "<this>");
         Intrinsics.checkNotNullParameter(block, "block");
-        long m11413markNowz9LOYto = monotonic.m11413markNowz9LOYto();
+        long m11414markNowz9LOYto = monotonic.m11414markNowz9LOYto();
         block.invoke();
-        return TimeSource.Monotonic.ValueTimeMark.m11418elapsedNowUwyO8pc(m11413markNowz9LOYto);
+        return TimeSource.Monotonic.ValueTimeMark.m11419elapsedNowUwyO8pc(m11414markNowz9LOYto);
     }
 
     public static final <T> TimedValue<T> measureTimedValue(Function0<? extends T> block) {
         Intrinsics.checkNotNullParameter(block, "block");
-        return new TimedValue<>(block.invoke(), TimeSource.Monotonic.ValueTimeMark.m11418elapsedNowUwyO8pc(TimeSource.Monotonic.INSTANCE.m11413markNowz9LOYto()), null);
+        return new TimedValue<>(block.invoke(), TimeSource.Monotonic.ValueTimeMark.m11419elapsedNowUwyO8pc(TimeSource.Monotonic.INSTANCE.m11414markNowz9LOYto()), null);
     }
 
     public static final <T> TimedValue<T> measureTimedValue(TimeSource timeSource, Function0<? extends T> block) {
         Intrinsics.checkNotNullParameter(timeSource, "<this>");
         Intrinsics.checkNotNullParameter(block, "block");
-        return new TimedValue<>(block.invoke(), timeSource.markNow().mo11284elapsedNowUwyO8pc(), null);
+        return new TimedValue<>(block.invoke(), timeSource.markNow().mo11285elapsedNowUwyO8pc(), null);
     }
 
     public static final <T> TimedValue<T> measureTimedValue(TimeSource.Monotonic monotonic, Function0<? extends T> block) {
         Intrinsics.checkNotNullParameter(monotonic, "<this>");
         Intrinsics.checkNotNullParameter(block, "block");
-        return new TimedValue<>(block.invoke(), TimeSource.Monotonic.ValueTimeMark.m11418elapsedNowUwyO8pc(monotonic.m11413markNowz9LOYto()), null);
+        return new TimedValue<>(block.invoke(), TimeSource.Monotonic.ValueTimeMark.m11419elapsedNowUwyO8pc(monotonic.m11414markNowz9LOYto()), null);
     }
 }

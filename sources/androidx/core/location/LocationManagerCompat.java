@@ -94,7 +94,7 @@ public final class LocationManagerCompat {
                 }
             });
         }
-        cancellableLocationListener.startTimeout(GET_CURRENT_LOCATION_TIMEOUT_MS);
+        cancellableLocationListener.startTimeout(30000L);
     }
 
     public static void requestLocationUpdates(LocationManager locationManager, String str, LocationRequestCompat locationRequestCompat, Executor executor, LocationListenerCompat locationListenerCompat) {

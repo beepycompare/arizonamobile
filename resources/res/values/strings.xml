@@ -457,7 +457,7 @@
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
     <string name="res_0x7f1201c8_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f1201c9_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"ce9b0f7de8a20a8f6fcde46d03c7d354578a467f\"\n}\n</string>
+    <string name="res_0x7f1201c9_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"64bff4efc77acb6c178d179b541434097b6ac4ec\"\n}\n</string>
     <string name="common_api_error">Ошибка API: %1$d</string>
     <string name="common_check_fields">Проверьте правильность введенных полей.</string>
     <string name="common_close">Закрыть</string>

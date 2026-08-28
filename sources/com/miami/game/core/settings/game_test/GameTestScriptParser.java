@@ -818,7 +818,7 @@ public final class GameTestScriptParser {
         String str5;
         String optString3;
         String str6;
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         BackendMessageMatcher backendMessageMatcher;
         JSONObject optJSONObject = jSONObject.optJSONObject("match");
         if (optJSONObject != null || (optJSONObject = jSONObject.optJSONObject("matcher")) != null) {
@@ -869,17 +869,17 @@ public final class GameTestScriptParser {
             if (str6 != null) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9919constructorimpl = Result.m9919constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
+                    m9920constructorimpl = Result.m9920constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                    m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-                if (m9922exceptionOrNullimpl == null) {
-                    Regex regex = (Regex) m9919constructorimpl;
+                Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+                if (m9923exceptionOrNullimpl == null) {
+                    Regex regex = (Regex) m9920constructorimpl;
                 } else {
                     int i2 = i + 1;
-                    String message = m9922exceptionOrNullimpl.getMessage();
+                    String message = m9923exceptionOrNullimpl.getMessage();
                     if (message == null) {
                         message = "";
                     }

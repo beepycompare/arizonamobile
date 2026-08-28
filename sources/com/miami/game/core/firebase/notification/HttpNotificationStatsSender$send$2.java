@@ -49,7 +49,7 @@ final class HttpNotificationStatsSender$send$2 extends SuspendLambda implements 
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         NotificationStatsPayloadFactory notificationStatsPayloadFactory;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
@@ -66,23 +66,23 @@ final class HttpNotificationStatsSender$send$2 extends SuspendLambda implements 
                 String jSONObject = notificationStatsPayloadFactory.create(notificationInteractionEvent).toString();
                 Intrinsics.checkNotNullExpressionValue(jSONObject, "toString(...)");
                 httpNotificationStatsSender.post(jSONObject);
-                m9919constructorimpl = Result.m9919constructorimpl(Unit.INSTANCE);
+                m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9926isSuccessimpl(m9919constructorimpl)) {
-                Unit unit = (Unit) m9919constructorimpl;
+            if (Result.m9927isSuccessimpl(m9920constructorimpl)) {
+                Unit unit = (Unit) m9920constructorimpl;
                 createSetBuilder.add(notificationInteractionEvent.getEventId());
                 Timber.Forest forest = Timber.Forest;
                 NotificationInteractionType type = notificationInteractionEvent.getType();
                 forest.d("Notification stats event sent: type=" + type + ", notifRef=" + notificationInteractionEvent.getNotifRef(), new Object[0]);
             }
-            Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-            if (m9922exceptionOrNullimpl != null) {
+            Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+            if (m9923exceptionOrNullimpl != null) {
                 Timber.Forest forest2 = Timber.Forest;
                 NotificationInteractionType type2 = notificationInteractionEvent.getType();
-                forest2.w(m9922exceptionOrNullimpl, "Failed to send notification stats event: type=" + type2 + ", notifRef=" + notificationInteractionEvent.getNotifRef(), new Object[0]);
+                forest2.w(m9923exceptionOrNullimpl, "Failed to send notification stats event: type=" + type2 + ", notifRef=" + notificationInteractionEvent.getNotifRef(), new Object[0]);
             }
         }
         return SetsKt.build(createSetBuilder);

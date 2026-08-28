@@ -56,7 +56,7 @@ public final class FileLauncherApkResumeStore implements LauncherApkResumeStore 
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public LauncherApkResumeMetadata load(File partialFile) {
-        Boolean m9919constructorimpl;
+        Boolean m9920constructorimpl;
         File parentFile;
         boolean z;
         File canonicalFile;
@@ -71,15 +71,15 @@ public final class FileLauncherApkResumeStore implements LauncherApkResumeStore 
             parentFile = sidecarFile.getParentFile();
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
         if (parentFile != null && (canonicalFile = parentFile.getCanonicalFile()) != null && Intrinsics.areEqual(sidecarFile.getCanonicalPath(), new File(canonicalFile, sidecarFile.getName()).getAbsolutePath())) {
             z = false;
-            m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(z));
-            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-                m9919constructorimpl = true;
+            m9920constructorimpl = Result.m9920constructorimpl(Boolean.valueOf(z));
+            if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+                m9920constructorimpl = true;
             }
-            if (((Boolean) m9919constructorimpl).booleanValue()) {
+            if (((Boolean) m9920constructorimpl).booleanValue()) {
                 try {
                     return Companion.parse(FilesKt.readText(sidecarFile, Charsets.UTF_8));
                 } catch (IOException | RuntimeException unused) {
@@ -89,10 +89,10 @@ public final class FileLauncherApkResumeStore implements LauncherApkResumeStore 
             return null;
         }
         z = true;
-        m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(z));
-        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+        m9920constructorimpl = Result.m9920constructorimpl(Boolean.valueOf(z));
+        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
         }
-        if (((Boolean) m9919constructorimpl).booleanValue()) {
+        if (((Boolean) m9920constructorimpl).booleanValue()) {
         }
     }
 
@@ -198,7 +198,7 @@ public final class FileLauncherApkResumeStore implements LauncherApkResumeStore 
             String str2;
             Long longOrNull;
             Long longOrNull2;
-            Object m9919constructorimpl;
+            Object m9920constructorimpl;
             String str3;
             String str4;
             Long valueOf;
@@ -231,15 +231,15 @@ public final class FileLauncherApkResumeStore implements LauncherApkResumeStore 
                             Companion companion = FileLauncherApkResumeStore.Companion;
                             try {
                                 Result.Companion companion2 = Result.Companion;
-                                m9919constructorimpl = Result.m9919constructorimpl(LauncherApkValidatorKind.valueOf(str10));
+                                m9920constructorimpl = Result.m9920constructorimpl(LauncherApkValidatorKind.valueOf(str10));
                             } catch (Throwable th) {
                                 Result.Companion companion3 = Result.Companion;
-                                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
                             }
-                            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-                                m9919constructorimpl = null;
+                            if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+                                m9920constructorimpl = null;
                             }
-                            LauncherApkValidatorKind launcherApkValidatorKind = (LauncherApkValidatorKind) m9919constructorimpl;
+                            LauncherApkValidatorKind launcherApkValidatorKind = (LauncherApkValidatorKind) m9920constructorimpl;
                             if (launcherApkValidatorKind != null && (str3 = (String) linkedHashMap.get("validatorValue")) != null) {
                                 String str11 = !StringsKt.isBlank(str3) ? str3 : null;
                                 if (str11 == null || (str4 = (String) linkedHashMap.get("expectedSizeBytes")) == null) {

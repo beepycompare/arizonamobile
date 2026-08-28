@@ -263,7 +263,7 @@ public final class InfoDialog extends AbstractDialog {
     }
 
     private final InfoDialogCaption parseInfoDialogCaption(String str) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         String obj = StringsKt.trim((CharSequence) str).toString();
         if (StringsKt.startsWith$default(obj, "{", false, 2, (Object) null) && StringsKt.endsWith$default(obj, "}", false, 2, (Object) null)) {
             try {
@@ -272,12 +272,12 @@ public final class InfoDialog extends AbstractDialog {
                 jsonReader.setStrictness(Strictness.LENIENT);
                 InfoDialogCaption infoDialogCaption = (InfoDialogCaption) MapperKt.getGson().fromJson(jsonReader, InfoDialogCaption.class);
                 jsonReader.close();
-                m9919constructorimpl = Result.m9919constructorimpl(infoDialogCaption);
+                m9920constructorimpl = Result.m9920constructorimpl(infoDialogCaption);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+            return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
         }
         return null;
     }

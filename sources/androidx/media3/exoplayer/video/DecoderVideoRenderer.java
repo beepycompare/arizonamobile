@@ -24,6 +24,7 @@ import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.video.VideoRendererEventListener;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public abstract class DecoderVideoRenderer extends BaseRenderer {
@@ -565,7 +566,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
                 dropOutputBuffer(videoDecoderOutputBuffer);
                 return true;
             }
-            if (j4 < 30000) {
+            if (j4 < ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS) {
                 renderOutputBuffer(videoDecoderOutputBuffer, streamOffsetUs, (Format) Preconditions.checkNotNull(this.outputFormat));
                 return true;
             }

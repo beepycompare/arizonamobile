@@ -53,11 +53,11 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         Object completeInventoryCatalogLoad;
         Object completeInventoryCatalogLoad2;
         Object obj2;
-        Throwable m9922exceptionOrNullimpl;
+        Throwable m9923exceptionOrNullimpl;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
@@ -70,7 +70,7 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
             }
         } catch (Throwable th) {
             Result.Companion companion = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -89,9 +89,9 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
                 List list = (List) this.L$1;
                 obj2 = this.L$0;
                 ResultKt.throwOnFailure(obj);
-                m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(obj2);
-                if (m9922exceptionOrNullimpl != null) {
-                    Log.e("InventoryCatalog", "Unable to load catalog '" + this.$key + "'", m9922exceptionOrNullimpl);
+                m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(obj2);
+                if (m9923exceptionOrNullimpl != null) {
+                    Log.e("InventoryCatalog", "Unable to load catalog '" + this.$key + "'", m9923exceptionOrNullimpl);
                 }
                 return Unit.INSTANCE;
             } else {
@@ -100,18 +100,18 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        m9919constructorimpl = Result.m9919constructorimpl(InventoryCatalogKt.normalizeInventoryCatalog((List) obj));
-        List list2 = Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+        m9920constructorimpl = Result.m9920constructorimpl(InventoryCatalogKt.normalizeInventoryCatalog((List) obj));
+        List list2 = Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
         String str = this.$key;
         boolean z = list2 != null;
-        this.L$0 = m9919constructorimpl;
+        this.L$0 = m9920constructorimpl;
         this.L$1 = SpillingKt.nullOutSpilledVariable(list2);
         this.label = 3;
         completeInventoryCatalogLoad2 = UtilsKt.completeInventoryCatalogLoad(str, list2, z, this);
         if (completeInventoryCatalogLoad2 != coroutine_suspended) {
-            obj2 = m9919constructorimpl;
-            m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(obj2);
-            if (m9922exceptionOrNullimpl != null) {
+            obj2 = m9920constructorimpl;
+            m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(obj2);
+            if (m9923exceptionOrNullimpl != null) {
             }
             return Unit.INSTANCE;
         }

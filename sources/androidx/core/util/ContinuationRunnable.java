@@ -25,7 +25,7 @@ final class ContinuationRunnable extends AtomicBoolean implements Runnable {
         if (compareAndSet(false, true)) {
             Continuation<Unit> continuation = this.continuation;
             Result.Companion companion = Result.Companion;
-            continuation.resumeWith(Result.m9919constructorimpl(Unit.INSTANCE));
+            continuation.resumeWith(Result.m9920constructorimpl(Unit.INSTANCE));
         }
     }
 

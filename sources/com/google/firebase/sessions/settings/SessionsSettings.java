@@ -74,16 +74,16 @@ public final class SessionsSettings {
     public final long m9782getSessionRestartTimeoutUwyO8pc() {
         Duration mo9780getSessionRestartTimeoutFghU774 = this.localOverrideSettings.mo9780getSessionRestartTimeoutFghU774();
         if (mo9780getSessionRestartTimeoutFghU774 != null) {
-            long m11342unboximpl = mo9780getSessionRestartTimeoutFghU774.m11342unboximpl();
-            if (m9781isValidSessionRestartTimeoutLRDsOJo(m11342unboximpl)) {
-                return m11342unboximpl;
+            long m11343unboximpl = mo9780getSessionRestartTimeoutFghU774.m11343unboximpl();
+            if (m9781isValidSessionRestartTimeoutLRDsOJo(m11343unboximpl)) {
+                return m11343unboximpl;
             }
         }
         Duration mo9780getSessionRestartTimeoutFghU7742 = this.remoteSettings.mo9780getSessionRestartTimeoutFghU774();
         if (mo9780getSessionRestartTimeoutFghU7742 != null) {
-            long m11342unboximpl2 = mo9780getSessionRestartTimeoutFghU7742.m11342unboximpl();
-            if (m9781isValidSessionRestartTimeoutLRDsOJo(m11342unboximpl2)) {
-                return m11342unboximpl2;
+            long m11343unboximpl2 = mo9780getSessionRestartTimeoutFghU7742.m11343unboximpl();
+            if (m9781isValidSessionRestartTimeoutLRDsOJo(m11343unboximpl2)) {
+                return m11343unboximpl2;
             }
         }
         Duration.Companion companion = Duration.Companion;
@@ -92,7 +92,7 @@ public final class SessionsSettings {
 
     /* renamed from: isValidSessionRestartTimeout-LRDsOJo  reason: not valid java name */
     private final boolean m9781isValidSessionRestartTimeoutLRDsOJo(long j) {
-        return Duration.m11323isPositiveimpl(j) && Duration.m11318isFiniteimpl(j);
+        return Duration.m11324isPositiveimpl(j) && Duration.m11319isFiniteimpl(j);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0044, code lost:

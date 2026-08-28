@@ -55,10 +55,12 @@ public final class DrawerState {
 
     /* JADX WARN: Multi-variable type inference failed */
     public DrawerState(DrawerValue drawerValue, Function1<? super DrawerValue, Boolean> function1) {
+        TweenSpec tweenSpec;
         MutableState mutableStateOf$default;
         this.confirmStateChange = function1;
-        TweenSpec tweenSpec = NavigationDrawerKt.AnchoredDraggableDefaultAnimationSpec;
-        this.anchoredDraggableMotionSpec = tweenSpec;
+        tweenSpec = NavigationDrawerKt.AnchoredDraggableDefaultAnimationSpec;
+        TweenSpec tweenSpec2 = tweenSpec;
+        this.anchoredDraggableMotionSpec = tweenSpec2;
         this.anchoredDraggableState = AnchoredDraggableKt.AnchoredDraggableState(drawerValue, new Function1() { // from class: androidx.compose.material3.DrawerState$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
@@ -67,11 +69,9 @@ public final class DrawerState {
         }, new Function0() { // from class: androidx.compose.material3.DrawerState$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                float mo434toPx0680j_4;
-                mo434toPx0680j_4 = DrawerState.this.requireDensity().mo434toPx0680j_4(NavigationDrawerKt.DrawerVelocityThreshold);
-                return Float.valueOf(mo434toPx0680j_4);
+                return Float.valueOf(DrawerState.anchoredDraggableState$lambda$3(DrawerState.this));
             }
-        }, tweenSpec, AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
+        }, tweenSpec2, AnchoredDraggableDefaults.INSTANCE.getDecayAnimationSpec(), function1);
         this.offset = new State<Float>() { // from class: androidx.compose.material3.DrawerState$offset$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // androidx.compose.runtime.State
@@ -112,7 +112,17 @@ public final class DrawerState {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final float anchoredDraggableState$lambda$1(float f) {
-        return f * NavigationDrawerKt.DrawerPositionalThreshold;
+        float f2;
+        f2 = NavigationDrawerKt.DrawerPositionalThreshold;
+        return f * f2;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final float anchoredDraggableState$lambda$3(DrawerState drawerState) {
+        float f;
+        Density requireDensity = drawerState.requireDensity();
+        f = NavigationDrawerKt.DrawerVelocityThreshold;
+        return requireDensity.mo434toPx0680j_4(f);
     }
 
     public final boolean isOpen() {

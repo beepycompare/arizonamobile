@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveSelectivePackageInstaller.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveSelectivePackageInstaller", f = "ArchiveSelectivePackageInstaller.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {240}, m = "install", n = {"archivePackage", "session", "stagingRoot", "onNetworkProgress", "fence", "rangeSession", "fetchedBytes", "staged", "transfer", "desired", TypedValues.AttributesType.S_TARGET, "networkCap"}, nl = {248}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "J$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveSelectivePackageInstaller", f = "ArchiveSelectivePackageInstaller.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {264}, m = "install", n = {"archivePackage", "session", "stagingRoot", "onNetworkProgress", "fence", "rangeSession", "fetchedBytes", "staged", "transfer", "desired", TypedValues.AttributesType.S_TARGET, "networkCap"}, nl = {272}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "J$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveSelectivePackageInstaller$install$1 extends ContinuationImpl {
     long J$0;

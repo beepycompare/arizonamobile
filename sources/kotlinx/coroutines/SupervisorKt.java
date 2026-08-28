@@ -25,16 +25,16 @@ public final class SupervisorKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Since 1.2.0, binary compatibility with versions <= 1.1.x")
     /* renamed from: SupervisorJob */
-    public static final /* synthetic */ Job m11450SupervisorJob(Job job) {
+    public static final /* synthetic */ Job m11451SupervisorJob(Job job) {
         return SupervisorJob(job);
     }
 
     /* renamed from: SupervisorJob$default */
-    public static /* synthetic */ Job m11451SupervisorJob$default(Job job, int i, Object obj) {
+    public static /* synthetic */ Job m11452SupervisorJob$default(Job job, int i, Object obj) {
         if ((i & 1) != 0) {
             job = null;
         }
-        return m11450SupervisorJob(job);
+        return m11451SupervisorJob(job);
     }
 
     public static final <R> Object supervisorScope(Function2<? super CoroutineScope, ? super Continuation<? super R>, ? extends Object> function2, Continuation<? super R> continuation) {

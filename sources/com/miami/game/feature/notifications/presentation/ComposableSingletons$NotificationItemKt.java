@@ -35,7 +35,7 @@ public final class ComposableSingletons$NotificationItemKt {
     });
 
     /* renamed from: getLambda$-458006129$notifications  reason: not valid java name */
-    public final Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> m9833getLambda$458006129$notifications() {
+    public final Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> m9834getLambda$458006129$notifications() {
         return f63lambda$458006129;
     }
 

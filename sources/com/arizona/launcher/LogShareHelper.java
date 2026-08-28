@@ -43,21 +43,21 @@ public final class LogShareHelper {
 
     @JvmStatic
     public static final void shareAllLogs(Activity activity) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         Intrinsics.checkNotNullParameter(activity, "activity");
         LogShareHelper logShareHelper = INSTANCE;
         try {
             Result.Companion companion = Result.Companion;
             logShareHelper.flushCurrentLog(activity);
             logShareHelper.shareFiles(activity, logShareHelper.resolveLogFiles(activity, fullLogPaths), false);
-            m9919constructorimpl = Result.m9919constructorimpl(Unit.INSTANCE);
+            m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-        if (m9922exceptionOrNullimpl != null) {
-            INSTANCE.showError(activity, m9922exceptionOrNullimpl);
+        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+        if (m9923exceptionOrNullimpl != null) {
+            INSTANCE.showError(activity, m9923exceptionOrNullimpl);
         }
     }
 
@@ -76,20 +76,20 @@ public final class LogShareHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit shareRecentLogs$lambda$0(final Activity activity) {
-        final Object m9919constructorimpl;
+        final Object m9920constructorimpl;
         LogShareHelper logShareHelper = INSTANCE;
         try {
             Result.Companion companion = Result.Companion;
             logShareHelper.flushCurrentLog(activity);
-            m9919constructorimpl = Result.m9919constructorimpl(logShareHelper.createRecentLogCopies(activity, 2097152L));
+            m9920constructorimpl = Result.m9920constructorimpl(logShareHelper.createRecentLogCopies(activity, 2097152L));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
         activity.runOnUiThread(new Runnable() { // from class: com.arizona.launcher.LogShareHelper$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                LogShareHelper.shareRecentLogs$lambda$0$1(activity, m9919constructorimpl);
+                LogShareHelper.shareRecentLogs$lambda$0$1(activity, m9920constructorimpl);
             }
         });
         return Unit.INSTANCE;
@@ -97,30 +97,30 @@ public final class LogShareHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void shareRecentLogs$lambda$0$1(Activity activity, Object obj) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         isPreparingRecentShare.set(false);
         if (activity.isFinishing() || activity.isDestroyed()) {
             return;
         }
-        if (Result.m9926isSuccessimpl(obj)) {
+        if (Result.m9927isSuccessimpl(obj)) {
             List<? extends File> list = (List) obj;
             LogShareHelper logShareHelper = INSTANCE;
             try {
                 Result.Companion companion = Result.Companion;
                 logShareHelper.shareFiles(activity, list, true);
-                m9919constructorimpl = Result.m9919constructorimpl(Unit.INSTANCE);
+                m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-            if (m9922exceptionOrNullimpl != null) {
-                INSTANCE.showError(activity, m9922exceptionOrNullimpl);
+            Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+            if (m9923exceptionOrNullimpl != null) {
+                INSTANCE.showError(activity, m9923exceptionOrNullimpl);
             }
         }
-        Throwable m9922exceptionOrNullimpl2 = Result.m9922exceptionOrNullimpl(obj);
-        if (m9922exceptionOrNullimpl2 != null) {
-            INSTANCE.showError(activity, m9922exceptionOrNullimpl2);
+        Throwable m9923exceptionOrNullimpl2 = Result.m9923exceptionOrNullimpl(obj);
+        if (m9923exceptionOrNullimpl2 != null) {
+            INSTANCE.showError(activity, m9923exceptionOrNullimpl2);
         }
     }
 

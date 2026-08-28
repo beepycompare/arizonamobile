@@ -26,6 +26,7 @@ import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.QueryProductDetailsParams;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.billing.IabHelper;
 import com.google.android.gms.internal.play_billing.zzhu;
 import com.google.android.gms.internal.play_billing.zzhx;
@@ -166,7 +167,7 @@ public class BillingClientImpl extends BillingClient {
     public static /* synthetic */ Void zzD(BillingClientImpl billingClientImpl, LaunchExternalLinkResponseListener launchExternalLinkResponseListener, LaunchExternalLinkParams launchExternalLinkParams, Activity activity) {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!billingClientImpl.zzbl(30000L)) {
+            if (!billingClientImpl.zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 billingClientImpl.zzaZ(launchExternalLinkResponseListener, zzdc.zzj, zzjd.SERVICE_CONNECTION_NOT_READY, null);
             } else if (billingClientImpl.zzD) {
                 synchronized (billingClientImpl.zza) {
@@ -305,7 +306,7 @@ public class BillingClientImpl extends BillingClient {
     private final /* synthetic */ Object zzaA(AcknowledgePurchaseResponseListener acknowledgePurchaseResponseListener, AcknowledgePurchaseParams acknowledgePurchaseParams) throws Exception {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!zzbl(30000L)) {
+            if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 zzjd zzjdVar = zzjd.SERVICE_CONNECTION_NOT_READY;
                 BillingResult billingResult = zzdc.zzj;
                 zzbs(zzjdVar, 3, billingResult);
@@ -354,7 +355,7 @@ public class BillingClientImpl extends BillingClient {
     private final /* synthetic */ Object zzaB(BillingConfigResponseListener billingConfigResponseListener) throws Exception {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!zzbl(30000L)) {
+            if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", "Service disconnected.");
                 zzjd zzjdVar = zzjd.SERVICE_CONNECTION_NOT_READY;
                 BillingResult billingResult = zzdc.zzj;
@@ -428,7 +429,7 @@ public class BillingClientImpl extends BillingClient {
     private final /* synthetic */ Void zzaF(AlternativeBillingOnlyReportingDetailsListener alternativeBillingOnlyReportingDetailsListener) throws Exception {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!zzbl(30000L)) {
+            if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 zzaT(alternativeBillingOnlyReportingDetailsListener, zzdc.zzj, zzjd.SERVICE_CONNECTION_NOT_READY, null);
             } else if (this.zzy) {
                 synchronized (this.zza) {
@@ -458,7 +459,7 @@ public class BillingClientImpl extends BillingClient {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
             try {
-                if (!zzbl(30000L)) {
+                if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                     zzaU(billingProgramReportingDetailsListener, zzdc.zzj, zzjd.SERVICE_CONNECTION_NOT_READY, null);
                 } else if (!this.zzD) {
                     com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", "Current client doesn't support the provided billing program.");
@@ -531,7 +532,7 @@ public class BillingClientImpl extends BillingClient {
     private final /* synthetic */ Void zzaH(ExternalOfferReportingDetailsListener externalOfferReportingDetailsListener) throws Exception {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!zzbl(30000L)) {
+            if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 zzaV(externalOfferReportingDetailsListener, zzdc.zzj, zzjd.SERVICE_CONNECTION_NOT_READY, null);
             } else if (this.zzz) {
                 synchronized (this.zza) {
@@ -566,7 +567,7 @@ public class BillingClientImpl extends BillingClient {
     private final /* synthetic */ Void zzaI(AlternativeBillingOnlyAvailabilityListener alternativeBillingOnlyAvailabilityListener) throws Exception {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!zzbl(30000L)) {
+            if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 zzaQ(alternativeBillingOnlyAvailabilityListener, zzdc.zzj, zzjd.SERVICE_CONNECTION_NOT_READY, null);
             } else if (this.zzy) {
                 synchronized (this.zza) {
@@ -595,7 +596,7 @@ public class BillingClientImpl extends BillingClient {
         int i2;
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!zzbl(30000L)) {
+            if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 try {
                     zzaR(billingProgramAvailabilityListener, i, zzdc.zzj, zzjd.SERVICE_CONNECTION_NOT_READY, null);
                     return null;
@@ -684,7 +685,7 @@ public class BillingClientImpl extends BillingClient {
     private final /* synthetic */ Void zzaK(ExternalOfferAvailabilityListener externalOfferAvailabilityListener) throws Exception {
         com.google.android.gms.internal.play_billing.zzap zzapVar;
         try {
-            if (!zzbl(30000L)) {
+            if (!zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
                 zzaW(externalOfferAvailabilityListener, zzdc.zzj, zzjd.SERVICE_CONNECTION_NOT_READY, null);
             } else if (this.zzB) {
                 synchronized (this.zza) {
@@ -1269,7 +1270,7 @@ public class BillingClientImpl extends BillingClient {
                 return zzbm();
             }
             com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", "Reconnection failed with result: " + billingResult.getResponseCode());
-            j2 = 30000 - zzb.zza(TimeUnit.MILLISECONDS);
+            j2 = ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS - zzb.zza(TimeUnit.MILLISECONDS);
             long pow = ((long) Math.pow(2.0d, i - 1)) * 1000;
             if (j2 < pow) {
                 com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", "Reconnection failed due to timeout limit reached.");
@@ -1278,7 +1279,7 @@ public class BillingClientImpl extends BillingClient {
             if (i < 3 && pow > 0) {
                 try {
                     Thread.sleep(pow);
-                    j2 = 30000 - zzb.zza(TimeUnit.MILLISECONDS);
+                    j2 = ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS - zzb.zza(TimeUnit.MILLISECONDS);
                 } catch (InterruptedException e2) {
                     Thread.currentThread().interrupt();
                     com.google.android.gms.internal.play_billing.zzc.zzp("BillingClient", "Error sleeping during reconnection attempt: ", e2);
@@ -1572,7 +1573,7 @@ public class BillingClientImpl extends BillingClient {
     }
 
     public static /* synthetic */ Object zzs(BillingClientImpl billingClientImpl, ConsumeResponseListener consumeResponseListener, ConsumeParams consumeParams) {
-        if (!billingClientImpl.zzbl(30000L)) {
+        if (!billingClientImpl.zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
             zzjd zzjdVar = zzjd.SERVICE_CONNECTION_NOT_READY;
             BillingResult billingResult = zzdc.zzj;
             billingClientImpl.zzbs(zzjdVar, 4, billingResult);
@@ -1584,7 +1585,7 @@ public class BillingClientImpl extends BillingClient {
     }
 
     public static /* synthetic */ Object zzt(BillingClientImpl billingClientImpl, ProductDetailsResponseListener productDetailsResponseListener, QueryProductDetailsParams queryProductDetailsParams) {
-        if (!billingClientImpl.zzbl(30000L)) {
+        if (!billingClientImpl.zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS)) {
             zzjd zzjdVar = zzjd.SERVICE_CONNECTION_NOT_READY;
             BillingResult billingResult = zzdc.zzj;
             billingClientImpl.zzbs(zzjdVar, 7, billingResult);
@@ -1627,7 +1628,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzu(BillingClientImpl.this, acknowledgePurchaseResponseListener, acknowledgePurchaseParams);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzak
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzak
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.zzR(BillingClientImpl.this, acknowledgePurchaseResponseListener);
@@ -1647,7 +1648,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzs(BillingClientImpl.this, consumeResponseListener, consumeParams);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzbb
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzbb
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.zzL(BillingClientImpl.this, consumeResponseListener, consumeParams);
@@ -1667,7 +1668,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzG(BillingClientImpl.this, alternativeBillingOnlyReportingDetailsListener);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzav
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzav
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.this.zzaT(alternativeBillingOnlyReportingDetailsListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -1693,7 +1694,7 @@ public class BillingClientImpl extends BillingClient {
                     BillingClientImpl.zzH(BillingClientImpl.this, billingProgramReportingDetailsListener, billingProgramReportingDetailsParams);
                     return null;
                 }
-            }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzap
+            }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzap
                 @Override // java.lang.Runnable
                 public final void run() {
                     BillingClientImpl.this.zzaU(billingProgramReportingDetailsListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -1713,7 +1714,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzE(BillingClientImpl.this, externalOfferReportingDetailsListener);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzbe
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzbe
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.this.zzaV(externalOfferReportingDetailsListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -1748,7 +1749,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzw(BillingClientImpl.this, billingConfigResponseListener);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzar
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzar
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.zzN(BillingClientImpl.this, billingConfigResponseListener);
@@ -1777,7 +1778,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzI(BillingClientImpl.this, alternativeBillingOnlyAvailabilityListener);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzay
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzay
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.this.zzaQ(alternativeBillingOnlyAvailabilityListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -1795,7 +1796,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzC(BillingClientImpl.this, billingProgramAvailabilityListener, i);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzam
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzam
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.this.zzaR(billingProgramAvailabilityListener, i, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -1813,7 +1814,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzB(BillingClientImpl.this, externalOfferAvailabilityListener);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzae
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzae
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.this.zzaW(externalOfferAvailabilityListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -2406,7 +2407,7 @@ public class BillingClientImpl extends BillingClient {
                         BillingClientImpl.zzD(BillingClientImpl.this, launchExternalLinkResponseListener, launchExternalLinkParams, activity);
                         return null;
                     }
-                }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzat
+                }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzat
                     @Override // java.lang.Runnable
                     public final void run() {
                         BillingClientImpl.this.zzaZ(launchExternalLinkResponseListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -2430,7 +2431,7 @@ public class BillingClientImpl extends BillingClient {
                 BillingClientImpl.zzt(BillingClientImpl.this, productDetailsResponseListener, queryProductDetailsParams);
                 return null;
             }
-        }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzbg
+        }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzbg
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.zzT(BillingClientImpl.this, productDetailsResponseListener);
@@ -2444,7 +2445,7 @@ public class BillingClientImpl extends BillingClient {
 
     @Override // com.android.billingclient.api.BillingClient
     public final void queryPurchasesAsync(QueryPurchasesParams queryPurchasesParams, final PurchasesResponseListener purchasesResponseListener) {
-        if (zzK(new zzbm(this, purchasesResponseListener, queryPurchasesParams.zza(), queryPurchasesParams.getIncludeSuspendedSubscriptions()), 30000L, new Runnable() { // from class: com.android.billingclient.api.zzbj
+        if (zzK(new zzbm(this, purchasesResponseListener, queryPurchasesParams.zza(), queryPurchasesParams.getIncludeSuspendedSubscriptions()), ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzbj
             @Override // java.lang.Runnable
             public final void run() {
                 BillingClientImpl.zzM(BillingClientImpl.this, purchasesResponseListener);
@@ -2656,7 +2657,7 @@ public class BillingClientImpl extends BillingClient {
                     BillingClientImpl.zzA(BillingClientImpl.this, alternativeBillingOnlyInformationDialogListener, activity, zzboVar);
                     return null;
                 }
-            }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzai
+            }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzai
                 @Override // java.lang.Runnable
                 public final void run() {
                     BillingClientImpl.this.zzba(alternativeBillingOnlyInformationDialogListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);
@@ -2695,7 +2696,7 @@ public class BillingClientImpl extends BillingClient {
                     BillingClientImpl.zzF(BillingClientImpl.this, externalOfferInformationDialogListener, activity, zzbpVar);
                     return null;
                 }
-            }, 30000L, new Runnable() { // from class: com.android.billingclient.api.zzbd
+            }, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, new Runnable() { // from class: com.android.billingclient.api.zzbd
                 @Override // java.lang.Runnable
                 public final void run() {
                     BillingClientImpl.this.zzaX(externalOfferInformationDialogListener, zzdc.zzk, zzjd.EXECUTE_ASYNC_TIMEOUT, null);

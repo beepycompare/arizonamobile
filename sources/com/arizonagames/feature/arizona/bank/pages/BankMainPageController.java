@@ -672,7 +672,7 @@ public final class BankMainPageController implements BankPageController {
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x006f, code lost:
         r0 = kotlin.Result.Companion;
-        r5 = kotlin.Result.m9919constructorimpl(kotlin.ResultKt.createFailure(r5));
+        r5 = kotlin.Result.m9920constructorimpl(kotlin.ResultKt.createFailure(r5));
      */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0080  */
     /*
@@ -680,7 +680,7 @@ public final class BankMainPageController implements BankPageController {
     */
     private final Integer parseOrganizationColor(String str) {
         String str2;
-        Throwable m9922exceptionOrNullimpl;
+        Throwable m9923exceptionOrNullimpl;
         String removeSuffix = StringsKt.removeSuffix(StringsKt.removePrefix(StringsKt.trim((CharSequence) str).toString(), (CharSequence) "{"), (CharSequence) "}");
         Object obj = null;
         if (!StringsKt.startsWith$default(removeSuffix, "#", false, 2, (Object) null)) {
@@ -693,10 +693,10 @@ public final class BankMainPageController implements BankPageController {
             }
             Result.Companion companion = Result.Companion;
             BankMainPageController bankMainPageController = this;
-            Object obj2 = Result.m9919constructorimpl(Integer.valueOf(Color.parseColor(str2)));
-            m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(obj2);
+            Object obj2 = Result.m9920constructorimpl(Integer.valueOf(Color.parseColor(str2)));
+            m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(obj2);
             Object obj3 = obj2;
-            if (m9922exceptionOrNullimpl != null) {
+            if (m9923exceptionOrNullimpl != null) {
                 Long longOrNull = StringsKt.toLongOrNull(removeSuffix);
                 if (longOrNull != null) {
                     long longValue = longOrNull.longValue();
@@ -713,10 +713,10 @@ public final class BankMainPageController implements BankPageController {
         str2 = removeSuffix;
         Result.Companion companion2 = Result.Companion;
         BankMainPageController bankMainPageController2 = this;
-        Object obj22 = Result.m9919constructorimpl(Integer.valueOf(Color.parseColor(str2)));
-        m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(obj22);
+        Object obj22 = Result.m9920constructorimpl(Integer.valueOf(Color.parseColor(str2)));
+        m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(obj22);
         Object obj32 = obj22;
-        if (m9922exceptionOrNullimpl != null) {
+        if (m9923exceptionOrNullimpl != null) {
         }
         return (Integer) obj32;
     }

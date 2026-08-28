@@ -142,8 +142,8 @@ public final class ArizonaRentAddPage extends MobilePage {
         MAX_CHAR_COUNT = arizonaRentLimitModel.getDescMax();
         DATA_INPUT_LIMIT_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.getFullValueMin()), Integer.valueOf(arizonaRentLimitModel.getFullValueMax()));
         DATA_INPUT_LIMIT_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.getRoomValueMin()), Integer.valueOf(arizonaRentLimitModel.getRoomValueMax()));
-        DATA_INPUT_LIMIT_COST_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11977getFullostMin()), Integer.valueOf(arizonaRentLimitModel.getFullCostMax()));
-        DATA_INPUT_LIMIT_COST_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11978getRoomostMin()), Integer.valueOf(arizonaRentLimitModel.getRoomCostMax()));
+        DATA_INPUT_LIMIT_COST_FULLY = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11978getFullostMin()), Integer.valueOf(arizonaRentLimitModel.getFullCostMax()));
+        DATA_INPUT_LIMIT_COST_ROOM = TuplesKt.to(Integer.valueOf(arizonaRentLimitModel.m11979getRoomostMin()), Integer.valueOf(arizonaRentLimitModel.getRoomCostMax()));
     }
 
     private final void setAvailableRealEstateList(List<ArizonaRentRealEstateModel> list) {

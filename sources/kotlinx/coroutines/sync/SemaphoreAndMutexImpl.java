@@ -191,27 +191,27 @@ public class SemaphoreAndMutexImpl {
         SemaphoreSegment semaphoreSegment = (SemaphoreSegment) tail$volatile$FU.get(this);
         loop0: while (true) {
             findSegmentInternal = ConcurrentLinkedListKt.findSegmentInternal(semaphoreSegment, j, semaphoreAndMutexImpl$addAcquireToQueue$createNewSegment$1);
-            if (!SegmentOrClosed.m11523isClosedimpl(findSegmentInternal)) {
-                Segment m11521getSegmentimpl = SegmentOrClosed.m11521getSegmentimpl(findSegmentInternal);
+            if (!SegmentOrClosed.m11524isClosedimpl(findSegmentInternal)) {
+                Segment m11522getSegmentimpl = SegmentOrClosed.m11522getSegmentimpl(findSegmentInternal);
                 while (true) {
                     Segment segment = (Segment) atomicReferenceFieldUpdater.get(this);
-                    if (segment.id >= m11521getSegmentimpl.id) {
+                    if (segment.id >= m11522getSegmentimpl.id) {
                         break loop0;
-                    } else if (!m11521getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
+                    } else if (!m11522getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
                         break;
-                    } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, segment, m11521getSegmentimpl)) {
+                    } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, segment, m11522getSegmentimpl)) {
                         if (segment.decPointers$kotlinx_coroutines_core()) {
                             segment.remove();
                         }
-                    } else if (m11521getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
-                        m11521getSegmentimpl.remove();
+                    } else if (m11522getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
+                        m11522getSegmentimpl.remove();
                     }
                 }
             } else {
                 break;
             }
         }
-        SemaphoreSegment semaphoreSegment2 = (SemaphoreSegment) SegmentOrClosed.m11521getSegmentimpl(findSegmentInternal);
+        SemaphoreSegment semaphoreSegment2 = (SemaphoreSegment) SegmentOrClosed.m11522getSegmentimpl(findSegmentInternal);
         i2 = SemaphoreKt.SEGMENT_SIZE;
         int i3 = (int) (andIncrement % i2);
         if (!zzah$$ExternalSyntheticBackportWithForwarding0.m(semaphoreSegment2.getAcquirers(), i3, null, waiter)) {
@@ -260,26 +260,26 @@ public class SemaphoreAndMutexImpl {
         SemaphoreSegment semaphoreSegment = (SemaphoreSegment) head$volatile$FU.get(this);
         loop0: while (true) {
             findSegmentInternal = ConcurrentLinkedListKt.findSegmentInternal(semaphoreSegment, j, semaphoreAndMutexImpl$tryResumeNextFromQueue$createNewSegment$1);
-            if (SegmentOrClosed.m11523isClosedimpl(findSegmentInternal)) {
+            if (SegmentOrClosed.m11524isClosedimpl(findSegmentInternal)) {
                 break;
             }
-            Segment m11521getSegmentimpl = SegmentOrClosed.m11521getSegmentimpl(findSegmentInternal);
+            Segment m11522getSegmentimpl = SegmentOrClosed.m11522getSegmentimpl(findSegmentInternal);
             while (true) {
                 Segment segment = (Segment) atomicReferenceFieldUpdater.get(this);
-                if (segment.id >= m11521getSegmentimpl.id) {
+                if (segment.id >= m11522getSegmentimpl.id) {
                     break loop0;
-                } else if (!m11521getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
+                } else if (!m11522getSegmentimpl.tryIncPointers$kotlinx_coroutines_core()) {
                     break;
-                } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, segment, m11521getSegmentimpl)) {
+                } else if (AbstractResolvableFuture$SafeAtomicHelper$$ExternalSyntheticBackportWithForwarding0.m(atomicReferenceFieldUpdater, this, segment, m11522getSegmentimpl)) {
                     if (segment.decPointers$kotlinx_coroutines_core()) {
                         segment.remove();
                     }
-                } else if (m11521getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
-                    m11521getSegmentimpl.remove();
+                } else if (m11522getSegmentimpl.decPointers$kotlinx_coroutines_core()) {
+                    m11522getSegmentimpl.remove();
                 }
             }
         }
-        SemaphoreSegment semaphoreSegment2 = (SemaphoreSegment) SegmentOrClosed.m11521getSegmentimpl(findSegmentInternal);
+        SemaphoreSegment semaphoreSegment2 = (SemaphoreSegment) SegmentOrClosed.m11522getSegmentimpl(findSegmentInternal);
         semaphoreSegment2.cleanPrev();
         if (semaphoreSegment2.id > j) {
             return false;

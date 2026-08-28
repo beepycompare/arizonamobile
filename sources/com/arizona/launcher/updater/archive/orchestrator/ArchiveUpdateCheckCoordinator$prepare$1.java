@@ -1,6 +1,5 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
-import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.android.gms.common.internal.ImagesContract;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import kotlin.Metadata;
@@ -10,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveUpdateCheckCoordinator.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator", f = "ArchiveUpdateCheckCoordinator.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {106, 114, 250}, m = "prepare", n = {"response", "selectedGpu", "serverBaseUrl", "bootstrapPrefetcher", RemoteConfigConstants.ResponseFieldKey.STATE, "candidate", "selection", "loadedState", "cleanBootstrap", "allowCleanBootstrap", "response", "selectedGpu", "serverBaseUrl", "bootstrapPrefetcher", RemoteConfigConstants.ResponseFieldKey.STATE, "candidate", "selection", "loadedState", "cleanBootstrap", "allowCleanBootstrap", "response", "selectedGpu", "serverBaseUrl", "bootstrapPrefetcher", RemoteConfigConstants.ResponseFieldKey.STATE, "candidate", "selection", "loadedState", "cleanBootstrap", "resolution", "remote", "transactionState", "effectiveState", ImagesContract.LOCAL, "sameIdentityRepairPackageIds", "plan", "stagingBytes", "archiveAllocatedBytes", "storageRequirements", "allowCleanBootstrap"}, nl = {114, 120, LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_MASK}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "Z$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator", f = "ArchiveUpdateCheckCoordinator.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {109, 117, 256}, m = "prepare", n = {"response", "selectedGpu", "serverBaseUrl", "bootstrapPrefetcher", RemoteConfigConstants.ResponseFieldKey.STATE, "candidate", "selection", "loadedState", "cleanBootstrap", "allowCleanBootstrap", "metadataAuditValidatedForFinalization", "response", "selectedGpu", "serverBaseUrl", "bootstrapPrefetcher", RemoteConfigConstants.ResponseFieldKey.STATE, "candidate", "selection", "loadedState", "cleanBootstrap", "allowCleanBootstrap", "metadataAuditValidatedForFinalization", "response", "selectedGpu", "serverBaseUrl", "bootstrapPrefetcher", RemoteConfigConstants.ResponseFieldKey.STATE, "candidate", "selection", "loadedState", "cleanBootstrap", "resolution", "remote", "transactionState", "effectiveState", ImagesContract.LOCAL, "sameIdentityRepairPackageIds", "plan", "stagingBytes", "archiveAllocatedBytes", "storageRequirements", "allowCleanBootstrap", "metadataAuditValidatedForFinalization"}, nl = {117, 123, 260}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "Z$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "Z$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "Z$0", "Z$1"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveUpdateCheckCoordinator$prepare$1 extends ContinuationImpl {
     Object L$0;
@@ -33,6 +32,7 @@ public final class ArchiveUpdateCheckCoordinator$prepare$1 extends ContinuationI
     Object L$8;
     Object L$9;
     boolean Z$0;
+    boolean Z$1;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ ArchiveUpdateCheckCoordinator this$0;
@@ -48,6 +48,6 @@ public final class ArchiveUpdateCheckCoordinator$prepare$1 extends ContinuationI
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.prepare(null, null, null, false, null, this);
+        return this.this$0.prepare(null, null, null, false, null, false, this);
     }
 }

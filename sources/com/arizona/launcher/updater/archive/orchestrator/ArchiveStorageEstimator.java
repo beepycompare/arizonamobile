@@ -18,7 +18,7 @@ import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: ArchiveStorageEstimator.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u001c\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bJF\u0010\r\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\u0014\b\u0002\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000b2\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bJF\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\u0014\b\u0002\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000b2\u0014\b\u0002\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bJ6\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u00162\u0006\u0010\u0017\u001a\u00020\u00052\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bH\u0002J\u0016\u0010\u0018\u001a\u00020\u00052\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u00050\u001aH\u0002J\u0014\u0010\u001b\u001a\u00020\u001c*\u00020\u00162\u0006\u0010\u0013\u001a\u00020\u0014H\u0002Ê\u0001\f\b\u001e\u0012\b\b\u001f\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u001d"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageEstimator;", "", "<init>", "()V", "downloadBytes", "", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "plannedArchiveDownloadBytesByPackage", "", "", "requiredFreeSpaceBytes", "stagingBytesByPackage", "archiveAllocatedBytesByPackage", "storageRequirements", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;", "overlayPlannedNetworkBytes", "archivePackage", "Lcom/arizona/launcher/updater/archive/model/ArchivePackage;", "entry", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;", "fallbackBytes", "checkedSum", "values", "", "matches", "", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u001c\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J0\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bJ.\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u00112\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bJF\u0010\u0012\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\u0014\b\u0002\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000b2\u0014\b\u0002\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bJF\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0006\u001a\u00020\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\t2\u0014\b\u0002\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000b2\u0014\b\u0002\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bJ6\u0010\u0017\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u00112\u0006\u0010\u0018\u001a\u00020\u00052\u0012\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bH\u0002J\u0016\u0010\u0019\u001a\u00020\u00052\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00050\u001bH\u0002J\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0014\u0010\u001e\u001a\u00020\u001d*\u00020\u00112\u0006\u0010\u000e\u001a\u00020\u000fH\u0002Ê\u0001\f\b \u0012\b\b!\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u001f"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageEstimator;", "", "<init>", "()V", "downloadBytes", "", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "plannedArchiveDownloadBytesByPackage", "", "", "packageNetworkBytes", "archivePackage", "Lcom/arizona/launcher/updater/archive/model/ArchivePackage;", "entry", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;", "requiredFreeSpaceBytes", "stagingBytesByPackage", "archiveAllocatedBytesByPackage", "storageRequirements", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;", "overlayPlannedNetworkBytes", "fallbackBytes", "checkedSum", "values", "", "keepsWholeZipPresentation", "", "matches", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveStorageEstimator {
     public static final int $stable = 0;
@@ -41,19 +41,19 @@ public final class ArchiveStorageEstimator {
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                iArr[ArchivePackagePhase.DOWNLOADED.ordinal()] = 3;
+                iArr[ArchivePackagePhase.EXTRACTING.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                iArr[ArchivePackagePhase.VERIFYING.ordinal()] = 4;
+                iArr[ArchivePackagePhase.DOWNLOADED.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[ArchivePackagePhase.VERIFIED.ordinal()] = 5;
+                iArr[ArchivePackagePhase.VERIFYING.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                iArr[ArchivePackagePhase.EXTRACTING.ordinal()] = 6;
+                iArr[ArchivePackagePhase.VERIFIED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
@@ -87,7 +87,6 @@ public final class ArchiveStorageEstimator {
     }
 
     public final long downloadBytes(ArchiveUpdatePlan plan, ArchiveUpdaterState archiveUpdaterState, Map<String, Long> plannedArchiveDownloadBytesByPackage) {
-        long archiveSize;
         Intrinsics.checkNotNullParameter(plan, "plan");
         Intrinsics.checkNotNullParameter(plannedArchiveDownloadBytesByPackage, "plannedArchiveDownloadBytesByPackage");
         if (plan.getType() == ArchivePlanType.SKIP) {
@@ -96,37 +95,52 @@ public final class ArchiveStorageEstimator {
         List<ArchivePackage> packages = plan.getPackages();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(packages, 10));
         for (ArchivePackage archivePackage : packages) {
-            ArchivePackageJournalEntry packageById = archiveUpdaterState != null ? archiveUpdaterState.packageById(archivePackage.getId()) : null;
-            if (packageById == null) {
-                archiveSize = archivePackage.getArchiveSize();
-            } else if (!INSTANCE.matches(packageById, archivePackage)) {
-                archiveSize = archivePackage.getArchiveSize();
-            } else {
-                switch (WhenMappings.$EnumSwitchMapping$0[packageById.getPhase().ordinal()]) {
-                    case 1:
-                        archiveSize = archivePackage.getArchiveSize();
-                        continue;
-                    case 2:
-                        archiveSize = archivePackage.getArchiveSize();
-                        continue;
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                    case 7:
-                    case 8:
-                    case 9:
-                        archiveSize = 0;
-                        continue;
-                    default:
-                        throw new NoWhenBranchMatchedException();
-                }
-            }
-            Map<String, Long> map = plannedArchiveDownloadBytesByPackage;
-            arrayList.add(Long.valueOf(INSTANCE.overlayPlannedNetworkBytes(archivePackage, packageById, archiveSize, map)));
-            plannedArchiveDownloadBytesByPackage = map;
+            arrayList.add(Long.valueOf(INSTANCE.packageNetworkBytes(archivePackage, archiveUpdaterState != null ? archiveUpdaterState.packageById(archivePackage.getId()) : null, plannedArchiveDownloadBytesByPackage)));
         }
         return checkedSum(arrayList);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static /* synthetic */ long packageNetworkBytes$default(ArchiveStorageEstimator archiveStorageEstimator, ArchivePackage archivePackage, ArchivePackageJournalEntry archivePackageJournalEntry, Map map, int i, Object obj) {
+        if ((i & 4) != 0) {
+            map = MapsKt.emptyMap();
+        }
+        return archiveStorageEstimator.packageNetworkBytes(archivePackage, archivePackageJournalEntry, map);
+    }
+
+    public final long packageNetworkBytes(ArchivePackage archivePackage, ArchivePackageJournalEntry archivePackageJournalEntry, Map<String, Long> plannedArchiveDownloadBytesByPackage) {
+        long archiveSize;
+        Intrinsics.checkNotNullParameter(archivePackage, "archivePackage");
+        Intrinsics.checkNotNullParameter(plannedArchiveDownloadBytesByPackage, "plannedArchiveDownloadBytesByPackage");
+        if (archivePackageJournalEntry == null || !matches(archivePackageJournalEntry, archivePackage)) {
+            archiveSize = archivePackage.getArchiveSize();
+        } else {
+            archiveSize = 0;
+            switch (WhenMappings.$EnumSwitchMapping$0[archivePackageJournalEntry.getPhase().ordinal()]) {
+                case 1:
+                    archiveSize = archivePackage.getArchiveSize();
+                    break;
+                case 2:
+                    archiveSize = archivePackage.getArchiveSize();
+                    break;
+                case 3:
+                    if (archivePackageJournalEntry.getBytesDownloaded() < archivePackageJournalEntry.getArchiveSize()) {
+                        archiveSize = archivePackage.getArchiveSize();
+                        break;
+                    }
+                    break;
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    break;
+                default:
+                    throw new NoWhenBranchMatchedException();
+            }
+        }
+        return overlayPlannedNetworkBytes(archivePackage, archivePackageJournalEntry, archiveSize, plannedArchiveDownloadBytesByPackage);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -280,11 +294,25 @@ public final class ArchiveStorageEstimator {
         Long l;
         if (j > 0 && (l = map.get(archivePackage.getId())) != null) {
             long longValue = l.longValue();
-            if (longValue > 0 && longValue < j && (archivePackageJournalEntry == null || !matches(archivePackageJournalEntry, archivePackage) || archivePackageJournalEntry.getPhase() != ArchivePackagePhase.DOWNLOADING)) {
-                return longValue;
+            if (longValue > 0 && longValue < j) {
+                if (archivePackageJournalEntry == null) {
+                    return longValue;
+                }
+                if (matches(archivePackageJournalEntry, archivePackage)) {
+                    return !keepsWholeZipPresentation(archivePackageJournalEntry) ? longValue : j;
+                } else if (archivePackageJournalEntry.getPhase() == ArchivePackagePhase.COMMITTED) {
+                    return longValue;
+                }
             }
         }
         return j;
+    }
+
+    private final boolean keepsWholeZipPresentation(ArchivePackageJournalEntry archivePackageJournalEntry) {
+        if (archivePackageJournalEntry.getPhase() != ArchivePackagePhase.DOWNLOADING) {
+            return archivePackageJournalEntry.getPhase() == ArchivePackagePhase.EXTRACTING && archivePackageJournalEntry.getBytesDownloaded() < archivePackageJournalEntry.getArchiveSize();
+        }
+        return true;
     }
 
     private final boolean matches(ArchivePackageJournalEntry archivePackageJournalEntry, ArchivePackage archivePackage) {

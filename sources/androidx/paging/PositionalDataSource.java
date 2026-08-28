@@ -261,7 +261,7 @@ public abstract class PositionalDataSource<T> extends DataSource<Integer, T> {
                 Intrinsics.checkNotNullParameter(data, "data");
                 if (this.this$0.isInvalid()) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(DataSource.BaseResult.Companion.empty$paging_common()));
+                    cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(DataSource.BaseResult.Companion.empty$paging_common()));
                     return;
                 }
                 int size = data.size() + i;
@@ -273,7 +273,7 @@ public abstract class PositionalDataSource<T> extends DataSource<Integer, T> {
                 Intrinsics.checkNotNullParameter(data, "data");
                 if (this.this$0.isInvalid()) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(DataSource.BaseResult.Companion.empty$paging_common()));
+                    cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(DataSource.BaseResult.Companion.empty$paging_common()));
                     return;
                 }
                 resume(loadInitialParams, new DataSource.BaseResult<>(data, i == 0 ? null : Integer.valueOf(i), Integer.valueOf(data.size() + i), i, Integer.MIN_VALUE));
@@ -284,7 +284,7 @@ public abstract class PositionalDataSource<T> extends DataSource<Integer, T> {
                     baseResult.validateForInitialTiling$paging_common(loadInitialParams2.pageSize);
                 }
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(baseResult));
+                cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(baseResult));
             }
         });
         Object result = cancellableContinuationImpl.getResult();
@@ -308,12 +308,12 @@ public abstract class PositionalDataSource<T> extends DataSource<Integer, T> {
                 CancellableContinuation<DataSource.BaseResult<T>> cancellableContinuation = cancellableContinuationImpl2;
                 if (isInvalid) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuation.resumeWith(Result.m9919constructorimpl(DataSource.BaseResult.Companion.empty$paging_common()));
+                    cancellableContinuation.resumeWith(Result.m9920constructorimpl(DataSource.BaseResult.Companion.empty$paging_common()));
                     return;
                 }
                 CancellableContinuation<DataSource.BaseResult<T>> cancellableContinuation2 = cancellableContinuation;
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuation2.resumeWith(Result.m9919constructorimpl(new DataSource.BaseResult(data, valueOf, Integer.valueOf(PositionalDataSource.LoadRangeParams.this.startPosition + data.size()), 0, 0, 24, null)));
+                cancellableContinuation2.resumeWith(Result.m9920constructorimpl(new DataSource.BaseResult(data, valueOf, Integer.valueOf(PositionalDataSource.LoadRangeParams.this.startPosition + data.size()), 0, 0, 24, null)));
             }
         });
         Object result = cancellableContinuationImpl.getResult();

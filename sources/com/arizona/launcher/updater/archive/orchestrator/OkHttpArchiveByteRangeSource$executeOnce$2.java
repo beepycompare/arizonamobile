@@ -83,7 +83,7 @@ public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLam
         boolean z;
         OkHttpClient okHttpClient;
         Object obj2;
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         boolean z2;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -120,13 +120,13 @@ public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLam
                 try {
                 } catch (Throwable th) {
                     Result.Companion companion = Result.Companion;
-                    obj2 = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                    obj2 = Result.m9920constructorimpl(ResultKt.createFailure(th));
                 }
                 Result.Companion companion2 = Result.Companion;
-                obj2 = Result.m9919constructorimpl(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).resolve(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getLocation()).toString());
-                boolean m9925isFailureimpl = Result.m9925isFailureimpl(obj2);
+                obj2 = Result.m9920constructorimpl(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).resolve(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getLocation()).toString());
+                boolean m9926isFailureimpl = Result.m9926isFailureimpl(obj2);
                 Object obj3 = obj2;
-                if (m9925isFailureimpl) {
+                if (m9926isFailureimpl) {
                     obj3 = null;
                 }
                 url = (String) obj3;
@@ -136,14 +136,14 @@ public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLam
                 try {
                 } catch (Throwable th2) {
                     Result.Companion companion3 = Result.Companion;
-                    m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th2));
+                    m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th2));
                 }
                 Result.Companion companion4 = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(Boxing.boxBoolean(StringsKt.equals(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(url).getScheme(), Constants.SCHEME, true)));
+                m9920constructorimpl = Result.m9920constructorimpl(Boxing.boxBoolean(StringsKt.equals(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(url).getScheme(), Constants.SCHEME, true)));
                 Boolean boxBoolean = Boxing.boxBoolean(true);
-                boolean m9925isFailureimpl2 = Result.m9925isFailureimpl(m9919constructorimpl);
-                Boolean bool = m9919constructorimpl;
-                if (m9925isFailureimpl2) {
+                boolean m9926isFailureimpl2 = Result.m9926isFailureimpl(m9920constructorimpl);
+                Boolean bool = m9920constructorimpl;
+                if (m9926isFailureimpl2) {
                     bool = boxBoolean;
                 }
                 if (!((Boolean) bool).booleanValue()) {

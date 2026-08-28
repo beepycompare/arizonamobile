@@ -6,6 +6,7 @@ import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorUtil;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.common.base.Preconditions;
 import java.io.EOFException;
 import java.io.IOException;
@@ -182,7 +183,7 @@ public final class DefaultOggSeeker implements OggSeeker {
 
         @Override // androidx.media3.extractor.SeekMap
         public SeekMap.SeekPoints getSeekPoints(long j) {
-            return new SeekMap.SeekPoints(new SeekPoint(j, Util.constrainValue((DefaultOggSeeker.this.payloadStartPosition + BigInteger.valueOf(DefaultOggSeeker.this.streamReader.convertTimeToGranule(j)).multiply(BigInteger.valueOf(DefaultOggSeeker.this.payloadEndPosition - DefaultOggSeeker.this.payloadStartPosition)).divide(BigInteger.valueOf(DefaultOggSeeker.this.totalGranules)).longValue()) - 30000, DefaultOggSeeker.this.payloadStartPosition, DefaultOggSeeker.this.payloadEndPosition - 1)));
+            return new SeekMap.SeekPoints(new SeekPoint(j, Util.constrainValue((DefaultOggSeeker.this.payloadStartPosition + BigInteger.valueOf(DefaultOggSeeker.this.streamReader.convertTimeToGranule(j)).multiply(BigInteger.valueOf(DefaultOggSeeker.this.payloadEndPosition - DefaultOggSeeker.this.payloadStartPosition)).divide(BigInteger.valueOf(DefaultOggSeeker.this.totalGranules)).longValue()) - ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, DefaultOggSeeker.this.payloadStartPosition, DefaultOggSeeker.this.payloadEndPosition - 1)));
         }
 
         @Override // androidx.media3.extractor.SeekMap

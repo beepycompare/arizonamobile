@@ -24,11 +24,10 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.Intrinsics;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Carousel.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes.dex */
-public final class CarouselKt$Carousel$2 implements Function4<PagerScope, Integer, Composer, Integer, Unit> {
+final class CarouselKt$Carousel$2 implements Function4<PagerScope, Integer, Composer, Integer, Unit> {
     final /* synthetic */ Function4<CarouselItemScope, Integer, Composer, Integer, Unit> $content;
     final /* synthetic */ CarouselPageSize $pageSize;
     final /* synthetic */ CarouselState $state;

@@ -1,6 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import android.os.Process;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.common.internal.Preconditions;
 import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
@@ -74,7 +75,7 @@ public final class zzhy extends Thread {
                         if (blockingQueue.peek() == null) {
                             this.zza.zzt();
                             try {
-                                obj.wait(30000L);
+                                obj.wait(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS);
                             } catch (InterruptedException e2) {
                                 zzc(e2);
                             }

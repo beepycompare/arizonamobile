@@ -47,6 +47,7 @@ import com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionC
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCoordinator;
 import com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater;
 import com.arizona.launcher.updater.archive.orchestrator.ArchivePayloadAuditResult;
+import com.arizona.launcher.updater.archive.orchestrator.ArchivePayloadAuditUnavailableReason;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStartupGuard;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStartupInspection;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStateMaintenance;
@@ -59,6 +60,8 @@ import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateSessionSta
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateTransactionLock;
 import com.arizona.launcher.updater.archive.planner.ArchivePlanReason;
 import com.arizona.launcher.updater.archive.planner.ArchivePlanType;
+import com.arizona.launcher.updater.archive.state.ArchiveStateLoadResult;
+import com.arizona.launcher.updater.archive.state.ArchiveUpdaterState;
 import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
 import com.arizona.launcher.updater.archive.verify.ArchiveInstalledPayloadAuditor;
 import com.arizona.launcher.updater.http.UpdateMetadataFetcher;
@@ -90,6 +93,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
@@ -150,7 +154,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     private AtomicReference<UpdateStatus> mUpdateStatus = new AtomicReference<>(UpdateStatus.Undefined);
     private AtomicReference<GameStatus> mGameStatus = new AtomicReference<>(GameStatus.Undefined);
     private final ArchiveUpdateSessionState archiveSession = new ArchiveUpdateSessionState(null, null, 3, null);
-    private final ArchiveStorageSpaceChecker archiveStorageSpaceChecker = ArchiveStorageSpaceChecker.Companion.android(new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+    private final ArchiveStorageSpaceChecker archiveStorageSpaceChecker = ArchiveStorageSpaceChecker.Companion.android(new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return UpdateService.archiveStorageSpaceChecker$lambda$0((String) obj, (Exception) obj2);
@@ -238,6 +242,10 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             try {
                 iArr3[Errno.ArchiveRecoveryBlocked.ordinal()] = 4;
             } catch (NoSuchFieldError unused15) {
+            }
+            try {
+                iArr3[Errno.UpdateServerUnreachable.ordinal()] = 5;
+            } catch (NoSuchFieldError unused16) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -565,7 +573,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         this.serviceAlive.set(true);
         this.analyticsReporter = UpdateAnalyticsReporter.Companion.createAndroid$default(UpdateAnalyticsReporter.Companion, this, null, 2, null);
         this.archiveStateStore = DurableArchiveStateStore.Companion.forAndroid(new File(getNoBackupFilesDir(), "archive-updater"));
-        Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
+        Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 File externalFilesDir;
@@ -588,12 +596,12 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             Intrinsics.throwUninitializedPropertyAccessException("metadataFetcher");
             updateMetadataFetcher2 = null;
         }
-        this.gameUpdateFlow = new GameUpdateServiceFlow(this.serviceScope, new GameUpdateCheckRunner(updateMetadataFetcher2, new UpdateService$onCreate$gameUpdateCheckRunner$1(this), new UpdateService$onCreate$gameUpdateCheckRunner$2(this), new UpdateService$onCreate$gameUpdateCheckRunner$3(FileServers.INSTANCE), new UpdateService$onCreate$gameUpdateCheckRunner$4(FileServers.INSTANCE)), this.archiveSession, this, new UpdateService$onCreate$2(FileServers.INSTANCE), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
+        this.gameUpdateFlow = new GameUpdateServiceFlow(this.serviceScope, new GameUpdateCheckRunner(updateMetadataFetcher2, new UpdateService$onCreate$gameUpdateCheckRunner$1(this), new UpdateService$onCreate$gameUpdateCheckRunner$2(this), new UpdateService$onCreate$gameUpdateCheckRunner$3(FileServers.INSTANCE), new UpdateService$onCreate$gameUpdateCheckRunner$4(FileServers.INSTANCE)), this.archiveSession, this, new UpdateService$onCreate$2(FileServers.INSTANCE), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return Integer.valueOf(UpdateService.onCreate$lambda$1());
             }
-        }, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
+        }, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 String jsonName;
@@ -601,7 +609,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
                 return jsonName;
             }
         }, new UpdateService$onCreate$5(this), new UpdateService$onCreate$6(this), new UpdateService$onCreate$7(this));
-        this.archiveUpdateFlow = new ArchiveUpdateServiceFlow(this.serviceScope, this.archiveSession, this, null, 8, null);
+        this.archiveUpdateFlow = new ArchiveUpdateServiceFlow(this.serviceScope, this.archiveSession, this, null, null, 24, null);
         CoroutineScope coroutineScope = this.serviceScope;
         UpdateService updateService = this;
         ArchiveStateMaintenance archiveStateMaintenance = this.archiveStateMaintenance;
@@ -627,7 +635,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         } else {
             updateAnalyticsReporter = updateAnalyticsReporter2;
         }
-        this.launcherUpdateFlow = new LauncherUpdateServiceFlow(coroutineScope2, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, updateAnalyticsReporter, this, new UpdateService$onCreate$9(FileServers.INSTANCE), new UpdateService$onCreate$10(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
+        this.launcherUpdateFlow = new LauncherUpdateServiceFlow(coroutineScope2, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, updateAnalyticsReporter, this, new UpdateService$onCreate$9(FileServers.INSTANCE), new UpdateService$onCreate$10(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return UpdateService.onCreate$lambda$3(UpdateService.this, (Function0) obj);
@@ -658,7 +666,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$3(UpdateService updateService, final Function0 block) {
         Intrinsics.checkNotNullParameter(block, "block");
-        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
+        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 Function0.this.invoke();
@@ -798,48 +806,161 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0042  */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0193, code lost:
+        if (r0 == r10) goto L27;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00ea A[Catch: Exception -> 0x0199, CancellationException -> 0x01b0, TryCatch #2 {CancellationException -> 0x01b0, Exception -> 0x0199, blocks: (B:13:0x004b, B:66:0x0196, B:18:0x006e, B:44:0x00e0, B:46:0x00ea, B:63:0x0162, B:47:0x00ed, B:49:0x00f1, B:52:0x0122, B:54:0x0126, B:56:0x0133, B:58:0x0138, B:57:0x0136, B:60:0x014f, B:61:0x0154, B:21:0x0076, B:23:0x0080, B:24:0x0086, B:26:0x008e, B:29:0x0094, B:32:0x009c, B:34:0x00a2, B:36:0x00a8, B:38:0x00ac, B:40:0x00b3), top: B:73:0x002f }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00ed A[Catch: Exception -> 0x0199, CancellationException -> 0x01b0, TryCatch #2 {CancellationException -> 0x01b0, Exception -> 0x0199, blocks: (B:13:0x004b, B:66:0x0196, B:18:0x006e, B:44:0x00e0, B:46:0x00ea, B:63:0x0162, B:47:0x00ed, B:49:0x00f1, B:52:0x0122, B:54:0x0126, B:56:0x0133, B:58:0x0138, B:57:0x0136, B:60:0x014f, B:61:0x0154, B:21:0x0076, B:23:0x0080, B:24:0x0086, B:26:0x008e, B:29:0x0094, B:32:0x009c, B:34:0x00a2, B:36:0x00a8, B:38:0x00ac, B:40:0x00b3), top: B:73:0x002f }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object prepareGameUpdateCheck(String str, String str2, UpdateOperationKind updateOperationKind, long j, Continuation<? super ArchiveUpdateCheckDecision> continuation) {
         UpdateService$prepareGameUpdateCheck$1 updateService$prepareGameUpdateCheck$1;
         int i;
+        Ref.BooleanRef booleanRef;
+        UpdateOperationKind updateOperationKind2;
+        ArchiveUpdaterState archiveUpdaterState;
+        String str3;
+        String str4;
+        long j2;
+        ArchiveUpdaterState archiveUpdaterState2;
+        String str5;
+        String str6;
+        ArchivePayloadAuditResult archivePayloadAuditResult;
+        ArchiveUpdateCheckBlockCode archiveUpdateCheckBlockCode;
         try {
             if (continuation instanceof UpdateService$prepareGameUpdateCheck$1) {
                 updateService$prepareGameUpdateCheck$1 = (UpdateService$prepareGameUpdateCheck$1) continuation;
                 if ((updateService$prepareGameUpdateCheck$1.label & Integer.MIN_VALUE) != 0) {
                     updateService$prepareGameUpdateCheck$1.label -= Integer.MIN_VALUE;
-                    Object obj = updateService$prepareGameUpdateCheck$1.result;
+                    UpdateService$prepareGameUpdateCheck$1 updateService$prepareGameUpdateCheck$12 = updateService$prepareGameUpdateCheck$1;
+                    Object obj = updateService$prepareGameUpdateCheck$12.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                    i = updateService$prepareGameUpdateCheck$1.label;
+                    i = updateService$prepareGameUpdateCheck$12.label;
                     if (i != 0) {
                         ResultKt.throwOnFailure(obj);
-                        updateService$prepareGameUpdateCheck$1.L$0 = SpillingKt.nullOutSpilledVariable(str);
-                        updateService$prepareGameUpdateCheck$1.L$1 = SpillingKt.nullOutSpilledVariable(str2);
-                        updateService$prepareGameUpdateCheck$1.L$2 = SpillingKt.nullOutSpilledVariable(updateOperationKind);
-                        updateService$prepareGameUpdateCheck$1.J$0 = j;
-                        updateService$prepareGameUpdateCheck$1.label = 1;
-                        obj = ArchiveUpdateTransactionLock.INSTANCE.withLock(new UpdateService$prepareGameUpdateCheck$decision$1(this, str, str2, updateOperationKind, j, null), updateService$prepareGameUpdateCheck$1);
-                        if (obj == coroutine_suspended) {
-                            return coroutine_suspended;
+                        booleanRef = new Ref.BooleanRef();
+                        DurableArchiveStateStore durableArchiveStateStore = this.archiveStateStore;
+                        ArchiveStateMaintenance archiveStateMaintenance = null;
+                        if (durableArchiveStateStore == null) {
+                            Intrinsics.throwUninitializedPropertyAccessException("archiveStateStore");
+                            durableArchiveStateStore = null;
+                        }
+                        ArchiveStateLoadResult load = durableArchiveStateStore.load();
+                        ArchiveStateLoadResult.Loaded loaded = load instanceof ArchiveStateLoadResult.Loaded ? (ArchiveStateLoadResult.Loaded) load : null;
+                        ArchiveUpdaterState state = loaded != null ? loaded.getState() : null;
+                        if (state != null && state.isPayloadCommitted() && !state.isInstallReady()) {
+                            ArchiveStateMaintenance archiveStateMaintenance2 = this.archiveStateMaintenance;
+                            if (archiveStateMaintenance2 == null) {
+                                Intrinsics.throwUninitializedPropertyAccessException("archiveStateMaintenance");
+                            } else {
+                                archiveStateMaintenance = archiveStateMaintenance2;
+                            }
+                            updateService$prepareGameUpdateCheck$12.L$0 = str;
+                            updateService$prepareGameUpdateCheck$12.L$1 = str2;
+                            updateOperationKind2 = updateOperationKind;
+                            updateService$prepareGameUpdateCheck$12.L$2 = updateOperationKind2;
+                            updateService$prepareGameUpdateCheck$12.L$3 = booleanRef;
+                            updateService$prepareGameUpdateCheck$12.L$4 = SpillingKt.nullOutSpilledVariable(state);
+                            updateService$prepareGameUpdateCheck$12.J$0 = j;
+                            updateService$prepareGameUpdateCheck$12.label = 1;
+                            Object auditMetadataAndPrepareRepair = archiveStateMaintenance.auditMetadataAndPrepareRepair(updateService$prepareGameUpdateCheck$12);
+                            if (auditMetadataAndPrepareRepair == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            archiveUpdaterState2 = state;
+                            obj = auditMetadataAndPrepareRepair;
+                            str5 = str;
+                            str6 = str2;
+                            j2 = j;
+                        } else {
+                            updateOperationKind2 = updateOperationKind;
+                            archiveUpdaterState = state;
+                            str3 = str;
+                            str4 = str2;
+                            j2 = j;
+                            Ref.BooleanRef booleanRef2 = booleanRef;
+                            UpdateOperationKind updateOperationKind3 = updateOperationKind2;
+                            updateService$prepareGameUpdateCheck$12.L$0 = SpillingKt.nullOutSpilledVariable(str3);
+                            updateService$prepareGameUpdateCheck$12.L$1 = SpillingKt.nullOutSpilledVariable(str4);
+                            updateService$prepareGameUpdateCheck$12.L$2 = SpillingKt.nullOutSpilledVariable(updateOperationKind3);
+                            updateService$prepareGameUpdateCheck$12.L$3 = SpillingKt.nullOutSpilledVariable(booleanRef2);
+                            updateService$prepareGameUpdateCheck$12.L$4 = SpillingKt.nullOutSpilledVariable(archiveUpdaterState);
+                            updateService$prepareGameUpdateCheck$12.J$0 = j2;
+                            updateService$prepareGameUpdateCheck$12.label = 2;
+                            obj = ArchiveUpdateTransactionLock.INSTANCE.withLock(new UpdateService$prepareGameUpdateCheck$decision$2(this, str3, str4, updateOperationKind3, booleanRef2, j2, null), updateService$prepareGameUpdateCheck$12);
                         }
                     } else if (i != 1) {
+                        if (i == 2) {
+                            long j3 = updateService$prepareGameUpdateCheck$12.J$0;
+                            ArchiveUpdaterState archiveUpdaterState3 = (ArchiveUpdaterState) updateService$prepareGameUpdateCheck$12.L$4;
+                            Ref.BooleanRef booleanRef3 = (Ref.BooleanRef) updateService$prepareGameUpdateCheck$12.L$3;
+                            UpdateOperationKind updateOperationKind4 = (UpdateOperationKind) updateService$prepareGameUpdateCheck$12.L$2;
+                            String str7 = (String) updateService$prepareGameUpdateCheck$12.L$1;
+                            String str8 = (String) updateService$prepareGameUpdateCheck$12.L$0;
+                            ResultKt.throwOnFailure(obj);
+                            return (ArchiveUpdateCheckDecision) obj;
+                        }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        long j2 = updateService$prepareGameUpdateCheck$1.J$0;
-                        UpdateOperationKind updateOperationKind2 = (UpdateOperationKind) updateService$prepareGameUpdateCheck$1.L$2;
-                        String str3 = (String) updateService$prepareGameUpdateCheck$1.L$1;
-                        String str4 = (String) updateService$prepareGameUpdateCheck$1.L$0;
+                        j2 = updateService$prepareGameUpdateCheck$12.J$0;
+                        archiveUpdaterState2 = (ArchiveUpdaterState) updateService$prepareGameUpdateCheck$12.L$4;
+                        booleanRef = (Ref.BooleanRef) updateService$prepareGameUpdateCheck$12.L$3;
+                        updateOperationKind2 = (UpdateOperationKind) updateService$prepareGameUpdateCheck$12.L$2;
+                        str6 = (String) updateService$prepareGameUpdateCheck$12.L$1;
+                        str5 = (String) updateService$prepareGameUpdateCheck$12.L$0;
                         ResultKt.throwOnFailure(obj);
                     }
-                    return (ArchiveUpdateCheckDecision) obj;
+                    archivePayloadAuditResult = (ArchivePayloadAuditResult) obj;
+                    if (!Intrinsics.areEqual(archivePayloadAuditResult, ArchivePayloadAuditResult.Valid.INSTANCE)) {
+                        booleanRef.element = true;
+                    } else if (archivePayloadAuditResult instanceof ArchivePayloadAuditResult.RepairScheduled) {
+                        Boxing.boxInt(Log.w(TAG, "Pre-finalization metadata audit scheduled repair for packages=" + ((ArchivePayloadAuditResult.RepairScheduled) archivePayloadAuditResult).getMismatchedPackageIds() + " first=" + ((ArchivePayloadAuditResult.RepairScheduled) archivePayloadAuditResult).getFirstMismatch()));
+                    } else if (!(archivePayloadAuditResult instanceof ArchivePayloadAuditResult.Unavailable)) {
+                        throw new NoWhenBranchMatchedException();
+                    } else {
+                        if (((ArchivePayloadAuditResult.Unavailable) archivePayloadAuditResult).getReason() == ArchivePayloadAuditUnavailableReason.GAME_ROOT_MISSING) {
+                            archiveUpdateCheckBlockCode = ArchiveUpdateCheckBlockCode.GAME_ROOT_UNAVAILABLE;
+                        } else {
+                            archiveUpdateCheckBlockCode = ArchiveUpdateCheckBlockCode.STATE_INVALID;
+                        }
+                        return new ArchiveUpdateCheckDecision.Block(archiveUpdateCheckBlockCode, "pre-finalization metadata audit unavailable: " + ((ArchivePayloadAuditResult.Unavailable) archivePayloadAuditResult).getReason());
+                    }
+                    archiveUpdaterState = archiveUpdaterState2;
+                    str4 = str6;
+                    str3 = str5;
+                    Ref.BooleanRef booleanRef22 = booleanRef;
+                    UpdateOperationKind updateOperationKind32 = updateOperationKind2;
+                    updateService$prepareGameUpdateCheck$12.L$0 = SpillingKt.nullOutSpilledVariable(str3);
+                    updateService$prepareGameUpdateCheck$12.L$1 = SpillingKt.nullOutSpilledVariable(str4);
+                    updateService$prepareGameUpdateCheck$12.L$2 = SpillingKt.nullOutSpilledVariable(updateOperationKind32);
+                    updateService$prepareGameUpdateCheck$12.L$3 = SpillingKt.nullOutSpilledVariable(booleanRef22);
+                    updateService$prepareGameUpdateCheck$12.L$4 = SpillingKt.nullOutSpilledVariable(archiveUpdaterState);
+                    updateService$prepareGameUpdateCheck$12.J$0 = j2;
+                    updateService$prepareGameUpdateCheck$12.label = 2;
+                    obj = ArchiveUpdateTransactionLock.INSTANCE.withLock(new UpdateService$prepareGameUpdateCheck$decision$2(this, str3, str4, updateOperationKind32, booleanRef22, j2, null), updateService$prepareGameUpdateCheck$12);
                 }
             }
             if (i != 0) {
             }
-            return (ArchiveUpdateCheckDecision) obj;
+            archivePayloadAuditResult = (ArchivePayloadAuditResult) obj;
+            if (!Intrinsics.areEqual(archivePayloadAuditResult, ArchivePayloadAuditResult.Valid.INSTANCE)) {
+            }
+            archiveUpdaterState = archiveUpdaterState2;
+            str4 = str6;
+            str3 = str5;
+            Ref.BooleanRef booleanRef222 = booleanRef;
+            UpdateOperationKind updateOperationKind322 = updateOperationKind2;
+            updateService$prepareGameUpdateCheck$12.L$0 = SpillingKt.nullOutSpilledVariable(str3);
+            updateService$prepareGameUpdateCheck$12.L$1 = SpillingKt.nullOutSpilledVariable(str4);
+            updateService$prepareGameUpdateCheck$12.L$2 = SpillingKt.nullOutSpilledVariable(updateOperationKind322);
+            updateService$prepareGameUpdateCheck$12.L$3 = SpillingKt.nullOutSpilledVariable(booleanRef222);
+            updateService$prepareGameUpdateCheck$12.L$4 = SpillingKt.nullOutSpilledVariable(archiveUpdaterState);
+            updateService$prepareGameUpdateCheck$12.J$0 = j2;
+            updateService$prepareGameUpdateCheck$12.label = 2;
+            obj = ArchiveUpdateTransactionLock.INSTANCE.withLock(new UpdateService$prepareGameUpdateCheck$decision$2(this, str3, str4, updateOperationKind322, booleanRef222, j2, null), updateService$prepareGameUpdateCheck$12);
         } catch (CancellationException e) {
             throw e;
         } catch (Exception e2) {
@@ -847,9 +968,10 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, e2.getMessage());
         }
         updateService$prepareGameUpdateCheck$1 = new UpdateService$prepareGameUpdateCheck$1(this, continuation);
-        Object obj2 = updateService$prepareGameUpdateCheck$1.result;
+        UpdateService$prepareGameUpdateCheck$1 updateService$prepareGameUpdateCheck$122 = updateService$prepareGameUpdateCheck$1;
+        Object obj2 = updateService$prepareGameUpdateCheck$122.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = updateService$prepareGameUpdateCheck$1.label;
+        i = updateService$prepareGameUpdateCheck$122.label;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -866,8 +988,8 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         } else if (!(archiveUpdateCheckDecision instanceof ArchiveUpdateCheckDecision.Block)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            this.mLastOperationStatus = Errno.ArchiveRecoveryBlocked;
             ArchiveUpdateCheckDecision.Block block = (ArchiveUpdateCheckDecision.Block) archiveUpdateCheckDecision;
+            this.mLastOperationStatus = UpdateServiceKt.archiveCheckBlockErrno(block.getCode());
             ArchiveUpdateCheckBlockCode code = block.getCode();
             String detail = block.getDetail();
             if (detail == null) {
@@ -1540,24 +1662,29 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             Intrinsics.throwUninitializedPropertyAccessException("archiveStateStore");
             durableArchiveStateStore = null;
         }
-        return companion.create(durableArchiveStateStore, this.archiveSession, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
+        return companion.create(durableArchiveStateStore, this.archiveSession, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return Integer.valueOf(UpdateService.archiveMirrorExecutionCoordinator$lambda$0());
             }
-        }, new UpdateService$archiveMirrorExecutionCoordinator$2(this), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
+        }, new UpdateService$archiveMirrorExecutionCoordinator$2(this), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 boolean isCurrentUpdateOperation;
                 isCurrentUpdateOperation = UpdateService.this.isCurrentUpdateOperation(UpdateOperationKind.ARCHIVE_UPDATE, j);
                 return Boolean.valueOf(isCurrentUpdateOperation);
             }
-        }, new UpdateService$archiveMirrorExecutionCoordinator$4(FileServers.INSTANCE), new UpdateService$archiveMirrorExecutionCoordinator$5(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
+        }, new UpdateService$archiveMirrorExecutionCoordinator$4(FileServers.INSTANCE), new UpdateService$archiveMirrorExecutionCoordinator$5(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return UpdateService.archiveMirrorExecutionCoordinator$lambda$2(UpdateService.this, (Function0) obj);
             }
-        }, new ArchiveMirrorExecutionCallbacks() { // from class: com.arizona.launcher.UpdateService$archiveMirrorExecutionCoordinator$7
+        }, new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj, Object obj2) {
+                return UpdateService.archiveMirrorExecutionCoordinator$lambda$3(UpdateService.this, ((Long) obj).longValue(), (Function0) obj2);
+            }
+        }, new ArchiveMirrorExecutionCallbacks() { // from class: com.arizona.launcher.UpdateService$archiveMirrorExecutionCoordinator$8
             @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCallbacks
             public void onRemainingBytesFallback(String str, Exception error) {
                 Intrinsics.checkNotNullParameter(error, "error");
@@ -1654,12 +1781,24 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit archiveMirrorExecutionCoordinator$lambda$2(UpdateService updateService, final Function0 block) {
         Intrinsics.checkNotNullParameter(block, "block");
-        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
+        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 Function0.this.invoke();
             }
         });
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit archiveMirrorExecutionCoordinator$lambda$3(UpdateService updateService, long j, final Function0 block) {
+        Intrinsics.checkNotNullParameter(block, "block");
+        updateService.mainHandler.postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                Function0.this.invoke();
+            }
+        }, j);
         return Unit.INSTANCE;
     }
 
@@ -1691,6 +1830,8 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
                 updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_FOREGROUND_UNAVAILABLE;
             } else if (i == 4) {
                 updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_RECOVERY_BLOCKED;
+            } else if (i == 5) {
+                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED;
             } else {
                 updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_VALIDATION_FAILED;
             }
@@ -1931,7 +2072,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             } else {
                 this.mLastOperationStatus = Errno.NoError;
             }
-            final Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda0
+            final Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return Boolean.valueOf(UpdateService.completeLauncherApk$lambda$0(UpdateService.this, j));
@@ -1944,7 +2085,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
                 }
                 return;
             }
-            this.mainHandler.postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
+            this.mainHandler.postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     UpdateService.completeLauncherApk$lambda$1(Function0.this, this);

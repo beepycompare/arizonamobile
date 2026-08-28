@@ -6,6 +6,7 @@ import android.content.Context;
 import android.location.Location;
 import android.os.Looper;
 import android.os.RemoteException;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.common.api.Api;
 import com.google.android.gms.common.api.GoogleApi;
 import com.google.android.gms.common.api.internal.ApiExceptionMapper;
@@ -68,7 +69,7 @@ public class FusedLocationProviderClient extends GoogleApi<Api.ApiOptions.NoOpti
         create.setPriority(i);
         create.setInterval(0L);
         create.setFastestInterval(0L);
-        create.setExpirationDuration(30000L);
+        create.setExpirationDuration(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS);
         final com.google.android.gms.internal.location.zzba zza = com.google.android.gms.internal.location.zzba.zza(null, create);
         zza.zzd(true);
         zza.zzb(10000L);

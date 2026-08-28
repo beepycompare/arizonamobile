@@ -1,6 +1,7 @@
 package com.android.billingclient.api;
 
 import android.text.TextUtils;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.internal.play_billing.zzjd;
 import java.util.List;
 import java.util.Objects;
@@ -27,7 +28,7 @@ final class zzbm implements Callable {
         boolean zzbl;
         zzdz zzbq;
         BillingClientImpl billingClientImpl = this.zzd;
-        zzbl = billingClientImpl.zzbl(30000L);
+        zzbl = billingClientImpl.zzbl(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS);
         if (!zzbl) {
             zzjd zzjdVar = zzjd.SERVICE_CONNECTION_NOT_READY;
             BillingResult billingResult = zzdc.zzj;

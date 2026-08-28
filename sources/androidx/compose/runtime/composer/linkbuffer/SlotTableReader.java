@@ -247,7 +247,7 @@ public final class SlotTableReader {
     }
 
     public final long getParentHandle() {
-        return UInt.m10020constructorimpl(this.parent) & 4294967295L;
+        return UInt.m10021constructorimpl(this.parent) & 4294967295L;
     }
 
     public final Object getParentNode() {
@@ -313,7 +313,7 @@ public final class SlotTableReader {
     }
 
     public final long rootHandle() {
-        return (UInt.m10020constructorimpl(this.table.getRoot()) & 4294967295L) | (-4294967296L);
+        return (UInt.m10021constructorimpl(this.table.getRoot()) & 4294967295L) | (-4294967296L);
     }
 
     public final boolean recomposeRequired(int i) {
@@ -506,7 +506,7 @@ public final class SlotTableReader {
             while (i >= 0) {
                 int i4 = iArr[i + 4];
                 int i5 = i3 + 1;
-                arrayList.add(new KeyInfo(iArr[i], (i4 & 16777216) == 16777216 ? objArr[(iArr[i + 5] >> 4) + Integer.bitCount(i4 & 8388608)] : null, (i2 << 32) | (UInt.m10020constructorimpl(i) & 4294967295L), (i4 & 8388608) == 8388608 ? 1 : 8388607 & i4, i3));
+                arrayList.add(new KeyInfo(iArr[i], (i4 & 16777216) == 16777216 ? objArr[(iArr[i + 5] >> 4) + Integer.bitCount(i4 & 8388608)] : null, (i2 << 32) | (UInt.m10021constructorimpl(i) & 4294967295L), (i4 & 8388608) == 8388608 ? 1 : 8388607 & i4, i3));
                 int i6 = i;
                 i = groups[i + 1];
                 i2 = i6;
@@ -668,16 +668,16 @@ public final class SlotTableReader {
     }
 
     public final void traverseChildrenByHandle(int i, Function1<? super Long, Unit> function1) {
-        long m10020constructorimpl = UInt.m10020constructorimpl(firstChildOf(i)) & 4294967295L;
+        long m10021constructorimpl = UInt.m10021constructorimpl(firstChildOf(i)) & 4294967295L;
         long j = -4294967296L;
         while (true) {
-            long j2 = m10020constructorimpl | j;
+            long j2 = m10021constructorimpl | j;
             if (GroupHandleKt.getGroup(j2) == -1) {
                 return;
             }
             function1.invoke(Long.valueOf(j2));
             j = GroupHandleKt.getGroup(j2) << 32;
-            m10020constructorimpl = UInt.m10020constructorimpl(nextSiblingOf(GroupHandleKt.getGroup(j2))) & 4294967295L;
+            m10021constructorimpl = UInt.m10021constructorimpl(nextSiblingOf(GroupHandleKt.getGroup(j2))) & 4294967295L;
         }
     }
 
@@ -689,6 +689,6 @@ public final class SlotTableReader {
     }
 
     public final void reposition(int i) {
-        reposition(UInt.m10020constructorimpl(i) & 4294967295L);
+        reposition(UInt.m10021constructorimpl(i) & 4294967295L);
     }
 }

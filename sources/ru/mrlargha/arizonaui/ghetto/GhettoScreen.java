@@ -419,7 +419,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     */
     private final int parseBusinessColor(String str) {
         String str2;
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         if (str != null && (str2 = StringsKt.trim((CharSequence) str).toString()) != null) {
             if (str2.length() <= 0) {
                 str2 = null;
@@ -432,12 +432,12 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
                     try {
                         Result.Companion companion = Result.Companion;
                         GhettoScreen ghettoScreen = this;
-                        m9919constructorimpl = Result.m9919constructorimpl(Integer.valueOf(Color.parseColor(str2)));
+                        m9920constructorimpl = Result.m9920constructorimpl(Integer.valueOf(Color.parseColor(str2)));
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                        m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
                     }
-                    Integer num = Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+                    Integer num = Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
                     if (num != null) {
                         return num.intValue();
                     }

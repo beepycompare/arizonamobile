@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="res_0x7f030000_com_google_firebase_crashlytics_build_ids_arch">
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
+        <item>aarch64</item>
         <item>arm</item>
         <item>arm</item>
         <item>arm</item>
@@ -32,24 +50,6 @@
         <item>x86</item>
         <item>x86</item>
         <item>x86</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
-        <item>aarch64</item>
         <item>x86_64</item>
         <item>x86_64</item>
         <item>x86_64</item>
@@ -60,122 +60,122 @@
         <item>x86_64</item>
     </array>
     <array name="res_0x7f030001_com_google_firebase_crashlytics_build_ids_build_id">
-        <item>d3df79de74679ce5f24a20967d13b39c1cf29b90</item>
-        <item>2ebebc19de27594a564c1aa67a61ad9832244f6f</item>
-        <item>ec53c4f7e1aac91a4c873829253dbbce</item>
-        <item>5f22b6a5abc807571b94b201d7acc10e</item>
-        <item>e1fc27ecc296d9c1f150453a6ab1e0fe</item>
-        <item>b17d962d19082a2f79ac08e380834e2a7d061855</item>
-        <item>3bdbe6ce948cf4ab54955fe2261a147c</item>
-        <item>8bd3ff61d562d4057c239bd3ec22768f5d61deb9</item>
-        <item>d2815cea70b13da3411e846aaa641ab3</item>
-        <item>a1e0a22522d4e2eb0c9cfc971e4f1961</item>
-        <item>b4e25e52c40020b27df68fff0662ac3a</item>
-        <item>5a775343f2d0cc8ec77ce7ed057863be57ddca7f</item>
-        <item>e3fe564d0915038b39edd68d2a4ff72fe011b5ef</item>
-        <item>658f31ec38399ef48993118c0ecaf1b76795a41a</item>
-        <item>bb380544b5651d27afc1e54eea2b2d18ce61759c</item>
-        <item>fa98a997cdd9b43f190a4bd20f3dad441b4062f0</item>
-        <item>eec038e47f2f26b111bece64cf90977deef9a15d</item>
-        <item>e790744e564fc5a48e7889c69f8793132c7d38c1</item>
-        <item>0bc79fdb6cf571d5f5fb5c7c453b0e0b</item>
-        <item>c0b199662be9f9ad0570763cdc71db2271fcb8fb</item>
-        <item>9a689a0bf501af72259e80f6df9c71c5</item>
-        <item>7e329e9a7eec1b79ac7edb9690ab3cef44a604e2</item>
-        <item>c8489446d887ddbcd5af044fb5294006</item>
-        <item>1d2647a23afe83fbe61824bc33010ca69650dd95</item>
-        <item>ec7e9fda3fbcea95d1f9d4f1001bcaeced58e765</item>
-        <item>27f0219f2e9c2949a31c80690de15adf5cebc630</item>
-        <item>56b3f97a7efb05fc89674cf68f6c27847a93860b</item>
-        <item>3727c2b55fbf4f49e82bf50453d4f1b95e669392</item>
-        <item>693423e0b9782e52f687e3ca396abbe35546823b</item>
-        <item>2192e6828fd72bd7cfcf4bd7f983b691</item>
-        <item>8dd9900d641130c9f08077112c5bf224da4869bc</item>
-        <item>e3effad6e520baa84e5f29946b780b268258cc43</item>
-        <item>816f5670c750f2cb593a6e55ed35fcb7</item>
-        <item>d73df70ee932c7b85c7e0d6f986f40f548a62a03</item>
-        <item>e128ee17aeea155467d76c2f01021f38</item>
-        <item>6ec8c9a091dea6513059e78c51eca45a0a80b522</item>
-        <item>2f62d5f3e8789b76d3327e37c203be5bac7aeed9</item>
-        <item>9fcfe50436d33759b34c7d845a85e1d079bd9b08</item>
-        <item>82e4194d871cc8f8760e6fad06f28994d4acb3de</item>
+        <item>a7846ae06d6bf6cf63fa7c5e056b5de493c71567</item>
         <item>0dbb1241bbc6dc4b4f37b7b08d98f509fe7a0ba4</item>
         <item>66916e4c2f14da2e509ac6ac7c0d58da0c56d275</item>
-        <item>47ddf1bca5065a1632f3c9b784dba881ce7f75ca</item>
-        <item>e13b4e4b977b9cec393f3b1277a2ab50b466c15b</item>
-        <item>a7846ae06d6bf6cf63fa7c5e056b5de493c71567</item>
-        <item>69ddcfdf107218859277e79e9d831a64fb01ad0b</item>
         <item>bcce6a21cf806fc1ae350b026c8f0fa665a88eb3</item>
-        <item>8fe1280f76b826cef0e1a3e111c991467da5327e</item>
-        <item>a50a621bac11d6b722ddfc5b67d243a0</item>
+        <item>6ec8c9a091dea6513059e78c51eca45a0a80b522</item>
+        <item>3e4637c8f9ddd09f2ccecf133bbca604c550218b</item>
+        <item>9fcfe50436d33759b34c7d845a85e1d079bd9b08</item>
+        <item>69ddcfdf107218859277e79e9d831a64fb01ad0b</item>
         <item>a8bed1c6d879ca2a03a91b7fd072e57f799da3fe</item>
-        <item>b981932bf7d2e3cb86700ffee4637dbabc0c188d</item>
-        <item>c4c30260f3293d0a84aeab5b58c45142bdf70a91</item>
-        <item>9b436ab3c2fbfd8a85d8d02da3409b8b3d2e8187</item>
+        <item>e13b4e4b977b9cec393f3b1277a2ab50b466c15b</item>
+        <item>a50a621bac11d6b722ddfc5b67d243a0</item>
+        <item>e128ee17aeea155467d76c2f01021f38</item>
+        <item>816f5670c750f2cb593a6e55ed35fcb7</item>
+        <item>9412b7b2719ae0b4bf9a85786b0be104ac7efc98</item>
+        <item>8fe1280f76b826cef0e1a3e111c991467da5327e</item>
+        <item>66f80f6f9f08c4eb15f09498a8ed070daf520ff4</item>
+        <item>c0ed1e0263d1e6ff69de0085cb49792a156dfaed</item>
+        <item>e3effad6e520baa84e5f29946b780b268258cc43</item>
+        <item>fa98a997cdd9b43f190a4bd20f3dad441b4062f0</item>
+        <item>5a775343f2d0cc8ec77ce7ed057863be57ddca7f</item>
+        <item>e3fe564d0915038b39edd68d2a4ff72fe011b5ef</item>
+        <item>e790744e564fc5a48e7889c69f8793132c7d38c1</item>
+        <item>b17d962d19082a2f79ac08e380834e2a7d061855</item>
+        <item>8bd3ff61d562d4057c239bd3ec22768f5d61deb9</item>
+        <item>eec038e47f2f26b111bece64cf90977deef9a15d</item>
+        <item>7e329e9a7eec1b79ac7edb9690ab3cef44a604e2</item>
+        <item>bb380544b5651d27afc1e54eea2b2d18ce61759c</item>
+        <item>d2815cea70b13da3411e846aaa641ab3</item>
+        <item>c8489446d887ddbcd5af044fb5294006</item>
+        <item>9a689a0bf501af72259e80f6df9c71c5</item>
+        <item>5f22b6a5abc807571b94b201d7acc10e</item>
+        <item>b4e25e52c40020b27df68fff0662ac3a</item>
+        <item>2ebebc19de27594a564c1aa67a61ad9832244f6f</item>
+        <item>0bc79fdb6cf571d5f5fb5c7c453b0e0b</item>
+        <item>a1e0a22522d4e2eb0c9cfc971e4f1961</item>
+        <item>c0b199662be9f9ad0570763cdc71db2271fcb8fb</item>
+        <item>251f468db664208423ee68a27d5cbd7605b78961</item>
+        <item>ec53c4f7e1aac91a4c873829253dbbce</item>
+        <item>d3df79de74679ce5f24a20967d13b39c1cf29b90</item>
+        <item>e1fc27ecc296d9c1f150453a6ab1e0fe</item>
+        <item>3bdbe6ce948cf4ab54955fe2261a147c</item>
+        <item>56b3f97a7efb05fc89674cf68f6c27847a93860b</item>
+        <item>ec7e9fda3fbcea95d1f9d4f1001bcaeced58e765</item>
+        <item>3727c2b55fbf4f49e82bf50453d4f1b95e669392</item>
+        <item>8dd9900d641130c9f08077112c5bf224da4869bc</item>
+        <item>27f0219f2e9c2949a31c80690de15adf5cebc630</item>
+        <item>2192e6828fd72bd7cfcf4bd7f983b691</item>
+        <item>693423e0b9782e52f687e3ca396abbe35546823b</item>
+        <item>1d2647a23afe83fbe61824bc33010ca69650dd95</item>
         <item>f3e82b0a78f4c567cca77fe6c132199d806987d1</item>
+        <item>c4c30260f3293d0a84aeab5b58c45142bdf70a91</item>
         <item>8df6117f62e9f861227f12c079de9a073c4110aa</item>
-        <item>df3c40aaebd95ad77b632e794b28022476284719</item>
-        <item>25953aa6f5e8e6768deb4d9e8534d3ee</item>
         <item>efa30781e14db4e7db9bc665b0505834674ec668</item>
+        <item>9b436ab3c2fbfd8a85d8d02da3409b8b3d2e8187</item>
+        <item>25953aa6f5e8e6768deb4d9e8534d3ee</item>
+        <item>df3c40aaebd95ad77b632e794b28022476284719</item>
+        <item>b981932bf7d2e3cb86700ffee4637dbabc0c188d</item>
     </array>
     <array name="res_0x7f030002_com_google_firebase_crashlytics_build_ids_lib">
-        <item>libsigner.so</item>
-        <item>libkeygen.so</item>
-        <item>libSCAnd.so</item>
-        <item>libGTASA.so</item>
-        <item>libssl.so</item>
-        <item>libbass_ssl.so</item>
-        <item>libssl_1_1.so</item>
-        <item>libcrashlytics-common.so</item>
-        <item>libcrypto.so</item>
-        <item>libopus.so</item>
-        <item>libImmEmulatorJ.so</item>
+        <item>libandroidx.graphics.path.so</item>
         <item>libbass.so</item>
         <item>libbassmix.so</item>
-        <item>libsamp.so</item>
-        <item>libcrashlytics.so</item>
-        <item>libandroidx.graphics.path.so</item>
-        <item>libcrashlytics-handler.so</item>
         <item>libbass_fx.so</item>
-        <item>libOpenAL32.so</item>
-        <item>librenderscript-toolkit.so</item>
-        <item>libdatastore_shared_counter.so</item>
-        <item>libcrashlytics-trampoline.so</item>
-        <item>libcrypto_1_1.so</item>
-        <item>libsigner.so</item>
-        <item>libcrashlytics-common.so</item>
-        <item>libcrashlytics.so</item>
-        <item>libandroidx.graphics.path.so</item>
-        <item>libcrashlytics-handler.so</item>
-        <item>librenderscript-toolkit.so</item>
-        <item>libdatastore_shared_counter.so</item>
-        <item>libcrashlytics-trampoline.so</item>
-        <item>libsigner.so</item>
-        <item>libOpenAL64.so</item>
-        <item>libSCAnd.so</item>
-        <item>libGTASA.so</item>
         <item>libbass_ssl.so</item>
         <item>libcommon.so</item>
         <item>libcrashlytics-common.so</item>
+        <item>libcrashlytics-handler.so</item>
+        <item>libcrashlytics-trampoline.so</item>
+        <item>libcrashlytics.so</item>
+        <item>libdatastore_shared_counter.so</item>
+        <item>libGTASA.so</item>
+        <item>libOpenAL64.so</item>
         <item>libraknet.so</item>
+        <item>librenderscript-toolkit.so</item>
+        <item>libsamp.so</item>
+        <item>libSCAnd.so</item>
+        <item>libsigner.so</item>
+        <item>libandroidx.graphics.path.so</item>
         <item>libbass.so</item>
         <item>libbassmix.so</item>
-        <item>libsamp.so</item>
-        <item>libcrashlytics.so</item>
-        <item>libandroidx.graphics.path.so</item>
-        <item>libcrashlytics-handler.so</item>
         <item>libbass_fx.so</item>
-        <item>librenderscript-toolkit.so</item>
-        <item>libdatastore_shared_counter.so</item>
-        <item>libcrashlytics-trampoline.so</item>
-        <item>libsigner.so</item>
+        <item>libbass_ssl.so</item>
         <item>libcrashlytics-common.so</item>
-        <item>libcrashlytics.so</item>
-        <item>libandroidx.graphics.path.so</item>
         <item>libcrashlytics-handler.so</item>
-        <item>librenderscript-toolkit.so</item>
-        <item>libdatastore_shared_counter.so</item>
         <item>libcrashlytics-trampoline.so</item>
+        <item>libcrashlytics.so</item>
+        <item>libcrypto.so</item>
+        <item>libcrypto_1_1.so</item>
+        <item>libdatastore_shared_counter.so</item>
+        <item>libGTASA.so</item>
+        <item>libImmEmulatorJ.so</item>
+        <item>libkeygen.so</item>
+        <item>libOpenAL32.so</item>
+        <item>libopus.so</item>
+        <item>librenderscript-toolkit.so</item>
+        <item>libsamp.so</item>
+        <item>libSCAnd.so</item>
+        <item>libsigner.so</item>
+        <item>libssl.so</item>
+        <item>libssl_1_1.so</item>
+        <item>libandroidx.graphics.path.so</item>
+        <item>libcrashlytics-common.so</item>
+        <item>libcrashlytics-handler.so</item>
+        <item>libcrashlytics-trampoline.so</item>
+        <item>libcrashlytics.so</item>
+        <item>libdatastore_shared_counter.so</item>
+        <item>librenderscript-toolkit.so</item>
+        <item>libsigner.so</item>
+        <item>libandroidx.graphics.path.so</item>
+        <item>libcrashlytics-common.so</item>
+        <item>libcrashlytics-handler.so</item>
+        <item>libcrashlytics-trampoline.so</item>
+        <item>libcrashlytics.so</item>
+        <item>libdatastore_shared_counter.so</item>
+        <item>librenderscript-toolkit.so</item>
+        <item>libsigner.so</item>
     </array>
     <array name="com_google_android_gms_fonts_certs">
         <item>@array/com_google_android_gms_fonts_certs_dev</item>

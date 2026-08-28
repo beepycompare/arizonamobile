@@ -115,7 +115,7 @@ public final class GzipSink implements Sink {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "deflater", imports = {}))
     /* renamed from: -deprecated_deflater  reason: not valid java name */
-    public final Deflater m11814deprecated_deflater() {
+    public final Deflater m11815deprecated_deflater() {
         return this.deflater;
     }
 }

@@ -174,7 +174,7 @@ public final class UpdateMetadataHttpClient implements UpdateMetadataRequest {
                 if (cancellableContinuationImpl2.isActive()) {
                     Result.Companion companion = Result.Companion;
                     result = this.toResult(error, false);
-                    cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(result));
+                    cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(result));
                 }
             }
 
@@ -192,7 +192,7 @@ public final class UpdateMetadataHttpClient implements UpdateMetadataRequest {
                 }
                 if (cancellableContinuationImpl2.isActive()) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9919constructorimpl(result));
+                    cancellableContinuationImpl2.resumeWith(Result.m9920constructorimpl(result));
                 }
             }
         });

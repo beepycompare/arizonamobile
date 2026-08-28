@@ -9,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RemoteZipIndexFetcher.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.RemoteZipIndexFetcher", f = "RemoteZipIndexFetcher.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {36, 80}, m = RemoteConfigComponent.FETCH_FILE_NAME, n = {"packageId", "archiveUrl", "archiveSize", "tailStart", "packageId", "archiveUrl", "tail", FirebaseAnalytics.Param.LOCATION, "fence", "archiveSize", "tailStart", "centralDirectoryEnd", "fetchedBytes"}, nl = {45, 90}, s = {"L$0", "L$1", "J$0", "J$1", "L$0", "L$1", "L$2", "L$3", "L$4", "J$0", "J$1", "J$2", "J$3"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.RemoteZipIndexFetcher", f = "RemoteZipIndexFetcher.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {37, 84}, m = RemoteConfigComponent.FETCH_FILE_NAME, n = {"packageId", "archiveUrl", "archiveSize", "tailStart", "packageId", "archiveUrl", "tail", FirebaseAnalytics.Param.LOCATION, "fence", "archiveSize", "tailStart", "centralDirectoryEnd", "fetchedBytes"}, nl = {46, 94}, s = {"L$0", "L$1", "J$0", "J$1", "L$0", "L$1", "L$2", "L$3", "L$4", "J$0", "J$1", "J$2", "J$3"}, v = 2)
 /* loaded from: classes3.dex */
 public final class RemoteZipIndexFetcher$fetch$1 extends ContinuationImpl {
     long J$0;

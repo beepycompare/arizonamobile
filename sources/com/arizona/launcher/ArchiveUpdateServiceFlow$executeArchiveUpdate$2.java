@@ -5,6 +5,7 @@ import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdaterListener;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdaterResult;
 import com.arizona.launcher.updater.archive.planner.ArchiveUpdatePlan;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,10 +17,11 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function3;
 /* compiled from: ArchiveUpdateServiceFlow.kt */
 @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterResult;", "attemptServer", "", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterListener;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow$executeArchiveUpdate$2", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0}, l = {299}, m = "invokeSuspend", n = {"attemptServer", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow$executeArchiveUpdate$2", f = "ArchiveUpdateServiceFlow.kt", i = {0, 0}, l = {314}, m = "invokeSuspend", n = {"attemptServer", ServiceSpecificExtraArgs.CastExtraArgs.LISTENER}, nl = {319}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes3.dex */
 final class ArchiveUpdateServiceFlow$executeArchiveUpdate$2 extends SuspendLambda implements Function3<String, ArchiveUpdaterListener, Continuation<? super ArchiveUpdaterResult>, Object> {
     final /* synthetic */ ArchiveUpdatePlan $plan;
+    final /* synthetic */ Map<String, Long> $plannedArchiveDownloadBytesByPackage;
     final /* synthetic */ ArchivePackageUpdater $updater;
     /* synthetic */ Object L$0;
     /* synthetic */ Object L$1;
@@ -27,15 +29,16 @@ final class ArchiveUpdateServiceFlow$executeArchiveUpdate$2 extends SuspendLambd
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ArchiveUpdateServiceFlow$executeArchiveUpdate$2(ArchivePackageUpdater archivePackageUpdater, ArchiveUpdatePlan archiveUpdatePlan, Continuation<? super ArchiveUpdateServiceFlow$executeArchiveUpdate$2> continuation) {
+    public ArchiveUpdateServiceFlow$executeArchiveUpdate$2(ArchivePackageUpdater archivePackageUpdater, ArchiveUpdatePlan archiveUpdatePlan, Map<String, Long> map, Continuation<? super ArchiveUpdateServiceFlow$executeArchiveUpdate$2> continuation) {
         super(3, continuation);
         this.$updater = archivePackageUpdater;
         this.$plan = archiveUpdatePlan;
+        this.$plannedArchiveDownloadBytesByPackage = map;
     }
 
     @Override // kotlin.jvm.functions.Function3
     public final Object invoke(String str, ArchiveUpdaterListener archiveUpdaterListener, Continuation<? super ArchiveUpdaterResult> continuation) {
-        ArchiveUpdateServiceFlow$executeArchiveUpdate$2 archiveUpdateServiceFlow$executeArchiveUpdate$2 = new ArchiveUpdateServiceFlow$executeArchiveUpdate$2(this.$updater, this.$plan, continuation);
+        ArchiveUpdateServiceFlow$executeArchiveUpdate$2 archiveUpdateServiceFlow$executeArchiveUpdate$2 = new ArchiveUpdateServiceFlow$executeArchiveUpdate$2(this.$updater, this.$plan, this.$plannedArchiveDownloadBytesByPackage, continuation);
         archiveUpdateServiceFlow$executeArchiveUpdate$2.L$0 = str;
         archiveUpdateServiceFlow$executeArchiveUpdate$2.L$1 = archiveUpdaterListener;
         return archiveUpdateServiceFlow$executeArchiveUpdate$2.invokeSuspend(Unit.INSTANCE);
@@ -58,7 +61,7 @@ final class ArchiveUpdateServiceFlow$executeArchiveUpdate$2 extends SuspendLambd
         this.L$0 = SpillingKt.nullOutSpilledVariable(str);
         this.L$1 = SpillingKt.nullOutSpilledVariable(archiveUpdaterListener);
         this.label = 1;
-        Object execute = this.$updater.execute(this.$plan, str, archiveUpdaterListener, this);
+        Object execute = this.$updater.execute(this.$plan, str, archiveUpdaterListener, this.$plannedArchiveDownloadBytesByPackage, this);
         return execute == coroutine_suspended ? coroutine_suspended : execute;
     }
 }

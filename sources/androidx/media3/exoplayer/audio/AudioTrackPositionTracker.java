@@ -5,6 +5,7 @@ import android.os.Build;
 import androidx.media3.common.C;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.common.base.Preconditions;
 import java.lang.reflect.Method;
 /* loaded from: classes3.dex */
@@ -194,7 +195,7 @@ final class AudioTrackPositionTracker {
 
     private void maybeSampleSyncParams() {
         long nanoTime = this.clock.nanoTime() / 1000;
-        if (nanoTime - this.lastPlayheadSampleTimeUs >= 30000) {
+        if (nanoTime - this.lastPlayheadSampleTimeUs >= ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS) {
             long playbackHeadPositionUs = getPlaybackHeadPositionUs();
             if (playbackHeadPositionUs != 0) {
                 this.playheadOffsets[this.nextPlayheadOffsetIndex] = Util.getPlayoutDurationForMediaDuration(playbackHeadPositionUs, this.audioTrackPlaybackSpeed) - nanoTime;

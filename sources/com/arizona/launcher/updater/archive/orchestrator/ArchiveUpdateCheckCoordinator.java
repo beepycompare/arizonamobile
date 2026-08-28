@@ -15,6 +15,8 @@ import com.arizona.launcher.updater.archive.model.ArchivePackage;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestCandidate;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestResolutionResult;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckDecision;
+import com.arizona.launcher.updater.archive.planner.ArchivePlanReason;
+import com.arizona.launcher.updater.archive.planner.ArchivePlanType;
 import com.arizona.launcher.updater.archive.planner.ArchiveUpdatePlan;
 import com.arizona.launcher.updater.archive.planner.ArchiveUpdatePlanner;
 import com.arizona.launcher.updater.archive.state.ArchiveFileRetirementRecord;
@@ -36,6 +38,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -58,7 +61,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 /* compiled from: ArchiveUpdateCheckCoordinator.kt */
-@Metadata(d1 = {"\u0000¦\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 ?2\u00020\u0001:\u0003=>?Be\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f\u0012\b\b\u0002\u0010\r\u001a\u00020\u000e\u0012\u000e\b\u0002\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010\u0012\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0013¢\u0006\u0004\b\u0014\u0010\u0015J>\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u00192\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 H\u0086@¢\u0006\u0002\u0010!J8\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020'2\u0006\u0010\u001c\u001a\u00020\u00192\b\u0010(\u001a\u0004\u0018\u00010)2\u0006\u0010\u001f\u001a\u00020 H\u0082@¢\u0006\u0002\u0010*J\u0010\u0010+\u001a\u00020\u00112\u0006\u0010&\u001a\u00020'H\u0002J,\u0010,\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u00110-2\u0006\u0010.\u001a\u00020/2\b\u00100\u001a\u0004\u0018\u00010)H\u0082@¢\u0006\u0002\u00101J\u0018\u00102\u001a\u00020)2\u0006\u00103\u001a\u00020\u00032\u0006\u00104\u001a\u000205H\u0002J\u0010\u00106\u001a\u00020\u001e2\u0006\u00100\u001a\u00020)H\u0002J\u0018\u00107\u001a\u00020)2\u0006\u00108\u001a\u00020)2\u0006\u00109\u001a\u000205H\u0002J\u001e\u0010:\u001a\b\u0012\u0004\u0012\u00020<0;2\u0006\u00108\u001a\u00020)2\u0006\u00109\u001a\u000205H\u0002R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\bA\u0012\b\bB\u0012\u0004\b\u0003\u0010\u0000¨\u0006@"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckCoordinator;", "", "gameRoot", "Ljava/io/File;", "stateStore", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore;", "installAdopter", "Lcom/arizona/launcher/updater/archive/adoption/ArchiveInstallAdopter;", "artifactCleaner", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageArtifactCleaner;", "downloadRoot", "candidateParser", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidateParser;", "manifestResolver", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolver;", "nowEpochMs", "Lkotlin/Function0;", "", "selectiveDownloadEstimator", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveSelectiveDownloadEstimator;", "<init>", "(Ljava/io/File;Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore;Lcom/arizona/launcher/updater/archive/adoption/ArchiveInstallAdopter;Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageArtifactCleaner;Ljava/io/File;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidateParser;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolver;Lkotlin/jvm/functions/Function0;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveSelectiveDownloadEstimator;)V", "prepare", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "response", "", "selectedGpu", "Lcom/arizona/launcher/updater/archive/model/ArchiveGpu;", "serverBaseUrl", "allowCleanBootstrap", "", "bootstrapPrefetcher", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveBootstrapPrefetcher;", "(Ljava/lang/String;Lcom/arizona/launcher/updater/archive/model/ArchiveGpu;Ljava/lang/String;ZLcom/arizona/launcher/updater/archive/orchestrator/ArchiveBootstrapPrefetcher;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveWithBootstrapPrefetch", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolutionResult;", "candidate", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidate;", "descriptor", "Lcom/arizona/launcher/updater/archive/manifest/OriginalTzArchiveManifestDescriptor;", "loadedState", "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidate;Lcom/arizona/launcher/updater/archive/manifest/OriginalTzArchiveManifestDescriptor;Ljava/lang/String;Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveBootstrapPrefetcher;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "bootstrapDownloadBytes", "plannedSelectiveDownloadBytes", "", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", RemoteConfigConstants.ResponseFieldKey.STATE, "(Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "adoptExistingInstall", "root", "manifest", "Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;", "isSafePreCommitRepairState", "rebasePreCommitRepairState", UpdateServiceContract.BundleKey.CURRENT, "remote", "supersededRepairIdentities", "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageIdentity;", "ArchiveBootstrapPrefetchCleanupException", "LivePackageBaseline", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000®\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 G2\u00020\u0001:\u0003EFGBe\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f\u0012\b\b\u0002\u0010\r\u001a\u00020\u000e\u0012\u000e\b\u0002\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010\u0012\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0013¢\u0006\u0004\b\u0014\u0010\u0015JH\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001b2\b\b\u0002\u0010\u001c\u001a\u00020\u00192\b\b\u0002\u0010\u001d\u001a\u00020\u001e2\n\b\u0002\u0010\u001f\u001a\u0004\u0018\u00010 2\b\b\u0002\u0010!\u001a\u00020\u001eH\u0086@¢\u0006\u0002\u0010\"J8\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(2\u0006\u0010\u001c\u001a\u00020\u00192\b\u0010)\u001a\u0004\u0018\u00010*2\u0006\u0010\u001f\u001a\u00020 H\u0082@¢\u0006\u0002\u0010+J\u0010\u0010,\u001a\u00020\u00112\u0006\u0010'\u001a\u00020(H\u0002J,\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u00110.2\u0006\u0010/\u001a\u0002002\b\u00101\u001a\u0004\u0018\u00010*H\u0082@¢\u0006\u0002\u00102J\u0018\u00103\u001a\u00020*2\u0006\u00104\u001a\u00020\u00032\u0006\u00105\u001a\u000206H\u0002J\u0010\u00107\u001a\u00020\u001e2\u0006\u00101\u001a\u00020*H\u0002J\u0018\u00108\u001a\u00020*2\u0006\u00109\u001a\u00020*2\u0006\u0010:\u001a\u000206H\u0002J\u001a\u0010;\u001a\u0002002\u0006\u0010/\u001a\u0002002\b\u00101\u001a\u0004\u0018\u00010*H\u0002J\u0010\u0010<\u001a\u00020\u001e2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010?\u001a\u00020\u001e2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010@\u001a\u00020\u001e2\u0006\u0010=\u001a\u00020>H\u0002J\u0018\u0010A\u001a\u00020\u001e2\u0006\u00101\u001a\u00020*2\u0006\u0010:\u001a\u000206H\u0002J\u001e\u0010B\u001a\b\u0012\u0004\u0012\u00020D0C2\u0006\u00109\u001a\u00020*2\u0006\u0010:\u001a\u000206H\u0002R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\n\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\bI\u0012\b\bJ\u0012\u0004\b\u0003\u0010\u0000¨\u0006H"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckCoordinator;", "", "gameRoot", "Ljava/io/File;", "stateStore", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore;", "installAdopter", "Lcom/arizona/launcher/updater/archive/adoption/ArchiveInstallAdopter;", "artifactCleaner", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageArtifactCleaner;", "downloadRoot", "candidateParser", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidateParser;", "manifestResolver", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolver;", "nowEpochMs", "Lkotlin/Function0;", "", "selectiveDownloadEstimator", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveSelectiveDownloadEstimator;", "<init>", "(Ljava/io/File;Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore;Lcom/arizona/launcher/updater/archive/adoption/ArchiveInstallAdopter;Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageArtifactCleaner;Ljava/io/File;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidateParser;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolver;Lkotlin/jvm/functions/Function0;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveSelectiveDownloadEstimator;)V", "prepare", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "response", "", "selectedGpu", "Lcom/arizona/launcher/updater/archive/model/ArchiveGpu;", "serverBaseUrl", "allowCleanBootstrap", "", "bootstrapPrefetcher", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveBootstrapPrefetcher;", "metadataAuditValidatedForFinalization", "(Ljava/lang/String;Lcom/arizona/launcher/updater/archive/model/ArchiveGpu;Ljava/lang/String;ZLcom/arizona/launcher/updater/archive/orchestrator/ArchiveBootstrapPrefetcher;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveWithBootstrapPrefetch", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolutionResult;", "candidate", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidate;", "descriptor", "Lcom/arizona/launcher/updater/archive/manifest/OriginalTzArchiveManifestDescriptor;", "loadedState", "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "(Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestCandidate;Lcom/arizona/launcher/updater/archive/manifest/OriginalTzArchiveManifestDescriptor;Ljava/lang/String;Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveBootstrapPrefetcher;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "bootstrapDownloadBytes", "plannedSelectiveDownloadBytes", "", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", RemoteConfigConstants.ResponseFieldKey.STATE, "(Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "adoptExistingInstall", "root", "manifest", "Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;", "isSafePreCommitRepairState", "rebasePreCommitRepairState", UpdateServiceContract.BundleKey.CURRENT, "remote", "promoteRebasedIncompleteBootstrapPlan", "isPromotableNonCommittedEntry", "entry", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;", "hasValidLiveBaseline", "isGenuinelyNewPlannedPackage", "hasNewOrRemovedPackageEvidence", "supersededRepairIdentities", "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageIdentity;", "ArchiveBootstrapPrefetchCleanupException", "LivePackageBaseline", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveUpdateCheckCoordinator {
     private final ArchivePackageArtifactCleaner artifactCleaner;
@@ -158,62 +161,67 @@ public final class ArchiveUpdateCheckCoordinator {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x043f  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0221  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:169:0x04c2  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x023d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object prepare(String str, ArchiveGpu archiveGpu, String str2, boolean z, ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher, Continuation<? super ArchiveUpdateCheckDecision> continuation) {
+    public final Object prepare(String str, ArchiveGpu archiveGpu, String str2, boolean z, ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher, boolean z2, Continuation<? super ArchiveUpdateCheckDecision> continuation) {
         ArchiveUpdateCheckCoordinator$prepare$1 archiveUpdateCheckCoordinator$prepare$1;
         int i;
-        boolean z2;
+        boolean z3;
         ArchiveStateLoadResult load;
         String str3;
         ArchiveGpu archiveGpu2;
-        ArchiveFlowSelection select;
-        ArchiveUpdaterState state;
         String str4;
-        ArchiveManifestCandidate archiveManifestCandidate;
+        ArchiveUpdaterState archiveUpdaterState;
         OriginalTzArchiveManifestDescriptor originalTzArchiveManifestDescriptor;
-        boolean z3;
+        Object obj;
+        boolean z4;
+        ArchiveFlowSelection archiveFlowSelection;
+        ArchiveManifestCandidate archiveManifestCandidate;
         ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher2;
         Object resolveWithBootstrapPrefetch;
-        ArchiveFlowSelection archiveFlowSelection;
         String str5;
-        ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher3;
+        ArchiveManifestCandidate archiveManifestCandidate2;
+        boolean z5;
         ArchiveManifestResolutionResult archiveManifestResolutionResult;
         ArchiveUpdateCheckBlockCode archiveUpdateCheckBlockCode;
-        OriginalTzArchiveManifestDescriptor originalTzArchiveManifestDescriptor2;
-        ArchiveUpdaterState archiveUpdaterState;
-        ArchiveFlowSelection archiveFlowSelection2;
         ArchiveUpdaterState archiveUpdaterState2;
+        ArchiveFlowSelection archiveFlowSelection2;
+        String str6;
+        ArchiveUpdaterState archiveUpdaterState3;
         ArchiveUpdaterState adoptExistingInstall;
         ArchiveLocalState plannerState;
         List<String> sameIdentityRepairPackageIds;
-        ArchiveUpdatePlan archiveUpdatePlan;
+        ArchiveManifest archiveManifest;
+        ArchiveUpdatePlan promoteRebasedIncompleteBootstrapPlan;
         ArchiveStorageRequirements archiveStorageRequirements;
+        boolean z6;
+        boolean z7;
+        boolean z8 = z2;
         try {
             if (continuation instanceof ArchiveUpdateCheckCoordinator$prepare$1) {
                 archiveUpdateCheckCoordinator$prepare$1 = (ArchiveUpdateCheckCoordinator$prepare$1) continuation;
                 if ((archiveUpdateCheckCoordinator$prepare$1.label & Integer.MIN_VALUE) != 0) {
                     archiveUpdateCheckCoordinator$prepare$1.label -= Integer.MIN_VALUE;
                     ArchiveUpdateCheckCoordinator$prepare$1 archiveUpdateCheckCoordinator$prepare$12 = archiveUpdateCheckCoordinator$prepare$1;
-                    Object obj = archiveUpdateCheckCoordinator$prepare$12.result;
+                    Object obj2 = archiveUpdateCheckCoordinator$prepare$12.result;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     i = archiveUpdateCheckCoordinator$prepare$12.label;
                     if (i != 0) {
-                        z2 = false;
-                        z2 = false;
-                        ResultKt.throwOnFailure(obj);
+                        z3 = false;
+                        z3 = false;
+                        ResultKt.throwOnFailure(obj2);
                         try {
                             load = this.stateStore.load();
                             try {
                                 str3 = str;
                                 archiveGpu2 = archiveGpu;
                                 ArchiveManifestCandidate parse = this.candidateParser.parse(str3, archiveGpu2);
-                                select = ArchiveFlowSelector.INSTANCE.select(true, load);
+                                ArchiveFlowSelection select = ArchiveFlowSelector.INSTANCE.select(true, load);
                                 int i2 = WhenMappings.$EnumSwitchMapping$1[select.ordinal()];
                                 if (i2 == 1) {
                                     ArchiveUpdateCheckBlockCode archiveUpdateCheckBlockCode2 = ArchiveUpdateCheckBlockCode.STATE_CORRUPT;
@@ -229,11 +237,11 @@ public final class ArchiveUpdateCheckCoordinator {
                                         return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.GAME_ROOT_UNAVAILABLE, null, 2, null);
                                     }
                                     ArchiveStateLoadResult.Loaded loaded = load instanceof ArchiveStateLoadResult.Loaded ? (ArchiveStateLoadResult.Loaded) load : null;
-                                    state = loaded != null ? loaded.getState() : null;
+                                    ArchiveUpdaterState state = loaded != null ? loaded.getState() : null;
                                     ArchiveManifestCandidate.OriginalTz originalTz = parse instanceof ArchiveManifestCandidate.OriginalTz ? (ArchiveManifestCandidate.OriginalTz) parse : null;
-                                    OriginalTzArchiveManifestDescriptor originalTzArchiveManifestDescriptor3 = (originalTz == null || (originalTzArchiveManifestDescriptor3 = originalTz.getDescriptor()) == null || !(load instanceof ArchiveStateLoadResult.Missing) || !LegacyGameTreeProbe.INSTANCE.isEmptyForArchiveBootstrap(this.gameRoot)) ? null : null;
-                                    if (!z || originalTzArchiveManifestDescriptor3 == null) {
-                                        if (originalTzArchiveManifestDescriptor3 != null && archiveBootstrapPrefetcher != null) {
+                                    OriginalTzArchiveManifestDescriptor originalTzArchiveManifestDescriptor2 = (originalTz == null || (originalTzArchiveManifestDescriptor2 = originalTz.getDescriptor()) == null || !(load instanceof ArchiveStateLoadResult.Missing) || !LegacyGameTreeProbe.INSTANCE.isEmptyForArchiveBootstrap(this.gameRoot)) ? null : null;
+                                    if (!z || originalTzArchiveManifestDescriptor2 == null) {
+                                        if (originalTzArchiveManifestDescriptor2 != null && archiveBootstrapPrefetcher != null) {
                                             archiveUpdateCheckCoordinator$prepare$12.L$0 = SpillingKt.nullOutSpilledVariable(str3);
                                             archiveUpdateCheckCoordinator$prepare$12.L$1 = SpillingKt.nullOutSpilledVariable(archiveGpu2);
                                             archiveUpdateCheckCoordinator$prepare$12.L$2 = SpillingKt.nullOutSpilledVariable(str2);
@@ -242,18 +250,24 @@ public final class ArchiveUpdateCheckCoordinator {
                                             archiveUpdateCheckCoordinator$prepare$12.L$5 = SpillingKt.nullOutSpilledVariable(parse);
                                             archiveUpdateCheckCoordinator$prepare$12.L$6 = SpillingKt.nullOutSpilledVariable(select);
                                             archiveUpdateCheckCoordinator$prepare$12.L$7 = state;
-                                            archiveUpdateCheckCoordinator$prepare$12.L$8 = SpillingKt.nullOutSpilledVariable(originalTzArchiveManifestDescriptor3);
+                                            archiveUpdateCheckCoordinator$prepare$12.L$8 = SpillingKt.nullOutSpilledVariable(originalTzArchiveManifestDescriptor2);
                                             archiveUpdateCheckCoordinator$prepare$12.Z$0 = z;
+                                            archiveUpdateCheckCoordinator$prepare$12.Z$1 = z8;
                                             archiveUpdateCheckCoordinator$prepare$12.label = 1;
-                                            resolveWithBootstrapPrefetch = resolveWithBootstrapPrefetch(parse, originalTzArchiveManifestDescriptor3, str2, state, archiveBootstrapPrefetcher, archiveUpdateCheckCoordinator$prepare$12);
+                                            resolveWithBootstrapPrefetch = resolveWithBootstrapPrefetch(parse, originalTzArchiveManifestDescriptor2, str2, state, archiveBootstrapPrefetcher, archiveUpdateCheckCoordinator$prepare$12);
                                             if (resolveWithBootstrapPrefetch != coroutine_suspended) {
-                                                originalTzArchiveManifestDescriptor = originalTzArchiveManifestDescriptor3;
-                                                z3 = z;
+                                                archiveUpdaterState = state;
+                                                z4 = z;
                                                 archiveFlowSelection = select;
                                                 str5 = str2;
-                                                archiveManifestCandidate = parse;
-                                                archiveBootstrapPrefetcher3 = archiveBootstrapPrefetcher;
+                                                originalTzArchiveManifestDescriptor = originalTzArchiveManifestDescriptor2;
+                                                archiveManifestCandidate2 = parse;
+                                                archiveBootstrapPrefetcher2 = archiveBootstrapPrefetcher;
+                                                String str7 = str5;
+                                                archiveManifestCandidate = archiveManifestCandidate2;
+                                                z5 = z8;
                                                 archiveManifestResolutionResult = (ArchiveManifestResolutionResult) resolveWithBootstrapPrefetch;
+                                                str4 = str7;
                                             }
                                         } else {
                                             ArchiveManifestResolver archiveManifestResolver = this.manifestResolver;
@@ -265,28 +279,28 @@ public final class ArchiveUpdateCheckCoordinator {
                                             archiveUpdateCheckCoordinator$prepare$12.L$5 = SpillingKt.nullOutSpilledVariable(parse);
                                             archiveUpdateCheckCoordinator$prepare$12.L$6 = SpillingKt.nullOutSpilledVariable(select);
                                             archiveUpdateCheckCoordinator$prepare$12.L$7 = state;
-                                            archiveUpdateCheckCoordinator$prepare$12.L$8 = SpillingKt.nullOutSpilledVariable(originalTzArchiveManifestDescriptor3);
+                                            archiveUpdateCheckCoordinator$prepare$12.L$8 = SpillingKt.nullOutSpilledVariable(originalTzArchiveManifestDescriptor2);
                                             archiveUpdateCheckCoordinator$prepare$12.Z$0 = z;
+                                            archiveUpdateCheckCoordinator$prepare$12.Z$1 = z8;
                                             archiveUpdateCheckCoordinator$prepare$12.label = 2;
-                                            str4 = str2;
-                                            Object resolve = archiveManifestResolver.resolve(parse, str4, state, archiveUpdateCheckCoordinator$prepare$12);
+                                            Object resolve = archiveManifestResolver.resolve(parse, str2, state, archiveUpdateCheckCoordinator$prepare$12);
                                             if (resolve != coroutine_suspended) {
-                                                archiveManifestCandidate = parse;
+                                                str4 = str2;
+                                                archiveUpdaterState = state;
+                                                originalTzArchiveManifestDescriptor = originalTzArchiveManifestDescriptor2;
                                                 obj = resolve;
-                                                originalTzArchiveManifestDescriptor = originalTzArchiveManifestDescriptor3;
-                                                z3 = z;
+                                                z4 = z;
+                                                archiveFlowSelection = select;
+                                                archiveManifestCandidate = parse;
                                                 archiveBootstrapPrefetcher2 = archiveBootstrapPrefetcher;
-                                                ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher4 = archiveBootstrapPrefetcher2;
+                                                boolean z9 = z8;
                                                 archiveManifestResolutionResult = (ArchiveManifestResolutionResult) obj;
-                                                archiveBootstrapPrefetcher3 = archiveBootstrapPrefetcher4;
-                                                ArchiveFlowSelection archiveFlowSelection3 = select;
-                                                str5 = str4;
-                                                archiveFlowSelection = archiveFlowSelection3;
+                                                z5 = z9;
                                             }
                                         }
                                         return coroutine_suspended;
                                     }
-                                    return new ArchiveUpdateCheckDecision.Bootstrap(new ArchiveBootstrapPending(bootstrapDownloadBytes(originalTzArchiveManifestDescriptor3)));
+                                    return new ArchiveUpdateCheckDecision.Bootstrap(new ArchiveBootstrapPending(bootstrapDownloadBytes(originalTzArchiveManifestDescriptor2)));
                                 }
                             } catch (IllegalArgumentException e) {
                                 return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.ARCHIVE_MANIFEST_INVALID, e.getMessage());
@@ -295,74 +309,98 @@ public final class ArchiveUpdateCheckCoordinator {
                             return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, e2.getMessage());
                         }
                     } else if (i == 1) {
-                        z2 = false;
-                        z3 = archiveUpdateCheckCoordinator$prepare$12.Z$0;
+                        z3 = false;
+                        boolean z10 = archiveUpdateCheckCoordinator$prepare$12.Z$1;
+                        z4 = archiveUpdateCheckCoordinator$prepare$12.Z$0;
                         originalTzArchiveManifestDescriptor = (OriginalTzArchiveManifestDescriptor) archiveUpdateCheckCoordinator$prepare$12.L$8;
-                        state = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$7;
+                        archiveUpdaterState = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$7;
                         archiveFlowSelection = (ArchiveFlowSelection) archiveUpdateCheckCoordinator$prepare$12.L$6;
-                        archiveManifestCandidate = (ArchiveManifestCandidate) archiveUpdateCheckCoordinator$prepare$12.L$5;
+                        ArchiveManifestCandidate archiveManifestCandidate3 = (ArchiveManifestCandidate) archiveUpdateCheckCoordinator$prepare$12.L$5;
                         ArchiveStateLoadResult archiveStateLoadResult = (ArchiveStateLoadResult) archiveUpdateCheckCoordinator$prepare$12.L$4;
-                        ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher5 = (ArchiveBootstrapPrefetcher) archiveUpdateCheckCoordinator$prepare$12.L$3;
+                        ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher3 = (ArchiveBootstrapPrefetcher) archiveUpdateCheckCoordinator$prepare$12.L$3;
                         str5 = (String) archiveUpdateCheckCoordinator$prepare$12.L$2;
                         ArchiveGpu archiveGpu3 = (ArchiveGpu) archiveUpdateCheckCoordinator$prepare$12.L$1;
-                        String str6 = (String) archiveUpdateCheckCoordinator$prepare$12.L$0;
-                        ResultKt.throwOnFailure(obj);
-                        resolveWithBootstrapPrefetch = obj;
-                        archiveBootstrapPrefetcher3 = archiveBootstrapPrefetcher5;
+                        String str8 = (String) archiveUpdateCheckCoordinator$prepare$12.L$0;
+                        ResultKt.throwOnFailure(obj2);
+                        resolveWithBootstrapPrefetch = obj2;
+                        archiveBootstrapPrefetcher2 = archiveBootstrapPrefetcher3;
                         archiveGpu2 = archiveGpu3;
+                        z8 = z10;
+                        archiveManifestCandidate2 = archiveManifestCandidate3;
                         load = archiveStateLoadResult;
-                        str3 = str6;
+                        str3 = str8;
+                        String str72 = str5;
+                        archiveManifestCandidate = archiveManifestCandidate2;
+                        z5 = z8;
                         archiveManifestResolutionResult = (ArchiveManifestResolutionResult) resolveWithBootstrapPrefetch;
+                        str4 = str72;
                     } else if (i != 2) {
                         if (i == 3) {
-                            boolean z4 = archiveUpdateCheckCoordinator$prepare$12.Z$0;
+                            z5 = archiveUpdateCheckCoordinator$prepare$12.Z$1;
+                            boolean z11 = archiveUpdateCheckCoordinator$prepare$12.Z$0;
                             archiveStorageRequirements = (ArchiveStorageRequirements) archiveUpdateCheckCoordinator$prepare$12.L$18;
                             Map map = (Map) archiveUpdateCheckCoordinator$prepare$12.L$17;
                             Map map2 = (Map) archiveUpdateCheckCoordinator$prepare$12.L$16;
-                            archiveUpdatePlan = (ArchiveUpdatePlan) archiveUpdateCheckCoordinator$prepare$12.L$15;
+                            promoteRebasedIncompleteBootstrapPlan = (ArchiveUpdatePlan) archiveUpdateCheckCoordinator$prepare$12.L$15;
                             List list = (List) archiveUpdateCheckCoordinator$prepare$12.L$14;
                             ArchiveLocalState archiveLocalState = (ArchiveLocalState) archiveUpdateCheckCoordinator$prepare$12.L$13;
                             adoptExistingInstall = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$12;
-                            ArchiveUpdaterState archiveUpdaterState3 = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$11;
-                            ArchiveManifest archiveManifest = (ArchiveManifest) archiveUpdateCheckCoordinator$prepare$12.L$10;
+                            ArchiveUpdaterState archiveUpdaterState4 = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$11;
+                            archiveManifest = (ArchiveManifest) archiveUpdateCheckCoordinator$prepare$12.L$10;
                             ArchiveManifestResolutionResult archiveManifestResolutionResult2 = (ArchiveManifestResolutionResult) archiveUpdateCheckCoordinator$prepare$12.L$9;
-                            OriginalTzArchiveManifestDescriptor originalTzArchiveManifestDescriptor4 = (OriginalTzArchiveManifestDescriptor) archiveUpdateCheckCoordinator$prepare$12.L$8;
-                            ArchiveUpdaterState archiveUpdaterState4 = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$7;
-                            ArchiveFlowSelection archiveFlowSelection4 = (ArchiveFlowSelection) archiveUpdateCheckCoordinator$prepare$12.L$6;
-                            ArchiveManifestCandidate archiveManifestCandidate2 = (ArchiveManifestCandidate) archiveUpdateCheckCoordinator$prepare$12.L$5;
+                            OriginalTzArchiveManifestDescriptor originalTzArchiveManifestDescriptor3 = (OriginalTzArchiveManifestDescriptor) archiveUpdateCheckCoordinator$prepare$12.L$8;
+                            ArchiveUpdaterState archiveUpdaterState5 = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$7;
+                            ArchiveFlowSelection archiveFlowSelection3 = (ArchiveFlowSelection) archiveUpdateCheckCoordinator$prepare$12.L$6;
+                            ArchiveManifestCandidate archiveManifestCandidate4 = (ArchiveManifestCandidate) archiveUpdateCheckCoordinator$prepare$12.L$5;
                             ArchiveStateLoadResult archiveStateLoadResult2 = (ArchiveStateLoadResult) archiveUpdateCheckCoordinator$prepare$12.L$4;
-                            ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher6 = (ArchiveBootstrapPrefetcher) archiveUpdateCheckCoordinator$prepare$12.L$3;
-                            String str7 = (String) archiveUpdateCheckCoordinator$prepare$12.L$2;
+                            ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher4 = (ArchiveBootstrapPrefetcher) archiveUpdateCheckCoordinator$prepare$12.L$3;
+                            String str9 = (String) archiveUpdateCheckCoordinator$prepare$12.L$2;
                             ArchiveGpu archiveGpu4 = (ArchiveGpu) archiveUpdateCheckCoordinator$prepare$12.L$1;
-                            String str8 = (String) archiveUpdateCheckCoordinator$prepare$12.L$0;
-                            ResultKt.throwOnFailure(obj);
-                            z2 = false;
-                            return new ArchiveUpdateCheckDecision.UseArchive(archiveUpdatePlan, ArchiveStorageEstimator.INSTANCE.downloadBytes(archiveUpdatePlan, adoptExistingInstall, (Map) obj), archiveStorageRequirements, (adoptExistingInstall == null && adoptExistingInstall.isPayloadCommitted() && !adoptExistingInstall.isInstallReady()) ? true : z2);
+                            String str10 = (String) archiveUpdateCheckCoordinator$prepare$12.L$0;
+                            ResultKt.throwOnFailure(obj2);
+                            z3 = false;
+                            Map<String, Long> map3 = (Map) obj2;
+                            long downloadBytes = ArchiveStorageEstimator.INSTANCE.downloadBytes(promoteRebasedIncompleteBootstrapPlan, adoptExistingInstall, map3);
+                            z6 = (adoptExistingInstall == null && adoptExistingInstall.isPayloadCommitted() && !adoptExistingInstall.isInstallReady()) ? true : z3;
+                            if (z6 || promoteRebasedIncompleteBootstrapPlan.getType() != ArchivePlanType.SKIP || downloadBytes != 0 || adoptExistingInstall == null || !z5) {
+                                z7 = z6;
+                            } else if (!ArchivePublishedPayloadReconciler.INSTANCE.matches(archiveManifest, adoptExistingInstall)) {
+                                return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, "committed archive payload does not match published metadata");
+                            } else {
+                                try {
+                                    this.stateStore.save(ArchiveStateAdapter.INSTANCE.markPayloadMetadataReconciled(adoptExistingInstall, this.nowEpochMs.invoke().longValue()));
+                                    z7 = z3;
+                                } catch (CancellationException e3) {
+                                    throw e3;
+                                } catch (Exception e4) {
+                                    return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "unable to finalize archive metadata: " + e4.getMessage());
+                                }
+                            }
+                            return new ArchiveUpdateCheckDecision.UseArchive(promoteRebasedIncompleteBootstrapPlan, downloadBytes, archiveStorageRequirements, z7, map3);
                         }
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     } else {
-                        z3 = archiveUpdateCheckCoordinator$prepare$12.Z$0;
+                        boolean z12 = archiveUpdateCheckCoordinator$prepare$12.Z$1;
+                        z4 = archiveUpdateCheckCoordinator$prepare$12.Z$0;
                         originalTzArchiveManifestDescriptor = (OriginalTzArchiveManifestDescriptor) archiveUpdateCheckCoordinator$prepare$12.L$8;
-                        state = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$7;
-                        ArchiveFlowSelection archiveFlowSelection5 = (ArchiveFlowSelection) archiveUpdateCheckCoordinator$prepare$12.L$6;
-                        archiveManifestCandidate = (ArchiveManifestCandidate) archiveUpdateCheckCoordinator$prepare$12.L$5;
+                        archiveUpdaterState = (ArchiveUpdaterState) archiveUpdateCheckCoordinator$prepare$12.L$7;
+                        archiveFlowSelection = (ArchiveFlowSelection) archiveUpdateCheckCoordinator$prepare$12.L$6;
+                        ArchiveManifestCandidate archiveManifestCandidate5 = (ArchiveManifestCandidate) archiveUpdateCheckCoordinator$prepare$12.L$5;
                         load = (ArchiveStateLoadResult) archiveUpdateCheckCoordinator$prepare$12.L$4;
-                        archiveBootstrapPrefetcher2 = (ArchiveBootstrapPrefetcher) archiveUpdateCheckCoordinator$prepare$12.L$3;
-                        z2 = false;
-                        String str9 = (String) archiveUpdateCheckCoordinator$prepare$12.L$2;
-                        ArchiveGpu archiveGpu5 = (ArchiveGpu) archiveUpdateCheckCoordinator$prepare$12.L$1;
-                        String str10 = (String) archiveUpdateCheckCoordinator$prepare$12.L$0;
-                        ResultKt.throwOnFailure(obj);
-                        select = archiveFlowSelection5;
-                        str4 = str9;
-                        str3 = str10;
-                        archiveGpu2 = archiveGpu5;
-                        ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher42 = archiveBootstrapPrefetcher2;
+                        z3 = false;
+                        ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher5 = (ArchiveBootstrapPrefetcher) archiveUpdateCheckCoordinator$prepare$12.L$3;
+                        str4 = (String) archiveUpdateCheckCoordinator$prepare$12.L$2;
+                        archiveGpu2 = (ArchiveGpu) archiveUpdateCheckCoordinator$prepare$12.L$1;
+                        String str11 = (String) archiveUpdateCheckCoordinator$prepare$12.L$0;
+                        ResultKt.throwOnFailure(obj2);
+                        obj = obj2;
+                        archiveBootstrapPrefetcher2 = archiveBootstrapPrefetcher5;
+                        str3 = str11;
+                        archiveManifestCandidate = archiveManifestCandidate5;
+                        z8 = z12;
+                        boolean z92 = z8;
                         archiveManifestResolutionResult = (ArchiveManifestResolutionResult) obj;
-                        archiveBootstrapPrefetcher3 = archiveBootstrapPrefetcher42;
-                        ArchiveFlowSelection archiveFlowSelection32 = select;
-                        str5 = str4;
-                        archiveFlowSelection = archiveFlowSelection32;
+                        z5 = z92;
                     }
                     if (archiveManifestResolutionResult instanceof ArchiveManifestResolutionResult.Success) {
                         if (!(archiveManifestResolutionResult instanceof ArchiveManifestResolutionResult.Failure)) {
@@ -380,13 +418,14 @@ public final class ArchiveUpdateCheckCoordinator {
                             archiveUpdateCheckBlockCode = ArchiveUpdateCheckBlockCode.ARCHIVE_MANIFEST_INVALID;
                         }
                         String[] strArr = new String[2];
-                        strArr[z2 ? 1 : 0] = failure.getPackageId();
+                        strArr[z3 ? 1 : 0] = failure.getPackageId();
                         strArr[1] = failure.getDetail();
                         return new ArchiveUpdateCheckDecision.Block(archiveUpdateCheckBlockCode, CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr), StringUtils.PROCESS_POSTFIX_DELIMITER, null, null, 0, null, null, 62, null));
                     }
                     ArchiveManifest manifest = ((ArchiveManifestResolutionResult.Success) archiveManifestResolutionResult).getManifest();
+                    ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher6 = archiveBootstrapPrefetcher2;
                     List<ArchivePackage> packages = manifest.getPackages();
-                    ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher7 = archiveBootstrapPrefetcher3;
+                    OriginalTzArchiveManifestDescriptor originalTzArchiveManifestDescriptor4 = originalTzArchiveManifestDescriptor;
                     if (!(packages instanceof Collection) || !packages.isEmpty()) {
                         for (ArchivePackage archivePackage : packages) {
                             if (archivePackage.getEntries() == null) {
@@ -394,50 +433,50 @@ public final class ArchiveUpdateCheckCoordinator {
                             }
                         }
                     }
-                    if (state == null || state.isInstallReady() || ArchiveStateAdapter.INSTANCE.identitiesMatch(state, manifest)) {
-                        originalTzArchiveManifestDescriptor2 = originalTzArchiveManifestDescriptor;
-                        archiveUpdaterState = state;
-                        archiveFlowSelection2 = archiveFlowSelection;
+                    if (archiveUpdaterState == null || archiveUpdaterState.isInstallReady() || ArchiveStateAdapter.INSTANCE.identitiesMatch(archiveUpdaterState, manifest)) {
                         archiveUpdaterState2 = archiveUpdaterState;
-                    } else if (!isSafePreCommitRepairState(state)) {
+                        archiveFlowSelection2 = archiveFlowSelection;
+                        str6 = str3;
+                        archiveUpdaterState3 = archiveUpdaterState2;
+                    } else if (!isSafePreCommitRepairState(archiveUpdaterState)) {
                         return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.INCOMPLETE_MANIFEST_MISMATCH, "remote archive identity changed during an incomplete transaction");
                     } else {
                         try {
-                            archiveUpdaterState2 = rebasePreCommitRepairState(state, manifest);
+                            archiveUpdaterState3 = rebasePreCommitRepairState(archiveUpdaterState, manifest);
                             try {
-                                originalTzArchiveManifestDescriptor2 = originalTzArchiveManifestDescriptor;
                                 archiveFlowSelection2 = archiveFlowSelection;
-                                archiveUpdaterState = state;
-                                this.artifactCleaner.cleanup(this.gameRoot, this.downloadRoot, supersededRepairIdentities(state, manifest));
+                                str6 = str3;
+                                archiveUpdaterState2 = archiveUpdaterState;
+                                this.artifactCleaner.cleanup(this.gameRoot, this.downloadRoot, supersededRepairIdentities(archiveUpdaterState, manifest));
                                 try {
-                                    this.stateStore.save(archiveUpdaterState2);
-                                    this.stateStore.save(archiveUpdaterState2);
-                                } catch (Exception e3) {
-                                    return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "unable to persist archive repair rebase: " + e3.getMessage());
+                                    this.stateStore.save(archiveUpdaterState3);
+                                    this.stateStore.save(archiveUpdaterState3);
+                                } catch (Exception e5) {
+                                    return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "unable to persist archive repair rebase: " + e5.getMessage());
                                 }
-                            } catch (Exception e4) {
-                                return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "unable to clean superseded archive artifacts: " + e4.getMessage());
+                            } catch (Exception e6) {
+                                return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "unable to clean superseded archive artifacts: " + e6.getMessage());
                             }
-                        } catch (ArchiveOwnershipException e5) {
-                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e5.getMessage());
-                        } catch (IllegalStateException e6) {
-                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e6.getMessage());
+                        } catch (ArchiveOwnershipException e7) {
+                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e7.getMessage());
+                        } catch (IllegalStateException e8) {
+                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e8.getMessage());
                         }
                     }
-                    if (archiveUpdaterState2 == null) {
+                    if (archiveUpdaterState3 == null) {
                         try {
                             adoptExistingInstall = LegacyGameTreeProbe.INSTANCE.isEmptyForArchiveBootstrap(this.gameRoot) ? null : adoptExistingInstall(this.gameRoot, manifest);
-                        } catch (Exception e7) {
-                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "unable to persist archive adoption state: " + e7.getMessage());
+                        } catch (Exception e9) {
+                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, "unable to persist archive adoption state: " + e9.getMessage());
                         }
                     } else {
-                        adoptExistingInstall = archiveUpdaterState2;
+                        adoptExistingInstall = archiveUpdaterState3;
                     }
                     if (adoptExistingInstall != null) {
                         try {
                             plannerState = ArchiveStateAdapter.INSTANCE.toPlannerState(adoptExistingInstall);
-                        } catch (IllegalStateException e8) {
-                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e8.getMessage());
+                        } catch (IllegalStateException e10) {
+                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e10.getMessage());
                         }
                     } else {
                         plannerState = null;
@@ -445,43 +484,52 @@ public final class ArchiveUpdateCheckCoordinator {
                     if (adoptExistingInstall != null) {
                         try {
                             sameIdentityRepairPackageIds = ArchiveStateAdapter.INSTANCE.sameIdentityRepairPackageIds(adoptExistingInstall);
-                        } catch (IllegalStateException e9) {
-                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e9.getMessage());
+                        } catch (IllegalStateException e11) {
+                            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_INVALID, e11.getMessage());
                         }
                     } else {
                         sameIdentityRepairPackageIds = null;
                     }
-                    ArchiveUpdatePlan plan$default = ArchiveUpdatePlanner.plan$default(ArchiveUpdatePlanner.INSTANCE, manifest, plannerState, null, sameIdentityRepairPackageIds, 4, null);
-                    Map<String, Long> bytesByPackage = ArchiveStagingUsage.INSTANCE.bytesByPackage(this.gameRoot, plan$default.getPackages());
-                    ArchiveUpdaterState archiveUpdaterState5 = archiveUpdaterState2;
-                    Map<String, Long> allocatedBytesByPackage = ArchiveDownloadUsage.INSTANCE.allocatedBytesByPackage(this.downloadRoot, plan$default.getPackages());
-                    ArchiveStorageRequirements storageRequirements = ArchiveStorageEstimator.INSTANCE.storageRequirements(plan$default, adoptExistingInstall, bytesByPackage, allocatedBytesByPackage);
-                    archiveUpdateCheckCoordinator$prepare$12.L$0 = SpillingKt.nullOutSpilledVariable(str3);
-                    archiveUpdateCheckCoordinator$prepare$12.L$1 = SpillingKt.nullOutSpilledVariable(archiveGpu2);
-                    archiveUpdateCheckCoordinator$prepare$12.L$2 = SpillingKt.nullOutSpilledVariable(str5);
-                    archiveUpdateCheckCoordinator$prepare$12.L$3 = SpillingKt.nullOutSpilledVariable(archiveBootstrapPrefetcher7);
+                    archiveManifest = manifest;
+                    promoteRebasedIncompleteBootstrapPlan = promoteRebasedIncompleteBootstrapPlan(ArchiveUpdatePlanner.plan$default(ArchiveUpdatePlanner.INSTANCE, manifest, plannerState, null, sameIdentityRepairPackageIds, 4, null), adoptExistingInstall);
+                    ArchiveUpdaterState archiveUpdaterState6 = archiveUpdaterState3;
+                    Map<String, Long> bytesByPackage = ArchiveStagingUsage.INSTANCE.bytesByPackage(this.gameRoot, promoteRebasedIncompleteBootstrapPlan.getPackages());
+                    ArchiveGpu archiveGpu5 = archiveGpu2;
+                    Map<String, Long> allocatedBytesByPackage = ArchiveDownloadUsage.INSTANCE.allocatedBytesByPackage(this.downloadRoot, promoteRebasedIncompleteBootstrapPlan.getPackages());
+                    ArchiveStorageRequirements storageRequirements = ArchiveStorageEstimator.INSTANCE.storageRequirements(promoteRebasedIncompleteBootstrapPlan, adoptExistingInstall, bytesByPackage, allocatedBytesByPackage);
+                    archiveUpdateCheckCoordinator$prepare$12.L$0 = SpillingKt.nullOutSpilledVariable(str6);
+                    archiveUpdateCheckCoordinator$prepare$12.L$1 = SpillingKt.nullOutSpilledVariable(archiveGpu5);
+                    archiveUpdateCheckCoordinator$prepare$12.L$2 = SpillingKt.nullOutSpilledVariable(str4);
+                    archiveUpdateCheckCoordinator$prepare$12.L$3 = SpillingKt.nullOutSpilledVariable(archiveBootstrapPrefetcher6);
                     archiveUpdateCheckCoordinator$prepare$12.L$4 = SpillingKt.nullOutSpilledVariable(load);
                     archiveUpdateCheckCoordinator$prepare$12.L$5 = SpillingKt.nullOutSpilledVariable(archiveManifestCandidate);
                     archiveUpdateCheckCoordinator$prepare$12.L$6 = SpillingKt.nullOutSpilledVariable(archiveFlowSelection2);
-                    archiveUpdateCheckCoordinator$prepare$12.L$7 = SpillingKt.nullOutSpilledVariable(archiveUpdaterState);
-                    archiveUpdateCheckCoordinator$prepare$12.L$8 = SpillingKt.nullOutSpilledVariable(originalTzArchiveManifestDescriptor2);
+                    archiveUpdateCheckCoordinator$prepare$12.L$7 = SpillingKt.nullOutSpilledVariable(archiveUpdaterState2);
+                    archiveUpdateCheckCoordinator$prepare$12.L$8 = SpillingKt.nullOutSpilledVariable(originalTzArchiveManifestDescriptor4);
                     archiveUpdateCheckCoordinator$prepare$12.L$9 = SpillingKt.nullOutSpilledVariable(archiveManifestResolutionResult);
-                    archiveUpdateCheckCoordinator$prepare$12.L$10 = SpillingKt.nullOutSpilledVariable(manifest);
-                    archiveUpdateCheckCoordinator$prepare$12.L$11 = SpillingKt.nullOutSpilledVariable(archiveUpdaterState5);
+                    archiveUpdateCheckCoordinator$prepare$12.L$10 = archiveManifest;
+                    archiveUpdateCheckCoordinator$prepare$12.L$11 = SpillingKt.nullOutSpilledVariable(archiveUpdaterState6);
                     archiveUpdateCheckCoordinator$prepare$12.L$12 = adoptExistingInstall;
                     archiveUpdateCheckCoordinator$prepare$12.L$13 = SpillingKt.nullOutSpilledVariable(plannerState);
                     archiveUpdateCheckCoordinator$prepare$12.L$14 = SpillingKt.nullOutSpilledVariable(sameIdentityRepairPackageIds);
-                    archiveUpdateCheckCoordinator$prepare$12.L$15 = plan$default;
+                    archiveUpdateCheckCoordinator$prepare$12.L$15 = promoteRebasedIncompleteBootstrapPlan;
                     archiveUpdateCheckCoordinator$prepare$12.L$16 = SpillingKt.nullOutSpilledVariable(bytesByPackage);
                     archiveUpdateCheckCoordinator$prepare$12.L$17 = SpillingKt.nullOutSpilledVariable(allocatedBytesByPackage);
                     archiveUpdateCheckCoordinator$prepare$12.L$18 = storageRequirements;
-                    archiveUpdateCheckCoordinator$prepare$12.Z$0 = z3;
+                    archiveUpdateCheckCoordinator$prepare$12.Z$0 = z4;
+                    archiveUpdateCheckCoordinator$prepare$12.Z$1 = z5;
                     archiveUpdateCheckCoordinator$prepare$12.label = 3;
-                    obj = plannedSelectiveDownloadBytes(plan$default, adoptExistingInstall, archiveUpdateCheckCoordinator$prepare$12);
-                    if (obj != coroutine_suspended) {
-                        archiveUpdatePlan = plan$default;
+                    obj2 = plannedSelectiveDownloadBytes(promoteRebasedIncompleteBootstrapPlan, adoptExistingInstall, archiveUpdateCheckCoordinator$prepare$12);
+                    if (obj2 != coroutine_suspended) {
                         archiveStorageRequirements = storageRequirements;
-                        return new ArchiveUpdateCheckDecision.UseArchive(archiveUpdatePlan, ArchiveStorageEstimator.INSTANCE.downloadBytes(archiveUpdatePlan, adoptExistingInstall, (Map) obj), archiveStorageRequirements, (adoptExistingInstall == null && adoptExistingInstall.isPayloadCommitted() && !adoptExistingInstall.isInstallReady()) ? true : z2);
+                        Map<String, Long> map32 = (Map) obj2;
+                        long downloadBytes2 = ArchiveStorageEstimator.INSTANCE.downloadBytes(promoteRebasedIncompleteBootstrapPlan, adoptExistingInstall, map32);
+                        if (adoptExistingInstall == null) {
+                        }
+                        if (z6) {
+                        }
+                        z7 = z6;
+                        return new ArchiveUpdateCheckDecision.UseArchive(promoteRebasedIncompleteBootstrapPlan, downloadBytes2, archiveStorageRequirements, z7, map32);
                     }
                     return coroutine_suspended;
                 }
@@ -490,29 +538,45 @@ public final class ArchiveUpdateCheckCoordinator {
             }
             if (archiveManifestResolutionResult instanceof ArchiveManifestResolutionResult.Success) {
             }
-        } catch (ArchiveBootstrapPrefetchCleanupException e10) {
-            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, e10.getMessage());
+        } catch (ArchiveBootstrapPrefetchCleanupException e12) {
+            return new ArchiveUpdateCheckDecision.Block(ArchiveUpdateCheckBlockCode.STATE_IO_FAILED, e12.getMessage());
         }
         archiveUpdateCheckCoordinator$prepare$1 = new ArchiveUpdateCheckCoordinator$prepare$1(this, continuation);
         ArchiveUpdateCheckCoordinator$prepare$1 archiveUpdateCheckCoordinator$prepare$122 = archiveUpdateCheckCoordinator$prepare$1;
-        Object obj2 = archiveUpdateCheckCoordinator$prepare$122.result;
+        Object obj22 = archiveUpdateCheckCoordinator$prepare$122.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = archiveUpdateCheckCoordinator$prepare$122.label;
     }
 
-    public static /* synthetic */ Object prepare$default(ArchiveUpdateCheckCoordinator archiveUpdateCheckCoordinator, String str, ArchiveGpu archiveGpu, String str2, boolean z, ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher, Continuation continuation, int i, Object obj) {
+    public static /* synthetic */ Object prepare$default(ArchiveUpdateCheckCoordinator archiveUpdateCheckCoordinator, String str, ArchiveGpu archiveGpu, String str2, boolean z, ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher, boolean z2, Continuation continuation, int i, Object obj) {
+        boolean z3;
+        ArchiveUpdateCheckCoordinator archiveUpdateCheckCoordinator2;
+        String str3;
+        ArchiveGpu archiveGpu2;
+        Continuation continuation2;
         if ((i & 4) != 0) {
             str2 = "https://invalid.local/";
         }
-        String str3 = str2;
-        if ((i & 8) != 0) {
-            z = false;
-        }
-        boolean z2 = z;
+        String str4 = str2;
+        boolean z4 = (i & 8) != 0 ? false : z;
         if ((i & 16) != 0) {
             archiveBootstrapPrefetcher = null;
         }
-        return archiveUpdateCheckCoordinator.prepare(str, archiveGpu, str3, z2, archiveBootstrapPrefetcher, continuation);
+        ArchiveBootstrapPrefetcher archiveBootstrapPrefetcher2 = archiveBootstrapPrefetcher;
+        if ((i & 32) != 0) {
+            z3 = false;
+            str3 = str;
+            archiveGpu2 = archiveGpu;
+            continuation2 = continuation;
+            archiveUpdateCheckCoordinator2 = archiveUpdateCheckCoordinator;
+        } else {
+            z3 = z2;
+            archiveUpdateCheckCoordinator2 = archiveUpdateCheckCoordinator;
+            str3 = str;
+            archiveGpu2 = archiveGpu;
+            continuation2 = continuation;
+        }
+        return archiveUpdateCheckCoordinator2.prepare(str3, archiveGpu2, str4, z4, archiveBootstrapPrefetcher2, z3, continuation2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -719,6 +783,89 @@ public final class ArchiveUpdateCheckCoordinator {
         ArchiveUpdaterState copy$default2 = ArchiveUpdaterState.copy$default(archiveUpdaterState, 0, manifestId, manifestVersion, schemaVersion, wireName, arrayList10, arrayList11, false, longValue, 1, null);
         ArchiveStateValidation.INSTANCE.requireValidState(copy$default2);
         return copy$default2;
+    }
+
+    private final ArchiveUpdatePlan promoteRebasedIncompleteBootstrapPlan(ArchiveUpdatePlan archiveUpdatePlan, ArchiveUpdaterState archiveUpdaterState) {
+        ArchivePlanReason archivePlanReason;
+        if (archiveUpdaterState != null && archiveUpdatePlan.getType() == ArchivePlanType.FULL_BOOTSTRAP && archiveUpdatePlan.getReason() == ArchivePlanReason.BOOTSTRAP_INCOMPLETE) {
+            ArrayList arrayList = new ArrayList();
+            for (Object obj : archiveUpdaterState.getPackages()) {
+                if (((ArchivePackageJournalEntry) obj).getPhase() != ArchivePackagePhase.COMMITTED) {
+                    arrayList.add(obj);
+                }
+            }
+            ArrayList arrayList2 = arrayList;
+            if (!arrayList2.isEmpty()) {
+                ArrayList<ArchivePackageJournalEntry> arrayList3 = arrayList2;
+                boolean z = arrayList3 instanceof Collection;
+                if (!z || !arrayList3.isEmpty()) {
+                    for (ArchivePackageJournalEntry archivePackageJournalEntry : arrayList3) {
+                        if (!isPromotableNonCommittedEntry(archivePackageJournalEntry)) {
+                            return archiveUpdatePlan;
+                        }
+                    }
+                }
+                if (z && arrayList3.isEmpty()) {
+                    return archiveUpdatePlan;
+                }
+                for (ArchivePackageJournalEntry archivePackageJournalEntry2 : arrayList3) {
+                    if (hasValidLiveBaseline(archivePackageJournalEntry2)) {
+                        ArrayList arrayList4 = new ArrayList();
+                        for (Object obj2 : archiveUpdatePlan.getRemoteManifest().getPackages()) {
+                            ArchivePackageJournalEntry packageById = archiveUpdaterState.packageById(((ArchivePackage) obj2).getId());
+                            if ((packageById != null ? packageById.getPhase() : null) != ArchivePackagePhase.COMMITTED) {
+                                arrayList4.add(obj2);
+                            }
+                        }
+                        ArrayList arrayList5 = arrayList4;
+                        if (!arrayList5.isEmpty()) {
+                            ArchivePlanType archivePlanType = ArchivePlanType.FULL_UPDATE;
+                            if (hasNewOrRemovedPackageEvidence(archiveUpdaterState, archiveUpdatePlan.getRemoteManifest())) {
+                                archivePlanReason = ArchivePlanReason.PACKAGE_SET_CHANGED;
+                            } else {
+                                archivePlanReason = ArchivePlanReason.PACKAGE_IDENTITY_CHANGED;
+                            }
+                            return ArchiveUpdatePlan.copy$default(archiveUpdatePlan, archivePlanType, archivePlanReason, null, arrayList5, null, 20, null);
+                        }
+                    }
+                }
+                return archiveUpdatePlan;
+            }
+        }
+        return archiveUpdatePlan;
+    }
+
+    private final boolean isPromotableNonCommittedEntry(ArchivePackageJournalEntry archivePackageJournalEntry) {
+        return hasValidLiveBaseline(archivePackageJournalEntry) || isGenuinelyNewPlannedPackage(archivePackageJournalEntry);
+    }
+
+    private final boolean hasValidLiveBaseline(ArchivePackageJournalEntry archivePackageJournalEntry) {
+        return (!SAFE_REPAIR_REBASE_PHASES.contains(archivePackageJournalEntry.getPhase()) || archivePackageJournalEntry.getPreviousCommitted() == null || archivePackageJournalEntry.getPreviousFiles().isEmpty()) ? false : true;
+    }
+
+    private final boolean isGenuinelyNewPlannedPackage(ArchivePackageJournalEntry archivePackageJournalEntry) {
+        return archivePackageJournalEntry.getPhase() == ArchivePackagePhase.PLANNED && archivePackageJournalEntry.getPreviousCommitted() == null && archivePackageJournalEntry.getPreviousFiles().isEmpty() && archivePackageJournalEntry.getFiles().isEmpty();
+    }
+
+    private final boolean hasNewOrRemovedPackageEvidence(ArchiveUpdaterState archiveUpdaterState, ArchiveManifest archiveManifest) {
+        List<ArchivePackage> packages = archiveManifest.getPackages();
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(packages, 10));
+        for (ArchivePackage archivePackage : packages) {
+            arrayList.add(archivePackage.getId());
+        }
+        Set set = CollectionsKt.toSet(arrayList);
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        for (ArchivePackageJournalEntry archivePackageJournalEntry : archiveUpdaterState.getPackages()) {
+            if (archivePackageJournalEntry.getPhase() == ArchivePackagePhase.COMMITTED || archivePackageJournalEntry.getPreviousCommitted() != null) {
+                linkedHashSet.add(archivePackageJournalEntry.getPackageId());
+            }
+        }
+        for (ArchiveFileRetirementRecord archiveFileRetirementRecord : archiveUpdaterState.getPendingRetirements()) {
+            if (!set.contains(archiveFileRetirementRecord.getPackageId())) {
+                linkedHashSet.add(archiveFileRetirementRecord.getPackageId());
+            }
+        }
+        return !Intrinsics.areEqual(linkedHashSet, set);
     }
 
     private final List<ArchivePackageIdentity> supersededRepairIdentities(ArchiveUpdaterState archiveUpdaterState, ArchiveManifest archiveManifest) {

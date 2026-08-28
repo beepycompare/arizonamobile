@@ -380,115 +380,115 @@ public final class HttpUrl {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to toUrl()", replaceWith = @ReplaceWith(expression = "toUrl()", imports = {}))
     /* renamed from: -deprecated_url  reason: not valid java name */
-    public final URL m11713deprecated_url() {
+    public final URL m11714deprecated_url() {
         return url();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to toUri()", replaceWith = @ReplaceWith(expression = "toUri()", imports = {}))
     /* renamed from: -deprecated_uri  reason: not valid java name */
-    public final URI m11712deprecated_uri() {
+    public final URI m11713deprecated_uri() {
         return uri();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "scheme", imports = {}))
     /* renamed from: -deprecated_scheme  reason: not valid java name */
-    public final String m11711deprecated_scheme() {
+    public final String m11712deprecated_scheme() {
         return this.scheme;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedUsername", imports = {}))
     /* renamed from: -deprecated_encodedUsername  reason: not valid java name */
-    public final String m11701deprecated_encodedUsername() {
+    public final String m11702deprecated_encodedUsername() {
         return encodedUsername();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = HintConstants.AUTOFILL_HINT_USERNAME, imports = {}))
     /* renamed from: -deprecated_username  reason: not valid java name */
-    public final String m11714deprecated_username() {
+    public final String m11715deprecated_username() {
         return this.username;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedPassword", imports = {}))
     /* renamed from: -deprecated_encodedPassword  reason: not valid java name */
-    public final String m11697deprecated_encodedPassword() {
+    public final String m11698deprecated_encodedPassword() {
         return encodedPassword();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = HintConstants.AUTOFILL_HINT_PASSWORD, imports = {}))
     /* renamed from: -deprecated_password  reason: not valid java name */
-    public final String m11704deprecated_password() {
+    public final String m11705deprecated_password() {
         return this.password;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "host", imports = {}))
     /* renamed from: -deprecated_host  reason: not valid java name */
-    public final String m11703deprecated_host() {
+    public final String m11704deprecated_host() {
         return this.host;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "port", imports = {}))
     /* renamed from: -deprecated_port  reason: not valid java name */
-    public final int m11707deprecated_port() {
+    public final int m11708deprecated_port() {
         return this.port;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "pathSize", imports = {}))
     /* renamed from: -deprecated_pathSize  reason: not valid java name */
-    public final int m11706deprecated_pathSize() {
+    public final int m11707deprecated_pathSize() {
         return pathSize();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedPath", imports = {}))
     /* renamed from: -deprecated_encodedPath  reason: not valid java name */
-    public final String m11698deprecated_encodedPath() {
+    public final String m11699deprecated_encodedPath() {
         return encodedPath();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedPathSegments", imports = {}))
     /* renamed from: -deprecated_encodedPathSegments  reason: not valid java name */
-    public final List<String> m11699deprecated_encodedPathSegments() {
+    public final List<String> m11700deprecated_encodedPathSegments() {
         return encodedPathSegments();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "pathSegments", imports = {}))
     /* renamed from: -deprecated_pathSegments  reason: not valid java name */
-    public final List<String> m11705deprecated_pathSegments() {
+    public final List<String> m11706deprecated_pathSegments() {
         return this.pathSegments;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedQuery", imports = {}))
     /* renamed from: -deprecated_encodedQuery  reason: not valid java name */
-    public final String m11700deprecated_encodedQuery() {
+    public final String m11701deprecated_encodedQuery() {
         return encodedQuery();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = SearchIntents.EXTRA_QUERY, imports = {}))
     /* renamed from: -deprecated_query  reason: not valid java name */
-    public final String m11708deprecated_query() {
+    public final String m11709deprecated_query() {
         return query();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "querySize", imports = {}))
     /* renamed from: -deprecated_querySize  reason: not valid java name */
-    public final int m11710deprecated_querySize() {
+    public final int m11711deprecated_querySize() {
         return querySize();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "queryParameterNames", imports = {}))
     /* renamed from: -deprecated_queryParameterNames  reason: not valid java name */
-    public final Set<String> m11709deprecated_queryParameterNames() {
+    public final Set<String> m11710deprecated_queryParameterNames() {
         return queryParameterNames();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "encodedFragment", imports = {}))
     /* renamed from: -deprecated_encodedFragment  reason: not valid java name */
-    public final String m11696deprecated_encodedFragment() {
+    public final String m11697deprecated_encodedFragment() {
         return encodedFragment();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "fragment", imports = {}))
     /* renamed from: -deprecated_fragment  reason: not valid java name */
-    public final String m11702deprecated_fragment() {
+    public final String m11703deprecated_fragment() {
         return this.fragment;
     }
 
@@ -1337,28 +1337,28 @@ public final class HttpUrl {
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "url.toHttpUrl()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrl"}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m11715deprecated_get(String url) {
+        public final HttpUrl m11716deprecated_get(String url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return get(url);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "url.toHttpUrlOrNull()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrlOrNull"}))
         /* renamed from: -deprecated_parse  reason: not valid java name */
-        public final HttpUrl m11718deprecated_parse(String url) {
+        public final HttpUrl m11719deprecated_parse(String url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return parse(url);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "url.toHttpUrlOrNull()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrlOrNull"}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m11717deprecated_get(URL url) {
+        public final HttpUrl m11718deprecated_get(URL url) {
             Intrinsics.checkNotNullParameter(url, "url");
             return get(url);
         }
 
         @Deprecated(level = DeprecationLevel.ERROR, message = "moved to extension function", replaceWith = @ReplaceWith(expression = "uri.toHttpUrlOrNull()", imports = {"okhttp3.HttpUrl.Companion.toHttpUrlOrNull"}))
         /* renamed from: -deprecated_get  reason: not valid java name */
-        public final HttpUrl m11716deprecated_get(URI uri) {
+        public final HttpUrl m11717deprecated_get(URI uri) {
             Intrinsics.checkNotNullParameter(uri, "uri");
             return get(uri);
         }

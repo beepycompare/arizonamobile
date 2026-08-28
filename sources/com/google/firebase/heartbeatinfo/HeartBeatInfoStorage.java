@@ -58,15 +58,15 @@ public class HeartBeatInfoStorage {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$deleteAllHeartBeats$0$com-google-firebase-heartbeatinfo-HeartBeatInfoStorage  reason: not valid java name */
     public /* synthetic */ Unit m9737xe97e9b5a(MutablePreferences mutablePreferences) {
-        Set m9991m;
+        Set m9992m;
         long j = 0;
         for (Map.Entry<Preferences.Key<?>, Object> entry : mutablePreferences.asMap().entrySet()) {
             if (entry.getValue() instanceof Set) {
                 Preferences.Key<?> key = entry.getKey();
                 String formattedDate = getFormattedDate(System.currentTimeMillis());
                 if (((Set) entry.getValue()).contains(formattedDate)) {
-                    m9991m = UByte$$ExternalSyntheticBackport0.m9991m(new Object[]{formattedDate});
-                    mutablePreferences.set(key, m9991m);
+                    m9992m = UByte$$ExternalSyntheticBackport0.m9992m(new Object[]{formattedDate});
+                    mutablePreferences.set(key, m9992m);
                     j++;
                 } else {
                     mutablePreferences.remove(key);

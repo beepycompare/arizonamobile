@@ -63,7 +63,7 @@ public final class NotificationStatsTracker {
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x0071, code lost:
         r0 = kotlin.Result.Companion;
-        r6 = kotlin.Result.m9919constructorimpl(kotlin.ResultKt.createFailure(r6));
+        r6 = kotlin.Result.m9920constructorimpl(kotlin.ResultKt.createFailure(r6));
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x003c  */
@@ -75,8 +75,8 @@ public final class NotificationStatsTracker {
     public final Object flushPending(Continuation<? super Unit> continuation) {
         NotificationStatsTracker$flushPending$1 notificationStatsTracker$flushPending$1;
         int i;
-        Set m9919constructorimpl;
-        Throwable m9922exceptionOrNullimpl;
+        Set m9920constructorimpl;
+        Throwable m9923exceptionOrNullimpl;
         if (continuation instanceof NotificationStatsTracker$flushPending$1) {
             notificationStatsTracker$flushPending$1 = (NotificationStatsTracker$flushPending$1) continuation;
             if ((notificationStatsTracker$flushPending$1.label & Integer.MIN_VALUE) != 0) {
@@ -107,16 +107,16 @@ public final class NotificationStatsTracker {
                     List list = (List) notificationStatsTracker$flushPending$1.L$0;
                     ResultKt.throwOnFailure(obj);
                 }
-                m9919constructorimpl = Result.m9919constructorimpl((Set) obj);
-                m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-                if (m9922exceptionOrNullimpl != null) {
-                    Timber.Forest.w(m9922exceptionOrNullimpl, "Failed to send notification stats", new Object[0]);
+                m9920constructorimpl = Result.m9920constructorimpl((Set) obj);
+                m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+                if (m9923exceptionOrNullimpl != null) {
+                    Timber.Forest.w(m9923exceptionOrNullimpl, "Failed to send notification stats", new Object[0]);
                 }
                 Set emptySet = SetsKt.emptySet();
-                if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-                    m9919constructorimpl = emptySet;
+                if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+                    m9920constructorimpl = emptySet;
                 }
-                this.store.remove((Set) m9919constructorimpl);
+                this.store.remove((Set) m9920constructorimpl);
                 return Unit.INSTANCE;
             }
         }
@@ -126,14 +126,14 @@ public final class NotificationStatsTracker {
         i = notificationStatsTracker$flushPending$1.label;
         if (i != 0) {
         }
-        m9919constructorimpl = Result.m9919constructorimpl((Set) obj2);
-        m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-        if (m9922exceptionOrNullimpl != null) {
+        m9920constructorimpl = Result.m9920constructorimpl((Set) obj2);
+        m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+        if (m9923exceptionOrNullimpl != null) {
         }
         Set emptySet2 = SetsKt.emptySet();
-        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
+        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
         }
-        this.store.remove((Set) m9919constructorimpl);
+        this.store.remove((Set) m9920constructorimpl);
         return Unit.INSTANCE;
     }
 

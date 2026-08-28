@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
+import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveMirrorExecutionCoordinator.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCoordinator", f = "ArchiveMirrorExecutionCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {95, 102}, m = "prepareMirrorRetry", n = {"plan", "failure", "failedServer", "plan", "failure", "failedServer", "remainingBytes"}, nl = {96, -1}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "J$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCoordinator", f = "ArchiveMirrorExecutionCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {123, TsExtractor.TS_STREAM_TYPE_HDMV_DTS}, m = "prepareMirrorRetry", n = {"plan", "failure", "failedServer", "plan", "failure", "failedServer", "remainingBytes"}, nl = {124, -1}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "J$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveMirrorExecutionCoordinator$prepareMirrorRetry$1 extends ContinuationImpl {
     long J$0;

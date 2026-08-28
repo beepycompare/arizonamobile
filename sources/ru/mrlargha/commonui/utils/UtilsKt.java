@@ -901,7 +901,7 @@ public final class UtilsKt {
     public static final void checkItemsName(Context context, boolean z, Function1<? super Boolean, Unit> function1) {
         boolean z2;
         boolean z3;
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         Intrinsics.checkNotNullParameter(context, "context");
         String inventoryCatalogKey = InventoryCatalogKt.inventoryCatalogKey(z);
         synchronized (inventoryCatalogLoadLock) {
@@ -932,18 +932,18 @@ public final class UtilsKt {
                 Context applicationContext = context.getApplicationContext();
                 Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
                 ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(applicationContext, 0);
-                m9919constructorimpl = Result.m9919constructorimpl(TuplesKt.to(arizonaRetrofit, ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, null, 14, null)));
+                m9920constructorimpl = Result.m9920constructorimpl(TuplesKt.to(arizonaRetrofit, ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, null, 14, null)));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-            if (m9922exceptionOrNullimpl != null) {
-                Log.e("InventoryCatalog", "Unable to create catalog '" + inventoryCatalogKey + "' request", m9922exceptionOrNullimpl);
+            Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+            if (m9923exceptionOrNullimpl != null) {
+                Log.e("InventoryCatalog", "Unable to create catalog '" + inventoryCatalogKey + "' request", m9923exceptionOrNullimpl);
                 BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().getImmediate()), null, null, new UtilsKt$checkItemsName$clientAndApi$2$1(inventoryCatalogKey, null), 3, null);
                 return;
             }
-            Pair pair = (Pair) m9919constructorimpl;
+            Pair pair = (Pair) m9920constructorimpl;
             BuildersKt.launch$default(((ArizonaRetrofit) pair.component1()).getScope(), Dispatchers.getIO(), null, new UtilsKt$checkItemsName$3((InventoryApi) pair.component2(), inventoryCatalogKey, null), 2, null);
         }
     }

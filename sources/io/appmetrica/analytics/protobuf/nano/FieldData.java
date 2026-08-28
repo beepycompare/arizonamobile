@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes5.dex */
-class FieldData implements Cloneable {
+public class FieldData implements Cloneable {
     private Extension<?, ?> cachedExtension;
     private List<UnknownFieldData> unknownFieldData;
     private Object value;
@@ -151,7 +152,7 @@ class FieldData implements Cloneable {
     }
 
     /* renamed from: clone */
-    public final FieldData m9912clone() {
+    public final FieldData m9913clone() {
         FieldData fieldData = new FieldData();
         try {
             fieldData.cachedExtension = this.cachedExtension;
@@ -164,7 +165,7 @@ class FieldData implements Cloneable {
             Object obj = this.value;
             if (obj != null) {
                 if (obj instanceof MessageNano) {
-                    fieldData.value = ((MessageNano) obj).mo9910clone();
+                    fieldData.value = ((MessageNano) obj).mo9911clone();
                     return fieldData;
                 } else if (obj instanceof byte[]) {
                     fieldData.value = ((byte[]) obj).clone();
@@ -199,7 +200,7 @@ class FieldData implements Cloneable {
                         MessageNano[] messageNanoArr2 = new MessageNano[messageNanoArr.length];
                         fieldData.value = messageNanoArr2;
                         while (i < messageNanoArr.length) {
-                            messageNanoArr2[i] = messageNanoArr[i].mo9910clone();
+                            messageNanoArr2[i] = messageNanoArr[i].mo9911clone();
                             i++;
                         }
                     }

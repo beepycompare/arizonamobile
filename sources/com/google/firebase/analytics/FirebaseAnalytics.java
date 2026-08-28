@@ -3,6 +3,7 @@ package com.google.firebase.analytics;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.internal.measurement.zzdd;
 import com.google.android.gms.internal.measurement.zzez;
@@ -227,7 +228,7 @@ public final class FirebaseAnalytics {
 
     public String getFirebaseInstanceId() {
         try {
-            return (String) Tasks.await(FirebaseInstallations.getInstance().getId(), 30000L, TimeUnit.MILLISECONDS);
+            return (String) Tasks.await(FirebaseInstallations.getInstance().getId(), ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, TimeUnit.MILLISECONDS);
         } catch (InterruptedException e) {
             throw new IllegalStateException(e);
         } catch (ExecutionException e2) {

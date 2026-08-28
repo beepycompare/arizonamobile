@@ -1611,20 +1611,20 @@ public final class Hud extends SAMPUIElement {
     }
 
     private final boolean isWorkCounterVisible(String str) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             Hud hud = this;
-            m9919constructorimpl = Result.m9919constructorimpl(Boolean.valueOf(((TaximeterModel) MapperKt.toModel(str, TaximeterModel.class)).getShow() != 0));
+            m9920constructorimpl = Result.m9920constructorimpl(Boolean.valueOf(((TaximeterModel) MapperKt.toModel(str, TaximeterModel.class)).getShow() != 0));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9922exceptionOrNullimpl(m9919constructorimpl) != null) {
+        if (Result.m9923exceptionOrNullimpl(m9920constructorimpl) != null) {
             Integer intOrNull = StringsKt.toIntOrNull(str);
-            m9919constructorimpl = Boolean.valueOf((intOrNull != null ? intOrNull.intValue() : 0) != 0);
+            m9920constructorimpl = Boolean.valueOf((intOrNull != null ? intOrNull.intValue() : 0) != 0);
         }
-        return ((Boolean) m9919constructorimpl).booleanValue();
+        return ((Boolean) m9920constructorimpl).booleanValue();
     }
 
     private final void setServerID(ServerInfoItem serverInfoItem) {

@@ -24,6 +24,7 @@ import androidx.collection.SieveCacheKt;
 import androidx.compose.runtime.ComposerKt;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.android.vending.expansion.zipfile.APEZProvider;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.stats.ConnectionTracker;
 import com.google.android.gms.common.util.Clock;
@@ -4526,7 +4527,7 @@ public final class zzpg implements zzjg {
     /* JADX INFO: Access modifiers changed from: package-private */
     public final String zzaq(zzr zzrVar) {
         try {
-            return (String) zzaX().zzh(new zzoz(this, zzrVar)).get(30000L, TimeUnit.MILLISECONDS);
+            return (String) zzaX().zzh(new zzoz(this, zzrVar)).get(ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, TimeUnit.MILLISECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
             zzaW().zzb().zzc("Failed to get app instance id. appId", zzgu.zzl(zzrVar.zza), e);
             return null;

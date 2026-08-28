@@ -24,7 +24,7 @@ public final class ArchiveManifestResolverKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final String resolveArchiveUrl(String str, String str2, boolean z) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             URI uri = new URI(str2);
@@ -40,11 +40,11 @@ public final class ArchiveManifestResolverKt {
             if (!archiveRemoteNetworkPolicy.isAllowedUrl(uri2, z)) {
                 uri2 = null;
             }
-            m9919constructorimpl = Result.m9919constructorimpl(uri2);
+            m9920constructorimpl = Result.m9920constructorimpl(uri2);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+        return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
     }
 }

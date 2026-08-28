@@ -23,7 +23,7 @@ public final class ArchivePackageUrlResolver {
     }
 
     public final String resolve(String baseUrl, String packageUrl, boolean z) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         String str;
         String host;
         Intrinsics.checkNotNullParameter(baseUrl, "baseUrl");
@@ -39,15 +39,15 @@ public final class ArchivePackageUrlResolver {
             if (!uri.isAbsolute()) {
                 uri = new URI(baseUrl).resolve(uri);
             }
-            m9919constructorimpl = Result.m9919constructorimpl(uri);
+            m9920constructorimpl = Result.m9920constructorimpl(uri);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-            m9919constructorimpl = null;
+        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+            m9920constructorimpl = null;
         }
-        URI uri2 = (URI) m9919constructorimpl;
+        URI uri2 = (URI) m9920constructorimpl;
         if (uri2 != null) {
             boolean z3 = (!StringsKt.equals(uri2.getScheme(), Constants.SCHEME, true) || (host = uri2.getHost()) == null || StringsKt.isBlank(host)) ? false : true;
             if (z && StringsKt.equals(uri2.getScheme(), "http", true)) {

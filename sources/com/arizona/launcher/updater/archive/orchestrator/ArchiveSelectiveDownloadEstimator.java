@@ -34,7 +34,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ArchiveSelectiveDownloadEstimator.kt */
-@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 #2\u00020\u0001:\u0001#B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u00052\u0006\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bJ)\u0010\f\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0000¢\u0006\u0004\b\u0011\u0010\u0012J!\u0010\u0013\u001a\u0004\u0018\u00010\u00102\b\u0010\u0014\u001a\u0004\u0018\u00010\u00102\u0006\u0010\r\u001a\u00020\u000eH\u0000¢\u0006\u0002\b\u0015J;\u0010\u0016\u001a\u0004\u0018\u00010\u00072\u0006\u0010\r\u001a\u00020\u000e2\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u00182\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u00190\u00182\u0006\u0010\u001b\u001a\u00020\u001cH\u0002¢\u0006\u0002\u0010\u001dJ$\u0010\u001e\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u00052\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018H\u0002J>\u0010\u001e\u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u0002H \u0018\u00010\u0005\"\u0004\b\u0000\u0010 2\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u0002H 0\u00182\u0012\u0010!\u001a\u000e\u0012\u0004\u0012\u0002H \u0012\u0004\u0012\u00020\u00060\"H\u0002Ê\u0001\f\b%\u0012\b\b&\u0012\u0004\b\u0003\u0010\u0002¨\u0006$"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveSelectiveDownloadEstimator;", "", "<init>", "()V", "plannedNetworkBytesByPackage", "", "", "", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "estimateNetworkBytes", "archivePackage", "Lcom/arizona/launcher/updater/archive/model/ArchivePackage;", DiskLruCache.JOURNAL_FILE, "Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;", "estimateNetworkBytes$app", "(Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;Lcom/arizona/launcher/updater/archive/model/ArchivePackage;Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;)Ljava/lang/Long;", "projectedJournal", UpdateServiceContract.BundleKey.CURRENT, "projectedJournal$app", "estimateFromObservedIndex", "desired", "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageFileRecord;", "toFetch", "layout", "Lcom/arizona/launcher/updater/archive/model/ArchiveResolvedZipIndexMetadata;", "(Lcom/arizona/launcher/updater/archive/model/ArchivePackage;Ljava/util/List;Ljava/util/List;Lcom/arizona/launcher/updater/archive/model/ArchiveResolvedZipIndexMetadata;)Ljava/lang/Long;", "uniqueByPath", OriginalTzArchiveManifestParser.FILES_ROOT, ExifInterface.GPS_DIRECTION_TRUE, "path", "Lkotlin/Function1;", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 %2\u00020\u0001:\u0001%B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J$\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u00052\u0006\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bJ)\u0010\f\u001a\u0004\u0018\u00010\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010H\u0000¢\u0006\u0004\b\u0011\u0010\u0012J!\u0010\u0013\u001a\u0004\u0018\u00010\u00102\b\u0010\u0014\u001a\u0004\u0018\u00010\u00102\u0006\u0010\r\u001a\u00020\u000eH\u0000¢\u0006\u0002\b\u0015J\u0018\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0014\u001a\u00020\u00102\u0006\u0010\r\u001a\u00020\u000eH\u0002J;\u0010\u0018\u001a\u0004\u0018\u00010\u00072\u0006\u0010\r\u001a\u00020\u000e2\f\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a2\f\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001a2\u0006\u0010\u001d\u001a\u00020\u001eH\u0002¢\u0006\u0002\u0010\u001fJ$\u0010 \u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u001b\u0018\u00010\u00052\f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aH\u0002J>\u0010 \u001a\u0010\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u0002H\"\u0018\u00010\u0005\"\u0004\b\u0000\u0010\"2\f\u0010!\u001a\b\u0012\u0004\u0012\u0002H\"0\u001a2\u0012\u0010#\u001a\u000e\u0012\u0004\u0012\u0002H\"\u0012\u0004\u0012\u00020\u00060$H\u0002Ê\u0001\f\b'\u0012\b\b(\u0012\u0004\b\u0003\u0010\u0002¨\u0006&"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveSelectiveDownloadEstimator;", "", "<init>", "()V", "plannedNetworkBytesByPackage", "", "", "", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "estimateNetworkBytes", "archivePackage", "Lcom/arizona/launcher/updater/archive/model/ArchivePackage;", DiskLruCache.JOURNAL_FILE, "Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;", "estimateNetworkBytes$app", "(Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;Lcom/arizona/launcher/updater/archive/model/ArchivePackage;Lcom/arizona/launcher/updater/archive/state/ArchivePackageJournalEntry;)Ljava/lang/Long;", "projectedJournal", UpdateServiceContract.BundleKey.CURRENT, "projectedJournal$app", "isRebasedPlannedJournal", "", "estimateFromObservedIndex", "desired", "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageFileRecord;", "toFetch", "layout", "Lcom/arizona/launcher/updater/archive/model/ArchiveResolvedZipIndexMetadata;", "(Lcom/arizona/launcher/updater/archive/model/ArchivePackage;Ljava/util/List;Ljava/util/List;Lcom/arizona/launcher/updater/archive/model/ArchiveResolvedZipIndexMetadata;)Ljava/lang/Long;", "uniqueByPath", OriginalTzArchiveManifestParser.FILES_ROOT, ExifInterface.GPS_DIRECTION_TRUE, "path", "Lkotlin/Function1;", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveSelectiveDownloadEstimator {
     public static final int $stable = 0;
@@ -86,20 +86,26 @@ public final class ArchiveSelectiveDownloadEstimator {
 
     public final ArchivePackageJournalEntry projectedJournal$app(ArchivePackageJournalEntry archivePackageJournalEntry, ArchivePackage archivePackage) {
         Intrinsics.checkNotNullParameter(archivePackage, "archivePackage");
-        if (archivePackageJournalEntry != null && archivePackageJournalEntry.getPhase() == ArchivePackagePhase.COMMITTED && archivePackageJournalEntry.getPreviousCommitted() == null && archivePackageJournalEntry.getPreviousFiles().isEmpty()) {
-            List<ArchiveEntryMetadata> entries = archivePackage.getEntries();
-            if (entries == null) {
-                entries = CollectionsKt.emptyList();
-            }
-            List<ArchiveEntryMetadata> list = entries;
-            ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
-            for (ArchiveEntryMetadata archiveEntryMetadata : list) {
-                arrayList.add(new ArchivePackageFileRecord(archiveEntryMetadata.getTargetRelativePath(), archiveEntryMetadata.getSize(), archiveEntryMetadata.getCrc32(), (String) null, 8, (DefaultConstructorMarker) null));
-            }
-            ArrayList arrayList2 = arrayList;
-            if (arrayList2.isEmpty()) {
-                return null;
-            }
+        if (archivePackageJournalEntry == null) {
+            return null;
+        }
+        List<ArchiveEntryMetadata> entries = archivePackage.getEntries();
+        if (entries == null) {
+            entries = CollectionsKt.emptyList();
+        }
+        List<ArchiveEntryMetadata> list = entries;
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+        for (ArchiveEntryMetadata archiveEntryMetadata : list) {
+            arrayList.add(new ArchivePackageFileRecord(archiveEntryMetadata.getTargetRelativePath(), archiveEntryMetadata.getSize(), archiveEntryMetadata.getCrc32(), (String) null, 8, (DefaultConstructorMarker) null));
+        }
+        ArrayList arrayList2 = arrayList;
+        if (arrayList2.isEmpty()) {
+            return null;
+        }
+        if (isRebasedPlannedJournal(archivePackageJournalEntry, archivePackage)) {
+            return ArchivePackageJournalEntry.copy$default(archivePackageJournalEntry, null, null, 0L, null, null, arrayList2, null, 0L, null, 479, null);
+        }
+        if (archivePackageJournalEntry.getPhase() == ArchivePackagePhase.COMMITTED && archivePackageJournalEntry.getPreviousCommitted() == null && archivePackageJournalEntry.getPreviousFiles().isEmpty()) {
             try {
                 if (Intrinsics.areEqual(archivePackageJournalEntry.getPackageId(), archivePackage.getId())) {
                     if (archivePackageJournalEntry.getArchiveSize() == archivePackage.getArchiveSize() && archivePackageJournalEntry.getArchiveCrc32() == archivePackage.getCrc32()) {
@@ -118,6 +124,10 @@ public final class ArchiveSelectiveDownloadEstimator {
             }
         }
         return null;
+    }
+
+    private final boolean isRebasedPlannedJournal(ArchivePackageJournalEntry archivePackageJournalEntry, ArchivePackage archivePackage) {
+        return archivePackageJournalEntry.getPhase() == ArchivePackagePhase.PLANNED && Intrinsics.areEqual(archivePackageJournalEntry.getPackageId(), archivePackage.getId()) && archivePackageJournalEntry.getArchiveSize() == archivePackage.getArchiveSize() && archivePackageJournalEntry.getArchiveCrc32() == archivePackage.getCrc32() && archivePackageJournalEntry.getPreviousCommitted() != null && !archivePackageJournalEntry.getPreviousFiles().isEmpty() && !archivePackageJournalEntry.getDesiredFiles().isEmpty();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x003c  */

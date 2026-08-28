@@ -1,7 +1,9 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
 import com.arizona.launcher.updater.archive.planner.ArchiveUpdatePlan;
+import java.util.Map;
 import kotlin.Metadata;
+import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: ArchiveUpdateCheckCoordinator.kt */
@@ -10,16 +12,17 @@ import kotlin.jvm.internal.Intrinsics;
 public interface ArchiveUpdateCheckDecision {
 
     /* compiled from: ArchiveUpdateCheckCoordinator.kt */
-    @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0013\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\t\u0010\u0016\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0017\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0018\u001a\u00020\u0007HÆ\u0003J\t\u0010\u0019\u001a\u00020\tHÆ\u0003J1\u0010\u001a\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\tHÆ\u0001J\u0014\u0010\u001b\u001a\u00020\t2\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dHÖ\u0083\u0004J\n\u0010\u001e\u001a\u00020\u001fHÖ\u0081\u0004J\n\u0010 \u001a\u00020!HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0014\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u000fÊ\u0001\f\b#\u0012\b\b$\u0012\u0004\b\u0003\u0010\u0000¨\u0006\""}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision$UseArchive;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", "downloadBytes", "", "storageRequirements", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;", "requiresFinalization", "", "<init>", "(Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;JLcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;Z)V", "getPlan", "()Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", "getDownloadBytes", "()J", "getStorageRequirements", "()Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;", "getRequiresFinalization", "()Z", "requiredFreeSpaceBytes", "getRequiredFreeSpaceBytes", "component1", "component2", "component3", "component4", "copy", "equals", "other", "", "hashCode", "", "toString", "", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0016\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B?\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000b¢\u0006\u0004\b\r\u0010\u000eJ\t\u0010\u001b\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001c\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001d\u001a\u00020\u0007HÆ\u0003J\t\u0010\u001e\u001a\u00020\tHÆ\u0003J\u0015\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bHÆ\u0003JG\u0010 \u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\t2\u0014\b\u0002\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000bHÆ\u0001J\u0014\u0010!\u001a\u00020\t2\b\u0010\"\u001a\u0004\u0018\u00010#HÖ\u0083\u0004J\n\u0010$\u001a\u00020%HÖ\u0081\u0004J\n\u0010&\u001a\u00020\fHÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u001d\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\u00050\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\u0019\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0012Ê\u0001\f\b(\u0012\b\b)\u0012\u0004\b\u0003\u0010\u0000¨\u0006'"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision$UseArchive;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "plan", "Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", "downloadBytes", "", "storageRequirements", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;", "requiresFinalization", "", "plannedArchiveDownloadBytesByPackage", "", "", "<init>", "(Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;JLcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;ZLjava/util/Map;)V", "getPlan", "()Lcom/arizona/launcher/updater/archive/planner/ArchiveUpdatePlan;", "getDownloadBytes", "()J", "getStorageRequirements", "()Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirements;", "getRequiresFinalization", "()Z", "getPlannedArchiveDownloadBytesByPackage", "()Ljava/util/Map;", "requiredFreeSpaceBytes", "getRequiredFreeSpaceBytes", "component1", "component2", "component3", "component4", "component5", "copy", "equals", "other", "", "hashCode", "", "toString", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class UseArchive implements ArchiveUpdateCheckDecision {
         public static final int $stable = ArchiveStorageRequirements.$stable | ArchiveUpdatePlan.$stable;
         private final long downloadBytes;
         private final ArchiveUpdatePlan plan;
+        private final Map<String, Long> plannedArchiveDownloadBytesByPackage;
         private final boolean requiresFinalization;
         private final ArchiveStorageRequirements storageRequirements;
 
-        public static /* synthetic */ UseArchive copy$default(UseArchive useArchive, ArchiveUpdatePlan archiveUpdatePlan, long j, ArchiveStorageRequirements archiveStorageRequirements, boolean z, int i, Object obj) {
+        public static /* synthetic */ UseArchive copy$default(UseArchive useArchive, ArchiveUpdatePlan archiveUpdatePlan, long j, ArchiveStorageRequirements archiveStorageRequirements, boolean z, Map map, int i, Object obj) {
             if ((i & 1) != 0) {
                 archiveUpdatePlan = useArchive.plan;
             }
@@ -32,7 +35,13 @@ public interface ArchiveUpdateCheckDecision {
             if ((i & 8) != 0) {
                 z = useArchive.requiresFinalization;
             }
-            return useArchive.copy(archiveUpdatePlan, j, archiveStorageRequirements, z);
+            Map<String, Long> map2 = map;
+            if ((i & 16) != 0) {
+                map2 = useArchive.plannedArchiveDownloadBytesByPackage;
+            }
+            Map map3 = map2;
+            ArchiveStorageRequirements archiveStorageRequirements2 = archiveStorageRequirements;
+            return useArchive.copy(archiveUpdatePlan, j, archiveStorageRequirements2, z, map3);
         }
 
         public final ArchiveUpdatePlan component1() {
@@ -51,10 +60,15 @@ public interface ArchiveUpdateCheckDecision {
             return this.requiresFinalization;
         }
 
-        public final UseArchive copy(ArchiveUpdatePlan plan, long j, ArchiveStorageRequirements storageRequirements, boolean z) {
+        public final Map<String, Long> component5() {
+            return this.plannedArchiveDownloadBytesByPackage;
+        }
+
+        public final UseArchive copy(ArchiveUpdatePlan plan, long j, ArchiveStorageRequirements storageRequirements, boolean z, Map<String, Long> plannedArchiveDownloadBytesByPackage) {
             Intrinsics.checkNotNullParameter(plan, "plan");
             Intrinsics.checkNotNullParameter(storageRequirements, "storageRequirements");
-            return new UseArchive(plan, j, storageRequirements, z);
+            Intrinsics.checkNotNullParameter(plannedArchiveDownloadBytesByPackage, "plannedArchiveDownloadBytesByPackage");
+            return new UseArchive(plan, j, storageRequirements, z, plannedArchiveDownloadBytesByPackage);
         }
 
         public boolean equals(Object obj) {
@@ -63,33 +77,32 @@ public interface ArchiveUpdateCheckDecision {
             }
             if (obj instanceof UseArchive) {
                 UseArchive useArchive = (UseArchive) obj;
-                return Intrinsics.areEqual(this.plan, useArchive.plan) && this.downloadBytes == useArchive.downloadBytes && Intrinsics.areEqual(this.storageRequirements, useArchive.storageRequirements) && this.requiresFinalization == useArchive.requiresFinalization;
+                return Intrinsics.areEqual(this.plan, useArchive.plan) && this.downloadBytes == useArchive.downloadBytes && Intrinsics.areEqual(this.storageRequirements, useArchive.storageRequirements) && this.requiresFinalization == useArchive.requiresFinalization && Intrinsics.areEqual(this.plannedArchiveDownloadBytesByPackage, useArchive.plannedArchiveDownloadBytesByPackage);
             }
             return false;
         }
 
         public int hashCode() {
-            return (((((this.plan.hashCode() * 31) + Long.hashCode(this.downloadBytes)) * 31) + this.storageRequirements.hashCode()) * 31) + Boolean.hashCode(this.requiresFinalization);
+            return (((((((this.plan.hashCode() * 31) + Long.hashCode(this.downloadBytes)) * 31) + this.storageRequirements.hashCode()) * 31) + Boolean.hashCode(this.requiresFinalization)) * 31) + this.plannedArchiveDownloadBytesByPackage.hashCode();
         }
 
         public String toString() {
             ArchiveUpdatePlan archiveUpdatePlan = this.plan;
             long j = this.downloadBytes;
             ArchiveStorageRequirements archiveStorageRequirements = this.storageRequirements;
-            return "UseArchive(plan=" + archiveUpdatePlan + ", downloadBytes=" + j + ", storageRequirements=" + archiveStorageRequirements + ", requiresFinalization=" + this.requiresFinalization + ")";
+            boolean z = this.requiresFinalization;
+            return "UseArchive(plan=" + archiveUpdatePlan + ", downloadBytes=" + j + ", storageRequirements=" + archiveStorageRequirements + ", requiresFinalization=" + z + ", plannedArchiveDownloadBytesByPackage=" + this.plannedArchiveDownloadBytesByPackage + ")";
         }
 
-        public UseArchive(ArchiveUpdatePlan plan, long j, ArchiveStorageRequirements storageRequirements, boolean z) {
+        public UseArchive(ArchiveUpdatePlan plan, long j, ArchiveStorageRequirements storageRequirements, boolean z, Map<String, Long> plannedArchiveDownloadBytesByPackage) {
             Intrinsics.checkNotNullParameter(plan, "plan");
             Intrinsics.checkNotNullParameter(storageRequirements, "storageRequirements");
+            Intrinsics.checkNotNullParameter(plannedArchiveDownloadBytesByPackage, "plannedArchiveDownloadBytesByPackage");
             this.plan = plan;
             this.downloadBytes = j;
             this.storageRequirements = storageRequirements;
             this.requiresFinalization = z;
-        }
-
-        public /* synthetic */ UseArchive(ArchiveUpdatePlan archiveUpdatePlan, long j, ArchiveStorageRequirements archiveStorageRequirements, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(archiveUpdatePlan, j, archiveStorageRequirements, (i & 8) != 0 ? false : z);
+            this.plannedArchiveDownloadBytesByPackage = plannedArchiveDownloadBytesByPackage;
         }
 
         public final ArchiveUpdatePlan getPlan() {
@@ -106,6 +119,14 @@ public interface ArchiveUpdateCheckDecision {
 
         public final boolean getRequiresFinalization() {
             return this.requiresFinalization;
+        }
+
+        public /* synthetic */ UseArchive(ArchiveUpdatePlan archiveUpdatePlan, long j, ArchiveStorageRequirements archiveStorageRequirements, boolean z, Map map, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(archiveUpdatePlan, j, archiveStorageRequirements, (i & 8) != 0 ? false : z, (i & 16) != 0 ? MapsKt.emptyMap() : map);
+        }
+
+        public final Map<String, Long> getPlannedArchiveDownloadBytesByPackage() {
+            return this.plannedArchiveDownloadBytesByPackage;
         }
 
         public final long getRequiredFreeSpaceBytes() {

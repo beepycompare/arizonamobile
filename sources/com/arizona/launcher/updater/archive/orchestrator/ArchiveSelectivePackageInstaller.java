@@ -116,17 +116,17 @@ public final class ArchiveSelectivePackageInstaller {
         this(file, remoteZipIndexFetcher, remoteZipEntryRangeReader, archiveLivePathSafety, (i & 16) != 0 ? JvmArchiveDirectoryCreator.INSTANCE : jvmArchiveDirectoryCreator, function2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0447  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x046a  */
     /* JADX WARN: Removed duplicated region for block: B:10:0x002f  */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x048b  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x04c9  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x050a  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x02ad A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0174  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x02b5  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0371  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:104:0x042d -> B:13:0x00b7). Please submit an issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x04b9  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0505  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x054f  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x02c7 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0182  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x02d3  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x038f  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:104:0x0450 -> B:13:0x00b9). Please submit an issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -165,7 +165,7 @@ public final class ArchiveSelectivePackageInstaller {
         ArrayList arrayList4;
         RemoteZipEntry remoteZipEntry;
         Object obj2;
-        ArchiveSelectivePackageInstaller archiveSelectivePackageInstaller = this;
+        long addExact;
         if (continuation instanceof ArchiveSelectivePackageInstaller$probe$1) {
             archiveSelectivePackageInstaller$probe$1 = (ArchiveSelectivePackageInstaller$probe$1) continuation;
             if ((archiveSelectivePackageInstaller$probe$1.label & Integer.MIN_VALUE) != 0) {
@@ -180,18 +180,18 @@ public final class ArchiveSelectivePackageInstaller {
                     ResultKt.throwOnFailure(obj3);
                     List<ArchivePackageFileRecord> desiredFiles = archivePackageJournalEntry.getDesiredFiles();
                     if (desiredFiles.isEmpty()) {
-                        return new ArchiveSelectiveProbeResult.Fallback("desired files missing");
+                        return new ArchiveSelectiveProbeResult.Fallback("desired files missing", 0L, 2, null);
                     }
                     ArchiveEntryChangePlan plan = ArchiveSelectiveEntryDiff.INSTANCE.plan(archivePackageJournalEntry.getPreviousFiles(), desiredFiles);
                     if (plan.getReusable().isEmpty() || plan.getToFetch().isEmpty()) {
-                        return new ArchiveSelectiveProbeResult.Fallback("selective work is empty or complete");
+                        return new ArchiveSelectiveProbeResult.Fallback("selective work is empty or complete", 0L, 2, null);
                     }
                     str2 = str;
-                    String invoke = archiveSelectivePackageInstaller.resolvePackageUrl.invoke(str2, archivePackage.getUrl());
+                    String invoke = this.resolvePackageUrl.invoke(str2, archivePackage.getUrl());
                     if (invoke == null) {
-                        return new ArchiveSelectiveProbeResult.Fallback("package URL is invalid");
+                        return new ArchiveSelectiveProbeResult.Fallback("package URL is invalid", 0L, 2, null);
                     }
-                    RemoteZipIndexFetcher remoteZipIndexFetcher = archiveSelectivePackageInstaller.indexFetcher;
+                    RemoteZipIndexFetcher remoteZipIndexFetcher = this.indexFetcher;
                     String id = archivePackage.getId();
                     long archiveSize = archivePackage.getArchiveSize();
                     archivePackage2 = archivePackage;
@@ -229,6 +229,7 @@ public final class ArchiveSelectivePackageInstaller {
                     long j5 = archiveSelectivePackageInstaller$probe$13.J$0;
                     RemoteZipEntry remoteZipEntry2 = (RemoteZipEntry) archiveSelectivePackageInstaller$probe$13.L$17;
                     c = 0;
+                    Object obj4 = obj3;
                     ArrayList arrayList5 = (ArrayList) archiveSelectivePackageInstaller$probe$13.L$10;
                     LinkedHashMap linkedHashMap2 = (LinkedHashMap) archiveSelectivePackageInstaller$probe$13.L$9;
                     archiveDeltaEligibility = (ArchiveDeltaEligibility) archiveSelectivePackageInstaller$probe$13.L$8;
@@ -239,13 +240,14 @@ public final class ArchiveSelectivePackageInstaller {
                     List<ArchivePackageFileRecord> list4 = (List) archiveSelectivePackageInstaller$probe$13.L$3;
                     String str7 = (String) archiveSelectivePackageInstaller$probe$13.L$2;
                     ArchivePackageJournalEntry archivePackageJournalEntry4 = (ArchivePackageJournalEntry) archiveSelectivePackageInstaller$probe$13.L$1;
-                    ResultKt.throwOnFailure(obj3);
+                    ResultKt.throwOnFailure(obj4);
                     linkedHashMap = linkedHashMap2;
                     ArchivePackage archivePackage4 = (ArchivePackage) archiveSelectivePackageInstaller$probe$13.L$0;
                     String str8 = "selective byte estimate overflow";
                     arrayList = (ArrayList) archiveSelectivePackageInstaller$probe$13.L$11;
-                    Object prepare = obj3;
                     archiveObservedRepresentationFence = archiveObservedRepresentationFence2;
+                    RemoteZipIndexSession remoteZipIndexSession4 = remoteZipIndexSession3;
+                    String str9 = str6;
                     archivePackageJournalEntry3 = archivePackageJournalEntry4;
                     ArchivePackageFileRecord archivePackageFileRecord = (ArchivePackageFileRecord) archiveSelectivePackageInstaller$probe$13.L$16;
                     archiveSelectivePackageInstaller$probe$12 = archiveSelectivePackageInstaller$probe$13;
@@ -257,110 +259,119 @@ public final class ArchiveSelectivePackageInstaller {
                     ArrayList arrayList6 = arrayList5;
                     it = (Iterator) archiveSelectivePackageInstaller$probe$13.L$15;
                     ArchiveDeltaEligibility archiveDeltaEligibility2 = archiveDeltaEligibility;
-                    RemoteZipEntryPreparationResult remoteZipEntryPreparationResult = (RemoteZipEntryPreparationResult) prepare;
+                    RemoteZipEntryPreparationResult remoteZipEntryPreparationResult = (RemoteZipEntryPreparationResult) obj4;
                     if (!(remoteZipEntryPreparationResult instanceof RemoteZipEntryPreparationResult.Success)) {
                         RemoteZipEntryPreparationResult.Success success = (RemoteZipEntryPreparationResult.Success) remoteZipEntryPreparationResult;
+                        Object obj5 = coroutine_suspended;
                         try {
-                            long addExact = Math.addExact(j5, success.getFetchedBytes());
-                            j = Math.addExact(j4, success.getPrepared().getPayloadLength());
-                            arrayList2.add(new ArchiveSelectiveEntryTransfer(archivePackageFileRecord, success.getPrepared()));
-                            arrayList3 = arrayList6;
-                            j2 = addExact;
-                            archiveDeltaEligibility = archiveDeltaEligibility2;
-                            remoteZipIndexSession2 = remoteZipIndexSession3;
-                            str4 = str6;
-                            archiveEntryChangePlan2 = archiveEntryChangePlan3;
-                            list3 = list4;
-                            str5 = str8;
-                            archivePackage3 = archivePackage4;
-                            archiveSelectivePackageInstaller = this;
-                            if (it.hasNext()) {
-                                ArchivePackage archivePackage5 = archivePackage3;
-                                String str9 = str5;
-                                try {
-                                    long addExact2 = Math.addExact(j2, j);
-                                    if (addExact2 >= archivePackage5.getArchiveSize()) {
-                                        return new ArchiveSelectiveProbeResult.Fallback("selective transfer is not smaller than the ZIP");
+                            try {
+                                long addExact2 = Math.addExact(j4, success.getPrepared().getPayloadLength());
+                                arrayList2.add(new ArchiveSelectiveEntryTransfer(archivePackageFileRecord, success.getPrepared()));
+                                archiveDeltaEligibility = archiveDeltaEligibility2;
+                                j = addExact2;
+                                arrayList3 = arrayList6;
+                                archiveEntryChangePlan2 = archiveEntryChangePlan3;
+                                list3 = list4;
+                                str5 = str8;
+                                remoteZipIndexSession2 = remoteZipIndexSession4;
+                                str4 = str9;
+                                j2 = addExact;
+                                coroutine_suspended = obj5;
+                                archivePackage3 = archivePackage4;
+                                if (it.hasNext()) {
+                                    ArchivePackage archivePackage5 = archivePackage3;
+                                    String str10 = str4;
+                                    RemoteZipIndexSession remoteZipIndexSession5 = remoteZipIndexSession2;
+                                    String str11 = str5;
+                                    try {
+                                        long addExact3 = Math.addExact(j2, j);
+                                        if (addExact3 >= archivePackage5.getArchiveSize()) {
+                                            return new ArchiveSelectiveProbeResult.Fallback("selective transfer is not smaller than the ZIP", j2);
+                                        }
+                                        return new ArchiveSelectiveProbeResult.Ready(new ArchiveSelectiveInstallSession(str10, remoteZipIndexSession5, arrayList3, arrayList2, j2, addExact3));
+                                    } catch (ArithmeticException unused) {
+                                        return new ArchiveSelectiveProbeResult.Fallback(str11, j2);
                                     }
-                                    return new ArchiveSelectiveProbeResult.Ready(new ArchiveSelectiveInstallSession(str4, remoteZipIndexSession2, arrayList3, arrayList2, j2, addExact2));
-                                } catch (ArithmeticException unused) {
-                                    return new ArchiveSelectiveProbeResult.Fallback(str9);
                                 }
-                            }
-                            String str10 = str2;
-                            Object next = it.next();
-                            str8 = str5;
-                            Intrinsics.checkNotNullExpressionValue(next, "next(...)");
-                            Pair pair = (Pair) next;
-                            archivePackageFileRecord = (ArchivePackageFileRecord) pair.component1();
-                            RemoteZipEntry remoteZipEntry3 = (RemoteZipEntry) pair.component2();
-                            Iterator it2 = list2.iterator();
-                            while (true) {
-                                if (!it2.hasNext()) {
-                                    obj2 = null;
-                                    break;
-                                }
-                                obj2 = it2.next();
-                                if (((Number) obj2).longValue() > remoteZipEntry3.getLocalHeaderOffset()) {
-                                    break;
-                                }
-                            }
-                            Long l = (Long) obj2;
-                            long longValue = l != null ? l.longValue() : remoteZipIndexSession2.getIndex().getCentralDirectoryOffset();
-                            RemoteZipEntryRangeReader remoteZipEntryRangeReader = archiveSelectivePackageInstaller.entryReader;
-                            archiveSelectivePackageInstaller$probe$12.L$0 = archivePackage3;
-                            archiveSelectivePackageInstaller$probe$12.L$1 = SpillingKt.nullOutSpilledVariable(archivePackageJournalEntry3);
-                            archiveSelectivePackageInstaller$probe$12.L$2 = SpillingKt.nullOutSpilledVariable(str10);
-                            archiveSelectivePackageInstaller$probe$12.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                            archiveSelectivePackageInstaller$probe$12.L$4 = SpillingKt.nullOutSpilledVariable(archiveEntryChangePlan2);
-                            archiveSelectivePackageInstaller$probe$12.L$5 = str4;
-                            archiveSelectivePackageInstaller$probe$12.L$6 = remoteZipIndexSession2;
-                            archiveSelectivePackageInstaller$probe$12.L$7 = SpillingKt.nullOutSpilledVariable(archiveObservedRepresentationFence);
-                            archiveSelectivePackageInstaller$probe$12.L$8 = SpillingKt.nullOutSpilledVariable(archiveDeltaEligibility);
-                            archiveSelectivePackageInstaller$probe$12.L$9 = SpillingKt.nullOutSpilledVariable(linkedHashMap);
-                            archiveSelectivePackageInstaller$probe$12.L$10 = arrayList3;
-                            archiveSelectivePackageInstaller$probe$12.L$11 = SpillingKt.nullOutSpilledVariable(arrayList);
-                            archiveSelectivePackageInstaller$probe$12.L$12 = remoteZipEntryRangeSession;
-                            archiveSelectivePackageInstaller$probe$12.L$13 = list2;
-                            archiveSelectivePackageInstaller$probe$12.L$14 = arrayList2;
-                            archiveSelectivePackageInstaller$probe$12.L$15 = it;
-                            archiveSelectivePackageInstaller$probe$12.L$16 = archivePackageFileRecord;
-                            archiveSelectivePackageInstaller$probe$12.L$17 = SpillingKt.nullOutSpilledVariable(remoteZipEntry3);
-                            archiveSelectivePackageInstaller$probe$12.J$0 = j2;
-                            archiveSelectivePackageInstaller$probe$12.J$1 = j;
-                            archivePackage4 = archivePackage3;
-                            archiveSelectivePackageInstaller$probe$12.J$2 = longValue;
-                            archiveSelectivePackageInstaller$probe$12.label = 2;
-                            RemoteZipEntryRangeSession remoteZipEntryRangeSession2 = remoteZipEntryRangeSession;
-                            ArchiveSelectivePackageInstaller$probe$1 archiveSelectivePackageInstaller$probe$14 = archiveSelectivePackageInstaller$probe$12;
-                            prepare = remoteZipEntryRangeReader.prepare(remoteZipEntryRangeSession2, remoteZipEntry3, longValue, archiveSelectivePackageInstaller$probe$14);
-                            if (prepare != coroutine_suspended) {
-                                arrayList6 = arrayList3;
-                                j5 = j2;
-                                archiveEntryChangePlan3 = archiveEntryChangePlan2;
-                                str6 = str4;
-                                remoteZipIndexSession3 = remoteZipIndexSession2;
-                                j4 = j;
-                                remoteZipEntryRangeSession = remoteZipEntryRangeSession2;
-                                archiveSelectivePackageInstaller$probe$12 = archiveSelectivePackageInstaller$probe$14;
-                                str2 = str10;
-                                list4 = list3;
-                                ArchiveDeltaEligibility archiveDeltaEligibility22 = archiveDeltaEligibility;
-                                RemoteZipEntryPreparationResult remoteZipEntryPreparationResult2 = (RemoteZipEntryPreparationResult) prepare;
-                                if (!(remoteZipEntryPreparationResult2 instanceof RemoteZipEntryPreparationResult.Success)) {
-                                    if (!(remoteZipEntryPreparationResult2 instanceof RemoteZipEntryPreparationResult.Failure)) {
-                                        throw new NoWhenBranchMatchedException();
+                                String str12 = str2;
+                                Object next = it.next();
+                                str8 = str5;
+                                Intrinsics.checkNotNullExpressionValue(next, "next(...)");
+                                Pair pair = (Pair) next;
+                                archivePackageFileRecord = (ArchivePackageFileRecord) pair.component1();
+                                RemoteZipEntry remoteZipEntry3 = (RemoteZipEntry) pair.component2();
+                                Iterator it2 = list2.iterator();
+                                while (true) {
+                                    if (!it2.hasNext()) {
+                                        obj2 = null;
+                                        break;
                                     }
-                                    String[] strArr = new String[2];
-                                    RemoteZipEntryPreparationResult.Failure failure = (RemoteZipEntryPreparationResult.Failure) remoteZipEntryPreparationResult2;
-                                    strArr[c] = failure.getCode().name();
-                                    strArr[1] = failure.getDetail();
-                                    return new ArchiveSelectiveProbeResult.Fallback(CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr), charSequence, null, null, 0, null, null, 62, null));
+                                    obj2 = it2.next();
+                                    if (((Number) obj2).longValue() > remoteZipEntry3.getLocalHeaderOffset()) {
+                                        break;
+                                    }
                                 }
+                                Long l = (Long) obj2;
+                                long longValue = l != null ? l.longValue() : remoteZipIndexSession2.getIndex().getCentralDirectoryOffset();
+                                RemoteZipEntryRangeReader remoteZipEntryRangeReader = this.entryReader;
+                                archiveSelectivePackageInstaller$probe$12.L$0 = archivePackage3;
+                                archivePackage4 = archivePackage3;
+                                archiveSelectivePackageInstaller$probe$12.L$1 = SpillingKt.nullOutSpilledVariable(archivePackageJournalEntry3);
+                                archiveSelectivePackageInstaller$probe$12.L$2 = SpillingKt.nullOutSpilledVariable(str12);
+                                archiveSelectivePackageInstaller$probe$12.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                                archiveSelectivePackageInstaller$probe$12.L$4 = SpillingKt.nullOutSpilledVariable(archiveEntryChangePlan2);
+                                archiveSelectivePackageInstaller$probe$12.L$5 = str4;
+                                archiveSelectivePackageInstaller$probe$12.L$6 = remoteZipIndexSession2;
+                                archiveSelectivePackageInstaller$probe$12.L$7 = SpillingKt.nullOutSpilledVariable(archiveObservedRepresentationFence);
+                                archiveSelectivePackageInstaller$probe$12.L$8 = SpillingKt.nullOutSpilledVariable(archiveDeltaEligibility);
+                                archiveSelectivePackageInstaller$probe$12.L$9 = SpillingKt.nullOutSpilledVariable(linkedHashMap);
+                                archiveSelectivePackageInstaller$probe$12.L$10 = arrayList3;
+                                archiveSelectivePackageInstaller$probe$12.L$11 = SpillingKt.nullOutSpilledVariable(arrayList);
+                                archiveSelectivePackageInstaller$probe$12.L$12 = remoteZipEntryRangeSession;
+                                archiveSelectivePackageInstaller$probe$12.L$13 = list2;
+                                archiveSelectivePackageInstaller$probe$12.L$14 = arrayList2;
+                                archiveSelectivePackageInstaller$probe$12.L$15 = it;
+                                archiveSelectivePackageInstaller$probe$12.L$16 = archivePackageFileRecord;
+                                archiveSelectivePackageInstaller$probe$12.L$17 = SpillingKt.nullOutSpilledVariable(remoteZipEntry3);
+                                archiveSelectivePackageInstaller$probe$12.J$0 = j2;
+                                archiveSelectivePackageInstaller$probe$12.J$1 = j;
+                                remoteZipIndexSession4 = remoteZipIndexSession2;
+                                archiveSelectivePackageInstaller$probe$12.J$2 = longValue;
+                                str9 = str4;
+                                archiveSelectivePackageInstaller$probe$12.label = 2;
+                                RemoteZipEntryRangeSession remoteZipEntryRangeSession2 = remoteZipEntryRangeSession;
+                                ArchiveSelectivePackageInstaller$probe$1 archiveSelectivePackageInstaller$probe$14 = archiveSelectivePackageInstaller$probe$12;
+                                Object prepare = remoteZipEntryRangeReader.prepare(remoteZipEntryRangeSession2, remoteZipEntry3, longValue, archiveSelectivePackageInstaller$probe$14);
+                                if (prepare != coroutine_suspended) {
+                                    arrayList6 = arrayList3;
+                                    j5 = j2;
+                                    archiveEntryChangePlan3 = archiveEntryChangePlan2;
+                                    obj4 = prepare;
+                                    j4 = j;
+                                    remoteZipEntryRangeSession = remoteZipEntryRangeSession2;
+                                    archiveSelectivePackageInstaller$probe$12 = archiveSelectivePackageInstaller$probe$14;
+                                    str2 = str12;
+                                    list4 = list3;
+                                    ArchiveDeltaEligibility archiveDeltaEligibility22 = archiveDeltaEligibility;
+                                    RemoteZipEntryPreparationResult remoteZipEntryPreparationResult2 = (RemoteZipEntryPreparationResult) obj4;
+                                    if (!(remoteZipEntryPreparationResult2 instanceof RemoteZipEntryPreparationResult.Success)) {
+                                        if (!(remoteZipEntryPreparationResult2 instanceof RemoteZipEntryPreparationResult.Failure)) {
+                                            throw new NoWhenBranchMatchedException();
+                                        }
+                                        String[] strArr = new String[2];
+                                        RemoteZipEntryPreparationResult.Failure failure = (RemoteZipEntryPreparationResult.Failure) remoteZipEntryPreparationResult2;
+                                        strArr[c] = failure.getCode().name();
+                                        strArr[1] = failure.getDetail();
+                                        return new ArchiveSelectiveProbeResult.Fallback(CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr), charSequence, null, null, 0, null, null, 62, null), addFetched(j5, failure.getFetchedBytes()));
+                                    }
+                                }
+                                return coroutine_suspended;
+                            } catch (ArithmeticException unused2) {
+                                j5 = addExact;
+                                return new ArchiveSelectiveProbeResult.Fallback(str8, addFetched(j5, success.getFetchedBytes()));
                             }
-                            return coroutine_suspended;
-                        } catch (ArithmeticException unused2) {
-                            return new ArchiveSelectiveProbeResult.Fallback(str8);
+                            addExact = Math.addExact(j5, success.getFetchedBytes());
+                        } catch (ArithmeticException unused3) {
                         }
                     }
                 }
@@ -373,19 +384,19 @@ public final class ArchiveSelectivePackageInstaller {
                     RemoteZipIndexFetchResult.Failure failure2 = (RemoteZipIndexFetchResult.Failure) remoteZipIndexFetchResult;
                     strArr2[c] = failure2.getCode().name();
                     strArr2[1] = failure2.getDetail();
-                    return new ArchiveSelectiveProbeResult.Fallback(CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr2), StringUtils.PROCESS_POSTFIX_DELIMITER, null, null, 0, null, null, 62, null));
+                    return new ArchiveSelectiveProbeResult.Fallback(CollectionsKt.joinToString$default(CollectionsKt.listOfNotNull((Object[]) strArr2), StringUtils.PROCESS_POSTFIX_DELIMITER, null, null, 0, null, null, 62, null), failure2.getNetworkBytes());
                 }
                 RemoteZipIndexSession session = ((RemoteZipIndexFetchResult.Success) remoteZipIndexFetchResult).getSession();
                 ArchiveObservedRepresentationFence observedFence = session.getObservedFence();
                 if (observedFence == null) {
-                    return new ArchiveSelectiveProbeResult.Fallback("missing observed strong ETag");
+                    return new ArchiveSelectiveProbeResult.Fallback("missing observed strong ETag", session.getFetchedBytes());
                 }
                 ArchiveDeltaEligibility evaluate = ArchiveRepresentationFencePolicy.INSTANCE.evaluate(ArchiveSelectiveUpdatePolicy.INSTANCE.publishedBinding(archivePackage2), ArchiveSelectiveUpdatePolicy.INSTANCE.resolvedBinding(archivePackage2), observedFence, session.getIndex().getCentralDirectorySha256());
                 if (!(evaluate instanceof ArchiveDeltaEligibility.Eligible)) {
                     Intrinsics.checkNotNull(evaluate, "null cannot be cast to non-null type com.arizona.launcher.updater.archive.range.ArchiveDeltaEligibility.Ineligible");
-                    return new ArchiveSelectiveProbeResult.Fallback(((ArchiveDeltaEligibility.Ineligible) evaluate).getReason().name());
+                    return new ArchiveSelectiveProbeResult.Fallback(((ArchiveDeltaEligibility.Ineligible) evaluate).getReason().name(), session.getFetchedBytes());
                 } else if (!ArchiveSelectiveUpdatePolicy.INSTANCE.remoteRegularEntriesMatchExpected(session.getIndex(), archivePackage2, list)) {
-                    return new ArchiveSelectiveProbeResult.Fallback("central directory does not match expected entry proofs");
+                    return new ArchiveSelectiveProbeResult.Fallback("central directory does not match expected entry proofs", session.getFetchedBytes());
                 } else {
                     LinkedHashMap linkedHashMap3 = new LinkedHashMap();
                     Iterator<RemoteZipEntry> it3 = session.getIndex().getEntries().iterator();
@@ -429,7 +440,7 @@ public final class ArchiveSelectivePackageInstaller {
                                 Iterator it5 = it4;
                                 arrayList4 = arrayList8;
                                 if (StringsKt.equals(((ArchivePackageFileRecord) it4.next()).getRelativePath(), archivePackageFileRecord2.getRelativePath(), true)) {
-                                    if (archiveSelectivePackageInstaller.liveFileMatches(archivePackageFileRecord2)) {
+                                    if (liveFileMatches(archivePackageFileRecord2)) {
                                         arrayList9.add(archivePackageFileRecord2);
                                         arrayList7 = arrayList9;
                                         arrayList8 = arrayList4;
@@ -441,7 +452,7 @@ public final class ArchiveSelectivePackageInstaller {
                                     Intrinsics.checkNotNullExpressionValue(lowerCase2, "toLowerCase(...)");
                                     remoteZipEntry = (RemoteZipEntry) linkedHashMap3.get(lowerCase2);
                                     if (remoteZipEntry != null) {
-                                        return new ArchiveSelectiveProbeResult.Fallback("changed entry missing from ZIP index");
+                                        return new ArchiveSelectiveProbeResult.Fallback("changed entry missing from ZIP index", remoteZipIndexSession.getFetchedBytes());
                                     }
                                     arrayList4.add(TuplesKt.to(archivePackageFileRecord2, remoteZipEntry));
                                     arrayList7 = arrayList9;
@@ -465,7 +476,7 @@ public final class ArchiveSelectivePackageInstaller {
                     ArrayList arrayList10 = arrayList7;
                     arrayList = arrayList8;
                     if (arrayList10.isEmpty() || arrayList.isEmpty()) {
-                        return new ArchiveSelectiveProbeResult.Fallback("no reusable live files after validation");
+                        return new ArchiveSelectiveProbeResult.Fallback("no reusable live files after validation", remoteZipIndexSession.getFetchedBytes());
                     }
                     RemoteZipEntryRangeSession remoteZipEntryRangeSession3 = new RemoteZipEntryRangeSession(archivePackage2.getId(), str3, remoteZipIndexSession.getEffectiveUrl(), archiveObservedRepresentationFence.getStrongEtag(), archivePackage2.getArchiveSize(), remoteZipIndexSession.getIndex().getCentralDirectoryOffset());
                     List<RemoteZipEntry> entries = remoteZipIndexSession.getIndex().getEntries();
@@ -498,7 +509,7 @@ public final class ArchiveSelectivePackageInstaller {
                 }
             }
         }
-        archiveSelectivePackageInstaller$probe$1 = new ArchiveSelectivePackageInstaller$probe$1(archiveSelectivePackageInstaller, continuation);
+        archiveSelectivePackageInstaller$probe$1 = new ArchiveSelectivePackageInstaller$probe$1(this, continuation);
         ArchiveSelectivePackageInstaller$probe$1 archiveSelectivePackageInstaller$probe$132 = archiveSelectivePackageInstaller$probe$1;
         Object obj32 = archiveSelectivePackageInstaller$probe$132.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();

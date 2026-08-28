@@ -216,7 +216,7 @@ public final class MutableIntFloatMap extends IntFloatMap {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m10099constructorimpl(ULong.m10099constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10099constructorimpl(ULong.m10099constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m10100constructorimpl(ULong.m10100constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10100constructorimpl(ULong.m10100constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

@@ -7,6 +7,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.common.BlockingServiceConnection;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -69,7 +70,7 @@ public class AdvertisingIdClient {
     }
 
     public AdvertisingIdClient(Context context) {
-        this(context, 30000L, false, false);
+        this(context, ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS, false, false);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x00a4  */

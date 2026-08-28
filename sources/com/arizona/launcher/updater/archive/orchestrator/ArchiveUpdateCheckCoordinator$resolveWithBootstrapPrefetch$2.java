@@ -30,7 +30,7 @@ import kotlinx.coroutines.NonCancellable;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveUpdateCheckCoordinator.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolutionResult;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 2, 2, 2}, l = {295, 301, 301}, m = "invokeSuspend", n = {"$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution"}, nl = {296, 304, 304}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 2, 2, 2}, l = {337, 343, 343}, m = "invokeSuspend", n = {"$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution"}, nl = {338, 346, 346}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ArchiveManifestResolutionResult>, Object> {
     final /* synthetic */ ArchiveBootstrapPrefetcher $bootstrapPrefetcher;
@@ -203,7 +203,7 @@ public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArchiveUpdateCheckCoordinator.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {}, l = {302}, m = "invokeSuspend", n = {}, nl = {303}, s = {}, v = 2)
+    @DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {}, l = {344}, m = "invokeSuspend", n = {}, nl = {345}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

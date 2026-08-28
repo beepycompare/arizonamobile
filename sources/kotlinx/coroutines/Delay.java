@@ -18,7 +18,7 @@ public interface Delay {
     }
 
     /* renamed from: scheduleResumeAfterDelay */
-    void mo11516scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation);
+    void mo11517scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation);
 
     /* compiled from: Delay.kt */
     @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
@@ -43,7 +43,7 @@ public interface Delay {
         }
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.intercepted(continuation), 1);
         cancellableContinuationImpl.initCancellability();
-        delay.mo11516scheduleResumeAfterDelay(j, cancellableContinuationImpl);
+        delay.mo11517scheduleResumeAfterDelay(j, cancellableContinuationImpl);
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
             DebugProbesKt.probeCoroutineSuspended(continuation);

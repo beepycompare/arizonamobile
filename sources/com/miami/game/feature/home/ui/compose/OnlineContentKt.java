@@ -208,7 +208,7 @@ public final class OnlineContentKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -216308211, "C83@2736L10,84@2781L12,85@2820L12,80@2617L251,88@2877L686:OnlineContent.kt#dswm0d");
                 Modifier modifier3 = companion;
                 int i6 = i4;
-                TextKt.m3157TextNvy7gAk(obj, null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.88f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
+                TextKt.m3157TextNvy7gAk(obj, null, Color.m5347copywmQWz5c$default(Color.Companion.m5385getWhite0d7_KjU(), 0.88f, 0.0f, 0.0f, 0.0f, 14, null), null, TypeKt.m9869dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m9869dpToSp8Feqmps(Dp.m8160constructorimpl(9.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 24576, 112618);
                 Modifier m1054paddingqDBjuR0$default = PaddingKt.m1054paddingqDBjuR0$default(Modifier.Companion, 0.0f, Dp.m8160constructorimpl(3.0f), 0.0f, 0.0f, 13, null);
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
@@ -240,7 +240,7 @@ public final class OnlineContentKt {
                 ImageKt.Image(PainterResources_androidKt.painterResource(i, startRestartGroup, (i6 >> 6) & 14), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
                 composer2 = startRestartGroup;
                 String str3 = obj2;
-                TextKt.m3157TextNvy7gAk(str3, null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), null, FontWeight.Companion.getW700(), null, 0L, null, null, TypeKt.m9868dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, ((i6 >> 3) & 14) | 1573248, 24576, 112554);
+                TextKt.m3157TextNvy7gAk(str3, null, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9869dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), null, FontWeight.Companion.getW700(), null, 0L, null, null, TypeKt.m9869dpToSp8Feqmps(Dp.m8160constructorimpl(11.0f), startRestartGroup, 6), 0, false, 1, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getBodySmall(), composer2, ((i6 >> 3) & 14) | 1573248, 24576, 112554);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 ComposerKt.sourceInformationMarkerEnd(composer2);
                 composer2.endNode();

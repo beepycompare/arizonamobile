@@ -67,7 +67,7 @@ public final class RemoteSettings implements SettingsProvider {
         Integer sessionRestartTimeout = this.settingsCache.sessionRestartTimeout();
         if (sessionRestartTimeout != null) {
             Duration.Companion companion = Duration.Companion;
-            return Duration.m11294boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
+            return Duration.m11295boximpl(DurationKt.toDuration(sessionRestartTimeout.intValue(), DurationUnit.SECONDS));
         }
         return null;
     }
@@ -241,7 +241,7 @@ public final class RemoteSettings implements SettingsProvider {
 
     static {
         Duration.Companion companion = Duration.Companion;
-        defaultCacheDuration = (int) Duration.m11310getInWholeSecondsimpl(DurationKt.toDuration(24, DurationUnit.HOURS));
+        defaultCacheDuration = (int) Duration.m11311getInWholeSecondsimpl(DurationKt.toDuration(24, DurationUnit.HOURS));
         sanitizeRegex = new Regex("com/google/firebase/sessions//");
     }
 }

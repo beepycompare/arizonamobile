@@ -32,7 +32,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: copy-fnh65Uc$default  reason: not valid java name */
-    public static /* synthetic */ SkySnapshot m9877copyfnh65Uc$default(SkySnapshot skySnapshot, int i, float f, float f2, float f3, float f4, ProgressiveDirection progressiveDirection, float f5, float f6, Easing easing, long j, int i2, Object obj) {
+    public static /* synthetic */ SkySnapshot m9878copyfnh65Uc$default(SkySnapshot skySnapshot, int i, float f, float f2, float f3, float f4, ProgressiveDirection progressiveDirection, float f5, float f6, Easing easing, long j, int i2, Object obj) {
         if ((i2 & 1) != 0) {
             i = skySnapshot.radius;
         }
@@ -70,7 +70,7 @@ public final class SkySnapshot {
         float f8 = f5;
         float f9 = f4;
         float f10 = f2;
-        return skySnapshot.m9879copyfnh65Uc(i, f, f10, f3, f9, progressiveDirection2, f8, f7, easing2, j2);
+        return skySnapshot.m9880copyfnh65Uc(i, f, f10, f3, f9, progressiveDirection2, f8, f7, easing2, j2);
     }
 
     public final int component1() {
@@ -78,7 +78,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: component10-0d7_KjU  reason: not valid java name */
-    public final long m9878component100d7_KjU() {
+    public final long m9879component100d7_KjU() {
         return this.tintColor;
     }
 
@@ -115,7 +115,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: copy-fnh65Uc  reason: not valid java name */
-    public final SkySnapshot m9879copyfnh65Uc(int i, float f, float f2, float f3, float f4, ProgressiveDirection direction, float f5, float f6, Easing easing, long j) {
+    public final SkySnapshot m9880copyfnh65Uc(int i, float f, float f2, float f3, float f4, ProgressiveDirection direction, float f5, float f6, Easing easing, long j) {
         Intrinsics.checkNotNullParameter(direction, "direction");
         Intrinsics.checkNotNullParameter(easing, "easing");
         return new SkySnapshot(i, f, f2, f3, f4, direction, f5, f6, easing, j, null);
@@ -192,7 +192,7 @@ public final class SkySnapshot {
     }
 
     /* renamed from: getTintColor-0d7_KjU  reason: not valid java name */
-    public final long m9880getTintColor0d7_KjU() {
+    public final long m9881getTintColor0d7_KjU() {
         return this.tintColor;
     }
 
@@ -247,7 +247,7 @@ public final class SkySnapshot {
         }
 
         /* renamed from: fromProgressive-PE3pjmc  reason: not valid java name */
-        public final SkySnapshot m9881fromProgressivePE3pjmc(int i, float f, float f2, float f3, float f4, CloudyProgressive progressive, long j) {
+        public final SkySnapshot m9882fromProgressivePE3pjmc(int i, float f, float f2, float f3, float f4, CloudyProgressive progressive, long j) {
             ProgressiveParams progressiveParams;
             ProgressiveParams progressiveParams2;
             Intrinsics.checkNotNullParameter(progressive, "progressive");

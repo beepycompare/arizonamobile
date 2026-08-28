@@ -6,6 +6,7 @@ import androidx.media3.common.C;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.ExoPlaybackException;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -172,7 +173,7 @@ public final class VideoFrameReleaseControl {
                 if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, true)) {
                     return 4;
                 }
-                if (!this.started || frameReleaseInfo.earlyUs >= 30000) {
+                if (!this.started || frameReleaseInfo.earlyUs >= ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS) {
                     this.frameReadyWithoutSurface = true;
                     return 5;
                 }

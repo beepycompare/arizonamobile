@@ -36,7 +36,7 @@ public final class YouTubePlayerView extends SixteenByNineFrameLayout implements
 
     /* compiled from: YouTubePlayerView.kt */
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes5.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

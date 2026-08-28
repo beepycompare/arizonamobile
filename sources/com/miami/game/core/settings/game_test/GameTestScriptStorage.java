@@ -116,7 +116,7 @@ public final class GameTestScriptStorage {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final List<GameTestSavedScript> listImportedScripts(Context context) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         String name;
         Intrinsics.checkNotNullParameter(context, "context");
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -166,19 +166,19 @@ public final class GameTestScriptStorage {
                     name = file3.getName();
                 }
                 Intrinsics.checkNotNull(name);
-                m9919constructorimpl = Result.m9919constructorimpl(new GameTestSavedScript(name2, name, file3.lastModified()));
+                m9920constructorimpl = Result.m9920constructorimpl(new GameTestSavedScript(name2, name, file3.lastModified()));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-            if (m9922exceptionOrNullimpl != null) {
-                Log.w(TAG, "Skipping invalid saved test script '" + file3.getName() + "'", m9922exceptionOrNullimpl);
+            Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+            if (m9923exceptionOrNullimpl != null) {
+                Log.w(TAG, "Skipping invalid saved test script '" + file3.getName() + "'", m9923exceptionOrNullimpl);
             }
-            if (Result.m9925isFailureimpl(m9919constructorimpl)) {
-                m9919constructorimpl = null;
+            if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+                m9920constructorimpl = null;
             }
-            GameTestSavedScript gameTestSavedScript = (GameTestSavedScript) m9919constructorimpl;
+            GameTestSavedScript gameTestSavedScript = (GameTestSavedScript) m9920constructorimpl;
             if (gameTestSavedScript != null) {
                 arrayList2.add(gameTestSavedScript);
             }
@@ -222,7 +222,7 @@ public final class GameTestScriptStorage {
     }
 
     private final LoadedGameTestScript readBundledScript(Context context) {
-        Object m9919constructorimpl;
+        Object m9920constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             GameTestScriptStorage gameTestScriptStorage = this;
@@ -234,16 +234,16 @@ public final class GameTestScriptStorage {
             BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
             String readText = TextStreamsKt.readText(bufferedReader);
             CloseableKt.closeFinally(bufferedReader, null);
-            m9919constructorimpl = Result.m9919constructorimpl(new LoadedGameTestScript(GameTestScriptPreferences.BUNDLED_SCRIPT_FILE_NAME, "bundled", GameTestScriptParser.parse(readText)));
+            m9920constructorimpl = Result.m9920constructorimpl(new LoadedGameTestScript(GameTestScriptPreferences.BUNDLED_SCRIPT_FILE_NAME, "bundled", GameTestScriptParser.parse(readText)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-        if (m9922exceptionOrNullimpl != null) {
-            Log.w(TAG, "Unable to load bundled test script", m9922exceptionOrNullimpl);
+        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+        if (m9923exceptionOrNullimpl != null) {
+            Log.w(TAG, "Unable to load bundled test script", m9923exceptionOrNullimpl);
         }
-        return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+        return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x001f, code lost:
@@ -290,8 +290,8 @@ public final class GameTestScriptStorage {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final LoadedGameTestScript readImportedScriptFile(Context context, String str, String str2) {
-        Object m9919constructorimpl;
-        Throwable m9922exceptionOrNullimpl;
+        Object m9920constructorimpl;
+        Throwable m9923exceptionOrNullimpl;
         File resolveImportedScriptFile;
         LoadedGameTestScript loadedGameTestScript;
         try {
@@ -300,25 +300,25 @@ public final class GameTestScriptStorage {
             resolveImportedScriptFile = resolveImportedScriptFile(context, str);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9919constructorimpl = Result.m9919constructorimpl(ResultKt.createFailure(th));
+            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
         }
         if (resolveImportedScriptFile != null && resolveImportedScriptFile.exists()) {
             Charset UTF_8 = StandardCharsets.UTF_8;
             Intrinsics.checkNotNullExpressionValue(UTF_8, "UTF_8");
             loadedGameTestScript = new LoadedGameTestScript(str2, "imported", GameTestScriptParser.parse(FilesKt.readText(resolveImportedScriptFile, UTF_8)));
-            m9919constructorimpl = Result.m9919constructorimpl(loadedGameTestScript);
-            m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-            if (m9922exceptionOrNullimpl != null) {
-                Log.w(TAG, "Unable to load imported test script '" + str + "'", m9922exceptionOrNullimpl);
+            m9920constructorimpl = Result.m9920constructorimpl(loadedGameTestScript);
+            m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+            if (m9923exceptionOrNullimpl != null) {
+                Log.w(TAG, "Unable to load imported test script '" + str + "'", m9923exceptionOrNullimpl);
             }
-            return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+            return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
         }
         loadedGameTestScript = null;
-        m9919constructorimpl = Result.m9919constructorimpl(loadedGameTestScript);
-        m9922exceptionOrNullimpl = Result.m9922exceptionOrNullimpl(m9919constructorimpl);
-        if (m9922exceptionOrNullimpl != null) {
+        m9920constructorimpl = Result.m9920constructorimpl(loadedGameTestScript);
+        m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
+        if (m9923exceptionOrNullimpl != null) {
         }
-        return Result.m9925isFailureimpl(m9919constructorimpl) ? null : m9919constructorimpl;
+        return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
     }
 
     private final File resolveImportedScriptFile(Context context, String str) {

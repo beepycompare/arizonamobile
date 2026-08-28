@@ -2,6 +2,7 @@ package coil3.util;
 
 import android.os.SystemClock;
 import coil3.util.Logger;
+import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import java.io.File;
 import kotlin.Metadata;
 /* compiled from: hardwareBitmaps.kt */
@@ -45,6 +46,6 @@ final class FileDescriptorCounter {
     private final boolean checkFileDescriptors() {
         int i = decodesSinceLastFileDescriptorCheck;
         decodesSinceLastFileDescriptorCheck = i + 1;
-        return i >= 30 || SystemClock.uptimeMillis() > lastFileDescriptorCheckTimestamp + 30000;
+        return i >= 30 || SystemClock.uptimeMillis() > lastFileDescriptorCheckTimestamp + ArchiveNetworkMonitorKt.ARCHIVE_NETWORK_RECONNECT_TIMEOUT_MS;
     }
 }

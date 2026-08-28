@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchivePackageUpdater.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater", f = "ArchivePackageUpdater.kt", i = {0, 0}, l = {1294}, m = "discardDisposableDownloadsAfterStorageFailure", n = {"slot", RemoteConfigConstants.ResponseFieldKey.STATE}, nl = {1296}, s = {"L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater", f = "ArchivePackageUpdater.kt", i = {0, 0}, l = {1373}, m = "discardDisposableDownloadsAfterStorageFailure", n = {"slot", RemoteConfigConstants.ResponseFieldKey.STATE}, nl = {1375}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchivePackageUpdater$discardDisposableDownloadsAfterStorageFailure$1 extends ContinuationImpl {
     Object L$0;

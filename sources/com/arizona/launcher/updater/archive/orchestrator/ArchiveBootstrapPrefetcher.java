@@ -1,6 +1,7 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
 import android.content.Context;
+import androidx.compose.runtime.ComposerKt;
 import com.arizona.launcher.DownloadRetryConfig;
 import com.arizona.launcher.DownloadRetryPolicy;
 import com.arizona.launcher.updater.archive.download.AndroidArchiveNetworkMonitor;
@@ -153,7 +154,7 @@ public final class ArchiveBootstrapPrefetcher {
             if (externalCacheDir == null) {
                 return null;
             }
-            return new ArchiveBootstrapPrefetcher(new File(externalCacheDir, "archive-updater/downloads"), false, new ArchiveBootstrapPrefetcher$Companion$forAndroid$1(new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), new AndroidArchiveNetworkMonitor(context), null, false, FileArchiveDownloadResumeStore.Companion.forAndroid(), null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, 100, null)));
+            return new ArchiveBootstrapPrefetcher(new File(externalCacheDir, "archive-updater/downloads"), false, new ArchiveBootstrapPrefetcher$Companion$forAndroid$1(new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), new AndroidArchiveNetworkMonitor(context), 0L, null, false, FileArchiveDownloadResumeStore.Companion.forAndroid(), null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, ComposerKt.providerMapsKey, null)));
         }
     }
 }
