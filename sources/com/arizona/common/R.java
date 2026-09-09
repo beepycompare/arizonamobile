@@ -32,8 +32,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int avatar_error_placeholder = 0x7f0803a1;
-        public static int sample_skin_avatar_view = 0x7f080f47;
+        public static int avatar_error_placeholder = 0x7f0803a3;
+        public static int sample_skin_avatar_view = 0x7f080f4d;
 
         private drawable() {
         }

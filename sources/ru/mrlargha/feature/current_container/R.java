@@ -4,16 +4,16 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int active_shape_bg = 0x7f080336;
-        public static int auction_button_exit = 0x7f08038e;
-        public static int auction_container_accept_button = 0x7f08038f;
-        public static int auction_container_bg = 0x7f080390;
-        public static int auction_container_item = 0x7f080391;
-        public static int auction_intput_style = 0x7f080393;
-        public static int auction_item_bg = 0x7f080394;
-        public static int ic_auction_container_last_bet_bg = 0x7f080afc;
-        public static int ic_auction_container_timer_bg = 0x7f080afd;
-        public static int item = 0x7f080c54;
+        public static int active_shape_bg = 0x7f080338;
+        public static int auction_button_exit = 0x7f080390;
+        public static int auction_container_accept_button = 0x7f080391;
+        public static int auction_container_bg = 0x7f080392;
+        public static int auction_container_item = 0x7f080393;
+        public static int auction_intput_style = 0x7f080395;
+        public static int auction_item_bg = 0x7f080396;
+        public static int ic_auction_container_last_bet_bg = 0x7f080b02;
+        public static int ic_auction_container_timer_bg = 0x7f080b03;
+        public static int item = 0x7f080c5a;
 
         private drawable() {
         }

@@ -19,7 +19,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int image_viewer_previous = 0x7f080c2b;
+        public static int image_viewer_previous = 0x7f080c31;
 
         private drawable() {
         }

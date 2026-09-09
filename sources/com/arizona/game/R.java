@@ -58,7 +58,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_launcher_background = 0x7f080b6e;
+        public static int ic_launcher_background = 0x7f080b74;
 
         private drawable() {
         }

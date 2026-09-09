@@ -24,11 +24,11 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class drawable {
-        public static int dot_background = 0x7f0807bc;
-        public static int spring_dot_background = 0x7f080fdf;
-        public static int spring_dot_stroke_background = 0x7f080fe0;
-        public static int worm_dot_background = 0x7f081053;
-        public static int worm_dot_stroke_background = 0x7f081054;
+        public static int dot_background = 0x7f0807c2;
+        public static int spring_dot_background = 0x7f080fe5;
+        public static int spring_dot_stroke_background = 0x7f080fe6;
+        public static int worm_dot_background = 0x7f081059;
+        public static int worm_dot_stroke_background = 0x7f08105a;
 
         private drawable() {
         }

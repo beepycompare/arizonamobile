@@ -103,8 +103,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_arrow_down_24dp = 0x7f080afb;
-        public static int preference_list_divider_material = 0x7f080ed2;
+        public static int ic_arrow_down_24dp = 0x7f080b01;
+        public static int preference_list_divider_material = 0x7f080ed8;
 
         private drawable() {
         }

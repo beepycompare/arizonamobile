@@ -4,13 +4,13 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int user_battlepass_logo10 = 0x7f081017;
-        public static int user_battlepass_logo10_old = 0x7f081018;
-        public static int user_battlepass_logo11 = 0x7f081019;
-        public static int user_battlepass_rodina_usual = 0x7f08101a;
-        public static int user_battlepass_topbar_bg_rodina = 0x7f08101c;
-        public static int user_battlepass_topbar_bg_rodina_old = 0x7f08101d;
-        public static int user_battlepass_topbar_pattern = 0x7f08101e;
+        public static int user_battlepass_logo10 = 0x7f08101d;
+        public static int user_battlepass_logo10_old = 0x7f08101e;
+        public static int user_battlepass_logo11 = 0x7f08101f;
+        public static int user_battlepass_rodina_usual = 0x7f081020;
+        public static int user_battlepass_topbar_bg_rodina = 0x7f081022;
+        public static int user_battlepass_topbar_bg_rodina_old = 0x7f081023;
+        public static int user_battlepass_topbar_pattern = 0x7f081024;
 
         private drawable() {
         }

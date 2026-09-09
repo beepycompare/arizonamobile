@@ -4,36 +4,36 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int arizona_cases_bg = 0x7f08034b;
-        public static int arizona_cases_can_win_item_default_bg = 0x7f08034c;
-        public static int arizona_cases_can_win_item_gold_bg = 0x7f08034d;
-        public static int arizona_cases_can_win_item_green_bg = 0x7f08034e;
-        public static int arizona_cases_can_win_item_purple_bg = 0x7f08034f;
-        public static int arizona_cases_can_win_item_red_bg = 0x7f080350;
-        public static int arizona_cases_diamond_icon = 0x7f080351;
-        public static int arizona_cases_gold_box = 0x7f080352;
-        public static int arizona_cases_main_box = 0x7f080353;
-        public static int arizona_cases_prize_item_bg = 0x7f080354;
-        public static int arizona_cases_prize_item_bg_pattern = 0x7f080355;
-        public static int arizona_cases_prize_select_item_bg_image = 0x7f080356;
-        public static int cases_arrow_icon = 0x7f0805df;
-        public static int cases_benefit_bg = 0x7f0805e0;
-        public static int cases_btn_close_bg = 0x7f0805e1;
-        public static int cases_close_icon = 0x7f0805e2;
-        public static int cases_custom_scrollbar_thumb = 0x7f0805e3;
-        public static int cases_custom_scrollbar_track = 0x7f0805e4;
-        public static int cases_info_icon = 0x7f0805e6;
-        public static int cases_mark_ckeck_icon = 0x7f0805e7;
-        public static int cases_new_bg = 0x7f0805e8;
-        public static int cases_prize_select_item_bg = 0x7f0805e9;
-        public static int cases_prizes_arrow_down_up_icon = 0x7f0805ea;
-        public static int cases_prizes_page_bg = 0x7f0805eb;
-        public static int cases_select_x = 0x7f0805ec;
-        public static int cases_top_bar_gold_box_bg = 0x7f0805ed;
-        public static int cases_top_bar_linear_progress = 0x7f0805ee;
-        public static int cases_top_bg = 0x7f0805ef;
-        public static int cases_unselect_x = 0x7f0805f0;
-        public static int done_ic = 0x7f0807bb;
+        public static int arizona_cases_bg = 0x7f08034d;
+        public static int arizona_cases_can_win_item_default_bg = 0x7f08034e;
+        public static int arizona_cases_can_win_item_gold_bg = 0x7f08034f;
+        public static int arizona_cases_can_win_item_green_bg = 0x7f080350;
+        public static int arizona_cases_can_win_item_purple_bg = 0x7f080351;
+        public static int arizona_cases_can_win_item_red_bg = 0x7f080352;
+        public static int arizona_cases_diamond_icon = 0x7f080353;
+        public static int arizona_cases_gold_box = 0x7f080354;
+        public static int arizona_cases_main_box = 0x7f080355;
+        public static int arizona_cases_prize_item_bg = 0x7f080356;
+        public static int arizona_cases_prize_item_bg_pattern = 0x7f080357;
+        public static int arizona_cases_prize_select_item_bg_image = 0x7f080358;
+        public static int cases_arrow_icon = 0x7f0805e3;
+        public static int cases_benefit_bg = 0x7f0805e4;
+        public static int cases_btn_close_bg = 0x7f0805e5;
+        public static int cases_close_icon = 0x7f0805e6;
+        public static int cases_custom_scrollbar_thumb = 0x7f0805e7;
+        public static int cases_custom_scrollbar_track = 0x7f0805e8;
+        public static int cases_info_icon = 0x7f0805ea;
+        public static int cases_mark_ckeck_icon = 0x7f0805eb;
+        public static int cases_new_bg = 0x7f0805ec;
+        public static int cases_prize_select_item_bg = 0x7f0805ed;
+        public static int cases_prizes_arrow_down_up_icon = 0x7f0805ee;
+        public static int cases_prizes_page_bg = 0x7f0805ef;
+        public static int cases_select_x = 0x7f0805f0;
+        public static int cases_top_bar_gold_box_bg = 0x7f0805f1;
+        public static int cases_top_bar_linear_progress = 0x7f0805f2;
+        public static int cases_top_bg = 0x7f0805f3;
+        public static int cases_unselect_x = 0x7f0805f4;
+        public static int done_ic = 0x7f0807c1;
 
         private drawable() {
         }

@@ -68,6 +68,14 @@ public final class DailyRewardsScreen extends SAMPUIElement {
                 iArr[BackgroundType.WELCOME.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
+            try {
+                iArr[BackgroundType.RODINA_CAR_1.ordinal()] = 6;
+            } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[BackgroundType.RODINA_CAR_2.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -135,25 +143,40 @@ public final class DailyRewardsScreen extends SAMPUIElement {
         if (dailyRewardsLayoutBinding != null) {
             dailyRewardsLayoutBinding.title.setText(screenDataInfo.getHeader());
             setVisibleDetail(true);
-            int i = WhenMappings.$EnumSwitchMapping$0[BackgroundType.Companion.fromType(screenDataInfo.getBackground()).ordinal()];
-            if (i == 1) {
-                dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_reward_bg);
-            } else if (i == 2) {
-                dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.new_year_reward_bg);
-            } else if (i == 3) {
-                dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_rewards_may_bg);
-                setVisibleDetail(false);
-                this.rewardsAdapter.setTypeReward(BackgroundType.MAY_REWARD);
-            } else if (i == 4) {
-                dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.autumn_reward_bg);
-                setVisibleDetail(false);
-                this.rewardsAdapter.setTypeReward(BackgroundType.AUTUMN_REWARD);
-            } else if (i != 5) {
-                throw new NoWhenBranchMatchedException();
-            } else {
-                dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_reward_welcom_bg);
-                setVisibleDetail(false);
-                this.rewardsAdapter.setTypeReward(BackgroundType.WELCOME);
+            switch (WhenMappings.$EnumSwitchMapping$0[BackgroundType.Companion.fromType(screenDataInfo.getBackground()).ordinal()]) {
+                case 1:
+                    dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_reward_bg);
+                    return;
+                case 2:
+                    dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.new_year_reward_bg);
+                    return;
+                case 3:
+                    dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_rewards_may_bg);
+                    setVisibleDetail(false);
+                    this.rewardsAdapter.setTypeReward(BackgroundType.MAY_REWARD);
+                    return;
+                case 4:
+                    dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.autumn_reward_bg);
+                    setVisibleDetail(false);
+                    this.rewardsAdapter.setTypeReward(BackgroundType.AUTUMN_REWARD);
+                    return;
+                case 5:
+                    dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.daily_reward_welcom_bg);
+                    setVisibleDetail(false);
+                    this.rewardsAdapter.setTypeReward(BackgroundType.WELCOME);
+                    return;
+                case 6:
+                    dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.calendar_rodina_car_1);
+                    setVisibleDetail(false);
+                    this.rewardsAdapter.setTypeReward(BackgroundType.RODINA_CAR_1);
+                    return;
+                case 7:
+                    dailyRewardsLayoutBinding.getRoot().setBackgroundResource(R.drawable.calendar_rodina_car_2);
+                    setVisibleDetail(false);
+                    this.rewardsAdapter.setTypeReward(BackgroundType.RODINA_CAR_2);
+                    return;
+                default:
+                    throw new NoWhenBranchMatchedException();
             }
         }
     }
@@ -450,7 +473,7 @@ public final class DailyRewardsScreen extends SAMPUIElement {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: DailyRewardsScreen.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000b\b\u0086\u0081\u0002\u0018\u0000 \r2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\rB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\u000e"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "", "type", "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "DAILY_REWARD", "NEW_YEAR", "MAY_REWARD", "AUTUMN_REWARD", "WELCOME", "Companion", "calendar"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\r\b\u0086\u0081\u0002\u0018\u0000 \u000f2\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u000fB\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000e¨\u0006\u0010"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "", "type", "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "DAILY_REWARD", "NEW_YEAR", "MAY_REWARD", "AUTUMN_REWARD", "WELCOME", "RODINA_CAR_1", "RODINA_CAR_2", "Companion", "calendar"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class BackgroundType {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -462,9 +485,11 @@ public final class DailyRewardsScreen extends SAMPUIElement {
         public static final BackgroundType MAY_REWARD = new BackgroundType("MAY_REWARD", 2, 2);
         public static final BackgroundType AUTUMN_REWARD = new BackgroundType("AUTUMN_REWARD", 3, 3);
         public static final BackgroundType WELCOME = new BackgroundType("WELCOME", 4, 4);
+        public static final BackgroundType RODINA_CAR_1 = new BackgroundType("RODINA_CAR_1", 5, 5);
+        public static final BackgroundType RODINA_CAR_2 = new BackgroundType("RODINA_CAR_2", 6, 6);
 
         private static final /* synthetic */ BackgroundType[] $values() {
-            return new BackgroundType[]{DAILY_REWARD, NEW_YEAR, MAY_REWARD, AUTUMN_REWARD, WELCOME};
+            return new BackgroundType[]{DAILY_REWARD, NEW_YEAR, MAY_REWARD, AUTUMN_REWARD, WELCOME, RODINA_CAR_1, RODINA_CAR_2};
         }
 
         public static EnumEntries<BackgroundType> getEntries() {

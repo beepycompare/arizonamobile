@@ -55,6 +55,14 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 iArr[DailyRewardsScreen.BackgroundType.WELCOME.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
+            try {
+                iArr[DailyRewardsScreen.BackgroundType.RODINA_CAR_1.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[DailyRewardsScreen.BackgroundType.RODINA_CAR_2.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -380,8 +388,7 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_autumn_item_bg);
                 dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#876836"));
             }
-        } else if (i2 != 3) {
-        } else {
+        } else if (i2 == 3) {
             if (updatePlayerInfo.getCurrentDay() == i + 1) {
                 dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
                 dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
@@ -398,6 +405,33 @@ public final class RewardsAdapter extends RecyclerView.Adapter<ViewHolder> {
                 dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
                 dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_rewerd_item_get_bg);
                 dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#569647"));
+            }
+        } else if (i2 == 4) {
+            if (updatePlayerInfo.getCurrentDay() == i + 1) {
+                dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_item_current_day_bg);
+                dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#CE8235"));
+                dailyRewardsRewardItemBinding.getButton.setBackgroundColor(Color.parseColor("#CE8235"));
+            } else if (updatePlayerInfo.getCurrentDay() <= i) {
+                dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_rodina_car_1_item_bg);
+                dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#281410"));
+            }
+        } else if (i2 != 5) {
+        } else {
+            if (updatePlayerInfo.getCurrentDay() == i + 1) {
+                dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_item_current_day_bg);
+                dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#CE8235"));
+                dailyRewardsRewardItemBinding.getButton.setBackgroundColor(Color.parseColor("#CE8235"));
+            } else if (updatePlayerInfo.getCurrentDay() <= i) {
+                dailyRewardsRewardItemBinding.getButtonText.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.dayTitle.setTextColor(Color.parseColor("#FFFFFF"));
+                dailyRewardsRewardItemBinding.mainContainer.setBackgroundResource(R.drawable.daily_reward_rodina_car_2_item_bg);
+                dailyRewardsRewardItemBinding.dayContainer.setBackgroundColor(Color.parseColor("#0C2840"));
             }
         }
     }

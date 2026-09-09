@@ -4,15 +4,15 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int dig0 = 0x7f080703;
-        public static int dig1 = 0x7f080704;
-        public static int dig2 = 0x7f080705;
-        public static int dig3 = 0x7f080706;
-        public static int dig4 = 0x7f080707;
-        public static int dig_bg = 0x7f080708;
-        public static int fishing_accept_bg = 0x7f08096e;
-        public static int fishing_exit_ic = 0x7f080975;
-        public static int fishing_lines = 0x7f08098d;
+        public static int dig0 = 0x7f080709;
+        public static int dig1 = 0x7f08070a;
+        public static int dig2 = 0x7f08070b;
+        public static int dig3 = 0x7f08070c;
+        public static int dig4 = 0x7f08070d;
+        public static int dig_bg = 0x7f08070e;
+        public static int fishing_accept_bg = 0x7f080974;
+        public static int fishing_exit_ic = 0x7f08097b;
+        public static int fishing_lines = 0x7f080993;
 
         private drawable() {
         }

@@ -4,21 +4,21 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int certificate_ic_rubble = 0x7f08060b;
-        public static int certificate_police_bonus_arrest = 0x7f08060c;
-        public static int certificate_police_bonus_deposit = 0x7f08060d;
-        public static int certificate_police_bonus_salary = 0x7f08060e;
-        public static int certificate_police_bonus_tasks = 0x7f08060f;
-        public static int sertificate_ic_anim = 0x7f080f5b;
-        public static int sertificate_ic_armor = 0x7f080f5c;
-        public static int sertificate_ic_caliper = 0x7f080f5d;
-        public static int sertificate_ic_container = 0x7f080f5e;
-        public static int sertificate_ic_engine = 0x7f080f5f;
-        public static int sertificate_ic_gov = 0x7f080f60;
-        public static int sertificate_ic_hp = 0x7f080f61;
-        public static int sertificate_ic_safe = 0x7f080f62;
-        public static int sertificate_ic_set = 0x7f080f63;
-        public static int sertificate_ic_speed = 0x7f080f64;
+        public static int certificate_ic_rubble = 0x7f08060f;
+        public static int certificate_police_bonus_arrest = 0x7f080610;
+        public static int certificate_police_bonus_deposit = 0x7f080611;
+        public static int certificate_police_bonus_salary = 0x7f080612;
+        public static int certificate_police_bonus_tasks = 0x7f080613;
+        public static int sertificate_ic_anim = 0x7f080f61;
+        public static int sertificate_ic_armor = 0x7f080f62;
+        public static int sertificate_ic_caliper = 0x7f080f63;
+        public static int sertificate_ic_container = 0x7f080f64;
+        public static int sertificate_ic_engine = 0x7f080f65;
+        public static int sertificate_ic_gov = 0x7f080f66;
+        public static int sertificate_ic_hp = 0x7f080f67;
+        public static int sertificate_ic_safe = 0x7f080f68;
+        public static int sertificate_ic_set = 0x7f080f69;
+        public static int sertificate_ic_speed = 0x7f080f6a;
 
         private drawable() {
         }
