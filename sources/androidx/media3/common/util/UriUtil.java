@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import com.google.common.base.Ascii;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class UriUtil {
     private static final int FRAGMENT = 3;
     private static final int INDEX_COUNT = 4;

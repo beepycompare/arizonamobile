@@ -25,6 +25,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.CatalogItemLayoutBinding;
 import ru.mrlargha.commonui.elements.catalog.models.CatalogItemModel;
 import ru.mrlargha.commonui.elements.hud.presentation.UtilsKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: CatalogAdapter.kt */
@@ -109,7 +110,9 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
             binding.catalogItemPriceText.setVisibility(8);
         }
         if (ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
-            Picasso.get().load((FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/donate/") + catalogItemModel2.getImg() + ".webp").error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$1
+            Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+            PicassoLoadSafeKt.loadSafe(picasso, (FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/donate/") + catalogItemModel2.getImg() + ".webp").error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$1
                 @Override // com.squareup.picasso.Callback
                 public void onError(Exception exc) {
                 }
@@ -137,7 +140,9 @@ public final class CatalogAdapter extends RecyclerView.Adapter<CatalogItemViewHo
                 Intrinsics.checkNotNullExpressionValue(catalogImage3, "catalogImage");
                 catalogImage3.setVisibility(0);
             } else {
-                Picasso.get().load(buildCatalogImageUrl).error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$2
+                Picasso picasso2 = Picasso.get();
+                Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
+                PicassoLoadSafeKt.loadSafe(picasso2, buildCatalogImageUrl).error(R.drawable.baseline_warning_24).into(binding.catalogImage, new Callback() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogAdapter$onBindViewHolder$1$2
                     @Override // com.squareup.picasso.Callback
                     public void onSuccess() {
                         ProgressBar catalogProgressBar3 = CatalogItemLayoutBinding.this.catalogProgressBar;

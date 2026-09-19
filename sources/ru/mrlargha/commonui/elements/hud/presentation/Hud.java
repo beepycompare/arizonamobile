@@ -10,10 +10,14 @@ import android.net.Uri;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -27,6 +31,7 @@ import androidx.media3.common.C;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizona.common.utils.EasyAnimation;
+import com.arizona.launcher.UpdateServiceContract;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.JsonArray;
@@ -39,10 +44,11 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import kotlin.Lazy;
+import kotlin.LazyKt;
 import kotlin.Metadata;
 import kotlin.Pair;
 import kotlin.Result;
@@ -57,19 +63,21 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
-import kotlin.jvm.internal.StringCompanionObject;
 import kotlin.ranges.RangesKt;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.databinding.BannerElementBinding;
 import ru.mrlargha.commonui.databinding.HudCaptBinding;
+import ru.mrlargha.commonui.databinding.HudCountdownBinding;
 import ru.mrlargha.commonui.databinding.HudDriftCounterBinding;
 import ru.mrlargha.commonui.databinding.HudElementCasesTimerBinding;
 import ru.mrlargha.commonui.databinding.HudElementChickenChargeBinding;
@@ -92,6 +100,7 @@ import ru.mrlargha.commonui.databinding.HudRadarScreenBinding;
 import ru.mrlargha.commonui.databinding.HudTargetPlatePageBinding;
 import ru.mrlargha.commonui.databinding.HudTaximeterBinding;
 import ru.mrlargha.commonui.databinding.HudTimerBinding;
+import ru.mrlargha.commonui.databinding.HudTrainInstructionBinding;
 import ru.mrlargha.commonui.databinding.HudTrainJobBinding;
 import ru.mrlargha.commonui.databinding.RodinaKaptScreenBinding;
 import ru.mrlargha.commonui.elements.hud.interaction_button.InteractionData;
@@ -100,6 +109,7 @@ import ru.mrlargha.commonui.elements.hud.mission_progress.MissionGroupData;
 import ru.mrlargha.commonui.elements.hud.mission_progress.MissionProgressAdapter;
 import ru.mrlargha.commonui.elements.hud.presentation.RodinaHudSubwindowEvents;
 import ru.mrlargha.commonui.elements.hud.presentation.api.HudApi;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.ArizonaTrainHud;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudImprovingSkills;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudListener;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudProposalScreen;
@@ -116,6 +126,7 @@ import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.models.HudChickenGameModel;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.models.HudChickenGameRatingModel;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.countdown.HudCountdown;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.damage_informer.DamageFeedElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.drift_counter.HudDriftCounter;
@@ -136,9 +147,11 @@ import ru.mrlargha.commonui.elements.hud.presentation.models.ProgressBarModel;
 import ru.mrlargha.commonui.elements.hud.presentation.models.ServerInfoItem;
 import ru.mrlargha.commonui.elements.hud.presentation.models.SharedPreferenceKeys;
 import ru.mrlargha.commonui.elements.hud.presentation.models.TaximeterModel;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 import ru.mrlargha.commonui.utils.CustomTextView;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.TokenManagerKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
@@ -149,12 +162,16 @@ import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.IconAndSize;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.TextWithIconsKt;
 /* compiled from: Hud.kt */
-@Metadata(d1 = {"\u0000»\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e*\u0001/\u0018\u0000 ¤\u00012\u00020\u0001:\b¡\u0001¢\u0001£\u0001¤\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010U\u001a\u00020VH\u0002J\b\u0010W\u001a\u00020VH\u0002J\u0010\u0010X\u001a\u00020Y2\u0006\u0010Z\u001a\u00020[H\u0002J\u000e\u0010\\\u001a\u00020Y2\u0006\u0010]\u001a\u00020[J\u0010\u0010^\u001a\u00020Y2\u0006\u0010_\u001a\u00020#H\u0016J&\u0010`\u001a\u00020Y2\u0006\u0010a\u001a\u00020\u00052\u0006\u0010b\u001a\u00020\u00052\u0006\u0010c\u001a\u00020\u00052\u0006\u0010d\u001a\u00020\u0005J\u000e\u0010e\u001a\u00020Y2\u0006\u0010f\u001a\u00020\u0005J\u000e\u0010g\u001a\u00020Y2\u0006\u0010h\u001a\u00020\u0018J\u000e\u0010i\u001a\u00020Y2\u0006\u0010j\u001a\u00020\u0005J\u000e\u0010k\u001a\u00020Y2\u0006\u0010l\u001a\u00020[J\u000e\u0010m\u001a\u00020Y2\u0006\u0010l\u001a\u00020[J\u0010\u0010n\u001a\u00020Y2\u0006\u0010_\u001a\u00020\u0005H\u0002J\u0010\u0010o\u001a\u00020Y2\u0006\u0010p\u001a\u00020\u0005H\u0002J\u0010\u0010q\u001a\u00020Y2\u0006\u0010r\u001a\u00020sH\u0002J\u0010\u0010t\u001a\u00020Y2\u0006\u0010u\u001a\u00020[H\u0002J\b\u0010v\u001a\u00020YH\u0002J\u001e\u0010w\u001a\u00020Y2\u0006\u0010x\u001a\u00020[2\f\u0010y\u001a\b\u0012\u0004\u0012\u00020{0zH\u0002J\b\u0010|\u001a\u00020YH\u0002J\u0010\u0010}\u001a\u00020Y2\u0006\u0010~\u001a\u00020\u0005H\u0002J\u0012\u0010\u007f\u001a\u00020Y2\b\u0010\u0080\u0001\u001a\u00030\u0081\u0001H\u0002J\u001a\u0010\u0082\u0001\u001a\u00020Y2\u0006\u0010l\u001a\u00020[2\u0007\u0010\u0083\u0001\u001a\u00020\u0005H\u0016J\u0011\u0010\u0084\u0001\u001a\u00020Y2\u0006\u0010l\u001a\u00020[H\u0002J\u0011\u0010\u0085\u0001\u001a\u00020#2\u0006\u0010l\u001a\u00020[H\u0002J\u0012\u0010\u0086\u0001\u001a\u00020Y2\u0007\u0010r\u001a\u00030\u0087\u0001H\u0002J\u0011\u0010\u0088\u0001\u001a\u00020Y2\u0006\u0010_\u001a\u00020\u0005H\u0002J\t\u0010\u0089\u0001\u001a\u00020YH\u0002J\u0018\u0010\u008a\u0001\u001a\u00020Y2\r\u0010l\u001a\t\u0012\u0005\u0012\u00030\u008b\u00010zH\u0002J\u0019\u0010\u008c\u0001\u001a\u00020Y2\u000e\u0010\u008d\u0001\u001a\t\u0012\u0005\u0012\u00030\u008b\u00010zH\u0002J\u0011\u0010\u008e\u0001\u001a\u00020Y2\u0006\u0010j\u001a\u00020\u0005H\u0002J\u0013\u0010\u008f\u0001\u001a\u00020Y2\b\u0010\u008d\u0001\u001a\u00030\u008b\u0001H\u0002J\t\u0010\u0090\u0001\u001a\u00020YH\u0002J\t\u0010\u0091\u0001\u001a\u00020YH\u0002J\t\u0010\u0092\u0001\u001a\u00020YH\u0002J\u0012\u0010\u0093\u0001\u001a\u00020Y2\u0007\u0010\u0094\u0001\u001a\u00020[H\u0002J\t\u0010\u0095\u0001\u001a\u00020YH\u0002J\u0012\u0010\u0096\u0001\u001a\u00020Y2\u0007\u0010l\u001a\u00030\u0097\u0001H\u0002J\u0012\u0010\u0098\u0001\u001a\u00020Y2\u0007\u0010\u0099\u0001\u001a\u00020\u0005H\u0002J\u0012\u0010\u009a\u0001\u001a\u00020Y2\u0007\u0010\u0099\u0001\u001a\u00020\u0005H\u0002J\t\u0010\u009b\u0001\u001a\u00020YH\u0002J\t\u0010\u009c\u0001\u001a\u00020YH\u0002J\u0012\u0010\u009d\u0001\u001a\u00020Y2\u0007\u0010\u009e\u0001\u001a\u00020\u0005H\u0002J\t\u0010\u009f\u0001\u001a\u00020YH\u0002J\t\u0010 \u0001\u001a\u00020YH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0010\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0019\u001a\n \u001b*\u0004\u0018\u00010\u001a0\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020+X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010.\u001a\u00020/X\u0082\u0004¢\u0006\u0004\n\u0002\u00100R\u0010\u00101\u001a\u0004\u0018\u000102X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020<X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020>X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020@X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020BX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020DX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010E\u001a\u00020FX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020HX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010I\u001a\u00020JX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010K\u001a\u00020LX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010M\u001a\u00020NX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010O\u001a\u00020PX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010Q\u001a\u00020RX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010S\u001a\u00020TX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006¥\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "trainHudBinding", "Lru/mrlargha/commonui/databinding/HudTrainJobBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "", "handler", "Landroid/os/Handler;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "rodinaSubwindowEventListener", "ru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1;", "rodinaSubwindowManager", "Lru/mrlargha/commonui/elements/hud/presentation/RodinaHudSubwindowManager;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "caseTimer", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/case_timer/CaseTimerElement;", "imposterGameElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/imposter_game/ImposterGameElement;", "chargeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "chickenGame", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_game/HudChickenGame;", "bodycam", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/bodycam/HudBodycam;", "driftCounter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/drift_counter/HudDriftCounter;", "gatherCount", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/gathers_count/HudGathersCount;", "targetPlate", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/target_plate/HudTargetPlate;", "nativeProvider", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/NativeProvider;", "timeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeElement;", "moneyElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/money/MoneyElement;", "damageInformerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/damage_informer/DamageFeedElement;", "paydayElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "football", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/football/HudFootball;", "factionCapture", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/faction_capture/FactionCaptureElement;", "setupBattlePassButton", "Lru/mrlargha/commonui/databinding/HudLeftMenuBinding;", "setupPrisonButton", "installServerLogotype", "", "uri", "", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", TtmlNode.ATTR_ID, "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessageHandled", "subId", "setLocationVisibility", "isWorkCounterVisible", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "resetHud", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ó\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\r\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000e*\u0001>\u0018\u0000 Í\u00012\u00020\u0001:\bÊ\u0001Ë\u0001Ì\u0001Í\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010f\u001a\u00020gH\u0002J\b\u0010h\u001a\u00020gH\u0002J\u0010\u0010i\u001a\u00020j2\u0006\u0010k\u001a\u00020+H\u0002J\u000e\u0010l\u001a\u00020j2\u0006\u0010m\u001a\u00020+J\u0010\u0010n\u001a\u00020j2\u0006\u0010o\u001a\u00020)H\u0016J&\u0010p\u001a\u00020j2\u0006\u0010q\u001a\u00020\u00052\u0006\u0010r\u001a\u00020\u00052\u0006\u0010s\u001a\u00020\u00052\u0006\u0010t\u001a\u00020\u0005J\u000e\u0010u\u001a\u00020j2\u0006\u0010v\u001a\u00020\u0005J\u000e\u0010w\u001a\u00020j2\u0006\u0010x\u001a\u00020\u001eJ\u000e\u0010y\u001a\u00020j2\u0006\u0010z\u001a\u00020\u0005J\u000e\u0010{\u001a\u00020j2\u0006\u0010|\u001a\u00020+J\u000e\u0010}\u001a\u00020j2\u0006\u0010|\u001a\u00020+J\u0010\u0010~\u001a\u00020j2\u0006\u0010o\u001a\u00020\u0005H\u0002J\u0011\u0010\u007f\u001a\u00020j2\u0007\u0010\u0080\u0001\u001a\u00020\u0005H\u0002J\u0013\u0010\u0081\u0001\u001a\u00020j2\b\u0010\u0082\u0001\u001a\u00030\u0083\u0001H\u0002J\u0013\u0010\u0084\u0001\u001a\u00020j2\b\u0010\u0085\u0001\u001a\u00030\u0086\u0001H\u0002J\u0015\u0010\u0087\u0001\u001a\u00020j2\n\u0010\u0088\u0001\u001a\u0005\u0018\u00010\u0089\u0001H\u0002J\t\u0010\u008a\u0001\u001a\u00020\tH\u0002J\t\u0010\u008b\u0001\u001a\u00020jH\u0002J\t\u0010\u008c\u0001\u001a\u00020jH\u0002J\t\u0010\u008d\u0001\u001a\u00020jH\u0002J\u001b\u0010\u008e\u0001\u001a\u00020)2\u0007\u0010\u008f\u0001\u001a\u00020\u00052\u0007\u0010\u0090\u0001\u001a\u00020\u0005H\u0002J\u0012\u0010\u0091\u0001\u001a\u00020j2\u0007\u0010\u0092\u0001\u001a\u00020)H\u0002J\u0010\u0010\u0093\u0001\u001a\u00020j2\u0007\u0010\u0094\u0001\u001a\u00020\u0005J\u0015\u0010\u0095\u0001\u001a\u00020\u0005*\u0004\u0018\u00010\u0005H\u0002¢\u0006\u0003\u0010\u0096\u0001J'\u0010\u0097\u0001\u001a\u00030\u0098\u00012\u0007\u0010\u008f\u0001\u001a\u00020\u00052\u0007\u0010\u0090\u0001\u001a\u00020\u00052\t\b\u0002\u0010\u0092\u0001\u001a\u00020)H\u0002J\u0012\u0010\u0099\u0001\u001a\u00020j2\u0007\u0010\u009a\u0001\u001a\u00020+H\u0002J\t\u0010\u009b\u0001\u001a\u00020jH\u0002J#\u0010\u009c\u0001\u001a\u00020j2\u0007\u0010\u009d\u0001\u001a\u00020+2\u000f\u0010\u009e\u0001\u001a\n\u0012\u0005\u0012\u00030 \u00010\u009f\u0001H\u0002J\t\u0010¡\u0001\u001a\u00020jH\u0002J\u0012\u0010¢\u0001\u001a\u00020j2\u0007\u0010£\u0001\u001a\u00020\u0005H\u0002J\u0013\u0010¤\u0001\u001a\u00020j2\b\u0010¥\u0001\u001a\u00030¦\u0001H\u0002J\u001a\u0010§\u0001\u001a\u00020j2\u0006\u0010|\u001a\u00020+2\u0007\u0010¨\u0001\u001a\u00020\u0005H\u0016J\u0011\u0010©\u0001\u001a\u00020+2\u0006\u0010|\u001a\u00020+H\u0002J\u0011\u0010ª\u0001\u001a\u00020j2\u0006\u0010|\u001a\u00020+H\u0002J\u0011\u0010«\u0001\u001a\u00020)2\u0006\u0010|\u001a\u00020+H\u0002J\u0013\u0010¬\u0001\u001a\u00020j2\b\u0010\u0082\u0001\u001a\u00030\u00ad\u0001H\u0002J\u0011\u0010®\u0001\u001a\u00020j2\u0006\u0010o\u001a\u00020\u0005H\u0002J\t\u0010¯\u0001\u001a\u00020jH\u0002J\u0019\u0010°\u0001\u001a\u00020j2\u000e\u0010|\u001a\n\u0012\u0005\u0012\u00030±\u00010\u009f\u0001H\u0002J\u001a\u0010²\u0001\u001a\u00020j2\u000f\u0010³\u0001\u001a\n\u0012\u0005\u0012\u00030±\u00010\u009f\u0001H\u0002J\u0011\u0010´\u0001\u001a\u00020j2\u0006\u0010z\u001a\u00020\u0005H\u0002J\u0013\u0010µ\u0001\u001a\u00020j2\b\u0010³\u0001\u001a\u00030±\u0001H\u0002J\t\u0010¶\u0001\u001a\u00020jH\u0002J\t\u0010·\u0001\u001a\u00020jH\u0002J\t\u0010¸\u0001\u001a\u00020jH\u0002J\u0013\u0010¹\u0001\u001a\u00020j2\b\u0010º\u0001\u001a\u00030»\u0001H\u0016J\u0012\u0010¼\u0001\u001a\u00020j2\u0007\u0010½\u0001\u001a\u00020+H\u0002J\t\u0010¾\u0001\u001a\u00020jH\u0002J\u0012\u0010¿\u0001\u001a\u00020j2\u0007\u0010|\u001a\u00030À\u0001H\u0002J\u0012\u0010Á\u0001\u001a\u00020j2\u0007\u0010Â\u0001\u001a\u00020\u0005H\u0002J\u0012\u0010Ã\u0001\u001a\u00020j2\u0007\u0010Â\u0001\u001a\u00020\u0005H\u0002J\t\u0010Ä\u0001\u001a\u00020jH\u0002J\t\u0010Å\u0001\u001a\u00020jH\u0002J\u0012\u0010Æ\u0001\u001a\u00020j2\u0007\u0010Ç\u0001\u001a\u00020\u0005H\u0002J\t\u0010È\u0001\u001a\u00020jH\u0002J\t\u0010É\u0001\u001a\u00020jH\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u0010\u001a\u00020\u00118BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u0014\u0010\u0015\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0016\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001f\u001a\n !*\u0004\u0018\u00010 0 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020#X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010*\u001a\u0004\u0018\u00010+X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010,\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010-R\u0012\u0010.\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0004\n\u0002\u0010-R\u000e\u0010/\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u000201X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00106\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020:X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020<X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010=\u001a\u00020>X\u0082\u0004¢\u0006\u0004\n\u0002\u0010?R\u0010\u0010@\u001a\u0004\u0018\u00010AX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020CX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u00020EX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u00020GX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020IX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010J\u001a\u00020KX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010L\u001a\u00020MX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010N\u001a\u00020OX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010P\u001a\u00020QX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010R\u001a\u00020SX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010T\u001a\u00020UX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010V\u001a\u00020WX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010X\u001a\u00020YX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010Z\u001a\u00020[X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\\\u001a\u00020]X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010^\u001a\u00020_X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010`\u001a\u00020aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010b\u001a\u00020cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010d\u001a\u00020eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006Î\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "arizonaTrainHud", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/ArizonaTrainHud;", "trainHudBinding", "Lru/mrlargha/commonui/databinding/HudTrainJobBinding;", "getTrainHudBinding", "()Lru/mrlargha/commonui/databinding/HudTrainJobBinding;", "trainHudBinding$delegate", "Lkotlin/Lazy;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "", "trainInstructionType", "", "trainSignalLastCurrent", "Ljava/lang/Integer;", "trainSignalLastRequired", "trainSignalHighlight", "handler", "Landroid/os/Handler;", "pendingTrainSpeedKmh", "trainSpeedUpdateRunnable", "Ljava/lang/Runnable;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "rodinaSubwindowEventListener", "ru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$rodinaSubwindowEventListener$1;", "rodinaSubwindowManager", "Lru/mrlargha/commonui/elements/hud/presentation/RodinaHudSubwindowManager;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "caseTimer", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/case_timer/CaseTimerElement;", "imposterGameElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/imposter_game/ImposterGameElement;", "chargeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "chickenGame", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_game/HudChickenGame;", "bodycam", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/bodycam/HudBodycam;", "driftCounter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/drift_counter/HudDriftCounter;", "countdown", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/countdown/HudCountdown;", "gatherCount", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/gathers_count/HudGathersCount;", "targetPlate", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/target_plate/HudTargetPlate;", "nativeProvider", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/NativeProvider;", "timeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeElement;", "moneyElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/money/MoneyElement;", "damageInformerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/damage_informer/DamageFeedElement;", "paydayElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/payday/PaydayElement;", "football", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/football/HudFootball;", "factionCapture", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/faction_capture/FactionCaptureElement;", "setupBattlePassButton", "Lru/mrlargha/commonui/databinding/HudLeftMenuBinding;", "setupPrisonButton", "installServerLogotype", "", "uri", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", TtmlNode.ATTR_ID, "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "setTrainRouteProgress", "progress", "", "setTrainInstruction", "instruction", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstruction;", "inflateHudPage", "inflateRodinaTrainJob", "hideTrainInstruction", "resetTrainSignalHighlightState", "resolveTrainSignalHighlight", UpdateServiceContract.BundleKey.CURRENT, "required", "applyTrainInstructionAppearance", "highlight", "updateTrainSpeed", "speedKmh", "orZero", "(Ljava/lang/Integer;)I", "signalProgressDescription", "", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessageHandled", "subId", "decodeHudJsonString", "setLocationVisibility", "isWorkCounterVisible", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "resetHud", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Hud extends SAMPUIElement {
-    public static final Companion Companion = new Companion(null);
-    private static final float METERS_IN_KILOMETER = 1000.0f;
+    private static final int TRAIN_CLOSE_DOORS_CLICK_SUB_ID = 3;
+    private static final int TRAIN_DOORS_CLICK_SUB_ID = 1;
+    private static final String TRAIN_INSTRUCTION_CLOSE_DOORS = "close_doors";
+    private static final String TRAIN_INSTRUCTION_OPEN_DOORS = "open_doors";
+    private static final String TRAIN_INSTRUCTION_SIGNAL = "signal";
     private final HudApi api;
+    private final ArizonaTrainHud arizonaTrainHud;
     private final IBackendNotifier backendNotifier;
     private final BannerElement bannerElement;
     private final HudPageBinding binding;
@@ -163,6 +180,7 @@ public final class Hud extends SAMPUIElement {
     private final ChickenChargeElement chargeElement;
     private final HudChickenGame chickenGame;
     private final ArizonaRetrofit client;
+    private final HudCountdown countdown;
     private final HudCounter counter;
     private final DamageFeedElement damageInformerElement;
     private final HudDriftCounter driftCounter;
@@ -180,6 +198,7 @@ public final class Hud extends SAMPUIElement {
     private CountDownTimer moneyTimer;
     private final NativeProvider nativeProvider;
     private final PaydayElement paydayElement;
+    private volatile int pendingTrainSpeedKmh;
     private long previousMoneyValue;
     private final PromoElement promoElement;
     private final RadarScreen radar;
@@ -190,37 +209,61 @@ public final class Hud extends SAMPUIElement {
     private boolean streamerState;
     private final HudTargetPlate targetPlate;
     private final TimeElement timeElement;
-    private final HudTrainJobBinding trainHudBinding;
+    private final Lazy trainHudBinding$delegate;
+    private String trainInstructionType;
+    private boolean trainSignalHighlight;
+    private Integer trainSignalLastCurrent;
+    private Integer trainSignalLastRequired;
+    private final Runnable trainSpeedUpdateRunnable;
     private CountDownTimer trainTimer;
     private int xPayDay;
+    public static final Companion Companion = new Companion(null);
+    private static final int TRAIN_SIGNAL_HIGHLIGHT_COLOR = Color.parseColor("#9EF15D");
+    private static final int TRAIN_INSTRUCTION_DEFAULT_BORDER_COLOR = Color.parseColor("#B3FFFFFF");
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$2$14(View view) {
+    public static final void lambda$2$15(View view) {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean lambda$2$16(View view, MotionEvent motionEvent) {
+    public static final boolean lambda$2$17(View view, MotionEvent motionEvent) {
         return true;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Type inference failed for: r11v5, types: [ru.mrlargha.commonui.elements.hud.presentation.Hud$rodinaSubwindowEventListener$1] */
-    public Hud(final Activity targetActivity, final int i) {
+    /* JADX WARN: Type inference failed for: r10v6, types: [ru.mrlargha.commonui.elements.hud.presentation.Hud$rodinaSubwindowEventListener$1] */
+    public Hud(final Activity targetActivity, int i) {
         super(targetActivity, i);
+        final int i2;
+        ArizonaTrainHud arizonaTrainHud;
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
-        View inflate = targetActivity.getLayoutInflater().inflate(R.layout.hud_page, (ViewGroup) null);
-        Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
-        ConstraintLayout constraintLayout = (ConstraintLayout) inflate;
-        this.hud = constraintLayout;
-        HudPageBinding bind = HudPageBinding.bind(constraintLayout);
+        ConstraintLayout inflateHudPage = inflateHudPage();
+        this.hud = inflateHudPage;
+        HudPageBinding bind = HudPageBinding.bind(inflateHudPage);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        HudTrainJobBinding bind2 = HudTrainJobBinding.bind(constraintLayout.findViewById(R.id.hud_train_job));
-        Intrinsics.checkNotNullExpressionValue(bind2, "bind(...)");
-        this.trainHudBinding = bind2;
         IBackendNotifier iBackendNotifier = (IBackendNotifier) targetActivity;
         this.backendNotifier = iBackendNotifier;
-        ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
+        if (ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
+            FrameLayout hudTrainJob = bind.hudTrainJob;
+            Intrinsics.checkNotNullExpressionValue(hudTrainJob, "hudTrainJob");
+            FrameLayout frameLayout = hudTrainJob;
+            ConstraintLayout hideAll = bind.hideAll;
+            Intrinsics.checkNotNullExpressionValue(hideAll, "hideAll");
+            i2 = i;
+            arizonaTrainHud = new ArizonaTrainHud(targetActivity, iBackendNotifier, i2, frameLayout, hideAll);
+        } else {
+            i2 = i;
+            arizonaTrainHud = null;
+        }
+        this.arizonaTrainHud = arizonaTrainHud;
+        this.trainHudBinding$delegate = LazyKt.lazy(new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return Hud.trainHudBinding_delegate$lambda$0(Hud.this);
+            }
+        });
+        ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i2);
         this.client = arizonaRetrofit;
         this.api = (HudApi) ArizonaRetrofit.create$default(arizonaRetrofit, HudApi.class, false, FirebaseConfigHelper.INSTANCE.getHudPingUrl(), null, 10, null);
         this.sharedPref = targetActivity.getSharedPreferences("flavorType", 0);
@@ -228,7 +271,13 @@ public final class Hud extends SAMPUIElement {
         this.missionsProgressAdapter = missionProgressAdapter;
         this.interactionButtonId = -1;
         this.handler = new Handler(Looper.getMainLooper());
-        this.groupAdapter = new GroupAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda0
+        this.trainSpeedUpdateRunnable = new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda2
+            @Override // java.lang.Runnable
+            public final void run() {
+                Hud.trainSpeedUpdateRunnable$lambda$0(Hud.this, targetActivity);
+            }
+        };
+        this.groupAdapter = new GroupAdapter(new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.groupAdapter$lambda$0(Hud.this, (GroupItem) obj);
@@ -251,22 +300,22 @@ public final class Hud extends SAMPUIElement {
                 }
             }
         };
-        this.rodinaSubwindowManager = ru.mrlargha.commonui.utils.UtilsKt.isArizonaType() ? null : new RodinaHudSubwindowManager(new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda2
+        this.rodinaSubwindowManager = ru.mrlargha.commonui.utils.UtilsKt.isArizonaType() ? null : new RodinaHudSubwindowManager(new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$0(Hud.this, ((Boolean) obj).booleanValue());
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda5
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$1(Hud.this, ((Boolean) obj).booleanValue());
             }
-        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda6
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$2(Hud.this, ((Boolean) obj).booleanValue());
             }
-        }, new Hud$rodinaSubwindowManager$4(this), new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda7
+        }, new Hud$rodinaSubwindowManager$4(this), new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda13
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return Hud.rodinaSubwindowManager$lambda$3(Hud.this, ((Boolean) obj).booleanValue());
@@ -274,10 +323,10 @@ public final class Hud extends SAMPUIElement {
         });
         HudTaximeterBinding hudTaximeterLayout = bind.hudTaximeterLayout;
         Intrinsics.checkNotNullExpressionValue(hudTaximeterLayout, "hudTaximeterLayout");
-        this.counter = new HudCounter(i, hudTaximeterLayout, iBackendNotifier);
+        this.counter = new HudCounter(i2, hudTaximeterLayout, iBackendNotifier);
         HudRadarScreenBinding radar = bind.radar;
         Intrinsics.checkNotNullExpressionValue(radar, "radar");
-        this.radar = new RadarScreen(radar, i, getNotifier());
+        this.radar = new RadarScreen(radar, i2, getNotifier());
         HudElementCasesTimerBinding casesTimer = bind.casesTimer;
         Intrinsics.checkNotNullExpressionValue(casesTimer, "casesTimer");
         this.caseTimer = new CaseTimerElement(casesTimer, hud);
@@ -293,6 +342,9 @@ public final class Hud extends SAMPUIElement {
         HudDriftCounterBinding driftCounter = bind.driftCounter;
         Intrinsics.checkNotNullExpressionValue(driftCounter, "driftCounter");
         this.driftCounter = new HudDriftCounter(driftCounter);
+        HudCountdownBinding hudCountdown = bind.hudCountdown;
+        Intrinsics.checkNotNullExpressionValue(hudCountdown, "hudCountdown");
+        this.countdown = new HudCountdown(hudCountdown);
         HudGathersCountBinding gatherCount = bind.gatherCount;
         Intrinsics.checkNotNullExpressionValue(gatherCount, "gatherCount");
         this.gatherCount = new HudGathersCount(gatherCount);
@@ -319,6 +371,10 @@ public final class Hud extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(factionCapture, "factionCapture");
         this.factionCapture = new FactionCaptureElement(factionCapture);
         ChatEmoji.INSTANCE.init(targetActivity);
+        if (!ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
+            inflateRodinaTrainJob();
+        }
+        bind.hudTaximeterLayout.racePosition.tvSecond.setShadowLayer(bind.getRoot().getResources().getDimension(R.dimen._1sdp), 0.0f, 0.0f, Color.parseColor("#440978"));
         if ((targetActivity.getResources().getConfiguration().screenLayout & 15) >= 3) {
             hudListener.hudScale(0.7f);
             bind.topQuestButtonLine.setGuidelinePercent(0.23f);
@@ -332,7 +388,7 @@ public final class Hud extends SAMPUIElement {
             bind.newMoney.root.setVisibility(8);
             bind.playersVariant.setOrientation(0);
         }
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        addViewToConstraintLayout(inflateHudPage, -1, -1);
         LinearLayout root = bind.leftMenu.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
         root.setVisibility(0);
@@ -341,114 +397,123 @@ public final class Hud extends SAMPUIElement {
         bind.rouletteContainer.setVisibility(8);
         bind.rouletteTimeContainer.setVisibility(8);
         bind.missionProgressList.setAdapter(missionProgressAdapter);
-        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda8
+        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda14
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.this.backendNotifier.clickedWrapper(i, 6, -1);
+                Hud.this.backendNotifier.clickedWrapper(i2, 6, -1);
             }
         });
         bind.rouletteContainer.setVisibility(8);
         bind.rouletteTimeContainer.setVisibility(8);
-        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda9
+        bind.rouletteContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda15
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.this.backendNotifier.clickedWrapper(i, 6, -1);
+                Hud.this.backendNotifier.clickedWrapper(i2, 6, -1);
             }
         });
-        bind.leftMenu.btnOpenRadialMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda10
+        bind.leftMenu.btnOpenRadialMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda16
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$2(targetActivity, this, i, view);
+                Hud.lambda$2$2(targetActivity, this, i2, view);
             }
         });
-        bind.leftMenu.btnOpenQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda12
+        bind.leftMenu.btnOpenQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$3(targetActivity, this, i, view);
+                Hud.lambda$2$3(targetActivity, this, i2, view);
             }
         });
-        bind.leftMenu.btnOpenBattlePass.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda13
+        bind.leftMenu.btnOpenBattlePass.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda22
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$4(targetActivity, this, i, view);
+                Hud.lambda$2$4(targetActivity, this, i2, view);
             }
         });
-        bind.leftMenu.btnOpenMission.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda11
+        bind.leftMenu.btnOpenMission.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$5(targetActivity, this, i, view);
+                Hud.lambda$2$5(targetActivity, this, i2, view);
             }
         });
-        bind.leftMenu.btnOpenChallenges.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda19
+        bind.leftMenu.btnOpenChallenges.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$6(targetActivity, this, i, view);
+                Hud.lambda$2$6(targetActivity, this, i2, view);
             }
         });
-        bind.hudStreamerButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda20
+        bind.hudStreamerButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$7(targetActivity, this, i, view);
+                Hud.lambda$2$7(targetActivity, this, i2, view);
             }
         });
-        bind.hudMenuButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda21
+        bind.hudMenuButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$8(targetActivity, this, i, view);
+                Hud.lambda$2$8(targetActivity, this, i2, view);
             }
         });
         ConstraintLayout hudPhoneButton = bind.hudPhoneButton;
         Intrinsics.checkNotNullExpressionValue(hudPhoneButton, "hudPhoneButton");
-        LockerKt.setLockingClickListener(hudPhoneButton, 600L, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda22
+        LockerKt.setLockingClickListener(hudPhoneButton, 600L, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return Hud.lambda$2$9(targetActivity, this, i, (View) obj);
+                return Hud.lambda$2$9(targetActivity, this, i2, (View) obj);
             }
         });
-        bind.hudInventoryButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda23
+        bind.hudInventoryButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda28
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.lambda$2$10(targetActivity, this, view);
             }
         });
-        bind.hudDonateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda24
+        bind.hudDonateButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda29
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$11(targetActivity, this, i, view);
+                Hud.lambda$2$11(targetActivity, this, i2, view);
             }
         });
         bind.hudServerInfoContainer.setVisibility(8);
-        bind2.trainRoute.routeProgress.setPercentWidth(0.0f);
-        for (CustomCardView customCardView : CollectionsKt.listOf((Object[]) new CustomCardView[]{bind2.trainDoorOpenAction, bind2.trainDoorCloseAction})) {
-            customCardView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda25
+        if (!ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
+            setTrainRouteProgress(0.0f);
+            updateTrainSpeed(0);
+            getTrainHudBinding().trainInstruction.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    Hud.this.backendNotifier.clickedWrapper(i, -1, 1);
+                    Hud.lambda$2$12(Hud.this, i2, view);
                 }
             });
+            for (CustomCardView customCardView : CollectionsKt.listOf((Object[]) new CustomCardView[]{getTrainHudBinding().trainDoorOpenAction, getTrainHudBinding().trainDoorCloseAction})) {
+                customCardView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda3
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        Hud.this.backendNotifier.clickedWrapper(i2, -1, 1);
+                    }
+                });
+            }
         }
-        bind.imageButtonInteraction.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda26
+        bind.imageButtonInteraction.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                r0.backendNotifier.clickedWrapper(i, 7, Hud.this.interactionButtonId);
+                r0.backendNotifier.clickedWrapper(i2, 7, Hud.this.interactionButtonId);
             }
         });
-        bind.newMessageContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda1
+        bind.newMessageContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                Hud.lambda$2$14(view);
+                Hud.lambda$2$15(view);
             }
         });
-        bind.groupButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda3
+        bind.groupButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.this.changeGroupTableVisibility();
             }
         });
-        bind.groupRv.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda4
+        bind.groupRv.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda7
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                return Hud.lambda$2$16(view, motionEvent);
+                return Hud.lambda$2$17(view, motionEvent);
             }
         });
         bind.groupRv.setAdapter(this.groupAdapter);
@@ -459,8 +524,30 @@ public final class Hud extends SAMPUIElement {
         RodinaHudSubwindowEvents.INSTANCE.register(this.rodinaSubwindowEventListener);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public final HudTrainJobBinding getTrainHudBinding() {
+        return (HudTrainJobBinding) this.trainHudBinding$delegate.getValue();
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final HudTrainJobBinding trainHudBinding_delegate$lambda$0(Hud hud) {
+        FrameLayout hudTrainJob = hud.binding.hudTrainJob;
+        Intrinsics.checkNotNullExpressionValue(hudTrainJob, "hudTrainJob");
+        return HudTrainJobBinding.bind(hudTrainJob.getChildCount() > 0 ? hudTrainJob.getChildAt(0) : hudTrainJob);
+    }
+
     public final ArizonaRetrofit getClient() {
         return this.client;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void trainSpeedUpdateRunnable$lambda$0(Hud hud, Activity activity) {
+        TrainSpeedGaugeView trainSpeedGauge = hud.getTrainHudBinding().trainSpeedIndicator.trainSpeedGauge;
+        Intrinsics.checkNotNullExpressionValue(trainSpeedGauge, "trainSpeedGauge");
+        trainSpeedGauge.setSpeedKmh(hud.pendingTrainSpeedKmh);
+        TextView textView = hud.getTrainHudBinding().trainSpeedIndicator.trainCurrentSpeedValue;
+        int speedKmh = trainSpeedGauge.getSpeedKmh();
+        textView.setText(speedKmh + " " + activity.getString(R.string.train_hud_kmh));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -571,6 +658,23 @@ public final class Hud extends SAMPUIElement {
         hud.backendNotifier.clickedWrapper(i, 3, -1);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final void lambda$2$12(Hud hud, int i, View view) {
+        int i2;
+        Intrinsics.checkNotNull(view);
+        if (view.getVisibility() != 8 && view.isClickable()) {
+            String str = hud.trainInstructionType;
+            if (Intrinsics.areEqual(str, TRAIN_INSTRUCTION_CLOSE_DOORS)) {
+                i2 = 3;
+            } else if (!Intrinsics.areEqual(str, TRAIN_INSTRUCTION_OPEN_DOORS)) {
+                return;
+            } else {
+                i2 = 1;
+            }
+            hud.backendNotifier.clickedWrapper(i, -1, i2);
+        }
+    }
+
     private final HudLeftMenuBinding setupBattlePassButton() {
         HudLeftMenuBinding hudLeftMenuBinding = this.binding.leftMenu;
         Context context = hudLeftMenuBinding.getRoot().getContext();
@@ -619,7 +723,9 @@ public final class Hud extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void installServerLogotype(String str) {
-        Picasso.get().load(str).placeholder(R.drawable.logo_phoenix).into(this.binding.hudServerShieldLogo);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, str).placeholder(R.drawable.logo_phoenix).into(this.binding.hudServerShieldLogo);
     }
 
     /* compiled from: Hud.kt */
@@ -696,8 +802,9 @@ public final class Hud extends SAMPUIElement {
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void setVisibility(boolean z) {
         super.setVisibility(z);
+        this.driftCounter.setTemporarilyHidden(!z);
         if (!z) {
-            this.driftCounter.clear();
+            this.countdown.clear();
         }
         updatePayDay();
     }
@@ -798,10 +905,14 @@ public final class Hud extends SAMPUIElement {
     }
 
     private final void setTrainsVisibility(int i) {
-        HudTrainJobBinding hudTrainJobBinding = this.trainHudBinding;
+        ArizonaTrainHud arizonaTrainHud = this.arizonaTrainHud;
+        if (arizonaTrainHud != null) {
+            arizonaTrainHud.setVisibility(i);
+            return;
+        }
         if (i == 0) {
-            hudTrainJobBinding.trainDriverContainer.setVisibility(8);
-            this.trainHudBinding.trainSettings.setVisibility(8);
+            getTrainHudBinding().trainDriverContainer.setVisibility(8);
+            getTrainHudBinding().trainSettings.setVisibility(8);
             CountDownTimer countDownTimer = this.trainTimer;
             if (countDownTimer != null) {
                 if (countDownTimer == null) {
@@ -809,15 +920,22 @@ public final class Hud extends SAMPUIElement {
                     countDownTimer = null;
                 }
                 countDownTimer.cancel();
-                return;
             }
-            return;
+            resetTrainSignalHighlightState();
+            applyTrainInstructionAppearance(false);
+        } else {
+            getTrainHudBinding().trainDriverContainer.setVisibility(0);
+            startTrainTimer(0);
         }
-        hudTrainJobBinding.trainDriverContainer.setVisibility(0);
-        startTrainTimer(0);
+        updateTrainSpeed(0);
     }
 
     private final void startTrainTimer(int i) {
+        ArizonaTrainHud arizonaTrainHud = this.arizonaTrainHud;
+        if (arizonaTrainHud != null) {
+            arizonaTrainHud.startTimer(i);
+            return;
+        }
         CountDownTimer countDownTimer = this.trainTimer;
         if (countDownTimer != null) {
             if (countDownTimer == null) {
@@ -841,9 +959,9 @@ public final class Hud extends SAMPUIElement {
 
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
-                HudTrainJobBinding hudTrainJobBinding;
-                hudTrainJobBinding = Hud.this.trainHudBinding;
-                hudTrainJobBinding.trainCurrentTime.setText(ru.mrlargha.commonui.utils.UtilsKt.formatTime(intRef.element * 1000) + " ");
+                HudTrainJobBinding trainHudBinding;
+                trainHudBinding = Hud.this.getTrainHudBinding();
+                trainHudBinding.trainCurrentTime.setText(ru.mrlargha.commonui.utils.UtilsKt.formatTime(intRef.element * 1000) + " ");
                 intRef.element++;
             }
         };
@@ -852,43 +970,316 @@ public final class Hud extends SAMPUIElement {
     }
 
     private final void setTrainInfo(Companion.TrainInfo trainInfo) {
-        HudTrainJobBinding hudTrainJobBinding = this.trainHudBinding;
-        hudTrainJobBinding.income.setText(MoneyElementKt.toMoneyFormattedSpannable$default(trainInfo.getSalary(), false, null, null, null, 15, null));
-        hudTrainJobBinding.warningsCount.setText(trainInfo.getWarnings() + " / " + trainInfo.getWarningsMax());
-        if (trainInfo.getMaxTime() == 0) {
-            hudTrainJobBinding.trainMaxTime.setVisibility(8);
-        } else {
-            hudTrainJobBinding.trainMaxTime.setVisibility(0);
-            hudTrainJobBinding.trainMaxTime.setText("/ " + ru.mrlargha.commonui.utils.UtilsKt.formatTime(trainInfo.getMaxTime() * 1000));
+        ArizonaTrainHud arizonaTrainHud = this.arizonaTrainHud;
+        if (arizonaTrainHud != null) {
+            arizonaTrainHud.setInfo(trainInfo);
+            return;
         }
+        HudTrainJobBinding trainHudBinding = getTrainHudBinding();
+        trainHudBinding.income.setText(MoneyElementKt.toMoneyFormattedSpannable$default(trainInfo.getSalary(), false, null, null, null, 15, null));
+        trainHudBinding.warningsCount.setText(trainInfo.getWarnings() + " / " + trainInfo.getWarningsMax());
+        trainHudBinding.trainRoute.trainRouteWarnings.setText(getTargetActivity().getString(R.string.train_hud_errors_format, new Object[]{Integer.valueOf(trainInfo.getWarnings()), Integer.valueOf(trainInfo.getWarningsMax())}));
+        if (trainInfo.getMaxTime() == 0) {
+            trainHudBinding.trainMaxTime.setVisibility(8);
+        } else {
+            trainHudBinding.trainMaxTime.setVisibility(0);
+            trainHudBinding.trainMaxTime.setText("/ " + ru.mrlargha.commonui.utils.UtilsKt.formatTime(trainInfo.getMaxTime() * 1000));
+        }
+        ViewParent parent = trainHudBinding.speedLimitCard.getParent();
+        Intrinsics.checkNotNull(parent, "null cannot be cast to non-null type android.view.View");
+        boolean z = true;
+        ((View) parent).setVisibility(trainInfo.getSpeedLimit() != 0 ? 0 : 8);
         String speedLimitType = trainInfo.getSpeedLimitType();
         int hashCode = speedLimitType.hashCode();
-        if (hashCode != -1039745817) {
-            if (hashCode != 1124446108) {
-                if (hashCode == 1952151455 && speedLimitType.equals("critical")) {
-                    hudTrainJobBinding.speedLimitCard.setBackground(Color.parseColor("#E7444F"));
-                    hudTrainJobBinding.speedLimitCard.setBorder(-1);
-                    hudTrainJobBinding.speedLimit.setTextColor(-1);
-                    hudTrainJobBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
-                }
-            } else if (speedLimitType.equals("warning")) {
-                hudTrainJobBinding.speedLimitCard.setBackground(-1);
-                hudTrainJobBinding.speedLimitCard.setBorder(Color.parseColor("#F4C63D"));
-                hudTrainJobBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
-                hudTrainJobBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+        if (hashCode == -1039745817) {
+            if (speedLimitType.equals(com.adjust.sdk.Constants.NORMAL)) {
+                trainHudBinding.speedLimitCard.setBackground(-1);
+                trainHudBinding.speedLimitCard.setBorder(Color.parseColor("#E7444F"));
+                trainHudBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
+                trainHudBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
             }
-        } else if (speedLimitType.equals(com.adjust.sdk.Constants.NORMAL)) {
-            hudTrainJobBinding.speedLimitCard.setBackground(-1);
-            hudTrainJobBinding.speedLimitCard.setBorder(Color.parseColor("#E7444F"));
-            hudTrainJobBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
-            hudTrainJobBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+            trainHudBinding.speedLimitCard.setBackground(-1);
+            trainHudBinding.speedLimitCard.setBorder(Color.parseColor("#E7444F"));
+            trainHudBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
+            trainHudBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+        } else if (hashCode == 1124446108) {
+            if (speedLimitType.equals("warning")) {
+                trainHudBinding.speedLimitCard.setBackground(-1);
+                trainHudBinding.speedLimitCard.setBorder(Color.parseColor("#F4C63D"));
+                trainHudBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
+                trainHudBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+            }
+            trainHudBinding.speedLimitCard.setBackground(-1);
+            trainHudBinding.speedLimitCard.setBorder(Color.parseColor("#E7444F"));
+            trainHudBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
+            trainHudBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+        } else {
+            if (hashCode == 1952151455 && speedLimitType.equals("critical")) {
+                trainHudBinding.speedLimitCard.setBackground(Color.parseColor("#E7444F"));
+                trainHudBinding.speedLimitCard.setBorder(-1);
+                trainHudBinding.speedLimit.setTextColor(-1);
+                trainHudBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
+            }
+            trainHudBinding.speedLimitCard.setBackground(-1);
+            trainHudBinding.speedLimitCard.setBorder(Color.parseColor("#E7444F"));
+            trainHudBinding.speedLimit.setTextColor(Color.parseColor("#171717"));
+            trainHudBinding.speedLimit.setText(String.valueOf(trainInfo.getSpeedLimit()));
         }
-        hudTrainJobBinding.trainRoute.routeProgress.setPercentWidth(trainInfo.getTotalDistance() > 0.0f ? RangesKt.coerceIn(trainInfo.getDistance() / trainInfo.getTotalDistance(), 0.0f, 1.0f) : 0.0f);
-        TextView textView = hudTrainJobBinding.trainRoute.maxKm;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-        String format = String.format(Locale.US, "%.3f km", Arrays.copyOf(new Object[]{Float.valueOf(trainInfo.getTotalDistance() / METERS_IN_KILOMETER)}, 1));
-        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-        textView.setText(format);
+        CustomCardView speedLimitDistanceCard = trainHudBinding.speedLimitDistanceCard;
+        Intrinsics.checkNotNullExpressionValue(speedLimitDistanceCard, "speedLimitDistanceCard");
+        CustomCardView customCardView = speedLimitDistanceCard;
+        Integer distanceToSpeedLimitMeters = trainInfo.getDistanceToSpeedLimitMeters();
+        customCardView.setVisibility((distanceToSpeedLimitMeters != null ? distanceToSpeedLimitMeters.intValue() : 0) > 0 ? 0 : 8);
+        Integer distanceToSpeedLimitMeters2 = trainInfo.getDistanceToSpeedLimitMeters();
+        if (distanceToSpeedLimitMeters2 != null) {
+            trainHudBinding.speedLimitDistance.setText(getTargetActivity().getString(R.string.train_hud_speed_limit_distance_format, new Object[]{Integer.valueOf(RangesKt.coerceAtLeast(distanceToSpeedLimitMeters2.intValue(), 0))}));
+        }
+        LinearLayout trainPassengers = trainHudBinding.trainPassengers;
+        Intrinsics.checkNotNullExpressionValue(trainPassengers, "trainPassengers");
+        trainPassengers.setVisibility(trainInfo.getPassengerCount() != null ? 0 : 8);
+        Integer passengerCount = trainInfo.getPassengerCount();
+        if (passengerCount != null) {
+            trainHudBinding.trainPassengerCount.setText(String.valueOf(RangesKt.coerceAtLeast(passengerCount.intValue(), 0)));
+        }
+        TextView textView = trainHudBinding.trainRoute.trainStartStation;
+        String startStation = trainInfo.getStartStation();
+        if (startStation == null) {
+            startStation = "";
+        }
+        textView.setText(startStation);
+        TextView trainStartStation = trainHudBinding.trainRoute.trainStartStation;
+        Intrinsics.checkNotNullExpressionValue(trainStartStation, "trainStartStation");
+        TextView textView2 = trainStartStation;
+        String startStation2 = trainInfo.getStartStation();
+        textView2.setVisibility(!(startStation2 == null || StringsKt.isBlank(startStation2)) ? 0 : 8);
+        TextView textView3 = trainHudBinding.trainRoute.trainEndStation;
+        String endStation = trainInfo.getEndStation();
+        textView3.setText(endStation != null ? endStation : "");
+        TextView trainEndStation = trainHudBinding.trainRoute.trainEndStation;
+        Intrinsics.checkNotNullExpressionValue(trainEndStation, "trainEndStation");
+        TextView textView4 = trainEndStation;
+        String endStation2 = trainInfo.getEndStation();
+        if (endStation2 != null && !StringsKt.isBlank(endStation2)) {
+            z = false;
+        }
+        textView4.setVisibility(z ? 8 : 0);
+        setTrainRouteProgress(trainInfo.getTotalDistance() > 0.0f ? RangesKt.coerceIn(trainInfo.getDistance() / trainInfo.getTotalDistance(), 0.0f, 1.0f) : 0.0f);
+        trainHudBinding.trainRoute.maxKm.setText(new DecimalFormat("0.000", new DecimalFormatSymbols(Locale.US)).format(RangesKt.coerceAtLeast(trainInfo.getTotalDistance() - trainInfo.getDistance(), 0.0f) / 1000.0d));
+        setTrainInstruction(trainInfo.getInstruction());
+        Integer speed = trainInfo.getSpeed();
+        if (speed != null) {
+            updateTrainSpeed(speed.intValue());
+        }
+    }
+
+    private final void setTrainRouteProgress(float f) {
+        getTrainHudBinding().trainRoute.routeProgress.setProgress(f);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00f4  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x011e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private final void setTrainInstruction(Companion.TrainInstruction trainInstruction) {
+        Companion.TrainInstructionContent trainInstructionContent;
+        ImageView imageView;
+        HudTrainInstructionBinding trainInstruction2 = getTrainHudBinding().trainInstruction;
+        Intrinsics.checkNotNullExpressionValue(trainInstruction2, "trainInstruction");
+        if (trainInstruction == null) {
+            hideTrainInstruction();
+            return;
+        }
+        String type = trainInstruction.getType();
+        boolean z = false;
+        if (Intrinsics.areEqual((Object) trainInstruction.getVisible(), (Object) false)) {
+            hideTrainInstruction();
+            return;
+        }
+        if (!Intrinsics.areEqual(type, TRAIN_INSTRUCTION_SIGNAL)) {
+            resetTrainSignalHighlightState();
+        }
+        if (type != null) {
+            int hashCode = type.hashCode();
+            if (hashCode != -902467928) {
+                if (hashCode != 501692798) {
+                    if (hashCode == 677280848 && type.equals(TRAIN_INSTRUCTION_OPEN_DOORS)) {
+                        int i = R.string.train_hud_instruction_open_doors;
+                        String string = getTargetActivity().getString(R.string.train_hud_instruction_open_doors_description);
+                        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+                        trainInstructionContent = new Companion.TrainInstructionContent(i, string, R.drawable.hud_train_door, false, 8, null);
+                        this.trainInstructionType = type;
+                        FrameLayout root = trainInstruction2.getRoot();
+                        Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+                        root.setVisibility(0);
+                        trainInstruction2.getRoot().setClickable((!Intrinsics.areEqual(type, TRAIN_INSTRUCTION_CLOSE_DOORS) || Intrinsics.areEqual(type, TRAIN_INSTRUCTION_OPEN_DOORS)) ? true : true);
+                        trainInstruction2.trainInstructionTitle.setText(trainInstructionContent.getTitleRes());
+                        trainInstruction2.trainInstructionDescription.setText(trainInstructionContent.getDescription());
+                        imageView = (ImageView) trainInstruction2.getRoot().findViewById(R.id.train_instruction_icon);
+                        if (imageView != null) {
+                            imageView.setImageResource(trainInstructionContent.getIconRes());
+                        }
+                        applyTrainInstructionAppearance(trainInstructionContent.getHighlight());
+                        return;
+                    }
+                } else if (type.equals(TRAIN_INSTRUCTION_CLOSE_DOORS)) {
+                    int i2 = R.string.train_hud_instruction_close_doors;
+                    String string2 = getTargetActivity().getString(R.string.train_hud_rodina_instruction_close_doors_description);
+                    Intrinsics.checkNotNullExpressionValue(string2, "getString(...)");
+                    trainInstructionContent = new Companion.TrainInstructionContent(i2, string2, R.drawable.hud_train_door, false, 8, null);
+                    this.trainInstructionType = type;
+                    FrameLayout root2 = trainInstruction2.getRoot();
+                    Intrinsics.checkNotNullExpressionValue(root2, "getRoot(...)");
+                    root2.setVisibility(0);
+                    trainInstruction2.getRoot().setClickable((!Intrinsics.areEqual(type, TRAIN_INSTRUCTION_CLOSE_DOORS) || Intrinsics.areEqual(type, TRAIN_INSTRUCTION_OPEN_DOORS)) ? true : true);
+                    trainInstruction2.trainInstructionTitle.setText(trainInstructionContent.getTitleRes());
+                    trainInstruction2.trainInstructionDescription.setText(trainInstructionContent.getDescription());
+                    imageView = (ImageView) trainInstruction2.getRoot().findViewById(R.id.train_instruction_icon);
+                    if (imageView != null) {
+                    }
+                    applyTrainInstructionAppearance(trainInstructionContent.getHighlight());
+                    return;
+                }
+            } else if (type.equals(TRAIN_INSTRUCTION_SIGNAL)) {
+                Integer signalRequired = trainInstruction.getSignalRequired();
+                if (signalRequired != null) {
+                    if (signalRequired.intValue() <= 0) {
+                        signalRequired = null;
+                    }
+                    if (signalRequired != null) {
+                        int intValue = signalRequired.intValue();
+                        int coerceIn = RangesKt.coerceIn(orZero(trainInstruction.getSignalCurrent()), 0, intValue);
+                        boolean resolveTrainSignalHighlight = resolveTrainSignalHighlight(coerceIn, intValue);
+                        trainInstructionContent = new Companion.TrainInstructionContent(R.string.train_hud_instruction_signal, signalProgressDescription(coerceIn, intValue, resolveTrainSignalHighlight), R.drawable.ic_train_hud_horn, resolveTrainSignalHighlight);
+                        this.trainInstructionType = type;
+                        FrameLayout root22 = trainInstruction2.getRoot();
+                        Intrinsics.checkNotNullExpressionValue(root22, "getRoot(...)");
+                        root22.setVisibility(0);
+                        trainInstruction2.getRoot().setClickable((!Intrinsics.areEqual(type, TRAIN_INSTRUCTION_CLOSE_DOORS) || Intrinsics.areEqual(type, TRAIN_INSTRUCTION_OPEN_DOORS)) ? true : true);
+                        trainInstruction2.trainInstructionTitle.setText(trainInstructionContent.getTitleRes());
+                        trainInstruction2.trainInstructionDescription.setText(trainInstructionContent.getDescription());
+                        imageView = (ImageView) trainInstruction2.getRoot().findViewById(R.id.train_instruction_icon);
+                        if (imageView != null) {
+                        }
+                        applyTrainInstructionAppearance(trainInstructionContent.getHighlight());
+                        return;
+                    }
+                }
+                hideTrainInstruction();
+                return;
+            }
+        }
+        hideTrainInstruction();
+    }
+
+    private final ConstraintLayout inflateHudPage() {
+        View inflate = getTargetActivity().getLayoutInflater().inflate(R.layout.hud_page, (ViewGroup) null);
+        Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
+        return (ConstraintLayout) inflate;
+    }
+
+    private final void inflateRodinaTrainJob() {
+        FrameLayout hudTrainJob = this.binding.hudTrainJob;
+        Intrinsics.checkNotNullExpressionValue(hudTrainJob, "hudTrainJob");
+        hudTrainJob.removeAllViews();
+        getTargetActivity().getLayoutInflater().inflate(R.layout.hud_rodina_train_job, (ViewGroup) hudTrainJob, true);
+    }
+
+    private final void hideTrainInstruction() {
+        resetTrainSignalHighlightState();
+        this.trainInstructionType = null;
+        FrameLayout root = getTrainHudBinding().trainInstruction.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+        root.setVisibility(8);
+        getTrainHudBinding().trainInstruction.getRoot().setClickable(false);
+        applyTrainInstructionAppearance(false);
+    }
+
+    private final void resetTrainSignalHighlightState() {
+        this.trainSignalLastCurrent = null;
+        this.trainSignalLastRequired = null;
+        this.trainSignalHighlight = false;
+    }
+
+    private final boolean resolveTrainSignalHighlight(int i, int i2) {
+        Integer num = this.trainSignalLastCurrent;
+        Integer num2 = this.trainSignalLastRequired;
+        boolean z = true;
+        if (i < i2) {
+            if (num2 != null && num2.intValue() == i2 && num != null) {
+                if (i <= num.intValue()) {
+                    if (i == num.intValue()) {
+                        z = this.trainSignalHighlight;
+                    }
+                }
+            }
+            z = false;
+        }
+        this.trainSignalLastCurrent = Integer.valueOf(i);
+        this.trainSignalLastRequired = Integer.valueOf(i2);
+        this.trainSignalHighlight = z;
+        return z;
+    }
+
+    private final void applyTrainInstructionAppearance(boolean z) {
+        FrameLayout root = getTrainHudBinding().trainInstruction.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+        CustomCardView customCardView = (CustomCardView) root.findViewById(R.id.train_instruction_card);
+        ImageView imageView = (ImageView) root.findViewById(R.id.train_instruction_icon);
+        if (customCardView != null) {
+            customCardView.setBorder(z ? TRAIN_SIGNAL_HIGHLIGHT_COLOR : TRAIN_INSTRUCTION_DEFAULT_BORDER_COLOR);
+        }
+        if (z) {
+            if (imageView != null) {
+                imageView.setColorFilter(TRAIN_SIGNAL_HIGHLIGHT_COLOR);
+            }
+        } else if (imageView != null) {
+            imageView.clearColorFilter();
+        }
+    }
+
+    public final void updateTrainSpeed(int i) {
+        if (ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
+            return;
+        }
+        this.pendingTrainSpeedKmh = RangesKt.coerceAtLeast(i, 0);
+        this.handler.removeCallbacks(this.trainSpeedUpdateRunnable);
+        if (Intrinsics.areEqual(Looper.myLooper(), Looper.getMainLooper())) {
+            this.trainSpeedUpdateRunnable.run();
+        } else {
+            this.handler.post(this.trainSpeedUpdateRunnable);
+        }
+    }
+
+    private final int orZero(Integer num) {
+        if (num != null) {
+            return num.intValue();
+        }
+        return 0;
+    }
+
+    static /* synthetic */ CharSequence signalProgressDescription$default(Hud hud, int i, int i2, boolean z, int i3, Object obj) {
+        if ((i3 & 4) != 0) {
+            z = false;
+        }
+        return hud.signalProgressDescription(i, i2, z);
+    }
+
+    private final CharSequence signalProgressDescription(int i, int i2, boolean z) {
+        String string = getTargetActivity().getString(R.string.train_hud_instruction_signal_progress, new Object[]{Integer.valueOf(i), Integer.valueOf(i2)});
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        String str = i + "/" + i2;
+        String str2 = string;
+        int lastIndexOf$default = StringsKt.lastIndexOf$default((CharSequence) str2, str, 0, false, 6, (Object) null);
+        if (lastIndexOf$default < 0) {
+            return str2;
+        }
+        SpannableString spannableString = new SpannableString(str2);
+        if (z) {
+            spannableString.setSpan(new ForegroundColorSpan(TRAIN_SIGNAL_HIGHLIGHT_COLOR), lastIndexOf$default, str.length() + lastIndexOf$default, 33);
+        }
+        spannableString.setSpan(new StyleSpan(1), lastIndexOf$default, str.length() + lastIndexOf$default, 33);
+        return spannableString;
     }
 
     private final void showInteractionButton(String str) {
@@ -943,7 +1334,7 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
             ConstraintLayout actionButton = hudPageBinding.actionButton;
             Intrinsics.checkNotNullExpressionValue(actionButton, "actionButton");
-            EasyAnimation.animateClick$default(easyAnimation, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda15
+            EasyAnimation.animateClick$default(easyAnimation, actionButton, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda18
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit noticeState$lambda$0$0;
@@ -969,7 +1360,7 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation easyAnimation2 = EasyAnimation.INSTANCE;
             ConstraintLayout actionNoticeWithoutDescriptionButtonClick = hudPageBinding.actionNoticeWithoutDescriptionButtonClick;
             Intrinsics.checkNotNullExpressionValue(actionNoticeWithoutDescriptionButtonClick, "actionNoticeWithoutDescriptionButtonClick");
-            EasyAnimation.animateClick$default(easyAnimation2, actionNoticeWithoutDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda16
+            EasyAnimation.animateClick$default(easyAnimation2, actionNoticeWithoutDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda19
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit noticeState$lambda$0$1;
@@ -989,7 +1380,7 @@ public final class Hud extends SAMPUIElement {
             EasyAnimation easyAnimation3 = EasyAnimation.INSTANCE;
             ConstraintLayout actionNoticeWithDescriptionButtonClick = hudPageBinding.actionNoticeWithDescriptionButtonClick;
             Intrinsics.checkNotNullExpressionValue(actionNoticeWithDescriptionButtonClick, "actionNoticeWithDescriptionButtonClick");
-            EasyAnimation.animateClick$default(easyAnimation3, actionNoticeWithDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda17
+            EasyAnimation.animateClick$default(easyAnimation3, actionNoticeWithDescriptionButtonClick, 0L, null, new Function0() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda20
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     Unit noticeState$lambda$0$2;
@@ -1068,13 +1459,23 @@ public final class Hud extends SAMPUIElement {
                 e.printStackTrace();
             }
         } else if (i == 5) {
-            FrameLayout trainSettings = this.trainHudBinding.trainSettings;
+            ArizonaTrainHud arizonaTrainHud = this.arizonaTrainHud;
+            if (arizonaTrainHud != null) {
+                arizonaTrainHud.setSettingsVisibility(Integer.parseInt(data));
+                return;
+            }
+            FrameLayout trainSettings = getTrainHudBinding().trainSettings;
             Intrinsics.checkNotNullExpressionValue(trainSettings, "trainSettings");
             trainSettings.setVisibility(Integer.parseInt(data) == 1 ? 0 : 8);
         } else if (i == 6) {
+            ArizonaTrainHud arizonaTrainHud2 = this.arizonaTrainHud;
+            if (arizonaTrainHud2 != null) {
+                arizonaTrainHud2.setDoorState(Integer.parseInt(data));
+                return;
+            }
             r1 = Integer.parseInt(data) == 1;
-            this.trainHudBinding.trainDoorUnlockedIcon.setAlpha(r1 ? 1.0f : 0.35f);
-            this.trainHudBinding.trainDoorLockedIcon.setAlpha(r1 ? 0.35f : 1.0f);
+            getTrainHudBinding().trainDoorUnlockedIcon.setAlpha(r1 ? 1.0f : 0.35f);
+            getTrainHudBinding().trainDoorLockedIcon.setAlpha(r1 ? 0.35f : 1.0f);
         } else if (i == 7) {
             this.counter.setTaximeterVisibility(data);
             RodinaHudSubwindowManager rodinaHudSubwindowManager2 = this.rodinaSubwindowManager;
@@ -1184,7 +1585,7 @@ public final class Hud extends SAMPUIElement {
                         root5.setVisibility(0);
                         HudProposalScreenBinding hudProposalScreen2 = this.binding.hudProposalScreen;
                         Intrinsics.checkNotNullExpressionValue(hudProposalScreen2, "hudProposalScreen");
-                        hudProposalScreen.showProposalScreen(hudProposalScreen2, proposalResponse, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda14
+                        hudProposalScreen.showProposalScreen(hudProposalScreen2, proposalResponse, new Function1() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda17
                             @Override // kotlin.jvm.functions.Function1
                             public final Object invoke(Object obj2) {
                                 return Hud.onBackendMessageHandled$lambda$3(Hud.this, ((Integer) obj2).intValue());
@@ -1504,17 +1905,34 @@ public final class Hud extends SAMPUIElement {
                                     return;
                                 } else if (i == BackendHudIds.CHALLENGE_SHOW.getSubId()) {
                                     Integer intOrNull10 = StringsKt.toIntOrNull(StringsKt.trim((CharSequence) data).toString());
-                                    r1 = (intOrNull10 == null || intOrNull10.intValue() != 1) ? false : false;
-                                    Log.d(getCLASS_TAG(), "CHALLENGE_SHOW: data=" + data + ", isVisible=" + r1);
-                                    if (!r1) {
-                                        this.binding.leftMenu.btnOpenChallenges.clearAnimation();
+                                    if (intOrNull10 != null && intOrNull10.intValue() == 0) {
+                                        r1 = false;
                                     }
-                                    ImageView btnOpenChallenges = this.binding.leftMenu.btnOpenChallenges;
+                                    Log.d(getCLASS_TAG(), "CHALLENGE_SHOW: data=" + data + ", isVisible=" + r1);
+                                    HudPageBinding hudPageBinding6 = this.binding;
+                                    if (!r1) {
+                                        hudPageBinding6.leftMenu.btnOpenChallenges.clearAnimation();
+                                    } else {
+                                        hudPageBinding6.leftMenu.tvChallenge.setText(decodeHudJsonString(data));
+                                    }
+                                    FrameLayout btnOpenChallenges = this.binding.leftMenu.btnOpenChallenges;
                                     Intrinsics.checkNotNullExpressionValue(btnOpenChallenges, "btnOpenChallenges");
                                     btnOpenChallenges.setVisibility(r1 ? 0 : 8);
                                     return;
                                 } else if (i == BackendHudIds.FACTION_CAPTURE.getSubId()) {
                                     this.factionCapture.event(data);
+                                    return;
+                                } else if (i == BackendHudIds.COUNTDOWN.getSubId()) {
+                                    this.countdown.event(data);
+                                    return;
+                                } else if (i == BackendHudIds.DRIFT_POINTS.getSubId()) {
+                                    this.driftCounter.eventPoints(data);
+                                    return;
+                                } else if (i == BackendHudIds.DRIFT_MONEY.getSubId()) {
+                                    this.driftCounter.eventMoney(data);
+                                    return;
+                                } else if (i == BackendHudIds.COUNTER_ADDITIONAL_INFO.getSubId()) {
+                                    this.counter.setAdditionalInfo(data);
                                     return;
                                 } else {
                                     return;
@@ -1597,6 +2015,29 @@ public final class Hud extends SAMPUIElement {
         return Unit.INSTANCE;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    private final String decodeHudJsonString(String str) {
+        String str2;
+        String obj = StringsKt.trim((CharSequence) str).toString();
+        if (obj.length() >= 2 && StringsKt.startsWith$default(obj, "\"", false, 2, (Object) null) && StringsKt.endsWith$default(obj, "\"", false, 2, (Object) null)) {
+            try {
+                Result.Companion companion = Result.Companion;
+                Hud hud = this;
+                Object fromJson = GsonStore.INSTANCE.getGson().fromJson(obj, (Class<Object>) String.class);
+                Intrinsics.checkNotNullExpressionValue(fromJson, "fromJson(...)");
+                str2 = Result.m9921constructorimpl((String) fromJson);
+            } catch (Throwable th) {
+                Result.Companion companion2 = Result.Companion;
+                str2 = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            }
+            if (!Result.m9927isFailureimpl(str2)) {
+                str = str2;
+            }
+            return str;
+        }
+        return str;
+    }
+
     private final void setLocationVisibility(String str) {
         Integer intOrNull = StringsKt.toIntOrNull(str);
         int intValue = intOrNull != null ? intOrNull.intValue() : 0;
@@ -1611,20 +2052,20 @@ public final class Hud extends SAMPUIElement {
     }
 
     private final boolean isWorkCounterVisible(String str) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             Hud hud = this;
-            m9920constructorimpl = Result.m9920constructorimpl(Boolean.valueOf(((TaximeterModel) MapperKt.toModel(str, TaximeterModel.class)).getShow() != 0));
+            m9921constructorimpl = Result.m9921constructorimpl(Boolean.valueOf(((TaximeterModel) MapperKt.toModel(str, TaximeterModel.class)).getShow() != 0));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9923exceptionOrNullimpl(m9920constructorimpl) != null) {
+        if (Result.m9924exceptionOrNullimpl(m9921constructorimpl) != null) {
             Integer intOrNull = StringsKt.toIntOrNull(str);
-            m9920constructorimpl = Boolean.valueOf((intOrNull != null ? intOrNull.intValue() : 0) != 0);
+            m9921constructorimpl = Boolean.valueOf((intOrNull != null ? intOrNull.intValue() : 0) != 0);
         }
-        return ((Boolean) m9920constructorimpl).booleanValue();
+        return ((Boolean) m9921constructorimpl).booleanValue();
     }
 
     private final void setServerID(ServerInfoItem serverInfoItem) {
@@ -1679,6 +2120,31 @@ public final class Hud extends SAMPUIElement {
         if (i > 0) {
             scheduleUpdateTimer();
         }
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        this.handler.removeCallbacksAndMessages(null);
+        CountDownTimer countDownTimer = this.moneyTimer;
+        if (countDownTimer != null) {
+            if (countDownTimer == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("moneyTimer");
+                countDownTimer = null;
+            }
+            countDownTimer.cancel();
+        }
+        CountDownTimer countDownTimer2 = this.trainTimer;
+        if (countDownTimer2 != null) {
+            if (countDownTimer2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("trainTimer");
+                countDownTimer2 = null;
+            }
+            countDownTimer2.cancel();
+        }
+        this.timeElement.dispose();
+        CoroutineScopeKt.cancel$default(this.client.getScope(), null, 1, null);
+        super.onRemovedFromStore(reason);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1852,7 +2318,7 @@ public final class Hud extends SAMPUIElement {
 
     private final void showProgressBar(String str) {
         HudProgressBarContainerBinding hudProgressBarContainerBinding = this.binding.hudProgressBarLayout;
-        hudProgressBarContainerBinding.tvNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda18
+        hudProgressBarContainerBinding.tvNext.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.Hud$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Hud.showProgressBar$lambda$0$0(Hud.this, view);
@@ -1918,7 +2384,7 @@ public final class Hud extends SAMPUIElement {
     }
 
     /* compiled from: Hud.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0003\u0006\u0007\bB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion;", "", "<init>", "()V", "METERS_IN_KILOMETER", "", "TrainInfo", "NoticeInfo", "NoticeType", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0005\r\u000e\u000f\u0010\u0011B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion;", "", "<init>", "()V", "TRAIN_INSTRUCTION_CLOSE_DOORS", "", "TRAIN_INSTRUCTION_OPEN_DOORS", "TRAIN_INSTRUCTION_SIGNAL", "TRAIN_DOORS_CLICK_SUB_ID", "", "TRAIN_CLOSE_DOORS_CLICK_SUB_ID", "TRAIN_SIGNAL_HIGHLIGHT_COLOR", "TRAIN_INSTRUCTION_DEFAULT_BORDER_COLOR", "TrainInfo", "TrainInstruction", "TrainInstructionContent", "NoticeInfo", "NoticeType", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1929,52 +2395,46 @@ public final class Hud extends SAMPUIElement {
         }
 
         /* compiled from: Hud.kt */
-        @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0018\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001BG\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u000b¢\u0006\u0004\b\r\u0010\u000eJ\t\u0010\u001a\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001b\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001c\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001d\u001a\u00020\u0007HÆ\u0003J\t\u0010\u001e\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0003HÆ\u0003J\t\u0010 \u001a\u00020\u000bHÆ\u0003J\t\u0010!\u001a\u00020\u000bHÆ\u0003JY\u0010\"\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000bHÆ\u0001J\u0014\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010&\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010'\u001a\u00020\u0007HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0010R\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0010R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0010R\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0011\u0010\f\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0018¨\u0006("}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "", "salary", "", "maxTime", "speedLimit", "speedLimitType", "", "warningsMax", "warnings", "distance", "", "totalDistance", "<init>", "(IIILjava/lang/String;IIFF)V", "getSalary", "()I", "getMaxTime", "getSpeedLimit", "getSpeedLimitType", "()Ljava/lang/String;", "getWarningsMax", "getWarnings", "getDistance", "()F", "getTotalDistance", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "copy", "equals", "", "other", "hashCode", "toString", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b(\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001B\u008f\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0003\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u000b\u0012\u0006\u0010\f\u001a\u00020\u000b\u0012\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u0012\u0012\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0014\u0010\u0015J\t\u0010*\u001a\u00020\u0003HÆ\u0003J\t\u0010+\u001a\u00020\u0003HÆ\u0003J\t\u0010,\u001a\u00020\u0003HÆ\u0003J\t\u0010-\u001a\u00020\u0007HÆ\u0003J\t\u0010.\u001a\u00020\u0003HÆ\u0003J\t\u0010/\u001a\u00020\u0003HÆ\u0003J\t\u00100\u001a\u00020\u000bHÆ\u0003J\t\u00101\u001a\u00020\u000bHÆ\u0003J\u000b\u00102\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u000b\u00103\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u00104\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u00105\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u000b\u00106\u001a\u0004\u0018\u00010\u0012HÆ\u0003J\u0010\u00107\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J¦\u0001\u00108\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00032\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\u000b2\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u00122\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u0003HÆ\u0001¢\u0006\u0002\u00109J\u0014\u0010:\u001a\u00020;2\b\u0010<\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010=\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010>\u001a\u00020\u0007HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0017R\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0017R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0017R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0017R\u0011\u0010\n\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0011\u0010\f\u001a\u00020\u000b¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u001fR\u0013\u0010\r\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001bR\u0013\u0010\u000e\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u001bR\u0015\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b#\u0010$R\u0015\u0010\u0010\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b&\u0010$R\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u0012¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u0015\u0010\u0013\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b)\u0010$¨\u0006?"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "", "salary", "", "maxTime", "speedLimit", "speedLimitType", "", "warningsMax", "warnings", "distance", "", "totalDistance", "startStation", "endStation", "passengerCount", "distanceToSpeedLimitMeters", "instruction", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstruction;", UpdateServiceContract.BundleKey.SPEED, "<init>", "(IIILjava/lang/String;IIFFLjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstruction;Ljava/lang/Integer;)V", "getSalary", "()I", "getMaxTime", "getSpeedLimit", "getSpeedLimitType", "()Ljava/lang/String;", "getWarningsMax", "getWarnings", "getDistance", "()F", "getTotalDistance", "getStartStation", "getEndStation", "getPassengerCount", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getDistanceToSpeedLimitMeters", "getInstruction", "()Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstruction;", "getSpeed", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "copy", "(IIILjava/lang/String;IIFFLjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstruction;Ljava/lang/Integer;)Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "equals", "", "other", "hashCode", "toString", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
         /* loaded from: classes6.dex */
         public static final class TrainInfo {
             private final float distance;
+            private final Integer distanceToSpeedLimitMeters;
+            private final String endStation;
+            private final TrainInstruction instruction;
             private final int maxTime;
+            private final Integer passengerCount;
             private final int salary;
+            private final Integer speed;
             private final int speedLimit;
             private final String speedLimitType;
+            private final String startStation;
             private final float totalDistance;
             private final int warnings;
             private final int warningsMax;
 
-            public static /* synthetic */ TrainInfo copy$default(TrainInfo trainInfo, int i, int i2, int i3, String str, int i4, int i5, float f, float f2, int i6, Object obj) {
-                if ((i6 & 1) != 0) {
-                    i = trainInfo.salary;
-                }
-                if ((i6 & 2) != 0) {
-                    i2 = trainInfo.maxTime;
-                }
-                if ((i6 & 4) != 0) {
-                    i3 = trainInfo.speedLimit;
-                }
-                if ((i6 & 8) != 0) {
-                    str = trainInfo.speedLimitType;
-                }
-                if ((i6 & 16) != 0) {
-                    i4 = trainInfo.warningsMax;
-                }
-                if ((i6 & 32) != 0) {
-                    i5 = trainInfo.warnings;
-                }
-                if ((i6 & 64) != 0) {
-                    f = trainInfo.distance;
-                }
-                if ((i6 & 128) != 0) {
-                    f2 = trainInfo.totalDistance;
-                }
-                float f3 = f;
-                float f4 = f2;
-                int i7 = i4;
-                int i8 = i5;
-                return trainInfo.copy(i, i2, i3, str, i7, i8, f3, f4);
-            }
-
             public final int component1() {
                 return this.salary;
+            }
+
+            public final String component10() {
+                return this.endStation;
+            }
+
+            public final Integer component11() {
+                return this.passengerCount;
+            }
+
+            public final Integer component12() {
+                return this.distanceToSpeedLimitMeters;
+            }
+
+            public final TrainInstruction component13() {
+                return this.instruction;
+            }
+
+            public final Integer component14() {
+                return this.speed;
             }
 
             public final int component2() {
@@ -2005,9 +2465,13 @@ public final class Hud extends SAMPUIElement {
                 return this.totalDistance;
             }
 
-            public final TrainInfo copy(int i, int i2, int i3, String speedLimitType, int i4, int i5, float f, float f2) {
+            public final String component9() {
+                return this.startStation;
+            }
+
+            public final TrainInfo copy(int i, int i2, int i3, String speedLimitType, int i4, int i5, float f, float f2, String str, String str2, Integer num, Integer num2, TrainInstruction trainInstruction, Integer num3) {
                 Intrinsics.checkNotNullParameter(speedLimitType, "speedLimitType");
-                return new TrainInfo(i, i2, i3, speedLimitType, i4, i5, f, f2);
+                return new TrainInfo(i, i2, i3, speedLimitType, i4, i5, f, f2, str, str2, num, num2, trainInstruction, num3);
             }
 
             public boolean equals(Object obj) {
@@ -2016,13 +2480,25 @@ public final class Hud extends SAMPUIElement {
                 }
                 if (obj instanceof TrainInfo) {
                     TrainInfo trainInfo = (TrainInfo) obj;
-                    return this.salary == trainInfo.salary && this.maxTime == trainInfo.maxTime && this.speedLimit == trainInfo.speedLimit && Intrinsics.areEqual(this.speedLimitType, trainInfo.speedLimitType) && this.warningsMax == trainInfo.warningsMax && this.warnings == trainInfo.warnings && Float.compare(this.distance, trainInfo.distance) == 0 && Float.compare(this.totalDistance, trainInfo.totalDistance) == 0;
+                    return this.salary == trainInfo.salary && this.maxTime == trainInfo.maxTime && this.speedLimit == trainInfo.speedLimit && Intrinsics.areEqual(this.speedLimitType, trainInfo.speedLimitType) && this.warningsMax == trainInfo.warningsMax && this.warnings == trainInfo.warnings && Float.compare(this.distance, trainInfo.distance) == 0 && Float.compare(this.totalDistance, trainInfo.totalDistance) == 0 && Intrinsics.areEqual(this.startStation, trainInfo.startStation) && Intrinsics.areEqual(this.endStation, trainInfo.endStation) && Intrinsics.areEqual(this.passengerCount, trainInfo.passengerCount) && Intrinsics.areEqual(this.distanceToSpeedLimitMeters, trainInfo.distanceToSpeedLimitMeters) && Intrinsics.areEqual(this.instruction, trainInfo.instruction) && Intrinsics.areEqual(this.speed, trainInfo.speed);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((((Integer.hashCode(this.salary) * 31) + Integer.hashCode(this.maxTime)) * 31) + Integer.hashCode(this.speedLimit)) * 31) + this.speedLimitType.hashCode()) * 31) + Integer.hashCode(this.warningsMax)) * 31) + Integer.hashCode(this.warnings)) * 31) + Float.hashCode(this.distance)) * 31) + Float.hashCode(this.totalDistance);
+                int hashCode = ((((((((((((((Integer.hashCode(this.salary) * 31) + Integer.hashCode(this.maxTime)) * 31) + Integer.hashCode(this.speedLimit)) * 31) + this.speedLimitType.hashCode()) * 31) + Integer.hashCode(this.warningsMax)) * 31) + Integer.hashCode(this.warnings)) * 31) + Float.hashCode(this.distance)) * 31) + Float.hashCode(this.totalDistance)) * 31;
+                String str = this.startStation;
+                int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
+                String str2 = this.endStation;
+                int hashCode3 = (hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31;
+                Integer num = this.passengerCount;
+                int hashCode4 = (hashCode3 + (num == null ? 0 : num.hashCode())) * 31;
+                Integer num2 = this.distanceToSpeedLimitMeters;
+                int hashCode5 = (hashCode4 + (num2 == null ? 0 : num2.hashCode())) * 31;
+                TrainInstruction trainInstruction = this.instruction;
+                int hashCode6 = (hashCode5 + (trainInstruction == null ? 0 : trainInstruction.hashCode())) * 31;
+                Integer num3 = this.speed;
+                return hashCode6 + (num3 != null ? num3.hashCode() : 0);
             }
 
             public String toString() {
@@ -2033,10 +2509,16 @@ public final class Hud extends SAMPUIElement {
                 int i4 = this.warningsMax;
                 int i5 = this.warnings;
                 float f = this.distance;
-                return "TrainInfo(salary=" + i + ", maxTime=" + i2 + ", speedLimit=" + i3 + ", speedLimitType=" + str + ", warningsMax=" + i4 + ", warnings=" + i5 + ", distance=" + f + ", totalDistance=" + this.totalDistance + ")";
+                float f2 = this.totalDistance;
+                String str2 = this.startStation;
+                String str3 = this.endStation;
+                Integer num = this.passengerCount;
+                Integer num2 = this.distanceToSpeedLimitMeters;
+                TrainInstruction trainInstruction = this.instruction;
+                return "TrainInfo(salary=" + i + ", maxTime=" + i2 + ", speedLimit=" + i3 + ", speedLimitType=" + str + ", warningsMax=" + i4 + ", warnings=" + i5 + ", distance=" + f + ", totalDistance=" + f2 + ", startStation=" + str2 + ", endStation=" + str3 + ", passengerCount=" + num + ", distanceToSpeedLimitMeters=" + num2 + ", instruction=" + trainInstruction + ", speed=" + this.speed + ")";
             }
 
-            public TrainInfo(int i, int i2, int i3, String speedLimitType, int i4, int i5, float f, float f2) {
+            public TrainInfo(int i, int i2, int i3, String speedLimitType, int i4, int i5, float f, float f2, String str, String str2, Integer num, Integer num2, TrainInstruction trainInstruction, Integer num3) {
                 Intrinsics.checkNotNullParameter(speedLimitType, "speedLimitType");
                 this.salary = i;
                 this.maxTime = i2;
@@ -2046,6 +2528,16 @@ public final class Hud extends SAMPUIElement {
                 this.warnings = i5;
                 this.distance = f;
                 this.totalDistance = f2;
+                this.startStation = str;
+                this.endStation = str2;
+                this.passengerCount = num;
+                this.distanceToSpeedLimitMeters = num2;
+                this.instruction = trainInstruction;
+                this.speed = num3;
+            }
+
+            public /* synthetic */ TrainInfo(int i, int i2, int i3, String str, int i4, int i5, float f, float f2, String str2, String str3, Integer num, Integer num2, TrainInstruction trainInstruction, Integer num3, int i6, DefaultConstructorMarker defaultConstructorMarker) {
+                this(i, i2, i3, str, i4, i5, f, f2, (i6 & 256) != 0 ? null : str2, (i6 & 512) != 0 ? null : str3, (i6 & 1024) != 0 ? null : num, (i6 & 2048) != 0 ? null : num2, (i6 & 4096) != 0 ? null : trainInstruction, (i6 & 8192) != 0 ? null : num3);
             }
 
             public final int getSalary() {
@@ -2078,6 +2570,234 @@ public final class Hud extends SAMPUIElement {
 
             public final float getTotalDistance() {
                 return this.totalDistance;
+            }
+
+            public final String getStartStation() {
+                return this.startStation;
+            }
+
+            public final String getEndStation() {
+                return this.endStation;
+            }
+
+            public final Integer getPassengerCount() {
+                return this.passengerCount;
+            }
+
+            public final Integer getDistanceToSpeedLimitMeters() {
+                return this.distanceToSpeedLimitMeters;
+            }
+
+            public final TrainInstruction getInstruction() {
+                return this.instruction;
+            }
+
+            public final Integer getSpeed() {
+                return this.speed;
+            }
+        }
+
+        /* compiled from: Hud.kt */
+        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0016\b\u0086\b\u0018\u00002\u00020\u0001B7\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0005\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nJ\u000b\u0010\u0014\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0005HÆ\u0003¢\u0006\u0002\u0010\u000eJ\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0005HÆ\u0003¢\u0006\u0002\u0010\u000eJ\u0010\u0010\u0017\u001a\u0004\u0018\u00010\bHÆ\u0003¢\u0006\u0002\u0010\u0012J>\u0010\u0018\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\bHÆ\u0001¢\u0006\u0002\u0010\u0019J\u0014\u0010\u001a\u001a\u00020\b2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u001c\u001a\u00020\u0005HÖ\u0081\u0004J\n\u0010\u001d\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\r\u0010\u000eR\u0015\u0010\u0006\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\u0010\u0010\u000eR\u0015\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\n\n\u0002\u0010\u0013\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001e"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstruction;", "", "type", "", "signalCurrent", "", "signalRequired", "visible", "", "<init>", "(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;)V", "getType", "()Ljava/lang/String;", "getSignalCurrent", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getSignalRequired", "getVisible", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "component1", "component2", "component3", "component4", "copy", "(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;)Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstruction;", "equals", "other", "hashCode", "toString", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        /* loaded from: classes6.dex */
+        public static final class TrainInstruction {
+            private final Integer signalCurrent;
+            private final Integer signalRequired;
+            private final String type;
+            private final Boolean visible;
+
+            public TrainInstruction() {
+                this(null, null, null, null, 15, null);
+            }
+
+            public static /* synthetic */ TrainInstruction copy$default(TrainInstruction trainInstruction, String str, Integer num, Integer num2, Boolean bool, int i, Object obj) {
+                if ((i & 1) != 0) {
+                    str = trainInstruction.type;
+                }
+                if ((i & 2) != 0) {
+                    num = trainInstruction.signalCurrent;
+                }
+                if ((i & 4) != 0) {
+                    num2 = trainInstruction.signalRequired;
+                }
+                if ((i & 8) != 0) {
+                    bool = trainInstruction.visible;
+                }
+                return trainInstruction.copy(str, num, num2, bool);
+            }
+
+            public final String component1() {
+                return this.type;
+            }
+
+            public final Integer component2() {
+                return this.signalCurrent;
+            }
+
+            public final Integer component3() {
+                return this.signalRequired;
+            }
+
+            public final Boolean component4() {
+                return this.visible;
+            }
+
+            public final TrainInstruction copy(String str, Integer num, Integer num2, Boolean bool) {
+                return new TrainInstruction(str, num, num2, bool);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof TrainInstruction) {
+                    TrainInstruction trainInstruction = (TrainInstruction) obj;
+                    return Intrinsics.areEqual(this.type, trainInstruction.type) && Intrinsics.areEqual(this.signalCurrent, trainInstruction.signalCurrent) && Intrinsics.areEqual(this.signalRequired, trainInstruction.signalRequired) && Intrinsics.areEqual(this.visible, trainInstruction.visible);
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                String str = this.type;
+                int hashCode = (str == null ? 0 : str.hashCode()) * 31;
+                Integer num = this.signalCurrent;
+                int hashCode2 = (hashCode + (num == null ? 0 : num.hashCode())) * 31;
+                Integer num2 = this.signalRequired;
+                int hashCode3 = (hashCode2 + (num2 == null ? 0 : num2.hashCode())) * 31;
+                Boolean bool = this.visible;
+                return hashCode3 + (bool != null ? bool.hashCode() : 0);
+            }
+
+            public String toString() {
+                String str = this.type;
+                Integer num = this.signalCurrent;
+                Integer num2 = this.signalRequired;
+                return "TrainInstruction(type=" + str + ", signalCurrent=" + num + ", signalRequired=" + num2 + ", visible=" + this.visible + ")";
+            }
+
+            public TrainInstruction(String str, Integer num, Integer num2, Boolean bool) {
+                this.type = str;
+                this.signalCurrent = num;
+                this.signalRequired = num2;
+                this.visible = bool;
+            }
+
+            public /* synthetic */ TrainInstruction(String str, Integer num, Integer num2, Boolean bool, int i, DefaultConstructorMarker defaultConstructorMarker) {
+                this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : num, (i & 4) != 0 ? null : num2, (i & 8) != 0 ? null : bool);
+            }
+
+            public final String getType() {
+                return this.type;
+            }
+
+            public final Integer getSignalCurrent() {
+                return this.signalCurrent;
+            }
+
+            public final Integer getSignalRequired() {
+                return this.signalRequired;
+            }
+
+            public final Boolean getVisible() {
+                return this.visible;
+            }
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* compiled from: Hud.kt */
+        @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\r\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0012\n\u0002\u0010\u000e\n\u0000\b\u0082\b\u0018\u00002\u00020\u0001B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0007\u001a\u00020\b¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0012\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0013\u001a\u00020\u0005HÆ\u0003J\t\u0010\u0014\u001a\u00020\u0003HÆ\u0003J\t\u0010\u0015\u001a\u00020\bHÆ\u0003J1\u0010\u0016\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00032\b\b\u0002\u0010\u0007\u001a\u00020\bHÆ\u0001J\u0014\u0010\u0017\u001a\u00020\b2\b\u0010\u0018\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0019\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010\u001a\u001a\u00020\u001bHÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\fR\u0011\u0010\u0007\u001a\u00020\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInstructionContent;", "", "titleRes", "", "description", "", "iconRes", "highlight", "", "<init>", "(ILjava/lang/CharSequence;IZ)V", "getTitleRes", "()I", "getDescription", "()Ljava/lang/CharSequence;", "getIconRes", "getHighlight", "()Z", "component1", "component2", "component3", "component4", "copy", "equals", "other", "hashCode", "toString", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        /* loaded from: classes6.dex */
+        public static final class TrainInstructionContent {
+            private final CharSequence description;
+            private final boolean highlight;
+            private final int iconRes;
+            private final int titleRes;
+
+            public static /* synthetic */ TrainInstructionContent copy$default(TrainInstructionContent trainInstructionContent, int i, CharSequence charSequence, int i2, boolean z, int i3, Object obj) {
+                if ((i3 & 1) != 0) {
+                    i = trainInstructionContent.titleRes;
+                }
+                if ((i3 & 2) != 0) {
+                    charSequence = trainInstructionContent.description;
+                }
+                if ((i3 & 4) != 0) {
+                    i2 = trainInstructionContent.iconRes;
+                }
+                if ((i3 & 8) != 0) {
+                    z = trainInstructionContent.highlight;
+                }
+                return trainInstructionContent.copy(i, charSequence, i2, z);
+            }
+
+            public final int component1() {
+                return this.titleRes;
+            }
+
+            public final CharSequence component2() {
+                return this.description;
+            }
+
+            public final int component3() {
+                return this.iconRes;
+            }
+
+            public final boolean component4() {
+                return this.highlight;
+            }
+
+            public final TrainInstructionContent copy(int i, CharSequence description, int i2, boolean z) {
+                Intrinsics.checkNotNullParameter(description, "description");
+                return new TrainInstructionContent(i, description, i2, z);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof TrainInstructionContent) {
+                    TrainInstructionContent trainInstructionContent = (TrainInstructionContent) obj;
+                    return this.titleRes == trainInstructionContent.titleRes && Intrinsics.areEqual(this.description, trainInstructionContent.description) && this.iconRes == trainInstructionContent.iconRes && this.highlight == trainInstructionContent.highlight;
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return (((((Integer.hashCode(this.titleRes) * 31) + this.description.hashCode()) * 31) + Integer.hashCode(this.iconRes)) * 31) + Boolean.hashCode(this.highlight);
+            }
+
+            public String toString() {
+                int i = this.titleRes;
+                CharSequence charSequence = this.description;
+                int i2 = this.iconRes;
+                return "TrainInstructionContent(titleRes=" + i + ", description=" + ((Object) charSequence) + ", iconRes=" + i2 + ", highlight=" + this.highlight + ")";
+            }
+
+            public TrainInstructionContent(int i, CharSequence description, int i2, boolean z) {
+                Intrinsics.checkNotNullParameter(description, "description");
+                this.titleRes = i;
+                this.description = description;
+                this.iconRes = i2;
+                this.highlight = z;
+            }
+
+            public /* synthetic */ TrainInstructionContent(int i, CharSequence charSequence, int i2, boolean z, int i3, DefaultConstructorMarker defaultConstructorMarker) {
+                this(i, charSequence, i2, (i3 & 8) != 0 ? false : z);
+            }
+
+            public final int getTitleRes() {
+                return this.titleRes;
+            }
+
+            public final CharSequence getDescription() {
+                return this.description;
+            }
+
+            public final int getIconRes() {
+                return this.iconRes;
+            }
+
+            public final boolean getHighlight() {
+                return this.highlight;
             }
         }
 
@@ -2259,6 +2979,11 @@ public final class Hud extends SAMPUIElement {
         this.damageInformerElement.clear();
         this.factionCapture.event("");
         this.driftCounter.clear();
+        this.countdown.clear();
+        ArizonaTrainHud arizonaTrainHud = this.arizonaTrainHud;
+        if (arizonaTrainHud != null) {
+            arizonaTrainHud.clear();
+        }
     }
 
     private final void scheduleUpdateTimer() {

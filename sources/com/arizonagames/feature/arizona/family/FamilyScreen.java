@@ -313,6 +313,11 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         this.sortMembers2state = true;
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit mainMenuItemsAdapter$lambda$0(FamilyScreen familyScreen, int i) {
         familyScreen.selectMenuItem(i);

@@ -16,14 +16,14 @@ import kotlin.io.CloseableKt;
 public final class Oh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0165c7 f706a;
-    public final C0670vl b;
+    public final C0164c7 f706a;
+    public final C0669vl b;
     public final ap c;
 
-    public Oh(C0447n5 c0447n5) {
-        this.f706a = c0447n5.i();
-        this.b = c0447n5.s();
-        this.c = c0447n5.u();
+    public Oh(C0446n5 c0446n5) {
+        this.f706a = c0446n5.i();
+        this.b = c0446n5.s();
+        this.c = c0446n5.u();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0065  */
@@ -34,20 +34,20 @@ public final class Oh {
     public final List a(LinkedHashMap linkedHashMap) {
         Cursor cursor;
         SQLiteDatabase readableDatabase;
-        C0165c7 c0165c7 = this.f706a;
-        c0165c7.f924a.lock();
+        C0164c7 c0164c7 = this.f706a;
+        c0164c7.f924a.lock();
         try {
-            readableDatabase = c0165c7.c.getReadableDatabase();
+            readableDatabase = c0164c7.c.getReadableDatabase();
         } catch (Throwable unused) {
         }
         if (readableDatabase != null) {
-            String a2 = C0165c7.a(linkedHashMap);
+            String a2 = C0164c7.a(linkedHashMap);
             ArrayList arrayList = new ArrayList(Arrays.asList(Long.toString(0L)));
             for (Map.Entry entry : linkedHashMap.entrySet()) {
                 arrayList.add((String) entry.getValue());
             }
             cursor = readableDatabase.query("sessions", null, a2, (String[]) arrayList.toArray(new String[0]), null, null, "id ASC", null);
-            c0165c7.f924a.unlock();
+            c0164c7.f924a.unlock();
             if (cursor != null) {
                 return CollectionsKt.emptyList();
             }
@@ -65,7 +65,7 @@ public final class Oh {
             return arrayList2;
         }
         cursor = null;
-        c0165c7.f924a.unlock();
+        c0164c7.f924a.unlock();
         if (cursor != null) {
         }
     }

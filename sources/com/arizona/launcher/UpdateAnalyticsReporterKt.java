@@ -26,7 +26,7 @@ public final class UpdateAnalyticsReporterKt {
             } else if (!(value instanceof Boolean)) {
                 throw new IllegalStateException(("Unsupported updater analytics value for '" + key + "': " + value.getClass().getName()).toString());
             } else {
-                bundle.putBoolean(key, ((Boolean) value).booleanValue());
+                bundle.putLong(key, ((Boolean) value).booleanValue() ? 1L : 0L);
             }
         }
         return bundle;

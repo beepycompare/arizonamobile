@@ -527,6 +527,11 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         });
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit inventoryMenuAdapter$lambda$0(InventoryScreen inventoryScreen, InventoryMenuData it) {
         Intrinsics.checkNotNullParameter(it, "it");

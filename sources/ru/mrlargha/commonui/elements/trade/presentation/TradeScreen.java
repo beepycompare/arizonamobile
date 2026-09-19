@@ -243,6 +243,11 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         });
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit tradeInventoryAdapter$lambda$1(TradeScreen tradeScreen, InventoryItem it) {
         Intrinsics.checkNotNullParameter(it, "it");

@@ -28,13 +28,8 @@ import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.SpreadBuilder;
 import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
-import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.flow.MutableStateFlow;
-import kotlinx.coroutines.flow.StateFlowKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
@@ -42,9 +37,10 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.RadialMenuItemBinding;
 import ru.mrlargha.commonui.databinding.RadialMenuScreenBinding;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: RadialMenuScreen.kt */
-@Metadata(d1 = {"\u0000\u008e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\u0018\u0000 F2\u00020\u0001:\u0006EFGHIJB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u001eH\u0016J\u0018\u0010#\u001a\u00020!2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u0005H\u0016J\u0010\u0010'\u001a\u00020!2\u0006\u0010$\u001a\u00020%H\u0002J\u001f\u0010(\u001a\b\u0012\u0004\u0012\u0002H)0\u000f\"\u0006\b\u0000\u0010)\u0018\u00012\u0006\u0010*\u001a\u00020%H\u0082\bJ\u0016\u0010+\u001a\u00020!2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00190\u000fH\u0002J\b\u0010-\u001a\u00020!H\u0002J,\u0010.\u001a\u00020!2\u0006\u0010/\u001a\u00020\u00052\f\u00100\u001a\b\u0012\u0004\u0012\u00020!012\f\u00102\u001a\b\u0012\u0004\u0012\u00020!01H\u0002J\u0010\u00103\u001a\u00020\u001e2\u0006\u0010/\u001a\u00020\u0005H\u0002J\b\u00104\u001a\u00020\u001eH\u0002J$\u00105\u001a\u00020!2\f\u0010,\u001a\b\u0012\u0004\u0012\u0002060\u000f2\f\u00107\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fH\u0002J\u0016\u00108\u001a\u00020!2\f\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00190\u000fH\u0002J>\u00109\u001a\u00020!2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020!012\f\u0010=\u001a\b\u0012\u0004\u0012\u00020!01H\u0003b\u0010\b>\u0012\f\b?\u0012\b\b\fJ\u0004\b\b(@J\b\u0010A\u001a\u00020!H\u0002J%\u0010B\u001a\b\u0012\u0004\u0012\u0002H)0\u000f\"\u0006\b\u0000\u0010)\u0018\u00012\f\u0010,\u001a\b\u0012\u0004\u0012\u0002H)0\u000fH\u0082\bJ\u0010\u0010C\u001a\u00020%2\u0006\u0010D\u001a\u00020%H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u000e\u001a\r\u0012\t\u0012\u00070\u0010¢\u0006\u0002\b\u00110\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u0012\u001a\r\u0012\t\u0012\u00070\u0010¢\u0006\u0002\b\u00110\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00100\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00100\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00190\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u00050\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006K"}, d2 = {"Lru/mrlargha/commonui/elements/radial_menu/RadialMenuScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "radialMenu", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/RadialMenuScreenBinding;", "leftItems", "", "Lru/mrlargha/commonui/databinding/RadialMenuItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "rightItems", "scope", "Lkotlinx/coroutines/CoroutineScope;", "visibleView", "", "invisibleView", "itemList", "Lru/mrlargha/commonui/elements/radial_menu/RadialMenuScreen$RadialMenuItemModel;", "actionList", "showListSize", "Lkotlinx/coroutines/flow/MutableStateFlow;", "isFirst", "", "page", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "", "subId", "checkModelType", "toListModel", ExifInterface.GPS_DIRECTION_TRUE, "json", "setItems", "list", "setOnClickListener", "setOnBottomBtnListener", "listSize", "onNext", "Lkotlin/Function0;", "onBack", "isShowNext", "isShowBack", "setExtremeItem", "", "extremeItems", "setDataItems", "itemClickListener", "view", "Landroid/view/ViewGroup;", "onTouch", "onClick", "Landroid/annotation/SuppressLint;", "value", "ClickableViewAccessibility", "clearItems", "setVisibleList", "setImage", "icon", "Spawner", "Companion", "RadialMenuId", "RadialMenuModel", "RadialMenuActionModel", "RadialMenuItemModel", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\u0018\u0000 @2\u00020\u0001:\u0006?@ABCDB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001aH\u0016J\u0018\u0010\u001f\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0005H\u0016J\u0010\u0010#\u001a\u00020\u001d2\u0006\u0010 \u001a\u00020!H\u0002J\u001f\u0010$\u001a\b\u0012\u0004\u0012\u0002H%0\u000f\"\u0006\b\u0000\u0010%\u0018\u00012\u0006\u0010&\u001a\u00020!H\u0082\bJ\u0016\u0010'\u001a\u00020\u001d2\f\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00170\u000fH\u0002J\b\u0010)\u001a\u00020\u001dH\u0002J\b\u0010*\u001a\u00020\u001dH\u0002J\u0010\u0010+\u001a\u00020\u001a2\u0006\u0010,\u001a\u00020\u0005H\u0002J\b\u0010-\u001a\u00020\u001aH\u0002J$\u0010.\u001a\u00020\u001d2\f\u0010(\u001a\b\u0012\u0004\u0012\u00020/0\u000f2\f\u00100\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fH\u0002J\u0016\u00101\u001a\u00020\u001d2\f\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00170\u000fH\u0002J>\u00102\u001a\u00020\u001d2\u0006\u00103\u001a\u0002042\f\u00105\u001a\b\u0012\u0004\u0012\u00020\u001d062\f\u00107\u001a\b\u0012\u0004\u0012\u00020\u001d06H\u0003b\u0010\b8\u0012\f\b9\u0012\b\b\fJ\u0004\b\b(:J\b\u0010;\u001a\u00020\u001dH\u0002J%\u0010<\u001a\b\u0012\u0004\u0012\u0002H%0\u000f\"\u0006\b\u0000\u0010%\u0018\u00012\f\u0010(\u001a\b\u0012\u0004\u0012\u0002H%0\u000fH\u0082\bJ\u0010\u0010=\u001a\u00020!2\u0006\u0010>\u001a\u00020!H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u000e\u001a\r\u0012\t\u0012\u00070\u0010¢\u0006\u0002\b\u00110\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0019\u0010\u0012\u001a\r\u0012\t\u0012\u00070\u0010¢\u0006\u0002\b\u00110\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00100\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00100\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006E"}, d2 = {"Lru/mrlargha/commonui/elements/radial_menu/RadialMenuScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "radialMenu", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/RadialMenuScreenBinding;", "leftItems", "", "Lru/mrlargha/commonui/databinding/RadialMenuItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "rightItems", "visibleView", "", "invisibleView", "itemList", "Lru/mrlargha/commonui/elements/radial_menu/RadialMenuScreen$RadialMenuItemModel;", "actionList", "isFirst", "", "page", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "", "subId", "checkModelType", "toListModel", ExifInterface.GPS_DIRECTION_TRUE, "json", "setItems", "list", "setOnClickListener", "setOnBottomBtnListener", "isShowNext", "listSize", "isShowBack", "setExtremeItem", "", "extremeItems", "setDataItems", "itemClickListener", "view", "Landroid/view/ViewGroup;", "onTouch", "Lkotlin/Function0;", "onClick", "Landroid/annotation/SuppressLint;", "value", "ClickableViewAccessibility", "clearItems", "setVisibleList", "setImage", "icon", "Spawner", "Companion", "RadialMenuId", "RadialMenuModel", "RadialMenuActionModel", "RadialMenuItemModel", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RadialMenuScreen extends SAMPUIElement {
     private static final String ACTIONS = "actions";
@@ -62,8 +58,6 @@ public final class RadialMenuScreen extends SAMPUIElement {
     private int page;
     private final ConstraintLayout radialMenu;
     private final List<RadialMenuItemBinding> rightItems;
-    private final CoroutineScope scope;
-    private MutableStateFlow<Integer> showListSize;
     private List<RadialMenuItemBinding> visibleView;
     public static final Companion Companion = new Companion(null);
     private static final int darkColor = Color.parseColor("#202731");
@@ -83,11 +77,9 @@ public final class RadialMenuScreen extends SAMPUIElement {
         this.binding = bind;
         this.leftItems = CollectionsKt.listOf((Object[]) new RadialMenuItemBinding[]{bind.leftFirstItem, bind.leftSecondItem, bind.leftThirdItem});
         this.rightItems = CollectionsKt.listOf((Object[]) new RadialMenuItemBinding[]{bind.rightFirstItem, bind.rightSecondItem, bind.rightThirdItem});
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
         this.visibleView = new ArrayList();
         this.invisibleView = new ArrayList();
         this.itemList = new ArrayList();
-        this.showListSize = StateFlowKt.MutableStateFlow(0);
         this.isFirst = true;
         this.page = 1;
         addViewToConstraintLayout(constraintLayout, -1, -1);
@@ -101,8 +93,25 @@ public final class RadialMenuScreen extends SAMPUIElement {
             return;
         }
         this.itemList.clear();
+        this.actionList = null;
         this.isFirst = true;
         this.page = 1;
+        clearItems();
+        SpreadBuilder spreadBuilder = new SpreadBuilder(3);
+        spreadBuilder.add(this.binding.topItem);
+        spreadBuilder.addSpread(this.leftItems.toArray(new RadialMenuItemBinding[0]));
+        spreadBuilder.addSpread(this.rightItems.toArray(new RadialMenuItemBinding[0]));
+        for (RadialMenuItemBinding radialMenuItemBinding : CollectionsKt.listOf(spreadBuilder.toArray(new RadialMenuItemBinding[spreadBuilder.size()]))) {
+            LinearLayout root = radialMenuItemBinding.getRoot();
+            Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
+            root.setVisibility(8);
+            radialMenuItemBinding.getRoot().setOnTouchListener(null);
+        }
+        LinearLayout root2 = this.binding.bottomItem.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root2, "getRoot(...)");
+        root2.setVisibility(8);
+        this.binding.bottomItem.btnNextPage.setOnClickListener(null);
+        this.binding.bottomItem.btnBackPage.setOnClickListener(null);
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -127,9 +136,8 @@ public final class RadialMenuScreen extends SAMPUIElement {
                 this.itemList.add(radialMenuActionModel.toItemModel());
             }
         }
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new RadialMenuScreen$checkModelType$2(this, null), 3, null);
         setItems(this.itemList);
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new RadialMenuScreen$checkModelType$3(this, null), 3, null);
+        setOnBottomBtnListener();
     }
 
     private final /* synthetic */ <T> List<T> toListModel(String str) {
@@ -140,8 +148,7 @@ public final class RadialMenuScreen extends SAMPUIElement {
         return (List) fromJson;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void setItems(List<RadialMenuItemModel> list) {
+    private final void setItems(List<RadialMenuItemModel> list) {
         clearItems();
         LinearLayout root = this.binding.bottomItem.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
@@ -228,45 +235,56 @@ public final class RadialMenuScreen extends SAMPUIElement {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void setOnBottomBtnListener(final int i, final Function0<Unit> function0, final Function0<Unit> function02) {
-        isShowNext(i);
+    private final void setOnBottomBtnListener() {
+        List<RadialMenuItemModel> list = this.actionList;
+        if (list == null) {
+            list = this.itemList;
+        }
+        isShowNext(list.size());
         isShowBack();
-        this.binding.bottomItem.btnNextPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda3
+        this.binding.bottomItem.btnNextPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RadialMenuScreen.setOnBottomBtnListener$lambda$0(RadialMenuScreen.this, function0, i, view);
+                RadialMenuScreen.setOnBottomBtnListener$lambda$0(RadialMenuScreen.this, view);
             }
         });
-        this.binding.bottomItem.btnBackPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda4
+        this.binding.bottomItem.btnBackPage.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                RadialMenuScreen.setOnBottomBtnListener$lambda$1(RadialMenuScreen.this, function02, i, view);
+                RadialMenuScreen.setOnBottomBtnListener$lambda$1(RadialMenuScreen.this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void setOnBottomBtnListener$lambda$0(RadialMenuScreen radialMenuScreen, Function0 function0, int i, View view) {
+    public static final void setOnBottomBtnListener$lambda$0(RadialMenuScreen radialMenuScreen, View view) {
         radialMenuScreen.page++;
-        function0.invoke();
-        radialMenuScreen.isShowNext(i);
-        radialMenuScreen.isShowBack();
+        List<RadialMenuItemModel> list = radialMenuScreen.actionList;
+        if (list != null) {
+            radialMenuScreen.setItems(list);
+        } else {
+            radialMenuScreen.setItems(radialMenuScreen.itemList);
+        }
+        radialMenuScreen.setOnBottomBtnListener();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void setOnBottomBtnListener$lambda$1(RadialMenuScreen radialMenuScreen, Function0 function0, int i, View view) {
-        int i2 = radialMenuScreen.page;
-        if (i2 > 1) {
-            radialMenuScreen.page = i2 - 1;
-            function0.invoke();
+    public static final void setOnBottomBtnListener$lambda$1(RadialMenuScreen radialMenuScreen, View view) {
+        int i = radialMenuScreen.page;
+        if (i > 1) {
+            radialMenuScreen.page = i - 1;
+            List<RadialMenuItemModel> list = radialMenuScreen.actionList;
+            if (list != null) {
+                radialMenuScreen.setItems(list);
+            } else {
+                radialMenuScreen.setItems(radialMenuScreen.itemList);
+            }
         } else if (!radialMenuScreen.isFirst) {
             radialMenuScreen.isFirst = true;
             radialMenuScreen.actionList = null;
             radialMenuScreen.setItems(radialMenuScreen.itemList);
         }
-        radialMenuScreen.isShowNext(i);
-        radialMenuScreen.isShowBack();
+        radialMenuScreen.setOnBottomBtnListener();
     }
 
     private final boolean isShowNext(int i) {
@@ -359,7 +377,9 @@ public final class RadialMenuScreen extends SAMPUIElement {
                 title = "";
             }
             textView.setText(title);
-            Picasso.get().load(setImage(radialMenuItemModel.getIcon())).into(radialMenuItemBinding.ivIcon);
+            Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+            PicassoLoadSafeKt.loadSafe(picasso, setImage(radialMenuItemModel.getIcon())).into(radialMenuItemBinding.ivIcon);
             LinearLayout root = radialMenuItemBinding.getRoot();
             Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
             itemClickListener(root, new Function0() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda5
@@ -417,7 +437,7 @@ public final class RadialMenuScreen extends SAMPUIElement {
     }
 
     private final void itemClickListener(final ViewGroup viewGroup, final Function0<Unit> function0, final Function0<Unit> function02) {
-        viewGroup.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda2
+        viewGroup.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.radial_menu.RadialMenuScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 return RadialMenuScreen.itemClickListener$lambda$0(viewGroup, function0, function02, view, motionEvent);

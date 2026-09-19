@@ -55,6 +55,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.CustomTextView;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
@@ -1911,15 +1912,15 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     private final Integer toColorOrNull(String str) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(Integer.valueOf(Color.parseColor(str != null ? StringsKt.trim((CharSequence) str).toString() : null)));
+            m9921constructorimpl = Result.m9921constructorimpl(Integer.valueOf(Color.parseColor(str != null ? StringsKt.trim((CharSequence) str).toString() : null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+        return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
     }
 
     private final void openModalWindow(BpModalWindowModel bpModalWindowModel) {
@@ -1942,7 +1943,9 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         if (StringsKt.isBlank(bpModalWindowModel.getImage())) {
             return;
         }
-        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/battlepass/image_modal/" + bpModalWindowModel.getImage() + ".webp").placeholder(this.visualSkin.getSeasonEndedPoster()).error(this.visualSkin.getSeasonEndedPoster()).into(bpSeasonEndedBinding.ivPoster);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/battlepass/image_modal/" + bpModalWindowModel.getImage() + ".webp").placeholder(this.visualSkin.getSeasonEndedPoster()).error(this.visualSkin.getSeasonEndedPoster()).into(bpSeasonEndedBinding.ivPoster);
     }
 
     private final void setupListeners() {

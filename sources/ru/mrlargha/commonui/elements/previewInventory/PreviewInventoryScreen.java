@@ -141,6 +141,11 @@ public final class PreviewInventoryScreen extends SAMPUIElement implements Inter
         bind.rvUserUpgrades.setAdapter(upgradesInventoryAdapter2);
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit subInventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");

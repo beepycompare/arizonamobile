@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="@dimen/_104sdp" android:layout_height="@dimen/_38sdp">
+    <ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView android:id="@+id/train_speed_gauge" android:layout_width="match_parent" android:layout_height="match_parent" android:contentDescription="@string/train_hud_current_speed"/>
+    <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/white" android:layout_gravity="bottom|center_horizontal" android:id="@+id/train_current_speed_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_3sdp" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+</FrameLayout>

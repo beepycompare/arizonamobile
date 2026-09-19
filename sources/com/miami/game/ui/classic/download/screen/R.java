@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class drawable {
-        public static int arizona_launcher_update = 0x7f08035a;
-        public static int rodina_launcher_update = 0x7f080f34;
+        public static int arizona_launcher_update = 0x7f08035c;
+        public static int rodina_launcher_update = 0x7f080f53;
 
         private drawable() {
         }

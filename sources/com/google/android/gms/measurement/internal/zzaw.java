@@ -27,6 +27,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
@@ -1817,7 +1818,7 @@ public final class zzaw extends zzos {
                             sb.append(join);
                             sb.append(")");
                             String sb2 = sb.toString();
-                            StringBuilder sb3 = new StringBuilder(sb2.length() + 140);
+                            StringBuilder sb3 = new StringBuilder(sb2.length() + TrainSpeedGaugeView.MAX_SPEED_KMH);
                             sb3.append("audience_id in (select audience_id from audience_filter_values where app_id=? and audience_id not in ");
                             sb3.append(sb2);
                             sb3.append(" order by rowid desc limit -1 offset ?)");

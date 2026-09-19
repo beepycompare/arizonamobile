@@ -17,21 +17,25 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$selectCategory$1$1", f = "DonateScreen.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateScreen$selectCategory$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ long $currentSessionGeneration;
     final /* synthetic */ DonateCategoryModelUi $model;
+    final /* synthetic */ DonateStates $sessionStates;
     int label;
     final /* synthetic */ DonateScreen this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DonateScreen$selectCategory$1$1(DonateScreen donateScreen, DonateCategoryModelUi donateCategoryModelUi, Continuation<? super DonateScreen$selectCategory$1$1> continuation) {
+    public DonateScreen$selectCategory$1$1(DonateScreen donateScreen, DonateStates donateStates, long j, DonateCategoryModelUi donateCategoryModelUi, Continuation<? super DonateScreen$selectCategory$1$1> continuation) {
         super(2, continuation);
         this.this$0 = donateScreen;
+        this.$sessionStates = donateStates;
+        this.$currentSessionGeneration = j;
         this.$model = donateCategoryModelUi;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new DonateScreen$selectCategory$1$1(this.this$0, this.$model, continuation);
+        return new DonateScreen$selectCategory$1$1(this.this$0, this.$sessionStates, this.$currentSessionGeneration, this.$model, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -41,26 +45,23 @@ public final class DonateScreen$selectCategory$1$1 extends SuspendLambda impleme
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        DonateStates donateStates;
-        DonateStates donateStates2;
+        boolean isCurrentSession;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (this.label != 0) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-        ResultKt.throwOnFailure(obj);
-        boolean isArizonaType = UtilsKt.isArizonaType();
-        DonateScreen donateScreen = this.this$0;
-        if (isArizonaType) {
-            donateStates2 = donateScreen.states;
-            if (donateStates2 != null) {
-                donateStates2.setItemsArizona(this.$model.getId(), this.$model.isActionCategory());
+        if (this.label == 0) {
+            ResultKt.throwOnFailure(obj);
+            isCurrentSession = this.this$0.isCurrentSession(this.$sessionStates, this.$currentSessionGeneration);
+            if (isCurrentSession) {
+                boolean isArizonaType = UtilsKt.isArizonaType();
+                DonateStates donateStates = this.$sessionStates;
+                if (isArizonaType) {
+                    donateStates.setItemsArizona(this.$model.getId(), this.$model.isActionCategory());
+                } else {
+                    donateStates.setItemsRodina(this.$model.getId(), this.$model.isLimitCategory(), this.$model.isActionCategory());
+                }
+                return Unit.INSTANCE;
             }
-        } else {
-            donateStates = donateScreen.states;
-            if (donateStates != null) {
-                donateStates.setItemsRodina(this.$model.getId(), this.$model.isLimitCategory(), this.$model.isActionCategory());
-            }
+            return Unit.INSTANCE;
         }
-        return Unit.INSTANCE;
+        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }
 }

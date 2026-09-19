@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="@dimen/_82sdp" android:layout_height="match_parent">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:id="@+id/paypass_marker_chip" android:padding="@dimen/_5sdp" android:layout_width="wrap_content" android:layout_height="wrap_content" app:backgroundMainColor="#000000" app:corners="@dimen/_6sdp">
+        <ImageView android:id="@+id/paypass_marker_icon" android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_8sdp" android:src="@drawable/donate_paypass_ic_lock" android:contentDescription="@null"/>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

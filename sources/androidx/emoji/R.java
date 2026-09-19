@@ -13,11 +13,11 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int all = 0x7f0a00d6;
-        public static int defaultStrategy = 0x7f0a059d;
-        public static int inputExtractAccessories = 0x7f0a0905;
-        public static int inputExtractAction = 0x7f0a0906;
-        public static int nonExistent = 0x7f0a0c09;
+        public static int all = 0x7f0a00d7;
+        public static int defaultStrategy = 0x7f0a05a1;
+        public static int inputExtractAccessories = 0x7f0a090d;
+        public static int inputExtractAction = 0x7f0a090e;
+        public static int nonExistent = 0x7f0a0c19;
 
         private id() {
         }
@@ -25,7 +25,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int input_method_extract_view = 0x7f0d0187;
+        public static int input_method_extract_view = 0x7f0d0198;
 
         private layout() {
         }

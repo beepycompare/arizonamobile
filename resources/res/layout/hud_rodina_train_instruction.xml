@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="@dimen/_110sdp" android:layout_height="wrap_content">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:gravity="center" android:id="@+id/train_instruction_card" android:paddingTop="@dimen/_4sdp" android:paddingBottom="@dimen/_4sdp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="@dimen/_48sdp" android:paddingStart="@dimen/_6sdp" android:paddingEnd="@dimen/_6sdp" app:backgroundMainColor="#80000000" app:borderMainColor="#b3ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_3sdp">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/train_instruction_icon" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/hud_train_door" android:scaleType="fitCenter" android:contentDescription="@null"/>
+            <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:ellipsize="end" android:gravity="center" android:id="@+id/train_instruction_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_4sdp" android:maxLines="1" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
+            <TextView android:textSize="@dimen/_5sdp" android:textColor="#e6ffffff" android:gravity="center" android:id="@+id/train_instruction_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:maxLines="2" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
+</FrameLayout>

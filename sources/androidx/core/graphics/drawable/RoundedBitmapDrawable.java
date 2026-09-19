@@ -12,6 +12,7 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* loaded from: classes2.dex */
 public abstract class RoundedBitmapDrawable extends Drawable {
     private static final int DEFAULT_PAINT_FLAGS = 3;
@@ -57,7 +58,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
     public void setTargetDensity(int i) {
         if (this.mTargetDensity != i) {
             if (i == 0) {
-                i = 160;
+                i = RodinaTrainSpeedGaugeView.MAX_SPEED_KMH;
             }
             this.mTargetDensity = i;
             if (this.mBitmap != null) {
@@ -245,7 +246,7 @@ public abstract class RoundedBitmapDrawable extends Drawable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public RoundedBitmapDrawable(Resources resources, Bitmap bitmap) {
-        this.mTargetDensity = 160;
+        this.mTargetDensity = RodinaTrainSpeedGaugeView.MAX_SPEED_KMH;
         if (resources != null) {
             this.mTargetDensity = resources.getDisplayMetrics().densityDpi;
         }

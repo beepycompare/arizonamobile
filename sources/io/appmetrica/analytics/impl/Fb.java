@@ -5,11 +5,11 @@ import kotlin.text.Charsets;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class Fb {
-    public static final V9 a(Fb fb, EnumC0219ea enumC0219ea, JSONObject jSONObject) {
+    public static final V9 a(Fb fb, EnumC0218ea enumC0218ea, JSONObject jSONObject) {
         int i;
         fb.getClass();
         V9 v9 = new V9();
-        switch (enumC0219ea.ordinal()) {
+        switch (enumC0218ea.ordinal()) {
             case 0:
                 i = 0;
                 break;

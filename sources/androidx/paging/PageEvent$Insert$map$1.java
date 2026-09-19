@@ -5,10 +5,11 @@ import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PageEvent.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.paging.PageEvent$Insert", f = "PageEvent.kt", i = {0, 0, 0, 0, 0}, l = {140}, m = "map", n = {"transform", "this_$iv$iv", "destination$iv$iv$iv", "it", "destination$iv$iv"}, s = {"L$0", "L$1", "L$3", "L$5", "L$7"}, v = 1)
+@DebugMetadata(c = "androidx.paging.PageEvent$Insert", f = "PageEvent.kt", i = {0, 0, 0, 0, 0}, l = {TrainSpeedGaugeView.MAX_SPEED_KMH}, m = "map", n = {"transform", "this_$iv$iv", "destination$iv$iv$iv", "it", "destination$iv$iv"}, s = {"L$0", "L$1", "L$3", "L$5", "L$7"}, v = 1)
 /* loaded from: classes3.dex */
 public final class PageEvent$Insert$map$1<R> extends ContinuationImpl {
     Object L$0;

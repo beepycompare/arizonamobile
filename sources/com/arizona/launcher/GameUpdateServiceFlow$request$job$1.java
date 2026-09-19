@@ -1,6 +1,5 @@
 package com.arizona.launcher;
 
-import androidx.media3.extractor.ts.TsExtractor;
 import com.arizona.launcher.GameUpdateCheckRunResult;
 import com.arizona.launcher.GameUpdateServiceCompletion;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckDecision;
@@ -21,10 +20,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GameUpdateServiceFlow.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.GameUpdateServiceFlow$request$job$1", f = "GameUpdateServiceFlow.kt", i = {}, l = {111, TsExtractor.TS_STREAM_TYPE_AC3}, m = "invokeSuspend", n = {}, nl = {114, 154}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.GameUpdateServiceFlow$request$job$1", f = "GameUpdateServiceFlow.kt", i = {}, l = {121, TrainSpeedGaugeView.MAX_SPEED_KMH}, m = "invokeSuspend", n = {}, nl = {124, 165}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ boolean $combined;
@@ -75,8 +75,8 @@ public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda imp
         return ((GameUpdateServiceFlow$request$job$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x012a, code lost:
-        if (r3 != r0) goto L8;
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x012e, code lost:
+        if (r2 != r0) goto L8;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -89,7 +89,6 @@ public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda imp
         Function0 function0;
         Function0 function02;
         Function0 function03;
-        boolean z;
         Object run;
         GameUpdateServiceHost gameUpdateServiceHost2;
         ArchiveUpdateSessionState archiveUpdateSessionState;
@@ -127,37 +126,34 @@ public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda imp
                 function03 = this.this$0.metadataFileName;
                 String str2 = (String) function03.invoke();
                 final GameUpdateServiceFlow gameUpdateServiceFlow = this.this$0;
-                final boolean z2 = this.$combined;
+                final boolean z = this.$combined;
                 final long j = this.$token;
                 Function0<Boolean> function05 = new Function0() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda0
                     @Override // kotlin.jvm.functions.Function0
                     public final Object invoke() {
-                        return Boolean.valueOf(GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$0(GameUpdateServiceFlow.this, z2, j));
+                        return Boolean.valueOf(GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$0(GameUpdateServiceFlow.this, z, j));
                     }
                 };
                 final GameUpdateServiceFlow gameUpdateServiceFlow2 = this.this$0;
-                final boolean z3 = this.$combined;
+                final boolean z2 = this.$combined;
                 Function1<? super String, Unit> function1 = new Function1() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function1
                     public final Object invoke(Object obj2) {
-                        return GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$1(GameUpdateServiceFlow.this, z3, (String) obj2);
+                        return GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$1(GameUpdateServiceFlow.this, z2, (String) obj2);
                     }
                 };
                 final GameUpdateServiceFlow gameUpdateServiceFlow3 = this.this$0;
-                Function2<? super String, ? super GameUpdateMirrorRetryReason, Unit> function23 = new Function2() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda2
+                this.label = 2;
+                run = gameUpdateCheckRunner.run(str, intValue, str2, function05, function1, new Function2() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda2
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
                         return GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$2(GameUpdateServiceFlow.this, (String) obj2, (GameUpdateMirrorRetryReason) obj3);
                     }
-                };
-                z = true;
-                this.label = 2;
-                run = gameUpdateCheckRunner.run(str, intValue, str2, function05, function1, function23, new GameUpdateServiceFlow$request$job$1$result$4(this.this$0, this.$kind, this.$token, null), this);
+                }, new GameUpdateServiceFlow$request$job$1$result$4(this.this$0, this.$kind, this.$token, null), this);
             } else if (i != 1) {
                 if (i == 2) {
                     ResultKt.throwOnFailure(obj);
                     run = obj;
-                    z = true;
                     GameUpdateCheckRunResult gameUpdateCheckRunResult = (GameUpdateCheckRunResult) run;
                     gameUpdateServiceHost4 = this.this$0.host;
                     if (gameUpdateServiceHost4.isCurrentGameCheckOperation(this.$combined, this.$token)) {
@@ -167,7 +163,7 @@ public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda imp
                         if (Intrinsics.areEqual(gameUpdateCheckRunResult, GameUpdateCheckRunResult.ServerEmpty.INSTANCE)) {
                             prepared = GameUpdateServiceCompletion.ServerEmpty.INSTANCE;
                         } else if (gameUpdateCheckRunResult instanceof GameUpdateCheckRunResult.MetadataFailed) {
-                            prepared = new GameUpdateServiceCompletion.MetadataFailed(((GameUpdateCheckRunResult.MetadataFailed) gameUpdateCheckRunResult).getFailure());
+                            prepared = new GameUpdateServiceCompletion.MetadataFailed(((GameUpdateCheckRunResult.MetadataFailed) gameUpdateCheckRunResult).getFailure(), ((GameUpdateCheckRunResult.MetadataFailed) gameUpdateCheckRunResult).getServer());
                         } else if (!(gameUpdateCheckRunResult instanceof GameUpdateCheckRunResult.Prepared)) {
                             throw new NoWhenBranchMatchedException();
                         } else {
@@ -175,15 +171,17 @@ public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda imp
                             ArchiveUpdateSessionSnapshot applyDecision = archiveUpdateSessionState2.applyDecision(((GameUpdateCheckRunResult.Prepared) gameUpdateCheckRunResult).getDecision(), ((GameUpdateCheckRunResult.Prepared) gameUpdateCheckRunResult).getServer());
                             function22 = this.this$0.onPrepared;
                             function22.invoke(((GameUpdateCheckRunResult.Prepared) gameUpdateCheckRunResult).getDecision(), applyDecision);
-                            prepared = new GameUpdateServiceCompletion.Prepared(z ^ (((GameUpdateCheckRunResult.Prepared) gameUpdateCheckRunResult).getDecision() instanceof ArchiveUpdateCheckDecision.Block));
+                            boolean z3 = !(((GameUpdateCheckRunResult.Prepared) gameUpdateCheckRunResult).getDecision() instanceof ArchiveUpdateCheckDecision.Block);
+                            ArchiveUpdateCheckDecision decision = ((GameUpdateCheckRunResult.Prepared) gameUpdateCheckRunResult).getDecision();
+                            prepared = new GameUpdateServiceCompletion.Prepared(z3, decision instanceof ArchiveUpdateCheckDecision.Block ? (ArchiveUpdateCheckDecision.Block) decision : null);
                         }
                         this.$releaseOperation.invoke();
                         if (prepared instanceof GameUpdateServiceCompletion.Prepared) {
                             gameUpdateServiceHost7 = this.this$0.host;
-                            gameUpdateServiceHost7.completePreparedGameCheck(this.$combined, ((GameUpdateServiceCompletion.Prepared) prepared).getSuccessfully());
+                            gameUpdateServiceHost7.completePreparedGameCheck(this.$combined, ((GameUpdateServiceCompletion.Prepared) prepared).getSuccessfully(), ((GameUpdateServiceCompletion.Prepared) prepared).getBlockedCheck());
                         } else if (prepared instanceof GameUpdateServiceCompletion.MetadataFailed) {
                             gameUpdateServiceHost6 = this.this$0.host;
-                            gameUpdateServiceHost6.completeGameCheckMetadataFailed(this.$combined, ((GameUpdateServiceCompletion.MetadataFailed) prepared).getFailure().toString());
+                            gameUpdateServiceHost6.completeGameCheckMetadataFailed(this.$combined, ((GameUpdateServiceCompletion.MetadataFailed) prepared).getFailure(), ((GameUpdateServiceCompletion.MetadataFailed) prepared).getFailedServer());
                         } else if (!Intrinsics.areEqual(prepared, GameUpdateServiceCompletion.ServerEmpty.INSTANCE)) {
                             throw new NoWhenBranchMatchedException();
                         } else {
@@ -213,7 +211,7 @@ public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda imp
                 function2.invoke(block, applyDecision2);
                 this.$releaseOperation.invoke();
                 gameUpdateServiceHost3 = this.this$0.host;
-                gameUpdateServiceHost3.completePreparedGameCheck(false, false);
+                gameUpdateServiceHost3.completePreparedGameCheck(false, false, block);
                 return Unit.INSTANCE;
             }
             gameUpdateCheckRunner = this.this$0.runner;
@@ -224,32 +222,30 @@ public final class GameUpdateServiceFlow$request$job$1 extends SuspendLambda imp
             function03 = this.this$0.metadataFileName;
             String str22 = (String) function03.invoke();
             final GameUpdateServiceFlow gameUpdateServiceFlow4 = this.this$0;
-            final boolean z22 = this.$combined;
+            final boolean z4 = this.$combined;
             final long j2 = this.$token;
             Function0<Boolean> function052 = new Function0() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
-                    return Boolean.valueOf(GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$0(GameUpdateServiceFlow.this, z22, j2));
+                    return Boolean.valueOf(GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$0(GameUpdateServiceFlow.this, z4, j2));
                 }
             };
             final GameUpdateServiceFlow gameUpdateServiceFlow22 = this.this$0;
-            final boolean z32 = this.$combined;
+            final boolean z22 = this.$combined;
             Function1<? super String, Unit> function12 = new Function1() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Object obj2) {
-                    return GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$1(GameUpdateServiceFlow.this, z32, (String) obj2);
+                    return GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$1(GameUpdateServiceFlow.this, z22, (String) obj2);
                 }
             };
             final GameUpdateServiceFlow gameUpdateServiceFlow32 = this.this$0;
-            Function2<? super String, ? super GameUpdateMirrorRetryReason, Unit> function232 = new Function2() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda2
+            this.label = 2;
+            run = gameUpdateCheckRunner.run(str3, intValue2, str22, function052, function12, new Function2() { // from class: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj2, Object obj3) {
                     return GameUpdateServiceFlow$request$job$1.invokeSuspend$lambda$2(GameUpdateServiceFlow.this, (String) obj2, (GameUpdateMirrorRetryReason) obj3);
                 }
-            };
-            z = true;
-            this.label = 2;
-            run = gameUpdateCheckRunner.run(str3, intValue2, str22, function052, function12, function232, new GameUpdateServiceFlow$request$job$1$result$4(this.this$0, this.$kind, this.$token, null), this);
+            }, new GameUpdateServiceFlow$request$job$1$result$4(this.this$0, this.$kind, this.$token, null), this);
         } finally {
             this.$releaseOperation.invoke();
         }

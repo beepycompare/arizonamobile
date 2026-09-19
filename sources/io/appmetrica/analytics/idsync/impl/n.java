@@ -73,16 +73,16 @@ public final class n {
     }
 
     public static final void a(n nVar, RequestConfig requestConfig) {
-        y c0098a;
+        y c0097a;
         x xVar = nVar.f;
         Preconditions preconditions = requestConfig.getPreconditions();
         xVar.getClass();
         if (w.f440a[preconditions.getNetworkType().ordinal()] == 1) {
-            c0098a = new C0099b(xVar.f441a);
+            c0097a = new C0098b(xVar.f441a);
         } else {
-            c0098a = new C0098a();
+            c0097a = new C0097a();
         }
-        if (c0098a.a()) {
+        if (c0097a.a()) {
             o oVar = nVar.e;
             oVar.getClass();
             Request.Builder builder = new Request.Builder(requestConfig.getUrl());

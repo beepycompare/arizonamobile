@@ -18,7 +18,7 @@ import ru.mrlargha.feature.arizona.cases.databinding.ArizonaCasesOpenPageBinding
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesOpenPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$setupCollectors$1$1", f = "CasesOpenPage.kt", i = {}, l = {97}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$setupCollectors$1$1", f = "CasesOpenPage.kt", i = {}, l = {100}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesOpenPage$setupCollectors$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ArizonaCasesOpenPageBinding $this_with;
@@ -43,12 +43,11 @@ public final class CasesOpenPage$setupCollectors$1$1 extends SuspendLambda imple
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        MutableStateFlow mutableStateFlow;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            mutableStateFlow = CasesOpenPage.isOpenState;
+            MutableStateFlow mutableStateFlow = CasesOpenPage.isOpenState;
             final ArizonaCasesOpenPageBinding arizonaCasesOpenPageBinding = this.$this_with;
             this.label = 1;
             if (mutableStateFlow.collect(new FlowCollector() { // from class: ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$setupCollectors$1$1.1

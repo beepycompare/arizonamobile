@@ -370,7 +370,7 @@ public final class ServersInteractor {
                 serverModel = (ServerModel) obj;
                 MutableStateFlow<ServersState> mutableStateFlow = this.stateStore;
                 if (serverModel != null) {
-                    ServerModel serverModel4 = (ServerModel) CollectionsKt.firstOrNull((List<? extends Object>) mutableStateFlow.getValue().getServerListDesktop());
+                    ServerModel serverModel4 = (ServerModel) CollectionsKt.firstOrNull((List<? extends Object>) mutableStateFlow.getValue().getServerListMobile());
                     if (serverModel4 != null) {
                         serversInteractor$getCurrentServer$1.L$0 = SpillingKt.nullOutSpilledVariable(serverModel);
                         serversInteractor$getCurrentServer$1.L$1 = SpillingKt.nullOutSpilledVariable(serverModel4);
@@ -432,7 +432,7 @@ public final class ServersInteractor {
     /* JADX WARN: Code restructure failed: missing block: B:68:0x01a8, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:92:0x0245, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0241, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0033  */
@@ -444,8 +444,8 @@ public final class ServersInteractor {
     /* JADX WARN: Removed duplicated region for block: B:79:0x01ff  */
     /* JADX WARN: Removed duplicated region for block: B:82:0x0205 A[Catch: Exception -> 0x0055, TryCatch #1 {Exception -> 0x0055, blocks: (B:19:0x004b, B:88:0x021a, B:89:0x021c, B:20:0x0050, B:72:0x01cd, B:74:0x01d1, B:75:0x01e2, B:77:0x01e8, B:78:0x01fc, B:80:0x0200, B:82:0x0205, B:85:0x020c, B:69:0x01bb), top: B:97:0x0031 }] */
     /* JADX WARN: Removed duplicated region for block: B:87:0x0219  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0266 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x0267 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0262 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x0263 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -569,7 +569,7 @@ public final class ServersInteractor {
                     List<ServersApiModelItem> list6 = readDataAssets;
                     ArrayList arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list6, 10));
                     for (ServersApiModelItem serversApiModelItem3 : list6) {
-                        arrayList5.add(ServerModelKt.toDomain(serversApiModelItem3, false, this.buildConfig.isArizona()));
+                        arrayList5.add(ServerModelKt.toDomain(serversApiModelItem3, true, this.buildConfig.isArizona()));
                     }
                     arrayList2 = arrayList5;
                     mutableStateFlow2 = this.stateStore;

@@ -241,11 +241,12 @@ public final class ColorSchemeKt {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean LocalTonalElevationEnabled$lambda$2() {
         return true;
     }
 
-    /* renamed from: lightColorScheme-_VG5OTI$default */
+    /* renamed from: lightColorScheme-_VG5OTI$default  reason: not valid java name */
     public static /* synthetic */ ColorScheme m2359lightColorScheme_VG5OTI$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48, int i, int i2, Object obj) {
         long m3727getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3727getPrimary0d7_KjU() : j;
         long m3711getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3711getOnPrimary0d7_KjU() : j2;
@@ -301,12 +302,12 @@ public final class ColorSchemeKt {
         return m2358lightColorScheme_VG5OTI(j49, m3711getOnPrimary0d7_KjU, m3728getPrimaryContainer0d7_KjU, m3712getOnPrimaryContainer0d7_KjU, m3706getInversePrimary0d7_KjU, m3732getSecondary0d7_KjU, m3715getOnSecondary0d7_KjU, m3733getSecondaryContainer0d7_KjU, m3716getOnSecondaryContainer0d7_KjU, m3746getTertiary0d7_KjU, m3721getOnTertiary0d7_KjU, m3747getTertiaryContainer0d7_KjU, m3722getOnTertiaryContainer0d7_KjU, m3702getBackground0d7_KjU, m3708getOnBackground0d7_KjU, m3736getSurface0d7_KjU, m3719getOnSurface0d7_KjU, m3745getSurfaceVariant0d7_KjU, m3720getOnSurfaceVariant0d7_KjU, j50, m3707getInverseSurface0d7_KjU, m3705getInverseOnSurface0d7_KjU, m3703getError0d7_KjU, m3709getOnError0d7_KjU, m3704getErrorContainer0d7_KjU, m3710getOnErrorContainer0d7_KjU, m3725getOutline0d7_KjU, m3726getOutlineVariant0d7_KjU, m3731getScrim0d7_KjU, m3737getSurfaceBright0d7_KjU, m3738getSurfaceContainer0d7_KjU, m3739getSurfaceContainerHigh0d7_KjU, m3740getSurfaceContainerHighest0d7_KjU, m3741getSurfaceContainerLow0d7_KjU, m3742getSurfaceContainerLowest0d7_KjU, m3743getSurfaceDim0d7_KjU, m3729getPrimaryFixed0d7_KjU, m3730getPrimaryFixedDim0d7_KjU, m3713getOnPrimaryFixed0d7_KjU, m3714getOnPrimaryFixedVariant0d7_KjU, m3734getSecondaryFixed0d7_KjU, m3735getSecondaryFixedDim0d7_KjU, m3717getOnSecondaryFixed0d7_KjU, m3718getOnSecondaryFixedVariant0d7_KjU, m3748getTertiaryFixed0d7_KjU, m3749getTertiaryFixedDim0d7_KjU, m3723getOnTertiaryFixed0d7_KjU, j48);
     }
 
-    /* renamed from: lightColorScheme-_VG5OTI */
+    /* renamed from: lightColorScheme-_VG5OTI  reason: not valid java name */
     public static final ColorScheme m2358lightColorScheme_VG5OTI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48) {
         return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, null);
     }
 
-    /* renamed from: darkColorScheme-_VG5OTI$default */
+    /* renamed from: darkColorScheme-_VG5OTI$default  reason: not valid java name */
     public static /* synthetic */ ColorScheme m2353darkColorScheme_VG5OTI$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48, int i, int i2, Object obj) {
         long m3679getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3679getPrimary0d7_KjU() : j;
         long m3663getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3663getOnPrimary0d7_KjU() : j2;
@@ -362,12 +363,12 @@ public final class ColorSchemeKt {
         return m2352darkColorScheme_VG5OTI(j49, m3663getOnPrimary0d7_KjU, m3680getPrimaryContainer0d7_KjU, m3664getOnPrimaryContainer0d7_KjU, m3658getInversePrimary0d7_KjU, m3684getSecondary0d7_KjU, m3667getOnSecondary0d7_KjU, m3685getSecondaryContainer0d7_KjU, m3668getOnSecondaryContainer0d7_KjU, m3698getTertiary0d7_KjU, m3673getOnTertiary0d7_KjU, m3699getTertiaryContainer0d7_KjU, m3674getOnTertiaryContainer0d7_KjU, m3654getBackground0d7_KjU, m3660getOnBackground0d7_KjU, m3688getSurface0d7_KjU, m3671getOnSurface0d7_KjU, m3697getSurfaceVariant0d7_KjU, m3672getOnSurfaceVariant0d7_KjU, j50, m3659getInverseSurface0d7_KjU, m3657getInverseOnSurface0d7_KjU, m3655getError0d7_KjU, m3661getOnError0d7_KjU, m3656getErrorContainer0d7_KjU, m3662getOnErrorContainer0d7_KjU, m3677getOutline0d7_KjU, m3678getOutlineVariant0d7_KjU, m3683getScrim0d7_KjU, m3689getSurfaceBright0d7_KjU, m3690getSurfaceContainer0d7_KjU, m3691getSurfaceContainerHigh0d7_KjU, m3692getSurfaceContainerHighest0d7_KjU, m3693getSurfaceContainerLow0d7_KjU, m3694getSurfaceContainerLowest0d7_KjU, m3695getSurfaceDim0d7_KjU, m3681getPrimaryFixed0d7_KjU, m3682getPrimaryFixedDim0d7_KjU, m3665getOnPrimaryFixed0d7_KjU, m3666getOnPrimaryFixedVariant0d7_KjU, m3686getSecondaryFixed0d7_KjU, m3687getSecondaryFixedDim0d7_KjU, m3669getOnSecondaryFixed0d7_KjU, m3670getOnSecondaryFixedVariant0d7_KjU, m3700getTertiaryFixed0d7_KjU, m3701getTertiaryFixedDim0d7_KjU, m3675getOnTertiaryFixed0d7_KjU, j48);
     }
 
-    /* renamed from: darkColorScheme-_VG5OTI */
+    /* renamed from: darkColorScheme-_VG5OTI  reason: not valid java name */
     public static final ColorScheme m2352darkColorScheme_VG5OTI(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, long j37, long j38, long j39, long j40, long j41, long j42, long j43, long j44, long j45, long j46, long j47, long j48) {
         return new ColorScheme(j, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20, j21, j22, j23, j24, j25, j26, j27, j28, j29, j30, j36, j31, j32, j33, j34, j35, j37, j38, j39, j40, j41, j42, j43, j44, j45, j46, j47, j48, null);
     }
 
-    /* renamed from: contentColorFor-4WTKRHQ */
+    /* renamed from: contentColorFor-4WTKRHQ  reason: not valid java name */
     public static final long m2346contentColorFor4WTKRHQ(ColorScheme colorScheme, long j) {
         if (Color.m5349equalsimpl0(j, colorScheme.m2322getPrimary0d7_KjU())) {
             return colorScheme.m2306getOnPrimary0d7_KjU();
@@ -420,7 +421,7 @@ public final class ColorSchemeKt {
         return colorScheme.m2314getOnSurface0d7_KjU();
     }
 
-    /* renamed from: contentColorFor-ek8zF_U */
+    /* renamed from: contentColorFor-ek8zF_U  reason: not valid java name */
     public static final long m2347contentColorForek8zF_U(long j, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, 509589638, "C(contentColorFor)N(backgroundColor:c#ui.graphics.Color)1112@50936L11:ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
@@ -447,7 +448,7 @@ public final class ColorSchemeKt {
         return m2359lightColorScheme_VG5OTI$default(0L, 0L, 0L, PaletteTokens.INSTANCE.m4104getPrimary300d7_KjU(), 0L, 0L, 0L, 0L, PaletteTokens.INSTANCE.m4117getSecondary300d7_KjU(), 0L, 0L, 0L, PaletteTokens.INSTANCE.m4130getTertiary300d7_KjU(), 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, PaletteTokens.INSTANCE.m4054getError300d7_KjU(), 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -33558793, 65535, null);
     }
 
-    /* renamed from: lightColorScheme-C-Xl9yA$default */
+    /* renamed from: lightColorScheme-C-Xl9yA$default  reason: not valid java name */
     public static /* synthetic */ ColorScheme m2355lightColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
         long m3727getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3727getPrimary0d7_KjU() : j;
         long m3711getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3711getOnPrimary0d7_KjU() : j2;
@@ -491,7 +492,7 @@ public final class ColorSchemeKt {
         return m2359lightColorScheme_VG5OTI$default(j37, m3711getOnPrimary0d7_KjU, m3728getPrimaryContainer0d7_KjU, m3712getOnPrimaryContainer0d7_KjU, m3706getInversePrimary0d7_KjU, m3732getSecondary0d7_KjU, m3715getOnSecondary0d7_KjU, m3733getSecondaryContainer0d7_KjU, m3716getOnSecondaryContainer0d7_KjU, m3746getTertiary0d7_KjU, m3721getOnTertiary0d7_KjU, m3747getTertiaryContainer0d7_KjU, m3722getOnTertiaryContainer0d7_KjU, m3702getBackground0d7_KjU, m3708getOnBackground0d7_KjU, m3736getSurface0d7_KjU, m3719getOnSurface0d7_KjU, m3745getSurfaceVariant0d7_KjU, m3720getOnSurfaceVariant0d7_KjU, j38, m3707getInverseSurface0d7_KjU, m3705getInverseOnSurface0d7_KjU, m3703getError0d7_KjU, m3709getOnError0d7_KjU, m3704getErrorContainer0d7_KjU, m3710getOnErrorContainer0d7_KjU, m3725getOutline0d7_KjU, m3726getOutlineVariant0d7_KjU, m3731getScrim0d7_KjU, m3737getSurfaceBright0d7_KjU, m3738getSurfaceContainer0d7_KjU, m3739getSurfaceContainerHigh0d7_KjU, m3740getSurfaceContainerHighest0d7_KjU, m3741getSurfaceContainerLow0d7_KjU, m3742getSurfaceContainerLowest0d7_KjU, j36, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0, 65520, null);
     }
 
-    /* renamed from: lightColorScheme-G1PFc-w$default */
+    /* renamed from: lightColorScheme-G1PFc-w$default  reason: not valid java name */
     public static /* synthetic */ ColorScheme m2357lightColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
         long m3727getPrimary0d7_KjU = (i & 1) != 0 ? ColorLightTokens.INSTANCE.m3727getPrimary0d7_KjU() : j;
         long m3711getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorLightTokens.INSTANCE.m3711getOnPrimary0d7_KjU() : j2;
@@ -528,7 +529,7 @@ public final class ColorSchemeKt {
         return m2359lightColorScheme_VG5OTI$default(j30, m3711getOnPrimary0d7_KjU, m3728getPrimaryContainer0d7_KjU, m3712getOnPrimaryContainer0d7_KjU, m3706getInversePrimary0d7_KjU, m3732getSecondary0d7_KjU, m3715getOnSecondary0d7_KjU, m3733getSecondaryContainer0d7_KjU, m3716getOnSecondaryContainer0d7_KjU, m3746getTertiary0d7_KjU, m3721getOnTertiary0d7_KjU, m3747getTertiaryContainer0d7_KjU, m3722getOnTertiaryContainer0d7_KjU, m3702getBackground0d7_KjU, m3708getOnBackground0d7_KjU, m3736getSurface0d7_KjU, m3719getOnSurface0d7_KjU, m3745getSurfaceVariant0d7_KjU, m3720getOnSurfaceVariant0d7_KjU, j31, m3707getInverseSurface0d7_KjU, m3705getInverseOnSurface0d7_KjU, m3703getError0d7_KjU, m3709getOnError0d7_KjU, m3704getErrorContainer0d7_KjU, m3710getOnErrorContainer0d7_KjU, m3725getOutline0d7_KjU, m3726getOutlineVariant0d7_KjU, j29, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, -536870912, 65535, null);
     }
 
-    /* renamed from: darkColorScheme-C-Xl9yA$default */
+    /* renamed from: darkColorScheme-C-Xl9yA$default  reason: not valid java name */
     public static /* synthetic */ ColorScheme m2349darkColorSchemeCXl9yA$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36, int i, int i2, Object obj) {
         long m3679getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3679getPrimary0d7_KjU() : j;
         long m3663getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3663getOnPrimary0d7_KjU() : j2;
@@ -572,7 +573,7 @@ public final class ColorSchemeKt {
         return m2353darkColorScheme_VG5OTI$default(j37, m3663getOnPrimary0d7_KjU, m3680getPrimaryContainer0d7_KjU, m3664getOnPrimaryContainer0d7_KjU, m3658getInversePrimary0d7_KjU, m3684getSecondary0d7_KjU, m3667getOnSecondary0d7_KjU, m3685getSecondaryContainer0d7_KjU, m3668getOnSecondaryContainer0d7_KjU, m3698getTertiary0d7_KjU, m3673getOnTertiary0d7_KjU, m3699getTertiaryContainer0d7_KjU, m3674getOnTertiaryContainer0d7_KjU, m3654getBackground0d7_KjU, m3660getOnBackground0d7_KjU, m3688getSurface0d7_KjU, m3671getOnSurface0d7_KjU, m3697getSurfaceVariant0d7_KjU, m3672getOnSurfaceVariant0d7_KjU, j38, m3659getInverseSurface0d7_KjU, m3657getInverseOnSurface0d7_KjU, m3655getError0d7_KjU, m3661getOnError0d7_KjU, m3656getErrorContainer0d7_KjU, m3662getOnErrorContainer0d7_KjU, m3677getOutline0d7_KjU, m3678getOutlineVariant0d7_KjU, m3683getScrim0d7_KjU, m3689getSurfaceBright0d7_KjU, m3690getSurfaceContainer0d7_KjU, m3691getSurfaceContainerHigh0d7_KjU, m3692getSurfaceContainerHighest0d7_KjU, m3693getSurfaceContainerLow0d7_KjU, m3694getSurfaceContainerLowest0d7_KjU, j36, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0, 65520, null);
     }
 
-    /* renamed from: darkColorScheme-G1PFc-w$default */
+    /* renamed from: darkColorScheme-G1PFc-w$default  reason: not valid java name */
     public static /* synthetic */ ColorScheme m2351darkColorSchemeG1PFcw$default(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, int i, Object obj) {
         long m3679getPrimary0d7_KjU = (i & 1) != 0 ? ColorDarkTokens.INSTANCE.m3679getPrimary0d7_KjU() : j;
         long m3663getOnPrimary0d7_KjU = (i & 2) != 0 ? ColorDarkTokens.INSTANCE.m3663getOnPrimary0d7_KjU() : j2;
@@ -729,7 +730,7 @@ public final class ColorSchemeKt {
         return fromToken;
     }
 
-    /* renamed from: applyTonalElevation-RFCenO8 */
+    /* renamed from: applyTonalElevation-RFCenO8  reason: not valid java name */
     public static final long m2345applyTonalElevationRFCenO8(ColorScheme colorScheme, long j, float f, Composer composer, int i) {
         ComposerKt.sourceInformationMarkerStart(composer, -1610977682, "C(applyTonalElevation)N(backgroundColor:c#ui.graphics.Color,elevation:c#ui.unit.Dp)1540@70581L7:ColorScheme.kt#uh7d8r");
         if (ComposerKt.isTraceInProgress()) {
@@ -753,7 +754,7 @@ public final class ColorSchemeKt {
         return LocalTonalElevationEnabled;
     }
 
-    /* renamed from: surfaceColorAtElevation-3ABfNKs */
+    /* renamed from: surfaceColorAtElevation-3ABfNKs  reason: not valid java name */
     public static final long m2360surfaceColorAtElevation3ABfNKs(ColorScheme colorScheme, float f) {
         if (Dp.m8165equalsimpl0(f, Dp.m8160constructorimpl(0.0f))) {
             return colorScheme.m2331getSurface0d7_KjU();

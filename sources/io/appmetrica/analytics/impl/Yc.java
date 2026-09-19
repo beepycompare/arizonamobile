@@ -10,73 +10,73 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 import java.util.ArrayList;
 import java.util.List;
 /* loaded from: classes5.dex */
-public final class Yc extends Bi implements InterfaceC0375kb {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+public final class Yc extends Bi implements InterfaceC0374kb {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final void a(Activity activity) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0326id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
     public final void a(Location location) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final void a(AnrListener anrListener) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final void a(ExternalAttribution externalAttribution) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final void a(lp lpVar) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
-    public final void a(EnumC0441n enumC0441n) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    public final void a(EnumC0440n enumC0440n) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0326id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
     public final void a(String str) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0326id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
     public final void a(String str, String str2) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final void a(String str, boolean z) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0326id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
     public final void a(boolean z) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0326id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
     public final void a(boolean z, boolean z2) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final void b(Activity activity) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0246fb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0245fb
     public final void b(String str) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0246fb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0245fb
     public final void b(String str, String str2) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb, io.appmetrica.analytics.impl.InterfaceC0246fb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0245fb
     public final boolean b() {
         return false;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final void c() {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0375kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
     public final List<String> f() {
         return new ArrayList();
     }

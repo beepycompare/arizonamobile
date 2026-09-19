@@ -18,6 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.cars.R;
 import ru.mrlargha.feature.cars.databinding.CarsCarItemBinding;
@@ -88,7 +89,9 @@ public final class CarInfoListAdapter extends ListAdapter<CarInfoListItem, ViewH
         final CarInfoListItem item = getItem(i);
         binding.carName.setText(item.getTitle());
         String str2 = UtilsKt.isArizonaType() ? "assets/images/inventory/vehicles/256/" : "assets/images/inventory/vehicles/512/";
-        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str2 + item.getSysName()).into(binding.carIc);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str2 + item.getSysName()).into(binding.carIc);
         String status = item.getStatus();
         switch (status.hashCode()) {
             case -2058533514:

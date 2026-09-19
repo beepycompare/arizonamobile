@@ -10,16 +10,16 @@ public class Zh extends Y3 {
     public boolean e;
     public String f;
 
-    public Zh(C0174cg c0174cg, CounterConfiguration counterConfiguration, W8 w8) {
-        this(c0174cg, counterConfiguration, w8, null);
+    public Zh(C0173cg c0173cg, CounterConfiguration counterConfiguration, W8 w8) {
+        this(c0173cg, counterConfiguration, w8, null);
     }
 
     public final Bundle c() {
         Bundle bundle = new Bundle();
         this.b.toBundle(bundle);
-        C0174cg c0174cg = this.f852a;
-        synchronized (c0174cg) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", c0174cg);
+        C0173cg c0173cg = this.f852a;
+        synchronized (c0173cg) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", c0173cg);
         }
         return bundle;
     }
@@ -38,8 +38,8 @@ public class Zh extends Y3 {
         return this.e;
     }
 
-    public Zh(C0174cg c0174cg, CounterConfiguration counterConfiguration, W8 w8, String str) {
-        super(c0174cg, counterConfiguration);
+    public Zh(C0173cg c0173cg, CounterConfiguration counterConfiguration, W8 w8, String str) {
+        super(c0173cg, counterConfiguration);
         this.e = true;
         this.f = str;
         this.c = w8;

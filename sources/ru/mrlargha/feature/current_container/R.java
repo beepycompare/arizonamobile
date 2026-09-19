@@ -4,16 +4,16 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int active_shape_bg = 0x7f080338;
-        public static int auction_button_exit = 0x7f080390;
-        public static int auction_container_accept_button = 0x7f080391;
-        public static int auction_container_bg = 0x7f080392;
-        public static int auction_container_item = 0x7f080393;
-        public static int auction_intput_style = 0x7f080395;
-        public static int auction_item_bg = 0x7f080396;
-        public static int ic_auction_container_last_bet_bg = 0x7f080b02;
-        public static int ic_auction_container_timer_bg = 0x7f080b03;
-        public static int item = 0x7f080c5a;
+        public static int active_shape_bg = 0x7f08033a;
+        public static int auction_button_exit = 0x7f080392;
+        public static int auction_container_accept_button = 0x7f080393;
+        public static int auction_container_bg = 0x7f080394;
+        public static int auction_container_item = 0x7f080395;
+        public static int auction_intput_style = 0x7f080397;
+        public static int auction_item_bg = 0x7f080398;
+        public static int ic_auction_container_last_bet_bg = 0x7f080b19;
+        public static int ic_auction_container_timer_bg = 0x7f080b1a;
+        public static int item = 0x7f080c79;
 
         private drawable() {
         }
@@ -29,47 +29,47 @@ public final class R {
         public static int ac_item_tittle = 0x7f0a001a;
         public static int ac_run = 0x7f0a001b;
         public static int ac_set_bet_button = 0x7f0a001c;
-        public static int auction_current_container = 0x7f0a0117;
-        public static int cc_horizontal_button = 0x7f0a049e;
-        public static int cc_horizontal_item_line = 0x7f0a049f;
-        public static int cc_horizontal_last_bet = 0x7f0a04a0;
-        public static int cc_horizontal_list_item = 0x7f0a04a1;
-        public static int cc_horizontal_menu_name = 0x7f0a04a2;
-        public static int cc_horizontal_timer = 0x7f0a04a3;
-        public static int cc_horizontal_tittle = 0x7f0a04a4;
-        public static int cc_input_bet_bg = 0x7f0a04a5;
-        public static int cc_input_bet_name = 0x7f0a04a6;
-        public static int cc_input_bet_price = 0x7f0a04a7;
-        public static int cc_input_bet_tittle = 0x7f0a04a8;
-        public static int cc_input_form = 0x7f0a04a9;
-        public static int cc_input_tittle = 0x7f0a04aa;
-        public static int cc_item_description = 0x7f0a04ab;
-        public static int cc_item_image = 0x7f0a04ac;
-        public static int cc_item_last_bet_name = 0x7f0a04ad;
-        public static int cc_item_last_bet_price = 0x7f0a04ae;
-        public static int cc_item_last_bet_tittle = 0x7f0a04af;
-        public static int cc_item_list_tittle = 0x7f0a04b0;
-        public static int cc_item_menu_tittle = 0x7f0a04b1;
-        public static int cc_item_price = 0x7f0a04b2;
-        public static int cc_item_price_icone = 0x7f0a04b3;
-        public static int cc_item_time_left_timer = 0x7f0a04b4;
-        public static int cc_item_time_left_tittle = 0x7f0a04b5;
-        public static int cc_item_tittle = 0x7f0a04b6;
-        public static int cc_last_bet_bg = 0x7f0a04b7;
-        public static int cc_rc_view = 0x7f0a04b8;
-        public static int cc_vertical_button = 0x7f0a04b9;
-        public static int cc_vertical_input = 0x7f0a04ba;
-        public static int cc_vertical_item_line = 0x7f0a04bb;
-        public static int cc_vertical_last_bet = 0x7f0a04bc;
-        public static int cc_vertical_menu_exit = 0x7f0a04bd;
-        public static int cc_vertical_menu_name = 0x7f0a04be;
-        public static int cgp = 0x7f0a04cb;
-        public static int cgp_bold_description = 0x7f0a04cc;
-        public static int cgp_description = 0x7f0a04cd;
-        public static int cgp_description_container = 0x7f0a04ce;
-        public static int cgp_exit_button = 0x7f0a04cf;
-        public static int cgp_title = 0x7f0a04d0;
-        public static int cpi_bg = 0x7f0a056c;
+        public static int auction_current_container = 0x7f0a0118;
+        public static int cc_horizontal_button = 0x7f0a04a2;
+        public static int cc_horizontal_item_line = 0x7f0a04a3;
+        public static int cc_horizontal_last_bet = 0x7f0a04a4;
+        public static int cc_horizontal_list_item = 0x7f0a04a5;
+        public static int cc_horizontal_menu_name = 0x7f0a04a6;
+        public static int cc_horizontal_timer = 0x7f0a04a7;
+        public static int cc_horizontal_tittle = 0x7f0a04a8;
+        public static int cc_input_bet_bg = 0x7f0a04a9;
+        public static int cc_input_bet_name = 0x7f0a04aa;
+        public static int cc_input_bet_price = 0x7f0a04ab;
+        public static int cc_input_bet_tittle = 0x7f0a04ac;
+        public static int cc_input_form = 0x7f0a04ad;
+        public static int cc_input_tittle = 0x7f0a04ae;
+        public static int cc_item_description = 0x7f0a04af;
+        public static int cc_item_image = 0x7f0a04b0;
+        public static int cc_item_last_bet_name = 0x7f0a04b1;
+        public static int cc_item_last_bet_price = 0x7f0a04b2;
+        public static int cc_item_last_bet_tittle = 0x7f0a04b3;
+        public static int cc_item_list_tittle = 0x7f0a04b4;
+        public static int cc_item_menu_tittle = 0x7f0a04b5;
+        public static int cc_item_price = 0x7f0a04b6;
+        public static int cc_item_price_icone = 0x7f0a04b7;
+        public static int cc_item_time_left_timer = 0x7f0a04b8;
+        public static int cc_item_time_left_tittle = 0x7f0a04b9;
+        public static int cc_item_tittle = 0x7f0a04ba;
+        public static int cc_last_bet_bg = 0x7f0a04bb;
+        public static int cc_rc_view = 0x7f0a04bc;
+        public static int cc_vertical_button = 0x7f0a04bd;
+        public static int cc_vertical_input = 0x7f0a04be;
+        public static int cc_vertical_item_line = 0x7f0a04bf;
+        public static int cc_vertical_last_bet = 0x7f0a04c0;
+        public static int cc_vertical_menu_exit = 0x7f0a04c1;
+        public static int cc_vertical_menu_name = 0x7f0a04c2;
+        public static int cgp = 0x7f0a04cf;
+        public static int cgp_bold_description = 0x7f0a04d0;
+        public static int cgp_description = 0x7f0a04d1;
+        public static int cgp_description_container = 0x7f0a04d2;
+        public static int cgp_exit_button = 0x7f0a04d3;
+        public static int cgp_title = 0x7f0a04d4;
+        public static int cpi_bg = 0x7f0a0570;
 
         private id() {
         }

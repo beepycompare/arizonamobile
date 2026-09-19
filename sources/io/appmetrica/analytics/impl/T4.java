@@ -10,7 +10,7 @@ public final class T4 implements R2 {
     }
 
     @Override // io.appmetrica.analytics.impl.R2
-    public final boolean a(Object obj, C0241f6 c0241f6) {
-        return ((Q4) obj).a(c0241f6, this.f772a);
+    public final boolean a(Object obj, C0240f6 c0240f6) {
+        return ((Q4) obj).a(c0240f6, this.f772a);
     }
 }

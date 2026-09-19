@@ -75,6 +75,11 @@ public final class SpawnMenu implements InterfaceController {
         });
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void lambda$1$0(SpawnMenu spawnMenu, Activity activity, int i, View view) {
         Integer num = spawnMenu.selectedLocation;
@@ -86,7 +91,9 @@ public final class SpawnMenu implements InterfaceController {
             iBackendNotifier.clickedWrapper(i, 6, 0, bytes);
             InterfaceController orCreateInterface = InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.VIDEO_BACKGROUND.getId(), activity, i);
             Intrinsics.checkNotNull(orCreateInterface, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground");
-            ((RegistrationVideoBackground) orCreateInterface).selectVideoMode(RegistrationVideoModeType.VIDEO_HIDE);
+            RegistrationVideoBackground registrationVideoBackground = (RegistrationVideoBackground) orCreateInterface;
+            registrationVideoBackground.selectVideoMode(RegistrationVideoModeType.VIDEO_HIDE);
+            registrationVideoBackground.setVisibility(false);
             spawnMenu.setVisible(false);
             return;
         }

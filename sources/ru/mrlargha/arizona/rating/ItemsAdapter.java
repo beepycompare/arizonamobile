@@ -22,6 +22,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.feature.arizona.item.rating.R;
@@ -152,7 +153,9 @@ public final class ItemsAdapter extends RecyclerView.Adapter<MembersViewHolder> 
                     UtilsKt.setImage(image2, iconFromArchive$default);
                 }
             } else {
-                Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/assets/images/inventory/vehicles/512/" + ratingItem.getImageIndex() + ".webp").into(binding.image);
+                Picasso picasso = Picasso.get();
+                Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+                PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "/assets/images/inventory/vehicles/512/" + ratingItem.getImageIndex() + ".webp").into(binding.image);
             }
         } else {
             ImageView image3 = binding.image;

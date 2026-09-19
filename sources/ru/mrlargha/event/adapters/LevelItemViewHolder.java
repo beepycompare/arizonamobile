@@ -13,6 +13,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.Job;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.event.data.AwardItemData;
 import ru.mrlargha.feature.event.databinding.EventAwardItemBinding;
@@ -82,12 +83,14 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
         eventAwardItemBinding.itemLevelNameUsually.setText(award.getTitle());
         if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(projectResourceUrl$default + "/systems/battlepass/easter-2026/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "/systems/battlepass/easter-2026/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
         } else {
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(projectResourceUrl$default2 + "/systems/battlepass/items/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
+            PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "/systems/battlepass/items/" + award.getSysName() + ".webp").into(eventAwardItemBinding.itemLevelIcUsually);
         }
         eventAwardItemBinding.locked.setVisibility(8);
         eventAwardItemBinding.received.setVisibility(8);

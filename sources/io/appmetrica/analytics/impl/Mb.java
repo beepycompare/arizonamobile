@@ -10,17 +10,17 @@ import kotlin.collections.CollectionsKt;
 public final class Mb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0573s2 f664a = new C0573s2();
+    public final C0572s2 f664a = new C0572s2();
     public final A6 b = new A6();
-    public C0182co c;
+    public C0181co c;
     public boolean d;
     public boolean e;
 
-    public final synchronized void a(Context context, AppMetricaConfig appMetricaConfig, InterfaceC0556rb interfaceC0556rb) {
+    public final synchronized void a(Context context, AppMetricaConfig appMetricaConfig, InterfaceC0555rb interfaceC0555rb) {
         if (this.e) {
             return;
         }
-        CollectionsKt.addAll(this.b.f454a, new InterfaceC0298hb[]{this.f664a.a(context, appMetricaConfig, interfaceC0556rb)});
+        CollectionsKt.addAll(this.b.f454a, new InterfaceC0297hb[]{this.f664a.a(context, appMetricaConfig, interfaceC0555rb)});
         this.e = true;
     }
 
@@ -29,7 +29,7 @@ public final class Mb {
             return;
         }
         A6 a6 = this.b;
-        ArrayList arrayList = C0575s4.l().i.f693a;
+        ArrayList arrayList = C0574s4.l().i.f693a;
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList, 10));
         Iterator it = arrayList.iterator();
         if (!it.hasNext()) {
@@ -45,15 +45,15 @@ public final class Mb {
         if (this.c != null) {
             return;
         }
-        C0134b2 c0134b2 = new C0134b2(this.b);
-        this.c = new C0182co(c0134b2);
-        C0156bo c0156bo = new C0156bo();
-        c0156bo.f915a.add(c0134b2);
+        C0133b2 c0133b2 = new C0133b2(this.b);
+        this.c = new C0181co(c0133b2);
+        C0155bo c0155bo = new C0155bo();
+        c0155bo.f915a.add(c0133b2);
         Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         if (defaultUncaughtExceptionHandler != null) {
-            c0156bo.f915a.add(defaultUncaughtExceptionHandler);
+            c0155bo.f915a.add(defaultUncaughtExceptionHandler);
         }
-        Thread.setDefaultUncaughtExceptionHandler(c0156bo);
+        Thread.setDefaultUncaughtExceptionHandler(c0155bo);
     }
 
     public final synchronized void a() {

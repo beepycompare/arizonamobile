@@ -16,12 +16,12 @@ public final class C3 implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Xi fromModel(List<String> list) {
-        C0518po a2 = this.f488a.a((List<Object>) list);
-        C0735y8 c0735y8 = new C0735y8();
-        c0735y8.f1292a = StringUtils.getUTF8Bytes((List) a2.f1155a);
-        InterfaceC0548r3 interfaceC0548r3 = a2.b;
-        int i = ((E4) interfaceC0548r3).f1160a;
-        return new Xi(c0735y8, interfaceC0548r3);
+        C0517po a2 = this.f488a.a((List<Object>) list);
+        C0734y8 c0734y8 = new C0734y8();
+        c0734y8.f1292a = StringUtils.getUTF8Bytes((List) a2.f1155a);
+        InterfaceC0547r3 interfaceC0547r3 = a2.b;
+        int i = ((E4) interfaceC0547r3).f1160a;
+        return new Xi(c0734y8, interfaceC0547r3);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter

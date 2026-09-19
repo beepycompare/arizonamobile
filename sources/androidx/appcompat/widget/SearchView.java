@@ -50,6 +50,7 @@ import androidx.customview.view.AbsSavedState;
 import com.google.android.gms.actions.SearchIntents;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* loaded from: classes.dex */
 public class SearchView extends LinearLayoutCompat implements CollapsibleActionView {
     static final boolean DBG = false;
@@ -1324,7 +1325,10 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
             int i2 = configuration.screenHeightDp;
             if (i < 960 || i2 < 720 || configuration.orientation != 2) {
                 if (i < 600) {
-                    return (i < 640 || i2 < 480) ? 160 : 192;
+                    if (i < 640 || i2 < 480) {
+                        return RodinaTrainSpeedGaugeView.MAX_SPEED_KMH;
+                    }
+                    return 192;
                 }
                 return 192;
             }

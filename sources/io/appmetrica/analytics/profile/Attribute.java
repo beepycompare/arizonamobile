@@ -1,8 +1,8 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0173cf;
-import io.appmetrica.analytics.impl.C0325ic;
-import io.appmetrica.analytics.impl.C0776zn;
+import io.appmetrica.analytics.impl.C0172cf;
+import io.appmetrica.analytics.impl.C0324ic;
+import io.appmetrica.analytics.impl.C0775zn;
 import io.appmetrica.analytics.impl.D4;
 import io.appmetrica.analytics.impl.Dl;
 import io.appmetrica.analytics.impl.O8;
@@ -16,19 +16,19 @@ public final class Attribute {
     }
 
     public static BooleanAttribute customBoolean(String str) {
-        return new BooleanAttribute(str, new Sb(), new C0325ic(new D4(100)));
+        return new BooleanAttribute(str, new Sb(), new C0324ic(new D4(100)));
     }
 
     public static CounterAttribute customCounter(String str) {
-        return new CounterAttribute(str, new Sb(), new C0325ic(new D4(100)));
+        return new CounterAttribute(str, new Sb(), new C0324ic(new D4(100)));
     }
 
     public static NumberAttribute customNumber(String str) {
-        return new NumberAttribute(str, new Sb(), new C0325ic(new D4(100)));
+        return new NumberAttribute(str, new Sb(), new C0324ic(new D4(100)));
     }
 
     public static StringAttribute customString(String str) {
-        return new StringAttribute(str, new C0776zn(200, "String attribute \"" + str + "\"", PublicLogger.getAnonymousInstance()), new Sb(), new C0325ic(new D4(100)));
+        return new StringAttribute(str, new C0775zn(200, "String attribute \"" + str + "\"", PublicLogger.getAnonymousInstance()), new Sb(), new C0324ic(new D4(100)));
     }
 
     public static FirstPartyDataEmailSha256Attribute emailHash() {
@@ -48,7 +48,7 @@ public final class Attribute {
     }
 
     public static FirstPartyDataPhoneSha256Attribute phoneHash() {
-        return new FirstPartyDataPhoneSha256Attribute(new Dl(new C0173cf()));
+        return new FirstPartyDataPhoneSha256Attribute(new Dl(new C0172cf()));
     }
 
     public static FirstPartyDataTelegramLoginSha256Attribute telegramLoginHash() {

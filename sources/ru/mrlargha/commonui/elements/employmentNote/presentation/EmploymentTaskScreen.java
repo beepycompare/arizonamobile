@@ -156,6 +156,11 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         });
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     public final ArizonaRetrofit getClient() {
         return this.client;
     }

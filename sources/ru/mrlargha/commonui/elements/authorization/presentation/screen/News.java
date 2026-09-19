@@ -96,6 +96,11 @@ public final class News implements InterfaceController {
         return this.targetActivity;
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void lambda$0$1(News news, AuthorizationNewsBinding authorizationNewsBinding, View view) {
         news.offscreen = false;

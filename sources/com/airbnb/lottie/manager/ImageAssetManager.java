@@ -14,6 +14,7 @@ import com.airbnb.lottie.utils.Logger;
 import com.airbnb.lottie.utils.Utils;
 import java.io.IOException;
 import java.util.Map;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* loaded from: classes3.dex */
 public class ImageAssetManager {
     private static final Object bitmapHashLock = new Object();
@@ -82,7 +83,7 @@ public class ImageAssetManager {
         String fileName = lottieImageAsset.getFileName();
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = true;
-        options.inDensity = 160;
+        options.inDensity = RodinaTrainSpeedGaugeView.MAX_SPEED_KMH;
         if (fileName.startsWith("data:") && fileName.indexOf("base64,") > 0) {
             try {
                 byte[] decode = Base64.decode(fileName.substring(fileName.indexOf(44) + 1), 0);

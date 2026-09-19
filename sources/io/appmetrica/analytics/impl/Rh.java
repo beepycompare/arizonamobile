@@ -13,12 +13,12 @@ public abstract class Rh implements Callable {
     public static final Qh d = new Qh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0545r0 f751a;
+    public final C0544r0 f751a;
     public final El b;
     public boolean c;
 
-    public Rh(C0545r0 c0545r0, El el) {
-        this.f751a = c0545r0;
+    public Rh(C0544r0 c0544r0, El el) {
+        this.f751a = c0544r0;
         this.b = el;
     }
 
@@ -27,22 +27,22 @@ public abstract class Rh implements Callable {
     public void a(Throwable th) {
     }
 
-    public final C0545r0 b() {
+    public final C0544r0 b() {
         return this.f751a;
     }
 
     public boolean c() {
-        C0545r0 c0545r0 = this.f751a;
-        synchronized (c0545r0) {
-            if (c0545r0.d == null) {
-                c0545r0.e = new CountDownLatch(1);
-                T1 t1 = c0545r0.h;
-                Context context = c0545r0.f1175a;
+        C0544r0 c0544r0 = this.f751a;
+        synchronized (c0544r0) {
+            if (c0544r0.d == null) {
+                c0544r0.e = new CountDownLatch(1);
+                T1 t1 = c0544r0.h;
+                Context context = c0544r0.f1175a;
                 t1.getClass();
                 Intent a2 = T1.a(context);
                 try {
-                    c0545r0.g.b(c0545r0.f1175a);
-                    c0545r0.f1175a.bindService(a2, c0545r0.j, 1);
+                    c0544r0.g.b(c0544r0.f1175a);
+                    c0544r0.f1175a.bindService(a2, c0544r0.j, 1);
                 } catch (Throwable unused) {
                 }
             }
@@ -74,9 +74,9 @@ public abstract class Rh implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0545r0 c0545r0 = this.f751a;
-                synchronized (c0545r0) {
-                    iAppMetricaService = c0545r0.d;
+                C0544r0 c0544r0 = this.f751a;
+                synchronized (c0544r0) {
+                    iAppMetricaService = c0544r0.d;
                 }
                 if (iAppMetricaService != null) {
                     try {
@@ -94,8 +94,8 @@ public abstract class Rh implements Callable {
                 if (!c()) {
                     return;
                 }
-                AtomicBoolean atomicBoolean = C0134b2.e;
-                if (C0134b2.e.get()) {
+                AtomicBoolean atomicBoolean = C0133b2.e;
+                if (C0133b2.e.get()) {
                     return;
                 }
             } while (i < 3);

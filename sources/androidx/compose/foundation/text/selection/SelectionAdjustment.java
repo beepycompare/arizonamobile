@@ -98,7 +98,7 @@ public interface SelectionAdjustment {
         /* JADX INFO: Access modifiers changed from: package-private */
         public static final Selection CharacterWithWordAccelerate$lambda$0(SelectionLayout selectionLayout) {
             Selection.AnchorInfo end;
-            Selection.AnchorInfo updateSelectionBoundary;
+            Selection.AnchorInfo access$updateSelectionBoundary;
             Selection.AnchorInfo start;
             Selection.AnchorInfo anchorInfo;
             Selection previousSelection = selectionLayout.getPreviousSelection();
@@ -107,16 +107,16 @@ public interface SelectionAdjustment {
             }
             if (selectionLayout.isStartHandle()) {
                 end = previousSelection.getStart();
-                updateSelectionBoundary = SelectionAdjustmentKt.updateSelectionBoundary(selectionLayout, selectionLayout.getStartInfo(), end);
+                access$updateSelectionBoundary = SelectionAdjustmentKt.access$updateSelectionBoundary(selectionLayout, selectionLayout.getStartInfo(), end);
                 anchorInfo = previousSelection.getEnd();
-                start = updateSelectionBoundary;
+                start = access$updateSelectionBoundary;
             } else {
                 end = previousSelection.getEnd();
-                updateSelectionBoundary = SelectionAdjustmentKt.updateSelectionBoundary(selectionLayout, selectionLayout.getEndInfo(), end);
+                access$updateSelectionBoundary = SelectionAdjustmentKt.access$updateSelectionBoundary(selectionLayout, selectionLayout.getEndInfo(), end);
                 start = previousSelection.getStart();
-                anchorInfo = updateSelectionBoundary;
+                anchorInfo = access$updateSelectionBoundary;
             }
-            if (Intrinsics.areEqual(updateSelectionBoundary, end)) {
+            if (Intrinsics.areEqual(access$updateSelectionBoundary, end)) {
                 return previousSelection;
             }
             return SelectionAdjustmentKt.ensureAtLeastOneChar(new Selection(start, anchorInfo, selectionLayout.getCrossStatus() == CrossStatus.CROSSED || (selectionLayout.getCrossStatus() == CrossStatus.COLLAPSED && start.getOffset() > anchorInfo.getOffset())), selectionLayout);

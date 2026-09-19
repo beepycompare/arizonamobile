@@ -11,6 +11,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
+import kotlin.text.StringsKt;
 import kotlinx.coroutines.flow.MutableStateFlow;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SettingsComponent.kt */
@@ -52,7 +53,7 @@ public final class SettingsComponent$observeSettingsState$1 extends SuspendLambd
             mutableStateFlow = this.this$0.stateStore;
             do {
                 value = mutableStateFlow.getValue();
-            } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, settingState, null, null, false, new ConnectionData(settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword()), false, null, false, 0, null, null, 4061, null)));
+            } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default((SettingsUiState) value, 0, settingState, null, null, false, new ConnectionData(StringsKt.trim((CharSequence) settingState.getConnectionData().getIp()).toString(), StringsKt.trim((CharSequence) settingState.getConnectionData().getPort()).toString(), StringsKt.trim((CharSequence) settingState.getConnectionData().getPassword()).toString()), false, null, false, 0, null, null, 4061, null)));
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

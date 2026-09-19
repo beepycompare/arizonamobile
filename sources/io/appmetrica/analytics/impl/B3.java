@@ -7,23 +7,23 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class B3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0328ig f468a;
+    public final C0327ig f468a;
     public final BigDecimal b;
-    public final C0122ag c;
+    public final C0121ag c;
     public final Ng d;
 
     public B3(ECommerceCartItem eCommerceCartItem) {
-        this(new C0328ig(eCommerceCartItem.getProduct()), eCommerceCartItem.getQuantity(), new C0122ag(eCommerceCartItem.getRevenue()), eCommerceCartItem.getReferrer() == null ? null : new Ng(eCommerceCartItem.getReferrer()));
+        this(new C0327ig(eCommerceCartItem.getProduct()), eCommerceCartItem.getQuantity(), new C0121ag(eCommerceCartItem.getRevenue()), eCommerceCartItem.getReferrer() == null ? null : new Ng(eCommerceCartItem.getReferrer()));
     }
 
     public final String toString() {
         return "CartItemWrapper{product=" + this.f468a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public B3(C0328ig c0328ig, BigDecimal bigDecimal, C0122ag c0122ag, Ng ng) {
-        this.f468a = c0328ig;
+    public B3(C0327ig c0327ig, BigDecimal bigDecimal, C0121ag c0121ag, Ng ng) {
+        this.f468a = c0327ig;
         this.b = bigDecimal;
-        this.c = c0122ag;
+        this.c = c0121ag;
         this.d = ng;
     }
 }

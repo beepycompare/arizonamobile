@@ -14,7 +14,7 @@ public final class Si implements Fk {
     public static final long g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0545r0 f767a;
+    public final C0544r0 f767a;
     public final Ak b;
     public final TimeProvider c;
     public final ICommonExecutor d;
@@ -25,42 +25,42 @@ public final class Si implements Fk {
         g = timeUnit.toMillis(4L);
     }
 
-    public Si(C0545r0 c0545r0, Ak ak, TimeProvider timeProvider) {
-        this.f767a = c0545r0;
+    public Si(C0544r0 c0544r0, Ak ak, TimeProvider timeProvider) {
+        this.f767a = c0544r0;
         this.b = ak;
         this.c = timeProvider;
-        this.d = C0575s4.l().g().c();
+        this.d = C0574s4.l().g().c();
     }
 
     public final void a(Ph ph) {
-        Rh c0252fh;
+        Rh c0251fh;
         ICommonExecutor iCommonExecutor = this.d;
         boolean z = ph.b;
         Ak ak = this.b;
         if (z) {
-            c0252fh = new C0577s6(ak.f464a, ak.b, ak.c, ph, true);
+            c0251fh = new C0576s6(ak.f464a, ak.b, ak.c, ph, true);
         } else {
-            c0252fh = new C0252fh(ak.b, ak.c, ph);
+            c0251fh = new C0251fh(ak.b, ak.c, ph);
         }
-        iCommonExecutor.submit(c0252fh);
+        iCommonExecutor.submit(c0251fh);
     }
 
     public final void b(Ph ph) {
         long uptimeMillis = this.c.uptimeMillis();
         Ak ak = this.b;
-        C0577s6 c0577s6 = new C0577s6(ak.f464a, ak.b, ak.c, ph, false);
+        C0576s6 c0576s6 = new C0576s6(ak.f464a, ak.b, ak.c, ph, false);
         long j = Intrinsics.areEqual(Looper.myLooper(), Looper.getMainLooper()) ? f : g;
         if (this.f767a.a()) {
             try {
-                this.d.submit(c0577s6).get(j, TimeUnit.MILLISECONDS);
+                this.d.submit(c0576s6).get(j, TimeUnit.MILLISECONDS);
             } catch (Throwable unused) {
             }
         }
-        if (c0577s6.c) {
+        if (c0576s6.c) {
             return;
         }
         try {
-            c0577s6.a();
+            c0576s6.a();
             Thread.sleep(Math.max(0L, j - (this.c.uptimeMillis() - uptimeMillis)));
         } catch (Throwable unused2) {
         }
@@ -70,22 +70,22 @@ public final class Si implements Fk {
     public final void reportData(int i, Bundle bundle) {
         ICommonExecutor iCommonExecutor = this.d;
         Ak ak = this.b;
-        iCommonExecutor.submit(new C0544qo(ak.b, ak.c, i, bundle));
+        iCommonExecutor.submit(new C0543qo(ak.b, ak.c, i, bundle));
     }
 
-    public Si(C0545r0 c0545r0, Ak ak) {
-        this(c0545r0, ak, new SystemTimeProvider());
+    public Si(C0544r0 c0544r0, Ak ak) {
+        this(c0544r0, ak, new SystemTimeProvider());
     }
 
-    public final void a(C0174cg c0174cg) {
+    public final void a(C0173cg c0173cg) {
         ICommonExecutor iCommonExecutor = this.d;
         Ak ak = this.b;
-        iCommonExecutor.submit(new Se(ak.b, ak.c, c0174cg));
+        iCommonExecutor.submit(new Se(ak.b, ak.c, c0173cg));
     }
 
-    public final void b(C0174cg c0174cg) {
+    public final void b(C0173cg c0173cg) {
         ICommonExecutor iCommonExecutor = this.d;
         Ak ak = this.b;
-        iCommonExecutor.submit(new Yi(ak.b, ak.c, c0174cg));
+        iCommonExecutor.submit(new Yi(ak.b, ak.c, c0173cg));
     }
 }

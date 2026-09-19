@@ -35,24 +35,28 @@ import ru.mrlargha.commonui.utils.StringKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {287}, m = "invokeSuspend", n = {}, nl = {325}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2", f = "DonateScreen.kt", i = {}, l = {371}, m = "invokeSuspend", n = {}, nl = {415}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ long $currentSessionGeneration;
+    final /* synthetic */ DonateStates $sessionStates;
     final /* synthetic */ DonateScreenBinding $this_with;
     int label;
     final /* synthetic */ DonateScreen this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DonateScreen$setupCollectors$1$2(DonateScreen donateScreen, DonateScreenBinding donateScreenBinding, Continuation<? super DonateScreen$setupCollectors$1$2> continuation) {
+    public DonateScreen$setupCollectors$1$2(DonateStates donateStates, DonateScreen donateScreen, long j, DonateScreenBinding donateScreenBinding, Continuation<? super DonateScreen$setupCollectors$1$2> continuation) {
         super(2, continuation);
+        this.$sessionStates = donateStates;
         this.this$0 = donateScreen;
+        this.$currentSessionGeneration = j;
         this.$this_with = donateScreenBinding;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new DonateScreen$setupCollectors$1$2(this.this$0, this.$this_with, continuation);
+        return new DonateScreen$setupCollectors$1$2(this.$sessionStates, this.this$0, this.$currentSessionGeneration, this.$this_with, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -63,24 +67,28 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {288}, m = "invokeSuspend", n = {}, nl = {324}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1", f = "DonateScreen.kt", i = {}, l = {372}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$2$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        final /* synthetic */ long $currentSessionGeneration;
+        final /* synthetic */ DonateStates $sessionStates;
         final /* synthetic */ DonateScreenBinding $this_with;
         int label;
         final /* synthetic */ DonateScreen this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        AnonymousClass1(DonateScreen donateScreen, DonateScreenBinding donateScreenBinding, Continuation<? super AnonymousClass1> continuation) {
+        AnonymousClass1(DonateStates donateStates, DonateScreen donateScreen, long j, DonateScreenBinding donateScreenBinding, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
+            this.$sessionStates = donateStates;
             this.this$0 = donateScreen;
+            this.$currentSessionGeneration = j;
             this.$this_with = donateScreenBinding;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.this$0, this.$this_with, continuation);
+            return new AnonymousClass1(this.$sessionStates, this.this$0, this.$currentSessionGeneration, this.$this_with, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
@@ -90,18 +98,15 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            DonateStates donateStates;
-            StateFlow<UiState<List<DonateItemModelUi>>> itemState;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                donateStates = this.this$0.states;
-                if (donateStates == null || (itemState = donateStates.getItemState()) == null) {
-                    return Unit.INSTANCE;
-                }
-                final DonateScreenBinding donateScreenBinding = this.$this_with;
+                StateFlow<UiState<List<DonateItemModelUi>>> itemState = this.$sessionStates.getItemState();
                 final DonateScreen donateScreen = this.this$0;
+                final DonateStates donateStates = this.$sessionStates;
+                final long j = this.$currentSessionGeneration;
+                final DonateScreenBinding donateScreenBinding = this.$this_with;
                 this.label = 1;
                 if (itemState.collect(new FlowCollector() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen.setupCollectors.1.2.1.1
                     @Override // kotlinx.coroutines.flow.FlowCollector
@@ -110,65 +115,72 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
                     }
 
                     public final Object emit(UiState<? extends List<DonateItemModelUi>> uiState, Continuation<? super Unit> continuation) {
+                        boolean isCurrentSession;
                         boolean z;
-                        Map map;
                         DonateScreen.Pages pages;
-                        IBackendNotifier notifier;
-                        Map map2;
+                        Map map;
                         DonateScreen.Pages pages2;
-                        if (uiState instanceof UiState.Loading) {
-                            FrameLayout pagesContainer = DonateScreenBinding.this.pagesContainer;
-                            Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
-                            pagesContainer.setVisibility(4);
-                            ProgressBar pageProgressBar = DonateScreenBinding.this.pageProgressBar;
-                            Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
-                            pageProgressBar.setVisibility(0);
-                            LinearLayout errorPlaceholderItems = DonateScreenBinding.this.errorPlaceholderItems;
-                            Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems, "errorPlaceholderItems");
-                            errorPlaceholderItems.setVisibility(8);
-                            Boxing.boxInt(Log.d(DonateUtilsKt.DONATE_TAG, "loading"));
-                        } else if (uiState instanceof UiState.Error) {
-                            FrameLayout pagesContainer2 = DonateScreenBinding.this.pagesContainer;
-                            Intrinsics.checkNotNullExpressionValue(pagesContainer2, "pagesContainer");
-                            pagesContainer2.setVisibility(8);
-                            ProgressBar pageProgressBar2 = DonateScreenBinding.this.pageProgressBar;
-                            Intrinsics.checkNotNullExpressionValue(pageProgressBar2, "pageProgressBar");
-                            pageProgressBar2.setVisibility(8);
-                            LinearLayout errorPlaceholderItems2 = DonateScreenBinding.this.errorPlaceholderItems;
-                            Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems2, "errorPlaceholderItems");
-                            errorPlaceholderItems2.setVisibility(0);
-                            Boxing.boxInt(Log.e(DonateUtilsKt.DONATE_TAG, "error items: " + ((UiState.Error) uiState).getMessage()));
-                        } else if (!(uiState instanceof UiState.Successful)) {
-                            throw new NoWhenBranchMatchedException();
-                        } else {
-                            LinearLayout errorPlaceholderItems3 = DonateScreenBinding.this.errorPlaceholderItems;
-                            Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems3, "errorPlaceholderItems");
-                            errorPlaceholderItems3.setVisibility(8);
-                            z = donateScreen.isHasUpdate;
-                            if (!z) {
-                                donateScreen.isHasUpdate = true;
-                                UiState.Successful successful = (UiState.Successful) uiState;
-                                Log.e(DonateUtilsKt.DONATE_TAG, "data: initData: " + ((List) successful.getData()).size());
-                                notifier = donateScreen.getNotifier();
-                                notifier.clickedWrapper(donateScreen.getBackendID(), 0, 6);
-                                map2 = donateScreen.pages;
-                                pages2 = donateScreen.currentPage;
-                                DonatePage donatePage = (DonatePage) map2.get(pages2);
-                                if (donatePage != null) {
-                                    donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful.getData()));
+                        IBackendNotifier notifier;
+                        DonateScreen.Pages pages3;
+                        DonateScreen.Pages pages4;
+                        isCurrentSession = DonateScreen.this.isCurrentSession(donateStates, j);
+                        if (isCurrentSession) {
+                            if (uiState instanceof UiState.Loading) {
+                                pages4 = DonateScreen.this.currentPage;
+                                if (pages4 != DonateScreen.Pages.PAYPASS) {
+                                    FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
+                                    Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
+                                    pagesContainer.setVisibility(4);
+                                    ProgressBar pageProgressBar = donateScreenBinding.pageProgressBar;
+                                    Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
+                                    pageProgressBar.setVisibility(0);
                                 }
+                                LinearLayout errorPlaceholderItems = donateScreenBinding.errorPlaceholderItems;
+                                Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems, "errorPlaceholderItems");
+                                errorPlaceholderItems.setVisibility(8);
+                                Boxing.boxInt(Log.d(DonateUtilsKt.DONATE_TAG, "loading"));
+                            } else if (uiState instanceof UiState.Error) {
+                                pages3 = DonateScreen.this.currentPage;
+                                if (pages3 != DonateScreen.Pages.PAYPASS) {
+                                    FrameLayout pagesContainer2 = donateScreenBinding.pagesContainer;
+                                    Intrinsics.checkNotNullExpressionValue(pagesContainer2, "pagesContainer");
+                                    pagesContainer2.setVisibility(8);
+                                    ProgressBar pageProgressBar2 = donateScreenBinding.pageProgressBar;
+                                    Intrinsics.checkNotNullExpressionValue(pageProgressBar2, "pageProgressBar");
+                                    pageProgressBar2.setVisibility(8);
+                                    LinearLayout errorPlaceholderItems2 = donateScreenBinding.errorPlaceholderItems;
+                                    Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems2, "errorPlaceholderItems");
+                                    errorPlaceholderItems2.setVisibility(0);
+                                }
+                                Boxing.boxInt(Log.e(DonateUtilsKt.DONATE_TAG, "error items: " + ((UiState.Error) uiState).getMessage()));
+                            } else if (!(uiState instanceof UiState.Successful)) {
+                                throw new NoWhenBranchMatchedException();
                             } else {
-                                UiState.Successful successful2 = (UiState.Successful) uiState;
-                                if (!((Collection) successful2.getData()).isEmpty()) {
-                                    map = donateScreen.pages;
-                                    pages = donateScreen.currentPage;
-                                    DonatePage donatePage2 = (DonatePage) map.get(pages);
-                                    if (donatePage2 != null) {
-                                        donatePage2.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(successful2.getData()));
+                                LinearLayout errorPlaceholderItems3 = donateScreenBinding.errorPlaceholderItems;
+                                Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems3, "errorPlaceholderItems");
+                                errorPlaceholderItems3.setVisibility(8);
+                                z = DonateScreen.this.isHasUpdate;
+                                if (!z) {
+                                    DonateScreen.this.isHasUpdate = true;
+                                    Log.e(DonateUtilsKt.DONATE_TAG, "data: initData: " + ((List) ((UiState.Successful) uiState).getData()).size());
+                                    notifier = DonateScreen.this.getNotifier();
+                                    notifier.clickedWrapper(DonateScreen.this.getBackendID(), 0, 6);
+                                }
+                                pages = DonateScreen.this.currentPage;
+                                if (pages == DonateScreen.Pages.PAYPASS) {
+                                    return Unit.INSTANCE;
+                                }
+                                if (!z || !((Collection) ((UiState.Successful) uiState).getData()).isEmpty()) {
+                                    map = DonateScreen.this.pages;
+                                    pages2 = DonateScreen.this.currentPage;
+                                    DonatePage donatePage = (DonatePage) map.get(pages2);
+                                    if (donatePage != null) {
+                                        donatePage.onBackendMessage(DonateSubIds.ITEM_INIT.getSubIds(), StringKt.toStringJson(((UiState.Successful) uiState).getData()));
                                     }
                                 }
+                                Unit unit = Unit.INSTANCE;
                             }
-                            Unit unit = Unit.INSTANCE;
+                            return Unit.INSTANCE;
                         }
                         return Unit.INSTANCE;
                     }
@@ -191,7 +203,7 @@ public final class DonateScreen$setupCollectors$1$2 extends SuspendLambda implem
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.this$0, this.$this_with, null), this) == coroutine_suspended) {
+            if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.$sessionStates, this.this$0, this.$currentSessionGeneration, this.$this_with, null), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

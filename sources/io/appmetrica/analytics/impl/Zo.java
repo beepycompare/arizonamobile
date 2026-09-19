@@ -13,8 +13,8 @@ public final class Zo {
     /* renamed from: a  reason: collision with root package name */
     public final bp f878a;
 
-    public Zo(C0768zf c0768zf, C0737ya c0737ya) {
-        this.f878a = new bp(c0768zf, c0737ya, new cp() { // from class: io.appmetrica.analytics.impl.Zo$$ExternalSyntheticLambda0
+    public Zo(C0767zf c0767zf, C0736ya c0736ya) {
+        this.f878a = new bp(c0767zf, c0736ya, new cp() { // from class: io.appmetrica.analytics.impl.Zo$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.cp
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return Zo.a(jSONObject, jSONObject2);

@@ -13,6 +13,7 @@ import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.starter_pack.databinding.StarterpackItemBinding;
 import ru.mrlargha.feature.starter_pack.models.StarterPackRewardsModel;
@@ -49,11 +50,12 @@ public final class StarterPackAdapter extends ListAdapter<StarterPackRewardsMode
             String str = "systems/starter_packs/items/" + model.getIcon() + ".webp";
             String str2 = "systems/starter-packs/images/" + model.getIcon() + ".webp";
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             if (!UtilsKt.isArizonaType()) {
                 str = str2;
             }
-            picasso.load(projectResourceUrl$default + str).into(starterpackItemBinding.imagePrise);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + str).into(starterpackItemBinding.imagePrise);
             starterpackItemBinding.bg.setForeground(new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{Color.parseColor("#80" + StringsKt.removePrefix(model.getColor(), (CharSequence) "#")), 0}));
         }
     }

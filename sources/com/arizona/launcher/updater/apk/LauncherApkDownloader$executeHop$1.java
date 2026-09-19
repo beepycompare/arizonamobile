@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LauncherApkDownloader.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.apk.LauncherApkDownloader", f = "LauncherApkDownloader.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {1120, 465}, m = "executeHop", n = {"networkRequest", "request", "preparation", "observer", NotificationCompat.CATEGORY_CALL, "drained", "attempt", "networkRequest", "request", "preparation", "observer", NotificationCompat.CATEGORY_CALL, "drained", "cancelled", "attempt"}, nl = {1120, 466}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.apk.LauncherApkDownloader", f = "LauncherApkDownloader.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {1125, 465}, m = "executeHop", n = {"networkRequest", "request", "preparation", "observer", NotificationCompat.CATEGORY_CALL, "drained", "attempt", "networkRequest", "request", "preparation", "observer", NotificationCompat.CATEGORY_CALL, "drained", "cancelled", "attempt"}, nl = {1125, 466}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class LauncherApkDownloader$executeHop$1 extends ContinuationImpl {
     int I$0;

@@ -17,20 +17,24 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 /* loaded from: classes6.dex */
 public final class DonateScreen$openPurchaseCategory$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $categoryId;
+    final /* synthetic */ long $currentSessionGeneration;
+    final /* synthetic */ DonateStates $sessionStates;
     int label;
     final /* synthetic */ DonateScreen this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DonateScreen$openPurchaseCategory$1$1(DonateScreen donateScreen, int i, Continuation<? super DonateScreen$openPurchaseCategory$1$1> continuation) {
+    public DonateScreen$openPurchaseCategory$1$1(DonateScreen donateScreen, DonateStates donateStates, long j, int i, Continuation<? super DonateScreen$openPurchaseCategory$1$1> continuation) {
         super(2, continuation);
         this.this$0 = donateScreen;
+        this.$sessionStates = donateStates;
+        this.$currentSessionGeneration = j;
         this.$categoryId = i;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new DonateScreen$openPurchaseCategory$1$1(this.this$0, this.$categoryId, continuation);
+        return new DonateScreen$openPurchaseCategory$1$1(this.this$0, this.$sessionStates, this.$currentSessionGeneration, this.$categoryId, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -40,26 +44,23 @@ public final class DonateScreen$openPurchaseCategory$1$1 extends SuspendLambda i
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        DonateStates donateStates;
-        DonateStates donateStates2;
+        boolean isCurrentSession;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        if (this.label != 0) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-        ResultKt.throwOnFailure(obj);
-        boolean isArizonaType = UtilsKt.isArizonaType();
-        DonateScreen donateScreen = this.this$0;
-        if (isArizonaType) {
-            donateStates2 = donateScreen.states;
-            if (donateStates2 != null) {
-                donateStates2.setItemsArizona(this.$categoryId, false);
+        if (this.label == 0) {
+            ResultKt.throwOnFailure(obj);
+            isCurrentSession = this.this$0.isCurrentSession(this.$sessionStates, this.$currentSessionGeneration);
+            if (isCurrentSession) {
+                boolean isArizonaType = UtilsKt.isArizonaType();
+                DonateStates donateStates = this.$sessionStates;
+                if (isArizonaType) {
+                    donateStates.setItemsArizona(this.$categoryId, false);
+                } else {
+                    donateStates.setItemsRodina(this.$categoryId, false, false);
+                }
+                return Unit.INSTANCE;
             }
-        } else {
-            donateStates = donateScreen.states;
-            if (donateStates != null) {
-                donateStates.setItemsRodina(this.$categoryId, false, false);
-            }
+            return Unit.INSTANCE;
         }
-        return Unit.INSTANCE;
+        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
     }
 }

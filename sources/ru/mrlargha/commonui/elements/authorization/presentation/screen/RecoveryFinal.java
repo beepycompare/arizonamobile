@@ -19,7 +19,7 @@ import ru.mrlargha.commonui.elements.authorization.domain.recovery.RecoveryMetho
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager;
 /* compiled from: RecoveryFinal.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u0016J\u0006\u0010\u0017\u001a\u00020\u0013J\u0010\u0010\u0018\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u001aH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RecoveryFinal;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "recoveryFinal", "Landroidx/constraintlayout/widget/ConstraintLayout;", "recoveryFinalBinding", "Lru/mrlargha/commonui/databinding/AccountRecoveryFinalBinding;", "timer", "Landroid/os/CountDownTimer;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "setRecoveryValue", "", "recoveryMethodType", "recoveryValue", "", "resetRecoveryFinal", "setVisible", "visible", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u0016J\u0006\u0010\u0017\u001a\u00020\u0013J\u0010\u0010\u0018\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u001aH\u0016J\b\u0010\u001b\u001a\u00020\u0013H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RecoveryFinal;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "recoveryFinal", "Landroidx/constraintlayout/widget/ConstraintLayout;", "recoveryFinalBinding", "Lru/mrlargha/commonui/databinding/AccountRecoveryFinalBinding;", "timer", "Landroid/os/CountDownTimer;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "setRecoveryValue", "", "recoveryMethodType", "recoveryValue", "", "resetRecoveryFinal", "setVisible", "visible", "", "onRemovedFromAuthorizationFlow", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RecoveryFinal implements InterfaceController {
     private final IBackendNotifier notifier;
@@ -147,11 +147,24 @@ public final class RecoveryFinal implements InterfaceController {
         this.recoveryFinalBinding.accountRecoveryFinalIsExist.setText(this.targetActivity.getString(R.string.not_arrived));
         this.recoveryFinalBinding.accountRecoveryFinalReplyButton.setText(this.targetActivity.getString(R.string.send_again));
         this.recoveryFinalBinding.accountRecoveryDescription.setText(this.targetActivity.getString(R.string.mail_sent));
+        CountDownTimer countDownTimer = this.timer;
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
         this.timer = null;
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
         this.recoveryFinalBinding.accountRecoveryFinal.setVisibility(z ? 0 : 8);
+    }
+
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public void onRemovedFromAuthorizationFlow() {
+        CountDownTimer countDownTimer = this.timer;
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+        this.timer = null;
     }
 }

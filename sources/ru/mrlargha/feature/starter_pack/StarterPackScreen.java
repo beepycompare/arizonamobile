@@ -19,6 +19,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.starter_pack.adapters.StarterPackAdapter;
 import ru.mrlargha.feature.starter_pack.databinding.StarterPackBinding;
@@ -51,6 +52,11 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         initialize();
         setupAdapters();
         setupNavigation();
+    }
+
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
@@ -131,11 +137,12 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         String str = "systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
         String str2 = "systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
         Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         if (!UtilsKt.isArizonaType()) {
             str = str2;
         }
-        picasso.load(projectResourceUrl$default + str).into(starterPackBinding.bg1);
+        PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + str).into(starterPackBinding.bg1);
     }
 
     private final void setRich(StarterPackModel starterPackModel) {
@@ -147,11 +154,12 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         String str = "systems/starter_packs/background/" + starterPackModel.getImage() + ".webp";
         String str2 = "systems/starter-packs/images/" + starterPackModel.getImage() + ".webp";
         Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         if (!UtilsKt.isArizonaType()) {
             str = str2;
         }
-        picasso.load(projectResourceUrl$default + str).into(starterPackBinding.bg2);
+        PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + str).into(starterPackBinding.bg2);
         if (starterPackModel.getOldPrice() > 0) {
             starterPackBinding.price2Old.setVisibility(0);
         } else {

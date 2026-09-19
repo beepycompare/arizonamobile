@@ -226,6 +226,11 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
         this.binding.parentLayout.setVisibility(z ? 0 : 8);
     }

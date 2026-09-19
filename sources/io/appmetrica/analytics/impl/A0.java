@@ -15,22 +15,22 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 /* loaded from: classes5.dex */
-public final class A0 implements InterfaceC0556rb {
+public final class A0 implements InterfaceC0555rb {
     public static volatile A0 e = null;
     public static volatile boolean f = false;
     public static volatile boolean g;
 
     /* renamed from: a  reason: collision with root package name */
     public final Context f449a;
-    public final C0597t0 b;
+    public final C0596t0 b;
     public final FutureTask c;
-    public final InterfaceC0195db d;
+    public final InterfaceC0194db d;
 
     public A0(Context context) {
         this.f449a = context;
-        C0597t0 c = C0575s4.l().c();
+        C0596t0 c = C0574s4.l().c();
         this.b = c;
-        this.d = c.a(context, C0575s4.l().g());
+        this.d = c.a(context, C0574s4.l().g());
         this.c = new FutureTask(new Callable() { // from class: io.appmetrica.analytics.impl.A0$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
@@ -48,7 +48,7 @@ public final class A0 implements InterfaceC0556rb {
                 if (a0 == null) {
                     a0 = new A0(context);
                     a0.j();
-                    C0575s4.l().c.a().execute(new RunnableC0753z0(a0));
+                    C0574s4.l().c.a().execute(new RunnableC0752z0(a0));
                     e = a0;
                 }
             }
@@ -128,16 +128,16 @@ public final class A0 implements InterfaceC0556rb {
 
     public final void d(AppMetricaConfig appMetricaConfig) {
         f().b(appMetricaConfig);
-        C0575s4.l().c.a().execute(new RunnableC0728y1(this.f449a));
+        C0574s4.l().c.a().execute(new RunnableC0727y1(this.f449a));
     }
 
     public final String e() {
         return f().e();
     }
 
-    public final InterfaceC0220eb f() {
+    public final InterfaceC0219eb f() {
         try {
-            return (InterfaceC0220eb) this.c.get();
+            return (InterfaceC0219eb) this.c.get();
         } catch (Exception e2) {
             throw new RuntimeException(e2);
         }
@@ -156,62 +156,62 @@ public final class A0 implements InterfaceC0556rb {
     }
 
     public final void j() {
-        C0317i4 c0317i4 = C0575s4.l().c;
+        C0316i4 c0316i4 = C0574s4.l().c;
         Runnable runnable = new Runnable() { // from class: io.appmetrica.analytics.impl.A0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 A0.this.o();
             }
         };
-        c0317i4.f1030a.getClass();
+        c0316i4.f1030a.getClass();
         new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + Zd.f873a.incrementAndGet()).start();
     }
 
     public final void o() {
-        C0575s4.l().s.a(this.f449a);
-        C0575s4.l().a(this.f449a).a();
+        C0574s4.l().s.a(this.f449a);
+        C0574s4.l().a(this.f449a).a();
         this.c.run();
     }
 
-    public final InterfaceC0220eb p() {
-        InterfaceC0220eb interfaceC0220eb;
-        C0597t0 c0597t0 = this.b;
+    public final InterfaceC0219eb p() {
+        InterfaceC0219eb interfaceC0219eb;
+        C0596t0 c0596t0 = this.b;
         Context context = this.f449a;
-        InterfaceC0195db interfaceC0195db = this.d;
-        synchronized (c0597t0) {
-            if (c0597t0.d == null) {
-                if (c0597t0.a(context)) {
-                    c0597t0.d = new G0();
+        InterfaceC0194db interfaceC0194db = this.d;
+        synchronized (c0596t0) {
+            if (c0596t0.d == null) {
+                if (c0596t0.a(context)) {
+                    c0596t0.d = new G0();
                 } else {
-                    c0597t0.d = new E0(context, interfaceC0195db);
+                    c0596t0.d = new E0(context, interfaceC0194db);
                 }
             }
-            interfaceC0220eb = c0597t0.d;
+            interfaceC0219eb = c0596t0.d;
         }
-        return interfaceC0220eb;
+        return interfaceC0219eb;
     }
 
     public final void b(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         f().a(appMetricaLibraryAdapterConfig);
-        C0575s4.l().c.a().execute(new RunnableC0728y1(this.f449a));
+        C0574s4.l().c.a().execute(new RunnableC0727y1(this.f449a));
     }
 
-    public final InterfaceC0505pb c(ReporterConfig reporterConfig) {
+    public final InterfaceC0504pb c(ReporterConfig reporterConfig) {
         return f().c(reporterConfig);
     }
 
-    public static InterfaceC0326id c() {
+    public static InterfaceC0325id c() {
         if (m()) {
             return e.f();
         }
-        return C0575s4.l().b;
+        return C0574s4.l().b;
     }
 
-    public final C0581sa d() {
+    public final C0580sa d() {
         return f().d();
     }
 
-    public final C0653v4 b() {
+    public final C0652v4 b() {
         return this.d.a();
     }
 
@@ -253,8 +253,8 @@ public final class A0 implements InterfaceC0556rb {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0556rb
-    public final InterfaceC0531qb a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0555rb
+    public final InterfaceC0530qb a() {
         return f().a();
     }
 }

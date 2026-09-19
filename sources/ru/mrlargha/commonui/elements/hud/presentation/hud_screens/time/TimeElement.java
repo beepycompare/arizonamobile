@@ -1,9 +1,10 @@
 package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.time;
 
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
@@ -24,15 +25,18 @@ import ru.mrlargha.commonui.databinding.HudElementTimeBinding;
 import ru.mrlargha.commonui.databinding.HudElementTimeItemBinding;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: TimeElement.kt */
-@Metadata(d1 = {"\u0000R\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019J\u000e\u0010\u001a\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019J\u0012\u0010\u001b\u001a\u00020\u00172\b\u0010\u001c\u001a\u0004\u0018\u00010\u001dH\u0002J\u0010\u0010\u001e\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010\u001f\u001a\u00020\u00172\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0006\u0010 \u001a\u00020\u0017J\u0010\u0010!\u001a\u00020\u00172\u0006\u0010\"\u001a\u00020\u0015H\u0002J\u0018\u0010#\u001a\u00020\u00172\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u000eH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001c\u0010\f\u001a\r\u0012\t\u0012\u00070\u000e¢\u0006\u0002\b\u000f0\r¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006'"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementTimeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementTimeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementTimeBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "itemsList", "", "Lru/mrlargha/commonui/databinding/HudElementTimeItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "getItemsList", "()Ljava/util/List;", "clockJob", "Lkotlinx/coroutines/Job;", "timesLeft", "", "setVisibility", "", "data", "", "setInfo", "setData", "info", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeData;", "setView", "startClock", "stopClock", "setDateTime", "timeLong", "setItem", "item", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/Component;", "itemBinding", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001dJ\u000e\u0010\u001e\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001dJ\u0012\u0010\u001f\u001a\u00020\u001b2\b\u0010 \u001a\u0004\u0018\u00010!H\u0002J\u0010\u0010\"\u001a\u00020\u001b2\u0006\u0010 \u001a\u00020!H\u0002J\u0010\u0010#\u001a\u00020\u001b2\u0006\u0010 \u001a\u00020!H\u0002J\u0006\u0010$\u001a\u00020\u001bJ\u0006\u0010%\u001a\u00020\u001bJ\u0010\u0010&\u001a\u00020\u001b2\u0006\u0010'\u001a\u00020\u0019H\u0002J\u0018\u0010(\u001a\u00020\u001b2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u000eH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u001c\u0010\f\u001a\r\u0012\t\u0012\u00070\u000e¢\u0006\u0002\b\u000f0\r¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006,"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementTimeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementTimeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementTimeBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "itemsList", "", "Lru/mrlargha/commonui/databinding/HudElementTimeItemBinding;", "Lkotlin/jvm/internal/EnhancedNullability;", "getItemsList", "()Ljava/util/List;", "clockJob", "Lkotlinx/coroutines/Job;", "handler", "Landroid/os/Handler;", "hideRunnable", "Ljava/lang/Runnable;", "timesLeft", "", "setVisibility", "", "data", "", "setInfo", "setData", "info", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/TimeData;", "setView", "startClock", "stopClock", "dispose", "setDateTime", "timeLong", "setItem", "item", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/time/Component;", "itemBinding", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class TimeElement {
     private final HudElementTimeBinding binding;
     private Job clockJob;
+    private final Handler handler;
+    private final Runnable hideRunnable;
     private final List<HudElementTimeItemBinding> itemsList;
     private final SAMPUIElement notifier;
     private long timesLeft;
@@ -43,7 +47,14 @@ public final class TimeElement {
         this.binding = binding;
         this.notifier = notifier;
         this.itemsList = CollectionsKt.listOf((Object[]) new HudElementTimeItemBinding[]{binding.card0, binding.card1, binding.card2, binding.card3, binding.card4, binding.card5, binding.card6});
-        binding.close.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.time.TimeElement$$ExternalSyntheticLambda0
+        this.handler = new Handler(Looper.getMainLooper());
+        this.hideRunnable = new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.time.TimeElement$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                TimeElement.this.binding.getRoot().setVisibility(8);
+            }
+        };
+        binding.close.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.time.TimeElement$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SAMPUIElement.notifyClick$default(TimeElement.this.notifier, 100, 100, null, 4, null);
@@ -65,22 +76,15 @@ public final class TimeElement {
 
     public final void setVisibility(String data) {
         Intrinsics.checkNotNullParameter(data, "data");
-        boolean areEqual = Intrinsics.areEqual(data, "1");
-        HudElementTimeBinding hudElementTimeBinding = this.binding;
-        if (areEqual) {
-            hudElementTimeBinding.main.setTranslationX(800.0f);
+        if (Intrinsics.areEqual(data, "1")) {
+            this.handler.removeCallbacks(this.hideRunnable);
+            this.binding.main.setTranslationX(800.0f);
             this.binding.getRoot().setVisibility(0);
             this.binding.main.animate().translationX(0.0f).setDuration(800L).setInterpolator(new DecelerateInterpolator()).start();
         } else {
-            hudElementTimeBinding.main.animate().translationX(800.0f).setDuration(800L).setInterpolator(new DecelerateInterpolator()).start();
-            FrameLayout root = this.binding.getRoot();
-            Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
-            root.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.time.TimeElement$setVisibility$$inlined$postDelayed$1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    TimeElement.this.getBinding().getRoot().setVisibility(8);
-                }
-            }, 1000L);
+            this.binding.main.animate().translationX(800.0f).setDuration(800L).setInterpolator(new DecelerateInterpolator()).start();
+            this.handler.removeCallbacks(this.hideRunnable);
+            this.handler.postDelayed(this.hideRunnable, 1000L);
         }
         stopClock();
     }
@@ -159,6 +163,12 @@ public final class TimeElement {
         this.clockJob = null;
     }
 
+    public final void dispose() {
+        this.handler.removeCallbacksAndMessages(null);
+        this.binding.main.animate().cancel();
+        stopClock();
+    }
+
     private final void setDateTime(long j) {
         DateParts timestampToParts = TimeElementKt.timestampToParts(j);
         HudElementTimeBinding hudElementTimeBinding = this.binding;
@@ -224,18 +234,21 @@ public final class TimeElement {
                 textView3.setText(format2);
             }
         }
-        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + (UtilsKt.isArizonaType() ? "systems/time/icons/" : "systems/time_menu/") + component.getImage()).into(hudElementTimeItemBinding.image);
-        String str2 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
-        String str3 = DonateUtilsKt.TRANSPARENT_COLOR;
-        if (str2 == null) {
-            str2 = DonateUtilsKt.TRANSPARENT_COLOR;
+        String str2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + (UtilsKt.isArizonaType() ? "systems/time/icons/" : "systems/time_menu/") + component.getImage();
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, str2).into(hudElementTimeItemBinding.image);
+        String str3 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 0);
+        String str4 = DonateUtilsKt.TRANSPARENT_COLOR;
+        if (str3 == null) {
+            str3 = DonateUtilsKt.TRANSPARENT_COLOR;
         }
-        int parseColor = Color.parseColor(str2);
-        String str4 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 1);
-        if (str4 != null) {
-            str3 = str4;
+        int parseColor = Color.parseColor(str3);
+        String str5 = (String) CollectionsKt.getOrNull(component.getGradientColors(), 1);
+        if (str5 != null) {
+            str4 = str5;
         }
-        int parseColor2 = Color.parseColor(str3);
+        int parseColor2 = Color.parseColor(str4);
         CustomCardView mainCard = hudElementTimeItemBinding.mainCard;
         Intrinsics.checkNotNullExpressionValue(mainCard, "mainCard");
         CustomCardView.setBackground$default(mainCard, parseColor, parseColor2, null, null, 12, null);

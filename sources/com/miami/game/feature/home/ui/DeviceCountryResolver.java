@@ -25,8 +25,8 @@ public final class DeviceCountryResolver {
     }
 
     public final String detectCountryIso(Context context) {
-        Object m9920constructorimpl;
-        Object m9920constructorimpl2;
+        Object m9921constructorimpl;
+        Object m9921constructorimpl2;
         Intrinsics.checkNotNullParameter(context, "context");
         Context applicationContext = context.getApplicationContext();
         Object systemService = applicationContext.getSystemService("phone");
@@ -35,27 +35,27 @@ public final class DeviceCountryResolver {
         try {
             Result.Companion companion = Result.Companion;
             DeviceCountryResolver deviceCountryResolver = this;
-            m9920constructorimpl = Result.m9920constructorimpl(telephonyManager != null ? telephonyManager.getNetworkCountryIso() : null);
+            m9921constructorimpl = Result.m9921constructorimpl(telephonyManager != null ? telephonyManager.getNetworkCountryIso() : null);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
-            m9920constructorimpl = null;
+        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+            m9921constructorimpl = null;
         }
-        String str = (String) m9920constructorimpl;
+        String str = (String) m9921constructorimpl;
         try {
             Result.Companion companion3 = Result.Companion;
             DeviceCountryResolver deviceCountryResolver2 = this;
-            m9920constructorimpl2 = Result.m9920constructorimpl(telephonyManager != null ? telephonyManager.getSimCountryIso() : null);
+            m9921constructorimpl2 = Result.m9921constructorimpl(telephonyManager != null ? telephonyManager.getSimCountryIso() : null);
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m9920constructorimpl2 = Result.m9920constructorimpl(ResultKt.createFailure(th2));
+            m9921constructorimpl2 = Result.m9921constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m9926isFailureimpl(m9920constructorimpl2)) {
-            m9920constructorimpl2 = null;
+        if (Result.m9927isFailureimpl(m9921constructorimpl2)) {
+            m9921constructorimpl2 = null;
         }
-        String str2 = (String) m9920constructorimpl2;
+        String str2 = (String) m9921constructorimpl2;
         Locale locale = ConfigurationCompat.getLocales(applicationContext.getResources().getConfiguration()).get(0);
         Iterator it = SequencesKt.mapNotNull(SequencesKt.sequenceOf((Object[]) new String[]{str, str2, locale != null ? locale.getCountry() : null}), new Function1() { // from class: com.miami.game.feature.home.ui.DeviceCountryResolver$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1

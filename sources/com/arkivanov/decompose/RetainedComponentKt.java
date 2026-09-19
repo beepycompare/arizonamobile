@@ -28,12 +28,10 @@ import kotlinx.serialization.builtins.BuiltinSerializersKt;
 public final class RetainedComponentKt {
     private static final String KEY_STATE_MARKER = "RetainedComponent_state_marker";
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainedComponent$lambda$0() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainedComponent$lambda$1() {
         return true;
     }
@@ -103,7 +101,6 @@ public final class RetainedComponentKt {
         }, factory);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final boolean retainedComponent$lambda$2(Fragment fragment) {
         FragmentActivity activity = fragment.getActivity();
         if (activity != null) {
@@ -195,30 +192,25 @@ public final class RetainedComponentKt {
         return (T) retainedComponentHolder3.getComponent();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Boolean retainedComponent$lambda$4() {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$7(RetainedComponentHolder retainedComponentHolder) {
         LifecycleRegistryExtKt.create(retainedComponentHolder.getLifecycle());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$8(RetainedComponentHolder retainedComponentHolder) {
         LifecycleRegistryExtKt.start(retainedComponentHolder.getLifecycle());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$9(RetainedComponentHolder retainedComponentHolder) {
         LifecycleRegistryExtKt.resume(retainedComponentHolder.getLifecycle());
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$10(Function0 function0, RetainedComponentHolder retainedComponentHolder) {
         if (!((Boolean) function0.invoke()).booleanValue()) {
             LifecycleRegistryExtKt.pause(retainedComponentHolder.getLifecycle());
@@ -226,7 +218,6 @@ public final class RetainedComponentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$11(Function0 function0, RetainedComponentHolder retainedComponentHolder) {
         if (!((Boolean) function0.invoke()).booleanValue()) {
             LifecycleRegistryExtKt.stop(retainedComponentHolder.getLifecycle());
@@ -234,7 +225,6 @@ public final class RetainedComponentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$12(Function0 function0, RetainedComponentHolder retainedComponentHolder) {
         if (!((Boolean) function0.invoke()).booleanValue()) {
             LifecycleRegistryExtKt.destroy(retainedComponentHolder.getLifecycle());
@@ -242,7 +232,6 @@ public final class RetainedComponentKt {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit retainedComponent$lambda$14(DelegateOnBackPressedCallback delegateOnBackPressedCallback, boolean z) {
         delegateOnBackPressedCallback.setEnabled(z);
         return Unit.INSTANCE;

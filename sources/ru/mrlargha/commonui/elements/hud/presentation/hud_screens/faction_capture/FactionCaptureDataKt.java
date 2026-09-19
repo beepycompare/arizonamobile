@@ -67,19 +67,19 @@ public final class FactionCaptureDataKt {
     }
 
     public static final FactionCaptureData parseFactionCapturePayload(String payload) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         Intrinsics.checkNotNullParameter(payload, "payload");
         if (StringsKt.isBlank(payload)) {
             return null;
         }
         try {
             Result.Companion companion = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl((FactionCaptureData) MapperKt.getGson().fromJson(payload, (Class<Object>) FactionCaptureData.class));
+            m9921constructorimpl = Result.m9921constructorimpl((FactionCaptureData) MapperKt.getGson().fromJson(payload, (Class<Object>) FactionCaptureData.class));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+        return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
     }
 
     public static final String formatFactionCaptureTime(int i) {

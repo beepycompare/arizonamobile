@@ -1,5 +1,6 @@
 package com.arizona.launcher;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService", f = "UpdateService.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {396, 421}, m = "prepareGameUpdateCheck", n = {"response", "server", "kind", "metadataAuditValidatedForFinalization", "stateBeforeCheck", "operationToken", "response", "server", "kind", "metadataAuditValidatedForFinalization", "stateBeforeCheck", "operationToken"}, nl = {397, 490}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "J$0", "L$0", "L$1", "L$2", "L$3", "L$4", "J$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService", f = "UpdateService.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {401, 426}, m = "prepareGameUpdateCheck", n = {"response", "server", "kind", "metadataAuditValidatedForFinalization", "stateBeforeCheck", "operationToken", "response", "server", "kind", "metadataAuditValidatedForFinalization", "stateBeforeCheck", "operationToken"}, nl = {TypedValues.CycleType.TYPE_VISIBILITY, 490}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "J$0", "L$0", "L$1", "L$2", "L$3", "L$4", "J$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$prepareGameUpdateCheck$1 extends ContinuationImpl {
     long J$0;

@@ -24,7 +24,7 @@ public final class BankLotteryPageControllerKt {
     public static final void bindBankLotteryRewardGlow(CustomCardView customCardView, String str) {
         Integer parseColorOrNull = parseColorOrNull(str);
         int intValue = parseColorOrNull != null ? parseColorOrNull.intValue() : DEFAULT_REWARD_GLOW_COLOR;
-        CustomCardView.setBackground$default(customCardView, Color.argb((int) REWARD_GLOW_ALPHA, Color.red(intValue), Color.green(intValue), Color.blue(intValue)), Color.argb(0, Color.red(intValue), Color.green(intValue), Color.blue(intValue)), null, CustomCardView.GradientType.RADIAL, 4, null);
+        CustomCardView.setBackground$default(customCardView, Color.argb(160, Color.red(intValue), Color.green(intValue), Color.blue(intValue)), Color.argb(0, Color.red(intValue), Color.green(intValue), Color.blue(intValue)), null, CustomCardView.GradientType.RADIAL, 4, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -52,18 +52,18 @@ public final class BankLotteryPageControllerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Integer parseColorOrNull(String str) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(Integer.valueOf(Color.parseColor(str)));
+            m9921constructorimpl = Result.m9921constructorimpl(Integer.valueOf(Color.parseColor(str)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
-            m9920constructorimpl = null;
+        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+            m9921constructorimpl = null;
         }
-        return (Integer) m9920constructorimpl;
+        return (Integer) m9921constructorimpl;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

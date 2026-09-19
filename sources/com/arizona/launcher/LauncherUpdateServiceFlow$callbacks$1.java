@@ -57,7 +57,7 @@ public final class LauncherUpdateServiceFlow$callbacks$1 implements LauncherUpda
         Intrinsics.checkNotNullParameter(outcome, "outcome");
         function1 = this.this$0.postToMain;
         final LauncherUpdateServiceFlow launcherUpdateServiceFlow = this.this$0;
-        function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda3
+        function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return LauncherUpdateServiceFlow$callbacks$1.onApkOutcome$lambda$1(LauncherUpdateServiceFlow.this, j, outcome);
@@ -66,29 +66,9 @@ public final class LauncherUpdateServiceFlow$callbacks$1 implements LauncherUpda
     }
 
     @Override // com.arizona.launcher.updater.apk.LauncherUpdateControllerCallbacks
-    public void onApkProgress(final long j, final LauncherApkProgress progress) {
-        Function1 function1;
+    public void onApkProgress(long j, LauncherApkProgress progress) {
         Intrinsics.checkNotNullParameter(progress, "progress");
-        function1 = this.this$0.postToMain;
-        final LauncherUpdateServiceFlow launcherUpdateServiceFlow = this.this$0;
-        function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda2
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
-                return LauncherUpdateServiceFlow$callbacks$1.onApkProgress$lambda$2(LauncherUpdateServiceFlow.this, j, progress);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit onApkProgress$lambda$2(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j, LauncherApkProgress launcherApkProgress) {
-        LauncherUpdateServiceHost launcherUpdateServiceHost;
-        LauncherUpdateServiceHost launcherUpdateServiceHost2;
-        launcherUpdateServiceHost = launcherUpdateServiceFlow.host;
-        if (launcherUpdateServiceHost.isCurrentLauncherApkOperation(j)) {
-            launcherUpdateServiceHost2 = launcherUpdateServiceFlow.host;
-            launcherUpdateServiceHost2.updateLauncherProgress(launcherApkProgress.getDownloadedBytes(), launcherApkProgress.getTotalBytes(), launcherApkProgress.getAttempt(), launcherApkProgress.getResumed());
-        }
-        return Unit.INSTANCE;
+        this.this$0.offerProgress(j, progress);
     }
 
     @Override // com.arizona.launcher.updater.apk.LauncherUpdateControllerCallbacks
@@ -97,16 +77,16 @@ public final class LauncherUpdateServiceFlow$callbacks$1 implements LauncherUpda
         Intrinsics.checkNotNullParameter(retry, "retry");
         function1 = this.this$0.postToMain;
         final LauncherUpdateServiceFlow launcherUpdateServiceFlow = this.this$0;
-        function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda5
+        function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return LauncherUpdateServiceFlow$callbacks$1.onApkRetry$lambda$3(LauncherUpdateServiceFlow.this, j, retry);
+                return LauncherUpdateServiceFlow$callbacks$1.onApkRetry$lambda$2(LauncherUpdateServiceFlow.this, j, retry);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit onApkRetry$lambda$3(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j, LauncherApkRetry launcherApkRetry) {
+    public static final Unit onApkRetry$lambda$2(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j, LauncherApkRetry launcherApkRetry) {
         LauncherUpdateServiceHost launcherUpdateServiceHost;
         launcherUpdateServiceHost = launcherUpdateServiceFlow.host;
         if (!launcherUpdateServiceHost.isCurrentLauncherApkOperation(j)) {
@@ -120,7 +100,7 @@ public final class LauncherUpdateServiceFlow$callbacks$1 implements LauncherUpda
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit onCancelled$lambda$4(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j, LauncherUpdatePhase launcherUpdatePhase) {
+    public static final Unit onCancelled$lambda$3(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j, LauncherUpdatePhase launcherUpdatePhase) {
         launcherUpdateServiceFlow.handleCancellation(j, launcherUpdatePhase);
         return Unit.INSTANCE;
     }
@@ -131,16 +111,16 @@ public final class LauncherUpdateServiceFlow$callbacks$1 implements LauncherUpda
         Intrinsics.checkNotNullParameter(phase, "phase");
         function1 = this.this$0.postToMain;
         final LauncherUpdateServiceFlow launcherUpdateServiceFlow = this.this$0;
-        function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda4
+        function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return LauncherUpdateServiceFlow$callbacks$1.onCancelled$lambda$4(LauncherUpdateServiceFlow.this, j, phase);
+                return LauncherUpdateServiceFlow$callbacks$1.onCancelled$lambda$3(LauncherUpdateServiceFlow.this, j, phase);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit onUnexpectedFailure$lambda$5(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j, LauncherUpdatePhase launcherUpdatePhase, Throwable th) {
+    public static final Unit onUnexpectedFailure$lambda$4(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j, LauncherUpdatePhase launcherUpdatePhase, Throwable th) {
         launcherUpdateServiceFlow.handleUnexpectedFailure(j, launcherUpdatePhase, th);
         return Unit.INSTANCE;
     }
@@ -155,7 +135,7 @@ public final class LauncherUpdateServiceFlow$callbacks$1 implements LauncherUpda
         function1.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$callbacks$1$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return LauncherUpdateServiceFlow$callbacks$1.onUnexpectedFailure$lambda$5(LauncherUpdateServiceFlow.this, j, phase, error);
+                return LauncherUpdateServiceFlow$callbacks$1.onUnexpectedFailure$lambda$4(LauncherUpdateServiceFlow.this, j, phase, error);
             }
         });
     }

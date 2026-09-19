@@ -5,7 +5,7 @@ import org.json.JSONObject;
 public final class Gb extends O2 {
     public static final Fb b = new Fb();
 
-    public Gb(EnumC0219ea enumC0219ea, JSONObject jSONObject) {
-        super(Fb.a(b, enumC0219ea, jSONObject));
+    public Gb(EnumC0218ea enumC0218ea, JSONObject jSONObject) {
+        super(Fb.a(b, enumC0218ea, jSONObject));
     }
 }

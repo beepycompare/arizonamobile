@@ -245,27 +245,26 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
         }
 
         private final void initItems(List<MobileRentAccessoryModelItem> list) {
-            int i;
-            int i2 = 0;
-            int i3 = 0;
+            int i = 0;
             for (Object obj : this.items) {
-                int i4 = i3 + 1;
-                if (i3 < 0) {
+                int i2 = i + 1;
+                if (i < 0) {
                     CollectionsKt.throwIndexOverflow();
                 }
                 MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding = (MobileRentAccessoryElementItemBinding) obj;
-                MobileRentAccessoryModelItem mobileRentAccessoryModelItem = (MobileRentAccessoryModelItem) CollectionsKt.getOrNull(list, i3);
+                MobileRentAccessoryModelItem mobileRentAccessoryModelItem = (MobileRentAccessoryModelItem) CollectionsKt.getOrNull(list, i);
                 if (mobileRentAccessoryModelItem != null) {
-                    BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new MobileRentAccessoryMainAdapter$MainViewHolder$initItems$1$1$1$1(mobileRentAccessoryElementItemBinding, mobileRentAccessoryModelItem, null), 3, null);
+                    BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new MobileRentAccessoryMainAdapter$MainViewHolder$initItems$1$1$1(mobileRentAccessoryElementItemBinding, mobileRentAccessoryModelItem, null), 3, null);
                     ImageView ivItem = mobileRentAccessoryElementItemBinding.ivItem;
                     Intrinsics.checkNotNullExpressionValue(ivItem, "ivItem");
-                    ivItem.setVisibility(i2);
+                    ivItem.setVisibility(0);
+                    mobileRentAccessoryElementItemBinding.getRoot().setEnabled(true);
                     ImageView ivIcon = mobileRentAccessoryElementItemBinding.ivIcon;
                     Intrinsics.checkNotNullExpressionValue(ivIcon, "ivIcon");
                     ivIcon.setVisibility(8);
                     TextView tvCount = mobileRentAccessoryElementItemBinding.tvCount;
                     Intrinsics.checkNotNullExpressionValue(tvCount, "tvCount");
-                    tvCount.setVisibility((mobileRentAccessoryModelItem.getEnchanted() > 0 ? 1 : i2) != 0 ? i2 : 8);
+                    tvCount.setVisibility(mobileRentAccessoryModelItem.getEnchanted() > 0 ? 0 : 8);
                     mobileRentAccessoryElementItemBinding.tvCount.setText("+" + mobileRentAccessoryModelItem.getEnchanted());
                     mobileRentAccessoryElementItemBinding.container.setBackground(mobileRentAccessoryModelItem.getColorId());
                     ImageView ivEffectBackgroundTop = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
@@ -274,35 +273,30 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
                     Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
                     ImageView ivEffectForeground = mobileRentAccessoryElementItemBinding.ivEffectForeground;
                     Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-                    if (UtilKt.setEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground, Integer.valueOf(mobileRentAccessoryModelItem.getItemID())) != null) {
-                        i = 0;
-                        i2 = i;
-                        i3 = i4;
-                    }
+                    UtilKt.setEffect(ivEffectBackgroundTop, ivEffectBackground, ivEffectForeground, Integer.valueOf(mobileRentAccessoryModelItem.getItemID()));
+                } else {
+                    mobileRentAccessoryElementItemBinding.getRoot().setEnabled(false);
+                    TextView tvCount2 = mobileRentAccessoryElementItemBinding.tvCount;
+                    Intrinsics.checkNotNullExpressionValue(tvCount2, "tvCount");
+                    tvCount2.setVisibility(8);
+                    ImageView ivItem2 = mobileRentAccessoryElementItemBinding.ivItem;
+                    Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
+                    ivItem2.setVisibility(8);
+                    ImageView ivIcon2 = mobileRentAccessoryElementItemBinding.ivIcon;
+                    Intrinsics.checkNotNullExpressionValue(ivIcon2, "ivIcon");
+                    ivIcon2.setVisibility(0);
+                    CustomCardView container = mobileRentAccessoryElementItemBinding.container;
+                    Intrinsics.checkNotNullExpressionValue(container, "container");
+                    CustomCardView.setBackground$default(container, Color.parseColor("#33FFFFFF"), Color.parseColor("#0DFFFFFF"), null, null, 12, null);
+                    ImageView ivEffectBackgroundTop2 = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
+                    Intrinsics.checkNotNullExpressionValue(ivEffectBackgroundTop2, "ivEffectBackgroundTop");
+                    ImageView ivEffectBackground2 = mobileRentAccessoryElementItemBinding.ivEffectBackground;
+                    Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
+                    ImageView ivEffectForeground2 = mobileRentAccessoryElementItemBinding.ivEffectForeground;
+                    Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
+                    UtilKt.setEffect(ivEffectBackgroundTop2, ivEffectBackground2, ivEffectForeground2, (Integer) (-1));
                 }
-                TextView tvCount2 = mobileRentAccessoryElementItemBinding.tvCount;
-                Intrinsics.checkNotNullExpressionValue(tvCount2, "tvCount");
-                tvCount2.setVisibility(8);
-                ImageView ivItem2 = mobileRentAccessoryElementItemBinding.ivItem;
-                Intrinsics.checkNotNullExpressionValue(ivItem2, "ivItem");
-                ivItem2.setVisibility(8);
-                ImageView ivIcon2 = mobileRentAccessoryElementItemBinding.ivIcon;
-                Intrinsics.checkNotNullExpressionValue(ivIcon2, "ivIcon");
-                i = 0;
-                ivIcon2.setVisibility(0);
-                CustomCardView container = mobileRentAccessoryElementItemBinding.container;
-                Intrinsics.checkNotNullExpressionValue(container, "container");
-                CustomCardView.setBackground$default(container, Color.parseColor("#33FFFFFF"), Color.parseColor("#0DFFFFFF"), null, null, 12, null);
-                ImageView ivEffectBackgroundTop2 = mobileRentAccessoryElementItemBinding.ivEffectBackgroundTop;
-                Intrinsics.checkNotNullExpressionValue(ivEffectBackgroundTop2, "ivEffectBackgroundTop");
-                ImageView ivEffectBackground2 = mobileRentAccessoryElementItemBinding.ivEffectBackground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectBackground2, "ivEffectBackground");
-                ImageView ivEffectForeground2 = mobileRentAccessoryElementItemBinding.ivEffectForeground;
-                Intrinsics.checkNotNullExpressionValue(ivEffectForeground2, "ivEffectForeground");
-                UtilKt.setEffect(ivEffectBackgroundTop2, ivEffectBackground2, ivEffectForeground2, (Integer) (-1));
-                Unit unit = Unit.INSTANCE;
-                i2 = i;
-                i3 = i4;
+                i = i2;
             }
         }
 

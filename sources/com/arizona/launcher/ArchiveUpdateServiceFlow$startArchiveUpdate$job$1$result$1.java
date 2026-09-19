@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function4;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: ArchiveUpdateServiceFlow.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterResult;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow$startArchiveUpdate$job$1$result$1", f = "ArchiveUpdateServiceFlow.kt", i = {}, l = {264, 266}, m = "invokeSuspend", n = {}, nl = {266, 272}, s = {}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.ArchiveUpdateServiceFlow$startArchiveUpdate$job$1$result$1", f = "ArchiveUpdateServiceFlow.kt", i = {}, l = {286, 288}, m = "invokeSuspend", n = {}, nl = {288, 294}, s = {}, v = 2)
 /* loaded from: classes3.dex */
 final class ArchiveUpdateServiceFlow$startArchiveUpdate$job$1$result$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ArchiveUpdaterResult>, Object> {
     final /* synthetic */ long $operationToken;

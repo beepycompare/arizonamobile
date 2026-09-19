@@ -20,6 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
@@ -31,18 +32,22 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.Random;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CompletableJob;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.SupervisorKt;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: ConveyorGameScreen.kt */
-@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010 \n\u0002\b\f\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0011\u0018\u0000 V2\u00020\u0001:\u0002VWB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010/\u001a\u0002002\u0006\u00101\u001a\u000202H\u0016J\u0018\u00103\u001a\u0002002\u0006\u00104\u001a\u0002052\u0006\u00106\u001a\u00020\u0005H\u0016J\u0010\u00107\u001a\u0002002\u0006\u00104\u001a\u000205H\u0002J\u0010\u00108\u001a\u0002002\u0006\u00109\u001a\u00020:H\u0002J\b\u0010;\u001a\u000200H\u0002J\b\u0010<\u001a\u000200H\u0002J\b\u0010=\u001a\u000200H\u0002J\b\u0010>\u001a\u000200H\u0002J\b\u0010?\u001a\u000200H\u0002J\u001c\u0010@\u001a\u0002002\b\b\u0002\u0010A\u001a\u00020\u00052\b\b\u0002\u0010B\u001a\u00020\u0005H\u0002J\b\u0010C\u001a\u000200H\u0002J\b\u0010D\u001a\u000200H\u0002J\u0010\u0010E\u001a\u0002002\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010H\u001a\u0002002\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010I\u001a\u0002002\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010J\u001a\u0002002\u0006\u0010K\u001a\u00020\u0017H\u0002J\u0010\u0010L\u001a\u0002002\u0006\u0010K\u001a\u00020\u0017H\u0002J\b\u0010M\u001a\u000200H\u0002J\b\u0010N\u001a\u000200H\u0002J\u000e\u0010O\u001a\b\u0012\u0004\u0012\u00020\u00170#H\u0002J\u0018\u0010P\u001a\b\u0012\u0004\u0012\u00020\u00170#*\b\u0012\u0004\u0012\u00020\u00050#H\u0002J\u0010\u0010Q\u001a\u0002002\u0006\u0010R\u001a\u00020\u0005H\u0002J\u0010\u0010S\u001a\u0002002\u0006\u0010T\u001a\u00020\u0005H\u0002J\b\u0010U\u001a\u000200H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00050\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u001a*\u0004\u0018\u00010\u00190\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006X"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/widget/FrameLayout;", "binding", "Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameScreenBinding;", "boxAdapter", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter;", "itemAdapter", "correctEggToBoxMap", "", "currentNeedItem", "scope", "Lkotlinx/coroutines/CoroutineScope;", "collectedEggsState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "selectItemImage", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemModel;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "successSoundId", "failureSoundId", "clickEggSoundId", "mediaPlayer", "Landroid/media/MediaPlayer;", "animationScale", "", "itemEggList", "", "boxEggList", "itemDocumentList", "boxDocumentList", "itemCrystalList", "boxCrystalList", "itemHalloweenList", "boxHalloweenList", "itemNewYearList", "boxNewYearList", "itemImageList", "boxImageList", "setVisibility", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "setCurrentNeedItem", "setGameType", "type", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen$Companion$ConveyorType;", "initEggType", "initDocumentType", "initCrystalType", "initHalloweenType", "initNewYearType", "updateLeftItem", "leftItem", "needItem", "openAgeLabel", "openScreen", "checkIsHasAnimation", "view", "Landroid/view/View;", "showItems", "startInfiniteAnimation", "onBoxClick", "itemModel", "onItemClick", "refreshItems", "getCorrectEggToBoxMap", "getRandomItemImageList", "toConveyorItemModel", "playSound", "soundId", "startBackgroundMelody", "melodyId", "closeScreen", "Companion", "Spawner", "conveyor"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010 \n\u0002\b\f\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 ^2\u00020\u0001:\u0002^_B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u000206H\u0016J\u0018\u00107\u001a\u0002042\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u0005H\u0016J\u0010\u0010;\u001a\u0002042\u0006\u00108\u001a\u000209H\u0002J\u0010\u0010<\u001a\u0002042\u0006\u0010=\u001a\u00020>H\u0002J\b\u0010?\u001a\u000204H\u0002J\b\u0010@\u001a\u000204H\u0002J\b\u0010A\u001a\u000204H\u0002J\b\u0010B\u001a\u000204H\u0002J\b\u0010C\u001a\u000204H\u0002J\u001c\u0010D\u001a\u0002042\b\b\u0002\u0010E\u001a\u00020\u00052\b\b\u0002\u0010F\u001a\u00020\u0005H\u0002J\b\u0010G\u001a\u000204H\u0002J\b\u0010H\u001a\u000204H\u0002J\u0010\u0010I\u001a\u0002042\u0006\u0010J\u001a\u00020KH\u0002J\u0010\u0010L\u001a\u0002042\u0006\u0010J\u001a\u00020KH\u0002J\u0010\u0010M\u001a\u0002042\u0006\u0010J\u001a\u00020KH\u0002J\u0010\u0010N\u001a\u0002042\u0006\u0010O\u001a\u00020\u001bH\u0002J\u0010\u0010P\u001a\u0002042\u0006\u0010O\u001a\u00020\u001bH\u0002J\b\u0010Q\u001a\u000204H\u0002J\b\u0010R\u001a\u000204H\u0002J\u000e\u0010S\u001a\b\u0012\u0004\u0012\u00020\u001b0'H\u0002J\u0018\u0010T\u001a\b\u0012\u0004\u0012\u00020\u001b0'*\b\u0012\u0004\u0012\u00020\u00050'H\u0002J\u0010\u0010U\u001a\u0002042\u0006\u0010V\u001a\u00020\u0005H\u0002J\u0010\u0010W\u001a\u0002042\u0006\u0010X\u001a\u00020\u0005H\u0002J\b\u0010Y\u001a\u000204H\u0002J\b\u0010Z\u001a\u000204H\u0016J\u0010\u0010[\u001a\u0002042\u0006\u0010\\\u001a\u00020]H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00050\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001c\u001a\n \u001e*\u0004\u0018\u00010\u001d0\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u0004\u0018\u00010#X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010/\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00100\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00102\u001a\b\u0012\u0004\u0012\u00020\u00050'X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006`"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/widget/FrameLayout;", "binding", "Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameScreenBinding;", "boxAdapter", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter;", "itemAdapter", "correctEggToBoxMap", "", "currentNeedItem", "scopeJob", "Lkotlinx/coroutines/CompletableJob;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "collectedEggsState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "collectedEggsCollector", "Lkotlinx/coroutines/Job;", "selectItemImage", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemModel;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "successSoundId", "failureSoundId", "clickEggSoundId", "mediaPlayer", "Landroid/media/MediaPlayer;", "animationScale", "", "itemEggList", "", "boxEggList", "itemDocumentList", "boxDocumentList", "itemCrystalList", "boxCrystalList", "itemHalloweenList", "boxHalloweenList", "itemNewYearList", "boxNewYearList", "itemImageList", "boxImageList", "setVisibility", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "setCurrentNeedItem", "setGameType", "type", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen$Companion$ConveyorType;", "initEggType", "initDocumentType", "initCrystalType", "initHalloweenType", "initNewYearType", "updateLeftItem", "leftItem", "needItem", "openAgeLabel", "openScreen", "checkIsHasAnimation", "view", "Landroid/view/View;", "showItems", "startInfiniteAnimation", "onBoxClick", "itemModel", "onItemClick", "refreshItems", "getCorrectEggToBoxMap", "getRandomItemImageList", "toConveyorItemModel", "playSound", "soundId", "startBackgroundMelody", "melodyId", "closeScreen", "onEnterHiddenCache", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "Companion", "Spawner", "conveyor"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ConveyorGameScreen extends SAMPUIElement {
     private static final float CONVEYOR_SPEED = 120.0f;
@@ -60,6 +65,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
     private List<Integer> boxImageList;
     private final List<Integer> boxNewYearList;
     private int clickEggSoundId;
+    private final Job collectedEggsCollector;
     private final MutableStateFlow<Integer> collectedEggsState;
     private Map<Integer, Integer> correctEggToBoxMap;
     private int currentNeedItem;
@@ -73,6 +79,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
     private final List<Integer> itemNewYearList;
     private MediaPlayer mediaPlayer;
     private final CoroutineScope scope;
+    private final CompletableJob scopeJob;
     private final FrameLayout screen;
     private ConveyorGameItemModel selectItemImage;
     private final SoundPool soundPool;
@@ -121,6 +128,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ConveyorGameScreen(Activity targetActivity, int i) {
         super(targetActivity, i);
+        Job launch$default;
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         View inflate = targetActivity.getLayoutInflater().inflate(R.layout.conveyor_game_screen, (ViewGroup) null);
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type android.widget.FrameLayout");
@@ -132,8 +140,13 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         this.boxAdapter = new ConveyorGameItemAdapter(false, new ConveyorGameScreen$boxAdapter$1(this), null, 5, null);
         this.itemAdapter = new ConveyorGameItemAdapter(true, new ConveyorGameScreen$itemAdapter$1(this), new ConveyorGameScreen$itemAdapter$2(this));
         this.correctEggToBoxMap = new LinkedHashMap();
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
+        CompletableJob SupervisorJob$default = SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null);
+        this.scopeJob = SupervisorJob$default;
+        CoroutineScope CoroutineScope = CoroutineScopeKt.CoroutineScope(SupervisorJob$default.plus(Dispatchers.getMain().getImmediate()));
+        this.scope = CoroutineScope;
         this.collectedEggsState = StateFlowKt.MutableStateFlow(0);
+        launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScope, null, null, new ConveyorGameScreen$collectedEggsCollector$1(this, null), 3, null);
+        this.collectedEggsCollector = launch$default;
         SoundPool build = new SoundPool.Builder().setMaxStreams(1).setAudioAttributes(new AudioAttributes.Builder().setContentType(4).setUsage(14).build()).build();
         this.soundPool = build;
         Activity activity = targetActivity;
@@ -205,7 +218,6 @@ public final class ConveyorGameScreen extends SAMPUIElement {
 
     private final void setCurrentNeedItem(String str) {
         this.currentNeedItem = Integer.parseInt(str);
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ConveyorGameScreen$setCurrentNeedItem$1(this, null), 3, null);
     }
 
     private final void setGameType(Companion.ConveyorType conveyorType) {
@@ -433,7 +445,8 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         int image = conveyorGameItemModel.getImage();
         if (num != null && num.intValue() == image) {
             this.selectItemImage = null;
-            BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ConveyorGameScreen$onBoxClick$1(this, null), 3, null);
+            MutableStateFlow<Integer> mutableStateFlow = this.collectedEggsState;
+            mutableStateFlow.setValue(Integer.valueOf(mutableStateFlow.getValue().intValue() + 1));
             getNotifier().clickedWrapper(getBackendID(), 0, Companion.ConveyorGameIds.SEND_CURRENT_ITEMS.getSubId());
             playSound(this.successSoundId);
             return;
@@ -501,13 +514,28 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         if (objectAnimator != null) {
             objectAnimator.cancel();
         }
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new ConveyorGameScreen$closeScreen$1(this, null), 3, null);
+        this.collectedEggsState.setValue(0);
         MediaPlayer mediaPlayer = this.mediaPlayer;
         if (mediaPlayer != null) {
             mediaPlayer.stop();
             mediaPlayer.release();
         }
         this.mediaPlayer = null;
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onEnterHiddenCache() {
+        closeScreen();
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        closeScreen();
+        Job.cancel$default(this.collectedEggsCollector, (CancellationException) null, 1, (Object) null);
+        Job.cancel$default((Job) this.scopeJob, (CancellationException) null, 1, (Object) null);
+        this.soundPool.release();
+        super.onRemovedFromStore(reason);
     }
 
     /* compiled from: ConveyorGameScreen.kt */

@@ -2,6 +2,7 @@ package ru.mrlargha.arizona.promo;
 
 import android.graphics.Bitmap;
 import android.widget.ImageView;
+import androidx.media3.container.MdtaMetadataEntry;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -18,7 +19,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.arizona.promo.databinding.ProgressItemBinding;
 /* compiled from: ProgressItemsAdapter.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizona.promo.ProgressItemsAdapter$onBindViewHolder$1$2", f = "ProgressItemsAdapter.kt", i = {}, l = {77}, m = "invokeSuspend", n = {}, nl = {80}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.arizona.promo.ProgressItemsAdapter$onBindViewHolder$1$2", f = "ProgressItemsAdapter.kt", i = {}, l = {MdtaMetadataEntry.TYPE_INDICATOR_UNSIGNED_INT64}, m = "invokeSuspend", n = {}, nl = {81}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 final class ProgressItemsAdapter$onBindViewHolder$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ PromoReward $item;

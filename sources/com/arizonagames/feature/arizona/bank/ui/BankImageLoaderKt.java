@@ -8,6 +8,7 @@ import com.squareup.picasso.RequestCreator;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 /* compiled from: BankImageLoader.kt */
 @Metadata(d1 = {"\u0000$\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\u001a3\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u00042\u000e\b\u0003\u0010\u0005\u001a\u0004\u0018\u00010\u0006:\u0002\b\u00072\b\b\u0002\u0010\b\u001a\u00020\tH\u0000¢\u0006\u0002\u0010\n\u001a\u0012\u0010\u000b\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0003\u001a\u00020\u0004H\u0000¨\u0006\f"}, d2 = {"loadBankImage", "", "Landroid/widget/ImageView;", "path", "", "fallbackRes", "", "Landroidx/annotation/DrawableRes;", "hideWhenUnavailable", "", "(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/Integer;Z)V", "resolveBankImageUrl", "bank"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
@@ -38,13 +39,13 @@ public final class BankImageLoaderKt {
             return;
         }
         imageView.setVisibility(0);
-        RequestCreator load = picasso.load(resolveBankImageUrl);
+        Intrinsics.checkNotNull(picasso);
+        RequestCreator loadSafe = PicassoLoadSafeKt.loadSafe(picasso, resolveBankImageUrl);
         if (num != null) {
-            Intrinsics.checkNotNull(load);
-            load.error(num.intValue());
+            loadSafe.error(num.intValue());
         }
         if (z && num == null) {
-            load.into(imageView, new Callback() { // from class: com.arizonagames.feature.arizona.bank.ui.BankImageLoaderKt$loadBankImage$2
+            loadSafe.into(imageView, new Callback() { // from class: com.arizonagames.feature.arizona.bank.ui.BankImageLoaderKt$loadBankImage$2
                 @Override // com.squareup.picasso.Callback
                 public void onSuccess() {
                     imageView.setVisibility(0);
@@ -57,7 +58,7 @@ public final class BankImageLoaderKt {
                 }
             });
         } else {
-            load.into(imageView);
+            loadSafe.into(imageView);
         }
     }
 

@@ -16,12 +16,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassBuyPremiumLayoutBinding;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BattlePassPurchaseController.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.BattlePassPurchaseController$setupBuyPremiumPage$1$4", f = "BattlePassPurchaseController.kt", i = {1, 2, 2}, l = {140, 147, 154}, m = "invokeSuspend", n = {"bitmap1", "bitmap1", "bitmap2"}, nl = {143, 150, 157}, s = {"L$0", "L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.battlepassWinter2025.BattlePassPurchaseController$setupBuyPremiumPage$1$4", f = "BattlePassPurchaseController.kt", i = {1, 2, 2}, l = {TrainSpeedGaugeView.MAX_SPEED_KMH, 147, 154}, m = "invokeSuspend", n = {"bitmap1", "bitmap1", "bitmap2"}, nl = {143, 150, 157}, s = {"L$0", "L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class BattlePassPurchaseController$setupBuyPremiumPage$1$4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ WinterBattlepassBuyPremiumLayoutBinding $this_apply;

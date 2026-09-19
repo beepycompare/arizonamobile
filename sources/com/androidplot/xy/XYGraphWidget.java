@@ -28,6 +28,7 @@ import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.Map;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 /* loaded from: classes3.dex */
 public class XYGraphWidget extends Widget {
     private static final float DEFAULT_LINE_LABEL_TEXT_SIZE_PX = PixelUtils.spToPix(15.0f);
@@ -163,7 +164,7 @@ public class XYGraphWidget extends Widget {
         this.lineLabelRenderers = getDefaultLineLabelRenderers();
         Paint paint = new Paint();
         this.gridBackgroundPaint = paint;
-        paint.setColor(Color.rgb(140, 140, 140));
+        paint.setColor(Color.rgb((int) TrainSpeedGaugeView.MAX_SPEED_KMH, (int) TrainSpeedGaugeView.MAX_SPEED_KMH, (int) TrainSpeedGaugeView.MAX_SPEED_KMH));
         this.gridBackgroundPaint.setStyle(Paint.Style.FILL);
         Paint paint2 = new Paint();
         paint2.setColor(Color.rgb(180, 180, 180));

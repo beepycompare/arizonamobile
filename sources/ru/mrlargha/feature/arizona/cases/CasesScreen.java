@@ -40,6 +40,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.flow.MutableStateFlow;
@@ -47,6 +48,7 @@ import kotlinx.coroutines.flow.StateFlowKt;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
@@ -60,11 +62,12 @@ import ru.mrlargha.feature.arizona.cases.pages.CasesBasePage;
 import ru.mrlargha.feature.arizona.cases.pages.CasesMainPage;
 import ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage;
 /* compiled from: CasesScreen.kt */
-@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u00002\u00020\u0001:\u0001GB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020)H\u0016J\u0018\u0010*\u001a\u00020'2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0016J\u0010\u0010.\u001a\u00020'2\u0006\u0010/\u001a\u00020)H\u0002J\b\u00100\u001a\u00020'H\u0002J\b\u00101\u001a\u00020'H\u0002J\b\u00102\u001a\u00020)H\u0002J\u0010\u00103\u001a\u00020'2\u0006\u00104\u001a\u00020\u0012H\u0002J\u0016\u00105\u001a\u00020'2\f\u00106\u001a\b\u0012\u0004\u0012\u0002070\u0014H\u0002J\u0010\u00108\u001a\u00020'2\u0006\u00109\u001a\u00020\u000bH\u0002J\"\u0010:\u001a\u00020'2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u00109\u001a\u00020\u000bH\u0002J\"\u0010;\u001a\u00020'2\b\u0010<\u001a\u0004\u0018\u00010=2\u000e\b\u0002\u0010>\u001a\b\u0012\u0004\u0012\u00020'0?H\u0002J\b\u0010@\u001a\u00020'H\u0002J\n\u0010A\u001a\u0004\u0018\u00010,H\u0002J\u0012\u0010B\u001a\u0004\u0018\u00010=2\u0006\u0010C\u001a\u00020,H\u0002J\u0010\u0010D\u001a\u00020'2\u0006\u0010E\u001a\u00020,H\u0002J\b\u0010F\u001a\u00020'H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001d\u001a\u00020\u001e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020%0$X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lru/mrlargha/feature/arizona/cases/CasesScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "currentPage", "Lru/mrlargha/feature/arizona/cases/CasesPages;", "casesBinding", "Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesScreenBinding;", "initMainPageJob", "Lkotlinx/coroutines/Job;", "infoState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;", "casesState", "", "Lru/mrlargha/feature/arizona/cases/data/remote/models/CasesModel;", "prizesList", "Lru/mrlargha/feature/arizona/cases/CasesGuaranteedPrizeModel;", "casesSharedPreference", "Lru/mrlargha/feature/arizona/cases/data/local/CasesSharedPreference;", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;", "videoPlayingType", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/arizona/cases/data/remote/apiservices/CasesApiService;", "pagesMap", "", "Lru/mrlargha/feature/arizona/cases/pages/CasesBasePage;", "setVisibility", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "setLoadingScreen", "isLoadingScreen", "setupListeners", "setCollectors", "startGoldBoxAnimation", "initInfo", CommonUrlParts.MODEL, "setWinnerPrize", "prizeIds", "Lru/mrlargha/feature/arizona/cases/CasesWinItemModel;", "changePage", "page", "sendEventToPage", "playVideo", "videoFile", "Ljava/io/File;", "onEnded", "Lkotlin/Function0;", "releasePlayer", "getSAMPPath", "getVideoFile", "videoName", "showToast", "message", "onQuality", "Spawner", "cases"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ª\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u00002\u00020\u0001:\u0001MB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+H\u0016J\u0018\u0010,\u001a\u00020)2\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0005H\u0016J\u0010\u00100\u001a\u00020)2\u0006\u00101\u001a\u00020+H\u0002J\b\u00102\u001a\u00020)H\u0002J\b\u00103\u001a\u00020)H\u0002J\b\u00104\u001a\u00020+H\u0002J\u0010\u00105\u001a\u00020)2\u0006\u00106\u001a\u00020\u0012H\u0002J\u0016\u00107\u001a\u00020)2\f\u00108\u001a\b\u0012\u0004\u0012\u0002090\u0014H\u0002J\u0010\u0010:\u001a\u00020)2\u0006\u0010;\u001a\u00020\u000bH\u0002J\"\u0010<\u001a\u00020)2\u0006\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u00052\b\b\u0002\u0010;\u001a\u00020\u000bH\u0002J\"\u0010=\u001a\u00020)2\b\u0010>\u001a\u0004\u0018\u00010?2\u000e\b\u0002\u0010@\u001a\b\u0012\u0004\u0012\u00020)0AH\u0002J\b\u0010B\u001a\u00020)H\u0002J\b\u0010C\u001a\u00020)H\u0016J\u0010\u0010D\u001a\u00020)2\u0006\u0010E\u001a\u00020FH\u0016J\n\u0010G\u001a\u0004\u0018\u00010.H\u0002J\u0012\u0010H\u001a\u0004\u0018\u00010?2\u0006\u0010I\u001a\u00020.H\u0002J\u0010\u0010J\u001a\u00020)2\u0006\u0010K\u001a\u00020.H\u0002J\b\u0010L\u001a\u00020)H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00150\u00140\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00170\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u001d\u001a\u00020\u001e¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010 R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u00020'0&X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006N"}, d2 = {"Lru/mrlargha/feature/arizona/cases/CasesScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "currentPage", "Lru/mrlargha/feature/arizona/cases/CasesPages;", "casesBinding", "Lru/mrlargha/feature/arizona/cases/databinding/ArizonaCasesScreenBinding;", "initMainPageJob", "Lkotlinx/coroutines/Job;", "infoState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/feature/arizona/cases/CasesInfoModel;", "casesState", "", "Lru/mrlargha/feature/arizona/cases/data/remote/models/CasesModel;", "prizesList", "Lru/mrlargha/feature/arizona/cases/CasesGuaranteedPrizeModel;", "casesSharedPreference", "Lru/mrlargha/feature/arizona/cases/data/local/CasesSharedPreference;", "exoPlayer", "Landroidx/media3/exoplayer/ExoPlayer;", "videoPlayingType", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/feature/arizona/cases/data/remote/apiservices/CasesApiService;", "casesOpenPage", "Lru/mrlargha/feature/arizona/cases/pages/CasesOpenPage;", "pagesMap", "", "Lru/mrlargha/feature/arizona/cases/pages/CasesBasePage;", "setVisibility", "", "visible", "", "onBackendMessageHandled", "data", "", "subId", "setLoadingScreen", "isLoadingScreen", "setupListeners", "setCollectors", "startGoldBoxAnimation", "initInfo", CommonUrlParts.MODEL, "setWinnerPrize", "prizeIds", "Lru/mrlargha/feature/arizona/cases/CasesWinItemModel;", "changePage", "page", "sendEventToPage", "playVideo", "videoFile", "Ljava/io/File;", "onEnded", "Lkotlin/Function0;", "releasePlayer", "onEnterHiddenCache", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "getSAMPPath", "getVideoFile", "videoName", "showToast", "message", "onQuality", "Spawner", "cases"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CasesScreen extends SAMPUIElement {
     private final CasesApiService api;
     private final ArizonaCasesScreenBinding casesBinding;
+    private final CasesOpenPage casesOpenPage;
     private final CasesSharedPreference casesSharedPreference;
     private final MutableStateFlow<List<CasesModel>> casesState;
     private final ArizonaRetrofit client;
@@ -105,18 +108,19 @@ public final class CasesScreen extends SAMPUIElement {
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, getBackendID());
         this.client = arizonaRetrofit;
         this.api = (CasesApiService) ArizonaRetrofit.create$default(arizonaRetrofit, CasesApiService.class, false, null, null, 14, null);
+        ArizonaCasesOpenPageBinding openPage = bind.openPage;
+        Intrinsics.checkNotNullExpressionValue(openPage, "openPage");
+        CasesOpenPage casesOpenPage = new CasesOpenPage(targetActivity, openPage, getNotifier());
+        this.casesOpenPage = casesOpenPage;
         CasesPages casesPages = CasesPages.MAIN;
         ArizonaCasesMainPageBinding mainPage = bind.mainPage;
         Intrinsics.checkNotNullExpressionValue(mainPage, "mainPage");
-        CasesPages casesPages2 = CasesPages.OPEN;
-        ArizonaCasesOpenPageBinding openPage = bind.openPage;
-        Intrinsics.checkNotNullExpressionValue(openPage, "openPage");
         this.pagesMap = MapsKt.mapOf(TuplesKt.to(casesPages, new CasesMainPage(targetActivity, mainPage, getNotifier(), new Function0() { // from class: ru.mrlargha.feature.arizona.cases.CasesScreen$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return CasesScreen.pagesMap$lambda$0(CasesScreen.this);
             }
-        })), TuplesKt.to(casesPages2, new CasesOpenPage(targetActivity, openPage, getNotifier())));
+        })), TuplesKt.to(CasesPages.OPEN, casesOpenPage));
         Context applicationContext = targetActivity.getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
         CasesResponseKt.setAppContext(applicationContext);
@@ -474,10 +478,39 @@ public final class CasesScreen extends SAMPUIElement {
     public final void releasePlayer() {
         changePage(this.videoPlayingType);
         ExoPlayer exoPlayer = this.exoPlayer;
+        this.exoPlayer = null;
+        this.casesBinding.videoAdviceBg.setPlayer(null);
         if (exoPlayer != null) {
             exoPlayer.release();
         }
-        this.exoPlayer = null;
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onEnterHiddenCache() {
+        Job job = this.initMainPageJob;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
+        this.initMainPageJob = null;
+        if (this.exoPlayer != null) {
+            releasePlayer();
+        }
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        Job job = this.initMainPageJob;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
+        this.initMainPageJob = null;
+        if (this.exoPlayer != null) {
+            releasePlayer();
+        }
+        this.casesOpenPage.dispose();
+        CoroutineScopeKt.cancel$default(this.client.getScope(), null, 1, null);
+        super.onRemovedFromStore(reason);
     }
 
     private final String getSAMPPath() {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/paypass_progress_row" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="@dimen/_20sdp">
+        <FrameLayout android:clipChildren="false" android:layout_width="@dimen/_82sdp" android:layout_height="match_parent">
+            <LinearLayout android:layout_gravity="start|center_vertical" android:orientation="horizontal" android:layout_width="@dimen/_82sdp" android:layout_height="@dimen/_6sdp">
+                <View android:id="@+id/paypass_progress_before" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"/>
+                <View android:id="@+id/paypass_progress_after" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"/>
+            </LinearLayout>
+            <include android:id="@+id/paypass_marker" android:layout_width="@dimen/_82sdp" android:layout_height="match_parent" layout="@layout/donate_pay_pass_marker"/>
+        </FrameLayout>
+        <View android:id="@+id/paypass_progress_gap" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_6sdp"/>
+    </LinearLayout>
+    <include android:id="@+id/paypass_tier" android:layout_width="@dimen/_82sdp" android:layout_height="@dimen/_110sdp" android:layout_marginTop="@dimen/_10sdp" layout="@layout/donate_pay_pass_tier"/>
+</LinearLayout>

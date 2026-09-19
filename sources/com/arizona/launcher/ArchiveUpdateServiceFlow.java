@@ -8,6 +8,7 @@ import com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorRetryPolic
 import com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStartupGuard;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageRequirementsSnapshot;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageSpaceCheckResult;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateSessionSnapshot;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateSessionState;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdaterErrorCode;
@@ -56,6 +57,7 @@ public final class ArchiveUpdateServiceFlow {
     /* loaded from: classes3.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
+        public static final /* synthetic */ int[] $EnumSwitchMapping$1;
 
         static {
             int[] iArr = new int[ArchiveStartupGuard.values().length];
@@ -72,6 +74,20 @@ public final class ArchiveUpdateServiceFlow {
             } catch (NoSuchFieldError unused3) {
             }
             $EnumSwitchMapping$0 = iArr;
+            int[] iArr2 = new int[ArchiveStorageSpaceCheckResult.values().length];
+            try {
+                iArr2[ArchiveStorageSpaceCheckResult.ENOUGH.ordinal()] = 1;
+            } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr2[ArchiveStorageSpaceCheckResult.INSUFFICIENT.ordinal()] = 2;
+            } catch (NoSuchFieldError unused5) {
+            }
+            try {
+                iArr2[ArchiveStorageSpaceCheckResult.UNAVAILABLE.ordinal()] = 3;
+            } catch (NoSuchFieldError unused6) {
+            }
+            $EnumSwitchMapping$1 = iArr2;
         }
     }
 
@@ -176,10 +192,21 @@ public final class ArchiveUpdateServiceFlow {
             }
             boolean isFinalizationOnly = ArchiveWorkDispatchPolicy.INSTANCE.isFinalizationOnly(archiveUpdatePlan.getType(), archiveUpdateSessionSnapshot.getRequiresFinalization());
             ArchiveStorageRequirementsSnapshot storageRequirements = archiveUpdateSessionSnapshot.getStorageRequirements();
-            if (!isFinalizationOnly && !this.host.hasEnoughSpaceForArchive(storageRequirements)) {
-                function0.invoke();
-                this.host.completeArchiveFailure(new ArchiveServiceFailure("not enough free space for archive install; required=" + storageRequirements.getRequiredFreeSpaceBytes() + " plus reserve", ArchiveServiceFailureKind.INSUFFICIENT_STORAGE, null, Long.valueOf(storageRequirements.getRequiredFreeSpaceBytes()), null, 20, null));
-                return;
+            if (!isFinalizationOnly) {
+                int i = WhenMappings.$EnumSwitchMapping$1[this.host.checkArchiveStorageSpace(storageRequirements).ordinal()];
+                if (i != 1) {
+                    if (i != 2) {
+                        if (i != 3) {
+                            throw new NoWhenBranchMatchedException();
+                        }
+                        function0.invoke();
+                        this.host.completeArchiveFailure(new ArchiveServiceFailure("unable to inspect archive storage for archive install", ArchiveServiceFailureKind.STORAGE_UNAVAILABLE, new DownloadFailureDetails("STORAGE_INSPECTION_FAILED", null, null, 6, null), null, null, 24, null));
+                        return;
+                    }
+                    function0.invoke();
+                    this.host.completeArchiveFailure(new ArchiveServiceFailure("not enough free space for archive install; required=" + storageRequirements.getRequiredFreeSpaceBytes() + " plus reserve", ArchiveServiceFailureKind.INSUFFICIENT_STORAGE, null, Long.valueOf(storageRequirements.getRequiredFreeSpaceBytes()), null, 20, null));
+                    return;
+                }
             }
             ArchiveForegroundPromotion promoteArchiveForeground = this.host.promoteArchiveForeground();
             if (!Intrinsics.areEqual(promoteArchiveForeground, ArchiveForegroundPromotion.Ready.INSTANCE)) {
@@ -297,48 +324,57 @@ public final class ArchiveUpdateServiceFlow {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:3|(6:5|6|7|(1:(2:10|11)(2:32|33))(2:34|(2:36|37)(4:38|(1:40)(1:44)|41|(1:43)))|12|(2:26|(4:28|29|15|(2:17|18)(2:20|(2:22|23)(2:24|25)))(2:30|31))(3:14|15|(0)(0))))|56|6|7|(0)(0)|12|(0)(0)|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0037, code lost:
+    /* JADX WARN: Can't wrap try/catch for region: R(9:1|(2:3|(6:5|6|7|(1:(2:10|11)(2:32|33))(2:34|(2:36|37)(4:38|(1:40)(1:44)|41|(1:43)))|12|(2:26|(4:28|29|15|(2:17|18)(2:20|(2:22|23)(2:24|25)))(2:30|31))(3:14|15|(0)(0))))|59|6|7|(0)(0)|12|(0)(0)|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0039, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x00a1, code lost:
-        r17.host.recordArchiveFinalizationException(r0);
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00c8, code lost:
+        r19.host.recordArchiveFinalizationException(r0);
         r4 = com.arizona.launcher.updater.archive.io.ArchiveStorageFailureClassifier.INSTANCE.isNoSpace(r0);
-        r10 = "archive metadata reconciliation or durable finalization failed: " + r0.getMessage();
+        r11 = "archive metadata reconciliation or durable finalization failed: " + r0.getMessage();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x00c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00eb, code lost:
         if (r4 != false) goto L50;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x00c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00ed, code lost:
         r0 = com.arizona.launcher.ArchiveServiceFailureKind.INSUFFICIENT_STORAGE;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00f0, code lost:
         r0 = com.arizona.launcher.ArchiveServiceFailureKind.RECOVERY_BLOCKED;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x00cb, code lost:
-        r11 = r0;
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00f2, code lost:
+        r12 = r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x00cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00f3, code lost:
         if (r4 != false) goto L53;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x00ce, code lost:
-        r8 = kotlin.coroutines.jvm.internal.Boxing.boxLong(r17.sessionState.snapshot().getStorageRequirements().getRequiredFreeSpaceBytes());
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00f5, code lost:
+        r13 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x00e0, code lost:
-        r9 = new com.arizona.launcher.ArchiveServiceFailure(r10, r11, null, r8, kotlin.coroutines.jvm.internal.Boxing.boxLong(r2), 4, null);
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x00f7, code lost:
+        r13 = new com.arizona.launcher.DownloadFailureDetails("FINALIZATION_EXCEPTION", null, null, 6, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x0112, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0105, code lost:
+        if (r4 != false) goto L55;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x0107, code lost:
+        r9 = kotlin.coroutines.jvm.internal.Boxing.boxLong(r19.sessionState.snapshot().getStorageRequirements().getRequiredFreeSpaceBytes());
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x0119, code lost:
+        r10 = new com.arizona.launcher.ArchiveServiceFailure(r11, r12, r13, r9, kotlin.coroutines.jvm.internal.Boxing.boxLong(r2));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0147, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0113, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x0148, code lost:
         throw r0;
      */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002b  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x007e  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x007f A[Catch: Exception -> 0x0037, CancellationException -> 0x0112, TryCatch #2 {CancellationException -> 0x0112, Exception -> 0x0037, blocks: (B:12:0x0033, B:29:0x0074, B:32:0x007f, B:34:0x0083, B:35:0x009b, B:36:0x00a0, B:26:0x0061), top: B:58:0x0029 }] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00f8  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0083 A[Catch: Exception -> 0x0039, CancellationException -> 0x0147, TryCatch #2 {CancellationException -> 0x0147, Exception -> 0x0039, blocks: (B:12:0x0035, B:29:0x0077, B:32:0x0083, B:34:0x0087, B:35:0x00c2, B:36:0x00c7, B:26:0x0064), top: B:61:0x002b }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x012d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -383,7 +419,7 @@ public final class ArchiveUpdateServiceFlow {
                     if (!(archiveMetadataFinalizationResult instanceof ArchiveMetadataFinalizationResult.Blocked)) {
                         throw new NoWhenBranchMatchedException();
                     }
-                    ArchiveServiceFailure archiveServiceFailure2 = new ArchiveServiceFailure(((ArchiveMetadataFinalizationResult.Blocked) archiveMetadataFinalizationResult).getDetail(), ArchiveServiceFailureKind.RECOVERY_BLOCKED, null, null, Boxing.boxLong(j2), 12, null);
+                    ArchiveServiceFailure archiveServiceFailure2 = new ArchiveServiceFailure(((ArchiveMetadataFinalizationResult.Blocked) archiveMetadataFinalizationResult).getDetail(), ArchiveServiceFailureKind.RECOVERY_BLOCKED, new DownloadFailureDetails("FINALIZATION_" + ((ArchiveMetadataFinalizationResult.Blocked) archiveMetadataFinalizationResult).getReason().name(), null, null, 6, null), null, Boxing.boxLong(j2), 8, null);
                     archiveServiceFailure = archiveServiceFailure2;
                     if (this.host.isCurrentArchiveOperation(j2)) {
                         return Unit.INSTANCE;
@@ -415,10 +451,19 @@ public final class ArchiveUpdateServiceFlow {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0089, code lost:
+        if (r0 == null) goto L37;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void completeWithFailure(ArchiveUpdaterResult.Failure failure, long j) {
         ArchiveServiceFailureKind archiveServiceFailureKind;
+        DownloadFailureDetails downloadFailureDetails;
         String detail;
         Long l;
+        ArchivePackageDownloadErrorCode downloadErrorCode;
+        String str;
         if (this.host.isCurrentArchiveOperation(j)) {
             Long runtimeDownloadBytes = failure.getRuntimeDownloadBytes();
             if (runtimeDownloadBytes != null) {
@@ -439,21 +484,32 @@ public final class ArchiveUpdateServiceFlow {
                 }
             }
             ArchiveServiceFailureKind archiveServiceFailureKind2 = archiveServiceFailureKind;
+            DownloadFailureDetails downloadFailure2 = failure.getDownloadFailure();
+            if (downloadFailure2 != null) {
+                downloadFailureDetails = downloadFailure2;
+            } else if (archiveServiceFailureKind2 == ArchiveServiceFailureKind.CORRUPTED) {
+                if (failure.getDownloadErrorCode() != null) {
+                    str = "DOWNLOAD_" + downloadErrorCode.name();
+                }
+                str = "UPDATE_" + failure.getCode().name();
+                downloadFailureDetails = new DownloadFailureDetails(str, null, null, 6, null);
+            } else {
+                downloadFailureDetails = null;
+            }
             ArchiveUpdateServiceHost archiveUpdateServiceHost = this.host;
             ArchiveUpdaterErrorCode code = failure.getCode();
             String packageId = failure.getPackageId();
             if (packageId == null) {
                 packageId = "";
             }
-            String str = code + " package=" + packageId + " " + (failure.getDetail() != null ? detail : "");
-            DownloadFailureDetails downloadFailure2 = failure.getDownloadFailure();
+            String str2 = code + " package=" + packageId + " " + (failure.getDetail() != null ? detail : "");
             if (failure.getCode() == ArchiveUpdaterErrorCode.INSUFFICIENT_STORAGE) {
                 Long runtimeRequiredFreeSpaceBytes = failure.getRuntimeRequiredFreeSpaceBytes();
                 l = Long.valueOf(runtimeRequiredFreeSpaceBytes != null ? runtimeRequiredFreeSpaceBytes.longValue() : this.sessionState.snapshot().getStorageRequirements().getRequiredFreeSpaceBytes());
             } else {
                 l = null;
             }
-            archiveUpdateServiceHost.completeArchiveFailure(new ArchiveServiceFailure(str, archiveServiceFailureKind2, downloadFailure2, l, Long.valueOf(j)));
+            archiveUpdateServiceHost.completeArchiveFailure(new ArchiveServiceFailure(str2, archiveServiceFailureKind2, downloadFailureDetails, l, Long.valueOf(j)));
         }
     }
 }

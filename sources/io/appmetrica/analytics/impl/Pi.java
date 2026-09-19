@@ -8,8 +8,8 @@ public final class Pi extends Mn {
     public final Oi d;
     public final ICommonExecutor e;
 
-    public Pi(C0447n5 c0447n5, InterfaceC0438mm interfaceC0438mm, ICommonExecutor iCommonExecutor) {
-        super(c0447n5, interfaceC0438mm);
+    public Pi(C0446n5 c0446n5, InterfaceC0437mm interfaceC0437mm, ICommonExecutor iCommonExecutor) {
+        super(c0446n5, interfaceC0437mm);
         this.d = new Oi(this);
         this.e = iCommonExecutor;
     }
@@ -22,14 +22,14 @@ public final class Pi extends Mn {
     @Override // io.appmetrica.analytics.impl.Mn
     public final void f() {
         this.b.a();
-        Eh eh = (Eh) ((C0447n5) this.f672a).k.a();
+        Eh eh = (Eh) ((C0446n5) this.f672a).k.a();
         if (eh.k.a(eh.j)) {
             String str = eh.m;
             if (TextUtils.isEmpty(str) || "-1".equals(str)) {
                 return;
             }
             try {
-                a(C0689we.a((C0447n5) this.f672a));
+                a(C0688we.a((C0446n5) this.f672a));
             } catch (Throwable unused) {
             }
         }
@@ -45,8 +45,8 @@ public final class Pi extends Mn {
             return;
         }
         this.e.remove(this.d);
-        if (((Eh) ((C0447n5) this.f672a).k.a()).g > 0) {
-            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((Eh) ((C0447n5) this.f672a).k.a()).g));
+        if (((Eh) ((C0446n5) this.f672a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((Eh) ((C0446n5) this.f672a).k.a()).g));
         }
     }
 }

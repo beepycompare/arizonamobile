@@ -13,10 +13,11 @@ import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.MutableStateFlow;
+import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesOpenPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$updateCost$1", f = "CasesOpenPage.kt", i = {}, l = {147}, m = "invokeSuspend", n = {}, nl = {150}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$updateCost$1", f = "CasesOpenPage.kt", i = {}, l = {150}, m = "invokeSuspend", n = {}, nl = {BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class CasesOpenPage$updateCost$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $cost;
@@ -44,7 +45,7 @@ public final class CasesOpenPage$updateCost$1 extends SuspendLambda implements F
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CasesOpenPage.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$updateCost$1$1", f = "CasesOpenPage.kt", i = {}, l = {148}, m = "invokeSuspend", n = {}, nl = {149}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$updateCost$1$1", f = "CasesOpenPage.kt", i = {}, l = {151}, m = "invokeSuspend", n = {}, nl = {BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.feature.arizona.cases.pages.CasesOpenPage$updateCost$1$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

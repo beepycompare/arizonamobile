@@ -22,6 +22,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.feature.arizona.cases.CasesCurrencyType;
 import ru.mrlargha.feature.arizona.cases.CasesSameCasesModel;
 import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesBadgesModel;
@@ -97,7 +98,9 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
             ArizonaCasesSameCasesItemBinding arizonaCasesSameCasesItemBinding = this.binding;
             Log.d("CasesScreen", "initialize: " + casesSameCasesModel);
             arizonaCasesSameCasesItemBinding.tvPrizeName.setText(casesSameCasesModel.getTitle());
-            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/cases/" + casesSameCasesModel.getId() + ".webp").into(arizonaCasesSameCasesItemBinding.ivPrize);
+            Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+            PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/cases/" + casesSameCasesModel.getId() + ".webp").into(arizonaCasesSameCasesItemBinding.ivPrize);
             arizonaCasesSameCasesItemBinding.tvPrizeCost.setText(String.valueOf(casesSameCasesModel.getCost()));
             TextView tvPrizeCost = arizonaCasesSameCasesItemBinding.tvPrizeCost;
             Intrinsics.checkNotNullExpressionValue(tvPrizeCost, "tvPrizeCost");
@@ -132,7 +135,7 @@ public final class CasesSameCasesAdapter extends ListAdapter<CasesSameCasesModel
                     tvNew2.setVisibility(0);
                 }
             }
-            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m11923getCurrency().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[casesSameCasesModel.m11924getCurrency().ordinal()];
             if (i == 1) {
                 arizonaCasesSameCasesItemBinding.ivRub.setImageResource(R.drawable.blueprint_ic_rub);
                 arizonaCasesSameCasesItemBinding.ivRub.setImageTintList(ColorStateList.valueOf(Color.parseColor("#95FF00")));

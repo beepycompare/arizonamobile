@@ -36,6 +36,7 @@ import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.ConverterKt;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.feature.arizona.cases.CasesCurrencyType;
 import ru.mrlargha.feature.arizona.cases.CasesGuaranteedPrizeModel;
 import ru.mrlargha.feature.arizona.cases.CasesId;
@@ -176,15 +177,17 @@ public final class CasesMainPage implements CasesBasePage {
         this.isHasCost = false;
         arizonaCasesMainPageBinding.animateContainer.setVisibility(4);
         this.baseModel = casesInfoModel;
-        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11921getCountLeft());
+        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11922getCountLeft());
         setSelectXType(true);
         hidePrizePage$default(this, false, 1, null);
         Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(projectResourceUrl$default + "systems/cases/" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCase);
+        PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "systems/cases/" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCase);
         Picasso picasso2 = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
         String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso2.load(projectResourceUrl$default2 + "systems/cases/logo_" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCaseLogo, new Callback() { // from class: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$initialize$1$1
+        PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "systems/cases/logo_" + casesInfoModel.getCaseId() + ".webp").into(arizonaCasesMainPageBinding.ivCaseLogo, new Callback() { // from class: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$initialize$1$1
             @Override // com.squareup.picasso.Callback
             public void onError(Exception exc) {
             }
@@ -197,7 +200,7 @@ public final class CasesMainPage implements CasesBasePage {
                 ArizonaCasesMainPageBinding.this.animateContainer.animate().translationY(0.0f).alpha(1.0f).setDuration(400L).setInterpolator(new DecelerateInterpolator()).start();
             }
         });
-        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11922getCurrency().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11923getCurrency().ordinal()];
         if (i == 1) {
             arizonaCasesMainPageBinding.ivMoneyIc.setImageResource(R.drawable.ic_rubble);
             arizonaCasesMainPageBinding.ivMoneyIc.setImageTintList(ColorStateList.valueOf(-16777216));

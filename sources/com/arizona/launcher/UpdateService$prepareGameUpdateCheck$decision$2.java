@@ -2,7 +2,6 @@ package com.arizona.launcher;
 
 import com.arizona.launcher.updater.archive.adoption.ArchiveInstallAdopter;
 import com.arizona.launcher.updater.archive.model.ArchiveGpu;
-import com.arizona.launcher.updater.archive.orchestrator.ArchiveBootstrapPrefetcher;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestResolver;
 import com.arizona.launcher.updater.archive.orchestrator.ArchivePackageArtifactCleaner;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveSelectiveDownloadEstimator;
@@ -22,10 +21,11 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$prepareGameUpdateCheck$decision$2", f = "UpdateService.kt", i = {0, 0, 0}, l = {473}, m = "invokeSuspend", n = {"gameRoot", "rangeRetryListener", "retryEnabled"}, nl = {488}, s = {"L$0", "L$1", "Z$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$prepareGameUpdateCheck$decision$2", f = "UpdateService.kt", i = {0, 0, 0}, l = {478}, m = "invokeSuspend", n = {"gameRoot", "rangeRetryListener", "retryEnabled"}, nl = {488}, s = {"L$0", "L$1", "Z$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$prepareGameUpdateCheck$decision$2 extends SuspendLambda implements Function1<Continuation<? super ArchiveUpdateCheckDecision>, Object> {
     final /* synthetic */ UpdateOperationKind $kind;
@@ -102,17 +102,16 @@ public final class UpdateService$prepareGameUpdateCheck$decision$2 extends Suspe
         } catch (Exception unused) {
             archiveSelectiveDownloadEstimator = null;
         }
-        ArchiveUpdateCheckCoordinator archiveUpdateCheckCoordinator = new ArchiveUpdateCheckCoordinator(externalFilesDir, durableArchiveStateStore2, forAndroid, forAndroid2, file2, null, create, null, archiveSelectiveDownloadEstimator, 160, null);
+        ArchiveUpdateCheckCoordinator archiveUpdateCheckCoordinator = new ArchiveUpdateCheckCoordinator(externalFilesDir, durableArchiveStateStore2, forAndroid, forAndroid2, file2, null, create, null, archiveSelectiveDownloadEstimator, RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, null);
         String str = this.$response;
         selectedArchiveGpu = this.this$0.selectedArchiveGpu();
         String str2 = this.$server;
         boolean z = this.$kind == UpdateOperationKind.CHECK_UPDATE;
-        ArchiveBootstrapPrefetcher forAndroid3 = this.$kind == UpdateOperationKind.CHECK_AND_DOWNLOAD ? ArchiveBootstrapPrefetcher.Companion.forAndroid(this.this$0, isGameDownloadRetryEnabled) : null;
         this.L$0 = SpillingKt.nullOutSpilledVariable(externalFilesDir);
         this.L$1 = SpillingKt.nullOutSpilledVariable(updateService$prepareGameUpdateCheck$decision$2$rangeRetryListener$12);
         this.Z$0 = isGameDownloadRetryEnabled;
         this.label = 1;
-        Object prepare = archiveUpdateCheckCoordinator.prepare(str, selectedArchiveGpu, str2, z, forAndroid3, this.$metadataAuditValidatedForFinalization.element, this);
-        return prepare == coroutine_suspended ? coroutine_suspended : prepare;
+        Object prepare$default = ArchiveUpdateCheckCoordinator.prepare$default(archiveUpdateCheckCoordinator, str, selectedArchiveGpu, str2, z, null, this.$metadataAuditValidatedForFinalization.element, this, 16, null);
+        return prepare$default == coroutine_suspended ? coroutine_suspended : prepare$default;
     }
 }

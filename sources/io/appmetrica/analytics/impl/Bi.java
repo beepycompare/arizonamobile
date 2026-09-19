@@ -8,17 +8,17 @@ import io.appmetrica.analytics.plugins.IPluginReporter;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Map;
 /* loaded from: classes5.dex */
-public class Bi implements InterfaceC0505pb {
+public class Bi implements InterfaceC0504pb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0535qf f481a = new C0535qf();
+    public final C0534qf f481a = new C0534qf();
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0505pb, io.appmetrica.analytics.impl.InterfaceC0313i0
+    @Override // io.appmetrica.analytics.impl.InterfaceC0504pb, io.appmetrica.analytics.impl.InterfaceC0312i0
     public final void a(X x) {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0505pb, io.appmetrica.analytics.impl.InterfaceC0608tb
-    public final void a(C0621to c0621to) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0504pb, io.appmetrica.analytics.impl.InterfaceC0607tb
+    public final void a(C0620to c0620to) {
     }
 
     @Override // io.appmetrica.analytics.IReporter

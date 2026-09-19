@@ -31,6 +31,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
@@ -106,6 +107,11 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         setupNavigation();
         setupAdapters();
         getApiData();
+    }
+
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
     }
 
     public final ArizonaRetrofit getClient() {
@@ -408,8 +414,9 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         EmploymentCenterMainBinding employmentCenterMainBinding = this.binding.main;
         employmentCenterMainBinding.title.setText(job.getName());
         Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(projectResourceUrl$default + "systems/employment_center/banners/mobile/" + job.getId() + ".webp").into(employmentCenterMainBinding.image);
+        PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "systems/employment_center/banners/mobile/" + job.getId() + ".webp").into(employmentCenterMainBinding.image);
         employmentCenterMainBinding.labelBonus.setText("+" + job.getBonusSalary().getPercent() + "%");
         employmentCenterMainBinding.timer.setText(TimeConverterKt.taskPageTimeConvert(job.getBonusSalary().getEndUnixTime()));
         if (job.getBonusSalary().getPercent() > 0 || job.getBonusSalary().getEndUnixTime() - System.currentTimeMillis() > 0) {

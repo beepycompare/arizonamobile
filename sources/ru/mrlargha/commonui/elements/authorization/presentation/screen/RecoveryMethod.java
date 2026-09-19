@@ -87,6 +87,11 @@ public final class RecoveryMethod implements InterfaceController {
         });
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$0(RecoveryMethod recoveryMethod, View view) {
         recoveryMethod.selectedMethod = "Почта";

@@ -29,6 +29,7 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
@@ -302,7 +303,9 @@ public final class CurrentContainer extends SAMPUIElement {
         textView2.setText(valueOf);
         this.binding.ccItemLastBetName.setText(container.getCurrentBetUser());
         this.binding.ccInputBetName.setText(container.getCurrentBetUser());
-        Picasso.get().load(CurrentContainerCdnKt.getContainerImageUrl(container.getImage())).placeholder(R.drawable.auction_container_item).error(R.drawable.auction_container_item).into(this.binding.ccItemImage);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, CurrentContainerCdnKt.getContainerImageUrl(container.getImage())).placeholder(R.drawable.auction_container_item).error(R.drawable.auction_container_item).into(this.binding.ccItemImage);
         CountDownTimer countDownTimer = this.timer;
         if (countDownTimer != null) {
             if (countDownTimer == null) {

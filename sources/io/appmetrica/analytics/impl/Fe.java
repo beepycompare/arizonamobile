@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 import kotlin.NoWhenBranchMatchedException;
 /* loaded from: classes5.dex */
 public final class Fe {
-    public static final V9 a(Fe fe, EnumC0219ea enumC0219ea) {
+    public static final V9 a(Fe fe, EnumC0218ea enumC0218ea) {
         int i;
         fe.getClass();
         V9 v9 = new V9();
-        switch (enumC0219ea.ordinal()) {
+        switch (enumC0218ea.ordinal()) {
             case 0:
                 i = 0;
                 break;

@@ -185,11 +185,13 @@
     <color name="hud_faction_capture_blue_border">#4d3586ff</color>
     <color name="hud_faction_capture_blue_end">#61bfff</color>
     <color name="hud_faction_capture_blue_start">#1a76d8</color>
-    <color name="hud_faction_capture_center">#f20d0d0d</color>
+    <color name="hud_faction_capture_center">#80000000</color>
     <color name="hud_faction_capture_label">#b3ffffff</color>
     <color name="hud_faction_capture_red_border">#4dff6269</color>
     <color name="hud_faction_capture_red_end">#ffadb3</color>
     <color name="hud_faction_capture_red_start">#ff3038</color>
+    <color name="hud_faction_capture_waiting_fill">#80000000</color>
+    <color name="hud_faction_capture_waiting_label_bg">#4d000000</color>
     <color name="hud_prison_border_end">#7098b0</color>
     <color name="hud_prison_border_start">#337098b0</color>
     <color name="hud_prison_gradient_end">#719ab3</color>

@@ -14,6 +14,7 @@ import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.battlepassWinter2025.data.CommonTaskReward;
 import ru.mrlargha.feature.battlepassWinter2025.databinding.WinterBattlepassTaskRewardItemBinding;
@@ -66,7 +67,10 @@ public final class RodinaBattlePassTaskRewardItemViewHolder extends RecyclerView
             UtilsKt.setNotLoadedImage(taskInfoRewardItemImage, context);
             return;
         }
-        Picasso.get().load(ArizonaRewardIconUrl.INSTANCE.build(obj, i)).placeholder(i2).error(i2).into(taskInfoRewardItemImage);
+        String build = ArizonaRewardIconUrl.INSTANCE.build(obj, i);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, build).placeholder(i2).error(i2).into(taskInfoRewardItemImage);
     }
 
     private final void loadArchiveRewardIcon(int i) {

@@ -41,7 +41,7 @@ final class SingleDoOnSuccess<T> extends Single<T> {
 
             @Override // ru.rustore.sdk.reactive.single.SingleObserver
             public void onSuccess(T t) {
-                Object m9920constructorimpl;
+                Object m9921constructorimpl;
                 Function1 function1;
                 SingleDoOnSuccess<T> singleDoOnSuccess = this;
                 try {
@@ -49,20 +49,20 @@ final class SingleDoOnSuccess<T> extends Single<T> {
                     SingleDoOnSuccess$subscribe$wrappedObserver$1<T> singleDoOnSuccess$subscribe$wrappedObserver$1 = this;
                     function1 = ((SingleDoOnSuccess) singleDoOnSuccess).block;
                     function1.invoke(t);
-                    m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
+                    m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+                    m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
                 }
                 SingleObserver<T> singleObserver = downstream;
-                if (Result.m9927isSuccessimpl(m9920constructorimpl)) {
-                    Unit unit = (Unit) m9920constructorimpl;
+                if (Result.m9928isSuccessimpl(m9921constructorimpl)) {
+                    Unit unit = (Unit) m9921constructorimpl;
                     singleObserver.onSuccess(t);
                 }
                 SingleObserver<T> singleObserver2 = downstream;
-                Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-                if (m9923exceptionOrNullimpl != null) {
-                    singleObserver2.onError(m9923exceptionOrNullimpl);
+                Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+                if (m9924exceptionOrNullimpl != null) {
+                    singleObserver2.onError(m9924exceptionOrNullimpl);
                 }
             }
         });

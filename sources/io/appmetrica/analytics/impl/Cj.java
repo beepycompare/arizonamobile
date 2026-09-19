@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 import java.lang.ref.WeakReference;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Cj implements InterfaceC0389l {
+public final class Cj implements InterfaceC0388l {
 
     /* renamed from: a  reason: collision with root package name */
-    public C0664vf f502a;
+    public C0663vf f502a;
     public ScreenInfo b;
     public boolean c;
     public boolean d;
@@ -21,17 +21,17 @@ public final class Cj implements InterfaceC0389l {
         this.f = new WeakReference(activity);
         if (!this.d) {
             if (this.f502a == null) {
-                this.f502a = C0575s4.l().b(activity);
+                this.f502a = C0574s4.l().b(activity);
             }
-            C0664vf c0664vf = this.f502a;
-            Intrinsics.checkNotNull(c0664vf);
-            this.b = c0664vf.p();
+            C0663vf c0663vf = this.f502a;
+            Intrinsics.checkNotNull(c0663vf);
+            this.b = c0663vf.p();
             if (this.f502a == null) {
-                this.f502a = C0575s4.l().b(activity);
+                this.f502a = C0574s4.l().b(activity);
             }
-            C0664vf c0664vf2 = this.f502a;
-            Intrinsics.checkNotNull(c0664vf2);
-            this.c = c0664vf2.t();
+            C0663vf c0663vf2 = this.f502a;
+            Intrinsics.checkNotNull(c0663vf2);
+            this.c = c0663vf2.t();
             this.d = true;
         }
         if (this.b == null) {
@@ -48,28 +48,28 @@ public final class Cj implements InterfaceC0389l {
             }
             this.b = a2;
             if (this.f502a == null) {
-                this.f502a = C0575s4.l().b(context);
+                this.f502a = C0574s4.l().b(context);
             }
-            C0664vf c0664vf = this.f502a;
-            Intrinsics.checkNotNull(c0664vf);
-            c0664vf.a(this.b);
+            C0663vf c0663vf = this.f502a;
+            Intrinsics.checkNotNull(c0663vf);
+            c0663vf.a(this.b);
         }
     }
 
     public final synchronized ScreenInfo a(Context context) {
         if (!this.d) {
             if (this.f502a == null) {
-                this.f502a = C0575s4.l().b(context);
+                this.f502a = C0574s4.l().b(context);
             }
-            C0664vf c0664vf = this.f502a;
-            Intrinsics.checkNotNull(c0664vf);
-            this.b = c0664vf.p();
+            C0663vf c0663vf = this.f502a;
+            Intrinsics.checkNotNull(c0663vf);
+            this.b = c0663vf.p();
             if (this.f502a == null) {
-                this.f502a = C0575s4.l().b(context);
+                this.f502a = C0574s4.l().b(context);
             }
-            C0664vf c0664vf2 = this.f502a;
-            Intrinsics.checkNotNull(c0664vf2);
-            this.c = c0664vf2.t();
+            C0663vf c0663vf2 = this.f502a;
+            Intrinsics.checkNotNull(c0663vf2);
+            this.c = c0663vf2.t();
             this.d = true;
         }
         b((Context) this.f.get());
@@ -79,11 +79,11 @@ public final class Cj implements InterfaceC0389l {
                     b(context);
                     this.c = true;
                     if (this.f502a == null) {
-                        this.f502a = C0575s4.l().b(context);
+                        this.f502a = C0574s4.l().b(context);
                     }
-                    C0664vf c0664vf3 = this.f502a;
-                    Intrinsics.checkNotNull(c0664vf3);
-                    c0664vf3.v();
+                    C0663vf c0663vf3 = this.f502a;
+                    Intrinsics.checkNotNull(c0663vf3);
+                    c0663vf3.v();
                 }
             } else {
                 b(context);
@@ -92,7 +92,7 @@ public final class Cj implements InterfaceC0389l {
         return this.b;
     }
 
-    public final void a(C0664vf c0664vf) {
-        this.f502a = c0664vf;
+    public final void a(C0663vf c0663vf) {
+        this.f502a = c0663vf;
     }
 }

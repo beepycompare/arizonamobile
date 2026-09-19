@@ -11,6 +11,7 @@ import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -20,17 +21,21 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import org.json.JSONArray;
+import org.json.JSONException;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.databinding.HudCounterBinding;
@@ -42,12 +47,19 @@ import ru.mrlargha.commonui.databinding.HudTaximeterStopwatchBinding;
 import ru.mrlargha.commonui.elements.hud.presentation.TypeTaximeter;
 import ru.mrlargha.commonui.elements.hud.presentation.TypeTaximeterValue;
 import ru.mrlargha.commonui.elements.hud.presentation.models.TaximeterModel;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: HudCounter.kt */
-@Metadata(d1 = {"\u0000\u0096\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u0018\u0010\u001c\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001d\u001a\u00020\rJ\u0018\u0010\u001e\u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010\u001f\u001a\u00020\u0003H\u0002J\u0018\u0010 \u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010!\u001a\u00020\u0003H\u0002J\u000e\u0010\"\u001a\u00020\u00192\u0006\u0010\u001f\u001a\u00020\u0003J\u000e\u0010#\u001a\u00020\u00012\u0006\u0010$\u001a\u00020\u001bJ\u000e\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020\u0003J\b\u0010(\u001a\u00020\u0019H\u0002J[\u0010)\u001a\u00020\u00192\u0006\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u00032\n\b\u0002\u0010,\u001a\u0004\u0018\u00010\u00032\u0006\u0010-\u001a\u00020\u001b2\n\b\u0002\u0010.\u001a\u0004\u0018\u00010\u001b2\b\b\u0002\u0010/\u001a\u00020\u001b2\b\b\u0002\u00100\u001a\u00020\r2\b\b\u0002\u00101\u001a\u00020\u0003H\u0002¢\u0006\u0002\u00102J<\u00103\u001a\u00020\u00192\u0006\u00104\u001a\u00020\u00032\u0006\u00105\u001a\u00020\u00032\u0006\u00106\u001a\u00020\u00032\u0006\u00107\u001a\u00020\u001b2\b\b\u0002\u00101\u001a\u00020\u00032\b\b\u0002\u00108\u001a\u00020\rH\u0002JÇ\u0001\u00109\u001a\u00020\u00192\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\f\b\u0001\u0010,\u001a\u00020\u0003:\u0002\b=2\u000e\b\u0003\u0010>\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\u000e\b\u0003\u0010?\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\f\b\u0001\u0010@\u001a\u00020\u0003:\u0002\bA2\f\b\u0003\u0010B\u001a\u00020\u0003:\u0002\bA2\f\b\u0001\u00101\u001a\u00020\u0003:\u0002\bC2\f\b\u0003\u0010D\u001a\u00020\u0003:\u0002\bC2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010F\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010G\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010H\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\u000e\b\u0003\u0010I\u001a\u0004\u0018\u00010\u0003:\u0002\b=H\u0002¢\u0006\u0002\u0010JJq\u0010K\u001a\u00020\u00192\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020;2\u000e\b\u0001\u0010O\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\f\b\u0001\u00107\u001a\u00020\u0003:\u0002\bA2\f\b\u0001\u00101\u001a\u00020\u0003:\u0002\bC2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010G\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010H\u001a\u0004\u0018\u00010\u0003:\u0002\b=H\u0002¢\u0006\u0002\u0010PJ\b\u0010Q\u001a\u00020\u0019H\u0002J\u0016\u0010R\u001a\b\u0012\u0004\u0012\u00020\u00140S2\u0006\u0010L\u001a\u00020MH\u0002J\n\u0010T\u001a\u00020\u0003*\u00020\u0003J/\u0010U\u001a\u00020\u0019*\u00020V2\u000e\b\u0003\u0010W\u001a\u0004\u0018\u00010\u0003:\u0002\bX2\u000e\b\u0003\u0010Y\u001a\u0004\u0018\u00010\u0003:\u0002\bX¢\u0006\u0002\u0010ZJ\u000e\u0010[\u001a\u00020\u00192\u0006\u0010\\\u001a\u00020\u001bJ\u0010\u0010]\u001a\u00020\u00192\u0006\u0010'\u001a\u00020^H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006_"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "", "backendID", "", "binding", "Lru/mrlargha/commonui/databinding/HudTaximeterBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "<init>", "(ILru/mrlargha/commonui/databinding/HudTaximeterBinding;Lru/mrlargha/commonui/core/IBackendNotifier;)V", "taximeterTimer", "Landroid/os/CountDownTimer;", "isRunningTaxiTimer", "", "typeTaximeterValue", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeterValue;", "context", "Landroid/content/Context;", "kotlin.jvm.PlatformType", "firstTextView", "Landroid/widget/TextView;", "secondTextView", "titleTextView", "isTimer", "setTaximeterVisibility", "", "data", "", "setTaximeterCounterType", "isCountDown", "startTaxiTimerCountdown", "seconds", "startTaxiTimerCountUp", "initialElapsedSeconds", "stopTaxiTimer", "setTaxiPrice", "text", "setTaximeterType", "Lru/mrlargha/commonui/databinding/HudTaximeterContainerBinding;", "type", "setupTofuCoolingProgressBar", "setTaximeterLayoutType", "sumBg", "timerBg", "bg", "timeTextColor", "sumTitleText", "sumTextColor", "isBigTextSize", TtmlNode.ATTR_TTS_FONT_FAMILY, "(IILjava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V", "setDemorganType", "titleImage", "containerImage", "containerBg", "textColor", "isScaleBg", "setCounterType", "firstItemType", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;", "secondItemType", "Landroidx/annotation/DrawableRes;", "mainItemBg", "secondItemBg", "mainTextColor", "Landroidx/annotation/ColorInt;", "secondTextColor", "Landroidx/annotation/FontRes;", "secondFontFamily", "titleText", "secondTitleText", "iconText", "icon", "secondIcon", "(Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;ILjava/lang/Integer;Ljava/lang/Integer;IIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setCounterItemType", "itemBinding", "Lru/mrlargha/commonui/databinding/HudCounterItemBinding;", "itemType", "itemBg", "(Lru/mrlargha/commonui/databinding/HudCounterItemBinding;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Ljava/lang/Integer;IILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V", "setDefaultCounterType", "getCounterTextList", "", "dpToPx", "updateViewSize", "Landroid/view/View;", "widthRes", "Landroidx/annotation/DimenRes;", "heightRes", "(Landroid/view/View;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setTitle", "title", "setVisible", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeter;", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0098\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 d2\u00020\u0001:\u0001dB\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u0018\u0010\u001c\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001d\u001a\u00020\rJ\u0018\u0010\u001e\u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010\u001f\u001a\u00020\u0003H\u0002J\u0018\u0010 \u001a\n \u0012*\u0004\u0018\u00010\u000b0\u000b2\u0006\u0010!\u001a\u00020\u0003H\u0002J\u000e\u0010\"\u001a\u00020\u00192\u0006\u0010\u001f\u001a\u00020\u0003J\u000e\u0010#\u001a\u00020\u00012\u0006\u0010$\u001a\u00020\u001bJ\u000e\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020\u0003J\b\u0010(\u001a\u00020\u0019H\u0002J[\u0010)\u001a\u00020\u00192\u0006\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u00032\n\b\u0002\u0010,\u001a\u0004\u0018\u00010\u00032\u0006\u0010-\u001a\u00020\u001b2\n\b\u0002\u0010.\u001a\u0004\u0018\u00010\u001b2\b\b\u0002\u0010/\u001a\u00020\u001b2\b\b\u0002\u00100\u001a\u00020\r2\b\b\u0002\u00101\u001a\u00020\u0003H\u0002¢\u0006\u0002\u00102J<\u00103\u001a\u00020\u00192\u0006\u00104\u001a\u00020\u00032\u0006\u00105\u001a\u00020\u00032\u0006\u00106\u001a\u00020\u00032\u0006\u00107\u001a\u00020\u001b2\b\b\u0002\u00101\u001a\u00020\u00032\b\b\u0002\u00108\u001a\u00020\rH\u0002JÇ\u0001\u00109\u001a\u00020\u00192\u0006\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u00020;2\f\b\u0001\u0010,\u001a\u00020\u0003:\u0002\b=2\u000e\b\u0003\u0010>\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\u000e\b\u0003\u0010?\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\f\b\u0001\u0010@\u001a\u00020\u0003:\u0002\bA2\f\b\u0003\u0010B\u001a\u00020\u0003:\u0002\bA2\f\b\u0001\u00101\u001a\u00020\u0003:\u0002\bC2\f\b\u0003\u0010D\u001a\u00020\u0003:\u0002\bC2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010F\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010G\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010H\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\u000e\b\u0003\u0010I\u001a\u0004\u0018\u00010\u0003:\u0002\b=H\u0002¢\u0006\u0002\u0010JJq\u0010K\u001a\u00020\u00192\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020;2\u000e\b\u0001\u0010O\u001a\u0004\u0018\u00010\u0003:\u0002\b=2\f\b\u0001\u00107\u001a\u00020\u0003:\u0002\bA2\f\b\u0001\u00101\u001a\u00020\u0003:\u0002\bC2\n\b\u0002\u0010E\u001a\u0004\u0018\u00010\u001b2\n\b\u0002\u0010G\u001a\u0004\u0018\u00010\u001b2\u000e\b\u0003\u0010H\u001a\u0004\u0018\u00010\u0003:\u0002\b=H\u0002¢\u0006\u0002\u0010PJ\b\u0010Q\u001a\u00020\u0019H\u0002J\u0016\u0010R\u001a\b\u0012\u0004\u0012\u00020\u00140S2\u0006\u0010L\u001a\u00020MH\u0002J\n\u0010T\u001a\u00020\u0003*\u00020\u0003J/\u0010U\u001a\u00020\u0019*\u00020V2\u000e\b\u0003\u0010W\u001a\u0004\u0018\u00010\u0003:\u0002\bX2\u000e\b\u0003\u0010Y\u001a\u0004\u0018\u00010\u0003:\u0002\bX¢\u0006\u0002\u0010ZJ\u000e\u0010[\u001a\u00020\u00192\u0006\u0010\\\u001a\u00020\u001bJ\u000e\u0010]\u001a\u00020\u00192\u0006\u0010\u001a\u001a\u00020\u001bJ\u0018\u0010^\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010S2\u0006\u0010_\u001a\u00020\u001bH\u0002J\u0016\u0010`\u001a\u00020\u00192\f\u0010a\u001a\b\u0012\u0004\u0012\u00020\r0SH\u0002J\u0010\u0010b\u001a\u00020\u00192\u0006\u0010'\u001a\u00020cH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0013\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006e"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "", "backendID", "", "binding", "Lru/mrlargha/commonui/databinding/HudTaximeterBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "<init>", "(ILru/mrlargha/commonui/databinding/HudTaximeterBinding;Lru/mrlargha/commonui/core/IBackendNotifier;)V", "taximeterTimer", "Landroid/os/CountDownTimer;", "isRunningTaxiTimer", "", "typeTaximeterValue", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeterValue;", "context", "Landroid/content/Context;", "kotlin.jvm.PlatformType", "firstTextView", "Landroid/widget/TextView;", "secondTextView", "titleTextView", "isTimer", "setTaximeterVisibility", "", "data", "", "setTaximeterCounterType", "isCountDown", "startTaxiTimerCountdown", "seconds", "startTaxiTimerCountUp", "initialElapsedSeconds", "stopTaxiTimer", "setTaxiPrice", "text", "setTaximeterType", "Lru/mrlargha/commonui/databinding/HudTaximeterContainerBinding;", "type", "setupTofuCoolingProgressBar", "setTaximeterLayoutType", "sumBg", "timerBg", "bg", "timeTextColor", "sumTitleText", "sumTextColor", "isBigTextSize", TtmlNode.ATTR_TTS_FONT_FAMILY, "(IILjava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V", "setDemorganType", "titleImage", "containerImage", "containerBg", "textColor", "isScaleBg", "setCounterType", "firstItemType", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;", "secondItemType", "Landroidx/annotation/DrawableRes;", "mainItemBg", "secondItemBg", "mainTextColor", "Landroidx/annotation/ColorInt;", "secondTextColor", "Landroidx/annotation/FontRes;", "secondFontFamily", "titleText", "secondTitleText", "iconText", "icon", "secondIcon", "(Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;ILjava/lang/Integer;Ljava/lang/Integer;IIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setCounterItemType", "itemBinding", "Lru/mrlargha/commonui/databinding/HudCounterItemBinding;", "itemType", "itemBg", "(Lru/mrlargha/commonui/databinding/HudCounterItemBinding;Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounterItemType;Ljava/lang/Integer;IILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V", "setDefaultCounterType", "getCounterTextList", "", "dpToPx", "updateViewSize", "Landroid/view/View;", "widthRes", "Landroidx/annotation/DimenRes;", "heightRes", "(Landroid/view/View;Ljava/lang/Integer;Ljava/lang/Integer;)V", "setTitle", "title", "setAdditionalInfo", "parseBooleanArrayPayload", "payload", "bindTofuAdditionalIndicators", DownloaderServiceMarshaller.PARAMS_FLAGS, "setVisible", "Lru/mrlargha/commonui/elements/hud/presentation/TypeTaximeter;", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class HudCounter {
+    private static final Companion Companion = new Companion(null);
+    @Deprecated
+    public static final String TOFU_INDICATOR_FALSE_COLOR = "#FF5A6A";
+    @Deprecated
+    public static final String TOFU_INDICATOR_TRUE_COLOR = "#7CFF4A";
     private final int backendID;
     private final IBackendNotifier backendNotifier;
     private final HudTaximeterBinding binding;
@@ -248,19 +260,27 @@ public final class HudCounter {
                 iArr2[TypeTaximeter.TOFU_COOLING.ordinal()] = 42;
             } catch (NoSuchFieldError unused44) {
             }
+            try {
+                iArr2[TypeTaximeter.RACE_POSITION.ordinal()] = 43;
+            } catch (NoSuchFieldError unused45) {
+            }
+            try {
+                iArr2[TypeTaximeter.DRIFT.ordinal()] = 44;
+            } catch (NoSuchFieldError unused46) {
+            }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[HudCounterItemType.values().length];
             try {
                 iArr3[HudCounterItemType.SIMPLE_TEXT.ordinal()] = 1;
-            } catch (NoSuchFieldError unused45) {
+            } catch (NoSuchFieldError unused47) {
             }
             try {
                 iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
-            } catch (NoSuchFieldError unused46) {
+            } catch (NoSuchFieldError unused48) {
             }
             try {
                 iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
-            } catch (NoSuchFieldError unused47) {
+            } catch (NoSuchFieldError unused49) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -628,7 +648,7 @@ public final class HudCounter {
                 imageView.setImageResource(R.drawable.hud_taximeter_farmer_health_heart_icon);
                 Intrinsics.checkNotNull(imageView);
                 imageView.setVisibility(0);
-                setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_farmer_health_sum, R.drawable.hud_taximeter_farmer_health_time, Integer.valueOf(R.drawable.hud_taximeter_farmer_health_bg), "#FFFFFF", this.context.getString(R.string.hud_health), null, false, 0, 160, null);
+                setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_farmer_health_sum, R.drawable.hud_taximeter_farmer_health_time, Integer.valueOf(R.drawable.hud_taximeter_farmer_health_bg), "#FFFFFF", this.context.getString(R.string.hud_health), null, false, 0, RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, null);
                 Unit unit10 = Unit.INSTANCE;
                 break;
             case 11:
@@ -639,14 +659,14 @@ public final class HudCounter {
                 imageView2.setImageResource(R.drawable.hud_taximeter_stopwatch_soccer_goals_icon);
                 Intrinsics.checkNotNull(imageView2);
                 imageView2.setVisibility(0);
-                setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_soccer_goals_sum, R.drawable.hud_taximeter_soccer_goals_time, Integer.valueOf(R.drawable.hud_taximeter_soccer_goals_bg), "#FFFFFF", this.context.getString(R.string.hud_goals), null, false, 0, 160, null);
+                setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_soccer_goals_sum, R.drawable.hud_taximeter_soccer_goals_time, Integer.valueOf(R.drawable.hud_taximeter_soccer_goals_bg), "#FFFFFF", this.context.getString(R.string.hud_goals), null, false, 0, RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, null);
                 Unit unit11 = Unit.INSTANCE;
                 break;
             case 12:
                 hudTaximeterContainerBinding2 = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 this.typeTaximeterValue = TypeTaximeterValue.PERCENT;
-                setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_easter_chicken_summ, R.drawable.hud_taximeter_easter_chicken_time, Integer.valueOf(R.drawable.hud_taximeter_easter_chicken_bg), "#D0FFFA", this.context.getString(R.string.hud_vehicle_condition), null, false, 0, 160, null);
+                setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_easter_chicken_summ, R.drawable.hud_taximeter_easter_chicken_time, Integer.valueOf(R.drawable.hud_taximeter_easter_chicken_bg), "#D0FFFA", this.context.getString(R.string.hud_vehicle_condition), null, false, 0, RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, null);
                 Unit unit12 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
@@ -901,9 +921,22 @@ public final class HudCounter {
                 Unit unit42 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
+            case 43:
+                setVisible(valueOf);
+                this.firstTextView = hudTaximeterBinding.racePosition.tvFirst;
+                this.secondTextView = hudTaximeterBinding.racePosition.tvSecond;
+                Unit unit43 = Unit.INSTANCE;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 44:
+                this.isTimer = true;
+                setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_drift_summ, R.drawable.bg_taximeter_drift_time, null, "#FF5900", "Противник", "#000000", false, R.font.ds_digital, 68, null);
+                Unit unit44 = Unit.INSTANCE;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
             default:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
-                Unit unit43 = Unit.INSTANCE;
+                Unit unit45 = Unit.INSTANCE;
                 break;
         }
         Intrinsics.checkNotNullExpressionValue(hudTaximeterContainerBinding, "with(...)");
@@ -1207,6 +1240,75 @@ public final class HudCounter {
         }
     }
 
+    public final void setAdditionalInfo(String data) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        List<Boolean> parseBooleanArrayPayload = parseBooleanArrayPayload(data);
+        if (parseBooleanArrayPayload == null) {
+            return;
+        }
+        bindTofuAdditionalIndicators(parseBooleanArrayPayload);
+    }
+
+    private final List<Boolean> parseBooleanArrayPayload(String str) {
+        String obj = StringsKt.trim((CharSequence) str).toString();
+        if (obj.length() == 0) {
+            return null;
+        }
+        try {
+            JSONArray jSONArray = new JSONArray(obj);
+            int length = jSONArray.length();
+            ArrayList arrayList = new ArrayList(length);
+            for (int i = 0; i < length; i++) {
+                Object opt = jSONArray.opt(i);
+                if (!(opt instanceof Boolean)) {
+                    return null;
+                }
+                arrayList.add(Boolean.valueOf(((Boolean) opt).booleanValue()));
+            }
+            return arrayList;
+        } catch (JSONException unused) {
+            return null;
+        }
+    }
+
+    private final void bindTofuAdditionalIndicators(List<Boolean> list) {
+        HudCounterTofuCoolingBinding hudCounterTofuCoolingBinding = this.binding.tofuCooling;
+        hudCounterTofuCoolingBinding.additionalIndicators.removeAllViews();
+        if (list.isEmpty()) {
+            LinearLayout additionalIndicators = hudCounterTofuCoolingBinding.additionalIndicators;
+            Intrinsics.checkNotNullExpressionValue(additionalIndicators, "additionalIndicators");
+            additionalIndicators.setVisibility(8);
+            return;
+        }
+        LinearLayout additionalIndicators2 = hudCounterTofuCoolingBinding.additionalIndicators;
+        Intrinsics.checkNotNullExpressionValue(additionalIndicators2, "additionalIndicators");
+        additionalIndicators2.setVisibility(0);
+        LayoutInflater from = LayoutInflater.from(this.context);
+        int dimensionPixelSize = this.context.getResources().getDimensionPixelSize(R.dimen._4sdp);
+        int parseColor = Color.parseColor(TOFU_INDICATOR_TRUE_COLOR);
+        int parseColor2 = Color.parseColor(TOFU_INDICATOR_FALSE_COLOR);
+        int i = 0;
+        for (Object obj : list) {
+            int i2 = i + 1;
+            if (i < 0) {
+                CollectionsKt.throwIndexOverflow();
+            }
+            boolean booleanValue = ((Boolean) obj).booleanValue();
+            View inflate = from.inflate(R.layout.hud_counter_tofu_cooling_indicator, (ViewGroup) hudCounterTofuCoolingBinding.additionalIndicators, false);
+            Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type ru.mrlargha.commonui.utils.ui.CustomCardView");
+            CustomCardView customCardView = (CustomCardView) inflate;
+            customCardView.setBackground(booleanValue ? parseColor : parseColor2);
+            ViewGroup.LayoutParams layoutParams = customCardView.getLayoutParams();
+            Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
+            LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) layoutParams;
+            if (i > 0) {
+                layoutParams2.topMargin = dimensionPixelSize;
+            }
+            hudCounterTofuCoolingBinding.additionalIndicators.addView(customCardView, layoutParams2);
+            i = i2;
+        }
+    }
+
     private final void setVisible(TypeTaximeter typeTaximeter) {
         HudTaximeterBinding hudTaximeterBinding = this.binding;
         LinearLayout root = hudTaximeterBinding.hudTaximeterLayoutContainer.getRoot();
@@ -1284,8 +1386,23 @@ public final class HudCounter {
         FrameLayout root25 = hudTaximeterBinding.escape.getRoot();
         Intrinsics.checkNotNullExpressionValue(root25, "getRoot(...)");
         root25.setVisibility(typeTaximeter == TypeTaximeter.ESCAPE ? 0 : 8);
-        FrameLayout root26 = hudTaximeterBinding.tofuCooling.getRoot();
+        LinearLayout root26 = hudTaximeterBinding.tofuCooling.getRoot();
         Intrinsics.checkNotNullExpressionValue(root26, "getRoot(...)");
         root26.setVisibility(typeTaximeter == TypeTaximeter.TOFU_COOLING ? 0 : 8);
+        CustomCardView root27 = hudTaximeterBinding.racePosition.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root27, "getRoot(...)");
+        root27.setVisibility(typeTaximeter == TypeTaximeter.RACE_POSITION ? 0 : 8);
+    }
+
+    /* compiled from: HudCounter.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0007"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter$Companion;", "", "<init>", "()V", "TOFU_INDICATOR_TRUE_COLOR", "", "TOFU_INDICATOR_FALSE_COLOR", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    /* loaded from: classes6.dex */
+    private static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
     }
 }

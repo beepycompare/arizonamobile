@@ -17,18 +17,18 @@ import kotlin.collections.MapsKt;
 public final class Cb implements InternalClientModuleFacade {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0507pd f496a = new C0507pd();
+    public final C0506pd f496a = new C0506pd();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade
     public final void reportAdRevenue(ModuleAdRevenue moduleAdRevenue) {
         AdType adType;
         Map<String, String> linkedHashMap;
-        C0507pd c0507pd = this.f496a;
-        c0507pd.getClass();
+        C0506pd c0506pd = this.f496a;
+        c0506pd.getClass();
         AdRevenue.Builder newBuilder = AdRevenue.newBuilder(moduleAdRevenue.getAdRevenue(), moduleAdRevenue.getCurrency());
         ModuleAdType adType2 = moduleAdRevenue.getAdType();
         ModuleAdType.values();
-        switch (adType2 == null ? -1 : AbstractC0481od.f1132a[adType2.ordinal()]) {
+        switch (adType2 == null ? -1 : AbstractC0480od.f1132a[adType2.ordinal()]) {
             case -1:
                 adType = null;
                 break;
@@ -62,7 +62,7 @@ public final class Cb implements InternalClientModuleFacade {
         if (payload == null || (linkedHashMap = MapsKt.toMutableMap(payload)) == null) {
             linkedHashMap = new LinkedHashMap<>();
         }
-        c0507pd.f1148a.getClass();
+        c0506pd.f1148a.getClass();
         linkedHashMap.put(AdRevenueConstants.LAYER_KEY, "native");
         ModulesFacade.reportAdRevenue(withPrecision.withPayload(linkedHashMap).build(), Boolean.valueOf(moduleAdRevenue.getAutoCollected()));
     }

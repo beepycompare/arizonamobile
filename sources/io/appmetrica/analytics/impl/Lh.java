@@ -6,12 +6,12 @@ public final class Lh {
 
     /* renamed from: a  reason: collision with root package name */
     public final long f650a;
-    public final C0762z9 b;
+    public final C0761z9 b;
     public final int c;
 
-    public Lh(long j, C0762z9 c0762z9, int i) {
+    public Lh(long j, C0761z9 c0761z9, int i) {
         this.f650a = j;
-        this.b = c0762z9;
+        this.b = c0761z9;
         this.c = i;
     }
 

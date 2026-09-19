@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class Z7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0672vn f870a;
+    public final C0671vn f870a;
 
-    public Z7(C0672vn c0672vn) {
-        this.f870a = c0672vn;
+    public Z7(C0671vn c0671vn) {
+        this.f870a = c0671vn;
     }
 
     public Z7() {
-        this(new C0672vn(Na.k().g(), "appmetrica_startup_hosts"));
+        this(new C0671vn(Na.k().g(), "appmetrica_startup_hosts"));
     }
 }

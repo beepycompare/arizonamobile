@@ -142,6 +142,11 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         this.currentPage = 0;
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit inventoryAdapter$lambda$0(DraggedItem draggedItem) {
         Intrinsics.checkNotNullParameter(draggedItem, "<unused var>");

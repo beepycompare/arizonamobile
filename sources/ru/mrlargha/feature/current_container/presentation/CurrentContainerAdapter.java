@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.current_container.R;
 import ru.mrlargha.feature.current_container.domain.obj.ContainerRewards;
@@ -34,7 +35,9 @@ public final class CurrentContainerAdapter extends RecyclerView.Adapter<CurrentC
         ContainerRewards containerRewards2 = containerRewards;
         holder.getBinding().acItemTittle.setText(UtilsKt.isArizonaType() ? containerRewards2.getTittle() : containerRewards2.getTitle());
         int i2 = UtilsKt.isArizonaType() ? R.drawable.item : ru.mrlargha.commonui.R.drawable.image_placeholder;
-        Picasso.get().load(CurrentContainerCdnKt.getItemImageUrl(containerRewards2.getImage())).placeholder(i2).error(i2).into(holder.getBinding().acItemImage);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, CurrentContainerCdnKt.getItemImageUrl(containerRewards2.getImage())).placeholder(i2).error(i2).into(holder.getBinding().acItemImage);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

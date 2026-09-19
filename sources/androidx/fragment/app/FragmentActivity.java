@@ -123,9 +123,8 @@ public class FragmentActivity extends ComponentActivity implements ActivityCompa
         this.mFragments.attachHost(null);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.activity.ComponentActivity, android.app.Activity
-    public void onActivityResult(int i, int i2, Intent intent) {
+    protected void onActivityResult(int i, int i2, Intent intent) {
         this.mFragments.noteStateNotSaved();
         super.onActivityResult(i, i2, intent);
     }

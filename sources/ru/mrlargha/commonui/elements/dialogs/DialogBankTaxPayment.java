@@ -25,6 +25,7 @@ import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.DialogBankTaxPaymentBinding;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: DialogBankTaxPayment.kt */
@@ -115,7 +116,9 @@ public final class DialogBankTaxPayment extends AbstractDialog {
     private final void setupPreview() {
         DialogBankTaxPaymentBinding dialogBankTaxPaymentBinding = this.binding;
         dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewTitle.setText(getTargetActivity().getString(DialogBankTaxPaymentKt.resolveDialogBankTaxPaymentTitleRes(this.payload.getAddType())));
-        Picasso.get().load(DialogBankTaxPaymentKt.resolveTaxPaymentImageUrl(this.payload.getAddType())).into(dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewImage);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, DialogBankTaxPaymentKt.resolveTaxPaymentImageUrl(this.payload.getAddType())).into(dialogBankTaxPaymentBinding.bankBusinessPaymentPreviewImage);
     }
 
     private final void setupList() {

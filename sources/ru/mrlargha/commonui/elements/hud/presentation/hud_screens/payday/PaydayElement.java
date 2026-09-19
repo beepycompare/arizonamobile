@@ -30,6 +30,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.HudElementPaydayBinding;
 import ru.mrlargha.commonui.databinding.HudElementPaydayItemBinding;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
@@ -249,7 +250,7 @@ public final class PaydayElement {
             } else if (Intrinsics.areEqual(paydayData.getFraction().getState(), "noFraction")) {
                 String string9 = context.getString(R.string.payday_no_fraction_hint);
                 Intrinsics.checkNotNullExpressionValue(string9, "getString(...)");
-                paydayCardUi3 = new PaydayCardUi(str, str, null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, string9, 140, null);
+                paydayCardUi3 = new PaydayCardUi(str, str, null, null, R.drawable.hud_element_payday_ic_fraction, "#80719E", "#B9AED0", false, string9, TrainSpeedGaugeView.MAX_SPEED_KMH, null);
             } else {
                 String string10 = context.getString(R.string.payday_fraction_title);
                 Intrinsics.checkNotNullExpressionValue(string10, "getString(...)");

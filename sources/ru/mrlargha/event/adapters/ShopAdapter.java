@@ -17,6 +17,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.event.data.ShopItem;
 import ru.mrlargha.feature.event.R;
@@ -55,12 +56,14 @@ public final class ShopAdapter extends RecyclerView.Adapter<EasterShopViewHolder
         binding.price.setText(String.valueOf(shopItem.getPrice()));
         if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(projectResourceUrl$default + "/systems/battlepass/easter-2026/" + shopItem.getImage() + ".webp").into(binding.ivName);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "/systems/battlepass/easter-2026/" + shopItem.getImage() + ".webp").into(binding.ivName);
         } else {
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(projectResourceUrl$default2 + "systems/pirate-event/shop/" + shopItem.getImage() + ".webp").into(binding.ivName);
+            PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "systems/pirate-event/shop/" + shopItem.getImage() + ".webp").into(binding.ivName);
         }
         binding.btnSelect.setVisibility(8);
         binding.btnUnselect.setVisibility(8);

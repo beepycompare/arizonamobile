@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:focusable="true" android:clickable="true" android:layout_width="0dp" android:layout_height="@dimen/_32sdp">
+    <ImageView android:id="@+id/iv_shortcut_art" android:focusable="false" android:clickable="false" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitXY" android:importantForAccessibility="no"/>
+    <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:ellipsize="end" android:layout_gravity="start|center_vertical" android:id="@+id/tv_shortcut_label" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:includeFontPadding="false" android:textAllCaps="true" android:importantForAccessibility="no" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_12sdp"/>
+</FrameLayout>

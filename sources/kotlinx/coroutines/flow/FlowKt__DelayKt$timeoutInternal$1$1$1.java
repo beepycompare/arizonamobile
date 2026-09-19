@@ -37,18 +37,18 @@ final class FlowKt__DelayKt$timeoutInternal$1$1$1<T> extends SuspendLambda imple
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         FlowKt__DelayKt$timeoutInternal$1$1$1 flowKt__DelayKt$timeoutInternal$1$1$1 = new FlowKt__DelayKt$timeoutInternal$1$1$1(this.$downStream, continuation);
-        flowKt__DelayKt$timeoutInternal$1$1$1.L$0 = ((ChannelResult) obj).m11480unboximpl();
+        flowKt__DelayKt$timeoutInternal$1$1$1.L$0 = ((ChannelResult) obj).m11481unboximpl();
         return flowKt__DelayKt$timeoutInternal$1$1$1;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Boolean> continuation) {
-        return m11498invokeWpGqRn0(((ChannelResult) obj).m11480unboximpl(), continuation);
+        return m11499invokeWpGqRn0(((ChannelResult) obj).m11481unboximpl(), continuation);
     }
 
     /* renamed from: invoke-WpGqRn0  reason: not valid java name */
-    public final Object m11498invokeWpGqRn0(Object obj, Continuation<? super Boolean> continuation) {
-        return ((FlowKt__DelayKt$timeoutInternal$1$1$1) create(ChannelResult.m11468boximpl(obj), continuation)).invokeSuspend(Unit.INSTANCE);
+    public final Object m11499invokeWpGqRn0(Object obj, Continuation<? super Boolean> continuation) {
+        return ((FlowKt__DelayKt$timeoutInternal$1$1$1) create(ChannelResult.m11469boximpl(obj), continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -79,9 +79,9 @@ final class FlowKt__DelayKt$timeoutInternal$1$1$1<T> extends SuspendLambda imple
             obj2 = obj3;
         }
         if (obj2 instanceof ChannelResult.Closed) {
-            Throwable m11472exceptionOrNullimpl = ChannelResult.m11472exceptionOrNullimpl(obj2);
-            if (m11472exceptionOrNullimpl != null) {
-                throw m11472exceptionOrNullimpl;
+            Throwable m11473exceptionOrNullimpl = ChannelResult.m11473exceptionOrNullimpl(obj2);
+            if (m11473exceptionOrNullimpl != null) {
+                throw m11473exceptionOrNullimpl;
             }
             return Boxing.boxBoolean(false);
         }

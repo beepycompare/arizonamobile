@@ -23,12 +23,14 @@ import androidx.constraintlayout.widget.Group;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
@@ -41,13 +43,18 @@ import kotlin.math.MathKt;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.CompletableJob;
+import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
+import kotlinx.coroutines.SupervisorKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.databinding.CraftScreenBinding;
 import ru.mrlargha.commonui.domain.db.AppDatabase;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
@@ -79,7 +86,7 @@ import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: CraftScreen.kt */
-@Metadata(d1 = {"\u0000Ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0013\n\u0002\u0010\"\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\t\n\u0002\u0010\r\n\u0002\b\u000b\u0018\u0000 w2\u00020\u00012\u00020\u0002:\u0002wxB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020/H\u0002J\u0018\u0010C\u001a\u00020A2\u0006\u0010D\u001a\u00020E2\u0006\u0010F\u001a\u00020\u0006H\u0016J\b\u0010G\u001a\u00020AH\u0002J\u0010\u0010H\u001a\u00020A2\u0006\u0010B\u001a\u00020/H\u0002J\u0010\u0010I\u001a\u00020A2\u0006\u0010J\u001a\u00020/H\u0002J\u0010\u0010K\u001a\u00020A2\u0006\u0010J\u001a\u00020/H\u0002J\b\u0010L\u001a\u00020AH\u0002J\b\u0010M\u001a\u00020AH\u0002J\b\u0010N\u001a\u00020AH\u0002J\b\u0010O\u001a\u00020AH\u0002J\u0010\u00105\u001a\u00020A2\u0006\u0010P\u001a\u000206H\u0002J\u0010\u00108\u001a\u00020A2\u0006\u0010P\u001a\u000206H\u0002J\b\u0010Q\u001a\u00020AH\u0002J\u0010\u0010R\u001a\u00020A2\u0006\u0010S\u001a\u00020\u0010H\u0002J\u001a\u0010T\u001a\u00020\u00102\b\u0010U\u001a\u0004\u0018\u00010\u00102\u0006\u0010V\u001a\u00020\u0010H\u0002J\u001e\u0010W\u001a\u00020A2\u0006\u0010S\u001a\u00020\u00102\f\u0010X\u001a\b\u0012\u0004\u0012\u00020\u00060YH\u0002J\u0010\u0010Z\u001a\u00020A2\u0006\u0010[\u001a\u000203H\u0002J\u0010\u0010\\\u001a\u00020A2\u0006\u0010S\u001a\u00020\u0010H\u0002J\u0010\u0010]\u001a\u00020A2\u0006\u0010S\u001a\u00020$H\u0002J\u0010\u0010^\u001a\u00020A2\u0006\u0010_\u001a\u00020/H\u0002J\u0018\u0010`\u001a\b\u0012\u0004\u0012\u00020a02*\b\u0012\u0004\u0012\u00020?02H\u0002J\u0010\u0010b\u001a\u00020A2\u0006\u0010c\u001a\u00020dH\u0002J\u0010\u0010e\u001a\u00020A2\u0006\u0010B\u001a\u00020/H\u0002J\u0018\u0010f\u001a\u00020d2\u0006\u0010g\u001a\u00020\u00062\u0006\u0010h\u001a\u00020\u0006H\u0002J\u0010\u0010i\u001a\u00020A2\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0016\u0010k\u001a\b\u0012\u0004\u0012\u000203022\u0006\u0010j\u001a\u00020\u0006H\u0002J\u0012\u0010l\u001a\u00020A2\b\u0010m\u001a\u0004\u0018\u00010nH\u0002J\u0010\u0010o\u001a\u00020A2\u0006\u0010j\u001a\u00020\u0006H\u0002J\b\u0010p\u001a\u00020AH\u0002J\u0010\u0010q\u001a\u00020A2\u0006\u0010S\u001a\u00020$H\u0002J\u0010\u0010r\u001a\u00020\u00062\u0006\u0010s\u001a\u00020\u0006H\u0002J\u0018\u0010t\u001a\u00020A2\u0006\u0010F\u001a\u00020\u00062\u0006\u0010D\u001a\u00020EH\u0002J\u0010\u0010u\u001a\u00020A2\u0006\u0010_\u001a\u00020/H\u0016J\b\u0010v\u001a\u00020AH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00150\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020/X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u00020/X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00101\u001a\b\u0012\u0004\u0012\u00020302X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00104\u001a\b\u0012\u0004\u0012\u00020302X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00105\u001a\n 7*\u0004\u0018\u00010606X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u00108\u001a\n 7*\u0004\u0018\u00010606X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020\u000602X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u00020/X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010;\u001a\n\u0012\u0004\u0012\u00020<\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020/X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010>\u001a\n\u0012\u0004\u0012\u00020?\u0018\u000102X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006y"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "craftScreen", "Landroid/widget/FrameLayout;", "binding", "Lru/mrlargha/commonui/databinding/CraftScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "craftResponse", "Lru/mrlargha/commonui/elements/craft/domain/CraftResponse;", "categoryMenu", "", "Lru/mrlargha/commonui/elements/craft/domain/CategoryItem;", "colorsList", "Lru/mrlargha/commonui/elements/craft/domain/ItemColor;", "craftItemsAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftItemsAdapter;", "craftMenuAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftMenuAdapter;", "needResourcesAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/NeedResourcesAdapter;", "craftItemsSelectedPosition", "craftMenuSelectedId", "colorsTypeAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/ColorsTypeAdapter;", "selectedColor", "selectedColorPosition", "currentNumber", "currentCraftedItem", "Lru/mrlargha/commonui/elements/craft/domain/CraftItemInfo;", "currentItem", "currentItemIndex", "incrementHandler", "Landroid/os/Handler;", "newHandler", "progress", "progressIncrement", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "isEnabledCraft", "", "isCancelClicked", "pagingCraftList", "", "Lru/mrlargha/commonui/elements/craft/domain/CraftItem;", "showingList", "fadeUpAnimation", "Landroid/view/animation/Animation;", "kotlin.jvm.PlatformType", "fadeDownAnimation", "tuningItems", "isDisableAll", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "isCraftProcess", "needList", "Lru/mrlargha/commonui/elements/craft/domain/NeedItems;", "setEnableEtResourcesCount", "", "isEnable", "onBackendMessageHandled", "data", "", "subId", "getInventoryList", "isEnabledCraftItem", "editNumber", "isPlus", "incrementFaster", "resetCraftNumber", "updateItemCountField", "updateItemCounts", "resetCraftAttempts", "animation", "defaultScreen", "fillColorsList", "response", "mergeCraftResponse", "currentResponse", "incomingResponse", "updateMenuCategories", "updatedCategoryIds", "", "editCraftItemUi", "craftItem", "initMenuCategories", "initItemUi", "setColorSelectionVisible", "visible", "toUi", "Lru/mrlargha/commonui/elements/craft/domain/NeedItemsUi;", "startProgressBarAnimation", "time", "", "isEnableButtons", "getItemFromInventory", "item", "successAmount", "initCraftItems", "clickedPos", "getCraftItems", "setItemDescription", "description", "", "updateVisibleCraftItems", "clearColor", "refreshData", "getTuningItem", "itemId", "sendRequest", "setVisible", "closeScreen", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0013\n\u0002\u0010\"\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\t\n\u0002\u0010\r\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 \u007f2\u00020\u00012\u00020\u0002:\u0003\u007f\u0080\u0001B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u000203H\u0002J\u0018\u0010H\u001a\u00020F2\u0006\u0010I\u001a\u00020J2\u0006\u0010K\u001a\u00020\u0006H\u0016J\b\u0010L\u001a\u00020FH\u0002J\u0010\u0010M\u001a\u00020F2\u0006\u0010G\u001a\u000203H\u0002J\u0010\u0010N\u001a\u00020F2\u0006\u0010O\u001a\u000203H\u0002J\u0010\u0010P\u001a\u00020F2\u0006\u0010O\u001a\u000203H\u0002J\b\u0010Q\u001a\u00020FH\u0002J\b\u0010R\u001a\u00020FH\u0002J\b\u0010S\u001a\u00020FH\u0002J\b\u0010T\u001a\u00020FH\u0002J\u0010\u00109\u001a\u00020F2\u0006\u0010U\u001a\u00020:H\u0002J\u0010\u0010<\u001a\u00020F2\u0006\u0010U\u001a\u00020:H\u0002J\b\u0010V\u001a\u00020FH\u0002J\u0010\u0010W\u001a\u00020F2\u0006\u0010X\u001a\u00020\u0010H\u0002J\u001a\u0010Y\u001a\u00020\u00102\b\u0010Z\u001a\u0004\u0018\u00010\u00102\u0006\u0010[\u001a\u00020\u0010H\u0002J\u001e\u0010\\\u001a\u00020F2\u0006\u0010X\u001a\u00020\u00102\f\u0010]\u001a\b\u0012\u0004\u0012\u00020\u00060^H\u0002J\u0010\u0010_\u001a\u00020F2\u0006\u0010`\u001a\u000207H\u0002J\u0010\u0010a\u001a\u00020F2\u0006\u0010X\u001a\u00020\u0010H\u0002J\u0010\u0010b\u001a\u00020F2\u0006\u0010X\u001a\u00020$H\u0002J\u0010\u0010c\u001a\u00020F2\u0006\u0010d\u001a\u000203H\u0002J\u0018\u0010e\u001a\b\u0012\u0004\u0012\u00020f06*\b\u0012\u0004\u0012\u00020C06H\u0002J\u0010\u0010g\u001a\u00020F2\u0006\u0010h\u001a\u00020iH\u0002J\u0010\u0010j\u001a\u00020F2\u0006\u0010G\u001a\u000203H\u0002J\u0018\u0010k\u001a\u00020i2\u0006\u0010l\u001a\u00020\u00062\u0006\u0010m\u001a\u00020\u0006H\u0002J\u0010\u0010n\u001a\u00020F2\u0006\u0010o\u001a\u00020\u0006H\u0002J\u0016\u0010p\u001a\b\u0012\u0004\u0012\u000207062\u0006\u0010o\u001a\u00020\u0006H\u0002J\u0012\u0010q\u001a\u00020F2\b\u0010r\u001a\u0004\u0018\u00010sH\u0002J\u0010\u0010t\u001a\u00020F2\u0006\u0010o\u001a\u00020\u0006H\u0002J\b\u0010u\u001a\u00020FH\u0002J\u0010\u0010v\u001a\u00020F2\u0006\u0010X\u001a\u00020$H\u0002J\u0010\u0010w\u001a\u00020\u00062\u0006\u0010x\u001a\u00020\u0006H\u0002J\u0018\u0010y\u001a\u00020F2\u0006\u0010K\u001a\u00020\u00062\u0006\u0010I\u001a\u00020JH\u0002J\u0010\u0010z\u001a\u00020F2\u0006\u0010d\u001a\u000203H\u0016J\u0010\u0010{\u001a\u00020F2\u0006\u0010|\u001a\u00020}H\u0016J\b\u0010~\u001a\u00020FH\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00150\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020(X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0006X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010.\u001a\u00020/X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00100\u001a\u000201X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00105\u001a\b\u0012\u0004\u0012\u00020706X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u00108\u001a\b\u0012\u0004\u0012\u00020706X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u00109\u001a\n ;*\u0004\u0018\u00010:0:X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010<\u001a\n ;*\u0004\u0018\u00010:0:X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010=\u001a\b\u0012\u0004\u0012\u00020\u000606X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010?\u001a\n\u0012\u0004\u0012\u00020@\u0018\u000106X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010B\u001a\n\u0012\u0004\u0012\u00020C\u0018\u000106X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010D\u001a\u000203X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0081\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/craft/presentation/CraftScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "craftScreen", "Landroid/widget/FrameLayout;", "binding", "Lru/mrlargha/commonui/databinding/CraftScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "craftResponse", "Lru/mrlargha/commonui/elements/craft/domain/CraftResponse;", "categoryMenu", "", "Lru/mrlargha/commonui/elements/craft/domain/CategoryItem;", "colorsList", "Lru/mrlargha/commonui/elements/craft/domain/ItemColor;", "craftItemsAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftItemsAdapter;", "craftMenuAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/CraftMenuAdapter;", "needResourcesAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/NeedResourcesAdapter;", "craftItemsSelectedPosition", "craftMenuSelectedId", "colorsTypeAdapter", "Lru/mrlargha/commonui/elements/craft/presentation/adapter/ColorsTypeAdapter;", "selectedColor", "selectedColorPosition", "currentNumber", "currentCraftedItem", "Lru/mrlargha/commonui/elements/craft/domain/CraftItemInfo;", "currentItem", "currentItemIndex", "incrementHandler", "Landroid/os/Handler;", "newHandler", "progress", "progressIncrement", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryCollectorJob", "Lkotlinx/coroutines/CompletableJob;", "inventoryScope", "Lkotlinx/coroutines/CoroutineScope;", "isEnabledCraft", "", "isCancelClicked", "pagingCraftList", "", "Lru/mrlargha/commonui/elements/craft/domain/CraftItem;", "showingList", "fadeUpAnimation", "Landroid/view/animation/Animation;", "kotlin.jvm.PlatformType", "fadeDownAnimation", "tuningItems", "isDisableAll", "inventoryList", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "isCraftProcess", "needList", "Lru/mrlargha/commonui/elements/craft/domain/NeedItems;", "isRemovedFromStore", "setEnableEtResourcesCount", "", "isEnable", "onBackendMessageHandled", "data", "", "subId", "getInventoryList", "isEnabledCraftItem", "editNumber", "isPlus", "incrementFaster", "resetCraftNumber", "updateItemCountField", "updateItemCounts", "resetCraftAttempts", "animation", "defaultScreen", "fillColorsList", "response", "mergeCraftResponse", "currentResponse", "incomingResponse", "updateMenuCategories", "updatedCategoryIds", "", "editCraftItemUi", "craftItem", "initMenuCategories", "initItemUi", "setColorSelectionVisible", "visible", "toUi", "Lru/mrlargha/commonui/elements/craft/domain/NeedItemsUi;", "startProgressBarAnimation", "time", "", "isEnableButtons", "getItemFromInventory", "item", "successAmount", "initCraftItems", "clickedPos", "getCraftItems", "setItemDescription", "description", "", "updateVisibleCraftItems", "clearColor", "refreshData", "getTuningItem", "itemId", "sendRequest", "setVisible", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "closeScreen", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CraftScreen extends SAMPUIElement implements InterfaceController {
     private static final String CRAFT_SCREEN_TAG = "CRAFT_SCREEN_TAG";
@@ -105,11 +112,14 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     private final Animation fadeUpAnimation;
     private final IBackendNotifier frontendNotifier;
     private Handler incrementHandler;
+    private final CompletableJob inventoryCollectorJob;
     private List<InventoryItem> inventoryList;
+    private final CoroutineScope inventoryScope;
     private boolean isCancelClicked;
     private boolean isCraftProcess;
     private boolean isDisableAll;
     private boolean isEnabledCraft;
+    private boolean isRemovedFromStore;
     private List<NeedItems> needList;
     private NeedResourcesAdapter needResourcesAdapter;
     private Handler newHandler;
@@ -160,6 +170,9 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.newHandler = new Handler();
         this.progressIncrement = 1;
         this.db = AppDatabase.Companion.invoke(activity);
+        CompletableJob SupervisorJob$default = SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null);
+        this.inventoryCollectorJob = SupervisorJob$default;
+        this.inventoryScope = CoroutineScopeKt.CoroutineScope(SupervisorJob$default.plus(Dispatchers.getIO()));
         this.pagingCraftList = CollectionsKt.emptyList();
         this.showingList = CollectionsKt.emptyList();
         this.fadeUpAnimation = AnimationUtils.loadAnimation(activity, R.anim.fade_up);
@@ -167,10 +180,11 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.tuningItems = CollectionsKt.emptyList();
         frameLayout.setClickable(true);
         addViewToConstraintLayout(frameLayout, -1, -1);
+        final WeakReference weakReference = new WeakReference(this);
         UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType(), new Function1() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return CraftScreen._init_$lambda$0(CraftScreen.this, ((Boolean) obj).booleanValue());
+                return CraftScreen._init_$lambda$0(weakReference, ((Boolean) obj).booleanValue());
             }
         });
         updateItemCountField();
@@ -296,6 +310,11 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         }
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit needResourcesAdapter$lambda$0(CraftScreen craftScreen, int i) {
         craftScreen.sendRequest(4, StringKt.toStringJson(new SendDataInfo(i)));
@@ -322,9 +341,10 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit _init_$lambda$0(CraftScreen craftScreen, boolean z) {
+    public static final Unit _init_$lambda$0(WeakReference weakReference, boolean z) {
         CraftMenuAdapter craftMenuAdapter;
-        if (z && craftScreen.craftItemsAdapter != null && (craftMenuAdapter = craftScreen.craftMenuAdapter) != null) {
+        CraftScreen craftScreen = (CraftScreen) weakReference.get();
+        if (z && craftScreen != null && !craftScreen.isRemovedFromStore && craftScreen.craftItemsAdapter != null && (craftMenuAdapter = craftScreen.craftMenuAdapter) != null) {
             if (craftMenuAdapter == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("craftMenuAdapter");
                 craftMenuAdapter = null;
@@ -723,7 +743,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void getInventoryList() {
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), null, null, new CraftScreen$getInventoryList$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.inventoryScope, null, null, new CraftScreen$getInventoryList$1(this, null), 3, null);
     }
 
     private final void isEnabledCraftItem(boolean z) {
@@ -1532,6 +1552,16 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
         this.binding.parentLayout.setVisibility(z ? 0 : 8);
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        this.isRemovedFromStore = true;
+        Job.cancel$default((Job) this.inventoryCollectorJob, (CancellationException) null, 1, (Object) null);
+        this.incrementHandler.removeCallbacksAndMessages(null);
+        this.newHandler.removeCallbacksAndMessages(null);
+        super.onRemovedFromStore(reason);
     }
 
     private final void closeScreen() {

@@ -1,4 +1,6 @@
 package com.google.android.gms.internal.measurement;
+
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public final class zzabl extends zzabp {
@@ -24,7 +26,7 @@ public final class zzabl extends zzabp {
             }
             zza2 = zzabj.zza(i, zza3, zzb);
         } else if (charAt == 't' || charAt == 'T') {
-            if (zzb.zzh(160, false)) {
+            if (zzb.zzh(RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, false)) {
                 int i6 = i4 + 2;
                 if (i6 > str.length()) {
                     throw zzabo.zzb("truncated format specifier", str, i2);
@@ -39,7 +41,7 @@ public final class zzabl extends zzabp {
                 throw zzabo.zza("invalid format specification", str, i2, i5);
             }
         } else if (charAt == 'h' || charAt == 'H') {
-            if (zzb.zzh(160, false)) {
+            if (zzb.zzh(RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, false)) {
                 zza2 = new zzabk(zzb, i, zzb);
             } else {
                 throw zzabo.zza("invalid format specification", str, i2, i5);

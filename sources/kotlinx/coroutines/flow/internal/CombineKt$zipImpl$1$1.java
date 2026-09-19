@@ -120,7 +120,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
             ReceiveChannel produce$default = ProduceKt.produce$default(receiveChannel2, null, 0, new CombineKt$zipImpl$1$1$second$1(this.$flow2, null), 3, null);
             Job$default = JobKt__JobKt.Job$default((Job) null, 1, (Object) null);
             Intrinsics.checkNotNull(produce$default, "null cannot be cast to non-null type kotlinx.coroutines.channels.SendChannel<*>");
-            ((SendChannel) produce$default).mo11528invokeOnClose(new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1.1
+            ((SendChannel) produce$default).mo11529invokeOnClose(new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1.1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
                     invoke2(th);
@@ -254,7 +254,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
             @DebugMetadata(c = "kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$2$1$1", f = "Combine.kt", i = {1, 2}, l = {WebSocketProtocol.PAYLOAD_SHORT, TsExtractor.TS_STREAM_TYPE_AC3, TsExtractor.TS_STREAM_TYPE_AC3}, m = "invokeSuspend", n = {"otherValue", "otherValue"}, s = {"L$0", "L$0"}, v = 1)
             /* renamed from: kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$2$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: classes5.dex */
-            public static final class C00791 extends SuspendLambda implements Function2<Unit, Continuation<? super Unit>, Object> {
+            public static final class C00781 extends SuspendLambda implements Function2<Unit, Continuation<? super Unit>, Object> {
                 final /* synthetic */ CompletableJob $collectJob;
                 final /* synthetic */ ReceiveChannel<Object> $second;
                 final /* synthetic */ FlowCollector<R> $this_unsafeFlow;
@@ -266,7 +266,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 /* JADX WARN: Multi-variable type inference failed */
-                C00791(ReceiveChannel<? extends Object> receiveChannel, FlowCollector<? super R> flowCollector, Function3<? super T1, ? super T2, ? super Continuation<? super R>, ? extends Object> function3, T1 t1, CompletableJob completableJob, Continuation<? super C00791> continuation) {
+                C00781(ReceiveChannel<? extends Object> receiveChannel, FlowCollector<? super R> flowCollector, Function3<? super T1, ? super T2, ? super Continuation<? super R>, ? extends Object> function3, T1 t1, CompletableJob completableJob, Continuation<? super C00781> continuation) {
                     super(2, continuation);
                     this.$second = receiveChannel;
                     this.$this_unsafeFlow = flowCollector;
@@ -277,7 +277,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
 
                 @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    return new C00791(this.$second, this.$this_unsafeFlow, this.$transform, this.$value, this.$collectJob, continuation);
+                    return new C00781(this.$second, this.$this_unsafeFlow, this.$transform, this.$value, this.$collectJob, continuation);
                 }
 
                 @Override // kotlin.jvm.functions.Function2
@@ -287,7 +287,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
 
                 /* renamed from: invoke  reason: avoid collision after fix types in other method */
                 public final Object invoke2(Unit unit, Continuation<? super Unit> continuation) {
-                    return ((C00791) create(unit, continuation)).invokeSuspend(Unit.INSTANCE);
+                    return ((C00781) create(unit, continuation)).invokeSuspend(Unit.INSTANCE);
                 }
 
                 /* JADX WARN: Code restructure failed: missing block: B:13:0x0041, code lost:
@@ -301,7 +301,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
                     Code decompiled incorrectly, please refer to instructions dump.
                 */
                 public final Object invokeSuspend(Object obj) {
-                    Object mo11461receiveCatchingJP2dKIU;
+                    Object mo11462receiveCatchingJP2dKIU;
                     Object obj2;
                     FlowCollector flowCollector;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -309,10 +309,10 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
                     if (i == 0) {
                         ResultKt.throwOnFailure(obj);
                         this.label = 1;
-                        mo11461receiveCatchingJP2dKIU = this.$second.mo11461receiveCatchingJP2dKIU(this);
+                        mo11462receiveCatchingJP2dKIU = this.$second.mo11462receiveCatchingJP2dKIU(this);
                     } else if (i == 1) {
                         ResultKt.throwOnFailure(obj);
-                        mo11461receiveCatchingJP2dKIU = ((ChannelResult) obj).m11480unboximpl();
+                        mo11462receiveCatchingJP2dKIU = ((ChannelResult) obj).m11481unboximpl();
                     } else if (i != 2) {
                         if (i == 3) {
                             ResultKt.throwOnFailure(obj);
@@ -328,23 +328,23 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
                         this.label = 3;
                     }
                     CompletableJob completableJob = this.$collectJob;
-                    if (mo11461receiveCatchingJP2dKIU instanceof ChannelResult.Failed) {
-                        Throwable m11472exceptionOrNullimpl = ChannelResult.m11472exceptionOrNullimpl(mo11461receiveCatchingJP2dKIU);
-                        if (m11472exceptionOrNullimpl == null) {
+                    if (mo11462receiveCatchingJP2dKIU instanceof ChannelResult.Failed) {
+                        Throwable m11473exceptionOrNullimpl = ChannelResult.m11473exceptionOrNullimpl(mo11462receiveCatchingJP2dKIU);
+                        if (m11473exceptionOrNullimpl == null) {
                             throw new AbortFlowException(completableJob);
                         }
-                        throw m11472exceptionOrNullimpl;
+                        throw m11473exceptionOrNullimpl;
                     }
                     FlowCollector flowCollector2 = this.$this_unsafeFlow;
                     Function3<T1, T2, Continuation<? super R>, Object> function3 = this.$transform;
                     T1 t1 = this.$value;
-                    Object obj3 = mo11461receiveCatchingJP2dKIU == NullSurrogateKt.NULL ? null : mo11461receiveCatchingJP2dKIU;
-                    this.L$0 = SpillingKt.nullOutSpilledVariable(mo11461receiveCatchingJP2dKIU);
+                    Object obj3 = mo11462receiveCatchingJP2dKIU == NullSurrogateKt.NULL ? null : mo11462receiveCatchingJP2dKIU;
+                    this.L$0 = SpillingKt.nullOutSpilledVariable(mo11462receiveCatchingJP2dKIU);
                     this.L$1 = flowCollector2;
                     this.label = 2;
                     Object invoke = function3.invoke(t1, obj3, this);
                     if (invoke != coroutine_suspended) {
-                        obj2 = mo11461receiveCatchingJP2dKIU;
+                        obj2 = mo11462receiveCatchingJP2dKIU;
                         obj = invoke;
                         flowCollector = flowCollector2;
                         this.L$0 = SpillingKt.nullOutSpilledVariable(obj2);
@@ -375,7 +375,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
                             ResultKt.throwOnFailure(obj);
                             combineKt$zipImpl$1$1$2$1$emit$1.L$0 = SpillingKt.nullOutSpilledVariable(t1);
                             combineKt$zipImpl$1$1$2$1$emit$1.label = 1;
-                            if (ChannelFlowKt.withContextUndispatched(this.$scopeContext, Unit.INSTANCE, this.$cnt, new C00791(this.$second, this.$this_unsafeFlow, this.$transform, t1, this.$collectJob, null), combineKt$zipImpl$1$1$2$1$emit$1) == coroutine_suspended) {
+                            if (ChannelFlowKt.withContextUndispatched(this.$scopeContext, Unit.INSTANCE, this.$cnt, new C00781(this.$second, this.$this_unsafeFlow, this.$transform, t1, this.$collectJob, null), combineKt$zipImpl$1$1$2$1$emit$1) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                         } else if (i != 1) {

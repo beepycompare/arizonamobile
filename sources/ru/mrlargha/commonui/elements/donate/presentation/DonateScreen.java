@@ -42,8 +42,10 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.databinding.DonateMainPageBinding;
 import ru.mrlargha.commonui.databinding.DonateOrdinaryPageBinding;
+import ru.mrlargha.commonui.databinding.DonatePayPassBinding;
 import ru.mrlargha.commonui.databinding.DonatePurchasePageBinding;
 import ru.mrlargha.commonui.databinding.DonateReplenishmentDialogBinding;
 import ru.mrlargha.commonui.databinding.DonateScreenBinding;
@@ -61,16 +63,18 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.GridTemplateType
 import ru.mrlargha.commonui.elements.donate.presentation.pages.DonateMainPage;
 import ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage;
 import ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePage;
+import ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePayPass;
 import ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePurchasePage;
 import ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.elements.donate.utils.ImageFader;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: DonateScreen.kt */
-@Metadata(d1 = {"\u0000¤\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u0000 T2\u00020\u00012\u00020\u0002:\u0003STUB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u00020&H\u0016J\u0018\u00106\u001a\u0002042\u0006\u00107\u001a\u00020\u001f2\u0006\u00108\u001a\u00020\u0006H\u0016J\u0010\u00109\u001a\u0002042\u0006\u00107\u001a\u00020\u001fH\u0002J\u0017\u0010:\u001a\u0002042\b\u0010;\u001a\u0004\u0018\u00010\u0006H\u0002¢\u0006\u0002\u0010<J\b\u0010=\u001a\u000204H\u0002J\u0017\u0010>\u001a\u0004\u0018\u0001042\u0006\u0010?\u001a\u00020@H\u0002¢\u0006\u0002\u0010AJ\b\u0010B\u001a\u000204H\u0002J\b\u0010C\u001a\u00020DH\u0002J\b\u0010E\u001a\u000204H\u0002J\u0010\u0010F\u001a\u0002042\u0006\u0010?\u001a\u00020)H\u0002J\u0010\u0010G\u001a\u0002042\u0006\u0010?\u001a\u00020,H\u0002J\u0018\u0010H\u001a\u0002042\u0006\u0010?\u001a\u00020,2\u0006\u0010I\u001a\u00020&H\u0002J\u0010\u0010J\u001a\u0002042\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0010\u0010L\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0010\u0010M\u001a\u00020&2\u0006\u0010K\u001a\u00020\u0006H\u0002J\u0014\u0010N\u001a\u0002042\n\b\u0002\u0010?\u001a\u0004\u0018\u00010OH\u0002J\u0010\u0010P\u001a\u0002042\u0006\u0010Q\u001a\u00020\u0014H\u0002J\b\u0010R\u001a\u000204H\u0016R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n \u000b*\u0004\u0018\u00010\u001c0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\u00020\u001f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020,0+X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010-\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u0012\u0010/\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u000e\u00100\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DonateScreenBinding;", "fader", "Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "getFader", "()Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "pages", "", "Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "currentPage", "categoryAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "states", "Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "isHasUpdate", "", "isChangeCategory", "dialogModel", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "categories", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "selectedCategoryId", "Ljava/lang/Integer;", "pendingOpenCategoryId", "hasInitializedCategory", "x", "", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "subId", "openBackendDialog", "openCategory", TtmlNode.ATTR_ID, "(Ljava/lang/Integer;)V", "checkArizonaType", "initDopInfo", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;)Lkotlin/Unit;", "initAdapters", "setupCollectors", "Lkotlinx/coroutines/Job;", "setupListeners", "sendDialogData", "onCategoryClick", "selectCategory", "notifyBackend", "openPurchaseCategory", "categoryId", "isCurrentPurchaseCategory", "isTopBarPurchaseCategory", "openReverseDialog", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "setPage", "page", "itemReadyToShow", "Pages", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000´\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 `2\u00020\u00012\u00020\u0002:\u0003_`aB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00104\u001a\u0002052\u0006\u00106\u001a\u00020&H\u0016J\u0018\u00107\u001a\u0002052\u0006\u00108\u001a\u00020\u001f2\u0006\u00109\u001a\u00020\u0006H\u0016J\b\u0010:\u001a\u000205H\u0002J\b\u0010;\u001a\u000205H\u0002J\u0018\u0010<\u001a\u00020&2\u0006\u0010=\u001a\u00020$2\u0006\u0010>\u001a\u000202H\u0002J\u0010\u0010?\u001a\u0002052\u0006\u00108\u001a\u00020\u001fH\u0002J!\u0010@\u001a\u0002052\b\u0010A\u001a\u0004\u0018\u00010\u00062\b\b\u0002\u0010B\u001a\u00020&H\u0002¢\u0006\u0002\u0010CJ\b\u0010D\u001a\u000205H\u0002J\u0017\u0010E\u001a\u0004\u0018\u0001052\u0006\u0010F\u001a\u00020GH\u0002¢\u0006\u0002\u0010HJ\b\u0010I\u001a\u000205H\u0002J\u0018\u0010J\u001a\u00020K2\u0006\u0010=\u001a\u00020$2\u0006\u0010L\u001a\u000202H\u0002J\b\u0010M\u001a\u000205H\u0002J\u0010\u0010N\u001a\u0002052\u0006\u0010F\u001a\u00020)H\u0002J\u0010\u0010O\u001a\u0002052\u0006\u0010F\u001a\u00020,H\u0002J\u0018\u0010P\u001a\u0002052\u0006\u0010F\u001a\u00020,2\u0006\u0010B\u001a\u00020&H\u0002J\u0010\u0010Q\u001a\u0002052\u0006\u0010R\u001a\u00020\u0006H\u0002J\u0010\u0010S\u001a\u00020&2\u0006\u0010R\u001a\u00020\u0006H\u0002J\u0010\u0010T\u001a\u00020&2\u0006\u0010R\u001a\u00020\u0006H\u0002J\b\u0010U\u001a\u00020VH\u0002J\u0014\u0010W\u001a\u0002052\n\b\u0002\u0010F\u001a\u0004\u0018\u00010XH\u0002J\u0010\u0010Y\u001a\u0002052\u0006\u0010Z\u001a\u00020\u0014H\u0002J\b\u0010[\u001a\u000205H\u0016J\u0010\u0010\\\u001a\u0002052\u0006\u0010]\u001a\u00020^H\u0016R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u00150\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n \u000b*\u0004\u0018\u00010\u001c0\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010 \u001a\u00020\u001f8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b!\u0010\"R\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010(\u001a\u0004\u0018\u00010)X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020,0+X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010-\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u0012\u0010/\u001a\u0004\u0018\u00010\u0006X\u0082\u000e¢\u0006\u0004\n\u0002\u0010.R\u000e\u00100\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000202X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006b"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/DonateScreenBinding;", "fader", "Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "getFader", "()Lru/mrlargha/commonui/elements/donate/utils/ImageFader;", "pages", "", "Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "currentPage", "categoryAdapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateCategoryAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "token", "getToken", "()Ljava/lang/String;", "states", "Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "isHasUpdate", "", "isChangeCategory", "dialogModel", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "categories", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "selectedCategoryId", "Ljava/lang/Integer;", "pendingOpenCategoryId", "hasInitializedCategory", "x", "", "sessionGeneration", "setVisibility", "", "visible", "onBackendMessageHandled", "data", "subId", "ensureSession", "stopSession", "isCurrentSession", "sessionStates", "expectedGeneration", "openBackendDialog", "openCategory", TtmlNode.ATTR_ID, "notifyBackend", "(Ljava/lang/Integer;Z)V", "checkArizonaType", "initDopInfo", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateScreenModel;)Lkotlin/Unit;", "initAdapters", "setupCollectors", "Lkotlinx/coroutines/Job;", "currentSessionGeneration", "setupListeners", "sendDialogData", "onCategoryClick", "selectCategory", "openPurchaseCategory", "categoryId", "isCurrentPurchaseCategory", "isTopBarPurchaseCategory", "purchasePage", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePurchasePage;", "openReverseDialog", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "setPage", "page", "itemReadyToShow", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "Pages", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateScreen extends SAMPUIElement implements DonateOnItemCompleteListeners {
     private static final Companion Companion = new Companion(null);
@@ -90,10 +94,11 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     private boolean isHasUpdate;
     private final Map<Pages, DonatePage> pages;
     private Integer pendingOpenCategoryId;
-    private final CoroutineScope scope;
+    private CoroutineScope scope;
     private final View screen;
     private Integer selectedCategoryId;
     private final int serverId;
+    private long sessionGeneration;
     private final SharedPreferences sharedPref;
     private DonateStates states;
     private long x;
@@ -117,6 +122,10 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             try {
                 iArr[GridTemplateType.ROW.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[GridTemplateType.PAYPASS.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -155,25 +164,38 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         Pages pages4 = Pages.DIALOG;
         DonateReplenishmentDialogBinding replenishmentDialogPage = bind.replenishmentDialogPage;
         Intrinsics.checkNotNullExpressionValue(replenishmentDialogPage, "replenishmentDialogPage");
+        Pages pages5 = Pages.PAYPASS;
+        DonatePayPassBinding payPassPage = bind.payPassPage;
+        Intrinsics.checkNotNullExpressionValue(payPassPage, "payPassPage");
         this.pages = MapsKt.mapOf(TuplesKt.to(pages, new DonateMainPage(i, targetActivity, donateScreen, mainPage, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return DonateScreen.pages$lambda$0(DonateScreen.this, (DonateItemModelUi) obj);
             }
-        })), TuplesKt.to(pages2, new DonateOrdinaryPage(i, targetActivity, donateScreen, ordinaryPage, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda1
+        })), TuplesKt.to(pages2, new DonateOrdinaryPage(i, targetActivity, donateScreen, ordinaryPage, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return DonateScreen.pages$lambda$1(DonateScreen.this, (DonateItemModelUi) obj);
             }
-        })), TuplesKt.to(pages3, new DonatePurchasePage(i, targetActivity, donateScreen, purchasePage, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda2
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                return DonateScreen.pages$lambda$2(DonateScreen.this, (DonateBoostModelUi) obj);
-            }
-        })), TuplesKt.to(pages4, new DonateReplenishmentDialogPage(i, targetActivity, donateScreen, replenishmentDialogPage, new Function0() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda3
+        })), TuplesKt.to(pages3, new DonatePurchasePage(i, targetActivity, donateScreen, purchasePage, new Function0() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return DonateScreen.pages$lambda$3(DonateScreen.this);
+                return DonateScreen.pages$lambda$2(DonateScreen.this);
+            }
+        }, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda5
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return DonateScreen.pages$lambda$3(DonateScreen.this, (DonateBoostModelUi) obj);
+            }
+        })), TuplesKt.to(pages4, new DonateReplenishmentDialogPage(i, targetActivity, donateScreen, replenishmentDialogPage, new Function0() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda6
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return DonateScreen.pages$lambda$4(DonateScreen.this);
+            }
+        })), TuplesKt.to(pages5, new DonatePayPass(i, targetActivity, donateScreen, payPassPage, new Function1() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda7
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return DonateScreen.pages$lambda$5(DonateScreen.this, ((Integer) obj).intValue());
             }
         })));
         this.currentPage = Pages.NONE;
@@ -206,7 +228,29 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit pages$lambda$2(DonateScreen donateScreen, DonateBoostModelUi it) {
+    public static final Unit pages$lambda$2(DonateScreen donateScreen) {
+        Object obj;
+        Iterator<T> it = donateScreen.categories.iterator();
+        while (true) {
+            if (!it.hasNext()) {
+                obj = null;
+                break;
+            }
+            obj = it.next();
+            DonateCategoryModelUi donateCategoryModelUi = (DonateCategoryModelUi) obj;
+            if (donateCategoryModelUi.getVisible() && donateCategoryModelUi.m11869getGridTemplateType() == GridTemplateType.PAYPASS) {
+                break;
+            }
+        }
+        DonateCategoryModelUi donateCategoryModelUi2 = (DonateCategoryModelUi) obj;
+        if (donateCategoryModelUi2 != null) {
+            donateScreen.onCategoryClick(donateCategoryModelUi2);
+        }
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit pages$lambda$3(DonateScreen donateScreen, DonateBoostModelUi it) {
         Intrinsics.checkNotNullParameter(it, "it");
         donateScreen.setPage(Pages.DIALOG);
         donateScreen.sendDialogData(it);
@@ -214,8 +258,14 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit pages$lambda$3(DonateScreen donateScreen) {
+    public static final Unit pages$lambda$4(DonateScreen donateScreen) {
         donateScreen.setPage(donateScreen.currentPage);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit pages$lambda$5(DonateScreen donateScreen, int i) {
+        donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), i, DonateSubIds.CLAIM_PAYPASS_LEVEL.getSubIds());
         return Unit.INSTANCE;
     }
 
@@ -227,53 +277,94 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     public void setVisibility(boolean z) {
         super.setVisibility(z);
         if (z) {
-            this.states = new DonateStates(getTargetActivity(), getBackendID());
-            this.isHasUpdate = false;
-            this.categories = CollectionsKt.emptyList();
-            this.selectedCategoryId = null;
-            this.pendingOpenCategoryId = null;
-            this.hasInitializedCategory = false;
-            this.categoryAdapter.refreshSelectItem();
-            initAdapters();
-            setupCollectors();
-            setupListeners();
-        } else {
-            DonateStates donateStates = this.states;
-            if (donateStates != null) {
-                donateStates.clearJobs();
-            }
-            this.states = null;
+            ensureSession();
+            return;
+        }
+        DonatePage donatePage = this.pages.get(Pages.PAYPASS);
+        DonatePayPass donatePayPass = donatePage instanceof DonatePayPass ? (DonatePayPass) donatePage : null;
+        if (donatePayPass != null) {
+            donatePayPass.onHidden();
         }
         this.fader.stop();
+        stopSession();
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessageHandled(String data, int i) {
-        DonateStates donateStates;
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == DonateSubIds.UPDATE_CATEGORY_LIST.getSubIds()) {
-            DonateStates donateStates2 = this.states;
-            if (donateStates2 != null) {
-                donateStates2.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
+            ensureSession();
+            DonateStates donateStates = this.states;
+            if (donateStates != null) {
+                donateStates.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
             }
         } else if (i == DonateSubIds.UPDATE_ITEM_LIST.getSubIds()) {
-            if (data.length() <= 0 || (donateStates = this.states) == null) {
-                return;
+            if (data.length() > 0) {
+                ensureSession();
+                DonateStates donateStates2 = this.states;
+                if (donateStates2 != null) {
+                    donateStates2.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
+                }
             }
-            donateStates.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
         } else if (i == DonateSubIds.GET_DOP_INFO.getSubIds()) {
+            ensureSession();
             initDopInfo((DonateScreenModel) MapperKt.toModel(data, DonateScreenModel.class));
         } else if (i == DonateSubIds.OPEN_CATEGORY.getSubIds()) {
-            String str = data;
-            openCategory(StringsKt.toIntOrNull(StringsKt.trim((CharSequence) str).toString()));
+            ensureSession();
+            Integer intOrNull = StringsKt.toIntOrNull(StringsKt.trim((CharSequence) data).toString());
+            openCategory(intOrNull, false);
             Log.d(DonateUtilsKt.DONATE_TAG, "data: open category: " + data);
-            Integer intOrNull = StringsKt.toIntOrNull(StringsKt.trim((CharSequence) str).toString());
             if (intOrNull != null) {
                 getNotifier().clickedWrapper(getBackendID(), intOrNull.intValue(), 4);
             }
+        } else if (i == DonateSubIds.PAYPASS_STATE.getSubIds()) {
+            ensureSession();
+            DonatePage donatePage = this.pages.get(Pages.PAYPASS);
+            if (donatePage != null) {
+                donatePage.onBackendMessage(i, data);
+            }
         } else if (i == DonateSubIds.DIALOG_INIT.getSubIds()) {
+            ensureSession();
             openBackendDialog(data);
         }
+    }
+
+    private final void ensureSession() {
+        if (this.states != null) {
+            return;
+        }
+        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO());
+        DonateStates donateStates = new DonateStates(getTargetActivity(), getBackendID());
+        this.states = donateStates;
+        long j = this.sessionGeneration;
+        this.isHasUpdate = false;
+        this.categories = CollectionsKt.emptyList();
+        this.selectedCategoryId = null;
+        this.pendingOpenCategoryId = null;
+        this.hasInitializedCategory = false;
+        this.categoryAdapter.refreshSelectItem();
+        initAdapters();
+        setupCollectors(donateStates, j);
+        setupListeners();
+    }
+
+    private final void stopSession() {
+        this.sessionGeneration++;
+        for (DonatePage donatePage : this.pages.values()) {
+            donatePage.stopPendingWork();
+        }
+        purchasePage().setPayPassShortcutAvailable(false);
+        DonateStates donateStates = this.states;
+        if (donateStates != null) {
+            donateStates.clearJobs();
+        }
+        this.states = null;
+        CoroutineScopeKt.cancel$default(this.scope, null, 1, null);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final boolean isCurrentSession(DonateStates donateStates, long j) {
+        return this.states == donateStates && this.sessionGeneration == j;
     }
 
     private final void openBackendDialog(String str) {
@@ -284,8 +375,15 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void openCategory(Integer num) {
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void openCategory$default(DonateScreen donateScreen, Integer num, boolean z, int i, Object obj) {
+        if ((i & 2) != 0) {
+            z = false;
+        }
+        donateScreen.openCategory(num, z);
+    }
+
+    private final void openCategory(Integer num, boolean z) {
         Object obj;
         Integer num2;
         if (num != null) {
@@ -319,7 +417,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             this.hasInitializedCategory = true;
             this.categoryAdapter.selectItemById(intValue);
             this.binding.rvCategories.scrollToPosition(this.categories.indexOf(donateCategoryModelUi));
-            selectCategory(donateCategoryModelUi, true);
+            selectCategory(donateCategoryModelUi, z);
         }
     }
 
@@ -339,7 +437,9 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         Intrinsics.checkNotNullExpressionValue(btnEvent, "btnEvent");
         btnEvent.setVisibility(donateScreenModel.isShowButtonEventStatus() ? 0 : 8);
         donateScreenBinding.topBar.tvEvent.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, donateScreenModel.getButtonEventName(), 0.0f, null, 3, null));
-        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/donate_icons/mobile/event.webp").into(donateScreenBinding.topBar.ivEvent);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/donate_icons/mobile/event.webp").into(donateScreenBinding.topBar.ivEvent);
         donateScreenBinding.topBar.tvMoneyCount.setText(String.valueOf(donateScreenModel.getCountMoney()));
         donateScreenBinding.topBar.tvAzCoin.setText(DonateUtilsKt.formatWithSpaces(donateScreenModel.getCountAzCoins()));
         CardView boostContainer = donateScreenBinding.topBar.boostContainer;
@@ -367,42 +467,43 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         donateScreenBinding.rvCategories.setVerticalScrollBarEnabled(true);
     }
 
-    private final Job setupCollectors() {
+    private final Job setupCollectors(DonateStates donateStates, long j) {
         Job launch$default;
         DonateScreenBinding donateScreenBinding = this.binding;
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$setupCollectors$1$1(this, donateScreenBinding, null), 3, null);
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$setupCollectors$1$2(this, donateScreenBinding, null), 3, null);
-        launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$setupCollectors$1$3(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$setupCollectors$1$1(donateStates, this, j, donateScreenBinding, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$setupCollectors$1$2(donateStates, this, j, donateScreenBinding, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$setupCollectors$1$3(donateStates, this, j, null), 3, null);
+        launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$setupCollectors$1$4(donateStates, this, j, null), 3, null);
         return launch$default;
     }
 
     private final void setupListeners() {
         final DonateScreenBinding donateScreenBinding = this.binding;
-        donateScreenBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda4
+        donateScreenBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DonateScreen.setupListeners$lambda$0$0(view);
             }
         });
-        donateScreenBinding.topBar.btnEvent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda5
+        donateScreenBinding.topBar.btnEvent.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DonateScreen.setupListeners$lambda$0$1(DonateScreen.this, view);
             }
         });
-        donateScreenBinding.topBar.btnAddMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda6
+        donateScreenBinding.topBar.btnAddMoney.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda10
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DonateScreen.setupListeners$lambda$0$2(DonateScreenBinding.this, this, view);
             }
         });
-        donateScreenBinding.topBar.btnAddAzCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda7
+        donateScreenBinding.topBar.btnAddAzCoins.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda11
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DonateScreen.setupListeners$lambda$0$3(DonateScreenBinding.this, this, view);
             }
         });
-        donateScreenBinding.topBar.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda8
+        donateScreenBinding.topBar.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DonateScreen.setupListeners$lambda$0$4(DonateScreen.this, view);
@@ -435,18 +536,38 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupListeners$lambda$0$3(DonateScreenBinding donateScreenBinding, DonateScreen donateScreen, View view) {
+        Object obj;
+        int id;
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         if (pagesContainer.getVisibility() == 0) {
-            int size = UtilsKt.isArizonaType() ? 10 : donateScreen.categoryAdapter.getCurrentList().size();
-            if (UtilsKt.isArizonaType() && donateScreen.isCurrentPurchaseCategory(size)) {
+            if (UtilsKt.isArizonaType()) {
+                id = 10;
+            } else {
+                List<DonateCategoryModelUi> currentList = donateScreen.categoryAdapter.getCurrentList();
+                Intrinsics.checkNotNullExpressionValue(currentList, "getCurrentList(...)");
+                Iterator<T> it = currentList.iterator();
+                while (true) {
+                    if (!it.hasNext()) {
+                        obj = null;
+                        break;
+                    }
+                    obj = it.next();
+                    if (Intrinsics.areEqual(((DonateCategoryModelUi) obj).getTitle(), "Деньги (скрытый)")) {
+                        break;
+                    }
+                }
+                DonateCategoryModelUi donateCategoryModelUi = (DonateCategoryModelUi) obj;
+                id = donateCategoryModelUi != null ? donateCategoryModelUi.getId() : 13;
+            }
+            if (UtilsKt.isArizonaType() && donateScreen.isCurrentPurchaseCategory(id)) {
                 return;
             }
             donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), 2, 2);
-            Log.d(donateScreen.getCLASS_TAG(), "setupListeners: " + size);
+            Log.d(donateScreen.getCLASS_TAG(), "setupListeners: " + id);
             donateScreen.categoryAdapter.rateCategory();
-            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), size, 4);
-            donateScreen.openPurchaseCategory(size);
+            donateScreen.getNotifier().clickedWrapper(donateScreen.getBackendID(), id, 4);
+            donateScreen.openPurchaseCategory(id);
         }
     }
 
@@ -478,41 +599,58 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void onCategoryClick(DonateCategoryModelUi donateCategoryModelUi) {
-        this.hasInitializedCategory = true;
-        selectCategory(donateCategoryModelUi, true);
+        if (this.states != null) {
+            this.hasInitializedCategory = true;
+            selectCategory(donateCategoryModelUi, true);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void selectCategory(DonateCategoryModelUi donateCategoryModelUi, boolean z) {
         DonateScreenBinding donateScreenBinding = this.binding;
+        DonateStates donateStates = this.states;
+        if (donateStates == null) {
+            return;
+        }
+        long j = this.sessionGeneration;
         this.selectedCategoryId = Integer.valueOf(donateCategoryModelUi.getId());
+        LinearLayout errorPlaceholderItems = donateScreenBinding.errorPlaceholderItems;
+        Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems, "errorPlaceholderItems");
+        errorPlaceholderItems.setVisibility(8);
+        this.isChangeCategory = true;
+        if (z) {
+            getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
+        }
+        Log.d("TAG", "selectCategory: " + donateCategoryModelUi.getId());
+        GridTemplateType m11869getGridTemplateType = donateCategoryModelUi.m11869getGridTemplateType();
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         pagesContainer.setVisibility(4);
         ProgressBar pageProgressBar = donateScreenBinding.pageProgressBar;
         Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
         pageProgressBar.setVisibility(0);
-        LinearLayout errorPlaceholderItems = donateScreenBinding.errorPlaceholderItems;
-        Intrinsics.checkNotNullExpressionValue(errorPlaceholderItems, "errorPlaceholderItems");
-        errorPlaceholderItems.setVisibility(8);
-        this.isChangeCategory = true;
-        getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
-        Log.d("TAG", "selectCategory: " + donateCategoryModelUi.getId());
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$selectCategory$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m11869getGridTemplateType().ordinal()];
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$selectCategory$1$1(this, donateStates, j, donateCategoryModelUi, null), 3, null);
+        int i = WhenMappings.$EnumSwitchMapping$0[m11869getGridTemplateType.ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {
             setPage(Pages.ORDINARY);
-        } else if (i != 3) {
+        } else if (i == 3) {
+            setPage(Pages.PURCHASE);
+        } else if (i != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            setPage(Pages.PURCHASE);
+            setPage(Pages.PAYPASS);
         }
     }
 
     private final void openPurchaseCategory(int i) {
         DonateScreenBinding donateScreenBinding = this.binding;
+        DonateStates donateStates = this.states;
+        if (donateStates == null) {
+            return;
+        }
+        long j = this.sessionGeneration;
         if (isCurrentPurchaseCategory(i)) {
             this.pendingOpenCategoryId = null;
             return;
@@ -532,7 +670,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         errorPlaceholderItems.setVisibility(8);
         this.isChangeCategory = true;
         setPage(Pages.PURCHASE);
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$openPurchaseCategory$1$1(this, i, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$openPurchaseCategory$1$1(this, donateStates, j, i, null), 3, null);
     }
 
     private final boolean isCurrentPurchaseCategory(int i) {
@@ -543,6 +681,13 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             return pagesContainer.getVisibility() == 0;
         }
         return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final DonatePurchasePage purchasePage() {
+        DonatePage donatePage = this.pages.get(Pages.PURCHASE);
+        Intrinsics.checkNotNull(donatePage, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePurchasePage");
+        return (DonatePurchasePage) donatePage;
     }
 
     static /* synthetic */ void openReverseDialog$default(DonateScreen donateScreen, DonateItemModelUi donateItemModelUi, int i, Object obj) {
@@ -582,6 +727,13 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         DonateScreenBinding donateScreenBinding = this.binding;
         Log.i(DonateUtilsKt.DONATE_TAG, "setPage: " + pages + " ");
         if (pages != Pages.DIALOG) {
+            if (this.currentPage == Pages.PAYPASS && pages != Pages.PAYPASS) {
+                DonatePage donatePage = this.pages.get(Pages.PAYPASS);
+                DonatePayPass donatePayPass = donatePage instanceof DonatePayPass ? (DonatePayPass) donatePage : null;
+                if (donatePayPass != null) {
+                    donatePayPass.onHidden();
+                }
+            }
             this.currentPage = pages;
             LinearLayout root = donateScreenBinding.mainPage.getRoot();
             Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
@@ -592,16 +744,26 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             LinearLayout root3 = donateScreenBinding.purchasePage.getRoot();
             Intrinsics.checkNotNullExpressionValue(root3, "getRoot(...)");
             root3.setVisibility(Pages.PURCHASE != pages ? 8 : 0);
+            FrameLayout root4 = donateScreenBinding.payPassPage.getRoot();
+            Intrinsics.checkNotNullExpressionValue(root4, "getRoot(...)");
+            root4.setVisibility(Pages.PAYPASS != pages ? 8 : 0);
+            if (pages == Pages.PAYPASS) {
+                DonatePage donatePage2 = this.pages.get(Pages.PAYPASS);
+                DonatePayPass donatePayPass2 = donatePage2 instanceof DonatePayPass ? (DonatePayPass) donatePage2 : null;
+                if (donatePayPass2 != null) {
+                    donatePayPass2.onPageSelected();
+                }
+            }
         }
-        FrameLayout root4 = donateScreenBinding.replenishmentDialogPage.getRoot();
-        Intrinsics.checkNotNullExpressionValue(root4, "getRoot(...)");
-        root4.setVisibility(Pages.DIALOG != pages ? 8 : 0);
+        FrameLayout root5 = donateScreenBinding.replenishmentDialogPage.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root5, "getRoot(...)");
+        root5.setVisibility(Pages.DIALOG != pages ? 8 : 0);
     }
 
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: DonateScreen.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\t"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "", "<init>", "(Ljava/lang/String;I)V", "NONE", "MAIN", "ORDINARY", "PURCHASE", "DIALOG", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\t\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\bj\u0002\b\t¨\u0006\n"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateScreen$Pages;", "", "<init>", "(Ljava/lang/String;I)V", "NONE", "MAIN", "ORDINARY", "PURCHASE", "PAYPASS", "DIALOG", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Pages {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -610,10 +772,11 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         public static final Pages MAIN = new Pages("MAIN", 1);
         public static final Pages ORDINARY = new Pages("ORDINARY", 2);
         public static final Pages PURCHASE = new Pages("PURCHASE", 3);
-        public static final Pages DIALOG = new Pages("DIALOG", 4);
+        public static final Pages PAYPASS = new Pages("PAYPASS", 4);
+        public static final Pages DIALOG = new Pages("DIALOG", 5);
 
         private static final /* synthetic */ Pages[] $values() {
-            return new Pages[]{NONE, MAIN, ORDINARY, PURCHASE, DIALOG};
+            return new Pages[]{NONE, MAIN, ORDINARY, PURCHASE, PAYPASS, DIALOG};
         }
 
         public static EnumEntries<Pages> getEntries() {
@@ -671,22 +834,36 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     @Override // ru.mrlargha.commonui.elements.donate.presentation.DonateOnItemCompleteListeners
     public void itemReadyToShow() {
         DonateScreenBinding donateScreenBinding = this.binding;
-        this.isChangeCategory = false;
-        FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
-        Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
-        pagesContainer.setVisibility(0);
-        donateScreenBinding.pagesContainer.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                DonateScreen.itemReadyToShow$lambda$0$0(DonateScreen.this);
-            }
-        });
+        final long j = this.sessionGeneration;
+        if (this.states != null) {
+            this.isChangeCategory = false;
+            FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
+            Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
+            pagesContainer.setVisibility(0);
+            donateScreenBinding.pagesContainer.post(new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$$ExternalSyntheticLambda2
+                @Override // java.lang.Runnable
+                public final void run() {
+                    DonateScreen.itemReadyToShow$lambda$0$0(DonateScreen.this, j);
+                }
+            });
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void itemReadyToShow$lambda$0$0(DonateScreen donateScreen) {
+    public static final void itemReadyToShow$lambda$0$0(DonateScreen donateScreen, long j) {
+        if (donateScreen.sessionGeneration != j) {
+            return;
+        }
         ProgressBar pageProgressBar = donateScreen.binding.pageProgressBar;
         Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
         pageProgressBar.setVisibility(8);
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        this.fader.stop();
+        stopSession();
+        super.onRemovedFromStore(reason);
     }
 }

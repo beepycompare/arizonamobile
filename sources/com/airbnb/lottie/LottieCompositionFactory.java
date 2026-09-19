@@ -34,6 +34,7 @@ import okio.BufferedSource;
 import okio.Okio;
 import okio.Source;
 import org.json.JSONObject;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* loaded from: classes3.dex */
 public class LottieCompositionFactory {
     private static final Map<String, LottieTask<LottieComposition>> taskCache = new HashMap();
@@ -561,7 +562,7 @@ public class LottieCompositionFactory {
                 String fileName = value.getFileName();
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inScaled = true;
-                options.inDensity = 160;
+                options.inDensity = RodinaTrainSpeedGaugeView.MAX_SPEED_KMH;
                 if (fileName.startsWith("data:") && fileName.indexOf("base64,") > 0) {
                     try {
                         byte[] decode = Base64.decode(fileName.substring(fileName.indexOf(44) + 1), 0);

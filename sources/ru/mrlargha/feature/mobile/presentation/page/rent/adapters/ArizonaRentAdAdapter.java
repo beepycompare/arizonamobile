@@ -19,6 +19,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
@@ -122,7 +123,9 @@ public final class ArizonaRentAdAdapter extends ListAdapter<ArizonaRentAdModel, 
                 Intrinsics.checkNotNullExpressionValue(online3, "online");
                 online3.setVisibility(8);
             }
-            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/house_int/" + arizonaRentAdModel.getImage() + ".webp").into(mpArizonaRentAdItemBinding.ivHome);
+            Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+            PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/house_int/" + arizonaRentAdModel.getImage() + ".webp").into(mpArizonaRentAdItemBinding.ivHome);
             Intrinsics.checkNotNull(context);
             checkIsMyAd(arizonaRentAdModel.getIsMy(context));
         }

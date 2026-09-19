@@ -6,19 +6,19 @@ import com.facebook.internal.NativeProtocol;
 /* loaded from: classes5.dex */
 public final class ULongKt {
     private static final long toULong(byte b) {
-        return ULong.m10100constructorimpl(b);
+        return ULong.m10101constructorimpl(b);
     }
 
     private static final long toULong(short s) {
-        return ULong.m10100constructorimpl(s);
+        return ULong.m10101constructorimpl(s);
     }
 
     private static final long toULong(int i) {
-        return ULong.m10100constructorimpl(i);
+        return ULong.m10101constructorimpl(i);
     }
 
     private static final long toULong(long j) {
-        return ULong.m10100constructorimpl(j);
+        return ULong.m10101constructorimpl(j);
     }
 
     private static final long toULong(float f) {

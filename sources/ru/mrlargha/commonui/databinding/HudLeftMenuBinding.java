@@ -3,8 +3,10 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
@@ -15,13 +17,14 @@ public final class HudLeftMenuBinding implements ViewBinding {
     public final CustomCardView btnOpenBattlePass;
     public final ImageView btnOpenBattlePassIcon;
     public final CustomTextView btnOpenBattlePassText;
-    public final ImageView btnOpenChallenges;
+    public final FrameLayout btnOpenChallenges;
     public final ImageView btnOpenMission;
     public final ImageView btnOpenQuest;
     public final ImageView btnOpenRadialMenu;
     private final LinearLayout rootView;
+    public final TextView tvChallenge;
 
-    private HudLeftMenuBinding(LinearLayout rootView, CustomCardView btnOpenBattlePass, ImageView btnOpenBattlePassIcon, CustomTextView btnOpenBattlePassText, ImageView btnOpenChallenges, ImageView btnOpenMission, ImageView btnOpenQuest, ImageView btnOpenRadialMenu) {
+    private HudLeftMenuBinding(LinearLayout rootView, CustomCardView btnOpenBattlePass, ImageView btnOpenBattlePassIcon, CustomTextView btnOpenBattlePassText, FrameLayout btnOpenChallenges, ImageView btnOpenMission, ImageView btnOpenQuest, ImageView btnOpenRadialMenu, TextView tvChallenge) {
         this.rootView = rootView;
         this.btnOpenBattlePass = btnOpenBattlePass;
         this.btnOpenBattlePassIcon = btnOpenBattlePassIcon;
@@ -30,6 +33,7 @@ public final class HudLeftMenuBinding implements ViewBinding {
         this.btnOpenMission = btnOpenMission;
         this.btnOpenQuest = btnOpenQuest;
         this.btnOpenRadialMenu = btnOpenRadialMenu;
+        this.tvChallenge = tvChallenge;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -60,18 +64,22 @@ public final class HudLeftMenuBinding implements ViewBinding {
                 CustomTextView customTextView = (CustomTextView) ViewBindings.findChildViewById(rootView, i);
                 if (customTextView != null) {
                     i = R.id.btn_open_challenges;
-                    ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                    if (imageView2 != null) {
+                    FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                    if (frameLayout != null) {
                         i = R.id.btn_open_mission;
-                        ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                        if (imageView3 != null) {
+                        ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                        if (imageView2 != null) {
                             i = R.id.btn_open_quest;
-                            ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                            if (imageView4 != null) {
+                            ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                            if (imageView3 != null) {
                                 i = R.id.btn_open_radial_menu;
-                                ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                if (imageView5 != null) {
-                                    return new HudLeftMenuBinding((LinearLayout) rootView, customCardView, imageView, customTextView, imageView2, imageView3, imageView4, imageView5);
+                                ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                if (imageView4 != null) {
+                                    i = R.id.tv_challenge;
+                                    TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView != null) {
+                                        return new HudLeftMenuBinding((LinearLayout) rootView, customCardView, imageView, customTextView, frameLayout, imageView2, imageView3, imageView4, textView);
+                                    }
                                 }
                             }
                         }

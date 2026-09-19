@@ -20,6 +20,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.RodinaPersonalPropertyScreenBinding;
 import ru.mrlargha.commonui.utils.GsonStore;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 /* compiled from: PersonalPropertyScreen.kt */
 @Metadata(d1 = {"\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001\u0017B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0005H\u0016J\u0018\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0015H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/personalproperty/PersonalPropertyScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screenLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/RodinaPersonalPropertyScreenBinding;", "buttonBottomMargin", "secondaryButtonStartMargin", "onBackendMessageHandled", "", "data", "", "subId", "updateButtonsLayout", "hasPrimaryButton", "", "hasSecondaryButton", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -133,7 +134,9 @@ public final class PersonalPropertyScreen extends SAMPUIElement {
         rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyRecycler.setVisibility(4);
         rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyTitle.setText(personalPropertyData.getTitle());
         rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyDescription.setText(personalPropertyData.getDescription());
-        Picasso.get().load(StringsKt.substringBefore$default(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), "projects", (String) null, 2, (Object) null) + personalPropertyData.getImageLink()).placeholder(R.drawable.rodina_universal_placeholder).into(rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyImage);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, StringsKt.substringBefore$default(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), "projects", (String) null, 2, (Object) null) + personalPropertyData.getImageLink()).placeholder(R.drawable.rodina_universal_placeholder).into(rodinaPersonalPropertyScreenBinding.rodinaPersonalPropertyImage);
         List<PersonalPropertyDetail> details = personalPropertyData.getDetails();
         List<PersonalPropertyDetail> list = details.isEmpty() ? null : details;
         if (list != null) {

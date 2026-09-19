@@ -41,8 +41,10 @@ import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
@@ -71,7 +73,7 @@ import ru.mrlargha.feature.event.databinding.EventShipUpgradeItemBinding;
 import ru.mrlargha.feature.event.databinding.EventShopSceenBinding;
 import ru.mrlargha.feature.event.databinding.EventTopbarBinding;
 /* compiled from: EventScreen.kt */
-@Metadata(d1 = {"\u0000æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003klmB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010.\u001a\u00020/2\u0006\u00100\u001a\u000201H\u0016J\u0018\u00102\u001a\u00020/2\u0006\u00103\u001a\u00020%2\u0006\u00104\u001a\u00020\u0006H\u0016J\u0010\u00105\u001a\u00020/2\u0006\u00103\u001a\u000206H\u0002J\u0016\u00107\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u0002090\u001aH\u0002J\u0010\u0010:\u001a\u00020/2\u0006\u0010;\u001a\u00020%H\u0002J \u0010<\u001a\u00020/2\u0006\u0010=\u001a\u00020>2\u0006\u00103\u001a\u00020?2\u0006\u0010@\u001a\u00020\u0006H\u0002J\u0016\u0010A\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020B0\u001aH\u0002J\u0010\u0010C\u001a\u00020/2\u0006\u00108\u001a\u00020\u001dH\u0002J\u0016\u0010D\u001a\u00020/2\f\u0010E\u001a\b\u0012\u0004\u0012\u00020F0\u001aH\u0002J\u0010\u0010G\u001a\u00020/2\u0006\u00108\u001a\u00020HH\u0002J\u0010\u0010I\u001a\u00020/2\u0006\u00108\u001a\u00020HH\u0002J\u0016\u0010J\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020K0\u001aH\u0002J\u0016\u0010L\u001a\u00020/2\f\u00108\u001a\b\u0012\u0004\u0012\u00020K0\u001aH\u0002J\u0016\u0010M\u001a\u00020/2\f\u0010N\u001a\b\u0012\u0004\u0012\u00020\u00060\u001aH\u0002J\u0016\u0010O\u001a\u00020/2\f\u0010P\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aH\u0002J\u0010\u0010Q\u001a\u00020/2\u0006\u0010R\u001a\u00020\u0006H\u0002J\u0018\u0010S\u001a\u00020/2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020KH\u0002J\u0018\u0010W\u001a\u00020/2\u0006\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020KH\u0002J\u000e\u0010X\u001a\u00020%2\u0006\u0010Y\u001a\u00020\u0006J\u0018\u0010Z\u001a\u00020/2\u0006\u0010T\u001a\u00020[2\u0006\u0010\\\u001a\u00020]H\u0002J\b\u0010^\u001a\u00020/H\u0002J\b\u0010_\u001a\u00020/H\u0002J\u0010\u0010`\u001a\u00020/2\u0006\u0010V\u001a\u00020BH\u0002J\u0010\u0010a\u001a\u00020/2\u0006\u0010V\u001a\u00020FH\u0002J\u0018\u0010b\u001a\u00020/2\u0006\u0010c\u001a\u00020%2\u0006\u0010T\u001a\u00020\nH\u0002J\b\u0010d\u001a\u00020/H\u0002J\b\u0010e\u001a\u00020/H\u0002J\b\u0010f\u001a\u00020/H\u0002J\b\u0010g\u001a\u00020/H\u0002J\u0010\u0010h\u001a\u00020/2\u0006\u0010i\u001a\u00020jH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010$\u001a\u00020%¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0011\u0010(\u001a\u00020)¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006n"}, d2 = {"Lru/mrlargha/event/EventScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/event/databinding/EventScreenBinding;", "textSelectedColor", "completeColor", "questAdapter", "Lru/mrlargha/event/adapters/QuestAdapter;", "shopAdapter", "Lru/mrlargha/event/adapters/ShopAdapter;", "levelItemsAdapter", "Lru/mrlargha/event/adapters/AwardsAdapter;", "timersList", "", "Landroid/os/CountDownTimer;", "_bpUsualData", "", "Lru/mrlargha/event/data/AwardItemData;", "battlePassInfo", "Lru/mrlargha/event/data/MainInfo;", "eventPosition", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "ratingAdapter", "Lru/mrlargha/event/adapters/RatingAdapter;", "url", "", "getUrl", "()Ljava/lang/String;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/event/EventApi;", "setVisible", "", "visible", "", "onBackendMessageHandled", "data", "subId", "setShipInfo", "Lru/mrlargha/event/data/ShipData;", "setRatingInfo", "info", "Lru/mrlargha/event/data/RatingData;", "setRatingTime", "time", "setShipUpgrade", "elementBinding", "Lru/mrlargha/feature/event/databinding/EventShipUpgradeItemBinding;", "Lru/mrlargha/event/data/ShipData$ShipComponent;", "stage", "setListQuest", "Lru/mrlargha/event/data/QuestData;", "setMainPageInfo", "setShopInfo", "items", "Lru/mrlargha/event/data/ShopItem;", "setShopResult", "Lru/mrlargha/event/data/ShopResult;", "setMainResult", "setListEvent", "Lru/mrlargha/event/data/EventData;", "updateListEvent", "updateBpAwards", "awardsStatusList", "updateLevelItems", "pairList", "onClaimItem", "position", "updateEvent", "view", "Lru/mrlargha/feature/event/databinding/EventEventsItemBinding;", "item", "setEvent", "formatSeconds", "seconds", "setPriseItem", "Lru/mrlargha/feature/event/databinding/EventPriseItemEventBinding;", "prise", "Lru/mrlargha/event/data/EasterItem;", "stopVideo", "setVideo", "onTaskItemClick", "onShopItemClick", "onPriseInfo", "text", "setupAdapters", "clearAdapters", "clearTimers", "setupNavigation", "navigateTo", "nav", "Lru/mrlargha/event/EventScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "event"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000î\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003pqrB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010.\u001a\u00020/2\u0006\u00100\u001a\u000201H\u0016J\b\u00102\u001a\u00020/H\u0016J\u0010\u00103\u001a\u00020/2\u0006\u00104\u001a\u000205H\u0016J\u0018\u00106\u001a\u00020/2\u0006\u00107\u001a\u00020%2\u0006\u00108\u001a\u00020\u0006H\u0016J\u0010\u00109\u001a\u00020/2\u0006\u00107\u001a\u00020:H\u0002J\u0016\u0010;\u001a\u00020/2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020=0\u001aH\u0002J\u0010\u0010>\u001a\u00020/2\u0006\u0010?\u001a\u00020%H\u0002J \u0010@\u001a\u00020/2\u0006\u0010A\u001a\u00020B2\u0006\u00107\u001a\u00020C2\u0006\u0010D\u001a\u00020\u0006H\u0002J\u0016\u0010E\u001a\u00020/2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020F0\u001aH\u0002J\u0010\u0010G\u001a\u00020/2\u0006\u0010<\u001a\u00020\u001dH\u0002J\u0016\u0010H\u001a\u00020/2\f\u0010I\u001a\b\u0012\u0004\u0012\u00020J0\u001aH\u0002J\u0010\u0010K\u001a\u00020/2\u0006\u0010<\u001a\u00020LH\u0002J\u0010\u0010M\u001a\u00020/2\u0006\u0010<\u001a\u00020LH\u0002J\u0016\u0010N\u001a\u00020/2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020O0\u001aH\u0002J\u0016\u0010P\u001a\u00020/2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020O0\u001aH\u0002J\u0016\u0010Q\u001a\u00020/2\f\u0010R\u001a\b\u0012\u0004\u0012\u00020\u00060\u001aH\u0002J\u0016\u0010S\u001a\u00020/2\f\u0010T\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aH\u0002J\u0010\u0010U\u001a\u00020/2\u0006\u0010V\u001a\u00020\u0006H\u0002J\u0018\u0010W\u001a\u00020/2\u0006\u0010X\u001a\u00020Y2\u0006\u0010Z\u001a\u00020OH\u0002J\u0018\u0010[\u001a\u00020/2\u0006\u0010X\u001a\u00020Y2\u0006\u0010Z\u001a\u00020OH\u0002J\u000e\u0010\\\u001a\u00020%2\u0006\u0010]\u001a\u00020\u0006J\u0018\u0010^\u001a\u00020/2\u0006\u0010X\u001a\u00020_2\u0006\u0010`\u001a\u00020aH\u0002J\b\u0010b\u001a\u00020/H\u0002J\b\u0010c\u001a\u00020/H\u0002J\b\u0010d\u001a\u00020/H\u0002J\u0010\u0010e\u001a\u00020/2\u0006\u0010Z\u001a\u00020FH\u0002J\u0010\u0010f\u001a\u00020/2\u0006\u0010Z\u001a\u00020JH\u0002J\u0018\u0010g\u001a\u00020/2\u0006\u0010h\u001a\u00020%2\u0006\u0010X\u001a\u00020\nH\u0002J\b\u0010i\u001a\u00020/H\u0002J\b\u0010j\u001a\u00020/H\u0002J\b\u0010k\u001a\u00020/H\u0002J\b\u0010l\u001a\u00020/H\u0002J\u0010\u0010m\u001a\u00020/2\u0006\u0010n\u001a\u00020oH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010!X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010$\u001a\u00020%¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0011\u0010(\u001a\u00020)¢\u0006\b\n\u0000\u001a\u0004\b*\u0010+R\u000e\u0010,\u001a\u00020-X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006s"}, d2 = {"Lru/mrlargha/event/EventScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/event/databinding/EventScreenBinding;", "textSelectedColor", "completeColor", "questAdapter", "Lru/mrlargha/event/adapters/QuestAdapter;", "shopAdapter", "Lru/mrlargha/event/adapters/ShopAdapter;", "levelItemsAdapter", "Lru/mrlargha/event/adapters/AwardsAdapter;", "timersList", "", "Landroid/os/CountDownTimer;", "_bpUsualData", "", "Lru/mrlargha/event/data/AwardItemData;", "battlePassInfo", "Lru/mrlargha/event/data/MainInfo;", "eventPosition", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "ratingAdapter", "Lru/mrlargha/event/adapters/RatingAdapter;", "url", "", "getUrl", "()Ljava/lang/String;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/event/EventApi;", "setVisible", "", "visible", "", "onEnterHiddenCache", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "onBackendMessageHandled", "data", "subId", "setShipInfo", "Lru/mrlargha/event/data/ShipData;", "setRatingInfo", "info", "Lru/mrlargha/event/data/RatingData;", "setRatingTime", "time", "setShipUpgrade", "elementBinding", "Lru/mrlargha/feature/event/databinding/EventShipUpgradeItemBinding;", "Lru/mrlargha/event/data/ShipData$ShipComponent;", "stage", "setListQuest", "Lru/mrlargha/event/data/QuestData;", "setMainPageInfo", "setShopInfo", "items", "Lru/mrlargha/event/data/ShopItem;", "setShopResult", "Lru/mrlargha/event/data/ShopResult;", "setMainResult", "setListEvent", "Lru/mrlargha/event/data/EventData;", "updateListEvent", "updateBpAwards", "awardsStatusList", "updateLevelItems", "pairList", "onClaimItem", "position", "updateEvent", "view", "Lru/mrlargha/feature/event/databinding/EventEventsItemBinding;", "item", "setEvent", "formatSeconds", "seconds", "setPriseItem", "Lru/mrlargha/feature/event/databinding/EventPriseItemEventBinding;", "prise", "Lru/mrlargha/event/data/EasterItem;", "stopVideo", "releasePlayer", "setVideo", "onTaskItemClick", "onShopItemClick", "onPriseInfo", "text", "setupAdapters", "clearAdapters", "clearTimers", "setupNavigation", "navigateTo", "nav", "Lru/mrlargha/event/EventScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "event"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class EventScreen extends SAMPUIElement implements InterfaceController {
     private List<AwardItemData> _bpUsualData;
@@ -199,6 +201,11 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         setupAdapters();
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit questAdapter$lambda$0(EventScreen eventScreen, QuestData it) {
         Intrinsics.checkNotNullParameter(it, "it");
@@ -242,6 +249,23 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         clearTimers();
         this.binding.getRoot().setVisibility(z ? 0 : 8);
         this.binding.getRoot().setVisibility(z ? 0 : 8);
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onEnterHiddenCache() {
+        stopVideo();
+        clearAdapters();
+        clearTimers();
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        stopVideo();
+        clearAdapters();
+        clearTimers();
+        CoroutineScopeKt.cancel$default(this.client.getScope(), null, 1, null);
+        super.onRemovedFromStore(reason);
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -448,12 +472,14 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         eventShopSceenBinding.tvDescription.setText(shopResult.getCaption());
         if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(projectResourceUrl$default + "/systems/battlepass/easter-2026/" + shopResult.getImage() + ".webp").into(eventShopSceenBinding.ivAward);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "/systems/battlepass/easter-2026/" + shopResult.getImage() + ".webp").into(eventShopSceenBinding.ivAward);
         } else {
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(projectResourceUrl$default2 + "/systems/battlepass/items/" + shopResult.getImage() + ".webp").into(eventShopSceenBinding.ivAward);
+            PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "/systems/battlepass/items/" + shopResult.getImage() + ".webp").into(eventShopSceenBinding.ivAward);
         }
         eventShopSceenBinding.count.setText(getTargetActivity().getString(R.string.event_count_amount, new Object[]{Integer.valueOf(shopResult.getCount())}));
     }
@@ -465,12 +491,14 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         eventMainResultScreenBinding.tvDescription.setText(shopResult.getCaption());
         if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(projectResourceUrl$default + "/systems/battlepass/easter-2026/" + shopResult.getImage() + ".webp").into(eventMainResultScreenBinding.ivAward);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "/systems/battlepass/easter-2026/" + shopResult.getImage() + ".webp").into(eventMainResultScreenBinding.ivAward);
         } else {
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(projectResourceUrl$default2 + "/systems/battlepass/items/" + shopResult.getImage() + ".webp").into(eventMainResultScreenBinding.ivAward);
+            PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "/systems/battlepass/items/" + shopResult.getImage() + ".webp").into(eventMainResultScreenBinding.ivAward);
         }
         eventMainResultScreenBinding.count.setText(getTargetActivity().getString(R.string.event_count_amount, new Object[]{Integer.valueOf(shopResult.getCount())}));
     }
@@ -970,12 +998,14 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         eventPriseItemEventBinding.rarity.setBackgroundColor(Color.parseColor(str));
         if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(projectResourceUrl$default + "assets/images/donate/" + easterItem.getItemid() + ".webp").into(eventPriseItemEventBinding.imagePrise);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "assets/images/donate/" + easterItem.getItemid() + ".webp").into(eventPriseItemEventBinding.imagePrise);
         } else {
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(projectResourceUrl$default2 + "systems/battlepass/items/" + easterItem.getItemid() + ".webp").into(eventPriseItemEventBinding.imagePrise);
+            PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "systems/battlepass/items/" + easterItem.getItemid() + ".webp").into(eventPriseItemEventBinding.imagePrise);
         }
         eventPriseItemEventBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
@@ -994,28 +1024,27 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
 
     private final void stopVideo() {
         this.binding.video.playerView.setVisibility(8);
+        releasePlayer();
+    }
+
+    private final void releasePlayer() {
         ExoPlayer exoPlayer = this.player;
-        if (exoPlayer != null) {
-            exoPlayer.stop();
-        }
-        ExoPlayer exoPlayer2 = this.player;
-        if (exoPlayer2 != null) {
-            exoPlayer2.release();
-        }
         this.player = null;
+        this.binding.video.playerView.setPlayer(null);
+        if (exoPlayer != null) {
+            try {
+                exoPlayer.stop();
+            } finally {
+                if (exoPlayer != null) {
+                    exoPlayer.release();
+                }
+            }
+        }
     }
 
     private final void setVideo() {
         try {
-            ExoPlayer exoPlayer = this.player;
-            if (exoPlayer != null) {
-                exoPlayer.stop();
-            }
-            ExoPlayer exoPlayer2 = this.player;
-            if (exoPlayer2 != null) {
-                exoPlayer2.release();
-            }
-            this.player = null;
+            releasePlayer();
             this.binding.video.playerView.setVisibility(0);
             File file = new File(getTargetActivity().getExternalFilesDir(null), "/SAMP/easter_video.webm");
             if (file.exists()) {
@@ -1150,7 +1179,10 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
                 EventScreen.setupNavigation$lambda$0$5(EventScreen.this, view);
             }
         });
-        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false) + (UtilsKt.isArizonaType() ? "/systems/battlepass/easter-2026/preview.webp" : "/systems/pirate-event/preview.webp")).into(this.binding.main.ivVideo);
+        String str = UtilsKt.isArizonaType() ? "/systems/battlepass/easter-2026/preview.webp" : "/systems/pirate-event/preview.webp";
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false) + str).into(this.binding.main.ivVideo);
         this.binding.main.ivVideo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

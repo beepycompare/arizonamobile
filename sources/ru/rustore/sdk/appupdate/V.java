@@ -33,9 +33,9 @@ public final class V extends Lambda implements Function1<InstallState, Unit> {
             int appUpdateType = appUpdateOptions.getAppUpdateType();
             int installStatus = installState2.getInstallStatus();
             if (installStatus == 1) {
-                C0783e c0783e = z.c;
-                c0783e.getClass();
-                SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0781c(c0783e, new C0787i("updateStart.downloaded", c0783e.a(appUpdateType)))), Dispatchers.INSTANCE.getIo()), null, C0782d.f1466a, 1, null);
+                C0782e c0782e = z.c;
+                c0782e.getClass();
+                SingleSubscribeKt.subscribe$default(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0780c(c0782e, new C0786i("updateStart.downloaded", c0782e.a(appUpdateType)))), Dispatchers.INSTANCE.getIo()), null, C0781d.f1466a, 1, null);
             } else if (installStatus == 3) {
                 z.c.a(appUpdateType, String.valueOf(installState2.getInstallErrorCode()));
             }

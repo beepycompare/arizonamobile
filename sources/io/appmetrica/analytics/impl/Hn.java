@@ -10,18 +10,18 @@ public final class Hn {
     /* renamed from: a  reason: collision with root package name */
     public final B0 f585a;
     public final lp b;
-    public final C0467o c;
+    public final C0466o c;
     public final Bl d;
     public final U5 e;
-    public final C0763za f;
+    public final C0762za f;
 
-    public Hn(B0 b0, lp lpVar, C0467o c0467o, Bl bl, U5 u5, C0763za c0763za) {
+    public Hn(B0 b0, lp lpVar, C0466o c0466o, Bl bl, U5 u5, C0762za c0762za) {
         this.f585a = b0;
         this.b = lpVar;
-        this.c = c0467o;
+        this.c = c0466o;
         this.d = bl;
         this.e = u5;
-        this.f = c0763za;
+        this.f = c0762za;
     }
 
     public static Intent a(Activity activity) {
@@ -38,6 +38,6 @@ public final class Hn {
     }
 
     public Hn(B0 b0, lp lpVar) {
-        this(b0, lpVar, C0575s4.l().a(), C0575s4.l().o(), C0575s4.l().h(), C0575s4.l().k());
+        this(b0, lpVar, C0574s4.l().a(), C0574s4.l().o(), C0574s4.l().h(), C0574s4.l().k());
     }
 }

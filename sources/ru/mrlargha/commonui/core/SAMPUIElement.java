@@ -33,14 +33,16 @@ import kotlin.io.CloseableKt;
 import kotlin.io.FilesKt;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.utils.TokenManagerKt;
 /* compiled from: SAMPUIElement.kt */
-@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\t\n\u0002\b\u0003\b&\u0018\u0000 I2\u00020\u0001:\u0002IJB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0016J\b\u0010!\u001a\u00020 H\u0016J\u0006\u0010\"\u001a\u00020\u001eJ\u001e\u0010#\u001a\u00020\u001e2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020\u0005J\"\u0010(\u001a\u00020\u001e2\u0006\u0010)\u001a\u00020\r2\b\b\u0002\u0010*\u001a\u00020\u00052\b\b\u0002\u0010+\u001a\u00020\u0005J\"\u0010,\u001a\u00020\u001e2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u00052\b\b\u0002\u0010/\u001a\u00020\u000fJ\u0016\u00100\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u000f2\u0006\u0010.\u001a\u00020\u0005J\u0018\u00102\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u000f2\u0006\u0010.\u001a\u00020\u0005H\u0016JB\u00103\u001a\u00020\u001e2\u0006\u0010.\u001a\u00020\u00052\n\b\u0002\u00101\u001a\u0004\u0018\u00010\u000f2\b\b\u0002\u00104\u001a\u00020\u000f2\b\b\u0002\u00105\u001a\u00020 2\f\u00106\u001a\b\u0012\u0004\u0012\u00020\u001e07H\u0084\bø\u0001\u0000J*\u00108\u001a\u00020\u001e2\u0006\u0010.\u001a\u00020\u00052\b\u00101\u001a\u0004\u0018\u00010\u000f2\n\u00109\u001a\u00060:j\u0002`;H\u0001b\u0002\b<J\b\u0010=\u001a\u00020\u001eH\u0016J\u0010\u0010>\u001a\u00020\u001e2\u0006\u0010?\u001a\u00020\u000fH\u0016J\u0006\u0010@\u001a\u00020\u001eJ\u0006\u0010A\u001a\u00020\u0005J&\u0010B\u001a\u00020\u001e*\u00020\r2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u00052\b\b\u0002\u0010/\u001a\u00020\u000fJ\n\u0010C\u001a\u00020\u001e*\u00020\rJ\n\u0010D\u001a\u00020\u001e*\u00020\rJ*\u0010B\u001a\u00020\u001e*\u00020\r2\u0006\u0010-\u001a\u00020\u00052\b\b\u0002\u0010.\u001a\u00020\u00052\f\u0010/\u001a\b\u0012\u0004\u0012\u00020\u000f07J\b\u0010E\u001a\u00020\u001eH\u0016J\u0018\u0010F\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u0005H\u0016J\u0018\u0010F\u001a\u00020\u001e2\u0006\u00101\u001a\u00020\u00052\u0006\u0010G\u001a\u00020HH\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u001c\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0014\u0010\u0013\u001a\u00020\u0014X\u0094\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R\u0014\u0010\u0017\u001a\u00020\u0018X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006K"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement;", "", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "innerView", "Landroid/view/View;", "CLASS_TAG", "", "kotlin.jvm.PlatformType", "getCLASS_TAG", "()Ljava/lang/String;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "getNotifier", "()Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPreferences", "Landroid/content/SharedPreferences;", "getSharedPreferences", "()Landroid/content/SharedPreferences;", "baseLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "setVisibility", "", "visible", "", "isOnScreen", "bringToFront", "setPosition", "type", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "x", "y", "addViewToConstraintLayout", "view", "width", "height", "notifyClick", TtmlNode.ATTR_ID, "subId", "message", "onBackendMessage", "data", "onBackendMessageHandled", "handleBackendMessage", "errorMessage", "showErrorToast", "block", "Lkotlin/Function0;", "appendBackendMessageErrorToCrashFile", "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "Lkotlin/PublishedApi;", "onLayoutClick", "consumeUserInput", "text", "removeFromLayout", "getViewId", "bindBackendClick", "gone", "show", "removeAllChildren", "onUpdateData", "value", "", "Companion", "PositionType", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u000b\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\t\n\u0002\b\u0003\b&\u0018\u0000 b2\u00020\u0001:\u0002bcB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010-\u001a\u00020\u00132\u0006\u0010.\u001a\u00020\u000fH\u0016J\b\u0010/\u001a\u00020\u000fH\u0016J\u0010\u00100\u001a\u00020\u00132\u0006\u00101\u001a\u00020\u000fH\u0004J\u0015\u00102\u001a\u00020\u00132\u0006\u0010.\u001a\u00020\u000fH\u0000¢\u0006\u0002\b3J\u0006\u00104\u001a\u00020\u0013J\u001e\u00105\u001a\u00020\u00132\u0006\u00106\u001a\u0002072\u0006\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020\u0005J\"\u0010:\u001a\u00020\u00132\u0006\u0010;\u001a\u00020\r2\b\b\u0002\u0010<\u001a\u00020\u00052\b\b\u0002\u0010=\u001a\u00020\u0005J\"\u0010>\u001a\u00020\u00132\u0006\u0010?\u001a\u00020\u00052\b\b\u0002\u0010@\u001a\u00020\u00052\b\b\u0002\u0010A\u001a\u00020\u001fJ\u0016\u0010B\u001a\u00020\u00132\u0006\u0010C\u001a\u00020\u001f2\u0006\u0010@\u001a\u00020\u0005J\u0018\u0010D\u001a\u00020\u00132\u0006\u0010C\u001a\u00020\u001f2\u0006\u0010@\u001a\u00020\u0005H\u0016JB\u0010E\u001a\u00020\u00132\u0006\u0010@\u001a\u00020\u00052\n\b\u0002\u0010C\u001a\u0004\u0018\u00010\u001f2\b\b\u0002\u0010F\u001a\u00020\u001f2\b\b\u0002\u0010G\u001a\u00020\u000f2\f\u0010H\u001a\b\u0012\u0004\u0012\u00020\u00130IH\u0084\bø\u0001\u0000J*\u0010J\u001a\u00020\u00132\u0006\u0010@\u001a\u00020\u00052\b\u0010C\u001a\u0004\u0018\u00010\u001f2\n\u0010K\u001a\u00060Lj\u0002`MH\u0001b\u0002\bNJ\b\u0010O\u001a\u00020\u0013H\u0016J\u0010\u0010P\u001a\u00020\u00132\u0006\u0010Q\u001a\u00020\u001fH\u0016J\b\u0010R\u001a\u00020\u0013H\u0016J\b\u0010S\u001a\u00020\u0013H\u0016J\u0010\u0010T\u001a\u00020\u00132\u0006\u0010U\u001a\u00020VH\u0016J\r\u0010W\u001a\u00020\u0013H\u0000¢\u0006\u0002\bXJ\u0006\u0010Y\u001a\u00020\u0013J\u0006\u0010Z\u001a\u00020\u0005J&\u0010[\u001a\u00020\u0013*\u00020\r2\u0006\u0010?\u001a\u00020\u00052\b\b\u0002\u0010@\u001a\u00020\u00052\b\b\u0002\u0010A\u001a\u00020\u001fJ\n\u0010\\\u001a\u00020\u0013*\u00020\rJ\n\u0010]\u001a\u00020\u0013*\u00020\rJ*\u0010[\u001a\u00020\u0013*\u00020\r2\u0006\u0010?\u001a\u00020\u00052\b\b\u0002\u0010@\u001a\u00020\u00052\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u001f0IJ\b\u0010^\u001a\u00020\u0013H\u0016J\u0018\u0010_\u001a\u00020\u00132\u0006\u0010C\u001a\u00020\u00052\u0006\u0010`\u001a\u00020\u0005H\u0016J\u0018\u0010_\u001a\u00020\u00132\u0006\u0010C\u001a\u00020\u00052\u0006\u0010`\u001a\u00020aH\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R(\u0010\u0011\u001a\u0010\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0013\u0018\u00010\u0012X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R(\u0010\u0018\u001a\u0010\u0012\u0004\u0012\u00020\u000f\u0012\u0004\u0012\u00020\u0013\u0018\u00010\u0012X\u0080\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u0015\"\u0004\b\u001a\u0010\u0017R\u0014\u0010\u001b\u001a\u00020\u000f8@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u001dR\u001c\u0010\u001e\u001a\n  *\u0004\u0018\u00010\u001f0\u001fX\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u0014\u0010#\u001a\u00020$X\u0094\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u0014\u0010'\u001a\u00020(X\u0084\u0004¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006d"}, d2 = {"Lru/mrlargha/commonui/core/SAMPUIElement;", "", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "innerView", "Landroid/view/View;", "isDetachedFromLayout", "", "cacheRemovalBlocked", "visibilityChangeObserver", "Lkotlin/Function1;", "", "getVisibilityChangeObserver$CommonUI", "()Lkotlin/jvm/functions/Function1;", "setVisibilityChangeObserver$CommonUI", "(Lkotlin/jvm/functions/Function1;)V", "cacheRemovalBlockedChangeObserver", "getCacheRemovalBlockedChangeObserver$CommonUI", "setCacheRemovalBlockedChangeObserver$CommonUI", "isCacheRemovalBlocked", "isCacheRemovalBlocked$CommonUI", "()Z", "CLASS_TAG", "", "kotlin.jvm.PlatformType", "getCLASS_TAG", "()Ljava/lang/String;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "getNotifier", "()Lru/mrlargha/commonui/core/IBackendNotifier;", "sharedPreferences", "Landroid/content/SharedPreferences;", "getSharedPreferences", "()Landroid/content/SharedPreferences;", "baseLayout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "setVisibility", "visible", "isOnScreen", "setCacheRemovalBlocked", "blocked", "applyStoreVisibilitySilently", "applyStoreVisibilitySilently$CommonUI", "bringToFront", "setPosition", "type", "Lru/mrlargha/commonui/core/SAMPUIElement$PositionType;", "x", "y", "addViewToConstraintLayout", "view", "width", "height", "notifyClick", TtmlNode.ATTR_ID, "subId", "message", "onBackendMessage", "data", "onBackendMessageHandled", "handleBackendMessage", "errorMessage", "showErrorToast", "block", "Lkotlin/Function0;", "appendBackendMessageErrorToCrashFile", "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "Lkotlin/PublishedApi;", "onLayoutClick", "consumeUserInput", "text", "onEnterHiddenCache", "onLeaveHiddenCache", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "detachFromLayoutSilently", "detachFromLayoutSilently$CommonUI", "removeFromLayout", "getViewId", "bindBackendClick", "gone", "show", "removeAllChildren", "onUpdateData", "value", "", "Companion", "PositionType", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public abstract class SAMPUIElement {
     private static final String CRASH_LOG_DIR_NAME = "logcat";
@@ -51,10 +53,14 @@ public abstract class SAMPUIElement {
     private final String CLASS_TAG;
     private final int backendID;
     private final ConstraintLayout baseLayout;
+    private boolean cacheRemovalBlocked;
+    private Function1<? super Boolean, Unit> cacheRemovalBlockedChangeObserver;
     private View innerView;
+    private boolean isDetachedFromLayout;
     private final IBackendNotifier notifier;
     private final SharedPreferences sharedPreferences;
     private final Activity targetActivity;
+    private Function1<? super Boolean, Unit> visibilityChangeObserver;
     public static final Companion Companion = new Companion(null);
     private static final Object crashLogWriteLock = new Object();
 
@@ -114,7 +120,13 @@ public abstract class SAMPUIElement {
         Intrinsics.checkNotNullParameter(data, "data");
     }
 
+    public void onEnterHiddenCache() {
+    }
+
     public void onLayoutClick() {
+    }
+
+    public void onLeaveHiddenCache() {
     }
 
     public void onUpdateData(int i, int i2) {
@@ -175,6 +187,26 @@ public abstract class SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: protected */
     public final Activity getTargetActivity() {
         return this.targetActivity;
+    }
+
+    public final Function1<Boolean, Unit> getVisibilityChangeObserver$CommonUI() {
+        return this.visibilityChangeObserver;
+    }
+
+    public final void setVisibilityChangeObserver$CommonUI(Function1<? super Boolean, Unit> function1) {
+        this.visibilityChangeObserver = function1;
+    }
+
+    public final Function1<Boolean, Unit> getCacheRemovalBlockedChangeObserver$CommonUI() {
+        return this.cacheRemovalBlockedChangeObserver;
+    }
+
+    public final void setCacheRemovalBlockedChangeObserver$CommonUI(Function1<? super Boolean, Unit> function1) {
+        this.cacheRemovalBlockedChangeObserver = function1;
+    }
+
+    public final boolean isCacheRemovalBlocked$CommonUI() {
+        return this.cacheRemovalBlocked;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -282,15 +314,53 @@ public abstract class SAMPUIElement {
             }
             view.setVisibility(z ? 0 : 8);
         }
-        if (this.backendID != UIElementID.RODINA_METAL_DETECTOR.getId()) {
-            Activity activity = this.targetActivity;
-            Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.core.IBackendNotifier");
-            ((IBackendNotifier) activity).viewShownStatusChangedWrapper(this.backendID, z);
+        try {
+            if (this.backendID != UIElementID.RODINA_METAL_DETECTOR.getId()) {
+                Activity activity = this.targetActivity;
+                Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.core.IBackendNotifier");
+                ((IBackendNotifier) activity).viewShownStatusChangedWrapper(this.backendID, z);
+            }
+        } finally {
+            try {
+                Function1<? super Boolean, Unit> function1 = this.visibilityChangeObserver;
+                if (function1 != null) {
+                    function1.invoke(Boolean.valueOf(z));
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "Visibility observer failed for backendId=" + this.backendID, e);
+            }
         }
     }
 
     public boolean isOnScreen() {
         return this.baseLayout.getVisibility() == 0;
+    }
+
+    protected final void setCacheRemovalBlocked(boolean z) {
+        if (this.cacheRemovalBlocked == z) {
+            return;
+        }
+        this.cacheRemovalBlocked = z;
+        try {
+            Function1<? super Boolean, Unit> function1 = this.cacheRemovalBlockedChangeObserver;
+            if (function1 != null) {
+                function1.invoke(Boolean.valueOf(z));
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Cache-removal observer failed for backendId=" + this.backendID, e);
+        }
+    }
+
+    public final void applyStoreVisibilitySilently$CommonUI(boolean z) {
+        this.baseLayout.setVisibility(z ? 0 : 8);
+        View view = this.innerView;
+        if (view != null) {
+            if (view == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("innerView");
+                view = null;
+            }
+            view.setVisibility(z ? 0 : 8);
+        }
     }
 
     public final void bringToFront() {
@@ -767,24 +837,60 @@ public abstract class SAMPUIElement {
         }
     }
 
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        removeAllChildren();
+    }
+
+    public final void detachFromLayoutSilently$CommonUI() {
+        if (this.isDetachedFromLayout) {
+            return;
+        }
+        this.isDetachedFromLayout = true;
+        this.baseLayout.animate().cancel();
+        this.baseLayout.clearAnimation();
+        this.baseLayout.setOnTouchListener(null);
+        View view = this.innerView;
+        if (view != null) {
+            if (view == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("innerView");
+                view = null;
+            }
+            view.animate().cancel();
+            View view2 = this.innerView;
+            if (view2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("innerView");
+                view2 = null;
+            }
+            view2.clearAnimation();
+            View view3 = this.innerView;
+            if (view3 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("innerView");
+                view3 = null;
+            }
+            ViewParent parent = view3.getParent();
+            ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
+            if (viewGroup != null) {
+                View view4 = this.innerView;
+                if (view4 == null) {
+                    Intrinsics.throwUninitializedPropertyAccessException("innerView");
+                    view4 = null;
+                }
+                viewGroup.removeView(view4);
+            }
+        }
+        ViewParent parent2 = this.baseLayout.getParent();
+        ViewGroup viewGroup2 = parent2 instanceof ViewGroup ? (ViewGroup) parent2 : null;
+        if (viewGroup2 != null) {
+            viewGroup2.removeView(this.baseLayout);
+        }
+    }
+
     public final void removeFromLayout() {
         Activity activity = this.targetActivity;
         Intrinsics.checkNotNull(activity, "null cannot be cast to non-null type ru.mrlargha.commonui.core.IBackendNotifier");
         ((IBackendNotifier) activity).viewShownStatusChangedWrapper(this.backendID, false);
-        ConstraintLayout constraintLayout = this.baseLayout;
-        View view = this.innerView;
-        if (view == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("innerView");
-            view = null;
-        }
-        constraintLayout.removeView(view);
-        if (this.baseLayout.getParent() != null) {
-            ViewParent parent = this.baseLayout.getParent();
-            ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
-            if (viewGroup != null) {
-                viewGroup.removeView(this.baseLayout);
-            }
-        }
+        detachFromLayoutSilently$CommonUI();
     }
 
     public final int getViewId() {

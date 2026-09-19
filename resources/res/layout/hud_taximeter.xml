@@ -26,4 +26,5 @@
     <include android:id="@+id/combine_condition" android:visibility="gone" layout="@layout/hud_counter_combine_condition"/>
     <include android:id="@+id/escape" android:visibility="gone" layout="@layout/hud_counter_escape"/>
     <include android:id="@+id/tofu_cooling" android:visibility="gone" layout="@layout/hud_counter_tofu_cooling"/>
+    <include android:id="@+id/race_position" android:visibility="gone" layout="@layout/hud_counter_race_position"/>
 </FrameLayout>

@@ -64,7 +64,7 @@ public final class HandwritingGesture_androidKt {
     }
 
     private static final boolean isWhitespace(int i) {
-        return Character.isWhitespace(i) || i == NBSP_CODE_POINT;
+        return Character.isWhitespace(i) || i == 160;
     }
 
     private static final boolean isWhitespaceExceptNewline(int i) {

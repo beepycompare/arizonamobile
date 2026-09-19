@@ -22,6 +22,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.BannerElementBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 /* compiled from: Banner.kt */
 @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 \u001c2\u00020\u0001:\u0001\u001cB\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007¢\u0006\u0004\b\b\u0010\tJ\u000e\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\u000e\u0010\u0015\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\u000e\u0010\u0016\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014J\u0010\u0010\u0017\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u0019H\u0002J\u0010\u0010\u001a\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0014H\u0002J\b\u0010\u001b\u001a\u00020\u0012H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\fR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "", "binding", "Lru/mrlargha/commonui/databinding/BannerElementBinding;", "isArizonaType", "", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/BannerElementBinding;ZLru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/BannerElementBinding;", "()Z", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "timerr", "Landroid/os/CountDownTimer;", "setVisible", "", "data", "", "initializeBanner", "setTypeBanner", "setBannerInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement$Companion$BannerInfo;", "checkBannersType", "setDefaultType", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -121,9 +122,13 @@ public final class BannerElement {
         bannerElementBinding.timerCard.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(bannerInfo.getTimerColor())));
         bannerElementBinding.buttonCard.setCardBackgroundColor(Color.parseColor(bannerInfo.getButtonColor()));
         if (this.isArizonaType) {
-            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/banner/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
+            Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+            PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/banner/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
         } else {
-            Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/tpevent/images/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
+            Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
+            PicassoLoadSafeKt.loadSafe(picasso2, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "systems/tpevent/images/" + bannerInfo.getImage()).into(bannerElementBinding.bgImg);
         }
         int typeButton = bannerInfo.getTypeButton();
         if (typeButton == 0) {

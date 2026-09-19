@@ -21,8 +21,8 @@ public final class K implements H {
     }
 
     @Override // io.appmetrica.analytics.impl.H
-    public final AdTrackingInfoResult a(Context context, InterfaceC0151bj interfaceC0151bj) {
-        return a(new J(this, context, interfaceC0151bj));
+    public final AdTrackingInfoResult a(Context context, InterfaceC0150bj interfaceC0150bj) {
+        return a(new J(this, context, interfaceC0150bj));
     }
 
     public static AdTrackingInfoResult a(Provider provider) {

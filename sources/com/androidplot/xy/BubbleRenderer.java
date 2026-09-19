@@ -42,7 +42,7 @@ public class BubbleRenderer<FormatterType extends BubbleFormatter> extends XYSer
     public BubbleRenderer(XYPlot xYPlot) {
         super(xYPlot);
         this.bubbleScaleMode = BubbleScaleMode.SQUARE_ROOT;
-        this.bubbleBounds = new Region(Float.valueOf(PixelUtils.dpToPix(MIN_BUBBLE_RADIUS_DEFAULT_DP)), Float.valueOf(PixelUtils.dpToPix(MAX_BUBBLE_RADIUS_DEFAULT_DP)));
+        this.bubbleBounds = new Region(Float.valueOf(PixelUtils.dpToPix(MIN_BUBBLE_RADIUS_DEFAULT_DP)), Float.valueOf(PixelUtils.dpToPix(25.0f)));
     }
 
     protected void onRender(Canvas canvas, RectF rectF, BubbleSeries bubbleSeries, FormatterType formattertype, RenderStack renderStack) {

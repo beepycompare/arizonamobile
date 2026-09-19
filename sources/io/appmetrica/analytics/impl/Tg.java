@@ -4,10 +4,10 @@ public final class Tg {
 
     /* renamed from: a  reason: collision with root package name */
     public final String f780a;
-    public final C0621to b;
+    public final C0620to b;
 
-    public Tg(String str, C0621to c0621to) {
+    public Tg(String str, C0620to c0620to) {
         this.f780a = str;
-        this.b = c0621to;
+        this.b = c0620to;
     }
 }

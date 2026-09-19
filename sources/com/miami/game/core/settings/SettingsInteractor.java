@@ -262,7 +262,7 @@ public final class SettingsInteractor {
     }
 
     private final <T> T readRawField(Object obj, String str) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             SettingsInteractor settingsInteractor = this;
@@ -273,15 +273,15 @@ public final class SettingsInteractor {
             if (obj2 == null) {
                 obj2 = null;
             }
-            m9920constructorimpl = Result.m9920constructorimpl(obj2);
+            m9921constructorimpl = Result.m9921constructorimpl(obj2);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
+        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
             return null;
         }
-        return (T) m9920constructorimpl;
+        return (T) m9921constructorimpl;
     }
 
     private final boolean getBooleanCompat(SharedPreferences sharedPreferences, String str, boolean z) {

@@ -19,6 +19,8 @@ import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import okhttp3.internal.ws.WebSocketProtocol;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* compiled from: Key.android.kt */
 @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0004\b\u0087@\u0018\u0000 \u00152\u00020\u0001:\u0001\u0015B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000f\u0010\b\u001a\u00020\tH\u0016¢\u0006\u0004\b\n\u0010\u000bJ\u001b\u0010\f\u001a\u00020\r2\b\u0010\u000e\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004¢\u0006\u0004\b\u000f\u0010\u0010J\u0011\u0010\u0011\u001a\u00020\u0012HÖ\u0081\u0004¢\u0006\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\u0088\u0001\u0002¨\u0006\u0016"}, d2 = {"Landroidx/compose/ui/input/key/Key;", "", "keyCode", "", "constructor-impl", "(J)J", "getKeyCode", "()J", "toString", "", "toString-impl", "(J)Ljava/lang/String;", "equals", "", "other", "equals-impl", "(JLjava/lang/Object;)Z", "hashCode", "", "hashCode-impl", "(J)I", "Companion", "ui"}, k = 1, mv = {2, 1, 0}, xi = 48)
@@ -188,7 +190,7 @@ public final class Key {
     private static final long F7 = Key_androidKt.Key(137);
     private static final long F8 = Key_androidKt.Key(TsExtractor.TS_STREAM_TYPE_DTS);
     private static final long F9 = Key_androidKt.Key(TsExtractor.TS_STREAM_TYPE_DTS_UHD);
-    private static final long F10 = Key_androidKt.Key(140);
+    private static final long F10 = Key_androidKt.Key(TrainSpeedGaugeView.MAX_SPEED_KMH);
     private static final long F11 = Key_androidKt.Key(141);
     private static final long F12 = Key_androidKt.Key(142);
     private static final long NumLock = Key_androidKt.Key(143);
@@ -208,7 +210,7 @@ public final class Key {
     private static final long NumPadAdd = Key_androidKt.Key(157);
     private static final long NumPadDot = Key_androidKt.Key(158);
     private static final long NumPadComma = Key_androidKt.Key(159);
-    private static final long NumPadEnter = Key_androidKt.Key(160);
+    private static final long NumPadEnter = Key_androidKt.Key(RodinaTrainSpeedGaugeView.MAX_SPEED_KMH);
     private static final long NumPadEquals = Key_androidKt.Key(161);
     private static final long NumPadLeftParenthesis = Key_androidKt.Key(162);
     private static final long NumPadRightParenthesis = Key_androidKt.Key(163);

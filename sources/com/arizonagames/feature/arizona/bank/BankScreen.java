@@ -619,7 +619,7 @@ public final class BankScreen extends SAMPUIElement {
     }
 
     private final boolean applyWrappedPartialPayload(String str, String str2) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         String json;
         String obj = StringsKt.trim((CharSequence) str2).toString();
         int hashCode = obj.hashCode();
@@ -629,15 +629,15 @@ public final class BankScreen extends SAMPUIElement {
             try {
                 Result.Companion companion = Result.Companion;
                 BankScreen bankScreen = this;
-                m9920constructorimpl = Result.m9920constructorimpl((JsonObject) MapperKt.getGson().fromJson(str2, (Class<Object>) JsonObject.class));
+                m9921constructorimpl = Result.m9921constructorimpl((JsonObject) MapperKt.getGson().fromJson(str2, (Class<Object>) JsonObject.class));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9926isFailureimpl(m9920constructorimpl)) {
-                m9920constructorimpl = null;
+            if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+                m9921constructorimpl = null;
             }
-            JsonObject jsonObject = (JsonObject) m9920constructorimpl;
+            JsonObject jsonObject = (JsonObject) m9921constructorimpl;
             if (jsonObject == null) {
                 return false;
             }

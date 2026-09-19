@@ -34,6 +34,7 @@ import com.arizona.launcher.UpdateOperationBeginResult;
 import com.arizona.launcher.UpdateService;
 import com.arizona.launcher.UpdateServiceContract;
 import com.arizona.launcher.updater.apk.LauncherApkDownloader;
+import com.arizona.launcher.updater.apk.LauncherApkLocalStorageFailure;
 import com.arizona.launcher.updater.apk.LauncherApkProgress;
 import com.arizona.launcher.updater.apk.LauncherUpdateConfig;
 import com.arizona.launcher.updater.archive.download.ArchiveDownloadGuardTaggingInterceptor;
@@ -52,6 +53,7 @@ import com.arizona.launcher.updater.archive.orchestrator.ArchiveStartupGuard;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStartupInspection;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStateMaintenance;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageRequirementsSnapshot;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageSpaceCheckResult;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageSpaceChecker;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckBlockCode;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckDecision;
@@ -65,6 +67,7 @@ import com.arizona.launcher.updater.archive.state.ArchiveUpdaterState;
 import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
 import com.arizona.launcher.updater.archive.verify.ArchiveInstalledPayloadAuditor;
 import com.arizona.launcher.updater.http.UpdateMetadataFetcher;
+import com.arizona.launcher.updater.http.UpdateMetadataHttpResult;
 import com.arizona.launcher.util.FileServers;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -104,7 +107,7 @@ import okhttp3.ConnectionPool;
 import okhttp3.Dns;
 import okhttp3.OkHttpClient;
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000²\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001a\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0010\u0003\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 ý\u00012\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\fý\u0001þ\u0001ÿ\u0001\u0080\u0002\u0081\u0002\u0082\u0002B\u0007¢\u0006\u0004\b\u0006\u0010\u0007J\b\u00109\u001a\u00020:H\u0016J\b\u0010;\u001a\u00020&H\u0002J\b\u0010<\u001a\u00020=H\u0002J\b\u0010>\u001a\u00020?H\u0002J\u0018\u0010@\u001a\u0004\u0018\u00010A2\u0006\u0010B\u001a\u00020CH\u0082@¢\u0006\u0002\u0010DJ.\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020H2\u0006\u0010J\u001a\u00020K2\u0006\u0010B\u001a\u00020CH\u0082@¢\u0006\u0002\u0010LJ\u0018\u0010M\u001a\u00020:2\u0006\u0010N\u001a\u00020F2\u0006\u0010O\u001a\u00020PH\u0002J\u0017\u0010Q\u001a\u0004\u0018\u00010C2\u0006\u0010J\u001a\u00020KH\u0002¢\u0006\u0002\u0010RJ\u0018\u0010S\u001a\u00020&2\u0006\u0010J\u001a\u00020K2\u0006\u0010T\u001a\u00020CH\u0002J\u0018\u0010U\u001a\u00020:2\u0006\u0010J\u001a\u00020K2\u0006\u0010T\u001a\u00020CH\u0002J\b\u0010V\u001a\u00020:H\u0002J\"\u0010W\u001a\u00020X2\b\u0010Y\u001a\u0004\u0018\u00010Z2\u0006\u0010[\u001a\u00020X2\u0006\u0010\\\u001a\u00020XH\u0016J\u0012\u0010]\u001a\u00020^2\b\b\u0002\u0010_\u001a\u00020&H\u0002J\b\u0010`\u001a\u00020&H\u0002J\b\u0010a\u001a\u00020&H\u0002J\n\u0010b\u001a\u0004\u0018\u00010cH\u0002J\b\u0010d\u001a\u00020&H\u0002J\u0010\u0010e\u001a\u00020f2\u0006\u0010g\u001a\u00020&H\u0002J\b\u0010h\u001a\u00020:H\u0002J\u0012\u0010i\u001a\u0004\u0018\u00010j2\u0006\u0010Y\u001a\u00020ZH\u0016J\u0010\u0010k\u001a\u00020&2\u0006\u0010Y\u001a\u00020ZH\u0016J\u0010\u0010l\u001a\u00020:2\u0006\u0010Y\u001a\u00020ZH\u0016J\b\u0010m\u001a\u00020:H\u0016J\u0012\u0010n\u001a\u00020:2\b\u0010o\u001a\u0004\u0018\u00010ZH\u0016J\b\u0010p\u001a\u00020:H\u0002J\b\u0010q\u001a\u00020:H\u0002J\u0017\u0010r\u001a\u0004\u0018\u00010C2\u0006\u0010s\u001a\u00020&H\u0016¢\u0006\u0002\u0010tJ\u0018\u0010u\u001a\u00020&2\u0006\u0010s\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0018\u0010v\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0010\u0010w\u001a\u00020:2\u0006\u0010s\u001a\u00020&H\u0016J\u0018\u0010x\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010G\u001a\u00020HH\u0016J\u0018\u0010y\u001a\u00020:2\u0006\u0010I\u001a\u00020H2\u0006\u0010z\u001a\u00020HH\u0016J\u0010\u0010{\u001a\u00020:2\u0006\u0010s\u001a\u00020&H\u0016J\u0018\u0010|\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010}\u001a\u00020HH\u0016J\u0018\u0010~\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010\u007f\u001a\u00020&H\u0016J\u0011\u0010\u0080\u0001\u001a\u00020K2\u0006\u0010s\u001a\u00020&H\u0002J\u0012\u0010\u0081\u0001\u001a\u00020:2\u0007\u0010\u0082\u0001\u001a\u00020&H\u0002J3\u0010\u0083\u0001\u001a\u00020:2\b\u0010\u0084\u0001\u001a\u00030\u0085\u00012\u0007\u0010\u0086\u0001\u001a\u00020&2\t\b\u0002\u0010\u0087\u0001\u001a\u00020&2\n\b\u0002\u0010}\u001a\u0004\u0018\u00010HH\u0002J\t\u0010\u0088\u0001\u001a\u00020&H\u0002J\t\u0010\u0089\u0001\u001a\u00020:H\u0002J\u0007\u0010\u008a\u0001\u001a\u00020:J\t\u0010\u008b\u0001\u001a\u00020&H\u0016J\f\u0010\u008c\u0001\u001a\u0005\u0018\u00010\u008d\u0001H\u0016J\u0011\u0010\u008e\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010\u0090\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010\u0091\u0001\u001a\u00020:2\u0006\u0010T\u001a\u00020CH\u0016J\u001d\u0010\u0092\u0001\u001a\u00020:2\u0007\u0010\u0093\u0001\u001a\u00020&2\t\u0010\u0094\u0001\u001a\u0004\u0018\u00010KH\u0016J\t\u0010\u0095\u0001\u001a\u00020:H\u0016J\u001b\u0010\u0096\u0001\u001a\u00020:2\u0007\u0010\u0097\u0001\u001a\u00020H2\u0007\u0010\u0098\u0001\u001a\u00020&H\u0016J\u0012\u0010\u0099\u0001\u001a\u00020:2\u0007\u0010\u009a\u0001\u001a\u00020HH\u0016J\t\u0010\u009b\u0001\u001a\u00020:H\u0016J\t\u0010\u009c\u0001\u001a\u00020:H\u0016J\u0013\u0010\u009d\u0001\u001a\u00020&2\b\u0010\u009e\u0001\u001a\u00030\u009f\u0001H\u0016J\n\u0010 \u0001\u001a\u00030¡\u0001H\u0016J\u001b\u0010¢\u0001\u001a\u00020:2\u0007\u0010£\u0001\u001a\u00020C2\u0007\u0010¤\u0001\u001a\u00020&H\u0016J\f\u0010¥\u0001\u001a\u0005\u0018\u00010¦\u0001H\u0016J\u0012\u0010§\u0001\u001a\u00030¨\u00012\u0006\u0010B\u001a\u00020CH\u0016J\u001d\u0010©\u0001\u001a\u00030ª\u00012\n\u0010«\u0001\u001a\u0005\u0018\u00010¬\u0001H\u0096@¢\u0006\u0003\u0010\u00ad\u0001J\u0013\u0010®\u0001\u001a\u00020:2\b\u0010\u009e\u0001\u001a\u00030\u009f\u0001H\u0016J\u0018\u0010¯\u0001\u001a\u00020:2\r\u0010\u0084\u0001\u001a\b0°\u0001j\u0003`±\u0001H\u0016J\u0018\u0010²\u0001\u001a\u00020:2\r\u0010\u0084\u0001\u001a\b0°\u0001j\u0003`±\u0001H\u0016J\t\u0010³\u0001\u001a\u00020:H\u0016J\u0013\u0010´\u0001\u001a\u00020:2\b\u0010µ\u0001\u001a\u00030¶\u0001H\u0016J-\u0010·\u0001\u001a\u0004\u0018\u00010&2\f\b\u0002\u0010¸\u0001\u001a\u0005\u0018\u00010¹\u00012\f\b\u0002\u0010º\u0001\u001a\u0005\u0018\u00010¹\u0001H\u0002¢\u0006\u0003\u0010»\u0001J\u0012\u0010¼\u0001\u001a\u00030¨\u00012\u0006\u0010B\u001a\u00020CH\u0002JI\u0010½\u0001\u001a\u00020:2\u0006\u0010}\u001a\u00020H2\t\b\u0002\u0010¾\u0001\u001a\u00020\u001f2\f\b\u0002\u0010¿\u0001\u001a\u0005\u0018\u00010À\u00012\u000b\b\u0002\u0010Á\u0001\u001a\u0004\u0018\u00010C2\n\b\u0002\u0010B\u001a\u0004\u0018\u00010CH\u0002¢\u0006\u0003\u0010Â\u0001J\u0011\u0010Ã\u0001\u001a\u00020:2\u0006\u0010g\u001a\u00020&H\u0002J1\u0010Ä\u0001\u001a\u00020:2\b\u0010Å\u0001\u001a\u00030Æ\u00012\t\b\u0002\u0010Ç\u0001\u001a\u00020\n2\u000b\b\u0002\u0010È\u0001\u001a\u0004\u0018\u00010&H\u0002¢\u0006\u0003\u0010É\u0001J\u000b\u0010Ê\u0001\u001a\u0004\u0018\u00010\u001bH\u0002J\t\u0010Ë\u0001\u001a\u00020&H\u0002J\t\u0010Ì\u0001\u001a\u00020HH\u0002J\u0013\u0010Ì\u0001\u001a\u00020H2\b\u0010Í\u0001\u001a\u00030Î\u0001H\u0002J\u0012\u0010Ï\u0001\u001a\u00020:2\u0007\u0010Ç\u0001\u001a\u00020\nH\u0002J\u0013\u0010Ð\u0001\u001a\u00020:2\b\u0010Ñ\u0001\u001a\u00030Ò\u0001H\u0002J\t\u0010Ó\u0001\u001a\u00020:H\u0002J\t\u0010Ô\u0001\u001a\u00020:H\u0002J\u0011\u0010Õ\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010Ö\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010×\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010Ø\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\t\u0010Ù\u0001\u001a\u00020:H\u0016J#\u0010Ú\u0001\u001a\u00020:2\u0006\u0010B\u001a\u00020C2\u0007\u0010Û\u0001\u001a\u00020&2\u0007\u0010Ü\u0001\u001a\u00020&H\u0016J\t\u0010Ý\u0001\u001a\u00020&H\u0016J\f\u0010Þ\u0001\u001a\u0005\u0018\u00010¹\u0001H\u0016J\t\u0010ß\u0001\u001a\u00020:H\u0016J5\u0010à\u0001\u001a\u00020:2\u0007\u0010á\u0001\u001a\u00020C2\t\u0010â\u0001\u001a\u0004\u0018\u00010C2\u0007\u0010ã\u0001\u001a\u00020X2\u0007\u0010ä\u0001\u001a\u00020&H\u0016¢\u0006\u0003\u0010å\u0001J\u0012\u0010æ\u0001\u001a\u00020:2\u0007\u0010â\u0001\u001a\u00020CH\u0016J7\u0010ç\u0001\u001a\u00020:2\u0006\u0010B\u001a\u00020C2\u0007\u0010Ü\u0001\u001a\u00020&2\u0007\u0010è\u0001\u001a\u00020&2\u0007\u0010é\u0001\u001a\u00020&2\t\u0010ê\u0001\u001a\u0004\u0018\u00010HH\u0016J\u0013\u0010ë\u0001\u001a\u00020:2\b\u0010\u0084\u0001\u001a\u00030ì\u0001H\u0016J\t\u0010í\u0001\u001a\u00020:H\u0002J\u0011\u0010î\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u008f\u0001J\u0011\u0010ï\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010ð\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\"\u0010ñ\u0001\u001a\u00020:2\r\u0010\u0084\u0001\u001a\b0°\u0001j\u0003`±\u00012\b\u0010ò\u0001\u001a\u00030ó\u0001H\u0016J\u0013\u0010ô\u0001\u001a\u00020:2\b\u0010õ\u0001\u001a\u00030ö\u0001H\u0016J\t\u0010÷\u0001\u001a\u00020:H\u0016J\t\u0010ø\u0001\u001a\u00020:H\u0016J\u0012\u0010ù\u0001\u001a\u00020:2\u0007\u0010Ç\u0001\u001a\u00020&H\u0016J\u0014\u0010ú\u0001\u001a\u00020:2\t\b\u0002\u0010û\u0001\u001a\u00020&H\u0002J\u0013\u0010ü\u0001\u001a\u00020:2\b\u0010\u0084\u0001\u001a\u00030\u0085\u0001H\u0002R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\f0\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082.¢\u0006\u0002\n\u0000Ê\u0001\u0003\b\u0084\u0002Ê\u0001\u000e\b\u0085\u0002\u0012\t\b\u0086\u0002\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0083\u0002"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "Lcom/arizona/launcher/LauncherUpdateServiceHost;", "Lcom/arizona/launcher/GameUpdateServiceHost;", "Lcom/arizona/launcher/ArchiveUpdateServiceHost;", "Lcom/arizona/launcher/FileCheckServiceHost;", "<init>", "()V", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "serviceHandlerThread", "Landroid/os/HandlerThread;", "archiveSession", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionState;", "archiveStorageSpaceChecker", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageSpaceChecker;", "transferProgress", "Lcom/arizona/launcher/UpdateTransferProgress;", "archiveInstallerPhase", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveInstallerPhase;", "archiveNetworkPending", "Ljava/util/concurrent/atomic/AtomicBoolean;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mainHandler", "Landroid/os/Handler;", "serviceAlive", "serviceScope", "Lkotlinx/coroutines/CoroutineScope;", "foregroundServiceActive", "", "updateOperationCoordinator", "Lcom/arizona/launcher/UpdateOperationCoordinator;", "analyticsReporter", "Lcom/arizona/launcher/UpdateAnalyticsReporter;", "metadataFetcher", "Lcom/arizona/launcher/updater/http/UpdateMetadataFetcher;", "gameUpdateFlow", "Lcom/arizona/launcher/GameUpdateServiceFlow;", "archiveUpdateFlow", "Lcom/arizona/launcher/ArchiveUpdateServiceFlow;", "fileCheckFlow", "Lcom/arizona/launcher/FileCheckServiceFlow;", "launcherUpdateFlow", "Lcom/arizona/launcher/LauncherUpdateServiceFlow;", "archiveStateStore", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore;", "archiveStateMaintenance", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStateMaintenance;", "onCreate", "", "isGameDownloadRetryEnabled", "detectArchiveStartupGuard", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStartupGuard;", "selectedArchiveGpu", "Lcom/arizona/launcher/updater/archive/model/ArchiveGpu;", "runPrimaryGameCheckPreflight", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision$Block;", "operationToken", "", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "prepareGameUpdateCheck", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "response", "", "server", "kind", "Lcom/arizona/launcher/UpdateOperationKind;", "(Ljava/lang/String;Ljava/lang/String;Lcom/arizona/launcher/UpdateOperationKind;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onPreparedGameUpdateCheck", "decision", "snapshot", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionSnapshot;", "beginUpdateOperation", "(Lcom/arizona/launcher/UpdateOperationKind;)Ljava/lang/Long;", "isCurrentUpdateOperation", "token", "finishUpdateOperation", "createNotificationChannel", "onStartCommand", "", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT, "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult;", "allowAcceptedStartFromBackground", "isDeviceOnline", "isDeviceNetworkValidated", "activeNetworkCapabilities", "Landroid/net/NetworkCapabilities;", "isAppInForeground", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "releaseServiceResources", "requestCheckUpdate", "beginGameCheckOperation", "combined", "(Z)Ljava/lang/Long;", "isCurrentGameCheckOperation", "finishGameCheckOperation", "onGameCheckStarted", "onGameMetadataLoaded", "onGameCheckMirrorRetry", "source", "completeGameCheckServerEmpty", "completeGameCheckMetadataFailed", "detail", "completePreparedGameCheck", "successfully", "gameCheckOperationKind", "notifyGameUpdateCheckCompleted", "preparedSuccessfully", "notifyGameUpdateCheckUnreachable", "error", "Lcom/arizona/launcher/UpdateAnalyticsErrorEvent;", "includeStatus", "resetUpdateStatus", UpdateServiceContract.BundleKey.IS_GAME_DATA_UPDATE_EXISTS, "resetGameStatus", "updateGameData", "isArchiveServiceAlive", "activeUpdateOperation", "Lcom/arizona/launcher/UpdateOperationSnapshot;", "beginArchiveOperation", "()Ljava/lang/Long;", "isCurrentArchiveOperation", "finishArchiveOperation", "onArchiveRequestCoalesced", "activeDownload", "activeOperationKind", "onArchiveStartupCorrupt", "requestArchiveManifestRefresh", "reason", "warning", "setArchiveBenchmarkMode", UpdateActivity.UPDATE_MODE, "onArchiveDownloadSelected", "onArchiveNoWork", "hasEnoughSpaceForArchive", DownloadService.KEY_REQUIREMENTS, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirementsSnapshot;", "promoteArchiveForeground", "Lcom/arizona/launcher/ArchiveForegroundPromotion;", "beginArchiveProgress", "downloadBytes", "finalizationOnly", "createArchivePackageUpdater", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater;", "createArchiveMirrorCoordinator", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveMirrorExecutionCoordinator;", "finalizeArchiveMetadata", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveMetadataFinalizationResult;", "manifest", "Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;", "(Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "expandArchiveRuntimeRequirements", "recordArchiveExecutionException", "Ljava/lang/Exception;", "Lkotlin/Exception;", "recordArchiveFinalizationException", "completeArchiveSuccess", "completeArchiveFailure", "failure", "Lcom/arizona/launcher/ArchiveServiceFailure;", "archiveStorageUsesSingleDevice", "gameRoot", "Ljava/io/File;", "downloadStorageRoot", "(Ljava/io/File;Ljava/io/File;)Ljava/lang/Boolean;", "archiveMirrorExecutionCoordinator", "notifyArchiveUpdateFailure", "errno", "failureDetails", "Lcom/arizona/launcher/DownloadFailureDetails;", "requiredFreeSpaceBytes", "(Ljava/lang/String;Lcom/arizona/launcher/UpdateService$Errno;Lcom/arizona/launcher/DownloadFailureDetails;Ljava/lang/Long;Ljava/lang/Long;)V", "updateStatusInfoAndProgress", "populateUpdateStatusSnapshot", "bundle", "Landroid/os/Bundle;", "status", "archiveIndeterminate", "(Landroid/os/Bundle;Lcom/arizona/launcher/UpdateService$UpdateStatus;Ljava/lang/Boolean;)V", "visibleArchiveInstallerPhase", "isArchiveProgressIndeterminate", UpdateServiceContract.BundleKey.TIME_LEFT, "progress", "Lcom/arizona/launcher/UpdateTransferProgressSnapshot;", "setUpdateStatus", "sendToActivity", "message", "Landroid/os/Message;", "requestLauncherUpdateCheck", "requestLauncherApkDownload", "beginLauncherCheckOperation", "beginLauncherApkOperation", "isCurrentLauncherCheckOperation", "isCurrentLauncherApkOperation", "setLauncherOperationHealthy", "completeLauncherCheck", "needsUpdate", FirebaseAnalytics.Param.SUCCESS, "promoteLauncherForeground", "externalFilesRoot", "beginLauncherProgress", "updateLauncherProgress", "downloadedBytes", "totalBytes", "attempt", "resumed", "(JLjava/lang/Long;IZ)V", "completeLauncherProgress", "completeLauncherApk", "markServerUnreachable", "deferResult", "failedServer", "recordLauncherException", "", "requestFullFileCheck", "beginFileCheckOperation", "isCurrentFileCheckOperation", "finishFileCheckOperation", "onFileCheckAuditFailure", "fallback", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePayloadAuditResult$Unavailable;", "onFileCheckRepairScheduled", "result", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePayloadAuditResult$RepairScheduled;", "markFileCheckRecoveryRequired", "markGameUpdateRequiredAfterFileCheck", "completeFullFileCheck", "requestCheckUpdateAndDownload", "restartMirrorCycle", "notifyCheckUpdateAndDownloadUnreachable", "Companion", "Errno", "UpdateStatus", "GameStatus", "ForegroundPromotionResult", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ä\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0013\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \u0082\u00022\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u0005:\f\u0082\u0002\u0083\u0002\u0084\u0002\u0085\u0002\u0086\u0002\u0087\u0002B\u0007¢\u0006\u0004\b\u0006\u0010\u0007J\b\u00109\u001a\u00020:H\u0016J\b\u0010;\u001a\u00020&H\u0002J\b\u0010<\u001a\u00020=H\u0002J\b\u0010>\u001a\u00020?H\u0002J\u0018\u0010@\u001a\u0004\u0018\u00010A2\u0006\u0010B\u001a\u00020CH\u0082@¢\u0006\u0002\u0010DJ.\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020H2\u0006\u0010J\u001a\u00020K2\u0006\u0010B\u001a\u00020CH\u0082@¢\u0006\u0002\u0010LJ\u0018\u0010M\u001a\u00020:2\u0006\u0010N\u001a\u00020F2\u0006\u0010O\u001a\u00020PH\u0002J\u0017\u0010Q\u001a\u0004\u0018\u00010C2\u0006\u0010J\u001a\u00020KH\u0002¢\u0006\u0002\u0010RJ\u0018\u0010S\u001a\u00020&2\u0006\u0010J\u001a\u00020K2\u0006\u0010T\u001a\u00020CH\u0002J\u0018\u0010U\u001a\u00020:2\u0006\u0010J\u001a\u00020K2\u0006\u0010T\u001a\u00020CH\u0002J\b\u0010V\u001a\u00020:H\u0002J\"\u0010W\u001a\u00020X2\b\u0010Y\u001a\u0004\u0018\u00010Z2\u0006\u0010[\u001a\u00020X2\u0006\u0010\\\u001a\u00020XH\u0016J\u0012\u0010]\u001a\u00020^2\b\b\u0002\u0010_\u001a\u00020&H\u0002J\b\u0010`\u001a\u00020&H\u0002J\b\u0010a\u001a\u00020&H\u0002J\n\u0010b\u001a\u0004\u0018\u00010cH\u0002J\b\u0010d\u001a\u00020&H\u0002J\u0010\u0010e\u001a\u00020f2\u0006\u0010g\u001a\u00020&H\u0002J\b\u0010h\u001a\u00020:H\u0002J\u0012\u0010i\u001a\u0004\u0018\u00010j2\u0006\u0010Y\u001a\u00020ZH\u0016J\u0010\u0010k\u001a\u00020&2\u0006\u0010Y\u001a\u00020ZH\u0016J\u0010\u0010l\u001a\u00020:2\u0006\u0010Y\u001a\u00020ZH\u0016J\b\u0010m\u001a\u00020:H\u0016J\u0012\u0010n\u001a\u00020:2\b\u0010o\u001a\u0004\u0018\u00010ZH\u0016J\b\u0010p\u001a\u00020:H\u0002J\b\u0010q\u001a\u00020:H\u0002J\u0017\u0010r\u001a\u0004\u0018\u00010C2\u0006\u0010s\u001a\u00020&H\u0016¢\u0006\u0002\u0010tJ\u0018\u0010u\u001a\u00020&2\u0006\u0010s\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0018\u0010v\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0010\u0010w\u001a\u00020:2\u0006\u0010s\u001a\u00020&H\u0016J\u0018\u0010x\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010G\u001a\u00020HH\u0016J\u0018\u0010y\u001a\u00020:2\u0006\u0010I\u001a\u00020H2\u0006\u0010z\u001a\u00020HH\u0016J\u0010\u0010{\u001a\u00020:2\u0006\u0010s\u001a\u00020&H\u0016J \u0010|\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0006\u0010}\u001a\u00020~2\u0006\u0010\u007f\u001a\u00020HH\u0016J%\u0010\u0080\u0001\u001a\u00020:2\u0006\u0010s\u001a\u00020&2\u0007\u0010\u0081\u0001\u001a\u00020&2\t\u0010\u0082\u0001\u001a\u0004\u0018\u00010AH\u0016J\u0011\u0010\u0083\u0001\u001a\u00020K2\u0006\u0010s\u001a\u00020&H\u0002J\u0012\u0010\u0084\u0001\u001a\u00020:2\u0007\u0010\u0085\u0001\u001a\u00020&H\u0002JM\u0010\u0086\u0001\u001a\u00020:2\b\u0010\u0087\u0001\u001a\u00030\u0088\u00012\u0007\u0010\u0089\u0001\u001a\u00020&2\t\b\u0002\u0010\u008a\u0001\u001a\u00020&2\u000b\b\u0002\u0010\u008b\u0001\u001a\u0004\u0018\u00010H2\u000b\b\u0002\u0010\u008c\u0001\u001a\u0004\u0018\u00010~2\n\b\u0002\u0010\u007f\u001a\u0004\u0018\u00010HH\u0002J\t\u0010\u008d\u0001\u001a\u00020&H\u0002J\t\u0010\u008e\u0001\u001a\u00020:H\u0002J\u0007\u0010\u008f\u0001\u001a\u00020:J\t\u0010\u0090\u0001\u001a\u00020&H\u0016J\f\u0010\u0091\u0001\u001a\u0005\u0018\u00010\u0092\u0001H\u0016J\u0011\u0010\u0093\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u0094\u0001J\u0011\u0010\u0095\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010\u0096\u0001\u001a\u00020:2\u0006\u0010T\u001a\u00020CH\u0016J\u001d\u0010\u0097\u0001\u001a\u00020:2\u0007\u0010\u0098\u0001\u001a\u00020&2\t\u0010\u0099\u0001\u001a\u0004\u0018\u00010KH\u0016J\t\u0010\u009a\u0001\u001a\u00020:H\u0016J\u001b\u0010\u009b\u0001\u001a\u00020:2\u0007\u0010\u009c\u0001\u001a\u00020H2\u0007\u0010\u009d\u0001\u001a\u00020&H\u0016J\u0012\u0010\u009e\u0001\u001a\u00020:2\u0007\u0010\u009f\u0001\u001a\u00020HH\u0016J\t\u0010 \u0001\u001a\u00020:H\u0016J\t\u0010¡\u0001\u001a\u00020:H\u0016J\u0014\u0010¢\u0001\u001a\u00030£\u00012\b\u0010¤\u0001\u001a\u00030¥\u0001H\u0016J\n\u0010¦\u0001\u001a\u00030§\u0001H\u0016J\u001b\u0010¨\u0001\u001a\u00020:2\u0007\u0010©\u0001\u001a\u00020C2\u0007\u0010ª\u0001\u001a\u00020&H\u0016J\f\u0010«\u0001\u001a\u0005\u0018\u00010¬\u0001H\u0016J\u0012\u0010\u00ad\u0001\u001a\u00030®\u00012\u0006\u0010B\u001a\u00020CH\u0016J\u001d\u0010¯\u0001\u001a\u00030°\u00012\n\u0010±\u0001\u001a\u0005\u0018\u00010²\u0001H\u0096@¢\u0006\u0003\u0010³\u0001J\u0013\u0010´\u0001\u001a\u00020:2\b\u0010¤\u0001\u001a\u00030¥\u0001H\u0016J\u0018\u0010µ\u0001\u001a\u00020:2\r\u0010\u0087\u0001\u001a\b0¶\u0001j\u0003`·\u0001H\u0016J\u0018\u0010¸\u0001\u001a\u00020:2\r\u0010\u0087\u0001\u001a\b0¶\u0001j\u0003`·\u0001H\u0016J\t\u0010¹\u0001\u001a\u00020:H\u0016J\u0012\u0010º\u0001\u001a\u00020:2\u0007\u0010}\u001a\u00030»\u0001H\u0016J-\u0010¼\u0001\u001a\u0004\u0018\u00010&2\f\b\u0002\u0010½\u0001\u001a\u0005\u0018\u00010¾\u00012\f\b\u0002\u0010¿\u0001\u001a\u0005\u0018\u00010¾\u0001H\u0002¢\u0006\u0003\u0010À\u0001J\u0012\u0010Á\u0001\u001a\u00030®\u00012\u0006\u0010B\u001a\u00020CH\u0002JJ\u0010Â\u0001\u001a\u00020:2\u0007\u0010\u008b\u0001\u001a\u00020H2\t\b\u0002\u0010Ã\u0001\u001a\u00020\u001f2\f\b\u0002\u0010Ä\u0001\u001a\u0005\u0018\u00010Å\u00012\u000b\b\u0002\u0010Æ\u0001\u001a\u0004\u0018\u00010C2\n\b\u0002\u0010B\u001a\u0004\u0018\u00010CH\u0002¢\u0006\u0003\u0010Ç\u0001J\u0011\u0010È\u0001\u001a\u00020:2\u0006\u0010g\u001a\u00020&H\u0002J1\u0010É\u0001\u001a\u00020:2\b\u0010Ê\u0001\u001a\u00030Ë\u00012\t\b\u0002\u0010Ì\u0001\u001a\u00020\n2\u000b\b\u0002\u0010Í\u0001\u001a\u0004\u0018\u00010&H\u0002¢\u0006\u0003\u0010Î\u0001J\u000b\u0010Ï\u0001\u001a\u0004\u0018\u00010\u001bH\u0002J\t\u0010Ð\u0001\u001a\u00020&H\u0002J\t\u0010Ñ\u0001\u001a\u00020HH\u0002J\u0013\u0010Ñ\u0001\u001a\u00020H2\b\u0010Ò\u0001\u001a\u00030Ó\u0001H\u0002J\u0012\u0010Ô\u0001\u001a\u00020:2\u0007\u0010Ì\u0001\u001a\u00020\nH\u0002J\u0013\u0010Õ\u0001\u001a\u00020:2\b\u0010Ö\u0001\u001a\u00030×\u0001H\u0002J\t\u0010Ø\u0001\u001a\u00020:H\u0002J\t\u0010Ù\u0001\u001a\u00020:H\u0002J\u0011\u0010Ú\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u0094\u0001J\u0011\u0010Û\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u0094\u0001J\u0011\u0010Ü\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010Ý\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\t\u0010Þ\u0001\u001a\u00020:H\u0016J#\u0010ß\u0001\u001a\u00020:2\u0006\u0010B\u001a\u00020C2\u0007\u0010à\u0001\u001a\u00020&2\u0007\u0010á\u0001\u001a\u00020&H\u0016J\t\u0010â\u0001\u001a\u00020&H\u0016J\f\u0010ã\u0001\u001a\u0005\u0018\u00010¾\u0001H\u0016J\t\u0010ä\u0001\u001a\u00020:H\u0016J5\u0010å\u0001\u001a\u00020:2\u0007\u0010æ\u0001\u001a\u00020C2\t\u0010ç\u0001\u001a\u0004\u0018\u00010C2\u0007\u0010è\u0001\u001a\u00020X2\u0007\u0010é\u0001\u001a\u00020&H\u0016¢\u0006\u0003\u0010ê\u0001J\u0012\u0010ë\u0001\u001a\u00020:2\u0007\u0010ç\u0001\u001a\u00020CH\u0016JB\u0010ì\u0001\u001a\u00020:2\u0006\u0010B\u001a\u00020C2\u0007\u0010á\u0001\u001a\u00020&2\u0007\u0010í\u0001\u001a\u00020&2\u0007\u0010î\u0001\u001a\u00020&2\b\u0010\u007f\u001a\u0004\u0018\u00010H2\n\u0010ï\u0001\u001a\u0005\u0018\u00010ð\u0001H\u0016J\u0013\u0010ñ\u0001\u001a\u00020:2\b\u0010\u0087\u0001\u001a\u00030ò\u0001H\u0016J\t\u0010ó\u0001\u001a\u00020:H\u0002J\u0011\u0010ô\u0001\u001a\u0004\u0018\u00010CH\u0016¢\u0006\u0003\u0010\u0094\u0001J\u0011\u0010õ\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\u0011\u0010ö\u0001\u001a\u00020&2\u0006\u0010T\u001a\u00020CH\u0016J\"\u0010÷\u0001\u001a\u00020:2\r\u0010\u0087\u0001\u001a\b0¶\u0001j\u0003`·\u00012\b\u0010ø\u0001\u001a\u00030ù\u0001H\u0016J\u0013\u0010ú\u0001\u001a\u00020:2\b\u0010\u008c\u0001\u001a\u00030û\u0001H\u0016J\t\u0010ü\u0001\u001a\u00020:H\u0016J\t\u0010ý\u0001\u001a\u00020:H\u0016J\u0012\u0010þ\u0001\u001a\u00020:2\u0007\u0010Ì\u0001\u001a\u00020&H\u0016J\u0014\u0010ÿ\u0001\u001a\u00020:2\t\b\u0002\u0010\u0080\u0002\u001a\u00020&H\u0002J,\u0010\u0081\u0002\u001a\u00020:2\b\u0010\u0087\u0001\u001a\u00030\u0088\u00012\u000b\b\u0002\u0010\u008c\u0001\u001a\u0004\u0018\u00010~2\n\b\u0002\u0010\u007f\u001a\u0004\u0018\u00010HH\u0002R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\n0\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\f0\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000f\u001a\u0004\u0018\u00010\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0012\u001a\u0004\u0018\u00010\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001a\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u001b0\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u000208X\u0082.¢\u0006\u0002\n\u0000Ê\u0001\u0003\b\u0089\u0002Ê\u0001\u000e\b\u008a\u0002\u0012\t\b\u008b\u0002\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u0088\u0002"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "Lcom/arizona/launcher/LauncherUpdateServiceHost;", "Lcom/arizona/launcher/GameUpdateServiceHost;", "Lcom/arizona/launcher/ArchiveUpdateServiceHost;", "Lcom/arizona/launcher/FileCheckServiceHost;", "<init>", "()V", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "serviceHandlerThread", "Landroid/os/HandlerThread;", "archiveSession", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionState;", "archiveStorageSpaceChecker", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageSpaceChecker;", "transferProgress", "Lcom/arizona/launcher/UpdateTransferProgress;", "archiveInstallerPhase", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveInstallerPhase;", "archiveNetworkPending", "Ljava/util/concurrent/atomic/AtomicBoolean;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mainHandler", "Landroid/os/Handler;", "serviceAlive", "serviceScope", "Lkotlinx/coroutines/CoroutineScope;", "foregroundServiceActive", "", "updateOperationCoordinator", "Lcom/arizona/launcher/UpdateOperationCoordinator;", "analyticsReporter", "Lcom/arizona/launcher/UpdateAnalyticsReporter;", "metadataFetcher", "Lcom/arizona/launcher/updater/http/UpdateMetadataFetcher;", "gameUpdateFlow", "Lcom/arizona/launcher/GameUpdateServiceFlow;", "archiveUpdateFlow", "Lcom/arizona/launcher/ArchiveUpdateServiceFlow;", "fileCheckFlow", "Lcom/arizona/launcher/FileCheckServiceFlow;", "launcherUpdateFlow", "Lcom/arizona/launcher/LauncherUpdateServiceFlow;", "archiveStateStore", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore;", "archiveStateMaintenance", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStateMaintenance;", "onCreate", "", "isGameDownloadRetryEnabled", "detectArchiveStartupGuard", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStartupGuard;", "selectedArchiveGpu", "Lcom/arizona/launcher/updater/archive/model/ArchiveGpu;", "runPrimaryGameCheckPreflight", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision$Block;", "operationToken", "", "(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "prepareGameUpdateCheck", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "response", "", "server", "kind", "Lcom/arizona/launcher/UpdateOperationKind;", "(Ljava/lang/String;Ljava/lang/String;Lcom/arizona/launcher/UpdateOperationKind;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onPreparedGameUpdateCheck", "decision", "snapshot", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateSessionSnapshot;", "beginUpdateOperation", "(Lcom/arizona/launcher/UpdateOperationKind;)Ljava/lang/Long;", "isCurrentUpdateOperation", "token", "finishUpdateOperation", "createNotificationChannel", "onStartCommand", "", AccessibilityNodeInfoCompat.MathInfoCompat.MATH_ATTRIBUTE_INTENT, "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "Lcom/arizona/launcher/UpdateService$ForegroundPromotionResult;", "allowAcceptedStartFromBackground", "isDeviceOnline", "isDeviceNetworkValidated", "activeNetworkCapabilities", "Landroid/net/NetworkCapabilities;", "isAppInForeground", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "releaseServiceResources", "requestCheckUpdate", "beginGameCheckOperation", "combined", "(Z)Ljava/lang/Long;", "isCurrentGameCheckOperation", "finishGameCheckOperation", "onGameCheckStarted", "onGameMetadataLoaded", "onGameCheckMirrorRetry", "source", "completeGameCheckServerEmpty", "completeGameCheckMetadataFailed", "failure", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", "failedServer", "completePreparedGameCheck", "successfully", "blockedCheck", "gameCheckOperationKind", "notifyGameUpdateCheckCompleted", "preparedSuccessfully", "notifyGameUpdateCheckUnreachable", "error", "Lcom/arizona/launcher/UpdateAnalyticsErrorEvent;", "includeStatus", "resetUpdateStatus", "detail", "result", UpdateServiceContract.BundleKey.IS_GAME_DATA_UPDATE_EXISTS, "resetGameStatus", "updateGameData", "isArchiveServiceAlive", "activeUpdateOperation", "Lcom/arizona/launcher/UpdateOperationSnapshot;", "beginArchiveOperation", "()Ljava/lang/Long;", "isCurrentArchiveOperation", "finishArchiveOperation", "onArchiveRequestCoalesced", "activeDownload", "activeOperationKind", "onArchiveStartupCorrupt", "requestArchiveManifestRefresh", "reason", "warning", "setArchiveBenchmarkMode", UpdateActivity.UPDATE_MODE, "onArchiveDownloadSelected", "onArchiveNoWork", "checkArchiveStorageSpace", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageSpaceCheckResult;", DownloadService.KEY_REQUIREMENTS, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStorageRequirementsSnapshot;", "promoteArchiveForeground", "Lcom/arizona/launcher/ArchiveForegroundPromotion;", "beginArchiveProgress", "downloadBytes", "finalizationOnly", "createArchivePackageUpdater", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater;", "createArchiveMirrorCoordinator", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveMirrorExecutionCoordinator;", "finalizeArchiveMetadata", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveMetadataFinalizationResult;", "manifest", "Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;", "(Lcom/arizona/launcher/updater/archive/model/ArchiveManifest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "expandArchiveRuntimeRequirements", "recordArchiveExecutionException", "Ljava/lang/Exception;", "Lkotlin/Exception;", "recordArchiveFinalizationException", "completeArchiveSuccess", "completeArchiveFailure", "Lcom/arizona/launcher/ArchiveServiceFailure;", "archiveStorageUsesSingleDevice", "gameRoot", "Ljava/io/File;", "downloadStorageRoot", "(Ljava/io/File;Ljava/io/File;)Ljava/lang/Boolean;", "archiveMirrorExecutionCoordinator", "notifyArchiveUpdateFailure", "errno", "failureDetails", "Lcom/arizona/launcher/DownloadFailureDetails;", "requiredFreeSpaceBytes", "(Ljava/lang/String;Lcom/arizona/launcher/UpdateService$Errno;Lcom/arizona/launcher/DownloadFailureDetails;Ljava/lang/Long;Ljava/lang/Long;)V", "updateStatusInfoAndProgress", "populateUpdateStatusSnapshot", "bundle", "Landroid/os/Bundle;", "status", "archiveIndeterminate", "(Landroid/os/Bundle;Lcom/arizona/launcher/UpdateService$UpdateStatus;Ljava/lang/Boolean;)V", "visibleArchiveInstallerPhase", "isArchiveProgressIndeterminate", UpdateServiceContract.BundleKey.TIME_LEFT, "progress", "Lcom/arizona/launcher/UpdateTransferProgressSnapshot;", "setUpdateStatus", "sendToActivity", "message", "Landroid/os/Message;", "requestLauncherUpdateCheck", "requestLauncherApkDownload", "beginLauncherCheckOperation", "beginLauncherApkOperation", "isCurrentLauncherCheckOperation", "isCurrentLauncherApkOperation", "setLauncherOperationHealthy", "completeLauncherCheck", "needsUpdate", FirebaseAnalytics.Param.SUCCESS, "promoteLauncherForeground", "externalFilesRoot", "beginLauncherProgress", "updateLauncherProgress", "downloadedBytes", "totalBytes", "attempt", "resumed", "(JLjava/lang/Long;IZ)V", "completeLauncherProgress", "completeLauncherApk", "markServerUnreachable", "deferResult", "localStorageFailure", "Lcom/arizona/launcher/updater/apk/LauncherApkLocalStorageFailure;", "recordLauncherException", "", "requestFullFileCheck", "beginFileCheckOperation", "isCurrentFileCheckOperation", "finishFileCheckOperation", "onFileCheckAuditFailure", "fallback", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePayloadAuditResult$Unavailable;", "onFileCheckRepairScheduled", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePayloadAuditResult$RepairScheduled;", "markFileCheckRecoveryRequired", "markGameUpdateRequiredAfterFileCheck", "completeFullFileCheck", "requestCheckUpdateAndDownload", "restartMirrorCycle", "notifyCheckUpdateAndDownloadUnreachable", "Companion", "Errno", "UpdateStatus", "GameStatus", "ForegroundPromotionResult", "IncomingHandler", "app", "Ldagger/hilt/android/AndroidEntryPoint;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateService extends Hilt_UpdateService implements LauncherUpdateServiceHost, GameUpdateServiceHost, ArchiveUpdateServiceHost, FileCheckServiceHost {
@@ -154,7 +157,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     private AtomicReference<UpdateStatus> mUpdateStatus = new AtomicReference<>(UpdateStatus.Undefined);
     private AtomicReference<GameStatus> mGameStatus = new AtomicReference<>(GameStatus.Undefined);
     private final ArchiveUpdateSessionState archiveSession = new ArchiveUpdateSessionState(null, null, 3, null);
-    private final ArchiveStorageSpaceChecker archiveStorageSpaceChecker = ArchiveStorageSpaceChecker.Companion.android(new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
+    private final ArchiveStorageSpaceChecker archiveStorageSpaceChecker = ArchiveStorageSpaceChecker.Companion.android(new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(Object obj, Object obj2) {
             return UpdateService.archiveStorageSpaceChecker$lambda$0((String) obj, (Exception) obj2);
@@ -176,6 +179,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
         public static final /* synthetic */ int[] $EnumSwitchMapping$1;
         public static final /* synthetic */ int[] $EnumSwitchMapping$2;
+        public static final /* synthetic */ int[] $EnumSwitchMapping$3;
 
         static {
             int[] iArr = new int[ArchiveInstallerPhase.values().length];
@@ -218,36 +222,54 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                iArr2[ArchiveServiceFailureKind.FOREGROUND_UNAVAILABLE.ordinal()] = 4;
+                iArr2[ArchiveServiceFailureKind.STORAGE_UNAVAILABLE.ordinal()] = 4;
             } catch (NoSuchFieldError unused10) {
             }
             try {
-                iArr2[ArchiveServiceFailureKind.RECOVERY_BLOCKED.ordinal()] = 5;
+                iArr2[ArchiveServiceFailureKind.FOREGROUND_UNAVAILABLE.ordinal()] = 5;
             } catch (NoSuchFieldError unused11) {
+            }
+            try {
+                iArr2[ArchiveServiceFailureKind.RECOVERY_BLOCKED.ordinal()] = 6;
+            } catch (NoSuchFieldError unused12) {
             }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[Errno.values().length];
             try {
                 iArr3[Errno.ConnectionRefused.ordinal()] = 1;
-            } catch (NoSuchFieldError unused12) {
-            }
-            try {
-                iArr3[Errno.InsufficientStorage.ordinal()] = 2;
             } catch (NoSuchFieldError unused13) {
             }
             try {
-                iArr3[Errno.ForegroundServiceUnavailable.ordinal()] = 3;
+                iArr3[Errno.InsufficientStorage.ordinal()] = 2;
             } catch (NoSuchFieldError unused14) {
             }
             try {
-                iArr3[Errno.ArchiveRecoveryBlocked.ordinal()] = 4;
+                iArr3[Errno.ForegroundServiceUnavailable.ordinal()] = 3;
             } catch (NoSuchFieldError unused15) {
             }
             try {
-                iArr3[Errno.UpdateServerUnreachable.ordinal()] = 5;
+                iArr3[Errno.ArchiveRecoveryBlocked.ordinal()] = 4;
             } catch (NoSuchFieldError unused16) {
             }
+            try {
+                iArr3[Errno.UpdateServerUnreachable.ordinal()] = 5;
+            } catch (NoSuchFieldError unused17) {
+            }
+            try {
+                iArr3[Errno.StorageUnavailable.ordinal()] = 6;
+            } catch (NoSuchFieldError unused18) {
+            }
             $EnumSwitchMapping$2 = iArr3;
+            int[] iArr4 = new int[LauncherApkLocalStorageFailure.values().length];
+            try {
+                iArr4[LauncherApkLocalStorageFailure.INSUFFICIENT.ordinal()] = 1;
+            } catch (NoSuchFieldError unused19) {
+            }
+            try {
+                iArr4[LauncherApkLocalStorageFailure.UNAVAILABLE.ordinal()] = 2;
+            } catch (NoSuchFieldError unused20) {
+            }
+            $EnumSwitchMapping$3 = iArr4;
         }
     }
 
@@ -279,7 +301,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000e\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012¨\u0006\u0013"}, d2 = {"Lcom/arizona/launcher/UpdateService$Errno;", "", "code", "", "description", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getCode", "()I", "getDescription", "()Ljava/lang/String;", "NoError", "UpdateServerUnreachable", "ConnectionRefused", "CorruptedFilesFound", "InsufficientStorage", "ForegroundServiceUnavailable", "ArchiveRecoveryBlocked", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0019\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000fj\u0002\b\u0010j\u0002\b\u0011j\u0002\b\u0012j\u0002\b\u0013¨\u0006\u0014"}, d2 = {"Lcom/arizona/launcher/UpdateService$Errno;", "", "code", "", "description", "", "<init>", "(Ljava/lang/String;IILjava/lang/String;)V", "getCode", "()I", "getDescription", "()Ljava/lang/String;", "NoError", "UpdateServerUnreachable", "ConnectionRefused", "CorruptedFilesFound", "InsufficientStorage", "ForegroundServiceUnavailable", "ArchiveRecoveryBlocked", "StorageUnavailable", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Errno {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -293,9 +315,10 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         public static final Errno InsufficientStorage = new Errno("InsufficientStorage", 4, 4, "Недостаточно места для установки игровых файлов");
         public static final Errno ForegroundServiceUnavailable = new Errno("ForegroundServiceUnavailable", 5, 5, "Не удалось безопасно продолжить фоновое обновление");
         public static final Errno ArchiveRecoveryBlocked = new Errno("ArchiveRecoveryBlocked", 6, 6, "Архивную установку нельзя безопасно восстановить автоматически");
+        public static final Errno StorageUnavailable = new Errno("StorageUnavailable", 7, 7, "Не удалось проверить свободное место для установки игровых файлов");
 
         private static final /* synthetic */ Errno[] $values() {
-            return new Errno[]{NoError, UpdateServerUnreachable, ConnectionRefused, CorruptedFilesFound, InsufficientStorage, ForegroundServiceUnavailable, ArchiveRecoveryBlocked};
+            return new Errno[]{NoError, UpdateServerUnreachable, ConnectionRefused, CorruptedFilesFound, InsufficientStorage, ForegroundServiceUnavailable, ArchiveRecoveryBlocked, StorageUnavailable};
         }
 
         public static EnumEntries<Errno> getEntries() {
@@ -573,7 +596,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         this.serviceAlive.set(true);
         this.analyticsReporter = UpdateAnalyticsReporter.Companion.createAndroid$default(UpdateAnalyticsReporter.Companion, this, null, 2, null);
         this.archiveStateStore = DurableArchiveStateStore.Companion.forAndroid(new File(getNoBackupFilesDir(), "archive-updater"));
-        Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
+        Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 File externalFilesDir;
@@ -596,12 +619,12 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             Intrinsics.throwUninitializedPropertyAccessException("metadataFetcher");
             updateMetadataFetcher2 = null;
         }
-        this.gameUpdateFlow = new GameUpdateServiceFlow(this.serviceScope, new GameUpdateCheckRunner(updateMetadataFetcher2, new UpdateService$onCreate$gameUpdateCheckRunner$1(this), new UpdateService$onCreate$gameUpdateCheckRunner$2(this), new UpdateService$onCreate$gameUpdateCheckRunner$3(FileServers.INSTANCE), new UpdateService$onCreate$gameUpdateCheckRunner$4(FileServers.INSTANCE)), this.archiveSession, this, new UpdateService$onCreate$2(FileServers.INSTANCE), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
+        this.gameUpdateFlow = new GameUpdateServiceFlow(this.serviceScope, new GameUpdateCheckRunner(updateMetadataFetcher2, new UpdateService$onCreate$gameUpdateCheckRunner$1(this), new UpdateService$onCreate$gameUpdateCheckRunner$2(this), new UpdateService$onCreate$gameUpdateCheckRunner$3(FileServers.INSTANCE), new UpdateService$onCreate$gameUpdateCheckRunner$4(FileServers.INSTANCE)), this.archiveSession, this, new UpdateService$onCreate$2(FileServers.INSTANCE), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return Integer.valueOf(UpdateService.onCreate$lambda$1());
             }
-        }, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
+        }, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 String jsonName;
@@ -635,12 +658,17 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         } else {
             updateAnalyticsReporter = updateAnalyticsReporter2;
         }
-        this.launcherUpdateFlow = new LauncherUpdateServiceFlow(coroutineScope2, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, updateAnalyticsReporter, this, new UpdateService$onCreate$9(FileServers.INSTANCE), new UpdateService$onCreate$10(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
+        this.launcherUpdateFlow = new LauncherUpdateServiceFlow(coroutineScope2, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, updateAnalyticsReporter, this, new UpdateService$onCreate$9(FileServers.INSTANCE), new UpdateService$onCreate$10(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return UpdateService.onCreate$lambda$3(UpdateService.this, (Function0) obj);
             }
-        });
+        }, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return Integer.valueOf(UpdateService.onCreate$lambda$4());
+            }
+        }, new UpdateService$onCreate$13(this));
         HandlerThread handlerThread = new HandlerThread("ServiceStartArguments", 10);
         handlerThread.start();
         this.serviceHandlerThread = handlerThread;
@@ -666,13 +694,18 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$3(UpdateService updateService, final Function0 block) {
         Intrinsics.checkNotNullParameter(block, "block");
-        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
+        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 Function0.this.invoke();
             }
         });
         return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final int onCreate$lambda$4() {
+        return FileServers.INSTANCE.getLauncher_servers().length;
     }
 
     private final ArchiveStartupGuard detectArchiveStartupGuard() {
@@ -1320,31 +1353,39 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     @Override // com.arizona.launcher.GameUpdateServiceHost
     public void completeGameCheckServerEmpty(boolean z) {
         if (z) {
-            notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_SERVER_EMPTY);
+            notifyCheckUpdateAndDownloadUnreachable$default(this, UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_SERVER_EMPTY, null, null, 6, null);
         } else {
-            notifyGameUpdateCheckUnreachable$default(this, UpdateAnalyticsErrorEvent.GAME_UPDATE_SERVER_EMPTY, false, false, null, 8, null);
+            notifyGameUpdateCheckUnreachable$default(this, UpdateAnalyticsErrorEvent.GAME_UPDATE_SERVER_EMPTY, false, false, null, null, null, 56, null);
         }
     }
 
     @Override // com.arizona.launcher.GameUpdateServiceHost
-    public void completeGameCheckMetadataFailed(boolean z, String detail) {
-        Intrinsics.checkNotNullParameter(detail, "detail");
-        Log.w(TAG, "Game metadata request failed: " + detail);
+    public void completeGameCheckMetadataFailed(boolean z, UpdateMetadataHttpResult failure, String failedServer) {
+        Intrinsics.checkNotNullParameter(failure, "failure");
+        Intrinsics.checkNotNullParameter(failedServer, "failedServer");
+        Log.w(TAG, "Game metadata request failed: " + failure);
         if (z) {
-            notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED);
+            notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED, failure, failedServer);
         } else {
-            notifyGameUpdateCheckUnreachable$default(this, UpdateAnalyticsErrorEvent.GAME_UPDATE_REQUEST_FAILED, true, false, detail, 4, null);
+            notifyGameUpdateCheckUnreachable$default(this, UpdateAnalyticsErrorEvent.GAME_UPDATE_REQUEST_FAILED, true, false, failure.toString(), failure, failedServer, 4, null);
         }
     }
 
     @Override // com.arizona.launcher.GameUpdateServiceHost
-    public void completePreparedGameCheck(boolean z, boolean z2) {
+    public void completePreparedGameCheck(boolean z, boolean z2, ArchiveUpdateCheckDecision.Block block) {
+        DownloadFailureDetails downloadFailureDetails;
         if (!z) {
             notifyGameUpdateCheckCompleted(z2);
         } else if (z2) {
             updateGameData();
         } else {
-            notifyArchiveUpdateFailure$default(this, "archive update check is blocked", this.mLastOperationStatus, null, null, null, 28, null);
+            Errno errno = this.mLastOperationStatus;
+            if (block != null) {
+                downloadFailureDetails = new DownloadFailureDetails("CHECK_" + block.getCode().name(), null, null, 6, null);
+            } else {
+                downloadFailureDetails = null;
+            }
+            notifyArchiveUpdateFailure$default(this, "archive update check is blocked", errno, downloadFailureDetails, null, null, 24, null);
         }
     }
 
@@ -1368,23 +1409,30 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         stopForegroundService();
     }
 
-    static /* synthetic */ void notifyGameUpdateCheckUnreachable$default(UpdateService updateService, UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, boolean z, boolean z2, String str, int i, Object obj) {
+    static /* synthetic */ void notifyGameUpdateCheckUnreachable$default(UpdateService updateService, UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, boolean z, boolean z2, String str, UpdateMetadataHttpResult updateMetadataHttpResult, String str2, int i, Object obj) {
         if ((i & 4) != 0) {
             z2 = true;
         }
-        if ((i & 8) != 0) {
-            str = null;
-        }
-        updateService.notifyGameUpdateCheckUnreachable(updateAnalyticsErrorEvent, z, z2, str);
+        updateService.notifyGameUpdateCheckUnreachable(updateAnalyticsErrorEvent, z, z2, (i & 8) != 0 ? null : str, (i & 16) != 0 ? null : updateMetadataHttpResult, (i & 32) != 0 ? null : str2);
     }
 
-    private final void notifyGameUpdateCheckUnreachable(UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, boolean z, boolean z2, String str) {
+    private final void notifyGameUpdateCheckUnreachable(UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, boolean z, boolean z2, String str, UpdateMetadataHttpResult updateMetadataHttpResult, String str2) {
         UpdateAnalyticsReporter updateAnalyticsReporter = this.analyticsReporter;
-        if (updateAnalyticsReporter == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
-            updateAnalyticsReporter = null;
+        UpdateAnalyticsReporter updateAnalyticsReporter2 = null;
+        if (updateMetadataHttpResult != null) {
+            if (updateAnalyticsReporter == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+                updateAnalyticsReporter = null;
+            }
+            updateAnalyticsReporter.reportMetadataError(updateAnalyticsErrorEvent, updateMetadataHttpResult, str2);
+        } else {
+            if (updateAnalyticsReporter == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+            } else {
+                updateAnalyticsReporter2 = updateAnalyticsReporter;
+            }
+            UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter2, updateAnalyticsErrorEvent, null, null, null, 14, null);
         }
-        UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter, updateAnalyticsErrorEvent, null, null, 6, null);
         this.mLastOperationStatus = Errno.UpdateServerUnreachable;
         if (z2) {
             setUpdateStatus(UpdateStatus.Undefined);
@@ -1514,9 +1562,9 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     }
 
     @Override // com.arizona.launcher.ArchiveUpdateServiceHost
-    public boolean hasEnoughSpaceForArchive(ArchiveStorageRequirementsSnapshot requirements) {
+    public ArchiveStorageSpaceCheckResult checkArchiveStorageSpace(ArchiveStorageRequirementsSnapshot requirements) {
         Intrinsics.checkNotNullParameter(requirements, "requirements");
-        return this.archiveStorageSpaceChecker.hasEnoughSpace(getExternalFilesDir(null), getExternalCacheDir(), requirements);
+        return this.archiveStorageSpaceChecker.check(getExternalFilesDir(null), getExternalCacheDir(), requirements);
     }
 
     @Override // com.arizona.launcher.ArchiveUpdateServiceHost
@@ -1624,19 +1672,27 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         this.archiveNetworkPending.set(false);
         this.archiveInstallerPhase.set(null);
         String detail = failure.getDetail();
-        int i = WhenMappings.$EnumSwitchMapping$1[failure.getKind().ordinal()];
-        if (i == 1) {
-            errno = Errno.ConnectionRefused;
-        } else if (i == 2) {
-            errno = Errno.CorruptedFilesFound;
-        } else if (i == 3) {
-            errno = Errno.InsufficientStorage;
-        } else if (i == 4) {
-            errno = Errno.ForegroundServiceUnavailable;
-        } else if (i != 5) {
-            throw new NoWhenBranchMatchedException();
-        } else {
-            errno = Errno.ArchiveRecoveryBlocked;
+        switch (WhenMappings.$EnumSwitchMapping$1[failure.getKind().ordinal()]) {
+            case 1:
+                errno = Errno.ConnectionRefused;
+                break;
+            case 2:
+                errno = Errno.CorruptedFilesFound;
+                break;
+            case 3:
+                errno = Errno.InsufficientStorage;
+                break;
+            case 4:
+                errno = Errno.StorageUnavailable;
+                break;
+            case 5:
+                errno = Errno.ForegroundServiceUnavailable;
+                break;
+            case 6:
+                errno = Errno.ArchiveRecoveryBlocked;
+                break;
+            default:
+                throw new NoWhenBranchMatchedException();
         }
         notifyArchiveUpdateFailure(detail, errno, failure.getFailureDetails(), failure.getRequiredFreeSpaceBytes(), failure.getOperationToken());
     }
@@ -1662,24 +1718,24 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
             Intrinsics.throwUninitializedPropertyAccessException("archiveStateStore");
             durableArchiveStateStore = null;
         }
-        return companion.create(durableArchiveStateStore, this.archiveSession, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
+        return companion.create(durableArchiveStateStore, this.archiveSession, new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return Integer.valueOf(UpdateService.archiveMirrorExecutionCoordinator$lambda$0());
             }
-        }, new UpdateService$archiveMirrorExecutionCoordinator$2(this), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
+        }, new UpdateService$archiveMirrorExecutionCoordinator$2(this), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 boolean isCurrentUpdateOperation;
                 isCurrentUpdateOperation = UpdateService.this.isCurrentUpdateOperation(UpdateOperationKind.ARCHIVE_UPDATE, j);
                 return Boolean.valueOf(isCurrentUpdateOperation);
             }
-        }, new UpdateService$archiveMirrorExecutionCoordinator$4(FileServers.INSTANCE), new UpdateService$archiveMirrorExecutionCoordinator$5(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
+        }, new UpdateService$archiveMirrorExecutionCoordinator$4(FileServers.INSTANCE), new UpdateService$archiveMirrorExecutionCoordinator$5(FileServers.INSTANCE), new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 return UpdateService.archiveMirrorExecutionCoordinator$lambda$2(UpdateService.this, (Function0) obj);
             }
-        }, new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+        }, new Function2() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return UpdateService.archiveMirrorExecutionCoordinator$lambda$3(UpdateService.this, ((Long) obj).longValue(), (Function0) obj2);
@@ -1781,7 +1837,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit archiveMirrorExecutionCoordinator$lambda$2(UpdateService updateService, final Function0 block) {
         Intrinsics.checkNotNullParameter(block, "block");
-        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
+        updateService.mainHandler.post(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
             @Override // java.lang.Runnable
             public final void run() {
                 Function0.this.invoke();
@@ -1821,21 +1877,31 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
                 Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
                 updateAnalyticsReporter = null;
             }
-            int i = WhenMappings.$EnumSwitchMapping$2[errno.ordinal()];
-            if (i == 1) {
-                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_DOWNLOAD_FAILED;
-            } else if (i == 2) {
-                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_STORAGE_INSUFFICIENT;
-            } else if (i == 3) {
-                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_FOREGROUND_UNAVAILABLE;
-            } else if (i == 4) {
-                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_RECOVERY_BLOCKED;
-            } else if (i == 5) {
-                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED;
-            } else {
-                updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_VALIDATION_FAILED;
+            UpdateAnalyticsReporter updateAnalyticsReporter2 = updateAnalyticsReporter;
+            switch (WhenMappings.$EnumSwitchMapping$2[errno.ordinal()]) {
+                case 1:
+                    updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_DOWNLOAD_FAILED;
+                    break;
+                case 2:
+                    updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_STORAGE_INSUFFICIENT;
+                    break;
+                case 3:
+                    updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_FOREGROUND_UNAVAILABLE;
+                    break;
+                case 4:
+                    updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.ARCHIVE_RECOVERY_BLOCKED;
+                    break;
+                case 5:
+                    updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.CHECK_AND_DOWNLOAD_REQUEST_FAILED;
+                    break;
+                case 6:
+                    updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_VALIDATION_FAILED;
+                    break;
+                default:
+                    updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.GAME_DATA_VALIDATION_FAILED;
+                    break;
             }
-            updateAnalyticsReporter.reportError(updateAnalyticsErrorEvent, downloadFailureDetails, this.archiveSession.snapshot().getServer());
+            UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter2, updateAnalyticsErrorEvent, downloadFailureDetails, this.archiveSession.snapshot().getServer(), null, 8, null);
             Message obtain = Message.obtain(this.mInHandler, 2);
             obtain.getData().putBoolean("status", false);
             obtain.getData().putSerializable("errno", this.mLastOperationStatus);
@@ -2062,17 +2128,28 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
     }
 
     @Override // com.arizona.launcher.LauncherUpdateServiceHost
-    public void completeLauncherApk(final long j, boolean z, boolean z2, boolean z3, String str) {
+    public void completeLauncherApk(final long j, boolean z, boolean z2, boolean z3, String str, LauncherApkLocalStorageFailure launcherApkLocalStorageFailure) {
+        Errno errno;
         if (isCurrentUpdateOperation(UpdateOperationKind.LAUNCHER_APK, j)) {
             if (!z) {
-                this.mLastOperationStatus = Errno.UpdateServerUnreachable;
+                int i = launcherApkLocalStorageFailure == null ? -1 : WhenMappings.$EnumSwitchMapping$3[launcherApkLocalStorageFailure.ordinal()];
+                if (i == -1) {
+                    errno = Errno.UpdateServerUnreachable;
+                } else if (i == 1) {
+                    errno = Errno.InsufficientStorage;
+                } else if (i != 2) {
+                    throw new NoWhenBranchMatchedException();
+                } else {
+                    errno = Errno.StorageUnavailable;
+                }
+                this.mLastOperationStatus = errno;
                 if (z2 && str != null) {
                     FileServers.INSTANCE.currentLauncherServerIsUnreachable(str);
                 }
             } else {
                 this.mLastOperationStatus = Errno.NoError;
             }
-            final Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
+            final Function0 function0 = new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function0
                 public final Object invoke() {
                     return Boolean.valueOf(UpdateService.completeLauncherApk$lambda$0(UpdateService.this, j));
@@ -2085,7 +2162,7 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
                 }
                 return;
             }
-            this.mainHandler.postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
+            this.mainHandler.postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
                     UpdateService.completeLauncherApk$lambda$1(Function0.this, this);
@@ -2332,13 +2409,33 @@ public final class UpdateService extends Hilt_UpdateService implements LauncherU
         gameUpdateServiceFlow.requestCheckAndDownload();
     }
 
-    private final void notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent) {
-        UpdateAnalyticsReporter updateAnalyticsReporter = this.analyticsReporter;
-        if (updateAnalyticsReporter == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
-            updateAnalyticsReporter = null;
+    static /* synthetic */ void notifyCheckUpdateAndDownloadUnreachable$default(UpdateService updateService, UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, UpdateMetadataHttpResult updateMetadataHttpResult, String str, int i, Object obj) {
+        if ((i & 2) != 0) {
+            updateMetadataHttpResult = null;
         }
-        UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter, updateAnalyticsErrorEvent, null, null, 6, null);
+        if ((i & 4) != 0) {
+            str = null;
+        }
+        updateService.notifyCheckUpdateAndDownloadUnreachable(updateAnalyticsErrorEvent, updateMetadataHttpResult, str);
+    }
+
+    private final void notifyCheckUpdateAndDownloadUnreachable(UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, UpdateMetadataHttpResult updateMetadataHttpResult, String str) {
+        UpdateAnalyticsReporter updateAnalyticsReporter = this.analyticsReporter;
+        UpdateAnalyticsReporter updateAnalyticsReporter2 = null;
+        if (updateMetadataHttpResult != null) {
+            if (updateAnalyticsReporter == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+                updateAnalyticsReporter = null;
+            }
+            updateAnalyticsReporter.reportMetadataError(updateAnalyticsErrorEvent, updateMetadataHttpResult, str);
+        } else {
+            if (updateAnalyticsReporter == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("analyticsReporter");
+            } else {
+                updateAnalyticsReporter2 = updateAnalyticsReporter;
+            }
+            UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter2, updateAnalyticsErrorEvent, null, null, null, 14, null);
+        }
         this.mLastOperationStatus = Errno.UpdateServerUnreachable;
         setUpdateStatus(UpdateStatus.Undefined);
         Message obtain = Message.obtain(this.mInHandler, 2);

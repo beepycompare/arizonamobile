@@ -2,9 +2,9 @@ package io.appmetrica.analytics.idsync.internal;
 
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
-import io.appmetrica.analytics.idsync.impl.C0100c;
-import io.appmetrica.analytics.idsync.impl.C0101d;
-import io.appmetrica.analytics.idsync.impl.C0102e;
+import io.appmetrica.analytics.idsync.impl.C0099c;
+import io.appmetrica.analytics.idsync.impl.C0100d;
+import io.appmetrica.analytics.idsync.impl.C0101e;
 import io.appmetrica.analytics.idsync.impl.h;
 import io.appmetrica.analytics.idsync.internal.model.IdSyncConfig;
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig;
@@ -24,17 +24,17 @@ import kotlin.collections.MapsKt;
 public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSyncConfig> implements RemoteConfigUpdateListener<IdSyncConfig> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0101d f442a;
-    private final C0100c b;
+    private final C0100d f442a;
+    private final C0099c b;
     private h c;
     private final String d;
     private final IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1 e;
 
     /* JADX WARN: Type inference failed for: r0v2, types: [io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1] */
     public IdSyncModuleEntryPoint() {
-        C0102e c0102e = new C0102e();
-        this.f442a = new C0101d(c0102e);
-        this.b = new C0100c(c0102e);
+        C0101e c0101e = new C0101e();
+        this.f442a = new C0100d(c0101e);
+        this.b = new C0099c(c0101e);
         this.d = "id-sync";
         this.e = new RemoteConfigExtensionConfiguration<IdSyncConfig>() { // from class: io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
@@ -49,16 +49,16 @@ public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSync
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
             public JsonParser<IdSyncConfig> getJsonParser() {
-                C0100c c0100c;
-                c0100c = IdSyncModuleEntryPoint.this.b;
-                return c0100c;
+                C0099c c0099c;
+                c0099c = IdSyncModuleEntryPoint.this.b;
+                return c0099c;
             }
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
             public Converter<IdSyncConfig, byte[]> getProtobufConverter() {
-                C0101d c0101d;
-                c0101d = IdSyncModuleEntryPoint.this.f442a;
-                return c0101d;
+                C0100d c0100d;
+                c0100d = IdSyncModuleEntryPoint.this.f442a;
+                return c0100d;
             }
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration

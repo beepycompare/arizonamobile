@@ -10,6 +10,9 @@
     </LinearLayout>
     <LinearLayout android:layout_width="wrap_content" android:layout_height="@dimen/_20sdp" android:layout_marginTop="@dimen/_5sdp">
         <ImageView android:id="@+id/btn_open_mission" android:visibility="gone" android:layout_width="@dimen/_46sdp" android:layout_height="match_parent" android:src="@drawable/hud_left_menu_missions" android:scaleType="fitXY" android:layout_marginEnd="@dimen/_5sdp"/>
-        <ImageView android:id="@+id/btn_open_challenges" android:visibility="gone" android:layout_width="@dimen/_46sdp" android:layout_height="match_parent" android:src="@drawable/hud_left_menu_challenges" android:scaleType="fitXY"/>
+        <FrameLayout android:id="@+id/btn_open_challenges" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_width="@dimen/_46sdp" android:layout_height="match_parent" android:src="@drawable/hud_left_menu_challenges" android:scaleType="fitXY"/>
+            <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:layout_gravity="start|center_vertical" android:id="@+id/tv_challenge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Вызовы" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_6sdp"/>
+        </FrameLayout>
     </LinearLayout>
 </LinearLayout>

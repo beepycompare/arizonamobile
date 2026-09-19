@@ -15,7 +15,7 @@ import kotlin.ranges.RangesKt;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Ed implements InterfaceC0617tk {
+public final class Ed implements InterfaceC0616tk {
 
     /* renamed from: a  reason: collision with root package name */
     public final Zl f530a;
@@ -34,7 +34,7 @@ public final class Ed implements InterfaceC0617tk {
         this.f = TimeUnit.DAYS.toMillis(1L);
     }
 
-    public final C0591sk a() {
+    public final C0590sk a() {
         Td td;
         if (this.d.isEmpty()) {
             return null;
@@ -65,7 +65,7 @@ public final class Ed implements InterfaceC0617tk {
             Zl zl = this.f530a;
             Yd yd = (Yd) zl;
             yd.d(yd.g(this.e), td2.a());
-            return new C0591sk(this.b + "_status", td2.a());
+            return new C0590sk(this.b + "_status", td2.a());
         }
         return null;
     }

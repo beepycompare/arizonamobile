@@ -13,7 +13,7 @@ import io.appmetrica.analytics.plugins.IPluginReporter;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Ai implements InterfaceC0505pb {
+public final class Ai implements InterfaceC0504pb {
 
     /* renamed from: a  reason: collision with root package name */
     public final B0 f463a;
@@ -22,13 +22,13 @@ public final class Ai implements InterfaceC0505pb {
     public final Context d;
     public final ReporterConfig e;
     public final Ki f;
-    public final C0509pf g;
+    public final C0508pf g;
 
     public Ai(ICommonExecutor iCommonExecutor, Context context, String str) {
         this(context.getApplicationContext(), str, new B0());
     }
 
-    public static InterfaceC0505pb a(B0 b0, Context context, ReporterConfig reporterConfig) {
+    public static InterfaceC0504pb a(B0 b0, Context context, ReporterConfig reporterConfig) {
         b0.getClass();
         return A0.a(context).f().c(reporterConfig);
     }
@@ -37,14 +37,14 @@ public final class Ai implements InterfaceC0505pb {
         ReporterConfig build = ReporterConfig.newConfigBuilder(str).build();
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0460ni(this, build));
+        this.c.execute(new RunnableC0459ni(this, build));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void clearAppEnvironment() {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0719xi(this));
+        this.c.execute(new RunnableC0718xi(this));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -56,35 +56,35 @@ public final class Ai implements InterfaceC0505pb {
     public final void pauseSession() {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0253fi(this));
+        this.c.execute(new RunnableC0252fi(this));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void putAppEnvironmentValue(String str, String str2) {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0693wi(this, str, str2));
+        this.c.execute(new RunnableC0692wi(this, str, str2));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportAdRevenue(AdRevenue adRevenue) {
         this.b.h.a(adRevenue);
         this.f.getClass();
-        this.c.execute(new RunnableC0356ji(this, adRevenue));
+        this.c.execute(new RunnableC0355ji(this, adRevenue));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportAnr(Map<Thread, StackTraceElement[]> map) {
         this.b.j.a(map);
         this.f.getClass();
-        this.c.execute(new RunnableC0615ti(this, CollectionUtils.getListFromMap(map)));
+        this.c.execute(new RunnableC0614ti(this, CollectionUtils.getListFromMap(map)));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportECommerce(ECommerceEvent eCommerceEvent) {
         this.b.i.a(eCommerceEvent);
         this.f.getClass();
-        this.c.execute(new RunnableC0408li(this, eCommerceEvent));
+        this.c.execute(new RunnableC0407li(this, eCommerceEvent));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -92,98 +92,98 @@ public final class Ai implements InterfaceC0505pb {
         this.b.b.a(str);
         this.f.getClass();
         if (th == null) {
-            th = new C0108a2();
+            th = new C0107a2();
             th.fillInStackTrace();
         }
-        this.c.execute(new RunnableC0150bi(this, str, th));
+        this.c.execute(new RunnableC0149bi(this, str, th));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str) {
         this.b.f797a.a(str);
         this.f.getClass();
-        this.c.execute(new RunnableC0745yi(this, str));
+        this.c.execute(new RunnableC0744yi(this, str));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportRevenue(Revenue revenue) {
         this.b.g.a(revenue);
         this.f.getClass();
-        this.c.execute(new RunnableC0330ii(this, revenue));
+        this.c.execute(new RunnableC0329ii(this, revenue));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportUnhandledException(Throwable th) {
         this.b.e.a(th);
         this.f.getClass();
-        this.c.execute(new RunnableC0202di(this, th));
+        this.c.execute(new RunnableC0201di(this, th));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportUserProfile(UserProfile userProfile) {
         this.b.f.a(userProfile);
         this.f.getClass();
-        this.c.execute(new RunnableC0305hi(this, userProfile));
+        this.c.execute(new RunnableC0304hi(this, userProfile));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void resumeSession() {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0227ei(this));
+        this.c.execute(new RunnableC0226ei(this));
     }
 
     @Override // io.appmetrica.analytics.IReporter, io.appmetrica.analytics.IModuleReporter
     public final void sendEventsBuffer() {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0667vi(this));
+        this.c.execute(new RunnableC0666vi(this));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void setDataSendingEnabled(boolean z) {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0434mi(this, z));
+        this.c.execute(new RunnableC0433mi(this, z));
     }
 
     @Override // io.appmetrica.analytics.IModuleReporter
     public final void setSessionExtra(String str, byte[] bArr) {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0538qi(this, str, bArr));
+        this.c.execute(new RunnableC0537qi(this, str, bArr));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void setUserProfileID(String str) {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0279gi(this, str));
+        this.c.execute(new RunnableC0278gi(this, str));
     }
 
     public Ai(Context context, String str, B0 b0) {
         this(context, new Uh(), b0, new Ki(), ReporterConfig.newConfigBuilder(str).build());
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0505pb, io.appmetrica.analytics.impl.InterfaceC0608tb
-    public final void a(C0621to c0621to) {
-        this.b.d.a(c0621to);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0504pb, io.appmetrica.analytics.impl.InterfaceC0607tb
+    public final void a(C0620to c0620to) {
+        this.b.d.a(c0620to);
         this.f.getClass();
-        this.c.execute(new RunnableC0589si(this, c0621to));
+        this.c.execute(new RunnableC0588si(this, c0620to));
     }
 
     @Override // io.appmetrica.analytics.IModuleReporter
     public final void reportAdRevenue(AdRevenue adRevenue, boolean z) {
         this.b.h.a(adRevenue);
         this.f.getClass();
-        this.c.execute(new RunnableC0563ri(this, adRevenue, z));
+        this.c.execute(new RunnableC0562ri(this, adRevenue, z));
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, String str2) {
         this.b.f797a.a(str);
         this.f.getClass();
-        this.c.execute(new RunnableC0771zi(this, str, str2));
+        this.c.execute(new RunnableC0770zi(this, str, str2));
     }
 
     @Override // io.appmetrica.analytics.IReporter
@@ -195,47 +195,47 @@ public final class Ai implements InterfaceC0505pb {
     public final void reportError(String str, String str2, Throwable th) {
         this.b.c.a(str);
         this.f.getClass();
-        this.c.execute(new RunnableC0176ci(this, str, str2, th));
+        this.c.execute(new RunnableC0175ci(this, str, str2, th));
     }
 
     public Ai(Context context, Uh uh, B0 b0, Ki ki, ReporterConfig reporterConfig) {
-        this(context, uh, b0, ki, reporterConfig, new C0509pf(new C0382ki(b0, context, reporterConfig)));
+        this(context, uh, b0, ki, reporterConfig, new C0508pf(new C0381ki(b0, context, reporterConfig)));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0505pb, io.appmetrica.analytics.impl.InterfaceC0313i0
+    @Override // io.appmetrica.analytics.impl.InterfaceC0504pb, io.appmetrica.analytics.impl.InterfaceC0312i0
     public final void a(X x) {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0641ui(this, x));
+        this.c.execute(new RunnableC0640ui(this, x));
     }
 
-    public Ai(Context context, Uh uh, B0 b0, Ki ki, ReporterConfig reporterConfig, C0509pf c0509pf) {
-        this.c = C0575s4.l().g().a();
+    public Ai(Context context, Uh uh, B0 b0, Ki ki, ReporterConfig reporterConfig, C0508pf c0508pf) {
+        this.c = C0574s4.l().g().a();
         this.d = context;
         this.b = uh;
         this.f463a = b0;
         this.f = ki;
         this.e = reporterConfig;
-        this.g = c0509pf;
+        this.g = c0508pf;
     }
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, Map<String, Object> map) {
         this.b.f797a.a(str);
         this.f.getClass();
-        this.c.execute(new RunnableC0124ai(this, str, CollectionUtils.getListFromMap(map)));
+        this.c.execute(new RunnableC0123ai(this, str, CollectionUtils.getListFromMap(map)));
     }
 
     public final void a(ReporterConfig reporterConfig) {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0486oi(this, reporterConfig));
+        this.c.execute(new RunnableC0485oi(this, reporterConfig));
     }
 
     @Override // io.appmetrica.analytics.IModuleReporter
     public final void reportEvent(ModuleEvent moduleEvent) {
         this.b.getClass();
         this.f.getClass();
-        this.c.execute(new RunnableC0512pi(this, moduleEvent));
+        this.c.execute(new RunnableC0511pi(this, moduleEvent));
     }
 }

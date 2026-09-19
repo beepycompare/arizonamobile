@@ -7,6 +7,7 @@ import androidx.media3.container.MdtaMetadataEntry;
 import androidx.media3.extractor.ts.TsExtractor;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import okhttp3.internal.ws.WebSocketProtocol;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 /* compiled from: com.android.billingclient:billing@@8.3.0 */
 /* loaded from: classes3.dex */
 public enum zzjd implements zzfw {
@@ -141,7 +142,7 @@ public enum zzjd implements zzfw {
     RESPONSE_CODE_NOT_SET_IN_BUNDLE(137),
     NON_OK_CODE_RETURNED_BY_PHONESKY(TsExtractor.TS_STREAM_TYPE_DTS),
     INITIALIZE_SERVICE_CALL_EXCEPTION(TsExtractor.TS_STREAM_TYPE_DTS_UHD),
-    INITIALIZE_DEAD_OBJECT_EXCEPTION(140),
+    INITIALIZE_DEAD_OBJECT_EXCEPTION(TrainSpeedGaugeView.MAX_SPEED_KMH),
     INITIALIZE_SECURITY_EXCEPTION(141),
     INITIALIZE_REMOTE_EXCEPTION(142),
     RUNTIME_EXCEPTION_ON_LAUNCH_EXTERNAL_LINK_INTENT(143),
@@ -414,7 +415,7 @@ public enum zzjd implements zzfw {
                                         return NON_OK_CODE_RETURNED_BY_PHONESKY;
                                     case TsExtractor.TS_STREAM_TYPE_DTS_UHD /* 139 */:
                                         return INITIALIZE_SERVICE_CALL_EXCEPTION;
-                                    case 140:
+                                    case TrainSpeedGaugeView.MAX_SPEED_KMH /* 140 */:
                                         return INITIALIZE_DEAD_OBJECT_EXCEPTION;
                                     case 141:
                                         return INITIALIZE_SECURITY_EXCEPTION;

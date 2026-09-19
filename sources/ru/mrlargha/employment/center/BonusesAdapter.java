@@ -24,6 +24,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.employment.center.data.BonusItem;
@@ -78,22 +79,24 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
         int imageType = bonusItem.getImageType();
         if (imageType == 0) {
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            RequestCreator load = picasso.load(projectResourceUrl$default + "assets/images/donate/" + bonusItem.getImage() + ".webp");
+            RequestCreator loadSafe = PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "assets/images/donate/" + bonusItem.getImage() + ".webp");
             Target picassoTarget = holder.getPicassoTarget();
             if (picassoTarget == null) {
                 return;
             }
-            load.into(picassoTarget);
+            loadSafe.into(picassoTarget);
         } else if (imageType == 1) {
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            RequestCreator load2 = picasso2.load(projectResourceUrl$default2 + "systems/employment_center/bonuses/" + bonusItem.getImage() + ".webp");
+            RequestCreator loadSafe2 = PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "systems/employment_center/bonuses/" + bonusItem.getImage() + ".webp");
             Target picassoTarget2 = holder.getPicassoTarget();
             if (picassoTarget2 == null) {
                 return;
             }
-            load2.into(picassoTarget2);
+            loadSafe2.into(picassoTarget2);
         } else if (imageType == 2) {
             int familyFlag = FlagsKt.familyFlag(bonusItem.getImage());
             Bitmap decodeResource = BitmapFactory.decodeResource(binding.getRoot().getContext().getResources(), familyFlag);
@@ -113,13 +116,14 @@ public final class BonusesAdapter extends RecyclerView.Adapter<EmploymentBonusVi
             }
         } else if (imageType == 3) {
             Picasso picasso3 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso3, "get(...)");
             String projectResourceUrl$default3 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            RequestCreator load3 = picasso3.load(projectResourceUrl$default3 + "assets/images/inventory/vehicles/256/" + bonusItem.getImage() + ".webp");
+            RequestCreator loadSafe3 = PicassoLoadSafeKt.loadSafe(picasso3, projectResourceUrl$default3 + "assets/images/inventory/vehicles/256/" + bonusItem.getImage() + ".webp");
             Target picassoTarget3 = holder.getPicassoTarget();
             if (picassoTarget3 == null) {
                 return;
             }
-            load3.into(picassoTarget3);
+            loadSafe3.into(picassoTarget3);
         }
         binding.text.setText(bonusItem.getName());
         binding.label1.getRoot().setVisibility(0);

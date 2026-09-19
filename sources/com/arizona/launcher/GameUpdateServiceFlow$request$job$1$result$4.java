@@ -16,9 +16,10 @@ import kotlin.jvm.functions.Function5;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* compiled from: GameUpdateServiceFlow.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "response", "", "server"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.GameUpdateServiceFlow$request$job$1$result$4", f = "GameUpdateServiceFlow.kt", i = {0, 0}, l = {149}, m = "invokeSuspend", n = {"response", "server"}, nl = {151}, s = {"L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.GameUpdateServiceFlow$request$job$1$result$4", f = "GameUpdateServiceFlow.kt", i = {0, 0}, l = {RodinaTrainSpeedGaugeView.MAX_SPEED_KMH}, m = "invokeSuspend", n = {"response", "server"}, nl = {162}, s = {"L$0", "L$1"}, v = 2)
 /* loaded from: classes3.dex */
 final class GameUpdateServiceFlow$request$job$1$result$4 extends SuspendLambda implements Function3<String, String, Continuation<? super ArchiveUpdateCheckDecision>, Object> {
     final /* synthetic */ UpdateOperationKind $kind;
@@ -48,7 +49,7 @@ final class GameUpdateServiceFlow$request$job$1$result$4 extends SuspendLambda i
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: GameUpdateServiceFlow.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.arizona.launcher.GameUpdateServiceFlow$request$job$1$result$4$1", f = "GameUpdateServiceFlow.kt", i = {}, l = {150}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.arizona.launcher.GameUpdateServiceFlow$request$job$1$result$4$1", f = "GameUpdateServiceFlow.kt", i = {}, l = {161}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.GameUpdateServiceFlow$request$job$1$result$4$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ArchiveUpdateCheckDecision>, Object> {

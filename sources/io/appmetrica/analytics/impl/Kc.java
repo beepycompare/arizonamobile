@@ -6,10 +6,10 @@ public final class Kc {
 
     /* renamed from: a  reason: collision with root package name */
     public int f629a = 5;
-    public final C0208e b;
+    public final C0207e b;
 
-    public Kc(InterfaceC0313i0 interfaceC0313i0) {
-        this.b = new C0208e(new C0247fc(interfaceC0313i0));
+    public Kc(InterfaceC0312i0 interfaceC0312i0) {
+        this.b = new C0207e(new C0246fc(interfaceC0312i0));
     }
 
     public static final void b(AnrListener anrListener) {
@@ -17,9 +17,9 @@ public final class Kc {
     }
 
     public final void a(final AnrListener anrListener) {
-        C0208e c0208e = this.b;
-        c0208e.f954a.add(new InterfaceC0157c() { // from class: io.appmetrica.analytics.impl.Kc$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.impl.InterfaceC0157c
+        C0207e c0207e = this.b;
+        c0207e.f954a.add(new InterfaceC0156c() { // from class: io.appmetrica.analytics.impl.Kc$$ExternalSyntheticLambda0
+            @Override // io.appmetrica.analytics.impl.InterfaceC0156c
             public final void onAppNotResponding() {
                 Kc.b(AnrListener.this);
             }

@@ -34,6 +34,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
+import kotlinx.coroutines.JobKt__JobKt;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 import ru.mrlargha.commonui.R;
@@ -49,7 +50,7 @@ import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: DonateReplenishmentDialogPage.kt */
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000e\u0018\u00002\u00020\u0001:\u00014B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0004\b\r\u0010\u000eJ\u0018\u0010!\u001a\u00020\f2\u0006\u0010\"\u001a\u00020\u00032\u0006\u0010#\u001a\u00020$H\u0016J\u0010\u0010%\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\u0018\u0010(\u001a\u00020\f2\u0006\u0010&\u001a\u00020'2\u0006\u0010\"\u001a\u00020\u0003H\u0002J\u0017\u0010)\u001a\u0004\u0018\u00010\f2\u0006\u0010&\u001a\u00020'H\u0002¢\u0006\u0002\u0010*J\u0010\u0010+\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\b\u0010,\u001a\u00020\fH\u0002J\u0010\u0010-\u001a\u00020\f2\u0006\u0010.\u001a\u00020\u0003H\u0002J\u0010\u0010/\u001a\u00020\f2\u0006\u0010.\u001a\u00020\u0003H\u0002J\b\u00100\u001a\u00020\fH\u0002J\u0017\u00101\u001a\u0004\u0018\u00010\f2\u0006\u0010&\u001a\u00020'H\u0002¢\u0006\u0002\u0010*J\u0010\u00102\u001a\u00020\f2\u0006\u0010&\u001a\u00020'H\u0002J\b\u00103\u001a\u00020 H\u0002R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0017\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u00030\u00190\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/pages/DonateReplenishmentDialogPage;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "backendId", "", "targetActivity", "Landroid/app/Activity;", "onItemCompleteListeners", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "binding", "Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "closePage", "Lkotlin/Function0;", "", "<init>", "(ILandroid/app/Activity;Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;Lkotlin/jvm/functions/Function0;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "getClosePage", "()Lkotlin/jvm/functions/Function0;", "adapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBonusAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "willReceiveState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lkotlin/Pair;", "", "upp", "rateType", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateRateType;", "getAmount", "rateJob", "Lkotlinx/coroutines/Job;", "onBackendMessage", "subId", "data", "", "setupListeners", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "sendConfirmClick", "dialogInit", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;)Lkotlin/Unit;", "setRateType", "setExpType", "setBuyAzType", "moneyIc", "setExchangeRub", "setExchangeGreenRub", "setBoost", "setupControllers", "clearPage", "DonateDialogConfirmPayload", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\u0018\u00002\u00020\u0001:\u00017B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t\u0012\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\u0004\b\r\u0010\u000eJ\u0018\u0010#\u001a\u00020\f2\u0006\u0010$\u001a\u00020\u00032\u0006\u0010%\u001a\u00020&H\u0016J\u0010\u0010'\u001a\u00020\f2\u0006\u0010(\u001a\u00020)H\u0002J\u0018\u0010*\u001a\u00020\f2\u0006\u0010(\u001a\u00020)2\u0006\u0010$\u001a\u00020\u0003H\u0002J\u0017\u0010+\u001a\u0004\u0018\u00010\f2\u0006\u0010(\u001a\u00020)H\u0002¢\u0006\u0002\u0010,J\u0010\u0010-\u001a\u00020\f2\u0006\u0010(\u001a\u00020)H\u0002J\b\u0010.\u001a\u00020\fH\u0002J\u0010\u0010/\u001a\u00020\f2\u0006\u00100\u001a\u00020\u0003H\u0002J\u0010\u00101\u001a\u00020\f2\u0006\u00100\u001a\u00020\u0003H\u0002J\b\u00102\u001a\u00020\fH\u0002J\u0017\u00103\u001a\u0004\u0018\u00010\f2\u0006\u0010(\u001a\u00020)H\u0002¢\u0006\u0002\u0010,J\u0010\u00104\u001a\u00020\f2\u0006\u0010(\u001a\u00020)H\u0002J\b\u00105\u001a\u00020\fH\u0016J\b\u00106\u001a\u00020 H\u0002R\u0011\u0010\b\u001a\u00020\t¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0017\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u001a\u0012\u0004\u0012\u00020\u00030\u00190\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010\"X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00068"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/pages/DonateReplenishmentDialogPage;", "Lru/mrlargha/commonui/elements/donate/presentation/pages/DonatePage;", "backendId", "", "targetActivity", "Landroid/app/Activity;", "onItemCompleteListeners", "Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;", "binding", "Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "closePage", "Lkotlin/Function0;", "", "<init>", "(ILandroid/app/Activity;Lru/mrlargha/commonui/elements/donate/presentation/DonateOnItemCompleteListeners;Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;Lkotlin/jvm/functions/Function0;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/DonateReplenishmentDialogBinding;", "getClosePage", "()Lkotlin/jvm/functions/Function0;", "adapter", "Lru/mrlargha/commonui/elements/donate/presentation/adapters/DonateBonusAdapter;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "willReceiveState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lkotlin/Pair;", "", "upp", "rateType", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateRateType;", "getAmount", "rateJob", "Lkotlinx/coroutines/Job;", "textWatcher", "Landroid/text/TextWatcher;", "onBackendMessage", "subId", "data", "", "setupListeners", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "sendConfirmClick", "dialogInit", "(Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;)Lkotlin/Unit;", "setRateType", "setExpType", "setBuyAzType", "moneyIc", "setExchangeRub", "setExchangeGreenRub", "setBoost", "setupControllers", "stopPendingWork", "clearPage", "DonateDialogConfirmPayload", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateReplenishmentDialogPage extends DonatePage {
     private final DonateBonusAdapter adapter;
@@ -59,6 +60,7 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
     private Job rateJob;
     private DonateRateType rateType;
     private final CoroutineScope scope;
+    private TextWatcher textWatcher;
     private long upp;
     private final MutableStateFlow<Pair<Long, Integer>> willReceiveState;
 
@@ -135,7 +137,11 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
                 DonateReplenishmentDialogPage.setupListeners$lambda$0$0(view);
             }
         });
-        donateReplenishmentDialogBinding.etReplenishmentSum.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$2
+        TextWatcher textWatcher = this.textWatcher;
+        if (textWatcher != null) {
+            donateReplenishmentDialogBinding.etReplenishmentSum.removeTextChangedListener(textWatcher);
+        }
+        TextWatcher textWatcher2 = new TextWatcher() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$setupListeners$1$watcher$1
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
             }
@@ -157,42 +163,44 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
                 if (obj2.length() == 0) {
                     DonateReplenishmentDialogPage.this.upp = 0L;
                     coroutineScope3 = DonateReplenishmentDialogPage.this.scope;
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope3, null, null, new DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$1(DonateReplenishmentDialogPage.this, null), 3, null);
+                    BuildersKt__Builders_commonKt.launch$default(coroutineScope3, null, null, new DonateReplenishmentDialogPage$setupListeners$1$watcher$1$onTextChanged$1(DonateReplenishmentDialogPage.this, null), 3, null);
                     return;
                 }
                 try {
                     long parseLong = Long.parseLong(obj2);
                     DonateReplenishmentDialogPage.this.upp = parseLong;
                     coroutineScope2 = DonateReplenishmentDialogPage.this.scope;
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope2, null, null, new DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$2(DonateReplenishmentDialogPage.this, parseLong, null), 3, null);
+                    BuildersKt__Builders_commonKt.launch$default(coroutineScope2, null, null, new DonateReplenishmentDialogPage$setupListeners$1$watcher$1$onTextChanged$2(DonateReplenishmentDialogPage.this, parseLong, null), 3, null);
                 } catch (NumberFormatException unused) {
                     DonateReplenishmentDialogPage.this.upp = 0L;
                     coroutineScope = DonateReplenishmentDialogPage.this.scope;
-                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new DonateReplenishmentDialogPage$setupListeners$1$2$onTextChanged$number$1(DonateReplenishmentDialogPage.this, null), 3, null);
+                    BuildersKt__Builders_commonKt.launch$default(coroutineScope, null, null, new DonateReplenishmentDialogPage$setupListeners$1$watcher$1$onTextChanged$number$1(DonateReplenishmentDialogPage.this, null), 3, null);
                 }
             }
-        });
+        };
+        this.textWatcher = textWatcher2;
+        donateReplenishmentDialogBinding.etReplenishmentSum.addTextChangedListener(textWatcher2);
         donateReplenishmentDialogBinding.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateReplenishmentDialogPage.setupListeners$lambda$0$1(DonateReplenishmentDialogPage.this, view);
+                DonateReplenishmentDialogPage.setupListeners$lambda$0$2(DonateReplenishmentDialogPage.this, view);
             }
         });
         donateReplenishmentDialogBinding.btnUpp.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishmentDialogPage$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DonateReplenishmentDialogPage.setupListeners$lambda$0$2(DonateReplenishmentDialogPage.this, donateReplenishmentDialogBinding, donateBoostModelUi, view);
+                DonateReplenishmentDialogPage.setupListeners$lambda$0$3(DonateReplenishmentDialogPage.this, donateReplenishmentDialogBinding, donateBoostModelUi, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$0$1(DonateReplenishmentDialogPage donateReplenishmentDialogPage, View view) {
+    public static final void setupListeners$lambda$0$2(DonateReplenishmentDialogPage donateReplenishmentDialogPage, View view) {
         donateReplenishmentDialogPage.closePage.invoke();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$0$2(DonateReplenishmentDialogPage donateReplenishmentDialogPage, DonateReplenishmentDialogBinding donateReplenishmentDialogBinding, DonateBoostModelUi donateBoostModelUi, View view) {
+    public static final void setupListeners$lambda$0$3(DonateReplenishmentDialogPage donateReplenishmentDialogPage, DonateReplenishmentDialogBinding donateReplenishmentDialogBinding, DonateBoostModelUi donateBoostModelUi, View view) {
         long j = donateReplenishmentDialogPage.getAmount;
         if (j <= 0) {
             Toast.makeText(donateReplenishmentDialogBinding.getRoot().getContext(), donateReplenishmentDialogBinding.getRoot().getContext().getString(R.string.donate_amount_gt_zero), 0).show();
@@ -431,6 +439,21 @@ public final class DonateReplenishmentDialogPage extends DonatePage {
         }
         launch$default = BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateReplenishmentDialogPage$setupControllers$1(this, donateBoostModelUi, null), 3, null);
         this.rateJob = launch$default;
+    }
+
+    @Override // ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePage
+    public void stopPendingWork() {
+        TextWatcher textWatcher = this.textWatcher;
+        if (textWatcher != null) {
+            this.binding.etReplenishmentSum.removeTextChangedListener(textWatcher);
+        }
+        this.textWatcher = null;
+        Job job = this.rateJob;
+        if (job != null) {
+            Job.cancel$default(job, (CancellationException) null, 1, (Object) null);
+        }
+        this.rateJob = null;
+        JobKt__JobKt.cancelChildren$default(this.scope.getCoroutineContext(), (CancellationException) null, 1, (Object) null);
     }
 
     private final Job clearPage() {

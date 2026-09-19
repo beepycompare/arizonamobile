@@ -16,6 +16,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.gasstation.domain.GasStationShop;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: GasStationAdapter.kt */
@@ -63,7 +64,9 @@ public final class GasStationAdapter extends RecyclerView.Adapter<GasStationView
         } else {
             str3 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "assets/images/items/";
         }
-        Picasso.get().load(str3 + this.shopList.get(i).getImage() + ".webp").into(holder.getGasStationItem().gsShopItemImg);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, str3 + this.shopList.get(i).getImage() + ".webp").into(holder.getGasStationItem().gsShopItemImg);
         holder.getGasStationItem().gsShopItemTitle.setText(title);
         holder.getGasStationItem().gsShopItemPrice.setText(str2);
         holder.getGasStationItem().gsShopItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.gasstation.presentation.GasStationAdapter$$ExternalSyntheticLambda0

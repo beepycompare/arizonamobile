@@ -22,10 +22,10 @@ public final class Cd {
     }
 
     public static final void a(Cd cd, List list) {
-        C0540qk c0540qk = Oj.f708a;
+        C0539qk c0539qk = Oj.f708a;
         Ed ed = new Ed(cd.b, cd.c, cd.d, list);
-        c0540qk.getClass();
-        c0540qk.a(new C0229ek(ed));
+        c0539qk.getClass();
+        c0539qk.a(new C0228ek(ed));
     }
 
     public final void a(final ArrayList arrayList) {

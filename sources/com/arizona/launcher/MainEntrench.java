@@ -451,7 +451,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.3.9 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.4.1 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -2052,7 +2052,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final NotificationLaunchAttribution readStoredNotificationLaunchAttribution() {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         Map<String, ?> all;
         String str;
         Long longOrNull;
@@ -2064,7 +2064,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             str = obj instanceof String ? (String) obj : null;
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
         if (str == null) {
             return null;
@@ -2080,16 +2080,16 @@ public final class MainEntrench extends Hilt_MainEntrench {
         Long longOrNull2 = toLongOrNull(all.get(PREF_NOTIFICATION_RECEIVED_AT_MILLIS));
         Object obj4 = all.get(PREF_NOTIFICATION_DID_REPORT_GAME_LAUNCH);
         Boolean bool = obj4 instanceof Boolean ? (Boolean) obj4 : null;
-        m9920constructorimpl = Result.m9920constructorimpl(new NotificationLaunchAttribution(str, str2, str3, longOrNull2, longValue, bool != null ? bool.booleanValue() : false));
-        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-        if (m9923exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to read notification launch attribution", m9923exceptionOrNullimpl);
+        m9921constructorimpl = Result.m9921constructorimpl(new NotificationLaunchAttribution(str, str2, str3, longOrNull2, longValue, bool != null ? bool.booleanValue() : false));
+        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+        if (m9924exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to read notification launch attribution", m9924exceptionOrNullimpl);
         }
-        return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+        return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
     }
 
     private final void saveNotificationLaunchAttribution(NotificationLaunchAttribution notificationLaunchAttribution) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             MainEntrench mainEntrench = this;
@@ -2099,31 +2099,31 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 putBoolean.remove(PREF_NOTIFICATION_RECEIVED_AT_MILLIS);
             }
             putBoolean.apply();
-            m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
+            m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-        if (m9923exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to save notification launch attribution", m9923exceptionOrNullimpl);
+        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+        if (m9924exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to save notification launch attribution", m9924exceptionOrNullimpl);
         }
     }
 
     private final void clearStoredNotificationLaunchAttribution() {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             MainEntrench mainEntrench = this;
             getSharedPreferences(NOTIFICATION_ATTRIBUTION_PREFS_NAME, 0).edit().clear().apply();
-            m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
+            m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-        if (m9923exceptionOrNullimpl != null) {
-            Log.w(TAG, "Failed to clear notification launch attribution", m9923exceptionOrNullimpl);
+        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+        if (m9924exceptionOrNullimpl != null) {
+            Log.w(TAG, "Failed to clear notification launch attribution", m9924exceptionOrNullimpl);
         }
     }
 
@@ -2348,7 +2348,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
     }
 
     private final String getSavedAuthorizationNickname() {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         SharedPreferences sharedPreferences;
         Object obj;
         String obj2;
@@ -2360,7 +2360,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             obj = sharedPreferences.getAll().get(AUTH_SERVER_ID_KEY);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
         if (obj != null && (obj2 = obj.toString()) != null) {
             if (StringsKt.isBlank(obj2)) {
@@ -2376,12 +2376,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
                 if (optJSONObject == null || (str = optJSONObject.optString("username")) == null || StringsKt.isBlank(str)) {
                     str = null;
                 }
-                m9920constructorimpl = Result.m9920constructorimpl(str);
-                Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-                if (m9923exceptionOrNullimpl != null) {
-                    Log.w(TAG, "Failed to read saved authorization nickname", m9923exceptionOrNullimpl);
+                m9921constructorimpl = Result.m9921constructorimpl(str);
+                Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+                if (m9924exceptionOrNullimpl != null) {
+                    Log.w(TAG, "Failed to read saved authorization nickname", m9924exceptionOrNullimpl);
                 }
-                return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+                return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
             }
         }
         return null;

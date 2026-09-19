@@ -103,7 +103,7 @@ public final class CasesGuaranteedAdapter extends ListAdapter<CasesGuaranteedPri
                 }
                 TextView textView = arizonaCasesGuaranteedPrizeItemBinding.tvPrizeName;
                 String name = itemsInfo.getName();
-                textView.setText(name + " " + casesGuaranteedPrizeModel.m11919getCount());
+                textView.setText(name + " " + casesGuaranteedPrizeModel.m11920getCount());
                 arizonaCasesGuaranteedPrizeItemBinding.tvItemCount.setText(casesGuaranteedPrizeModel.getGaranteX());
                 if (casesGuaranteedAdapter.progress >= casesGuaranteedPrizeModel.getGarante()) {
                     arizonaCasesGuaranteedPrizeItemBinding.progressBar.setVisibility(8);

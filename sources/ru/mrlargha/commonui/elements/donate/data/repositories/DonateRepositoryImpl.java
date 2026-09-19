@@ -15,9 +15,10 @@ import ru.mrlargha.commonui.elements.donate.domain.ResultState;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateBoostModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateCategoryModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateItemModel;
+import ru.mrlargha.commonui.elements.donate.domain.models.DonatePayPassLevelModel;
 import ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository;
 /* compiled from: DonateRepositoryImpl.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u001a\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u0014H\u0096@¢\u0006\u0002\u0010\u0015J\u001a\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u00070\u0014H\u0096@¢\u0006\u0002\u0010\u0015J\u001a\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u00070\u0014H\u0096@¢\u0006\u0002\u0010\u0015R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\f0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "<init>", "()V", "retrofitClient", "Lru/mrlargha/commonui/elements/donate/data/remote/DonateRetrofitClient;", "categoryList", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "itemsList", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "boostList", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBoostModel;", "setParams", "", "targetActivity", "Landroid/app/Activity;", "backendId", "", "getCategories", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getItems", "getBoost", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u001a\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\b0\u00070\u0014H\u0096@¢\u0006\u0002\u0010\u0015J\u001a\u0010\u0016\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\n0\u00070\u0014H\u0096@¢\u0006\u0002\u0010\u0015J\u001a\u0010\u0017\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\f0\u00070\u0014H\u0096@¢\u0006\u0002\u0010\u0015J\u001a\u0010\u0018\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00190\u00070\u0014H\u0096@¢\u0006\u0002\u0010\u0015R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\f0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "Lru/mrlargha/commonui/elements/donate/domain/repositories/DonateRepository;", "<init>", "()V", "retrofitClient", "Lru/mrlargha/commonui/elements/donate/data/remote/DonateRetrofitClient;", "categoryList", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "itemsList", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "boostList", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBoostModel;", "setParams", "", "targetActivity", "Landroid/app/Activity;", "backendId", "", "getCategories", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getItems", "getBoost", "getPayPassLevels", "Lru/mrlargha/commonui/elements/donate/domain/models/DonatePayPassLevelModel;", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateRepositoryImpl implements DonateRepository {
     private static DonateRetrofitClient retrofitClient;
@@ -251,5 +252,74 @@ public final class DonateRepositoryImpl implements DonateRepository {
         Object obj2 = donateRepositoryImpl$getBoost$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = donateRepositoryImpl$getBoost$1.label;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0055 A[Catch: Exception -> 0x007b, TryCatch #0 {Exception -> 0x007b, blocks: (B:11:0x0027, B:22:0x004d, B:24:0x0055, B:26:0x005f, B:27:0x0063, B:29:0x0069, B:16:0x0036, B:18:0x003a, B:19:0x0040), top: B:37:0x0023 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0069 A[Catch: Exception -> 0x007b, TRY_LEAVE, TryCatch #0 {Exception -> 0x007b, blocks: (B:11:0x0027, B:22:0x004d, B:24:0x0055, B:26:0x005f, B:27:0x0063, B:29:0x0069, B:16:0x0036, B:18:0x003a, B:19:0x0040), top: B:37:0x0023 }] */
+    @Override // ru.mrlargha.commonui.elements.donate.domain.repositories.DonateRepository
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public Object getPayPassLevels(Continuation<? super ResultState<? extends List<DonatePayPassLevelModel>>> continuation) {
+        DonateRepositoryImpl$getPayPassLevels$1 donateRepositoryImpl$getPayPassLevels$1;
+        int i;
+        Response response;
+        try {
+            if (continuation instanceof DonateRepositoryImpl$getPayPassLevels$1) {
+                donateRepositoryImpl$getPayPassLevels$1 = (DonateRepositoryImpl$getPayPassLevels$1) continuation;
+                if ((donateRepositoryImpl$getPayPassLevels$1.label & Integer.MIN_VALUE) != 0) {
+                    donateRepositoryImpl$getPayPassLevels$1.label -= Integer.MIN_VALUE;
+                    Object obj = donateRepositoryImpl$getPayPassLevels$1.result;
+                    Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                    i = donateRepositoryImpl$getPayPassLevels$1.label;
+                    if (i != 0) {
+                        ResultKt.throwOnFailure(obj);
+                        DonateRetrofitClient donateRetrofitClient = retrofitClient;
+                        if (donateRetrofitClient == null) {
+                            Intrinsics.throwUninitializedPropertyAccessException("retrofitClient");
+                            donateRetrofitClient = null;
+                        }
+                        DonateApiService donateApiService = donateRetrofitClient.getDonateApiService();
+                        donateRepositoryImpl$getPayPassLevels$1.label = 1;
+                        obj = DonateApiService.getPayPassLevels$default(donateApiService, null, donateRepositoryImpl$getPayPassLevels$1, 1, null);
+                        if (obj == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                    } else if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    } else {
+                        ResultKt.throwOnFailure(obj);
+                    }
+                    response = (Response) obj;
+                    if (!response.isSuccessful()) {
+                        List list = (List) response.body();
+                        if (list == null) {
+                            list = CollectionsKt.emptyList();
+                        }
+                        return new ResultState.Success(list);
+                    }
+                    String message = response.message();
+                    Intrinsics.checkNotNullExpressionValue(message, "message(...)");
+                    return new ResultState.Error(message, null, 2, null);
+                }
+            }
+            if (i != 0) {
+            }
+            response = (Response) obj;
+            if (!response.isSuccessful()) {
+            }
+        } catch (Exception e) {
+            String message2 = e.getMessage();
+            if (message2 == null) {
+                message2 = "";
+            }
+            return new ResultState.Error(message2, e);
+        }
+        donateRepositoryImpl$getPayPassLevels$1 = new DonateRepositoryImpl$getPayPassLevels$1(this, continuation);
+        Object obj2 = donateRepositoryImpl$getPayPassLevels$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = donateRepositoryImpl$getPayPassLevels$1.label;
     }
 }

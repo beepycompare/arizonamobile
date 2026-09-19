@@ -221,6 +221,11 @@ public final class RecoveryHandler implements InterfaceController {
         return this.targetActivity;
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$0(RecoveryHandler recoveryHandler, View view) {
         int i = WhenMappings.$EnumSwitchMapping$0[recoveryHandler.requestState.ordinal()];

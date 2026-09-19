@@ -22,6 +22,7 @@ import com.arizona.launcher.updater.archive.install.SafeZipExtractor;
 import com.arizona.launcher.updater.archive.install.SafeZipLimits;
 import com.arizona.launcher.updater.archive.install.WholeFileCrc32Verifier;
 import com.arizona.launcher.updater.archive.io.AndroidArchiveDirectoryCreator;
+import com.arizona.launcher.updater.archive.io.AndroidArchiveLivePayloadAccess;
 import com.arizona.launcher.updater.archive.io.ArchiveDirectoryCreator;
 import com.arizona.launcher.updater.archive.io.ArchiveLivePathSafety;
 import com.arizona.launcher.updater.archive.io.JvmArchiveDirectoryCreator;
@@ -49,6 +50,7 @@ import com.arizona.launcher.updater.archive.transaction.ArchiveOwnershipDiff;
 import com.arizona.launcher.updater.archive.transaction.ArchiveOwnershipDiffPlanner;
 import com.arizona.launcher.updater.archive.transaction.ArchiveOwnershipException;
 import com.arizona.launcher.updater.archive.transaction.ArchiveTrashCleanupResult;
+import com.arizona.launcher.util.FlavorUtilKt;
 import com.facebook.internal.AnalyticsEvents;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
@@ -1195,6 +1197,7 @@ public final class ArchivePackageUpdater {
 
         public final ArchivePackageUpdater create(Context context, boolean z) {
             File externalCacheDir;
+            ArchivePackageUpdater$Companion$create$committer$1 archivePackageUpdater$Companion$create$committer$1;
             ArchiveRetirementClient archiveRetirementClient;
             Intrinsics.checkNotNullParameter(context, "context");
             File externalFilesDir = context.getExternalFilesDir(null);
@@ -1209,19 +1212,39 @@ public final class ArchivePackageUpdater {
             OkHttpArchiveByteRangeSource okHttpArchiveByteRangeSource = new OkHttpArchiveByteRangeSource(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor, null, null, false, 12, null);
             FileArchiveDownloadResumeStore fileArchiveDownloadResumeStore = forAndroid2;
             ArchivePackageDownloader archivePackageDownloader = new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor, 0L, null, false, fileArchiveDownloadResumeStore, null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, ComposerKt.providerMapsKey, null);
-            ArchivePackageCommitter archivePackageCommitter = new ArchivePackageCommitter(externalFilesDir, file2, null, null, AndroidArchiveDirectoryCreator.INSTANCE, 12, null);
+            AndroidArchiveDirectoryCreator androidArchiveDirectoryCreator = AndroidArchiveDirectoryCreator.INSTANCE;
+            if (FlavorUtilKt.isDebug() || FlavorUtilKt.isStaging()) {
+                archivePackageUpdater$Companion$create$committer$1 = new ArchivePackageUpdater$Companion$create$committer$1(AndroidArchiveLivePayloadAccess.INSTANCE);
+            } else {
+                archivePackageUpdater$Companion$create$committer$1 = new Function2() { // from class: com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$Companion$$ExternalSyntheticLambda0
+                    @Override // kotlin.jvm.functions.Function2
+                    public final Object invoke(Object obj, Object obj2) {
+                        return ArchivePackageUpdater.Companion.create$lambda$0((File) obj, (File) obj2);
+                    }
+                };
+            }
+            ArchivePackageCommitter archivePackageCommitter = new ArchivePackageCommitter(externalFilesDir, file2, null, null, androidArchiveDirectoryCreator, archivePackageUpdater$Companion$create$committer$1, 12, null);
             final SafeZipLimits safeZipLimits = new SafeZipLimits(0, 0L, 0L, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 15, null);
-            archiveRetirementClient = ArchivePackageUpdaterKt.archiveRetirementClient(externalFilesDir);
-            return new ArchivePackageUpdater(externalFilesDir, file, file2, forAndroid, new ArchivePackageUpdater$Companion$create$1(archivePackageDownloader), new ArchivePackageUpdater$Companion$create$2(WholeFileCrc32Verifier.INSTANCE), new ArchiveExtractor() { // from class: com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$Companion$$ExternalSyntheticLambda0
+            ArchiveExtractor archiveExtractor = new ArchiveExtractor() { // from class: com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$Companion$$ExternalSyntheticLambda1
                 @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveExtractor
                 public final SafeZipExtractionResult extract(File file3, File file4, long j) {
-                    return ArchivePackageUpdater.Companion.create$lambda$0(SafeZipLimits.this, file3, file4, j);
+                    return ArchivePackageUpdater.Companion.create$lambda$1(SafeZipLimits.this, file3, file4, j);
                 }
-            }, new ArchivePackageUpdater$Companion$create$4(archivePackageCommitter), archiveRetirementClient, null, false, new AndroidArchiveRuntimeCapacityPolicy(externalFilesDir, file), new AndroidArchiveDownloadAheadPolicy(externalFilesDir, file), null, fileArchiveDownloadResumeStore, null, okHttpArchiveByteRangeSource, okHttpArchiveByteRangeSource.asStreamer(), ArchiveLivePathSafety.Companion.forAndroid(), AndroidArchiveDirectoryCreator.INSTANCE, 41472, null);
+            };
+            ArchivePackageUpdater$Companion$create$4 archivePackageUpdater$Companion$create$4 = new ArchivePackageUpdater$Companion$create$4(archivePackageCommitter);
+            archiveRetirementClient = ArchivePackageUpdaterKt.archiveRetirementClient(externalFilesDir);
+            return new ArchivePackageUpdater(externalFilesDir, file, file2, forAndroid, new ArchivePackageUpdater$Companion$create$1(archivePackageDownloader), new ArchivePackageUpdater$Companion$create$2(WholeFileCrc32Verifier.INSTANCE), archiveExtractor, archivePackageUpdater$Companion$create$4, archiveRetirementClient, null, false, new AndroidArchiveRuntimeCapacityPolicy(externalFilesDir, file), new AndroidArchiveDownloadAheadPolicy(externalFilesDir, file), null, fileArchiveDownloadResumeStore, null, okHttpArchiveByteRangeSource, okHttpArchiveByteRangeSource.asStreamer(), ArchiveLivePathSafety.Companion.forAndroid(), AndroidArchiveDirectoryCreator.INSTANCE, 41472, null);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public static final SafeZipExtractionResult create$lambda$0(SafeZipLimits safeZipLimits, File archive, File stagingRoot, long j) {
+        public static final Unit create$lambda$0(File file, File file2) {
+            Intrinsics.checkNotNullParameter(file, "<unused var>");
+            Intrinsics.checkNotNullParameter(file2, "<unused var>");
+            return Unit.INSTANCE;
+        }
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public static final SafeZipExtractionResult create$lambda$1(SafeZipLimits safeZipLimits, File archive, File stagingRoot, long j) {
             Intrinsics.checkNotNullParameter(archive, "archive");
             Intrinsics.checkNotNullParameter(stagingRoot, "stagingRoot");
             return new SafeZipExtractor(SafeZipLimits.copy$default(safeZipLimits, 0, Math.min(safeZipLimits.getMaxEntryUncompressedBytes(), j), j, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 9, null), null, AndroidArchiveDirectoryCreator.INSTANCE, 2, null).extract(archive, stagingRoot);

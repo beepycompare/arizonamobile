@@ -24,18 +24,18 @@ public final class Ig {
             if (hashCode != -1637701853) {
                 if (hashCode != -1046965711) {
                     if (hashCode == -356280397 && installerPackageName.equals("ru.vk.store")) {
-                        ee = new C0383kj(context);
+                        ee = new C0382kj(context);
                     }
                 } else if (installerPackageName.equals("com.android.vending")) {
                     ee = new Qa(context, g);
                 }
             } else if (installerPackageName.equals("com.huawei.appmarket")) {
-                ee = new C0143bb(context);
+                ee = new C0142bb(context);
             }
-            return new T9(new C0539qj(new C0704x3(ee, new fp(zo))), g);
+            return new T9(new C0538qj(new C0703x3(ee, new fp(zo))), g);
         }
         ee = new Ee(installerPackageName);
-        return new T9(new C0539qj(new C0704x3(ee, new fp(zo))), g);
+        return new T9(new C0538qj(new C0703x3(ee, new fp(zo))), g);
     }
 
     public /* synthetic */ Ig() {

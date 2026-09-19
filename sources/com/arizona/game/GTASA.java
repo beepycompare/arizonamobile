@@ -36,6 +36,7 @@ import java.util.LinkedList;
 import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Consumer;
 import org.json.JSONException;
 import org.json.JSONObject;
 import ru.mrlargha.commonui.core.IBackendNotifier;
@@ -43,11 +44,13 @@ import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementFactory;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.core.UIElementStore;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.elements.ArizonaSnackbar;
 import ru.mrlargha.commonui.elements.CustomKeyboard;
 import ru.mrlargha.commonui.elements.EmptyScreen;
 import ru.mrlargha.commonui.elements.InputPopup;
 import ru.mrlargha.commonui.elements.InputStorage;
+import ru.mrlargha.commonui.elements.authorization.domain.controller.RegistrationServerResponse;
 import ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings;
 import ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings;
 import ru.mrlargha.commonui.elements.azvoice.SoundSliderData;
@@ -108,10 +111,10 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     private native void clicked(int viewBackendID, int elementID, int subID, byte[] payload);
 
-    public static /* synthetic */ void lambda$OnPlayerState$33() {
+    public static /* synthetic */ void lambda$OnPlayerState$36() {
     }
 
-    public static /* synthetic */ void lambda$PlayVibration$30() {
+    public static /* synthetic */ void lambda$PlayVibration$33() {
     }
 
     private native void onDialogResponse(int dialogID, int responseButtonID, int listItemID, byte[] inputText);
@@ -148,10 +151,10 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     native void SetHudScale(float hud, float speedometer);
 
     /* renamed from: SetHudTimer */
-    public native void lambda$hudSetTimer$51(int seconds);
+    public native void lambda$hudSetTimer$55(int seconds);
 
     /* renamed from: SetHudTimer2 */
-    public native void lambda$hudSetTimer2$52(int seconds, int maxTime, int type);
+    public native void lambda$hudSetTimer2$56(int seconds, int maxTime, int type);
 
     public native void initSAMP();
 
@@ -216,25 +219,11 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     @Override // android.app.Activity, android.content.ComponentCallbacks2
     public void onTrimMemory(int level) {
         Log.w("MemoryTrim", "onTrimMemory called with level: " + level);
-        if (level == 5) {
-            Log.w("MemoryTrim", "Memory running moderate. Consider freeing non-critical resources.");
-        } else if (level == 10) {
-            Log.w("MemoryTrim", "Memory running low. Free non-essential resources.");
+        if (level >= 5 && level != 20) {
+            this.uiElementStore.trimHiddenElements();
+        }
+        if ((level >= 10 && level < 20) || level >= 80) {
             lowMemoryEvent();
-        } else if (level == 15) {
-            Log.w("MemoryTrim", "Memory running critically low. Free as many resources as possible.");
-            lowMemoryEvent();
-        } else if (level == 20) {
-            Log.w("MemoryTrim", "UI is now hidden. Freeing UI-related resources.");
-        } else if (level == 40) {
-            Log.w("MemoryTrim", "App in background. Release background resources if possible.");
-        } else if (level == 60) {
-            Log.w("MemoryTrim", "Moderate memory usage while backgrounded. Release some resources.");
-        } else if (level == 80) {
-            Log.w("MemoryTrim", "App not a priority. Release as many resources as possible.");
-            lowMemoryEvent();
-        } else {
-            Log.w("MemoryTrim", "Unknown memory trim level: " + level);
         }
         super.onTrimMemory(level);
     }
@@ -270,7 +259,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putString("Version:", BuildConfig.VERSION_NAME).putString("Package:", BuildConfig.APPLICATION_ID).build());
         this.uiElements.put(Integer.valueOf(UIElementID.INVENTORY.getId()), new EmptyScreen(this, UIElementID.INVENTORY.getId()));
         this.gameTestBackendHarness = GameTestBackendHarnessController.create(this);
-        getWindow().getDecorView().post(new GTASA$$ExternalSyntheticLambda17(this));
+        getWindow().getDecorView().post(new GTASA$$ExternalSyntheticLambda20(this));
     }
 
     public String GetReferrerString() {
@@ -289,7 +278,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     private void installWindowInsetsListener() {
         View decorView = getWindow().getDecorView();
-        ViewCompat.setOnApplyWindowInsetsListener(decorView, new OnApplyWindowInsetsListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda15
+        ViewCompat.setOnApplyWindowInsetsListener(decorView, new OnApplyWindowInsetsListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda18
             @Override // androidx.core.view.OnApplyWindowInsetsListener
             public final WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat windowInsetsCompat) {
                 WindowInsetsCompat lambda$installWindowInsetsListener$1;
@@ -303,7 +292,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     public /* synthetic */ WindowInsetsCompat lambda$installWindowInsetsListener$1(final View view, WindowInsetsCompat windowInsetsCompat) {
         boolean isVisible = windowInsetsCompat.isVisible(WindowInsetsCompat.Type.ime());
         if (this.wasImeVisible && !isVisible) {
-            view.post(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda32
+            view.post(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda37
                 @Override // java.lang.Runnable
                 public final void run() {
                     GTASA.this.lambda$installWindowInsetsListener$0(view);
@@ -339,7 +328,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void destroyDialog() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda51
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda56
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.lambda$destroyDialog$2();
@@ -369,9 +358,18 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         this.inputPopup.bindID(elementID, password, bindText);
     }
 
+    public /* synthetic */ void lambda$requestRemoveUIElement$3(SAMPUIElement sAMPUIElement) {
+        this.uiElementStore.removeElement(sAMPUIElement);
+    }
+
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
-    public void requestRemoveUIElement(SAMPUIElement element) {
-        this.uiElementStore.removeElement(element);
+    public void requestRemoveUIElement(final SAMPUIElement element) {
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda23
+            @Override // java.lang.Runnable
+            public final void run() {
+                GTASA.this.lambda$requestRemoveUIElement$3(element);
+            }
+        });
     }
 
     private String getUniqueID() {
@@ -388,15 +386,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     private void OnInputEndWrapper(final String str) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda35
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda39
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$OnInputEndWrapper$3(str);
+                GTASA.this.lambda$OnInputEndWrapper$4(str);
             }
         });
     }
 
-    public /* synthetic */ void lambda$OnInputEndWrapper$3(String str) {
+    public /* synthetic */ void lambda$OnInputEndWrapper$4(String str) {
         try {
             OnInputEnd(str);
         } catch (LinkageError e) {
@@ -412,8 +410,8 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             boolean z = defaultSharedPreferences.getBoolean(SettingsConstants.STREAMER_MODE, false);
             boolean z2 = defaultSharedPreferences.getBoolean(SettingsConstants.AMBIENT_SOUNDS, true);
             String string = defaultSharedPreferences.getString("token", "");
-            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.3.9\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
-            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.3.9", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
+            Log.i("InitSettingWrapper", "InitSetting called with the following arguments:\n1. Boolean flag 1: true\n2. show_fps: " + show_fps + "\n3. Boolean flag 2: true\n4. Streamer mode: " + z + "\n5. Ambient sounds: " + z2 + "\n6. Version: (release) 2.1 - v17.4.1\n7. Last element ID: " + UIElementID.getLastUIElementID() + "\n8. Device name: " + str + "\n9. Token: " + string + "\n10. Channels state: " + channelsState);
+            InitSetting(true, show_fps, true, z, "(release) 2.1 - v17.4.1", UIElementID.getLastUIElementID(), str, string, channelsState, z2);
             FirebaseCrashlytics.getInstance().setUserId(getUniqueID());
         } catch (LinkageError e) {
             Log.w(TAG, "Unable to call native method", e);
@@ -421,15 +419,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void initSAMPWrapper() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda36
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda40
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$initSAMPWrapper$4();
+                GTASA.this.lambda$initSAMPWrapper$5();
             }
         });
     }
 
-    public /* synthetic */ void lambda$initSAMPWrapper$4() {
+    public /* synthetic */ void lambda$initSAMPWrapper$5() {
         try {
             initSAMP();
         } catch (LinkageError e) {
@@ -441,12 +439,12 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda22
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$OnKeyboardShowedWrapper$5();
+                GTASA.this.lambda$OnKeyboardShowedWrapper$6();
             }
         });
     }
 
-    public /* synthetic */ void lambda$OnKeyboardShowedWrapper$5() {
+    public /* synthetic */ void lambda$OnKeyboardShowedWrapper$6() {
         try {
             OnKeyboardShowed();
         } catch (LinkageError e) {
@@ -455,15 +453,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void OnOnKeyboardClosedWrapper() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda21
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda26
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$OnOnKeyboardClosedWrapper$6();
+                GTASA.this.lambda$OnOnKeyboardClosedWrapper$7();
             }
         });
     }
 
-    public /* synthetic */ void lambda$OnOnKeyboardClosedWrapper$6() {
+    public /* synthetic */ void lambda$OnOnKeyboardClosedWrapper$7() {
         try {
             OnKeyboardClosed();
         } catch (LinkageError e) {
@@ -473,15 +471,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void sliderValueChangedWrapper(final int viewBackendID, final int elementID, final int value) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda6
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$sliderValueChangedWrapper$7(viewBackendID, elementID, value);
+                GTASA.this.lambda$sliderValueChangedWrapper$8(viewBackendID, elementID, value);
             }
         });
     }
 
-    public /* synthetic */ void lambda$sliderValueChangedWrapper$7(int i, int i2, int i3) {
+    public /* synthetic */ void lambda$sliderValueChangedWrapper$8(int i, int i2, int i3) {
         try {
             sliderValueChanged(i, i2, i3);
         } catch (LinkageError e) {
@@ -491,15 +489,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void onDialogResponseWrapper(final int dialogID, final int responseButtonID, final int listItemID, final byte[] inputText) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda50
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda54
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$onDialogResponseWrapper$8(dialogID, responseButtonID, listItemID, inputText);
+                GTASA.this.lambda$onDialogResponseWrapper$9(dialogID, responseButtonID, listItemID, inputText);
             }
         });
     }
 
-    public /* synthetic */ void lambda$onDialogResponseWrapper$8(int i, int i2, int i3, byte[] bArr) {
+    public /* synthetic */ void lambda$onDialogResponseWrapper$9(int i, int i2, int i3, byte[] bArr) {
         try {
             onDialogResponse(i, i2, i3, bArr);
         } catch (LinkageError e) {
@@ -509,15 +507,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void clickedWrapper(final int viewBackendID, final int elementID, final int subID, final byte[] payload) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda52
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda58
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$clickedWrapper$9(payload, viewBackendID, elementID, subID);
+                GTASA.this.lambda$clickedWrapper$10(payload, viewBackendID, elementID, subID);
             }
         });
     }
 
-    public /* synthetic */ void lambda$clickedWrapper$9(byte[] bArr, int i, int i2, int i3) {
+    public /* synthetic */ void lambda$clickedWrapper$10(byte[] bArr, int i, int i2, int i3) {
         try {
             try {
                 FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putInt("clickedWrapper_viewBackendID", i).putInt("clickedWrapper_elementID", i2).putInt("clickedWrapper_subID", i3).putString("clickedWrapper_payload", new String(bArr).contains(HintConstants.AUTOFILL_HINT_PASSWORD) ? "" : new String(bArr)).build());
@@ -535,15 +533,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         if (FlavorUtilKt.isDebug()) {
             Log.d(TAG, "Frontend click:" + viewBackendID + ", id: " + elementID + ", subID" + subID);
         }
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda19
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda24
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$clickedWrapper$10(viewBackendID, elementID, subID);
+                GTASA.this.lambda$clickedWrapper$11(viewBackendID, elementID, subID);
             }
         });
     }
 
-    public /* synthetic */ void lambda$clickedWrapper$10(int i, int i2, int i3) {
+    public /* synthetic */ void lambda$clickedWrapper$11(int i, int i2, int i3) {
         try {
             try {
                 FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putInt("clickedWrapper_viewBackendID", i).putInt("clickedWrapper_elementID", i2).putInt("clickedWrapper_subID", i3).build());
@@ -558,15 +556,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void switchStatusChangedWrapper(final int viewBackendID, final int elementID, final boolean state) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda53
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda59
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$switchStatusChangedWrapper$11(viewBackendID, elementID, state);
+                GTASA.this.lambda$switchStatusChangedWrapper$12(viewBackendID, elementID, state);
             }
         });
     }
 
-    public /* synthetic */ void lambda$switchStatusChangedWrapper$11(int i, int i2, boolean z) {
+    public /* synthetic */ void lambda$switchStatusChangedWrapper$12(int i, int i2, boolean z) {
         try {
             switchStatusChanged(i, i2, z);
         } catch (Exception e) {
@@ -576,15 +574,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void viewShownStatusChangedWrapper(final int viewBackendID, final boolean shown) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda29
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda34
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$viewShownStatusChangedWrapper$12(viewBackendID, shown);
+                GTASA.this.lambda$viewShownStatusChangedWrapper$13(viewBackendID, shown);
             }
         });
     }
 
-    public /* synthetic */ void lambda$viewShownStatusChangedWrapper$12(int i, boolean z) {
+    public /* synthetic */ void lambda$viewShownStatusChangedWrapper$13(int i, boolean z) {
         try {
             viewShownStatusChanged(i, z);
         } catch (LinkageError e) {
@@ -602,7 +600,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     public void clearPlayersList() {
         final LinkedList<Player> linkedList = this.playerLinkedList;
         Objects.requireNonNull(linkedList);
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda9
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda13
             @Override // java.lang.Runnable
             public final void run() {
                 linkedList.clear();
@@ -610,44 +608,52 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         });
     }
 
-    public /* synthetic */ void lambda$addPlayerToList$13(int i, byte[] bArr, int i2, int i3, int i4) {
+    public /* synthetic */ void lambda$addPlayerToList$14(int i, byte[] bArr, int i2, int i3, int i4) {
         this.playerLinkedList.add(new Player(i, new String(bArr), i2, i3, i4));
     }
 
     public void addPlayerToList(final int id, final byte[] name, final int level, final int ping, final int color) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda23
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda27
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$addPlayerToList$13(id, name, level, ping, color);
+                GTASA.this.lambda$addPlayerToList$14(id, name, level, ping, color);
             }
         });
     }
 
     public void submitPlayersList(final byte[] serverName) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda47
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda49
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$submitPlayersList$14(serverName);
+                GTASA.this.lambda$submitPlayersList$15(serverName);
             }
         });
     }
 
-    public /* synthetic */ void lambda$submitPlayersList$14(byte[] bArr) {
-        ((PlayerListDialog) this.uiElementStore.getOrCreateDefault(UIElementID.PLAYER_LIST)).submitPlayersList(this.playerLinkedList);
+    public /* synthetic */ void lambda$submitPlayersList$15(byte[] bArr) {
+        PlayerListDialog playerListDialog = (PlayerListDialog) this.uiElementStore.getForBackendMessage(UIElementID.PLAYER_LIST);
+        if (playerListDialog == null) {
+            return;
+        }
+        playerListDialog.submitPlayersList(this.playerLinkedList);
         setPlayerListDialogServerName(bArr);
     }
 
     public void setPlayerListDialogServerName(final byte[] serverName) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda55
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setPlayerListDialogServerName$15(serverName);
+                GTASA.this.lambda$setPlayerListDialogServerName$16(serverName);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setPlayerListDialogServerName$15(byte[] bArr) {
-        ((PlayerListDialog) this.uiElementStore.getOrCreateDefault(UIElementID.PLAYER_LIST)).setServerName(new String(bArr));
+    public /* synthetic */ void lambda$setPlayerListDialogServerName$16(byte[] bArr) {
+        PlayerListDialog playerListDialog = (PlayerListDialog) this.uiElementStore.getForBackendMessage(UIElementID.PLAYER_LIST);
+        if (playerListDialog == null) {
+            return;
+        }
+        playerListDialog.setServerName(new String(bArr));
     }
 
     @Override // com.wardrumstudios.utils.WarMedia, android.app.Activity, android.view.Window.Callback
@@ -661,9 +667,10 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     @Override // com.wardrumstudios.utils.WarMedia, com.wardrumstudios.utils.WarBase, com.nvidia.devtech.NvEventQueueActivity, android.app.Activity
     public void onResume() {
         super.onResume();
+        this.uiElementStore.onHostResumed();
         if (this.isInit) {
             hideSystemUI();
-            getWindow().getDecorView().post(new GTASA$$ExternalSyntheticLambda17(this));
+            getWindow().getDecorView().post(new GTASA$$ExternalSyntheticLambda20(this));
         }
     }
 
@@ -682,6 +689,41 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             gameTestBackendHarnessController.stop();
         }
         super.onStop();
+    }
+
+    @Override // com.wardrumstudios.utils.WarMedia, com.wardrumstudios.utils.WarGamepad, com.wardrumstudios.utils.WarBilling, com.wardrumstudios.utils.WarBase, com.nvidia.devtech.NvEventQueueActivity, android.app.Activity
+    public void onDestroy() {
+        GameTestBackendHarnessController gameTestBackendHarnessController = this.gameTestBackendHarness;
+        if (gameTestBackendHarnessController != null) {
+            gameTestBackendHarnessController.destroy();
+        }
+        StreamVideo streamVideo = this.streamVideo;
+        if (streamVideo != null) {
+            streamVideo.destroy();
+            this.streamVideo = null;
+        }
+        ArizonaSnackbar arizonaSnackbar = this.arizonaSnackbar;
+        if (arizonaSnackbar != null) {
+            arizonaSnackbar.destroy();
+            this.arizonaSnackbar = null;
+        }
+        this.uiElements.values().forEach(new Consumer() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda55
+            @Override // java.util.function.Consumer
+            public final void accept(Object obj) {
+                GTASA.lambda$onDestroy$17((SAMPUIElement) obj);
+            }
+        });
+        this.uiElements.clear();
+        this.uiElementStore.clearForHostDestroy();
+        super.onDestroy();
+    }
+
+    public static /* synthetic */ void lambda$onDestroy$17(SAMPUIElement sAMPUIElement) {
+        try {
+            sAMPUIElement.onRemovedFromStore(UIElementEvictionReason.HOST_DESTROY);
+        } catch (Exception e) {
+            Log.w(TAG, "Unable to dispose legacy UI element", e);
+        }
     }
 
     public void armDebugGameTestHarness() {
@@ -712,24 +754,24 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void notifySubscribe(final boolean subscribe, final byte[] topic) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda54
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda60
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.lambda$notifySubscribe$18(subscribe, topic);
+                GTASA.lambda$notifySubscribe$20(subscribe, topic);
             }
         });
     }
 
-    public static /* synthetic */ void lambda$notifySubscribe$18(boolean z, byte[] bArr) {
+    public static /* synthetic */ void lambda$notifySubscribe$20(boolean z, byte[] bArr) {
         if (z) {
-            FirebaseMessaging.getInstance().subscribeToTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda40
+            FirebaseMessaging.getInstance().subscribeToTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda52
                 @Override // com.google.android.gms.tasks.OnCompleteListener
                 public final void onComplete(Task task) {
                     Log.d("notifySubscribe", r1.isSuccessful() ? "successfully" : "not successful");
                 }
             });
         } else {
-            FirebaseMessaging.getInstance().unsubscribeFromTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda41
+            FirebaseMessaging.getInstance().unsubscribeFromTopic(new String(bArr)).addOnCompleteListener(new OnCompleteListener() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda53
                 @Override // com.google.android.gms.tasks.OnCompleteListener
                 public final void onComplete(Task task) {
                     Log.d("unsubscribeFromTopic", r1.isSuccessful() ? "successfully" : "not successful");
@@ -739,15 +781,15 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void sendAnalytics(final byte[] data, final int type) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda34
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda38
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$sendAnalytics$19(data, type);
+                GTASA.this.lambda$sendAnalytics$21(data, type);
             }
         });
     }
 
-    public /* synthetic */ void lambda$sendAnalytics$19(byte[] bArr, int i) {
+    public /* synthetic */ void lambda$sendAnalytics$21(byte[] bArr, int i) {
         if (FlavorUtilKt.isDebug() || FlavorUtilKt.isStaging()) {
             Log.i("sendDataAnalyticsDebug", new String(bArr));
             Log.i("sendDataAnalyticsDebugType", String.valueOf(i));
@@ -757,70 +799,83 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     public void updateLocation(final byte[] location) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda31
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda36
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$updateLocation$20(location);
+                GTASA.this.lambda$updateLocation$22(location);
             }
         });
     }
 
-    public /* synthetic */ void lambda$updateLocation$20(byte[] bArr) {
+    public /* synthetic */ void lambda$updateLocation$22(byte[] bArr) {
+        Hud hud;
         if (FlavorUtilKt.isArizona()) {
             try {
-                ((Hud) this.uiElementStore.getOrCreateDefault(UIElementID.HUD)).setPlayerLocation(new String(bArr));
+                hud = (Hud) this.uiElementStore.getForBackendMessage(UIElementID.HUD);
             } catch (IllegalArgumentException e) {
                 Log.w(TAG, "Location: cannot access uielement " + UIElementID.HUD, e);
             }
+            if (hud == null) {
+                return;
+            }
+            hud.setPlayerLocation(new String(bArr));
             Log.w("Location", new String(bArr));
         }
     }
 
     public void OnUpdateData(final int data, final int value) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda3
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$OnUpdateData$21(data, value);
+                GTASA.this.lambda$OnUpdateData$23(data, value);
             }
         });
     }
 
-    public /* synthetic */ void lambda$OnUpdateData$21(int i, int i2) {
-        if (PlayerData.HEALTH.getId() == i) {
-            Log.d("OnUpdateData", "Health was updated to " + i2);
-            ConstantsKt.setHealthBar(i2);
-            if (this.uiElementStore.isElementExist(UIElementID.INVENTORY)) {
-                this.uiElementStore.getOrCreateDefault(UIElementID.INVENTORY).onBackendMessage("" + i2, 10);
+    public /* synthetic */ void lambda$OnUpdateData$23(int i, int i2) {
+        SAMPUIElement forBackendMessage;
+        SAMPUIElement forBackendMessage2;
+        SAMPUIElement forBackendMessage3;
+        if (this.uiElementStore.isHostActive()) {
+            if (PlayerData.HEALTH.getId() == i) {
+                Log.d("OnUpdateData", "Health was updated to " + i2);
+                ConstantsKt.setHealthBar(i2);
+                if (!this.uiElementStore.isElementExist(UIElementID.INVENTORY) || (forBackendMessage3 = this.uiElementStore.getForBackendMessage(UIElementID.INVENTORY)) == null) {
+                    return;
+                }
+                forBackendMessage3.onBackendMessage("" + i2, 10);
+            } else if (PlayerData.ARMOR.getId() == i) {
+                Log.d("OnUpdateData", "Armour was updated to " + i2);
+                ConstantsKt.setShieldBar(i2);
+                if (!this.uiElementStore.isElementExist(UIElementID.INVENTORY) || (forBackendMessage2 = this.uiElementStore.getForBackendMessage(UIElementID.INVENTORY)) == null) {
+                    return;
+                }
+                forBackendMessage2.onBackendMessage("" + i2, 11);
+            } else if (PlayerData.SATIETY.getId() == i) {
+                Log.d("OnUpdateData", "Satiety was updated to " + i2);
+                ConstantsKt.setSatietyBar(i2);
+                if (!this.uiElementStore.isElementExist(UIElementID.INVENTORY) || (forBackendMessage = this.uiElementStore.getForBackendMessage(UIElementID.INVENTORY)) == null) {
+                    return;
+                }
+                forBackendMessage.onBackendMessage("" + i2, 12);
+            } else if (FlavorUtilKt.isArizona()) {
+            } else {
+                Log.d("OnUpdateData", "Money was updated to " + i2);
+                ((SAMPUIElement) Objects.requireNonNull(this.uiElements.get(Integer.valueOf(UIElementID.INVENTORY.getId())))).onUpdateData(i, i2);
             }
-        } else if (PlayerData.ARMOR.getId() == i) {
-            Log.d("OnUpdateData", "Armour was updated to " + i2);
-            ConstantsKt.setShieldBar(i2);
-            if (this.uiElementStore.isElementExist(UIElementID.INVENTORY)) {
-                this.uiElementStore.getOrCreateDefault(UIElementID.INVENTORY).onBackendMessage("" + i2, 11);
-            }
-        } else if (PlayerData.SATIETY.getId() == i) {
-            Log.d("OnUpdateData", "Satiety was updated to " + i2);
-            ConstantsKt.setSatietyBar(i2);
-            if (this.uiElementStore.isElementExist(UIElementID.INVENTORY)) {
-                this.uiElementStore.getOrCreateDefault(UIElementID.INVENTORY).onBackendMessage("" + i2, 12);
-            }
-        } else if (FlavorUtilKt.isArizona()) {
-        } else {
-            Log.d("OnUpdateData", "Money was updated to " + i2);
-            ((SAMPUIElement) Objects.requireNonNull(this.uiElements.get(Integer.valueOf(UIElementID.INVENTORY.getId())))).onUpdateData(i, i2);
         }
     }
 
     public void SetInputLayout(final int type, final boolean is_chat) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda20
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda25
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$SetInputLayout$22(type, is_chat);
+                GTASA.this.lambda$SetInputLayout$24(type, is_chat);
             }
         });
     }
 
-    public /* synthetic */ void lambda$SetInputLayout$22(int i, boolean z) {
+    public /* synthetic */ void lambda$SetInputLayout$24(int i, boolean z) {
         if (i != 0) {
             if (!this.isKeyboadInstalled) {
                 this.uiElements.put(Integer.valueOf(UIElementID.INPUT_LAYOUT.getId()), new CustomKeyboard(this, UIElementID.INPUT_LAYOUT.getId()));
@@ -855,13 +910,22 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
-    public void openMessengerByNewMessage(int messageId) {
-        SAMPUIElement orCreateDefault = this.uiElementStore.getOrCreateDefault(UIElementID.ARIZONA_MOBILE_PHONE);
-        if (orCreateDefault.isOnScreen()) {
+    public void openMessengerByNewMessage(final int messageId) {
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda8
+            @Override // java.lang.Runnable
+            public final void run() {
+                GTASA.this.lambda$openMessengerByNewMessage$25(messageId);
+            }
+        });
+    }
+
+    public /* synthetic */ void lambda$openMessengerByNewMessage$25(int i) {
+        SAMPUIElement forBackendMessage = this.uiElementStore.getForBackendMessage(UIElementID.ARIZONA_MOBILE_PHONE);
+        if (forBackendMessage == null || forBackendMessage.isOnScreen()) {
             return;
         }
-        orCreateDefault.setVisibility(true);
-        orCreateDefault.onBackendMessage(String.valueOf(messageId), 50);
+        forBackendMessage.setVisibility(true);
+        forBackendMessage.onBackendMessage(String.valueOf(i), 50);
     }
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
@@ -877,67 +941,67 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda11
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$InitGui$23();
+                GTASA.this.lambda$InitGui$26();
             }
         });
     }
 
-    public /* synthetic */ void lambda$InitGui$23() {
+    public /* synthetic */ void lambda$InitGui$26() {
         InitSettingWrapper(this.show_fps ? 1 : 0);
         this.isInit = true;
     }
 
     public void setBinderState(final int index_binder, final boolean state) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda14
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda17
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setBinderState$24(index_binder, state);
+                GTASA.this.lambda$setBinderState$27(index_binder, state);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setBinderState$24(int i, boolean z) {
+    public /* synthetic */ void lambda$setBinderState$27(int i, boolean z) {
         this.inputStorage.setBinderState(i, z);
         ((CommandBinder) Objects.requireNonNull(this.uiElements.get(Integer.valueOf(UIElementID.COMMAND_BINDER.getId())))).setBinderState(i, z);
     }
 
     public void setBinderName(final int index_binder, final byte[] name) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda1
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setBinderName$25(index_binder, name);
+                GTASA.this.lambda$setBinderName$28(index_binder, name);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setBinderName$25(int i, byte[] bArr) {
+    public /* synthetic */ void lambda$setBinderName$28(int i, byte[] bArr) {
         this.inputStorage.setBinderName(i, new String(bArr));
         ((CommandBinder) Objects.requireNonNull(this.uiElements.get(Integer.valueOf(UIElementID.COMMAND_BINDER.getId())))).setBinderName(i, new String(bArr));
     }
 
     public void ShowMobileToolTip(final byte[] name, final int type) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda44
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda57
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$ShowMobileToolTip$26(name, type);
+                GTASA.this.lambda$ShowMobileToolTip$29(name, type);
             }
         });
     }
 
-    public /* synthetic */ void lambda$ShowMobileToolTip$26(byte[] bArr, int i) {
+    public /* synthetic */ void lambda$ShowMobileToolTip$29(byte[] bArr, int i) {
         Toast.makeText(this, new String(bArr), i).show();
     }
 
     public void addKeyboardHistory(final byte[] str) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda38
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda42
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$addKeyboardHistory$27(str);
+                GTASA.this.lambda$addKeyboardHistory$30(str);
             }
         });
     }
 
-    public /* synthetic */ void lambda$addKeyboardHistory$27(byte[] bArr) {
+    public /* synthetic */ void lambda$addKeyboardHistory$30(byte[] bArr) {
         this.inputStorage.AddKeyboardHistory(new String(bArr));
     }
 
@@ -991,7 +1055,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
             return;
         }
         Log.i(TAG, "snack-bar try to hide");
-        this.arizonaSnackbar.setVisibility(false);
+        this.arizonaSnackbar.destroy();
         this.arizonaSnackbar = null;
         this.snackbarJson = "";
         viewShownStatusChangedWrapper(UIElementID.SNACKBAR.getId(), false);
@@ -1009,197 +1073,219 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void setUIElementVisible(final int elementId, final boolean visibility) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda37
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda41
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setUIElementVisible$28(elementId, visibility);
+                GTASA.this.lambda$setUIElementVisible$31(elementId, visibility);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setUIElementVisible$28(int i, boolean z) {
-        UIElementID uIElementID = UIElementID.getUIElementID(i, FlavorUtilKt.getProjectType());
-        GameTestBackendHarnessController gameTestBackendHarnessController = this.gameTestBackendHarness;
-        if (gameTestBackendHarnessController == null || !gameTestBackendHarnessController.shouldSuppressVisibilityChange(uIElementID, z)) {
-            if (uIElementID.getId() == UIElementID.INVENTORY_VEHICLE_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_WAREHOUSE.getId() || uIElementID.getId() == UIElementID.INVENTORY_WALLET_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
-                this.uiElementStore.getOrCreateDefault(UIElementID.INVENTORY).onBackendMessage("" + z, uIElementID.getId());
-            }
-            try {
-                FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putInt("setUIElementVisible_elementId", i).putBoolean("setUIElementVisible_visibility", z).build());
-            } catch (IllegalStateException e) {
-                Log.w(TAG, "setUIElementVisible: we couldn't find instance from crashlytics " + e);
-            }
-            if (uIElementID.getId() == UIElementID.INVENTORY.getId() && !z) {
-                if (uIElementID.getId() != UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
-                    setUIElementVisible(UIElementID.INVENTORY_SECURITY_SCREEN.getId(), false);
+    public /* synthetic */ void lambda$setUIElementVisible$31(int i, boolean z) {
+        SAMPUIElement existing;
+        if (this.uiElementStore.isHostActive()) {
+            UIElementID uIElementID = UIElementID.getUIElementID(i, FlavorUtilKt.getProjectType());
+            GameTestBackendHarnessController gameTestBackendHarnessController = this.gameTestBackendHarness;
+            if (gameTestBackendHarnessController == null || !gameTestBackendHarnessController.shouldSuppressVisibilityChange(uIElementID, z)) {
+                if (uIElementID.getId() == UIElementID.INVENTORY_VEHICLE_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_WAREHOUSE.getId() || uIElementID.getId() == UIElementID.INVENTORY_WALLET_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
+                    UIElementStore uIElementStore = this.uiElementStore;
+                    if (z) {
+                        existing = uIElementStore.getForBackendMessage(UIElementID.INVENTORY);
+                    } else {
+                        existing = uIElementStore.getExisting(UIElementID.INVENTORY);
+                    }
+                    if (existing != null) {
+                        existing.onBackendMessage("" + z, uIElementID.getId());
+                    }
                 }
-                if (uIElementID.getId() != UIElementID.INVENTORY_WAREHOUSE.getId()) {
-                    setUIElementVisible(UIElementID.INVENTORY_WAREHOUSE.getId(), false);
+                try {
+                    FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putInt("setUIElementVisible_elementId", i).putBoolean("setUIElementVisible_visibility", z).build());
+                } catch (IllegalStateException e) {
+                    Log.w(TAG, "setUIElementVisible: we couldn't find instance from crashlytics " + e);
                 }
-                if (uIElementID.getId() != UIElementID.INVENTORY_VEHICLE_SCREEN.getId()) {
-                    setUIElementVisible(UIElementID.INVENTORY_VEHICLE_SCREEN.getId(), false);
+                if (uIElementID.getId() == UIElementID.INVENTORY.getId() && !z) {
+                    if (uIElementID.getId() != UIElementID.INVENTORY_SECURITY_SCREEN.getId()) {
+                        setUIElementVisible(UIElementID.INVENTORY_SECURITY_SCREEN.getId(), false);
+                    }
+                    if (uIElementID.getId() != UIElementID.INVENTORY_WAREHOUSE.getId()) {
+                        setUIElementVisible(UIElementID.INVENTORY_WAREHOUSE.getId(), false);
+                    }
+                    if (uIElementID.getId() != UIElementID.INVENTORY_VEHICLE_SCREEN.getId()) {
+                        setUIElementVisible(UIElementID.INVENTORY_VEHICLE_SCREEN.getId(), false);
+                    }
+                    if (uIElementID.getId() != UIElementID.INVENTORY_WALLET_SCREEN.getId()) {
+                        setUIElementVisible(UIElementID.INVENTORY_WALLET_SCREEN.getId(), false);
+                    }
                 }
-                if (uIElementID.getId() != UIElementID.INVENTORY_WALLET_SCREEN.getId()) {
-                    setUIElementVisible(UIElementID.INVENTORY_WALLET_SCREEN.getId(), false);
-                }
-            }
-            if (i == UIElementID.SNACKBAR.getId()) {
-                if (z) {
-                    if (this.arizonaSnackbar == null) {
-                        Log.i(TAG, "snack-bar try to show");
-                        this.arizonaSnackbar = new ArizonaSnackbar(this.snackbarJson, this, UIElementID.SNACKBAR.getId());
-                        viewShownStatusChangedWrapper(UIElementID.SNACKBAR.getId(), true);
-                        Log.i(TAG, "snack-bar try to showed");
+                if (i == UIElementID.SNACKBAR.getId()) {
+                    if (z) {
+                        if (this.arizonaSnackbar == null) {
+                            Log.i(TAG, "snack-bar try to show");
+                            this.arizonaSnackbar = new ArizonaSnackbar(this.snackbarJson, this, UIElementID.SNACKBAR.getId());
+                            viewShownStatusChangedWrapper(UIElementID.SNACKBAR.getId(), true);
+                            Log.i(TAG, "snack-bar try to showed");
+                        }
+                    } else {
+                        asDestroy();
+                    }
+                    GameTestBackendHarnessController gameTestBackendHarnessController2 = this.gameTestBackendHarness;
+                    if (gameTestBackendHarnessController2 != null) {
+                        gameTestBackendHarnessController2.onVisibilityApplied(uIElementID, z);
+                    }
+                } else if (i == UIElementID.STREAM_VIDEO.getId()) {
+                    StreamVideo streamVideo = this.streamVideo;
+                    if (z) {
+                        if (streamVideo == null) {
+                            this.streamVideo = new StreamVideo(this, UIElementID.STREAM_VIDEO.getId());
+                            viewShownStatusChangedWrapper(UIElementID.STREAM_VIDEO.getId(), true);
+                        }
+                    } else if (streamVideo != null) {
+                        streamVideo.destroy();
+                        this.streamVideo = null;
+                        viewShownStatusChangedWrapper(UIElementID.STREAM_VIDEO.getId(), false);
+                    }
+                    GameTestBackendHarnessController gameTestBackendHarnessController3 = this.gameTestBackendHarness;
+                    if (gameTestBackendHarnessController3 != null) {
+                        gameTestBackendHarnessController3.onVisibilityApplied(uIElementID, z);
                     }
                 } else {
-                    asDestroy();
-                }
-                GameTestBackendHarnessController gameTestBackendHarnessController2 = this.gameTestBackendHarness;
-                if (gameTestBackendHarnessController2 != null) {
-                    gameTestBackendHarnessController2.onVisibilityApplied(uIElementID, z);
-                }
-            } else if (i == UIElementID.STREAM_VIDEO.getId()) {
-                StreamVideo streamVideo = this.streamVideo;
-                if (z) {
-                    if (streamVideo == null) {
-                        this.streamVideo = new StreamVideo(this, UIElementID.STREAM_VIDEO.getId());
-                        viewShownStatusChangedWrapper(UIElementID.STREAM_VIDEO.getId(), true);
+                    if (this.uiElements.containsKey(Integer.valueOf(i))) {
+                        ((SAMPUIElement) Objects.requireNonNull(this.uiElements.get(Integer.valueOf(i)))).setVisibility(z);
+                    } else if (uIElementID != UIElementID.DIALOG) {
+                        try {
+                            this.uiElementStore.setElementVisibility(uIElementID, z);
+                        } catch (IllegalArgumentException e2) {
+                            Log.w(TAG, "setUIElementVisible: cannot access element " + uIElementID, e2);
+                        }
                     }
-                } else if (streamVideo != null) {
-                    streamVideo.destroy();
-                    this.streamVideo = null;
-                    viewShownStatusChangedWrapper(UIElementID.STREAM_VIDEO.getId(), false);
-                }
-                GameTestBackendHarnessController gameTestBackendHarnessController3 = this.gameTestBackendHarness;
-                if (gameTestBackendHarnessController3 != null) {
-                    gameTestBackendHarnessController3.onVisibilityApplied(uIElementID, z);
-                }
-            } else {
-                if (this.uiElements.containsKey(Integer.valueOf(i))) {
-                    ((SAMPUIElement) Objects.requireNonNull(this.uiElements.get(Integer.valueOf(i)))).setVisibility(z);
-                } else if (uIElementID != UIElementID.DIALOG) {
-                    try {
-                        this.uiElementStore.getOrCreateDefault(uIElementID).setVisibility(z);
-                    } catch (IllegalArgumentException e2) {
-                        Log.w(TAG, "setUIElementVisible: cannot access element " + uIElementID, e2);
+                    GameTestBackendHarnessController gameTestBackendHarnessController4 = this.gameTestBackendHarness;
+                    if (gameTestBackendHarnessController4 != null) {
+                        gameTestBackendHarnessController4.onVisibilityApplied(uIElementID, z);
                     }
-                }
-                GameTestBackendHarnessController gameTestBackendHarnessController4 = this.gameTestBackendHarness;
-                if (gameTestBackendHarnessController4 != null) {
-                    gameTestBackendHarnessController4.onVisibilityApplied(uIElementID, z);
                 }
             }
         }
     }
 
     public void InstallHud(final int playerId, final int serverId, final int serverType, final int isStreamerMode) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda49
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda51
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$InstallHud$29(playerId, serverId, serverType, isStreamerMode);
+                GTASA.this.lambda$InstallHud$32(playerId, serverId, serverType, isStreamerMode);
             }
         });
     }
 
-    public /* synthetic */ void lambda$InstallHud$29(int i, int i2, int i3, int i4) {
-        ((Hud) this.uiElementStore.getOrCreateDefault(UIElementID.HUD)).installHud(i, i2, i3, i4);
+    public /* synthetic */ void lambda$InstallHud$32(int i, int i2, int i3, int i4) {
+        Hud hud = (Hud) this.uiElementStore.getForBackendMessage(UIElementID.HUD);
+        if (hud == null) {
+            return;
+        }
+        hud.installHud(i, i2, i3, i4);
     }
 
     public void PlayVibration(long duration) {
         runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.lambda$PlayVibration$30();
+                GTASA.lambda$PlayVibration$33();
             }
         });
     }
 
     public void InstallAuthorization() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda10
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda14
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$InstallAuthorization$31();
+                GTASA.this.lambda$InstallAuthorization$34();
             }
         });
     }
 
-    public /* synthetic */ void lambda$InstallAuthorization$31() {
-        this.uiElementStore.getOrCreateDefault(UIElementID.AUTHORIZATION).onBackendMessage(FlavorUtilKt.isArizona() ? BuildConfig.FLAVOR : "rodina", 9);
+    public /* synthetic */ void lambda$InstallAuthorization$34() {
+        SAMPUIElement forBackendMessage = this.uiElementStore.getForBackendMessage(UIElementID.AUTHORIZATION);
+        if (forBackendMessage != null) {
+            forBackendMessage.onBackendMessage(FlavorUtilKt.isArizona() ? BuildConfig.FLAVOR : "rodina", 9);
+        }
     }
 
     public void UpdateOnline(final int currentOnline) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda12
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$UpdateOnline$32(currentOnline);
+                GTASA.this.lambda$UpdateOnline$35(currentOnline);
             }
         });
     }
 
-    public /* synthetic */ void lambda$UpdateOnline$32(int i) {
-        ((Hud) this.uiElementStore.getOrCreateDefault(UIElementID.HUD)).updateOnline(i);
+    public /* synthetic */ void lambda$UpdateOnline$35(int i) {
+        Hud hud = (Hud) this.uiElementStore.getForBackendMessage(UIElementID.HUD);
+        if (hud == null) {
+            return;
+        }
+        hud.updateOnline(i);
     }
 
     public void OnPlayerState(int currentState, int oldState) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda26
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda30
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.lambda$OnPlayerState$33();
+                GTASA.lambda$OnPlayerState$36();
             }
         });
     }
 
     public void UpdateMoney(final int money) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda43
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda46
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$UpdateMoney$34(money);
+                GTASA.this.lambda$UpdateMoney$37(money);
             }
         });
     }
 
-    public /* synthetic */ void lambda$UpdateMoney$34(int i) {
-        if (FlavorUtilKt.isArizona()) {
+    public /* synthetic */ void lambda$UpdateMoney$37(int i) {
+        Hud hud;
+        if (FlavorUtilKt.isArizona() || (hud = (Hud) this.uiElementStore.getForBackendMessage(UIElementID.HUD)) == null) {
             return;
         }
-        ((Hud) this.uiElementStore.getOrCreateDefault(UIElementID.HUD)).updateMoney(i);
-    }
-
-    public /* synthetic */ void lambda$SetAuthAwaitText$35(String str) {
-        this.uiElementStore.getOrCreateDefault(UIElementID.AUTHORIZATION).onBackendMessage(str, 10);
+        hud.updateMoney(i);
     }
 
     public void SetAuthAwaitText(final String text) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda48
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda50
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$SetAuthAwaitText$35(text);
+                GTASA.this.lambda$SetAuthAwaitText$38(text);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setAutocompleteState$36(boolean z) {
+    public /* synthetic */ void lambda$SetAuthAwaitText$38(String str) {
+        SAMPUIElement forPassiveBackendMessage = this.uiElementStore.getForPassiveBackendMessage(UIElementID.AUTHORIZATION);
+        if (forPassiveBackendMessage != null) {
+            forPassiveBackendMessage.onBackendMessage(str, RegistrationServerResponse.AUTH_AWAIT_TEXT.getId());
+        }
+    }
+
+    public /* synthetic */ void lambda$setAutocompleteState$39(boolean z) {
         this.isAutocompleteEnabled = z;
     }
 
     public void setAutocompleteState(final boolean state) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda46
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda48
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setAutocompleteState$36(state);
+                GTASA.this.lambda$setAutocompleteState$39(state);
             }
         });
     }
 
-    public /* synthetic */ void lambda$addSliderToAzVoiceSettings$37(byte[] bArr, int i, int i2, int i3) {
-        ((AzVoiceSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_SETTINGS)).addSlider(new SoundSliderData(new String(bArr), i, i2, i3, -1, -1));
-    }
-
     public int addSliderToAzVoiceSettings(final int minValue, final int maxValue, final int currentValue, final byte[] name) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda30
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda35
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$addSliderToAzVoiceSettings$37(name, maxValue, minValue, currentValue);
+                GTASA.this.lambda$addSliderToAzVoiceSettings$40(name, maxValue, minValue, currentValue);
             }
         });
         int i = this.voiceSettingPagination;
@@ -1207,68 +1293,87 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         return i;
     }
 
-    public /* synthetic */ void lambda$removeAllSlidersFormPlayersVoiceSettings$38() {
-        ((AzVoiceUserSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_PLAYERS_SETTINGS)).clearSliders();
+    public /* synthetic */ void lambda$addSliderToAzVoiceSettings$40(byte[] bArr, int i, int i2, int i3) {
+        AzVoiceSettings azVoiceSettings = (AzVoiceSettings) this.uiElementStore.getForBackendMessage(UIElementID.VOICE_SETTINGS);
+        if (azVoiceSettings != null) {
+            azVoiceSettings.addSlider(new SoundSliderData(new String(bArr), i, i2, i3, -1, -1));
+        }
     }
 
     public void removeAllSlidersFormPlayersVoiceSettings() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda39
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda43
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$removeAllSlidersFormPlayersVoiceSettings$38();
+                GTASA.this.lambda$removeAllSlidersFormPlayersVoiceSettings$41();
             }
         });
     }
 
-    public /* synthetic */ void lambda$addSliderToAzVoicePlayersSettings$39(byte[] bArr, int i, int i2, int i3, int i4) {
-        ((AzVoiceUserSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_PLAYERS_SETTINGS)).addSlider(new SoundSliderData(new String(bArr), i, i2, i3, i4, -1));
+    public /* synthetic */ void lambda$removeAllSlidersFormPlayersVoiceSettings$41() {
+        AzVoiceUserSettings azVoiceUserSettings = (AzVoiceUserSettings) this.uiElementStore.getForBackendMessage(UIElementID.VOICE_PLAYERS_SETTINGS);
+        if (azVoiceUserSettings != null) {
+            azVoiceUserSettings.clearSliders();
+        }
     }
 
     public void addSliderToAzVoicePlayersSettings(final int minValue, final int maxValue, final int currentValue, final byte[] playerName, final int playerId) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda4
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$addSliderToAzVoicePlayersSettings$39(playerName, maxValue, minValue, currentValue, playerId);
+                GTASA.this.lambda$addSliderToAzVoicePlayersSettings$42(playerName, maxValue, minValue, currentValue, playerId);
             }
         });
     }
 
-    public /* synthetic */ void lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$40(int i) {
-        ((AzVoiceUserSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_PLAYERS_SETTINGS)).removeSliderByPlayerId(i);
+    public /* synthetic */ void lambda$addSliderToAzVoicePlayersSettings$42(byte[] bArr, int i, int i2, int i3, int i4) {
+        AzVoiceUserSettings azVoiceUserSettings = (AzVoiceUserSettings) this.uiElementStore.getForBackendMessage(UIElementID.VOICE_PLAYERS_SETTINGS);
+        if (azVoiceUserSettings != null) {
+            azVoiceUserSettings.addSlider(new SoundSliderData(new String(bArr), i, i2, i3, i4, -1));
+        }
     }
 
     public void removeSliderFromAzVoicePlayerSettingsByPlayerId(final int id) {
         runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda33
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$40(id);
+                GTASA.this.lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$43(id);
             }
         });
     }
 
-    public /* synthetic */ void lambda$removeSliderFromAzVoiceSettingsBySliderId$41(int i) {
-        ((AzVoiceSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_SETTINGS)).removeSlider(i);
+    public /* synthetic */ void lambda$removeSliderFromAzVoicePlayerSettingsByPlayerId$43(int i) {
+        AzVoiceUserSettings azVoiceUserSettings = (AzVoiceUserSettings) this.uiElementStore.getForBackendMessage(UIElementID.VOICE_PLAYERS_SETTINGS);
+        if (azVoiceUserSettings != null) {
+            azVoiceUserSettings.removeSliderByPlayerId(i);
+        }
     }
 
     public void removeSliderFromAzVoiceSettingsBySliderId(final int id) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda13
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda16
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$removeSliderFromAzVoiceSettingsBySliderId$41(id);
+                GTASA.this.lambda$removeSliderFromAzVoiceSettingsBySliderId$44(id);
             }
         });
+    }
+
+    public /* synthetic */ void lambda$removeSliderFromAzVoiceSettingsBySliderId$44(int i) {
+        AzVoiceSettings azVoiceSettings = (AzVoiceSettings) this.uiElementStore.getForBackendMessage(UIElementID.VOICE_SETTINGS);
+        if (azVoiceSettings != null) {
+            azVoiceSettings.removeSlider(i);
+        }
     }
 
     public void setAzVoiceUserSliders(final byte[][] names, final int[] playerIDs, final int[] values, final int maxVal, final int minVal) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda28
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setAzVoiceUserSliders$42(names, playerIDs, values, maxVal, minVal);
+                GTASA.this.lambda$setAzVoiceUserSliders$45(names, playerIDs, values, maxVal, minVal);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setAzVoiceUserSliders$42(byte[][] bArr, int[] iArr, int[] iArr2, int i, int i2) {
+    public /* synthetic */ void lambda$setAzVoiceUserSliders$45(byte[][] bArr, int[] iArr, int[] iArr2, int i, int i2) {
         if (bArr.length != iArr.length || iArr.length != iArr2.length) {
             throw new IllegalArgumentException("Arrays must have same size");
         }
@@ -1276,39 +1381,54 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         for (int i3 = 0; i3 < bArr.length; i3++) {
             linkedList.add(new SoundSliderData(new String(bArr[i3]), i, i2, iArr2[i3], iArr[i3], -1));
         }
-        ((AzVoiceUserSettings) this.uiElementStore.getOrCreate(UIElementID.VOICE_PLAYERS_SETTINGS)).setSliders(linkedList);
-    }
-
-    public /* synthetic */ void lambda$showMessageFromNotification$43(Integer num) {
-        this.uiElementStore.getOrCreateDefault(UIElementID.ARIZONA_MOBILE_PHONE).onBackendMessage(num.toString(), 50);
+        AzVoiceUserSettings azVoiceUserSettings = (AzVoiceUserSettings) this.uiElementStore.getForBackendMessage(UIElementID.VOICE_PLAYERS_SETTINGS);
+        if (azVoiceUserSettings != null) {
+            azVoiceUserSettings.setSliders(linkedList);
+        }
     }
 
     public void showMessageFromNotification(final Integer notificationId) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda8
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$showMessageFromNotification$43(notificationId);
+                GTASA.this.lambda$showMessageFromNotification$46(notificationId);
             }
         });
+    }
+
+    public /* synthetic */ void lambda$showMessageFromNotification$46(Integer num) {
+        SAMPUIElement forBackendMessage = this.uiElementStore.getForBackendMessage(UIElementID.ARIZONA_MOBILE_PHONE);
+        if (forBackendMessage != null) {
+            forBackendMessage.onBackendMessage(num.toString(), 50);
+        }
     }
 
     public void showPlayerDialog(final int sampDialogID, final int style, final byte[] caption, final byte[] infoText, final byte[] leftButton, final byte[] rightButton, final byte[] placeholder) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda2
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$showPlayerDialog$44(sampDialogID, style, caption, infoText, leftButton, rightButton, placeholder);
+                GTASA.this.lambda$showPlayerDialog$47(sampDialogID, style, caption, infoText, leftButton, rightButton, placeholder);
             }
         });
     }
 
-    public /* synthetic */ void lambda$showPlayerDialog$44(int i, int i2, byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4, byte[] bArr5) {
+    public /* synthetic */ void lambda$showPlayerDialog$47(int i, int i2, byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4, byte[] bArr5) {
         destroyDialog();
         this.uiElements.put(Integer.valueOf(UIElementID.DIALOG.getId()), DialogFactory.INSTANCE.createDialog(this, i, i2, new String(bArr), new String(bArr2), new String(bArr3), new String(bArr4), UIElementID.DIALOG.getId(), new String(bArr5), this));
     }
 
+    public /* synthetic */ void lambda$removeMainScreen$48() {
+        this.uiElementStore.removeElement(UIElementID.MAIN_BATTLE_PASS);
+    }
+
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
     public void removeMainScreen() {
-        this.uiElementStore.removeElement(UIElementID.MAIN_BATTLE_PASS);
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda44
+            @Override // java.lang.Runnable
+            public final void run() {
+                GTASA.this.lambda$removeMainScreen$48();
+            }
+        });
     }
 
     @Override // ru.mrlargha.commonui.core.IBackendNotifier
@@ -1316,8 +1436,13 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
         Log.v(tag, message);
     }
 
-    private boolean isWorkshopOnScreen() {
-        return this.uiElementStore.isElementExist(UIElementID.WORKSHOP) && this.uiElementStore.getOrCreateDefault(UIElementID.WORKSHOP).isOnScreen();
+    private boolean isWorkshopInventoryFlowActive() {
+        SAMPUIElement existing = this.uiElementStore.getExisting(UIElementID.WORKSHOP);
+        if (existing == null || !existing.isOnScreen()) {
+            return false;
+        }
+        UIElementID inventoryCompanionPayloadTarget = this.uiElementStore.getInventoryCompanionPayloadTarget();
+        return inventoryCompanionPayloadTarget == null || inventoryCompanionPayloadTarget == UIElementID.WORKSHOP;
     }
 
     private boolean isInventoryMessageType(int subID, String message, int inventoryType) {
@@ -1336,59 +1461,67 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     }
 
     private void dispatchFrontendMessageInternal(final int frontendID, final int subID, final String message, final boolean allowDebugLoginStart, final boolean recordTrace) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda18
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda21
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$dispatchFrontendMessageInternal$45(frontendID, subID, message, allowDebugLoginStart, recordTrace);
+                GTASA.this.lambda$dispatchFrontendMessageInternal$49(frontendID, subID, message, allowDebugLoginStart, recordTrace);
             }
         });
     }
 
-    public /* synthetic */ void lambda$dispatchFrontendMessageInternal$45(int i, int i2, String str, boolean z, boolean z2) {
-        UIElementID uIElementID = UIElementID.getUIElementID(i, FlavorUtilKt.getProjectType());
-        Log.i(TAG, "sendFrontendMessage: name:" + uIElementID.name() + ", id:" + i + ", subID:" + i2 + "\nJSON: " + str);
-        FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putInt("sendFrontendMessage_frontendID", i).putInt("sendFrontendMessage_subID", i2).putString("sendFrontendMessage_message", str).build());
-        GameTestBackendHarnessController gameTestBackendHarnessController = this.gameTestBackendHarness;
-        if (gameTestBackendHarnessController == null || !gameTestBackendHarnessController.onLiveFrontendMessage(i, uIElementID, i2, str, z, z2)) {
-            if (i == UIElementID.SNACKBAR.getId()) {
-                ArizonaSnackbar arizonaSnackbar = this.arizonaSnackbar;
-                if (arizonaSnackbar != null) {
-                    arizonaSnackbar.onBackendMessage(str, i2);
+    public /* synthetic */ void lambda$dispatchFrontendMessageInternal$49(int i, int i2, String str, boolean z, boolean z2) {
+        boolean deliverBackendMessage;
+        GameTestBackendHarnessController gameTestBackendHarnessController;
+        if (this.uiElementStore.isHostActive()) {
+            UIElementID uIElementID = UIElementID.getUIElementID(i, FlavorUtilKt.getProjectType());
+            Log.i(TAG, "sendFrontendMessage: name:" + uIElementID.name() + ", id:" + i + ", subID:" + i2 + "\nJSON: " + str);
+            FirebaseCrashlytics.getInstance().setCustomKeys(new CustomKeysAndValues.Builder().putInt("sendFrontendMessage_frontendID", i).putInt("sendFrontendMessage_subID", i2).putString("sendFrontendMessage_message", str).build());
+            GameTestBackendHarnessController gameTestBackendHarnessController2 = this.gameTestBackendHarness;
+            if (gameTestBackendHarnessController2 == null || !gameTestBackendHarnessController2.onLiveFrontendMessage(i, uIElementID, i2, str, z, z2)) {
+                if (i == UIElementID.SNACKBAR.getId()) {
+                    ArizonaSnackbar arizonaSnackbar = this.arizonaSnackbar;
+                    if (arizonaSnackbar != null) {
+                        arizonaSnackbar.onBackendMessage(str, i2);
+                    } else {
+                        this.snackbarJson = str;
+                    }
+                } else if (i == UIElementID.STREAM_VIDEO.getId()) {
+                    StreamVideo streamVideo = this.streamVideo;
+                    if (streamVideo != null) {
+                        streamVideo.onBackendMessage(str, i2);
+                    }
+                } else if (uIElementID == UIElementID.INVENTORY && isWorkshopInventoryFlowActive() && (isInventoryMessageType(i2, str, 5) || isInventoryMessageType(i2, str, 28))) {
+                    if (this.uiElementStore.deliverBackendMessage(UIElementID.WORKSHOP, str, UIElementID.INVENTORY.getId()) && (gameTestBackendHarnessController = this.gameTestBackendHarness) != null) {
+                        gameTestBackendHarnessController.onFrontendMessageDelivered(UIElementID.WORKSHOP);
+                    }
                 } else {
-                    this.snackbarJson = str;
-                }
-            } else if (i == UIElementID.STREAM_VIDEO.getId()) {
-                StreamVideo streamVideo = this.streamVideo;
-                if (streamVideo != null) {
-                    streamVideo.onBackendMessage(str, i2);
-                }
-            } else if (uIElementID == UIElementID.INVENTORY && isWorkshopOnScreen() && (isInventoryMessageType(i2, str, 5) || isInventoryMessageType(i2, str, 28))) {
-                this.uiElementStore.getOrCreateDefault(UIElementID.WORKSHOP).onBackendMessage(str, UIElementID.INVENTORY.getId());
-                GameTestBackendHarnessController gameTestBackendHarnessController2 = this.gameTestBackendHarness;
-                if (gameTestBackendHarnessController2 != null) {
-                    gameTestBackendHarnessController2.onFrontendMessageDelivered(UIElementID.WORKSHOP);
-                }
-            } else {
-                try {
-                    this.uiElementStore.getOrCreateDefault(uIElementID).onBackendMessage(str, i2);
-                    GameTestBackendHarnessController gameTestBackendHarnessController3 = this.gameTestBackendHarness;
-                    if (gameTestBackendHarnessController3 != null) {
-                        gameTestBackendHarnessController3.onFrontendMessageDelivered(uIElementID);
-                    }
-                    if (uIElementID.getId() == UIElementID.INVENTORY_SECURITY_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_VEHICLE_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_WAREHOUSE.getId() || uIElementID.getId() == UIElementID.INVENTORY_WALLET_SCREEN.getId()) {
-                        this.uiElementStore.getOrCreateDefault(UIElementID.INVENTORY).onBackendMessage(str, i2);
-                    }
-                    if (uIElementID == UIElementID.INVENTORY) {
-                        if (i2 == 2 && isWorkshopOnScreen()) {
-                            this.uiElementStore.getOrCreateDefault(UIElementID.WORKSHOP).onBackendMessage(str, UIElementID.INVENTORY.getId());
-                        } else if (i2 == 2 && this.uiElementStore.isElementExist(UIElementID.TRADE)) {
-                            this.uiElementStore.getOrCreateDefault(UIElementID.TRADE).onBackendMessage(str, UIElementID.INVENTORY.getId());
-                        } else if (i2 == 2 && this.uiElementStore.isElementExist(UIElementID.ARIZONA_GLOVO)) {
-                            this.uiElementStore.getOrCreateDefault(UIElementID.ARIZONA_GLOVO).onBackendMessage(str, UIElementID.INVENTORY.getId());
+                    try {
+                        if (uIElementID == UIElementID.AUTHORIZATION && i2 == RegistrationServerResponse.AUTH_AWAIT_TEXT.getId()) {
+                            deliverBackendMessage = this.uiElementStore.deliverPassiveBackendMessage(uIElementID, str, i2);
+                        } else {
+                            deliverBackendMessage = this.uiElementStore.deliverBackendMessage(uIElementID, str, i2);
                         }
+                        if (deliverBackendMessage) {
+                            GameTestBackendHarnessController gameTestBackendHarnessController3 = this.gameTestBackendHarness;
+                            if (gameTestBackendHarnessController3 != null) {
+                                gameTestBackendHarnessController3.onFrontendMessageDelivered(uIElementID);
+                            }
+                            if (uIElementID.getId() == UIElementID.INVENTORY_SECURITY_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_VEHICLE_SCREEN.getId() || uIElementID.getId() == UIElementID.INVENTORY_WAREHOUSE.getId() || uIElementID.getId() == UIElementID.INVENTORY_WALLET_SCREEN.getId()) {
+                                this.uiElementStore.deliverBackendMessage(UIElementID.INVENTORY, str, i2);
+                            }
+                            if (uIElementID.getId() == UIElementID.INVENTORY.getId() && i2 == 2) {
+                                UIElementID inventoryCompanionPayloadTarget = this.uiElementStore.getInventoryCompanionPayloadTarget();
+                                if (inventoryCompanionPayloadTarget == null && isWorkshopInventoryFlowActive()) {
+                                    inventoryCompanionPayloadTarget = UIElementID.WORKSHOP;
+                                }
+                                if (inventoryCompanionPayloadTarget != null) {
+                                    this.uiElementStore.deliverBackendMessage(inventoryCompanionPayloadTarget, str, UIElementID.INVENTORY.getId());
+                                }
+                            }
+                        }
+                    } catch (IllegalArgumentException e) {
+                        Log.w(TAG, "sendFrontendMessage: cannot access uielement " + uIElementID, e);
                     }
-                } catch (IllegalArgumentException e) {
-                    Log.w(TAG, "sendFrontendMessage: cannot access uielement " + uIElementID, e);
                 }
             }
         }
@@ -1442,30 +1575,30 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
     public void setupScene() {
         Log.d("setCarModel", "setupScene: ");
         final Position positionModelCentered = ListenerKt.positionModelCentered(this, 1.0f);
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda16
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda19
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setupScene$46(positionModelCentered);
+                GTASA.this.lambda$setupScene$50(positionModelCentered);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setupScene$46(Position position) {
+    public /* synthetic */ void lambda$setupScene$50(Position position) {
         Cef3DSetupScene(position.getX(), position.getY(), position.getW(), position.getH(), 60, (byte) 0, (byte) 0, (byte) 0);
     }
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void setCarModel(final int id, final boolean isSimple, final String bg, final int mainColor, final int secondColor, final String bgPath, final int wear, final boolean isCar) {
         this._isSimple = isSimple;
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda27
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda31
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setCarModel$47(id, isSimple, isCar, wear, mainColor, secondColor, bgPath, bg);
+                GTASA.this.lambda$setCarModel$51(id, isSimple, isCar, wear, mainColor, secondColor, bgPath, bg);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setCarModel$47(int i, boolean z, boolean z2, int i2, int i3, int i4, String str, String str2) {
+    public /* synthetic */ void lambda$setCarModel$51(int i, boolean z, boolean z2, int i2, int i3, int i4, String str, String str2) {
         Cef3DRemoveModels();
         Cef3DAddModel(i, z);
         if (z2) {
@@ -1478,7 +1611,7 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void closeScene() {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda56
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 GTASA.this.Cef3DRemoveModels();
@@ -1488,77 +1621,77 @@ public class GTASA extends GTASAInternal implements CustomKeyboard.InputListener
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void rotateModel(final int id, final float x, final float y, final float z) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda45
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda47
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$rotateModel$48(id, x, y, z);
+                GTASA.this.lambda$rotateModel$52(id, x, y, z);
             }
         });
     }
 
-    public /* synthetic */ void lambda$rotateModel$48(int i, float f, float f2, float f3) {
+    public /* synthetic */ void lambda$rotateModel$52(int i, float f, float f2, float f3) {
         Cef3DRotateModel(i, this._isSimple, f, f2, f3);
     }
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void scaleModel(final int id, final float scale) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda25
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda29
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$scaleModel$49(id, scale);
+                GTASA.this.lambda$scaleModel$53(id, scale);
             }
         });
     }
 
-    public /* synthetic */ void lambda$scaleModel$49(int i, float f) {
+    public /* synthetic */ void lambda$scaleModel$53(int i, float f) {
         Cef3DScaleModel(i, this._isSimple, f);
     }
 
     @Override // ru.mrlargha.commonui.elements.items3d.ItemScene
     public void setCarModule(final int id, final int module, final boolean isSimple) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda42
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda45
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$setCarModule$50(id, module, isSimple);
+                GTASA.this.lambda$setCarModule$54(id, module, isSimple);
             }
         });
     }
 
-    public /* synthetic */ void lambda$setCarModule$50(int i, int i2, boolean z) {
+    public /* synthetic */ void lambda$setCarModule$54(int i, int i2, boolean z) {
         Cef3DSetVehicleComponent(i, i2, z, false);
     }
 
     @Override // ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudListener
     public void hudSetTimer(final int seconds) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda24
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda28
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$hudSetTimer$51(seconds);
+                GTASA.this.lambda$hudSetTimer$55(seconds);
             }
         });
     }
 
     @Override // ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudListener
     public void hudSetTimer2(final int seconds, final int maxTime, final int type) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda7
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$hudSetTimer2$52(seconds, maxTime, type);
+                GTASA.this.lambda$hudSetTimer2$56(seconds, maxTime, type);
             }
         });
     }
 
     @Override // ru.mrlargha.commonui.elements.hud.presentation.hud_screens.HudListener
     public void hudScale(final float scale) {
-        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda5
+        runOnUiThread(new Runnable() { // from class: com.arizona.game.GTASA$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
-                GTASA.this.lambda$hudScale$53(scale);
+                GTASA.this.lambda$hudScale$57(scale);
             }
         });
     }
 
-    public /* synthetic */ void lambda$hudScale$53(float f) {
+    public /* synthetic */ void lambda$hudScale$57(float f) {
         SetHudScale(f, f);
     }
 

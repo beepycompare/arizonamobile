@@ -1,11 +1,13 @@
 package ru.mrlargha.commonui.elements.donate.presentation;
 
 import java.util.List;
+import java.util.Map;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
@@ -16,27 +18,33 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.StateFlow;
+import ru.mrlargha.commonui.elements.donate.presentation.DonateScreen;
 import ru.mrlargha.commonui.elements.donate.presentation.UiState;
-import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModelUi;
+import ru.mrlargha.commonui.elements.donate.presentation.models.DonatePayPassLevel;
+import ru.mrlargha.commonui.elements.donate.presentation.pages.DonatePayPass;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {327}, m = "invokeSuspend", n = {}, nl = {344}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3", f = "DonateScreen.kt", i = {}, l = {417}, m = "invokeSuspend", n = {}, nl = {427}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    final /* synthetic */ long $currentSessionGeneration;
+    final /* synthetic */ DonateStates $sessionStates;
     int label;
     final /* synthetic */ DonateScreen this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public DonateScreen$setupCollectors$1$3(DonateScreen donateScreen, Continuation<? super DonateScreen$setupCollectors$1$3> continuation) {
+    public DonateScreen$setupCollectors$1$3(DonateStates donateStates, DonateScreen donateScreen, long j, Continuation<? super DonateScreen$setupCollectors$1$3> continuation) {
         super(2, continuation);
+        this.$sessionStates = donateStates;
         this.this$0 = donateScreen;
+        this.$currentSessionGeneration = j;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new DonateScreen$setupCollectors$1$3(this.this$0, continuation);
+        return new DonateScreen$setupCollectors$1$3(this.$sessionStates, this.this$0, this.$currentSessionGeneration, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -47,22 +55,26 @@ public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implem
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: DonateScreen.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {328}, m = "invokeSuspend", n = {}, nl = {343}, s = {}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1", f = "DonateScreen.kt", i = {}, l = {418}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$3$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        final /* synthetic */ long $currentSessionGeneration;
+        final /* synthetic */ DonateStates $sessionStates;
         int label;
         final /* synthetic */ DonateScreen this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        AnonymousClass1(DonateScreen donateScreen, Continuation<? super AnonymousClass1> continuation) {
+        AnonymousClass1(DonateStates donateStates, DonateScreen donateScreen, long j, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
+            this.$sessionStates = donateStates;
             this.this$0 = donateScreen;
+            this.$currentSessionGeneration = j;
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.this$0, continuation);
+            return new AnonymousClass1(this.$sessionStates, this.this$0, this.$currentSessionGeneration, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
@@ -72,30 +84,40 @@ public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implem
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            DonateStates donateStates;
-            StateFlow<UiState<List<DonateBoostModelUi>>> boostState;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             int i = this.label;
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
-                donateStates = this.this$0.states;
-                if (donateStates == null || (boostState = donateStates.getBoostState()) == null) {
-                    return Unit.INSTANCE;
-                }
+                StateFlow<UiState<List<DonatePayPassLevel>>> payPassLevelsState = this.$sessionStates.getPayPassLevelsState();
                 final DonateScreen donateScreen = this.this$0;
+                final DonateStates donateStates = this.$sessionStates;
+                final long j = this.$currentSessionGeneration;
                 this.label = 1;
-                if (boostState.collect(new FlowCollector() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen.setupCollectors.1.3.1.1
+                if (payPassLevelsState.collect(new FlowCollector() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen.setupCollectors.1.3.1.1
                     @Override // kotlinx.coroutines.flow.FlowCollector
                     public /* bridge */ /* synthetic */ Object emit(Object obj2, Continuation continuation) {
                         return emit((UiState) obj2, (Continuation<? super Unit>) continuation);
                     }
 
-                    public final Object emit(UiState<? extends List<DonateBoostModelUi>> uiState, Continuation<? super Unit> continuation) {
-                        if (!(uiState instanceof UiState.Error) && !(uiState instanceof UiState.Loading)) {
-                            if (!(uiState instanceof UiState.Successful)) {
-                                throw new NoWhenBranchMatchedException();
+                    public final Object emit(UiState<? extends List<DonatePayPassLevel>> uiState, Continuation<? super Unit> continuation) {
+                        boolean isCurrentSession;
+                        Map map;
+                        isCurrentSession = DonateScreen.this.isCurrentSession(donateStates, j);
+                        if (isCurrentSession) {
+                            map = DonateScreen.this.pages;
+                            Object obj2 = map.get(DonateScreen.Pages.PAYPASS);
+                            DonatePayPass donatePayPass = obj2 instanceof DonatePayPass ? (DonatePayPass) obj2 : null;
+                            if (donatePayPass == null) {
+                                return Unit.INSTANCE;
                             }
-                            DonateScreen.this.dialogModel = (DonateBoostModelUi) ((List) ((UiState.Successful) uiState).getData()).get(0);
+                            if (uiState instanceof UiState.Successful) {
+                                donatePayPass.applyCatalog((List) ((UiState.Successful) uiState).getData());
+                            } else if (!(uiState instanceof UiState.Error) && !(uiState instanceof UiState.Loading)) {
+                                throw new NoWhenBranchMatchedException();
+                            } else {
+                                donatePayPass.applyCatalog(CollectionsKt.emptyList());
+                            }
+                            return Unit.INSTANCE;
                         }
                         return Unit.INSTANCE;
                     }
@@ -118,7 +140,7 @@ public final class DonateScreen$setupCollectors$1$3 extends SuspendLambda implem
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             this.label = 1;
-            if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.this$0, null), this) == coroutine_suspended) {
+            if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.$sessionStates, this.this$0, this.$currentSessionGeneration, null), this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

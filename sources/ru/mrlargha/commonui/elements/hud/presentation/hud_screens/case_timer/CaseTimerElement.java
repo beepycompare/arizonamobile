@@ -15,6 +15,7 @@ import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.HudElementCasesTimerBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
@@ -79,8 +80,9 @@ public final class CaseTimerElement {
         }
         this.timer = null;
         Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso.load(projectResourceUrl$default + "systems/cases/" + caseTimerInfo.getImage() + ".webp").into(this.binding.image);
+        PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "systems/cases/" + caseTimerInfo.getImage() + ".webp").into(this.binding.image);
         this.binding.timer.setText(TimeConverterKt.toTimeString(caseTimerInfo.getTime()));
         final long time = caseTimerInfo.getTime() * 1000;
         this.timer = new CountDownTimer(time) { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement$setData$1

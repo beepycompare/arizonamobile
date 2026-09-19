@@ -25,6 +25,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizona.cars.QualityType;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: CarInfoListAdapter.kt */
@@ -111,7 +112,9 @@ public final class CarInfoListAdapter extends RecyclerView.Adapter<ViewHolder> {
         });
         binding.carName.setText(carInfoListItem.getTitle());
         String str = UtilsKt.isArizonaType() ? "assets/images/inventory/vehicles/256/" : "assets/images/inventory/vehicles/512/";
-        Picasso.get().load(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str + carInfoListItem.getSysName()).into(binding.carIc);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + str + carInfoListItem.getSysName()).into(binding.carIc);
         String status = carInfoListItem.getStatus();
         switch (status.hashCode()) {
             case -2058533514:

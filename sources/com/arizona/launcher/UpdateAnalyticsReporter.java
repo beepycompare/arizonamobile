@@ -1,10 +1,12 @@
 package com.arizona.launcher;
 
 import android.content.Context;
+import com.arizona.launcher.updater.http.UpdateMetadataHttpResult;
 import com.arizona.launcher.util.FileServers;
 import java.util.LinkedHashMap;
 import java.util.Set;
 import kotlin.Metadata;
+import kotlin.NoWhenBranchMatchedException;
 import kotlin.Pair;
 import kotlin.TuplesKt;
 import kotlin.Unit;
@@ -14,7 +16,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UpdateAnalyticsReporter.kt */
-@Metadata(d1 = {"\u0000T\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \"2\u00020\u0001:\u0001\"B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\u0001¢\u0006\u0004\b\t\u0010\nJ&\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00102\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u0012J0\u0010\u0013\u001a\u00020\f2\u0006\u0010\u0014\u001a\u00020\u00122\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012J0\u0010\u001a\u001a\u00020\f2\u0006\u0010\u0014\u001a\u00020\u00122\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012J\u0006\u0010\u001c\u001a\u00020\fJ:\u0010\u001d\u001a\u00020\f2\u0006\u0010\u001e\u001a\u00020\u00122\u0006\u0010\u0014\u001a\u00020\u00122\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u001b\u001a\u00020\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0002J\u0010\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0016H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b$\u0012\b\b%\u0012\u0004\b\u0003\u0010\u0000¨\u0006#"}, d2 = {"Lcom/arizona/launcher/UpdateAnalyticsReporter;", "", "eventSink", "Lcom/arizona/launcher/UpdateAnalyticsEventSink;", "firstLaunchStore", "Lcom/arizona/launcher/UpdateFirstLaunchStore;", "environment", "Lcom/arizona/launcher/UpdateAnalyticsEnvironment;", "firstLaunchLock", "<init>", "(Lcom/arizona/launcher/UpdateAnalyticsEventSink;Lcom/arizona/launcher/UpdateFirstLaunchStore;Lcom/arizona/launcher/UpdateAnalyticsEnvironment;Ljava/lang/Object;)V", "reportError", "", "error", "Lcom/arizona/launcher/UpdateAnalyticsErrorEvent;", "failureDetails", "Lcom/arizona/launcher/DownloadFailureDetails;", "serverUrl", "", "reportArchiveIndexRetry", "packageId", "retryAttempt", "", "delayMs", "", "failure", "reportArchivePackageRetry", "failureSubtype", "finishFirstLaunchSession", "reportArchiveRetry", "stage", "markFirstLaunchErrorReported", "", "errorCode", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 )2\u00020\u0001:\u0001)B)\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\u0001¢\u0006\u0004\b\t\u0010\nJ2\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00102\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u00122\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u0012J \u0010\u0014\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0015\u001a\u00020\u00162\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012J0\u0010\u0017\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012J0\u0010\u001e\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001f\u001a\u00020\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012J \u0010 \u001a\u00020\f2\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001f\u001a\u00020\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012J\u0006\u0010!\u001a\u00020\fJ:\u0010\"\u001a\u00020\f2\u0006\u0010#\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00122\u0006\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001f\u001a\u00020\u00122\b\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0002J\u0017\u0010$\u001a\u0004\u0018\u00010\u00102\u0006\u0010\u0015\u001a\u00020\u0016H\u0000¢\u0006\u0002\b%J\u0010\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u001aH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b+\u0012\b\b,\u0012\u0004\b\u0003\u0010\u0000¨\u0006*"}, d2 = {"Lcom/arizona/launcher/UpdateAnalyticsReporter;", "", "eventSink", "Lcom/arizona/launcher/UpdateAnalyticsEventSink;", "firstLaunchStore", "Lcom/arizona/launcher/UpdateFirstLaunchStore;", "environment", "Lcom/arizona/launcher/UpdateAnalyticsEnvironment;", "firstLaunchLock", "<init>", "(Lcom/arizona/launcher/UpdateAnalyticsEventSink;Lcom/arizona/launcher/UpdateFirstLaunchStore;Lcom/arizona/launcher/UpdateAnalyticsEnvironment;Ljava/lang/Object;)V", "reportError", "", "error", "Lcom/arizona/launcher/UpdateAnalyticsErrorEvent;", "failureDetails", "Lcom/arizona/launcher/DownloadFailureDetails;", "serverUrl", "", "errorStage", "reportMetadataError", "result", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", "reportArchiveIndexRetry", "packageId", "retryAttempt", "", "delayMs", "", "failure", "reportArchivePackageRetry", "failureSubtype", "reportLauncherMetadataRetry", "finishFirstLaunchSession", "reportArchiveRetry", "stage", "metadataFailureDetails", "metadataFailureDetails$app", "markFirstLaunchErrorReported", "", "errorCode", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class UpdateAnalyticsReporter {
     private final UpdateAnalyticsEnvironment environment;
@@ -39,17 +41,20 @@ public final class UpdateAnalyticsReporter {
         this(updateAnalyticsEventSink, updateFirstLaunchStore, updateAnalyticsEnvironment, (i & 8) != 0 ? new Object() : obj);
     }
 
-    public static /* synthetic */ void reportError$default(UpdateAnalyticsReporter updateAnalyticsReporter, UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, DownloadFailureDetails downloadFailureDetails, String str, int i, Object obj) {
+    public static /* synthetic */ void reportError$default(UpdateAnalyticsReporter updateAnalyticsReporter, UpdateAnalyticsErrorEvent updateAnalyticsErrorEvent, DownloadFailureDetails downloadFailureDetails, String str, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
             downloadFailureDetails = null;
         }
         if ((i & 4) != 0) {
             str = null;
         }
-        updateAnalyticsReporter.reportError(updateAnalyticsErrorEvent, downloadFailureDetails, str);
+        if ((i & 8) != 0) {
+            str2 = null;
+        }
+        updateAnalyticsReporter.reportError(updateAnalyticsErrorEvent, downloadFailureDetails, str, str2);
     }
 
-    public final void reportError(UpdateAnalyticsErrorEvent error, DownloadFailureDetails downloadFailureDetails, String str) {
+    public final void reportError(UpdateAnalyticsErrorEvent error, DownloadFailureDetails downloadFailureDetails, String str, String str2) {
         String hostOf;
         Intrinsics.checkNotNullParameter(error, "error");
         LinkedHashMap linkedMapOf = MapsKt.linkedMapOf(TuplesKt.to(UpdateAnalyticsContract.LEGACY_CALL_SITE_PARAM, Integer.valueOf(error.getLegacyCallSite())), TuplesKt.to(UpdateAnalyticsContract.SOURCE_LINE_PARAM, Integer.valueOf(error.getLegacyCallSite())), TuplesKt.to("errno", Integer.valueOf(error.getErrno().getCode())), TuplesKt.to(UpdateAnalyticsContract.ERRNO_CODE_PARAM, Integer.valueOf(error.getErrno().getCode())), TuplesKt.to(UpdateAnalyticsContract.ERRNO_NAME_PARAM, error.getErrno().name()), TuplesKt.to(UpdateAnalyticsContract.ERROR_CODE_PARAM, Integer.valueOf(error.getCode())), TuplesKt.to(UpdateAnalyticsContract.ERROR_TYPE_PARAM, error.name()));
@@ -60,6 +65,9 @@ public final class UpdateAnalyticsReporter {
             if (httpStatus != null) {
                 linkedHashMap.put(UpdateAnalyticsContract.HTTP_STATUS_PARAM, Integer.valueOf(httpStatus.intValue()));
             }
+        }
+        if (str2 != null) {
+            linkedMapOf.put(UpdateAnalyticsContract.ERROR_STAGE_PARAM, str2);
         }
         LinkedHashMap linkedHashMap2 = linkedMapOf;
         linkedHashMap2.put(UpdateAnalyticsContract.ERROR_CONTEXT_PARAM, error.getContext());
@@ -85,6 +93,19 @@ public final class UpdateAnalyticsReporter {
         }
     }
 
+    public final void reportMetadataError(UpdateAnalyticsErrorEvent error, UpdateMetadataHttpResult result, String str) {
+        String str2;
+        Intrinsics.checkNotNullParameter(error, "error");
+        Intrinsics.checkNotNullParameter(result, "result");
+        DownloadFailureDetails metadataFailureDetails$app = metadataFailureDetails$app(result);
+        if (error == UpdateAnalyticsErrorEvent.LAUNCHER_UPDATE_CHECK_REQUEST_FAILED) {
+            str2 = UpdateAnalyticsContract.LAUNCHER_METADATA_ERROR_STAGE;
+        } else {
+            str2 = UpdateAnalyticsContract.GAME_METADATA_ERROR_STAGE;
+        }
+        reportError(error, metadataFailureDetails$app, str, str2);
+    }
+
     public final void reportArchiveIndexRetry(String packageId, int i, long j, DownloadFailureDetails failure, String str) {
         Intrinsics.checkNotNullParameter(packageId, "packageId");
         Intrinsics.checkNotNullParameter(failure, "failure");
@@ -95,6 +116,23 @@ public final class UpdateAnalyticsReporter {
         Intrinsics.checkNotNullParameter(packageId, "packageId");
         Intrinsics.checkNotNullParameter(failureSubtype, "failureSubtype");
         reportArchiveRetry(UpdateAnalyticsContract.ARCHIVE_PACKAGE_RETRY_STAGE, packageId, i, j, failureSubtype, str);
+    }
+
+    public final void reportLauncherMetadataRetry(int i, String failureSubtype, String str) {
+        String hostOf;
+        Intrinsics.checkNotNullParameter(failureSubtype, "failureSubtype");
+        UpdateAnalyticsEventSink updateAnalyticsEventSink = this.eventSink;
+        Pair[] pairArr = new Pair[5];
+        pairArr[0] = TuplesKt.to(UpdateAnalyticsContract.RETRY_STAGE_PARAM, UpdateAnalyticsContract.LAUNCHER_METADATA_ERROR_STAGE);
+        pairArr[1] = TuplesKt.to(UpdateAnalyticsContract.RETRY_ATTEMPT_PARAM, Integer.valueOf(i));
+        pairArr[2] = TuplesKt.to(UpdateAnalyticsContract.RETRY_DELAY_MS_PARAM, 0L);
+        pairArr[3] = TuplesKt.to(UpdateAnalyticsContract.ERROR_SUBTYPE_PARAM, failureSubtype);
+        hostOf = UpdateAnalyticsReporterKt.hostOf(str);
+        if (hostOf == null) {
+            hostOf = "";
+        }
+        pairArr[4] = TuplesKt.to(UpdateAnalyticsContract.SERVER_HOST_PARAM, hostOf);
+        updateAnalyticsEventSink.logEvent(UpdateAnalyticsContract.DOWNLOAD_RETRY_EVENT, MapsKt.linkedMapOf(pairArr));
     }
 
     public final void finishFirstLaunchSession() {
@@ -119,6 +157,30 @@ public final class UpdateAnalyticsReporter {
         }
         pairArr[5] = TuplesKt.to(UpdateAnalyticsContract.SERVER_HOST_PARAM, hostOf);
         updateAnalyticsEventSink.logEvent(UpdateAnalyticsContract.DOWNLOAD_RETRY_EVENT, MapsKt.linkedMapOf(pairArr));
+    }
+
+    public final DownloadFailureDetails metadataFailureDetails$app(UpdateMetadataHttpResult result) {
+        Intrinsics.checkNotNullParameter(result, "result");
+        if (result instanceof UpdateMetadataHttpResult.Timeout) {
+            return new DownloadFailureDetails("TIMEOUT", null, DownloadFailureKind.TIMEOUT, 2, null);
+        }
+        if (result instanceof UpdateMetadataHttpResult.HttpError) {
+            UpdateMetadataHttpResult.HttpError httpError = (UpdateMetadataHttpResult.HttpError) result;
+            return new DownloadFailureDetails("HTTP_" + httpError.getStatusCode(), Integer.valueOf(httpError.getStatusCode()), DownloadFailureKind.HTTP);
+        } else if (result instanceof UpdateMetadataHttpResult.NetworkError) {
+            return DownloadFailureClassifier.INSTANCE.classify(((UpdateMetadataHttpResult.NetworkError) result).getCause());
+        } else {
+            if (result instanceof UpdateMetadataHttpResult.InvalidRequest) {
+                return new DownloadFailureDetails("INVALID_REQUEST", null, null, 6, null);
+            }
+            if (result instanceof UpdateMetadataHttpResult.BodyTooLarge) {
+                return new DownloadFailureDetails("BODY_TOO_LARGE", null, null, 6, null);
+            }
+            if (result instanceof UpdateMetadataHttpResult.Success) {
+                return null;
+            }
+            throw new NoWhenBranchMatchedException();
+        }
     }
 
     private final boolean markFirstLaunchErrorReported(int i) {

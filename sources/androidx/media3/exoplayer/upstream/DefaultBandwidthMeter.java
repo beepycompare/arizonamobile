@@ -34,6 +34,8 @@ import kotlin.text.Typography;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import okhttp3.internal.ws.WebSocketProtocol;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
+import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
 /* loaded from: classes3.dex */
 public final class DefaultBandwidthMeter implements BandwidthMeter, TransferListener {
     private static final int BYTES_TRANSFERRED_FOR_ESTIMATE = 524288;
@@ -2108,7 +2110,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{1, 0, 0, 1, 3, 2};
             case TsExtractor.TS_STREAM_TYPE_DTS_UHD /* 139 */:
                 return new int[]{2, 0, 2, 2, 2, 2};
-            case 140:
+            case TrainSpeedGaugeView.MAX_SPEED_KMH /* 140 */:
                 return new int[]{0, 2, 4, 4, 3, 1};
             case 142:
                 return new int[]{2, 1, 2, 3, 2, 2};
@@ -2136,7 +2138,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{2, 1, 4, 3, 0, 4};
             case 159:
                 return new int[]{0, 0, 3, 0, 0, 2};
-            case 160:
+            case RodinaTrainSpeedGaugeView.MAX_SPEED_KMH /* 160 */:
                 return new int[]{2, 2, 4, 3, 2, 2};
             case 163:
                 return new int[]{0, 0, 1, 2, 4, 2};

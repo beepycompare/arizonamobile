@@ -53,7 +53,7 @@ public final class MessagingService$saveNotificationData$1 extends SuspendLambda
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -84,14 +84,14 @@ public final class MessagingService$saveNotificationData$1 extends SuspendLambda
                 CoroutineScope coroutineScope2 = (CoroutineScope) this.L$1;
                 ResultKt.throwOnFailure(obj);
             }
-            m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
+            m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-        if (m9923exceptionOrNullimpl != null) {
-            Log.w(MessagingService.TAG, "Failed to write notification history", m9923exceptionOrNullimpl);
+        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+        if (m9924exceptionOrNullimpl != null) {
+            Log.w(MessagingService.TAG, "Failed to write notification history", m9924exceptionOrNullimpl);
         }
         return Unit.INSTANCE;
     }

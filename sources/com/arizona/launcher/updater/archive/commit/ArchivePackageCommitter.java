@@ -17,8 +17,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import kotlin.Metadata;
+import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.comparisons.ComparisonsKt;
+import kotlin.jvm.functions.Function2;
 import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.FunctionReferenceImpl;
@@ -27,7 +29,7 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ArchivePackageCommitter.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u000b\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 22\u00020\u0001:\u000212BO\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012 \b\u0002\u0010\u0007\u001a\u001a\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f¢\u0006\u0004\b\r\u0010\u000eJ$\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00032\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016J\u0012\u0010\u0018\u001a\u0004\u0018\u00010\u00192\u0006\u0010\u0014\u001a\u00020\u0003H\u0002J\u001e\u0010\u001a\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u00162\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016H\u0002J\"\u0010\u001b\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u001d\u001a\u00020\u00192\u0006\u0010\u001e\u001a\u00020\u00032\u0006\u0010\u001f\u001a\u00020\u0017H\u0002J\u0018\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u00032\u0006\u0010\u001f\u001a\u00020\u0017H\u0002J\u0018\u0010#\u001a\u00020!2\u0006\u0010$\u001a\u00020\u00032\u0006\u0010%\u001a\u00020\u0003H\u0002J\u001a\u0010&\u001a\u0004\u0018\u00010\u00032\u0006\u0010'\u001a\u00020\u00032\u0006\u0010(\u001a\u00020\u0013H\u0002J\u0018\u0010)\u001a\u00020!2\u0006\u0010*\u001a\u00020\u00032\u0006\u0010'\u001a\u00020\u0003H\u0002J\u0018\u0010+\u001a\u00020!2\u0006\u0010\"\u001a\u00020\u00032\u0006\u0010%\u001a\u00020\u0003H\u0002J\u0018\u0010,\u001a\u00020-2\u0006\u0010'\u001a\u00020\u00032\u0006\u0010%\u001a\u00020\u0003H\u0002J\u0018\u0010.\u001a\u00020-2\u0006\u0010/\u001a\u00020\u00032\u0006\u00100\u001a\u00020\u0003H\u0002R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R&\u0010\u0007\u001a\u001a\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0002\u001a\n \u000f*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0004\u001a\n \u000f*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b4\u0012\b\b5\u0012\u0004\b\u0003\u0010\u0000¨\u00063"}, d2 = {"Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitter;", "", "gameRoot", "Ljava/io/File;", "updaterWorkRoot", "fileOps", "Lcom/arizona/launcher/updater/archive/commit/ArchiveCommitFileOps;", "verifyFile", "Lkotlin/Function3;", "", "Lcom/arizona/launcher/updater/archive/install/WholeFileVerificationResult;", "directoryCreator", "Lcom/arizona/launcher/updater/archive/io/ArchiveDirectoryCreator;", "<init>", "(Ljava/io/File;Ljava/io/File;Lcom/arizona/launcher/updater/archive/commit/ArchiveCommitFileOps;Lkotlin/jvm/functions/Function3;Lcom/arizona/launcher/updater/archive/io/ArchiveDirectoryCreator;)V", "kotlin.jvm.PlatformType", "commit", "Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitResult;", "packageId", "", "stagingRoot", OriginalTzArchiveManifestParser.FILES_ROOT, "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageFileRecord;", "validateRoots", "Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitter$CommitRoots;", "validateFiles", "commitFile", "Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitResult$Failure;", "roots", "backupRoot", "record", "matches", "", UtilsKt.SCHEME_FILE, "ensureDirectory", "directory", "allowedRoot", "containedFile", "root", "relativePath", "isStrictChild", "candidate", "safeDeleteFile", "safeDeleteTree", "", "deleteTreeNode", "node", "deletionRoot", "CommitRoots", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 72\u00020\u0001:\u000267Bk\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006\u0012 \b\u0002\u0010\u0007\u001a\u001a\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b\u0012\b\b\u0002\u0010\u000b\u001a\u00020\f\u0012\u001a\b\u0002\u0010\r\u001a\u0014\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u000f0\u000e¢\u0006\u0004\b\u0010\u0010\u0011J$\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u00032\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019J\u0012\u0010\u001b\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u0017\u001a\u00020\u0003H\u0002J\u001e\u0010\u001d\u001a\n\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00192\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019H\u0002J\"\u0010\u001e\u001a\u0004\u0018\u00010\u001f2\u0006\u0010 \u001a\u00020\u001c2\u0006\u0010!\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020\u001aH\u0002J\u0018\u0010#\u001a\u00020\u000f2\u0006\u0010$\u001a\u00020\u00032\u0006\u0010%\u001a\u00020\u0003H\u0002J\u0018\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020\u001aH\u0002J\u0018\u0010)\u001a\u00020'2\u0006\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J\u001a\u0010,\u001a\u0004\u0018\u00010\u00032\u0006\u0010-\u001a\u00020\u00032\u0006\u0010.\u001a\u00020\u0016H\u0002J\u0018\u0010/\u001a\u00020'2\u0006\u00100\u001a\u00020\u00032\u0006\u0010-\u001a\u00020\u0003H\u0002J\u0018\u00101\u001a\u00020'2\u0006\u0010(\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J\u0018\u00102\u001a\u00020\u000f2\u0006\u0010-\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J\u0018\u00103\u001a\u00020\u000f2\u0006\u00104\u001a\u00020\u00032\u0006\u00105\u001a\u00020\u0003H\u0002R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R&\u0010\u0007\u001a\u001a\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\r\u001a\u0014\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u000f0\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0002\u001a\n \u0012*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0004\u001a\n \u0012*\u0004\u0018\u00010\u00030\u0003X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b9\u0012\b\b:\u0012\u0004\b\u0003\u0010\u0000¨\u00068"}, d2 = {"Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitter;", "", "gameRoot", "Ljava/io/File;", "updaterWorkRoot", "fileOps", "Lcom/arizona/launcher/updater/archive/commit/ArchiveCommitFileOps;", "verifyFile", "Lkotlin/Function3;", "", "Lcom/arizona/launcher/updater/archive/install/WholeFileVerificationResult;", "directoryCreator", "Lcom/arizona/launcher/updater/archive/io/ArchiveDirectoryCreator;", "applyLiveAccess", "Lkotlin/Function2;", "", "<init>", "(Ljava/io/File;Ljava/io/File;Lcom/arizona/launcher/updater/archive/commit/ArchiveCommitFileOps;Lkotlin/jvm/functions/Function3;Lcom/arizona/launcher/updater/archive/io/ArchiveDirectoryCreator;Lkotlin/jvm/functions/Function2;)V", "kotlin.jvm.PlatformType", "commit", "Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitResult;", "packageId", "", "stagingRoot", OriginalTzArchiveManifestParser.FILES_ROOT, "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageFileRecord;", "validateRoots", "Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitter$CommitRoots;", "validateFiles", "commitFile", "Lcom/arizona/launcher/updater/archive/commit/ArchivePackageCommitResult$Failure;", "roots", "backupRoot", "record", "applyVerifiedLiveAccess", "canonicalGameRoot", "liveFile", "matches", "", UtilsKt.SCHEME_FILE, "ensureDirectory", "directory", "allowedRoot", "containedFile", "root", "relativePath", "isStrictChild", "candidate", "safeDeleteFile", "safeDeleteTree", "deleteTreeNode", "node", "deletionRoot", "CommitRoots", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchivePackageCommitter {
     @Deprecated
@@ -36,6 +38,7 @@ public final class ArchivePackageCommitter {
     public static final String DEFAULT_WORK_DIRECTORY = ".archive-installing";
     @Deprecated
     public static final long MAX_CRC32 = 4294967295L;
+    private final Function2<File, File, Unit> applyLiveAccess;
     private final ArchiveDirectoryCreator directoryCreator;
     private final ArchiveCommitFileOps fileOps;
     private final File gameRoot;
@@ -46,21 +49,28 @@ public final class ArchivePackageCommitter {
     private static final Regex PACKAGE_ID = new Regex("^[A-Za-z0-9._-]{1,96}$");
 
     /* JADX WARN: Multi-variable type inference failed */
-    public ArchivePackageCommitter(File gameRoot, File updaterWorkRoot, ArchiveCommitFileOps fileOps, Function3<? super File, ? super Long, ? super Long, ? extends WholeFileVerificationResult> verifyFile, ArchiveDirectoryCreator directoryCreator) {
+    public ArchivePackageCommitter(File gameRoot, File updaterWorkRoot, ArchiveCommitFileOps fileOps, Function3<? super File, ? super Long, ? super Long, ? extends WholeFileVerificationResult> verifyFile, ArchiveDirectoryCreator directoryCreator, Function2<? super File, ? super File, Unit> applyLiveAccess) {
         Intrinsics.checkNotNullParameter(gameRoot, "gameRoot");
         Intrinsics.checkNotNullParameter(updaterWorkRoot, "updaterWorkRoot");
         Intrinsics.checkNotNullParameter(fileOps, "fileOps");
         Intrinsics.checkNotNullParameter(verifyFile, "verifyFile");
         Intrinsics.checkNotNullParameter(directoryCreator, "directoryCreator");
+        Intrinsics.checkNotNullParameter(applyLiveAccess, "applyLiveAccess");
         this.fileOps = fileOps;
         this.verifyFile = verifyFile;
         this.directoryCreator = directoryCreator;
+        this.applyLiveAccess = applyLiveAccess;
         this.gameRoot = gameRoot.getAbsoluteFile();
         this.updaterWorkRoot = updaterWorkRoot.getAbsoluteFile();
     }
 
-    public /* synthetic */ ArchivePackageCommitter(File file, File file2, AndroidArchiveCommitFileOps androidArchiveCommitFileOps, AnonymousClass1 anonymousClass1, JvmArchiveDirectoryCreator jvmArchiveDirectoryCreator, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(file, (i & 2) != 0 ? new File(file, ".archive-installing") : file2, (i & 4) != 0 ? AndroidArchiveCommitFileOps.INSTANCE : androidArchiveCommitFileOps, (i & 8) != 0 ? new AnonymousClass1(WholeFileCrc32Verifier.INSTANCE) : anonymousClass1, (i & 16) != 0 ? JvmArchiveDirectoryCreator.INSTANCE : jvmArchiveDirectoryCreator);
+    public /* synthetic */ ArchivePackageCommitter(File file, File file2, AndroidArchiveCommitFileOps androidArchiveCommitFileOps, AnonymousClass1 anonymousClass1, JvmArchiveDirectoryCreator jvmArchiveDirectoryCreator, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(file, (i & 2) != 0 ? new File(file, ".archive-installing") : file2, (i & 4) != 0 ? AndroidArchiveCommitFileOps.INSTANCE : androidArchiveCommitFileOps, (i & 8) != 0 ? new AnonymousClass1(WholeFileCrc32Verifier.INSTANCE) : anonymousClass1, (i & 16) != 0 ? JvmArchiveDirectoryCreator.INSTANCE : jvmArchiveDirectoryCreator, (i & 32) != 0 ? new Function2() { // from class: com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter$$ExternalSyntheticLambda0
+            @Override // kotlin.jvm.functions.Function2
+            public final Object invoke(Object obj, Object obj2) {
+                return ArchivePackageCommitter._init_$lambda$0((File) obj, (File) obj2);
+            }
+        } : function2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -82,6 +92,13 @@ public final class ArchivePackageCommitter {
         public /* bridge */ /* synthetic */ WholeFileVerificationResult invoke(File file, Long l, Long l2) {
             return invoke(file, l.longValue(), l2.longValue());
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit _init_$lambda$0(File file, File file2) {
+        Intrinsics.checkNotNullParameter(file, "<unused var>");
+        Intrinsics.checkNotNullParameter(file2, "<unused var>");
+        return Unit.INSTANCE;
     }
 
     public final ArchivePackageCommitResult commit(String packageId, File stagingRoot, List<ArchivePackageFileRecord> files) {
@@ -251,6 +268,7 @@ public final class ArchivePackageCommitter {
             if (parentFile != null) {
                 this.fileOps.syncDirectory(parentFile);
             }
+            applyVerifiedLiveAccess(commitRoots.getGameRoot(), containedFile2);
             return null;
         } else if (!containedFile.isFile()) {
             failure9 = ArchivePackageCommitterKt.failure(ArchivePackageCommitErrorCode.SOURCE_MISSING, archivePackageFileRecord.getRelativePath());
@@ -304,12 +322,20 @@ public final class ArchivePackageCommitter {
                 if (parentFile7 != null) {
                     this.fileOps.syncDirectory(parentFile7);
                 }
-                if (matches(containedFile2, archivePackageFileRecord)) {
-                    return null;
+                if (!matches(containedFile2, archivePackageFileRecord)) {
+                    failure2 = ArchivePackageCommitterKt.failure(ArchivePackageCommitErrorCode.TARGET_VERIFICATION_FAILED, archivePackageFileRecord.getRelativePath());
+                    return failure2;
                 }
-                failure2 = ArchivePackageCommitterKt.failure(ArchivePackageCommitErrorCode.TARGET_VERIFICATION_FAILED, archivePackageFileRecord.getRelativePath());
-                return failure2;
+                applyVerifiedLiveAccess(commitRoots.getGameRoot(), containedFile2);
+                return null;
             }
+        }
+    }
+
+    private final void applyVerifiedLiveAccess(File file, File file2) {
+        try {
+            this.applyLiveAccess.invoke(file, file2);
+        } catch (Exception unused) {
         }
     }
 

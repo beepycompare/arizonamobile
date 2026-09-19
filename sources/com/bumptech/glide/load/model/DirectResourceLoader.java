@@ -63,9 +63,8 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
         return new ModelLoader.LoadData<>(new ObjectKey(num), new ResourceDataFetcher(theme, resources, this.resourceOpener, num.intValue()));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Integer, AssetFileDescriptor>, ResourceOpener<AssetFileDescriptor> {
+    private static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Integer, AssetFileDescriptor>, ResourceOpener<AssetFileDescriptor> {
         private final Context context;
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -98,9 +97,8 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static final class InputStreamFactory implements ModelLoaderFactory<Integer, InputStream>, ResourceOpener<InputStream> {
+    private static final class InputStreamFactory implements ModelLoaderFactory<Integer, InputStream>, ResourceOpener<InputStream> {
         private final Context context;
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -133,9 +131,8 @@ public final class DirectResourceLoader<DataT> implements ModelLoader<Integer, D
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static final class DrawableFactory implements ModelLoaderFactory<Integer, Drawable>, ResourceOpener<Drawable> {
+    private static final class DrawableFactory implements ModelLoaderFactory<Integer, Drawable>, ResourceOpener<Drawable> {
         private final Context context;
 
         @Override // com.bumptech.glide.load.model.DirectResourceLoader.ResourceOpener

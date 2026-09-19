@@ -11,30 +11,30 @@ public final class Bc implements Q6 {
     public final Context f477a;
     public final String b;
     public final Jn c;
-    public final C0633ua d;
-    public C0501p7 e;
+    public final C0632ua d;
+    public C0500p7 e;
 
     public Bc(Context context, String str, Jn jn) {
-        this(context, str, new C0633ua(str), jn);
+        this(context, str, new C0632ua(str), jn);
     }
 
     @Override // io.appmetrica.analytics.impl.Q6
     public final synchronized SQLiteDatabase a() {
-        C0501p7 c0501p7;
+        C0500p7 c0500p7;
         try {
             this.d.a();
-            c0501p7 = new C0501p7(this.f477a, this.b, this.c, PublicLogger.getAnonymousInstance());
-            this.e = c0501p7;
+            c0500p7 = new C0500p7(this.f477a, this.b, this.c, PublicLogger.getAnonymousInstance());
+            this.e = c0500p7;
         } catch (Throwable unused) {
             return null;
         }
-        return c0501p7.getWritableDatabase();
+        return c0500p7.getWritableDatabase();
     }
 
-    public Bc(Context context, String str, C0633ua c0633ua, Jn jn) {
+    public Bc(Context context, String str, C0632ua c0632ua, Jn jn) {
         this.f477a = context;
         this.b = str;
-        this.d = c0633ua;
+        this.d = c0632ua;
         this.c = jn;
     }
 

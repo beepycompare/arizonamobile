@@ -21,13 +21,14 @@ public final class DonateScreenBinding implements ViewBinding {
     public final DonateOrdinaryPageBinding ordinaryPage;
     public final ProgressBar pageProgressBar;
     public final FrameLayout pagesContainer;
+    public final DonatePayPassBinding payPassPage;
     public final DonatePurchasePageBinding purchasePage;
     public final DonateReplenishmentDialogBinding replenishmentDialogPage;
     private final FrameLayout rootView;
     public final RecyclerView rvCategories;
     public final DonateTopBarBinding topBar;
 
-    private DonateScreenBinding(FrameLayout rootView, LinearLayout contentContainer, ProgressBar contentProgressBar, FrameLayout donate, LinearLayout errorPlaceholder, LinearLayout errorPlaceholderItems, DonateMainPageBinding mainPage, DonateOrdinaryPageBinding ordinaryPage, ProgressBar pageProgressBar, FrameLayout pagesContainer, DonatePurchasePageBinding purchasePage, DonateReplenishmentDialogBinding replenishmentDialogPage, RecyclerView rvCategories, DonateTopBarBinding topBar) {
+    private DonateScreenBinding(FrameLayout rootView, LinearLayout contentContainer, ProgressBar contentProgressBar, FrameLayout donate, LinearLayout errorPlaceholder, LinearLayout errorPlaceholderItems, DonateMainPageBinding mainPage, DonateOrdinaryPageBinding ordinaryPage, ProgressBar pageProgressBar, FrameLayout pagesContainer, DonatePayPassBinding payPassPage, DonatePurchasePageBinding purchasePage, DonateReplenishmentDialogBinding replenishmentDialogPage, RecyclerView rvCategories, DonateTopBarBinding topBar) {
         this.rootView = rootView;
         this.contentContainer = contentContainer;
         this.contentProgressBar = contentProgressBar;
@@ -38,6 +39,7 @@ public final class DonateScreenBinding implements ViewBinding {
         this.ordinaryPage = ordinaryPage;
         this.pageProgressBar = pageProgressBar;
         this.pagesContainer = pagesContainer;
+        this.payPassPage = payPassPage;
         this.purchasePage = purchasePage;
         this.replenishmentDialogPage = replenishmentDialogPage;
         this.rvCategories = rvCategories;
@@ -88,16 +90,21 @@ public final class DonateScreenBinding implements ViewBinding {
                             if (progressBar2 != null) {
                                 i = R.id.pages_container;
                                 FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
-                                if (frameLayout2 != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.purchase_page))) != null) {
-                                    DonatePurchasePageBinding bind3 = DonatePurchasePageBinding.bind(findChildViewById2);
-                                    i = R.id.replenishment_dialog_page;
+                                if (frameLayout2 != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.pay_pass_page))) != null) {
+                                    DonatePayPassBinding bind3 = DonatePayPassBinding.bind(findChildViewById2);
+                                    i = R.id.purchase_page;
                                     View findChildViewById5 = ViewBindings.findChildViewById(rootView, i);
                                     if (findChildViewById5 != null) {
-                                        DonateReplenishmentDialogBinding bind4 = DonateReplenishmentDialogBinding.bind(findChildViewById5);
-                                        i = R.id.rv_categories;
-                                        RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
-                                        if (recyclerView != null && (findChildViewById3 = ViewBindings.findChildViewById(rootView, (i = R.id.top_bar))) != null) {
-                                            return new DonateScreenBinding(frameLayout, linearLayout, progressBar, frameLayout, linearLayout2, linearLayout3, bind, bind2, progressBar2, frameLayout2, bind3, bind4, recyclerView, DonateTopBarBinding.bind(findChildViewById3));
+                                        DonatePurchasePageBinding bind4 = DonatePurchasePageBinding.bind(findChildViewById5);
+                                        i = R.id.replenishment_dialog_page;
+                                        View findChildViewById6 = ViewBindings.findChildViewById(rootView, i);
+                                        if (findChildViewById6 != null) {
+                                            DonateReplenishmentDialogBinding bind5 = DonateReplenishmentDialogBinding.bind(findChildViewById6);
+                                            i = R.id.rv_categories;
+                                            RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                                            if (recyclerView != null && (findChildViewById3 = ViewBindings.findChildViewById(rootView, (i = R.id.top_bar))) != null) {
+                                                return new DonateScreenBinding(frameLayout, linearLayout, progressBar, frameLayout, linearLayout2, linearLayout3, bind, bind2, progressBar2, frameLayout2, bind3, bind4, bind5, recyclerView, DonateTopBarBinding.bind(findChildViewById3));
+                                            }
                                         }
                                     }
                                 }

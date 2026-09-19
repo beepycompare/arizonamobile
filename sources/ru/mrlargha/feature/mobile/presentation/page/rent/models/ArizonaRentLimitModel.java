@@ -146,7 +146,7 @@ public final class ArizonaRentLimitModel {
     }
 
     /* renamed from: getRoomСostMin  reason: contains not printable characters */
-    public final int m11979getRoomostMin() {
+    public final int m11980getRoomostMin() {
         return this.f85roomostMin;
     }
 
@@ -163,7 +163,7 @@ public final class ArizonaRentLimitModel {
     }
 
     /* renamed from: getFullСostMin  reason: contains not printable characters */
-    public final int m11978getFullostMin() {
+    public final int m11979getFullostMin() {
         return this.f84fullostMin;
     }
 

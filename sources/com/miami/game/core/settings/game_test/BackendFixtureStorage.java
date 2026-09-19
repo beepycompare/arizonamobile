@@ -125,7 +125,7 @@ public final class BackendFixtureStorage {
 
     private final String resolveRawFixture(Context context, String str) {
         Object obj;
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         Iterator<T> it = resolveCandidateFiles(context, str).iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -154,16 +154,16 @@ public final class BackendFixtureStorage {
             BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
             String readText = TextStreamsKt.readText(bufferedReader);
             CloseableKt.closeFinally(bufferedReader, null);
-            m9920constructorimpl = Result.m9920constructorimpl(readText);
+            m9921constructorimpl = Result.m9921constructorimpl(readText);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-        if (m9923exceptionOrNullimpl != null) {
-            Log.w(TAG, "Unable to load backend fixture asset '" + str + "'", m9923exceptionOrNullimpl);
+        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+        if (m9924exceptionOrNullimpl != null) {
+            Log.w(TAG, "Unable to load backend fixture asset '" + str + "'", m9924exceptionOrNullimpl);
         }
-        String str2 = Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+        String str2 = Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
         if (str2 != null) {
             return str2;
         }

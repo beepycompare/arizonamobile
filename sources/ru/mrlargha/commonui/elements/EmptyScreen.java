@@ -42,6 +42,11 @@ public final class EmptyScreen extends SAMPUIElement implements InterfaceControl
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
         this.binding.parentLayout.setVisibility(z ? 0 : 8);
     }

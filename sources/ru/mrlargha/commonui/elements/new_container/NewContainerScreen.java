@@ -29,6 +29,7 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.NewContainerLayoutBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: NewContainerScreen.kt */
 @Metadata(d1 = {"\u0000F\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 \u001b2\u00020\u0001:\u0002\u001b\u001cB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0005H\u0002J\u0010\u0010\u0015\u001a\u00020\u00112\u0006\u0010\u0016\u001a\u00020\u0017H\u0002J\u0018\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lru/mrlargha/commonui/elements/new_container/NewContainerScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/NewContainerLayoutBinding;", "awardsAdapter", "Lru/mrlargha/commonui/elements/new_container/NewContainerAwardsAdapter;", "imageCdnPath", "", "colorizeTextView", "", "textView", "Landroid/widget/TextView;", "color", "setContainerInfo", "info", "Lru/mrlargha/commonui/elements/new_container/NewContainerScreen$Companion$ContainerInfo;", "onBackendMessageHandled", "data", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
@@ -114,18 +115,20 @@ public final class NewContainerScreen extends SAMPUIElement {
         newContainerLayoutBinding.actionButton.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(containerInfo.getMainColor())));
         newContainerLayoutBinding.blurContainer.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(containerInfo.getMainColor())));
         Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
         String str = this.imageCdnPath;
-        picasso.load(projectResourceUrl$default + str + containerInfo.getLogo()).into(newContainerLayoutBinding.mainImageContainer);
+        PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + str + containerInfo.getLogo()).into(newContainerLayoutBinding.mainImageContainer);
         this.awardsAdapter.addWinnerInfo(containerInfo.getItems());
         String backgroundImage = containerInfo.getBackgroundImage();
         if (backgroundImage != null && backgroundImage.length() != 0) {
             NewContainerLayoutBinding newContainerLayoutBinding2 = this.binding;
             newContainerLayoutBinding2.blurContainer.setVisibility(4);
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             String str2 = this.imageCdnPath;
-            picasso2.load(projectResourceUrl$default2 + str2 + containerInfo.getBackgroundImage()).into(newContainerLayoutBinding2.imageBg);
+            PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + str2 + containerInfo.getBackgroundImage()).into(newContainerLayoutBinding2.imageBg);
         } else {
             NewContainerLayoutBinding newContainerLayoutBinding3 = this.binding;
             newContainerLayoutBinding3.imageBg.setImageDrawable(null);
@@ -135,9 +138,10 @@ public final class NewContainerScreen extends SAMPUIElement {
         if (buttonBackgroundImage != null && buttonBackgroundImage.length() != 0) {
             NewContainerLayoutBinding newContainerLayoutBinding4 = this.binding;
             Picasso picasso3 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso3, "get(...)");
             String projectResourceUrl$default3 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             String str3 = this.imageCdnPath;
-            picasso3.load(projectResourceUrl$default3 + str3 + containerInfo.getButtonBackgroundImage()).into(newContainerLayoutBinding4.imageButtonBg);
+            PicassoLoadSafeKt.loadSafe(picasso3, projectResourceUrl$default3 + str3 + containerInfo.getButtonBackgroundImage()).into(newContainerLayoutBinding4.imageButtonBg);
             newContainerLayoutBinding4.actionButtonText.setTextColor(-1);
             newContainerLayoutBinding4.actionButton.setBackgroundTintList(null);
             return;

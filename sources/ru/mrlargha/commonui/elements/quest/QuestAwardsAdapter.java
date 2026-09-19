@@ -13,6 +13,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.RodinaQuestAwardsItemBinding;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 /* compiled from: QuestAwardsAdapter.kt */
@@ -44,14 +45,16 @@ public final class QuestAwardsAdapter extends RecyclerView.Adapter<QuestAwardsVi
         if (UtilsKt.isArizonaType()) {
             binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, null, 3, null));
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(projectResourceUrl$default + "assets/images/donate/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "assets/images/donate/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
             return;
         }
         binding.rodinaQuestInfoTitle.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, questAwards2.getTitle(), 0.0f, null, 3, null));
         Picasso picasso2 = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
         String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        picasso2.load(projectResourceUrl$default2 + "assets/images/other/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
+        PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "assets/images/other/" + questAwards2.getIcon()).placeholder(R.drawable.item_template).into(binding.rodinaQuestAwardsImage);
     }
 
     public final void addQuestAwards(List<QuestAwards> questAwards) {

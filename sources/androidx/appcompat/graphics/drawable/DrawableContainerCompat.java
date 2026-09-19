@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.util.SparseArray;
 import androidx.core.graphics.drawable.DrawableCompat;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* loaded from: classes.dex */
 public class DrawableContainerCompat extends Drawable implements Drawable.Callback {
     private static final boolean DEBUG = false;
@@ -1130,10 +1131,7 @@ public class DrawableContainerCompat extends Drawable implements Drawable.Callba
         if (resources != null) {
             i = resources.getDisplayMetrics().densityDpi;
         }
-        if (i == 0) {
-            return 160;
-        }
-        return i;
+        return i == 0 ? RodinaTrainSpeedGaugeView.MAX_SPEED_KMH : i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

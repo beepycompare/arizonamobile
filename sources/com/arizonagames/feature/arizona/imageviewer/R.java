@@ -4,14 +4,14 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class color {
-        public static int image_viewer_close_background = 0x7f0600de;
-        public static int image_viewer_content_background = 0x7f0600df;
-        public static int image_viewer_indicator_active = 0x7f0600e0;
-        public static int image_viewer_indicator_pending = 0x7f0600e1;
-        public static int image_viewer_indicator_visited = 0x7f0600e2;
-        public static int image_viewer_navigation_background = 0x7f0600e3;
-        public static int image_viewer_panel_end = 0x7f0600e4;
-        public static int image_viewer_panel_start = 0x7f0600e5;
+        public static int image_viewer_close_background = 0x7f0600e0;
+        public static int image_viewer_content_background = 0x7f0600e1;
+        public static int image_viewer_indicator_active = 0x7f0600e2;
+        public static int image_viewer_indicator_pending = 0x7f0600e3;
+        public static int image_viewer_indicator_visited = 0x7f0600e4;
+        public static int image_viewer_navigation_background = 0x7f0600e5;
+        public static int image_viewer_panel_end = 0x7f0600e6;
+        public static int image_viewer_panel_start = 0x7f0600e7;
 
         private color() {
         }
@@ -19,7 +19,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int image_viewer_previous = 0x7f080c31;
+        public static int image_viewer_previous = 0x7f080c50;
 
         private drawable() {
         }
@@ -27,14 +27,14 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int close_button = 0x7f0a0518;
-        public static int content_loader = 0x7f0a0555;
-        public static int content_pager = 0x7f0a0556;
-        public static int image = 0x7f0a08b6;
-        public static int loader = 0x7f0a0a55;
-        public static int next_button = 0x7f0a0c01;
-        public static int page_indicator = 0x7f0a0c5a;
-        public static int previous_button = 0x7f0a0ce5;
+        public static int close_button = 0x7f0a051c;
+        public static int content_loader = 0x7f0a0559;
+        public static int content_pager = 0x7f0a055a;
+        public static int image = 0x7f0a08bc;
+        public static int loader = 0x7f0a0a64;
+        public static int next_button = 0x7f0a0c11;
+        public static int page_indicator = 0x7f0a0c6a;
+        public static int previous_button = 0x7f0a0d18;
 
         private id() {
         }
@@ -51,10 +51,10 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int image_viewer_close = 0x7f120401;
-        public static int image_viewer_content = 0x7f120402;
-        public static int image_viewer_next = 0x7f120403;
-        public static int image_viewer_previous = 0x7f120404;
+        public static int image_viewer_close = 0x7f12041a;
+        public static int image_viewer_content = 0x7f12041b;
+        public static int image_viewer_next = 0x7f12041c;
+        public static int image_viewer_previous = 0x7f12041d;
 
         private string() {
         }

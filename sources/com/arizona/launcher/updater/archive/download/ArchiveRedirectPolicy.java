@@ -21,8 +21,8 @@ public final class ArchiveRedirectPolicy {
 
     public final String resolve(String fromUrl, String str, int i, boolean z) {
         String str2;
-        Object m9920constructorimpl;
-        Boolean m9920constructorimpl2;
+        Object m9921constructorimpl;
+        Boolean m9921constructorimpl2;
         Intrinsics.checkNotNullParameter(fromUrl, "fromUrl");
         if (i >= 5 || (str2 = str) == null || StringsKt.isBlank(str2)) {
             return null;
@@ -30,30 +30,30 @@ public final class ArchiveRedirectPolicy {
         try {
             Result.Companion companion = Result.Companion;
             ArchiveRedirectPolicy archiveRedirectPolicy = this;
-            m9920constructorimpl = Result.m9920constructorimpl(new URI(fromUrl).resolve(str).toString());
+            m9921constructorimpl = Result.m9921constructorimpl(new URI(fromUrl).resolve(str).toString());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
-            m9920constructorimpl = null;
+        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+            m9921constructorimpl = null;
         }
-        String str3 = (String) m9920constructorimpl;
+        String str3 = (String) m9921constructorimpl;
         if (str3 == null) {
             return null;
         }
         try {
             Result.Companion companion3 = Result.Companion;
             ArchiveRedirectPolicy archiveRedirectPolicy2 = this;
-            m9920constructorimpl2 = Result.m9920constructorimpl(Boolean.valueOf(StringsKt.equals(new URI(fromUrl).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(str3).getScheme(), Constants.SCHEME, true)));
+            m9921constructorimpl2 = Result.m9921constructorimpl(Boolean.valueOf(StringsKt.equals(new URI(fromUrl).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(str3).getScheme(), Constants.SCHEME, true)));
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m9920constructorimpl2 = Result.m9920constructorimpl(ResultKt.createFailure(th2));
+            m9921constructorimpl2 = Result.m9921constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m9926isFailureimpl(m9920constructorimpl2)) {
-            m9920constructorimpl2 = true;
+        if (Result.m9927isFailureimpl(m9921constructorimpl2)) {
+            m9921constructorimpl2 = true;
         }
-        if (!((Boolean) m9920constructorimpl2).booleanValue() && ArchiveRemoteNetworkPolicy.INSTANCE.isAllowedUrl(str3, z)) {
+        if (!((Boolean) m9921constructorimpl2).booleanValue() && ArchiveRemoteNetworkPolicy.INSTANCE.isAllowedUrl(str3, z)) {
             return str3;
         }
         return null;

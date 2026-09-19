@@ -27,6 +27,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 import ru.mrlargha.commonui.elements.donate.data.repositories.DonateRepositoryImpl;
+import ru.mrlargha.commonui.elements.donate.domain.ResultState;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateBadgesModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateCategoryModel;
 import ru.mrlargha.commonui.elements.donate.domain.models.DonateItemModel;
@@ -37,14 +38,16 @@ import ru.mrlargha.commonui.elements.donate.presentation.models.DonateBoostModel
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUi;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateCategoryModelUiKt;
 import ru.mrlargha.commonui.elements.donate.presentation.models.DonateItemModelUi;
+import ru.mrlargha.commonui.elements.donate.presentation.models.DonatePayPassLevel;
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* compiled from: DonateStates.kt */
-@Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\r\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020-J\b\u00101\u001a\u00020/H\u0002J\u001c\u00102\u001a\b\u0012\u0004\u0012\u00020\u00160\u00152\f\u00103\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0002J\u0016\u00104\u001a\u00020/2\u0006\u00100\u001a\u0002052\u0006\u00106\u001a\u00020#J\u0016\u00107\u001a\u00020/2\u0006\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020#J\u001e\u0010:\u001a\u00020/2\u0006\u00108\u001a\u00020\u00052\u0006\u0010;\u001a\u00020#2\u0006\u00109\u001a\u00020#J$\u0010<\u001a\b\u0012\u0004\u0012\u0002050\u00152\u0006\u00108\u001a\u00020\u00052\f\u0010=\u001a\b\u0012\u0004\u0012\u0002050\u0015H\u0002J\u001c\u0010>\u001a\b\u0012\u0004\u0012\u0002050\u00152\f\u0010=\u001a\b\u0012\u0004\u0012\u0002050\u0015H\u0002J\u001c\u0010?\u001a\b\u0012\u0004\u0012\u0002050\u00152\f\u0010=\u001a\b\u0012\u0004\u0012\u0002050\u0015H\u0002J\b\u0010@\u001a\u00020/H\u0002J\u0006\u0010A\u001a\u00020/R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0012\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR \u0010\u001b\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u001d\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001aR\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010$\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010&\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020%0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001aR\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010+\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020-0,X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006B"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "repository", "Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "getCategoriesUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetCategoriesUseCase;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getItemsUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "_categoriesState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/presentation/UiState;", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "categoriesState", "Lkotlinx/coroutines/flow/StateFlow;", "getCategoriesState", "()Lkotlinx/coroutines/flow/StateFlow;", "_itemsState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "itemState", "getItemState", "itemJob", "Lkotlinx/coroutines/Job;", "updateItemJob", "isWorkingMainItemSet", "", "_boostState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "boostState", "getBoostState", "badgesTime", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBadgesModel;", "currentCategory", "categoryUpdates", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "updateCategories", "", CommonUrlParts.MODEL, "setCategories", "applyCategoryUpdates", "categories", "updateItems", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "isHasUpdate", "setItemsArizona", "categoriesId", "isActionCategory", "setItemsRodina", "isLimitCategory", "filterItemOrdinary", "itemList", "filterItemByAction", "filterItemByLimit", "setBoosts", "clearJobs", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0012\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u00106\u001a\u0002072\u0006\u00108\u001a\u000205J\b\u00109\u001a\u000207H\u0002J\u001c\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00160\u00152\f\u0010;\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015H\u0002J\u0016\u0010<\u001a\u0002072\u0006\u00108\u001a\u00020!2\u0006\u0010=\u001a\u00020'J\u0016\u0010>\u001a\u0002072\u0006\u0010?\u001a\u00020\u00052\u0006\u0010@\u001a\u00020'J\u001e\u0010A\u001a\u0002072\u0006\u0010?\u001a\u00020\u00052\u0006\u0010B\u001a\u00020'2\u0006\u0010@\u001a\u00020'J$\u0010C\u001a\b\u0012\u0004\u0012\u00020!0\u00152\u0006\u0010?\u001a\u00020\u00052\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0\u0015H\u0002J\u001c\u0010D\u001a\b\u0012\u0004\u0012\u00020!0\u00152\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0\u0015H\u0002J\u001c\u0010E\u001a\b\u0012\u0004\u0012\u00020!0\u00152\f\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0\u0015H\u0002J\b\u0010F\u001a\u000207H\u0002J\b\u0010G\u001a\u000207H\u0002J\u0006\u0010H\u001a\u000207R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0012\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u0017\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00160\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR \u0010\u001b\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010\u001d\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u001c0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001aR#\u0010\u001f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020!0\u00150 0\u0018¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u001aR\u0010\u0010#\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010%\u001a\u0004\u0018\u00010$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010(\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010*\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b+\u0010\u001aR \u0010,\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020-0\u00150\u00140\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R#\u0010.\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020-0\u00150\u00140\u0018¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u001aR\u000e\u00100\u001a\u000201X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u00103\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020504X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006I"}, d2 = {"Lru/mrlargha/commonui/elements/donate/presentation/DonateStates;", "", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "repository", "Lru/mrlargha/commonui/elements/donate/data/repositories/DonateRepositoryImpl;", "getCategoriesUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetCategoriesUseCase;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getItemsUseCase", "Lru/mrlargha/commonui/elements/donate/domain/usecases/DonateGetItemUseCase;", "_categoriesState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lru/mrlargha/commonui/elements/donate/presentation/UiState;", "", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateCategoryModelUi;", "categoriesState", "Lkotlinx/coroutines/flow/StateFlow;", "getCategoriesState", "()Lkotlinx/coroutines/flow/StateFlow;", "_itemsState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateItemModelUi;", "itemState", "getItemState", "itemList", "Lru/mrlargha/commonui/elements/donate/domain/ResultState;", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateItemModel;", "getItemList", "itemJob", "Lkotlinx/coroutines/Job;", "updateItemJob", "isWorkingMainItemSet", "", "_boostState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonateBoostModelUi;", "boostState", "getBoostState", "_payPassLevelsState", "Lru/mrlargha/commonui/elements/donate/presentation/models/DonatePayPassLevel;", "payPassLevelsState", "getPayPassLevelsState", "badgesTime", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateBadgesModel;", "currentCategory", "categoryUpdates", "", "Lru/mrlargha/commonui/elements/donate/domain/models/DonateCategoryModel;", "updateCategories", "", CommonUrlParts.MODEL, "setCategories", "applyCategoryUpdates", "categories", "updateItems", "isHasUpdate", "setItemsArizona", "categoriesId", "isActionCategory", "setItemsRodina", "isLimitCategory", "filterItemOrdinary", "filterItemByAction", "filterItemByLimit", "setBoosts", "setPayPassLevels", "clearJobs", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DonateStates {
     private final MutableStateFlow<UiState<List<DonateBoostModelUi>>> _boostState;
     private final MutableStateFlow<UiState<List<DonateCategoryModelUi>>> _categoriesState;
     private final MutableStateFlow<UiState<List<DonateItemModelUi>>> _itemsState;
+    private final MutableStateFlow<UiState<List<DonatePayPassLevel>>> _payPassLevelsState;
     private final DonateBadgesModel badgesTime;
     private final StateFlow<UiState<List<DonateBoostModelUi>>> boostState;
     private final StateFlow<UiState<List<DonateCategoryModelUi>>> categoriesState;
@@ -55,7 +58,9 @@ public final class DonateStates {
     private final CoroutineExceptionHandler handler;
     private boolean isWorkingMainItemSet;
     private Job itemJob;
+    private final StateFlow<ResultState<List<DonateItemModel>>> itemList;
     private final StateFlow<UiState<List<DonateItemModelUi>>> itemState;
+    private final StateFlow<UiState<List<DonatePayPassLevel>>> payPassLevelsState;
     private final DonateRepositoryImpl repository;
     private final CoroutineScope scope;
     private Job updateItemJob;
@@ -70,20 +75,26 @@ public final class DonateStates {
         this.handler = donateStates$special$$inlined$CoroutineExceptionHandler$1;
         CoroutineScope CoroutineScope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(donateStates$special$$inlined$CoroutineExceptionHandler$1));
         this.scope = CoroutineScope;
-        this.getItemsUseCase = new DonateGetItemUseCase(donateRepositoryImpl, CoroutineScope);
+        DonateGetItemUseCase donateGetItemUseCase = new DonateGetItemUseCase(donateRepositoryImpl, CoroutineScope);
+        this.getItemsUseCase = donateGetItemUseCase;
         MutableStateFlow<UiState<List<DonateCategoryModelUi>>> MutableStateFlow = StateFlowKt.MutableStateFlow(UiState.Loading.INSTANCE);
         this._categoriesState = MutableStateFlow;
         this.categoriesState = FlowKt.asStateFlow(MutableStateFlow);
         MutableStateFlow<UiState<List<DonateItemModelUi>>> MutableStateFlow2 = StateFlowKt.MutableStateFlow(UiState.Loading.INSTANCE);
         this._itemsState = MutableStateFlow2;
         this.itemState = FlowKt.asStateFlow(MutableStateFlow2);
+        this.itemList = donateGetItemUseCase.getItemList();
         MutableStateFlow<UiState<List<DonateBoostModelUi>>> MutableStateFlow3 = StateFlowKt.MutableStateFlow(UiState.Loading.INSTANCE);
         this._boostState = MutableStateFlow3;
         this.boostState = FlowKt.asStateFlow(MutableStateFlow3);
+        MutableStateFlow<UiState<List<DonatePayPassLevel>>> MutableStateFlow4 = StateFlowKt.MutableStateFlow(UiState.Loading.INSTANCE);
+        this._payPassLevelsState = MutableStateFlow4;
+        this.payPassLevelsState = FlowKt.asStateFlow(MutableStateFlow4);
         this.badgesTime = new DonateBadgesModel(CollectionsKt.listOf((Object[]) new String[]{"", ""}), "", "TIME");
         this.categoryUpdates = new LinkedHashMap();
         setCategories();
         setBoosts();
+        setPayPassLevels();
     }
 
     public final StateFlow<UiState<List<DonateCategoryModelUi>>> getCategoriesState() {
@@ -94,8 +105,16 @@ public final class DonateStates {
         return this.itemState;
     }
 
+    public final StateFlow<ResultState<List<DonateItemModel>>> getItemList() {
+        return this.itemList;
+    }
+
     public final StateFlow<UiState<List<DonateBoostModelUi>>> getBoostState() {
         return this.boostState;
+    }
+
+    public final StateFlow<UiState<List<DonatePayPassLevel>>> getPayPassLevelsState() {
+        return this.payPassLevelsState;
     }
 
     public final void updateCategories(DonateCategoryModel model) {
@@ -275,6 +294,10 @@ public final class DonateStates {
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateStates$setBoosts$1(this, null), 3, null);
     }
 
+    private final void setPayPassLevels() {
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateStates$setPayPassLevels$1(this, null), 3, null);
+    }
+
     public final void clearJobs() {
         Job job = this.itemJob;
         if (job != null) {
@@ -286,5 +309,6 @@ public final class DonateStates {
             Job.cancel$default(job2, (CancellationException) null, 1, (Object) null);
         }
         this.updateItemJob = null;
+        CoroutineScopeKt.cancel$default(this.scope, null, 1, null);
     }
 }

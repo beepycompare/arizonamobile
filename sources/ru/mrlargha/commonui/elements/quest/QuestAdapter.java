@@ -14,6 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.RodinaQuestItemBinding;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: QuestAdapter.kt */
 @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\b\u0004\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0002\u0019\u001aB\u0007¢\u0006\u0004\b\u0003\u0010\u0004J\u000e\u0010\u000b\u001a\u00020\f2\u0006\u0010\t\u001a\u00020\nJ\u0018\u0010\r\u001a\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\f2\u0006\u0010\u0013\u001a\u00020\u00022\u0006\u0010\u0014\u001a\u00020\u0011H\u0016J\b\u0010\u0015\u001a\u00020\u0011H\u0016J\u0014\u0010\u0016\u001a\u00020\f2\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00070\u0017J\u0006\u0010\u0018\u001a\u00020\fR\u001e\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u00020\u00070\u0006j\b\u0012\u0004\u0012\u00020\u0007`\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/quest/QuestAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/quest/QuestAdapter$QuestViewHolder;", "<init>", "()V", "quests", "Ljava/util/ArrayList;", "Lru/mrlargha/commonui/elements/quest/QuestLine;", "Lkotlin/collections/ArrayList;", "onQuestClickListener", "Lru/mrlargha/commonui/elements/quest/QuestAdapter$OnQuestClickListener;", "setOnQuestClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "getItemCount", "addQuests", "", "clearQuests", "OnQuestClickListener", "QuestViewHolder", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
@@ -74,12 +75,14 @@ public final class QuestAdapter extends RecyclerView.Adapter<QuestViewHolder> {
         }
         if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
             String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso.load(projectResourceUrl$default + "systems/image_quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
+            PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "systems/image_quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
         } else {
             Picasso picasso2 = Picasso.get();
+            Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
             String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-            picasso2.load(projectResourceUrl$default2 + "systems/quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
+            PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "systems/quest/" + questLine2.getImage()).placeholder(R.drawable.quest_template).into(binding.rodinaQuestItemImage);
         }
         binding.rodinaQuestInfoTitle.setText(questLine2.getTitle());
         binding.rodinaQuestItem.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestAdapter$$ExternalSyntheticLambda0

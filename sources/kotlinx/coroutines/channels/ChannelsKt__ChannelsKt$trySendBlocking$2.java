@@ -52,7 +52,7 @@ public final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambd
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -75,11 +75,11 @@ public final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambd
                 CoroutineScope coroutineScope2 = (CoroutineScope) this.L$1;
                 ResultKt.throwOnFailure(obj);
             }
-            m9920constructorimpl = Result.m9920constructorimpl(Unit.INSTANCE);
+            m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        return ChannelResult.m11468boximpl(Result.m9927isSuccessimpl(m9920constructorimpl) ? ChannelResult.Companion.m11483successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m11481closedJP2dKIU(Result.m9923exceptionOrNullimpl(m9920constructorimpl)));
+        return ChannelResult.m11469boximpl(Result.m9928isSuccessimpl(m9921constructorimpl) ? ChannelResult.Companion.m11484successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m11482closedJP2dKIU(Result.m9924exceptionOrNullimpl(m9921constructorimpl)));
     }
 }

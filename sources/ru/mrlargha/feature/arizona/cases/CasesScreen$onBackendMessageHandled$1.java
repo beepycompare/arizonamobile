@@ -17,10 +17,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.MutableStateFlow;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.feature.arizona.cases.databinding.ArizonaCasesScreenBinding;
 /* compiled from: CasesScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$onBackendMessageHandled$1", f = "CasesScreen.kt", i = {0}, l = {96}, m = "invokeSuspend", n = {CommonUrlParts.MODEL}, nl = {97}, s = {"L$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$onBackendMessageHandled$1", f = "CasesScreen.kt", i = {0}, l = {101}, m = "invokeSuspend", n = {CommonUrlParts.MODEL}, nl = {102}, s = {"L$0"}, v = 2)
 /* loaded from: classes6.dex */
 final class CasesScreen$onBackendMessageHandled$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ String $data;
@@ -81,10 +82,11 @@ final class CasesScreen$onBackendMessageHandled$1 extends SuspendLambda implemen
         btnClose.setVisibility(0);
         this.this$0.startGoldBoxAnimation();
         Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-        RequestCreator load = picasso.load(projectResourceUrl$default + "systems/cases/" + casesInfoModel.getCaseId() + ".webp");
+        RequestCreator loadSafe = PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "systems/cases/" + casesInfoModel.getCaseId() + ".webp");
         arizonaCasesScreenBinding3 = this.this$0.casesBinding;
-        load.into(arizonaCasesScreenBinding3.openPage.caseImg);
+        loadSafe.into(arizonaCasesScreenBinding3.openPage.caseImg);
         return Unit.INSTANCE;
     }
 }

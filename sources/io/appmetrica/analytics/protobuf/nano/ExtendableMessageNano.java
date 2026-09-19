@@ -94,8 +94,8 @@ public abstract class ExtendableMessageNano<M extends ExtendableMessageNano<M>> 
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     /* renamed from: clone */
-    public M mo9911clone() throws CloneNotSupportedException {
-        M m = (M) super.mo9911clone();
+    public M mo9912clone() throws CloneNotSupportedException {
+        M m = (M) super.mo9912clone();
         InternalNano.cloneUnknownFieldData(this, m);
         return m;
     }

@@ -35,27 +35,27 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int common_full_open_on_phone = 0x7f080631;
-        public static int common_google_signin_btn_icon_dark = 0x7f080632;
-        public static int common_google_signin_btn_icon_dark_focused = 0x7f080633;
-        public static int common_google_signin_btn_icon_dark_normal = 0x7f080634;
-        public static int common_google_signin_btn_icon_dark_normal_background = 0x7f080635;
-        public static int common_google_signin_btn_icon_disabled = 0x7f080636;
-        public static int common_google_signin_btn_icon_light = 0x7f080637;
-        public static int common_google_signin_btn_icon_light_focused = 0x7f080638;
-        public static int common_google_signin_btn_icon_light_normal = 0x7f080639;
-        public static int common_google_signin_btn_icon_light_normal_background = 0x7f08063a;
-        public static int common_google_signin_btn_text_dark = 0x7f08063b;
-        public static int common_google_signin_btn_text_dark_focused = 0x7f08063c;
-        public static int common_google_signin_btn_text_dark_normal = 0x7f08063d;
-        public static int common_google_signin_btn_text_dark_normal_background = 0x7f08063e;
-        public static int common_google_signin_btn_text_disabled = 0x7f08063f;
-        public static int common_google_signin_btn_text_light = 0x7f080640;
-        public static int common_google_signin_btn_text_light_focused = 0x7f080641;
-        public static int common_google_signin_btn_text_light_normal = 0x7f080642;
-        public static int common_google_signin_btn_text_light_normal_background = 0x7f080643;
-        public static int googleg_disabled_color_18 = 0x7f0809d3;
-        public static int googleg_standard_color_18 = 0x7f0809d4;
+        public static int common_full_open_on_phone = 0x7f080633;
+        public static int common_google_signin_btn_icon_dark = 0x7f080634;
+        public static int common_google_signin_btn_icon_dark_focused = 0x7f080635;
+        public static int common_google_signin_btn_icon_dark_normal = 0x7f080636;
+        public static int common_google_signin_btn_icon_dark_normal_background = 0x7f080637;
+        public static int common_google_signin_btn_icon_disabled = 0x7f080638;
+        public static int common_google_signin_btn_icon_light = 0x7f080639;
+        public static int common_google_signin_btn_icon_light_focused = 0x7f08063a;
+        public static int common_google_signin_btn_icon_light_normal = 0x7f08063b;
+        public static int common_google_signin_btn_icon_light_normal_background = 0x7f08063c;
+        public static int common_google_signin_btn_text_dark = 0x7f08063d;
+        public static int common_google_signin_btn_text_dark_focused = 0x7f08063e;
+        public static int common_google_signin_btn_text_dark_normal = 0x7f08063f;
+        public static int common_google_signin_btn_text_dark_normal_background = 0x7f080640;
+        public static int common_google_signin_btn_text_disabled = 0x7f080641;
+        public static int common_google_signin_btn_text_light = 0x7f080642;
+        public static int common_google_signin_btn_text_light_focused = 0x7f080643;
+        public static int common_google_signin_btn_text_light_normal = 0x7f080644;
+        public static int common_google_signin_btn_text_light_normal_background = 0x7f080645;
+        public static int googleg_disabled_color_18 = 0x7f0809e1;
+        public static int googleg_standard_color_18 = 0x7f0809e2;
 
         private drawable() {
         }
@@ -63,15 +63,15 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class id {
-        public static int adjust_height = 0x7f0a00ba;
-        public static int adjust_width = 0x7f0a00bb;
-        public static int auto = 0x7f0a0142;
-        public static int dark = 0x7f0a058c;
-        public static int icon_only = 0x7f0a08af;
-        public static int light = 0x7f0a0a3c;
-        public static int none = 0x7f0a0c0a;
-        public static int standard = 0x7f0a0fdf;
-        public static int wide = 0x7f0a12d6;
+        public static int adjust_height = 0x7f0a00bb;
+        public static int adjust_width = 0x7f0a00bc;
+        public static int auto = 0x7f0a0143;
+        public static int dark = 0x7f0a0590;
+        public static int icon_only = 0x7f0a08b5;
+        public static int light = 0x7f0a0a4b;
+        public static int none = 0x7f0a0c1a;
+        public static int standard = 0x7f0a101c;
+        public static int wide = 0x7f0a1325;
 
         private id() {
         }

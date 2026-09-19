@@ -54,7 +54,7 @@ public class MaterialResources {
     }
 
     public static boolean isFontScaleAtLeast1_3(Context context) {
-        return context.getResources().getConfiguration().fontScale >= FONT_SCALE_1_3;
+        return context.getResources().getConfiguration().fontScale >= 1.3f;
     }
 
     public static boolean isFontScaleAtLeast2_0(Context context) {

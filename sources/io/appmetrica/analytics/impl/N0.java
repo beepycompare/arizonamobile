@@ -8,25 +8,25 @@ import kotlin.jvm.internal.Intrinsics;
 public final class N0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IHandlerExecutor f675a = C0575s4.l().g().a();
+    public final IHandlerExecutor f675a = C0574s4.l().g().a();
     public final B0 b;
-    public final C0560rf c;
-    public final C0638uf d;
+    public final C0559rf c;
+    public final C0637uf d;
 
     public N0() {
         B0 b0 = new B0();
         this.b = b0;
-        this.c = new C0560rf(b0);
-        this.d = new C0638uf();
+        this.c = new C0559rf(b0);
+        this.d = new C0637uf();
     }
 
     public final void a(final PluginErrorDetails pluginErrorDetails) {
-        C0560rf c0560rf = this.c;
-        c0560rf.f1184a.a(null);
-        c0560rf.b.a(pluginErrorDetails);
-        C0638uf c0638uf = this.d;
+        C0559rf c0559rf = this.c;
+        c0559rf.f1184a.a(null);
+        c0559rf.b.a(pluginErrorDetails);
+        C0637uf c0637uf = this.d;
         Intrinsics.checkNotNull(pluginErrorDetails);
-        c0638uf.getClass();
+        c0637uf.getClass();
         this.f675a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
@@ -36,13 +36,13 @@ public final class N0 {
     }
 
     public final void a(final PluginErrorDetails pluginErrorDetails, final String str) {
-        C0560rf c0560rf = this.c;
-        c0560rf.f1184a.a(null);
-        c0560rf.b.a(pluginErrorDetails);
-        if (c0560rf.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f784a) {
-            C0638uf c0638uf = this.d;
+        C0559rf c0559rf = this.c;
+        c0559rf.f1184a.a(null);
+        c0559rf.b.a(pluginErrorDetails);
+        if (c0559rf.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f784a) {
+            C0637uf c0637uf = this.d;
             Intrinsics.checkNotNull(pluginErrorDetails);
-            c0638uf.getClass();
+            c0637uf.getClass();
             this.f675a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -53,12 +53,12 @@ public final class N0 {
     }
 
     public final void a(final String str, final String str2, final PluginErrorDetails pluginErrorDetails) {
-        C0560rf c0560rf = this.c;
-        c0560rf.f1184a.a(null);
-        c0560rf.c.a(str);
-        C0638uf c0638uf = this.d;
+        C0559rf c0559rf = this.c;
+        c0559rf.f1184a.a(null);
+        c0559rf.c.a(str);
+        C0637uf c0637uf = this.d;
         Intrinsics.checkNotNull(str);
-        c0638uf.getClass();
+        c0637uf.getClass();
         this.f675a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.N0$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {

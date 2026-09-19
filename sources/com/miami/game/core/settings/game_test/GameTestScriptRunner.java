@@ -1150,7 +1150,7 @@ public final class GameTestScriptRunner {
     }
 
     private final int resolveSpawnSelectionId(String str, int i) {
-        int m9920constructorimpl;
+        int m9921constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             GameTestScriptRunner gameTestScriptRunner = this;
@@ -1167,22 +1167,22 @@ public final class GameTestScriptRunner {
                     return ComparisonsKt.compareValues(Integer.valueOf(((JSONObject) t2).optInt("favorite", 0)), Integer.valueOf(((JSONObject) t).optInt("favorite", 0)));
                 }
             }), i);
-            m9920constructorimpl = Result.m9920constructorimpl(Integer.valueOf(jSONObject != null ? jSONObject.optInt(TtmlNode.ATTR_ID) : 0));
+            m9921constructorimpl = Result.m9921constructorimpl(Integer.valueOf(jSONObject != null ? jSONObject.optInt(TtmlNode.ATTR_ID) : 0));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9923exceptionOrNullimpl = Result.m9923exceptionOrNullimpl(m9920constructorimpl);
-        if (m9923exceptionOrNullimpl != null) {
+        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
+        if (m9924exceptionOrNullimpl != null) {
             GameTestRuntime gameTestRuntime = this.runtime;
-            String message = m9923exceptionOrNullimpl.getMessage();
+            String message = m9924exceptionOrNullimpl.getMessage();
             if (message == null) {
                 message = "";
             }
             gameTestRuntime.log("Failed to parse SPAWN_SELECTION list, falling back to id=0: " + message);
-            m9920constructorimpl = 0;
+            m9921constructorimpl = 0;
         }
-        return ((Number) m9920constructorimpl).intValue();
+        return ((Number) m9921constructorimpl).intValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -37,4 +37,9 @@ public class GameTestBackendHarnessController {
     public static GameTestBackendHarnessController create(GTASA gtasa) {
         return new GameTestBackendHarnessController();
     }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public void destroy() {
+        stop();
+    }
 }

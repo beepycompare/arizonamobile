@@ -189,8 +189,8 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         do {
             value = mutableStateFlow.getValue();
         } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, false, 0, null, null, 4079, null)));
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), connectionData.getPassword()), 524287, null));
-        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), 0, 0.0f, false, false, false, false, false, false, connectionData.getIp(), connectionData.getPort(), connectionData.getPassword(), 255, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), StringsKt.trim((CharSequence) connectionData.getPassword()).toString()), 524287, null));
+        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), 0, 0.0f, false, false, false, false, false, false, connectionData.getIp(), connectionData.getPort(), StringsKt.trim((CharSequence) connectionData.getPassword()).toString(), 255, null));
         ConnectionHolder.INSTANCE.getOnConnectTest().invoke();
     }
 

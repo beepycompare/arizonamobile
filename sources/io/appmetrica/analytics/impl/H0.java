@@ -16,15 +16,15 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class H0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0196dc f571a = new C0196dc(C0575s4.l().d());
-    public final C0221ec b = new C0221ec();
-    public final C0273gc c = new C0273gc();
+    public final C0195dc f571a = new C0195dc(C0574s4.l().d());
+    public final C0220ec b = new C0220ec();
+    public final C0272gc c = new C0272gc();
 
     public final void a(final String str, final String str2, final String str3) {
-        C0196dc c0196dc = this.f571a;
-        if (c0196dc.c.a((Void) null).f784a && c0196dc.d.a(str).f784a && c0196dc.e.a(str2).f784a && c0196dc.f.a(str3).f784a) {
+        C0195dc c0195dc = this.f571a;
+        if (c0195dc.c.a((Void) null).f784a && c0195dc.d.a(str).f784a && c0195dc.e.a(str2).f784a && c0195dc.f.a(str3).f784a) {
             this.b.getClass();
-            IHandlerExecutor a2 = C0575s4.l().c.a();
+            IHandlerExecutor a2 = C0574s4.l().c.a();
             ((U9) a2).b.post(new Runnable() { // from class: io.appmetrica.analytics.impl.H0$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -37,10 +37,10 @@ public final class H0 {
     }
 
     public static final void a(H0 h0, String str, String str2, String str3) {
-        List<InterfaceC0622u> list;
+        List<InterfaceC0621u> list;
         Context a2;
-        C0273gc c0273gc = h0.c;
-        c0273gc.getClass();
+        C0272gc c0272gc = h0.c;
+        c0272gc.getClass();
         Pair[] pairArr = new Pair[3];
         if (str == null) {
             str = AbstractJsonLexerKt.NULL;
@@ -56,15 +56,15 @@ public final class H0 {
         pairArr[2] = TuplesKt.to("payload", str3);
         Map<String, Object> mutableMapOf = MapsKt.mutableMapOf(pairArr);
         ModuleEvent.Builder withName = ModuleEvent.newBuilder(4).withName("appmetrica_system_event_42");
-        synchronized (c0273gc) {
-            if (c0273gc.f997a == null && (a2 = C0575s4.l().g.a()) != null) {
-                c0273gc.f997a = CollectionsKt.listOf((Object[]) new InterfaceC0622u[]{new C0534qe(), new Gn(a2), new np()});
+        synchronized (c0272gc) {
+            if (c0272gc.f997a == null && (a2 = C0574s4.l().g.a()) != null) {
+                c0272gc.f997a = CollectionsKt.listOf((Object[]) new InterfaceC0621u[]{new C0533qe(), new Gn(a2), new np()});
             }
-            list = c0273gc.f997a;
+            list = c0272gc.f997a;
         }
         if (list != null) {
-            for (InterfaceC0622u interfaceC0622u : list) {
-                interfaceC0622u.a(mutableMapOf);
+            for (InterfaceC0621u interfaceC0621u : list) {
+                interfaceC0621u.a(mutableMapOf);
             }
         }
         ModulesFacade.reportEvent(withName.withAttributes(mutableMapOf).build());

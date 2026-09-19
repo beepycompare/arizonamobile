@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
@@ -11,28 +10,32 @@ import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 /* loaded from: classes6.dex */
 public final class HudDriftCounterBinding implements ViewBinding {
-    public final LinearLayout countdownContainer;
-    public final TextView countdownLabel;
-    public final TextView elapsedTime;
-    public final TextView multiplier;
-    private final FrameLayout rootView;
+    public final TextView driftMoneyTimer;
+    public final TextView money;
+    public final TextView moneyMultiplier;
+    public final TextView pointMultiplier;
+    public final TextView points;
+    private final LinearLayout rootView;
     public final LinearLayout scoreContainer;
-    public final TextView scoreValue;
+    public final LinearLayout speedContainer;
+    public final TextView speedSpeedStatus;
     public final TextView speedStatus;
 
-    private HudDriftCounterBinding(FrameLayout rootView, LinearLayout countdownContainer, TextView countdownLabel, TextView elapsedTime, TextView multiplier, LinearLayout scoreContainer, TextView scoreValue, TextView speedStatus) {
+    private HudDriftCounterBinding(LinearLayout rootView, TextView driftMoneyTimer, TextView money, TextView moneyMultiplier, TextView pointMultiplier, TextView points, LinearLayout scoreContainer, LinearLayout speedContainer, TextView speedSpeedStatus, TextView speedStatus) {
         this.rootView = rootView;
-        this.countdownContainer = countdownContainer;
-        this.countdownLabel = countdownLabel;
-        this.elapsedTime = elapsedTime;
-        this.multiplier = multiplier;
+        this.driftMoneyTimer = driftMoneyTimer;
+        this.money = money;
+        this.moneyMultiplier = moneyMultiplier;
+        this.pointMultiplier = pointMultiplier;
+        this.points = points;
         this.scoreContainer = scoreContainer;
-        this.scoreValue = scoreValue;
+        this.speedContainer = speedContainer;
+        this.speedSpeedStatus = speedSpeedStatus;
         this.speedStatus = speedStatus;
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public FrameLayout getRoot() {
+    public LinearLayout getRoot() {
         return this.rootView;
     }
 
@@ -49,28 +52,36 @@ public final class HudDriftCounterBinding implements ViewBinding {
     }
 
     public static HudDriftCounterBinding bind(View rootView) {
-        int i = R.id.countdown_container;
-        LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-        if (linearLayout != null) {
-            i = R.id.countdown_label;
-            TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-            if (textView != null) {
-                i = R.id.elapsed_time;
-                TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                if (textView2 != null) {
-                    i = R.id.multiplier;
-                    TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                    if (textView3 != null) {
-                        i = R.id.score_container;
-                        LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                        if (linearLayout2 != null) {
-                            i = R.id.score_value;
-                            TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                            if (textView4 != null) {
-                                i = R.id.speed_status;
-                                TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                if (textView5 != null) {
-                                    return new HudDriftCounterBinding((FrameLayout) rootView, linearLayout, textView, textView2, textView3, linearLayout2, textView4, textView5);
+        int i = R.id.drift_money_timer;
+        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+        if (textView != null) {
+            i = R.id.money;
+            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+            if (textView2 != null) {
+                i = R.id.money_multiplier;
+                TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                if (textView3 != null) {
+                    i = R.id.point_multiplier;
+                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                    if (textView4 != null) {
+                        i = R.id.points;
+                        TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                        if (textView5 != null) {
+                            i = R.id.score_container;
+                            LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                            if (linearLayout != null) {
+                                i = R.id.speed_container;
+                                LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                if (linearLayout2 != null) {
+                                    i = R.id.speed_speed_status;
+                                    TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView6 != null) {
+                                        i = R.id.speed_status;
+                                        TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                        if (textView7 != null) {
+                                            return new HudDriftCounterBinding((LinearLayout) rootView, textView, textView2, textView3, textView4, textView5, linearLayout, linearLayout2, textView6, textView7);
+                                        }
+                                    }
                                 }
                             }
                         }

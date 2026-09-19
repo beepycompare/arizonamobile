@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="@dimen/_210sdp" android:layout_height="@dimen/_38sdp">
-    <TextView android:textSize="@dimen/_4sdp" android:textColor="#8fffffff" android:gravity="center" android:layout_gravity="start|top" android:id="@+id/train_start_station" android:layout_width="@dimen/_62sdp" android:layout_height="@dimen/_14sdp" android:maxLines="2" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
-    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="top|center_horizontal" android:orientation="vertical" android:layout_width="@dimen/_60sdp" android:layout_height="@dimen/_18sdp">
-        <TextView android:textSize="@dimen/_4sdp" android:textColor="#80ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/train_hud_distance" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
-        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:id="@+id/max_km" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
-    </LinearLayout>
-    <TextView android:textSize="@dimen/_4sdp" android:textColor="#8fffffff" android:gravity="center" android:layout_gravity="end|top" android:id="@+id/train_end_station" android:layout_width="@dimen/_62sdp" android:layout_height="@dimen/_14sdp" android:maxLines="2" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
-    <FrameLayout android:layout_gravity="bottom" android:layout_width="match_parent" android:layout_height="@dimen/_18sdp">
-        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:layout_width="@dimen/_176sdp" android:layout_height="@dimen/_1sdp" app:backgroundMainColor="#8affffff" app:corners="@dimen/_1sdp"/>
-        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:id="@+id/route_progress" android:layout_width="@dimen/_176sdp" android:layout_height="@dimen/_1sdp" app:backgroundMainColor="#b5ef6b" app:corners="@dimen/_1sdp"/>
-        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
-            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" app:backgroundMainColor="#ff414f" app:corners="@dimen/_6sdp"/>
-            </FrameLayout>
-            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:layout_width="@dimen/_7sdp" android:layout_height="@dimen/_9sdp" android:src="@drawable/location_icon" android:tint="@color/white" android:contentDescription="@null"/>
-            </FrameLayout>
-            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:layout_width="@dimen/_7sdp" android:layout_height="@dimen/_9sdp" android:src="@drawable/location_icon" android:tint="@color/white" android:contentDescription="@null"/>
-            </FrameLayout>
-            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_10sdp" android:src="@drawable/location_icon" android:tint="#f4c63d" android:contentDescription="@null"/>
-            </FrameLayout>
-            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-                <ImageView android:layout_gravity="center" android:layout_width="@dimen/_7sdp" android:layout_height="@dimen/_9sdp" android:src="@drawable/location_icon" android:tint="@color/white" android:contentDescription="@null"/>
-            </FrameLayout>
-            <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1">
-                <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" app:backgroundMainColor="#9ef15d" app:corners="@dimen/_6sdp"/>
-            </FrameLayout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_62sdp" android:layout_height="@dimen/_63sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:focusable="false" android:clickable="false" android:layout_width="@dimen/_104sdp" android:layout_height="@dimen/_104sdp" android:scaleY="0.9519" app:backgroundMainColor="#b3000000" app:backgroundSecondColor="#00000000" app:corners="@dimen/_52sdp" app:gradientType="radial" app:radialGradientRadius="@dimen/_52sdp"/>
+    <FrameLayout android:layout_gravity="start|top" android:id="@+id/route_progress_track" android:clipChildren="false" android:clipToPadding="false" android:layout_width="@dimen/_6sdp" android:layout_height="match_parent" android:layout_marginBottom="@dimen/_13sdp">
+        <ru.mrlargha.commonui.elements.hud.presentation.view.TrainRouteProgressView android:layout_gravity="center_horizontal" android:id="@+id/route_progress" android:layout_width="@dimen/_1sdp" android:layout_height="match_parent" android:layout_marginTop="@dimen/_3sdp" android:layout_marginBottom="@dimen/_3sdp"/>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" app:backgroundMainColor="#ff414f" app:borderMainColor="@color/white" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp"/>
+            <View android:layout_width="@dimen/_1sdp" android:layout_height="0dp" android:layout_weight="1"/>
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" app:backgroundMainColor="#9ef15d" app:borderMainColor="@color/white" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp"/>
         </LinearLayout>
     </FrameLayout>
+    <TextView android:textSize="@dimen/_5sdp" android:textColor="#8fffffff" android:gravity="start|center_vertical" android:layout_gravity="end|top" android:id="@+id/train_start_station" android:layout_width="@dimen/_51sdp" android:layout_height="@dimen/_15sdp" android:maxLines="2" android:includeFontPadding="false" android:lineSpacingExtra="@dimen/_1sdp" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="end|top" android:orientation="vertical" android:layout_width="@dimen/_51sdp" android:layout_height="@dimen/_18sdp" android:layout_marginTop="@dimen/_16sdp">
+        <TextView android:textSize="@dimen/_5sdp" android:textColor="#80ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/_1sdp" android:text="@string/train_hud_distance" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_64_regular"/>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/white" android:id="@+id/max_km" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+            <TextView android:textSize="@dimen/_9sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/train_hud_km" android:includeFontPadding="false" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_3sdp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:gravity="start|center_vertical" android:layout_gravity="end|top" android:id="@+id/train_end_station" android:layout_width="@dimen/_51sdp" android:layout_height="@dimen/_15sdp" android:layout_marginTop="@dimen/_36sdp" android:maxLines="2" android:includeFontPadding="false" android:lineSpacingExtra="@dimen/_1sdp" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="start|bottom" android:layout_width="wrap_content" android:layout_height="@dimen/_11sdp" android:paddingStart="@dimen/_4sdp" android:paddingEnd="@dimen/_5sdp" app:backgroundMainColor="#f04450" app:corners="@dimen/_3sdp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="match_parent">
+            <ImageView android:layout_width="@dimen/_6sdp" android:layout_height="@dimen/_6sdp" android:src="@drawable/cross" android:tint="@color/white" android:contentDescription="@null"/>
+            <TextView android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:gravity="center_vertical" android:id="@+id/train_route_warnings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_65_medium" android:layout_marginStart="@dimen/_2sdp"/>
+        </LinearLayout>
+    </ru.mrlargha.commonui.utils.ui.CustomCardView>
 </FrameLayout>

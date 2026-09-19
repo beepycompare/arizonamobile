@@ -16,6 +16,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.event.adapters.PriseAdapter;
 import ru.mrlargha.event.data.EasterItem;
@@ -173,12 +174,14 @@ public final class PriseAdapter extends RecyclerView.Adapter<OldPriseViewHolder>
             this.binding.rarity.setBackgroundColor(Color.parseColor(str));
             if (UtilsKt.isArizonaType()) {
                 Picasso picasso = Picasso.get();
+                Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
                 String projectResourceUrl$default = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-                picasso.load(projectResourceUrl$default + "/assets/images/donate/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
+                PicassoLoadSafeKt.loadSafe(picasso, projectResourceUrl$default + "/assets/images/donate/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
             } else {
                 Picasso picasso2 = Picasso.get();
+                Intrinsics.checkNotNullExpressionValue(picasso2, "get(...)");
                 String projectResourceUrl$default2 = FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
-                picasso2.load(projectResourceUrl$default2 + "systems/pirate-event/rewards/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
+                PicassoLoadSafeKt.loadSafe(picasso2, projectResourceUrl$default2 + "systems/pirate-event/rewards/" + prise.getItemid() + ".webp").into(this.binding.imagePrise);
             }
             LinearLayout root = this.binding.getRoot();
             final PriseAdapter priseAdapter = this.this$0;

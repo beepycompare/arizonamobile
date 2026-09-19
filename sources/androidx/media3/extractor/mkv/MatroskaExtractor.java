@@ -359,7 +359,7 @@ public class MatroskaExtractor implements Extractor {
             case ID_NAME /* 21358 */:
             case ID_LANGUAGE /* 2274716 */:
                 return 3;
-            case ID_BLOCK_GROUP /* 160 */:
+            case 160:
             case ID_BLOCK_MORE /* 166 */:
             case ID_TRACK_ENTRY /* 174 */:
             case ID_CUE_TRACK_POSITIONS /* 183 */:
@@ -561,7 +561,7 @@ public class MatroskaExtractor implements Extractor {
 
     protected void startMasterElement(int i, long j, long j2) throws ParserException {
         assertInitialized();
-        if (i == ID_BLOCK_GROUP) {
+        if (i == 160) {
             this.blockHasReferenceBlock = false;
             this.blockGroupDiscardPaddingNs = 0L;
         } else if (i == ID_TRACK_ENTRY) {
@@ -614,7 +614,7 @@ public class MatroskaExtractor implements Extractor {
     protected void endMasterElement(int i) throws ParserException {
         int i2;
         assertInitialized();
-        if (i == ID_BLOCK_GROUP) {
+        if (i == 160) {
             if (this.blockState != 2) {
                 return;
             }

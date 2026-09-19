@@ -7,16 +7,16 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class Bl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0467o f483a;
+    public final C0466o f483a;
     public final C5 b;
     public final ActivityLifecycleListener c;
     public final ActivityLifecycleListener d;
-    public final C0519q e;
-    public final C0415m f;
+    public final C0518q e;
+    public final C0414m f;
     public boolean g;
 
-    public Bl(C0467o c0467o, C0415m c0415m) {
-        this(c0467o, c0415m, new C5(), new C0519q());
+    public Bl(C0466o c0466o, C0414m c0414m) {
+        this(c0466o, c0414m, new C5(), new C0518q());
     }
 
     public final void a(final Activity activity, ActivityEvent activityEvent) {
@@ -29,7 +29,7 @@ public final class Bl {
                 }
             };
             c5.getClass();
-            C0575s4.l().c.a().execute(new B5(c5, be));
+            C0574s4.l().c.a().execute(new B5(c5, be));
         }
     }
 
@@ -43,16 +43,16 @@ public final class Bl {
                 }
             };
             c5.getClass();
-            C0575s4.l().c.a().execute(new B5(c5, be));
+            C0574s4.l().c.a().execute(new B5(c5, be));
         }
     }
 
-    public Bl(C0467o c0467o, C0415m c0415m, C5 c5, C0519q c0519q) {
+    public Bl(C0466o c0466o, C0414m c0414m, C5 c5, C0518q c0518q) {
         this.g = false;
-        this.f483a = c0467o;
-        this.f = c0415m;
+        this.f483a = c0466o;
+        this.f = c0414m;
         this.b = c5;
-        this.e = c0519q;
+        this.e = c0518q;
         this.c = new ActivityLifecycleListener() { // from class: io.appmetrica.analytics.impl.Bl$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
             public final void onEvent(Activity activity, ActivityEvent activityEvent) {
@@ -68,18 +68,18 @@ public final class Bl {
     }
 
     public final void b(Activity activity, Jc jc) {
-        if (this.g && this.e.a(activity, EnumC0493p.PAUSED)) {
+        if (this.g && this.e.a(activity, EnumC0492p.PAUSED)) {
             jc.b(activity);
         }
     }
 
     public final void a(Activity activity, Jc jc) {
-        if (this.g && this.e.a(activity, EnumC0493p.RESUMED)) {
+        if (this.g && this.e.a(activity, EnumC0492p.RESUMED)) {
             jc.a(activity);
         }
     }
 
-    public final synchronized EnumC0441n a() {
+    public final synchronized EnumC0440n a() {
         if (!this.g) {
             this.f483a.registerListener(this.c, ActivityEvent.RESUMED);
             this.f483a.registerListener(this.d, ActivityEvent.PAUSED);

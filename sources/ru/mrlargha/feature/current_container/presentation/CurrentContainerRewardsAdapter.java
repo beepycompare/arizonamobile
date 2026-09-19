@@ -15,6 +15,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.commonui.core.IBackendNotifier;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.feature.current_container.R;
 import ru.mrlargha.feature.current_container.domain.obj.ContainerPrize;
 /* compiled from: CurrentContainerRewardsAdapter.kt */
@@ -75,7 +76,9 @@ public final class CurrentContainerRewardsAdapter extends RecyclerView.Adapter<C
         }
         constraintLayout.setBackground(drawable);
         holder.getBinding().acItemTittle.setText(containerPrize2.getTitle());
-        Picasso.get().load(CurrentContainerCdnKt.getItemImageUrl(containerPrize2.getImage())).placeholder(R.drawable.item).error(R.drawable.item).into(holder.getBinding().acItemImage);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, CurrentContainerCdnKt.getItemImageUrl(containerPrize2.getImage())).placeholder(R.drawable.item).error(R.drawable.item).into(holder.getBinding().acItemImage);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter

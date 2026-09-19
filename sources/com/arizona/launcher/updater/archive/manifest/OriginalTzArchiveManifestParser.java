@@ -263,7 +263,7 @@ public final class OriginalTzArchiveManifestParser {
 
     private final String parseCentralDirectorySha256(JsonObject jsonObject) {
         JsonElement jsonElement;
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         if (jsonObject.has(CENTRAL_DIRECTORY_SHA256_KEY) && (jsonElement = jsonObject.get(CENTRAL_DIRECTORY_SHA256_KEY)) != null && jsonElement.isJsonPrimitive() && jsonElement.getAsJsonPrimitive().isString()) {
             try {
                 Result.Companion companion = Result.Companion;
@@ -271,12 +271,12 @@ public final class OriginalTzArchiveManifestParser {
                 ArchiveModelRules archiveModelRules = ArchiveModelRules.INSTANCE;
                 String asString = jsonElement.getAsString();
                 Intrinsics.checkNotNullExpressionValue(asString, "getAsString(...)");
-                m9920constructorimpl = Result.m9920constructorimpl(archiveModelRules.requireSha256Hex(asString));
+                m9921constructorimpl = Result.m9921constructorimpl(archiveModelRules.requireSha256Hex(asString));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+            return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
         }
         return null;
     }

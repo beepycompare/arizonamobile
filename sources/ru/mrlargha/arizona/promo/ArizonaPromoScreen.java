@@ -123,6 +123,11 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
         navigateTo(Navigation.Activate);
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit promoAdapter$lambda$0(ArizonaPromoScreen arizonaPromoScreen, PromoItem it) {
         Intrinsics.checkNotNullParameter(it, "it");

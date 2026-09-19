@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.casino;
 
 import android.app.Activity;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -14,21 +15,25 @@ import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.core.cache.UIElementEvictionReason;
 import ru.mrlargha.commonui.databinding.CasinoLayoutBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.feature.arizona.cases.pages.adapters.CasesSameCasesAdapter;
 /* compiled from: CasinoScreen.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 \u001b2\u00020\u0001:\u0002\u001b\u001cB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0010\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0010\u0010\u0013\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0002J\u0010\u0010\u0014\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0015H\u0002J\u0010\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0017\u001a\u00020\u0011H\u0002J\u0018\u0010\u0018\u001a\u00020\u000f2\u0006\u0010\u0019\u001a\u00020\u00112\u0006\u0010\u001a\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lru/mrlargha/commonui/elements/casino/CasinoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/CasinoLayoutBinding;", "timer", "Landroid/os/CountDownTimer;", "setCasinoType", "", "info", "", "setBalance", "updateBet", "setWinScreen", "Lru/mrlargha/commonui/elements/casino/CasinoScreen$Companion$WinInfo;", "setBackground", "type", "onBackendMessageHandled", "data", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 *2\u00020\u0001:\u0002*+B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0002J\u0010\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0002J\u0010\u0010\u0017\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0002J\u0010\u0010\u0018\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0019H\u0002J\b\u0010\u001a\u001a\u00020\u0013H\u0002J\u0010\u0010\u001b\u001a\u00020\u00132\u0006\u0010\u001c\u001a\u00020\u000fH\u0002J\b\u0010\u001d\u001a\u00020\u0013H\u0002J\b\u0010\u001e\u001a\u00020\u0013H\u0002J\u0010\u0010\u001f\u001a\u00020\u00132\u0006\u0010 \u001a\u00020\u0015H\u0002J\u0018\u0010!\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020\u00152\u0006\u0010#\u001a\u00020\u0005H\u0016J\u0010\u0010$\u001a\u00020\u00132\u0006\u0010%\u001a\u00020&H\u0016J\u0010\u0010'\u001a\u00020\u00132\u0006\u0010(\u001a\u00020)H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006,"}, d2 = {"Lru/mrlargha/commonui/elements/casino/CasinoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/CasinoLayoutBinding;", "winTimer", "Landroid/os/CountDownTimer;", "winDeadlineMillis", "", "Ljava/lang/Long;", "winTimerGeneration", "setCasinoType", "", "info", "", "setBalance", "updateBet", "setWinScreen", "Lru/mrlargha/commonui/elements/casino/CasinoScreen$Companion$WinInfo;", "resumeWinTimer", "startWinTimer", "remainingMillis", "stopWinTimer", "clearWinScreen", "setBackground", "type", "onBackendMessageHandled", "data", "subId", "setVisibility", "visible", "", "onRemovedFromStore", "reason", "Lru/mrlargha/commonui/core/cache/UIElementEvictionReason;", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class CasinoScreen extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
     private final CasinoLayoutBinding binding;
     private final ConstraintLayout layout;
-    private CountDownTimer timer;
+    private Long winDeadlineMillis;
+    private CountDownTimer winTimer;
+    private long winTimerGeneration;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CasinoScreen(Activity targetActivity, int i) {
@@ -189,34 +194,72 @@ public final class CasinoScreen extends SAMPUIElement {
         this.binding.bet.setText("Ставка " + str);
     }
 
-    /* JADX WARN: Type inference failed for: r6v2, types: [ru.mrlargha.commonui.elements.casino.CasinoScreen$setWinScreen$1$1] */
     private final void setWinScreen(Companion.WinInfo winInfo) {
-        CountDownTimer countDownTimer = this.timer;
-        if (countDownTimer != null) {
-            if (countDownTimer == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("timer");
-                countDownTimer = null;
-            }
-            countDownTimer.cancel();
-        }
-        final CasinoLayoutBinding casinoLayoutBinding = this.binding;
+        stopWinTimer();
+        this.winDeadlineMillis = Long.valueOf(SystemClock.elapsedRealtime() + (RangesKt.coerceAtLeast(winInfo.getTimeout(), 0) * 1000));
+        CasinoLayoutBinding casinoLayoutBinding = this.binding;
         casinoLayoutBinding.casinoWinScreen.setVisibility(0);
         casinoLayoutBinding.winTitle.setText(winInfo.getText());
         casinoLayoutBinding.winCount.setText(String.valueOf(winInfo.getChips()));
-        final long timeout = winInfo.getTimeout() * 1000;
-        CountDownTimer start = new CountDownTimer(timeout) { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$setWinScreen$1$1
+        if (isOnScreen()) {
+            resumeWinTimer();
+        }
+    }
+
+    private final void resumeWinTimer() {
+        Long l = this.winDeadlineMillis;
+        if (l == null) {
+            this.binding.casinoWinScreen.setVisibility(8);
+            return;
+        }
+        long longValue = l.longValue() - SystemClock.elapsedRealtime();
+        if (longValue <= 0) {
+            clearWinScreen();
+        } else {
+            startWinTimer(longValue);
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r4v0, types: [ru.mrlargha.commonui.elements.casino.CasinoScreen$startWinTimer$1] */
+    private final void startWinTimer(final long j) {
+        stopWinTimer();
+        final long j2 = this.winTimerGeneration + 1;
+        this.winTimerGeneration = j2;
+        this.winTimer = new CountDownTimer(j) { // from class: ru.mrlargha.commonui.elements.casino.CasinoScreen$startWinTimer$1
             @Override // android.os.CountDownTimer
-            public void onTick(long j) {
+            public void onTick(long j3) {
             }
 
             @Override // android.os.CountDownTimer
             public void onFinish() {
-                CasinoLayoutBinding.this.casinoWinScreen.setVisibility(8);
-                cancel();
+                long j3;
+                CasinoLayoutBinding casinoLayoutBinding;
+                long j4 = j2;
+                j3 = this.winTimerGeneration;
+                if (j4 != j3) {
+                    return;
+                }
+                this.winTimer = null;
+                this.winDeadlineMillis = null;
+                casinoLayoutBinding = this.binding;
+                casinoLayoutBinding.casinoWinScreen.setVisibility(8);
             }
         }.start();
-        Intrinsics.checkNotNullExpressionValue(start, "start(...)");
-        this.timer = start;
+    }
+
+    private final void stopWinTimer() {
+        this.winTimerGeneration++;
+        CountDownTimer countDownTimer = this.winTimer;
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+        this.winTimer = null;
+    }
+
+    private final void clearWinScreen() {
+        stopWinTimer();
+        this.winDeadlineMillis = null;
+        this.binding.casinoWinScreen.setVisibility(8);
     }
 
     private final void setBackground(String str) {
@@ -262,6 +305,24 @@ public final class CasinoScreen extends SAMPUIElement {
             default:
                 return;
         }
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void setVisibility(boolean z) {
+        if (!z) {
+            stopWinTimer();
+        }
+        super.setVisibility(z);
+        if (z) {
+            resumeWinTimer();
+        }
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onRemovedFromStore(UIElementEvictionReason reason) {
+        Intrinsics.checkNotNullParameter(reason, "reason");
+        clearWinScreen();
+        super.onRemovedFromStore(reason);
     }
 
     /* compiled from: CasinoScreen.kt */

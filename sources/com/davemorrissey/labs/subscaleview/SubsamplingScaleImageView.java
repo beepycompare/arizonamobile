@@ -45,6 +45,7 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 /* loaded from: classes4.dex */
 public class SubsamplingScaleImageView extends View {
     public static final int EASE_IN_OUT_QUAD = 2;
@@ -283,8 +284,8 @@ public class SubsamplingScaleImageView extends View {
         this.srcArray = new float[8];
         this.dstArray = new float[8];
         this.density = getResources().getDisplayMetrics().density;
-        setMinimumDpi(160);
-        setDoubleTapZoomDpi(160);
+        setMinimumDpi(RodinaTrainSpeedGaugeView.MAX_SPEED_KMH);
+        setDoubleTapZoomDpi(RodinaTrainSpeedGaugeView.MAX_SPEED_KMH);
         setMinimumTileDpi(320);
         setGestureDetector(context);
         this.handler = new Handler(new Handler.Callback() { // from class: com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView.1

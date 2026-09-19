@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="wrap_content" android:layout_height="wrap_content" app:backgroundMainColor="#f20d1011" app:borderMainColor="#33ffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_8sdp">
+    <LinearLayout android:orientation="vertical" android:padding="@dimen/_8sdp" android:layout_width="@dimen/_160sdp" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:id="@+id/paypass_tooltip_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold"/>
+        <TextView android:textSize="@dimen/_7sdp" android:textColor="#b3ffffff" android:id="@+id/paypass_tooltip_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_4sdp" android:includeFontPadding="false" android:fontFamily="@font/heading_now_64_regular"/>
+    </LinearLayout>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

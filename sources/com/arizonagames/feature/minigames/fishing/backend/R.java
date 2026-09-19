@@ -4,15 +4,15 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int dig0 = 0x7f080709;
-        public static int dig1 = 0x7f08070a;
-        public static int dig2 = 0x7f08070b;
-        public static int dig3 = 0x7f08070c;
-        public static int dig4 = 0x7f08070d;
-        public static int dig_bg = 0x7f08070e;
-        public static int fishing_accept_bg = 0x7f080974;
-        public static int fishing_exit_ic = 0x7f08097b;
-        public static int fishing_lines = 0x7f080993;
+        public static int dig0 = 0x7f08070b;
+        public static int dig1 = 0x7f08070c;
+        public static int dig2 = 0x7f08070d;
+        public static int dig3 = 0x7f08070e;
+        public static int dig4 = 0x7f08070f;
+        public static int dig_bg = 0x7f080710;
+        public static int fishing_accept_bg = 0x7f080982;
+        public static int fishing_exit_ic = 0x7f080989;
+        public static int fishing_lines = 0x7f0809a1;
 
         private drawable() {
         }
@@ -21,15 +21,15 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int accept_mask = 0x7f0a001e;
-        public static int description = 0x7f0a05b1;
-        public static int exit_button = 0x7f0a06b3;
-        public static int fishing_item = 0x7f0a0724;
-        public static int fishing_layout = 0x7f0a0725;
-        public static int fishing_rc = 0x7f0a0726;
-        public static int item_img = 0x7f0a092e;
-        public static int left_line = 0x7f0a0a1a;
-        public static int main_title = 0x7f0a0aa3;
-        public static int rc_container = 0x7f0a0d59;
+        public static int description = 0x7f0a05b5;
+        public static int exit_button = 0x7f0a06b8;
+        public static int fishing_item = 0x7f0a0729;
+        public static int fishing_layout = 0x7f0a072a;
+        public static int fishing_rc = 0x7f0a072b;
+        public static int item_img = 0x7f0a0936;
+        public static int left_line = 0x7f0a0a28;
+        public static int main_title = 0x7f0a0ab2;
+        public static int rc_container = 0x7f0a0d8e;
 
         private id() {
         }

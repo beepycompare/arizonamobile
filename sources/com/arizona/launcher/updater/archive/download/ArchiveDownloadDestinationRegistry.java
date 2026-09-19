@@ -33,22 +33,22 @@ public final class ArchiveDownloadDestinationRegistry {
     }
 
     public final String destinationKey(File destination) {
-        String m9920constructorimpl;
+        String m9921constructorimpl;
         Intrinsics.checkNotNullParameter(destination, "destination");
         try {
             Result.Companion companion = Result.Companion;
             ArchiveDownloadDestinationRegistry archiveDownloadDestinationRegistry = this;
-            m9920constructorimpl = Result.m9920constructorimpl(destination.getCanonicalFile().getPath());
+            m9921constructorimpl = Result.m9921constructorimpl(destination.getCanonicalFile().getPath());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9923exceptionOrNullimpl(m9920constructorimpl) != null) {
+        if (Result.m9924exceptionOrNullimpl(m9921constructorimpl) != null) {
             File absoluteFile = destination.getAbsoluteFile();
             Intrinsics.checkNotNullExpressionValue(absoluteFile, "getAbsoluteFile(...)");
-            m9920constructorimpl = FilesKt.normalize(absoluteFile).getPath();
+            m9921constructorimpl = FilesKt.normalize(absoluteFile).getPath();
         }
-        Intrinsics.checkNotNullExpressionValue(m9920constructorimpl, "getOrElse(...)");
-        return (String) m9920constructorimpl;
+        Intrinsics.checkNotNullExpressionValue(m9921constructorimpl, "getOrElse(...)");
+        return (String) m9921constructorimpl;
     }
 }

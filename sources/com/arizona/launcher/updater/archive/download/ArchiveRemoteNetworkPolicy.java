@@ -26,22 +26,22 @@ public final class ArchiveRemoteNetworkPolicy {
     }
 
     public final boolean isAllowedUrl(String url, boolean z) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         String str;
         String str2;
         Intrinsics.checkNotNullParameter(url, "url");
         try {
             Result.Companion companion = Result.Companion;
             ArchiveRemoteNetworkPolicy archiveRemoteNetworkPolicy = this;
-            m9920constructorimpl = Result.m9920constructorimpl(new URI(url));
+            m9921constructorimpl = Result.m9921constructorimpl(new URI(url));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9926isFailureimpl(m9920constructorimpl)) {
-            m9920constructorimpl = null;
+        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+            m9921constructorimpl = null;
         }
-        URI uri = (URI) m9920constructorimpl;
+        URI uri = (URI) m9921constructorimpl;
         if (uri != null) {
             String host = uri.getHost();
             if (host != null) {
@@ -98,19 +98,19 @@ public final class ArchiveRemoteNetworkPolicy {
     }
 
     private final InetAddress toLiteralInetAddressOrNull(String str) {
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         String str2 = str;
         boolean matches = IPV4_LITERAL.matches(str2);
         boolean contains$default = StringsKt.contains$default((CharSequence) str2, (char) AbstractJsonLexerKt.COLON, false, 2, (Object) null);
         if (matches || contains$default) {
             try {
                 Result.Companion companion = Result.Companion;
-                m9920constructorimpl = Result.m9920constructorimpl(InetAddress.getByName(str));
+                m9921constructorimpl = Result.m9921constructorimpl(InetAddress.getByName(str));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+            return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
         }
         return null;
     }

@@ -15,6 +15,7 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
+import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.feature.documents.data.TransportItem;
 import ru.mrlargha.feature.documents.databinding.DocumentsTransportItemBinding;
 /* compiled from: TransportAdapter.kt */
@@ -52,7 +53,9 @@ public final class TransportAdapter extends RecyclerView.Adapter<TransportViewHo
         Intrinsics.checkNotNullExpressionValue(transportItem, "get(...)");
         TransportItem transportItem2 = transportItem;
         DocumentsTransportItemBinding binding = holder.getBinding();
-        Picasso.get().load(StringsKt.substringBefore$default(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), "projects", (String) null, 2, (Object) null) + transportItem2.getImage_url()).into(binding.documentsTransportItemIc);
+        Picasso picasso = Picasso.get();
+        Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
+        PicassoLoadSafeKt.loadSafe(picasso, StringsKt.substringBefore$default(FirebaseConfigHelper.getProjectResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null), "projects", (String) null, 2, (Object) null) + transportItem2.getImage_url()).into(binding.documentsTransportItemIc);
         String number = transportItem2.getNumber();
         if (number == null || number.length() == 0) {
             binding.documentsTransportItemNumber.setVisibility(8);

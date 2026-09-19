@@ -38,18 +38,18 @@ public final /* synthetic */ class JobKt__JobKt {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Since 1.2.0, binary compatibility with versions <= 1.1.x")
     /* renamed from: Job */
-    public static final /* synthetic */ Job m11449Job(Job job) {
+    public static final /* synthetic */ Job m11450Job(Job job) {
         return JobKt.Job(job);
     }
 
     /* renamed from: Job$default */
-    public static /* synthetic */ Job m11450Job$default(Job job, int i, Object obj) {
-        Job m11449Job;
+    public static /* synthetic */ Job m11451Job$default(Job job, int i, Object obj) {
+        Job m11450Job;
         if ((i & 1) != 0) {
             job = null;
         }
-        m11449Job = m11449Job(job);
-        return m11449Job;
+        m11450Job = m11450Job(job);
+        return m11450Job;
     }
 
     public static final DisposableHandle disposeOnCompletion(Job job, DisposableHandle disposableHandle) {

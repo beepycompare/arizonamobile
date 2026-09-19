@@ -18,13 +18,13 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class dimen {
-        public static int splashscreen_icon_mask_size_no_background = 0x7f070732;
-        public static int splashscreen_icon_mask_size_with_background = 0x7f070733;
-        public static int splashscreen_icon_mask_stroke_no_background = 0x7f070734;
-        public static int splashscreen_icon_mask_stroke_with_background = 0x7f070735;
-        public static int splashscreen_icon_size = 0x7f070736;
-        public static int splashscreen_icon_size_no_background = 0x7f070737;
-        public static int splashscreen_icon_size_with_background = 0x7f070738;
+        public static int splashscreen_icon_mask_size_no_background = 0x7f070733;
+        public static int splashscreen_icon_mask_size_with_background = 0x7f070734;
+        public static int splashscreen_icon_mask_stroke_no_background = 0x7f070735;
+        public static int splashscreen_icon_mask_stroke_with_background = 0x7f070736;
+        public static int splashscreen_icon_size = 0x7f070737;
+        public static int splashscreen_icon_size_no_background = 0x7f070738;
+        public static int splashscreen_icon_size_with_background = 0x7f070739;
 
         private dimen() {
         }
@@ -32,9 +32,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class drawable {
-        public static int compat_splash_screen = 0x7f080644;
-        public static int compat_splash_screen_no_icon_background = 0x7f080645;
-        public static int icon_background = 0x7f080c2c;
+        public static int compat_splash_screen = 0x7f080646;
+        public static int compat_splash_screen_no_icon_background = 0x7f080647;
+        public static int icon_background = 0x7f080c4b;
 
         private drawable() {
         }
@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0fac;
+        public static int splashscreen_icon_view = 0x7f0a0fe9;
 
         private id() {
         }
@@ -58,7 +58,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int splash_screen_view = 0x7f0d02a7;
+        public static int splash_screen_view = 0x7f0d02b8;
 
         private layout() {
         }

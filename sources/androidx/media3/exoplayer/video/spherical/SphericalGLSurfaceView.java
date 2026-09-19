@@ -65,7 +65,7 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         SceneRenderer sceneRenderer = new SceneRenderer();
         this.scene = sceneRenderer;
         Renderer renderer = new Renderer(sceneRenderer);
-        TouchTracker touchTracker = new TouchTracker(context, renderer, PX_PER_DEGREES);
+        TouchTracker touchTracker = new TouchTracker(context, renderer, 25.0f);
         this.touchTracker = touchTracker;
         this.orientationListener = new OrientationListener(((WindowManager) Preconditions.checkNotNull((WindowManager) context.getSystemService("window"))).getDefaultDisplay(), touchTracker, renderer);
         this.useSensorRotation = true;

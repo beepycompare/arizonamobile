@@ -10,30 +10,30 @@ import org.json.JSONObject;
 public final class Uc implements Z8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0278gh f792a;
-    public final C0690wf b;
+    public final C0277gh f792a;
+    public final C0689wf b;
     public final String c = "activation_unlock_event_sending";
     public final AtomicBoolean d;
 
-    public Uc(C0278gh c0278gh, F4 f4, C0690wf c0690wf) {
-        this.f792a = c0278gh;
-        this.b = c0690wf;
+    public Uc(C0277gh c0277gh, F4 f4, C0689wf c0689wf) {
+        this.f792a = c0277gh;
+        this.b = c0689wf;
         boolean z = false;
-        this.d = new AtomicBoolean((c0690wf.a(false) || a(f4)) ? true : true);
+        this.d = new AtomicBoolean((c0689wf.a(false) || a(f4)) ? true : true);
     }
 
     public final void a(String str) {
         try {
-            C0540qk c0540qk = Oj.f708a;
+            C0539qk c0539qk = Oj.f708a;
             String str2 = this.c;
             JSONObject put = new JSONObject().put("source", str).put("framework", FrameworkDetector.framework());
-            C0297ha i = Na.I.i();
+            C0296ha i = Na.I.i();
             Bundle applicationMetaData = i.d.getApplicationMetaData(i.f1013a);
             JSONObject put2 = put.put("appmetrica_plugin_id", applicationMetaData != null ? applicationMetaData.getString("io.appmetrica.analytics.plugin_id") : null);
             Ok ok = Na.I.D;
             String jSONObject = put2.put("activation_offset", TimeUnit.SECONDS.convert(ok.f709a.currentTimeMillis() - ok.b, TimeUnit.MILLISECONDS)).toString();
-            c0540qk.getClass();
-            c0540qk.a(new C0488ok(str2, jSONObject));
+            c0539qk.getClass();
+            c0539qk.a(new C0487ok(str2, jSONObject));
         } catch (Throwable unused) {
         }
     }

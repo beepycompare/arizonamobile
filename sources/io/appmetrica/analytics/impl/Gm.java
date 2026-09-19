@@ -15,6 +15,6 @@ public final class Gm {
     }
 
     public Gm(Context context) {
-        this(((AbstractC0620tn) C0568rn.a(Lm.class)).create(context), Na.k().D().a());
+        this(((AbstractC0619tn) C0567rn.a(Lm.class)).create(context), Na.k().D().a());
     }
 }

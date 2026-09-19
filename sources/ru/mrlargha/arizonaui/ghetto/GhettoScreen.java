@@ -118,6 +118,11 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         setupNavigation();
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit warsAdapter$lambda$0(GhettoScreen ghettoScreen, int i) {
         if (i == 4) {
@@ -419,7 +424,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     */
     private final int parseBusinessColor(String str) {
         String str2;
-        Object m9920constructorimpl;
+        Object m9921constructorimpl;
         if (str != null && (str2 = StringsKt.trim((CharSequence) str).toString()) != null) {
             if (str2.length() <= 0) {
                 str2 = null;
@@ -432,12 +437,12 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
                     try {
                         Result.Companion companion = Result.Companion;
                         GhettoScreen ghettoScreen = this;
-                        m9920constructorimpl = Result.m9920constructorimpl(Integer.valueOf(Color.parseColor(str2)));
+                        m9921constructorimpl = Result.m9921constructorimpl(Integer.valueOf(Color.parseColor(str2)));
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        m9920constructorimpl = Result.m9920constructorimpl(ResultKt.createFailure(th));
+                        m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
                     }
-                    Integer num = Result.m9926isFailureimpl(m9920constructorimpl) ? null : m9920constructorimpl;
+                    Integer num = Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
                     if (num != null) {
                         return num.intValue();
                     }

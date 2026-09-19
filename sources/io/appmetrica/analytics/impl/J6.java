@@ -4,17 +4,17 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class J6 implements InterfaceC0200dg {
+public final class J6 implements InterfaceC0199dg {
     public static final I6 b = new I6();
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0200dg f609a;
+    public final InterfaceC0199dg f609a;
 
     public J6() {
         this(null, 1, null);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0200dg
+    @Override // io.appmetrica.analytics.impl.InterfaceC0199dg
     public final String a() {
         return this.f609a.a();
     }
@@ -32,8 +32,8 @@ public final class J6 implements InterfaceC0200dg {
         return false;
     }
 
-    public J6(InterfaceC0200dg interfaceC0200dg) {
-        this.f609a = interfaceC0200dg;
+    public J6(InterfaceC0199dg interfaceC0199dg) {
+        this.f609a = interfaceC0199dg;
     }
 
     public final boolean a(String str) {
@@ -53,11 +53,11 @@ public final class J6 implements InterfaceC0200dg {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public /* synthetic */ J6(InterfaceC0200dg interfaceC0200dg, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(interfaceC0200dg);
+    public /* synthetic */ J6(InterfaceC0199dg interfaceC0199dg, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(interfaceC0199dg);
         if ((i & 1) != 0) {
             b.getClass();
-            interfaceC0200dg = I6.a();
+            interfaceC0199dg = I6.a();
         }
     }
 }

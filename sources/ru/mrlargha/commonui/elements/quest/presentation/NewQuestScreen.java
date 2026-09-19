@@ -146,6 +146,11 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
         });
     }
 
+    @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
+    public /* bridge */ void onRemovedFromAuthorizationFlow() {
+        super.onRemovedFromAuthorizationFlow();
+    }
+
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit questStageAdapter$lambda$0(NewQuestScreen newQuestScreen, QuestStage item) {
         Intrinsics.checkNotNullParameter(item, "item");

@@ -19,6 +19,9 @@ public final class HudTrainJobBinding implements ViewBinding {
     private final FrameLayout rootView;
     public final TextView speedLimit;
     public final CustomCardView speedLimitCard;
+    public final TextView speedLimitDistance;
+    public final CustomCardView speedLimitDistanceCard;
+    public final FrameLayout trainBottomIndicators;
     public final HudTrainCallPanelBinding trainCallPanel;
     public final TextView trainCurrentTime;
     public final HudTrainDispatcherPanelBinding trainDispatcherPanel;
@@ -28,21 +31,26 @@ public final class HudTrainJobBinding implements ViewBinding {
     public final ImageView trainDoorUnlockedIcon;
     public final FrameLayout trainDriverContainer;
     public final HudTrainFullControlPanelBinding trainFullControlPanel;
+    public final HudTrainInstructionBinding trainInstruction;
     public final TextView trainMaxTime;
     public final TextView trainPassengerCount;
     public final LinearLayout trainPassengers;
     public final HudTrainRouteBinding trainRoute;
     public final FrameLayout trainSettings;
+    public final HudTrainSpeedIndicatorBinding trainSpeedIndicator;
     public final HudTrainStopPanelBinding trainStopPanel;
     public final TextView warningsCount;
 
-    private HudTrainJobBinding(FrameLayout rootView, FrameLayout hudTrainJob, TextView income, LinearLayout legacyTrainData, TextView speedLimit, CustomCardView speedLimitCard, HudTrainCallPanelBinding trainCallPanel, TextView trainCurrentTime, HudTrainDispatcherPanelBinding trainDispatcherPanel, CustomCardView trainDoorCloseAction, ImageView trainDoorLockedIcon, CustomCardView trainDoorOpenAction, ImageView trainDoorUnlockedIcon, FrameLayout trainDriverContainer, HudTrainFullControlPanelBinding trainFullControlPanel, TextView trainMaxTime, TextView trainPassengerCount, LinearLayout trainPassengers, HudTrainRouteBinding trainRoute, FrameLayout trainSettings, HudTrainStopPanelBinding trainStopPanel, TextView warningsCount) {
+    private HudTrainJobBinding(FrameLayout rootView, FrameLayout hudTrainJob, TextView income, LinearLayout legacyTrainData, TextView speedLimit, CustomCardView speedLimitCard, TextView speedLimitDistance, CustomCardView speedLimitDistanceCard, FrameLayout trainBottomIndicators, HudTrainCallPanelBinding trainCallPanel, TextView trainCurrentTime, HudTrainDispatcherPanelBinding trainDispatcherPanel, CustomCardView trainDoorCloseAction, ImageView trainDoorLockedIcon, CustomCardView trainDoorOpenAction, ImageView trainDoorUnlockedIcon, FrameLayout trainDriverContainer, HudTrainFullControlPanelBinding trainFullControlPanel, HudTrainInstructionBinding trainInstruction, TextView trainMaxTime, TextView trainPassengerCount, LinearLayout trainPassengers, HudTrainRouteBinding trainRoute, FrameLayout trainSettings, HudTrainSpeedIndicatorBinding trainSpeedIndicator, HudTrainStopPanelBinding trainStopPanel, TextView warningsCount) {
         this.rootView = rootView;
         this.hudTrainJob = hudTrainJob;
         this.income = income;
         this.legacyTrainData = legacyTrainData;
         this.speedLimit = speedLimit;
         this.speedLimitCard = speedLimitCard;
+        this.speedLimitDistance = speedLimitDistance;
+        this.speedLimitDistanceCard = speedLimitDistanceCard;
+        this.trainBottomIndicators = trainBottomIndicators;
         this.trainCallPanel = trainCallPanel;
         this.trainCurrentTime = trainCurrentTime;
         this.trainDispatcherPanel = trainDispatcherPanel;
@@ -52,11 +60,13 @@ public final class HudTrainJobBinding implements ViewBinding {
         this.trainDoorUnlockedIcon = trainDoorUnlockedIcon;
         this.trainDriverContainer = trainDriverContainer;
         this.trainFullControlPanel = trainFullControlPanel;
+        this.trainInstruction = trainInstruction;
         this.trainMaxTime = trainMaxTime;
         this.trainPassengerCount = trainPassengerCount;
         this.trainPassengers = trainPassengers;
         this.trainRoute = trainRoute;
         this.trainSettings = trainSettings;
+        this.trainSpeedIndicator = trainSpeedIndicator;
         this.trainStopPanel = trainStopPanel;
         this.warningsCount = warningsCount;
     }
@@ -96,46 +106,68 @@ public final class HudTrainJobBinding implements ViewBinding {
                 if (textView2 != null) {
                     i = R.id.speed_limit_card;
                     CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
-                    if (customCardView != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.train_call_panel))) != null) {
-                        HudTrainCallPanelBinding bind = HudTrainCallPanelBinding.bind(findChildViewById);
-                        i = R.id.train_current_time;
+                    if (customCardView != null) {
+                        i = R.id.speed_limit_distance;
                         TextView textView3 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                        if (textView3 != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.train_dispatcher_panel))) != null) {
-                            HudTrainDispatcherPanelBinding bind2 = HudTrainDispatcherPanelBinding.bind(findChildViewById2);
-                            i = R.id.train_door_close_action;
+                        if (textView3 != null) {
+                            i = R.id.speed_limit_distance_card;
                             CustomCardView customCardView2 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
                             if (customCardView2 != null) {
-                                i = R.id.train_door_locked_icon;
-                                ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                if (imageView != null) {
-                                    i = R.id.train_door_open_action;
-                                    CustomCardView customCardView3 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
-                                    if (customCardView3 != null) {
-                                        i = R.id.train_door_unlocked_icon;
-                                        ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                        if (imageView2 != null) {
-                                            i = R.id.train_driver_container;
-                                            FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
-                                            if (frameLayout2 != null && (findChildViewById3 = ViewBindings.findChildViewById(rootView, (i = R.id.train_full_control_panel))) != null) {
-                                                HudTrainFullControlPanelBinding bind3 = HudTrainFullControlPanelBinding.bind(findChildViewById3);
-                                                i = R.id.train_max_time;
-                                                TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                if (textView4 != null) {
-                                                    i = R.id.train_passenger_count;
-                                                    TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                    if (textView5 != null) {
-                                                        i = R.id.train_passengers;
-                                                        LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
-                                                        if (linearLayout2 != null && (findChildViewById4 = ViewBindings.findChildViewById(rootView, (i = R.id.train_route))) != null) {
-                                                            HudTrainRouteBinding bind4 = HudTrainRouteBinding.bind(findChildViewById4);
-                                                            i = R.id.trainSettings;
-                                                            FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
-                                                            if (frameLayout3 != null && (findChildViewById5 = ViewBindings.findChildViewById(rootView, (i = R.id.train_stop_panel))) != null) {
-                                                                HudTrainStopPanelBinding bind5 = HudTrainStopPanelBinding.bind(findChildViewById5);
-                                                                i = R.id.warnings_count;
-                                                                TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                                                if (textView6 != null) {
-                                                                    return new HudTrainJobBinding(frameLayout, frameLayout, textView, linearLayout, textView2, customCardView, bind, textView3, bind2, customCardView2, imageView, customCardView3, imageView2, frameLayout2, bind3, textView4, textView5, linearLayout2, bind4, frameLayout3, bind5, textView6);
+                                i = R.id.train_bottom_indicators;
+                                FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                if (frameLayout2 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.train_call_panel))) != null) {
+                                    HudTrainCallPanelBinding bind = HudTrainCallPanelBinding.bind(findChildViewById);
+                                    i = R.id.train_current_time;
+                                    TextView textView4 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView4 != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.train_dispatcher_panel))) != null) {
+                                        HudTrainDispatcherPanelBinding bind2 = HudTrainDispatcherPanelBinding.bind(findChildViewById2);
+                                        i = R.id.train_door_close_action;
+                                        CustomCardView customCardView3 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                        if (customCardView3 != null) {
+                                            i = R.id.train_door_locked_icon;
+                                            ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                            if (imageView != null) {
+                                                i = R.id.train_door_open_action;
+                                                CustomCardView customCardView4 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                                if (customCardView4 != null) {
+                                                    i = R.id.train_door_unlocked_icon;
+                                                    ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                                    if (imageView2 != null) {
+                                                        i = R.id.train_driver_container;
+                                                        FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                        if (frameLayout3 != null && (findChildViewById3 = ViewBindings.findChildViewById(rootView, (i = R.id.train_full_control_panel))) != null) {
+                                                            HudTrainFullControlPanelBinding bind3 = HudTrainFullControlPanelBinding.bind(findChildViewById3);
+                                                            i = R.id.train_instruction;
+                                                            View findChildViewById6 = ViewBindings.findChildViewById(rootView, i);
+                                                            if (findChildViewById6 != null) {
+                                                                HudTrainInstructionBinding bind4 = HudTrainInstructionBinding.bind(findChildViewById6);
+                                                                i = R.id.train_max_time;
+                                                                TextView textView5 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                if (textView5 != null) {
+                                                                    i = R.id.train_passenger_count;
+                                                                    TextView textView6 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                    if (textView6 != null) {
+                                                                        i = R.id.train_passengers;
+                                                                        LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                        if (linearLayout2 != null && (findChildViewById4 = ViewBindings.findChildViewById(rootView, (i = R.id.train_route))) != null) {
+                                                                            HudTrainRouteBinding bind5 = HudTrainRouteBinding.bind(findChildViewById4);
+                                                                            i = R.id.trainSettings;
+                                                                            FrameLayout frameLayout4 = (FrameLayout) ViewBindings.findChildViewById(rootView, i);
+                                                                            if (frameLayout4 != null && (findChildViewById5 = ViewBindings.findChildViewById(rootView, (i = R.id.train_speed_indicator))) != null) {
+                                                                                HudTrainSpeedIndicatorBinding bind6 = HudTrainSpeedIndicatorBinding.bind(findChildViewById5);
+                                                                                i = R.id.train_stop_panel;
+                                                                                View findChildViewById7 = ViewBindings.findChildViewById(rootView, i);
+                                                                                if (findChildViewById7 != null) {
+                                                                                    HudTrainStopPanelBinding bind7 = HudTrainStopPanelBinding.bind(findChildViewById7);
+                                                                                    i = R.id.warnings_count;
+                                                                                    TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                                                    if (textView7 != null) {
+                                                                                        return new HudTrainJobBinding(frameLayout, frameLayout, textView, linearLayout, textView2, customCardView, textView3, customCardView2, frameLayout2, bind, textView4, bind2, customCardView3, imageView, customCardView4, imageView2, frameLayout3, bind3, bind4, textView5, textView6, linearLayout2, bind5, frameLayout4, bind6, bind7, textView7);
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
                                                                 }
                                                             }
                                                         }

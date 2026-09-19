@@ -1,6 +1,7 @@
 package com.google.ads;
 
 import android.content.Context;
+import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGaugeView;
 @Deprecated
 /* loaded from: classes4.dex */
 public final class AdSize {
@@ -15,7 +16,7 @@ public final class AdSize {
     public static final AdSize IAB_MRECT = new AdSize(300, 250, "as");
     public static final AdSize IAB_BANNER = new AdSize(468, 60, "as");
     public static final AdSize IAB_LEADERBOARD = new AdSize(728, 90, "as");
-    public static final AdSize IAB_WIDE_SKYSCRAPER = new AdSize(160, 600, "as");
+    public static final AdSize IAB_WIDE_SKYSCRAPER = new AdSize(RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, 600, "as");
 
     public AdSize(int i, int i2) {
         this(new com.google.android.gms.ads.AdSize(i, i2));

@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class color {
-        public static int vector_tint_color = 0x7f06046b;
-        public static int vector_tint_theme_color = 0x7f06046c;
+        public static int vector_tint_color = 0x7f06046d;
+        public static int vector_tint_theme_color = 0x7f06046e;
 
         private color() {
         }
@@ -45,14 +45,14 @@ public final class R {
         public static int accessibility_custom_action_7 = 0x7f0a003d;
         public static int accessibility_custom_action_8 = 0x7f0a003e;
         public static int accessibility_custom_action_9 = 0x7f0a003f;
-        public static int androidx_compose_ui_view_compose_view_context = 0x7f0a00e2;
-        public static int androidx_compose_ui_view_composition_context = 0x7f0a00e3;
-        public static int auto_clear_focus_behavior_tag = 0x7f0a0148;
-        public static int compose_view_saveable_id_tag = 0x7f0a0533;
-        public static int consume_window_insets_tag = 0x7f0a053a;
-        public static int hide_in_inspector_tag = 0x7f0a0846;
-        public static int inspection_slot_table_set = 0x7f0a090a;
-        public static int wrapped_composition_tag = 0x7f0a12e6;
+        public static int androidx_compose_ui_view_compose_view_context = 0x7f0a00e3;
+        public static int androidx_compose_ui_view_composition_context = 0x7f0a00e4;
+        public static int auto_clear_focus_behavior_tag = 0x7f0a0149;
+        public static int compose_view_saveable_id_tag = 0x7f0a0537;
+        public static int consume_window_insets_tag = 0x7f0a053e;
+        public static int hide_in_inspector_tag = 0x7f0a084b;
+        public static int inspection_slot_table_set = 0x7f0a0912;
+        public static int wrapped_composition_tag = 0x7f0a1335;
 
         private id() {
         }
@@ -65,21 +65,21 @@ public final class R {
         public static int close_sheet = 0x7f1201c6;
         public static int default_error_message = 0x7f1201ff;
         public static int default_popup_window_title = 0x7f120204;
-        public static int dropdown_menu = 0x7f12024c;
-        public static int in_progress = 0x7f120405;
-        public static int indeterminate = 0x7f120406;
-        public static int navigation_menu = 0x7f120572;
-        public static int not_selected = 0x7f120588;
-        public static int range_end = 0x7f120614;
-        public static int range_start = 0x7f120615;
-        public static int selected = 0x7f12065c;
-        public static int snackbar_pane_title = 0x7f120687;
-        public static int state_empty = 0x7f120695;
-        public static int state_off = 0x7f120696;
-        public static int state_on = 0x7f120697;
-        public static int switch_role = 0x7f12069f;
-        public static int tab = 0x7f1206a0;
-        public static int template_percent = 0x7f1206a9;
+        public static int dropdown_menu = 0x7f120263;
+        public static int in_progress = 0x7f12041e;
+        public static int indeterminate = 0x7f12041f;
+        public static int navigation_menu = 0x7f120594;
+        public static int not_selected = 0x7f1205ac;
+        public static int range_end = 0x7f120638;
+        public static int range_start = 0x7f120639;
+        public static int selected = 0x7f120680;
+        public static int snackbar_pane_title = 0x7f1206ab;
+        public static int state_empty = 0x7f1206b9;
+        public static int state_off = 0x7f1206ba;
+        public static int state_on = 0x7f1206bb;
+        public static int switch_role = 0x7f1206c5;
+        public static int tab = 0x7f1206c6;
+        public static int template_percent = 0x7f1206cf;
 
         private string() {
         }
