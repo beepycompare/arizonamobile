@@ -7,16 +7,14 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveManifestResolver.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestResolver", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0, 0}, l = {156}, m = "resolveOriginalTz", n = {"descriptor", "serverBaseUrl", "loadedState", "packages", "packageDescriptor", "reused"}, nl = {157}, s = {"L$0", "L$1", "L$2", "L$3", "L$5", "L$6"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestResolver", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0}, l = {162}, m = "resolveOriginalTz", n = {"descriptor", "serverBaseUrl", "loadedState", "outcome", "startedAt"}, nl = {163}, s = {"L$0", "L$1", "L$2", "L$3", "J$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveManifestResolver$resolveOriginalTz$1 extends ContinuationImpl {
+    long J$0;
     Object L$0;
     Object L$1;
     Object L$2;
     Object L$3;
-    Object L$4;
-    Object L$5;
-    Object L$6;
     int label;
     /* synthetic */ Object result;
     final /* synthetic */ ArchiveManifestResolver this$0;

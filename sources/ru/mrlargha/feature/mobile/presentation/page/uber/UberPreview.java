@@ -85,6 +85,6 @@ public final class UberPreview implements MobileController {
     @Override // ru.mrlargha.feature.mobile.presentation.MobileController
     public void removePage() {
         HistoryManager.Companion.clearThisPage(MobilePhonePage.UBER_PREVIEW.getId());
-        this.uberPreview.removeAllViews();
+        this.phoneBinding.phoneCaseContainer.removeView(this.uberPreview);
     }
 }

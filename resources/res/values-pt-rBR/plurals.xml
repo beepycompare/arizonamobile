@@ -8,6 +8,26 @@
         <item quantity="one">%d nova notificação</item>
         <item quantity="other">%d novas notificações</item>
     </plurals>
+    <plurals name="october_street_days">
+        <item quantity="one">%1$d dia</item>
+        <item quantity="other">%1$d dias</item>
+    </plurals>
+    <plurals name="october_street_hours">
+        <item quantity="one">%1$d hora</item>
+        <item quantity="other">%1$d horas</item>
+    </plurals>
+    <plurals name="october_street_minutes">
+        <item quantity="one">%1$d minuto</item>
+        <item quantity="other">%1$d minutos</item>
+    </plurals>
+    <plurals name="october_street_restore_az_description">
+        <item quantity="one">Restaurar recompensa por %1$d AZ</item>
+        <item quantity="other">Restaurar recompensa por %1$d AZ</item>
+    </plurals>
+    <plurals name="october_street_restore_rub_description">
+        <item quantity="one">Restaurar recompensa por %1$d rublo</item>
+        <item quantity="other">Restaurar recompensa por %1$d rublos</item>
+    </plurals>
     <plurals name="situation_promo_hours">
         <item quantity="one">%d hora</item>
         <item quantity="other">%d horas</item>

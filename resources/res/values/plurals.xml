@@ -18,6 +18,36 @@
         <item quantity="one">%d new notification</item>
         <item quantity="other">%d new notifications</item>
     </plurals>
+    <plurals name="october_street_days">
+        <item quantity="one">%1$d день</item>
+        <item quantity="few">%1$d дня</item>
+        <item quantity="many">%1$d дней</item>
+        <item quantity="other">%1$d дня</item>
+    </plurals>
+    <plurals name="october_street_hours">
+        <item quantity="one">%1$d час</item>
+        <item quantity="few">%1$d часа</item>
+        <item quantity="many">%1$d часов</item>
+        <item quantity="other">%1$d часа</item>
+    </plurals>
+    <plurals name="october_street_minutes">
+        <item quantity="one">%1$d минута</item>
+        <item quantity="few">%1$d минуты</item>
+        <item quantity="many">%1$d минут</item>
+        <item quantity="other">%1$d минуты</item>
+    </plurals>
+    <plurals name="october_street_restore_az_description">
+        <item quantity="one">Восстановить награду за %1$d AZ</item>
+        <item quantity="few">Восстановить награду за %1$d AZ</item>
+        <item quantity="many">Восстановить награду за %1$d AZ</item>
+        <item quantity="other">Восстановить награду за %1$d AZ</item>
+    </plurals>
+    <plurals name="october_street_restore_rub_description">
+        <item quantity="one">Восстановить награду за %1$d рубль</item>
+        <item quantity="few">Восстановить награду за %1$d рубля</item>
+        <item quantity="many">Восстановить награду за %1$d рублей</item>
+        <item quantity="other">Восстановить награду за %1$d рубля</item>
+    </plurals>
     <plurals name="situation_promo_hours">
         <item quantity="one">%d час</item>
         <item quantity="few">%d часа</item>

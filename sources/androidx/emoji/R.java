@@ -14,10 +14,10 @@ public final class R {
     /* loaded from: classes2.dex */
     public static final class id {
         public static int all = 0x7f0a00d7;
-        public static int defaultStrategy = 0x7f0a05a1;
-        public static int inputExtractAccessories = 0x7f0a090d;
-        public static int inputExtractAction = 0x7f0a090e;
-        public static int nonExistent = 0x7f0a0c19;
+        public static int defaultStrategy = 0x7f0a05a2;
+        public static int inputExtractAccessories = 0x7f0a0911;
+        public static int inputExtractAction = 0x7f0a0912;
+        public static int nonExistent = 0x7f0a0c1e;
 
         private id() {
         }

@@ -28,13 +28,13 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int close_button = 0x7f0a051c;
-        public static int content_loader = 0x7f0a0559;
-        public static int content_pager = 0x7f0a055a;
-        public static int image = 0x7f0a08bc;
-        public static int loader = 0x7f0a0a64;
-        public static int next_button = 0x7f0a0c11;
-        public static int page_indicator = 0x7f0a0c6a;
-        public static int previous_button = 0x7f0a0d18;
+        public static int content_loader = 0x7f0a055a;
+        public static int content_pager = 0x7f0a055b;
+        public static int image = 0x7f0a08c0;
+        public static int loader = 0x7f0a0a68;
+        public static int next_button = 0x7f0a0c16;
+        public static int page_indicator = 0x7f0a0c71;
+        public static int previous_button = 0x7f0a0d1f;
 
         private id() {
         }

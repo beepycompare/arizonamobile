@@ -10,14 +10,14 @@ public final class R {
         public static int keyboard_button_active = 0x7f080c7d;
         public static int nubmer_button_active = 0x7f080e0a;
         public static int number_button_png = 0x7f080e0f;
-        public static int privacy_policy = 0x7f080efc;
-        public static int settings_label = 0x7f080f8e;
-        public static int share_logs = 0x7f080f93;
-        public static int support_button = 0x7f08101d;
-        public static int switch_bg = 0x7f08101f;
-        public static int tech_button = 0x7f081026;
-        public static int thumb_active = 0x7f081028;
-        public static int thumb_not_active = 0x7f081029;
+        public static int privacy_policy = 0x7f080f05;
+        public static int settings_label = 0x7f080f97;
+        public static int share_logs = 0x7f080f9c;
+        public static int support_button = 0x7f081026;
+        public static int switch_bg = 0x7f081028;
+        public static int tech_button = 0x7f08102f;
+        public static int thumb_active = 0x7f081031;
+        public static int thumb_not_active = 0x7f081032;
 
         private drawable() {
         }

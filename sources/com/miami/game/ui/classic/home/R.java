@@ -17,11 +17,11 @@ public final class R {
         public static int launcher_btn_update = 0x7f080c81;
         public static int messenger_ic = 0x7f080cf7;
         public static int news_item_arrow = 0x7f080df6;
-        public static int online_ic = 0x7f080e42;
-        public static int queue_ic = 0x7f080f16;
-        public static int server_button_arrow = 0x7f080f8a;
-        public static int shop_notificaiotns_bg = 0x7f080f9e;
-        public static int update_home_screen = 0x7f08103b;
+        public static int online_ic = 0x7f080e4b;
+        public static int queue_ic = 0x7f080f1f;
+        public static int server_button_arrow = 0x7f080f93;
+        public static int shop_notificaiotns_bg = 0x7f080fa7;
+        public static int update_home_screen = 0x7f081044;
 
         private drawable() {
         }

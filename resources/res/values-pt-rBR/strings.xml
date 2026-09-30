@@ -1114,6 +1114,16 @@
     <string name="not_set">Não definido</string>
     <string name="number_i">#%1$d</string>
     <string name="numbering">#%1d</string>
+    <string name="october_street_amount">x%1$d</string>
+    <string name="october_street_claim">RESGATAR</string>
+    <string name="october_street_close">×</string>
+    <string name="october_street_close_description">Fechar</string>
+    <string name="october_street_day">DIA %1$d</string>
+    <string name="october_street_missed">DIA PERDIDO</string>
+    <string name="october_street_remaining">Falta %1$s</string>
+    <string name="october_street_remaining_label">Falta jogar</string>
+    <string name="october_street_restore_price">%1$s</string>
+    <string name="october_street_tip">Jogue todos os dias e receba uma recompensa sempre que cumprir todas as condições</string>
     <string name="of_these">Desses</string>
     <string name="off">Desligado</string>
     <string name="ok">Ok</string>

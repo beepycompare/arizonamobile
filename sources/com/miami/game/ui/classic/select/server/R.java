@@ -11,9 +11,9 @@ public final class R {
         public static int btn_next = 0x7f080586;
         public static int mobile_topbar_icon = 0x7f080d14;
         public static int no_promo_label = 0x7f080df8;
-        public static int select_server_label = 0x7f080f7c;
-        public static int server_new_ic = 0x7f080f8b;
-        public static int server_top_ic = 0x7f080f8c;
+        public static int select_server_label = 0x7f080f85;
+        public static int server_new_ic = 0x7f080f94;
+        public static int server_top_ic = 0x7f080f95;
 
         private drawable() {
         }

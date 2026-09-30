@@ -47,15 +47,15 @@ public final class R {
         public static int alwaysDisallow = 0x7f0a00db;
         public static int androidx_window_activity_scope = 0x7f0a00e5;
         public static int bottomToTop = 0x7f0a034a;
-        public static int draggable = 0x7f0a063b;
-        public static int fixed = 0x7f0a0732;
-        public static int jumpCut = 0x7f0a09da;
-        public static int locale = 0x7f0a0a6b;
-        public static int ltr = 0x7f0a0a7e;
-        public static int never = 0x7f0a0c08;
-        public static int rtl = 0x7f0a0ed2;
-        public static int systemDefault = 0x7f0a1061;
-        public static int topToBottom = 0x7f0a112c;
+        public static int draggable = 0x7f0a063c;
+        public static int fixed = 0x7f0a0735;
+        public static int jumpCut = 0x7f0a09de;
+        public static int locale = 0x7f0a0a6f;
+        public static int ltr = 0x7f0a0a82;
+        public static int never = 0x7f0a0c0d;
+        public static int rtl = 0x7f0a0edf;
+        public static int systemDefault = 0x7f0a1070;
+        public static int topToBottom = 0x7f0a113b;
 
         private id() {
         }

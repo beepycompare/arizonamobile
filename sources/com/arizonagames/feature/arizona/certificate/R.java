@@ -9,16 +9,16 @@ public final class R {
         public static int certificate_police_bonus_deposit = 0x7f080613;
         public static int certificate_police_bonus_salary = 0x7f080614;
         public static int certificate_police_bonus_tasks = 0x7f080615;
-        public static int sertificate_ic_anim = 0x7f080f80;
-        public static int sertificate_ic_armor = 0x7f080f81;
-        public static int sertificate_ic_caliper = 0x7f080f82;
-        public static int sertificate_ic_container = 0x7f080f83;
-        public static int sertificate_ic_engine = 0x7f080f84;
-        public static int sertificate_ic_gov = 0x7f080f85;
-        public static int sertificate_ic_hp = 0x7f080f86;
-        public static int sertificate_ic_safe = 0x7f080f87;
-        public static int sertificate_ic_set = 0x7f080f88;
-        public static int sertificate_ic_speed = 0x7f080f89;
+        public static int sertificate_ic_anim = 0x7f080f89;
+        public static int sertificate_ic_armor = 0x7f080f8a;
+        public static int sertificate_ic_caliper = 0x7f080f8b;
+        public static int sertificate_ic_container = 0x7f080f8c;
+        public static int sertificate_ic_engine = 0x7f080f8d;
+        public static int sertificate_ic_gov = 0x7f080f8e;
+        public static int sertificate_ic_hp = 0x7f080f8f;
+        public static int sertificate_ic_safe = 0x7f080f90;
+        public static int sertificate_ic_set = 0x7f080f91;
+        public static int sertificate_ic_speed = 0x7f080f92;
 
         private drawable() {
         }
@@ -32,24 +32,24 @@ public final class R {
         public static int button_get = 0x7f0a0420;
         public static int button_sell = 0x7f0a0432;
         public static int card_info = 0x7f0a0470;
-        public static int ic = 0x7f0a08a6;
-        public static int image = 0x7f0a08bc;
-        public static int info1 = 0x7f0a08ea;
-        public static int info2 = 0x7f0a08ec;
-        public static int info3 = 0x7f0a08ee;
-        public static int info4 = 0x7f0a08f0;
-        public static int overlay = 0x7f0a0c65;
-        public static int quality_bg = 0x7f0a0d68;
-        public static int quality_button = 0x7f0a0d69;
-        public static int quality_text = 0x7f0a0d6b;
-        public static int sell_ic = 0x7f0a0f63;
-        public static int sell_text = 0x7f0a0f64;
-        public static int text_bonus = 0x7f0a10d0;
-        public static int title = 0x7f0a110e;
-        public static int top_container = 0x7f0a112f;
-        public static int transport_screen = 0x7f0a1181;
-        public static int type = 0x7f0a12b2;
-        public static int value = 0x7f0a12db;
+        public static int ic = 0x7f0a08aa;
+        public static int image = 0x7f0a08c0;
+        public static int info1 = 0x7f0a08ee;
+        public static int info2 = 0x7f0a08f0;
+        public static int info3 = 0x7f0a08f2;
+        public static int info4 = 0x7f0a08f4;
+        public static int overlay = 0x7f0a0c6c;
+        public static int quality_bg = 0x7f0a0d70;
+        public static int quality_button = 0x7f0a0d71;
+        public static int quality_text = 0x7f0a0d73;
+        public static int sell_ic = 0x7f0a0f72;
+        public static int sell_text = 0x7f0a0f73;
+        public static int text_bonus = 0x7f0a10df;
+        public static int title = 0x7f0a111d;
+        public static int top_container = 0x7f0a113e;
+        public static int transport_screen = 0x7f0a1190;
+        public static int type = 0x7f0a12c1;
+        public static int value = 0x7f0a12ea;
 
         private id() {
         }

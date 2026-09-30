@@ -30,7 +30,7 @@ import okhttp3.Response;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveManifestResolver.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveByteRangeResult;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource$executeOnce$2", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0}, l = {552}, m = "invokeSuspend", n = {"$this$withContext", "currentUrl", "terminalResult", "httpRequest", "redirectsFollowed"}, nl = {564}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource$executeOnce$2", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0}, l = {663}, m = "invokeSuspend", n = {"$this$withContext", "currentUrl", "terminalResult", "httpRequest", "redirectsFollowed"}, nl = {675}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ArchiveByteRangeResult>, Object> {
     final /* synthetic */ Function1<InputStream, Unit> $consumer;

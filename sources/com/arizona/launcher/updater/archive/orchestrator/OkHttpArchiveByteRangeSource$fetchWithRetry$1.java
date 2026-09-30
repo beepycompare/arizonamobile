@@ -1,6 +1,5 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
-import androidx.window.core.layout.WindowSizeClass;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveManifestResolver.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {444, 479, 519}, m = "fetchWithRetry", n = {"request", "consumer", "bodyHasStarted", "expectedBodyBytes", "retriesConsumed", "request", "consumer", "bodyHasStarted", "error", "details", "retry", "expectedBodyBytes", "retriesConsumed", "request", "consumer", "bodyHasStarted", "result", "details", "retry", "expectedBodyBytes", "retriesConsumed", "status"}, nl = {445, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, 522}, s = {"L$0", "L$1", "L$2", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {555, 590, 630}, m = "fetchWithRetry", n = {"request", "consumer", "bodyHasStarted", "expectedBodyBytes", "retriesConsumed", "request", "consumer", "bodyHasStarted", "error", "details", "retry", "expectedBodyBytes", "retriesConsumed", "request", "consumer", "bodyHasStarted", "result", "details", "retry", "expectedBodyBytes", "retriesConsumed", "status"}, nl = {556, 591, 633}, s = {"L$0", "L$1", "L$2", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2"}, v = 2)
 /* loaded from: classes3.dex */
 public final class OkHttpArchiveByteRangeSource$fetchWithRetry$1 extends ContinuationImpl {
     int I$0;

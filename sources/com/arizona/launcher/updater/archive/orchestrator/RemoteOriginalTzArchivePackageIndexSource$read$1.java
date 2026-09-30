@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveManifestResolver.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.RemoteOriginalTzArchivePackageIndexSource", f = "ArchiveManifestResolver.kt", i = {0, 0, 0}, l = {778}, m = "read", n = {"packageDescriptor", "serverBaseUrl", "archiveUrl"}, nl = {783}, s = {"L$0", "L$1", "L$2"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.RemoteOriginalTzArchivePackageIndexSource", f = "ArchiveManifestResolver.kt", i = {0, 0, 0}, l = {889}, m = "read", n = {"packageDescriptor", "serverBaseUrl", "archiveUrl"}, nl = {894}, s = {"L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes3.dex */
 public final class RemoteOriginalTzArchivePackageIndexSource$read$1 extends ContinuationImpl {
     Object L$0;

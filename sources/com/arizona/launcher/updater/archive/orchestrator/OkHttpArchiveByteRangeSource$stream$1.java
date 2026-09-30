@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveManifestResolver.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0, 0}, l = {408}, m = "stream", n = {"request", "consumer", "bodyStarted", "wrappedConsumer", "bodyHasStarted", "rangeLength"}, nl = {407}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "J$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.OkHttpArchiveByteRangeSource", f = "ArchiveManifestResolver.kt", i = {0, 0, 0, 0, 0, 0}, l = {519}, m = "stream", n = {"request", "consumer", "bodyStarted", "wrappedConsumer", "bodyHasStarted", "rangeLength"}, nl = {518}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "J$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class OkHttpArchiveByteRangeSource$stream$1 extends ContinuationImpl {
     long J$0;

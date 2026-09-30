@@ -99,7 +99,6 @@ import com.miami.game.core.app.root.nav.main.DialogMainState;
 import com.miami.game.core.app.root.nav.main.MainComponent;
 import com.miami.game.core.app.root.nav.main.MainExternalUiStateHolder;
 import com.miami.game.core.app.root.nav.main.MainState;
-import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.miami.game.core.firebase.notification.NotificationIntentExtras;
 import com.miami.game.core.firebase.notification.NotificationInteractionEvent;
 import com.miami.game.core.firebase.notification.NotificationInteractionType;
@@ -451,7 +450,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.4.1 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.5.3 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -942,7 +941,6 @@ public final class MainEntrench extends Hilt_MainEntrench {
         UtilsKt.set_isArizonaType(FlavorUtilKt.isArizona());
         UtilsKt.set_isBrazilType(FlavorUtilKt.isBrazil());
         UtilsKt.set_isDebug(false);
-        FirebaseConfigHelper.INSTANCE.setDebug(false, FlavorUtilKt.isArizona(), sharedPreferences, FlavorUtilKt.isBrazil());
         if (FlavorUtilKt.isArizona()) {
             edit.putBoolean("isArizonaType", true);
         } else {

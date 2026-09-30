@@ -37,6 +37,7 @@ import ru.mrlargha.commonui.databinding.RewardsLayoutBinding;
 import ru.mrlargha.commonui.databinding.RewardsLayoutItemBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.ui.kit.ParseColoredTextKt;
 /* compiled from: RewardsScreen.kt */
 @Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 *2\u00020\u0001:\u0002*+B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0016J\u0010\u0010\u0016\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J \u0010\u0019\u001a\u00020\u00132\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J\u0010\u0010\u001e\u001a\u00020\u000f2\u0006\u0010\u001f\u001a\u00020 H\u0002J(\u0010!\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u000f2\u0006\u0010%\u001a\u00020\u000f2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u0018\u0010'\u001a\u00020\u00132\u0006\u0010(\u001a\u00020\u000f2\u0006\u0010)\u001a\u00020\u0005H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u000fX\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006,"}, d2 = {"Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "layout", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/RewardsLayoutBinding;", "timer", "Landroid/os/CountDownTimer;", "path", "", "getPath", "()Ljava/lang/String;", "setVisibility", "", "visible", "", "setRewardScreenInfo", "info", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardScreenInfo;", "setItemReward", "itemBinding", "Lru/mrlargha/commonui/databinding/RewardsLayoutItemBinding;", "rewardItem", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardItem;", "formatTime", "millisUntilFinished", "", "colorizeTextView", "textView", "Landroid/widget/TextView;", "fullString", "subString", "color", "onBackendMessageHandled", "data", "subId", "Companion", "Spawner", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
@@ -120,19 +121,26 @@ public final class RewardsScreen extends SAMPUIElement {
             }
             countDownTimer.cancel();
         }
+        String str = null;
         RewardsLayoutBinding rewardsLayoutBinding = this.binding;
         Picasso picasso = Picasso.get();
         Intrinsics.checkNotNullExpressionValue(picasso, "get(...)");
         int i = 0;
         PicassoLoadSafeKt.loadSafe(picasso, FirebaseConfigHelper.INSTANCE.getProjectResourceUrl(false) + this.path + "background/" + rewardScreenInfo.getBackground()).into(rewardsLayoutBinding.layoutBg);
-        String str = rewardScreenInfo.getTitleHeaders() + "\n" + rewardScreenInfo.getTitle();
+        String str2 = rewardScreenInfo.getTitleHeaders() + "\n" + rewardScreenInfo.getTitle();
         if (rewardScreenInfo.getType() == 7) {
             rewardsLayoutBinding.title.setTypeface(ResourcesCompat.getFont(getTargetActivity(), R.font.hardpixel));
         }
         TextView title = rewardsLayoutBinding.title;
         Intrinsics.checkNotNullExpressionValue(title, "title");
-        colorizeTextView(title, str, rewardScreenInfo.getTitle(), Color.parseColor(rewardScreenInfo.getColor()));
+        colorizeTextView(title, str2, rewardScreenInfo.getTitle(), Color.parseColor(rewardScreenInfo.getColor()));
         rewardsLayoutBinding.description.setText(ParseColoredTextKt.toColoredText(StringsKt.replace$default(rewardScreenInfo.getDescription(), "<br>", "\n", false, 4, (Object) null), -1));
+        String endDateText = rewardScreenInfo.getEndDateText();
+        if (endDateText != null && !StringsKt.isBlank(endDateText)) {
+            str = endDateText;
+        }
+        rewardsLayoutBinding.endDateContainer.setVisibility(str == null ? 8 : 0);
+        rewardsLayoutBinding.endDateText.setText((str == null || (r0 = ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, str, 0.0f, null, 3, null)) == null) ? "" : "");
         CountDownTimer start = new RewardsScreen$setRewardScreenInfo$1$1(rewardsLayoutBinding, this, rewardScreenInfo, rewardScreenInfo.getTime() * 1000).start();
         Intrinsics.checkNotNullExpressionValue(start, "start(...)");
         this.timer = start;
@@ -217,20 +225,21 @@ public final class RewardsScreen extends SAMPUIElement {
         }
 
         /* compiled from: RewardsScreen.kt */
-        @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0019\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001BU\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0005\u0012\u0006\u0010\t\u001a\u00020\u0005\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0005\u0012\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\u0004\b\u000f\u0010\u0010J\t\u0010\u001d\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001e\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0005HÆ\u0003J\t\u0010 \u001a\u00020\u0005HÆ\u0003J\t\u0010!\u001a\u00020\u0005HÆ\u0003J\t\u0010\"\u001a\u00020\u0005HÆ\u0003J\t\u0010#\u001a\u00020\u0003HÆ\u0003J\t\u0010$\u001a\u00020\u0005HÆ\u0003J\u000f\u0010%\u001a\b\u0012\u0004\u0012\u00020\u000e0\rHÆ\u0003Ji\u0010&\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\u00052\b\b\u0002\u0010\t\u001a\u00020\u00052\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00052\u000e\b\u0002\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\rHÆ\u0001J\u0014\u0010'\u001a\u00020(2\b\u0010)\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010*\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010+\u001a\u00020\u0005HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0014R\u0011\u0010\u0007\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0014R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0014R\u0011\u0010\t\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0014R\u0011\u0010\n\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0012R\u0011\u0010\u000b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0014R\u0017\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c¨\u0006,"}, d2 = {"Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardScreenInfo;", "", "type", "", M2.g, "", "title", "titleHeaders", "buttonName", "description", "time", "color", "rewards", "", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardItem;", "<init>", "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/List;)V", "getType", "()I", "getBackground", "()Ljava/lang/String;", "getTitle", "getTitleHeaders", "getButtonName", "getDescription", "getTime", "getColor", "getRewards", "()Ljava/util/List;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "copy", "equals", "", "other", "hashCode", "toString", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u001c\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0086\b\u0018\u00002\u00020\u0001Ba\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005\u0012\u0006\u0010\u0007\u001a\u00020\u0005\u0012\u0006\u0010\b\u001a\u00020\u0005\u0012\u0006\u0010\t\u001a\u00020\u0005\u0012\u0006\u0010\n\u001a\u00020\u0003\u0012\u0006\u0010\u000b\u001a\u00020\u0005\u0012\f\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r\u0012\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0010\u0010\u0011J\t\u0010\u001f\u001a\u00020\u0003HÆ\u0003J\t\u0010 \u001a\u00020\u0005HÆ\u0003J\t\u0010!\u001a\u00020\u0005HÆ\u0003J\t\u0010\"\u001a\u00020\u0005HÆ\u0003J\t\u0010#\u001a\u00020\u0005HÆ\u0003J\t\u0010$\u001a\u00020\u0005HÆ\u0003J\t\u0010%\u001a\u00020\u0003HÆ\u0003J\t\u0010&\u001a\u00020\u0005HÆ\u0003J\u000f\u0010'\u001a\b\u0012\u0004\u0012\u00020\u000e0\rHÆ\u0003J\u000b\u0010(\u001a\u0004\u0018\u00010\u0005HÆ\u0003Ju\u0010)\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\u00052\b\b\u0002\u0010\t\u001a\u00020\u00052\b\b\u0002\u0010\n\u001a\u00020\u00032\b\b\u0002\u0010\u000b\u001a\u00020\u00052\u000e\b\u0002\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r2\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u0005HÆ\u0001J\u0014\u0010*\u001a\u00020+2\b\u0010,\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010-\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010.\u001a\u00020\u0005HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0011\u0010\u0006\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0015R\u0011\u0010\u0007\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u0011\u0010\b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0015R\u0011\u0010\t\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0015R\u0011\u0010\n\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u0013R\u0011\u0010\u000b\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0015R\u0017\u0010\f\u001a\b\u0012\u0004\u0012\u00020\u000e0\r¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u0013\u0010\u000f\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u0015¨\u0006/"}, d2 = {"Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardScreenInfo;", "", "type", "", M2.g, "", "title", "titleHeaders", "buttonName", "description", "time", "color", "rewards", "", "Lru/mrlargha/commonui/elements/rewards_screen/RewardsScreen$Companion$RewardItem;", "endDateText", "<init>", "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/List;Ljava/lang/String;)V", "getType", "()I", "getBackground", "()Ljava/lang/String;", "getTitle", "getTitleHeaders", "getButtonName", "getDescription", "getTime", "getColor", "getRewards", "()Ljava/util/List;", "getEndDateText", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "copy", "equals", "", "other", "hashCode", "toString", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
         /* loaded from: classes6.dex */
         public static final class RewardScreenInfo {
             private final String background;
             private final String buttonName;
             private final String color;
             private final String description;
+            private final String endDateText;
             private final List<RewardItem> rewards;
             private final int time;
             private final String title;
             private final String titleHeaders;
             private final int type;
 
-            public static /* synthetic */ RewardScreenInfo copy$default(RewardScreenInfo rewardScreenInfo, int i, String str, String str2, String str3, String str4, String str5, int i2, String str6, List list, int i3, Object obj) {
+            public static /* synthetic */ RewardScreenInfo copy$default(RewardScreenInfo rewardScreenInfo, int i, String str, String str2, String str3, String str4, String str5, int i2, String str6, List list, String str7, int i3, Object obj) {
                 if ((i3 & 1) != 0) {
                     i = rewardScreenInfo.type;
                 }
@@ -259,17 +268,24 @@ public final class RewardsScreen extends SAMPUIElement {
                 if ((i3 & 256) != 0) {
                     list2 = rewardScreenInfo.rewards;
                 }
-                String str7 = str6;
+                if ((i3 & 512) != 0) {
+                    str7 = rewardScreenInfo.endDateText;
+                }
                 List list3 = list2;
-                String str8 = str5;
+                String str8 = str7;
                 int i4 = i2;
-                String str9 = str4;
-                String str10 = str2;
-                return rewardScreenInfo.copy(i, str, str10, str3, str9, str8, i4, str7, list3);
+                String str9 = str6;
+                String str10 = str4;
+                String str11 = str5;
+                return rewardScreenInfo.copy(i, str, str2, str3, str10, str11, i4, str9, list3, str8);
             }
 
             public final int component1() {
                 return this.type;
+            }
+
+            public final String component10() {
+                return this.endDateText;
             }
 
             public final String component2() {
@@ -304,7 +320,7 @@ public final class RewardsScreen extends SAMPUIElement {
                 return this.rewards;
             }
 
-            public final RewardScreenInfo copy(int i, String background, String title, String titleHeaders, String buttonName, String description, int i2, String color, List<RewardItem> rewards) {
+            public final RewardScreenInfo copy(int i, String background, String title, String titleHeaders, String buttonName, String description, int i2, String color, List<RewardItem> rewards, String str) {
                 Intrinsics.checkNotNullParameter(background, "background");
                 Intrinsics.checkNotNullParameter(title, "title");
                 Intrinsics.checkNotNullParameter(titleHeaders, "titleHeaders");
@@ -312,7 +328,7 @@ public final class RewardsScreen extends SAMPUIElement {
                 Intrinsics.checkNotNullParameter(description, "description");
                 Intrinsics.checkNotNullParameter(color, "color");
                 Intrinsics.checkNotNullParameter(rewards, "rewards");
-                return new RewardScreenInfo(i, background, title, titleHeaders, buttonName, description, i2, color, rewards);
+                return new RewardScreenInfo(i, background, title, titleHeaders, buttonName, description, i2, color, rewards, str);
             }
 
             public boolean equals(Object obj) {
@@ -321,13 +337,15 @@ public final class RewardsScreen extends SAMPUIElement {
                 }
                 if (obj instanceof RewardScreenInfo) {
                     RewardScreenInfo rewardScreenInfo = (RewardScreenInfo) obj;
-                    return this.type == rewardScreenInfo.type && Intrinsics.areEqual(this.background, rewardScreenInfo.background) && Intrinsics.areEqual(this.title, rewardScreenInfo.title) && Intrinsics.areEqual(this.titleHeaders, rewardScreenInfo.titleHeaders) && Intrinsics.areEqual(this.buttonName, rewardScreenInfo.buttonName) && Intrinsics.areEqual(this.description, rewardScreenInfo.description) && this.time == rewardScreenInfo.time && Intrinsics.areEqual(this.color, rewardScreenInfo.color) && Intrinsics.areEqual(this.rewards, rewardScreenInfo.rewards);
+                    return this.type == rewardScreenInfo.type && Intrinsics.areEqual(this.background, rewardScreenInfo.background) && Intrinsics.areEqual(this.title, rewardScreenInfo.title) && Intrinsics.areEqual(this.titleHeaders, rewardScreenInfo.titleHeaders) && Intrinsics.areEqual(this.buttonName, rewardScreenInfo.buttonName) && Intrinsics.areEqual(this.description, rewardScreenInfo.description) && this.time == rewardScreenInfo.time && Intrinsics.areEqual(this.color, rewardScreenInfo.color) && Intrinsics.areEqual(this.rewards, rewardScreenInfo.rewards) && Intrinsics.areEqual(this.endDateText, rewardScreenInfo.endDateText);
                 }
                 return false;
             }
 
             public int hashCode() {
-                return (((((((((((((((Integer.hashCode(this.type) * 31) + this.background.hashCode()) * 31) + this.title.hashCode()) * 31) + this.titleHeaders.hashCode()) * 31) + this.buttonName.hashCode()) * 31) + this.description.hashCode()) * 31) + Integer.hashCode(this.time)) * 31) + this.color.hashCode()) * 31) + this.rewards.hashCode();
+                int hashCode = ((((((((((((((((Integer.hashCode(this.type) * 31) + this.background.hashCode()) * 31) + this.title.hashCode()) * 31) + this.titleHeaders.hashCode()) * 31) + this.buttonName.hashCode()) * 31) + this.description.hashCode()) * 31) + Integer.hashCode(this.time)) * 31) + this.color.hashCode()) * 31) + this.rewards.hashCode()) * 31;
+                String str = this.endDateText;
+                return hashCode + (str == null ? 0 : str.hashCode());
             }
 
             public String toString() {
@@ -339,10 +357,11 @@ public final class RewardsScreen extends SAMPUIElement {
                 String str5 = this.description;
                 int i2 = this.time;
                 String str6 = this.color;
-                return "RewardScreenInfo(type=" + i + ", background=" + str + ", title=" + str2 + ", titleHeaders=" + str3 + ", buttonName=" + str4 + ", description=" + str5 + ", time=" + i2 + ", color=" + str6 + ", rewards=" + this.rewards + ")";
+                List<RewardItem> list = this.rewards;
+                return "RewardScreenInfo(type=" + i + ", background=" + str + ", title=" + str2 + ", titleHeaders=" + str3 + ", buttonName=" + str4 + ", description=" + str5 + ", time=" + i2 + ", color=" + str6 + ", rewards=" + list + ", endDateText=" + this.endDateText + ")";
             }
 
-            public RewardScreenInfo(int i, String background, String title, String titleHeaders, String buttonName, String description, int i2, String color, List<RewardItem> rewards) {
+            public RewardScreenInfo(int i, String background, String title, String titleHeaders, String buttonName, String description, int i2, String color, List<RewardItem> rewards, String str) {
                 Intrinsics.checkNotNullParameter(background, "background");
                 Intrinsics.checkNotNullParameter(title, "title");
                 Intrinsics.checkNotNullParameter(titleHeaders, "titleHeaders");
@@ -359,6 +378,11 @@ public final class RewardsScreen extends SAMPUIElement {
                 this.time = i2;
                 this.color = color;
                 this.rewards = rewards;
+                this.endDateText = str;
+            }
+
+            public /* synthetic */ RewardScreenInfo(int i, String str, String str2, String str3, String str4, String str5, int i2, String str6, List list, String str7, int i3, DefaultConstructorMarker defaultConstructorMarker) {
+                this(i, str, str2, str3, str4, str5, i2, str6, list, (i3 & 512) != 0 ? null : str7);
             }
 
             public final int getType() {
@@ -387,6 +411,10 @@ public final class RewardsScreen extends SAMPUIElement {
 
             public final String getColor() {
                 return this.color;
+            }
+
+            public final String getEndDateText() {
+                return this.endDateText;
             }
 
             public final List<RewardItem> getRewards() {

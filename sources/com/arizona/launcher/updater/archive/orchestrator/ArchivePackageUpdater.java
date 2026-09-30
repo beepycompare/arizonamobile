@@ -1196,20 +1196,19 @@ public final class ArchivePackageUpdater {
         }
 
         public final ArchivePackageUpdater create(Context context, boolean z) {
-            File externalCacheDir;
+            File resolve;
             ArchivePackageUpdater$Companion$create$committer$1 archivePackageUpdater$Companion$create$committer$1;
             ArchiveRetirementClient archiveRetirementClient;
             Intrinsics.checkNotNullParameter(context, "context");
             File externalFilesDir = context.getExternalFilesDir(null);
-            if (externalFilesDir == null || (externalCacheDir = context.getExternalCacheDir()) == null) {
+            if (externalFilesDir == null || (resolve = ArchiveDownloadRootResolver.Companion.getProcess().resolve(context)) == null) {
                 return null;
             }
-            File file = new File(externalCacheDir, "archive-updater/downloads");
-            File file2 = new File(externalFilesDir, ".archive-installing");
+            File file = new File(externalFilesDir, ".archive-installing");
             DurableArchiveStateStore forAndroid = DurableArchiveStateStore.Companion.forAndroid(new File(context.getNoBackupFilesDir(), "archive-updater"));
             FileArchiveDownloadResumeStore forAndroid2 = FileArchiveDownloadResumeStore.Companion.forAndroid();
             AndroidArchiveNetworkMonitor androidArchiveNetworkMonitor = new AndroidArchiveNetworkMonitor(context);
-            OkHttpArchiveByteRangeSource okHttpArchiveByteRangeSource = new OkHttpArchiveByteRangeSource(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor, null, null, false, 12, null);
+            OkHttpArchiveByteRangeSource okHttpArchiveByteRangeSource = new OkHttpArchiveByteRangeSource(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor, null, null, false, 0L, 44, null);
             FileArchiveDownloadResumeStore fileArchiveDownloadResumeStore = forAndroid2;
             ArchivePackageDownloader archivePackageDownloader = new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor, 0L, null, false, fileArchiveDownloadResumeStore, null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, ComposerKt.providerMapsKey, null);
             AndroidArchiveDirectoryCreator androidArchiveDirectoryCreator = AndroidArchiveDirectoryCreator.INSTANCE;
@@ -1223,17 +1222,17 @@ public final class ArchivePackageUpdater {
                     }
                 };
             }
-            ArchivePackageCommitter archivePackageCommitter = new ArchivePackageCommitter(externalFilesDir, file2, null, null, androidArchiveDirectoryCreator, archivePackageUpdater$Companion$create$committer$1, 12, null);
+            ArchivePackageCommitter archivePackageCommitter = new ArchivePackageCommitter(externalFilesDir, file, null, null, androidArchiveDirectoryCreator, archivePackageUpdater$Companion$create$committer$1, 12, null);
             final SafeZipLimits safeZipLimits = new SafeZipLimits(0, 0L, 0L, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 15, null);
             ArchiveExtractor archiveExtractor = new ArchiveExtractor() { // from class: com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$Companion$$ExternalSyntheticLambda1
                 @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveExtractor
-                public final SafeZipExtractionResult extract(File file3, File file4, long j) {
-                    return ArchivePackageUpdater.Companion.create$lambda$1(SafeZipLimits.this, file3, file4, j);
+                public final SafeZipExtractionResult extract(File file2, File file3, long j) {
+                    return ArchivePackageUpdater.Companion.create$lambda$1(SafeZipLimits.this, file2, file3, j);
                 }
             };
             ArchivePackageUpdater$Companion$create$4 archivePackageUpdater$Companion$create$4 = new ArchivePackageUpdater$Companion$create$4(archivePackageCommitter);
             archiveRetirementClient = ArchivePackageUpdaterKt.archiveRetirementClient(externalFilesDir);
-            return new ArchivePackageUpdater(externalFilesDir, file, file2, forAndroid, new ArchivePackageUpdater$Companion$create$1(archivePackageDownloader), new ArchivePackageUpdater$Companion$create$2(WholeFileCrc32Verifier.INSTANCE), archiveExtractor, archivePackageUpdater$Companion$create$4, archiveRetirementClient, null, false, new AndroidArchiveRuntimeCapacityPolicy(externalFilesDir, file), new AndroidArchiveDownloadAheadPolicy(externalFilesDir, file), null, fileArchiveDownloadResumeStore, null, okHttpArchiveByteRangeSource, okHttpArchiveByteRangeSource.asStreamer(), ArchiveLivePathSafety.Companion.forAndroid(), AndroidArchiveDirectoryCreator.INSTANCE, 41472, null);
+            return new ArchivePackageUpdater(externalFilesDir, resolve, file, forAndroid, new ArchivePackageUpdater$Companion$create$1(archivePackageDownloader), new ArchivePackageUpdater$Companion$create$2(WholeFileCrc32Verifier.INSTANCE), archiveExtractor, archivePackageUpdater$Companion$create$4, archiveRetirementClient, null, false, new AndroidArchiveRuntimeCapacityPolicy(externalFilesDir, resolve), new AndroidArchiveDownloadAheadPolicy(externalFilesDir, resolve), null, fileArchiveDownloadResumeStore, null, okHttpArchiveByteRangeSource, okHttpArchiveByteRangeSource.asStreamer(), ArchiveLivePathSafety.Companion.forAndroid(), AndroidArchiveDirectoryCreator.INSTANCE, 41472, null);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */

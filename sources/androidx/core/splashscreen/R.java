@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0fe9;
+        public static int splashscreen_icon_view = 0x7f0a0ff8;
 
         private id() {
         }
@@ -58,7 +58,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int splash_screen_view = 0x7f0d02b8;
+        public static int splash_screen_view = 0x7f0d02ba;
 
         private layout() {
         }

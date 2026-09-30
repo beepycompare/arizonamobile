@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/october_street_layout" android:visibility="gone" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/october_street_background" android:scaleType="centerCrop" android:contentDescription="@null"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/content_container" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/_131sdp">
+        <FrameLayout android:id="@+id/header_container" android:layout_width="match_parent" android:layout_height="@dimen/_67sdp" android:layout_marginTop="@dimen/_14sdp" android:layout_marginEnd="@dimen/_14sdp">
+            <ImageView android:layout_width="@dimen/_181sdp" android:layout_height="@dimen/_67sdp" android:src="@drawable/october_street_logo" android:scaleType="fitStart" android:contentDescription="@null"/>
+            <ImageView android:layout_gravity="end|top" android:id="@+id/exit_button" android:layout_width="@dimen/_28sdp" android:layout_height="@dimen/_28sdp" android:src="@drawable/october_street_close" android:scaleType="fitCenter" android:contentDescription="@string/october_street_close_description"/>
+        </FrameLayout>
+        <View android:layout_width="match_parent" android:layout_height="@dimen/_11sdp"/>
+        <ru.mrlargha.feature.calendar.LeftFadingEdgeRecyclerView android:orientation="horizontal" android:id="@+id/rewards_rc" android:scrollbars="none" android:fadingEdgeLength="@dimen/_12sdp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="@dimen/_132sdp" android:overScrollMode="never" android:requiresFadingEdge="horizontal" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/scrollbar_track" android:layout_width="match_parent" android:layout_height="@dimen/_3sdp" android:layout_marginTop="@dimen/_14sdp" app:backgroundMainColor="#4dffffff">
+            <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/scrollbar_thumb" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#ffffffff"/>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+        <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="@dimen/_224sdp" android:layout_height="@dimen/_33sdp" android:layout_marginTop="@dimen/_11sdp" app:backgroundMainColor="#991c1209" app:corners="@dimen/_5sdp">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="@dimen/_7sdp" android:paddingEnd="@dimen/_7sdp">
+                <ImageView android:layout_width="@dimen/_14sdp" android:layout_height="@dimen/_14sdp" android:src="@drawable/october_street_info" android:contentDescription="@null"/>
+                <TextView android:textSize="@dimen/_9sdp" android:textColor="#ffffffff" android:ellipsize="end" android:layout_width="@dimen/_188sdp" android:layout_height="wrap_content" android:text="@string/october_street_tip" android:maxLines="2" android:fontFamily="@font/pfdindisplaypro_regular" android:layout_marginStart="@dimen/_7sdp" android:autoSizeTextType="uniform" android:autoSizeStepGranularity="@dimen/_1sdp" android:autoSizeMinTextSize="@dimen/_6sdp" android:autoSizeMaxTextSize="@dimen/_9sdp"/>
+            </LinearLayout>
+        </ru.mrlargha.commonui.utils.ui.CustomCardView>
+    </LinearLayout>
+</FrameLayout>

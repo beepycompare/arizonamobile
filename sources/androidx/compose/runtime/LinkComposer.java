@@ -1714,7 +1714,7 @@ public final class LinkComposer extends InternalComposer {
     /* JADX WARN: Removed duplicated region for block: B:93:0x0256  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x0259  */
     /* JADX WARN: Type inference failed for: r13v0 */
-    /* JADX WARN: Type inference failed for: r13v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r13v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r13v6 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

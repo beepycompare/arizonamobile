@@ -69,7 +69,7 @@ public final class R {
         public static int cgp_description_container = 0x7f0a04d2;
         public static int cgp_exit_button = 0x7f0a04d3;
         public static int cgp_title = 0x7f0a04d4;
-        public static int cpi_bg = 0x7f0a0570;
+        public static int cpi_bg = 0x7f0a0571;
 
         private id() {
         }

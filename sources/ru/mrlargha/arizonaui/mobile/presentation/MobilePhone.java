@@ -222,13 +222,17 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
 
     private final void closeOrder() {
         if (this.phoneIsOpen) {
-            MobileController pageIfExist = HistoryManager.Companion.getPageIfExist(MobilePhonePage.UBER_ORDER.getId());
+            MobileController pageIfExist = HistoryManager.Companion.getPageIfExist(MobilePhonePage.UBER_PREVIEW.getId());
             if (pageIfExist != null) {
                 pageIfExist.removePage();
             }
-            MobileController pageIfExist2 = HistoryManager.Companion.getPageIfExist(MobilePhonePage.UBER_CHOSE_TAXI.getId());
+            MobileController pageIfExist2 = HistoryManager.Companion.getPageIfExist(MobilePhonePage.UBER_ORDER.getId());
             if (pageIfExist2 != null) {
                 pageIfExist2.removePage();
+            }
+            MobileController pageIfExist3 = HistoryManager.Companion.getPageIfExist(MobilePhonePage.UBER_CHOSE_TAXI.getId());
+            if (pageIfExist3 != null) {
+                pageIfExist3.removePage();
             }
             HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MAIN_PAGE.getId());
         }

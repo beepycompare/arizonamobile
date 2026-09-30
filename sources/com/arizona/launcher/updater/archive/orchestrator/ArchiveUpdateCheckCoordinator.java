@@ -153,8 +153,8 @@ public final class ArchiveUpdateCheckCoordinator {
         this.selectiveDownloadEstimator = archiveSelectiveDownloadEstimator;
     }
 
-    public /* synthetic */ ArchiveUpdateCheckCoordinator(File file, DurableArchiveStateStore durableArchiveStateStore, ArchiveInstallAdopter archiveInstallAdopter, ArchivePackageArtifactCleaner archivePackageArtifactCleaner, File file2, ArchiveManifestCandidateParser archiveManifestCandidateParser, ArchiveManifestResolver archiveManifestResolver, AnonymousClass1 anonymousClass1, ArchiveSelectiveDownloadEstimator archiveSelectiveDownloadEstimator, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(file, durableArchiveStateStore, archiveInstallAdopter, archivePackageArtifactCleaner, (i & 16) != 0 ? null : file2, (i & 32) != 0 ? new ArchiveManifestCandidateParser(null, null, 3, null) : archiveManifestCandidateParser, (i & 64) != 0 ? new ArchiveManifestResolver(null, 1, null) : archiveManifestResolver, (i & 128) != 0 ? AnonymousClass1.INSTANCE : anonymousClass1, (i & 256) != 0 ? null : archiveSelectiveDownloadEstimator);
+    public /* synthetic */ ArchiveUpdateCheckCoordinator(File file, DurableArchiveStateStore durableArchiveStateStore, ArchiveInstallAdopter archiveInstallAdopter, ArchivePackageArtifactCleaner archivePackageArtifactCleaner, File file2, ArchiveManifestCandidateParser archiveManifestCandidateParser, ArchiveManifestResolver archiveManifestResolver, Function0 function0, ArchiveSelectiveDownloadEstimator archiveSelectiveDownloadEstimator, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this(file, durableArchiveStateStore, archiveInstallAdopter, archivePackageArtifactCleaner, (i & 16) != 0 ? null : file2, (i & 32) != 0 ? new ArchiveManifestCandidateParser(null, null, 3, null) : archiveManifestCandidateParser, (i & 64) != 0 ? new ArchiveManifestResolver(null, 0, 0L, 7, null) : archiveManifestResolver, (i & 128) != 0 ? AnonymousClass1.INSTANCE : function0, (i & 256) != 0 ? null : archiveSelectiveDownloadEstimator);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -49,6 +49,7 @@ import com.arizona.launcher.UpdateService;
 import com.arizona.launcher.UpdateServiceContract;
 import com.arizona.launcher.updater.apk.LauncherApkDownloader;
 import com.arizona.launcher.updater.apk.LauncherVersionPolicy;
+import com.arizona.launcher.updater.archive.orchestrator.ArchiveDownloadRootResolver;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageEstimatorKt;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageRequirementsSnapshot;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveStorageSpaceCheckResult;
@@ -321,12 +322,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit onCreate$lambda$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C127@5294L175,127@5269L200:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C128@5379L175,128@5354L200:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:127)");
+                ComposerKt.traceEventStart(-1020785817, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous> (UpdateActivity.kt:128)");
             }
             CompositionLocalKt.CompositionLocalProvider(new ProvidedValue[0], ComposableLambdaKt.rememberComposableLambda(-413695961, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
@@ -345,12 +346,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0(final DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C128@5331L124,128@5312L143:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C129@5416L124,129@5397L143:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:128)");
+                ComposerKt.traceEventStart(-413695961, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous> (UpdateActivity.kt:129)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(-298306341, true, new Function2() { // from class: com.arizona.launcher.UpdateActivity$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
@@ -369,12 +370,12 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$0$0$0(DownloadScreenComponent downloadScreenComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C129@5353L84:UpdateActivity.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C130@5438L84:UpdateActivity.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:129)");
+                ComposerKt.traceEventStart(-298306341, i, -1, "com.arizona.launcher.UpdateActivity.onCreate.<anonymous>.<anonymous>.<anonymous> (UpdateActivity.kt:130)");
             }
             DownloadScreenRouteKt.DownloadScreenRoute(downloadScreenComponent, composer, DownloadScreenComponent.$stable);
             if (ComposerKt.isTraceInProgress()) {
@@ -809,9 +810,9 @@ public final class UpdateActivity extends Hilt_UpdateActivity {
     /* JADX INFO: Access modifiers changed from: private */
     public final void checkFreeSpace(long j, long j2, long j3, boolean z) {
         File externalFilesDir = getExternalFilesDir(null);
-        File externalCacheDir = getExternalCacheDir();
-        ArchiveStorageSpaceCheckResult check = this.archiveStorageSpaceChecker.check(externalFilesDir, externalCacheDir, new ArchiveStorageRequirementsSnapshot(0L, j, j2, j3));
-        Boolean usesSingleStorageDevice = this.archiveStorageSpaceChecker.usesSingleStorageDevice(externalFilesDir, externalCacheDir);
+        File resolve = ArchiveDownloadRootResolver.Companion.getProcess().resolve(this);
+        ArchiveStorageSpaceCheckResult check = this.archiveStorageSpaceChecker.check(externalFilesDir, resolve, new ArchiveStorageRequirementsSnapshot(0L, j, j2, j3));
+        Boolean usesSingleStorageDevice = this.archiveStorageSpaceChecker.usesSingleStorageDevice(externalFilesDir, resolve);
         Log.d(this.tag, "Archive free space result=" + check + " wireSameDevice=" + z + " inspectedSameDevice=" + usesSingleStorageDevice + " gameRequired=" + j2 + " downloadRequired=" + j3);
         int i = WhenMappings.$EnumSwitchMapping$0[check.ordinal()];
         if (i == 1) {

@@ -8,6 +8,7 @@ import com.arizona.launcher.updater.archive.orchestrator.ArchiveSelectiveDownloa
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckDecision;
 import com.arizona.launcher.updater.archive.state.DurableArchiveStateStore;
+import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import java.io.File;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -25,7 +26,7 @@ import ru.mrlargha.commonui.elements.hud.presentation.view.RodinaTrainSpeedGauge
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdateCheckDecision;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$prepareGameUpdateCheck$decision$2", f = "UpdateService.kt", i = {0, 0, 0}, l = {478}, m = "invokeSuspend", n = {"gameRoot", "rangeRetryListener", "retryEnabled"}, nl = {488}, s = {"L$0", "L$1", "Z$0"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$prepareGameUpdateCheck$decision$2", f = "UpdateService.kt", i = {0, 0, 0}, l = {477}, m = "invokeSuspend", n = {"gameRoot", "rangeRetryListener", "retryEnabled"}, nl = {DownloaderService.STATUS_FILE_DELIVERED_INCORRECTLY}, s = {"L$0", "L$1", "Z$0"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateService$prepareGameUpdateCheck$decision$2 extends SuspendLambda implements Function1<Continuation<? super ArchiveUpdateCheckDecision>, Object> {
     final /* synthetic */ UpdateOperationKind $kind;
@@ -64,6 +65,7 @@ public final class UpdateService$prepareGameUpdateCheck$decision$2 extends Suspe
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         boolean isGameDownloadRetryEnabled;
+        File archiveDownloadRoot;
         DurableArchiveStateStore durableArchiveStateStore;
         DurableArchiveStateStore durableArchiveStateStore2;
         ArchiveSelectiveDownloadEstimator archiveSelectiveDownloadEstimator;
@@ -85,8 +87,7 @@ public final class UpdateService$prepareGameUpdateCheck$decision$2 extends Suspe
         UpdateService$prepareGameUpdateCheck$decision$2$rangeRetryListener$1 updateService$prepareGameUpdateCheck$decision$2$rangeRetryListener$12 = new UpdateService$prepareGameUpdateCheck$decision$2$rangeRetryListener$1(this.this$0, this.$kind, this.$operationToken, this.$server);
         ArchiveInstallAdopter forAndroid = ArchiveInstallAdopter.Companion.forAndroid();
         ArchivePackageArtifactCleaner forAndroid2 = ArchivePackageArtifactCleaner.Companion.forAndroid();
-        File externalCacheDir = this.this$0.getExternalCacheDir();
-        File file2 = externalCacheDir != null ? new File(externalCacheDir, "archive-updater/downloads") : null;
+        archiveDownloadRoot = this.this$0.archiveDownloadRoot();
         durableArchiveStateStore = this.this$0.archiveStateStore;
         if (durableArchiveStateStore == null) {
             Intrinsics.throwUninitializedPropertyAccessException("archiveStateStore");
@@ -102,7 +103,7 @@ public final class UpdateService$prepareGameUpdateCheck$decision$2 extends Suspe
         } catch (Exception unused) {
             archiveSelectiveDownloadEstimator = null;
         }
-        ArchiveUpdateCheckCoordinator archiveUpdateCheckCoordinator = new ArchiveUpdateCheckCoordinator(externalFilesDir, durableArchiveStateStore2, forAndroid, forAndroid2, file2, null, create, null, archiveSelectiveDownloadEstimator, RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, null);
+        ArchiveUpdateCheckCoordinator archiveUpdateCheckCoordinator = new ArchiveUpdateCheckCoordinator(externalFilesDir, durableArchiveStateStore2, forAndroid, forAndroid2, archiveDownloadRoot, null, create, null, archiveSelectiveDownloadEstimator, RodinaTrainSpeedGaugeView.MAX_SPEED_KMH, null);
         String str = this.$response;
         selectedArchiveGpu = this.this$0.selectedArchiveGpu();
         String str2 = this.$server;

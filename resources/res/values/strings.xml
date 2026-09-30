@@ -457,7 +457,7 @@
     <string name="close_sheet">Close sheet</string>
     <string name="close_txt">Закрыто</string>
     <string name="res_0x7f1201c8_com_google_firebase_crashlytics_mapping_file_id">00000000000000000000000000000000</string>
-    <string name="res_0x7f1201c9_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"92084b36f72aa69575dcb738492fd2be7b72f5ff\"\n}\n</string>
+    <string name="res_0x7f1201c9_com_google_firebase_crashlytics_version_control_info">repositories {\n  system: GIT\n  local_root_path: \"$PROJECT_DIR\"\n  revision: \"3501ba51b78ef63c0713de660ee9a6912feececa\"\n}\n</string>
     <string name="common_api_error">Ошибка API: %1$d</string>
     <string name="common_check_fields">Проверьте правильность введенных полей.</string>
     <string name="common_close">Закрыть</string>
@@ -1458,6 +1458,16 @@
     <string name="num_i">№%1$d</string>
     <string name="number_i">#%1$d</string>
     <string name="numbering">№%1d</string>
+    <string name="october_street_amount">x%1$d</string>
+    <string name="october_street_claim">ЗАБРАТЬ</string>
+    <string name="october_street_close">×</string>
+    <string name="october_street_close_description">Закрыть</string>
+    <string name="october_street_day">%1$d день</string>
+    <string name="october_street_missed">ДЕНЬ ПРОПУЩЕН</string>
+    <string name="october_street_remaining">Осталось отыграть %1$s</string>
+    <string name="october_street_remaining_label">Осталось отыграть</string>
+    <string name="october_street_restore_price">%1$s</string>
+    <string name="october_street_tip">Играй каждый день и получай награду каждый раз после выполнения всех условий</string>
     <string name="of_these">Из них</string>
     <string name="off">Выкл.</string>
     <string name="official_site">Официальный сайт</string>
