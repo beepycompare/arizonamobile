@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Ke extends O2 {
     public static final Je b = new Je();
 
-    public Ke(EnumC0218ea enumC0218ea, Object obj) {
-        super(Je.a(b, enumC0218ea, obj));
+    public Ke(EnumC0213ea enumC0213ea, Object obj) {
+        super(Je.a(b, enumC0213ea, obj));
     }
 }

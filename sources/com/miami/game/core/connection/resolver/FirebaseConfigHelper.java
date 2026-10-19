@@ -2,7 +2,9 @@ package com.miami.game.core.connection.resolver;
 
 import android.content.SharedPreferences;
 import android.util.Log;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.arizona.game.BuildConfig;
+import com.google.android.gms.common.internal.ImagesContract;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
@@ -53,7 +55,7 @@ import okhttp3.ResponseBody;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: FirebaseServerHandler.kt */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010$\n\u0002\b\t\n\u0002\u0010 \n\u0002\b\u0007\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J(\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\t2\b\b\u0002\u0010.\u001a\u00020\u0005J\u000e\u0010/\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u0011J\f\u00101\u001a\u00020\u0013*\u00020\u0013H\u0002J\u0010\u00102\u001a\u0004\u0018\u00010\u00112\u0006\u00100\u001a\u00020\u0011J\f\u00103\u001a\u00020\u0005*\u00020\u0013H\u0002J\u0010\u00104\u001a\u00020\u00112\u0006\u00105\u001a\u00020\u0013H\u0002J\u001a\u00106\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u001107H\u0086@¢\u0006\u0002\u00108J\u000e\u00109\u001a\u00020\u0005H\u0086@¢\u0006\u0002\u00108J\u000e\u0010:\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00108J\u000e\u0010;\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cH\u0002J\b\u0010<\u001a\u00020*H\u0002J\u0016\u0010=\u001a\u00020*2\f\u0010>\u001a\b\u0012\u0004\u0012\u00020\u00110\"H\u0002J\u001a\u0010?\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u001107H\u0086@¢\u0006\u0002\u00108J\u0018\u0010@\u001a\b\u0012\u0004\u0012\u00020\u00110A2\b\b\u0002\u0010B\u001a\u00020\u0005H\u0002J\u0010\u0010C\u001a\u00020\u00112\b\b\u0002\u0010B\u001a\u00020\u0005J\u0016\u0010D\u001a\b\u0012\u0004\u0012\u00020\u00110A2\b\b\u0002\u0010B\u001a\u00020\u0005J\u0006\u0010E\u001a\u00020\u0011J\u0006\u0010F\u001a\u00020\u0011J\u0006\u0010G\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\n\u001a\u00020\u000b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000e\u0010\u000f\u001a\u0004\b\f\u0010\rR\u001a\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010 \u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010#\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\"0$¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lcom/miami/game/core/connection/resolver/FirebaseConfigHelper;", "", "<init>", "()V", "isDebug", "", "isArizona", "isBrazil", "sharedPref", "Landroid/content/SharedPreferences;", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "remoteConfig$delegate", "Lkotlin/Lazy;", "getRawLink", "", "type", "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "linkCache", "Ljava/util/concurrent/ConcurrentHashMap;", "hostRegex", "Lkotlin/text/Regex;", "remoteConfigReadyMutex", "Lkotlinx/coroutines/sync/Mutex;", "remoteConfigFetchTaskLock", "remoteConfigFetchTask", "Lcom/google/android/gms/tasks/Task;", "Ljava/lang/Void;", "remoteConfigReady", "remoteConfigListenerRegistered", "_remoteConfigUpdates", "Lkotlinx/coroutines/flow/MutableSharedFlow;", "", "remoteConfigUpdates", "Lkotlinx/coroutines/flow/SharedFlow;", "getRemoteConfigUpdates", "()Lkotlinx/coroutines/flow/SharedFlow;", "httpClient", "Lokhttp3/OkHttpClient;", "setDebug", "", "debug", BuildConfig.FLAVOR, "sharedPreferences", "brazil", "isServiceAvailable", "url", "toReserve", "extractHost", "hasReserve", "fetchLink", "primary", "bootstrap", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitRemoteConfigReady", "fetchAndActivateWithRetry", "currentOrStartRemoteConfigFetch", "registerRemoteConfigUpdates", "publishRemoteConfigUpdate", "updatedKeys", "fetchAll", "getResourceUrls", "", "useDebug", "getProjectResourceUrl", "getProjectResourceUrls", "getServerApiUrl", "getHudPingUrl", "getChannelsState", "connection-resolver"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010\"\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\f\n\u0002\u0010$\n\u0002\b\t\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0005\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J(\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\t2\b\b\u0002\u0010.\u001a\u00020\u0005J\u000e\u0010/\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u0011J\f\u00101\u001a\u00020\u0013*\u00020\u0013H\u0002J\u0010\u00102\u001a\u0004\u0018\u00010\u00112\u0006\u00100\u001a\u00020\u0011J\f\u00103\u001a\u00020\u0005*\u00020\u0013H\u0002J\u0010\u00104\u001a\u00020\u00112\u0006\u00105\u001a\u00020\u0013H\u0002J\u001a\u00106\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u001107H\u0086@¢\u0006\u0002\u00108J\u000e\u00109\u001a\u00020\u0005H\u0086@¢\u0006\u0002\u00108J\u000e\u0010:\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00108J\u000e\u0010;\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cH\u0002J\b\u0010<\u001a\u00020*H\u0002J\u0016\u0010=\u001a\u00020*2\f\u0010>\u001a\b\u0012\u0004\u0012\u00020\u00110\"H\u0002J\u001a\u0010?\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u001107H\u0086@¢\u0006\u0002\u00108J\u0018\u0010@\u001a\b\u0012\u0004\u0012\u00020\u00110A2\b\b\u0002\u0010B\u001a\u00020\u0005H\u0002J\u0010\u0010C\u001a\u00020\u00112\b\b\u0002\u0010B\u001a\u00020\u0005J\u0006\u0010D\u001a\u00020EJ\u0016\u0010F\u001a\b\u0012\u0004\u0012\u00020\u00110A2\b\b\u0002\u0010B\u001a\u00020\u0005J\u0006\u0010G\u001a\u00020\u0011J\u0006\u0010H\u001a\u00020\u0011J\u0006\u0010I\u001a\u00020\u0011R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\b\u001a\u0004\u0018\u00010\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010\n\u001a\u00020\u000b8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\u000e\u0010\u000f\u001a\u0004\b\f\u0010\rR\u001a\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00110\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001b\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010 \u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\"0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u001d\u0010#\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00110\"0$¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006J"}, d2 = {"Lcom/miami/game/core/connection/resolver/FirebaseConfigHelper;", "", "<init>", "()V", "isDebug", "", "isArizona", "isBrazil", "sharedPref", "Landroid/content/SharedPreferences;", "remoteConfig", "Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "getRemoteConfig", "()Lcom/google/firebase/remoteconfig/FirebaseRemoteConfig;", "remoteConfig$delegate", "Lkotlin/Lazy;", "getRawLink", "", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "Lcom/miami/game/core/connection/resolver/FirebaseConfigLinks;", "linkCache", "Ljava/util/concurrent/ConcurrentHashMap;", "hostRegex", "Lkotlin/text/Regex;", "remoteConfigReadyMutex", "Lkotlinx/coroutines/sync/Mutex;", "remoteConfigFetchTaskLock", "remoteConfigFetchTask", "Lcom/google/android/gms/tasks/Task;", "Ljava/lang/Void;", "remoteConfigReady", "remoteConfigListenerRegistered", "_remoteConfigUpdates", "Lkotlinx/coroutines/flow/MutableSharedFlow;", "", "remoteConfigUpdates", "Lkotlinx/coroutines/flow/SharedFlow;", "getRemoteConfigUpdates", "()Lkotlinx/coroutines/flow/SharedFlow;", "httpClient", "Lokhttp3/OkHttpClient;", "setDebug", "", "debug", BuildConfig.FLAVOR, "sharedPreferences", "brazil", "isServiceAvailable", ImagesContract.URL, "toReserve", "extractHost", "hasReserve", "fetchLink", "primary", "bootstrap", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "awaitRemoteConfigReady", "fetchAndActivateWithRetry", "currentOrStartRemoteConfigFetch", "registerRemoteConfigUpdates", "publishRemoteConfigUpdate", "updatedKeys", "fetchAll", "getResourceUrls", "", "useDebug", "getProjectResourceUrl", "getLauncherResourceGeneration", "", "getProjectResourceUrls", "getServerApiUrl", "getHudPingUrl", "getChannelsState", "connection-resolver"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FirebaseConfigHelper {
     private static final MutableSharedFlow<Set<String>> _remoteConfigUpdates;
@@ -228,20 +230,20 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean hasReserve(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
+            m9974constructorimpl = Result.m9974constructorimpl(INSTANCE.toReserve(firebaseConfigLinks));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9928isSuccessimpl(m9921constructorimpl);
+        return Result.m9981isSuccessimpl(m9974constructorimpl);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String fetchLink(FirebaseConfigLinks firebaseConfigLinks) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         String rawLink = getRawLink(firebaseConfigLinks);
         if (isServiceAvailable(rawLink)) {
             return rawLink;
@@ -249,15 +251,15 @@ public final class FirebaseConfigHelper {
         try {
             Result.Companion companion = Result.Companion;
             FirebaseConfigHelper firebaseConfigHelper = this;
-            m9921constructorimpl = Result.m9921constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
+            m9974constructorimpl = Result.m9974constructorimpl(getRawLink(toReserve(firebaseConfigLinks)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = null;
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = null;
         }
-        String str = (String) m9921constructorimpl;
+        String str = (String) m9974constructorimpl;
         if (str != null && isServiceAvailable(str)) {
             Log.w("FirebaseSrvHandler", "fetchLink: primary=" + firebaseConfigLinks.getKey() + " down, fall back to reserve");
             return str;
@@ -500,6 +502,32 @@ public final class FirebaseConfigHelper {
         return str == null ? "" : str;
     }
 
+    public final long getLauncherResourceGeneration() {
+        String str;
+        if (isArizona) {
+            str = isBrazil ? "launcher_resource_generation_brazil" : "launcher_resource_generation_arizona";
+        } else {
+            str = "launcher_resource_generation_rodina";
+        }
+        try {
+            String string = getRemoteConfig().getString(str);
+            Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+            Long longOrNull = StringsKt.toLongOrNull(StringsKt.trim((CharSequence) string).toString());
+            if (longOrNull != null) {
+                if (longOrNull.longValue() < 0) {
+                    longOrNull = null;
+                }
+                if (longOrNull != null) {
+                    return longOrNull.longValue();
+                }
+            }
+            return 0L;
+        } catch (Throwable th) {
+            Log.w("FirebaseSrvHandler", "getLauncherResourceGeneration: " + th.getMessage());
+            return 0L;
+        }
+    }
+
     public static /* synthetic */ List getProjectResourceUrls$default(FirebaseConfigHelper firebaseConfigHelper, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
             z = true;
@@ -544,7 +572,7 @@ public final class FirebaseConfigHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence getChannelsState$lambda$0(FirebaseConfigLinks linkType) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         Intrinsics.checkNotNullParameter(linkType, "linkType");
         String str = linkCache.get(linkType);
         if (str == null) {
@@ -554,15 +582,15 @@ public final class FirebaseConfigHelper {
         String rawLink = firebaseConfigHelper.getRawLink(linkType);
         try {
             Result.Companion companion = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
+            m9974constructorimpl = Result.m9974constructorimpl(firebaseConfigHelper.getRawLink(firebaseConfigHelper.toReserve(linkType)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = null;
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = null;
         }
-        String str2 = (String) m9921constructorimpl;
+        String str2 = (String) m9974constructorimpl;
         if (!Intrinsics.areEqual(str, rawLink) && Intrinsics.areEqual(str, str2)) {
             return "1";
         }

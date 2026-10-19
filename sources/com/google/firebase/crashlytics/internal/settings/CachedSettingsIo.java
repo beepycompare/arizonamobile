@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileWriter;
 import org.json.JSONObject;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class CachedSettingsIo {
     private static final String SETTINGS_CACHE_FILENAME = "com.crashlytics.settings.json";
     private final File cachedSettingsFile;

@@ -1,7 +1,7 @@
 package com.google.firebase.platforminfo;
 
 import kotlin.KotlinVersion;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final class KotlinDetector {
     private KotlinDetector() {
     }

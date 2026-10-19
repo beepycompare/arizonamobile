@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.blueprint.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BlueprintPipeTwoBinding implements ViewBinding {
     public final ImageView ivDrawing;
     private final ConstraintLayout rootView;

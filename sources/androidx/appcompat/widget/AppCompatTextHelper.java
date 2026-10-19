@@ -22,8 +22,9 @@ import androidx.core.view.inputmethod.EditorInfoCompat;
 import androidx.core.widget.TextViewCompat;
 import java.lang.ref.WeakReference;
 import java.util.Locale;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-class AppCompatTextHelper {
+public class AppCompatTextHelper {
     private static final int MONOSPACE = 3;
     private static final int SANS = 1;
     private static final int SERIF = 2;

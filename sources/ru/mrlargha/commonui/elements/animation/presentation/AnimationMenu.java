@@ -6,7 +6,6 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,6 +29,7 @@ import ru.mrlargha.commonui.elements.animation.domain.obj.AnimationCategory;
 import ru.mrlargha.commonui.elements.animation.domain.obj.AnimationFavourites;
 import ru.mrlargha.commonui.elements.animation.presentation.adapter.AnimationAdapter;
 import ru.mrlargha.commonui.elements.animation.presentation.adapter.AnimationCategoryAdapter;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
@@ -66,12 +66,12 @@ public final class AnimationMenu extends SAMPUIElement {
         this.client = arizonaRetrofit;
         this.api = (AnimationApi) ArizonaRetrofit.create$default(arizonaRetrofit, AnimationApi.class, false, null, null, 14, null);
         Intrinsics.checkNotNullExpressionValue(animationMenu, "animationMenu");
-        addViewToConstraintLayout(animationMenu, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, animationMenu, -1, -1, false, 8, null);
         setVisibility(false);
         if (!UtilsKt.isArizonaType()) {
             initRetrofit();
         }
-        EditText animationSearch = bind.animationSearch;
+        KeyboardEditText animationSearch = bind.animationSearch;
         Intrinsics.checkNotNullExpressionValue(animationSearch, "animationSearch");
         animationSearch.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.animation.presentation.AnimationMenu$special$$inlined$doOnTextChanged$1
             @Override // android.text.TextWatcher

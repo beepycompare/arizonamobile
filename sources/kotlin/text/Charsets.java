@@ -1,7 +1,5 @@
 package kotlin.text;
 
-import com.android.internal.http.multipart.FilePart;
-import com.android.internal.http.multipart.StringPart;
 import java.nio.charset.Charset;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -36,10 +34,10 @@ public final class Charsets {
         Charset forName4 = Charset.forName("UTF-16LE");
         Intrinsics.checkNotNullExpressionValue(forName4, "forName(...)");
         UTF_16LE = forName4;
-        Charset forName5 = Charset.forName(StringPart.DEFAULT_CHARSET);
+        Charset forName5 = Charset.forName("US-ASCII");
         Intrinsics.checkNotNullExpressionValue(forName5, "forName(...)");
         US_ASCII = forName5;
-        Charset forName6 = Charset.forName(FilePart.DEFAULT_CHARSET);
+        Charset forName6 = Charset.forName("ISO-8859-1");
         Intrinsics.checkNotNullExpressionValue(forName6, "forName(...)");
         ISO_8859_1 = forName6;
     }

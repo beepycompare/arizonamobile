@@ -1,6 +1,5 @@
 package androidx.compose.ui.semantics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -126,6 +125,6 @@ public final class Role {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m7376toStringimpl(int i) {
-        return m7374equalsimpl0(i, Button) ? "Button" : m7374equalsimpl0(i, Checkbox) ? "Checkbox" : m7374equalsimpl0(i, Switch) ? "Switch" : m7374equalsimpl0(i, RadioButton) ? "RadioButton" : m7374equalsimpl0(i, Tab) ? "Tab" : m7374equalsimpl0(i, Image) ? "Image" : m7374equalsimpl0(i, DropdownList) ? "DropdownList" : m7374equalsimpl0(i, ValuePicker) ? "Picker" : m7374equalsimpl0(i, Carousel) ? "Carousel" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m7374equalsimpl0(i, Button) ? "Button" : m7374equalsimpl0(i, Checkbox) ? "Checkbox" : m7374equalsimpl0(i, Switch) ? "Switch" : m7374equalsimpl0(i, RadioButton) ? "RadioButton" : m7374equalsimpl0(i, Tab) ? "Tab" : m7374equalsimpl0(i, Image) ? "Image" : m7374equalsimpl0(i, DropdownList) ? "DropdownList" : m7374equalsimpl0(i, ValuePicker) ? "Picker" : m7374equalsimpl0(i, Carousel) ? "Carousel" : "Unknown";
     }
 }

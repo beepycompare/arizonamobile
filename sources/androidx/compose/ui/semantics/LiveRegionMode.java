@@ -1,6 +1,5 @@
 package androidx.compose.ui.semantics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -84,6 +83,6 @@ public final class LiveRegionMode {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m7367toStringimpl(int i) {
-        return m7365equalsimpl0(i, Polite) ? "Polite" : m7365equalsimpl0(i, Assertive) ? "Assertive" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m7365equalsimpl0(i, Polite) ? "Polite" : m7365equalsimpl0(i, Assertive) ? "Assertive" : "Unknown";
     }
 }

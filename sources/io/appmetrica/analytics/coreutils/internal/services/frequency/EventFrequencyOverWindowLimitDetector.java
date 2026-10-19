@@ -7,13 +7,13 @@ import kotlin.Metadata;
 public final class EventFrequencyOverWindowLimitDetector {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f379a;
+    private long f382a;
     private int b;
     private final EventFrequencyStorage c;
     private final SystemTimeProvider d = new SystemTimeProvider();
 
     public EventFrequencyOverWindowLimitDetector(long j, int i, EventFrequencyStorage eventFrequencyStorage) {
-        this.f379a = j;
+        this.f382a = j;
         this.b = i;
         this.c = eventFrequencyStorage;
     }
@@ -30,7 +30,7 @@ public final class EventFrequencyOverWindowLimitDetector {
             longValue = windowStart.longValue();
         }
         long j = uptimeMillis - longValue;
-        if (j >= 0 && j <= this.f379a) {
+        if (j >= 0 && j <= this.f382a) {
             Integer windowOccurrencesCount = this.c.getWindowOccurrencesCount(str);
             int intValue = (windowOccurrencesCount != null ? windowOccurrencesCount.intValue() : 0) + 1;
             this.c.putWindowOccurrencesCount(str, intValue);
@@ -42,7 +42,7 @@ public final class EventFrequencyOverWindowLimitDetector {
     }
 
     public final synchronized void updateParameters(long j, int i) {
-        this.f379a = j;
+        this.f382a = j;
         this.b = i;
     }
 }

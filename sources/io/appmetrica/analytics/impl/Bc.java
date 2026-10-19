@@ -8,33 +8,33 @@ import java.io.Closeable;
 public final class Bc implements Q6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f477a;
+    public final Context f480a;
     public final String b;
     public final Jn c;
-    public final C0632ua d;
-    public C0500p7 e;
+    public final C0627ua d;
+    public C0495p7 e;
 
     public Bc(Context context, String str, Jn jn) {
-        this(context, str, new C0632ua(str), jn);
+        this(context, str, new C0627ua(str), jn);
     }
 
     @Override // io.appmetrica.analytics.impl.Q6
     public final synchronized SQLiteDatabase a() {
-        C0500p7 c0500p7;
+        C0495p7 c0495p7;
         try {
             this.d.a();
-            c0500p7 = new C0500p7(this.f477a, this.b, this.c, PublicLogger.getAnonymousInstance());
-            this.e = c0500p7;
+            c0495p7 = new C0495p7(this.f480a, this.b, this.c, PublicLogger.getAnonymousInstance());
+            this.e = c0495p7;
         } catch (Throwable unused) {
             return null;
         }
-        return c0500p7.getWritableDatabase();
+        return c0495p7.getWritableDatabase();
     }
 
-    public Bc(Context context, String str, C0632ua c0632ua, Jn jn) {
-        this.f477a = context;
+    public Bc(Context context, String str, C0627ua c0627ua, Jn jn) {
+        this.f480a = context;
         this.b = str;
-        this.d = c0632ua;
+        this.d = c0627ua;
         this.c = jn;
     }
 

@@ -1,11 +1,10 @@
 package com.google.firebase.crashlytics.ndk;
 
-import com.facebook.internal.NativeProtocol;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.HashMap;
 import org.json.JSONObject;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 class SessionMetadataJsonSerializer {
     private SessionMetadataJsonSerializer() {
     }
@@ -35,7 +34,7 @@ class SessionMetadataJsonSerializer {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String serializeSessionOs(String str, String str2, boolean z) {
         HashMap hashMap = new HashMap();
-        hashMap.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, str);
+        hashMap.put("version", str);
         hashMap.put("build_version", str2);
         hashMap.put(CommonUrlParts.ROOT_STATUS, Boolean.valueOf(z));
         return new JSONObject(hashMap).toString();

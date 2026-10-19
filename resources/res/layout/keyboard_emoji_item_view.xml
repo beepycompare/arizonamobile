@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.emoji.widget.EmojiTextView xmlns:android="http://schemas.android.com/apk/res/android" android:textSize="@dimen/_20sdp" android:textColor="@color/white" android:gravity="center" android:background="?attr/selectableItemBackgroundBorderless" android:layout_width="match_parent" android:layout_height="@dimen/_31sdp" android:includeFontPadding="false"/>

@@ -1,9 +1,12 @@
 package kotlinx.datetime.format;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.NotificationCompat;
 import androidx.media3.container.MdtaMetadataEntry;
 import androidx.media3.extractor.ts.TsExtractor;
+import com.google.android.gms.location.LocationRequest;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
@@ -52,27 +55,27 @@ public final class UnicodeKt {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithTime)) {
                         throw new IllegalArgumentException(("A time-based directive " + unicodeFormat + " was used in a format builder that doesn't support time components").toString());
                     }
-                    ((UnicodeFormat.Directive.TimeBased) unicodeFormat).mo11552addToFormat((DateTimeFormatBuilder.WithTime) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.TimeBased) unicodeFormat).mo11605addToFormat((DateTimeFormatBuilder.WithTime) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.YearMonthBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithYearMonth)) {
                         throw new IllegalArgumentException(("A year-month-based directive " + unicodeFormat + " was used in a format builder that doesn't support year-month components").toString());
                     }
-                    ((UnicodeFormat.Directive.YearMonthBased) unicodeFormat).mo11553addToFormat((DateTimeFormatBuilder.WithYearMonth) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.YearMonthBased) unicodeFormat).mo11606addToFormat((DateTimeFormatBuilder.WithYearMonth) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.DateBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithDate)) {
                         throw new IllegalArgumentException(("A date-based directive " + unicodeFormat + " was used in a format builder that doesn't support date components").toString());
                     }
-                    ((UnicodeFormat.Directive.DateBased) unicodeFormat).mo11550addToFormat((DateTimeFormatBuilder.WithDate) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.DateBased) unicodeFormat).mo11603addToFormat((DateTimeFormatBuilder.WithDate) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.ZoneBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithDateTimeComponents)) {
                         throw new IllegalArgumentException(("A time-zone-based directive " + unicodeFormat + " was used in a format builder that doesn't support time-zone components").toString());
                     }
-                    ((UnicodeFormat.Directive.ZoneBased) unicodeFormat).mo11554addToFormat((DateTimeFormatBuilder.WithDateTimeComponents) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.ZoneBased) unicodeFormat).mo11607addToFormat((DateTimeFormatBuilder.WithDateTimeComponents) dateTimeFormatBuilder);
                 } else if (directive instanceof UnicodeFormat.Directive.OffsetBased) {
                     if (!(dateTimeFormatBuilder instanceof DateTimeFormatBuilder.WithUtcOffset)) {
                         throw new IllegalArgumentException(("A UTC-offset-based directive " + unicodeFormat + " was used in a format builder that doesn't support UTC offset components").toString());
                     }
-                    ((UnicodeFormat.Directive.OffsetBased) unicodeFormat).mo11551addToFormat((DateTimeFormatBuilder.WithUtcOffset) dateTimeFormatBuilder);
+                    ((UnicodeFormat.Directive.OffsetBased) unicodeFormat).mo11604addToFormat((DateTimeFormatBuilder.WithUtcOffset) dateTimeFormatBuilder);
                 } else if (!(directive instanceof UnknownUnicodeDirective)) {
                     throw new NoWhenBranchMatchedException();
                 } else {
@@ -120,10 +123,10 @@ public final class UnicodeKt {
             case '`':
             case 'b':
             case 'f':
-            case 'i':
+            case LocationRequest.PRIORITY_NO_POWER /* 105 */:
             case 'j':
             case 'k':
-            case 'l':
+            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR /* 108 */:
             case 'o':
             case 'p':
             case 't':
@@ -151,7 +154,7 @@ public final class UnicodeKt {
                 return new UnicodeFormat.Directive.YearMonthBased.QuarterOfYear(i);
             case 'S':
                 return new UnicodeFormat.Directive.TimeBased.WithSubsecondPrecision.FractionOfSecond(i);
-            case 'U':
+            case SettingsMenuDefaults.DEFAULT_VIDEO_RENDER_SCALE /* 85 */:
                 return new UnicodeFormat.Directive.YearMonthBased.CyclicYearName(i);
             case 'V':
                 return new UnicodeFormat.Directive.ZoneBased.TimeZoneId(i);
@@ -175,7 +178,7 @@ public final class UnicodeKt {
                 return new UnicodeFormat.Directive.DateBased.ModifiedJulianDay(i);
             case 'h':
                 return new UnicodeFormat.Directive.TimeBased.AmPmHourOfDay(i);
-            case 'm':
+            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY /* 109 */:
                 return new UnicodeFormat.Directive.TimeBased.MinuteOfHour(i);
             case 'n':
                 return new UnicodeFormat.Directive.TimeBased.WithSubsecondPrecision.NanoOfSecond(i);

@@ -1,7 +1,6 @@
 package com.google.common.io;
 
 import com.arizona.launcher.UpdateServiceContract;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.StandardSystemProperty;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
@@ -200,7 +199,7 @@ abstract class TempFileCreator {
         @Override // com.google.common.io.TempFileCreator
         File createTempDir() {
             File file = new File(StandardSystemProperty.JAVA_IO_TMPDIR.value());
-            String str = System.currentTimeMillis() + Constants.FILENAME_SEQUENCE_SEPARATOR;
+            String str = System.currentTimeMillis() + "-";
             for (int i = 0; i < 10000; i++) {
                 File file2 = new File(file, str + i);
                 if (file2.mkdir()) {

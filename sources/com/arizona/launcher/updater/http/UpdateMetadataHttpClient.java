@@ -3,6 +3,7 @@ package com.arizona.launcher.updater.http;
 import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.arizona.launcher.updater.http.UpdateMetadataHttpResult;
+import com.google.android.gms.common.internal.ImagesContract;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,7 +31,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 /* compiled from: UpdateMetadataHttpClient.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \u001c2\u00020\u0001:\u0001\u001cB\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0096@¢\u0006\u0002\u0010\fJ\u0016\u0010\r\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u000fH\u0082@¢\u0006\u0002\u0010\u0010J\u0010\u0010\u0011\u001a\u00020\t2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u0010\u0010\u0014\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0014\u0010\u0017\u001a\u00020\t*\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\f\u0010\u001b\u001a\u00020\u001a*\u00020\u0018H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u001e\u0012\b\b\u001f\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u001d"}, d2 = {"Lcom/arizona/launcher/updater/http/UpdateMetadataHttpClient;", "Lcom/arizona/launcher/updater/http/UpdateMetadataRequest;", "callFactory", "Lokhttp3/Call$Factory;", "maxBodyBytes", "", "<init>", "(Lokhttp3/Call$Factory;J)V", "get", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", "url", "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "execute", "request", "Lokhttp3/Request;", "(Lokhttp3/Request;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumeResponse", "response", "Lokhttp3/Response;", "readBounded", TtmlNode.TAG_BODY, "Lokhttp3/ResponseBody;", "toResult", "Ljava/io/IOException;", "responseStarted", "", "isTimeout", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \u001c2\u00020\u0001:\u0001\u001cB\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0096@¢\u0006\u0002\u0010\fJ\u0016\u0010\r\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u000fH\u0082@¢\u0006\u0002\u0010\u0010J\u0010\u0010\u0011\u001a\u00020\t2\u0006\u0010\u0012\u001a\u00020\u0013H\u0002J\u0010\u0010\u0014\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\u0016H\u0002J\u0014\u0010\u0017\u001a\u00020\t*\u00020\u00182\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\f\u0010\u001b\u001a\u00020\u001a*\u00020\u0018H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u001e\u0012\b\b\u001f\u0012\u0004\b\u0003\u0010\u0000¨\u0006\u001d"}, d2 = {"Lcom/arizona/launcher/updater/http/UpdateMetadataHttpClient;", "Lcom/arizona/launcher/updater/http/UpdateMetadataRequest;", "callFactory", "Lokhttp3/Call$Factory;", "maxBodyBytes", "", "<init>", "(Lokhttp3/Call$Factory;J)V", "get", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", ImagesContract.URL, "", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "execute", "request", "Lokhttp3/Request;", "(Lokhttp3/Request;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumeResponse", "response", "Lokhttp3/Response;", "readBounded", TtmlNode.TAG_BODY, "Lokhttp3/ResponseBody;", "toResult", "Ljava/io/IOException;", "responseStarted", "", "isTimeout", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class UpdateMetadataHttpClient implements UpdateMetadataRequest {
     @Deprecated
@@ -174,7 +175,7 @@ public final class UpdateMetadataHttpClient implements UpdateMetadataRequest {
                 if (cancellableContinuationImpl2.isActive()) {
                     Result.Companion companion = Result.Companion;
                     result = this.toResult(error, false);
-                    cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(result));
+                    cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(result));
                 }
             }
 
@@ -192,7 +193,7 @@ public final class UpdateMetadataHttpClient implements UpdateMetadataRequest {
                 }
                 if (cancellableContinuationImpl2.isActive()) {
                     Result.Companion companion = Result.Companion;
-                    cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(result));
+                    cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(result));
                 }
             }
         });

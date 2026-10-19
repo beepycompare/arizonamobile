@@ -3,7 +3,6 @@ package com.arizonagames.feature.arizona.family.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,6 +11,7 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.arizona.family.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes3.dex */
 public final class FamilyTopbarBinding implements ViewBinding {
     public final CardView backButton;
@@ -22,7 +22,7 @@ public final class FamilyTopbarBinding implements ViewBinding {
     public final CardView closeButton;
     public final TextView createMoney;
     public final LinearLayout createMoneyInfo;
-    public final EditText editText;
+    public final KeyboardEditText editText;
     public final TextView familyNotice;
     public final TextView familyTitle;
     public final TextView familyType;
@@ -49,7 +49,7 @@ public final class FamilyTopbarBinding implements ViewBinding {
     public final TextView title;
     public final TextView titleCreate;
 
-    private FamilyTopbarBinding(LinearLayout linearLayout, CardView cardView, CardView cardView2, CardView cardView3, CardView cardView4, FrameLayout frameLayout, CardView cardView5, TextView textView, LinearLayout linearLayout2, EditText editText, TextView textView2, TextView textView3, TextView textView4, ImageView imageView, LinearLayout linearLayout3, CardView cardView6, CardView cardView7, ImageView imageView2, LinearLayout linearLayout4, FrameLayout frameLayout2, LinearLayout linearLayout5, CardView cardView8, LinearLayout linearLayout6, TextView textView5, CardView cardView9, LinearLayout linearLayout7, TextView textView6, LinearLayout linearLayout8, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12) {
+    private FamilyTopbarBinding(LinearLayout linearLayout, CardView cardView, CardView cardView2, CardView cardView3, CardView cardView4, FrameLayout frameLayout, CardView cardView5, TextView textView, LinearLayout linearLayout2, KeyboardEditText keyboardEditText, TextView textView2, TextView textView3, TextView textView4, ImageView imageView, LinearLayout linearLayout3, CardView cardView6, CardView cardView7, ImageView imageView2, LinearLayout linearLayout4, FrameLayout frameLayout2, LinearLayout linearLayout5, CardView cardView8, LinearLayout linearLayout6, TextView textView5, CardView cardView9, LinearLayout linearLayout7, TextView textView6, LinearLayout linearLayout8, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12) {
         this.rootView = linearLayout;
         this.backButton = cardView;
         this.buttonCoins = cardView2;
@@ -59,7 +59,7 @@ public final class FamilyTopbarBinding implements ViewBinding {
         this.closeButton = cardView5;
         this.createMoney = textView;
         this.createMoneyInfo = linearLayout2;
-        this.editText = editText;
+        this.editText = keyboardEditText;
         this.familyNotice = textView2;
         this.familyTitle = textView3;
         this.familyType = textView4;
@@ -129,8 +129,8 @@ public final class FamilyTopbarBinding implements ViewBinding {
                                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                     if (linearLayout != null) {
                                         i = R.id.edit_text;
-                                        EditText editText = (EditText) ViewBindings.findChildViewById(view, i);
-                                        if (editText != null) {
+                                        KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(view, i);
+                                        if (keyboardEditText != null) {
                                             i = R.id.family_notice;
                                             TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                             if (textView2 != null) {
@@ -203,7 +203,7 @@ public final class FamilyTopbarBinding implements ViewBinding {
                                                                                                                                         i = R.id.title_create;
                                                                                                                                         TextView textView12 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                                                                         if (textView12 != null) {
-                                                                                                                                            return new FamilyTopbarBinding((LinearLayout) view, cardView, cardView2, cardView3, cardView4, frameLayout, cardView5, textView, linearLayout, editText, textView2, textView3, textView4, imageView, linearLayout2, cardView6, cardView7, imageView2, linearLayout3, frameLayout2, linearLayout4, cardView8, linearLayout5, textView5, cardView9, linearLayout6, textView6, linearLayout7, textView7, textView8, textView9, textView10, textView11, textView12);
+                                                                                                                                            return new FamilyTopbarBinding((LinearLayout) view, cardView, cardView2, cardView3, cardView4, frameLayout, cardView5, textView, linearLayout, keyboardEditText, textView2, textView3, textView4, imageView, linearLayout2, cardView6, cardView7, imageView2, linearLayout3, frameLayout2, linearLayout4, cardView8, linearLayout5, textView5, cardView9, linearLayout6, textView6, linearLayout7, textView7, textView8, textView9, textView10, textView11, textView12);
                                                                                                                                         }
                                                                                                                                     }
                                                                                                                                 }

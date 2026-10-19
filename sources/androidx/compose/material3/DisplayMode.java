@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -84,6 +83,6 @@ public final class DisplayMode {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m2478toStringimpl(int i) {
-        return m2476equalsimpl0(i, Picker) ? "Picker" : m2476equalsimpl0(i, Input) ? "Input" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m2476equalsimpl0(i, Picker) ? "Picker" : m2476equalsimpl0(i, Input) ? "Input" : "Unknown";
     }
 }

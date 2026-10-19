@@ -356,20 +356,20 @@ public final class DebugProbesImpl {
     }
 
     private final List<StackTraceElement> enhanceStackTraceWithThreadDumpImpl(String str, Thread thread, List<StackTraceElement> list) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         if (Intrinsics.areEqual(str, DebugCoroutineInfoImplKt.RUNNING) && thread != null) {
             try {
                 Result.Companion companion = Result.Companion;
                 DebugProbesImpl debugProbesImpl = this;
-                m9921constructorimpl = Result.m9921constructorimpl(thread.getStackTrace());
+                m9974constructorimpl = Result.m9974constructorimpl(thread.getStackTrace());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-                m9921constructorimpl = null;
+            if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+                m9974constructorimpl = null;
             }
-            StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) m9921constructorimpl;
+            StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) m9974constructorimpl;
             if (stackTraceElementArr != null) {
                 int length = stackTraceElementArr.length;
                 int i = 0;

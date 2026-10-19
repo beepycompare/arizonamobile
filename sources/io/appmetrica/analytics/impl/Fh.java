@@ -6,35 +6,35 @@ import android.os.Bundle;
 public final class Fh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f550a;
-    public final C0240f6 b;
+    public final Context f553a;
+    public final C0235f6 b;
     public final Bundle c;
-    public final C0548r4 d;
+    public final C0543r4 d;
 
-    public Fh(Context context, C0240f6 c0240f6, Bundle bundle, C0548r4 c0548r4) {
-        this.f550a = context;
-        this.b = c0240f6;
+    public Fh(Context context, C0235f6 c0235f6, Bundle bundle, C0543r4 c0543r4) {
+        this.f553a = context;
+        this.b = c0235f6;
         this.c = bundle;
-        this.d = c0548r4;
+        this.d = c0543r4;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         try {
-            Y3 a2 = Y3.a(this.f550a, this.c);
+            Y3 a2 = Y3.a(this.f553a, this.c);
             if (a2 == null) {
                 return;
             }
-            C0264g4 a3 = C0264g4.a(a2);
+            C0259g4 a3 = C0259g4.a(a2);
             Fj v = Na.I.v();
             v.a(a2.b.getAppVersion(), a2.b.getAppBuildNumber());
             v.a(a2.b.getDeviceType());
-            G4 g4 = new G4(new Bm(a2), new F4(a2.b, Ib.c(a2.f852a.f930a.getAsString("PROCESS_CFG_CLIDS"))), a2.f852a.b);
+            G4 g4 = new G4(new Bm(a2), new F4(a2.b, Ib.c(a2.f855a.f933a.getAsString("PROCESS_CFG_CLIDS"))), a2.f855a.b);
             this.d.a(a3, g4).a(this.b, g4);
         } catch (Throwable th) {
-            C0539qk c0539qk = Oj.f708a;
-            c0539qk.getClass();
-            c0539qk.a(new Pj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
+            C0534qk c0534qk = Oj.f711a;
+            c0534qk.getClass();
+            c0534qk.a(new Pj("Exception during processing event with type: " + this.b.d + " (" + this.b.e + "): " + th.getMessage(), th));
         }
     }
 }

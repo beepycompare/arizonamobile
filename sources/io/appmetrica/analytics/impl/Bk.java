@@ -6,14 +6,14 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 public final class Bk implements ServiceComponentModuleConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final F4 f482a;
+    public final F4 f485a;
 
     public Bk(F4 f4) {
-        this.f482a = f4;
+        this.f485a = f4;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleConfig
     public final boolean isRevenueAutoTrackingEnabled() {
-        return ((Boolean) WrapUtils.getOrDefault(this.f482a.m, Boolean.TRUE)).booleanValue();
+        return ((Boolean) WrapUtils.getOrDefault(this.f485a.m, Boolean.TRUE)).booleanValue();
     }
 }

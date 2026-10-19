@@ -3,7 +3,7 @@ package androidx.text.emoji.flatbuffer;
 import androidx.text.emoji.flatbuffer.MetadataItem;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class MetadataList extends Table {
     public static void ValidateVersion() {
         Constants.FLATBUFFERS_1_12_0();
@@ -131,7 +131,7 @@ public final class MetadataList extends Table {
         flatBufferBuilder.finishSizePrefixed(i);
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Vector extends BaseVector {
         public Vector __assign(int i, int i2, ByteBuffer byteBuffer) {
             __reset(i, i2, byteBuffer);

@@ -9,6 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.media3.exoplayer.RendererCapabilities;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ public final class PaydayElement {
         binding.close.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.payday.PaydayElement$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SAMPUIElement.notifyClick$default(PaydayElement.this.notifier, 108, 108, null, 4, null);
+                SAMPUIElement.notifyClick$default(PaydayElement.this.notifier, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, null, 4, null);
             }
         });
     }

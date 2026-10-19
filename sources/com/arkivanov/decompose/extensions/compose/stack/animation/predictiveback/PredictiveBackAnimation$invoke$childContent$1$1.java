@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Add missing generic type declarations: [C, T] */
 /* compiled from: PredictiveBackAnimation.kt */
 @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 final class PredictiveBackAnimation$invoke$childContent$1$1<C, T> implements Function3<Child.Created<? extends C, ? extends T>, Composer, Integer, Unit> {
     final /* synthetic */ HashSet<Object> $activeKeys;
     final /* synthetic */ Function3<Child.Created<? extends C, ? extends T>, Composer, Integer, Unit> $content;

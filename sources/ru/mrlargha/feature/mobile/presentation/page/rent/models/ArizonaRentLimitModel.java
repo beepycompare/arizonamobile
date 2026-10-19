@@ -12,17 +12,17 @@ public final class ArizonaRentLimitModel {
     private final int fullValueMin;
 
     /* renamed from: fullСostMin  reason: contains not printable characters */
-    private final int f84fullostMin;
+    private final int f87fullostMin;
     private final int roomCostMax;
     private final int roomValueMax;
     private final int roomValueMin;
 
     /* renamed from: roomСostMin  reason: contains not printable characters */
-    private final int f85roomostMin;
+    private final int f88roomostMin;
 
     public static /* synthetic */ ArizonaRentLimitModel copy$default(ArizonaRentLimitModel arizonaRentLimitModel, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10, int i11, Object obj) {
         if ((i11 & 1) != 0) {
-            i = arizonaRentLimitModel.f85roomostMin;
+            i = arizonaRentLimitModel.f88roomostMin;
         }
         if ((i11 & 2) != 0) {
             i2 = arizonaRentLimitModel.roomCostMax;
@@ -34,7 +34,7 @@ public final class ArizonaRentLimitModel {
             i4 = arizonaRentLimitModel.roomValueMax;
         }
         if ((i11 & 16) != 0) {
-            i5 = arizonaRentLimitModel.f84fullostMin;
+            i5 = arizonaRentLimitModel.f87fullostMin;
         }
         if ((i11 & 32) != 0) {
             i6 = arizonaRentLimitModel.fullCostMax;
@@ -61,7 +61,7 @@ public final class ArizonaRentLimitModel {
     }
 
     public final int component1() {
-        return this.f85roomostMin;
+        return this.f88roomostMin;
     }
 
     public final int component10() {
@@ -81,7 +81,7 @@ public final class ArizonaRentLimitModel {
     }
 
     public final int component5() {
-        return this.f84fullostMin;
+        return this.f87fullostMin;
     }
 
     public final int component6() {
@@ -110,21 +110,21 @@ public final class ArizonaRentLimitModel {
         }
         if (obj instanceof ArizonaRentLimitModel) {
             ArizonaRentLimitModel arizonaRentLimitModel = (ArizonaRentLimitModel) obj;
-            return this.f85roomostMin == arizonaRentLimitModel.f85roomostMin && this.roomCostMax == arizonaRentLimitModel.roomCostMax && this.roomValueMin == arizonaRentLimitModel.roomValueMin && this.roomValueMax == arizonaRentLimitModel.roomValueMax && this.f84fullostMin == arizonaRentLimitModel.f84fullostMin && this.fullCostMax == arizonaRentLimitModel.fullCostMax && this.fullValueMin == arizonaRentLimitModel.fullValueMin && this.fullValueMax == arizonaRentLimitModel.fullValueMax && this.descMin == arizonaRentLimitModel.descMin && this.descMax == arizonaRentLimitModel.descMax;
+            return this.f88roomostMin == arizonaRentLimitModel.f88roomostMin && this.roomCostMax == arizonaRentLimitModel.roomCostMax && this.roomValueMin == arizonaRentLimitModel.roomValueMin && this.roomValueMax == arizonaRentLimitModel.roomValueMax && this.f87fullostMin == arizonaRentLimitModel.f87fullostMin && this.fullCostMax == arizonaRentLimitModel.fullCostMax && this.fullValueMin == arizonaRentLimitModel.fullValueMin && this.fullValueMax == arizonaRentLimitModel.fullValueMax && this.descMin == arizonaRentLimitModel.descMin && this.descMax == arizonaRentLimitModel.descMax;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((Integer.hashCode(this.f85roomostMin) * 31) + Integer.hashCode(this.roomCostMax)) * 31) + Integer.hashCode(this.roomValueMin)) * 31) + Integer.hashCode(this.roomValueMax)) * 31) + Integer.hashCode(this.f84fullostMin)) * 31) + Integer.hashCode(this.fullCostMax)) * 31) + Integer.hashCode(this.fullValueMin)) * 31) + Integer.hashCode(this.fullValueMax)) * 31) + Integer.hashCode(this.descMin)) * 31) + Integer.hashCode(this.descMax);
+        return (((((((((((((((((Integer.hashCode(this.f88roomostMin) * 31) + Integer.hashCode(this.roomCostMax)) * 31) + Integer.hashCode(this.roomValueMin)) * 31) + Integer.hashCode(this.roomValueMax)) * 31) + Integer.hashCode(this.f87fullostMin)) * 31) + Integer.hashCode(this.fullCostMax)) * 31) + Integer.hashCode(this.fullValueMin)) * 31) + Integer.hashCode(this.fullValueMax)) * 31) + Integer.hashCode(this.descMin)) * 31) + Integer.hashCode(this.descMax);
     }
 
     public String toString() {
-        int i = this.f85roomostMin;
+        int i = this.f88roomostMin;
         int i2 = this.roomCostMax;
         int i3 = this.roomValueMin;
         int i4 = this.roomValueMax;
-        int i5 = this.f84fullostMin;
+        int i5 = this.f87fullostMin;
         int i6 = this.fullCostMax;
         int i7 = this.fullValueMin;
         int i8 = this.fullValueMax;
@@ -133,11 +133,11 @@ public final class ArizonaRentLimitModel {
     }
 
     public ArizonaRentLimitModel(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10) {
-        this.f85roomostMin = i;
+        this.f88roomostMin = i;
         this.roomCostMax = i2;
         this.roomValueMin = i3;
         this.roomValueMax = i4;
-        this.f84fullostMin = i5;
+        this.f87fullostMin = i5;
         this.fullCostMax = i6;
         this.fullValueMin = i7;
         this.fullValueMax = i8;
@@ -146,8 +146,8 @@ public final class ArizonaRentLimitModel {
     }
 
     /* renamed from: getRoomСostMin  reason: contains not printable characters */
-    public final int m11980getRoomostMin() {
-        return this.f85roomostMin;
+    public final int m12045getRoomostMin() {
+        return this.f88roomostMin;
     }
 
     public final int getRoomCostMax() {
@@ -163,8 +163,8 @@ public final class ArizonaRentLimitModel {
     }
 
     /* renamed from: getFullСostMin  reason: contains not printable characters */
-    public final int m11979getFullostMin() {
-        return this.f84fullostMin;
+    public final int m12044getFullostMin() {
+        return this.f87fullostMin;
     }
 
     public final int getFullCostMax() {

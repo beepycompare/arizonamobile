@@ -2,7 +2,6 @@ package com.arizona.launcher.updater.archive.orchestrator;
 
 import com.arizona.launcher.updater.archive.model.ArchivePackage;
 import com.arizona.launcher.updater.archive.state.ArchivePackageIdentity;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.io.File;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -32,7 +31,7 @@ public final class ArchivePackagePaths {
     private final File archiveFile(File file, String str, long j) {
         String l = Long.toString(j, CharsKt.checkRadix(16));
         Intrinsics.checkNotNullExpressionValue(l, "toString(...)");
-        return new File(file, str + Constants.FILENAME_SEQUENCE_SEPARATOR + l + ".zip.part");
+        return new File(file, str + "-" + l + ".zip.part");
     }
 
     public final File stagingRoot(File workRoot, ArchivePackage archivePackage) {
@@ -50,6 +49,6 @@ public final class ArchivePackagePaths {
     private final File stagingRoot(File file, String str, long j) {
         String l = Long.toString(j, CharsKt.checkRadix(16));
         Intrinsics.checkNotNullExpressionValue(l, "toString(...)");
-        return new File(file, "packages/" + str + Constants.FILENAME_SEQUENCE_SEPARATOR + l);
+        return new File(file, "packages/" + str + "-" + l);
     }
 }

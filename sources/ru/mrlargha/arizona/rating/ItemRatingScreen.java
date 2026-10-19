@@ -120,7 +120,7 @@ public final class ItemRatingScreen extends SAMPUIElement {
         this.zoomMultipler = 1.0f;
         this.isCars = true;
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         setupAdapters();
         setupNavigation();
     }

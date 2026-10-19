@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.blueprint.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BlueprintHalloweenBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final RecyclerView topRv;

@@ -4,7 +4,6 @@ import androidx.constraintlayout.core.LinearSystem;
 import androidx.constraintlayout.core.widgets.Chain;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import androidx.constraintlayout.core.widgets.ConstraintWidgetContainer;
-import com.facebook.internal.AnalyticsEvents;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -63,7 +62,7 @@ public class WidgetGroup {
         if (i == 2) {
             return "Both";
         }
-        return AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return "Unknown";
     }
 
     public String toString() {

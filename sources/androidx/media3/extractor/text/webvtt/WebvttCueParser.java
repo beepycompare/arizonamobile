@@ -23,6 +23,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.media3.extractor.text.webvtt.WebvttCueParser;
+import com.google.android.gms.location.LocationRequest;
 import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayDeque;
@@ -513,7 +514,7 @@ public final class WebvttCueParser {
                     break;
                 }
                 break;
-            case 105:
+            case LocationRequest.PRIORITY_NO_POWER /* 105 */:
                 if (str.equals("i")) {
                     c = 2;
                     break;
@@ -590,7 +591,7 @@ public final class WebvttCueParser {
                     break;
                 }
                 break;
-            case 105:
+            case LocationRequest.PRIORITY_NO_POWER /* 105 */:
                 if (str2.equals("i")) {
                     c = 3;
                     break;

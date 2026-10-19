@@ -28,7 +28,6 @@ import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import coil3.util.UtilsKt;
-import com.google.android.vending.expansion.downloader.impl.DownloadsDB;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
@@ -532,7 +531,7 @@ public class IconCompat extends CustomVersionedParcelable {
             case 3:
                 return "DATA";
             case 4:
-                return DownloadsDB.DownloadColumns.URI;
+                return "URI";
             case 5:
                 return "BITMAP_MASKABLE";
             case 6:

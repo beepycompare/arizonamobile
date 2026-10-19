@@ -4,8 +4,8 @@ import android.location.Location;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0310ho;
-import io.appmetrica.analytics.impl.C0337j0;
+import io.appmetrica.analytics.impl.C0305ho;
+import io.appmetrica.analytics.impl.C0332j0;
 import io.appmetrica.analytics.impl.D5;
 import io.appmetrica.analytics.impl.Oo;
 import io.appmetrica.analytics.impl.U7;
@@ -53,13 +53,13 @@ public class AppMetricaConfig {
 
     /* loaded from: classes5.dex */
     public static class Builder {
-        private static final C0310ho D = new C0310ho(new C0337j0());
+        private static final C0305ho D = new C0305ho(new C0332j0());
         private Integer A;
         private List B;
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final D5 f210a;
+        private final D5 f213a;
         private final String b;
         private String c;
         private Integer d;
@@ -201,7 +201,7 @@ public class AppMetricaConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.n = Integer.valueOf(this.f210a.a(i));
+            this.n = Integer.valueOf(this.f213a.a(i));
             return this;
         }
 
@@ -240,7 +240,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f210a = new D5(str);
+            this.f213a = new D5(str);
             this.b = str;
         }
     }

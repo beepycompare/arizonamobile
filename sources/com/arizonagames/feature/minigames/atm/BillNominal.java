@@ -1,5 +1,6 @@
 package com.arizonagames.feature.minigames.atm;
 
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.enums.EnumEntries;
@@ -8,8 +9,8 @@ import kotlin.enums.EnumEntriesKt;
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
 /* compiled from: AtmScreen.kt */
-@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\nj\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\f"}, d2 = {"Lcom/arizonagames/feature/minigames/atm/BillNominal;", "", "<init>", "(Ljava/lang/String;I)V", "ONE", "TEN", "FIFTY", "HUNDRED", "EXTRA", "billDrawableRes", "", "type", "atm"}, k = 1, mv = {2, 4, 0}, xi = 48)
-/* loaded from: classes3.dex */
+@Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\nj\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\f"}, d2 = {"Lcom/arizonagames/feature/minigames/atm/BillNominal;", "", "<init>", "(Ljava/lang/String;I)V", "ONE", "TEN", "FIFTY", "HUNDRED", "EXTRA", "billDrawableRes", "", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "atm"}, k = 1, mv = {2, 4, 0}, xi = 48)
+/* loaded from: classes.dex */
 public final class BillNominal {
     private static final /* synthetic */ EnumEntries $ENTRIES;
     private static final /* synthetic */ BillNominal[] $VALUES;
@@ -21,7 +22,7 @@ public final class BillNominal {
 
     /* compiled from: AtmScreen.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

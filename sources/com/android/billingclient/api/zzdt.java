@@ -1,5 +1,6 @@
 package com.android.billingclient.api;
 
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.android.billingclient:billing@@8.3.0 */
@@ -7,6 +8,6 @@ import org.json.JSONObject;
 public final class zzdt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzdt(JSONObject jSONObject) throws JSONException {
-        jSONObject.getString("type");
+        jSONObject.getString(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
     }
 }

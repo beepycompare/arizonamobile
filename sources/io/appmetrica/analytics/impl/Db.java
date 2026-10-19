@@ -49,18 +49,18 @@ public enum Db {
     public static final HashMap K = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f513a;
+    public final int f516a;
     public final String b;
 
     static {
         Db[] values;
         for (Db db : values()) {
-            K.put(Integer.valueOf(db.f513a), db);
+            K.put(Integer.valueOf(db.f516a), db);
         }
     }
 
     Db(int i, String str) {
-        this.f513a = i;
+        this.f516a = i;
         this.b = str;
     }
 

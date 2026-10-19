@@ -2,7 +2,6 @@ package com.arkivanov.decompose.extensions.compose.stack.animation.predictivebac
 
 import com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimation;
 import com.arkivanov.decompose.router.stack.ChildStack;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -15,8 +14,8 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: PredictiveBackAnimation.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimation$Handler$onBackCancelled$1", f = "PredictiveBackAnimation.kt", i = {}, l = {DownloaderService.STATUS_QUEUED_FOR_WIFI}, m = "invokeSuspend", n = {}, s = {})
-/* loaded from: classes.dex */
+@DebugMetadata(c = "com.arkivanov.decompose.extensions.compose.stack.animation.predictiveback.PredictiveBackAnimation$Handler$onBackCancelled$1", f = "PredictiveBackAnimation.kt", i = {}, l = {197}, m = "invokeSuspend", n = {}, s = {})
+/* loaded from: classes2.dex */
 final class PredictiveBackAnimation$Handler$onBackCancelled$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
     final /* synthetic */ PredictiveBackAnimation.Handler<C, T> this$0;

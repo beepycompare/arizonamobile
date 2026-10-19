@@ -8,14 +8,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class Mn implements Nk, P9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0271gb f672a;
-    public final InterfaceC0437mm b;
+    public final InterfaceC0266gb f675a;
+    public final InterfaceC0432mm b;
     public final AtomicBoolean c = new AtomicBoolean(false);
 
-    public Mn(InterfaceC0271gb interfaceC0271gb, InterfaceC0437mm interfaceC0437mm) {
-        this.f672a = interfaceC0271gb;
-        this.b = interfaceC0437mm;
-        Objects.toString(interfaceC0271gb.a());
+    public Mn(InterfaceC0266gb interfaceC0266gb, InterfaceC0432mm interfaceC0432mm) {
+        this.f675a = interfaceC0266gb;
+        this.b = interfaceC0432mm;
+        Objects.toString(interfaceC0266gb.a());
     }
 
     public void a() {
@@ -36,8 +36,8 @@ public class Mn implements Nk, P9 {
         a();
     }
 
-    public final InterfaceC0271gb d() {
-        return this.f672a;
+    public final InterfaceC0266gb d() {
+        return this.f675a;
     }
 
     public final boolean e() {

@@ -5,11 +5,11 @@ import io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider;
 public final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SslSocketFactoryProvider f434a;
+    public final SslSocketFactoryProvider f437a;
     public final n b;
 
     public o(SslSocketFactoryProvider sslSocketFactoryProvider, n nVar) {
-        this.f434a = sslSocketFactoryProvider;
+        this.f437a = sslSocketFactoryProvider;
         this.b = nVar;
     }
 }

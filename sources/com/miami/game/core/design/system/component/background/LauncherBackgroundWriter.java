@@ -1038,23 +1038,23 @@ public final class LauncherBackgroundWriter {
     }
 
     private final String calculateFileHashOrEmpty(File file) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             LauncherBackgroundWriter launcherBackgroundWriter = this;
-            m9921constructorimpl = Result.m9921constructorimpl(calculateFileHash(file));
+            m9974constructorimpl = Result.m9974constructorimpl(calculateFileHash(file));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-        if (m9924exceptionOrNullimpl != null) {
-            Log.e(TAG, "calculateFileHashOrEmpty: failed for " + file.getAbsolutePath(), m9924exceptionOrNullimpl);
+        Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+        if (m9977exceptionOrNullimpl != null) {
+            Log.e(TAG, "calculateFileHashOrEmpty: failed for " + file.getAbsolutePath(), m9977exceptionOrNullimpl);
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = "";
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = "";
         }
-        return (String) m9921constructorimpl;
+        return (String) m9974constructorimpl;
     }
 
     private final String calculateFileHash(File file) {

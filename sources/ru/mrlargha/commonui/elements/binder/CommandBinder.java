@@ -98,7 +98,7 @@ public final class CommandBinder extends SAMPUIElement {
                 CommandBinder._init_$lambda$1(CommandBinder.this, activity, view);
             }
         });
-        addViewToConstraintLayout(this.mBinderView, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, this.mBinderView, -1, -1, false, 8, null);
         setVisibility(false);
     }
 
@@ -111,7 +111,7 @@ public final class CommandBinder extends SAMPUIElement {
 
     public final void setBinderName(int i, String name) {
         Intrinsics.checkNotNullParameter(name, "name");
-        Log.d(TAG, "setBinderName: " + i + " set name to " + name);
+        Log.d("CommandBinder", "setBinderName: " + i + " set name to " + name);
         this.bindsList.get(i).setBinderName(name);
         this.adapter.submitList(this.bindsList);
         this.adapter.notifyItemChanged(i);

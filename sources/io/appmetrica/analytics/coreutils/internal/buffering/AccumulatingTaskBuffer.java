@@ -10,25 +10,25 @@ import kotlin.collections.CollectionsKt;
 public final class AccumulatingTaskBuffer<T> implements TaskBuffer<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList f351a = new ArrayList();
+    private final ArrayList f354a = new ArrayList();
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public void add(T t) {
-        this.f351a.add(t);
+        this.f354a.add(t);
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public List<T> getAndClear() {
-        if (this.f351a.isEmpty()) {
+        if (this.f354a.isEmpty()) {
             return CollectionsKt.emptyList();
         }
-        List<T> list = CollectionsKt.toList(this.f351a);
-        this.f351a.clear();
+        List<T> list = CollectionsKt.toList(this.f354a);
+        this.f354a.clear();
         return list;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.buffering.TaskBuffer
     public boolean isEmpty() {
-        return this.f351a.isEmpty();
+        return this.f354a.isEmpty();
     }
 }

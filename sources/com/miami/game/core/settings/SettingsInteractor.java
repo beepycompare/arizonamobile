@@ -3,6 +3,7 @@ package com.miami.game.core.settings;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
@@ -98,10 +99,12 @@ public final class SettingsInteractor {
     }
 
     public final void changeNotifications() {
-        Intent intent = new Intent("android.settings.APP_NOTIFICATION_SETTINGS");
-        intent.putExtra("android.provider.extra.APP_PACKAGE", this.localRepository.getContext().getPackageName());
-        intent.setFlags(268435456);
-        this.localRepository.getContext().startActivity(intent);
+        if (Build.VERSION.SDK_INT >= 26) {
+            Intent intent = new Intent("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", this.localRepository.getContext().getPackageName());
+            intent.setFlags(268435456);
+            this.localRepository.getContext().startActivity(intent);
+        }
     }
 
     public final void saveLogFile() {
@@ -121,7 +124,7 @@ public final class SettingsInteractor {
     }
 
     public final void useBundledGameTestScript() {
-        saveSettings(SettingState.copy$default(this.stateStore.getValue(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1046527, null));
+        saveSettings(SettingState.copy$default(this.stateStore.getValue(), 0, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1046527, null));
     }
 
     public final void selectImportedGameTestScript(String fileName) {
@@ -195,7 +198,7 @@ public final class SettingsInteractor {
         if (booleanCompat && gameTestSavedScript != null) {
             z2 = true;
         }
-        return SettingState.copy$default(settingState, 0.0f, 0, false, false, false, false, false, false, z, booleanCompat4, booleanCompat5, z2, (gameTestSavedScript == null || (displayName = gameTestSavedScript.getDisplayName()) == null) ? stringCompat : displayName, resolveActiveImportedScriptFileName, listImportedScripts, str3, booleanCompat2, booleanCompat3, str4, connectionData2, 255, null);
+        return SettingState.copy$default(settingState, 0, 0, false, false, false, false, false, false, z, booleanCompat4, booleanCompat5, z2, (gameTestSavedScript == null || (displayName = gameTestSavedScript.getDisplayName()) == null) ? stringCompat : displayName, resolveActiveImportedScriptFileName, listImportedScripts, str3, booleanCompat2, booleanCompat3, str4, connectionData2, 255, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -262,7 +265,7 @@ public final class SettingsInteractor {
     }
 
     private final <T> T readRawField(Object obj, String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             SettingsInteractor settingsInteractor = this;
@@ -273,15 +276,15 @@ public final class SettingsInteractor {
             if (obj2 == null) {
                 obj2 = null;
             }
-            m9921constructorimpl = Result.m9921constructorimpl(obj2);
+            m9974constructorimpl = Result.m9974constructorimpl(obj2);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
             return null;
         }
-        return (T) m9921constructorimpl;
+        return (T) m9974constructorimpl;
     }
 
     private final boolean getBooleanCompat(SharedPreferences sharedPreferences, String str, boolean z) {

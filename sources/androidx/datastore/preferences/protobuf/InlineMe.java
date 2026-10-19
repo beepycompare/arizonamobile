@@ -5,7 +5,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Documented
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 @interface InlineMe {
     String[] imports() default {};
 

@@ -39,8 +39,9 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.elements.inventory.presentation.UtilKt;
 import ru.mrlargha.commonui.utils.StringKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MobileRentAccessoryElementItemBinding;
 import ru.mrlargha.feature.mobile.databinding.MobileRentAccessoryItemBinding;
@@ -333,11 +334,12 @@ public final class MobileRentAccessoryMainAdapter extends ListAdapter<MobileRent
 
         private final void initDesc(MobileRentAccessoryModel mobileRentAccessoryModel) {
             MobileRentAccessoryItemBinding mobileRentAccessoryItemBinding = this.binding;
-            mobileRentAccessoryItemBinding.tvCost.setText(MoneyFormatter.INSTANCE.formatPlain(mobileRentAccessoryModel.getCost()));
+            mobileRentAccessoryItemBinding.tvCost.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mobileRentAccessoryModel.getCost(), false, null, null, null, 15, null));
+            ImageView ivCostCurrency = mobileRentAccessoryItemBinding.ivCostCurrency;
+            Intrinsics.checkNotNullExpressionValue(ivCostCurrency, "ivCostCurrency");
+            ivCostCurrency.setVisibility(!UtilsKt.isArizonaType() ? 0 : 8);
             mobileRentAccessoryItemBinding.tvDesc.setText(mobileRentAccessoryModel.getDescription());
-            TextView textView = mobileRentAccessoryItemBinding.tvNickName;
-            String nickName = mobileRentAccessoryModel.getNickName();
-            textView.setText(nickName + "[" + mobileRentAccessoryModel.getOwnerPlayerUID() + "]");
+            mobileRentAccessoryItemBinding.tvNickName.setText(mobileRentAccessoryModel.getNickName() + "[" + mobileRentAccessoryModel.getOwnerPlayerUID() + "]");
         }
 
         private final void initButtons(MobileRentAccessoryModel mobileRentAccessoryModel) {

@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.archive.state;
 
+import com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter;
 import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import com.google.firebase.messaging.Constants;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -192,7 +193,7 @@ public final class ArchiveStateValidation {
                             }
                         }
                     }
-                    if (!StringsKt.equals((String) CollectionsKt.first((List<? extends Object>) split$default), ".archive-installing", true)) {
+                    if (!StringsKt.equals((String) CollectionsKt.first((List<? extends Object>) split$default), ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY, true)) {
                         return;
                     }
                 }

@@ -82,7 +82,7 @@ public final class RadialMenuScreen extends SAMPUIElement {
         this.itemList = new ArrayList();
         this.isFirst = true;
         this.page = 1;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setOnClickListener();
     }
 

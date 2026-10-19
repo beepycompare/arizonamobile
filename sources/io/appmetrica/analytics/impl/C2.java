@@ -8,19 +8,19 @@ import java.util.concurrent.TimeUnit;
 public final class C2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0689wf f487a;
+    public final C0684wf f490a;
     public final long b;
     public final long c;
     public final SystemTimeProvider d;
     public final Map e;
 
-    public C2(C0265g5 c0265g5, C0689wf c0689wf) {
-        this.f487a = c0689wf;
-        c0265g5.b();
+    public C2(C0260g5 c0260g5, C0684wf c0684wf) {
+        this.f490a = c0684wf;
+        c0260g5.b();
         this.b = TimeUnit.MINUTES.toMillis(1L);
         this.c = TimeUnit.DAYS.toMillis(7L);
         this.d = new SystemTimeProvider();
-        Map<String, Long> f = c0689wf.f();
+        Map<String, Long> f = c0684wf.f();
         a(f);
         this.e = f;
     }

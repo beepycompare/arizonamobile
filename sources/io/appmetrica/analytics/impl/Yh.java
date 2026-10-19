@@ -2,10 +2,10 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Yh implements InterfaceC0472o5 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0472o5
+public final class Yh implements InterfaceC0467o5 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0467o5
     /* renamed from: b */
-    public final Xh a(Context context, C0265g5 c0265g5, F4 f4, C0180cn c0180cn) {
-        return new Xh(context, c0265g5, f4, Na.I.h(), c0180cn.e(), new Vg(c0180cn), new C0239f5());
+    public final Xh a(Context context, C0260g5 c0260g5, F4 f4, C0175cn c0175cn) {
+        return new Xh(context, c0260g5, f4, Na.I.h(), c0175cn.e(), new Vg(c0175cn), new C0234f5());
     }
 }

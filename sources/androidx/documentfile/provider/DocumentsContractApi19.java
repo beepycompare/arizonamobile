@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.provider.DocumentsContract;
 import android.text.TextUtils;
 import android.util.Log;
-import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
 class DocumentsContractApi19 {
@@ -34,7 +33,7 @@ class DocumentsContractApi19 {
     }
 
     public static long getFlags(Context context, Uri uri) {
-        return queryForLong(context, uri, DownloaderServiceMarshaller.PARAMS_FLAGS, 0L);
+        return queryForLong(context, uri, "flags", 0L);
     }
 
     public static boolean isDirectory(Context context, Uri uri) {
@@ -63,7 +62,7 @@ class DocumentsContractApi19 {
             return false;
         }
         String rawType = getRawType(context, uri);
-        int queryForInt = queryForInt(context, uri, DownloaderServiceMarshaller.PARAMS_FLAGS, 0);
+        int queryForInt = queryForInt(context, uri, "flags", 0);
         if (TextUtils.isEmpty(rawType)) {
             return false;
         }
@@ -148,7 +147,7 @@ class DocumentsContractApi19 {
     private static void closeQuietly(AutoCloseable autoCloseable) {
         if (autoCloseable != null) {
             try {
-                UByte$$ExternalSyntheticBackport0.m9994m((Object) autoCloseable);
+                UByte$$ExternalSyntheticBackport0.m10047m((Object) autoCloseable);
             } catch (RuntimeException e) {
                 throw e;
             } catch (Exception unused) {

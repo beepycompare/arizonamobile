@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.sync.Semaphore;
 /* compiled from: Utils.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/graphics/Bitmap;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$preloadInventoryIcons$2$1$1", f = "Utils.kt", i = {0, 1}, l = {936, 240}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv"}, nl = {937, 938}, s = {"L$0", "L$0"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$preloadInventoryIcons$2$1$1", f = "Utils.kt", i = {0, 1}, l = {937, 240}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv"}, nl = {938, 939}, s = {"L$0", "L$0"}, v = 2)
 /* loaded from: classes6.dex */
 final class UtilsKt$preloadInventoryIcons$2$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Bitmap>, Object> {
     final /* synthetic */ InventoryIconRequest $request;

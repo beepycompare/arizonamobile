@@ -12,7 +12,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -78,6 +77,7 @@ import ru.mrlargha.commonui.elements.craft.presentation.adapter.CraftItemsAdapte
 import ru.mrlargha.commonui.elements.craft.presentation.adapter.CraftMenuAdapter;
 import ru.mrlargha.commonui.elements.craft.presentation.adapter.NeedResourcesAdapter;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.ConstantsKt;
 import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.ItemsInfo;
@@ -179,7 +179,7 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
         this.fadeDownAnimation = AnimationUtils.loadAnimation(activity, R.anim.fade_down);
         this.tuningItems = CollectionsKt.emptyList();
         frameLayout.setClickable(true);
-        addViewToConstraintLayout(frameLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, frameLayout, -1, -1, false, 8, null);
         final WeakReference weakReference = new WeakReference(this);
         UtilsKt.checkItemsName(activity, UtilsKt.isArizonaType(), new Function1() { // from class: ru.mrlargha.commonui.elements.craft.presentation.CraftScreen$$ExternalSyntheticLambda27
             @Override // kotlin.jvm.functions.Function1
@@ -494,13 +494,13 @@ public final class CraftScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void setEnableEtResourcesCount(boolean z) {
-        EditText editText = this.binding.etResourcesCount;
-        editText.setFocusable(z);
-        editText.setFocusableInTouchMode(z);
-        editText.setClickable(z);
-        editText.setLongClickable(z);
-        editText.setInputType(z ? 2 : 0);
-        editText.setTextIsSelectable(z);
+        KeyboardEditText keyboardEditText = this.binding.etResourcesCount;
+        keyboardEditText.setFocusable(z);
+        keyboardEditText.setFocusableInTouchMode(z);
+        keyboardEditText.setClickable(z);
+        keyboardEditText.setLongClickable(z);
+        keyboardEditText.setInputType(z ? 2 : 0);
+        keyboardEditText.setTextIsSelectable(z);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:120:0x037c, code lost:

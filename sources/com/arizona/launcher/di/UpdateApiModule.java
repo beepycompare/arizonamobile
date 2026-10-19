@@ -3,6 +3,7 @@ package com.arizona.launcher.di;
 import com.arizona.launcher.data.repository.SecondaryUpdateApi;
 import com.arizona.launcher.data.repository.UpdateApi;
 import com.arizona.launcher.util.FlavorUtilKt;
+import com.google.android.gms.common.internal.ImagesContract;
 import com.google.common.net.HttpHeaders;
 import dagger.Module;
 import dagger.Provides;
@@ -18,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.DefaultQueryInterceptor;
 /* compiled from: UpdateApiModule.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u0000 \r2\u00020\u0001:\u0001\rB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J\f\u0010\b\u001a\u00020\tH\u0007b\u0002\b\nJ\f\u0010\u000b\u001a\u00020\fH\u0007b\u0002\b\nÊ\u0001\u0002\b\u000fÊ\u0001\u0010\b\u0010\u0012\f\b\u0011\u0012\b\b\fJ\u0004\b\t0\u0012Ê\u0001\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u000e"}, d2 = {"Lcom/arizona/launcher/di/UpdateApiModule;", "", "<init>", "()V", "getRetrofit", "Lretrofit2/Retrofit;", "url", "", "provideApi", "Lcom/arizona/launcher/data/repository/UpdateApi;", "Ldagger/Provides;", "provideSecondaryApi", "Lcom/arizona/launcher/data/repository/SecondaryUpdateApi;", "Companion", "app", "Ldagger/Module;", "Ldagger/hilt/InstallIn;", "value", "Ldagger/hilt/components/SingletonComponent;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u0000 \r2\u00020\u0001:\u0001\rB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J\f\u0010\b\u001a\u00020\tH\u0007b\u0002\b\nJ\f\u0010\u000b\u001a\u00020\fH\u0007b\u0002\b\nÊ\u0001\u0002\b\u000fÊ\u0001\u0010\b\u0010\u0012\f\b\u0011\u0012\b\b\fJ\u0004\b\t0\u0012Ê\u0001\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u000e"}, d2 = {"Lcom/arizona/launcher/di/UpdateApiModule;", "", "<init>", "()V", "getRetrofit", "Lretrofit2/Retrofit;", ImagesContract.URL, "", "provideApi", "Lcom/arizona/launcher/data/repository/UpdateApi;", "Ldagger/Provides;", "provideSecondaryApi", "Lcom/arizona/launcher/data/repository/SecondaryUpdateApi;", "Companion", "app", "Ldagger/Module;", "Ldagger/hilt/InstallIn;", "value", "Ldagger/hilt/components/SingletonComponent;", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @Module
 /* loaded from: classes3.dex */
 public final class UpdateApiModule {

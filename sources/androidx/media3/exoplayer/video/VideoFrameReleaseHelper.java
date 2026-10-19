@@ -12,6 +12,7 @@ import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.video.VideoFrameReleaseHelper;
 import com.google.common.base.Preconditions;
+import com.google.firebase.messaging.Constants;
 /* loaded from: classes3.dex */
 public final class VideoFrameReleaseHelper {
     private static final long MAX_ALLOWED_ADJUSTMENT_NS = 20000000;
@@ -296,7 +297,7 @@ public final class VideoFrameReleaseHelper {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static VSyncSampler maybeBuildInstance(Context context) {
-            DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
+            DisplayManager displayManager = (DisplayManager) context.getSystemService(Constants.ScionAnalytics.MessageType.DISPLAY_NOTIFICATION);
             if (displayManager == null) {
                 return null;
             }

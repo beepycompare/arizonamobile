@@ -2620,7 +2620,7 @@ public class NotificationCompat {
             this.mValue = (MetricValue) Objects.requireNonNull(metricValue);
             String safeCharSequenceToString = Builder.safeCharSequenceToString((CharSequence) Objects.requireNonNull(charSequence));
             this.mLabel = safeCharSequenceToString;
-            Preconditions.checkArgument(!UByte$$ExternalSyntheticBackport0.m9995m(safeCharSequenceToString), "Metric label is required");
+            Preconditions.checkArgument(!UByte$$ExternalSyntheticBackport0.m10048m(safeCharSequenceToString), "Metric label is required");
             this.mSemanticStyle = i;
         }
 
@@ -4291,7 +4291,7 @@ public class NotificationCompat {
                 this.mFlags = 1;
                 Bundle bundle = action.getExtras().getBundle(EXTRA_WEARABLE_EXTENSIONS);
                 if (bundle != null) {
-                    this.mFlags = bundle.getInt("flags", 1);
+                    this.mFlags = bundle.getInt(KEY_FLAGS, 1);
                     this.mInProgressLabel = bundle.getCharSequence(KEY_IN_PROGRESS_LABEL);
                     this.mConfirmLabel = bundle.getCharSequence(KEY_CONFIRM_LABEL);
                     this.mCancelLabel = bundle.getCharSequence(KEY_CANCEL_LABEL);
@@ -4303,7 +4303,7 @@ public class NotificationCompat {
                 Bundle bundle = new Bundle();
                 int i = this.mFlags;
                 if (i != 1) {
-                    bundle.putInt("flags", i);
+                    bundle.putInt(KEY_FLAGS, i);
                 }
                 CharSequence charSequence = this.mInProgressLabel;
                 if (charSequence != null) {
@@ -4491,7 +4491,7 @@ public class NotificationCompat {
                     }
                     Collections.addAll(this.mActions, actionArr);
                 }
-                this.mFlags = bundle.getInt("flags", 1);
+                this.mFlags = bundle.getInt(KEY_FLAGS, 1);
                 this.mDisplayIntent = (PendingIntent) bundle.getParcelable(KEY_DISPLAY_INTENT);
                 Notification[] notificationArrayFromBundle = NotificationCompat.getNotificationArrayFromBundle(bundle, KEY_PAGES);
                 if (notificationArrayFromBundle != null) {
@@ -4523,7 +4523,7 @@ public class NotificationCompat {
             }
             int i = this.mFlags;
             if (i != 1) {
-                bundle.putInt("flags", i);
+                bundle.putInt(KEY_FLAGS, i);
             }
             PendingIntent pendingIntent = this.mDisplayIntent;
             if (pendingIntent != null) {
@@ -5161,7 +5161,7 @@ public class NotificationCompat {
             }
             Bundle bundle = notification.extras == null ? null : notification.extras.getBundle(EXTRA_TV_EXTENDER);
             if (bundle != null) {
-                this.mFlags = bundle.getInt("flags");
+                this.mFlags = bundle.getInt(EXTRA_FLAGS);
                 this.mChannelId = bundle.getString(EXTRA_CHANNEL_ID);
                 this.mSuppressShowOverApps = bundle.getBoolean(EXTRA_SUPPRESS_SHOW_OVER_APPS);
                 this.mContentIntent = (PendingIntent) bundle.getParcelable(EXTRA_CONTENT_INTENT);
@@ -5175,7 +5175,7 @@ public class NotificationCompat {
                 return builder;
             }
             Bundle bundle = new Bundle();
-            bundle.putInt("flags", this.mFlags);
+            bundle.putInt(EXTRA_FLAGS, this.mFlags);
             bundle.putString(EXTRA_CHANNEL_ID, this.mChannelId);
             bundle.putBoolean(EXTRA_SUPPRESS_SHOW_OVER_APPS, this.mSuppressShowOverApps);
             PendingIntent pendingIntent = this.mContentIntent;

@@ -10,7 +10,6 @@ import androidx.core.app.PendingIntentCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.android.gms.common.util.DeviceProperties;
 import com.google.android.gms.common.wrappers.Wrappers;
-import com.google.android.vending.expansion.downloader.Constants;
 /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public class GoogleApiAvailabilityLight {
@@ -86,15 +85,15 @@ public class GoogleApiAvailabilityLight {
         } else if (context == null || !DeviceProperties.isWearableWithoutPlayStore(context)) {
             StringBuilder sb = new StringBuilder("gcore_");
             sb.append(GOOGLE_PLAY_SERVICES_VERSION_CODE);
-            sb.append(Constants.FILENAME_SEQUENCE_SEPARATOR);
+            sb.append("-");
             if (!TextUtils.isEmpty(str)) {
                 sb.append(str);
             }
-            sb.append(Constants.FILENAME_SEQUENCE_SEPARATOR);
+            sb.append("-");
             if (context != null) {
                 sb.append(context.getPackageName());
             }
-            sb.append(Constants.FILENAME_SEQUENCE_SEPARATOR);
+            sb.append("-");
             if (context != null) {
                 try {
                     sb.append(Wrappers.packageManager(context).getPackageInfo(context.getPackageName(), 0).versionCode);

@@ -3,9 +3,9 @@ package com.google.firebase.crashlytics.internal.model.serialization;
 import android.util.Base64;
 import android.util.JsonReader;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import coil3.util.UtilsKt;
 import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
-import com.facebook.internal.NativeProtocol;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.model.AutoCrashlyticsReportEncoder;
 import com.google.firebase.crashlytics.internal.model.CrashlyticsReport;
@@ -22,11 +22,11 @@ import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class CrashlyticsReportJsonTransform {
     private static final DataEncoder CRASHLYTICS_REPORT_JSON_ENCODER = new JsonDataEncoderBuilder().configureWith(AutoCrashlyticsReportEncoder.CONFIG).ignoreNullValues(true).build();
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes4.dex */
     public interface ObjectParser<T> {
         T parse(JsonReader jsonReader) throws IOException;
     }
@@ -528,7 +528,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case 351608024:
-                    if (nextName.equals(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN)) {
+                    if (nextName.equals("version")) {
                         c = 3;
                         break;
                     }
@@ -595,7 +595,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case 351608024:
-                    if (nextName.equals(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN)) {
+                    if (nextName.equals("version")) {
                         c = 2;
                         break;
                     }
@@ -762,7 +762,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case 3575610:
-                    if (nextName.equals("type")) {
+                    if (nextName.equals(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY)) {
                         c = 4;
                         break;
                     }
@@ -1059,7 +1059,7 @@ public class CrashlyticsReportJsonTransform {
                     }
                     break;
                 case 3575610:
-                    if (nextName.equals("type")) {
+                    if (nextName.equals(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY)) {
                         c = 2;
                         break;
                     }

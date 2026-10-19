@@ -2,7 +2,6 @@ package androidx.media3.datasource;
 
 import android.text.TextUtils;
 import androidx.media3.common.util.Log;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.net.HttpHeaders;
@@ -28,7 +27,7 @@ public final class HttpUtil {
         }
         StringBuilder sb = new StringBuilder("bytes=");
         sb.append(j);
-        sb.append(Constants.FILENAME_SEQUENCE_SEPARATOR);
+        sb.append("-");
         if (j2 != -1) {
             sb.append((j + j2) - 1);
         }

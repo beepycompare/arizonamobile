@@ -44,7 +44,7 @@ public final class SelectorElement extends SAMPUIElement {
         PieSelector pieSelector = (PieSelector) findViewById;
         this.pie = pieSelector;
         Intrinsics.checkNotNullExpressionValue(layout, "layout");
-        addViewToConstraintLayout(layout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, layout, -1, -1, false, 8, null);
         pieSelector.setListener(new PieSelector.SectorSelectedLister() { // from class: ru.mrlargha.commonui.elements.radial_menu.SelectorElement.1
             @Override // ru.mrlargha.commonui.elements.radial_menu.PieSelector.SectorSelectedLister
             public void onSectorSelected(SectorData data) {

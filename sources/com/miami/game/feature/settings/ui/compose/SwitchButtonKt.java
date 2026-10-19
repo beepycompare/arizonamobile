@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.PaddingKt;
 import androidx.compose.foundation.layout.RowKt;
 import androidx.compose.foundation.layout.RowScopeInstance;
 import androidx.compose.foundation.layout.SizeKt;
+import androidx.compose.foundation.layout.SpacerKt;
 import androidx.compose.foundation.shape.RoundedCornerShapeKt;
 import androidx.compose.runtime.Applier;
 import androidx.compose.runtime.ComposablesKt;
@@ -66,7 +67,7 @@ public final class SwitchButtonKt {
         Intrinsics.checkNotNullParameter(text, "text");
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         Composer startRestartGroup = composer.startRestartGroup(945005206);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SwitchButton)N(text,onClick,checked)34@1498L949,34@1475L972:SwitchButton.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(SwitchButton)N(text,onClick,checked)34@1498L991,34@1475L1014:SwitchButton.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(text) ? 4 : 2) | i;
         } else {
@@ -110,7 +111,7 @@ public final class SwitchButtonKt {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit SwitchButton$lambda$0(String str, boolean z, BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C35@1508L933:SwitchButton.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C35@1508L975:SwitchButton.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
@@ -144,8 +145,9 @@ public final class SwitchButtonKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -246736908, "C57@2349L42,59@2404L27:SwitchButton.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(composer, -246735606, "C57@2349L42,59@2404L29,60@2446L27:SwitchButton.kt#1gr92h");
             TextSettingsKt.TextSettings(str, null, composer, 0, 2);
+            SpacerKt.Spacer(SizeKt.m1122width3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), composer, 6);
             CustomToggleSwitch(z, composer, 0);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -163,7 +165,7 @@ public final class SwitchButtonKt {
     public static final void CustomToggleSwitch(final boolean z, Composer composer, final int i) {
         int i2;
         Composer startRestartGroup = composer.startRestartGroup(2052617564);
-        ComposerKt.sourceInformation(startRestartGroup, "C(CustomToggleSwitch)N(checked)81@2896L475:SwitchButton.kt#1gr92h");
+        ComposerKt.sourceInformation(startRestartGroup, "C(CustomToggleSwitch)N(checked)82@2938L475:SwitchButton.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changed(z) ? 4 : 2) | i;
         } else {
@@ -173,7 +175,7 @@ public final class SwitchButtonKt {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(2052617564, i2, -1, "com.miami.game.feature.settings.ui.compose.CustomToggleSwitch (SwitchButton.kt:75)");
+                ComposerKt.traceEventStart(2052617564, i2, -1, "com.miami.game.feature.settings.ui.compose.CustomToggleSwitch (SwitchButton.kt:76)");
             }
             Color.Companion companion = Color.Companion;
             if (z) {
@@ -215,7 +217,7 @@ public final class SwitchButtonKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -935852450, "C84@2962L37,84@2946L217,89@3188L24,89@3172L193:SwitchButton.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -935852450, "C85@3004L37,85@2988L217,90@3230L24,90@3214L193:SwitchButton.kt#1gr92h");
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.switch_bg, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m1103height3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), Alignment.Companion.getCenter()), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
             ImageKt.Image(PainterResources_androidKt.painterResource(i3, startRestartGroup, 0), (String) null, boxScopeInstance.align(SizeKt.m1103height3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(20.0f)), centerEnd), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 104);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

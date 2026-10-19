@@ -1,7 +1,6 @@
 package kotlin.ranges;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.facebook.internal.NativeProtocol;
 import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.ULong;
@@ -9,7 +8,7 @@ import kotlin.internal.UProgressionUtilKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: ULongRange.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\n\n\u0002\u0010(\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0017\u0018\u0000 \u001b2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u001bB!\b@\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00020\u0011H\u0086\u0082\u0004J\n\u0010\u0012\u001a\u00020\u0013H\u0096\u0080\u0004J\u0014\u0010\u0014\u001a\u00020\u00132\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0096\u0082\u0004J\n\u0010\u0017\u001a\u00020\u0018H\u0096\u0080\u0004J\n\u0010\u0019\u001a\u00020\u001aH\u0096\u0080\u0004R\u0017\u0010\t\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0017\u0010\r\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000e\u0010\u000bR\u0015\u0010\u0005\u001a\u00020\u0006X\u0086\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000bÊ\u0001\f\b\u001d\u0012\b\b\u001e\u0012\u0004\b\b(\u001f¨\u0006\u001c"}, d2 = {"Lkotlin/ranges/ULongProgression;", "", "Lkotlin/ULong;", TtmlNode.START, "endInclusive", "step", "", "<init>", "(JJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "first", "getFirst-s-VKNKU", "()J", "J", "last", "getLast-s-VKNKU", "getStep", "iterator", "", "isEmpty", "", "equals", "other", "", "hashCode", "", "toString", "", "Companion", "kotlin-stdlib", "Lkotlin/SinceKotlin;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "1.5"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\n\n\u0002\u0010(\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0017\u0018\u0000 \u001b2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u001bB!\b@\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00020\u0011H\u0086\u0082\u0004J\n\u0010\u0012\u001a\u00020\u0013H\u0096\u0080\u0004J\u0014\u0010\u0014\u001a\u00020\u00132\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0096\u0082\u0004J\n\u0010\u0017\u001a\u00020\u0018H\u0096\u0080\u0004J\n\u0010\u0019\u001a\u00020\u001aH\u0096\u0080\u0004R\u0017\u0010\t\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0017\u0010\r\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000e\u0010\u000bR\u0015\u0010\u0005\u001a\u00020\u0006X\u0086\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000bÊ\u0001\f\b\u001d\u0012\b\b\u001e\u0012\u0004\b\b(\u001f¨\u0006\u001c"}, d2 = {"Lkotlin/ranges/ULongProgression;", "", "Lkotlin/ULong;", TtmlNode.START, "endInclusive", "step", "", "<init>", "(JJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "first", "getFirst-s-VKNKU", "()J", "J", "last", "getLast-s-VKNKU", "getStep", "iterator", "", "isEmpty", "", "equals", "other", "", "hashCode", "", "toString", "", "Companion", "kotlin-stdlib", "Lkotlin/SinceKotlin;", "version", "1.5"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public class ULongProgression implements Iterable<ULong>, KMappedMarker {
     public static final Companion Companion = new Companion(null);
@@ -29,17 +28,17 @@ public class ULongProgression implements Iterable<ULong>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Long.MIN_VALUE to avoid overflow on negation.");
         }
         this.first = j;
-        this.last = UProgressionUtilKt.m11166getProgressionLastElement7ftBX0g(j, j2, j3);
+        this.last = UProgressionUtilKt.m11219getProgressionLastElement7ftBX0g(j, j2, j3);
         this.step = j3;
     }
 
     /* renamed from: getFirst-s-VKNKU  reason: not valid java name */
-    public final long m11194getFirstsVKNKU() {
+    public final long m11247getFirstsVKNKU() {
         return this.first;
     }
 
     /* renamed from: getLast-s-VKNKU  reason: not valid java name */
-    public final long m11195getLastsVKNKU() {
+    public final long m11248getLastsVKNKU() {
         return this.last;
     }
 
@@ -84,7 +83,7 @@ public class ULongProgression implements Iterable<ULong>, KMappedMarker {
         long j = this.first;
         long j2 = this.last;
         long j3 = this.step;
-        return (((((int) ULong.m10101constructorimpl(j ^ ULong.m10101constructorimpl(j >>> 32))) * 31) + ((int) ULong.m10101constructorimpl(j2 ^ ULong.m10101constructorimpl(j2 >>> 32)))) * 31) + ((int) ((j3 >>> 32) ^ j3));
+        return (((((int) ULong.m10154constructorimpl(j ^ ULong.m10154constructorimpl(j >>> 32))) * 31) + ((int) ULong.m10154constructorimpl(j2 ^ ULong.m10154constructorimpl(j2 >>> 32)))) * 31) + ((int) ((j3 >>> 32) ^ j3));
     }
 
     public String toString() {
@@ -93,10 +92,10 @@ public class ULongProgression implements Iterable<ULong>, KMappedMarker {
         int i = (this.step > 0L ? 1 : (this.step == 0L ? 0 : -1));
         long j2 = this.first;
         if (i > 0) {
-            append = new StringBuilder().append((Object) ULong.m10147toStringimpl(j2)).append("..").append((Object) ULong.m10147toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) ULong.m10200toStringimpl(j2)).append("..").append((Object) ULong.m10200toStringimpl(this.last)).append(" step ");
             j = this.step;
         } else {
-            append = new StringBuilder().append((Object) ULong.m10147toStringimpl(j2)).append(" downTo ").append((Object) ULong.m10147toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) ULong.m10200toStringimpl(j2)).append(" downTo ").append((Object) ULong.m10200toStringimpl(this.last)).append(" step ");
             j = -this.step;
         }
         return append.append(j).toString();
@@ -114,7 +113,7 @@ public class ULongProgression implements Iterable<ULong>, KMappedMarker {
         }
 
         /* renamed from: fromClosedRange-7ftBX0g  reason: not valid java name */
-        public final ULongProgression m11196fromClosedRange7ftBX0g(long j, long j2, long j3) {
+        public final ULongProgression m11249fromClosedRange7ftBX0g(long j, long j2, long j3) {
             return new ULongProgression(j, j2, j3, null);
         }
     }

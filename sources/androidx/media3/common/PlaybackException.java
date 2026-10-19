@@ -157,17 +157,17 @@ public class PlaybackException extends Exception {
                                                                     return "ERROR_CODE_PARSING_MANIFEST_UNSUPPORTED";
                                                                 default:
                                                                     switch (i) {
-                                                                        case 4001:
+                                                                        case ERROR_CODE_DECODER_INIT_FAILED /* 4001 */:
                                                                             return "ERROR_CODE_DECODER_INIT_FAILED";
-                                                                        case 4002:
+                                                                        case ERROR_CODE_DECODER_QUERY_FAILED /* 4002 */:
                                                                             return "ERROR_CODE_DECODER_QUERY_FAILED";
-                                                                        case 4003:
+                                                                        case ERROR_CODE_DECODING_FAILED /* 4003 */:
                                                                             return "ERROR_CODE_DECODING_FAILED";
-                                                                        case 4004:
+                                                                        case ERROR_CODE_DECODING_FORMAT_EXCEEDS_CAPABILITIES /* 4004 */:
                                                                             return "ERROR_CODE_DECODING_FORMAT_EXCEEDS_CAPABILITIES";
-                                                                        case 4005:
+                                                                        case ERROR_CODE_DECODING_FORMAT_UNSUPPORTED /* 4005 */:
                                                                             return "ERROR_CODE_DECODING_FORMAT_UNSUPPORTED";
-                                                                        case 4006:
+                                                                        case ERROR_CODE_DECODING_RESOURCES_RECLAIMED /* 4006 */:
                                                                             return "ERROR_CODE_DECODING_RESOURCES_RECLAIMED";
                                                                         default:
                                                                             switch (i) {

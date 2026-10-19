@@ -1,22 +1,21 @@
 package kotlinx.metadata.internal.protobuf;
 
-import com.android.internal.http.multipart.FilePart;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public class Internal {
     private static final int DEFAULT_BUFFER_SIZE = 4096;
     public static final byte[] EMPTY_BYTE_ARRAY;
     public static final ByteBuffer EMPTY_BYTE_BUFFER;
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public interface EnumLite {
         int getNumber();
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public interface EnumLiteMap<T extends EnumLite> {
         T findValueByNumber(int i);
     }
@@ -31,7 +30,7 @@ public class Internal {
 
     public static String stringDefaultValue(String str) {
         try {
-            return new String(str.getBytes(FilePart.DEFAULT_CHARSET), "UTF-8");
+            return new String(str.getBytes("ISO-8859-1"), "UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new IllegalStateException("Java VM does not support a standard character set.", e);
         }
@@ -39,7 +38,7 @@ public class Internal {
 
     public static ByteString bytesDefaultValue(String str) {
         try {
-            return ByteString.copyFrom(str.getBytes(FilePart.DEFAULT_CHARSET));
+            return ByteString.copyFrom(str.getBytes("ISO-8859-1"));
         } catch (UnsupportedEncodingException e) {
             throw new IllegalStateException("Java VM does not support a standard character set.", e);
         }
@@ -47,7 +46,7 @@ public class Internal {
 
     public static byte[] byteArrayDefaultValue(String str) {
         try {
-            return str.getBytes(FilePart.DEFAULT_CHARSET);
+            return str.getBytes("ISO-8859-1");
         } catch (UnsupportedEncodingException e) {
             throw new IllegalStateException("Java VM does not support a standard character set.", e);
         }

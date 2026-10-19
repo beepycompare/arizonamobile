@@ -1,23 +1,23 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Hj implements InterfaceC0678w4 {
+public final class Hj implements InterfaceC0673w4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rg f581a;
+    public final Rg f584a;
 
     public Hj(Rg rg) {
-        this.f581a = rg;
+        this.f584a = rg;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0678w4
+    @Override // io.appmetrica.analytics.impl.InterfaceC0673w4
     public final void a() {
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0678w4
-    public final void a(C0240f6 c0240f6, G4 g4) {
-        Rg rg = this.f581a;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0673w4
+    public final void a(C0235f6 c0235f6, G4 g4) {
+        Rg rg = this.f584a;
         if (rg != null) {
-            rg.a(c0240f6, g4);
+            rg.a(c0235f6, g4);
         }
     }
 }

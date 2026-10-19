@@ -1,13 +1,12 @@
 package com.arizona.launcher.updater.http;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.facebook.internal.NativeProtocol;
 import java.io.IOException;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UpdateMetadataHttpClient.kt */
-@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bp\u0018\u00002\u00020\u0001:\u0006\u0002\u0003\u0004\u0005\u0006\u0007\u0082\u0001\u0006\b\t\n\u000b\f\r¨\u0006\u000eÀ\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", "", "Success", "HttpError", "BodyTooLarge", "Timeout", NativeProtocol.ERROR_NETWORK_ERROR, "InvalidRequest", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$BodyTooLarge;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$HttpError;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$InvalidRequest;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$NetworkError;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$Success;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$Timeout;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bp\u0018\u00002\u00020\u0001:\u0006\u0002\u0003\u0004\u0005\u0006\u0007\u0082\u0001\u0006\b\t\n\u000b\f\r¨\u0006\u000eÀ\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", "", "Success", "HttpError", "BodyTooLarge", "Timeout", "NetworkError", "InvalidRequest", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$BodyTooLarge;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$HttpError;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$InvalidRequest;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$NetworkError;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$Success;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult$Timeout;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public interface UpdateMetadataHttpResult {
 

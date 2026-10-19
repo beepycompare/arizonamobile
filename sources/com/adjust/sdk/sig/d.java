@@ -14,12 +14,11 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 /* loaded from: classes3.dex */
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f204a = false;
+    public static boolean f207a = false;
 
     public static void a(Set set, Map map, Map map2) {
         Iterator it = set.iterator();
@@ -33,12 +32,12 @@ public final class d {
 
     public static void a(Context context, c cVar, a aVar, Map map, String str, String str2) {
         byte[] bArr;
-        if (f204a) {
+        if (f207a) {
             Log.e("SignerInstance", "sign: library received error. It has locked down");
         } else if (map == null || map.isEmpty() || str == null || str2 == null) {
             Log.e("SignerInstance", "sign: One or more parameters are null");
         } else {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppUpdateInfo.Factory.UPDATED_FORMAT, Locale.US);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
             boolean equals = AdjustConfig.ENVIRONMENT_SANDBOX.equals(map.get("environment"));
             if (equals) {
                 Log.v("SignerInstance", "Signing all the parameters begin: " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
@@ -57,7 +56,7 @@ public final class d {
                     break;
                 } catch (b e) {
                     Log.e("SignerInstance", "sign: Api is less than JellyBean-4-18");
-                    f204a = true;
+                    f207a = true;
                     map.remove("activity_kind");
                     map.remove("client_sdk");
                     throw e;
@@ -81,7 +80,7 @@ public final class d {
                 context.getSharedPreferences("adjust_keys", 0).edit().remove("encrypted_key").apply();
             }
             if (i == 0) {
-                f204a = true;
+                f207a = true;
                 map.remove("activity_kind");
                 map.remove("client_sdk");
                 return;
@@ -89,7 +88,7 @@ public final class d {
             if (equals) {
                 Log.v("SignerInstance", "Calling native begin: " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
             }
-            byte[] a2 = ((NativeLibHelper) aVar).a(context, map, bArr, cVar.f203a);
+            byte[] a2 = ((NativeLibHelper) aVar).a(context, map, bArr, cVar.f206a);
             if (equals) {
                 Log.v("SignerInstance", "Calling native end  : " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
             }

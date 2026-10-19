@@ -1,5 +1,5 @@
 package com.google.firebase.encoders.json;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final class R {
     private R() {
     }

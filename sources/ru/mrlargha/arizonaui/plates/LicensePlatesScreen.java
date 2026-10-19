@@ -6,6 +6,7 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.graphics.Color;
+import android.text.Editable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
@@ -126,7 +127,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         LinkedList<Integer> linkedList = new LinkedList<>();
         this.usaPlates = linkedList;
         constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         linkedList.addAll(SetsKt.linkedSetOf(Integer.valueOf(R.drawable.number_usa), Integer.valueOf(R.drawable.number_alabama), Integer.valueOf(R.drawable.number_alaska), Integer.valueOf(R.drawable.number_arizona), Integer.valueOf(R.drawable.number_arkansas), Integer.valueOf(R.drawable.number_colorado), Integer.valueOf(R.drawable.number_connecticut), Integer.valueOf(R.drawable.number_delaware), Integer.valueOf(R.drawable.number_florida), Integer.valueOf(R.drawable.number_georgia), Integer.valueOf(R.drawable.number_hawaii), Integer.valueOf(R.drawable.number_idaho), Integer.valueOf(R.drawable.number_illinois), Integer.valueOf(R.drawable.number_indiana), Integer.valueOf(R.drawable.number_iowa), Integer.valueOf(R.drawable.number_kansas), Integer.valueOf(R.drawable.number_louisiane), Integer.valueOf(R.drawable.number_maine), Integer.valueOf(R.drawable.number_maryland), Integer.valueOf(R.drawable.number_massachusetts), Integer.valueOf(R.drawable.number_michigan), Integer.valueOf(R.drawable.number_minnesota), Integer.valueOf(R.drawable.number_mississippi), Integer.valueOf(R.drawable.number_missouri), Integer.valueOf(R.drawable.number_montana), Integer.valueOf(R.drawable.number_nebraska), Integer.valueOf(R.drawable.number_nevada), Integer.valueOf(R.drawable.number_new_hampshire), Integer.valueOf(R.drawable.number_new_jersey), Integer.valueOf(R.drawable.number_new_mexico), Integer.valueOf(R.drawable.number_new_york), Integer.valueOf(R.drawable.number_north_carolina), Integer.valueOf(R.drawable.number_north_dakota), Integer.valueOf(R.drawable.number_ohio), Integer.valueOf(R.drawable.number_oklahoma), Integer.valueOf(R.drawable.number_oregon), Integer.valueOf(R.drawable.number_pennsylvania), Integer.valueOf(R.drawable.number_rhode_island), Integer.valueOf(R.drawable.number_south_carolina), Integer.valueOf(R.drawable.number_south_dakota), Integer.valueOf(R.drawable.number_tennessee), Integer.valueOf(R.drawable.number_texas), Integer.valueOf(R.drawable.number_utah), Integer.valueOf(R.drawable.number_vermont), Integer.valueOf(R.drawable.number_virginia), Integer.valueOf(R.drawable.number_washington), Integer.valueOf(R.drawable.number_west_virginia), Integer.valueOf(R.drawable.number_wisconsin), Integer.valueOf(R.drawable.number_wyoming)));
         ChatEmoji.INSTANCE.init(targetActivity);
         bind.usaPlateMainButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.plates.LicensePlatesScreen$$ExternalSyntheticLambda1
@@ -529,7 +530,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final Companion.GeneratedPlateResponse parseGeneratedPlate(String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         String number;
         String removeSurrounding;
         Object obj;
@@ -538,15 +539,15 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             LicensePlatesScreen licensePlatesScreen = this;
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
         if (MapperKt.isJsonValid(str) && !Intrinsics.areEqual(str, AbstractJsonLexerKt.NULL) && !Intrinsics.areEqual(str, "{}") && str.length() != 0) {
             obj = MapperKt.getGson().fromJson(str, (Class<Object>) Companion.GeneratedPlateResponse.class);
-            m9921constructorimpl = Result.m9921constructorimpl((Companion.GeneratedPlateResponse) obj);
-            if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-                m9921constructorimpl = null;
+            m9974constructorimpl = Result.m9974constructorimpl((Companion.GeneratedPlateResponse) obj);
+            if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+                m9974constructorimpl = null;
             }
-            Companion.GeneratedPlateResponse generatedPlateResponse = (Companion.GeneratedPlateResponse) m9921constructorimpl;
+            Companion.GeneratedPlateResponse generatedPlateResponse = (Companion.GeneratedPlateResponse) m9974constructorimpl;
             number = generatedPlateResponse == null ? generatedPlateResponse.getNumber() : null;
             if (number != null || StringsKt.isBlank(number)) {
                 removeSurrounding = StringsKt.removeSurrounding(StringsKt.trim((CharSequence) str).toString(), (CharSequence) "\"");
@@ -561,10 +562,10 @@ public final class LicensePlatesScreen extends SAMPUIElement {
             return generatedPlateResponse;
         }
         obj = null;
-        m9921constructorimpl = Result.m9921constructorimpl((Companion.GeneratedPlateResponse) obj);
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+        m9974constructorimpl = Result.m9974constructorimpl((Companion.GeneratedPlateResponse) obj);
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
         }
-        Companion.GeneratedPlateResponse generatedPlateResponse2 = (Companion.GeneratedPlateResponse) m9921constructorimpl;
+        Companion.GeneratedPlateResponse generatedPlateResponse2 = (Companion.GeneratedPlateResponse) m9974constructorimpl;
         number = generatedPlateResponse2 == null ? generatedPlateResponse2.getNumber() : null;
         if (number != null) {
         }
@@ -595,7 +596,10 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void rusPlatesAction$lambda$0$0(AzRusPlateScreenBinding azRusPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azRusPlateScreenBinding.plateNumber.setText((CharSequence) null);
-        azRusPlateScreenBinding.enterRegion.getText().clear();
+        Editable text = azRusPlateScreenBinding.enterRegion.getText();
+        if (text != null) {
+            text.clear();
+        }
         licensePlatesScreen.hideRusPlatesScreen();
         licensePlatesScreen.showChooseRegionScreen();
     }
@@ -603,7 +607,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void rusPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzRusPlateScreenBinding azRusPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_RUSSIA;
-        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("rus", azRusPlateScreenBinding.enterRegion.getText().toString())));
+        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("rus", String.valueOf(azRusPlateScreenBinding.enterRegion.getText()))));
     }
 
     private final void uaPlatesAction() {
@@ -625,7 +629,10 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void uaPlatesAction$lambda$0$0(AzUaPlateScreenBinding azUaPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azUaPlateScreenBinding.plateNumber.setText((CharSequence) null);
-        azUaPlateScreenBinding.enterRegion.getText().clear();
+        Editable text = azUaPlateScreenBinding.enterRegion.getText();
+        if (text != null) {
+            text.clear();
+        }
         licensePlatesScreen.hideUaPlatesScreen();
         licensePlatesScreen.showChooseRegionScreen();
     }
@@ -633,7 +640,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void uaPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzUaPlateScreenBinding azUaPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_UKRAINE;
-        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("ua", azUaPlateScreenBinding.enterRegion.getText().toString())));
+        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("ua", String.valueOf(azUaPlateScreenBinding.enterRegion.getText()))));
     }
 
     private final void byPlatesAction() {
@@ -655,7 +662,10 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void byPlatesAction$lambda$0$0(AzByPlateScreenBinding azByPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azByPlateScreenBinding.plateNumber.setText((CharSequence) null);
-        azByPlateScreenBinding.enterRegion.getText().clear();
+        Editable text = azByPlateScreenBinding.enterRegion.getText();
+        if (text != null) {
+            text.clear();
+        }
         licensePlatesScreen.hideByPlatesScreen();
         licensePlatesScreen.showChooseRegionScreen();
     }
@@ -663,7 +673,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void byPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzByPlateScreenBinding azByPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_BELARUS;
-        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("by", azByPlateScreenBinding.enterRegion.getText().toString())));
+        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("by", String.valueOf(azByPlateScreenBinding.enterRegion.getText()))));
     }
 
     private final void kzPlatesAction() {
@@ -685,7 +695,10 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void kzPlatesAction$lambda$0$0(AzKzPlateScreenBinding azKzPlateScreenBinding, LicensePlatesScreen licensePlatesScreen, View view) {
         azKzPlateScreenBinding.plateNumber.setText((CharSequence) null);
-        azKzPlateScreenBinding.enterRegion.getText().clear();
+        Editable text = azKzPlateScreenBinding.enterRegion.getText();
+        if (text != null) {
+            text.clear();
+        }
         licensePlatesScreen.hideKzPlatesScreen();
         licensePlatesScreen.showChooseRegionScreen();
     }
@@ -693,7 +706,7 @@ public final class LicensePlatesScreen extends SAMPUIElement {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void kzPlatesAction$lambda$0$1(LicensePlatesScreen licensePlatesScreen, AzKzPlateScreenBinding azKzPlateScreenBinding, View view) {
         licensePlatesScreen.currentRegion = Companion.LicensePlatesRegion.COUNTRY_KAZAKHSTAN;
-        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("kz", azKzPlateScreenBinding.enterRegion.getText().toString())));
+        licensePlatesScreen.notifyClick(0, 1, StringKt.toStringJson(new Companion.BuyNumberRequest("kz", String.valueOf(azKzPlateScreenBinding.enterRegion.getText()))));
     }
 
     private final void showUiMode(Companion.LicensePlateUiMode licensePlateUiMode) {

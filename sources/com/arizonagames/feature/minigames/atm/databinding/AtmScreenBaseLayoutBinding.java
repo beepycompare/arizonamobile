@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import com.arizonagames.feature.minigames.atm.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AtmScreenBaseLayoutBinding implements ViewBinding {
     public final FrameLayout atmGameBaseScreen;
     private final FrameLayout rootView;

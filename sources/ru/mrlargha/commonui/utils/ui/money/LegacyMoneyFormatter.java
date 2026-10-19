@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.utils.ui.money;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -87,7 +86,7 @@ public final class LegacyMoneyFormatter {
             int i = intValue3 / 1000;
             int i2 = intValue3 % 1000;
             String str2 = i + "." + StringsKt.padStart(String.valueOf(i2), 3, '0');
-            String str3 = j < 0 ? Constants.FILENAME_SEQUENCE_SEPARATOR : "";
+            String str3 = j < 0 ? "-" : "";
             if (intValue >= 1) {
                 if (i <= 0 && i2 <= 0) {
                     r3 = false;

@@ -1,9 +1,9 @@
 package com.google.firebase.heartbeatinfo;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public interface HeartBeatInfo {
     HeartBeat getHeartBeatCode(String str);
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes4.dex */
     public enum HeartBeat {
         NONE(0),
         SDK(1),

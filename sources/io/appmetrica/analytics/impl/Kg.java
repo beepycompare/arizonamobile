@@ -3,18 +3,18 @@ package io.appmetrica.analytics.impl;
 public final class Kg implements Lg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bg f631a;
+    public final Bg f634a;
 
     public Kg(Bg bg) {
-        this.f631a = bg;
+        this.f634a = bg;
     }
 
     @Override // io.appmetrica.analytics.impl.Lg
     public final Bg a() {
-        return this.f631a;
+        return this.f634a;
     }
 
     public final String toString() {
-        return "Success(referrerInfo=" + this.f631a + ')';
+        return "Success(referrerInfo=" + this.f634a + ')';
     }
 }

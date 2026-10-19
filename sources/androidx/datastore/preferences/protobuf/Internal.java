@@ -1,7 +1,5 @@
 package androidx.datastore.preferences.protobuf;
 
-import com.android.internal.http.multipart.FilePart;
-import com.android.internal.http.multipart.StringPart;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.AbstractList;
@@ -19,9 +17,9 @@ public final class Internal {
     public static final byte[] EMPTY_BYTE_ARRAY;
     public static final ByteBuffer EMPTY_BYTE_BUFFER;
     public static final CodedInputStream EMPTY_CODED_INPUT_STREAM;
-    static final Charset US_ASCII = Charset.forName(StringPart.DEFAULT_CHARSET);
+    static final Charset US_ASCII = Charset.forName("US-ASCII");
     static final Charset UTF_8 = Charset.forName("UTF-8");
-    static final Charset ISO_8859_1 = Charset.forName(FilePart.DEFAULT_CHARSET);
+    static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
 
     /* loaded from: classes2.dex */
     public interface BooleanList extends ProtobufList<Boolean> {

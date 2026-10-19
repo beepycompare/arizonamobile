@@ -33,7 +33,7 @@ public final class UniversalActionScreen extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.universalActionBinding = bind;
         Intrinsics.checkNotNullExpressionValue(universalAction, "universalAction");
-        addViewToConstraintLayout(universalAction, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, universalAction, -1, -1, false, 8, null);
         bind.rodinaProgressTouchIcon.startAnimation(AnimationUtils.loadAnimation(targetActivity, R.anim.bounce));
         bind.rodinaProgressTouchContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.UniversalActionScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

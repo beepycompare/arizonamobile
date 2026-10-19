@@ -13,7 +13,7 @@ public final class Ba {
     public static final Ba d = new Ba();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Sd f475a = new Sd();
+    public final Sd f478a = new Sd();
     public final ServiceComponentsInitializer b = Dk.a();
     public boolean c = false;
 
@@ -21,7 +21,7 @@ public final class Ba {
         Bd bd;
         Na.a(context);
         this.b.onCreate(context);
-        this.f475a.getClass();
+        this.f478a.getClass();
         List<String> a2 = Na.I.s.a();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(a2, 10));
         for (String str : a2) {
@@ -38,7 +38,7 @@ public final class Ba {
         new Pk(Na.I.D().d).a(context);
         Zo zo = Na.I.D().c;
         synchronized (zo) {
-            zo.f878a.a();
+            zo.f881a.a();
         }
         Na.I.q().a();
         new Cd(Na.I.d.b(), Na.I.y(), "service_modules", new SystemTimeProvider()).a(arrayList);

@@ -10,30 +10,30 @@ import org.json.JSONObject;
 public final class Uc implements Z8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0277gh f792a;
-    public final C0689wf b;
+    public final C0272gh f795a;
+    public final C0684wf b;
     public final String c = "activation_unlock_event_sending";
     public final AtomicBoolean d;
 
-    public Uc(C0277gh c0277gh, F4 f4, C0689wf c0689wf) {
-        this.f792a = c0277gh;
-        this.b = c0689wf;
+    public Uc(C0272gh c0272gh, F4 f4, C0684wf c0684wf) {
+        this.f795a = c0272gh;
+        this.b = c0684wf;
         boolean z = false;
-        this.d = new AtomicBoolean((c0689wf.a(false) || a(f4)) ? true : true);
+        this.d = new AtomicBoolean((c0684wf.a(false) || a(f4)) ? true : true);
     }
 
     public final void a(String str) {
         try {
-            C0539qk c0539qk = Oj.f708a;
+            C0534qk c0534qk = Oj.f711a;
             String str2 = this.c;
             JSONObject put = new JSONObject().put("source", str).put("framework", FrameworkDetector.framework());
-            C0296ha i = Na.I.i();
-            Bundle applicationMetaData = i.d.getApplicationMetaData(i.f1013a);
+            C0291ha i = Na.I.i();
+            Bundle applicationMetaData = i.d.getApplicationMetaData(i.f1016a);
             JSONObject put2 = put.put("appmetrica_plugin_id", applicationMetaData != null ? applicationMetaData.getString("io.appmetrica.analytics.plugin_id") : null);
             Ok ok = Na.I.D;
-            String jSONObject = put2.put("activation_offset", TimeUnit.SECONDS.convert(ok.f709a.currentTimeMillis() - ok.b, TimeUnit.MILLISECONDS)).toString();
-            c0539qk.getClass();
-            c0539qk.a(new C0487ok(str2, jSONObject));
+            String jSONObject = put2.put("activation_offset", TimeUnit.SECONDS.convert(ok.f712a.currentTimeMillis() - ok.b, TimeUnit.MILLISECONDS)).toString();
+            c0534qk.getClass();
+            c0534qk.a(new C0482ok(str2, jSONObject));
         } catch (Throwable unused) {
         }
     }
@@ -41,7 +41,7 @@ public final class Uc implements Z8 {
     @Override // io.appmetrica.analytics.impl.Z8
     public final boolean b() {
         String str;
-        if (!this.d.get() && (str = ((Eh) this.f792a.a()).m) != null && !Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01") && this.d.compareAndSet(false, true)) {
+        if (!this.d.get() && (str = ((Eh) this.f795a.a()).m) != null && !Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01") && this.d.compareAndSet(false, true)) {
             this.b.b(true);
             a("activation");
         }
@@ -56,7 +56,7 @@ public final class Uc implements Z8 {
     }
 
     public static boolean a(F4 f4) {
-        String str = f4.f540a;
+        String str = f4.f543a;
         return (str == null || Intrinsics.areEqual(str, "629a824d-c717-4ba5-bc0f-3f3968554d01")) ? false : true;
     }
 }

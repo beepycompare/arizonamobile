@@ -11,21 +11,21 @@ import java.util.Map;
 public final class Ln implements Kn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f654a;
+    public final HashMap f657a;
 
     public Ln(String str, HashMap<String, List<String>> hashMap) {
-        this.f654a = hashMap;
+        this.f657a = hashMap;
     }
 
     public final HashMap<String, List<String>> a() {
-        return this.f654a;
+        return this.f657a;
     }
 
     @Override // io.appmetrica.analytics.impl.Kn
     public final boolean a(SQLiteDatabase sQLiteDatabase) {
         try {
             boolean z = true;
-            for (Map.Entry entry : this.f654a.entrySet()) {
+            for (Map.Entry entry : this.f657a.entrySet()) {
                 SQLiteDatabase sQLiteDatabase2 = sQLiteDatabase;
                 Cursor query = sQLiteDatabase2.query((String) entry.getKey(), null, null, null, null, null, null);
                 if (query == null) {

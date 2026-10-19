@@ -604,7 +604,7 @@ public final class TsExtractor implements Extractor {
                     }
                     i4 = 129;
                 } else {
-                    if (readUnsignedByte != 106) {
+                    if (readUnsignedByte != TS_PMT_DESC_AC3) {
                         if (readUnsignedByte != TS_PMT_DESC_EAC3) {
                             if (readUnsignedByte == 127) {
                                 int readUnsignedByte2 = parsableByteArray.readUnsignedByte();

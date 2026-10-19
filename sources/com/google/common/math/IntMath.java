@@ -2,7 +2,6 @@ package com.google.common.math;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.exoplayer.upstream.CmcdData;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import java.math.RoundingMode;
@@ -16,7 +15,7 @@ public final class IntMath {
     static final int[] powersOf10 = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000};
     static final int[] halfPowersOf10 = {3, 31, TypedValues.AttributesType.TYPE_PATH_ROTATE, 3162, 31622, 316227, 3162277, 31622776, 316227766, Integer.MAX_VALUE};
     private static final int[] factorials = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600};
-    static int[] biggestBinomials = {Integer.MAX_VALUE, Integer.MAX_VALUE, 65536, 2345, 477, DownloaderService.STATUS_PAUSED_BY_APP, 110, 75, 58, 49, 43, 39, 37, 35, 34, 34, 33};
+    static int[] biggestBinomials = {Integer.MAX_VALUE, Integer.MAX_VALUE, 65536, 2345, 477, 193, 110, 75, 58, 49, 43, 39, 37, 35, 34, 34, 33};
 
     public static boolean isPowerOfTwo(int x) {
         return (x > 0) & ((x & (x + (-1))) == 0);

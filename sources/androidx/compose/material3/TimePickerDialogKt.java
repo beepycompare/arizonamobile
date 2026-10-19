@@ -1,5 +1,6 @@
 package androidx.compose.material3;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.foundation.BackgroundKt;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.foundation.layout.BoxKt;
@@ -658,7 +659,7 @@ public final class TimePickerDialogKt {
                                             ComposerKt.traceEventEnd();
                                         }
                                     }
-                                }, startRestartGroup, 54), composer2, ((i9 >> 12) & 112) | 12607488, 108);
+                                }, startRestartGroup, 54), composer2, ((i9 >> 12) & 112) | 12607488, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR);
                                 if (ComposerKt.isTraceInProgress()) {
                                     ComposerKt.traceEventEnd();
                                 }

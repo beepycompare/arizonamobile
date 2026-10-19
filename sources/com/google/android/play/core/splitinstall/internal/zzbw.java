@@ -1,6 +1,5 @@
 package com.google.android.play.core.splitinstall.internal;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.io.File;
 /* compiled from: com.google.android.play:feature-delivery@@2.1.0 */
 /* loaded from: classes4.dex */
@@ -16,6 +15,6 @@ public final class zzbw {
         if (replaceFirst.startsWith("base-")) {
             return replaceFirst.replace("base-", "config.");
         }
-        return replaceFirst.replace(Constants.FILENAME_SEQUENCE_SEPARATOR, ".config.").replace(".config.master", "").replace(".config.main", "");
+        return replaceFirst.replace("-", ".config.").replace(".config.master", "").replace(".config.main", "");
     }
 }

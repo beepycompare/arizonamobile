@@ -3,10 +3,9 @@ package com.google.android.gms.ads.identifier;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-ads-identifier@@18.3.0 */
 /* loaded from: classes4.dex */
-public final class zzb extends Thread {
+final class zzb extends Thread {
     final CountDownLatch zza;
     private final WeakReference zzb;
     private final long zzc;

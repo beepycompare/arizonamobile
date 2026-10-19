@@ -2,7 +2,7 @@ package com.google.firebase.concurrent;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 final class PausableExecutorImpl implements PausableExecutor {
     private final Executor delegate;
     private volatile boolean paused;

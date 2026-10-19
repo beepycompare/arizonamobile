@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -177,7 +176,7 @@ public final class CasesMainPage implements CasesBasePage {
         this.isHasCost = false;
         arizonaCasesMainPageBinding.animateContainer.setVisibility(4);
         this.baseModel = casesInfoModel;
-        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11922getCountLeft());
+        arizonaCasesMainPageBinding.tvCountLeft.setText(casesInfoModel.m11988getCountLeft());
         setSelectXType(true);
         hidePrizePage$default(this, false, 1, null);
         Picasso picasso = Picasso.get();
@@ -200,7 +199,7 @@ public final class CasesMainPage implements CasesBasePage {
                 ArizonaCasesMainPageBinding.this.animateContainer.animate().translationY(0.0f).alpha(1.0f).setDuration(400L).setInterpolator(new DecelerateInterpolator()).start();
             }
         });
-        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11923getCurrency().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[casesInfoModel.m11989getCurrency().ordinal()];
         if (i == 1) {
             arizonaCasesMainPageBinding.ivMoneyIc.setImageResource(R.drawable.ic_rubble);
             arizonaCasesMainPageBinding.ivMoneyIc.setImageTintList(ColorStateList.valueOf(-16777216));
@@ -274,7 +273,7 @@ public final class CasesMainPage implements CasesBasePage {
             CardView discountContainer = arizonaCasesMainPageBinding.discountContainer;
             Intrinsics.checkNotNullExpressionValue(discountContainer, "discountContainer");
             discountContainer.setVisibility(0);
-            arizonaCasesMainPageBinding.tvDiscount.setText(Constants.FILENAME_SEQUENCE_SEPARATOR + casesInfoModel.getDiscount() + "%");
+            arizonaCasesMainPageBinding.tvDiscount.setText("-" + casesInfoModel.getDiscount() + "%");
             Integer cost = casesInfoModel.getCost();
             double intValue = (cost != null ? cost.intValue() : 0) * (casesInfoModel.getDiscount() / 100.0d);
             Integer cost2 = casesInfoModel.getCost();

@@ -1,5 +1,6 @@
 package androidx.compose.foundation.text.selection;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.foundation.internal.ClipboardUtils_androidKt;
 import androidx.compose.ui.platform.Clipboard;
 import androidx.compose.ui.text.AnnotatedString;
@@ -15,7 +16,7 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SelectionContainer.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionContainerKt$SelectionContainer$3$1$1", f = "SelectionContainer.kt", i = {}, l = {108}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionContainerKt$SelectionContainer$3$1$1", f = "SelectionContainer.kt", i = {}, l = {AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 public final class SelectionContainerKt$SelectionContainer$3$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Clipboard $clipboard;

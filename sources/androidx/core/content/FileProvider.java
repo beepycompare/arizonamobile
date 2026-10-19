@@ -14,7 +14,6 @@ import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 import androidx.core.util.ObjectsCompat;
-import com.android.internal.http.multipart.FilePart;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -256,13 +255,13 @@ public class FileProvider extends ContentProvider {
         int lastIndexOf = fileForUri.getName().lastIndexOf(46);
         if (lastIndexOf >= 0) {
             String mimeTypeFromExtension = MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileForUri.getName().substring(lastIndexOf + 1));
-            return mimeTypeFromExtension != null ? mimeTypeFromExtension : FilePart.DEFAULT_CONTENT_TYPE;
+            return mimeTypeFromExtension != null ? mimeTypeFromExtension : "application/octet-stream";
         }
-        return FilePart.DEFAULT_CONTENT_TYPE;
+        return "application/octet-stream";
     }
 
     public String getTypeAnonymous(Uri uri) {
-        return FilePart.DEFAULT_CONTENT_TYPE;
+        return "application/octet-stream";
     }
 
     @Override // android.content.ContentProvider

@@ -6,12 +6,12 @@ import java.util.HashMap;
 public final class Mj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Nj f669a;
+    public final Nj f672a;
     public final Context b;
     public final HashMap c = new HashMap();
 
     public Mj(Context context, Nj nj) {
         this.b = context;
-        this.f669a = nj;
+        this.f672a = nj;
     }
 }

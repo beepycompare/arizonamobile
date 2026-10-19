@@ -44,7 +44,7 @@ public final class PreviewInventorySlotSyncKt {
             int nextInt = ((IntIterator) it).nextInt();
             InventoryItem inventoryItem3 = (InventoryItem) linkedHashMap2.get(Integer.valueOf(nextInt));
             if (inventoryItem3 == null) {
-                inventoryItem3 = InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), nextInt, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, null, null, null, 134152190, null);
+                inventoryItem3 = InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), nextInt, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, null, null, null, null, 268369918, null);
             }
             arrayList.add(inventoryItem3);
         }

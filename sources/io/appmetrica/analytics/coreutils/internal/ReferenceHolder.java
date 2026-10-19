@@ -10,17 +10,17 @@ import kotlin.collections.CollectionsKt;
 public final class ReferenceHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashSet f350a = new LinkedHashSet();
+    private final LinkedHashSet f353a = new LinkedHashSet();
 
     public final Set<Object> peekReferences() {
-        return CollectionsKt.toSet(this.f350a);
+        return CollectionsKt.toSet(this.f353a);
     }
 
     public final void removeReference(Object obj) {
-        this.f350a.remove(obj);
+        this.f353a.remove(obj);
     }
 
     public final void storeReference(Object obj) {
-        this.f350a.add(obj);
+        this.f353a.add(obj);
     }
 }

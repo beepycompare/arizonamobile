@@ -8,11 +8,11 @@ import kotlin.Metadata;
 public final class BillingConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f285a;
+    private final int f288a;
     private final int b;
 
     public BillingConfig(int i, int i2) {
-        this.f285a = i;
+        this.f288a = i;
         this.b = i2;
     }
 
@@ -21,14 +21,14 @@ public final class BillingConfig {
     }
 
     public final int getSendFrequencySeconds() {
-        return this.f285a;
+        return this.f288a;
     }
 
     public String toString() {
-        return "BillingConfig(sendFrequencySeconds=" + this.f285a + ", firstCollectingInappMaxAgeSeconds=" + this.b + ')';
+        return "BillingConfig(sendFrequencySeconds=" + this.f288a + ", firstCollectingInappMaxAgeSeconds=" + this.b + ')';
     }
 
     public BillingConfig() {
-        this(new s().f274a, new s().b);
+        this(new s().f277a, new s().b);
     }
 }

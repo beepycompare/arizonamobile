@@ -54,7 +54,7 @@ public final class PlayerListDialog extends AbstractDialog {
         PlayersListAdapter playersListAdapter = new PlayersListAdapter();
         this.playerListAdapter = playersListAdapter;
         Intrinsics.checkNotNullExpressionValue(layout, "layout");
-        addViewToConstraintLayout(layout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, layout, -1, -1, false, 8, null);
         bind.tvCaption.setText(caption);
         TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(bind.tvCaption, 8, 16, 1, 2);
         TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(bind.tvPlayersCount, 8, 16, 1, 2);

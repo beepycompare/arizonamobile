@@ -10,20 +10,20 @@ import kotlin.collections.CollectionsKt;
 public final class W7 implements ServiceComponentsInitializer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f823a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.remotepermissions.internal.RemotePermissionsModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudServiceModuleEntryPoint", "io.appmetrica.analytics.adrevenue.other.internal.AdRevenueOtherServiceModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotServiceModuleEntryPoint", "io.appmetrica.analytics.billing.internal.BillingServiceModuleEntryPoint", "io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint"});
+    public final List f826a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.remotepermissions.internal.RemotePermissionsModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudServiceModuleEntryPoint", "io.appmetrica.analytics.adrevenue.other.internal.AdRevenueOtherServiceModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotServiceModuleEntryPoint", "io.appmetrica.analytics.billing.internal.BillingServiceModuleEntryPoint", "io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint"});
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentsInitializer
     public final void onCreate(Context context) {
-        C0583sd c0583sd = Na.I.s;
-        List<String> list = this.f823a;
+        C0578sd c0578sd = Na.I.s;
+        List<String> list = this.f826a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (String str : list) {
             arrayList.add(new G5(str));
         }
         G5[] g5Arr = (G5[]) arrayList.toArray(new G5[0]);
         G5[] g5Arr2 = (G5[]) Arrays.copyOf(g5Arr, g5Arr.length);
-        synchronized (c0583sd) {
-            CollectionsKt.addAll(c0583sd.f1199a, g5Arr2);
+        synchronized (c0578sd) {
+            CollectionsKt.addAll(c0578sd.f1202a, g5Arr2);
         }
     }
 }

@@ -22,117 +22,117 @@ import java.util.List;
 import java.util.Map;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class E0 implements InterfaceC0219eb {
+public final class E0 implements InterfaceC0214eb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f520a;
-    public final InterfaceC0194db b;
-    public final C0663vf c;
-    public final C0541qm d;
-    public final C0768zg e;
-    public final C0173cg f;
+    public final Context f523a;
+    public final InterfaceC0189db b;
+    public final C0658vf c;
+    public final C0536qm d;
+    public final C0763zg e;
+    public final C0168cg f;
     public final Di g;
     public final Qi h;
     public final V7 i;
     public final Bl j;
     public volatile Lc k;
-    public final C0467o0 l;
+    public final C0462o0 l;
     public boolean m;
 
-    public E0(Context context, InterfaceC0194db interfaceC0194db) {
-        this.f520a = context;
-        this.b = interfaceC0194db;
-        C0663vf b = C0574s4.l().b(context);
+    public E0(Context context, InterfaceC0189db interfaceC0189db) {
+        this.f523a = context;
+        this.b = interfaceC0189db;
+        C0658vf b = C0569s4.l().b(context);
         this.c = b;
         ArrayList a2 = Sd.a();
-        C0574s4 l = C0574s4.l();
-        l.m().a(new C0135b4(context));
+        C0569s4 l = C0569s4.l();
+        l.m().a(new C0130b4(context));
         F0.a(context).a(a2);
-        C0173cg a3 = F0.a(context, F0.a(interfaceC0194db.b(), this));
+        C0168cg a3 = F0.a(context, F0.a(interfaceC0189db.b(), this));
         this.f = a3;
         V7 j = l.j();
         this.i = j;
-        Qi a4 = F0.a(a3, context, interfaceC0194db.getDefaultExecutor());
+        Qi a4 = F0.a(a3, context, interfaceC0189db.getDefaultExecutor());
         this.h = a4;
         j.a(a4);
-        C0541qm a5 = F0.a(context, a4, interfaceC0194db.b());
+        C0536qm a5 = F0.a(context, a4, interfaceC0189db.b());
         this.d = a5;
         a4.a(a5);
-        this.e = F0.a(a4, b, interfaceC0194db.b());
-        this.g = F0.a(context, a3, a4, interfaceC0194db.b(), a5);
+        this.e = F0.a(a4, b, interfaceC0189db.b());
+        this.g = F0.a(context, a3, a4, interfaceC0189db.b(), a5);
         this.j = l.o();
-        this.l = new C0467o0(b);
+        this.l = new C0462o0(b);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
-    public final InterfaceC0504pb c(ReporterConfig reporterConfig) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
+    public final InterfaceC0499pb c(ReporterConfig reporterConfig) {
         return this.g.b(reporterConfig);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void clearAppEnvironment() {
         j().clearAppEnvironment();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
-    public final C0580sa d() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
+    public final C0575sa d() {
         return this.d.e();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final String e() {
         return this.d.d();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final Map<String, String> g() {
         return this.d.b();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final AdvIdentifiersResult h() {
         return this.d.a();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final Lc i() {
         return this.k;
     }
 
-    public final InterfaceC0374kb j() {
+    public final InterfaceC0369kb j() {
         Lc lc = this.k;
         Intrinsics.checkNotNull(lc);
-        return lc.f647a;
+        return lc.f650a;
     }
 
     public final Di k() {
         return this.g;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void putAppEnvironmentValue(String str, String str2) {
         j().putAppEnvironmentValue(str, str2);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void setDataSendingEnabled(boolean z) {
         j().setDataSendingEnabled(z);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void setUserProfileID(String str) {
         j().setUserProfileID(str);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         Boolean bool;
         V7 v7 = this.i;
-        C0467o0 c0467o0 = this.l;
-        C0726y0 c0726y0 = c0467o0.b;
-        c0726y0.getClass();
+        C0462o0 c0462o0 = this.l;
+        C0721y0 c0721y0 = c0462o0.b;
+        c0721y0.getClass();
         AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder("629a824d-c717-4ba5-bc0f-3f3968554d01");
-        if (c0726y0.f1285a.b() && Intrinsics.areEqual(c0726y0.b.f1314a, Boolean.TRUE)) {
+        if (c0721y0.f1288a.b() && Intrinsics.areEqual(c0721y0.b.f1317a, Boolean.TRUE)) {
             newConfigBuilder.handleFirstActivationAsUpdate(true);
         }
         Boolean bool2 = appMetricaLibraryAdapterConfig.advIdentifiersTracking;
@@ -141,7 +141,7 @@ public final class E0 implements InterfaceC0219eb {
         }
         newConfigBuilder.withAdvIdentifiersTracking(bool2.booleanValue());
         AppMetricaConfig build = newConfigBuilder.build();
-        AppMetricaConfig.Builder f = c0467o0.f1125a.f();
+        AppMetricaConfig.Builder f = c0462o0.f1128a.f();
         if (f != null) {
             if (f.build().advIdentifiersTracking == null && (bool = build.advIdentifiersTracking) != null) {
                 f.withAdvIdentifiersTracking(bool.booleanValue());
@@ -157,7 +157,7 @@ public final class E0 implements InterfaceC0219eb {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final void b(AppMetricaConfig appMetricaConfig) {
         boolean z;
         PublicLogger orCreateMainPublicLogger = LoggerStorage.getOrCreateMainPublicLogger(appMetricaConfig.apiKey);
@@ -185,29 +185,29 @@ public final class E0 implements InterfaceC0219eb {
         this.m = true;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.S6
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.S6
     public final void a(int i, Bundle bundle) {
         this.d.b(bundle, null);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
         this.e.a(deferredDeeplinkParametersListener);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final void a(DeferredDeeplinkListener deferredDeeplinkListener) {
         this.e.a(deferredDeeplinkListener);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final void a(ReporterConfig reporterConfig) {
         this.g.a(reporterConfig);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
-        this.d.a(startupParamsCallback, list, Ib.c(this.f.f930a.getAsString("PROCESS_CFG_CLIDS")));
+        this.d.a(startupParamsCallback, list, Ib.c(this.f.f933a.getAsString("PROCESS_CFG_CLIDS")));
     }
 
     public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, Xc xc, boolean z) {
@@ -221,7 +221,7 @@ public final class E0 implements InterfaceC0219eb {
             this.k = lc;
             C5 c5 = this.j.b;
             synchronized (c5) {
-                c5.f490a = a2;
+                c5.f493a = a2;
                 Iterator it = c5.b.iterator();
                 while (it.hasNext()) {
                     ((Be) it.next()).consume(a2);
@@ -245,13 +245,13 @@ public final class E0 implements InterfaceC0219eb {
             PublicLogger.Companion.getAnonymousInstance().setEnabled(false);
         }
         boolean booleanValue = ((Boolean) WrapUtils.getOrDefault(appMetricaConfig.crashReporting, bool2)).booleanValue();
-        InterfaceC0194db interfaceC0194db = this.b;
+        InterfaceC0189db interfaceC0189db = this.b;
         if (booleanValue) {
-            interfaceC0194db.d().a(this.f520a, appMetricaConfig, this);
+            interfaceC0189db.d().a(this.f523a, appMetricaConfig, this);
             this.b.d().b();
             publicLogger.info("Register application crash handler", new Object[0]);
         } else {
-            interfaceC0194db.d().a();
+            interfaceC0189db.d().a();
             publicLogger.info("Disable all crash handlers", new Object[0]);
         }
         boolean booleanValue2 = ((Boolean) WrapUtils.getOrDefault(appMetricaConfig.sessionsAutoTrackingEnabled, bool2)).booleanValue();
@@ -261,19 +261,19 @@ public final class E0 implements InterfaceC0219eb {
         } else {
             synchronized (bl) {
                 if (bl.g) {
-                    bl.f483a.unregisterListener(bl.c, ActivityEvent.RESUMED);
-                    bl.f483a.unregisterListener(bl.d, ActivityEvent.PAUSED);
+                    bl.f486a.unregisterListener(bl.c, ActivityEvent.RESUMED);
+                    bl.f486a.unregisterListener(bl.d, ActivityEvent.PAUSED);
                     bl.g = false;
                 }
             }
         }
         this.f.d(appMetricaConfig);
-        C0541qm c0541qm = this.d;
-        c0541qm.e = publicLogger;
-        c0541qm.b(appMetricaConfig.customHosts);
-        C0541qm c0541qm2 = this.d;
+        C0536qm c0536qm = this.d;
+        c0536qm.e = publicLogger;
+        c0536qm.b(appMetricaConfig.customHosts);
+        C0536qm c0536qm2 = this.d;
         Object obj = appMetricaConfig.additionalConfig.get("YMM_clids");
-        c0541qm2.a(obj instanceof Map ? (Map) obj : null);
+        c0536qm2.a(obj instanceof Map ? (Map) obj : null);
         String str = (String) appMetricaConfig.additionalConfig.get("YMM_distributionReferrer");
         this.d.a(str);
         if (str != null) {
@@ -283,33 +283,33 @@ public final class E0 implements InterfaceC0219eb {
         this.d.i();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(Location location) {
         j().a(location);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(boolean z) {
         j().a(z);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(boolean z, boolean z2) {
         j().a(z, z2);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(String str, String str2) {
         j().a(str, str2);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(String str) {
         j().a(str);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0219eb, io.appmetrica.analytics.impl.InterfaceC0555rb
-    public final InterfaceC0530qb a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0214eb, io.appmetrica.analytics.impl.InterfaceC0550rb
+    public final InterfaceC0525qb a() {
         return this.g;
     }
 }

@@ -8,11 +8,11 @@ import java.util.Iterator;
 public final class a implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f226a;
+    public final ArrayList f229a;
 
     public a(b bVar, ClientContext clientContext) {
         ArrayList arrayList = new ArrayList();
-        this.f226a = arrayList;
+        this.f229a = arrayList;
         arrayList.add(new d(bVar, clientContext));
         arrayList.add(new f(bVar, clientContext));
         arrayList.add(new g(bVar, clientContext));
@@ -28,7 +28,7 @@ public final class a implements ModuleAdRevenueProcessor {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
     public final boolean process(Object... objArr) {
-        Iterator it = this.f226a.iterator();
+        Iterator it = this.f229a.iterator();
         while (it.hasNext()) {
             if (((ModuleAdRevenueProcessor) it.next()).process(objArr)) {
                 return true;

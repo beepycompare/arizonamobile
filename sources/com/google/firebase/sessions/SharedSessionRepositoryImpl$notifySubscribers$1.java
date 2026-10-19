@@ -1,5 +1,6 @@
 package com.google.firebase.sessions;
 
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SharedSessionRepository.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "com.google.firebase.sessions.SharedSessionRepositoryImpl", f = "SharedSessionRepository.kt", i = {0, 0}, l = {206}, m = "notifySubscribers", n = {"sessionId", "type"}, s = {"L$0", "L$1"})
+@DebugMetadata(c = "com.google.firebase.sessions.SharedSessionRepositoryImpl", f = "SharedSessionRepository.kt", i = {0, 0}, l = {206}, m = "notifySubscribers", n = {"sessionId", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY}, s = {"L$0", "L$1"})
 /* loaded from: classes5.dex */
 public final class SharedSessionRepositoryImpl$notifySubscribers$1 extends ContinuationImpl {
     Object L$0;

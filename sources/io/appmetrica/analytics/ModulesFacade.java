@@ -21,22 +21,22 @@ public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_TENJIN = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    private static Nd f218a = new Nd();
+    private static Nd f221a = new Nd();
 
     public static IModuleReporter getModuleReporter(Context context, String str) {
-        Nd nd = f218a;
+        Nd nd = f221a;
         Fd fd = nd.b;
         fd.b.a(context);
         fd.d.a(str);
-        nd.c.f793a.a(context.getApplicationContext().getApplicationContext());
-        return Hi.f580a.a(context.getApplicationContext(), str);
+        nd.c.f796a.a(context.getApplicationContext().getApplicationContext());
+        return Hi.f583a.a(context.getApplicationContext(), str);
     }
 
     public static boolean isActivatedForApp() {
-        Nd nd = f218a;
+        Nd nd = f221a;
         nd.b.getClass();
         nd.c.getClass();
-        nd.f685a.getClass();
+        nd.f688a.getClass();
         return B0.a();
     }
 
@@ -45,55 +45,55 @@ public final class ModulesFacade {
     }
 
     public static void reportEvent(ModuleEvent moduleEvent) {
-        Nd nd = f218a;
-        nd.b.f547a.a(null);
+        Nd nd = f221a;
+        nd.b.f550a.a(null);
         nd.c.getClass();
         nd.d.execute(new Id(nd, moduleEvent));
     }
 
     public static void reportExternalAttribution(int i, String str) {
-        Nd nd = f218a;
+        Nd nd = f221a;
         nd.b.getClass();
         nd.c.getClass();
         nd.d.execute(new Jd(nd, i, str));
     }
 
     public static void sendEventsBuffer() {
-        Nd nd = f218a;
+        Nd nd = f221a;
         nd.b.getClass();
         nd.c.getClass();
         AppMetrica.sendEventsBuffer();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        Nd nd = f218a;
+        Nd nd = f221a;
         nd.b.getClass();
         nd.c.getClass();
         nd.d.execute(new Kd(nd, z));
     }
 
     public static void setProxy(Nd nd) {
-        f218a = nd;
+        f221a = nd;
     }
 
     public static void setSessionExtra(String str, byte[] bArr) {
-        Nd nd = f218a;
+        Nd nd = f221a;
         nd.b.c.a(str);
         nd.c.getClass();
         nd.d.execute(new Ld(nd, str, bArr));
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        Nd nd = f218a;
+        Nd nd = f221a;
         Fd fd = nd.b;
         fd.b.a(context);
         fd.d.a(str);
-        nd.c.f793a.a(context.getApplicationContext());
+        nd.c.f796a.a(context.getApplicationContext());
         nd.d.execute(new Md(str));
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue, Boolean bool) {
-        Nd nd = f218a;
+        Nd nd = f221a;
         boolean booleanValue = bool.booleanValue();
         nd.b.getClass();
         nd.c.getClass();

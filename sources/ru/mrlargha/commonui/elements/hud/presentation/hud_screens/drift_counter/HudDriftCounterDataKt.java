@@ -186,7 +186,7 @@ public final class HudDriftCounterDataKt {
     }
 
     private static final JsonObject parseJsonObjectOrNull(String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         JsonObject asJsonObject;
         if (StringsKt.isBlank(str)) {
             return null;
@@ -207,12 +207,12 @@ public final class HudDriftCounterDataKt {
                 asJsonObject = read != null ? read.getAsJsonObject() : null;
                 CloseableKt.closeFinally(jsonReader, null);
             }
-            m9921constructorimpl = Result.m9921constructorimpl(asJsonObject);
+            m9974constructorimpl = Result.m9974constructorimpl(asJsonObject);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+        return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
     }
 
     private static final Long strictNonNegativeLong(JsonObject jsonObject, String str) {

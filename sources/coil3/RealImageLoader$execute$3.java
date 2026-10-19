@@ -1,6 +1,7 @@
 package coil3;
 
 import androidx.media3.extractor.ts.TsExtractor;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +9,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RealImageLoader.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "coil3.RealImageLoader", f = "RealImageLoader.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {117, TsExtractor.TS_STREAM_TYPE_AC3, 133}, m = "execute", n = {"initialRequest", "requestDelegate", "request", "eventListener", "type", "initialRequest", "requestDelegate", "request", "eventListener", "cachedPlaceholder", "sizeResolver", "type", "initialRequest", "requestDelegate", "request", "eventListener", "cachedPlaceholder", "sizeResolver", "size", "type"}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"})
+@DebugMetadata(c = "coil3.RealImageLoader", f = "RealImageLoader.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {117, TsExtractor.TS_STREAM_TYPE_AC3, 133}, m = "execute", n = {"initialRequest", "requestDelegate", "request", "eventListener", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "initialRequest", "requestDelegate", "request", "eventListener", "cachedPlaceholder", "sizeResolver", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "initialRequest", "requestDelegate", "request", "eventListener", "cachedPlaceholder", "sizeResolver", "size", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"})
 /* loaded from: classes3.dex */
 public final class RealImageLoader$execute$3 extends ContinuationImpl {
     int I$0;

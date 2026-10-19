@@ -3,7 +3,6 @@ package androidx.compose.foundation.text.selection;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.text.AnnotatedString;
 import androidx.compose.ui.text.TextRange;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlin.Pair;
 import kotlin.ResultKt;
@@ -15,7 +14,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* compiled from: SelectionManager.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "clickLocation", "Landroidx/compose/ui/geometry/Offset;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionManager$contextMenuAreaModifier$1", f = "SelectionManager.kt", i = {}, l = {DownloaderService.STATUS_WAITING_TO_RETRY}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionManager$contextMenuAreaModifier$1", f = "SelectionManager.kt", i = {}, l = {194}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes.dex */
 final class SelectionManager$contextMenuAreaModifier$1 extends SuspendLambda implements Function2<Offset, Continuation<? super Unit>, Object> {
     /* synthetic */ long J$0;

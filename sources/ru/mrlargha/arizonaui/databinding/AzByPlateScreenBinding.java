@@ -3,7 +3,6 @@ package ru.mrlargha.arizonaui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -12,6 +11,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.arizonaui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class AzByPlateScreenBinding implements ViewBinding {
     public final ConstraintLayout adviceContainer;
@@ -20,7 +20,7 @@ public final class AzByPlateScreenBinding implements ViewBinding {
     public final TextView adviceTitle;
     public final ConstraintLayout chooseNumber;
     public final ConstraintLayout completeButton;
-    public final EditText enterRegion;
+    public final KeyboardEditText enterRegion;
     public final Guideline flagRightLine;
     public final ConstraintLayout logoContainer;
     public final ImageView logoIc;
@@ -32,7 +32,7 @@ public final class AzByPlateScreenBinding implements ViewBinding {
     public final Guideline regionRightLine;
     private final ConstraintLayout rootView;
 
-    private AzByPlateScreenBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, TextView textView, AppCompatImageView appCompatImageView, TextView textView2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, EditText editText, Guideline guideline, ConstraintLayout constraintLayout5, ImageView imageView, TextView textView3, ConstraintLayout constraintLayout6, TextView textView4, ConstraintLayout constraintLayout7, Guideline guideline2, Guideline guideline3) {
+    private AzByPlateScreenBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, TextView textView, AppCompatImageView appCompatImageView, TextView textView2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, KeyboardEditText keyboardEditText, Guideline guideline, ConstraintLayout constraintLayout5, ImageView imageView, TextView textView3, ConstraintLayout constraintLayout6, TextView textView4, ConstraintLayout constraintLayout7, Guideline guideline2, Guideline guideline3) {
         this.rootView = constraintLayout;
         this.adviceContainer = constraintLayout2;
         this.adviceDescription = textView;
@@ -40,7 +40,7 @@ public final class AzByPlateScreenBinding implements ViewBinding {
         this.adviceTitle = textView2;
         this.chooseNumber = constraintLayout3;
         this.completeButton = constraintLayout4;
-        this.enterRegion = editText;
+        this.enterRegion = keyboardEditText;
         this.flagRightLine = guideline;
         this.logoContainer = constraintLayout5;
         this.logoIc = imageView;
@@ -89,8 +89,8 @@ public final class AzByPlateScreenBinding implements ViewBinding {
                             ConstraintLayout constraintLayout3 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                             if (constraintLayout3 != null) {
                                 i = R.id.enter_region;
-                                EditText editText = (EditText) ViewBindings.findChildViewById(view, i);
-                                if (editText != null) {
+                                KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(view, i);
+                                if (keyboardEditText != null) {
                                     i = R.id.flag_right_line;
                                     Guideline guideline = (Guideline) ViewBindings.findChildViewById(view, i);
                                     if (guideline != null) {
@@ -118,7 +118,7 @@ public final class AzByPlateScreenBinding implements ViewBinding {
                                                                     i = R.id.region_right_line;
                                                                     Guideline guideline3 = (Guideline) ViewBindings.findChildViewById(view, i);
                                                                     if (guideline3 != null) {
-                                                                        return new AzByPlateScreenBinding((ConstraintLayout) view, constraintLayout, textView, appCompatImageView, textView2, constraintLayout2, constraintLayout3, editText, guideline, constraintLayout4, imageView, textView3, constraintLayout5, textView4, constraintLayout6, guideline2, guideline3);
+                                                                        return new AzByPlateScreenBinding((ConstraintLayout) view, constraintLayout, textView, appCompatImageView, textView2, constraintLayout2, constraintLayout3, keyboardEditText, guideline, constraintLayout4, imageView, textView3, constraintLayout5, textView4, constraintLayout6, guideline2, guideline3);
                                                                     }
                                                                 }
                                                             }

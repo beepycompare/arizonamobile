@@ -49,7 +49,7 @@ public final class InputPopup extends SAMPUIElement {
         this.passwordToggle = imageButton;
         this.targetID = -1;
         Intrinsics.checkNotNullExpressionValue(layout, "layout");
-        addViewToConstraintLayout(layout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, layout, -1, -1, false, 8, null);
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.InputPopup$$ExternalSyntheticLambda0
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {

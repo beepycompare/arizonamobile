@@ -186,7 +186,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             } catch (DecoderException e3) {
                 Log.e(TAG, "Audio codec error", e3);
                 this.eventDispatcher.audioCodecError(e3);
-                throw createRendererException(e3, this.inputFormat, 4003);
+                throw createRendererException(e3, this.inputFormat, PlaybackException.ERROR_CODE_DECODING_FAILED);
             } catch (AudioSink.ConfigurationException e4) {
                 throw createRendererException(e4, e4.format, PlaybackException.ERROR_CODE_AUDIO_TRACK_INIT_FAILED);
             } catch (AudioSink.InitializationException e5) {
@@ -524,9 +524,9 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         } catch (DecoderException e) {
             Log.e(TAG, "Audio codec error", e);
             this.eventDispatcher.audioCodecError(e);
-            throw createRendererException(e, this.inputFormat, 4001);
+            throw createRendererException(e, this.inputFormat, PlaybackException.ERROR_CODE_DECODER_INIT_FAILED);
         } catch (OutOfMemoryError e2) {
-            throw createRendererException(e2, this.inputFormat, 4001);
+            throw createRendererException(e2, this.inputFormat, PlaybackException.ERROR_CODE_DECODER_INIT_FAILED);
         }
     }
 

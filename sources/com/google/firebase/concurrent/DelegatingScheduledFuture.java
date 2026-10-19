@@ -4,19 +4,19 @@ import androidx.concurrent.futures.AbstractResolvableFuture;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 class DelegatingScheduledFuture<V> extends AbstractResolvableFuture<V> implements ScheduledFuture<V> {
     private final ScheduledFuture<?> upstreamFuture;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     public interface Completer<T> {
         void set(T t);
 
         void setException(Throwable th);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     interface Resolver<T> {
         ScheduledFuture<?> addCompleter(Completer<T> completer);
     }

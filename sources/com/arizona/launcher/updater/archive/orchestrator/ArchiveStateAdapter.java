@@ -12,7 +12,6 @@ import com.arizona.launcher.updater.archive.state.ArchivePackagePhase;
 import com.arizona.launcher.updater.archive.state.ArchiveStateInvariantException;
 import com.arizona.launcher.updater.archive.state.ArchiveStateValidation;
 import com.arizona.launcher.updater.archive.state.ArchiveUpdaterState;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.security.MessageDigest;
@@ -67,7 +66,7 @@ public final class ArchiveStateAdapter {
             }
             arrayList.add(new ArchivePackageJournalEntry(archivePackageIdentity, archivePackagePhase, 0L, (ArchivePackageIdentity) null, (List) null, arrayList2, (List) null, j, (String) null, 348, (DefaultConstructorMarker) null));
         }
-        ArchiveUpdaterState archiveUpdaterState = new ArchiveUpdaterState(0, manifestId, manifestVersion, schemaVersion, wireName, (List) arrayList, (List) null, false, j, (int) DownloaderService.STATUS_PAUSED_BY_APP, (DefaultConstructorMarker) null);
+        ArchiveUpdaterState archiveUpdaterState = new ArchiveUpdaterState(0, manifestId, manifestVersion, schemaVersion, wireName, (List) arrayList, (List) null, false, j, 193, (DefaultConstructorMarker) null);
         ArchiveStateValidation.INSTANCE.requireValidState(archiveUpdaterState);
         return archiveUpdaterState;
     }

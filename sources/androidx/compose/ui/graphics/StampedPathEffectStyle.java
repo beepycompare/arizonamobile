@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -90,6 +89,6 @@ public final class StampedPathEffectStyle {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5710toStringimpl(int i) {
-        return m5708equalsimpl0(i, Translate) ? "Translate" : m5708equalsimpl0(i, Rotate) ? "Rotate" : m5708equalsimpl0(i, Morph) ? "Morph" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5708equalsimpl0(i, Translate) ? "Translate" : m5708equalsimpl0(i, Rotate) ? "Rotate" : m5708equalsimpl0(i, Morph) ? "Morph" : "Unknown";
     }
 }

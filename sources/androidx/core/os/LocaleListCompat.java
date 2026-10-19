@@ -3,7 +3,6 @@ package androidx.core.os;
 import android.os.Build;
 import android.os.LocaleList;
 import androidx.core.text.ICUCompat;
-import com.google.android.vending.expansion.downloader.Constants;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.Locale;
 /* loaded from: classes2.dex */
@@ -75,8 +74,8 @@ public final class LocaleListCompat {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Locale forLanguageTagCompat(String str) {
-        if (str.contains(Constants.FILENAME_SEQUENCE_SEPARATOR)) {
-            String[] split = str.split(Constants.FILENAME_SEQUENCE_SEPARATOR, -1);
+        if (str.contains("-")) {
+            String[] split = str.split("-", -1);
             if (split.length > 2) {
                 return new Locale(split[0], split[1], split[2]);
             }

@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class O {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0767zf f694a = Na.k().y();
+    public final C0762zf f697a = Na.k().y();
     public final SavableToggle b;
     public final OuterStateToggle c;
     public final OuterStateToggle d;
@@ -46,21 +46,21 @@ public final class O {
         M m2;
         M m3;
         if (this.e.getActualState()) {
-            m = M.f656a;
+            m = M.f659a;
         } else if (this.b.getActualState()) {
             m = !this.c.getActualState() ? M.c : M.d;
         } else {
             m = M.b;
         }
         if (this.f.getActualState()) {
-            m2 = M.f656a;
+            m2 = M.f659a;
         } else if (this.b.getActualState()) {
             m2 = !this.d.getActualState() ? M.c : M.d;
         } else {
             m2 = M.b;
         }
         if (this.g.getActualState()) {
-            m3 = M.f656a;
+            m3 = M.f659a;
         } else {
             m3 = !this.b.getActualState() ? M.b : M.d;
         }

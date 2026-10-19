@@ -1,26 +1,26 @@
 package com.arizona.launcher.data.repository.settings;
 
-import android.content.SharedPreferences;
 import dagger.internal.Factory;
-import dagger.internal.Provider;
 /* loaded from: classes3.dex */
 public final class SettingsRepository_Factory implements Factory<SettingsRepository> {
-    private final Provider<SharedPreferences> preferencesProvider;
-
-    private SettingsRepository_Factory(Provider<SharedPreferences> preferencesProvider) {
-        this.preferencesProvider = preferencesProvider;
-    }
-
     @Override // javax.inject.Provider, jakarta.inject.Provider
     public SettingsRepository get() {
-        return newInstance(this.preferencesProvider.get());
+        return newInstance();
     }
 
-    public static SettingsRepository_Factory create(Provider<SharedPreferences> preferencesProvider) {
-        return new SettingsRepository_Factory(preferencesProvider);
+    public static SettingsRepository_Factory create() {
+        return InstanceHolder.INSTANCE;
     }
 
-    public static SettingsRepository newInstance(SharedPreferences preferences) {
-        return new SettingsRepository(preferences);
+    public static SettingsRepository newInstance() {
+        return new SettingsRepository();
+    }
+
+    /* loaded from: classes3.dex */
+    private static final class InstanceHolder {
+        static final SettingsRepository_Factory INSTANCE = new SettingsRepository_Factory();
+
+        private InstanceHolder() {
+        }
     }
 }

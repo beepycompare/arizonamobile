@@ -10,68 +10,68 @@ import io.appmetrica.analytics.coreutils.internal.io.CloseableUtils;
 import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes5.dex */
-public final class Qk implements InterfaceC0350jd {
+public final class Qk implements InterfaceC0345jd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zo f738a;
+    public final Zo f741a;
     public final String b = "startup_state";
     public final AESEncrypter c;
 
     public Qk(Zo zo) {
-        this.f738a = zo;
-        C0104a c0104a = new C0104a(Na.k().g());
-        this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0104a.b(), c0104a.a());
+        this.f741a = zo;
+        C0099a c0099a = new C0099a(Na.k().g());
+        this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0099a.b(), c0099a.a());
     }
 
-    public static void a(Zo zo, Km km, C0169cc c0169cc) {
+    public static void a(Zo zo, Km km, C0164cc c0164cc) {
         String optStringOrNull;
         synchronized (zo) {
-            optStringOrNull = JsonUtils.optStringOrNull(zo.f878a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
+            optStringOrNull = JsonUtils.optStringOrNull(zo.f881a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
         }
         if (TextUtils.isEmpty(optStringOrNull)) {
-            if (!TextUtils.isEmpty(c0169cc.d)) {
-                zo.a(c0169cc.d);
+            if (!TextUtils.isEmpty(c0164cc.d)) {
+                zo.a(c0164cc.d);
             }
-            if (!TextUtils.isEmpty(c0169cc.e)) {
-                zo.b(c0169cc.e);
+            if (!TextUtils.isEmpty(c0164cc.e)) {
+                zo.b(c0164cc.e);
             }
-            if (TextUtils.isEmpty(c0169cc.f926a)) {
+            if (TextUtils.isEmpty(c0164cc.f929a)) {
                 return;
             }
-            km.f635a = c0169cc.f926a;
+            km.f638a = c0164cc.f929a;
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0350jd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0345jd
     public final void a(Context context) {
         SQLiteDatabase readableDatabase = Na.I.B().f(context).getReadableDatabase();
         if (readableDatabase != null) {
             try {
-                C0169cc a2 = a(readableDatabase);
+                C0164cc a2 = a(readableDatabase);
                 Km km = new Km(new C4(new A4()));
                 if (a2 != null) {
-                    a(this.f738a, km, a2);
+                    a(this.f741a, km, a2);
                     km.p = a2.c;
                     km.r = a2.b;
                 }
                 Lm lm = new Lm(km);
-                AbstractC0619tn abstractC0619tn = (AbstractC0619tn) C0567rn.a(Lm.class);
-                abstractC0619tn.a(context, abstractC0619tn.b(context)).save(lm);
+                AbstractC0614tn abstractC0614tn = (AbstractC0614tn) C0562rn.a(Lm.class);
+                abstractC0614tn.a(context, abstractC0614tn.b(context)).save(lm);
             } catch (Throwable unused) {
             }
         }
     }
 
-    public final C0169cc a(SQLiteDatabase sQLiteDatabase) {
+    public final C0164cc a(SQLiteDatabase sQLiteDatabase) {
         Cursor cursor;
         try {
             cursor = sQLiteDatabase.query("binary_data", new String[]{"value"}, "data_key = ?", new String[]{this.b}, null, null, null);
             if (cursor != null) {
                 try {
                     if (cursor.getCount() == 1 && cursor.moveToFirst()) {
-                        C0169cc c0169cc = (C0169cc) MessageNano.mergeFrom(new C0169cc(), this.c.decrypt(cursor.getBlob(cursor.getColumnIndexOrThrow("value"))));
+                        C0164cc c0164cc = (C0164cc) MessageNano.mergeFrom(new C0164cc(), this.c.decrypt(cursor.getBlob(cursor.getColumnIndexOrThrow("value"))));
                         CloseableUtils.closeSafely(cursor);
-                        return c0169cc;
+                        return c0164cc;
                     }
                 } catch (Throwable unused) {
                 }

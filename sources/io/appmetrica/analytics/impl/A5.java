@@ -7,16 +7,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class A5 implements K9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final P9 f453a;
+    public final P9 f456a;
     public final List b;
     public final List c;
     public final AtomicBoolean d;
 
-    public A5(P9 p9, List<? extends Z8> list, List<? extends Z8> list2, C0265g5 c0265g5) {
-        this.f453a = p9;
+    public A5(P9 p9, List<? extends Z8> list, List<? extends Z8> list2, C0260g5 c0260g5) {
+        this.f456a = p9;
         this.b = list;
         this.c = list2;
-        Objects.toString(c0265g5);
+        Objects.toString(c0260g5);
         this.d = new AtomicBoolean(true);
     }
 
@@ -59,19 +59,19 @@ public final class A5 implements K9 {
                     }
                 }
             }
-            ((Mn) this.f453a).c();
+            ((Mn) this.f456a).c();
         }
     }
 
     public final void e() {
         if (this.d.get() && a()) {
-            ((Mn) this.f453a).c();
+            ((Mn) this.f456a).c();
         }
     }
 
     public final void f() {
         if (this.d.get() && a()) {
-            ((Mn) this.f453a).b();
+            ((Mn) this.f456a).b();
         }
     }
 }

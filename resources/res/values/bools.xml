@@ -5,5 +5,6 @@
     <bool name="config_materialPreferenceIconSpaceReserved">false</bool>
     <bool name="m3_focus_rings_enabled">false</bool>
     <bool name="mtrl_btn_textappearance_all_caps">true</bool>
+    <bool name="resource_hot_reload_capable">false</bool>
     <bool name="timepicker_force_input_mode_keyboard">true</bool>
 </resources>

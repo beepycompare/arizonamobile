@@ -2,6 +2,7 @@ package androidx.compose.ui.text.font;
 
 import androidx.compose.ui.text.internal.InlineClassHelperKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.adjust.sdk.Constants;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -199,7 +200,7 @@ public final class FontWeight implements Comparable<FontWeight> {
         W200 = fontWeight2;
         FontWeight fontWeight3 = new FontWeight(300);
         W300 = fontWeight3;
-        FontWeight fontWeight4 = new FontWeight(400);
+        FontWeight fontWeight4 = new FontWeight(Constants.MINIMAL_ERROR_STATUS_CODE);
         W400 = fontWeight4;
         FontWeight fontWeight5 = new FontWeight(500);
         W500 = fontWeight5;

@@ -217,12 +217,12 @@ public final class CacheUpdateDialogKt {
                 ComposerKt.traceEventStart(352303246, i2, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogContent (CacheUpdateDialog.kt:70)");
             }
             function0 = onDismiss;
-            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), function0, ComposableLambdaKt.rememberComposableLambda(-1885731162, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda4
+            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), function0, null, ComposableLambdaKt.rememberComposableLambda(2016237189, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogKt$$ExternalSyntheticLambda4
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return CacheUpdateDialogKt.CacheUpdateDialogContent$lambda$0(updateSize, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 3) & 112) | 3072, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -243,7 +243,7 @@ public final class CacheUpdateDialogKt {
         ComposerKt.sourceInformation(composer, "C72@2640L10,72@2613L87,75@2728L85,74@2709L217,82@2935L97,83@3041L419:CacheUpdateDialog.kt#as3uag");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1885731162, i, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogContent.<anonymous> (CacheUpdateDialog.kt:72)");
+                ComposerKt.traceEventStart(2016237189, i, -1, "com.miami.game.feature.download.dialog.ui.download.CacheUpdateDialogContent.<anonymous> (CacheUpdateDialog.kt:72)");
             }
             TextKt.m3157TextNvy7gAk("ОБНОВЛЕНИЕ КЭША", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 6, 0, 131070);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_download_image, composer, 0), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(100.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
@@ -273,8 +273,8 @@ public final class CacheUpdateDialogKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -1035232358, "C84@3084L43,84@3059L187,90@3285L43,90@3259L191:CacheUpdateDialog.kt#as3uag");
-            ComposerKt.sourceInformationMarkerStart(composer, 1352079181, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -785953957, "C84@3084L43,84@3059L187,90@3285L43,90@3259L191:CacheUpdateDialog.kt#as3uag");
+            ComposerKt.sourceInformationMarkerStart(composer, 1637215084, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -289,8 +289,8 @@ public final class CacheUpdateDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$CacheUpdateDialogKt.INSTANCE.getLambda$2143907042$dialogs(), composer, 48);
-            ComposerKt.sourceInformationMarkerStart(composer, 1352085613, "CC(remember):CacheUpdateDialog.kt#9igjgp");
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$CacheUpdateDialogKt.INSTANCE.getLambda$1750908097$dialogs(), composer, 48);
+            ComposerKt.sourceInformationMarkerStart(composer, 1637221516, "CC(remember):CacheUpdateDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -305,7 +305,7 @@ public final class CacheUpdateDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$CacheUpdateDialogKt.INSTANCE.getLambda$1292262873$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$CacheUpdateDialogKt.INSTANCE.getLambda$899263928$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

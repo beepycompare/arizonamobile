@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
+import com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter;
 import java.io.File;
 import java.util.Set;
 import kotlin.Metadata;
@@ -12,7 +13,7 @@ import kotlin.text.StringsKt;
 public final class LegacyGameTreeProbe {
     public static final int $stable = 0;
     public static final LegacyGameTreeProbe INSTANCE = new LegacyGameTreeProbe();
-    private static final Set<String> ignoredRootNames = SetsKt.setOf((Object[]) new String[]{"settings.json", "local_manifest.json", "logcat", "recent-log-share", ".archive-installing"});
+    private static final Set<String> ignoredRootNames = SetsKt.setOf((Object[]) new String[]{"settings.json", "local_manifest.json", "logcat", "recent-log-share", ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY});
 
     private LegacyGameTreeProbe() {
     }

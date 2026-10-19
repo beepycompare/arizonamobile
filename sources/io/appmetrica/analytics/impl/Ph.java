@@ -5,14 +5,14 @@ import java.util.HashMap;
 public final class Ph {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0240f6 f720a;
+    public final C0235f6 f723a;
     public final boolean b;
     public final int c;
     public final HashMap d;
     public final Zh e;
 
-    public Ph(C0240f6 c0240f6, boolean z, int i, HashMap hashMap, Zh zh) {
-        this.f720a = c0240f6;
+    public Ph(C0235f6 c0235f6, boolean z, int i, HashMap hashMap, Zh zh) {
+        this.f723a = c0235f6;
         this.b = z;
         this.c = i;
         this.d = hashMap;
@@ -20,6 +20,6 @@ public final class Ph {
     }
 
     public final String toString() {
-        return "ReportToSend(report=" + this.f720a + ", serviceDataReporterType=" + this.c + ", environment=" + this.e + ", isCrashReport=" + this.b + ", trimmedFields=" + this.d + ')';
+        return "ReportToSend(report=" + this.f723a + ", serviceDataReporterType=" + this.c + ", environment=" + this.e + ", isCrashReport=" + this.b + ", trimmedFields=" + this.d + ')';
     }
 }

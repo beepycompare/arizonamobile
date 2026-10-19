@@ -7,17 +7,17 @@ import android.os.ResultReceiver;
 public final class T6 extends ResultReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final S6 f774a;
+    public final S6 f777a;
 
     public T6(Handler handler, S6 s6) {
         super(handler);
-        this.f774a = s6;
+        this.f777a = s6;
     }
 
-    public static void a(ResultReceiver resultReceiver, C0341j4 c0341j4) {
+    public static void a(ResultReceiver resultReceiver, C0336j4 c0336j4) {
         if (resultReceiver != null) {
             Bundle bundle = new Bundle();
-            c0341j4.b(bundle);
+            c0336j4.b(bundle);
             resultReceiver.send(1, bundle);
         }
     }
@@ -27,14 +27,14 @@ public final class T6 extends ResultReceiver {
         if (bundle == null) {
             bundle = new Bundle();
         }
-        this.f774a.a(i, bundle);
+        this.f777a.a(i, bundle);
     }
 
-    public static void a(ResultReceiver resultReceiver, EnumC0411lm enumC0411lm, C0341j4 c0341j4) {
+    public static void a(ResultReceiver resultReceiver, EnumC0406lm enumC0406lm, C0336j4 c0336j4) {
         if (resultReceiver != null) {
             Bundle bundle = new Bundle();
-            bundle.putInt("startup_error_key_code", enumC0411lm.f1086a);
-            c0341j4.b(bundle);
+            bundle.putInt("startup_error_key_code", enumC0406lm.f1089a);
+            c0336j4.b(bundle);
             resultReceiver.send(2, bundle);
         }
     }

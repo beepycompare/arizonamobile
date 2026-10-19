@@ -1,7 +1,6 @@
 package androidx.compose.ui.graphics.colorspace;
 
 import androidx.exifinterface.media.ExifInterface;
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -97,6 +96,6 @@ public final class RenderIntent {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5803toStringimpl(int i) {
-        return m5801equalsimpl0(i, Perceptual) ? "Perceptual" : m5801equalsimpl0(i, Relative) ? "Relative" : m5801equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m5801equalsimpl0(i, Absolute) ? "Absolute" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5801equalsimpl0(i, Perceptual) ? "Perceptual" : m5801equalsimpl0(i, Relative) ? "Relative" : m5801equalsimpl0(i, Saturation) ? ExifInterface.TAG_SATURATION : m5801equalsimpl0(i, Absolute) ? "Absolute" : "Unknown";
     }
 }

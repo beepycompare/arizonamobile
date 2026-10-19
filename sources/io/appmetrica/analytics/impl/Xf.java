@@ -8,9 +8,9 @@ public final class Xf extends Ra {
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(List<AbstractC0303hh> list) {
-        list.add(this.f745a.n);
-        list.add(this.f745a.h);
-        list.add(this.f745a.d);
+    public final void a(List<AbstractC0298hh> list) {
+        list.add(this.f748a.n);
+        list.add(this.f748a.h);
+        list.add(this.f748a.d);
     }
 }

@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Hk implements InterfaceC0474o7 {
+public final class Hk implements InterfaceC0469o7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f582a = "service_main.db";
+    public final String f585a = "service_main.db";
     public final String b = "metrica_data.db";
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0474o7
+    @Override // io.appmetrica.analytics.impl.InterfaceC0469o7
     public final String a() {
         return this.b;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0474o7
+    @Override // io.appmetrica.analytics.impl.InterfaceC0469o7
     public final String b() {
-        return this.f582a;
+        return this.f585a;
     }
 }

@@ -11,9 +11,11 @@ import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes6.dex */
 public final class ItemInventoryBinding implements ViewBinding {
     public final CardView cvColoredItem;
+    public final CustomCardView holdBorder;
     public final CardView item;
     public final ProgressBar itemProgressBar;
     public final AppCompatImageView ivActiveItem;
@@ -21,15 +23,17 @@ public final class ItemInventoryBinding implements ViewBinding {
     public final ImageView ivEffectBackground;
     public final ImageView ivEffectBackgroundTop;
     public final ImageView ivEffectForeground;
+    public final ImageView ivHoldPin;
     public final ImageView ivItemImage;
     private final CardView rootView;
     public final TextView tvNeedRes;
     public final TextView tvTitleText;
     public final View viewCenter;
 
-    private ItemInventoryBinding(CardView rootView, CardView cvColoredItem, CardView item, ProgressBar itemProgressBar, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivEffectBackground, ImageView ivEffectBackgroundTop, ImageView ivEffectForeground, ImageView ivItemImage, TextView tvNeedRes, TextView tvTitleText, View viewCenter) {
+    private ItemInventoryBinding(CardView rootView, CardView cvColoredItem, CustomCardView holdBorder, CardView item, ProgressBar itemProgressBar, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivEffectBackground, ImageView ivEffectBackgroundTop, ImageView ivEffectForeground, ImageView ivHoldPin, ImageView ivItemImage, TextView tvNeedRes, TextView tvTitleText, View viewCenter) {
         this.rootView = rootView;
         this.cvColoredItem = cvColoredItem;
+        this.holdBorder = holdBorder;
         this.item = item;
         this.itemProgressBar = itemProgressBar;
         this.ivActiveItem = ivActiveItem;
@@ -37,6 +41,7 @@ public final class ItemInventoryBinding implements ViewBinding {
         this.ivEffectBackground = ivEffectBackground;
         this.ivEffectBackgroundTop = ivEffectBackgroundTop;
         this.ivEffectForeground = ivEffectForeground;
+        this.ivHoldPin = ivHoldPin;
         this.ivItemImage = ivItemImage;
         this.tvNeedRes = tvNeedRes;
         this.tvTitleText = tvTitleText;
@@ -65,35 +70,43 @@ public final class ItemInventoryBinding implements ViewBinding {
         int i = R.id.cvColoredItem;
         CardView cardView = (CardView) ViewBindings.findChildViewById(rootView, i);
         if (cardView != null) {
-            CardView cardView2 = (CardView) rootView;
-            i = R.id.item_progress_bar;
-            ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(rootView, i);
-            if (progressBar != null) {
-                i = R.id.ivActiveItem;
-                AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
-                if (appCompatImageView != null) {
-                    i = R.id.ivDefaultItem;
-                    ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                    if (imageView != null) {
-                        i = R.id.iv_effect_background;
-                        ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                        if (imageView2 != null) {
-                            i = R.id.iv_effect_background_top;
-                            ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                            if (imageView3 != null) {
-                                i = R.id.iv_effect_foreground;
-                                ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                if (imageView4 != null) {
-                                    i = R.id.ivItemImage;
-                                    ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
-                                    if (imageView5 != null) {
-                                        i = R.id.tvNeedRes;
-                                        TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                        if (textView != null) {
-                                            i = R.id.tvTitleText;
-                                            TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                            if (textView2 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
-                                                return new ItemInventoryBinding(cardView2, cardView, cardView2, progressBar, appCompatImageView, imageView, imageView2, imageView3, imageView4, imageView5, textView, textView2, findChildViewById);
+            i = R.id.holdBorder;
+            CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+            if (customCardView != null) {
+                CardView cardView2 = (CardView) rootView;
+                i = R.id.item_progress_bar;
+                ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(rootView, i);
+                if (progressBar != null) {
+                    i = R.id.ivActiveItem;
+                    AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
+                    if (appCompatImageView != null) {
+                        i = R.id.ivDefaultItem;
+                        ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                        if (imageView != null) {
+                            i = R.id.iv_effect_background;
+                            ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                            if (imageView2 != null) {
+                                i = R.id.iv_effect_background_top;
+                                ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                if (imageView3 != null) {
+                                    i = R.id.iv_effect_foreground;
+                                    ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                    if (imageView4 != null) {
+                                        i = R.id.ivHoldPin;
+                                        ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                        if (imageView5 != null) {
+                                            i = R.id.ivItemImage;
+                                            ImageView imageView6 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                            if (imageView6 != null) {
+                                                i = R.id.tvNeedRes;
+                                                TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                if (textView != null) {
+                                                    i = R.id.tvTitleText;
+                                                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                                    if (textView2 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
+                                                        return new ItemInventoryBinding(cardView2, cardView, customCardView, cardView2, progressBar, appCompatImageView, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, textView, textView2, findChildViewById);
+                                                    }
+                                                }
                                             }
                                         }
                                     }

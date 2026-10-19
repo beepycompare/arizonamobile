@@ -8,6 +8,7 @@ import android.util.Log;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.content.res.FontResourcesParserCompat;
 import androidx.core.provider.FontsContractCompat;
+import com.adjust.sdk.Constants;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,7 +31,7 @@ public class TypefaceCompatBaseImpl {
     }
 
     private static <T> T findBestFont(T[] tArr, int i, StyleExtractor<T> styleExtractor) {
-        return (T) findBestFont(tArr, (i & 1) == 0 ? 400 : TypedValues.TransitionType.TYPE_DURATION, (i & 2) != 0, styleExtractor);
+        return (T) findBestFont(tArr, (i & 1) == 0 ? Constants.MINIMAL_ERROR_STATUS_CODE : TypedValues.TransitionType.TYPE_DURATION, (i & 2) != 0, styleExtractor);
     }
 
     private static <T> T findBestFont(T[] tArr, int i, boolean z, StyleExtractor<T> styleExtractor) {

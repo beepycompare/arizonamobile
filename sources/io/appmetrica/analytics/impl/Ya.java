@@ -23,7 +23,7 @@ public final class Ya extends P2 {
     }
 
     @Override // io.appmetrica.analytics.impl.P2, io.appmetrica.analytics.impl.Wa
-    public final C0517po a(Map<String, String> map) {
+    public final C0512po a(Map<String, String> map) {
         HashMap hashMap;
         int i;
         int i2 = 0;
@@ -39,18 +39,18 @@ public final class Ya extends P2 {
             int i4 = 0;
             while (i2 < length) {
                 Map.Entry entry = entryArr[i2];
-                C0517po a2 = this.b.a((String) entry.getKey());
-                C0517po a3 = this.c.a((String) entry.getValue());
+                C0512po a2 = this.b.a((String) entry.getKey());
+                C0512po a3 = this.c.a((String) entry.getValue());
                 int utf8BytesLength = StringUtils.getUtf8BytesLength((String) entry.getValue()) + StringUtils.getUtf8BytesLength((String) entry.getKey());
-                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f1155a) + StringUtils.getUtf8BytesLength((String) a2.f1155a);
-                if (z || utf8BytesLength2 + i4 > this.f713a) {
+                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f1158a) + StringUtils.getUtf8BytesLength((String) a2.f1158a);
+                if (z || utf8BytesLength2 + i4 > this.f716a) {
                     i3++;
                     i += utf8BytesLength;
                     z = true;
                 } else {
                     i = a3.b.getBytesTruncated() + a2.b.getBytesTruncated() + i;
-                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f1155a) + StringUtils.getUtf8BytesLength((String) a2.f1155a) + i4;
-                    hashMap.put((String) a2.f1155a, (String) a3.f1155a);
+                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f1158a) + StringUtils.getUtf8BytesLength((String) a2.f1158a) + i4;
+                    hashMap.put((String) a2.f1158a, (String) a3.f1158a);
                     i4 = utf8BytesLength3;
                 }
                 i2++;
@@ -60,6 +60,6 @@ public final class Ya extends P2 {
             hashMap = null;
             i = 0;
         }
-        return new C0517po(hashMap, new E4(i2, i));
+        return new C0512po(hashMap, new E4(i2, i));
     }
 }

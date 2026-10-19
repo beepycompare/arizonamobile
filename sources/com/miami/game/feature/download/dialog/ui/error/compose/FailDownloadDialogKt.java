@@ -134,12 +134,12 @@ public final class FailDownloadDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-1458419362, i2, -1, "com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadErrorDialogScreen (FailDownloadDialog.kt:49)");
             }
-            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_no_network_background_icon), onDismiss, ComposableLambdaKt.rememberComposableLambda(-50143882, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadDialogKt$$ExternalSyntheticLambda1
+            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_no_network_background_icon), onDismiss, null, ComposableLambdaKt.rememberComposableLambda(-286761707, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadDialogKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return FailDownloadDialogKt.FailDownloadErrorDialogScreen$lambda$0(Function0.this, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | 3072, 4);
             function0 = onDismiss;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -161,7 +161,7 @@ public final class FailDownloadDialogKt {
         ComposerKt.sourceInformation(composer, "C51@1954L10,51@1927L87,54@2042L86,53@2023L218,61@2250L419:FailDownloadDialog.kt#d3gn1w");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-50143882, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadErrorDialogScreen.<anonymous> (FailDownloadDialog.kt:51)");
+                ComposerKt.traceEventStart(-286761707, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.FailDownloadErrorDialogScreen.<anonymous> (FailDownloadDialog.kt:51)");
             }
             TextKt.m3157TextNvy7gAk("ОТСУТСТВИЕ СЕТИ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 6, 0, 131070);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_no_network_icon, composer, 0), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(100.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
@@ -190,8 +190,8 @@ public final class FailDownloadDialogKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1627999178, "C62@2293L43,62@2268L187,68@2494L43,68@2468L191:FailDownloadDialog.kt#d3gn1w");
-            ComposerKt.sourceInformationMarkerStart(composer, -1471504099, "CC(remember):FailDownloadDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 587707339, "C62@2293L43,62@2268L187,68@2494L43,68@2468L191:FailDownloadDialog.kt#d3gn1w");
+            ComposerKt.sourceInformationMarkerStart(composer, -1227967236, "CC(remember):FailDownloadDialog.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -206,8 +206,8 @@ public final class FailDownloadDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$FailDownloadDialogKt.INSTANCE.getLambda$1464513202$dialogs(), composer, 48);
-            ComposerKt.sourceInformationMarkerStart(composer, -1471497667, "CC(remember):FailDownloadDialog.kt#9igjgp");
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$FailDownloadDialogKt.INSTANCE.getLambda$1227895377$dialogs(), composer, 48);
+            ComposerKt.sourceInformationMarkerStart(composer, -1227960804, "CC(remember):FailDownloadDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function0);
             Object rememberedValue2 = composer.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -222,7 +222,7 @@ public final class FailDownloadDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$FailDownloadDialogKt.INSTANCE.m9810getLambda$1143154327$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$FailDownloadDialogKt.INSTANCE.m9850getLambda$1379772152$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

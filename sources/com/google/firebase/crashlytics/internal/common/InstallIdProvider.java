@@ -1,9 +1,9 @@
 package com.google.firebase.crashlytics.internal.common;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public interface InstallIdProvider {
     InstallIds getInstallIds();
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes4.dex */
     public static abstract class InstallIds {
         public abstract String getCrashlyticsInstallId();
 

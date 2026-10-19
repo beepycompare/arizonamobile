@@ -1,10 +1,10 @@
 package com.arizona.launcher.updater.archive.manifest;
 
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import coil3.util.UtilsKt;
 import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
 import com.arizona.launcher.updater.archive.model.ArchiveGpu;
 import com.arizona.launcher.updater.archive.model.ArchiveModelRules;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -122,7 +122,7 @@ public final class OriginalTzArchiveManifestParser {
         JsonElement jsonElement2 = requiredArray.get(0);
         Intrinsics.checkNotNullExpressionValue(jsonElement2, "get(...)");
         JsonObject requireObject = requireObject(jsonElement2, "root.data.data[0]");
-        if (!Intrinsics.areEqual(requiredString(requireObject, "type", "root.data.data[0].type"), "dir")) {
+        if (!Intrinsics.areEqual(requiredString(requireObject, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "root.data.data[0].type"), "dir")) {
             fail("root.data.data[0].type", "must be dir");
             throw new KotlinNothingValueException();
         } else if (!Intrinsics.areEqual(requiredString(requireObject, "name", "root.data.data[0].name"), FILES_ROOT)) {
@@ -151,7 +151,7 @@ public final class OriginalTzArchiveManifestParser {
         String safeSegment = safeSegment(requiredString(jsonObject, "name", str2 + ".name"), str2 + ".name");
         String str3 = str.length() == 0 ? safeSegment : str + "/" + safeSegment;
         registerSourcePath(str3, str2, map);
-        String requiredString = requiredString(jsonObject, "type", str2 + ".type");
+        String requiredString = requiredString(jsonObject, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, str2 + ".type");
         long requiredWholeLong = requiredWholeLong(jsonObject, "size", str2 + ".size");
         int i = 0;
         if (Intrinsics.areEqual(requiredString, "dir")) {
@@ -263,7 +263,7 @@ public final class OriginalTzArchiveManifestParser {
 
     private final String parseCentralDirectorySha256(JsonObject jsonObject) {
         JsonElement jsonElement;
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         if (jsonObject.has(CENTRAL_DIRECTORY_SHA256_KEY) && (jsonElement = jsonObject.get(CENTRAL_DIRECTORY_SHA256_KEY)) != null && jsonElement.isJsonPrimitive() && jsonElement.getAsJsonPrimitive().isString()) {
             try {
                 Result.Companion companion = Result.Companion;
@@ -271,12 +271,12 @@ public final class OriginalTzArchiveManifestParser {
                 ArchiveModelRules archiveModelRules = ArchiveModelRules.INSTANCE;
                 String asString = jsonElement.getAsString();
                 Intrinsics.checkNotNullExpressionValue(asString, "getAsString(...)");
-                m9921constructorimpl = Result.m9921constructorimpl(archiveModelRules.requireSha256Hex(asString));
+                m9974constructorimpl = Result.m9974constructorimpl(archiveModelRules.requireSha256Hex(asString));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+            return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
         }
         return null;
     }
@@ -325,7 +325,7 @@ public final class OriginalTzArchiveManifestParser {
         Intrinsics.checkNotNullExpressionValue(ROOT, "ROOT");
         String lowerCase = dropLast.toLowerCase(ROOT);
         Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
-        String trim = StringsKt.trim(NON_ID_CHARACTERS.replace(lowerCase, Constants.FILENAME_SEQUENCE_SEPARATOR), '-', '.', '_');
+        String trim = StringsKt.trim(NON_ID_CHARACTERS.replace(lowerCase, "-"), '-', '.', '_');
         if (trim.length() == 0) {
             trim = "archive";
         }
@@ -336,7 +336,7 @@ public final class OriginalTzArchiveManifestParser {
         Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
         String take = StringsKt.take(companion.sha256Hex(bytes), 16);
         String trimEnd = StringsKt.trimEnd(StringsKt.take(trim, 92 - take.length()), '-', '.', '_');
-        return PACKAGE_ID_PREFIX + (trimEnd.length() != 0 ? trimEnd : "archive") + Constants.FILENAME_SEQUENCE_SEPARATOR + take;
+        return PACKAGE_ID_PREFIX + (trimEnd.length() != 0 ? trimEnd : "archive") + "-" + take;
     }
 
     private final String deterministicManifestVersion(ArchiveGpu archiveGpu, List<OriginalTzArchivePackageDescriptor> list) {

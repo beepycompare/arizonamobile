@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPOutputStream;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 class FileBackedNativeSessionFile implements NativeSessionFile {
     private final String dataTransportFilename;
     private final File file;

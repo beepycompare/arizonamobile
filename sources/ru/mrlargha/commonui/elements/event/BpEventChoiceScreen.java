@@ -37,7 +37,7 @@ public final class BpEventChoiceScreen extends SAMPUIElement implements Interfac
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         setupNavigation();
         setDefaultImages();
     }

@@ -3,7 +3,7 @@ package androidx.appcompat.app;
 import android.app.Dialog;
 import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public class AppCompatDialogFragment extends DialogFragment {
     public AppCompatDialogFragment() {
     }

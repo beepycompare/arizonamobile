@@ -3,17 +3,17 @@ package io.appmetrica.analytics.impl;
 public final class V6 implements U6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0767zf f806a;
+    public final C0762zf f809a;
 
-    public V6(C0767zf c0767zf) {
-        this.f806a = c0767zf;
+    public V6(C0762zf c0762zf) {
+        this.f809a = c0762zf;
     }
 
     public final void a(boolean z) {
-        this.f806a.c(z);
+        this.f809a.c(z);
     }
 
     public final Boolean a() {
-        return this.f806a.d();
+        return this.f809a.d();
     }
 }

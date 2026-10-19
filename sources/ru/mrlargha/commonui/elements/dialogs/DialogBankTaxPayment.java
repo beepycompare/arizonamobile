@@ -77,7 +77,7 @@ public final class DialogBankTaxPayment extends AbstractDialog {
         this.methodTabs = CollectionsKt.take(titles.isEmpty() ? defaultMethodTabs() : titles, 2);
         this.adapter = new DialogBankTaxPaymentAdapter(new DialogBankTaxPayment$adapter$1(this));
         this.selectedTaxIds = new LinkedHashSet<>();
-        addViewToConstraintLayout(inflate, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, inflate, -1, -1, false, 8, null);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
         setupUi();
         setVisibility(true);

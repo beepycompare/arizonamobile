@@ -1,6 +1,7 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
 import com.arizona.launcher.UpdateServiceContract;
+import com.arizona.launcher.updater.archive.download.ArchiveResumableHttpEngine;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveByteRangeResult;
 import com.arizona.launcher.updater.archive.orchestrator.RemoteZipIndexFetchResult;
 import com.arizona.launcher.updater.archive.range.ArchiveObservedRepresentationFence;
@@ -254,7 +255,7 @@ public final class RemoteZipIndexFetcher {
 
     private final RemoteZipIndexFetchResult.Failure toIndexFailure(ArchiveByteRangeResult.Failure failure, long j) {
         ArchiveManifestResolutionErrorCode archiveManifestResolutionErrorCode;
-        if (failure.getCode() == ArchiveByteRangeErrorCode.HTTP_STATUS && CollectionsKt.contains(SetsKt.setOf((Object[]) new Integer[]{200, 412, 416}), failure.getHttpStatus())) {
+        if (failure.getCode() == ArchiveByteRangeErrorCode.HTTP_STATUS && CollectionsKt.contains(SetsKt.setOf((Object[]) new Integer[]{200, Integer.valueOf((int) ArchiveResumableHttpEngine.HTTP_PRECONDITION_FAILED), 416}), failure.getHttpStatus())) {
             archiveManifestResolutionErrorCode = ArchiveManifestResolutionErrorCode.REMOTE_REPRESENTATION_CHANGED;
         } else {
             archiveManifestResolutionErrorCode = ArchiveManifestResolutionErrorCode.REMOTE_INDEX_UNAVAILABLE;

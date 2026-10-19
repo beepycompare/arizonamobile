@@ -124,7 +124,7 @@ public final class NewQuestScreen extends SAMPUIElement implements InterfaceCont
             }
         });
         this.questTaskList = new ArrayList();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         initAdapters();
         bind.ivGetQuest.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.presentation.NewQuestScreen$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener

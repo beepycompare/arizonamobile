@@ -4,13 +4,13 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class attr {
-        public static int isLightTheme = 0x7f040345;
-        public static int postSplashScreenTheme = 0x7f040536;
-        public static int splashScreenIconSize = 0x7f0405ef;
-        public static int windowSplashScreenAnimatedIcon = 0x7f04074a;
-        public static int windowSplashScreenAnimationDuration = 0x7f04074b;
-        public static int windowSplashScreenBackground = 0x7f04074c;
-        public static int windowSplashScreenIconBackgroundColor = 0x7f04074d;
+        public static int isLightTheme = 0x7f04034a;
+        public static int postSplashScreenTheme = 0x7f04053d;
+        public static int splashScreenIconSize = 0x7f0405f7;
+        public static int windowSplashScreenAnimatedIcon = 0x7f040754;
+        public static int windowSplashScreenAnimationDuration = 0x7f040755;
+        public static int windowSplashScreenBackground = 0x7f040756;
+        public static int windowSplashScreenIconBackgroundColor = 0x7f040757;
 
         private attr() {
         }
@@ -32,9 +32,9 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class drawable {
-        public static int compat_splash_screen = 0x7f080646;
-        public static int compat_splash_screen_no_icon_background = 0x7f080647;
-        public static int icon_background = 0x7f080c4b;
+        public static int compat_splash_screen = 0x7f080657;
+        public static int compat_splash_screen_no_icon_background = 0x7f080658;
+        public static int icon_background = 0x7f080c66;
 
         private drawable() {
         }
@@ -42,7 +42,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int splashscreen_icon_view = 0x7f0a0ff8;
+        public static int splashscreen_icon_view = 0x7f0a1087;
 
         private id() {
         }
@@ -58,7 +58,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int splash_screen_view = 0x7f0d02ba;
+        public static int splash_screen_view = 0x7f0d02c7;
 
         private layout() {
         }
@@ -73,9 +73,9 @@ public final class R {
         public static int Base_v21_Theme_SplashScreen_Light = 0x7f13014a;
         public static int Base_v27_Theme_SplashScreen = 0x7f13014b;
         public static int Base_v27_Theme_SplashScreen_Light = 0x7f13014c;
-        public static int Theme_SplashScreen = 0x7f1303d3;
-        public static int Theme_SplashScreen_Common = 0x7f1303d4;
-        public static int Theme_SplashScreen_IconBackground = 0x7f1303d5;
+        public static int Theme_SplashScreen = 0x7f1303d2;
+        public static int Theme_SplashScreen_Common = 0x7f1303d3;
+        public static int Theme_SplashScreen_IconBackground = 0x7f1303d4;
 
         private style() {
         }

@@ -20,7 +20,6 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.drm.ExoMediaDrm;
 import androidx.media3.extractor.mp4.PsshAtomUtil;
-import com.facebook.internal.NativeProtocol;
 import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -193,7 +192,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             return "";
         }
         if (Build.VERSION.SDK_INT >= 33 && "https://default.url".equals(str)) {
-            String propertyString = getPropertyString(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN);
+            String propertyString = getPropertyString("version");
             if (Objects.equals(propertyString, "1.2") || Objects.equals(propertyString, "aidl-1")) {
                 return "";
             }
@@ -333,7 +332,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
 
     private boolean isMediaDrmRequiresSecureDecoderImplemented() {
         if (this.uuid.equals(C.WIDEVINE_UUID)) {
-            String propertyString = getPropertyString(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN);
+            String propertyString = getPropertyString("version");
             return (propertyString.startsWith("v5.") || propertyString.startsWith("14.") || propertyString.startsWith("15.") || propertyString.startsWith("16.0")) ? false : true;
         }
         return this.uuid.equals(C.CLEARKEY_UUID);

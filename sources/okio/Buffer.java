@@ -6,6 +6,7 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.media3.extractor.ts.PsExtractor;
 import com.google.common.base.Ascii;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.io.Closeable;
@@ -620,13 +621,13 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to operator function", replaceWith = @ReplaceWith(expression = "this[index]", imports = {}))
     /* renamed from: -deprecated_getByte  reason: not valid java name */
-    public final byte m11798deprecated_getByte(long j) {
+    public final byte m11851deprecated_getByte(long j) {
         return getByte(j);
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "size", imports = {}))
     /* renamed from: -deprecated_size  reason: not valid java name */
-    public final long m11799deprecated_size() {
+    public final long m11852deprecated_size() {
         return this.size;
     }
 
@@ -1449,7 +1450,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
                     } else {
                         if (charAt2 < 2048) {
                             Segment writableSegment$okio2 = writableSegment$okio(2);
-                            writableSegment$okio2.data[writableSegment$okio2.limit] = (byte) ((charAt2 >> 6) | 192);
+                            writableSegment$okio2.data[writableSegment$okio2.limit] = (byte) ((charAt2 >> 6) | PsExtractor.AUDIO_STREAM);
                             writableSegment$okio2.data[writableSegment$okio2.limit + 1] = (byte) ((charAt2 & '?') | 128);
                             writableSegment$okio2.limit += 2;
                             setSize$okio(size() + 2);
@@ -1495,7 +1496,7 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
             return this;
         } else if (i < 2048) {
             Segment writableSegment$okio = writableSegment$okio(2);
-            writableSegment$okio.data[writableSegment$okio.limit] = (byte) ((i >> 6) | 192);
+            writableSegment$okio.data[writableSegment$okio.limit] = (byte) ((i >> 6) | PsExtractor.AUDIO_STREAM);
             writableSegment$okio.data[writableSegment$okio.limit + 1] = (byte) ((i & 63) | 128);
             writableSegment$okio.limit += 2;
             setSize$okio(size() + 2);
@@ -2109,6 +2110,6 @@ public final class Buffer implements BufferedSource, BufferedSink, Cloneable, By
             i5++;
             segment2 = segment2.next;
         }
-        return new C0777SegmentedByteString(bArr, iArr);
+        return new C0772SegmentedByteString(bArr, iArr);
     }
 }

@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -11,13 +10,14 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.textfield.TextInputLayout;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes6.dex */
 public final class InputDialogBinding implements ViewBinding {
     public final CustomCardView btnEmoji;
     public final DialogButtonsBinding buttons;
     public final TextView caption;
-    public final EditText findPlayerInput;
+    public final KeyboardEditText findPlayerInput;
     public final CustomCardView findPlayerInputContainer;
     public final LinearLayout findPlayerInputRow;
     public final TextInputLayout findPlayerTextInputLayout;
@@ -36,9 +36,9 @@ public final class InputDialogBinding implements ViewBinding {
     public final LinearLayout transferCommissionContainer;
     public final TextView transferCommissionText;
     public final TextView transferCommissionValue;
-    public final EditText userInput;
+    public final KeyboardEditText userInput;
 
-    private InputDialogBinding(FrameLayout rootView, CustomCardView btnEmoji, DialogButtonsBinding buttons, TextView caption, EditText findPlayerInput, CustomCardView findPlayerInputContainer, LinearLayout findPlayerInputRow, TextInputLayout findPlayerTextInputLayout, TextView findPlayerTitle, TextView headerInfoBadge, LinearLayout headerInfoContainer, TextView headerInfoText, FrameLayout infoDialogLayout, TextView infoText, CustomCardView inputContainer, LinearLayout moneyInputRow, TextView moneyTitle, LinearLayout moneyTitleContainer, TextInputLayout textInputLayout, LinearLayout transferCommissionContainer, TextView transferCommissionText, TextView transferCommissionValue, EditText userInput) {
+    private InputDialogBinding(FrameLayout rootView, CustomCardView btnEmoji, DialogButtonsBinding buttons, TextView caption, KeyboardEditText findPlayerInput, CustomCardView findPlayerInputContainer, LinearLayout findPlayerInputRow, TextInputLayout findPlayerTextInputLayout, TextView findPlayerTitle, TextView headerInfoBadge, LinearLayout headerInfoContainer, TextView headerInfoText, FrameLayout infoDialogLayout, TextView infoText, CustomCardView inputContainer, LinearLayout moneyInputRow, TextView moneyTitle, LinearLayout moneyTitleContainer, TextInputLayout textInputLayout, LinearLayout transferCommissionContainer, TextView transferCommissionText, TextView transferCommissionValue, KeyboardEditText userInput) {
         this.rootView = rootView;
         this.btnEmoji = btnEmoji;
         this.buttons = buttons;
@@ -91,8 +91,8 @@ public final class InputDialogBinding implements ViewBinding {
             TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
             if (textView != null) {
                 i = R.id.find_player_input;
-                EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
-                if (editText != null) {
+                KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                if (keyboardEditText != null) {
                     i = R.id.find_player_input_container;
                     CustomCardView customCardView2 = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
                     if (customCardView2 != null) {
@@ -143,9 +143,9 @@ public final class InputDialogBinding implements ViewBinding {
                                                                                 TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                                                                 if (textView8 != null) {
                                                                                     i = R.id.user_input;
-                                                                                    EditText editText2 = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                                                    if (editText2 != null) {
-                                                                                        return new InputDialogBinding(frameLayout, customCardView, bind, textView, editText, customCardView2, linearLayout, textInputLayout, textView2, textView3, linearLayout2, textView4, frameLayout, textView5, customCardView3, linearLayout3, textView6, linearLayout4, textInputLayout2, linearLayout5, textView7, textView8, editText2);
+                                                                                    KeyboardEditText keyboardEditText2 = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                    if (keyboardEditText2 != null) {
+                                                                                        return new InputDialogBinding(frameLayout, customCardView, bind, textView, keyboardEditText, customCardView2, linearLayout, textInputLayout, textView2, textView3, linearLayout2, textView4, frameLayout, textView5, customCardView3, linearLayout3, textView6, linearLayout4, textInputLayout2, linearLayout5, textView7, textView8, keyboardEditText2);
                                                                                     }
                                                                                 }
                                                                             }

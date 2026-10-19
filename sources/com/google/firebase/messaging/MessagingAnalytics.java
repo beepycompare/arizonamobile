@@ -22,7 +22,7 @@ import com.google.firebase.messaging.reporting.MessagingClientEvent;
 import com.google.firebase.messaging.reporting.MessagingClientEventExtension;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.concurrent.ExecutionException;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class MessagingAnalytics {
     private static final int DEFAULT_PRODUCT_ID = 111881503;
     private static final String DELIVERY_METRICS_EXPORT_TO_BIG_QUERY_PREF = "export_to_big_query";
@@ -278,7 +278,7 @@ public class MessagingAnalytics {
 
     static String getMessageTypeForScion(Bundle bundle) {
         if (bundle != null && NotificationParams.isNotification(bundle)) {
-            return "display";
+            return Constants.ScionAnalytics.MessageType.DISPLAY_NOTIFICATION;
         }
         return "data";
     }

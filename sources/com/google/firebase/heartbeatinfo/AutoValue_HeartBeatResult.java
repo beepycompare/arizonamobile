@@ -1,7 +1,7 @@
 package com.google.firebase.heartbeatinfo;
 
 import java.util.List;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_HeartBeatResult extends HeartBeatResult {
     private final List<String> usedDates;
     private final String userAgent;

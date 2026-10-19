@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class DonateReplenishmentDialogBinding implements ViewBinding {
     public final LinearLayout bonusContainer;
@@ -20,7 +20,7 @@ public final class DonateReplenishmentDialogBinding implements ViewBinding {
     public final ImageView btnClose;
     public final CardView btnUpp;
     public final CardView dialogContainer;
-    public final EditText etReplenishmentSum;
+    public final KeyboardEditText etReplenishmentSum;
     public final ImageView ivAzCoin;
     public final ImageView ivAzCoinIc;
     public final ImageView ivMoney;
@@ -42,7 +42,7 @@ public final class DonateReplenishmentDialogBinding implements ViewBinding {
     public final TextView tvTitle;
     public final TextView tvYouReceive;
 
-    private DonateReplenishmentDialogBinding(FrameLayout rootView, LinearLayout bonusContainer, CardView boostContainer, ImageView btnClose, CardView btnUpp, CardView dialogContainer, EditText etReplenishmentSum, ImageView ivAzCoin, ImageView ivAzCoinIc, ImageView ivMoney, ImageView ivMoneyIc, LinearLayout receiveContainer, RecyclerView rvReplenishment, CardView timeContainer, FrameLayout titleContainer, TextView tvAzCoins, TextView tvBonus, TextView tvBoost, TextView tvBtnTitle, TextView tvExchangeRate, TextView tvMoney, TextView tvReceive, TextView tvReplenishment, TextView tvTime, TextView tvTitle, TextView tvYouReceive) {
+    private DonateReplenishmentDialogBinding(FrameLayout rootView, LinearLayout bonusContainer, CardView boostContainer, ImageView btnClose, CardView btnUpp, CardView dialogContainer, KeyboardEditText etReplenishmentSum, ImageView ivAzCoin, ImageView ivAzCoinIc, ImageView ivMoney, ImageView ivMoneyIc, LinearLayout receiveContainer, RecyclerView rvReplenishment, CardView timeContainer, FrameLayout titleContainer, TextView tvAzCoins, TextView tvBonus, TextView tvBoost, TextView tvBtnTitle, TextView tvExchangeRate, TextView tvMoney, TextView tvReceive, TextView tvReplenishment, TextView tvTime, TextView tvTitle, TextView tvYouReceive) {
         this.rootView = rootView;
         this.bonusContainer = bonusContainer;
         this.boostContainer = boostContainer;
@@ -105,8 +105,8 @@ public final class DonateReplenishmentDialogBinding implements ViewBinding {
                         CardView cardView3 = (CardView) ViewBindings.findChildViewById(rootView, i);
                         if (cardView3 != null) {
                             i = R.id.et_replenishment_sum;
-                            EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
-                            if (editText != null) {
+                            KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                            if (keyboardEditText != null) {
                                 i = R.id.iv_az_coin;
                                 ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                 if (imageView2 != null) {
@@ -164,7 +164,7 @@ public final class DonateReplenishmentDialogBinding implements ViewBinding {
                                                                                                         i = R.id.tv_you_receive;
                                                                                                         TextView textView11 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                                                                                         if (textView11 != null) {
-                                                                                                            return new DonateReplenishmentDialogBinding((FrameLayout) rootView, linearLayout, cardView, imageView, cardView2, cardView3, editText, imageView2, imageView3, imageView4, imageView5, linearLayout2, recyclerView, cardView4, frameLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11);
+                                                                                                            return new DonateReplenishmentDialogBinding((FrameLayout) rootView, linearLayout, cardView, imageView, cardView2, cardView3, keyboardEditText, imageView2, imageView3, imageView4, imageView5, linearLayout2, recyclerView, cardView4, frameLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11);
                                                                                                         }
                                                                                                     }
                                                                                                 }

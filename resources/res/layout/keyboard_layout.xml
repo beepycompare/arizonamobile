@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_gravity="bottom" android:orientation="vertical" android:id="@+id/keyboard_container" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="10dp" android:layout_alignParentBottom="true">
+            <Space android:id="@+id/binders_spacer_left" android:layout_width="0dp" android:layout_height="1dp"/>
+            <LinearLayout android:layout_gravity="start" android:orientation="horizontal" android:id="@+id/binders_btns_container" android:background="@drawable/bg_binders_keyboard_container" android:padding="5dp" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <com.arizona.common.ui.KeyboardButton android:id="@+id/rp_binder_button_key" android:layout_width="35dp" android:layout_height="25dp" app:hasBackground="true" app:textKey="РП"/>
+                <Space android:layout_width="12dp" android:layout_height="1dp" android:layout_weight="1"/>
+                <com.arizona.common.ui.KeyboardButton android:id="@+id/non_rp_binder_button_key" android:layout_width="75dp" android:layout_height="25dp" app:hasBackground="true" app:textKey="НонРП"/>
+                <Space android:layout_width="12dp" android:layout_height="1dp" android:layout_weight="1"/>
+                <com.arizona.common.ui.KeyboardButton android:id="@+id/org_binder_button_key" android:layout_width="55dp" android:layout_height="25dp" app:hasBackground="true" app:textKey="Орг."/>
+                <Space android:layout_width="12dp" android:layout_height="1dp" android:layout_weight="1"/>
+                <com.arizona.common.ui.KeyboardButton android:id="@+id/family_binder_button_key" android:layout_width="65dp" android:layout_height="25dp" app:hasBackground="true" app:textKey="Семья"/>
+                <Space android:layout_width="12dp" android:layout_height="1dp" android:layout_weight="1"/>
+                <com.arizona.common.ui.KeyboardButton android:id="@+id/work_binder_button_key" android:layout_width="75dp" android:layout_height="25dp" app:hasBackground="true" app:textKey="Работа"/>
+                <Space android:layout_width="12dp" android:layout_height="1dp" android:layout_weight="1"/>
+                <com.arizona.common.ui.KeyboardButton android:id="@+id/vip_binder_button_key" android:layout_width="45dp" android:layout_height="25dp" app:hasBackground="true" app:textKey="VIP"/>
+            </LinearLayout>
+            <Space android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+            <com.arizona.common.ui.KeyboardButton android:id="@+id/emoji_btn" android:padding="@dimen/_8sdp" android:layout_width="@dimen/_45sdp" android:layout_height="@dimen/_35sdp" app:hasBinderKeysBackground="true" app:imageKey="@drawable/ic_keyboard_smile"/>
+            <Space android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_1sdp"/>
+            <RelativeLayout android:id="@+id/main_binder_btn" android:background="@drawable/bg_binder_btn" android:layout_width="80dp" android:layout_height="35dp">
+                <TextView android:textSize="15sp" android:textColor="#6aa6ff" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="Биндер" android:layout_centerInParent="true" android:fontFamily="@font/pfdindisplaypro_regular"/>
+            </RelativeLayout>
+            <Space android:layout_width="10dp" android:layout_height="1dp"/>
+            <com.arizona.common.ui.KeyboardButton android:id="@+id/down_btn_history" android:padding="12dp" android:layout_width="55dp" android:layout_height="35dp" app:hasBinderKeysBackground="true" app:imageKey="@drawable/ic_arrow_down"/>
+            <Space android:layout_width="10dp" android:layout_height="1dp"/>
+            <com.arizona.common.ui.KeyboardButton android:id="@+id/up_btn_history" android:padding="12dp" android:layout_width="55dp" android:layout_height="35dp" app:hasBinderKeysBackground="true" app:imageKey="@drawable/ic_arrow_up"/>
+            <Space android:id="@+id/binders_spacer_right" android:layout_width="0dp" android:layout_height="1dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/main_keyboard_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <LinearLayout android:orientation="vertical" android:background="#e5272727" android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/input_container" android:paddingTop="8dp" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Space android:id="@+id/edit_text_spacer_left" android:layout_width="0dp" android:layout_height="1dp"/>
+                <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@+id/binders_btn_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <com.arizona.common.ui.KeyboardButton android:id="@+id/binders_key_btn" android:layout_width="70dp" android:layout_height="25dp" android:layout_marginEnd="5dp" app:isMainBinderKey="true" app:textKey="Работа" app:textSize="12sp"/>
+                    <ImageView android:id="@+id/binders_tick_open" android:layout_width="10dp" android:layout_height="10dp" android:src="@drawable/ic_arrow_up"/>
+                </LinearLayout>
+                <Space android:layout_width="16dp" android:layout_height="1dp"/>
+                <com.google.android.material.textfield.TextInputEditText android:textSize="14sp" android:textColor="@color/white" android:id="@+id/main_input_et" android:background="@color/ap_transparent" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="0.35" android:inputType="none" android:textCursorDrawable="@null"/>
+                <ImageView android:id="@+id/clear_text" android:layout_width="12dp" android:layout_height="12dp" android:src="@drawable/ic_clear_text"/>
+                <Space android:id="@+id/edit_text_spacer_right" android:layout_width="0dp" android:layout_height="1dp"/>
+            </LinearLayout>
+            <View android:background="#d7d7d9" android:layout_width="match_parent" android:layout_height="1dp"/>
+            <include android:id="@+id/keyboard_container_symbols" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" layout="@layout/keyboard_container_symbols"/>
+            <include android:id="@+id/keyboard_container_other_symbols" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" layout="@layout/keyboard_container_other_symbols"/>
+            <include android:id="@+id/keyboard_container_eng" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" layout="@layout/keyboard_container_eng"/>
+            <include android:id="@+id/keyboard_container_rus" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" layout="@layout/keyboard_container_rus"/>
+            <include android:id="@+id/keyboard_container_emoji" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/keyboard_container_emoji"/>
+            <include android:id="@+id/keyboard_container_binding" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" layout="@layout/keyboard_container_bindings"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

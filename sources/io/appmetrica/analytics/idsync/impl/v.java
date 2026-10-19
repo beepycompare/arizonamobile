@@ -1,6 +1,8 @@
 package io.appmetrica.analytics.idsync.impl;
 
 import android.util.Base64;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
+import com.google.android.gms.common.internal.ImagesContract;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -12,8 +14,8 @@ public final class v {
     public static String a(D d) {
         String encodeToString;
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("type", d.f417a);
-        jSONObject.put("url", d.c);
+        jSONObject.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, d.f420a);
+        jSONObject.put(ImagesContract.URL, d.c);
         jSONObject.put("responseCode", d.e);
         byte[] bArr = d.f;
         try {

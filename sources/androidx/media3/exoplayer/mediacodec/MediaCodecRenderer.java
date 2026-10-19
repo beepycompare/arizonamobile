@@ -318,7 +318,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         try {
             return supportsFormat(this.mediaCodecSelector, format);
         } catch (MediaCodecUtil.DecoderQueryException e) {
-            throw this.createRendererException(e, format, 4002);
+            throw this.createRendererException(e, format, PlaybackException.ERROR_CODE_DECODER_QUERY_FAILED);
         }
     }
 
@@ -352,7 +352,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                 DrmSession drmSession = this.codecDrmSession;
                 maybeInitCodecWithFallback(this.mediaCrypto, drmSession != null && (drmSession.getState() == 3 || this.codecDrmSession.getState() == 4) && this.codecDrmSession.requiresSecureDecoder((String) Preconditions.checkNotNull(format.sampleMimeType)));
             } catch (DecoderInitializationException e) {
-                throw createRendererException(e, format, 4001);
+                throw createRendererException(e, format, PlaybackException.ERROR_CODE_DECODER_INIT_FAILED);
             }
         }
         MediaCrypto mediaCrypto = this.mediaCrypto;
@@ -625,7 +625,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                     releaseCodec();
                 }
                 MediaCodecDecoderException createDecoderException = createDecoderException(e2, getCodecInfo());
-                throw createRendererException(createDecoderException, this.inputFormat, z, createDecoderException.errorCode == 1101 ? 4006 : 4003);
+                throw createRendererException(createDecoderException, this.inputFormat, z, createDecoderException.errorCode == 1101 ? PlaybackException.ERROR_CODE_DECODING_RESOURCES_RECLAIMED : PlaybackException.ERROR_CODE_DECODING_FAILED);
             }
             throw e2;
         }
@@ -1129,7 +1129,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.waitingForFirstSampleInFormat = true;
         Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
         if (format.sampleMimeType == null) {
-            throw createRendererException(new IllegalArgumentException("Sample MIME type is null."), format, 4005);
+            throw createRendererException(new IllegalArgumentException("Sample MIME type is null."), format, PlaybackException.ERROR_CODE_DECODING_FORMAT_UNSUPPORTED);
         }
         if ((Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_AV1) || Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_VP9) || (Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_DOLBY_VISION) && Objects.equals(CodecSpecificDataUtil.getDolbyVisionBaseLayerMimeType(format), MimeTypes.VIDEO_AV1))) && !format.initializationData.isEmpty()) {
             format = format.buildUpon().setInitializationData(null).build();

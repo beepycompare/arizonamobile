@@ -29,22 +29,22 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyModuleProvider {
+public final class Zk implements InterfaceC0527qd, Mm, AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f876a = "rp";
+    public final String f879a = "rp";
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public volatile AskForPermissionStrategyModuleProvider c = new S7();
 
     public static void a(String str, String str2, Throwable th) {
-        C0539qk c0539qk = Oj.f708a;
+        C0534qk c0534qk = Oj.f711a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
-        c0539qk.getClass();
-        c0539qk.a(new C0513pk("service_module_errors", mapOf));
+        c0534qk.getClass();
+        c0534qk.a(new C0508pk("service_module_errors", mapOf));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qd
-    public final Map<String, C0739yd> b() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0527qd
+    public final Map<String, C0734yd> b() {
         HashSet hashSet = new HashSet();
         CopyOnWriteArrayList copyOnWriteArrayList = this.b;
         ArrayList arrayList = new ArrayList();
@@ -55,7 +55,7 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
             try {
                 RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
                 if (remoteConfigExtensionConfiguration != null) {
-                    pair = TuplesKt.to(moduleServiceEntryPoint.getIdentifier(), new C0739yd(remoteConfigExtensionConfiguration));
+                    pair = TuplesKt.to(moduleServiceEntryPoint.getIdentifier(), new C0734yd(remoteConfigExtensionConfiguration));
                 }
             } catch (Throwable th) {
                 a(moduleServiceEntryPoint.getIdentifier(), "remote_config_controller", th);
@@ -65,12 +65,12 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
                 arrayList.add(pair);
             }
         }
-        Map<String, C0739yd> map = MapsKt.toMap(arrayList);
+        Map<String, C0734yd> map = MapsKt.toMap(arrayList);
         a(hashSet);
         return map;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0527qd
     public final Map<String, Integer> c() {
         List emptyList;
         Map<String, Integer> blocks;
@@ -97,7 +97,7 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
         return map;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0527qd
     public final List<Consumer<Location>> d() {
         HashSet hashSet = new HashSet();
         CopyOnWriteArrayList copyOnWriteArrayList = this.b;
@@ -123,7 +123,7 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
         return arrayList;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0527qd
     public final ModuleLocationSourcesServiceController e() {
         ModuleLocationSourcesServiceController moduleLocationSourcesServiceController;
         HashSet hashSet = new HashSet();
@@ -152,7 +152,7 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
         return moduleLocationSourcesServiceController;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0527qd
     public final Toggle f() {
         Toggle toggle;
         HashSet hashSet = new HashSet();
@@ -181,7 +181,7 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
         return toggle;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0527qd
     public final List<String> g() {
         List<String> emptyList;
         HashSet hashSet = new HashSet();
@@ -235,7 +235,7 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
         return bundle;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0532qd
+    @Override // io.appmetrica.analytics.impl.InterfaceC0527qd
     public final List<ModuleServicesDatabase> a() {
         Object obj;
         HashSet hashSet = new HashSet();
@@ -263,7 +263,7 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
 
     public final void a(ModuleServiceEntryPoint<Object> moduleServiceEntryPoint) {
         this.b.add(moduleServiceEntryPoint);
-        if (Intrinsics.areEqual(this.f876a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
+        if (Intrinsics.areEqual(this.f879a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
             this.c = (AskForPermissionStrategyModuleProvider) moduleServiceEntryPoint;
         }
     }
@@ -271,15 +271,15 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
     @Override // io.appmetrica.analytics.impl.Mm
     public final void a(Hm hm) {
         HashSet hashSet = new HashSet();
-        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(hm.d, hm.f584a, hm.b);
-        C0122ah c0122ah = new C0122ah(hm.v, hm.u);
+        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(hm.d, hm.f587a, hm.b);
+        C0117ah c0117ah = new C0117ah(hm.v, hm.u);
         Iterator it = this.b.iterator();
         while (it.hasNext()) {
             ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
                 RemoteConfigExtensionConfiguration remoteConfigExtensionConfiguration = moduleServiceEntryPoint.getRemoteConfigExtensionConfiguration();
                 if (remoteConfigExtensionConfiguration != null) {
-                    remoteConfigExtensionConfiguration.getRemoteConfigUpdateListener().onRemoteConfigUpdated(new Wk(sdkIdentifiers, c0122ah, hm.A.get(moduleServiceEntryPoint.getIdentifier())));
+                    remoteConfigExtensionConfiguration.getRemoteConfigUpdateListener().onRemoteConfigUpdated(new Wk(sdkIdentifiers, c0117ah, hm.A.get(moduleServiceEntryPoint.getIdentifier())));
                 }
             } catch (Throwable th) {
                 hashSet.add(moduleServiceEntryPoint);
@@ -295,13 +295,13 @@ public final class Zk implements InterfaceC0532qd, Mm, AskForPermissionStrategyM
         while (it.hasNext()) {
             ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
-                moduleServiceEntryPoint.initServiceSide(serviceContext, new Wk(new SdkIdentifiers(hm.d, hm.f584a, hm.b), new C0122ah(hm.v, hm.u), hm.A.get(moduleServiceEntryPoint.getIdentifier())));
+                moduleServiceEntryPoint.initServiceSide(serviceContext, new Wk(new SdkIdentifiers(hm.d, hm.f587a, hm.b), new C0117ah(hm.v, hm.u), hm.A.get(moduleServiceEntryPoint.getIdentifier())));
                 ModuleEventServiceHandlerFactory moduleEventServiceHandlerFactory = moduleServiceEntryPoint.getModuleEventServiceHandlerFactory();
                 if (moduleEventServiceHandlerFactory != null) {
-                    C0635ud c0635ud = Na.I.t;
+                    C0630ud c0630ud = Na.I.t;
                     String identifier = moduleServiceEntryPoint.getIdentifier();
-                    synchronized (c0635ud) {
-                        c0635ud.f1233a.put(identifier, moduleEventServiceHandlerFactory);
+                    synchronized (c0630ud) {
+                        c0630ud.f1236a.put(identifier, moduleEventServiceHandlerFactory);
                     }
                 }
             } catch (Throwable th) {

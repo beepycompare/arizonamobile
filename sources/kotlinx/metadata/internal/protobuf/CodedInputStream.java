@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import kotlinx.metadata.internal.protobuf.MessageLite;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public final class CodedInputStream {
     private static final int BUFFER_SIZE = 4096;
     private static final int DEFAULT_RECURSION_LIMIT = 64;
@@ -29,7 +29,7 @@ public final class CodedInputStream {
     private int totalBytesRetired;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public interface RefillCallback {
         void onRefill();
     }
@@ -187,7 +187,7 @@ public final class CodedInputStream {
         } while (skipField(readTag, codedOutputStream));
     }
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     private class SkippedDataSink implements RefillCallback {
         private ByteArrayOutputStream byteArrayStream;
         private int lastPos;

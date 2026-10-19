@@ -4,7 +4,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import dagger.hilt.android.internal.managers.ServiceComponentManager;
 import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.UnsafeCasts;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public abstract class Hilt_MessagingService extends FirebaseMessagingService implements GeneratedComponentManagerHolder {
     private volatile ServiceComponentManager componentManager;
     private final Object componentManagerLock = new Object();

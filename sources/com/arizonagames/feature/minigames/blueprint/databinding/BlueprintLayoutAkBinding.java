@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.blueprint.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BlueprintLayoutAkBinding implements ViewBinding {
     public final ImageView akImage;
     public final RelativeLayout akTouchAreaStage1;

@@ -6,8 +6,8 @@ public final class R {
     public static final class attr {
         public static int graphPackage = 0x7f0402e4;
         public static int graphResName = 0x7f0402e9;
-        public static int moduleName = 0x7f04049f;
-        public static int progressDestination = 0x7f04054d;
+        public static int moduleName = 0x7f0404a6;
+        public static int progressDestination = 0x7f040554;
 
         private attr() {
         }

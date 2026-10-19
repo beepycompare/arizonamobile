@@ -12,7 +12,7 @@ public final class NativeCrashSource {
     public static final NativeCrashSource UNKNOWN;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ NativeCrashSource[] f1367a;
+    private static final /* synthetic */ NativeCrashSource[] f1370a;
     private static final /* synthetic */ EnumEntries b;
 
     static {
@@ -21,7 +21,7 @@ public final class NativeCrashSource {
         NativeCrashSource nativeCrashSource2 = new NativeCrashSource("CRASHPAD", 1);
         CRASHPAD = nativeCrashSource2;
         NativeCrashSource[] nativeCrashSourceArr = {nativeCrashSource, nativeCrashSource2};
-        f1367a = nativeCrashSourceArr;
+        f1370a = nativeCrashSourceArr;
         b = EnumEntriesKt.enumEntries(nativeCrashSourceArr);
     }
 
@@ -37,6 +37,6 @@ public final class NativeCrashSource {
     }
 
     public static NativeCrashSource[] values() {
-        return (NativeCrashSource[]) f1367a.clone();
+        return (NativeCrashSource[]) f1370a.clone();
     }
 }

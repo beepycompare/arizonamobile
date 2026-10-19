@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -21,6 +20,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.card.MaterialCardView;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class CraftScreenBinding implements ViewBinding {
     public final View bgRVCraft;
@@ -34,7 +34,7 @@ public final class CraftScreenBinding implements ViewBinding {
     public final ConstraintLayout craftContainer;
     public final MaterialCardView cvColor;
     public final CardView cvColorIcon;
-    public final EditText etResourcesCount;
+    public final KeyboardEditText etResourcesCount;
     public final ItemInfoCostBinding experienceField;
     public final LinearLayout fieldLinear;
     public final Group groupCharacter;
@@ -68,7 +68,7 @@ public final class CraftScreenBinding implements ViewBinding {
     public final ImageView viewLine;
     public final View viewTopRight;
 
-    private CraftScreenBinding(FrameLayout rootView, View bgRVCraft, AppCompatImageView btnBack, Button btnCancelCraft, Button btnDisableCreateItem, TextView btnEnableCreateItem, ProgressBar containerProgress, LinearLayout costContainer, ItemInfoCostBinding costField, ConstraintLayout craftContainer, MaterialCardView cvColor, CardView cvColorIcon, EditText etResourcesCount, ItemInfoCostBinding experienceField, LinearLayout fieldLinear, Group groupCharacter, Guideline guideline, Guideline guidelineEnd, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineHor3, Guideline guidelineVer3, ImageView ivBgFlashLight, ImageView ivItemIcon, ImageButton ivMinus, ImageButton ivPlus, FrameLayout parentLayout, ProgressBar progressBar, RecyclerView rvColors, RecyclerView rvCraft, RecyclerView rvMenu, RecyclerView rvNeedResources, ItemInfoCostBinding successChanceField, LayoutCraftSuccessBinding successLayout, TextView tvColorName, TextView tvColorTitle, TextView tvCost, TextView tvItemDescription, TextView tvItemName, TextView tvResourcesTitle, TextView tvTitle, TextView tvTotalCost, ImageView viewLine, View viewTopRight) {
+    private CraftScreenBinding(FrameLayout rootView, View bgRVCraft, AppCompatImageView btnBack, Button btnCancelCraft, Button btnDisableCreateItem, TextView btnEnableCreateItem, ProgressBar containerProgress, LinearLayout costContainer, ItemInfoCostBinding costField, ConstraintLayout craftContainer, MaterialCardView cvColor, CardView cvColorIcon, KeyboardEditText etResourcesCount, ItemInfoCostBinding experienceField, LinearLayout fieldLinear, Group groupCharacter, Guideline guideline, Guideline guidelineEnd, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineHor3, Guideline guidelineVer3, ImageView ivBgFlashLight, ImageView ivItemIcon, ImageButton ivMinus, ImageButton ivPlus, FrameLayout parentLayout, ProgressBar progressBar, RecyclerView rvColors, RecyclerView rvCraft, RecyclerView rvMenu, RecyclerView rvNeedResources, ItemInfoCostBinding successChanceField, LayoutCraftSuccessBinding successLayout, TextView tvColorName, TextView tvColorTitle, TextView tvCost, TextView tvItemDescription, TextView tvItemName, TextView tvResourcesTitle, TextView tvTitle, TextView tvTotalCost, ImageView viewLine, View viewTopRight) {
         this.rootView = rootView;
         this.bgRVCraft = bgRVCraft;
         this.btnBack = btnBack;
@@ -169,8 +169,8 @@ public final class CraftScreenBinding implements ViewBinding {
                                             CardView cardView = (CardView) ViewBindings.findChildViewById(rootView, i);
                                             if (cardView != null) {
                                                 i = R.id.etResourcesCount;
-                                                EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                if (editText != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.experienceField))) != null) {
+                                                KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                if (keyboardEditText != null && (findChildViewById2 = ViewBindings.findChildViewById(rootView, (i = R.id.experienceField))) != null) {
                                                     ItemInfoCostBinding bind2 = ItemInfoCostBinding.bind(findChildViewById2);
                                                     i = R.id.fieldLinear;
                                                     LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
@@ -256,7 +256,7 @@ public final class CraftScreenBinding implements ViewBinding {
                                                                                                                                                             i = R.id.viewLine;
                                                                                                                                                             ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                                                                                                                                             if (imageView3 != null && (findChildViewById4 = ViewBindings.findChildViewById(rootView, (i = R.id.viewTopRight))) != null) {
-                                                                                                                                                                return new CraftScreenBinding(frameLayout, findChildViewById5, appCompatImageView, button, button2, textView, progressBar, linearLayout, bind, constraintLayout, materialCardView, cardView, editText, bind2, linearLayout2, group, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, imageView, imageView2, imageButton, imageButton2, frameLayout, progressBar2, recyclerView, recyclerView2, recyclerView3, recyclerView4, bind3, bind4, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, imageView3, findChildViewById4);
+                                                                                                                                                                return new CraftScreenBinding(frameLayout, findChildViewById5, appCompatImageView, button, button2, textView, progressBar, linearLayout, bind, constraintLayout, materialCardView, cardView, keyboardEditText, bind2, linearLayout2, group, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, imageView, imageView2, imageButton, imageButton2, frameLayout, progressBar2, recyclerView, recyclerView2, recyclerView3, recyclerView4, bind3, bind4, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, imageView3, findChildViewById4);
                                                                                                                                                             }
                                                                                                                                                         }
                                                                                                                                                     }

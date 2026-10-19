@@ -31,7 +31,7 @@ public final class AndroidArchiveDownloadAheadPolicy implements ArchiveDownloadA
         Intrinsics.checkNotNullParameter(nextPackage, "nextPackage");
         try {
             if (Os.stat(this.gameRoot.getAbsolutePath()).st_dev == Os.stat(this.downloadRoot.getAbsolutePath()).st_dev) {
-                if (new StatFs(this.gameRoot.getAbsolutePath()).getAvailableBytes() >= Math.addExact(ArchiveStorageEstimator.INSTANCE.requiredFreeSpaceBytes(plan, state, ArchiveStagingUsage.INSTANCE.bytesByPackage(this.gameRoot, plan.getPackages()), ArchiveDownloadUsage.INSTANCE.allocatedBytesByPackage(this.downloadRoot, plan.getPackages())), (long) ArchiveStorageEstimatorKt.ARCHIVE_FREE_SPACE_RESERVE_BYTES)) {
+                if (new StatFs(this.gameRoot.getAbsolutePath()).getAvailableBytes() >= Math.addExact(ArchiveStorageEstimator.INSTANCE.requiredFreeSpaceBytes(plan, state, ArchiveStagingUsage.bytesByPackage$default(ArchiveStagingUsage.INSTANCE, this.gameRoot, plan.getPackages(), null, 4, null), ArchiveDownloadUsage.INSTANCE.allocatedBytesByPackage(this.downloadRoot, plan.getPackages())), (long) ArchiveStorageEstimatorKt.ARCHIVE_FREE_SPACE_RESERVE_BYTES)) {
                     return true;
                 }
             }

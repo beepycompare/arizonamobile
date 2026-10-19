@@ -33,7 +33,7 @@ public final class FirebaseAnalytics {
     }
 
     /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public enum ConsentType {
         AD_STORAGE,
         ANALYTICS_STORAGE,
@@ -42,7 +42,7 @@ public final class FirebaseAnalytics {
     }
 
     /* compiled from: com.google.android.gms:play-services-measurement-api@@23.2.0 */
-    /* loaded from: classes4.dex */
+    /* loaded from: classes6.dex */
     public static class Event {
         public static final String ADD_PAYMENT_INFO = "add_payment_info";
         public static final String ADD_SHIPPING_INFO = "add_shipping_info";

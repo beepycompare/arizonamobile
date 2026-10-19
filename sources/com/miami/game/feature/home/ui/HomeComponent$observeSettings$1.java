@@ -45,10 +45,7 @@ final class HomeComponent$observeSettings$1 extends SuspendLambda implements Fun
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        ConnectionHolder connectionHolder = ConnectionHolder.INSTANCE;
-        SettingsData settingsData = ConnectionHolder.INSTANCE.getSettingsData();
-        float chatFontSize = settingState.getChatFontSize();
-        connectionHolder.setSettingsData(SettingsData.copy$default(settingsData, settingState.getPageSize(), chatFontSize, settingState.getCustomKeyBoard(), settingState.getStreamerMode(), settingState.getShowChatTime(), false, settingState.getShowFps(), settingState.getFullScreen(), settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword(), 32, null));
+        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), settingState.getChatFontSize(), settingState.getPageSize(), settingState.getCustomKeyBoard(), settingState.getShowChatTime(), false, settingState.getShowFps(), false, settingState.getFullScreen(), settingState.getStreamerMode(), settingState.getConnectionData().getIp(), settingState.getConnectionData().getPort(), settingState.getConnectionData().getPassword(), 80, null));
         return Unit.INSTANCE;
     }
 }

@@ -1,6 +1,4 @@
 package com.google.android.gms.common;
-
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
 /* loaded from: classes4.dex */
 public final class GooglePlayServicesIncorrectManifestValueException extends GooglePlayServicesManifestException {
@@ -11,7 +9,7 @@ public final class GooglePlayServicesIncorrectManifestValueException extends Goo
     public GooglePlayServicesIncorrectManifestValueException(int i) {
         super(i, r2.toString());
         int i2 = GoogleApiAvailabilityLight.GOOGLE_PLAY_SERVICES_VERSION_CODE;
-        StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 104 + String.valueOf(i).length() + DownloaderService.STATUS_WAITING_TO_RETRY);
+        StringBuilder sb = new StringBuilder(String.valueOf(i2).length() + 104 + String.valueOf(i).length() + 194);
         sb.append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ");
         sb.append(i2);
         sb.append(" but found ");

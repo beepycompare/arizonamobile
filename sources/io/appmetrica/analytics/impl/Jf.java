@@ -4,21 +4,20 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.facebook.internal.NativeProtocol;
 import io.appmetrica.analytics.coreutils.internal.parsing.ParseUtils;
 import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Jf implements InterfaceC0667vj {
+public final class Jf implements InterfaceC0662vj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f614a;
-    public final String b = NativeProtocol.CONTENT_SCHEME + a() + "/preload_info";
+    public final Context f617a;
+    public final String b = "content://" + a() + "/preload_info";
     public final String c = "tracking_id";
     public final String d = "additional_parameters";
 
     public Jf(Context context) {
-        this.f614a = context;
+        this.f617a = context;
     }
 
     public final String a() {
@@ -30,12 +29,12 @@ public final class Jf implements InterfaceC0667vj {
     public final Qf invoke() {
         Cursor cursor;
         JSONObject jSONObject;
-        if (!PackageManagerUtils.hasContentProvider(this.f614a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
+        if (!PackageManagerUtils.hasContentProvider(this.f617a, "com.yandex.preinstallsatellite.appmetrica.provider")) {
             Gj.a("Satellite content provider with preload info was not found.", new Object[0]);
             return null;
         }
         try {
-            cursor = this.f614a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
+            cursor = this.f617a.getContentResolver().query(Uri.parse(this.b), null, null, null, null);
             try {
                 if (cursor != null) {
                     if (cursor.moveToFirst()) {
@@ -48,7 +47,7 @@ public final class Jf implements InterfaceC0667vj {
                                 Gj.a("Tracking id from Satellite is not a number.", new Object[0]);
                             }
                             Gj.a("Preload info from Satellite: {tracking id = %s, additional parameters = %s}", string, jSONObject2);
-                            Qf qf = new Qf(string, jSONObject2, !TextUtils.isEmpty(string), false, EnumC0397l8.e);
+                            Qf qf = new Qf(string, jSONObject2, !TextUtils.isEmpty(string), false, EnumC0392l8.e);
                             Oo.a(cursor);
                             return qf;
                         }
@@ -58,7 +57,7 @@ public final class Jf implements InterfaceC0667vj {
                             Gj.a("Tracking id from Satellite is not a number.", new Object[0]);
                         }
                         Gj.a("Preload info from Satellite: {tracking id = %s, additional parameters = %s}", string, jSONObject22);
-                        Qf qf2 = new Qf(string, jSONObject22, !TextUtils.isEmpty(string), false, EnumC0397l8.e);
+                        Qf qf2 = new Qf(string, jSONObject22, !TextUtils.isEmpty(string), false, EnumC0392l8.e);
                         Oo.a(cursor);
                         return qf2;
                     }

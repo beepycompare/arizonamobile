@@ -1,6 +1,5 @@
 package com.google.android.gms.common.internal;
 
-import com.facebook.internal.NativeProtocol;
 import com.google.android.gms.common.util.IOUtils;
 import java.io.IOException;
 import java.io.InputStream;
@@ -62,7 +61,7 @@ public class LibraryVersion {
         try {
             if (inputStream != null) {
                 properties.load(inputStream);
-                String property = properties.getProperty(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, null);
+                String property = properties.getProperty("version", null);
                 GmsLogger gmsLogger = zza;
                 StringBuilder sb = new StringBuilder(String.valueOf(str).length() + 12 + String.valueOf(property).length());
                 sb.append(str);

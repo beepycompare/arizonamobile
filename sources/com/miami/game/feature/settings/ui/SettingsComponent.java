@@ -1,7 +1,9 @@
 package com.miami.game.feature.settings.ui;
 
+import android.content.SharedPreferences;
 import android.net.Uri;
-import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.compose.runtime.MutableState;
+import androidx.core.app.FrameMetricsAggregator;
 import com.arkivanov.decompose.ComponentContext;
 import com.arkivanov.decompose.ComponentContextFactory;
 import com.arkivanov.essenty.backhandler.BackHandler;
@@ -16,6 +18,7 @@ import com.miami.game.core.external.navigation.model.ExternalNavigationAction;
 import com.miami.game.core.files.updater.domain.FilesUpdaterInteractor;
 import com.miami.game.core.settings.SettingState;
 import com.miami.game.core.settings.SettingsInteractor;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import com.miami.game.core.settings.game_test.GameTestScriptPreferences;
 import com.miami.game.core.ui.utils.extensions.ExtensionsBrowseKt;
 import com.miami.game.feature.download.dialog.ui.connection.ConnectionData;
@@ -38,7 +41,7 @@ import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 import timber.log.Timber;
 /* compiled from: SettingsComponent.kt */
-@Metadata(d1 = {"\u0000Æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u00012\u00020\u0002:\u0001gB3\b\u0001\u0012\f\b\u0001\u0010\u0003\u001a\u00020\u0001:\u0002\b\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u001a\u0002\b\r¢\u0006\u0004\b\u000b\u0010\fJ\b\u0010\u001d\u001a\u00020\u001eH\u0002J\b\u0010\u001f\u001a\u00020\u001eH\u0002J\b\u0010 \u001a\u00020\u001eH\u0002J\u0014\u0010!\u001a\u00020\u001e2\n\u0010\"\u001a\u00060#j\u0002`$H\u0002J\u0006\u0010%\u001a\u00020\u001eJ\u0006\u0010&\u001a\u00020\u001eJ\u000e\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020)J\u0006\u0010*\u001a\u00020\u001eJ\u0006\u0010+\u001a\u00020\u001eJ\u000e\u0010,\u001a\u00020\u001e2\u0006\u0010-\u001a\u00020.J\u0006\u0010/\u001a\u00020\u001eJ\u000e\u00100\u001a\u00020\u001e2\u0006\u00101\u001a\u000202J\u000e\u00103\u001a\u00020\u001e2\u0006\u00104\u001a\u000202J\u0006\u00105\u001a\u00020\u001eJ\u0006\u00106\u001a\u00020\u001eJ\u000e\u00107\u001a\u00020\u001e2\u0006\u00104\u001a\u000202J\b\u00108\u001a\u00020\u001eH\u0002J\u000e\u00109\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;J\u000e\u0010<\u001a\u00020\u001e2\u0006\u0010=\u001a\u00020>J\u0006\u0010?\u001a\u00020\u001eJ\u0006\u0010@\u001a\u00020\u001eJ\u0006\u0010A\u001a\u00020\u001eJ\u0006\u0010B\u001a\u00020\u001eJ\u0006\u0010C\u001a\u00020\u001eJ\u0006\u0010D\u001a\u00020\u001eJ\u0006\u0010E\u001a\u00020\u001eJ\u0010\u0010F\u001a\u00020\u001e2\u0006\u0010G\u001a\u00020\u0017H\u0002J\u0006\u0010H\u001a\u00020\u001eJ\u0006\u0010I\u001a\u00020\u001eJ\u0006\u0010J\u001a\u00020\u001eJ\u0006\u0010K\u001a\u00020\u001eJ\u0006\u0010L\u001a\u00020\u001eJ\u0006\u0010M\u001a\u00020\u001eJ\u0010\u0010N\u001a\u00020\u001e2\u0006\u0010G\u001a\u00020\u001bH\u0002R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0017\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0017\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0019R\u0012\u0010O\u001a\u00020PX\u0096\u0005¢\u0006\u0006\u001a\u0004\bQ\u0010RR\u0018\u0010S\u001a\b\u0012\u0004\u0012\u00020\u00010TX\u0096\u0005¢\u0006\u0006\u001a\u0004\bU\u0010VR\u0012\u0010W\u001a\u00020XX\u0096\u0005¢\u0006\u0006\u001a\u0004\bY\u0010ZR\u0012\u0010[\u001a\u00020\\X\u0096\u0005¢\u0006\u0006\u001a\u0004\b]\u0010^R\u0012\u0010_\u001a\u00020`X\u0096\u0005¢\u0006\u0006\u001a\u0004\ba\u0010bR\u0012\u0010c\u001a\u00020dX\u0096\u0005¢\u0006\u0006\u001a\u0004\be\u0010fÊ\u0001\f\bi\u0012\b\bj\u0012\u0004\b\u0003\u0010\u0000¨\u0006h"}, d2 = {"Lcom/miami/game/feature/settings/ui/SettingsComponent;", "Lcom/arkivanov/decompose/ComponentContext;", "Lcom/miami/game/core/decompose/utils/CoroutineFeature;", "componentContext", "Ldagger/assisted/Assisted;", "filesUpdaterInteractor", "Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "settingsInteractor", "Lcom/miami/game/core/settings/SettingsInteractor;", "<init>", "(Lcom/arkivanov/decompose/ComponentContext;Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/settings/SettingsInteractor;)V", "Ldagger/assisted/AssistedInject;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "uiState", "Lkotlinx/coroutines/flow/StateFlow;", "getUiState", "()Lkotlinx/coroutines/flow/StateFlow;", "uiAction", "Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiAction;", "getUiAction", "()Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "externalNavigationAction", "Lcom/miami/game/core/external/navigation/model/ExternalNavigationAction;", "getExternalNavigationAction", "initVmState", "", "observeLifecycle", "observeSettingsState", "handleError", "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "onRepairGameClick", "onRepairGameStart", "onConnectGame", "connectionData", "Lcom/miami/game/feature/download/dialog/ui/connection/ConnectionData;", "onDebugAutoConnectTestServer", "onDebugAutoRunTestScript", "onImportGameTestScript", "uri", "Landroid/net/Uri;", "onUseBundledGameTestScript", "onSelectImportedGameTestScript", "fileName", "", "onUpdateGameTestScreenshotPullPath", "path", "onDebugScreenshotButton", "onDebugLogShareButton", "onUpdateGameTestScreenshotDeviceDir", "repairGame", "selectFontSize", TtmlNode.ATTR_TTS_FONT_SIZE, "", "selectPageSize", "pageSize", "", "onFullScreen", "onFps", "onChatTime", "onAmbientSounds", "onKeyBoard", "onStreamer", "onNotifications", "emitUiAction", "action", "onBugsReport", "onShareLogs", "onLongShareLogs", "onPrivacyPolicy", "onTech", "closeTech", "emitExternalNavigationAction", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "getBackHandler", "()Lcom/arkivanov/essenty/backhandler/BackHandler;", "componentContextFactory", "Lcom/arkivanov/decompose/ComponentContextFactory;", "getComponentContextFactory", "()Lcom/arkivanov/decompose/ComponentContextFactory;", "instanceKeeper", "Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "getInstanceKeeper", "()Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "getLifecycle", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "stateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "getStateKeeper", "()Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "Factory", "settings", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u00012\u00020\u0002:\u0001iB3\b\u0001\u0012\f\b\u0001\u0010\u0003\u001a\u00020\u0001:\u0002\b\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u0012\u0006\u0010\u0007\u001a\u00020\b\u0012\u0006\u0010\t\u001a\u00020\n\u001a\u0002\b\r¢\u0006\u0004\b\u000b\u0010\fJ\b\u0010\u001d\u001a\u00020\u001eH\u0002J\b\u0010\u001f\u001a\u00020\u001eH\u0002J\b\u0010 \u001a\u00020\u001eH\u0002J\u0014\u0010!\u001a\u00020\u001e2\n\u0010\"\u001a\u00060#j\u0002`$H\u0002J\u0006\u0010%\u001a\u00020\u001eJ\u0006\u0010&\u001a\u00020\u001eJ\u000e\u0010'\u001a\u00020\u001e2\u0006\u0010(\u001a\u00020)J\u0006\u0010*\u001a\u00020\u001eJ\u0006\u0010+\u001a\u00020\u001eJ\u000e\u0010,\u001a\u00020\u001e2\u0006\u0010-\u001a\u00020.J\u0006\u0010/\u001a\u00020\u001eJ\u000e\u00100\u001a\u00020\u001e2\u0006\u00101\u001a\u000202J\u000e\u00103\u001a\u00020\u001e2\u0006\u00104\u001a\u000202J\u0006\u00105\u001a\u00020\u001eJ\u0006\u00106\u001a\u00020\u001eJ\u000e\u00107\u001a\u00020\u001e2\u0006\u00104\u001a\u000202J\b\u00108\u001a\u00020\u001eH\u0002J$\u00109\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020>0=2\u0006\u0010?\u001a\u00020>J\u001c\u0010@\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020A0=J$\u0010B\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020>0=2\u0006\u0010?\u001a\u00020>J\u001c\u0010C\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020A0=J\u001c\u0010D\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020A0=J$\u0010E\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020>0=2\u0006\u0010?\u001a\u00020>J$\u0010F\u001a\u00020\u001e2\u0006\u0010:\u001a\u00020;2\f\u0010<\u001a\b\u0012\u0004\u0012\u00020>0=2\u0006\u0010?\u001a\u00020>J\u0006\u0010G\u001a\u00020\u001eJ\u0010\u0010H\u001a\u00020\u001e2\u0006\u0010I\u001a\u00020\u0017H\u0002J\u0006\u0010J\u001a\u00020\u001eJ\u0006\u0010K\u001a\u00020\u001eJ\u0006\u0010L\u001a\u00020\u001eJ\u0006\u0010M\u001a\u00020\u001eJ\u0006\u0010N\u001a\u00020\u001eJ\u0006\u0010O\u001a\u00020\u001eJ\u0010\u0010P\u001a\u00020\u001e2\u0006\u0010I\u001a\u00020\u001bH\u0002R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u0017\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0017\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0019R\u0012\u0010Q\u001a\u00020RX\u0096\u0005¢\u0006\u0006\u001a\u0004\bS\u0010TR\u0018\u0010U\u001a\b\u0012\u0004\u0012\u00020\u00010VX\u0096\u0005¢\u0006\u0006\u001a\u0004\bW\u0010XR\u0012\u0010Y\u001a\u00020ZX\u0096\u0005¢\u0006\u0006\u001a\u0004\b[\u0010\\R\u0012\u0010]\u001a\u00020^X\u0096\u0005¢\u0006\u0006\u001a\u0004\b_\u0010`R\u0012\u0010a\u001a\u00020bX\u0096\u0005¢\u0006\u0006\u001a\u0004\bc\u0010dR\u0012\u0010e\u001a\u00020fX\u0096\u0005¢\u0006\u0006\u001a\u0004\bg\u0010hÊ\u0001\f\bk\u0012\b\bl\u0012\u0004\b\u0003\u0010\u0000¨\u0006j"}, d2 = {"Lcom/miami/game/feature/settings/ui/SettingsComponent;", "Lcom/arkivanov/decompose/ComponentContext;", "Lcom/miami/game/core/decompose/utils/CoroutineFeature;", "componentContext", "Ldagger/assisted/Assisted;", "filesUpdaterInteractor", "Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "settingsInteractor", "Lcom/miami/game/core/settings/SettingsInteractor;", "<init>", "(Lcom/arkivanov/decompose/ComponentContext;Lcom/miami/game/core/files/updater/domain/FilesUpdaterInteractor;Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/settings/SettingsInteractor;)V", "Ldagger/assisted/AssistedInject;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiState;", "uiState", "Lkotlinx/coroutines/flow/StateFlow;", "getUiState", "()Lkotlinx/coroutines/flow/StateFlow;", "uiAction", "Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "Lcom/miami/game/feature/settings/ui/model/SettingsUiAction;", "getUiAction", "()Lcom/miami/game/core/decompose/utils/SharedEventFlow;", "externalNavigationAction", "Lcom/miami/game/core/external/navigation/model/ExternalNavigationAction;", "getExternalNavigationAction", "initVmState", "", "observeLifecycle", "observeSettingsState", "handleError", "exception", "Ljava/lang/Exception;", "Lkotlin/Exception;", "onRepairGameClick", "onRepairGameStart", "onConnectGame", "connectionData", "Lcom/miami/game/feature/download/dialog/ui/connection/ConnectionData;", "onDebugAutoConnectTestServer", "onDebugAutoRunTestScript", "onImportGameTestScript", "uri", "Landroid/net/Uri;", "onUseBundledGameTestScript", "onSelectImportedGameTestScript", "fileName", "", "onUpdateGameTestScreenshotPullPath", "path", "onDebugScreenshotButton", "onDebugLogShareButton", "onUpdateGameTestScreenshotDeviceDir", "repairGame", "onPageSize", "prefs", "Landroid/content/SharedPreferences;", "value", "Landroidx/compose/runtime/MutableState;", "", "newValue", "onFullScreen", "", "onFontSize", "onShowFPS", "onShowChatTime", "onKeyBoard", "onStreamer", "onNotifications", "emitUiAction", "action", "onBugsReport", "onShareLogs", "onLongShareLogs", "onPrivacyPolicy", "onTech", "closeTech", "emitExternalNavigationAction", "backHandler", "Lcom/arkivanov/essenty/backhandler/BackHandler;", "getBackHandler", "()Lcom/arkivanov/essenty/backhandler/BackHandler;", "componentContextFactory", "Lcom/arkivanov/decompose/ComponentContextFactory;", "getComponentContextFactory", "()Lcom/arkivanov/decompose/ComponentContextFactory;", "instanceKeeper", "Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "getInstanceKeeper", "()Lcom/arkivanov/essenty/instancekeeper/InstanceKeeper;", "lifecycle", "Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "getLifecycle", "()Lcom/arkivanov/essenty/lifecycle/Lifecycle;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "stateKeeper", "Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "getStateKeeper", "()Lcom/arkivanov/essenty/statekeeper/StateKeeper;", "Factory", "settings", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class SettingsComponent implements ComponentContext, CoroutineFeature {
     public static final int $stable = 8;
@@ -189,17 +192,17 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         do {
             value = mutableStateFlow.getValue();
         } while (!mutableStateFlow.compareAndSet(value, SettingsUiState.copy$default(value, 0, null, null, null, false, null, false, null, false, 0, null, null, 4079, null)));
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), StringsKt.trim((CharSequence) connectionData.getPassword()).toString()), 524287, null));
-        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), 0, 0.0f, false, false, false, false, false, false, connectionData.getIp(), connectionData.getPort(), StringsKt.trim((CharSequence) connectionData.getPassword()).toString(), 255, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, new com.miami.game.core.settings.ConnectionData(connectionData.getIp(), connectionData.getPort(), StringsKt.trim((CharSequence) connectionData.getPassword()).toString()), 524287, null));
+        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), 0, 0, false, false, false, false, false, false, false, connectionData.getIp(), connectionData.getPort(), StringsKt.trim((CharSequence) connectionData.getPassword()).toString(), FrameMetricsAggregator.EVERY_DURATION, null));
         ConnectionHolder.INSTANCE.getOnConnectTest().invoke();
     }
 
     public final void onDebugAutoConnectTestServer() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, !this.stateStore.getValue().getSettingState().getDebugAutoConnectTestServer(), false, false, null, null, null, null, false, false, null, null, 1048063, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0, 0, false, false, false, false, false, false, false, !this.stateStore.getValue().getSettingState().getDebugAutoConnectTestServer(), false, false, null, null, null, null, false, false, null, null, 1048063, null));
     }
 
     public final void onDebugAutoRunTestScript() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, !this.stateStore.getValue().getSettingState().getDebugAutoRunTestScript(), false, null, null, null, null, false, false, null, null, 1047551, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0, 0, false, false, false, false, false, false, false, false, !this.stateStore.getValue().getSettingState().getDebugAutoRunTestScript(), false, null, null, null, null, false, false, null, null, 1047551, null));
     }
 
     public final void onImportGameTestScript(Uri uri) {
@@ -222,20 +225,20 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         if (StringsKt.isBlank(obj)) {
             obj = GameTestScriptPreferences.DEFAULT_SCREENSHOT_PULL_PATH;
         }
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, obj, false, false, null, null, 1015807, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, obj, false, false, null, null, 1015807, null));
     }
 
     public final void onDebugScreenshotButton() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, !this.stateStore.getValue().getSettingState().getDebugGameTestScreenshotButtonEnabled(), false, null, null, 983039, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, !this.stateStore.getValue().getSettingState().getDebugGameTestScreenshotButtonEnabled(), false, null, null, 983039, null));
     }
 
     public final void onDebugLogShareButton() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, !this.stateStore.getValue().getSettingState().getDebugGameTestLogShareButtonEnabled(), null, null, 917503, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, !this.stateStore.getValue().getSettingState().getDebugGameTestLogShareButtonEnabled(), null, null, 917503, null));
     }
 
     public final void onUpdateGameTestScreenshotDeviceDir(String path) {
         Intrinsics.checkNotNullParameter(path, "path");
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, StringsKt.trim((CharSequence) path).toString(), null, 786431, null));
+        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, StringsKt.trim((CharSequence) path).toString(), null, 786431, null));
     }
 
     private final void repairGame() {
@@ -243,36 +246,37 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
         emitUiAction(SettingsUiAction.RepairGameDialog.INSTANCE);
     }
 
-    public final void selectFontSize(float f) {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), f, 0, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1048574, null));
+    public final void onFullScreen(SharedPreferences prefs, MutableState<Boolean> value) {
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Intrinsics.checkNotNullParameter(value, "value");
+        boolean z = !value.getValue().booleanValue();
+        SharedPreferences.Editor edit = prefs.edit();
+        Intrinsics.checkNotNull(edit);
+        edit.putBoolean(SettingsMenuDefaults.KEY_FULL_SCREEN, z);
+        edit.apply();
+        value.setValue(Boolean.valueOf(z));
     }
 
-    public final void selectPageSize(int i) {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, i, false, false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1048573, null));
+    public final void onShowFPS(SharedPreferences prefs, MutableState<Boolean> value) {
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Intrinsics.checkNotNullParameter(value, "value");
+        boolean z = !value.getValue().booleanValue();
+        SharedPreferences.Editor edit = prefs.edit();
+        Intrinsics.checkNotNull(edit);
+        edit.putBoolean(SettingsMenuDefaults.KEY_SHOW_FPS, z);
+        edit.apply();
+        value.setValue(Boolean.valueOf(z));
     }
 
-    public final void onFullScreen() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, !this.stateStore.getValue().getSettingState().getFullScreen(), false, false, false, false, false, null, null, null, null, false, false, null, null, 1048511, null));
-    }
-
-    public final void onFps() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, !this.stateStore.getValue().getSettingState().getShowFps(), false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1048543, null));
-    }
-
-    public final void onChatTime() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, !this.stateStore.getValue().getSettingState().getShowChatTime(), false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1048567, null));
-    }
-
-    public final void onAmbientSounds() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, !this.stateStore.getValue().getSettingState().getAmbientSounds(), false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1048559, null));
-    }
-
-    public final void onKeyBoard() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, !this.stateStore.getValue().getSettingState().getCustomKeyBoard(), false, false, false, false, false, false, false, false, false, null, null, null, null, false, false, null, null, 1048571, null));
-    }
-
-    public final void onStreamer() {
-        this.settingsInteractor.saveSettings(SettingState.copy$default(this.stateStore.getValue().getSettingState(), 0.0f, 0, false, false, false, false, false, !this.stateStore.getValue().getSettingState().getStreamerMode(), false, false, false, false, null, null, null, null, false, false, null, null, 1048447, null));
+    public final void onShowChatTime(SharedPreferences prefs, MutableState<Boolean> value) {
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Intrinsics.checkNotNullParameter(value, "value");
+        boolean z = !value.getValue().booleanValue();
+        SharedPreferences.Editor edit = prefs.edit();
+        Intrinsics.checkNotNull(edit);
+        edit.putBoolean(SettingsMenuDefaults.KEY_TIME_IN_CHAT, z);
+        edit.apply();
+        value.setValue(Boolean.valueOf(z));
     }
 
     public final void onNotifications() {
@@ -325,5 +329,45 @@ public final class SettingsComponent implements ComponentContext, CoroutineFeatu
 
     private final void emitExternalNavigationAction(ExternalNavigationAction externalNavigationAction) {
         BuildersKt__Builders_commonKt.launch$default(getScope(), null, null, new SettingsComponent$emitExternalNavigationAction$1(this, externalNavigationAction, null), 3, null);
+    }
+
+    public final void onPageSize(SharedPreferences prefs, MutableState<Integer> value, int i) {
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Intrinsics.checkNotNullParameter(value, "value");
+        SharedPreferences.Editor edit = prefs.edit();
+        Intrinsics.checkNotNull(edit);
+        edit.putInt(SettingsMenuDefaults.KEY_CHAT_COUNTS, i);
+        edit.apply();
+        value.setValue(Integer.valueOf(i));
+    }
+
+    public final void onFontSize(SharedPreferences prefs, MutableState<Integer> value, int i) {
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Intrinsics.checkNotNullParameter(value, "value");
+        SharedPreferences.Editor edit = prefs.edit();
+        Intrinsics.checkNotNull(edit);
+        edit.putInt(SettingsMenuDefaults.KEY_CHAT_FONT_SIZE, i);
+        edit.apply();
+        value.setValue(Integer.valueOf(i));
+    }
+
+    public final void onKeyBoard(SharedPreferences prefs, MutableState<Integer> value, int i) {
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Intrinsics.checkNotNullParameter(value, "value");
+        SharedPreferences.Editor edit = prefs.edit();
+        Intrinsics.checkNotNull(edit);
+        edit.putInt(SettingsMenuDefaults.KEY_KEYBOARD_TYPE, i);
+        edit.apply();
+        value.setValue(Integer.valueOf(i));
+    }
+
+    public final void onStreamer(SharedPreferences prefs, MutableState<Integer> value, int i) {
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Intrinsics.checkNotNullParameter(value, "value");
+        SharedPreferences.Editor edit = prefs.edit();
+        Intrinsics.checkNotNull(edit);
+        edit.putInt(SettingsMenuDefaults.KEY_GAME_MODE, i);
+        edit.apply();
+        value.setValue(Integer.valueOf(i));
     }
 }

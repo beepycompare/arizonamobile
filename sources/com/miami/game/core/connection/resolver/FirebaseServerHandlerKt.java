@@ -2,10 +2,13 @@ package com.miami.game.core.connection.resolver;
 
 import kotlin.Metadata;
 /* compiled from: FirebaseServerHandler.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"TAG", "", "EXPECTED_PING_HASH", "REMOTE_CONFIG_FETCH_TIMEOUT_SECONDS", "", "REMOTE_CONFIG_TASK_TIMEOUT_SECONDS", "REMOTE_CONFIG_FETCH_ATTEMPTS", "", "REMOTE_CONFIG_RETRY_DELAY_MS", "connection-resolver"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0006\u001a\u00020\u0007X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0004X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\t\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\n\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000b\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"TAG", "", "EXPECTED_PING_HASH", "REMOTE_CONFIG_FETCH_TIMEOUT_SECONDS", "", "REMOTE_CONFIG_TASK_TIMEOUT_SECONDS", "REMOTE_CONFIG_FETCH_ATTEMPTS", "", "REMOTE_CONFIG_RETRY_DELAY_MS", "LAUNCHER_RESOURCE_GENERATION_ARIZONA", "LAUNCHER_RESOURCE_GENERATION_RODINA", "LAUNCHER_RESOURCE_GENERATION_BRAZIL", "connection-resolver"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FirebaseServerHandlerKt {
     private static final String EXPECTED_PING_HASH = "5aa4731d5d84e09e2f7e7141e560104f";
+    private static final String LAUNCHER_RESOURCE_GENERATION_ARIZONA = "launcher_resource_generation_arizona";
+    private static final String LAUNCHER_RESOURCE_GENERATION_BRAZIL = "launcher_resource_generation_brazil";
+    private static final String LAUNCHER_RESOURCE_GENERATION_RODINA = "launcher_resource_generation_rodina";
     private static final int REMOTE_CONFIG_FETCH_ATTEMPTS = 2;
     private static final long REMOTE_CONFIG_FETCH_TIMEOUT_SECONDS = 15;
     private static final long REMOTE_CONFIG_RETRY_DELAY_MS = 1000;

@@ -21,7 +21,7 @@ public final class ComposableSingletons$NotificationItemKt {
     public static final ComposableSingletons$NotificationItemKt INSTANCE = new ComposableSingletons$NotificationItemKt();
 
     /* renamed from: lambda$-458006129  reason: not valid java name */
-    private static Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> f63lambda$458006129 = ComposableLambdaKt.composableLambdaInstance(-458006129, false, new Function4() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationItemKt$$ExternalSyntheticLambda0
+    private static Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> f61lambda$458006129 = ComposableLambdaKt.composableLambdaInstance(-458006129, false, new Function4() { // from class: com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationItemKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function4
         public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
             return ComposableSingletons$NotificationItemKt.lambda__458006129$lambda$0((SubcomposeAsyncImageScope) obj, (AsyncImagePainter.State.Loading) obj2, (Composer) obj3, ((Integer) obj4).intValue());
@@ -35,8 +35,8 @@ public final class ComposableSingletons$NotificationItemKt {
     });
 
     /* renamed from: getLambda$-458006129$notifications  reason: not valid java name */
-    public final Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> m9835getLambda$458006129$notifications() {
-        return f63lambda$458006129;
+    public final Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Loading, Composer, Integer, Unit> m9875getLambda$458006129$notifications() {
+        return f61lambda$458006129;
     }
 
     public final Function4<SubcomposeAsyncImageScope, AsyncImagePainter.State.Error, Composer, Integer, Unit> getLambda$968944409$notifications() {
@@ -54,7 +54,7 @@ public final class ComposableSingletons$NotificationItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-458006129, i, -1, "com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationItemKt.lambda$-458006129.<anonymous> (NotificationItem.kt:62)");
             }
-            AnimatedLoadingKt.m9795AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
+            AnimatedLoadingKt.m9836AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -73,7 +73,7 @@ public final class ComposableSingletons$NotificationItemKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(968944409, i, -1, "com.miami.game.feature.notifications.presentation.ComposableSingletons$NotificationItemKt.lambda$968944409.<anonymous> (NotificationItem.kt:69)");
             }
-            AnimatedLoadingKt.m9795AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
+            AnimatedLoadingKt.m9836AnimatedLoadinguFdPcIQ(true, Dp.m8160constructorimpl(40.0f), OffsetKt.m1009offsetVpY3zN4(Modifier.Companion, Dp.m8160constructorimpl(32.0f), Dp.m8160constructorimpl(32.0f)), composer, 438, 0);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

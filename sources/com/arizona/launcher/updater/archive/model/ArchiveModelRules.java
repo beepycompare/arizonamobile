@@ -1,8 +1,8 @@
 package com.arizona.launcher.updater.archive.model;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter;
 import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
-import com.facebook.internal.NativeProtocol;
 import com.google.firebase.messaging.Constants;
 import java.net.URI;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import kotlin.text.RegexOption;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ArchivePackage.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010J\u000e\u0010\u0011\u001a\u00020\u000e2\u0006\u0010\u0012\u001a\u00020\u0010J\u000e\u0010\u0013\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\u0007J\u0016\u0010\u0015\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0010J\u000e\u0010\u0017\u001a\u00020\u000e2\u0006\u0010\u0018\u001a\u00020\u0007J\u000e\u0010\u0019\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u0010J\u000e\u0010\u001b\u001a\u00020\u000e2\u0006\u0010\u001a\u001a\u00020\u0010J\u000e\u0010\u001c\u001a\u00020\u00102\u0006\u0010\u001d\u001a\u00020\u0010J\u0018\u0010\u001e\u001a\u00020\u000e2\u0006\u0010\u001f\u001a\u00020\u00102\u0006\u0010\u0016\u001a\u00020\u0010H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b!\u0012\b\b\"\u0012\u0004\b\u0003\u0010\u0002¨\u0006 "}, d2 = {"Lcom/arizona/launcher/updater/archive/model/ArchiveModelRules;", "", "<init>", "()V", "CURRENT_SCHEMA_VERSION", "", "MAX_ARCHIVE_SIZE_EXCLUSIVE", "", "MAX_UNSIGNED_CRC32", "packageIdRegex", "Lkotlin/text/Regex;", "encodedUnsafePathToken", "SHA256_HEX", "requirePackageId", "", TtmlNode.ATTR_ID, "", "requireManifestVersion", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "requireArchiveSize", "size", "requireNonNegativeSize", Constants.ScionAnalytics.PARAM_LABEL, "requireUnsignedCrc32", "crc32", "requireSha256Hex", "value", "requirePackageUrl", "entryTarget", "entryPath", "requireSafeSegments", "path", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0010J\u000e\u0010\u0011\u001a\u00020\u000e2\u0006\u0010\u0012\u001a\u00020\u0010J\u000e\u0010\u0013\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\u0007J\u0016\u0010\u0015\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\u00072\u0006\u0010\u0016\u001a\u00020\u0010J\u000e\u0010\u0017\u001a\u00020\u000e2\u0006\u0010\u0018\u001a\u00020\u0007J\u000e\u0010\u0019\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u0010J\u000e\u0010\u001b\u001a\u00020\u000e2\u0006\u0010\u001a\u001a\u00020\u0010J\u000e\u0010\u001c\u001a\u00020\u00102\u0006\u0010\u001d\u001a\u00020\u0010J\u0018\u0010\u001e\u001a\u00020\u000e2\u0006\u0010\u001f\u001a\u00020\u00102\u0006\u0010\u0016\u001a\u00020\u0010H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0007X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b!\u0012\b\b\"\u0012\u0004\b\u0003\u0010\u0002¨\u0006 "}, d2 = {"Lcom/arizona/launcher/updater/archive/model/ArchiveModelRules;", "", "<init>", "()V", "CURRENT_SCHEMA_VERSION", "", "MAX_ARCHIVE_SIZE_EXCLUSIVE", "", "MAX_UNSIGNED_CRC32", "packageIdRegex", "Lkotlin/text/Regex;", "encodedUnsafePathToken", "SHA256_HEX", "requirePackageId", "", TtmlNode.ATTR_ID, "", "requireManifestVersion", "version", "requireArchiveSize", "size", "requireNonNegativeSize", Constants.ScionAnalytics.PARAM_LABEL, "requireUnsignedCrc32", "crc32", "requireSha256Hex", "value", "requirePackageUrl", "entryTarget", "entryPath", "requireSafeSegments", "path", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveModelRules {
     public static final int $stable = 0;
@@ -95,7 +95,7 @@ public final class ArchiveModelRules {
     }
 
     public final void requirePackageUrl(String value) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         String host;
         Intrinsics.checkNotNullParameter(value, "value");
         String str = value;
@@ -113,16 +113,16 @@ public final class ArchiveModelRules {
                 try {
                     Result.Companion companion = Result.Companion;
                     ArchiveModelRules archiveModelRules = this;
-                    m9921constructorimpl = Result.m9921constructorimpl(new URI(value));
+                    m9974constructorimpl = Result.m9974constructorimpl(new URI(value));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                    m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-                if (m9924exceptionOrNullimpl != null) {
-                    throw new IllegalArgumentException("package URL is malformed", m9924exceptionOrNullimpl);
+                Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+                if (m9977exceptionOrNullimpl != null) {
+                    throw new IllegalArgumentException("package URL is malformed", m9977exceptionOrNullimpl);
                 }
-                URI uri = (URI) m9921constructorimpl;
+                URI uri = (URI) m9974constructorimpl;
                 if (uri.getFragment() != null) {
                     throw new IllegalArgumentException("package URL must not contain a fragment".toString());
                 }
@@ -181,7 +181,7 @@ public final class ArchiveModelRules {
                     throw new IllegalArgumentException("entry path must start with files/ and name a target".toString());
                 }
                 List drop = CollectionsKt.drop(split$default, 1);
-                if (StringsKt.equals((String) CollectionsKt.first((List<? extends Object>) drop), ".archive-installing", true)) {
+                if (StringsKt.equals((String) CollectionsKt.first((List<? extends Object>) drop), ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY, true)) {
                     throw new IllegalArgumentException("entry path targets a reserved updater root".toString());
                 }
                 return CollectionsKt.joinToString$default(drop, "/", null, null, 0, null, null, 62, null);

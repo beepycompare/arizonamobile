@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -84,6 +83,6 @@ public final class NavigationItemIconPosition {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m2752toStringimpl(int i) {
-        return m2750equalsimpl0(i, Top) ? "Top" : m2750equalsimpl0(i, Start) ? "Start" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m2750equalsimpl0(i, Top) ? "Top" : m2750equalsimpl0(i, Start) ? "Start" : "Unknown";
     }
 }

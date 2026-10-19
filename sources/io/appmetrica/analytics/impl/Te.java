@@ -8,7 +8,7 @@ import java.util.Map;
 public final class Te implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ya f779a;
+    public final Ya f782a;
 
     public Te() {
         this(new Ya((int) CacheDataSink.DEFAULT_BUFFER_SIZE, 100, 1000));
@@ -17,23 +17,23 @@ public final class Te implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Xi fromModel(Map<String, String> map) {
-        C0517po a2 = this.f779a.a(map);
+        C0512po a2 = this.f782a.a(map);
         E8 e8 = new E8();
         e8.b = ((E4) a2.b).b;
-        Map map2 = (Map) a2.f1155a;
+        Map map2 = (Map) a2.f1158a;
         if (map2 != null) {
-            e8.f526a = new D8[map2.size()];
+            e8.f529a = new D8[map2.size()];
             int i = 0;
             for (Map.Entry entry : map2.entrySet()) {
-                e8.f526a[i] = new D8();
-                e8.f526a[i].f511a = StringUtils.getUTF8Bytes((String) entry.getKey());
-                e8.f526a[i].b = StringUtils.getUTF8Bytes((String) entry.getValue());
+                e8.f529a[i] = new D8();
+                e8.f529a[i].f514a = StringUtils.getUTF8Bytes((String) entry.getKey());
+                e8.f529a[i].b = StringUtils.getUTF8Bytes((String) entry.getValue());
                 i++;
             }
         }
-        InterfaceC0547r3 interfaceC0547r3 = a2.b;
-        int i2 = ((E4) interfaceC0547r3).f1160a;
-        return new Xi(e8, interfaceC0547r3);
+        InterfaceC0542r3 interfaceC0542r3 = a2.b;
+        int i2 = ((E4) interfaceC0542r3).f1163a;
+        return new Xi(e8, interfaceC0542r3);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -43,7 +43,7 @@ public final class Te implements Converter {
     }
 
     public Te(Ya ya) {
-        this.f779a = ya;
+        this.f782a = ya;
     }
 
     public final Map<String, String> a(Xi xi) {

@@ -12,7 +12,7 @@ public final class Om extends MessageNano {
     public static volatile Om[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f710a;
+    public String f713a;
     public Nm b;
 
     public Om() {
@@ -31,7 +31,7 @@ public final class Om extends MessageNano {
     }
 
     public final Om a() {
-        this.f710a = "";
+        this.f713a = "";
         this.b = null;
         this.cachedSize = -1;
         return this;
@@ -40,8 +40,8 @@ public final class Om extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f710a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f710a);
+        if (!this.f713a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f713a);
         }
         Nm nm = this.b;
         return nm != null ? CodedOutputByteBufferNano.computeMessageSize(2, nm) + computeSerializedSize : computeSerializedSize;
@@ -49,8 +49,8 @@ public final class Om extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f710a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f710a);
+        if (!this.f713a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f713a);
         }
         Nm nm = this.b;
         if (nm != null) {
@@ -67,7 +67,7 @@ public final class Om extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f710a = codedInputByteBufferNano.readString();
+                this.f713a = codedInputByteBufferNano.readString();
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

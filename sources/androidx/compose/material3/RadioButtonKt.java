@@ -1,5 +1,6 @@
 package androidx.compose.material3;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.animation.core.AnimateAsStateKt;
 import androidx.compose.foundation.CanvasKt;
 import androidx.compose.foundation.interaction.MutableInteractionSource;
@@ -307,9 +308,9 @@ public final class RadioButtonKt {
     public static final Unit RadioButton$lambda$1$lambda$0(State state, State state2, DrawScope drawScope) {
         float f = drawScope.mo434toPx0680j_4(RadioStrokeWidth);
         float f2 = f / 2.0f;
-        DrawScope.m5903drawCircleVaOC9Bg$default(drawScope, ((Color) state.getValue()).m5358unboximpl(), drawScope.mo434toPx0680j_4(Dp.m8160constructorimpl(RadioButtonTokens.INSTANCE.m4145getIconSizeD9Ej5fM() / 2.0f)) - f2, 0L, 0.0f, new Stroke(f, 0.0f, 0, 0, null, 30, null), null, 0, 108, null);
+        DrawScope.m5903drawCircleVaOC9Bg$default(drawScope, ((Color) state.getValue()).m5358unboximpl(), drawScope.mo434toPx0680j_4(Dp.m8160constructorimpl(RadioButtonTokens.INSTANCE.m4145getIconSizeD9Ej5fM() / 2.0f)) - f2, 0L, 0.0f, new Stroke(f, 0.0f, 0, 0, null, 30, null), null, 0, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, null);
         if (Dp.m8159compareTo0680j_4(((Dp) state2.getValue()).m8174unboximpl(), Dp.m8160constructorimpl(0.0f)) > 0) {
-            DrawScope.m5903drawCircleVaOC9Bg$default(drawScope, ((Color) state.getValue()).m5358unboximpl(), drawScope.mo434toPx0680j_4(((Dp) state2.getValue()).m8174unboximpl()) - f2, 0L, 0.0f, Fill.INSTANCE, null, 0, 108, null);
+            DrawScope.m5903drawCircleVaOC9Bg$default(drawScope, ((Color) state.getValue()).m5358unboximpl(), drawScope.mo434toPx0680j_4(((Dp) state2.getValue()).m8174unboximpl()) - f2, 0L, 0.0f, Fill.INSTANCE, null, 0, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, null);
         }
         return Unit.INSTANCE;
     }

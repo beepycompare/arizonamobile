@@ -2,7 +2,6 @@ package com.adjust.sdk;
 
 import android.text.TextUtils;
 import com.adjust.sdk.ActivityHandler;
-import com.facebook.AppEventsLogger;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
@@ -45,7 +44,7 @@ public class PackageBuilder {
     public static class ActivityStateCopy {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f171a;
+        public final int f174a;
         public final int b;
         public final int c;
         public final long d;
@@ -54,7 +53,7 @@ public class PackageBuilder {
         public final String g;
 
         public ActivityStateCopy(ActivityState activityState) {
-            this.f171a = -1;
+            this.f174a = -1;
             this.b = -1;
             this.c = -1;
             this.d = -1L;
@@ -64,7 +63,7 @@ public class PackageBuilder {
             if (activityState == null) {
                 return;
             }
-            this.f171a = activityState.eventCount;
+            this.f174a = activityState.eventCount;
             this.b = activityState.sessionCount;
             this.c = activityState.subsessionCount;
             this.d = activityState.timeSpent;
@@ -1088,7 +1087,7 @@ public class PackageBuilder {
         addString(hashMap, "display_width", this.deviceInfo.displayWidth);
         addString(hashMap, "environment", this.adjustConfig.environment);
         addString(hashMap, "event_callback_id", adjustEvent.callbackId);
-        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f171a);
+        addLong(hashMap, "event_count", this.activityStateCopy.f174a);
         addString(hashMap, "event_token", adjustEvent.eventToken);
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);

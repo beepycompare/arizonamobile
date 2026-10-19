@@ -1,10 +1,12 @@
 package com.google.android.gms.internal.play_billing;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.container.MdtaMetadataEntry;
 import androidx.media3.extractor.ts.TsExtractor;
+import com.google.android.gms.location.LocationRequest;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import okhttp3.internal.ws.WebSocketProtocol;
 import ru.mrlargha.commonui.elements.hud.presentation.view.TrainSpeedGaugeView;
@@ -104,11 +106,11 @@ public enum zzjd implements zzfw {
     IS_BILLING_SUPPORTED_DEAD_OBJECT_EXCEPTION(100),
     IS_BILLING_SUPPORTED_SECURITY_EXCEPTION(101),
     LICENSE_TESTER_BILLING_OVERRIDE(104),
-    BILLING_OVERRIDE_SERVICE_CONNECTION_NOT_READY(105),
+    BILLING_OVERRIDE_SERVICE_CONNECTION_NOT_READY(LocationRequest.PRIORITY_NO_POWER),
     BILLING_OVERRIDE_SERVICE_CALL_EXCEPTION(106),
     NULL_LISTENER_IN_DELEGATE_TO_BACKEND_CALLBACK(107),
-    ERROR_DECODING_DELEGATE_TO_BACKEND_RESPONSE_DATA(108),
-    NULL_BUNDLE_FROM_DELEGATE_TO_BACKEND_SERVICE_CALL(109),
+    ERROR_DECODING_DELEGATE_TO_BACKEND_RESPONSE_DATA(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR),
+    NULL_BUNDLE_FROM_DELEGATE_TO_BACKEND_SERVICE_CALL(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY),
     MISSING_BILLING_RESULT_IN_DELEGATE_TO_BACKEND_RESPONSE(110),
     ERROR_DECODING_DELEGATE_TO_BACKEND_BILLING_RESULT(111),
     MISSING_RESPONSE_DATA_IN_DELEGATE_TO_BACKEND_RESPONSE(112),
@@ -345,15 +347,15 @@ public enum zzjd implements zzfw {
                                         return ERROR_DECODING_EXTERNAL_OFFER_REPORTING_DETAILS;
                                     case 104:
                                         return LICENSE_TESTER_BILLING_OVERRIDE;
-                                    case 105:
+                                    case LocationRequest.PRIORITY_NO_POWER /* 105 */:
                                         return BILLING_OVERRIDE_SERVICE_CONNECTION_NOT_READY;
                                     case 106:
                                         return BILLING_OVERRIDE_SERVICE_CALL_EXCEPTION;
                                     case 107:
                                         return NULL_LISTENER_IN_DELEGATE_TO_BACKEND_CALLBACK;
-                                    case 108:
+                                    case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR /* 108 */:
                                         return ERROR_DECODING_DELEGATE_TO_BACKEND_RESPONSE_DATA;
-                                    case 109:
+                                    case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY /* 109 */:
                                         return NULL_BUNDLE_FROM_DELEGATE_TO_BACKEND_SERVICE_CALL;
                                     case 110:
                                         return MISSING_BILLING_RESULT_IN_DELEGATE_TO_BACKEND_RESPONSE;

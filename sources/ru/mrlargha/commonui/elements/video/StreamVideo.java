@@ -40,7 +40,7 @@ public final class StreamVideo extends SAMPUIElement {
         this.binding = bind;
         this.fullScreenWebView = (YouTubePlayerView) constraintLayout.findViewById(R.id.youtube_player_view_fullscreen);
         this.pipBoyWebView = (YouTubePlayerView) constraintLayout.findViewById(R.id.youtube_player_view_pip);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setVisibility(true);
     }
 

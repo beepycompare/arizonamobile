@@ -55,8 +55,9 @@ final class AppCompatReceiveContentHelper {
         return false;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
-    private static final class OnDropApi24Impl {
+    public static final class OnDropApi24Impl {
         private OnDropApi24Impl() {
         }
 

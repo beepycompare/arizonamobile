@@ -86,7 +86,7 @@ public final class CarsScreen extends SAMPUIElement {
         this.actionButtonItemList = new ArrayList();
         this.circleProgressBarItemList = new ArrayList();
         this.textInfoItemList = new ArrayList();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         bind.mainPageCarsRc.setAdapter(carInfoListAdapter);
         carInfoListAdapter.setOnCarInfoClickListener(new CarInfoListAdapter.OnCarInfoClickListener() { // from class: ru.mrlargha.cars.CarsScreen$1$1
             @Override // ru.mrlargha.cars.CarInfoListAdapter.OnCarInfoClickListener

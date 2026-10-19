@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: com.google.android.gms:play-services-basement@@18.9.0 */
-/* loaded from: classes4.dex */
+/* loaded from: classes3.dex */
 public final class JsonUtils {
     private static final Pattern zza = Pattern.compile("\\\\.");
     private static final Pattern zzb = Pattern.compile("[\\\\\"/\b\f\n\r\t]");

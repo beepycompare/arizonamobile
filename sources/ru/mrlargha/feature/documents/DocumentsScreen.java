@@ -152,7 +152,7 @@ public final class DocumentsScreen extends SAMPUIElement {
         this.transportAdapter = new TransportAdapter(targetActivity.getResources().getDimension(ru.mrlargha.arizonaui.R.dimen._6sdp), targetActivity.getResources().getDimension(ru.mrlargha.arizonaui.R.dimen._10sdp));
         SoundPool build = new SoundPool.Builder().setMaxStreams(1).setAudioAttributes(new AudioAttributes.Builder().setContentType(4).setUsage(14).build()).build();
         this.soundPool = build;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setAdapters();
         setNavigation();
         Activity activity = targetActivity;

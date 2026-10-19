@@ -5711,14 +5711,6 @@
         <item name="android:padding">0dp</item>
         <item name="android:layout_margin">0dp</item>
     </style>
-    <style name="Theme.ActivityLauncher.Transparent" parent="@android:style/Theme.NoTitleBar">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:backgroundDimEnabled">true</item>
-    </style>
     <style name="Theme.AppCompat" parent="@style/Base.Theme.AppCompat">
     </style>
     <style name="Theme.AppCompat.CompactMenu" parent="@style/Base.Theme.AppCompat.CompactMenu">
@@ -11269,6 +11261,11 @@
         <item name="android:focusable">true</item>
         <item name="android:clickable">true</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="setting_switch" parent="@style/Theme.AppCompat.Light">
+        <item name="colorAccent">#80ffffff</item>
+        <item name="colorPrimary">#3e8bff</item>
+        <item name="colorPrimaryDark">#1d3f78</item>
     </style>
     <style name="small_2line_text" parent="">
         <item name="android:textSize">7sp</item>

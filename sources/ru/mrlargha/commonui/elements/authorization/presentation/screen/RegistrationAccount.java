@@ -17,6 +17,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import java.lang.Character;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -41,10 +42,11 @@ import ru.mrlargha.commonui.elements.authorization.domain.controller.Registratio
 import ru.mrlargha.commonui.elements.authorization.domain.registration.RegistrationAccountData;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: RegistrationAccount.kt */
-@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0017\u0018\u0000 92\u00020\u0001:\u000289B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001b\u001a\u00020\u001cH\u0002J\f\u0010\u001d\u001a\u00020\u001c*\u00020\u001eH\u0002J \u0010\u001f\u001a\u00020\u001c2\u0006\u0010 \u001a\u00020\u00172\u0006\u0010!\u001a\u00020\u00172\u0006\u0010\"\u001a\u00020#H\u0002J\u000e\u0010$\u001a\u00020#2\u0006\u0010%\u001a\u00020\u0017J\u000e\u0010&\u001a\u00020\u001c2\u0006\u0010'\u001a\u00020\u0017J\b\u0010(\u001a\u00020\u001cH\u0002J\b\u0010)\u001a\u00020\u001cH\u0002J\b\u0010*\u001a\u00020\u001cH\u0002J\b\u0010+\u001a\u00020\u001cH\u0002J\b\u0010,\u001a\u00020\u001cH\u0002J\b\u0010-\u001a\u00020\u001cH\u0002J\b\u0010.\u001a\u00020\u001cH\u0002J\b\u0010/\u001a\u00020\u001cH\u0002J\b\u00100\u001a\u00020\u001cH\u0002J\b\u00101\u001a\u00020\u001cH\u0002J\u0018\u0010\u001f\u001a\u00020\u001c2\u0006\u0010 \u001a\u00020\u00172\u0006\u0010!\u001a\u00020\u0017H\u0002J\n\u00102\u001a\u0004\u0018\u00010\u0017H\u0002J\u0010\u00103\u001a\u00020\u001c2\u0006\u00104\u001a\u00020#H\u0002J\u0010\u00105\u001a\u00020\u001c2\u0006\u00106\u001a\u00020#H\u0016J\b\u00107\u001a\u00020\u001cH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006:"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "registrationAccount", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "registrationAccountBinding", "Lru/mrlargha/commonui/databinding/RegistrationAccountBinding;", "registrationButtonCooldown", "Lru/mrlargha/commonui/elements/authorization/presentation/screen/AuthorizationButtonCooldown;", "requestState", "Lru/mrlargha/commonui/elements/authorization/domain/RequestState;", "sharedPreferences", "Landroid/content/SharedPreferences;", "localUsername", "", "localSurname", "localPassword", "localInvite", "setFilter", "", "checkRaisingContent", "Landroid/widget/EditText;", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "rememberMe", "", "isCyrillic", CmcdData.STREAMING_FORMAT_SS, "onServerAccountResponse", "data", "enableUsernameError", "disableUsernameError", "enableSurnameError", "disableSurnameError", "enablePasswordError", "disablePasswordError", "enableInviteError", "disableInviteError", "enableRegistrationButton", "disableRegistrationButton", "getServerId", "setRegisteredState", RemoteConfigConstants.ResponseFieldKey.STATE, "setVisible", "visible", "onRemovedFromAuthorizationFlow", "ContainerData", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000`\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001b\u0018\u0000 ;2\u00020\u0001:\u0002:;B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u001e\u001a\u00020\u001fH\u0002J\f\u0010 \u001a\u00020\u001f*\u00020!H\u0002J \u0010\"\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001a2\u0006\u0010%\u001a\u00020\u0018H\u0002J\u000e\u0010&\u001a\u00020\u00182\u0006\u0010'\u001a\u00020\u001aJ\u000e\u0010(\u001a\u00020\u001f2\u0006\u0010)\u001a\u00020\u001aJ\b\u0010*\u001a\u00020\u001fH\u0002J\b\u0010+\u001a\u00020\u001fH\u0002J\b\u0010,\u001a\u00020\u001fH\u0002J\b\u0010-\u001a\u00020\u001fH\u0002J\b\u0010.\u001a\u00020\u001fH\u0002J\b\u0010/\u001a\u00020\u001fH\u0002J\b\u00100\u001a\u00020\u001fH\u0002J\b\u00101\u001a\u00020\u001fH\u0002J\b\u00102\u001a\u00020\u001fH\u0002J\b\u00103\u001a\u00020\u001fH\u0002J\u0018\u0010\"\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u001aH\u0002J\n\u00104\u001a\u0004\u0018\u00010\u001aH\u0002J\u0010\u00105\u001a\u00020\u001f2\u0006\u00106\u001a\u00020\u0018H\u0002J\u0010\u00107\u001a\u00020\u001f2\u0006\u00108\u001a\u00020\u0018H\u0016J\b\u00109\u001a\u00020\u001fH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006<"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "registrationAccount", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "registrationAccountBinding", "Lru/mrlargha/commonui/databinding/RegistrationAccountBinding;", "registrationButtonCooldown", "Lru/mrlargha/commonui/elements/authorization/presentation/screen/AuthorizationButtonCooldown;", "requestState", "Lru/mrlargha/commonui/elements/authorization/domain/RequestState;", "sharedPreferences", "Landroid/content/SharedPreferences;", "storage", "isInGameKeyboard", "", "localUsername", "", "localSurname", "localPassword", "localInvite", "setFilter", "", "checkRaisingContent", "Landroid/widget/EditText;", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "rememberMe", "isCyrillic", CmcdData.STREAMING_FORMAT_SS, "onServerAccountResponse", "data", "enableUsernameError", "disableUsernameError", "enableSurnameError", "disableSurnameError", "enablePasswordError", "disablePasswordError", "enableInviteError", "disableInviteError", "enableRegistrationButton", "disableRegistrationButton", "getServerId", "setRegisteredState", RemoteConfigConstants.ResponseFieldKey.STATE, "setVisible", "visible", "onRemovedFromAuthorizationFlow", "ContainerData", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RegistrationAccount implements InterfaceController {
     public static final Companion Companion = new Companion(null);
@@ -53,6 +55,7 @@ public final class RegistrationAccount implements InterfaceController {
     private static final String SERVER_ID = "SERVER_ID";
     private static final String SP_NAME = "UI_ELEMENTS_SP";
     private final int backendID;
+    private final boolean isInGameKeyboard;
     private String localInvite;
     private String localPassword;
     private String localSurname;
@@ -63,6 +66,7 @@ public final class RegistrationAccount implements InterfaceController {
     private final AuthorizationButtonCooldown registrationButtonCooldown;
     private RequestState requestState;
     private final SharedPreferences sharedPreferences;
+    private SharedPreferences storage;
     private final Activity targetActivity;
     private final BackgroundVideoBinding videoBinding;
 
@@ -90,6 +94,9 @@ public final class RegistrationAccount implements InterfaceController {
         SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("UI_ELEMENTS_SP", 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         this.sharedPreferences = sharedPreferences;
+        SharedPreferences prefs = SettingsMenuDefaults.prefs(targetActivity);
+        this.storage = prefs;
+        this.isInGameKeyboard = prefs.getInt(SettingsMenuDefaults.KEY_KEYBOARD_TYPE, 0) != 0;
         this.localUsername = "";
         this.localSurname = "";
         this.localPassword = "";
@@ -101,16 +108,16 @@ public final class RegistrationAccount implements InterfaceController {
                 RegistrationAccount._init_$lambda$0(RegistrationAccount.this, view);
             }
         });
-        EditText registrationAccountPasswordPlaceholder = bind.registrationAccountPasswordPlaceholder;
+        KeyboardEditText registrationAccountPasswordPlaceholder = bind.registrationAccountPasswordPlaceholder;
         Intrinsics.checkNotNullExpressionValue(registrationAccountPasswordPlaceholder, "registrationAccountPasswordPlaceholder");
         checkRaisingContent(registrationAccountPasswordPlaceholder);
-        EditText registrationAccountSurnamePlaceholder = bind.registrationAccountSurnamePlaceholder;
+        KeyboardEditText registrationAccountSurnamePlaceholder = bind.registrationAccountSurnamePlaceholder;
         Intrinsics.checkNotNullExpressionValue(registrationAccountSurnamePlaceholder, "registrationAccountSurnamePlaceholder");
         checkRaisingContent(registrationAccountSurnamePlaceholder);
-        EditText registrationAccountUsernamePlaceholder = bind.registrationAccountUsernamePlaceholder;
+        KeyboardEditText registrationAccountUsernamePlaceholder = bind.registrationAccountUsernamePlaceholder;
         Intrinsics.checkNotNullExpressionValue(registrationAccountUsernamePlaceholder, "registrationAccountUsernamePlaceholder");
         checkRaisingContent(registrationAccountUsernamePlaceholder);
-        EditText registrationAccountUsernamePlaceholder2 = bind.registrationAccountUsernamePlaceholder;
+        KeyboardEditText registrationAccountUsernamePlaceholder2 = bind.registrationAccountUsernamePlaceholder;
         Intrinsics.checkNotNullExpressionValue(registrationAccountUsernamePlaceholder2, "registrationAccountUsernamePlaceholder");
         registrationAccountUsernamePlaceholder2.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$special$$inlined$addTextChangedListener$default$1
             @Override // android.text.TextWatcher
@@ -127,22 +134,22 @@ public final class RegistrationAccount implements InterfaceController {
                 RegistrationAccountBinding registrationAccountBinding2;
                 String str;
                 registrationAccountBinding = RegistrationAccount.this.registrationAccountBinding;
-                String obj = registrationAccountBinding.registrationAccountUsernamePlaceholder.getText().toString();
+                String valueOf = String.valueOf(registrationAccountBinding.registrationAccountUsernamePlaceholder.getText());
                 registrationAccountBinding2 = RegistrationAccount.this.registrationAccountBinding;
                 registrationAccountBinding2.registrationAccountUsernamePlaceholder.requestFocus();
-                String str2 = obj;
+                String str2 = valueOf;
                 if (StringsKt.isBlank(str2) || str2.length() <= 0) {
                     return;
                 }
                 str = RegistrationAccount.this.localUsername;
-                if (Intrinsics.areEqual(str, obj)) {
+                if (Intrinsics.areEqual(str, valueOf)) {
                     return;
                 }
                 RegistrationAccount.this.disableUsernameError();
                 RegistrationAccount.this.enableRegistrationButton();
             }
         });
-        EditText registrationAccountSurnamePlaceholder2 = bind.registrationAccountSurnamePlaceholder;
+        KeyboardEditText registrationAccountSurnamePlaceholder2 = bind.registrationAccountSurnamePlaceholder;
         Intrinsics.checkNotNullExpressionValue(registrationAccountSurnamePlaceholder2, "registrationAccountSurnamePlaceholder");
         registrationAccountSurnamePlaceholder2.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$special$$inlined$addTextChangedListener$default$2
             @Override // android.text.TextWatcher
@@ -159,22 +166,22 @@ public final class RegistrationAccount implements InterfaceController {
                 RegistrationAccountBinding registrationAccountBinding2;
                 String str;
                 registrationAccountBinding = RegistrationAccount.this.registrationAccountBinding;
-                String obj = registrationAccountBinding.registrationAccountSurnamePlaceholder.getText().toString();
+                String valueOf = String.valueOf(registrationAccountBinding.registrationAccountSurnamePlaceholder.getText());
                 registrationAccountBinding2 = RegistrationAccount.this.registrationAccountBinding;
                 registrationAccountBinding2.registrationAccountSurnamePlaceholder.requestFocus();
-                String str2 = obj;
+                String str2 = valueOf;
                 if (StringsKt.isBlank(str2) || str2.length() <= 0) {
                     return;
                 }
                 str = RegistrationAccount.this.localSurname;
-                if (Intrinsics.areEqual(str, obj)) {
+                if (Intrinsics.areEqual(str, valueOf)) {
                     return;
                 }
                 RegistrationAccount.this.disableSurnameError();
                 RegistrationAccount.this.enableRegistrationButton();
             }
         });
-        EditText registrationAccountPasswordPlaceholder2 = bind.registrationAccountPasswordPlaceholder;
+        KeyboardEditText registrationAccountPasswordPlaceholder2 = bind.registrationAccountPasswordPlaceholder;
         Intrinsics.checkNotNullExpressionValue(registrationAccountPasswordPlaceholder2, "registrationAccountPasswordPlaceholder");
         registrationAccountPasswordPlaceholder2.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$special$$inlined$addTextChangedListener$default$3
             @Override // android.text.TextWatcher
@@ -193,20 +200,20 @@ public final class RegistrationAccount implements InterfaceController {
                 registrationAccountBinding = RegistrationAccount.this.registrationAccountBinding;
                 registrationAccountBinding.registrationAccountPasswordPlaceholder.requestFocus();
                 registrationAccountBinding2 = RegistrationAccount.this.registrationAccountBinding;
-                String obj = registrationAccountBinding2.registrationAccountPasswordPlaceholder.getText().toString();
-                String str2 = obj;
+                String valueOf = String.valueOf(registrationAccountBinding2.registrationAccountPasswordPlaceholder.getText());
+                String str2 = valueOf;
                 if (StringsKt.isBlank(str2) || str2.length() <= 0) {
                     return;
                 }
                 str = RegistrationAccount.this.localPassword;
-                if (Intrinsics.areEqual(str, obj)) {
+                if (Intrinsics.areEqual(str, valueOf)) {
                     return;
                 }
                 RegistrationAccount.this.disablePasswordError();
                 RegistrationAccount.this.enableRegistrationButton();
             }
         });
-        EditText registrationAccountInvitePlaceholder = bind.registrationAccountInvitePlaceholder;
+        KeyboardEditText registrationAccountInvitePlaceholder = bind.registrationAccountInvitePlaceholder;
         Intrinsics.checkNotNullExpressionValue(registrationAccountInvitePlaceholder, "registrationAccountInvitePlaceholder");
         registrationAccountInvitePlaceholder.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$special$$inlined$addTextChangedListener$default$4
             @Override // android.text.TextWatcher
@@ -225,9 +232,9 @@ public final class RegistrationAccount implements InterfaceController {
                 registrationAccountBinding = RegistrationAccount.this.registrationAccountBinding;
                 registrationAccountBinding.registrationAccountInvitePlaceholder.requestFocus();
                 registrationAccountBinding2 = RegistrationAccount.this.registrationAccountBinding;
-                String obj = registrationAccountBinding2.registrationAccountInvitePlaceholder.getText().toString();
+                String valueOf = String.valueOf(registrationAccountBinding2.registrationAccountInvitePlaceholder.getText());
                 str = RegistrationAccount.this.localInvite;
-                if (Intrinsics.areEqual(str, obj)) {
+                if (Intrinsics.areEqual(str, valueOf)) {
                     return;
                 }
                 RegistrationAccount.this.disableInviteError();
@@ -252,20 +259,20 @@ public final class RegistrationAccount implements InterfaceController {
         } else if (registrationAccount.requestState == RequestState.RECEIVED_BAD_ANSWER_FROM_SERVER) {
             Toast.makeText(registrationAccount.targetActivity.getApplicationContext(), "Исправьте отмеченные поля!", 0).show();
         } else {
-            String obj = StringsKt.trim((CharSequence) registrationAccount.registrationAccountBinding.registrationAccountUsernamePlaceholder.getText().toString()).toString();
-            String obj2 = StringsKt.trim((CharSequence) registrationAccount.registrationAccountBinding.registrationAccountSurnamePlaceholder.getText().toString()).toString();
-            String obj3 = registrationAccount.registrationAccountBinding.registrationAccountPasswordPlaceholder.getText().toString();
-            String obj4 = registrationAccount.registrationAccountBinding.registrationAccountInvitePlaceholder.getText().toString();
-            String obj5 = registrationAccount.registrationAccountBinding.registrationAccountPromoPlaceholder.getText().toString();
+            String obj = StringsKt.trim((CharSequence) String.valueOf(registrationAccount.registrationAccountBinding.registrationAccountUsernamePlaceholder.getText())).toString();
+            String obj2 = StringsKt.trim((CharSequence) String.valueOf(registrationAccount.registrationAccountBinding.registrationAccountSurnamePlaceholder.getText())).toString();
+            String valueOf = String.valueOf(registrationAccount.registrationAccountBinding.registrationAccountPasswordPlaceholder.getText());
+            String valueOf2 = String.valueOf(registrationAccount.registrationAccountBinding.registrationAccountInvitePlaceholder.getText());
+            String valueOf3 = String.valueOf(registrationAccount.registrationAccountBinding.registrationAccountPromoPlaceholder.getText());
             registrationAccount.localUsername = obj;
             registrationAccount.localSurname = obj2;
-            registrationAccount.localPassword = obj3;
-            registrationAccount.localInvite = obj4;
+            registrationAccount.localPassword = valueOf;
+            registrationAccount.localInvite = valueOf2;
             Regex regex = new Regex("^[A-Za-z0-9]{2,17}");
             Regex regex2 = new Regex("^[A-Za-z0-9]{2,17}");
             Regex regex3 = new Regex("^[A-Za-z0-9_]{4,20}");
             String str = obj + "_" + obj2;
-            int length = obj3.length();
+            int length = valueOf.length();
             boolean z = 6 <= length && length < 33;
             if (registrationAccount.isCyrillic(obj)) {
                 Toast.makeText(registrationAccount.targetActivity, "Имя игрока должно использовать только буквы английского алфавита.", 1).show();
@@ -295,7 +302,7 @@ public final class RegistrationAccount implements InterfaceController {
             } else {
                 IBackendNotifier iBackendNotifier = registrationAccount.notifier;
                 int i = registrationAccount.backendID;
-                byte[] bytes = StringKt.toStringJson(new RegistrationAccountData(str, obj3, obj4, obj5)).getBytes(Charsets.UTF_8);
+                byte[] bytes = StringKt.toStringJson(new RegistrationAccountData(str, valueOf, valueOf2, valueOf3)).getBytes(Charsets.UTF_8);
                 Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
                 iBackendNotifier.clickedWrapper(i, 1, 0, bytes);
                 registrationAccount.disableRegistrationButton();
@@ -318,10 +325,10 @@ public final class RegistrationAccount implements InterfaceController {
 
     private final void setFilter() {
         RegistrationAccountBinding registrationAccountBinding = this.registrationAccountBinding;
-        EditText editText = registrationAccountBinding.registrationAccountUsernamePlaceholder;
-        InputFilter[] filters = editText.getFilters();
+        KeyboardEditText keyboardEditText = registrationAccountBinding.registrationAccountUsernamePlaceholder;
+        InputFilter[] filters = keyboardEditText.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
-        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda4
+        keyboardEditText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$0;
@@ -329,10 +336,10 @@ public final class RegistrationAccount implements InterfaceController {
                 return filter$lambda$0$0;
             }
         })));
-        EditText editText2 = registrationAccountBinding.registrationAccountSurnamePlaceholder;
-        InputFilter[] filters2 = editText2.getFilters();
+        KeyboardEditText keyboardEditText2 = registrationAccountBinding.registrationAccountSurnamePlaceholder;
+        InputFilter[] filters2 = keyboardEditText2.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters2, "getFilters(...)");
-        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda5
+        keyboardEditText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$1;
@@ -340,10 +347,10 @@ public final class RegistrationAccount implements InterfaceController {
                 return filter$lambda$0$1;
             }
         })));
-        EditText editText3 = registrationAccountBinding.registrationAccountPasswordPlaceholder;
-        InputFilter[] filters3 = editText3.getFilters();
+        KeyboardEditText keyboardEditText3 = registrationAccountBinding.registrationAccountPasswordPlaceholder;
+        InputFilter[] filters3 = keyboardEditText3.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters3, "getFilters(...)");
-        editText3.setFilters((InputFilter[]) ArraysKt.plus(filters3, AuthorizationUtilsKt.getRegistrationPasswordFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda6
+        keyboardEditText3.setFilters((InputFilter[]) ArraysKt.plus(filters3, AuthorizationUtilsKt.getRegistrationPasswordFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$2;

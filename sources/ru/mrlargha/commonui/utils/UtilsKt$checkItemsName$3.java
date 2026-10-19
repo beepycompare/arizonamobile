@@ -1,7 +1,6 @@
 package ru.mrlargha.commonui.utils;
 
 import android.util.Log;
-import com.google.android.vending.licensing.Policy;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -20,7 +19,7 @@ import ru.mrlargha.commonui.elements.inventory.domain.InventoryCatalogKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Utils.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$checkItemsName$3", f = "Utils.kt", i = {1, 2, 2}, l = {560, 562, 569}, m = "invokeSuspend", n = {"exception", "result", "loadedCatalog"}, nl = {Policy.NOT_LICENSED, 563, 574}, s = {"L$0", "L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt$checkItemsName$3", f = "Utils.kt", i = {1, 2, 2}, l = {560, 562, 569}, m = "invokeSuspend", n = {"exception", "result", "loadedCatalog"}, nl = {561, 563, 574}, s = {"L$0", "L$0", "L$1"}, v = 2)
 /* loaded from: classes6.dex */
 public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryApi $api;
@@ -53,11 +52,11 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         Object completeInventoryCatalogLoad;
         Object completeInventoryCatalogLoad2;
         Object obj2;
-        Throwable m9924exceptionOrNullimpl;
+        Throwable m9977exceptionOrNullimpl;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
@@ -70,7 +69,7 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
             }
         } catch (Throwable th) {
             Result.Companion companion = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
@@ -89,9 +88,9 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
                 List list = (List) this.L$1;
                 obj2 = this.L$0;
                 ResultKt.throwOnFailure(obj);
-                m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(obj2);
-                if (m9924exceptionOrNullimpl != null) {
-                    Log.e("InventoryCatalog", "Unable to load catalog '" + this.$key + "'", m9924exceptionOrNullimpl);
+                m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(obj2);
+                if (m9977exceptionOrNullimpl != null) {
+                    Log.e("InventoryCatalog", "Unable to load catalog '" + this.$key + "'", m9977exceptionOrNullimpl);
                 }
                 return Unit.INSTANCE;
             } else {
@@ -100,18 +99,18 @@ public final class UtilsKt$checkItemsName$3 extends SuspendLambda implements Fun
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        m9921constructorimpl = Result.m9921constructorimpl(InventoryCatalogKt.normalizeInventoryCatalog((List) obj));
-        List list2 = Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+        m9974constructorimpl = Result.m9974constructorimpl(InventoryCatalogKt.normalizeInventoryCatalog((List) obj));
+        List list2 = Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
         String str = this.$key;
         boolean z = list2 != null;
-        this.L$0 = m9921constructorimpl;
+        this.L$0 = m9974constructorimpl;
         this.L$1 = SpillingKt.nullOutSpilledVariable(list2);
         this.label = 3;
         completeInventoryCatalogLoad2 = UtilsKt.completeInventoryCatalogLoad(str, list2, z, this);
         if (completeInventoryCatalogLoad2 != coroutine_suspended) {
-            obj2 = m9921constructorimpl;
-            m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(obj2);
-            if (m9924exceptionOrNullimpl != null) {
+            obj2 = m9974constructorimpl;
+            m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(obj2);
+            if (m9977exceptionOrNullimpl != null) {
             }
             return Unit.INSTANCE;
         }

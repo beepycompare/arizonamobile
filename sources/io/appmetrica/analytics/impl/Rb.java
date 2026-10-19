@@ -9,17 +9,17 @@ import java.util.Set;
 public final class Rb implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final WeakReference f746a;
+    public final WeakReference f749a;
     public final WeakReference b;
 
     public Rb(Handler handler, V2 v2) {
-        this.f746a = new WeakReference(handler);
+        this.f749a = new WeakReference(handler);
         this.b = new WeakReference(v2);
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Handler handler = (Handler) this.f746a.get();
+        Handler handler = (Handler) this.f749a.get();
         V2 v2 = (V2) this.b.get();
         if (handler == null || v2 == null) {
             return;
@@ -27,13 +27,13 @@ public final class Rb implements Runnable {
         boolean f = v2.b.f();
         if (!f) {
             PublicLogger publicLogger = v2.c;
-            Set set = Q9.f730a;
+            Set set = Q9.f733a;
             Db db = Db.EVENT_TYPE_UNDEFINED;
-            C0187d4 c0187d4 = new C0187d4("", "", 3, 0, publicLogger);
+            C0182d4 c0182d4 = new C0182d4("", "", 3, 0, publicLogger);
             Qi qi = v2.h;
             Zh zh = v2.b;
             qi.getClass();
-            qi.a(Qi.a(c0187d4, zh), zh, 1, (Map) null);
+            qi.a(Qi.a(c0182d4, zh), zh, 1, (Map) null);
         }
         if (f) {
             return;

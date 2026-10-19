@@ -36,6 +36,7 @@ import androidx.compose.ui.semantics.SemanticsPropertiesKt;
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
+import androidx.media3.extractor.ts.PsExtractor;
 import androidx.profileinstaller.ProfileVerifier;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlin.Deprecated;
@@ -3232,7 +3233,7 @@ public final class IconButtonKt {
                         ComposerKt.traceEventEnd();
                     }
                 }
-            }, startRestartGroup, 54), composer2, (i2 & 8078) | (234881024 & i3) | (i3 & C.ENCODING_PCM_DOUBLE), 6, 192);
+            }, startRestartGroup, 54), composer2, (i2 & 8078) | (234881024 & i3) | (i3 & C.ENCODING_PCM_DOUBLE), 6, PsExtractor.AUDIO_STREAM);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

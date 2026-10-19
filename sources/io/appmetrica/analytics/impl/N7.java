@@ -7,30 +7,30 @@ import kotlin.Pair;
 import kotlin.TuplesKt;
 /* loaded from: classes5.dex */
 public final class N7 implements ProtobufConverter {
-    public final BigDecimal a(C0760z8 c0760z8) {
+    public final BigDecimal a(C0755z8 c0755z8) {
         throw new UnsupportedOperationException();
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        C0760z8 c0760z8 = (C0760z8) obj;
+        C0755z8 c0755z8 = (C0755z8) obj;
         throw new UnsupportedOperationException();
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0760z8 fromModel(BigDecimal bigDecimal) {
-        BigInteger bigInteger = P7.f716a;
+    public final C0755z8 fromModel(BigDecimal bigDecimal) {
+        BigInteger bigInteger = P7.f719a;
         int i = -bigDecimal.scale();
         BigInteger unscaledValue = bigDecimal.unscaledValue();
         while (true) {
-            if (unscaledValue.compareTo(P7.f716a) <= 0 && unscaledValue.compareTo(P7.b) >= 0) {
+            if (unscaledValue.compareTo(P7.f719a) <= 0 && unscaledValue.compareTo(P7.b) >= 0) {
                 Pair pair = TuplesKt.to(Long.valueOf(unscaledValue.longValue()), Integer.valueOf(i));
                 O7 o7 = new O7(((Number) pair.getFirst()).longValue(), ((Number) pair.getSecond()).intValue());
-                C0760z8 c0760z8 = new C0760z8();
-                c0760z8.f1312a = o7.f699a;
-                c0760z8.b = o7.b;
-                return c0760z8;
+                C0755z8 c0755z8 = new C0755z8();
+                c0755z8.f1315a = o7.f702a;
+                c0755z8.b = o7.b;
+                return c0755z8;
             }
             unscaledValue = unscaledValue.divide(BigInteger.TEN);
             i++;

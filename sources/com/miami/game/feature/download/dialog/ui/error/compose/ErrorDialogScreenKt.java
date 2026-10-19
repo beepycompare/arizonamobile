@@ -139,12 +139,12 @@ public final class ErrorDialogScreenKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1329362400, i2, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreen (ErrorDialogScreen.kt:53)");
             }
-            DialogFrameKt.DialogFrame(null, onDismiss, ComposableLambdaKt.rememberComposableLambda(-59434296, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreenKt$$ExternalSyntheticLambda0
+            DialogFrameKt.DialogFrame(null, onDismiss, null, ComposableLambdaKt.rememberComposableLambda(740140233, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreenKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return ErrorDialogScreenKt.ErrorDialogScreen$lambda$0(errorMessage, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | 390, 0);
+            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | 3078, 4);
             function0 = onDismiss;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -166,7 +166,7 @@ public final class ErrorDialogScreenKt {
         ComposerKt.sourceInformation(composer, "C55@1961L10,55@1934L82,58@2044L85,57@2025L217,65@2251L420:ErrorDialogScreen.kt#d3gn1w");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-59434296, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreen.<anonymous> (ErrorDialogScreen.kt:55)");
+                ComposerKt.traceEventStart(740140233, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.ErrorDialogScreen.<anonymous> (ErrorDialogScreen.kt:55)");
             }
             TextKt.m3157TextNvy7gAk(str, null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 0, 0, 131070);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_download_image, composer, 0), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(100.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
@@ -195,8 +195,8 @@ public final class ErrorDialogScreenKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 967934991, "C66@2294L43,66@2269L188,72@2496L43,72@2470L191:ErrorDialogScreen.kt#d3gn1w");
-            ComposerKt.sourceInformationMarkerStart(composer, -1354249161, "CC(remember):ErrorDialogScreen.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1204104814, "C66@2294L43,66@2269L188,72@2496L43,72@2470L191:ErrorDialogScreen.kt#d3gn1w");
+            ComposerKt.sourceInformationMarkerStart(composer, -1762272776, "CC(remember):ErrorDialogScreen.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -211,8 +211,8 @@ public final class ErrorDialogScreenKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m9809getLambda$1032883188$dialogs(), composer, 48);
-            ComposerKt.sourceInformationMarkerStart(composer, -1354242697, "CC(remember):ErrorDialogScreen.kt#9igjgp");
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.m9849getLambda$233308659$dialogs(), composer, 48);
+            ComposerKt.sourceInformationMarkerStart(composer, -1762266312, "CC(remember):ErrorDialogScreen.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -227,7 +227,7 @@ public final class ErrorDialogScreenKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.getLambda$24227829$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$ErrorDialogScreenKt.INSTANCE.getLambda$823802358$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

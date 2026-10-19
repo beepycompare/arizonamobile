@@ -4,24 +4,24 @@ public final class R {
 
     /* loaded from: classes5.dex */
     public static final class drawable {
-        public static int btn_account = 0x7f080553;
-        public static int btn_discord = 0x7f080566;
-        public static int btn_forum = 0x7f080568;
-        public static int btn_notification = 0x7f080589;
-        public static int btn_notification_count = 0x7f08058a;
-        public static int btn_telegram = 0x7f080592;
-        public static int btn_vk = 0x7f080598;
-        public static int launcher_btn_install = 0x7f080c7e;
-        public static int launcher_btn_play = 0x7f080c7f;
-        public static int launcher_btn_shop = 0x7f080c80;
-        public static int launcher_btn_update = 0x7f080c81;
-        public static int messenger_ic = 0x7f080cf7;
-        public static int news_item_arrow = 0x7f080df6;
-        public static int online_ic = 0x7f080e4b;
-        public static int queue_ic = 0x7f080f1f;
-        public static int server_button_arrow = 0x7f080f93;
-        public static int shop_notificaiotns_bg = 0x7f080fa7;
-        public static int update_home_screen = 0x7f081044;
+        public static int btn_account = 0x7f080564;
+        public static int btn_discord = 0x7f080577;
+        public static int btn_forum = 0x7f080579;
+        public static int btn_notification = 0x7f08059a;
+        public static int btn_notification_count = 0x7f08059b;
+        public static int btn_telegram = 0x7f0805a3;
+        public static int btn_vk = 0x7f0805a9;
+        public static int launcher_btn_install = 0x7f080c99;
+        public static int launcher_btn_play = 0x7f080c9a;
+        public static int launcher_btn_shop = 0x7f080c9b;
+        public static int launcher_btn_update = 0x7f080c9c;
+        public static int messenger_ic = 0x7f080d12;
+        public static int news_item_arrow = 0x7f080e11;
+        public static int online_ic = 0x7f080e66;
+        public static int queue_ic = 0x7f080f3a;
+        public static int server_button_arrow = 0x7f080faf;
+        public static int shop_notificaiotns_bg = 0x7f080fd3;
+        public static int update_home_screen = 0x7f081070;
 
         private drawable() {
         }

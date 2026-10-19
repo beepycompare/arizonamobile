@@ -9,27 +9,27 @@ import java.util.concurrent.Executor;
 public final class Cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Executor f497a;
+    public final Executor f500a;
     public final Zl b;
     public final String c;
     public final SystemTimeProvider d;
 
     public Cd(IHandlerExecutor iHandlerExecutor, Yd yd, String str, SystemTimeProvider systemTimeProvider) {
-        this.f497a = iHandlerExecutor;
+        this.f500a = iHandlerExecutor;
         this.b = yd;
         this.c = str;
         this.d = systemTimeProvider;
     }
 
     public static final void a(Cd cd, List list) {
-        C0539qk c0539qk = Oj.f708a;
+        C0534qk c0534qk = Oj.f711a;
         Ed ed = new Ed(cd.b, cd.c, cd.d, list);
-        c0539qk.getClass();
-        c0539qk.a(new C0228ek(ed));
+        c0534qk.getClass();
+        c0534qk.a(new C0223ek(ed));
     }
 
     public final void a(final ArrayList arrayList) {
-        this.f497a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Cd$$ExternalSyntheticLambda0
+        this.f500a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.Cd$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 Cd.a(Cd.this, arrayList);

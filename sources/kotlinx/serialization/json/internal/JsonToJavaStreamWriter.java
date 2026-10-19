@@ -1,6 +1,7 @@
 package kotlinx.serialization.json.internal;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
+import androidx.media3.extractor.ts.PsExtractor;
 import java.io.OutputStream;
 import java.util.Arrays;
 import kotlin.IgnorableReturnValue;
@@ -174,43 +175,44 @@ public final class JsonToJavaStreamWriter implements InternalJsonWriter {
                     if (this.buffer.length - this.indexInBuffer < 2) {
                         flush();
                     }
+                    int i6 = (c >> 6) | PsExtractor.AUDIO_STREAM;
                     byte[] bArr3 = this.buffer;
-                    int i6 = this.indexInBuffer;
-                    int i7 = i6 + 1;
-                    this.indexInBuffer = i7;
-                    bArr3[i6] = (byte) ((c >> 6) | 192);
-                    this.indexInBuffer = i6 + 2;
-                    bArr3[i7] = (byte) ((c & '?') | 128);
+                    int i7 = this.indexInBuffer;
+                    int i8 = i7 + 1;
+                    this.indexInBuffer = i8;
+                    bArr3[i7] = (byte) i6;
+                    this.indexInBuffer = i7 + 2;
+                    bArr3[i8] = (byte) ((c & '?') | 128);
                 } else if (c >= 55296 && c <= 57343) {
-                    int i8 = i2 + 1;
-                    char c3 = i8 < i ? cArr[i8] : (char) 0;
+                    int i9 = i2 + 1;
+                    char c3 = i9 < i ? cArr[i9] : (char) 0;
                     if (c > 56319 || 56320 > c3 || c3 >= 57344) {
                         if (this.buffer.length - this.indexInBuffer < 1) {
                             flush();
                         }
                         byte[] bArr4 = this.buffer;
-                        int i9 = this.indexInBuffer;
-                        this.indexInBuffer = i9 + 1;
-                        bArr4[i9] = Utf8.REPLACEMENT_BYTE;
-                        i2 = i8;
+                        int i10 = this.indexInBuffer;
+                        this.indexInBuffer = i10 + 1;
+                        bArr4[i10] = Utf8.REPLACEMENT_BYTE;
+                        i2 = i9;
                     } else {
-                        int i10 = (((c & 1023) << 10) | (c3 & 1023)) + 65536;
+                        int i11 = (((c & 1023) << 10) | (c3 & 1023)) + 65536;
                         if (this.buffer.length - this.indexInBuffer < 4) {
                             flush();
                         }
                         byte[] bArr5 = this.buffer;
-                        int i11 = this.indexInBuffer;
-                        int i12 = i11 + 1;
-                        this.indexInBuffer = i12;
-                        bArr5[i11] = (byte) ((i10 >> 18) | 240);
-                        int i13 = i11 + 2;
+                        int i12 = this.indexInBuffer;
+                        int i13 = i12 + 1;
                         this.indexInBuffer = i13;
-                        bArr5[i12] = (byte) (((i10 >> 12) & 63) | 128);
-                        int i14 = i11 + 3;
+                        bArr5[i12] = (byte) ((i11 >> 18) | 240);
+                        int i14 = i12 + 2;
                         this.indexInBuffer = i14;
-                        bArr5[i13] = (byte) (((i10 >> 6) & 63) | 128);
-                        this.indexInBuffer = i11 + 4;
-                        bArr5[i14] = (byte) ((i10 & 63) | 128);
+                        bArr5[i13] = (byte) (((i11 >> 12) & 63) | 128);
+                        int i15 = i12 + 3;
+                        this.indexInBuffer = i15;
+                        bArr5[i14] = (byte) (((i11 >> 6) & 63) | 128);
+                        this.indexInBuffer = i12 + 4;
+                        bArr5[i15] = (byte) ((i11 & 63) | 128);
                         i2 += 2;
                     }
                 } else {
@@ -218,15 +220,15 @@ public final class JsonToJavaStreamWriter implements InternalJsonWriter {
                         flush();
                     }
                     byte[] bArr6 = this.buffer;
-                    int i15 = this.indexInBuffer;
-                    int i16 = i15 + 1;
-                    this.indexInBuffer = i16;
-                    bArr6[i15] = (byte) ((c >> '\f') | 224);
-                    int i17 = i15 + 2;
+                    int i16 = this.indexInBuffer;
+                    int i17 = i16 + 1;
                     this.indexInBuffer = i17;
-                    bArr6[i16] = (byte) (((c >> 6) & 63) | 128);
-                    this.indexInBuffer = i15 + 3;
-                    bArr6[i17] = (byte) ((c & '?') | 128);
+                    bArr6[i16] = (byte) ((c >> '\f') | 224);
+                    int i18 = i16 + 2;
+                    this.indexInBuffer = i18;
+                    bArr6[i17] = (byte) (((c >> 6) & 63) | 128);
+                    this.indexInBuffer = i16 + 3;
+                    bArr6[i18] = (byte) ((c & '?') | 128);
                 }
                 i2++;
             }
@@ -252,35 +254,36 @@ public final class JsonToJavaStreamWriter implements InternalJsonWriter {
             if (this.buffer.length - this.indexInBuffer < 2) {
                 flush();
             }
+            int i3 = (i >> 6) | PsExtractor.AUDIO_STREAM;
             byte[] bArr2 = this.buffer;
-            int i3 = this.indexInBuffer;
-            int i4 = i3 + 1;
-            this.indexInBuffer = i4;
-            bArr2[i3] = (byte) ((i >> 6) | 192);
-            this.indexInBuffer = i3 + 2;
-            bArr2[i4] = (byte) ((i & 63) | 128);
+            int i4 = this.indexInBuffer;
+            int i5 = i4 + 1;
+            this.indexInBuffer = i5;
+            bArr2[i4] = (byte) i3;
+            this.indexInBuffer = i4 + 2;
+            bArr2[i5] = (byte) ((i & 63) | 128);
         } else if (55296 <= i && i < 57344) {
             if (this.buffer.length - this.indexInBuffer < 1) {
                 flush();
             }
             byte[] bArr3 = this.buffer;
-            int i5 = this.indexInBuffer;
-            this.indexInBuffer = i5 + 1;
-            bArr3[i5] = Utf8.REPLACEMENT_BYTE;
+            int i6 = this.indexInBuffer;
+            this.indexInBuffer = i6 + 1;
+            bArr3[i6] = Utf8.REPLACEMENT_BYTE;
         } else if (i < 65536) {
             if (this.buffer.length - this.indexInBuffer < 3) {
                 flush();
             }
             byte[] bArr4 = this.buffer;
-            int i6 = this.indexInBuffer;
-            int i7 = i6 + 1;
-            this.indexInBuffer = i7;
-            bArr4[i6] = (byte) ((i >> 12) | 224);
-            int i8 = i6 + 2;
+            int i7 = this.indexInBuffer;
+            int i8 = i7 + 1;
             this.indexInBuffer = i8;
-            bArr4[i7] = (byte) (((i >> 6) & 63) | 128);
-            this.indexInBuffer = i6 + 3;
-            bArr4[i8] = (byte) ((i & 63) | 128);
+            bArr4[i7] = (byte) ((i >> 12) | 224);
+            int i9 = i7 + 2;
+            this.indexInBuffer = i9;
+            bArr4[i8] = (byte) (((i >> 6) & 63) | 128);
+            this.indexInBuffer = i7 + 3;
+            bArr4[i9] = (byte) ((i & 63) | 128);
         } else if (i > 1114111) {
             throw new JsonEncodingException("Unexpected code point: " + i + ". Check your strings for malformed UTF-8 sequences.", null, null, 6, null);
         } else {
@@ -288,18 +291,18 @@ public final class JsonToJavaStreamWriter implements InternalJsonWriter {
                 flush();
             }
             byte[] bArr5 = this.buffer;
-            int i9 = this.indexInBuffer;
-            int i10 = i9 + 1;
-            this.indexInBuffer = i10;
-            bArr5[i9] = (byte) ((i >> 18) | 240);
-            int i11 = i9 + 2;
+            int i10 = this.indexInBuffer;
+            int i11 = i10 + 1;
             this.indexInBuffer = i11;
-            bArr5[i10] = (byte) (((i >> 12) & 63) | 128);
-            int i12 = i9 + 3;
+            bArr5[i10] = (byte) ((i >> 18) | 240);
+            int i12 = i10 + 2;
             this.indexInBuffer = i12;
-            bArr5[i11] = (byte) (((i >> 6) & 63) | 128);
-            this.indexInBuffer = i9 + 4;
-            bArr5[i12] = (byte) ((i & 63) | 128);
+            bArr5[i11] = (byte) (((i >> 12) & 63) | 128);
+            int i13 = i10 + 3;
+            this.indexInBuffer = i13;
+            bArr5[i12] = (byte) (((i >> 6) & 63) | 128);
+            this.indexInBuffer = i10 + 4;
+            bArr5[i13] = (byte) ((i & 63) | 128);
         }
     }
 }

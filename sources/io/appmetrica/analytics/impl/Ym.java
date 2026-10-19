@@ -2,7 +2,6 @@ package io.appmetrica.analytics.impl;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.ts.TsExtractor;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.InternalNano;
@@ -21,7 +20,7 @@ public final class Ym extends MessageNano {
     public Sm C;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f864a;
+    public String f867a;
     public long b;
     public String[] c;
     public String d;
@@ -64,7 +63,7 @@ public final class Ym extends MessageNano {
     }
 
     public final Ym a() {
-        this.f864a = "";
+        this.f867a = "";
         this.b = 0L;
         String[] strArr = WireFormatNano.EMPTY_STRING_ARRAY;
         this.c = strArr;
@@ -101,8 +100,8 @@ public final class Ym extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f864a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f864a);
+        if (!this.f867a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f867a);
         }
         int computeInt64Size = CodedOutputByteBufferNano.computeInt64Size(2, this.b) + computeSerializedSize;
         String[] strArr = this.c;
@@ -273,8 +272,8 @@ public final class Ym extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f864a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f864a);
+        if (!this.f867a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f867a);
         }
         codedOutputByteBufferNano.writeInt64(2, this.b);
         String[] strArr = this.c;
@@ -445,7 +444,7 @@ public final class Ym extends MessageNano {
                 case 0:
                     break;
                 case 10:
-                    this.f864a = codedInputByteBufferNano.readString();
+                    this.f867a = codedInputByteBufferNano.readString();
                     break;
                 case 16:
                     this.b = codedInputByteBufferNano.readInt64();
@@ -587,7 +586,7 @@ public final class Ym extends MessageNano {
                 case 184:
                     this.u = codedInputByteBufferNano.readBool();
                     break;
-                case DownloaderService.STATUS_WAITING_TO_RETRY /* 194 */:
+                case 194:
                     if (this.v == null) {
                         this.v = new Vm();
                     }

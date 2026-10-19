@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.atm.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ItemAtmSlotChickenBinding implements ViewBinding {
     public final ConstraintLayout billsContainer;
     private final FrameLayout rootView;

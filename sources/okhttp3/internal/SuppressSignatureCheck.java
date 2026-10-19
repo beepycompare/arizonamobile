@@ -15,6 +15,6 @@ import kotlin.annotation.AnnotationTarget;
 @Documented
 @Retention(RetentionPolicy.CLASS)
 @kotlin.annotation.Retention(AnnotationRetention.BINARY)
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public @interface SuppressSignatureCheck {
 }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ResolveInfo;
 import androidx.compose.ui.text.TextRange;
+import coil3.network.internal.UtilsKt;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -79,7 +80,7 @@ public final class ProcessTextApi23Impl {
     }
 
     private final Intent createProcessTextIntent() {
-        return new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain");
+        return new Intent().setAction("android.intent.action.PROCESS_TEXT").setType(UtilsKt.MIME_TYPE_TEXT_PLAIN);
     }
 
     public final Intent createProcessTextIntentForResolveInfo(ResolveInfo resolveInfo, boolean z) {

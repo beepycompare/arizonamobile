@@ -5,6 +5,7 @@ import android.os.SystemClock;
 import android.view.Surface;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
+import androidx.media3.common.PlaybackException;
 import androidx.media3.common.VideoSize;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.TimedValueQueue;
@@ -129,7 +130,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
             } catch (DecoderException e) {
                 Log.e(TAG, "Video codec error", e);
                 this.eventDispatcher.videoCodecError(e);
-                throw createRendererException(e, this.inputFormat, 4003);
+                throw createRendererException(e, this.inputFormat, PlaybackException.ERROR_CODE_DECODING_FAILED);
             }
         }
     }
@@ -448,9 +449,9 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         } catch (DecoderException e) {
             Log.e(TAG, "Video codec error", e);
             this.eventDispatcher.videoCodecError(e);
-            throw createRendererException(e, this.inputFormat, 4001);
+            throw createRendererException(e, this.inputFormat, PlaybackException.ERROR_CODE_DECODER_INIT_FAILED);
         } catch (OutOfMemoryError e2) {
-            throw createRendererException(e2, this.inputFormat, 4001);
+            throw createRendererException(e2, this.inputFormat, PlaybackException.ERROR_CODE_DECODER_INIT_FAILED);
         }
     }
 

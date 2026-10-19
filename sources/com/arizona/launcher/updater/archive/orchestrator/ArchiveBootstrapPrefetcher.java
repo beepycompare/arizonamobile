@@ -149,12 +149,13 @@ public final class ArchiveBootstrapPrefetcher {
         }
 
         public final ArchiveBootstrapPrefetcher forAndroid(Context context, boolean z) {
+            File downloadRoot;
             Intrinsics.checkNotNullParameter(context, "context");
-            File resolve = ArchiveDownloadRootResolver.Companion.getProcess().resolve(context);
-            if (resolve == null) {
+            ArchiveUpdaterStorageRoots resolve = ArchiveDownloadRootResolver.Companion.getProcess().resolve(context, ArchiveUpdaterStorageScope.BASE);
+            if (resolve == null || (downloadRoot = resolve.getDownloadRoot()) == null) {
                 return null;
             }
-            return new ArchiveBootstrapPrefetcher(resolve, false, new ArchiveBootstrapPrefetcher$Companion$forAndroid$1(new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), new AndroidArchiveNetworkMonitor(context), 0L, null, false, FileArchiveDownloadResumeStore.Companion.forAndroid(), null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, ComposerKt.providerMapsKey, null)));
+            return new ArchiveBootstrapPrefetcher(downloadRoot, false, new ArchiveBootstrapPrefetcher$Companion$forAndroid$1(new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), new AndroidArchiveNetworkMonitor(context), 0L, null, false, FileArchiveDownloadResumeStore.Companion.forAndroid(), null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, ComposerKt.providerMapsKey, null)));
         }
     }
 }

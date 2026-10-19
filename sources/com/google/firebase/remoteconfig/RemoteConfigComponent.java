@@ -227,7 +227,7 @@ public class RemoteConfigComponent implements FirebaseRemoteConfigInterop {
         get(str).getRolloutsStateSubscriptionsHandler().registerRolloutsStateSubscriber(rolloutsStateSubscriber);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes4.dex */
     private static class GlobalBackgroundListener implements BackgroundDetector.BackgroundStateChangeListener {
         private static final AtomicReference<GlobalBackgroundListener> INSTANCE = new AtomicReference<>();
 

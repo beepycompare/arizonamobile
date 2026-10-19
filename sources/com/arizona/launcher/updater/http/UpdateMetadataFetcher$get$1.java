@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.http;
 
+import com.google.android.gms.common.internal.ImagesContract;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateMetadataFetcher.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.http.UpdateMetadataFetcher", f = "UpdateMetadataFetcher.kt", i = {0, 1, 1}, l = {12, 13}, m = "get", n = {"url", "url", "first"}, nl = {13, 14}, s = {"L$0", "L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.http.UpdateMetadataFetcher", f = "UpdateMetadataFetcher.kt", i = {0, 1, 1}, l = {12, 13}, m = "get", n = {ImagesContract.URL, ImagesContract.URL, "first"}, nl = {13, 14}, s = {"L$0", "L$0", "L$1"}, v = 2)
 /* loaded from: classes3.dex */
 public final class UpdateMetadataFetcher$get$1 extends ContinuationImpl {
     Object L$0;

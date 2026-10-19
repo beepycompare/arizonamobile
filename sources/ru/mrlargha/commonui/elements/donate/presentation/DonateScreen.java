@@ -207,7 +207,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         this._token = sharedPreferences.getString("api_token", "");
         this.categories = CollectionsKt.emptyList();
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         checkArizonaType();
     }
 
@@ -238,7 +238,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             }
             obj = it.next();
             DonateCategoryModelUi donateCategoryModelUi = (DonateCategoryModelUi) obj;
-            if (donateCategoryModelUi.getVisible() && donateCategoryModelUi.m11869getGridTemplateType() == GridTemplateType.PAYPASS) {
+            if (donateCategoryModelUi.getVisible() && donateCategoryModelUi.m11922getGridTemplateType() == GridTemplateType.PAYPASS) {
                 break;
             }
         }
@@ -622,7 +622,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
             getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
         }
         Log.d("TAG", "selectCategory: " + donateCategoryModelUi.getId());
-        GridTemplateType m11869getGridTemplateType = donateCategoryModelUi.m11869getGridTemplateType();
+        GridTemplateType m11922getGridTemplateType = donateCategoryModelUi.m11922getGridTemplateType();
         FrameLayout pagesContainer = donateScreenBinding.pagesContainer;
         Intrinsics.checkNotNullExpressionValue(pagesContainer, "pagesContainer");
         pagesContainer.setVisibility(4);
@@ -630,7 +630,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         Intrinsics.checkNotNullExpressionValue(pageProgressBar, "pageProgressBar");
         pageProgressBar.setVisibility(0);
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$selectCategory$1$1(this, donateStates, j, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[m11869getGridTemplateType.ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[m11922getGridTemplateType.ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {

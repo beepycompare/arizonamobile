@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.runtime.ComposerKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -42,8 +43,8 @@ public final class MetaldetectorScreen extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         this.lastDuration = 1.0f;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
         MetaldetectorScreen metaldetectorScreen = this;
+        SAMPUIElement.addViewToConstraintLayout$default(metaldetectorScreen, constraintLayout, -1, -1, false, 8, null);
         MaterialButton digButton = bind.digButton;
         Intrinsics.checkNotNullExpressionValue(digButton, "digButton");
         SAMPUIElement.bindBackendClick$default(metaldetectorScreen, digButton, 0, 0, (String) null, 6, (Object) null);
@@ -156,7 +157,7 @@ public final class MetaldetectorScreen extends SAMPUIElement {
             } else if (intValue == 2) {
                 this.binding.imageView37.setColorFilter(UtilsKt.isArizonaType() ? Color.rgb(255, (int) ComposerKt.providerMapsKey, 51) : Color.parseColor("#59E827"));
             } else if (intValue == 3) {
-                this.binding.imageView37.setColorFilter(UtilsKt.isArizonaType() ? Color.rgb(240, 108, 13) : Color.rgb(255, 33, 33));
+                this.binding.imageView37.setColorFilter(UtilsKt.isArizonaType() ? Color.rgb(240, (int) AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, 13) : Color.rgb(255, 33, 33));
             } else if (intValue == 4) {
                 if (UtilsKt.isArizonaType()) {
                     this.binding.imageView37.setColorFilter(Color.rgb(255, 255, 255));

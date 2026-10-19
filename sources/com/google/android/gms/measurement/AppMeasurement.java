@@ -11,6 +11,7 @@ import com.google.android.gms.measurement.internal.zzjp;
 import com.google.android.gms.measurement.internal.zzjq;
 import com.google.android.gms.measurement.internal.zzlk;
 import com.google.android.gms.measurement.internal.zzlt;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -150,7 +151,7 @@ public class AppMeasurement {
         Bundle bundle = new Bundle();
         String str = conditionalUserProperty.mAppId;
         if (str != null) {
-            bundle.putString("app_id", str);
+            bundle.putString(CommonUrlParts.APP_ID, str);
         }
         String str2 = conditionalUserProperty.mOrigin;
         if (str2 != null) {
@@ -242,7 +243,7 @@ public class AppMeasurement {
 
         ConditionalUserProperty(Bundle bundle) {
             Preconditions.checkNotNull(bundle);
-            this.mAppId = (String) zzjh.zzb(bundle, "app_id", String.class, null);
+            this.mAppId = (String) zzjh.zzb(bundle, CommonUrlParts.APP_ID, String.class, null);
             this.mOrigin = (String) zzjh.zzb(bundle, "origin", String.class, null);
             this.mName = (String) zzjh.zzb(bundle, "name", String.class, null);
             this.mValue = zzjh.zzb(bundle, "value", Object.class, null);

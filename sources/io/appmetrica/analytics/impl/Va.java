@@ -6,17 +6,17 @@ public final class Va extends P2 {
     }
 
     @Override // io.appmetrica.analytics.impl.P2, io.appmetrica.analytics.impl.Wa
-    public final C0517po a(String str) {
+    public final C0512po a(String str) {
         int i = 0;
         if (str != null) {
             int length = str.length();
-            int i2 = this.f713a;
+            int i2 = this.f716a;
             if (length > i2) {
                 String substring = str.substring(0, i2);
                 i = str.getBytes().length - substring.getBytes().length;
                 str = substring;
             }
         }
-        return new C0517po(str, new C0522q3(i));
+        return new C0512po(str, new C0517q3(i));
     }
 }

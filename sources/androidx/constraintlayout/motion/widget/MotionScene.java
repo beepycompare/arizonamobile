@@ -27,6 +27,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.R;
 import androidx.constraintlayout.widget.StateSet;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.adjust.sdk.Constants;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -85,7 +86,7 @@ public class MotionScene {
     private SparseArray<ConstraintSet> mConstraintSetMap = new SparseArray<>();
     private HashMap<String, Integer> mConstraintSetIdMap = new HashMap<>();
     private SparseIntArray mDeriveMap = new SparseIntArray();
-    private int mDefaultDuration = 400;
+    private int mDefaultDuration = Constants.MINIMAL_ERROR_STATUS_CODE;
     private int mLayoutDuringTransition = 0;
     private boolean mIgnoreTouch = false;
     private boolean mMotionOutsideRegion = false;
@@ -745,7 +746,7 @@ public class MotionScene {
             this.mDefaultInterpolator = 0;
             this.mDefaultInterpolatorString = null;
             this.mDefaultInterpolatorID = -1;
-            this.mDuration = 400;
+            this.mDuration = Constants.MINIMAL_ERROR_STATUS_CODE;
             this.mStagger = 0.0f;
             this.mKeyFramesList = new ArrayList<>();
             this.mTouchResponse = null;
@@ -777,7 +778,7 @@ public class MotionScene {
             this.mDefaultInterpolator = 0;
             this.mDefaultInterpolatorString = null;
             this.mDefaultInterpolatorID = -1;
-            this.mDuration = 400;
+            this.mDuration = Constants.MINIMAL_ERROR_STATUS_CODE;
             this.mStagger = 0.0f;
             this.mKeyFramesList = new ArrayList<>();
             this.mTouchResponse = null;
@@ -803,7 +804,7 @@ public class MotionScene {
             this.mDefaultInterpolator = 0;
             this.mDefaultInterpolatorString = null;
             this.mDefaultInterpolatorID = -1;
-            this.mDuration = 400;
+            this.mDuration = Constants.MINIMAL_ERROR_STATUS_CODE;
             this.mStagger = 0.0f;
             this.mKeyFramesList = new ArrayList<>();
             this.mTouchResponse = null;

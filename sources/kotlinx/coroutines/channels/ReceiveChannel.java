@@ -1,7 +1,6 @@
 package kotlinx.coroutines.channels;
 
 import androidx.exifinterface.media.ExifInterface;
-import com.facebook.widget.FacebookDialog;
 import java.util.concurrent.CancellationException;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
@@ -15,7 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.internal.StackTraceRecoveryKt;
 import kotlinx.coroutines.selects.SelectClause1;
 /* compiled from: Channel.kt */
-@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0006\bf\u0018\u0000*\u0006\b\u0000\u0010\u0001 \u00012\u00020\u0002J\u000e\u0010\n\u001a\u00028\u0000H¦@¢\u0006\u0002\u0010\u000bJ\u0016\u0010\u0010\u001a\b\u0012\u0004\u0012\u00028\u00000\u0011H¦@¢\u0006\u0004\b\u0012\u0010\u000bJ\u0015\u0010\u0015\u001a\b\u0012\u0004\u0012\u00028\u00000\u0011H&¢\u0006\u0004\b\u0016\u0010\u0017J\u000f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00028\u00000\u0019H¦\u0002J\u001f\u0010\u001a\u001a\u00020\u001b2\u0010\b\u0002\u0010\u001c\u001a\n\u0018\u00010\u001dj\u0004\u0018\u0001`\u001eH&¢\u0006\u0002\u0010\u001fJ\b\u0010\u001a\u001a\u00020\u001bH\u0017J\u0014\u0010\u001a\u001a\u00020\u00042\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010 H'J\u000f\u0010!\u001a\u0004\u0018\u00018\u0000H\u0017¢\u0006\u0002\u0010\u0017J\u0010\u0010\"\u001a\u0004\u0018\u00018\u0000H\u0097@¢\u0006\u0002\u0010\u000bR\u001a\u0010\u0003\u001a\u00020\u00048&X§\u0004¢\u0006\f\u0012\u0004\b\u0005\u0010\u0006\u001a\u0004\b\u0003\u0010\u0007R\u001a\u0010\b\u001a\u00020\u00048&X§\u0004¢\u0006\f\u0012\u0004\b\t\u0010\u0006\u001a\u0004\b\b\u0010\u0007R\u0018\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00000\rX¦\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u001e\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\u00110\rX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u000fR\"\u0010#\u001a\n\u0012\u0006\u0012\u0004\u0018\u00018\u00000\r8VX\u0097\u0004¢\u0006\f\u0012\u0004\b$\u0010\u0006\u001a\u0004\b%\u0010\u000f¨\u0006&À\u0006\u0003"}, d2 = {"Lkotlinx/coroutines/channels/ReceiveChannel;", ExifInterface.LONGITUDE_EAST, "", "isClosedForReceive", "", "isClosedForReceive$annotations", "()V", "()Z", "isEmpty", "isEmpty$annotations", "receive", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onReceive", "Lkotlinx/coroutines/selects/SelectClause1;", "getOnReceive", "()Lkotlinx/coroutines/selects/SelectClause1;", "receiveCatching", "Lkotlinx/coroutines/channels/ChannelResult;", "receiveCatching-JP2dKIU", "onReceiveCatching", "getOnReceiveCatching", "tryReceive", "tryReceive-PtdJZtk", "()Ljava/lang/Object;", "iterator", "Lkotlinx/coroutines/channels/ChannelIterator;", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "cause", "Ljava/util/concurrent/CancellationException;", "Lkotlinx/coroutines/CancellationException;", "(Ljava/util/concurrent/CancellationException;)V", "", "poll", "receiveOrNull", "onReceiveOrNull", "getOnReceiveOrNull$annotations", "getOnReceiveOrNull", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0006\bf\u0018\u0000*\u0006\b\u0000\u0010\u0001 \u00012\u00020\u0002J\u000e\u0010\n\u001a\u00028\u0000H¦@¢\u0006\u0002\u0010\u000bJ\u0016\u0010\u0010\u001a\b\u0012\u0004\u0012\u00028\u00000\u0011H¦@¢\u0006\u0004\b\u0012\u0010\u000bJ\u0015\u0010\u0015\u001a\b\u0012\u0004\u0012\u00028\u00000\u0011H&¢\u0006\u0004\b\u0016\u0010\u0017J\u000f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00028\u00000\u0019H¦\u0002J\u001f\u0010\u001a\u001a\u00020\u001b2\u0010\b\u0002\u0010\u001c\u001a\n\u0018\u00010\u001dj\u0004\u0018\u0001`\u001eH&¢\u0006\u0002\u0010\u001fJ\b\u0010\u001a\u001a\u00020\u001bH\u0017J\u0014\u0010\u001a\u001a\u00020\u00042\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010 H'J\u000f\u0010!\u001a\u0004\u0018\u00018\u0000H\u0017¢\u0006\u0002\u0010\u0017J\u0010\u0010\"\u001a\u0004\u0018\u00018\u0000H\u0097@¢\u0006\u0002\u0010\u000bR\u001a\u0010\u0003\u001a\u00020\u00048&X§\u0004¢\u0006\f\u0012\u0004\b\u0005\u0010\u0006\u001a\u0004\b\u0003\u0010\u0007R\u001a\u0010\b\u001a\u00020\u00048&X§\u0004¢\u0006\f\u0012\u0004\b\t\u0010\u0006\u001a\u0004\b\b\u0010\u0007R\u0018\u0010\f\u001a\b\u0012\u0004\u0012\u00028\u00000\rX¦\u0004¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u001e\u0010\u0013\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00028\u00000\u00110\rX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u000fR\"\u0010#\u001a\n\u0012\u0006\u0012\u0004\u0018\u00018\u00000\r8VX\u0097\u0004¢\u0006\f\u0012\u0004\b$\u0010\u0006\u001a\u0004\b%\u0010\u000f¨\u0006&À\u0006\u0003"}, d2 = {"Lkotlinx/coroutines/channels/ReceiveChannel;", ExifInterface.LONGITUDE_EAST, "", "isClosedForReceive", "", "isClosedForReceive$annotations", "()V", "()Z", "isEmpty", "isEmpty$annotations", "receive", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "onReceive", "Lkotlinx/coroutines/selects/SelectClause1;", "getOnReceive", "()Lkotlinx/coroutines/selects/SelectClause1;", "receiveCatching", "Lkotlinx/coroutines/channels/ChannelResult;", "receiveCatching-JP2dKIU", "onReceiveCatching", "getOnReceiveCatching", "tryReceive", "tryReceive-PtdJZtk", "()Ljava/lang/Object;", "iterator", "Lkotlinx/coroutines/channels/ChannelIterator;", "cancel", "", "cause", "Ljava/util/concurrent/CancellationException;", "Lkotlinx/coroutines/CancellationException;", "(Ljava/util/concurrent/CancellationException;)V", "", "poll", "receiveOrNull", "onReceiveOrNull", "getOnReceiveOrNull$annotations", "getOnReceiveOrNull", "kotlinx-coroutines-core"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public interface ReceiveChannel<E> {
     void cancel(CancellationException cancellationException);
@@ -36,7 +35,7 @@ public interface ReceiveChannel<E> {
     Object receive(Continuation<? super E> continuation);
 
     /* renamed from: receiveCatching-JP2dKIU */
-    Object mo11462receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation);
+    Object mo11515receiveCatchingJP2dKIU(Continuation<? super ChannelResult<? extends E>> continuation);
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "Deprecated in favor of 'receiveCatching'. Please note that the provided replacement does not rethrow channel's close cause as 'receiveOrNull' did, for the detailed replacement please refer to the 'receiveOrNull' documentation", replaceWith = @ReplaceWith(expression = "receiveCatching().getOrNull()", imports = {}))
     default Object receiveOrNull(Continuation<? super E> continuation) {
@@ -44,7 +43,7 @@ public interface ReceiveChannel<E> {
     }
 
     /* renamed from: tryReceive-PtdJZtk */
-    Object mo11463tryReceivePtdJZtk();
+    Object mo11516tryReceivePtdJZtk();
 
     /* compiled from: Channel.kt */
     @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
@@ -105,15 +104,15 @@ public interface ReceiveChannel<E> {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "Deprecated in the favour of 'tryReceive'. Please note that the provided replacement does not rethrow channel's close cause as 'poll' did, for the precise replacement please refer to the 'poll' documentation", replaceWith = @ReplaceWith(expression = "tryReceive().getOrNull()", imports = {}))
     default E poll() {
-        Object mo11463tryReceivePtdJZtk = mo11463tryReceivePtdJZtk();
-        if (ChannelResult.m11479isSuccessimpl(mo11463tryReceivePtdJZtk)) {
-            return (E) ChannelResult.m11475getOrThrowimpl(mo11463tryReceivePtdJZtk);
+        Object mo11516tryReceivePtdJZtk = mo11516tryReceivePtdJZtk();
+        if (ChannelResult.m11532isSuccessimpl(mo11516tryReceivePtdJZtk)) {
+            return (E) ChannelResult.m11528getOrThrowimpl(mo11516tryReceivePtdJZtk);
         }
-        Throwable m11473exceptionOrNullimpl = ChannelResult.m11473exceptionOrNullimpl(mo11463tryReceivePtdJZtk);
-        if (m11473exceptionOrNullimpl == null) {
+        Throwable m11526exceptionOrNullimpl = ChannelResult.m11526exceptionOrNullimpl(mo11516tryReceivePtdJZtk);
+        if (m11526exceptionOrNullimpl == null) {
             return null;
         }
-        throw StackTraceRecoveryKt.recoverStackTrace(m11473exceptionOrNullimpl);
+        throw StackTraceRecoveryKt.recoverStackTrace(m11526exceptionOrNullimpl);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -125,7 +124,7 @@ public interface ReceiveChannel<E> {
     static /* synthetic */ <E> Object receiveOrNull$suspendImpl(ReceiveChannel<? extends E> receiveChannel, Continuation<? super E> continuation) {
         ReceiveChannel$receiveOrNull$1 receiveChannel$receiveOrNull$1;
         int i;
-        Object mo11462receiveCatchingJP2dKIU;
+        Object mo11515receiveCatchingJP2dKIU;
         if (continuation instanceof ReceiveChannel$receiveOrNull$1) {
             receiveChannel$receiveOrNull$1 = (ReceiveChannel$receiveOrNull$1) continuation;
             if ((receiveChannel$receiveOrNull$1.label & Integer.MIN_VALUE) != 0) {
@@ -137,8 +136,8 @@ public interface ReceiveChannel<E> {
                     ResultKt.throwOnFailure(obj);
                     receiveChannel$receiveOrNull$1.L$0 = SpillingKt.nullOutSpilledVariable(receiveChannel);
                     receiveChannel$receiveOrNull$1.label = 1;
-                    mo11462receiveCatchingJP2dKIU = receiveChannel.mo11462receiveCatchingJP2dKIU(receiveChannel$receiveOrNull$1);
-                    if (mo11462receiveCatchingJP2dKIU == coroutine_suspended) {
+                    mo11515receiveCatchingJP2dKIU = receiveChannel.mo11515receiveCatchingJP2dKIU(receiveChannel$receiveOrNull$1);
+                    if (mo11515receiveCatchingJP2dKIU == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 } else if (i != 1) {
@@ -146,9 +145,9 @@ public interface ReceiveChannel<E> {
                 } else {
                     ReceiveChannel receiveChannel2 = (ReceiveChannel) receiveChannel$receiveOrNull$1.L$0;
                     ResultKt.throwOnFailure(obj);
-                    mo11462receiveCatchingJP2dKIU = ((ChannelResult) obj).m11481unboximpl();
+                    mo11515receiveCatchingJP2dKIU = ((ChannelResult) obj).m11534unboximpl();
                 }
-                return ChannelResult.m11474getOrNullimpl(mo11462receiveCatchingJP2dKIU);
+                return ChannelResult.m11527getOrNullimpl(mo11515receiveCatchingJP2dKIU);
             }
         }
         receiveChannel$receiveOrNull$1 = new ReceiveChannel$receiveOrNull$1(receiveChannel, continuation);
@@ -157,7 +156,7 @@ public interface ReceiveChannel<E> {
         i = receiveChannel$receiveOrNull$1.label;
         if (i != 0) {
         }
-        return ChannelResult.m11474getOrNullimpl(mo11462receiveCatchingJP2dKIU);
+        return ChannelResult.m11527getOrNullimpl(mo11515receiveCatchingJP2dKIU);
     }
 
     default SelectClause1<E> getOnReceiveOrNull() {

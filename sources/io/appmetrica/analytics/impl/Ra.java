@@ -5,14 +5,14 @@ import java.util.List;
 public abstract class Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Li f745a;
+    public final Li f748a;
 
     public Ra(Li li) {
-        this.f745a = li;
+        this.f748a = li;
     }
 
     public final Li a() {
-        return this.f745a;
+        return this.f748a;
     }
 
     public abstract void a(List list);

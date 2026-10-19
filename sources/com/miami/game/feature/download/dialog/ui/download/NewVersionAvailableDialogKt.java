@@ -210,12 +210,12 @@ public final class NewVersionAvailableDialogKt {
                 ComposerKt.traceEventStart(960090197, i2, -1, "com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogContent (NewVersionAvailableDialog.kt:67)");
             }
             function0 = onDismiss;
-            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), function0, ComposableLambdaKt.rememberComposableLambda(1396301117, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogKt$$ExternalSyntheticLambda3
+            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_background_download_icon), function0, null, ComposableLambdaKt.rememberComposableLambda(-706152386, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return NewVersionAvailableDialogKt.NewVersionAvailableDialogContent$lambda$0(Function0.this, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), startRestartGroup, (i2 & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            }, startRestartGroup, 54), startRestartGroup, (i2 & 112) | 3072, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -236,7 +236,7 @@ public final class NewVersionAvailableDialogKt {
         ComposerKt.sourceInformation(composer, "C69@2525L10,69@2498L93,72@2619L85,71@2600L217,79@2826L419:NewVersionAvailableDialog.kt#as3uag");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1396301117, i, -1, "com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogContent.<anonymous> (NewVersionAvailableDialog.kt:69)");
+                ComposerKt.traceEventStart(-706152386, i, -1, "com.miami.game.feature.download.dialog.ui.download.NewVersionAvailableDialogContent.<anonymous> (NewVersionAvailableDialog.kt:69)");
             }
             TextKt.m3157TextNvy7gAk("ДОСТУПНА НОВАЯ ВЕРСИЯ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 6, 0, 131070);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_download_image, composer, 0), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(100.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
@@ -265,8 +265,8 @@ public final class NewVersionAvailableDialogKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -1637839525, "C80@2869L43,80@2844L187,86@3070L43,86@3044L191:NewVersionAvailableDialog.kt#as3uag");
-            ComposerKt.sourceInformationMarkerStart(composer, 1194092908, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1972897466, "C80@2869L43,80@2844L187,86@3070L43,86@3044L191:NewVersionAvailableDialog.kt#as3uag");
+            ComposerKt.sourceInformationMarkerStart(composer, -629094355, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -281,8 +281,8 @@ public final class NewVersionAvailableDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m9807getLambda$1405896063$dialogs(), composer, 48);
-            ComposerKt.sourceInformationMarkerStart(composer, 1194099340, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.getLambda$786617730$dialogs(), composer, 48);
+            ComposerKt.sourceInformationMarkerStart(composer, -629087923, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -297,7 +297,7 @@ public final class NewVersionAvailableDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m9808getLambda$1889472662$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.getLambda$303041131$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

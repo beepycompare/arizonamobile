@@ -1,6 +1,5 @@
 package io.appmetrica.analytics.impl;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.UUID;
 /* loaded from: classes5.dex */
 public final class So {
@@ -18,6 +17,6 @@ public final class So {
     }
 
     public static String b(String str) {
-        return str.substring(0, 8) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(8, 12) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(12, 16) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(16, 20) + Constants.FILENAME_SEQUENCE_SEPARATOR + str.substring(20, 32);
+        return str.substring(0, 8) + "-" + str.substring(8, 12) + "-" + str.substring(12, 16) + "-" + str.substring(16, 20) + "-" + str.substring(20, 32);
     }
 }

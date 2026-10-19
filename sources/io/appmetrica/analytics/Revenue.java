@@ -1,6 +1,6 @@
 package io.appmetrica.analytics;
 
-import io.appmetrica.analytics.impl.C0310ho;
+import io.appmetrica.analytics.impl.C0305ho;
 import io.appmetrica.analytics.impl.Ce;
 import java.util.Currency;
 /* loaded from: classes5.dex */
@@ -14,10 +14,10 @@ public class Revenue {
 
     /* loaded from: classes5.dex */
     public static class Builder {
-        private static final C0310ho g = new C0310ho(new Ce("revenue currency"));
+        private static final C0305ho g = new C0305ho(new Ce("revenue currency"));
 
         /* renamed from: a  reason: collision with root package name */
-        final long f222a;
+        final long f225a;
         final Currency b;
         Integer c;
         String d;
@@ -54,7 +54,7 @@ public class Revenue {
 
         private Builder(long j, Currency currency) {
             g.a(currency);
-            this.f222a = j;
+            this.f225a = j;
             this.b = currency;
         }
     }
@@ -68,7 +68,7 @@ public class Revenue {
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */
-            private String f223a;
+            private String f226a;
             private String b;
 
             /* synthetic */ Builder(int i) {
@@ -80,7 +80,7 @@ public class Revenue {
             }
 
             public Builder withData(String str) {
-                this.f223a = str;
+                this.f226a = str;
                 return this;
             }
 
@@ -102,7 +102,7 @@ public class Revenue {
         }
 
         private Receipt(Builder builder) {
-            this.data = builder.f223a;
+            this.data = builder.f226a;
             this.signature = builder.b;
         }
     }
@@ -116,7 +116,7 @@ public class Revenue {
     }
 
     private Revenue(Builder builder) {
-        this.priceMicros = builder.f222a;
+        this.priceMicros = builder.f225a;
         this.currency = builder.b;
         this.quantity = builder.c;
         this.productID = builder.d;

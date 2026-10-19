@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class T2 implements Vo {
     @Override // io.appmetrica.analytics.impl.Vo
     public final To a(Object obj) {
-        Io[] ioArr = ((Lo) obj).f655a;
+        Io[] ioArr = ((Lo) obj).f658a;
         if (ioArr != null && ioArr.length != 0) {
             return new To(this, true, "");
         }

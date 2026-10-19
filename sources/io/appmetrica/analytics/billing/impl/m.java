@@ -20,12 +20,12 @@ import kotlin.text.StringsKt;
 public final class m implements ServiceModuleReporterComponentLifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f269a;
+    public final ServiceContext f272a;
     public B b;
     public BillingMonitor c;
 
     public m(ServiceContext serviceContext, B b) {
-        this.f269a = serviceContext;
+        this.f272a = serviceContext;
         this.b = b;
     }
 
@@ -35,7 +35,7 @@ public final class m implements ServiceModuleReporterComponentLifecycleListener 
         if (billingMonitor != null) {
             if (b != null) {
                 A a2 = b.b;
-                billingConfig = new BillingConfig(a2.f259a, a2.b);
+                billingConfig = new BillingConfig(a2.f262a, a2.b);
             } else {
                 billingConfig = null;
             }
@@ -59,9 +59,9 @@ public final class m implements ServiceModuleReporterComponentLifecycleListener 
         if (!serviceModuleReporterComponentContext.getConfig().isRevenueAutoTrackingEnabled()) {
             return;
         }
-        Context context = this.f269a.getContext();
-        IHandlerExecutor defaultExecutor = this.f269a.getExecutorProvider().getDefaultExecutor();
-        Executor uiExecutor = this.f269a.getExecutorProvider().getUiExecutor();
+        Context context = this.f272a.getContext();
+        IHandlerExecutor defaultExecutor = this.f272a.getExecutorProvider().getDefaultExecutor();
+        Executor uiExecutor = this.f272a.getExecutorProvider().getUiExecutor();
         try {
             Class<?> findClass = ReflectionUtils.findClass("com.android.billingclient.BuildConfig");
             str = (String) ((findClass == null || (field = findClass.getField("VERSION_NAME")) == null) ? null : field.get(null));
@@ -87,16 +87,16 @@ public final class m implements ServiceModuleReporterComponentLifecycleListener 
         } else {
             billingType = BillingType.NONE;
         }
-        k kVar = new k(this.f269a.getServiceStorageProvider().createBinaryStateStorageFactory("auto_inapp_collecting_info_data", new e(), new C0096b(null, 1, null)).create(this.f269a.getContext()));
-        j jVar = new j(serviceModuleReporterComponentContext.getReporter(), this.f269a.getExecutorProvider().getReportRunnableExecutor(), null, 4, null);
-        int i = l.f268a[billingType.ordinal()];
+        k kVar = new k(this.f272a.getServiceStorageProvider().createBinaryStateStorageFactory("auto_inapp_collecting_info_data", new e(), new C0091b(null, 1, null)).create(this.f272a.getContext()));
+        j jVar = new j(serviceModuleReporterComponentContext.getReporter(), this.f272a.getExecutorProvider().getReportRunnableExecutor(), null, 4, null);
+        int i = l.f271a[billingType.ordinal()];
         if (i == 1) {
             billingLibraryMonitor = new BillingLibraryMonitor(context, defaultExecutor, uiExecutor, kVar, jVar, null, null, 96, null);
         } else if (i != 2) {
             billingMonitor = new DummyBillingMonitor();
             this.c = billingMonitor;
             a(this.b);
-            if (this.f269a.getApplicationStateProvider().registerStickyObserver(new ApplicationStateObserver() { // from class: io.appmetrica.analytics.billing.impl.m$$ExternalSyntheticLambda0
+            if (this.f272a.getApplicationStateProvider().registerStickyObserver(new ApplicationStateObserver() { // from class: io.appmetrica.analytics.billing.impl.m$$ExternalSyntheticLambda0
                 @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver
                 public final void onApplicationStateChanged(ApplicationState applicationState) {
                     m.a(m.this, applicationState);
@@ -120,7 +120,7 @@ public final class m implements ServiceModuleReporterComponentLifecycleListener 
         billingMonitor = billingLibraryMonitor;
         this.c = billingMonitor;
         a(this.b);
-        if (this.f269a.getApplicationStateProvider().registerStickyObserver(new ApplicationStateObserver() { // from class: io.appmetrica.analytics.billing.impl.m$$ExternalSyntheticLambda0
+        if (this.f272a.getApplicationStateProvider().registerStickyObserver(new ApplicationStateObserver() { // from class: io.appmetrica.analytics.billing.impl.m$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.applicationstate.ApplicationStateObserver
             public final void onApplicationStateChanged(ApplicationState applicationState) {
                 m.a(m.this, applicationState);

@@ -1,5 +1,6 @@
 package okio;
 
+import androidx.media3.extractor.ts.PsExtractor;
 import com.google.common.base.Ascii;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -105,7 +106,7 @@ public final class Utf8 {
                 }
             } else {
                 if (Intrinsics.compare((int) charAt2, 2048) < 0) {
-                    yield.invoke(Byte.valueOf((byte) ((charAt2 >> 6) | 192)));
+                    yield.invoke(Byte.valueOf((byte) ((charAt2 >> 6) | PsExtractor.AUDIO_STREAM)));
                     yield.invoke(Byte.valueOf((byte) ((charAt2 & '?') | 128)));
                 } else if (55296 > charAt2 || charAt2 >= 57344) {
                     yield.invoke(Byte.valueOf((byte) ((charAt2 >> '\f') | 224)));

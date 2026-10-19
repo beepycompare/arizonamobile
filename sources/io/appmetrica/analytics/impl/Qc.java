@@ -5,27 +5,27 @@ import io.appmetrica.analytics.coreutils.internal.services.PackageManagerUtils;
 import io.appmetrica.analytics.coreutils.internal.time.TimePassedChecker;
 import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes5.dex */
-public final class Qc extends C0446n5 {
+public final class Qc extends C0441n5 {
     public final W6 w;
 
-    public Qc(Context context, Hm hm, C0265g5 c0265g5, F4 f4, W6 w6, AbstractC0394l5 abstractC0394l5) {
-        this(context, c0265g5, f4, new C0415m0(), new TimePassedChecker(), new Sc(context, c0265g5, f4, abstractC0394l5, hm, new Mc(w6), Na.k().w().d(), PackageManagerUtils.getAppVersionCodeInt(context), Na.k().w(), Na.k().l(), new Gc()), w6);
+    public Qc(Context context, Hm hm, C0260g5 c0260g5, F4 f4, W6 w6, AbstractC0389l5 abstractC0389l5) {
+        this(context, c0260g5, f4, new C0410m0(), new TimePassedChecker(), new Sc(context, c0260g5, f4, abstractC0389l5, hm, new Mc(w6), Na.k().w().d(), PackageManagerUtils.getAppVersionCodeInt(context), Na.k().w(), Na.k().l(), new Gc()), w6);
     }
 
-    @Override // io.appmetrica.analytics.impl.C0446n5, io.appmetrica.analytics.impl.InterfaceC0452nb, io.appmetrica.analytics.impl.InterfaceC0271gb
+    @Override // io.appmetrica.analytics.impl.C0441n5, io.appmetrica.analytics.impl.InterfaceC0447nb, io.appmetrica.analytics.impl.InterfaceC0266gb
     public final synchronized void a(F4 f4) {
         super.a(f4);
         this.w.a(f4.i);
     }
 
-    @Override // io.appmetrica.analytics.impl.C0446n5, io.appmetrica.analytics.impl.InterfaceC0271gb
+    @Override // io.appmetrica.analytics.impl.C0441n5, io.appmetrica.analytics.impl.InterfaceC0266gb
     public final CounterConfigurationReporterType b() {
         return CounterConfigurationReporterType.MAIN;
     }
 
-    public Qc(Context context, C0265g5 c0265g5, F4 f4, C0415m0 c0415m0, TimePassedChecker timePassedChecker, Sc sc, W6 w6) {
-        super(context, c0265g5, c0415m0, timePassedChecker, sc, f4);
-        C0553r9 k = k();
+    public Qc(Context context, C0260g5 c0260g5, F4 f4, C0410m0 c0410m0, TimePassedChecker timePassedChecker, Sc sc, W6 w6) {
+        super(context, c0260g5, c0410m0, timePassedChecker, sc, f4);
+        C0548r9 k = k();
         k.a(Db.EVENT_TYPE_REGULAR, new Xg(k.a()));
         this.w = w6;
         Na.k().x().onMainReporterCreated(new Xk(this, f4));

@@ -25,6 +25,7 @@ import android.widget.TextView;
 import androidx.annotation.ReplaceWith;
 import androidx.core.text.PrecomputedTextCompat;
 import androidx.core.util.Preconditions;
+import coil3.network.internal.UtilsKt;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.InvocationTargetException;
@@ -283,7 +284,7 @@ public final class TextViewCompat {
         }
 
         private Intent createProcessTextIntent() {
-            return new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain");
+            return new Intent().setAction("android.intent.action.PROCESS_TEXT").setType(UtilsKt.MIME_TYPE_TEXT_PLAIN);
         }
     }
 

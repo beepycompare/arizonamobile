@@ -36,7 +36,7 @@ public final class Action extends SAMPUIElement implements DefaultLifecycleObser
         ActionBinding bind = ActionBinding.bind(relativeLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.actionBinding = bind;
-        SAMPUIElement.addViewToConstraintLayout$default(this, relativeLayout, 0, 0, 6, null);
+        SAMPUIElement.addViewToConstraintLayout$default(this, relativeLayout, 0, 0, false, 14, null);
         setVisibility(false);
     }
 

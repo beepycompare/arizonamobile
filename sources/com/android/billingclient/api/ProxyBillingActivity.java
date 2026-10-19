@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import androidx.core.content.ContextCompat;
 import com.android.billingclient.api.BillingResult;
-import com.google.android.billing.IabHelper;
 import com.google.android.gms.internal.play_billing.zzjd;
 import com.google.android.gms.internal.play_billing.zzjk;
 /* compiled from: com.android.billingclient:billing@@8.3.0 */
@@ -62,7 +61,7 @@ public class ProxyBillingActivity extends Activity {
 
     private Intent makePurchaseUpdatedIntentWithInternalErrorReason(zzjd zzjdVar, long j, boolean z) {
         Intent makePurchasesUpdatedIntent = makePurchasesUpdatedIntent();
-        makePurchasesUpdatedIntent.putExtra(IabHelper.RESPONSE_CODE, 6);
+        makePurchasesUpdatedIntent.putExtra("RESPONSE_CODE", 6);
         makePurchasesUpdatedIntent.putExtra("DEBUG_MESSAGE", "An internal error occurred.");
         BillingResult.Builder newBuilder = BillingResult.newBuilder();
         newBuilder.setResponseCode(6);
@@ -203,8 +202,8 @@ public class ProxyBillingActivity extends Activity {
         if (bundle == null) {
             com.google.android.gms.internal.play_billing.zzc.zzn(TAG, "Launching Play Store billing flow");
             this.activityCode = 100;
-            if (getIntent().hasExtra(IabHelper.RESPONSE_BUY_INTENT)) {
-                pendingIntent = (PendingIntent) getIntent().getParcelableExtra(IabHelper.RESPONSE_BUY_INTENT);
+            if (getIntent().hasExtra("BUY_INTENT")) {
+                pendingIntent = (PendingIntent) getIntent().getParcelableExtra("BUY_INTENT");
                 if (getIntent().hasExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT") && getIntent().getBooleanExtra("IS_FLOW_FROM_FIRST_PARTY_CLIENT", false)) {
                     this.isFlowFromFirstPartyClient = true;
                     this.activityCode = REQUEST_CODE_FIRST_PARTY_PURCHASE_FLOW;
@@ -263,7 +262,7 @@ public class ProxyBillingActivity extends Activity {
         super.onDestroy();
         if (isFinishing() && this.sendCancelledBroadcastIfFinished) {
             Intent makePurchasesUpdatedIntent = makePurchasesUpdatedIntent();
-            makePurchasesUpdatedIntent.putExtra(IabHelper.RESPONSE_CODE, 1);
+            makePurchasesUpdatedIntent.putExtra("RESPONSE_CODE", 1);
             makePurchasesUpdatedIntent.putExtra("DEBUG_MESSAGE", "Billing dialog closed.");
             if (this.isFlowFromFirstPartyClient) {
                 makePurchasesUpdatedIntent.putExtra("IS_FIRST_PARTY_PURCHASE", true);

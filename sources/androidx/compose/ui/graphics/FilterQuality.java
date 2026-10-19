@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -100,6 +99,6 @@ public final class FilterQuality {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5445toStringimpl(int i) {
-        return m5443equalsimpl0(i, None) ? "None" : m5443equalsimpl0(i, Low) ? "Low" : m5443equalsimpl0(i, Medium) ? "Medium" : m5443equalsimpl0(i, High) ? "High" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5443equalsimpl0(i, None) ? "None" : m5443equalsimpl0(i, Low) ? "Low" : m5443equalsimpl0(i, Medium) ? "Medium" : m5443equalsimpl0(i, High) ? "High" : "Unknown";
     }
 }

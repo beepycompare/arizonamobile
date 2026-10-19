@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -84,6 +83,6 @@ public final class TimePickerDisplayMode {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m3193toStringimpl(int i) {
-        return m3191equalsimpl0(i, Picker) ? "Picker" : m3191equalsimpl0(i, Input) ? "Input" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m3191equalsimpl0(i, Picker) ? "Picker" : m3191equalsimpl0(i, Input) ? "Input" : "Unknown";
     }
 }

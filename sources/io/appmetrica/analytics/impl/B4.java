@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public abstract class B4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f469a;
+    public static final boolean f472a;
     public static final boolean b;
     public static final boolean c;
     public static final boolean d;
@@ -11,7 +11,7 @@ public abstract class B4 {
 
     static {
         Tm tm = new Tm();
-        f469a = tm.f783a;
+        f472a = tm.f786a;
         b = tm.b;
         c = tm.c;
         d = tm.d;

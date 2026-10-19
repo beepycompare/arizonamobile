@@ -4,8 +4,9 @@ import android.content.Context;
 import android.hardware.display.DisplayManager;
 import android.os.Build;
 import android.view.Display;
+import com.google.firebase.messaging.Constants;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DisplayManagerCompat {
     static final String DISPLAY_CATEGORY_ALL = "android.hardware.display.category.ALL_INCLUDING_DISABLED";
     public static final String DISPLAY_CATEGORY_BUILT_IN_DISPLAYS = "android.hardware.display.category.BUILT_IN_DISPLAYS";
@@ -22,19 +23,19 @@ public final class DisplayManagerCompat {
     }
 
     public Display getDisplay(int i) {
-        return ((DisplayManager) this.mContext.getSystemService("display")).getDisplay(i);
+        return ((DisplayManager) this.mContext.getSystemService(Constants.ScionAnalytics.MessageType.DISPLAY_NOTIFICATION)).getDisplay(i);
     }
 
     public Display[] getDisplays() {
-        return ((DisplayManager) this.mContext.getSystemService("display")).getDisplays();
+        return ((DisplayManager) this.mContext.getSystemService(Constants.ScionAnalytics.MessageType.DISPLAY_NOTIFICATION)).getDisplays();
     }
 
     public Display[] getDisplays(String str) {
-        DisplayManager displayManager = (DisplayManager) this.mContext.getSystemService("display");
+        DisplayManager displayManager = (DisplayManager) this.mContext.getSystemService(Constants.ScionAnalytics.MessageType.DISPLAY_NOTIFICATION);
         if (DISPLAY_CATEGORY_BUILT_IN_DISPLAYS.equals(str)) {
             return computeBuiltInDisplays(displayManager);
         }
-        return ((DisplayManager) this.mContext.getSystemService("display")).getDisplays(str);
+        return ((DisplayManager) this.mContext.getSystemService(Constants.ScionAnalytics.MessageType.DISPLAY_NOTIFICATION)).getDisplays(str);
     }
 
     private static Display[] computeBuiltInDisplays(DisplayManager displayManager) {

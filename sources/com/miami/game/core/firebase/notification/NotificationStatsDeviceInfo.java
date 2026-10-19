@@ -96,7 +96,7 @@ public final class NotificationStatsDeviceInfo {
     }
 
     private final String stableAndroidId() {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             NotificationStatsDeviceInfo notificationStatsDeviceInfo = this;
@@ -104,20 +104,20 @@ public final class NotificationStatsDeviceInfo {
             if (string == null || StringsKt.isBlank(string) || Intrinsics.areEqual(string, BROKEN_ANDROID_ID)) {
                 string = null;
             }
-            m9921constructorimpl = Result.m9921constructorimpl(string);
+            m9974constructorimpl = Result.m9974constructorimpl(string);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-        if (m9924exceptionOrNullimpl != null) {
-            Timber.Forest.w(m9924exceptionOrNullimpl, "Failed to read Android ID for notification stats", new Object[0]);
+        Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+        if (m9977exceptionOrNullimpl != null) {
+            Timber.Forest.w(m9977exceptionOrNullimpl, "Failed to read Android ID for notification stats", new Object[0]);
         }
-        return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+        return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
     }
 
     private final String generatedDeviceId() {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         Object obj = this.prefs.getAll().get(KEY_GENERATED_DEVICE_ID);
         String str = obj instanceof String ? (String) obj : null;
         if (str != null) {
@@ -129,20 +129,20 @@ public final class NotificationStatsDeviceInfo {
             Result.Companion companion = Result.Companion;
             NotificationStatsDeviceInfo notificationStatsDeviceInfo = this;
             this.prefs.edit().putString(KEY_GENERATED_DEVICE_ID, uuid).apply();
-            m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
+            m9974constructorimpl = Result.m9974constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-        if (m9924exceptionOrNullimpl != null) {
-            Timber.Forest.w(m9924exceptionOrNullimpl, "Failed to persist generated notification stats device ID", new Object[0]);
+        Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+        if (m9977exceptionOrNullimpl != null) {
+            Timber.Forest.w(m9977exceptionOrNullimpl, "Failed to persist generated notification stats device ID", new Object[0]);
         }
         return uuid;
     }
 
     private final PackageInfo packageInfo() {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         PackageInfo packageInfo;
         try {
             Result.Companion companion = Result.Companion;
@@ -154,15 +154,15 @@ public final class NotificationStatsDeviceInfo {
             } else {
                 packageInfo = context.getPackageManager().getPackageInfo(this.context.getPackageName(), 0);
             }
-            m9921constructorimpl = Result.m9921constructorimpl(packageInfo);
+            m9974constructorimpl = Result.m9974constructorimpl(packageInfo);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = null;
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = null;
         }
-        return (PackageInfo) m9921constructorimpl;
+        return (PackageInfo) m9974constructorimpl;
     }
 
     private final long longVersionCodeCompat(PackageInfo packageInfo) {

@@ -14,14 +14,14 @@ import java.util.List;
 public final class D3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f507a;
-    public final C0689wf b;
+    public final Context f510a;
+    public final C0684wf b;
     public final String c;
     public final SafePackageManager d;
 
-    public D3(Context context, C0689wf c0689wf, String str, SafePackageManager safePackageManager) {
-        this.f507a = context;
-        this.b = c0689wf;
+    public D3(Context context, C0684wf c0684wf, String str, SafePackageManager safePackageManager) {
+        this.f510a = context;
+        this.b = c0684wf;
         this.c = str;
         this.d = safePackageManager;
     }
@@ -38,14 +38,14 @@ public final class D3 {
                 boolean isApiAchieved = AndroidUtils.isApiAchieved(28);
                 SafePackageManager safePackageManager = this.d;
                 if (isApiAchieved) {
-                    SigningInfo signingInfo = safePackageManager.getPackageInfo(this.f507a, this.c, 134217728).signingInfo;
+                    SigningInfo signingInfo = safePackageManager.getPackageInfo(this.f510a, this.c, 134217728).signingInfo;
                     if (signingInfo.hasMultipleSigners()) {
                         signatureArr = signingInfo.getApkContentsSigners();
                     } else {
                         signatureArr = signingInfo.getSigningCertificateHistory();
                     }
                 } else {
-                    signatureArr = safePackageManager.getPackageInfo(this.f507a, this.c, 64).signatures;
+                    signatureArr = safePackageManager.getPackageInfo(this.f510a, this.c, 64).signatures;
                 }
                 if (signatureArr != null) {
                     for (Signature signature : signatureArr) {
@@ -65,7 +65,7 @@ public final class D3 {
             boolean isEmpty2 = arrayList2.isEmpty();
             arrayList = arrayList2;
             if (!isEmpty2) {
-                this.b.a(arrayList2).f1281a.flushAsync();
+                this.b.a(arrayList2).f1284a.flushAsync();
                 arrayList = arrayList2;
             }
         }

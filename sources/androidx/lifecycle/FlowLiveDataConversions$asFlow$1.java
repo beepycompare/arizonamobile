@@ -1,6 +1,8 @@
 package androidx.lifecycle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.exifinterface.media.ExifInterface;
+import com.google.android.gms.location.LocationRequest;
 import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -19,7 +21,7 @@ import kotlinx.coroutines.channels.ProducerScope;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: FlowLiveData.kt */
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\b\u0012\u0004\u0012\u0002H\u00020\u0003H\n"}, d2 = {"<anonymous>", "", ExifInterface.GPS_DIRECTION_TRUE, "Lkotlinx/coroutines/channels/ProducerScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.lifecycle.FlowLiveDataConversions$asFlow$1", f = "FlowLiveData.kt", i = {0, 1}, l = {105, 106, 108}, m = "invokeSuspend", n = {"observer", "observer"}, s = {"L$0", "L$0"}, v = 1)
+@DebugMetadata(c = "androidx.lifecycle.FlowLiveDataConversions$asFlow$1", f = "FlowLiveData.kt", i = {0, 1}, l = {LocationRequest.PRIORITY_NO_POWER, 106, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR}, m = "invokeSuspend", n = {"observer", "observer"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes2.dex */
 final class FlowLiveDataConversions$asFlow$1<T> extends SuspendLambda implements Function2<ProducerScope<? super T>, Continuation<? super Unit>, Object> {
     final /* synthetic */ LiveData<T> $this_asFlow;

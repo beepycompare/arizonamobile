@@ -84,7 +84,7 @@ public final class ColorInfo {
         return 3;
     }
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static final class Builder {
         private int chromaBitdepth;
         private int colorRange;

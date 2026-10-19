@@ -5,15 +5,15 @@ import android.content.Context;
 public abstract class Wd {
 
     /* renamed from: a  reason: collision with root package name */
-    public static R9 f827a;
+    public static R9 f830a;
 
     public static final synchronized R9 a(Context context) {
         R9 r9;
         synchronized (Wd.class) {
-            r9 = f827a;
+            r9 = f830a;
             if (r9 == null) {
                 r9 = new R9(context, "uuid.dat");
-                f827a = r9;
+                f830a = r9;
             }
         }
         return r9;

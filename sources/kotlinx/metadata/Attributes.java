@@ -1,6 +1,5 @@
 package kotlinx.metadata;
 
-import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import java.util.ArrayList;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
@@ -82,7 +81,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -108,7 +107,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -134,7 +133,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -160,7 +159,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -186,7 +185,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -212,7 +211,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -238,7 +237,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -264,7 +263,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -290,7 +289,7 @@ public final class Attributes {
 
         @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
         public String getName() {
-            return DownloaderServiceMarshaller.PARAMS_FLAGS;
+            return "flags";
         }
 
         @Override // kotlin.jvm.internal.CallableReference
@@ -332,7 +331,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -388,7 +387,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -420,7 +419,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -446,7 +445,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -472,7 +471,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -522,7 +521,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -548,7 +547,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -574,7 +573,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -627,7 +626,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -653,7 +652,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -691,7 +690,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -717,7 +716,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -754,7 +753,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -782,7 +781,7 @@ public final class Attributes {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference

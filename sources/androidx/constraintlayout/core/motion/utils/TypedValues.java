@@ -395,7 +395,7 @@ public interface TypedValues {
                                     case 401:
                                     case TYPE_VISIBILITY /* 402 */:
                                         return 2;
-                                    case 403:
+                                    case TYPE_ALPHA /* 403 */:
                                         return 4;
                                     default:
                                         switch (i) {
@@ -563,7 +563,7 @@ public interface TypedValues {
                 case 11:
                     return 312;
                 case '\f':
-                    return 403;
+                    return TYPE_ALPHA;
                 case '\r':
                     return 401;
                 case 14:

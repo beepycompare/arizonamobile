@@ -198,9 +198,8 @@ public class Person {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    public static class Api28Impl {
+    static class Api28Impl {
         private Api28Impl() {
         }
 

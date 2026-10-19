@@ -23,6 +23,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.InfoDialogBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
@@ -77,7 +78,7 @@ public final class InfoDialog extends AbstractDialog {
             }
         });
         Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
-        addViewToConstraintLayout(dialogLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, dialogLayout, -1, -1, false, 8, null);
         bind.caption.setText(resolveInfoDialogCaption(resolveInfoDialogContent.getHeader()));
         bind.infoText.setText(ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, parseInfoDialogAnimatedBar.getText(), 0.0f, null, 3, null));
         TextView infoText = bind.infoText;
@@ -263,7 +264,7 @@ public final class InfoDialog extends AbstractDialog {
     }
 
     private final InfoDialogCaption parseInfoDialogCaption(String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         String obj = StringsKt.trim((CharSequence) str).toString();
         if (StringsKt.startsWith$default(obj, "{", false, 2, (Object) null) && StringsKt.endsWith$default(obj, "}", false, 2, (Object) null)) {
             try {
@@ -272,12 +273,12 @@ public final class InfoDialog extends AbstractDialog {
                 jsonReader.setStrictness(Strictness.LENIENT);
                 InfoDialogCaption infoDialogCaption = (InfoDialogCaption) MapperKt.getGson().fromJson(jsonReader, InfoDialogCaption.class);
                 jsonReader.close();
-                m9921constructorimpl = Result.m9921constructorimpl(infoDialogCaption);
+                m9974constructorimpl = Result.m9974constructorimpl(infoDialogCaption);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+            return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
         }
         return null;
     }

@@ -52,7 +52,7 @@ public final class SelectorDialog extends SAMPUIElement {
         SelectorDialogBinding bind = SelectorDialogBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
         Integer bits = item.getBits();
         if (bits != null) {
@@ -157,6 +157,9 @@ public final class SelectorDialog extends SAMPUIElement {
         int pow5;
         SelectorDialogBinding selectorDialogBinding = this.binding;
         list.remove(Integer.valueOf(ActionTypes.INVENTORY_BUTTON_TYPE_CLOSE.ordinal()));
+        if (!UtilsKt.isArizonaType()) {
+            list.remove(Integer.valueOf(ActionTypes.INVENT_BUTTON_TYPE_EMPTY.ordinal()));
+        }
         if (list.get(0).intValue() == ActionTypes.INVENTORY_BUTTON_TYPE_USE.ordinal()) {
             selectorDialogBinding.btnFirstItem.setBackgroundResource(R.drawable.rectangle_yellow_selector);
             selectorDialogBinding.btnFirstItem.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_baseline_done_24, 0, 0, 0);

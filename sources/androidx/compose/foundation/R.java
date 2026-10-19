@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class id {
-        public static int compose_prefetch_scheduler = 0x7f0a0537;
+        public static int compose_prefetch_scheduler = 0x7f0a054a;
 
         private id() {
         }
@@ -13,8 +13,8 @@ public final class R {
     /* loaded from: classes.dex */
     public static final class string {
         public static int androidx_compose_foundation_autofill = 0x7f12002a;
-        public static int tooltip_description = 0x7f1206e1;
-        public static int tooltip_label = 0x7f1206e2;
+        public static int tooltip_description = 0x7f120719;
+        public static int tooltip_label = 0x7f12071a;
 
         private string() {
         }

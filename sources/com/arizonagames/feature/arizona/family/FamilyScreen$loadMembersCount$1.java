@@ -2,7 +2,6 @@ package com.arizonagames.feature.arizona.family;
 
 import android.app.Activity;
 import android.widget.TextView;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
 import com.arizonagames.feature.arizona.family.data.FamilyMembersCount;
 import com.arizonagames.feature.arizona.family.databinding.FamilyMainBinding;
@@ -22,7 +21,7 @@ import kotlinx.coroutines.Dispatchers;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$loadMembersCount$1", f = "FamilyScreen.kt", i = {0}, l = {TypedValues.MotionType.TYPE_PATHMOTION_ARC}, m = "invokeSuspend", n = {"it"}, nl = {TypedValues.MotionType.TYPE_QUANTIZE_MOTIONSTEPS}, s = {"L$1"}, v = 2)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$loadMembersCount$1", f = "FamilyScreen.kt", i = {0}, l = {622}, m = "invokeSuspend", n = {"it"}, nl = {625}, s = {"L$1"}, v = 2)
 /* loaded from: classes3.dex */
 public final class FamilyScreen$loadMembersCount$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;

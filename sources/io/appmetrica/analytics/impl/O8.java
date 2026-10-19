@@ -1,6 +1,5 @@
 package io.appmetrica.analytics.impl;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -11,10 +10,10 @@ import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class O8 implements InterfaceC0702x2 {
+public final class O8 implements InterfaceC0697x2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f700a = 5;
+    public final int f703a = 5;
     public final int b = 100;
     public final int c = 255;
     public final int d = 2;
@@ -30,7 +29,7 @@ public final class O8 implements InterfaceC0702x2 {
     public final String n = "gmail.com";
     public final String o = "googlemail.com";
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0702x2
+    @Override // io.appmetrica.analytics.impl.InterfaceC0697x2
     public final String a(String str) {
         Character lastOrNull;
         String lowerCase = new Regex("^\\++").replace(StringsKt.trim((CharSequence) str).toString(), "").toLowerCase(Locale.ROOT);
@@ -108,7 +107,7 @@ public final class O8 implements InterfaceC0702x2 {
                                     }
                                 }
                                 if (Intrinsics.areEqual(replace$default, this.m)) {
-                                    substring = StringsKt.replace$default(substring, ".", Constants.FILENAME_SEQUENCE_SEPARATOR, false, 4, (Object) null);
+                                    substring = StringsKt.replace$default(substring, ".", "-", false, 4, (Object) null);
                                 } else if (Intrinsics.areEqual(replace$default, this.n)) {
                                     substring = StringsKt.replace$default(substring, ".", "", false, 4, (Object) null);
                                 }
@@ -125,7 +124,7 @@ public final class O8 implements InterfaceC0702x2 {
                                     i4++;
                                 }
                                 String str7 = substring + '@' + replace$default;
-                                if (str7.length() < this.f700a || str7.length() > this.b) {
+                                if (str7.length() < this.f703a || str7.length() > this.b) {
                                     return null;
                                 }
                                 return str7;

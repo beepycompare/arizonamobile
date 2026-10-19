@@ -3,7 +3,6 @@ package com.google.android.gms.measurement.internal;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.common.internal.Preconditions;
-import com.google.android.vending.expansion.downloader.Constants;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
@@ -100,7 +99,7 @@ public final class zzgu extends zzjf {
             long round = Math.round(Math.pow(10.0d, valueOf.length() - 1));
             long round2 = Math.round(Math.pow(10.0d, valueOf.length()) - 1.0d);
             int length = String.valueOf(round).length();
-            String str = charAt == '-' ? Constants.FILENAME_SEQUENCE_SEPARATOR : "";
+            String str = charAt == '-' ? "-" : "";
             StringBuilder sb = new StringBuilder(str.length() + length + 3 + str.length() + String.valueOf(round2).length());
             sb.append(str);
             sb.append(round);
@@ -133,7 +132,7 @@ public final class zzgu extends zzjf {
             } else if (obj instanceof zzgt) {
                 return ((zzgt) obj).zza();
             } else {
-                return z ? Constants.FILENAME_SEQUENCE_SEPARATOR : obj.toString();
+                return z ? "-" : obj.toString();
             }
         }
     }

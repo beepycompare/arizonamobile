@@ -47,8 +47,8 @@ public final class PersonalPropertyScreen extends SAMPUIElement {
         ViewGroup.LayoutParams layoutParams2 = bind.rodinaPersonalPropertyBtnEnter.getLayoutParams();
         Intrinsics.checkNotNull(layoutParams2, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         this.secondaryButtonStartMargin = ((ConstraintLayout.LayoutParams) layoutParams2).getMarginStart();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
         PersonalPropertyScreen personalPropertyScreen = this;
+        SAMPUIElement.addViewToConstraintLayout$default(personalPropertyScreen, constraintLayout, -1, -1, false, 8, null);
         MaterialButton rodinaPersonalPropertyBtnBuy = bind.rodinaPersonalPropertyBtnBuy;
         Intrinsics.checkNotNullExpressionValue(rodinaPersonalPropertyBtnBuy, "rodinaPersonalPropertyBtnBuy");
         SAMPUIElement.bindBackendClick$default(personalPropertyScreen, rodinaPersonalPropertyBtnBuy, 0, 0, (String) null, 6, (Object) null);

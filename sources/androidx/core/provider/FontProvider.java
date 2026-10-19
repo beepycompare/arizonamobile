@@ -20,7 +20,7 @@ import androidx.core.graphics.TypefaceCompat;
 import androidx.core.provider.FontsContractCompat;
 import androidx.tracing.Trace;
 import coil3.util.UtilsKt;
-import com.android.vending.expansion.zipfile.APEZProvider;
+import com.adjust.sdk.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -150,14 +150,14 @@ public class FontProvider {
             ContentQueryWrapper make = ContentQueryWrapper.make(context, build);
             try {
                 int i = 0;
-                String[] strArr = {APEZProvider.FILEID, FontsContractCompat.Columns.FILE_ID, FontsContractCompat.Columns.TTC_INDEX, FontsContractCompat.Columns.VARIATION_SETTINGS, FontsContractCompat.Columns.WEIGHT, FontsContractCompat.Columns.ITALIC, FontsContractCompat.Columns.RESULT_CODE};
+                String[] strArr = {"_id", FontsContractCompat.Columns.FILE_ID, FontsContractCompat.Columns.TTC_INDEX, FontsContractCompat.Columns.VARIATION_SETTINGS, FontsContractCompat.Columns.WEIGHT, FontsContractCompat.Columns.ITALIC, FontsContractCompat.Columns.RESULT_CODE};
                 Trace.beginSection("ContentQueryWrapper.query");
                 Cursor query = make.query(build, strArr, "query = ?", getSelectionArgs(fontRequest), null, cancellationSignal);
                 try {
                     if (query != null && query.getCount() > 0) {
                         int columnIndex = query.getColumnIndex(FontsContractCompat.Columns.RESULT_CODE);
                         arrayList2 = new ArrayList();
-                        int columnIndex2 = query.getColumnIndex(APEZProvider.FILEID);
+                        int columnIndex2 = query.getColumnIndex("_id");
                         int columnIndex3 = query.getColumnIndex(FontsContractCompat.Columns.FILE_ID);
                         int columnIndex4 = query.getColumnIndex(FontsContractCompat.Columns.TTC_INDEX);
                         int columnIndex5 = query.getColumnIndex(FontsContractCompat.Columns.WEIGHT);
@@ -174,7 +174,7 @@ public class FontProvider {
                             }
                             Uri uri = withAppendedId;
                             ArrayList arrayList3 = arrayList;
-                            arrayList3.add(new FontsContractCompat.FontInfo(uri, i3, columnIndex5 != -1 ? query.getInt(columnIndex5) : 400, columnIndex6 != -1 && query.getInt(columnIndex6) == 1, fontRequest.getVariationSettings(), i2));
+                            arrayList3.add(new FontsContractCompat.FontInfo(uri, i3, columnIndex5 != -1 ? query.getInt(columnIndex5) : Constants.MINIMAL_ERROR_STATUS_CODE, columnIndex6 != -1 && query.getInt(columnIndex6) == 1, fontRequest.getVariationSettings(), i2));
                             arrayList2 = arrayList3;
                             i = 0;
                         }
@@ -204,7 +204,7 @@ public class FontProvider {
 
     protected static String[] getSelectionArgs(FontRequest fontRequest) {
         String variationSettings = fontRequest.getVariationSettings();
-        return (variationSettings == null || UByte$$ExternalSyntheticBackport0.m9995m(variationSettings)) ? new String[]{fontRequest.getQuery()} : new String[]{fontRequest.getQuery(), VARIABLE_FONT_QUERY_PARAM};
+        return (variationSettings == null || UByte$$ExternalSyntheticBackport0.m10048m(variationSettings)) ? new String[]{fontRequest.getQuery()} : new String[]{fontRequest.getQuery(), VARIABLE_FONT_QUERY_PARAM};
     }
 
     private static List<List<byte[]>> getCertificates(FontRequest fontRequest, Resources resources) {

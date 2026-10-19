@@ -1,6 +1,7 @@
 package ru.mrlargha.commonui.elements.donate.presentation.pages;
 
 import android.util.Log;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.media3.extractor.ts.TsExtractor;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,7 +27,7 @@ import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DonateOrdinaryPage.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1", f = "DonateOrdinaryPage.kt", i = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {106, 131, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, m = "invokeSuspend", n = {"sortedList", "chunks", "addedList", "readyShown", "chunk", "chunkSize", "loadingPercent", "itemsShown", "totalChunks", "percent", "sortedList", "chunks", "addedList", "readyShown", "chunkSize", "loadingPercent", "itemsShown", "totalChunks"}, nl = {109, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, TsExtractor.TS_STREAM_TYPE_DTS_UHD}, s = {"L$0", "L$1", "L$2", "L$3", "L$5", "I$0", "D$0", "I$1", "I$2", "F$0", "L$0", "L$1", "L$2", "L$3", "I$0", "D$0", "I$1", "I$2"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.presentation.pages.DonateOrdinaryPage$renderListGradually$1", f = "DonateOrdinaryPage.kt", i = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {106, 131, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, m = "invokeSuspend", n = {"sortedList", "chunks", "addedList", "readyShown", "chunk", "chunkSize", "loadingPercent", "itemsShown", "totalChunks", "percent", "sortedList", "chunks", "addedList", "readyShown", "chunkSize", "loadingPercent", "itemsShown", "totalChunks"}, nl = {AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, TsExtractor.TS_STREAM_TYPE_DTS_UHD}, s = {"L$0", "L$1", "L$2", "L$3", "L$5", "I$0", "D$0", "I$1", "I$2", "F$0", "L$0", "L$1", "L$2", "L$3", "I$0", "D$0", "I$1", "I$2"}, v = 2)
 /* loaded from: classes6.dex */
 public final class DonateOrdinaryPage$renderListGradually$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ List<DonateItemModelUi> $list;

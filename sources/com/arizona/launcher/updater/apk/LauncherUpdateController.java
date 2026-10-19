@@ -4,7 +4,6 @@ import com.arizona.launcher.updater.apk.LauncherApkPreparation;
 import com.arizona.launcher.updater.apk.LauncherUpdateController;
 import com.arizona.launcher.updater.http.UpdateMetadataFetcher;
 import com.arizona.launcher.updater.http.UpdateMetadataHttpResult;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.io.File;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -28,7 +27,7 @@ import kotlinx.coroutines.Job;
 /* loaded from: classes3.dex */
 public final class LauncherUpdateController {
     @Deprecated
-    public static final String APK_DIRECTORY = "launcher_new/";
+    public static final String APK_DIRECTORY = "bin/";
     @Deprecated
     public static final String METADATA_FILE_NAME = "app_version.json";
     private ActiveApkDownload activeApkDownload;
@@ -121,7 +120,7 @@ public final class LauncherUpdateController {
         if (file == null) {
             return LauncherApkPreparation.ExternalStorageUnavailable.INSTANCE;
         }
-        String str = "app-" + this.config.getFlavor() + Constants.FILENAME_SEQUENCE_SEPARATOR + this.config.getBuildType() + ".apk";
+        String str = "app-" + this.config.getFlavor() + "-" + this.config.getBuildType() + ".apk";
         return new LauncherApkPreparation.Ready(new LauncherApkDownloadRequest(server + APK_DIRECTORY + str, new File(file, str), null, null, 12, null));
     }
 

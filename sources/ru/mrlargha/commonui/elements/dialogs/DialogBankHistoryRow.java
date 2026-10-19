@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.elements.dialogs;
 import android.content.Context;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -171,37 +170,35 @@ public final class DialogBankHistoryRow {
     }
 
     public final CharSequence amountText() {
+        String str;
         long absSafe;
-        String str = this.amount;
+        String str2 = this.amount;
         StringBuilder sb = new StringBuilder();
-        int length = str.length();
+        int length = str2.length();
         for (int i = 0; i < length; i++) {
-            char charAt = str.charAt(i);
+            char charAt = str2.charAt(i);
             if (Character.isDigit(charAt) || charAt == '-') {
                 sb.append(charAt);
             }
         }
         Long longOrNull = StringsKt.toLongOrNull(sb.toString());
-        String str2 = Constants.FILENAME_SEQUENCE_SEPARATOR;
+        str = "-";
         if (longOrNull == null) {
             String str3 = this.amount;
-            if (!StringsKt.isBlank(str3)) {
-                str2 = str3;
-            }
-            return str2;
+            return StringsKt.isBlank(str3) ? "-" : str3;
         }
         long longValue = longOrNull.longValue();
         if (longValue >= 0) {
-            str2 = "";
+            str = "";
         }
         MoneyFormatter moneyFormatter = MoneyFormatter.INSTANCE;
         absSafe = DialogBankHistoryKt.absSafe(longValue);
-        return str2 + "$ " + moneyFormatter.formatPlain(absSafe);
+        return str + "$ " + moneyFormatter.formatPlain(absSafe);
     }
 
     public final String commissionBadgeText() {
         String obj = StringsKt.trim((CharSequence) this.commission).toString();
-        if (StringsKt.isBlank(obj) || Intrinsics.areEqual(obj, Constants.FILENAME_SEQUENCE_SEPARATOR) || Intrinsics.areEqual(obj, "0") || Intrinsics.areEqual(obj, "0%")) {
+        if (StringsKt.isBlank(obj) || Intrinsics.areEqual(obj, "-") || Intrinsics.areEqual(obj, "0") || Intrinsics.areEqual(obj, "0%")) {
             return "";
         }
         return StringsKt.endsWith$default(obj, "%", false, 2, (Object) null) ? obj : obj + "%";

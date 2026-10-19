@@ -2,6 +2,7 @@ package com.miami.game.feature.home.ui.compose;
 
 import android.content.Context;
 import android.content.res.Resources;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.foundation.ImageKt;
 import androidx.compose.foundation.layout.BoxKt;
 import androidx.compose.foundation.layout.BoxScopeInstance;
@@ -379,11 +380,11 @@ public final class ImagesKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1132759582, "C114@3513L101,113@3476L264,123@3893L13,124@3939L13,120@3757L254:Images.kt#dswm0d");
-                ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.ui.classic.home.R.drawable.btn_notification_count, startRestartGroup, 0), (String) null, (Modifier) null, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 108);
+                ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.ui.classic.home.R.drawable.btn_notification_count, startRestartGroup, 0), (String) null, (Modifier) null, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, (int) AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR);
                 String valueOf = String.valueOf(notificationState.getValue().intValue());
                 Modifier.Companion companion = Modifier.Companion;
-                long m9870dpToSp8Feqmps = TypeKt.m9870dpToSp8Feqmps(Dp.m8160constructorimpl(10.0f), startRestartGroup, 6);
-                TextKt.m3157TextNvy7gAk(valueOf, companion, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9870dpToSp8Feqmps(Dp.m8160constructorimpl(10.0f), startRestartGroup, 6), null, null, null, 0L, null, null, m9870dpToSp8Feqmps, 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 260072);
+                long m9923dpToSp8Feqmps = TypeKt.m9923dpToSp8Feqmps(Dp.m8160constructorimpl(10.0f), startRestartGroup, 6);
+                TextKt.m3157TextNvy7gAk(valueOf, companion, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9923dpToSp8Feqmps(Dp.m8160constructorimpl(10.0f), startRestartGroup, 6), null, null, null, 0L, null, null, m9923dpToSp8Feqmps, 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 260072);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -519,7 +520,7 @@ public final class ImagesKt {
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -493012355, "C159@4912L100,156@4795L283,167@5227L13,168@5273L13,171@5421L10,164@5095L366:Images.kt#dswm0d");
                 ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.ui.classic.home.R.drawable.shop_notificaiotns_bg, startRestartGroup, 0), (String) null, SizeKt.m1103height3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(20.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
-                TextKt.m3157TextNvy7gAk("АКЦИЯ X" + i + " ДОНАТ", Modifier.Companion, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9870dpToSp8Feqmps(Dp.m8160constructorimpl(12.0f), startRestartGroup, 6), null, FontWeight.Companion.getW900(), null, 0L, null, null, TypeKt.m9870dpToSp8Feqmps(Dp.m8160constructorimpl(12.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getLabelMedium(), startRestartGroup, 1573296, 0, 128936);
+                TextKt.m3157TextNvy7gAk("АКЦИЯ X" + i + " ДОНАТ", Modifier.Companion, Color.Companion.m5385getWhite0d7_KjU(), null, TypeKt.m9923dpToSp8Feqmps(Dp.m8160constructorimpl(12.0f), startRestartGroup, 6), null, FontWeight.Companion.getW900(), null, 0L, null, null, TypeKt.m9923dpToSp8Feqmps(Dp.m8160constructorimpl(12.0f), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, 6).getLabelMedium(), startRestartGroup, 1573296, 0, 128936);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

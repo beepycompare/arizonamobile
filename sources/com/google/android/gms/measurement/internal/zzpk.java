@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.arizona.launcher.UpdateActivity;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
@@ -855,7 +856,7 @@ public final class zzpk extends zzos {
                     zzW(sb, 1, "config_version", Long.valueOf(zzidVar.zzX()));
                 }
                 zzW(sb, 1, "gmp_app_id", zzidVar.zzP());
-                zzW(sb, 1, "app_id", zzidVar.zzA());
+                zzW(sb, 1, CommonUrlParts.APP_ID, zzidVar.zzA());
                 zzW(sb, 1, NotificationStatsPayloadFactory.KEY_APP_VERSION, zzidVar.zzB());
                 if (zzidVar.zzU()) {
                     zzW(sb, 1, "app_version_major", Integer.valueOf(zzidVar.zzV()));
@@ -994,7 +995,7 @@ public final class zzpk extends zzos {
                         zzQ(sb, 3);
                         sb.append("limited_data_modes {\n");
                         int zzc = zzhlVar.zzc();
-                        zzW(sb, 3, "type", zzc != 1 ? zzc != 2 ? zzc != 3 ? zzc != 4 ? "AD_PERSONALIZATION" : "AD_USER_DATA" : "ANALYTICS_STORAGE" : "AD_STORAGE" : "CONSENT_TYPE_UNSPECIFIED");
+                        zzW(sb, 3, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, zzc != 1 ? zzc != 2 ? zzc != 3 ? zzc != 4 ? "AD_PERSONALIZATION" : "AD_USER_DATA" : "ANALYTICS_STORAGE" : "AD_STORAGE" : "CONSENT_TYPE_UNSPECIFIED");
                         int zzd = zzhlVar.zzd();
                         zzW(sb, 3, UpdateActivity.UPDATE_MODE, zzd != 1 ? zzd != 2 ? "NO_DATA_MODE" : "LIMITED_MODE" : "NOT_LIMITED");
                         zzQ(sb, 3);

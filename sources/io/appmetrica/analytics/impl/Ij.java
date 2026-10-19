@@ -2,14 +2,14 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Ij implements InterfaceC0704x4 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0704x4
+public final class Ij implements InterfaceC0699x4 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0699x4
     /* renamed from: b */
-    public final Hj a(Context context, C0601t5 c0601t5, C0264g4 c0264g4, G4 g4) {
+    public final Hj a(Context context, C0596t5 c0596t5, C0259g4 c0259g4, G4 g4) {
         Rg rg;
-        Pc pc = new Pc(c0264g4.b, c0264g4.f994a);
-        synchronized (c0601t5) {
-            rg = (Rg) c0601t5.f1212a.get(pc.toString());
+        Pc pc = new Pc(c0259g4.b, c0259g4.f997a);
+        synchronized (c0596t5) {
+            rg = (Rg) c0596t5.f1215a.get(pc.toString());
         }
         return new Hj(rg);
     }

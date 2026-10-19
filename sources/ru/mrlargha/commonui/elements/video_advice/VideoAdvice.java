@@ -50,7 +50,7 @@ public final class VideoAdvice extends SAMPUIElement {
         VideoAdviceBinding bind = VideoAdviceBinding.bind(frameLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.videoBackgroundBinding = bind;
-        addViewToConstraintLayout(frameLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, frameLayout, -1, -1, false, 8, null);
         setupListeners();
     }
 
@@ -179,7 +179,7 @@ public final class VideoAdvice extends SAMPUIElement {
             PackageInfo packageInfo = packageManager.getPackageInfo(packageName, 0);
             Intrinsics.checkNotNullExpressionValue(packageInfo, "getPackageInfo(...)");
             ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-            return "Android/data/" + String.valueOf((applicationInfo == null || (str = applicationInfo.dataDir) == null) ? null : StringsKt.substringAfter$default(str, "/0/", (String) null, 2, (Object) null)) + "/files/SAMP/";
+            return "Android/data/" + String.valueOf((applicationInfo == null || (str = applicationInfo.dataDir) == null) ? null : StringsKt.substringAfter$default(str, "/0/", (String) null, 2, (Object) null)) + "/files/video/";
         } catch (PackageManager.NameNotFoundException e) {
             Log.w(HttpHeaders.AUTHORIZATION, "Error Package name not found ", e);
             return null;

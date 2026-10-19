@@ -1,6 +1,5 @@
 package com.google.android.gms.internal.play_billing;
 
-import com.android.internal.http.multipart.FilePart;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 /* compiled from: com.android.billingclient:billing@@8.3.0 */
@@ -10,7 +9,7 @@ public final class zzga {
     public static final byte[] zzb;
 
     static {
-        Charset.forName(FilePart.DEFAULT_CHARSET);
+        Charset.forName("ISO-8859-1");
         byte[] bArr = new byte[0];
         zzb = bArr;
         ByteBuffer.wrap(bArr);

@@ -5,7 +5,7 @@ public abstract class DecoderOutputBuffer extends Buffer {
     public int skippedOutputBufferCount;
     public long timeUs;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public interface Owner<S extends DecoderOutputBuffer> {
         void releaseOutputBuffer(S s);
     }

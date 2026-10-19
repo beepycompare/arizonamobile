@@ -500,7 +500,7 @@ public class Direct {
     /* JADX WARN: Removed duplicated region for block: B:84:0x0155  */
     /* JADX WARN: Type inference failed for: r6v10 */
     /* JADX WARN: Type inference failed for: r6v21 */
-    /* JADX WARN: Type inference failed for: r6v7, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r6v7, types: [int, boolean] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

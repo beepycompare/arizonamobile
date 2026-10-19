@@ -85,7 +85,7 @@ public final class EmploymentTaskScreen extends SAMPUIElement implements Interfa
         this.client = arizonaRetrofit;
         this.api = (TaskApi) ArizonaRetrofit.create$default(arizonaRetrofit, TaskApi.class, false, null, null, 14, null);
         initRetrofit();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         UtilsKt.checkItemsName$default(targetActivity, UtilsKt.isArizonaType(), null, 4, null);
         initAdapters();
         bind.btnMenu.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$$ExternalSyntheticLambda5

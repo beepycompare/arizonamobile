@@ -502,7 +502,7 @@ public class MotionKeyCycle extends MotionKey {
             case 14:
                 return 312;
             case 15:
-                return 403;
+                return TypedValues.CycleType.TYPE_ALPHA;
             case 16:
                 return TypedValues.CycleType.TYPE_WAVE_PHASE;
             case 17:

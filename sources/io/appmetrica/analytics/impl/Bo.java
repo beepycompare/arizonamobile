@@ -9,10 +9,10 @@ public final class Bo extends Q4 {
     }
 
     @Override // io.appmetrica.analytics.impl.Q4
-    public final boolean a(C0240f6 c0240f6, L4 l4) {
-        F4 f4 = l4.b.d.f781a;
+    public final boolean a(C0235f6 c0235f6, L4 l4) {
+        F4 f4 = l4.b.d.f784a;
         this.b.a(f4.i);
-        InterfaceC0427mc m = Na.I.m();
+        InterfaceC0422mc m = Na.I.m();
         if (Boolean.TRUE.equals(f4.b)) {
             m.a(true);
         } else {

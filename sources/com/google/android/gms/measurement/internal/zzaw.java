@@ -18,6 +18,7 @@ import com.google.firebase.messaging.Constants;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -126,19 +127,19 @@ public final class zzaw extends zzos {
     private final void zzaD(String str, String str2, ContentValues contentValues) {
         try {
             SQLiteDatabase zze2 = zze();
-            String asString = contentValues.getAsString("app_id");
+            String asString = contentValues.getAsString(CommonUrlParts.APP_ID);
             if (asString != null) {
                 StringBuilder sb = new StringBuilder(10);
                 sb.append("app_id = ?");
                 if (zze2.update("consent_settings", contentValues, sb.toString(), new String[]{asString}) == 0 && zze2.insertWithOnConflict("consent_settings", null, contentValues, 5) == -1) {
-                    this.zzu.zzaW().zzb().zzc("Failed to insert/update table (got -1). key", zzgu.zzl("consent_settings"), zzgu.zzl("app_id"));
+                    this.zzu.zzaW().zzb().zzc("Failed to insert/update table (got -1). key", zzgu.zzl("consent_settings"), zzgu.zzl(CommonUrlParts.APP_ID));
                     return;
                 }
                 return;
             }
-            this.zzu.zzaW().zzd().zzb("Value of the primary key is not set.", zzgu.zzl("app_id"));
+            this.zzu.zzaW().zzd().zzb("Value of the primary key is not set.", zzgu.zzl(CommonUrlParts.APP_ID));
         } catch (SQLiteException e) {
-            this.zzu.zzaW().zzb().zzd("Error storing into table. key", zzgu.zzl("consent_settings"), zzgu.zzl("app_id"), e);
+            this.zzu.zzaW().zzb().zzd("Error storing into table. key", zzgu.zzl("consent_settings"), zzgu.zzl(CommonUrlParts.APP_ID), e);
         }
     }
 
@@ -246,7 +247,7 @@ public final class zzaw extends zzos {
         zzay();
         ContentValues contentValues = new ContentValues();
         String str2 = zzbdVar.zza;
-        contentValues.put("app_id", str2);
+        contentValues.put(CommonUrlParts.APP_ID, str2);
         contentValues.put("name", zzbdVar.zzb);
         contentValues.put("lifetime_count", Long.valueOf(zzbdVar.zzc));
         contentValues.put("current_bundle_count", Long.valueOf(zzbdVar.zzd));
@@ -423,7 +424,7 @@ public final class zzaw extends zzos {
         }
         byte[] zzcd = zzibVar.zzcd();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("measurement_batch", zzcd);
         contentValues.put("upload_uri", str2);
         contentValues.put("upload_headers", TextUtils.join("\r\n", arrayList));
@@ -474,7 +475,7 @@ public final class zzaw extends zzos {
             cursor = null;
         }
         try {
-            cursor4 = zze().query("upload_queue", new String[]{"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"}, "rowId=?", new String[]{String.valueOf(j)}, null, null, null, "1");
+            cursor4 = zze().query("upload_queue", new String[]{"rowId", CommonUrlParts.APP_ID, "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"}, "rowId=?", new String[]{String.valueOf(j)}, null, null, null, "1");
             try {
                 try {
                 } catch (SQLiteException e2) {
@@ -548,7 +549,7 @@ public final class zzaw extends zzos {
                 i2 = 0;
                 i3 = 2;
                 i4 = 3;
-                String[] strArr = {"rowId", "app_id", "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"};
+                String[] strArr = {"rowId", CommonUrlParts.APP_ID, "measurement_batch", "upload_uri", "upload_headers", "upload_type", "retry_count", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "associated_row_id", "last_upload_timestamp"};
                 String zzaJ = zzaJ(zzooVar.zza);
                 String zzaI = zzaI();
                 StringBuilder sb = new StringBuilder(String.valueOf(zzaJ).length() + 17 + zzaI.length());
@@ -900,7 +901,7 @@ public final class zzaw extends zzos {
         }
         if (zzaB == -1) {
             ContentValues contentValues = new ContentValues();
-            contentValues.put("app_id", str);
+            contentValues.put(CommonUrlParts.APP_ID, str);
             contentValues.put("first_open_count", (Integer) 0);
             contentValues.put("previous_install_count", (Integer) 0);
             if (zze2.insertWithOnConflict("app2", null, contentValues, 5) == -1) {
@@ -910,7 +911,7 @@ public final class zzaw extends zzos {
             zzaB = 0;
         }
         ContentValues contentValues2 = new ContentValues();
-        contentValues2.put("app_id", str);
+        contentValues2.put(CommonUrlParts.APP_ID, str);
         contentValues2.put("first_open_count", Long.valueOf(1 + zzaB));
         if (zze2.update("app2", contentValues2, "app_id = ?", new String[]{str}) == 0) {
             this.zzu.zzaW().zzb().zzc("Failed to update column (got 0). appId", zzgu.zzl(str), "first_open_count");
@@ -970,7 +971,7 @@ public final class zzaw extends zzos {
         byte[] zzcd = zzhsVar.zzcd();
         zzicVar.zzaW().zzk().zzc("Saving complex main event, appId, data size", zzicVar.zzl().zza(str), Integer.valueOf(zzcd.length));
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("event_id", l);
         contentValues.put("children_to_process", Long.valueOf(j));
         contentValues.put("main_event", zzcd);
@@ -1175,7 +1176,7 @@ public final class zzaw extends zzos {
                                 Preconditions.checkNotEmpty(str5);
                                 byte[] zzcd = zzpgVar2.zzp().zzh(zzbcVar).zzcd();
                                 ContentValues contentValues = new ContentValues();
-                                contentValues.put("app_id", str5);
+                                contentValues.put(CommonUrlParts.APP_ID, str5);
                                 contentValues.put("name", zzbcVar.zzb);
                                 contentValues.put("timestamp", Long.valueOf(zzbcVar.zzd));
                                 contentValues.put("metadata_fingerprint", Long.valueOf(j2));
@@ -1266,7 +1267,7 @@ public final class zzaw extends zzos {
                 Preconditions.checkNotEmpty(str52);
                 byte[] zzcd2 = zzpgVar22.zzp().zzh(zzbcVar2).zzcd();
                 ContentValues contentValues2 = new ContentValues();
-                contentValues2.put("app_id", str52);
+                contentValues2.put(CommonUrlParts.APP_ID, str52);
                 contentValues2.put("name", zzbcVar2.zzb);
                 contentValues2.put("timestamp", Long.valueOf(zzbcVar2.zzd));
                 contentValues2.put("metadata_fingerprint", Long.valueOf(j22));
@@ -1361,7 +1362,7 @@ public final class zzaw extends zzos {
         }
         zzicVar.zzaW().zzk().zza("Saving trigger URI");
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("trigger_uri", zzohVar.zza);
         contentValues.put("source", Integer.valueOf(zzohVar.zzc));
         contentValues.put("timestamp_millis", Long.valueOf(j));
@@ -1383,10 +1384,10 @@ public final class zzaw extends zzos {
         zzg();
         zzay();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("consent_state", zzjlVar.zzl());
         contentValues.put("consent_source", Integer.valueOf(zzjlVar.zzb()));
-        zzaD("consent_settings", "app_id", contentValues);
+        zzaD("consent_settings", CommonUrlParts.APP_ID, contentValues);
     }
 
     public final zzba zzab(String str) {
@@ -1464,9 +1465,9 @@ public final class zzaw extends zzos {
             zzaa(str, zzjlVar);
         }
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("dma_consent_settings", zzbaVar.zze());
-        zzaD("consent_settings", "app_id", contentValues);
+        zzaD("consent_settings", CommonUrlParts.APP_ID, contentValues);
     }
 
     public final void zzae(String str, zzjl zzjlVar) {
@@ -1476,9 +1477,9 @@ public final class zzaw extends zzos {
         zzay();
         zzaa(str, zzY(str));
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("storage_consent_at_bundling", zzjlVar.zzl());
-        zzaD("consent_settings", "app_id", contentValues);
+        zzaD("consent_settings", CommonUrlParts.APP_ID, contentValues);
     }
 
     public final zzjl zzaf(String str) {
@@ -1540,12 +1541,15 @@ public final class zzaw extends zzos {
     /* JADX WARN: Code restructure failed: missing block: B:53:0x01a7, code lost:
         r12 = r0.zzf().iterator();
      */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x01af, code lost:
+        r13 = r12.hasNext();
+     */
     /* JADX WARN: Code restructure failed: missing block: B:55:0x01b3, code lost:
         r22 = r0;
-        r0 = "app_id";
+        r0 = io.appmetrica.analytics.networktasks.internal.CommonUrlParts.APP_ID;
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x01c1, code lost:
-        if (r12.hasNext() == false) goto L112;
+        if (r13 == false) goto L112;
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:0x01c3, code lost:
         r13 = (com.google.android.gms.internal.measurement.zzff) r12.next();
@@ -1583,7 +1587,7 @@ public final class zzaw extends zzos {
      */
     /* JADX WARN: Code restructure failed: missing block: B:66:0x0214, code lost:
         r7 = new android.content.ContentValues();
-        r7.put("app_id", r26);
+        r7.put(io.appmetrica.analytics.networktasks.internal.CommonUrlParts.APP_ID, r26);
         r7.put("audience_id", java.lang.Integer.valueOf(r11));
      */
     /* JADX WARN: Code restructure failed: missing block: B:67:0x0227, code lost:
@@ -2234,7 +2238,7 @@ public final class zzaw extends zzos {
             }
         }
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("origin", zzpnVar.zzb);
         contentValues.put("name", str2);
         contentValues.put("set_timestamp", Long.valueOf(zzpnVar.zzd));
@@ -2521,7 +2525,7 @@ public final class zzaw extends zzos {
             }
         }
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("origin", zzahVar.zzb);
         contentValues.put("name", zzahVar.zzc.zzb);
         zzaw(contentValues, "value", Preconditions.checkNotNull(zzahVar.zzc.zza()));
@@ -2718,7 +2722,7 @@ public final class zzaw extends zzos {
             SQLiteDatabase zze2 = zze();
             int i = 0;
             int i2 = 1;
-            String[] strArr2 = {"app_id", "origin", "name", "value", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, "timed_out_event", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "triggered_event", AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, "expired_event"};
+            String[] strArr2 = {CommonUrlParts.APP_ID, "origin", "name", "value", AppMeasurementSdk.ConditionalUserProperty.ACTIVE, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME, AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT, "timed_out_event", AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, "triggered_event", AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP, AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE, "expired_event"};
             zzic zzicVar = this.zzu;
             zzicVar.zzc();
             cursor2 = zze2.query("conditional_properties", strArr2, str, strArr, null, null, "rowid", "1001");
@@ -3151,7 +3155,7 @@ public final class zzaw extends zzos {
         String zzc2 = zzhVar.zzc();
         Preconditions.checkNotNull(zzc2);
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", zzc2);
+        contentValues.put(CommonUrlParts.APP_ID, zzc2);
         if (z) {
             contentValues.put("app_instance_id", (String) null);
         } else if (this.zzg.zzB(zzc2).zzo(zzjk.ANALYTICS_STORAGE)) {
@@ -3420,7 +3424,7 @@ public final class zzaw extends zzos {
             zzic zzicVar2 = this.zzu;
             zzicVar2.zzaW().zzk().zzb("Saving bundle, size", Integer.valueOf(zzv.length));
             ContentValues contentValues = new ContentValues();
-            contentValues.put("app_id", zzidVar.zzA());
+            contentValues.put(CommonUrlParts.APP_ID, zzidVar.zzA());
             contentValues.put("bundle_end_timestamp", Long.valueOf(zzidVar.zzo()));
             contentValues.put("data", zzv);
             contentValues.put("has_realtime", Integer.valueOf(z ? 1 : 0));

@@ -715,7 +715,7 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes5.dex */
+    /* loaded from: classes3.dex */
     public static final class ServiceCImpl extends ArizonaApplication_HiltComponents.ServiceC {
         private final ServiceCImpl serviceCImpl = this;
         private final SingletonCImpl singletonCImpl;
@@ -935,7 +935,7 @@ public final class DaggerArizonaApplication_HiltComponents_SingletonC {
                     case 15:
                         return (T) LauncherDBModule_ProvideDownloaderInfoDatabaseFactory.provideDownloaderInfoDatabase(this.singletonCImpl.launcherDBModule, ApplicationContextModule_ProvideContextFactory.provideContext(this.singletonCImpl.applicationContextModule));
                     case 16:
-                        return (T) new SettingsRepository(this.singletonCImpl.sharedPreferences());
+                        return (T) new SettingsRepository();
                     case 17:
                         return (T) new PreferencesRepository(this.singletonCImpl.sharedPreferences());
                     case 18:

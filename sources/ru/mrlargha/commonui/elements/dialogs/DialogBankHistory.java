@@ -71,7 +71,7 @@ public final class DialogBankHistory extends AbstractDialog {
         this.selectedTab = DialogBankHistoryTab.ALL;
         resolveAllowedTabs = DialogBankHistoryKt.resolveAllowedTabs(buildPayload.getAddType());
         this.allowedTabs = resolveAllowedTabs;
-        addViewToConstraintLayout(inflate, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, inflate, -1, -1, false, 8, null);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
         setupUi();
         open(buildPayload);

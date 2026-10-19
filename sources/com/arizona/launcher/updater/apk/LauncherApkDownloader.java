@@ -6,8 +6,7 @@ import com.arizona.launcher.UpdateServiceContract;
 import com.arizona.launcher.updater.apk.LauncherApkDownloadError;
 import com.arizona.launcher.updater.apk.LauncherApkDownloadResult;
 import com.arizona.launcher.updater.apk.LauncherApkDownloader;
-import com.facebook.internal.AnalyticsEvents;
-import com.google.android.vending.expansion.downloader.Constants;
+import com.google.android.gms.common.internal.ImagesContract;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.io.EOFException;
@@ -65,7 +64,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 /* compiled from: LauncherApkDownloader.kt */
-@Metadata(d1 = {"\u0000\u008a\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 y2\u00020\u0001:\npqrstuvwxyB\u0091\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b\u0012\b\b\u0002\u0010\f\u001a\u00020\r\u0012\b\b\u0002\u0010\u000e\u001a\u00020\u000f\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u000f\u0012$\b\u0002\u0010\u0011\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u000f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u0012\u0012\u0014\b\u0002\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00140\u0016¢\u0006\u0004\b\u0018\u0010\u0019J \u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\b\b\u0002\u0010$\u001a\u00020%H\u0086@¢\u0006\u0002\u0010&J\u0016\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*H\u0086@¢\u0006\u0002\u0010+J\u001e\u0010,\u001a\u00020!2\u0006\u0010\"\u001a\u00020-2\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u0010.J\u0010\u0010/\u001a\u0002002\u0006\u0010\"\u001a\u00020-H\u0002J.\u00101\u001a\u0002022\u0006\u0010\"\u001a\u00020-2\u0006\u00103\u001a\u0002002\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u00105J\u0018\u00106\u001a\u0002072\u0006\u00108\u001a\u0002092\u0006\u00103\u001a\u000200H\u0002J6\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u0002072\u0006\u0010\"\u001a\u00020-2\u0006\u00103\u001a\u0002002\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u0010=J>\u0010>\u001a\u00020;2\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u00103\u001a\u0002002\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J6\u0010C\u001a\u0002022\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J>\u0010D\u001a\u0002022\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u0010E\u001a\u00020F2\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002JW\u0010G\u001a\u0002022\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u0010H\u001a\u00020\u000f2\b\u0010I\u001a\u0004\u0018\u00010\u000f2\b\u0010J\u001a\u0004\u0018\u00010F2\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002¢\u0006\u0002\u0010KJ\u001e\u0010L\u001a\u00020\u00142\u0006\u0010\"\u001a\u00020-2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J\u0018\u0010M\u001a\u00020\u00142\u0006\u0010N\u001a\u00020*2\u0006\u0010E\u001a\u00020FH\u0002J\u0010\u0010O\u001a\u00020\u00142\u0006\u0010P\u001a\u00020QH\u0002J\u0016\u0010R\u001a\u00020\u00142\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J\u0012\u0010S\u001a\u0004\u0018\u00010-2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010T\u001a\u00020U2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010V\u001a\u00020\u00142\u0006\u0010\"\u001a\u00020-H\u0002J\u0010\u0010W\u001a\u00020\u00142\u0006\u0010N\u001a\u00020*H\u0002J\u0010\u0010X\u001a\u00020\u00142\u0006\u0010N\u001a\u00020*H\u0002J\u0010\u0010Y\u001a\u00020\u00142\u0006\u0010Z\u001a\u00020*H\u0002J\u0010\u0010[\u001a\u00020\u000b2\u0006\u0010\\\u001a\u00020*H\u0002J\f\u0010]\u001a\u00020^*\u00020@H\u0002J\u0010\u0010_\u001a\u00020^2\u0006\u0010`\u001a\u00020aH\u0002J\u000e\u0010b\u001a\u0004\u0018\u00010c*\u00020@H\u0002J\u0016\u0010d\u001a\u0004\u0018\u00010a*\u00020@2\u0006\u0010e\u001a\u00020fH\u0002J\f\u0010g\u001a\u00020U*\u00020hH\u0002J\f\u0010i\u001a\u00020^*\u00020hH\u0002J\u0018\u0010j\u001a\u00020\u00142\u0006\u0010$\u001a\u00020%2\u0006\u0010k\u001a\u00020lH\u0002J\u0018\u0010m\u001a\u00020\u00142\u0006\u0010$\u001a\u00020%2\u0006\u0010n\u001a\u00020oH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R,\u0010\u0011\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u000f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u0012X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001aR\u001a\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00140\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b{\u0012\b\b|\u0012\u0004\b\u0003\u0010\u0000¨\u0006z"}, d2 = {"Lcom/arizona/launcher/updater/apk/LauncherApkDownloader;", "", "baseClient", "Lokhttp3/OkHttpClient;", "retryPolicy", "Lcom/arizona/launcher/updater/apk/LauncherApkRetryPolicy;", "fileOps", "Lcom/arizona/launcher/updater/apk/LauncherApkFileOps;", "ioDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "allowInsecureLoopback", "", "maxRedirects", "", "maxApkBytes", "", "checkpointBytes", "retryDelay", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "onCallCreated", "Lkotlin/Function1;", "Lokhttp3/Call;", "<init>", "(Lokhttp3/OkHttpClient;Lcom/arizona/launcher/updater/apk/LauncherApkRetryPolicy;Lcom/arizona/launcher/updater/apk/LauncherApkFileOps;Lkotlinx/coroutines/CoroutineDispatcher;ZIJJLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)V", "Lkotlin/jvm/functions/Function2;", "networkPolicy", "Lcom/arizona/launcher/updater/apk/LauncherApkNetworkPolicy;", "client", "resumeStore", "Lcom/arizona/launcher/updater/apk/LauncherApkResumeStore;", "download", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadResult;", "request", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadRequest;", "observer", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;", "(Lcom/arizona/launcher/updater/apk/LauncherApkDownloadRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "cleanupTemporaryArtifacts", "Lcom/arizona/launcher/updater/apk/LauncherApkCleanupResult;", FirebaseAnalytics.Param.DESTINATION, "Ljava/io/File;", "(Ljava/io/File;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "downloadOwned", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;", "(Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "preparePartial", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$PartialPreparation;", "executeAttempt", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome;", "preparation", "attempt", "(Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$PartialPreparation;ILcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "buildNetworkRequest", "Lokhttp3/Request;", "url", "Lokhttp3/HttpUrl;", "executeHop", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$HopOutcome;", "networkRequest", "(Lokhttp3/Request;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$PartialPreparation;ILcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumeResponse", "response", "Lokhttp3/Response;", "isActive", "Lkotlin/Function0;", "consumeFreshResponse", "consumeResumeResponse", TtmlNode.TAG_METADATA, "Lcom/arizona/launcher/updater/apk/LauncherApkResumeMetadata;", "writeAndCommit", "startOffset", "totalBytes", "resumableMetadata", "(Lokhttp3/Response;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;JLjava/lang/Long;Lcom/arizona/launcher/updater/apk/LauncherApkResumeMetadata;ILcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/jvm/functions/Function0;)Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome;", "verifyCompletedPayload", "saveResumeMetadata", "partialFile", "syncOutput", "output", "Ljava/io/RandomAccessFile;", "ensureTransferActive", "validateRequest", "invalidRequestError", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadError;", "discardNonResumablePartialQuietly", "discardArtifacts", "discardArtifactsQuietly", "ensureParentDirectory", "parent", "isSymbolicLink", UtilsKt.SCHEME_FILE, "toHttpFailure", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome$Failed;", "invalidResume", "reason", "", "resumeValidator", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ResumeValidator;", "validatorValue", "kind", "Lcom/arizona/launcher/updater/apk/LauncherApkValidatorKind;", "toDownloadError", "Ljava/io/IOException;", "toAttemptFailure", "notifyProgress", "progress", "Lcom/arizona/launcher/updater/apk/LauncherApkProgress;", "notifyRetry", "retry", "Lcom/arizona/launcher/updater/apk/LauncherApkRetry;", "PartialPreparation", "HopOutcome", "AttemptOutcome", "ValidatedRequest", "ResumeValidator", "ParsedContentRange", "PayloadIntegrityException", "LauncherApkStorageException", "LauncherApkNetworkException", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u008a\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 y2\u00020\u0001:\npqrstuvwxyB\u0091\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0005\u0012\b\b\u0002\u0010\u0006\u001a\u00020\u0007\u0012\b\b\u0002\u0010\b\u001a\u00020\t\u0012\b\b\u0002\u0010\n\u001a\u00020\u000b\u0012\b\b\u0002\u0010\f\u001a\u00020\r\u0012\b\b\u0002\u0010\u000e\u001a\u00020\u000f\u0012\b\b\u0002\u0010\u0010\u001a\u00020\u000f\u0012$\b\u0002\u0010\u0011\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u000f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u0012\u0012\u0014\b\u0002\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00140\u0016¢\u0006\u0004\b\u0018\u0010\u0019J \u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#2\b\b\u0002\u0010$\u001a\u00020%H\u0086@¢\u0006\u0002\u0010&J\u0016\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*H\u0086@¢\u0006\u0002\u0010+J\u001e\u0010,\u001a\u00020!2\u0006\u0010\"\u001a\u00020-2\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u0010.J\u0010\u0010/\u001a\u0002002\u0006\u0010\"\u001a\u00020-H\u0002J.\u00101\u001a\u0002022\u0006\u0010\"\u001a\u00020-2\u0006\u00103\u001a\u0002002\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u00105J\u0018\u00106\u001a\u0002072\u0006\u00108\u001a\u0002092\u0006\u00103\u001a\u000200H\u0002J6\u0010:\u001a\u00020;2\u0006\u0010<\u001a\u0002072\u0006\u0010\"\u001a\u00020-2\u0006\u00103\u001a\u0002002\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%H\u0082@¢\u0006\u0002\u0010=J>\u0010>\u001a\u00020;2\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u00103\u001a\u0002002\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J6\u0010C\u001a\u0002022\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J>\u0010D\u001a\u0002022\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u0010E\u001a\u00020F2\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002JW\u0010G\u001a\u0002022\u0006\u0010?\u001a\u00020@2\u0006\u0010\"\u001a\u00020-2\u0006\u0010H\u001a\u00020\u000f2\b\u0010I\u001a\u0004\u0018\u00010\u000f2\b\u0010J\u001a\u0004\u0018\u00010F2\u0006\u00104\u001a\u00020\r2\u0006\u0010$\u001a\u00020%2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002¢\u0006\u0002\u0010KJ\u001e\u0010L\u001a\u00020\u00142\u0006\u0010\"\u001a\u00020-2\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J\u0018\u0010M\u001a\u00020\u00142\u0006\u0010N\u001a\u00020*2\u0006\u0010E\u001a\u00020FH\u0002J\u0010\u0010O\u001a\u00020\u00142\u0006\u0010P\u001a\u00020QH\u0002J\u0016\u0010R\u001a\u00020\u00142\f\u0010A\u001a\b\u0012\u0004\u0012\u00020\u000b0BH\u0002J\u0012\u0010S\u001a\u0004\u0018\u00010-2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010T\u001a\u00020U2\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010V\u001a\u00020\u00142\u0006\u0010\"\u001a\u00020-H\u0002J\u0010\u0010W\u001a\u00020\u00142\u0006\u0010N\u001a\u00020*H\u0002J\u0010\u0010X\u001a\u00020\u00142\u0006\u0010N\u001a\u00020*H\u0002J\u0010\u0010Y\u001a\u00020\u00142\u0006\u0010Z\u001a\u00020*H\u0002J\u0010\u0010[\u001a\u00020\u000b2\u0006\u0010\\\u001a\u00020*H\u0002J\f\u0010]\u001a\u00020^*\u00020@H\u0002J\u0010\u0010_\u001a\u00020^2\u0006\u0010`\u001a\u00020aH\u0002J\u000e\u0010b\u001a\u0004\u0018\u00010c*\u00020@H\u0002J\u0016\u0010d\u001a\u0004\u0018\u00010a*\u00020@2\u0006\u0010e\u001a\u00020fH\u0002J\f\u0010g\u001a\u00020U*\u00020hH\u0002J\f\u0010i\u001a\u00020^*\u00020hH\u0002J\u0018\u0010j\u001a\u00020\u00142\u0006\u0010$\u001a\u00020%2\u0006\u0010k\u001a\u00020lH\u0002J\u0018\u0010m\u001a\u00020\u00142\u0006\u0010$\u001a\u00020%2\u0006\u0010n\u001a\u00020oH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R,\u0010\u0011\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\u000f\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00140\u0013\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u0012X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u001aR\u001a\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00140\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b{\u0012\b\b|\u0012\u0004\b\u0003\u0010\u0000¨\u0006z"}, d2 = {"Lcom/arizona/launcher/updater/apk/LauncherApkDownloader;", "", "baseClient", "Lokhttp3/OkHttpClient;", "retryPolicy", "Lcom/arizona/launcher/updater/apk/LauncherApkRetryPolicy;", "fileOps", "Lcom/arizona/launcher/updater/apk/LauncherApkFileOps;", "ioDispatcher", "Lkotlinx/coroutines/CoroutineDispatcher;", "allowInsecureLoopback", "", "maxRedirects", "", "maxApkBytes", "", "checkpointBytes", "retryDelay", "Lkotlin/Function2;", "Lkotlin/coroutines/Continuation;", "", "onCallCreated", "Lkotlin/Function1;", "Lokhttp3/Call;", "<init>", "(Lokhttp3/OkHttpClient;Lcom/arizona/launcher/updater/apk/LauncherApkRetryPolicy;Lcom/arizona/launcher/updater/apk/LauncherApkFileOps;Lkotlinx/coroutines/CoroutineDispatcher;ZIJJLkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)V", "Lkotlin/jvm/functions/Function2;", "networkPolicy", "Lcom/arizona/launcher/updater/apk/LauncherApkNetworkPolicy;", "client", "resumeStore", "Lcom/arizona/launcher/updater/apk/LauncherApkResumeStore;", "download", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadResult;", "request", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadRequest;", "observer", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;", "(Lcom/arizona/launcher/updater/apk/LauncherApkDownloadRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "cleanupTemporaryArtifacts", "Lcom/arizona/launcher/updater/apk/LauncherApkCleanupResult;", FirebaseAnalytics.Param.DESTINATION, "Ljava/io/File;", "(Ljava/io/File;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "downloadOwned", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;", "(Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "preparePartial", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$PartialPreparation;", "executeAttempt", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome;", "preparation", "attempt", "(Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$PartialPreparation;ILcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "buildNetworkRequest", "Lokhttp3/Request;", ImagesContract.URL, "Lokhttp3/HttpUrl;", "executeHop", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$HopOutcome;", "networkRequest", "(Lokhttp3/Request;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$PartialPreparation;ILcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "consumeResponse", "response", "Lokhttp3/Response;", "isActive", "Lkotlin/Function0;", "consumeFreshResponse", "consumeResumeResponse", TtmlNode.TAG_METADATA, "Lcom/arizona/launcher/updater/apk/LauncherApkResumeMetadata;", "writeAndCommit", "startOffset", "totalBytes", "resumableMetadata", "(Lokhttp3/Response;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ValidatedRequest;JLjava/lang/Long;Lcom/arizona/launcher/updater/apk/LauncherApkResumeMetadata;ILcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;Lkotlin/jvm/functions/Function0;)Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome;", "verifyCompletedPayload", "saveResumeMetadata", "partialFile", "syncOutput", "output", "Ljava/io/RandomAccessFile;", "ensureTransferActive", "validateRequest", "invalidRequestError", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadError;", "discardNonResumablePartialQuietly", "discardArtifacts", "discardArtifactsQuietly", "ensureParentDirectory", "parent", "isSymbolicLink", UtilsKt.SCHEME_FILE, "toHttpFailure", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome$Failed;", "invalidResume", "reason", "", "resumeValidator", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$ResumeValidator;", "validatorValue", "kind", "Lcom/arizona/launcher/updater/apk/LauncherApkValidatorKind;", "toDownloadError", "Ljava/io/IOException;", "toAttemptFailure", "notifyProgress", "progress", "Lcom/arizona/launcher/updater/apk/LauncherApkProgress;", "notifyRetry", "retry", "Lcom/arizona/launcher/updater/apk/LauncherApkRetry;", "PartialPreparation", "HopOutcome", "AttemptOutcome", "ValidatedRequest", "ResumeValidator", "ParsedContentRange", "PayloadIntegrityException", "LauncherApkStorageException", "LauncherApkNetworkException", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class LauncherApkDownloader {
     @Deprecated
@@ -637,7 +636,7 @@ public final class LauncherApkDownloader {
         Request.Builder header = new Request.Builder().url(httpUrl).get().header("Cache-Control", "no-cache").header("Accept-Encoding", "identity");
         PartialPreparation.Resume resume = partialPreparation instanceof PartialPreparation.Resume ? (PartialPreparation.Resume) partialPreparation : null;
         if (resume != null) {
-            header.header("Range", "bytes=" + resume.getMetadata().getCommittedBytes() + Constants.FILENAME_SEQUENCE_SEPARATOR);
+            header.header("Range", "bytes=" + resume.getMetadata().getCommittedBytes() + "-");
             header.header("If-Range", resume.getMetadata().getValidatorValue());
         }
         return header.build();
@@ -679,10 +678,10 @@ public final class LauncherApkDownloader {
                         Result.Companion companion = Result.Companion;
                         LauncherApkDownloader launcherApkDownloader = this;
                         this.onCallCreated.invoke(newCall);
-                        Result.m9921constructorimpl(Unit.INSTANCE);
+                        Result.m9974constructorimpl(Unit.INSTANCE);
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        Result.m9921constructorimpl(ResultKt.createFailure(th));
+                        Result.m9974constructorimpl(ResultKt.createFailure(th));
                     }
                     final CompletableDeferred CompletableDeferred$default = CompletableDeferredKt.CompletableDeferred$default(null, 1, null);
                     try {
@@ -720,7 +719,7 @@ public final class LauncherApkDownloader {
                                         if (cancellableContinuationImpl2.isActive()) {
                                             Result.Companion companion3 = Result.Companion;
                                             attemptFailure = this.toAttemptFailure(error);
-                                            cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
+                                            cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
                                         }
                                     } finally {
                                         CompletableDeferred$default.complete(Unit.INSTANCE);
@@ -756,7 +755,7 @@ public final class LauncherApkDownloader {
                                                         CloseableKt.closeFinally(response2, null);
                                                         if (cancellableContinuationImpl2.isActive()) {
                                                             Result.Companion companion3 = Result.Companion;
-                                                            cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(consumeResponse));
+                                                            cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(consumeResponse));
                                                         }
                                                         CompletableDeferred$default.complete(Unit.INSTANCE);
                                                         return;
@@ -769,14 +768,14 @@ public final class LauncherApkDownloader {
                                             } catch (RuntimeException e) {
                                                 if (cancellableContinuationImpl2.isActive()) {
                                                     Result.Companion companion4 = Result.Companion;
-                                                    cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(new IOException("Unexpected launcher APK transport failure", e)), false, false))));
+                                                    cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(new IOException("Unexpected launcher APK transport failure", e)), false, false))));
                                                 }
                                                 CompletableDeferred$default.complete(Unit.INSTANCE);
                                             }
                                         } catch (LauncherApkDownloader.LauncherApkStorageException e2) {
                                             if (cancellableContinuationImpl2.isActive()) {
                                                 Result.Companion companion5 = Result.Companion;
-                                                cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(e2.getIoCause()), false, false))));
+                                                cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Storage(e2.getIoCause()), false, false))));
                                             }
                                             CompletableDeferred$default.complete(Unit.INSTANCE);
                                         } catch (LauncherApkDownloader.PayloadIntegrityException e3) {
@@ -788,14 +787,14 @@ public final class LauncherApkDownloader {
                                                 }
                                                 LauncherApkDownloader.HopOutcome.Terminal terminal = new LauncherApkDownloader.HopOutcome.Terminal(new LauncherApkDownloader.AttemptOutcome.Failed(new LauncherApkDownloadError.Integrity(message), true, true));
                                                 Result.Companion companion6 = Result.Companion;
-                                                cancellableContinuation2.resumeWith(Result.m9921constructorimpl(terminal));
+                                                cancellableContinuation2.resumeWith(Result.m9974constructorimpl(terminal));
                                             }
                                             CompletableDeferred$default.complete(Unit.INSTANCE);
                                         } catch (IOException e4) {
                                             if (cancellableContinuationImpl2.isActive()) {
                                                 Result.Companion companion7 = Result.Companion;
                                                 attemptFailure = this.toAttemptFailure(e4);
-                                                cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
+                                                cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(new LauncherApkDownloader.HopOutcome.Terminal(attemptFailure)));
                                             }
                                             CompletableDeferred$default.complete(Unit.INSTANCE);
                                         }
@@ -809,7 +808,7 @@ public final class LauncherApkDownloader {
                             CompletableDeferred$default.complete(Unit.INSTANCE);
                             if (cancellableContinuationImpl2.isActive()) {
                                 Result.Companion companion3 = Result.Companion;
-                                cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(new HopOutcome.Terminal(new AttemptOutcome.Failed(new LauncherApkDownloadError.Network(new IOException("Unable to enqueue launcher APK request", e)), true, false))));
+                                cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(new HopOutcome.Terminal(new AttemptOutcome.Failed(new LauncherApkDownloadError.Network(new IOException("Unable to enqueue launcher APK request", e)), true, false))));
                             }
                         }
                         result = cancellableContinuationImpl.getResult();
@@ -1308,7 +1307,7 @@ public final class LauncherApkDownloader {
     /* JADX INFO: Access modifiers changed from: private */
     public final ValidatedRequest validateRequest(LauncherApkDownloadRequest launcherApkDownloadRequest) {
         String str;
-        Boolean m9921constructorimpl;
+        Boolean m9974constructorimpl;
         String obj;
         HttpUrl parse = HttpUrl.Companion.parse(launcherApkDownloadRequest.getUrl());
         if (parse == null) {
@@ -1342,15 +1341,15 @@ public final class LauncherApkDownloader {
                             try {
                                 Result.Companion companion = Result.Companion;
                                 LauncherApkDownloader launcherApkDownloader = this;
-                                m9921constructorimpl = Result.m9921constructorimpl(Boolean.valueOf(!Intrinsics.areEqual(absoluteFile.getCanonicalPath(), file.getAbsolutePath())));
+                                m9974constructorimpl = Result.m9974constructorimpl(Boolean.valueOf(!Intrinsics.areEqual(absoluteFile.getCanonicalPath(), file.getAbsolutePath())));
                             } catch (Throwable th) {
                                 Result.Companion companion2 = Result.Companion;
-                                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
                             }
-                            if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-                                m9921constructorimpl = true;
+                            if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+                                m9974constructorimpl = true;
                             }
-                            if (((Boolean) m9921constructorimpl).booleanValue()) {
+                            if (((Boolean) m9974constructorimpl).booleanValue()) {
                                 return null;
                             }
                         }
@@ -1412,10 +1411,10 @@ public final class LauncherApkDownloader {
             Result.Companion companion = Result.Companion;
             LauncherApkDownloader launcherApkDownloader = this;
             discardArtifacts(file);
-            Result.m9921constructorimpl(Unit.INSTANCE);
+            Result.m9974constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            Result.m9921constructorimpl(ResultKt.createFailure(th));
+            Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
     }
 
@@ -1430,7 +1429,7 @@ public final class LauncherApkDownloader {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private final boolean isSymbolicLink(File file) {
-        Boolean m9921constructorimpl;
+        Boolean m9974constructorimpl;
         File parentFile;
         boolean z;
         File canonicalFile;
@@ -1440,21 +1439,21 @@ public final class LauncherApkDownloader {
             parentFile = file.getParentFile();
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
         if (parentFile != null && (canonicalFile = parentFile.getCanonicalFile()) != null && Intrinsics.areEqual(file.getCanonicalPath(), new File(canonicalFile, file.getName()).getAbsolutePath())) {
             z = false;
-            m9921constructorimpl = Result.m9921constructorimpl(Boolean.valueOf(z));
-            if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-                m9921constructorimpl = true;
+            m9974constructorimpl = Result.m9974constructorimpl(Boolean.valueOf(z));
+            if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+                m9974constructorimpl = true;
             }
-            return ((Boolean) m9921constructorimpl).booleanValue();
+            return ((Boolean) m9974constructorimpl).booleanValue();
         }
         z = true;
-        m9921constructorimpl = Result.m9921constructorimpl(Boolean.valueOf(z));
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
+        m9974constructorimpl = Result.m9974constructorimpl(Boolean.valueOf(z));
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
         }
-        return ((Boolean) m9921constructorimpl).booleanValue();
+        return ((Boolean) m9974constructorimpl).booleanValue();
     }
 
     private final AttemptOutcome.Failed toHttpFailure(Response response) {
@@ -1534,10 +1533,10 @@ public final class LauncherApkDownloader {
             Result.Companion companion = Result.Companion;
             LauncherApkDownloader launcherApkDownloader = this;
             launcherApkDownloadObserver.onProgress(launcherApkProgress);
-            Result.m9921constructorimpl(Unit.INSTANCE);
+            Result.m9974constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            Result.m9921constructorimpl(ResultKt.createFailure(th));
+            Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
     }
 
@@ -1546,10 +1545,10 @@ public final class LauncherApkDownloader {
             Result.Companion companion = Result.Companion;
             LauncherApkDownloader launcherApkDownloader = this;
             launcherApkDownloadObserver.onRetry(launcherApkRetry);
-            Result.m9921constructorimpl(Unit.INSTANCE);
+            Result.m9974constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            Result.m9921constructorimpl(ResultKt.createFailure(th));
+            Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
     }
 
@@ -1724,7 +1723,7 @@ public final class LauncherApkDownloader {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: LauncherApkDownloader.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\br\u0018\u00002\u00020\u0001:\u0002\u0002\u0003\u0082\u0001\u0002\u0004\u0005¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome;", "", AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_COMPLETED, AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_FAILED, "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome$Completed;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome$Failed;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\br\u0018\u00002\u00020\u0001:\u0002\u0002\u0003\u0082\u0001\u0002\u0004\u0005¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome;", "", "Completed", "Failed", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome$Completed;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader$AttemptOutcome$Failed;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public interface AttemptOutcome {
 

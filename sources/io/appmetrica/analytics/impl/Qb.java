@@ -7,12 +7,12 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 public final class Qb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Handler f732a;
+    public final Handler f735a;
     public final V2 b;
     public final Rb c;
 
     public Qb(Handler handler, V2 v2) {
-        this.f732a = handler;
+        this.f735a = handler;
         this.b = v2;
         this.c = new Rb(handler, v2);
     }

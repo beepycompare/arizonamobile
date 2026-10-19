@@ -1,6 +1,5 @@
 package com.google.android.gms.measurement.internal;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -24,7 +23,7 @@ public final class zzbb extends zzjf {
         String lowerCase2 = locale.getCountry().toLowerCase(Locale.ENGLISH);
         StringBuilder sb = new StringBuilder(String.valueOf(lowerCase).length() + 1 + String.valueOf(lowerCase2).length());
         sb.append(lowerCase);
-        sb.append(Constants.FILENAME_SEQUENCE_SEPARATOR);
+        sb.append("-");
         sb.append(lowerCase2);
         this.zzb = sb.toString();
         return false;

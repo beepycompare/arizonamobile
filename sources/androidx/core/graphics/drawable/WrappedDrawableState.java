@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public final class WrappedDrawableState extends Drawable.ConstantState {
     int mChangingConfigurations;
     Drawable.ConstantState mDrawableState;

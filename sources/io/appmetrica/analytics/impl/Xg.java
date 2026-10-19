@@ -8,9 +8,9 @@ public final class Xg extends Wg {
     }
 
     @Override // io.appmetrica.analytics.impl.Wg, io.appmetrica.analytics.impl.Ra
-    public final void a(List<AbstractC0303hh> list) {
-        list.add(this.f745a.i);
-        list.add(this.f745a.j);
+    public final void a(List<AbstractC0298hh> list) {
+        list.add(this.f748a.i);
+        list.add(this.f748a.j);
         super.a(list);
     }
 }

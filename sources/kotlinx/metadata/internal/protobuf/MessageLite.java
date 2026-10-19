@@ -3,10 +3,10 @@ package kotlinx.metadata.internal.protobuf;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public interface MessageLite extends MessageLiteOrBuilder {
 
-    /* loaded from: classes6.dex */
+    /* loaded from: classes5.dex */
     public interface Builder extends MessageLiteOrBuilder, Cloneable {
         MessageLite build();
 

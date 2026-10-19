@@ -1,7 +1,6 @@
 package kotlinx.datetime.internal.format.parser;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -71,7 +70,7 @@ public final class ParserOperationKt {
         }
         List createListBuilder = CollectionsKt.createListBuilder();
         if (z) {
-            createListBuilder.add(new PlainStringParserOperation(Constants.FILENAME_SEQUENCE_SEPARATOR));
+            createListBuilder.add(new PlainStringParserOperation("-"));
         }
         createListBuilder.add(new NumberSpanParserOperation(CollectionsKt.listOf(new UnsignedIntConsumer(Integer.valueOf(i - (z ? 1 : 0)), Integer.valueOf(i2 - (z ? 1 : 0)), assignableField, str, z))));
         return new ParserStructure<>(CollectionsKt.build(createListBuilder), CollectionsKt.emptyList());
@@ -80,16 +79,16 @@ public final class ParserOperationKt {
     public static final <Output> ParserStructure<Output> ReducedIntParser(int i, int i2, AssignableField<? super Output, Integer> setter, String name) {
         Intrinsics.checkNotNullParameter(setter, "setter");
         Intrinsics.checkNotNullParameter(name, "name");
-        return new ParserStructure<>(CollectionsKt.emptyList(), CollectionsKt.listOf((Object[]) new ParserStructure[]{new ParserStructure(CollectionsKt.listOf(new NumberSpanParserOperation(CollectionsKt.listOf(new ReducedIntConsumer(i, setter, name, i2)))), CollectionsKt.emptyList()), new ParserStructure(CollectionsKt.listOf((Object[]) new ParserOperation[]{new PlainStringParserOperation("+"), new NumberSpanParserOperation(CollectionsKt.listOf(new UnsignedIntConsumer(null, null, setter, name, false)))}), CollectionsKt.emptyList()), new ParserStructure(CollectionsKt.listOf((Object[]) new ParserOperation[]{new PlainStringParserOperation(Constants.FILENAME_SEQUENCE_SEPARATOR), new NumberSpanParserOperation(CollectionsKt.listOf(new UnsignedIntConsumer(null, null, setter, name, true)))}), CollectionsKt.emptyList())}));
+        return new ParserStructure<>(CollectionsKt.emptyList(), CollectionsKt.listOf((Object[]) new ParserStructure[]{new ParserStructure(CollectionsKt.listOf(new NumberSpanParserOperation(CollectionsKt.listOf(new ReducedIntConsumer(i, setter, name, i2)))), CollectionsKt.emptyList()), new ParserStructure(CollectionsKt.listOf((Object[]) new ParserOperation[]{new PlainStringParserOperation("+"), new NumberSpanParserOperation(CollectionsKt.listOf(new UnsignedIntConsumer(null, null, setter, name, false)))}), CollectionsKt.emptyList()), new ParserStructure(CollectionsKt.listOf((Object[]) new ParserOperation[]{new PlainStringParserOperation("-"), new NumberSpanParserOperation(CollectionsKt.listOf(new UnsignedIntConsumer(null, null, setter, name, true)))}), CollectionsKt.emptyList())}));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final <Object, Type> Object setWithoutReassigning(final AssignableField<? super Object, Type> assignableField, Object object, final Type type, int i, int i2) {
         final Type trySetWithoutReassigning = assignableField.trySetWithoutReassigning(object, type);
         if (trySetWithoutReassigning == null) {
-            return ParseResult.Companion.m11567OkQi1bsqg(i2);
+            return ParseResult.Companion.m11620OkQi1bsqg(i2);
         }
-        return ParseResult.Companion.m11566ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.ParserOperationKt$$ExternalSyntheticLambda0
+        return ParseResult.Companion.m11619ErrorRg3Co2E(i, new Function0() { // from class: kotlinx.datetime.internal.format.parser.ParserOperationKt$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return ParserOperationKt.setWithoutReassigning$lambda$2(trySetWithoutReassigning, type, assignableField);

@@ -23,7 +23,6 @@ import androidx.collection.ArrayMap;
 import androidx.collection.SieveCacheKt;
 import androidx.compose.runtime.ComposerKt;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.android.vending.expansion.zipfile.APEZProvider;
 import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.stats.ConnectionTracker;
@@ -43,6 +42,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -2485,7 +2485,7 @@ public final class zzpg implements zzjg {
                                         zzic zzicVar = zzj2.zzu;
                                         zzicVar.zzaW().zzk().zzb("Caching events in NO_DATA mode", zzhsVar);
                                         ContentValues contentValues = new ContentValues();
-                                        contentValues.put("app_id", str);
+                                        contentValues.put(CommonUrlParts.APP_ID, str);
                                         contentValues.put("name", zzhsVar.zzd());
                                         contentValues.put("data", zzhsVar.zzcd());
                                         contentValues.put("timestamp_millis", Long.valueOf(zzhsVar.zzf()));
@@ -3151,7 +3151,7 @@ public final class zzpg implements zzjg {
                 zzicVar.zzE(zzD.substring(0, indexOf));
             }
         }
-        if (zzh().zzs(str) && (zzx = zzpk.zzx(zzicVar, APEZProvider.FILEID)) != -1) {
+        if (zzh().zzs(str) && (zzx = zzpk.zzx(zzicVar, "_id")) != -1) {
             zzicVar.zzr(zzx);
         }
         if (zzh().zzt(str)) {
@@ -3809,7 +3809,7 @@ public final class zzpg implements zzjg {
                 zzk2.zzc("Setting user property", zzicVar.zzl().zzc(str5), zzN);
                 zzj().zzb();
                 try {
-                    if (APEZProvider.FILEID.equals(str5) && (zzm = zzj().zzm(str4, APEZProvider.FILEID)) != null && !zzpnVar.zze.equals(zzm.zze)) {
+                    if ("_id".equals(str5) && (zzm = zzj().zzm(str4, "_id")) != null && !zzpnVar.zze.equals(zzm.zze)) {
                         zzj().zzk(str4, "_lair");
                     }
                     zzap(zzrVar);
@@ -3857,7 +3857,7 @@ public final class zzpg implements zzjg {
             zzj().zzb();
             try {
                 zzap(zzrVar);
-                if (APEZProvider.FILEID.equals(str)) {
+                if ("_id".equals(str)) {
                     zzj().zzk((String) Preconditions.checkNotNull(zzrVar.zza), "_lair");
                 }
                 zzj().zzk((String) Preconditions.checkNotNull(zzrVar.zza), str);
@@ -4421,7 +4421,7 @@ public final class zzpg implements zzjg {
                 } else {
                     z = true;
                 }
-                if (zzj().zzm(str5, APEZProvider.FILEID) != null && zzj().zzm(str5, "_lair") == null) {
+                if (zzj().zzm(str5, "_id") != null && zzj().zzm(str5, "_lair") == null) {
                     zzj().zzl(new zzpn(str5, "auto", "_lair", zzba().currentTimeMillis(), 1L));
                 }
                 zzu.zzg(zzrVar.zzb);
@@ -4866,7 +4866,7 @@ public final class zzpg implements zzjg {
             } else {
                 zzanVar.zzc(zzjk.AD_USER_DATA, zzam.FAILSAFE);
             }
-            return new zzba((Boolean) false, i, (Boolean) true, com.google.android.vending.expansion.downloader.Constants.FILENAME_SEQUENCE_SEPARATOR);
+            return new zzba((Boolean) false, i, (Boolean) true, "-");
         }
         zzji zzc = zzbaVar.zzc();
         zzji zzjiVar2 = zzji.GRANTED;
@@ -4901,7 +4901,7 @@ public final class zzpg implements zzjg {
         boolean zzz = this.zzc.zzz(str);
         SortedSet zzA = zzh().zzA(str);
         if (zzc == zzji.DENIED || zzA.isEmpty()) {
-            return new zzba((Boolean) false, i, Boolean.valueOf(zzz), com.google.android.vending.expansion.downloader.Constants.FILENAME_SEQUENCE_SEPARATOR);
+            return new zzba((Boolean) false, i, Boolean.valueOf(zzz), "-");
         }
         return new zzba((Boolean) true, i, Boolean.valueOf(zzz), zzz ? TextUtils.join("", zzA) : "");
     }

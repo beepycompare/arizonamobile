@@ -12,7 +12,6 @@ import android.os.Debug;
 import android.os.StatFs;
 import android.text.TextUtils;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.Ascii;
 import com.google.firebase.crashlytics.internal.Logger;
 import io.appmetrica.analytics.coreutils.internal.system.ConstantDeviceInfo;
@@ -29,7 +28,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class CommonUtils {
     static final String BUILD_IDS_ARCH_RESOURCE_NAME = "com.google.firebase.crashlytics.build_ids_arch";
     static final String BUILD_IDS_BUILD_ID_RESOURCE_NAME = "com.google.firebase.crashlytics.build_ids_build_id";
@@ -68,7 +67,7 @@ public class CommonUtils {
         return Architecture.getValue().ordinal();
     }
 
-    /* loaded from: classes5.dex */
+    /* loaded from: classes4.dex */
     enum Architecture {
         X86_32,
         X86_64,
@@ -150,7 +149,7 @@ public class CommonUtils {
             ArrayList<String> arrayList = new ArrayList();
             for (String str : strArr) {
                 if (str != null) {
-                    arrayList.add(str.replace(Constants.FILENAME_SEQUENCE_SEPARATOR, "").toLowerCase(Locale.US));
+                    arrayList.add(str.replace("-", "").toLowerCase(Locale.US));
                 }
             }
             Collections.sort(arrayList);

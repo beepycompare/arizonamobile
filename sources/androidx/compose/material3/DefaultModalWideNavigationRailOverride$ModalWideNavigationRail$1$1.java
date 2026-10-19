@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import com.google.android.vending.licensing.Policy;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,7 +15,7 @@ import kotlinx.coroutines.channels.ChannelIterator;
 import kotlinx.coroutines.channels.ChannelResult;
 /* compiled from: WideNavigationRail.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.material3.DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1", f = "WideNavigationRail.kt", i = {0}, l = {Policy.NOT_LICENSED}, m = "invokeSuspend", n = {"$this$LaunchedEffect"}, s = {"L$0"})
+@DebugMetadata(c = "androidx.compose.material3.DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1", f = "WideNavigationRail.kt", i = {0}, l = {561}, m = "invokeSuspend", n = {"$this$LaunchedEffect"}, s = {"L$0"})
 /* loaded from: classes.dex */
 final class DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Channel<Boolean> $channel;
@@ -78,7 +77,7 @@ final class DefaultModalWideNavigationRailOverride$ModalWideNavigationRail$1$1 e
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 boolean booleanValue = it.next().booleanValue();
-                Boolean bool = (Boolean) ChannelResult.m11474getOrNullimpl(this.$channel.mo11463tryReceivePtdJZtk());
+                Boolean bool = (Boolean) ChannelResult.m11527getOrNullimpl(this.$channel.mo11516tryReceivePtdJZtk());
                 if (bool != null) {
                     booleanValue = bool.booleanValue();
                 }

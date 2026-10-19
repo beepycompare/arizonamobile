@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics.colorspace;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -104,6 +103,6 @@ public final class ColorModel {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5781toStringimpl(long j) {
-        return m5778equalsimpl0(j, Rgb) ? "Rgb" : m5778equalsimpl0(j, Xyz) ? "Xyz" : m5778equalsimpl0(j, Lab) ? "Lab" : m5778equalsimpl0(j, Cmyk) ? "Cmyk" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5778equalsimpl0(j, Rgb) ? "Rgb" : m5778equalsimpl0(j, Xyz) ? "Xyz" : m5778equalsimpl0(j, Lab) ? "Lab" : m5778equalsimpl0(j, Cmyk) ? "Cmyk" : "Unknown";
     }
 }

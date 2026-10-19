@@ -64,8 +64,10 @@ public final class DialogBankHistoryAdapter extends RecyclerView.Adapter<ViewHol
             DialogBankHistoryItemBinding dialogBankHistoryItemBinding = this.binding;
             TextView textView = dialogBankHistoryItemBinding.dialogBankHistoryItemId;
             String id = row.getId();
-            if (StringsKt.isBlank(id)) {
-                id = "-";
+            boolean isBlank = StringsKt.isBlank(id);
+            String str = EMPTY_CELL;
+            if (isBlank) {
+                id = EMPTY_CELL;
             }
             textView.setText(id);
             dialogBankHistoryItemBinding.dialogBankHistoryItemIcon.setImageResource(row.operationIconRes());
@@ -80,13 +82,16 @@ public final class DialogBankHistoryAdapter extends RecyclerView.Adapter<ViewHol
             TextView textView3 = dialogBankHistoryItemBinding.dialogBankHistoryItemTarget;
             String target = row.getTarget();
             if (StringsKt.isBlank(target)) {
-                target = "-";
+                target = EMPTY_CELL;
             }
             textView3.setText(target);
             dialogBankHistoryItemBinding.dialogBankHistoryItemAmount.setText(row.amountText());
             TextView textView4 = dialogBankHistoryItemBinding.dialogBankHistoryItemDate;
             String date = row.getDate();
-            textView4.setText(StringsKt.isBlank(date) ? "-" : date);
+            if (!StringsKt.isBlank(date)) {
+                str = date;
+            }
+            textView4.setText(str);
         }
 
         /* compiled from: DialogBankHistory.kt */

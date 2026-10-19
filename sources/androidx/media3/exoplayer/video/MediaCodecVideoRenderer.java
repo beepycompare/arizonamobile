@@ -12,6 +12,7 @@ import android.os.Message;
 import android.util.Pair;
 import android.view.Display;
 import android.view.Surface;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -52,10 +53,13 @@ import androidx.media3.exoplayer.video.VideoSink;
 import androidx.media3.extractor.ts.TsExtractor;
 import androidx.window.core.layout.WindowSizeClass;
 import com.google.android.gms.common.Scopes;
+import com.google.android.gms.location.LocationRequest;
 import com.google.common.base.Ascii;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.firebase.messaging.Constants;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -423,7 +427,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
 
         public static boolean doesDisplaySupportDolbyVision(Context context) {
             Display.HdrCapabilities hdrCapabilities;
-            DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
+            DisplayManager displayManager = (DisplayManager) context.getSystemService(Constants.ScionAnalytics.MessageType.DISPLAY_NOTIFICATION);
             Display display = displayManager != null ? displayManager.getDisplay(0) : null;
             if (display == null || !display.isHdr() || (hdrCapabilities = display.getHdrCapabilities()) == null) {
                 return false;
@@ -3150,7 +3154,7 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'R':
                             case 'S':
                             case 'T':
-                            case 'U':
+                            case SettingsMenuDefaults.DEFAULT_VIDEO_RENDER_SCALE /* 85 */:
                             case 'V':
                             case 'W':
                             case 'X':
@@ -3170,11 +3174,11 @@ public class MediaCodecVideoRenderer extends MediaCodecRenderer implements Video
                             case 'f':
                             case 'g':
                             case 'h':
-                            case 'i':
+                            case LocationRequest.PRIORITY_NO_POWER /* 105 */:
                             case 'j':
                             case 'k':
-                            case 'l':
-                            case 'm':
+                            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR /* 108 */:
+                            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY /* 109 */:
                             case 'n':
                             case 'o':
                             case 'p':

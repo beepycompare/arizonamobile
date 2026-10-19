@@ -38,7 +38,7 @@ public final class TestScreen extends SAMPUIElement {
         this.value1 = 1L;
         bind.etValue1123213e.setText("baadadd");
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         Log.d(getCLASS_TAG(), "setupListeners: 1");
         setupListeners();
         Log.d(getCLASS_TAG(), "setupListeners: 2");

@@ -16,10 +16,10 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class W implements InterfaceC0168cb {
+public final class W implements InterfaceC0163cb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f817a;
+    public final Context f820a;
     public final ICommonExecutor b;
     public FutureTask i;
     public final O l;
@@ -36,7 +36,7 @@ public final class W implements InterfaceC0168cb {
     public volatile AdvertisingIdsHolder m = new AdvertisingIdsHolder();
 
     public W(Context context, ICommonExecutor iCommonExecutor, Hm hm) {
-        this.f817a = context;
+        this.f820a = context;
         this.b = iCommonExecutor;
         this.l = new O(hm);
         M m = M.d;
@@ -44,7 +44,7 @@ public final class W implements InterfaceC0168cb {
     }
 
     public static final Void f(W w) {
-        w.m = new AdvertisingIdsHolder(w.a(w.n.f637a, new T(w)), w.a(w.n.b, new U(w)), w.a(w.n.c, new V(w, new C0740ye())));
+        w.m = new AdvertisingIdsHolder(w.a(w.n.f640a, new T(w)), w.a(w.n.b, new U(w)), w.a(w.n.c, new V(w, new C0735ye())));
         w.b.executeDelayed((FutureTask) w.j.getValue(), w.k, TimeUnit.SECONDS);
         return null;
     }
@@ -68,7 +68,7 @@ public final class W implements InterfaceC0168cb {
         return this.m;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0168cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0163cb
     public final synchronized void init() {
         if (this.i == null) {
             this.n = this.l.a();
@@ -83,20 +83,20 @@ public final class W implements InterfaceC0168cb {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0168cb, io.appmetrica.analytics.impl.Mm
+    @Override // io.appmetrica.analytics.impl.InterfaceC0163cb, io.appmetrica.analytics.impl.Mm
     public final synchronized void a(Hm hm) {
         this.l.a(hm);
         a();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0168cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0163cb
     public final synchronized void b(boolean z) {
         this.o = true;
         this.l.b.update(z);
         a();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0168cb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0163cb
     public final synchronized void c(boolean z) {
         if (!this.o) {
             b(z);
@@ -128,7 +128,7 @@ public final class W implements InterfaceC0168cb {
     }
 
     public final void b() {
-        AdTrackingInfoResult a2 = a(this.n.f637a, new T(this));
+        AdTrackingInfoResult a2 = a(this.n.f640a, new T(this));
         AdTrackingInfoResult google = this.m.getGoogle();
         IdentifierStatus identifierStatus = a2.mStatus;
         IdentifierStatus identifierStatus2 = IdentifierStatus.UNKNOWN;
@@ -140,7 +140,7 @@ public final class W implements InterfaceC0168cb {
         if (a3.mStatus == identifierStatus2) {
             a3 = new AdTrackingInfoResult(huawei.mAdTrackingInfo, a3.mStatus, a3.mErrorExplanation);
         }
-        AdTrackingInfoResult a4 = a(this.n.c, new V(this, new C0439mo(3, 500)));
+        AdTrackingInfoResult a4 = a(this.n.c, new V(this, new C0434mo(3, 500)));
         AdTrackingInfoResult yandex = this.m.getYandex();
         if (a4.mStatus == identifierStatus2) {
             a4 = new AdTrackingInfoResult(yandex.mAdTrackingInfo, a4.mStatus, a4.mErrorExplanation);

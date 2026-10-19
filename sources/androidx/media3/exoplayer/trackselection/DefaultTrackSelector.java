@@ -33,7 +33,6 @@ import androidx.media3.exoplayer.trackselection.DefaultTrackSelector;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.MappingTrackSelector;
 import androidx.media3.exoplayer.util.SpatializerWrapper;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
@@ -2027,7 +2026,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             } else if (normalizeUndeterminedLanguageToNull2.startsWith(normalizeUndeterminedLanguageToNull) || normalizeUndeterminedLanguageToNull.startsWith(normalizeUndeterminedLanguageToNull2)) {
                 return 3;
             } else {
-                return Util.splitAtFirst(normalizeUndeterminedLanguageToNull2, Constants.FILENAME_SEQUENCE_SEPARATOR)[0].equals(Util.splitAtFirst(normalizeUndeterminedLanguageToNull, Constants.FILENAME_SEQUENCE_SEPARATOR)[0]) ? 2 : 0;
+                return Util.splitAtFirst(normalizeUndeterminedLanguageToNull2, "-")[0].equals(Util.splitAtFirst(normalizeUndeterminedLanguageToNull, "-")[0]) ? 2 : 0;
             }
         }
         return 4;

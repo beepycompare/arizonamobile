@@ -2,6 +2,7 @@ package com.arizonagames.feature.arizona.bank;
 
 import android.app.Activity;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.arizonagames.feature.arizona.bank.BankScreen$requestHistory$1;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -139,7 +140,7 @@ public final class BankScreen$requestHistory$1 extends SuspendLambda implements 
                 targetActivity = this.this$0.getTargetActivity();
                 int id = UIElementID.DIALOG.getId();
                 String str = this.$title;
-                String json = MapperKt.getGson().toJson(MapsKt.mapOf(TuplesKt.to("type", Boxing.boxInt(10)), TuplesKt.to("header", this.$title), TuplesKt.to("addType", Boxing.boxInt(this.$addType)), TuplesKt.to(TtmlNode.TAG_BODY, this.$body)));
+                String json = MapperKt.getGson().toJson(MapsKt.mapOf(TuplesKt.to(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, Boxing.boxInt(10)), TuplesKt.to("header", this.$title), TuplesKt.to("addType", Boxing.boxInt(this.$addType)), TuplesKt.to(TtmlNode.TAG_BODY, this.$body)));
                 Intrinsics.checkNotNullExpressionValue(json, "toJson(...)");
                 final BankScreen bankScreen2 = this.this$0;
                 bankScreen.historyDialog = new DialogBankHistory(targetActivity, id, str, json, 0, false, new Function0() { // from class: com.arizonagames.feature.arizona.bank.BankScreen$requestHistory$1$1$$ExternalSyntheticLambda0

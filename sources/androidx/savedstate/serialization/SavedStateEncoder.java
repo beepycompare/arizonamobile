@@ -82,9 +82,9 @@ public final class SavedStateEncoder extends AbstractEncoder {
     }
 
     private final void putClassDiscriminatorIfRequired(SavedStateConfiguration savedStateConfiguration, SerialDescriptor serialDescriptor, Bundle bundle) {
-        if (savedStateConfiguration.getClassDiscriminatorMode() == 1 && !SavedStateReader.m9076containsimpl(SavedStateReader.m9075constructorimpl(bundle), "type")) {
+        if (savedStateConfiguration.getClassDiscriminatorMode() == 1 && !SavedStateReader.m9076containsimpl(SavedStateReader.m9075constructorimpl(bundle), ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY)) {
             if (Intrinsics.areEqual(serialDescriptor.getKind(), StructureKind.CLASS.INSTANCE) || Intrinsics.areEqual(serialDescriptor.getKind(), StructureKind.OBJECT.INSTANCE)) {
-                SavedStateWriter.m9194putStringimpl(SavedStateWriter.m9161constructorimpl(bundle), "type", serialDescriptor.getSerialName());
+                SavedStateWriter.m9194putStringimpl(SavedStateWriter.m9161constructorimpl(bundle), ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, serialDescriptor.getSerialName());
             }
         }
     }
@@ -94,10 +94,10 @@ public final class SavedStateEncoder extends AbstractEncoder {
         Intrinsics.checkNotNullParameter(descriptor, "descriptor");
         this.key = descriptor.getElementName(i);
         if (this.configuration.getClassDiscriminatorMode() == 1) {
-            boolean m9076containsimpl = SavedStateReader.m9076containsimpl(SavedStateReader.m9075constructorimpl(this.savedState), "type");
-            boolean areEqual = Intrinsics.areEqual(this.key, "type");
+            boolean m9076containsimpl = SavedStateReader.m9076containsimpl(SavedStateReader.m9075constructorimpl(this.savedState), ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
+            boolean areEqual = Intrinsics.areEqual(this.key, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
             if (m9076containsimpl && areEqual) {
-                throw new IllegalArgumentException("SavedStateEncoder for " + SavedStateReader.m9146getStringimpl(SavedStateReader.m9075constructorimpl(this.savedState), "type") + " has property '" + this.key + "' that conflicts with the class discriminator. You can rename a property with @SerialName annotation.");
+                throw new IllegalArgumentException("SavedStateEncoder for " + SavedStateReader.m9146getStringimpl(SavedStateReader.m9075constructorimpl(this.savedState), ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY) + " has property '" + this.key + "' that conflicts with the class discriminator. You can rename a property with @SerialName annotation.");
             }
         }
         return true;

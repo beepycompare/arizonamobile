@@ -143,12 +143,12 @@ public final class RepairGameDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2066583429, i2, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogScreen (RepairGameDialog.kt:67)");
             }
-            DialogFrameKt.DialogFrame(null, onDismiss, ComposableLambdaKt.rememberComposableLambda(-1489415267, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda2
+            DialogFrameKt.DialogFrame(null, onDismiss, null, ComposableLambdaKt.rememberComposableLambda(-1904742084, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogKt$$ExternalSyntheticLambda2
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return RepairGameDialogKt.RepairGameDialogScreen$lambda$0(Function0.this, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 1);
+            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | 3072, 5);
             function0 = onDismiss;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -170,7 +170,7 @@ public final class RepairGameDialogKt {
         ComposerKt.sourceInformation(composer, "C69@2677L18,70@2704L102,71@2815L409:RepairGameDialog.kt#wxnm6r");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1489415267, i, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogScreen.<anonymous> (RepairGameDialog.kt:69)");
+                ComposerKt.traceEventStart(-1904742084, i, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameDialogScreen.<anonymous> (RepairGameDialog.kt:69)");
             }
             ComponentKt.AlertLabelDialog(composer, 0);
             DialogDescriptionTextKt.DialogDescriptionText("Проверка целостности файлов может занять длительное время. Хотите продолжить?", composer, 6);
@@ -199,8 +199,8 @@ public final class RepairGameDialogKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -967043315, "C72@2858L43,72@2833L184,78@3056L43,78@3030L184:RepairGameDialog.kt#wxnm6r");
-            ComposerKt.sourceInformationMarkerStart(composer, -308289148, "CC(remember):RepairGameDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -167468786, "C72@2858L43,72@2833L184,78@3056L43,78@3030L184:RepairGameDialog.kt#wxnm6r");
+            ComposerKt.sourceInformationMarkerStart(composer, -5401757, "CC(remember):RepairGameDialog.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -215,8 +215,8 @@ public final class RepairGameDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameDialogKt.INSTANCE.m9816getLambda$1796529959$dialogs(), composer, 48);
-            ComposerKt.sourceInformationMarkerStart(composer, -308282812, "CC(remember):RepairGameDialog.kt#9igjgp");
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameDialogKt.INSTANCE.getLambda$2083110520$dialogs(), composer, 48);
+            ComposerKt.sourceInformationMarkerStart(composer, -5395421, "CC(remember):RepairGameDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
             if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -231,7 +231,7 @@ public final class RepairGameDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$RepairGameDialogKt.INSTANCE.m9817getLambda$277375600$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$RepairGameDialogKt.INSTANCE.m9857getLambda$692702417$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

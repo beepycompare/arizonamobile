@@ -11,10 +11,10 @@ import org.json.JSONObject;
 public final class Zo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final bp f878a;
+    public final bp f881a;
 
-    public Zo(C0767zf c0767zf, C0736ya c0736ya) {
-        this.f878a = new bp(c0767zf, c0736ya, new cp() { // from class: io.appmetrica.analytics.impl.Zo$$ExternalSyntheticLambda0
+    public Zo(C0762zf c0762zf, C0731ya c0731ya) {
+        this.f881a = new bp(c0762zf, c0731ya, new cp() { // from class: io.appmetrica.analytics.impl.Zo$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.cp
             public final JSONObject a(JSONObject jSONObject, JSONObject jSONObject2) {
                 return Zo.a(jSONObject, jSONObject2);
@@ -33,29 +33,29 @@ public final class Zo {
         } else {
             str = null;
         }
-        JSONObject a2 = this.f878a.a();
+        JSONObject a2 = this.f881a.a();
         if (!Intrinsics.areEqual(JsonUtils.optStringOrNull(a2, Constants.REFERRER), str)) {
-            this.f878a.a(a2.put(Constants.REFERRER, str));
+            this.f881a.a(a2.put(Constants.REFERRER, str));
         }
-        bp bpVar = this.f878a;
-        bp.a(bpVar.f916a);
+        bp bpVar = this.f881a;
+        bp.a(bpVar.f919a);
         bp.a(bpVar.b);
     }
 
     public final synchronized void b(String str) {
-        JSONObject a2 = this.f878a.a();
+        JSONObject a2 = this.f881a.a();
         if (!Intrinsics.areEqual(JsonUtils.optStringOrNull(a2, "device_id_hash"), str)) {
-            this.f878a.a(a2.put("device_id_hash", str));
+            this.f881a.a(a2.put("device_id_hash", str));
         }
-        bp bpVar = this.f878a;
-        bp.a(bpVar.f916a);
+        bp bpVar = this.f881a;
+        bp.a(bpVar.f919a);
         bp.a(bpVar.b);
     }
 
     public final synchronized Bg b() {
         byte[] decode;
         Bg bg;
-        String optStringOrNull = JsonUtils.optStringOrNull(this.f878a.a(), Constants.REFERRER);
+        String optStringOrNull = JsonUtils.optStringOrNull(this.f881a.a(), Constants.REFERRER);
         if (optStringOrNull != null) {
             try {
                 decode = Base64.decode(optStringOrNull.getBytes(Charsets.UTF_8), 0);
@@ -80,16 +80,16 @@ public final class Zo {
     }
 
     public final synchronized void a(String str) {
-        JSONObject a2 = this.f878a.a();
+        JSONObject a2 = this.f881a.a();
         if (!Intrinsics.areEqual(JsonUtils.optStringOrNull(a2, NotificationStatsPayloadFactory.KEY_DEVICE_ID), str)) {
-            this.f878a.a(a2.put(NotificationStatsPayloadFactory.KEY_DEVICE_ID, str));
+            this.f881a.a(a2.put(NotificationStatsPayloadFactory.KEY_DEVICE_ID, str));
         }
-        bp bpVar = this.f878a;
-        bp.a(bpVar.f916a);
+        bp bpVar = this.f881a;
+        bp.a(bpVar.f919a);
         bp.a(bpVar.b);
     }
 
     public final synchronized String a() {
-        return JsonUtils.optStringOrNull(this.f878a.a(), "device_id_hash");
+        return JsonUtils.optStringOrNull(this.f881a.a(), "device_id_hash");
     }
 }

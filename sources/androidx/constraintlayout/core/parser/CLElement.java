@@ -1,6 +1,5 @@
 package androidx.constraintlayout.core.parser;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.Arrays;
 import java.util.Objects;
 /* loaded from: classes2.dex */
@@ -66,7 +65,7 @@ public class CLElement implements Cloneable {
         long j = this.mStart;
         long j2 = this.mEnd;
         if (j > j2 || j2 == Long.MAX_VALUE) {
-            return getClass() + " (INVALID, " + this.mStart + Constants.FILENAME_SEQUENCE_SEPARATOR + this.mEnd + ")";
+            return getClass() + " (INVALID, " + this.mStart + "-" + this.mEnd + ")";
         }
         return getStrClass() + " (" + this.mStart + " : " + this.mEnd + ") <<" + new String(this.mContent).substring((int) this.mStart, ((int) this.mEnd) + 1) + ">>";
     }

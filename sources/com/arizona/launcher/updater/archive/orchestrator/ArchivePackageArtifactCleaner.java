@@ -12,15 +12,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Set;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.collections.CollectionsKt;
+import kotlin.collections.SetsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 /* compiled from: ArchivePackagePaths.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \u001d2\u00020\u0001:\u0001\u001dB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J&\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u000b2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eJ\u001c\u0010\u0010\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00120\u000eJ\u0018\u0010\u0013\u001a\u00020\t2\u0006\u0010\u0014\u001a\u00020\u000b2\u0006\u0010\u0015\u001a\u00020\u000bH\u0002J\u0018\u0010\u0016\u001a\u00020\t2\u0006\u0010\u0017\u001a\u00020\u000b2\u0006\u0010\u0015\u001a\u00020\u000bH\u0002J\u0018\u0010\u0018\u001a\u00020\t2\u0006\u0010\u0019\u001a\u00020\u000b2\u0006\u0010\u001a\u001a\u00020\u000bH\u0002J\u0018\u0010\u001b\u001a\u00020\t2\u0006\u0010\u001c\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\u000bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u001f\u0012\b\b \u0012\u0004\b\u0003\u0010\u0000¨\u0006\u001e"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageArtifactCleaner;", "", "nodeInspector", "Lcom/arizona/launcher/updater/archive/io/ArchiveNodeInspector;", "<init>", "(Lcom/arizona/launcher/updater/archive/io/ArchiveNodeInspector;)V", "pathSafety", "Lcom/arizona/launcher/updater/archive/io/ArchiveLivePathSafety;", "cleanup", "", "gameRoot", "Ljava/io/File;", "downloadRoot", "identities", "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageIdentity;", "cleanupAbandonedCommitBackups", "activeCommittingPackageIds", "", "deleteOwnedFile", UtilsKt.SCHEME_FILE, "allowedRoot", "deleteOwnedTree", "root", "deleteOwnedNode", "node", "deletionRoot", "requireStrictChild", "candidate", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u001e\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 \u001f2\u00020\u0001:\u0001\u001fB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J@\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u000b2\f\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e2\b\b\u0002\u0010\u0010\u001a\u00020\u000b2\u000e\b\u0002\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eJ&\u0010\u0012\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000b2\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u000e2\b\b\u0002\u0010\u0010\u001a\u00020\u000bJ\u0018\u0010\u0015\u001a\u00020\t2\u0006\u0010\u0016\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\u000bH\u0002J\u0018\u0010\u0018\u001a\u00020\t2\u0006\u0010\u0019\u001a\u00020\u000b2\u0006\u0010\u0017\u001a\u00020\u000bH\u0002J\u0018\u0010\u001a\u001a\u00020\t2\u0006\u0010\u001b\u001a\u00020\u000b2\u0006\u0010\u001c\u001a\u00020\u000bH\u0002J\u0018\u0010\u001d\u001a\u00020\t2\u0006\u0010\u001e\u001a\u00020\u000b2\u0006\u0010\u0019\u001a\u00020\u000bH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b!\u0012\b\b\"\u0012\u0004\b\u0003\u0010\u0000¨\u0006 "}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageArtifactCleaner;", "", "nodeInspector", "Lcom/arizona/launcher/updater/archive/io/ArchiveNodeInspector;", "<init>", "(Lcom/arizona/launcher/updater/archive/io/ArchiveNodeInspector;)V", "pathSafety", "Lcom/arizona/launcher/updater/archive/io/ArchiveLivePathSafety;", "cleanup", "", "gameRoot", "Ljava/io/File;", "downloadRoot", "identities", "", "Lcom/arizona/launcher/updater/archive/state/ArchivePackageIdentity;", "workRoot", "preserveArchiveIdentities", "cleanupAbandonedCommitBackups", "activeCommittingPackageIds", "", "deleteOwnedFile", UtilsKt.SCHEME_FILE, "allowedRoot", "deleteOwnedTree", "root", "deleteOwnedNode", "node", "deletionRoot", "requireStrictChild", "candidate", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchivePackageArtifactCleaner {
     private final ArchiveNodeInspector nodeInspector;
@@ -67,15 +69,29 @@ public final class ArchivePackageArtifactCleaner {
         this.pathSafety = new ArchiveLivePathSafety(nodeInspector);
     }
 
-    public final void cleanup(File gameRoot, File file, Collection<ArchivePackageIdentity> identities) throws IOException {
+    public static /* synthetic */ void cleanup$default(ArchivePackageArtifactCleaner archivePackageArtifactCleaner, File file, File file2, Collection collection, File file3, Collection collection2, int i, Object obj) throws IOException {
+        if ((i & 8) != 0) {
+            file3 = new File(file.getCanonicalFile(), ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY);
+        }
+        File file4 = file3;
+        Set set = collection2;
+        if ((i & 16) != 0) {
+            set = SetsKt.emptySet();
+        }
+        archivePackageArtifactCleaner.cleanup(file, file2, collection, file4, set);
+    }
+
+    public final void cleanup(File gameRoot, File file, Collection<ArchivePackageIdentity> identities, File workRoot, Collection<ArchivePackageIdentity> preserveArchiveIdentities) throws IOException {
         File canonicalFile;
         Intrinsics.checkNotNullParameter(gameRoot, "gameRoot");
         Intrinsics.checkNotNullParameter(identities, "identities");
+        Intrinsics.checkNotNullParameter(workRoot, "workRoot");
+        Intrinsics.checkNotNullParameter(preserveArchiveIdentities, "preserveArchiveIdentities");
         if (identities.isEmpty()) {
             return;
         }
         File canonicalFile2 = gameRoot.getCanonicalFile();
-        File canonicalFile3 = new File(canonicalFile2, ".archive-installing").getCanonicalFile();
+        File canonicalFile3 = workRoot.getCanonicalFile();
         ArchiveLivePathSafety archiveLivePathSafety = this.pathSafety;
         Intrinsics.checkNotNull(canonicalFile3);
         Intrinsics.checkNotNull(canonicalFile2);
@@ -85,21 +101,32 @@ public final class ArchivePackageArtifactCleaner {
         if (file == null || (canonicalFile = file.getCanonicalFile()) == null) {
             throw new IOException("Archive download root is unavailable");
         }
+        HashSet hashSet = CollectionsKt.toHashSet(preserveArchiveIdentities);
         for (ArchivePackageIdentity archivePackageIdentity : CollectionsKt.distinct(identities)) {
-            File archiveFile = ArchivePackagePaths.INSTANCE.archiveFile(canonicalFile, archivePackageIdentity);
-            deleteOwnedFile(archiveFile, canonicalFile);
-            File file2 = new File(archiveFile.getParentFile(), archiveFile.getName() + FileArchiveDownloadResumeStore.SIDECAR_SUFFIX);
-            deleteOwnedFile(new File(file2.getParentFile(), file2.getName() + ".tmp"), canonicalFile);
-            deleteOwnedFile(file2, canonicalFile);
+            if (!hashSet.contains(archivePackageIdentity)) {
+                File archiveFile = ArchivePackagePaths.INSTANCE.archiveFile(canonicalFile, archivePackageIdentity);
+                deleteOwnedFile(archiveFile, canonicalFile);
+                File file2 = new File(archiveFile.getParentFile(), archiveFile.getName() + FileArchiveDownloadResumeStore.SIDECAR_SUFFIX);
+                deleteOwnedFile(new File(file2.getParentFile(), file2.getName() + ".tmp"), canonicalFile);
+                deleteOwnedFile(file2, canonicalFile);
+            }
             deleteOwnedTree(ArchivePackagePaths.INSTANCE.stagingRoot(canonicalFile3, archivePackageIdentity), canonicalFile3);
         }
     }
 
-    public final void cleanupAbandonedCommitBackups(File gameRoot, Collection<String> activeCommittingPackageIds) throws IOException {
+    public static /* synthetic */ void cleanupAbandonedCommitBackups$default(ArchivePackageArtifactCleaner archivePackageArtifactCleaner, File file, Collection collection, File file2, int i, Object obj) throws IOException {
+        if ((i & 4) != 0) {
+            file2 = new File(file.getCanonicalFile(), ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY);
+        }
+        archivePackageArtifactCleaner.cleanupAbandonedCommitBackups(file, collection, file2);
+    }
+
+    public final void cleanupAbandonedCommitBackups(File gameRoot, Collection<String> activeCommittingPackageIds, File workRoot) throws IOException {
         Intrinsics.checkNotNullParameter(gameRoot, "gameRoot");
         Intrinsics.checkNotNullParameter(activeCommittingPackageIds, "activeCommittingPackageIds");
+        Intrinsics.checkNotNullParameter(workRoot, "workRoot");
         File canonicalFile = gameRoot.getCanonicalFile();
-        File canonicalFile2 = new File(canonicalFile, ".archive-installing").getCanonicalFile();
+        File canonicalFile2 = workRoot.getCanonicalFile();
         ArchiveLivePathSafety archiveLivePathSafety = this.pathSafety;
         Intrinsics.checkNotNull(canonicalFile2);
         Intrinsics.checkNotNull(canonicalFile);

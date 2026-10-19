@@ -15,7 +15,7 @@ import okhttp3.Request;
 public final class d extends EventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TimeProvider f1383a;
+    public final TimeProvider f1386a;
     public long b;
     public long c;
     public long d;
@@ -29,7 +29,7 @@ public final class d extends EventListener {
     public boolean l;
 
     public d(TimeProvider timeProvider) {
-        this.f1383a = timeProvider;
+        this.f1386a = timeProvider;
     }
 
     public static Long a(long j, long j2) {
@@ -41,7 +41,7 @@ public final class d extends EventListener {
 
     @Override // okhttp3.EventListener
     public final void callFailed(Call call, IOException iOException) {
-        long currentTimeMillis = this.f1383a.currentTimeMillis();
+        long currentTimeMillis = this.f1386a.currentTimeMillis();
         if (this.b > 0 && this.c == 0) {
             this.c = currentTimeMillis;
         }
@@ -59,12 +59,12 @@ public final class d extends EventListener {
 
     @Override // okhttp3.EventListener
     public final void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol) {
-        this.e = this.f1383a.currentTimeMillis();
+        this.e = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
     public final void connectStart(Call call, InetSocketAddress inetSocketAddress, Proxy proxy) {
-        this.d = this.f1383a.currentTimeMillis();
+        this.d = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
@@ -75,36 +75,36 @@ public final class d extends EventListener {
 
     @Override // okhttp3.EventListener
     public final void dnsEnd(Call call, String str, List list) {
-        this.c = this.f1383a.currentTimeMillis();
+        this.c = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
     public final void dnsStart(Call call, String str) {
-        this.b = this.f1383a.currentTimeMillis();
+        this.b = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
     public final void requestHeadersEnd(Call call, Request request) {
-        this.h = this.f1383a.currentTimeMillis();
+        this.h = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
     public final void responseBodyEnd(Call call, long j) {
-        this.j = this.f1383a.currentTimeMillis();
+        this.j = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
     public final void responseHeadersStart(Call call) {
-        this.i = this.f1383a.currentTimeMillis();
+        this.i = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
     public final void secureConnectEnd(Call call, Handshake handshake) {
-        this.g = this.f1383a.currentTimeMillis();
+        this.g = this.f1386a.currentTimeMillis();
     }
 
     @Override // okhttp3.EventListener
     public final void secureConnectStart(Call call) {
-        this.f = this.f1383a.currentTimeMillis();
+        this.f = this.f1386a.currentTimeMillis();
     }
 }

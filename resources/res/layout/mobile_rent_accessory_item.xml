@@ -44,7 +44,7 @@
             </LinearLayout>
         </ru.mrlargha.commonui.utils.ui.CustomCardView>
         <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_3sdp">
-            <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_7sdp" android:src="@drawable/arizona_dollar" android:adjustViewBounds="true"/>
+            <ImageView android:id="@+id/iv_cost_currency" android:layout_width="wrap_content" android:layout_height="@dimen/_7sdp" android:src="@drawable/arizona_dollar" android:adjustViewBounds="true"/>
             <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:id="@+id/tv_cost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1 200 300" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp"/>
             <TextView android:textSize="@dimen/_6sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mobile_per_hour" android:alpha="0.5" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_2sdp"/>
         </LinearLayout>

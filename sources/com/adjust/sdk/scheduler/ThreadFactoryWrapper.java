@@ -17,7 +17,7 @@ public class ThreadFactoryWrapper implements ThreadFactory {
     public Thread newThread(Runnable runnable) {
         Thread newThread = Executors.defaultThreadFactory().newThread(runnable);
         newThread.setPriority(9);
-        newThread.setName(Constants.THREAD_PREFIX + newThread.getName() + com.google.android.vending.expansion.downloader.Constants.FILENAME_SEQUENCE_SEPARATOR + this.source);
+        newThread.setName(Constants.THREAD_PREFIX + newThread.getName() + "-" + this.source);
         newThread.setDaemon(true);
         newThread.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: com.adjust.sdk.scheduler.ThreadFactoryWrapper.1
             @Override // java.lang.Thread.UncaughtExceptionHandler

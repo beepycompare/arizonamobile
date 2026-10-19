@@ -5,33 +5,33 @@ import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Cm extends AbstractC0163c6 {
+public final class Cm extends AbstractC0158c6 {
     public final Q3 b;
 
     public Cm(Context context, String str) {
         this(context, str, new SafePackageManager(), Na.k().f());
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0163c6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.ComponentLoader, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.RequestConfigLoader
+    @Override // io.appmetrica.analytics.impl.AbstractC0158c6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.ComponentLoader, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.RequestConfigLoader
     /* renamed from: b */
-    public final Dm load(C0137b6 c0137b6) {
-        Dm dm = (Dm) super.load(c0137b6);
-        Hm hm = c0137b6.f904a;
+    public final Dm load(C0132b6 c0132b6) {
+        Dm dm = (Dm) super.load(c0132b6);
+        Hm hm = c0132b6.f907a;
         dm.d = hm.f;
         dm.e = hm.g;
-        Bm bm = (Bm) c0137b6.componentArguments;
-        String str = bm.f484a;
+        Bm bm = (Bm) c0132b6.componentArguments;
+        String str = bm.f487a;
         if (str != null) {
             dm.f = str;
             dm.g = bm.b;
         }
         Map<String, String> map = bm.c;
         dm.h = map;
-        dm.i = (I3) this.b.a(new I3(map, EnumC0397l8.d));
-        Bm bm2 = (Bm) c0137b6.componentArguments;
+        dm.i = (I3) this.b.a(new I3(map, EnumC0392l8.d));
+        Bm bm2 = (Bm) c0132b6.componentArguments;
         dm.k = bm2.d;
         dm.j = bm2.e;
-        Hm hm2 = c0137b6.f904a;
+        Hm hm2 = c0132b6.f907a;
         dm.l = hm2.p;
         dm.m = hm2.r;
         long j = hm2.v;

@@ -11,17 +11,17 @@ import kotlin.collections.CollectionsKt;
 public final class a extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ b f305a;
+    public final /* synthetic */ b f308a;
     public final /* synthetic */ BillingResult b;
 
     public a(b bVar, BillingResult billingResult) {
-        this.f305a = bVar;
+        this.f308a = bVar;
         this.b = billingResult;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        b bVar = this.f305a;
+        b bVar = this.f308a;
         BillingResult billingResult = this.b;
         bVar.getClass();
         if (billingResult.getResponseCode() != 0) {
@@ -30,7 +30,7 @@ public final class a extends SafeRunnable {
             bVar.e.onUpdateFinished();
         } else {
             for (String str : CollectionsKt.listOf((Object[]) new String[]{"inapp", "subs"})) {
-                BillingConfig billingConfig = bVar.f306a;
+                BillingConfig billingConfig = bVar.f309a;
                 BillingClient billingClient = bVar.b;
                 UtilsProvider utilsProvider = bVar.c;
                 d dVar = bVar.d;

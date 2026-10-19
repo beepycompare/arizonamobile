@@ -1,4 +1,6 @@
 package androidx.constraintlayout.core.dsl;
+
+import com.adjust.sdk.Constants;
 /* loaded from: classes2.dex */
 public class Transition {
     private String mConstraintSetEnd;
@@ -6,12 +8,12 @@ public class Transition {
     private String mId;
     private OnSwipe mOnSwipe = null;
     final int UNSET = -1;
-    private final int DEFAULT_DURATION = 400;
+    private final int DEFAULT_DURATION = Constants.MINIMAL_ERROR_STATUS_CODE;
     private final float DEFAULT_STAGGER = 0.0f;
     private int mDefaultInterpolator = 0;
     private String mDefaultInterpolatorString = null;
     private int mDefaultInterpolatorID = -1;
-    private int mDuration = 400;
+    private int mDuration = Constants.MINIMAL_ERROR_STATUS_CODE;
     private float mStagger = 0.0f;
     private KeyFrames mKeyFrames = new KeyFrames();
 

@@ -10,7 +10,6 @@ import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.InAppMessageResult;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.QueryProductDetailsParams;
-import com.google.android.billing.IabHelper;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,7 +33,7 @@ public final class zzc {
             zzo(str, "Unexpected null bundle received!");
             return 6;
         }
-        Object obj = bundle.get(IabHelper.RESPONSE_CODE);
+        Object obj = bundle.get("RESPONSE_CODE");
         if (obj == null) {
             zzn(str, "getResponseCodeFromBundle() got null response code, assuming OK");
             return 0;
@@ -57,7 +56,7 @@ public final class zzc {
 
     public static Bundle zzd(BillingResult billingResult, zzjd zzjdVar) {
         Bundle bundle = new Bundle();
-        bundle.putInt(IabHelper.RESPONSE_CODE, billingResult.getResponseCode());
+        bundle.putInt("RESPONSE_CODE", billingResult.getResponseCode());
         bundle.putString("DEBUG_MESSAGE", billingResult.getDebugMessage());
         bundle.putInt("LOG_REASON", zzjdVar.zza());
         return bundle;
@@ -269,11 +268,11 @@ public final class zzc {
     }
 
     public static List zzm(Bundle bundle) {
-        ArrayList<String> stringArrayList = bundle.getStringArrayList(IabHelper.RESPONSE_INAPP_PURCHASE_DATA_LIST);
-        ArrayList<String> stringArrayList2 = bundle.getStringArrayList(IabHelper.RESPONSE_INAPP_SIGNATURE_LIST);
+        ArrayList<String> stringArrayList = bundle.getStringArrayList("INAPP_PURCHASE_DATA_LIST");
+        ArrayList<String> stringArrayList2 = bundle.getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
         ArrayList arrayList = new ArrayList();
         if (stringArrayList == null || stringArrayList2 == null) {
-            Purchase zzr = zzr(bundle.getString(IabHelper.RESPONSE_INAPP_PURCHASE_DATA), bundle.getString(IabHelper.RESPONSE_INAPP_SIGNATURE));
+            Purchase zzr = zzr(bundle.getString("INAPP_PURCHASE_DATA"), bundle.getString("INAPP_DATA_SIGNATURE"));
             if (zzr == null) {
                 zzn("BillingHelper", "Couldn't find single purchase data as well.");
                 return null;

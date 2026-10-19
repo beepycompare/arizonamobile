@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier;
 import androidx.compose.ui.unit.Dp;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.tbuonomo.viewpagerdotsindicator.compose.type.BalloonIndicatorType;
 import com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType;
@@ -31,7 +32,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: DotsIndicator.kt */
-@Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\u001a>\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b\f\u0010\r\u001as\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u00032\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00102%\b\u0002\u0010\u0012\u001a\u001f\u0012\u0013\u0012\u00110\u0003¢\u0006\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\b(\u0016\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0017\u0010\u0018\u001a\r\u0010\u0019\u001a\u00020\u0001H\u0003¢\u0006\u0002\u0010\u001a\u001a \u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u00112\u0006\u0010\u001e\u001a\u00020\u0003H\u0002\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001f²\u0006\n\u0010 \u001a\u00020\u0011X\u008a\u0084\u0002"}, d2 = {"DotsIndicator", "", "dotCount", "", "modifier", "Landroidx/compose/ui/Modifier;", "dotSpacing", "Landroidx/compose/ui/unit/Dp;", "type", "Lcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "DotsIndicator-TN_CM5M", "(ILandroidx/compose/ui/Modifier;FLcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/runtime/Composer;II)V", "currentPage", "currentPageOffsetFraction", "Lkotlin/Function0;", "", "onDotClicked", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "DotsIndicator-AFY4PWA", "(ILandroidx/compose/ui/Modifier;FLcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;ILkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "DotsIndicatorPreview", "(Landroidx/compose/runtime/Composer;I)V", "computeGlobalScrollOffset", "position", "positionOffset", "totalCount", "viewpagerdotsindicator_release", "globalOffset"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\f\u001a>\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0007ø\u0001\u0000¢\u0006\u0004\b\f\u0010\r\u001as\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u00032\f\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u00102%\b\u0002\u0010\u0012\u001a\u001f\u0012\u0013\u0012\u00110\u0003¢\u0006\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\b(\u0016\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u0013H\u0007ø\u0001\u0000¢\u0006\u0004\b\u0017\u0010\u0018\u001a\r\u0010\u0019\u001a\u00020\u0001H\u0003¢\u0006\u0002\u0010\u001a\u001a \u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u00112\u0006\u0010\u001e\u001a\u00020\u0003H\u0002\u0082\u0002\u0007\n\u0005\b¡\u001e0\u0001¨\u0006\u001f²\u0006\n\u0010 \u001a\u00020\u0011X\u008a\u0084\u0002"}, d2 = {"DotsIndicator", "", "dotCount", "", "modifier", "Landroidx/compose/ui/Modifier;", "dotSpacing", "Landroidx/compose/ui/unit/Dp;", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "Lcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;", "pagerState", "Landroidx/compose/foundation/pager/PagerState;", "DotsIndicator-TN_CM5M", "(ILandroidx/compose/ui/Modifier;FLcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;Landroidx/compose/foundation/pager/PagerState;Landroidx/compose/runtime/Composer;II)V", "currentPage", "currentPageOffsetFraction", "Lkotlin/Function0;", "", "onDotClicked", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", FirebaseAnalytics.Param.INDEX, "DotsIndicator-AFY4PWA", "(ILandroidx/compose/ui/Modifier;FLcom/tbuonomo/viewpagerdotsindicator/compose/type/IndicatorType;ILkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V", "DotsIndicatorPreview", "(Landroidx/compose/runtime/Composer;I)V", "computeGlobalScrollOffset", "position", "positionOffset", "totalCount", "viewpagerdotsindicator_release", "globalOffset"}, k = 2, mv = {1, 9, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class DotsIndicatorKt {
     /* JADX INFO: Access modifiers changed from: private */
@@ -67,7 +68,7 @@ public final class DotsIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9886DotsIndicatorTN_CM5M(final int i, Modifier modifier, float f, final IndicatorType type, final PagerState pagerState, Composer composer, final int i2, final int i3) {
+    public static final void m9939DotsIndicatorTN_CM5M(final int i, Modifier modifier, float f, final IndicatorType type, final PagerState pagerState, Composer composer, final int i2, final int i3) {
         int i4;
         float f2;
         Object rememberedValue;
@@ -147,7 +148,7 @@ public final class DotsIndicatorKt {
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                 }
                 startRestartGroup.endReplaceGroup();
-                m9885DotsIndicatorAFY4PWA(i, modifier3, f4, type, currentPage, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
+                m9938DotsIndicatorAFY4PWA(i, modifier3, f4, type, currentPage, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -237,7 +238,7 @@ public final class DotsIndicatorKt {
                     }
 
                     public final void invoke(Composer composer2, int i7) {
-                        DotsIndicatorKt.m9886DotsIndicatorTN_CM5M(i, modifier2, f3, type, pagerState, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+                        DotsIndicatorKt.m9939DotsIndicatorTN_CM5M(i, modifier2, f3, type, pagerState, composer2, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
                     }
                 });
                 return;
@@ -288,7 +289,7 @@ public final class DotsIndicatorKt {
         };
         startRestartGroup.updateRememberedValue(rememberedValue2);
         startRestartGroup.endReplaceGroup();
-        m9885DotsIndicatorAFY4PWA(i, modifier32, f42, type, currentPage2, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
+        m9938DotsIndicatorAFY4PWA(i, modifier32, f42, type, currentPage2, (Function0) rememberedValue2, new Function1<Integer, Unit>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicator$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -390,7 +391,7 @@ public final class DotsIndicatorKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void m9885DotsIndicatorAFY4PWA(final int i, Modifier modifier, float f, final IndicatorType type, final int i2, final Function0<Float> currentPageOffsetFraction, Function1<? super Integer, Unit> function1, Composer composer, final int i3, final int i4) {
+    public static final void m9938DotsIndicatorAFY4PWA(final int i, Modifier modifier, float f, final IndicatorType type, final int i2, final Function0<Float> currentPageOffsetFraction, Function1<? super Integer, Unit> function1, Composer composer, final int i3, final int i4) {
         int i5;
         Modifier.Companion companion;
         int i6;
@@ -517,7 +518,7 @@ public final class DotsIndicatorKt {
                         startRestartGroup.endReplaceGroup();
                         int i11 = i5 << 6;
                         modifier2 = companion;
-                        type.mo9897IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11 & 458752));
+                        type.mo9950IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11 & 458752));
                         if (ComposerKt.isTraceInProgress()) {
                             ComposerKt.traceEventEnd();
                         }
@@ -541,7 +542,7 @@ public final class DotsIndicatorKt {
                             }
 
                             public final void invoke(Composer composer2, int i12) {
-                                DotsIndicatorKt.m9885DotsIndicatorAFY4PWA(i, modifier2, f3, type, i2, currentPageOffsetFraction, function12, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
+                                DotsIndicatorKt.m9938DotsIndicatorAFY4PWA(i, modifier2, f3, type, i2, currentPageOffsetFraction, function12, composer2, RecomposeScopeImplKt.updateChangedFlags(i3 | 1), i4);
                             }
                         });
                         return;
@@ -615,7 +616,7 @@ public final class DotsIndicatorKt {
                 startRestartGroup.endReplaceGroup();
                 int i112 = i5 << 6;
                 modifier2 = companion;
-                type.mo9897IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i112 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i112 & 458752));
+                type.mo9950IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i112 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i112 & 458752));
                 if (ComposerKt.isTraceInProgress()) {
                 }
                 f3 = m8160constructorimpl;
@@ -697,7 +698,7 @@ public final class DotsIndicatorKt {
             startRestartGroup.endReplaceGroup();
             int i1122 = i5 << 6;
             modifier2 = companion;
-            type.mo9897IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i1122 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i1122 & 458752));
+            type.mo9950IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i1122 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i1122 & 458752));
             if (ComposerKt.isTraceInProgress()) {
             }
             f3 = m8160constructorimpl;
@@ -783,7 +784,7 @@ public final class DotsIndicatorKt {
         startRestartGroup.endReplaceGroup();
         int i11222 = i5 << 6;
         modifier2 = companion;
-        type.mo9897IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11222 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11222 & 458752));
+        type.mo9950IndicatorTypeComposablejt2gSs((Function0) rememberedValue2, modifier2, i, m8160constructorimpl, function13, startRestartGroup, (i5 & 112) | (i11222 & 896) | ((i5 << 3) & 7168) | ((i5 >> 6) & i9) | (i11222 & 458752));
         if (ComposerKt.isTraceInProgress()) {
         }
         f3 = m8160constructorimpl;
@@ -800,7 +801,7 @@ public final class DotsIndicatorKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(2128547675, i, -1, "com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorPreview (DotsIndicator.kt:72)");
             }
-            m9885DotsIndicatorAFY4PWA(10, null, Dp.m8160constructorimpl(8.0f), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
+            m9938DotsIndicatorAFY4PWA(10, null, Dp.m8160constructorimpl(8.0f), new BalloonIndicatorType(null, 0.0f, 3, null), 0, new Function0<Float>() { // from class: com.tbuonomo.viewpagerdotsindicator.compose.DotsIndicatorKt$DotsIndicatorPreview$1
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // kotlin.jvm.functions.Function0
                 public final Float invoke() {

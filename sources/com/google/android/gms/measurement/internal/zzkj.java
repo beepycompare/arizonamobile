@@ -3,6 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
@@ -31,7 +32,7 @@ public final class zzkj implements Runnable {
             return;
         }
         try {
-            zzljVar.zzu.zzt().zzp(new zzah(bundle.getString("app_id"), "", new zzpl(checkNotEmpty, 0L, null, ""), bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP), bundle.getBoolean(AppMeasurementSdk.ConditionalUserProperty.ACTIVE), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME), null, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT), null, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE), zzljVar.zzu.zzk().zzaf(bundle.getString("app_id"), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS), "", bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP), 0L, true, true)));
+            zzljVar.zzu.zzt().zzp(new zzah(bundle.getString(CommonUrlParts.APP_ID), "", new zzpl(checkNotEmpty, 0L, null, ""), bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP), bundle.getBoolean(AppMeasurementSdk.ConditionalUserProperty.ACTIVE), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME), null, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT), null, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE), zzljVar.zzu.zzk().zzaf(bundle.getString(CommonUrlParts.APP_ID), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS), "", bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP), 0L, true, true)));
         } catch (IllegalArgumentException unused) {
         }
     }

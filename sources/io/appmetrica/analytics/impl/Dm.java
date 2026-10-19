@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class Dm extends C0189d6 {
+public final class Dm extends C0184d6 {
     public List d;
     public List e;
     public String f;
@@ -81,7 +81,7 @@ public final class Dm extends C0189d6 {
         if (!Oo.a((Collection) this.e)) {
             linkedHashSet.addAll(this.e);
         }
-        String[] strArr = (String[]) this.p.f870a.a();
+        String[] strArr = (String[]) this.p.f873a.a();
         if (strArr != null) {
             arrayList = new ArrayList();
             for (String str : strArr) {
@@ -122,13 +122,13 @@ public final class Dm extends C0189d6 {
         return this.l;
     }
 
-    @Override // io.appmetrica.analytics.impl.C0189d6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
+    @Override // io.appmetrica.analytics.impl.C0184d6, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
     public final String toString() {
         return "StartupRequestConfig{mStartupHostsFromStartup=" + this.d + ", mStartupHostsFromClient=" + this.e + ", mDistributionReferrer='" + this.f + "', mInstallReferrerSource='" + this.g + "', mClidsFromClient=" + this.h + ", mNewCustomHosts=" + this.j + ", mHasNewCustomHosts=" + this.k + ", mSuccessfulStartup=" + this.l + ", mCountryInit='" + this.m + "', mFirstStartupTime=" + this.n + "} " + super.toString();
     }
 
     public Dm(Fg fg, Z7 z7) {
-        this.i = new I3(null, EnumC0397l8.d);
+        this.i = new I3(null, EnumC0392l8.d);
         this.n = 0L;
         this.o = fg;
         this.p = z7;

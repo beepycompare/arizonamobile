@@ -3,28 +3,28 @@ package io.appmetrica.analytics.impl;
 public abstract class S2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AbstractC0276gg f758a;
-    public final InterfaceC0271gb b;
+    public final AbstractC0271gg f761a;
+    public final InterfaceC0266gb b;
 
-    public S2(AbstractC0276gg abstractC0276gg, InterfaceC0271gb interfaceC0271gb) {
-        this.f758a = abstractC0276gg;
-        this.b = interfaceC0271gb;
+    public S2(AbstractC0271gg abstractC0271gg, InterfaceC0266gb interfaceC0266gb) {
+        this.f761a = abstractC0271gg;
+        this.b = interfaceC0266gb;
     }
 
-    public final boolean a(C0240f6 c0240f6, R2 r2) {
-        for (Object obj : ((C0502p9) this.f758a.a(c0240f6.d)).f1147a) {
-            if (r2.a(obj, c0240f6)) {
+    public final boolean a(C0235f6 c0235f6, R2 r2) {
+        for (Object obj : ((C0497p9) this.f761a.a(c0235f6.d)).f1150a) {
+            if (r2.a(obj, c0235f6)) {
                 return true;
             }
         }
         return false;
     }
 
-    public final AbstractC0276gg b() {
-        return this.f758a;
+    public final AbstractC0271gg b() {
+        return this.f761a;
     }
 
-    public final InterfaceC0271gb a() {
+    public final InterfaceC0266gb a() {
         return this.b;
     }
 }

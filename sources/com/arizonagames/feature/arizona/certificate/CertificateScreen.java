@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
 import com.arizonagames.feature.arizona.certificate.databinding.CertificateInfoItemBinding;
@@ -81,7 +80,7 @@ public final class CertificateScreen extends SAMPUIElement {
         this.isCars = true;
         this.bonuses = CollectionsKt.emptyList();
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
     }
 
     public final ItemScene getScene() {
@@ -207,9 +206,7 @@ public final class CertificateScreen extends SAMPUIElement {
         mainInfo.getPrice();
         if (mainInfo.getPrice() > 0) {
             certificateScreenBinding.sellText.setText(MoneyElementKt.toMoneyFormattedSpannable$default(mainInfo.getPrice(), false, null, null, null, 15, null));
-            if (!UtilsKt.isArizonaType()) {
-                certificateScreenBinding.sellIc.setVisibility(0);
-            }
+            certificateScreenBinding.sellIc.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
         } else {
             certificateScreenBinding.sellText.setText(getTargetActivity().getString(R.string.certificate_go_to_rating));
             certificateScreenBinding.sellIc.setVisibility(8);
@@ -236,9 +233,7 @@ public final class CertificateScreen extends SAMPUIElement {
                 String str4 = (String) CollectionsKt.getOrNull(qualityType.getColors(), 1);
                 if (str4 != null) {
                     CustomCardView.setBackground$default(qualityBg, parseColor, Color.parseColor(str4), null, null, 12, null);
-                    TextView textView = certificateScreenBinding.qualityText;
-                    String name = qualityType.getName();
-                    textView.setText(name + " (" + mainInfo.getRarity() + ")");
+                    certificateScreenBinding.qualityText.setText(qualityType.getName() + " (" + mainInfo.getRarity() + ")");
                 }
             }
         }

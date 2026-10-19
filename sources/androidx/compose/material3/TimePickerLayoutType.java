@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -84,6 +83,6 @@ public final class TimePickerLayoutType {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m3216toStringimpl(int i) {
-        return m3214equalsimpl0(i, Horizontal) ? "Horizontal" : m3214equalsimpl0(i, Vertical) ? "Vertical" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m3214equalsimpl0(i, Horizontal) ? "Horizontal" : m3214equalsimpl0(i, Vertical) ? "Vertical" : "Unknown";
     }
 }

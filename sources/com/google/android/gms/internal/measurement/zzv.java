@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.measurement;
 
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.2.0 */
 /* loaded from: classes4.dex */
@@ -24,10 +25,10 @@ public final class zzv extends zzai {
             throw new IllegalArgumentException("Invalid callback params");
         }
         zzal zzalVar = (zzal) zza2;
-        if (!zzalVar.zzj("type")) {
+        if (!zzalVar.zzj(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY)) {
             throw new IllegalArgumentException("Undefined rule type");
         }
-        this.zza.zza(zzc, zzalVar.zzj("priority") ? zzh.zzg(zzalVar.zzk("priority").zzd().doubleValue()) : 1000, (zzan) zza, zzalVar.zzk("type").zzc());
+        this.zza.zza(zzc, zzalVar.zzj("priority") ? zzh.zzg(zzalVar.zzk("priority").zzd().doubleValue()) : 1000, (zzan) zza, zzalVar.zzk(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY).zzc());
         return zzao.zzf;
     }
 }

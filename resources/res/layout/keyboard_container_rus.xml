@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:id="@+id/spacer_left" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/j_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:maxHeight="35dp" android:layout_weight="1" app:hasBackground="true" app:textKey="й"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/c_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ц"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/y_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="у"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/k_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="к"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/e_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="е"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/n_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="н"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/g_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="г"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/sh_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ш"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/shch_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="щ"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/z_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="з"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/h_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="х"/>
+        <Space android:layout_gravity="center" android:id="@+id/spacer_right" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/f_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ф"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/yu_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ы"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/v_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="в"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/a_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="а"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/p_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="п"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/r_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="р"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/o_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="о"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/l_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="л"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/d_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="д"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/zh_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ж"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/ee_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="э"/>
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/shift_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="false" app:hasSymbolBackground="true" app:imageKey="@drawable/ic_keyboard_shift"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/ya_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="я"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/ch_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ч"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/s_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="с"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/m_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="м"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/i_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="и"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/t_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="т"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/iai_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ь"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/b_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="б"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/u_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="ю"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/backspace_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="false" app:hasSymbolBackground="true" app:imageKey="@drawable/ic_keyboard_backspace"/>
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/slash_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="false" app:hasSymbolBackground="true" app:textKey="/"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/symbols_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:textKey="123"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/globus_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:textKey="RU"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/space_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="0.66" app:hasBackground="true" app:textKey="пробел"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/comma_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="false" app:hasSymbolBackground="true" app:textKey=","/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/dot_point_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="false" app:hasSymbolBackground="true" app:textKey="."/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/send_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="false" app:hasSymbolBackground="true" app:imageKey="@drawable/ic_keyboard_send" app:imageTint="#3d81ff"/>
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

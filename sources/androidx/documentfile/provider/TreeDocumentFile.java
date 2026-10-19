@@ -140,7 +140,7 @@ class TreeDocumentFile extends DocumentFile {
     private static void closeQuietly(AutoCloseable autoCloseable) {
         if (autoCloseable != null) {
             try {
-                UByte$$ExternalSyntheticBackport0.m9994m((Object) autoCloseable);
+                UByte$$ExternalSyntheticBackport0.m10047m((Object) autoCloseable);
             } catch (RuntimeException e) {
                 throw e;
             } catch (Exception unused) {

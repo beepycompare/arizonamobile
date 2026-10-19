@@ -11,23 +11,23 @@ import org.json.JSONObject;
 public final class Td {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f778a;
+    public final List f781a;
     public final long b;
 
     public Td(List list, long j) {
-        this.f778a = list;
+        this.f781a = list;
         this.b = j;
     }
 
     public final String a() {
         try {
             JSONObject jSONObject = new JSONObject();
-            List<Bd> list = this.f778a;
+            List<Bd> list = this.f781a;
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (Bd bd : list) {
                 bd.getClass();
                 JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("moduleName", bd.f478a);
+                jSONObject2.put("moduleName", bd.f481a);
                 jSONObject2.put("loaded", bd.b);
                 arrayList.add(jSONObject2);
             }
@@ -45,16 +45,16 @@ public final class Td {
         }
         if (obj instanceof Td) {
             Td td = (Td) obj;
-            return Intrinsics.areEqual(this.f778a, td.f778a) && this.b == td.b;
+            return Intrinsics.areEqual(this.f781a, td.f781a) && this.b == td.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (this.f778a.hashCode() * 31);
+        return Long.hashCode(this.b) + (this.f781a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "ModulesStatus(modulesStatus=" + this.f778a + ", lastSendTime=" + this.b + ')';
+        return "ModulesStatus(modulesStatus=" + this.f781a + ", lastSendTime=" + this.b + ')';
     }
 }

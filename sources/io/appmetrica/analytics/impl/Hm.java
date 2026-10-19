@@ -9,7 +9,7 @@ public final class Hm {
     public final W9 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f584a;
+    public final String f587a;
     public final String b;
     public final Lm c;
     public final String d;
@@ -32,15 +32,15 @@ public final class Hm {
     public final long u;
     public final long v;
     public final boolean w;
-    public final C0599t3 x;
-    public final C0754z2 y;
-    public final C0231en z;
+    public final C0594t3 x;
+    public final C0749z2 y;
+    public final C0226en z;
 
     public Hm(String str, String str2, Lm lm) {
-        this.f584a = str;
+        this.f587a = str;
         this.b = str2;
         this.c = lm;
-        this.d = lm.f653a;
+        this.d = lm.f656a;
         this.e = lm.b;
         this.f = lm.f;
         this.g = lm.g;
@@ -57,7 +57,7 @@ public final class Hm {
         this.p = lm.o;
         this.q = lm.p;
         this.r = lm.q;
-        C0334in c0334in = lm.r;
+        C0329in c0329in = lm.r;
         this.s = lm.s;
         this.t = lm.t;
         this.u = lm.u;
@@ -71,7 +71,7 @@ public final class Hm {
     }
 
     public final String a() {
-        return this.f584a;
+        return this.f587a;
     }
 
     public final String b() {
@@ -83,6 +83,6 @@ public final class Hm {
     }
 
     public final String toString() {
-        return "StartupState(deviceId=" + this.f584a + ", deviceIdHash=" + this.b + ", startupStateModel=" + this.c + ')';
+        return "StartupState(deviceId=" + this.f587a + ", deviceIdHash=" + this.b + ", startupStateModel=" + this.c + ')';
     }
 }

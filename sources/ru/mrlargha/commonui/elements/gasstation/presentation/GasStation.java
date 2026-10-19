@@ -70,11 +70,16 @@ public final class GasStation extends SAMPUIElement {
         this.gasStationAdapter = gasStationAdapter;
         this.commonBorderSize = ConverterKt.dpToPx(1, targetActivity);
         constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         if (!UtilsKt.isArizonaType()) {
             bind.gsLogoRed.setText("ЛУКОЙЛ");
             bind.gsLogoWhite.setVisibility(8);
             bind.gsFuelCountCurrencyIc.setImageResource(R.drawable.currency_rubble);
+        } else {
+            AppCompatImageView gsFuelCountCurrencyIc = bind.gsFuelCountCurrencyIc;
+            Intrinsics.checkNotNullExpressionValue(gsFuelCountCurrencyIc, "gsFuelCountCurrencyIc");
+            gsFuelCountCurrencyIc.setVisibility(8);
+            bind.gsFuelTotalPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(0L, false, null, null, null, 15, null));
         }
         bind.gsShopList.setAdapter(gasStationAdapter);
         bind.gsShopList.setLayoutManager(new LinearLayoutManager(targetActivity, 0, false));
@@ -108,9 +113,9 @@ public final class GasStation extends SAMPUIElement {
                 GasStation.this.gasStationBinding.gsFuelCounter.setText("+" + i2 + "l.");
                 GasStation.this.gasStationBinding.gsFuelNowCount.setText((GasStation.this.gasNow + i2) + "l.");
                 GasStation.this.gasStationBinding.gsFuelTotalPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(i2 * GasStation.this.price, false, null, null, null, 15, null));
-                AppCompatImageView gsFuelCountCurrencyIc = GasStation.this.gasStationBinding.gsFuelCountCurrencyIc;
-                Intrinsics.checkNotNullExpressionValue(gsFuelCountCurrencyIc, "gsFuelCountCurrencyIc");
-                gsFuelCountCurrencyIc.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
+                AppCompatImageView gsFuelCountCurrencyIc2 = GasStation.this.gasStationBinding.gsFuelCountCurrencyIc;
+                Intrinsics.checkNotNullExpressionValue(gsFuelCountCurrencyIc2, "gsFuelCountCurrencyIc");
+                gsFuelCountCurrencyIc2.setVisibility(UtilsKt.isArizonaType() ? 8 : 0);
                 GasStation.this.choseFuelCount = Integer.valueOf(i2);
             }
         });
@@ -376,7 +381,14 @@ public final class GasStation extends SAMPUIElement {
         gasStationBinding.gsFuelSlider.setProgress(0);
         gasStationBinding.gsFuelSliderEnd.setText("100l.");
         gasStationBinding.gsFuelNowCount.setText("0l.");
-        gasStationBinding.gsFuelTotalPrice.setText("0");
+        if (UtilsKt.isArizonaType()) {
+            AppCompatImageView gsFuelCountCurrencyIc = gasStationBinding.gsFuelCountCurrencyIc;
+            Intrinsics.checkNotNullExpressionValue(gsFuelCountCurrencyIc, "gsFuelCountCurrencyIc");
+            gsFuelCountCurrencyIc.setVisibility(8);
+            gasStationBinding.gsFuelTotalPrice.setText(MoneyElementKt.toMoneyFormattedSpannable$default(0L, false, null, null, null, 15, null));
+        } else {
+            gasStationBinding.gsFuelTotalPrice.setText("0");
+        }
         blueDisable();
         redDisable();
         greenDisable();

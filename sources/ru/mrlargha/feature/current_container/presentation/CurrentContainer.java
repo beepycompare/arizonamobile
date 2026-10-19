@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -28,6 +27,7 @@ import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
@@ -69,16 +69,16 @@ public final class CurrentContainer extends SAMPUIElement {
         String str2 = UtilsKt.isArizonaType() ? "$" : "₽";
         this.currency = str2;
         constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setVisibility(false);
         createCurrentContainerItems();
-        EditText editText = bind.ccInputForm;
+        KeyboardEditText keyboardEditText = bind.ccInputForm;
         if (UtilsKt.isArizonaType()) {
             str = MoneyElementKt.toMoneyFormattedSpannable$default(10000L, false, null, null, null, 15, null);
         } else {
             str = "10 000 " + str2;
         }
-        editText.setHint(str);
+        keyboardEditText.setHint(str);
     }
 
     private final void createCurrentContainerItems() {
@@ -161,7 +161,7 @@ public final class CurrentContainer extends SAMPUIElement {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static final void createCurrentContainerItems$lambda$5(CurrentContainer currentContainer, View view) {
-        String obj;
+        String valueOf;
         int i;
         CountDownTimer countDownTimer;
         int i2 = currentContainer.currentBetValue;
@@ -172,12 +172,12 @@ public final class CurrentContainer extends SAMPUIElement {
             Toast.makeText(currentContainer.currentContainer.getContext(), currentContainer.currentContainer.getContext().getString(R.string.auction_finished_cannot_bid), 0).show();
         }
         try {
-            obj = currentContainer.binding.ccInputForm.getText().toString();
+            valueOf = String.valueOf(currentContainer.binding.ccInputForm.getText());
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        if (!StringsKt.isBlank(obj)) {
-            String str2 = obj;
+        if (!StringsKt.isBlank(valueOf)) {
+            String str2 = valueOf;
             StringBuilder sb = new StringBuilder();
             int length = str2.length();
             for (int i3 = 0; i3 < length; i3++) {
@@ -280,13 +280,13 @@ public final class CurrentContainer extends SAMPUIElement {
             }
             textView.setText(str);
             this.binding.ccInputBetPrice.setText(this.binding.ccItemLastBetPrice.getText());
-            EditText editText = this.binding.ccInputForm;
+            KeyboardEditText keyboardEditText = this.binding.ccInputForm;
             if (UtilsKt.isArizonaType()) {
                 string = MoneyElementKt.toMoneyFormattedSpannable$default(10000L, false, null, null, null, 15, null);
             } else {
                 string = this.currentContainer.getContext().getString(R.string.auction_bid_hint_cash);
             }
-            editText.setHint(string);
+            keyboardEditText.setHint(string);
         } else {
             auctionCurrentContainerBinding.ccItemLastBetPrice.setText(container.getCurrentBet() + " AZ");
             this.binding.ccInputBetPrice.setText(container.getCurrentBet() + " AZ");

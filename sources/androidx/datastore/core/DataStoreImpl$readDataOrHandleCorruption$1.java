@@ -1,6 +1,6 @@
 package androidx.datastore.core;
 
-import com.facebook.internal.NativeProtocol;
+import com.adjust.sdk.Constants;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -8,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DataStoreImpl.kt */
 @Metadata(k = 3, mv = {2, 0, 0}, xi = 48)
-@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl", f = "DataStoreImpl.kt", i = {0, 1, 2, 3, 4, 4, 4, 5, 5, 5}, l = {385, 386, 388, 389, 396, 400}, m = "readDataOrHandleCorruption", n = {"hasWriteFileLock", "hasWriteFileLock", "hasWriteFileLock", "hasWriteFileLock", "ex", "newData", "hasWriteFileLock", "ex", "newData", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN}, s = {"Z$0", "Z$0", "Z$0", "Z$0", "L$0", "L$1", "Z$0", "L$0", "L$1", "L$2"}, v = 1)
+@DebugMetadata(c = "androidx.datastore.core.DataStoreImpl", f = "DataStoreImpl.kt", i = {0, 1, 2, 3, 4, 4, 4, 5, 5, 5}, l = {385, 386, 388, 389, 396, Constants.MINIMAL_ERROR_STATUS_CODE}, m = "readDataOrHandleCorruption", n = {"hasWriteFileLock", "hasWriteFileLock", "hasWriteFileLock", "hasWriteFileLock", "ex", "newData", "hasWriteFileLock", "ex", "newData", "version"}, s = {"Z$0", "Z$0", "Z$0", "Z$0", "L$0", "L$1", "Z$0", "L$0", "L$1", "L$2"}, v = 1)
 /* loaded from: classes2.dex */
 public final class DataStoreImpl$readDataOrHandleCorruption$1 extends ContinuationImpl {
     int I$0;

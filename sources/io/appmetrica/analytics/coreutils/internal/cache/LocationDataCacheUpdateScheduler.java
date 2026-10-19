@@ -9,14 +9,14 @@ import java.util.concurrent.TimeUnit;
 public class LocationDataCacheUpdateScheduler implements CacheUpdateScheduler {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ICommonExecutor f357a;
+    private final ICommonExecutor f360a;
     private final ILastKnownUpdater b;
     private final UpdateConditionsChecker c;
     private final a d = new a(this);
     private final b e = new b(this);
 
     public LocationDataCacheUpdateScheduler(ICommonExecutor iCommonExecutor, ILastKnownUpdater iLastKnownUpdater, UpdateConditionsChecker updateConditionsChecker, String str) {
-        this.f357a = iCommonExecutor;
+        this.f360a = iCommonExecutor;
         this.b = iLastKnownUpdater;
         this.c = updateConditionsChecker;
         String.format("[LocationDataCacheUpdateScheduler-%s]", str);
@@ -24,13 +24,13 @@ public class LocationDataCacheUpdateScheduler implements CacheUpdateScheduler {
 
     @Override // io.appmetrica.analytics.coreapi.internal.cache.CacheUpdateScheduler
     public void onStateUpdated() {
-        this.f357a.remove(this.d);
-        this.f357a.executeDelayed(this.d, 90L, TimeUnit.SECONDS);
+        this.f360a.remove(this.d);
+        this.f360a.executeDelayed(this.d, 90L, TimeUnit.SECONDS);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.cache.CacheUpdateScheduler
     public void scheduleUpdateIfNeededNow() {
-        this.f357a.execute(this.e);
+        this.f360a.execute(this.e);
     }
 
     public void startUpdates() {
@@ -38,7 +38,7 @@ public class LocationDataCacheUpdateScheduler implements CacheUpdateScheduler {
     }
 
     public void stopUpdates() {
-        this.f357a.remove(this.d);
-        this.f357a.remove(this.e);
+        this.f360a.remove(this.d);
+        this.f360a.remove(this.e);
     }
 }

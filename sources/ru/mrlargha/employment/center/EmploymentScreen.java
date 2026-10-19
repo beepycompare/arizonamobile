@@ -33,6 +33,7 @@ import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceControl
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
@@ -103,7 +104,7 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         });
         this.textBonusAdapter = new TextBonusAdapter();
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         setupNavigation();
         setupAdapters();
         getApiData();
@@ -373,6 +374,10 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         employmentCenterSalaryTableBinding.totalBonus.setText("+" + i2 + "%");
         long j = i2;
         employmentCenterSalaryTableBinding.total.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((jobInfo.getHourSalary() * j) / 100), false, null, null, null, 15, null));
+        if (UtilsKt.isArizonaType()) {
+            employmentCenterSalaryTableBinding.ivSalaryCurrency.setVisibility(8);
+            employmentCenterSalaryTableBinding.ivTotalCurrency.setVisibility(8);
+        }
         employmentCenterMainBinding.salary.setText(MoneyElementKt.toMoneyFormattedSpannable$default(jobInfo.getHourSalary() + ((j * jobInfo.getHourSalary()) / 100), false, null, null, null, 15, null));
         employmentCenterMainBinding.buttonInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener

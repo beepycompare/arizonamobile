@@ -116,7 +116,7 @@ public final class ArizonaPromoScreen extends SAMPUIElement implements Interface
         this.undoneColor = Color.parseColor("#0D1011");
         this.activateId = -1;
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         setupAdapters();
         setupNavigation();
         setupProject();

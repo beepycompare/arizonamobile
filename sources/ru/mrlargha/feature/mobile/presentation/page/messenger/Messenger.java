@@ -20,8 +20,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 import com.arizona.common.model.AvatarData;
 import com.arizona.common.ui.AvatarView;
-import com.arizona.launcher.model.settings.SettingsConstants;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.miami.game.core.settings.SettingsInteractor;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,6 +30,7 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -44,7 +43,7 @@ import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.domain.model.MessageStatus;
-import ru.mrlargha.commonui.elements.CustomKeyboard;
+import ru.mrlargha.commonui.elements.keyboard.inGameKeyboard.KeyboardKeeper;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.recycle_view.PaginationScrollListener;
 import ru.mrlargha.feature.mobile.R;
@@ -69,7 +68,7 @@ import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.ContactApi
 import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.SettingsApiResponse;
 import ru.mrlargha.feature.mobile.presentation.page.messenger.api.obj.SettingsRequest;
 /* compiled from: Messenger.kt */
-@Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u0000 V2\u00020\u00012\u00020\u0002:\u0003VWXB\u0011\u0012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0004H\u0002J\b\u0010-\u001a\u00020.H\u0002J\u0012\u0010/\u001a\u00020.2\b\u00100\u001a\u0004\u0018\u00010\fH\u0002J\b\u00101\u001a\u00020.H\u0002J\b\u00102\u001a\u00020.H\u0002J\b\u00103\u001a\u00020.H\u0002J\b\u00104\u001a\u00020.H\u0002J\b\u00105\u001a\u00020.H\u0002J\b\u00106\u001a\u00020.H\u0002J\u0018\u00107\u001a\u00020.2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\tH\u0016J\b\u0010;\u001a\u00020.H\u0002J!\u0010<\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\f2\n\b\u0002\u0010=\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0002\u0010>J\b\u0010?\u001a\u00020.H\u0002J\u0010\u0010@\u001a\u00020.2\u0006\u0010A\u001a\u00020BH\u0002J\b\u0010C\u001a\u00020.H\u0002J\b\u0010D\u001a\u00020.H\u0002J\b\u0010E\u001a\u00020.H\u0002J\b\u0010F\u001a\u00020.H\u0002J\u0010\u0010G\u001a\u00020.2\u0006\u0010\u001b\u001a\u00020&H\u0002J\b\u0010H\u001a\u00020.H\u0016J\b\u0010I\u001a\u00020.H\u0016J\u0006\u0010J\u001a\u00020.J\u000e\u0010K\u001a\u00020.2\u0006\u0010L\u001a\u00020MJ\u0010\u0010N\u001a\u00020.2\u0006\u0010L\u001a\u00020MH\u0002J\u000e\u0010O\u001a\u00020.2\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010P\u001a\u00020.J\u0006\u0010Q\u001a\u00020.J\u0016\u0010R\u001a\u00020.2\u0006\u0010S\u001a\u00020\u00042\u0006\u0010T\u001a\u00020\fJ\u000e\u0010U\u001a\u00020.2\u0006\u0010=\u001a\u00020\u0004R\u0012\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001d\u001a\n \u0015*\u0004\u0018\u00010\u001e0\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Y"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "Landroid/widget/CompoundButton$OnCheckedChangeListener;", "notificationMessageId", "", "<init>", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "isPaginationLoading", "", "paginationPage", "searchNickname", "", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sharedPreferences", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "token", "userIdForAddContact", "isRefreshToken", "page", "Landroidx/constraintlayout/widget/ConstraintLayout;", "api", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/MessagesApi;", "pageBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneMessengerPageBinding;", "contactsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerContactsAdapter;", "colorsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "currentPage", "Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Page;", "previousPage", "currentSettings", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/obj/SettingsRequest;", "getUserIdJson", "", TtmlNode.ATTR_ID, "loadNextPage", "", "requestContacts", SettingsConstants.NICKNAME, "showMessagesLoader", "showContacts", "showEmptySearchedContacts", "openChatEvent", "requestToken", "prepareSettings", "onCheckedChanged", "buttonView", "Landroid/widget/CompoundButton;", "isChecked", "preparePage", "loadChats", "dialogId", "(Ljava/lang/String;Ljava/lang/Integer;)V", "loadSettings", "updateSettingsInfo", "settings", "Lru/mrlargha/feature/mobile/domain/obj/SettingsInfo;", "setupEmptyPages", "setupNewCorrespondencePage", "setupMessagesPage", "prepareHeader", "updatePage", "renderPage", "removePage", "contactSettingsUpdate", "onOpenNewChat", "contactInfo", "Lru/mrlargha/feature/mobile/domain/obj/ContactInfo;", "contactAddOrRemove", "addToken", "addContactAction", "removeContactAction", "onNewMessage", "userId", "newMessage", "updateDialog", "Companion", "Page", "InputCustomKeyboardListener", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u000b\u0018\u0000 W2\u00020\u00012\u00020\u0002:\u0002WXB\u0011\u0012\b\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0004H\u0002J\b\u0010.\u001a\u00020/H\u0002J\u0012\u00100\u001a\u00020/2\b\u00101\u001a\u0004\u0018\u00010\fH\u0002J\b\u00102\u001a\u00020/H\u0002J\b\u00103\u001a\u00020/H\u0002J\b\u00104\u001a\u00020/H\u0002J\b\u00105\u001a\u00020/H\u0002J\b\u00106\u001a\u00020/H\u0002J\b\u00107\u001a\u00020/H\u0002J\u0018\u00108\u001a\u00020/2\u0006\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020\tH\u0016J\b\u0010<\u001a\u00020/H\u0002J!\u0010=\u001a\u00020/2\u0006\u0010\u0018\u001a\u00020\f2\n\b\u0002\u0010>\u001a\u0004\u0018\u00010\u0004H\u0002¢\u0006\u0002\u0010?J\b\u0010@\u001a\u00020/H\u0002J\u0010\u0010A\u001a\u00020/2\u0006\u0010B\u001a\u00020CH\u0002J\b\u0010D\u001a\u00020/H\u0002J\b\u0010E\u001a\u00020/H\u0002J\b\u0010F\u001a\u00020/H\u0002J\b\u0010G\u001a\u00020/H\u0002J\u0010\u0010H\u001a\u00020/2\u0006\u0010\u001c\u001a\u00020'H\u0002J\b\u0010I\u001a\u00020/H\u0016J\b\u0010J\u001a\u00020/H\u0016J\u0006\u0010K\u001a\u00020/J\u000e\u0010L\u001a\u00020/2\u0006\u0010M\u001a\u00020NJ\u0010\u0010O\u001a\u00020/2\u0006\u0010M\u001a\u00020NH\u0002J\u000e\u0010P\u001a\u00020/2\u0006\u0010\u0018\u001a\u00020\fJ\u0006\u0010Q\u001a\u00020/J\u0006\u0010R\u001a\u00020/J\u0016\u0010S\u001a\u00020/2\u0006\u0010T\u001a\u00020\u00042\u0006\u0010U\u001a\u00020\fJ\u000e\u0010V\u001a\u00020/2\u0006\u0010>\u001a\u00020\u0004R\u0012\u0010\u0003\u001a\u0004\u0018\u00010\u0004X\u0082\u000e¢\u0006\u0004\n\u0002\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0013\u001a\n \u0015*\u0004\u0018\u00010\u00140\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0004X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u001e\u001a\n \u0015*\u0004\u0018\u00010\u001f0\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020'X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006Y"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "Landroid/widget/CompoundButton$OnCheckedChangeListener;", "notificationMessageId", "", "<init>", "(Ljava/lang/Integer;)V", "Ljava/lang/Integer;", "isPaginationLoading", "", "paginationPage", "searchNickname", "", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sharedPreferences", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "token", "userIdForAddContact", "isRefreshToken", "isInGameKeyboard", "page", "Landroidx/constraintlayout/widget/ConstraintLayout;", "api", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/MessagesApi;", "pageBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneMessengerPageBinding;", "contactsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerContactsAdapter;", "colorsAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/MobilePhoneMessengerColorsAdapter;", "currentPage", "Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$Page;", "previousPage", "currentSettings", "Lru/mrlargha/feature/mobile/presentation/page/messenger/api/obj/SettingsRequest;", "getUserIdJson", "", TtmlNode.ATTR_ID, "loadNextPage", "", "requestContacts", "nickname", "showMessagesLoader", "showContacts", "showEmptySearchedContacts", "openChatEvent", "requestToken", "prepareSettings", "onCheckedChanged", "buttonView", "Landroid/widget/CompoundButton;", "isChecked", "preparePage", "loadChats", "dialogId", "(Ljava/lang/String;Ljava/lang/Integer;)V", "loadSettings", "updateSettingsInfo", "settings", "Lru/mrlargha/feature/mobile/domain/obj/SettingsInfo;", "setupEmptyPages", "setupNewCorrespondencePage", "setupMessagesPage", "prepareHeader", "updatePage", "renderPage", "removePage", "contactSettingsUpdate", "onOpenNewChat", "contactInfo", "Lru/mrlargha/feature/mobile/domain/obj/ContactInfo;", "contactAddOrRemove", "addToken", "addContactAction", "removeContactAction", "onNewMessage", "userId", "newMessage", "updateDialog", "Companion", "Page", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Messenger implements MobileController, CompoundButton.OnCheckedChangeListener {
     public static final Companion Companion = new Companion(null);
@@ -85,6 +84,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
     private Page currentPage;
     private SettingsRequest currentSettings;
     private final IBackendNotifier frontendNotifier;
+    private final boolean isInGameKeyboard;
     private boolean isPaginationLoading;
     private boolean isRefreshToken;
     private final MobilePhone mobilePhone;
@@ -160,6 +160,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         this.frontendNotifier = (IBackendNotifier) context;
         this.token = "";
         this.userIdForAddContact = -1;
+        this.isInGameKeyboard = KeyboardKeeper.INSTANCE.isInGameKeyboard();
         View inflate = context.getLayoutInflater().inflate(R.layout.mobile_phone_messenger_page, (ViewGroup) null);
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
         ConstraintLayout constraintLayout = (ConstraintLayout) inflate;
@@ -346,8 +347,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void requestContacts(String str) {
+    private final void requestContacts(String str) {
         if (this.token.length() == 0) {
             return;
         }
@@ -362,6 +362,7 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
             @Override // retrofit2.Callback
             public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
                 MobilePhoneMessengerContactsAdapter mobilePhoneMessengerContactsAdapter;
+                Messenger.Page page;
                 Intrinsics.checkNotNullParameter(call, "call");
                 Intrinsics.checkNotNullParameter(response, "response");
                 List<? extends ContactApiResponse> body = response.body();
@@ -374,7 +375,8 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
                     ArrayList arrayList2 = arrayList;
                     Messenger messenger = Messenger.this;
                     if (arrayList2.isEmpty()) {
-                        if (messenger.currentPage == Messenger.Page.MY_CONTACTS) {
+                        page = messenger.currentPage;
+                        if (page == Messenger.Page.MY_CONTACTS) {
                             messenger.updatePage(Messenger.Page.EMPTY_CONTACTS);
                             return;
                         } else {
@@ -750,8 +752,10 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
 
             @Override // ru.mrlargha.commonui.utils.recycle_view.PaginationScrollListener
             protected void loadMoreItems() {
+                Messenger.Page page;
                 int i;
-                if (Messenger.this.currentPage == Messenger.Page.CONTACTS_SEARCH) {
+                page = Messenger.this.currentPage;
+                if (page == Messenger.Page.CONTACTS_SEARCH) {
                     Messenger.this.isPaginationLoading = true;
                     Messenger messenger = Messenger.this;
                     i = messenger.paginationPage;
@@ -770,17 +774,25 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
         RecyclerView.ItemAnimator itemAnimator = messengerMessagesLayoutBinding.listMessages.getItemAnimator();
         Intrinsics.checkNotNull(itemAnimator, "null cannot be cast to non-null type androidx.recyclerview.widget.SimpleItemAnimator");
         ((SimpleItemAnimator) itemAnimator).setSupportsChangeAnimations(false);
-        messengerMessagesLayoutBinding.searchEditText.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda4
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                Messenger.setupMessagesPage$lambda$0$0(Messenger.this, view);
+        messengerMessagesLayoutBinding.searchEditText.setOnDone(new Function0() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.Messenger$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Unit unit;
+                unit = Messenger.setupMessagesPage$lambda$0$0(Messenger.this);
+                return unit;
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupMessagesPage$lambda$0$0(Messenger messenger, View view) {
-        messenger.frontendNotifier.showCustomKeyboardForEditText(new InputCustomKeyboardListener(), "");
+    public static final Unit setupMessagesPage$lambda$0$0(Messenger messenger) {
+        String valueOf = messenger.currentPage == Page.MY_CONTACTS ? "" : String.valueOf(messenger.pageBinding.messagesLayout.searchEditText.getText());
+        if (valueOf.length() >= 3) {
+            messenger.requestContacts(valueOf);
+        } else {
+            messenger.showEmptySearchedContacts();
+        }
+        return Unit.INSTANCE;
     }
 
     private final void prepareHeader() {
@@ -987,61 +999,5 @@ public final class Messenger implements MobileController, CompoundButton.OnCheck
             return;
         }
         loadChats(this.token, Integer.valueOf(i));
-    }
-
-    /* compiled from: Messenger.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016J\b\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\u000bH\u0016J\u0012\u0010\f\u001a\u0004\u0018\u00010\u00072\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0010\u0010\u000e\u001a\u00020\u00052\u0006\u0010\r\u001a\u00020\u000bH\u0016J\u0012\u0010\u000f\u001a\u00020\u00052\b\u0010\u0010\u001a\u0004\u0018\u00010\u0007H\u0016J\u0010\u0010\u0011\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u000bH\u0016J\b\u0010\u0013\u001a\u00020\u0005H\u0016¨\u0006\u0014"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger$InputCustomKeyboardListener;", "Lru/mrlargha/commonui/elements/CustomKeyboard$InputListener;", "<init>", "(Lru/mrlargha/feature/mobile/presentation/page/messenger/Messenger;)V", "t_OnInputEnd", "", "str", "", "t_BinderIsEmpty", "", "t_GetKeyboardHistorySize", "", "t_GetKeyboardHistoryText", FirebaseAnalytics.Param.INDEX, "t_SetChatType", "t_SetLastString", "std", "t_SetChatHeight", "height", "closeKeyboard", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    /* loaded from: classes6.dex */
-    public final class InputCustomKeyboardListener implements CustomKeyboard.InputListener {
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public void closeKeyboard() {
-        }
-
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public boolean t_BinderIsEmpty() {
-            return false;
-        }
-
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public int t_GetKeyboardHistorySize() {
-            return 0;
-        }
-
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public String t_GetKeyboardHistoryText(int i) {
-            return null;
-        }
-
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public void t_SetChatHeight(int i) {
-        }
-
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public void t_SetChatType(int i) {
-        }
-
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public void t_SetLastString(String str) {
-        }
-
-        public InputCustomKeyboardListener() {
-        }
-
-        @Override // ru.mrlargha.commonui.elements.CustomKeyboard.InputListener
-        public void t_OnInputEnd(String str) {
-            Messenger.this.pageBinding.messagesLayout.searchEditText.setText(str);
-            if (Messenger.this.currentPage == Page.MY_CONTACTS) {
-                str = "";
-            } else if (str == null) {
-                return;
-            }
-            int length = str.length();
-            Messenger messenger = Messenger.this;
-            if (length >= 3) {
-                messenger.requestContacts(str);
-            } else {
-                messenger.showEmptySearchedContacts();
-            }
-        }
     }
 }

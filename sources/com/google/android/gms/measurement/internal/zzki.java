@@ -3,6 +3,7 @@ package com.google.android.gms.measurement.internal;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
@@ -37,8 +38,8 @@ public final class zzki implements Runnable {
         zzpl zzplVar = new zzpl(string, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_TIMESTAMP), bundle.get("value"), string2);
         try {
             zzic zzicVar = zzljVar.zzu;
-            zzbh zzaf = zzicVar.zzk().zzaf(bundle.getString("app_id"), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS), string2, 0L, 0L, true, true);
-            zzljVar.zzu.zzt().zzp(new zzah(bundle.getString("app_id"), string2, zzplVar, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP), false, bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME), zzicVar.zzk().zzaf(bundle.getString("app_id"), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS), string2, 0L, 0L, true, true), bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT), zzaf, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE), zzicVar.zzk().zzaf(bundle.getString("app_id"), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS), string2, 0L, 0L, true, true)));
+            zzbh zzaf = zzicVar.zzk().zzaf(bundle.getString(CommonUrlParts.APP_ID), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.TRIGGERED_EVENT_PARAMS), string2, 0L, 0L, true, true);
+            zzljVar.zzu.zzt().zzp(new zzah(bundle.getString(CommonUrlParts.APP_ID), string2, zzplVar, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP), false, bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_EVENT_NAME), zzicVar.zzk().zzaf(bundle.getString(CommonUrlParts.APP_ID), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.TIMED_OUT_EVENT_PARAMS), string2, 0L, 0L, true, true), bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TRIGGER_TIMEOUT), zzaf, bundle.getLong(AppMeasurementSdk.ConditionalUserProperty.TIME_TO_LIVE), zzicVar.zzk().zzaf(bundle.getString(CommonUrlParts.APP_ID), bundle.getString(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_NAME), bundle.getBundle(AppMeasurementSdk.ConditionalUserProperty.EXPIRED_EVENT_PARAMS), string2, 0L, 0L, true, true)));
         } catch (IllegalArgumentException unused) {
         }
     }

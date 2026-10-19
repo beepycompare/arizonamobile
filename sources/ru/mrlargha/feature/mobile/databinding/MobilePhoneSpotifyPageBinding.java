@@ -3,7 +3,6 @@ package ru.mrlargha.feature.mobile.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -12,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.feature.mobile.R;
 /* loaded from: classes6.dex */
 public final class MobilePhoneSpotifyPageBinding implements ViewBinding {
@@ -34,7 +34,7 @@ public final class MobilePhoneSpotifyPageBinding implements ViewBinding {
     public final AppCompatImageView mpSpotifyPlay;
     public final ConstraintLayout mpSpotifyPlayerContainer;
     public final AppCompatImageView mpSpotifySearchClose;
-    public final EditText mpSpotifySearchInput;
+    public final KeyboardEditText mpSpotifySearchInput;
     public final ConstraintLayout mpSpotifySearchInputContainer;
     public final AppCompatImageView mpSpotifySearchZoom;
     public final SeekBar mpSpotifySeekBar;
@@ -49,7 +49,7 @@ public final class MobilePhoneSpotifyPageBinding implements ViewBinding {
     private final ConstraintLayout rootView;
     public final RecyclerView spotifyTrackList;
 
-    private MobilePhoneSpotifyPageBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ImageView imageView, TextView textView, ConstraintLayout constraintLayout4, ConstraintLayout constraintLayout5, RecyclerView recyclerView, TextView textView2, ConstraintLayout constraintLayout6, TextView textView3, ConstraintLayout constraintLayout7, ImageView imageView2, ConstraintLayout constraintLayout8, AppCompatImageView appCompatImageView, TextView textView4, ConstraintLayout constraintLayout9, AppCompatImageView appCompatImageView2, ConstraintLayout constraintLayout10, AppCompatImageView appCompatImageView3, EditText editText, ConstraintLayout constraintLayout11, AppCompatImageView appCompatImageView4, SeekBar seekBar, TextView textView5, ImageView imageView3, TextView textView6, TextView textView7, TextView textView8, ConstraintLayout constraintLayout12, RecyclerView recyclerView2, AppCompatImageView appCompatImageView5, RecyclerView recyclerView3) {
+    private MobilePhoneSpotifyPageBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ImageView imageView, TextView textView, ConstraintLayout constraintLayout4, ConstraintLayout constraintLayout5, RecyclerView recyclerView, TextView textView2, ConstraintLayout constraintLayout6, TextView textView3, ConstraintLayout constraintLayout7, ImageView imageView2, ConstraintLayout constraintLayout8, AppCompatImageView appCompatImageView, TextView textView4, ConstraintLayout constraintLayout9, AppCompatImageView appCompatImageView2, ConstraintLayout constraintLayout10, AppCompatImageView appCompatImageView3, KeyboardEditText keyboardEditText, ConstraintLayout constraintLayout11, AppCompatImageView appCompatImageView4, SeekBar seekBar, TextView textView5, ImageView imageView3, TextView textView6, TextView textView7, TextView textView8, ConstraintLayout constraintLayout12, RecyclerView recyclerView2, AppCompatImageView appCompatImageView5, RecyclerView recyclerView3) {
         this.rootView = constraintLayout;
         this.mpSpotifyActionContainer = constraintLayout2;
         this.mpSpotifyBack = constraintLayout3;
@@ -70,7 +70,7 @@ public final class MobilePhoneSpotifyPageBinding implements ViewBinding {
         this.mpSpotifyPlay = appCompatImageView2;
         this.mpSpotifyPlayerContainer = constraintLayout10;
         this.mpSpotifySearchClose = appCompatImageView3;
-        this.mpSpotifySearchInput = editText;
+        this.mpSpotifySearchInput = keyboardEditText;
         this.mpSpotifySearchInputContainer = constraintLayout11;
         this.mpSpotifySearchZoom = appCompatImageView4;
         this.mpSpotifySeekBar = seekBar;
@@ -159,8 +159,8 @@ public final class MobilePhoneSpotifyPageBinding implements ViewBinding {
                                                                             AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                                                             if (appCompatImageView3 != null) {
                                                                                 i = R.id.mp_spotify_search_input;
-                                                                                EditText editText = (EditText) ViewBindings.findChildViewById(view, i);
-                                                                                if (editText != null) {
+                                                                                KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(view, i);
+                                                                                if (keyboardEditText != null) {
                                                                                     i = R.id.mp_spotify_search_input_container;
                                                                                     ConstraintLayout constraintLayout10 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                                                                                     if (constraintLayout10 != null) {
@@ -197,7 +197,7 @@ public final class MobilePhoneSpotifyPageBinding implements ViewBinding {
                                                                                                                                 i = R.id.spotify_track_list;
                                                                                                                                 RecyclerView recyclerView3 = (RecyclerView) ViewBindings.findChildViewById(view, i);
                                                                                                                                 if (recyclerView3 != null) {
-                                                                                                                                    return new MobilePhoneSpotifyPageBinding(constraintLayout8, constraintLayout, constraintLayout2, imageView, textView, constraintLayout3, constraintLayout4, recyclerView, textView2, constraintLayout5, textView3, constraintLayout6, imageView2, constraintLayout7, appCompatImageView, textView4, constraintLayout8, appCompatImageView2, constraintLayout9, appCompatImageView3, editText, constraintLayout10, appCompatImageView4, seekBar, textView5, imageView3, textView6, textView7, textView8, constraintLayout11, recyclerView2, appCompatImageView5, recyclerView3);
+                                                                                                                                    return new MobilePhoneSpotifyPageBinding(constraintLayout8, constraintLayout, constraintLayout2, imageView, textView, constraintLayout3, constraintLayout4, recyclerView, textView2, constraintLayout5, textView3, constraintLayout6, imageView2, constraintLayout7, appCompatImageView, textView4, constraintLayout8, appCompatImageView2, constraintLayout9, appCompatImageView3, keyboardEditText, constraintLayout10, appCompatImageView4, seekBar, textView5, imageView3, textView6, textView7, textView8, constraintLayout11, recyclerView2, appCompatImageView5, recyclerView3);
                                                                                                                                 }
                                                                                                                             }
                                                                                                                         }

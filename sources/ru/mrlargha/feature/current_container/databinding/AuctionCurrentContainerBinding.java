@@ -3,7 +3,6 @@ package ru.mrlargha.feature.current_container.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -13,6 +12,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.feature.current_container.R;
 /* loaded from: classes6.dex */
 public final class AuctionCurrentContainerBinding implements ViewBinding {
@@ -33,7 +33,7 @@ public final class AuctionCurrentContainerBinding implements ViewBinding {
     public final TextView ccInputBetName;
     public final TextView ccInputBetPrice;
     public final TextView ccInputBetTittle;
-    public final EditText ccInputForm;
+    public final KeyboardEditText ccInputForm;
     public final TextView ccInputTittle;
     public final TextView ccItemDescription;
     public final AppCompatImageView ccItemImage;
@@ -57,7 +57,7 @@ public final class AuctionCurrentContainerBinding implements ViewBinding {
     public final Guideline ccVerticalMenuName;
     private final ConstraintLayout rootView;
 
-    private AuctionCurrentContainerBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, AppCompatImageView appCompatImageView, AppCompatImageView appCompatImageView2, AppCompatImageView appCompatImageView3, AppCompatImageView appCompatImageView4, ConstraintLayout constraintLayout2, Guideline guideline, Guideline guideline2, Guideline guideline3, Guideline guideline4, Guideline guideline5, Guideline guideline6, Guideline guideline7, LinearLayout linearLayout2, TextView textView, TextView textView2, TextView textView3, EditText editText, TextView textView4, TextView textView5, AppCompatImageView appCompatImageView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, RelativeLayout relativeLayout, RecyclerView recyclerView, Guideline guideline8, Guideline guideline9, Guideline guideline10, Guideline guideline11, Guideline guideline12, Guideline guideline13) {
+    private AuctionCurrentContainerBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, AppCompatImageView appCompatImageView, AppCompatImageView appCompatImageView2, AppCompatImageView appCompatImageView3, AppCompatImageView appCompatImageView4, ConstraintLayout constraintLayout2, Guideline guideline, Guideline guideline2, Guideline guideline3, Guideline guideline4, Guideline guideline5, Guideline guideline6, Guideline guideline7, LinearLayout linearLayout2, TextView textView, TextView textView2, TextView textView3, KeyboardEditText keyboardEditText, TextView textView4, TextView textView5, AppCompatImageView appCompatImageView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, TextView textView15, RelativeLayout relativeLayout, RecyclerView recyclerView, Guideline guideline8, Guideline guideline9, Guideline guideline10, Guideline guideline11, Guideline guideline12, Guideline guideline13) {
         this.rootView = constraintLayout;
         this.acBetBg = linearLayout;
         this.acExitButton = appCompatImageView;
@@ -76,7 +76,7 @@ public final class AuctionCurrentContainerBinding implements ViewBinding {
         this.ccInputBetName = textView;
         this.ccInputBetPrice = textView2;
         this.ccInputBetTittle = textView3;
-        this.ccInputForm = editText;
+        this.ccInputForm = keyboardEditText;
         this.ccInputTittle = textView4;
         this.ccItemDescription = textView5;
         this.ccItemImage = appCompatImageView5;
@@ -168,8 +168,8 @@ public final class AuctionCurrentContainerBinding implements ViewBinding {
                                                                     TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                     if (textView3 != null) {
                                                                         i = R.id.cc_input_form;
-                                                                        EditText editText = (EditText) ViewBindings.findChildViewById(view, i);
-                                                                        if (editText != null) {
+                                                                        KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(view, i);
+                                                                        if (keyboardEditText != null) {
                                                                             i = R.id.cc_input_tittle;
                                                                             TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                             if (textView4 != null) {
@@ -233,7 +233,7 @@ public final class AuctionCurrentContainerBinding implements ViewBinding {
                                                                                                                                                             i = R.id.cc_vertical_menu_name;
                                                                                                                                                             Guideline guideline13 = (Guideline) ViewBindings.findChildViewById(view, i);
                                                                                                                                                             if (guideline13 != null) {
-                                                                                                                                                                return new AuctionCurrentContainerBinding(constraintLayout, linearLayout, appCompatImageView, appCompatImageView2, appCompatImageView3, appCompatImageView4, constraintLayout, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, linearLayout2, textView, textView2, textView3, editText, textView4, textView5, appCompatImageView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, relativeLayout, recyclerView, guideline8, guideline9, guideline10, guideline11, guideline12, guideline13);
+                                                                                                                                                                return new AuctionCurrentContainerBinding(constraintLayout, linearLayout, appCompatImageView, appCompatImageView2, appCompatImageView3, appCompatImageView4, constraintLayout, guideline, guideline2, guideline3, guideline4, guideline5, guideline6, guideline7, linearLayout2, textView, textView2, textView3, keyboardEditText, textView4, textView5, appCompatImageView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, relativeLayout, recyclerView, guideline8, guideline9, guideline10, guideline11, guideline12, guideline13);
                                                                                                                                                             }
                                                                                                                                                         }
                                                                                                                                                     }

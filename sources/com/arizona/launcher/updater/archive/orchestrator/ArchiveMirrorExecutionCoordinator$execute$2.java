@@ -2,6 +2,7 @@ package com.arizona.launcher.updater.archive.orchestrator;
 
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdaterResult;
 import com.arizona.launcher.updater.archive.planner.ArchiveUpdatePlan;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -55,7 +56,7 @@ public final class ArchiveMirrorExecutionCoordinator$execute$2 extends SuspendLa
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArchiveMirrorExecutionCoordinator.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterResult;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCoordinator$execute$2$1", f = "ArchiveMirrorExecutionCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {76, 84, 95}, m = "invokeSuspend", n = {"server", "mirrorsRemaining", "progressToken", "server", "result", "mirrorsRemaining", "progressToken", "server", "result", "failure", "mirrorsRemaining", "progressToken", "shouldRotateMirror"}, nl = {77, 85, 96}, s = {"L$0", "I$0", "J$0", "L$0", "L$1", "I$0", "J$0", "L$0", "L$1", "L$2", "I$0", "J$0", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCoordinator$execute$2$1", f = "ArchiveMirrorExecutionCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {76, 84, 95}, m = "invokeSuspend", n = {"server", "mirrorsRemaining", "progressToken", "server", "result", "mirrorsRemaining", "progressToken", "server", "result", "failure", "mirrorsRemaining", "progressToken", "shouldRotateMirror"}, nl = {77, SettingsMenuDefaults.DEFAULT_VIDEO_RENDER_SCALE, 96}, s = {"L$0", "I$0", "J$0", "L$0", "L$1", "I$0", "J$0", "L$0", "L$1", "L$2", "I$0", "J$0", "Z$0"}, v = 2)
     /* renamed from: com.arizona.launcher.updater.archive.orchestrator.ArchiveMirrorExecutionCoordinator$execute$2$1  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ArchiveUpdaterResult>, Object> {

@@ -1,7 +1,6 @@
 package kotlinx.datetime.format;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -119,7 +118,7 @@ public final class IncompleteUtcOffset implements UtcOffsetFieldContainer, Copya
     public String toString() {
         StringBuilder sb = new StringBuilder();
         Boolean offsetIsNegative = getOffsetIsNegative();
-        StringBuilder append = sb.append(offsetIsNegative != null ? offsetIsNegative.booleanValue() ? Constants.FILENAME_SEQUENCE_SEPARATOR : "+" : " ");
+        StringBuilder append = sb.append(offsetIsNegative != null ? offsetIsNegative.booleanValue() ? "-" : "+" : " ");
         Integer offsetHours = getOffsetHours();
         if (offsetHours == null) {
             offsetHours = "??";

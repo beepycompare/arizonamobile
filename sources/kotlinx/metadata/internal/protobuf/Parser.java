@@ -1,7 +1,7 @@
 package kotlinx.metadata.internal.protobuf;
 
 import java.io.InputStream;
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public interface Parser<MessageType> {
     MessageType parseDelimitedFrom(InputStream inputStream) throws InvalidProtocolBufferException;
 

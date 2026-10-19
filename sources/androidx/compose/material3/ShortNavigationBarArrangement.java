@@ -1,6 +1,5 @@
 package androidx.compose.material3;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -84,6 +83,6 @@ public final class ShortNavigationBarArrangement {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m2929toStringimpl(int i) {
-        return m2927equalsimpl0(i, EqualWeight) ? "EqualWeight" : m2927equalsimpl0(i, Centered) ? "Centered" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m2927equalsimpl0(i, EqualWeight) ? "EqualWeight" : m2927equalsimpl0(i, Centered) ? "Centered" : "Unknown";
     }
 }

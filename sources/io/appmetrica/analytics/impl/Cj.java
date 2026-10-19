@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 import java.lang.ref.WeakReference;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Cj implements InterfaceC0388l {
+public final class Cj implements InterfaceC0383l {
 
     /* renamed from: a  reason: collision with root package name */
-    public C0663vf f502a;
+    public C0658vf f505a;
     public ScreenInfo b;
     public boolean c;
     public boolean d;
@@ -20,18 +20,18 @@ public final class Cj implements InterfaceC0388l {
     public final synchronized void a(Activity activity) {
         this.f = new WeakReference(activity);
         if (!this.d) {
-            if (this.f502a == null) {
-                this.f502a = C0574s4.l().b(activity);
+            if (this.f505a == null) {
+                this.f505a = C0569s4.l().b(activity);
             }
-            C0663vf c0663vf = this.f502a;
-            Intrinsics.checkNotNull(c0663vf);
-            this.b = c0663vf.p();
-            if (this.f502a == null) {
-                this.f502a = C0574s4.l().b(activity);
+            C0658vf c0658vf = this.f505a;
+            Intrinsics.checkNotNull(c0658vf);
+            this.b = c0658vf.p();
+            if (this.f505a == null) {
+                this.f505a = C0569s4.l().b(activity);
             }
-            C0663vf c0663vf2 = this.f502a;
-            Intrinsics.checkNotNull(c0663vf2);
-            this.c = c0663vf2.t();
+            C0658vf c0658vf2 = this.f505a;
+            Intrinsics.checkNotNull(c0658vf2);
+            this.c = c0658vf2.t();
             this.d = true;
         }
         if (this.b == null) {
@@ -47,29 +47,29 @@ public final class Cj implements InterfaceC0388l {
                 return;
             }
             this.b = a2;
-            if (this.f502a == null) {
-                this.f502a = C0574s4.l().b(context);
+            if (this.f505a == null) {
+                this.f505a = C0569s4.l().b(context);
             }
-            C0663vf c0663vf = this.f502a;
-            Intrinsics.checkNotNull(c0663vf);
-            c0663vf.a(this.b);
+            C0658vf c0658vf = this.f505a;
+            Intrinsics.checkNotNull(c0658vf);
+            c0658vf.a(this.b);
         }
     }
 
     public final synchronized ScreenInfo a(Context context) {
         if (!this.d) {
-            if (this.f502a == null) {
-                this.f502a = C0574s4.l().b(context);
+            if (this.f505a == null) {
+                this.f505a = C0569s4.l().b(context);
             }
-            C0663vf c0663vf = this.f502a;
-            Intrinsics.checkNotNull(c0663vf);
-            this.b = c0663vf.p();
-            if (this.f502a == null) {
-                this.f502a = C0574s4.l().b(context);
+            C0658vf c0658vf = this.f505a;
+            Intrinsics.checkNotNull(c0658vf);
+            this.b = c0658vf.p();
+            if (this.f505a == null) {
+                this.f505a = C0569s4.l().b(context);
             }
-            C0663vf c0663vf2 = this.f502a;
-            Intrinsics.checkNotNull(c0663vf2);
-            this.c = c0663vf2.t();
+            C0658vf c0658vf2 = this.f505a;
+            Intrinsics.checkNotNull(c0658vf2);
+            this.c = c0658vf2.t();
             this.d = true;
         }
         b((Context) this.f.get());
@@ -78,12 +78,12 @@ public final class Cj implements InterfaceC0388l {
                 if (!this.c) {
                     b(context);
                     this.c = true;
-                    if (this.f502a == null) {
-                        this.f502a = C0574s4.l().b(context);
+                    if (this.f505a == null) {
+                        this.f505a = C0569s4.l().b(context);
                     }
-                    C0663vf c0663vf3 = this.f502a;
-                    Intrinsics.checkNotNull(c0663vf3);
-                    c0663vf3.v();
+                    C0658vf c0658vf3 = this.f505a;
+                    Intrinsics.checkNotNull(c0658vf3);
+                    c0658vf3.v();
                 }
             } else {
                 b(context);
@@ -92,7 +92,7 @@ public final class Cj implements InterfaceC0388l {
         return this.b;
     }
 
-    public final void a(C0663vf c0663vf) {
-        this.f502a = c0663vf;
+    public final void a(C0658vf c0658vf) {
+        this.f505a = c0658vf;
     }
 }

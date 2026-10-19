@@ -8,6 +8,7 @@ import com.airbnb.lottie.model.content.Mask;
 import com.airbnb.lottie.parser.moshi.JsonReader;
 import com.airbnb.lottie.utils.Logger;
 import com.arizona.launcher.UpdateActivity;
+import com.google.android.gms.location.LocationRequest;
 import java.io.IOException;
 /* loaded from: classes3.dex */
 class MaskParser {
@@ -87,7 +88,7 @@ class MaskParser {
                             }
                             c = 65535;
                             break;
-                        case 105:
+                        case LocationRequest.PRIORITY_NO_POWER /* 105 */:
                             if (nextString.equals(CmcdData.OBJECT_TYPE_INIT_SEGMENT)) {
                                 c = 1;
                                 break;

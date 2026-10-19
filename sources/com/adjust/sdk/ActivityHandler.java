@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Process;
 import android.text.TextUtils;
+import androidx.appcompat.app.AppCompatDelegate;
 import com.adjust.sdk.SystemLifecycle;
 import com.adjust.sdk.network.ActivityPackageSender;
 import com.adjust.sdk.network.UtilNetworking;
@@ -14,6 +15,7 @@ import com.adjust.sdk.scheduler.SingleThreadCachedScheduler;
 import com.adjust.sdk.scheduler.ThreadExecutor;
 import com.adjust.sdk.scheduler.TimerCycle;
 import com.adjust.sdk.scheduler.TimerOnce;
+import com.google.android.gms.location.LocationRequest;
 import com.google.firebase.messaging.Constants;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -1851,7 +1853,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             this.logger.warn("Purchase verification aborted because verification callback is null", new Object[0]);
         } else if (this.adjustConfig.isDataResidency) {
             this.logger.warn("Purchase verification not available for data residency users right now", new Object[0]);
-            onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", 109, "Purchase verification not available for data residency users right now"));
+            onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY, "Purchase verification not available for data residency users right now"));
         } else if (!checkActivityStateI(this.activityState)) {
             onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", 102, "Purchase verification aborted because SDK is still not initialized"));
             this.logger.warn("Purchase verification aborted because SDK is still not initialized", new Object[0]);
@@ -1883,7 +1885,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             this.logger.warn("Purchase verification aborted because verification callback is null", new Object[0]);
         } else if (this.adjustConfig.isDataResidency) {
             this.logger.warn("Purchase verification not available for data residency users right now", new Object[0]);
-            onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", 109, "Purchase verification not available for data residency users right now"));
+            onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY, "Purchase verification not available for data residency users right now"));
         } else if (!checkActivityStateI(this.activityState)) {
             onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", 102, "Purchase verification aborted because SDK is still not initialized"));
             this.logger.warn("Purchase verification aborted because SDK is still not initialized", new Object[0]);
@@ -1895,7 +1897,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             this.logger.warn("Purchase verification aborted because user is GDPR forgotten", new Object[0]);
         } else if (adjustPlayStorePurchase == null) {
             this.logger.warn("Purchase verification aborted because purchase instance is null", new Object[0]);
-            onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", 105, "Purchase verification aborted because purchase instance is null"));
+            onPurchaseVerificationFinishedListener.onVerificationFinished(new AdjustPurchaseVerificationResult("not_verified", LocationRequest.PRIORITY_NO_POWER, "Purchase verification aborted because purchase instance is null"));
         } else {
             PackageBuilder packageBuilder = new PackageBuilder(this.adjustConfig, this.deviceInfo, this.activityState, this.globalParameters, this.firstSessionDelayManager, System.currentTimeMillis());
             packageBuilder.internalState = this.internalState;
@@ -2362,7 +2364,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
             return;
         }
         firstSessionDelayManager.c = 4;
-        firstSessionDelayManager.f166a.initI();
+        firstSessionDelayManager.f169a.initI();
         ArrayList arrayList = firstSessionDelayManager.b;
         int size = arrayList.size();
         int i = 0;
@@ -2420,12 +2422,12 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         readActivityStateI(adjustConfig.context);
         readEventMetadataI(adjustConfig.context);
         FirstSessionDelayManager firstSessionDelayManager = this.firstSessionDelayManager;
-        if (firstSessionDelayManager.f166a.getActivityState() == null && firstSessionDelayManager.f166a.getAdjustConfig().isFirstSessionDelayEnabled) {
+        if (firstSessionDelayManager.f169a.getActivityState() == null && firstSessionDelayManager.f169a.getAdjustConfig().isFirstSessionDelayEnabled) {
             firstSessionDelayManager.c = 3;
             return;
         }
         firstSessionDelayManager.c = 2;
-        firstSessionDelayManager.f166a.initI();
+        firstSessionDelayManager.f169a.initI();
         ArrayList arrayList = firstSessionDelayManager.b;
         int size = arrayList.size();
         int i = 0;
@@ -2556,7 +2558,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f166a.getAdjustConfig().coppaComplianceEnabled = z;
+        firstSessionDelayManager.f169a.getAdjustConfig().coppaComplianceEnabled = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -2577,7 +2579,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f166a.getAdjustConfig().externalDeviceId = str;
+        firstSessionDelayManager.f169a.getAdjustConfig().externalDeviceId = str;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -2598,7 +2600,7 @@ public class ActivityHandler implements IActivityHandler, SystemLifecycle.System
         if (firstSessionDelayManager.c != 3) {
             return;
         }
-        firstSessionDelayManager.f166a.getAdjustConfig().playStoreKidsComplianceEnabled = z;
+        firstSessionDelayManager.f169a.getAdjustConfig().playStoreKidsComplianceEnabled = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

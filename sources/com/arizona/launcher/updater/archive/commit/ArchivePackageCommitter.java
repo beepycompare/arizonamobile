@@ -65,7 +65,7 @@ public final class ArchivePackageCommitter {
     }
 
     public /* synthetic */ ArchivePackageCommitter(File file, File file2, AndroidArchiveCommitFileOps androidArchiveCommitFileOps, AnonymousClass1 anonymousClass1, JvmArchiveDirectoryCreator jvmArchiveDirectoryCreator, Function2 function2, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(file, (i & 2) != 0 ? new File(file, ".archive-installing") : file2, (i & 4) != 0 ? AndroidArchiveCommitFileOps.INSTANCE : androidArchiveCommitFileOps, (i & 8) != 0 ? new AnonymousClass1(WholeFileCrc32Verifier.INSTANCE) : anonymousClass1, (i & 16) != 0 ? JvmArchiveDirectoryCreator.INSTANCE : jvmArchiveDirectoryCreator, (i & 32) != 0 ? new Function2() { // from class: com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter$$ExternalSyntheticLambda0
+        this(file, (i & 2) != 0 ? new File(file, DEFAULT_WORK_DIRECTORY) : file2, (i & 4) != 0 ? AndroidArchiveCommitFileOps.INSTANCE : androidArchiveCommitFileOps, (i & 8) != 0 ? new AnonymousClass1(WholeFileCrc32Verifier.INSTANCE) : anonymousClass1, (i & 16) != 0 ? JvmArchiveDirectoryCreator.INSTANCE : jvmArchiveDirectoryCreator, (i & 32) != 0 ? new Function2() { // from class: com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return ArchivePackageCommitter._init_$lambda$0((File) obj, (File) obj2);
@@ -211,7 +211,7 @@ public final class ArchivePackageCommitter {
                         }
                     }
                 }
-                if (!StringsKt.equals((String) CollectionsKt.first((List<? extends Object>) split$default), ".archive-installing", true) && archivePackageFileRecord.getSize() >= 0) {
+                if (!StringsKt.equals((String) CollectionsKt.first((List<? extends Object>) split$default), DEFAULT_WORK_DIRECTORY, true) && archivePackageFileRecord.getSize() >= 0) {
                     long crc32 = archivePackageFileRecord.getCrc32();
                     if (0 <= crc32 && crc32 < 4294967296L) {
                         Locale ROOT = Locale.ROOT;

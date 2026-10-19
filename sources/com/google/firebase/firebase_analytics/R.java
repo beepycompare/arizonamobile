@@ -1,5 +1,5 @@
 package com.google.firebase.firebase_analytics;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final class R {
     private R() {
     }

@@ -3,13 +3,13 @@ package io.appmetrica.analytics.impl;
 public final class Ci implements El {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Jc f501a;
+    public final /* synthetic */ Jc f504a;
 
     public Ci(Jc jc) {
-        this.f501a = jc;
+        this.f504a = jc;
     }
 
     public final boolean a() {
-        return this.f501a.b.f();
+        return this.f504a.b.f();
     }
 }

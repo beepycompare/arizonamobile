@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.model;
 
 import com.google.firebase.crashlytics.internal.model.StaticSessionData;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_StaticSessionData_OsData extends StaticSessionData.OsData {
     private final boolean isRooted;
     private final String osCodeName;

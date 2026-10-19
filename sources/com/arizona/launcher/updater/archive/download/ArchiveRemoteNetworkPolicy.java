@@ -1,6 +1,7 @@
 package com.arizona.launcher.updater.archive.download;
 
 import com.adjust.sdk.Constants;
+import com.google.android.gms.common.internal.ImagesContract;
 import java.net.InetAddress;
 import java.net.URI;
 import java.util.Collection;
@@ -15,7 +16,7 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: ArchiveNetworkSecurity.kt */
-@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0012\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0005J\u000e\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bJ\u000e\u0010\f\u001a\u00020\u0005*\u0004\u0018\u00010\u0007H\u0002J\u000e\u0010\r\u001a\u0004\u0018\u00010\u000b*\u00020\u0007H\u0002J\u0010\u0010\u000e\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0010H\u0002R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u0013"}, d2 = {"Lcom/arizona/launcher/updater/archive/download/ArchiveRemoteNetworkPolicy;", "", "<init>", "()V", "isAllowedUrl", "", "url", "", "allowInsecureLoopback", "isUnsafeAddress", "address", "Ljava/net/InetAddress;", "isLoopbackHostName", "toLiteralInetAddressOrNull", "isUnsafeIpv4", "bytes", "", "IPV4_LITERAL", "Lkotlin/text/Regex;", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0012\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0005J\u000e\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u000bJ\u000e\u0010\f\u001a\u00020\u0005*\u0004\u0018\u00010\u0007H\u0002J\u000e\u0010\r\u001a\u0004\u0018\u00010\u000b*\u00020\u0007H\u0002J\u0010\u0010\u000e\u001a\u00020\u00052\u0006\u0010\u000f\u001a\u00020\u0010H\u0002R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u0013"}, d2 = {"Lcom/arizona/launcher/updater/archive/download/ArchiveRemoteNetworkPolicy;", "", "<init>", "()V", "isAllowedUrl", "", ImagesContract.URL, "", "allowInsecureLoopback", "isUnsafeAddress", "address", "Ljava/net/InetAddress;", "isLoopbackHostName", "toLiteralInetAddressOrNull", "isUnsafeIpv4", "bytes", "", "IPV4_LITERAL", "Lkotlin/text/Regex;", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveRemoteNetworkPolicy {
     public static final int $stable = 0;
@@ -26,22 +27,22 @@ public final class ArchiveRemoteNetworkPolicy {
     }
 
     public final boolean isAllowedUrl(String url, boolean z) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         String str;
         String str2;
         Intrinsics.checkNotNullParameter(url, "url");
         try {
             Result.Companion companion = Result.Companion;
             ArchiveRemoteNetworkPolicy archiveRemoteNetworkPolicy = this;
-            m9921constructorimpl = Result.m9921constructorimpl(new URI(url));
+            m9974constructorimpl = Result.m9974constructorimpl(new URI(url));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = null;
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = null;
         }
-        URI uri = (URI) m9921constructorimpl;
+        URI uri = (URI) m9974constructorimpl;
         if (uri != null) {
             String host = uri.getHost();
             if (host != null) {
@@ -98,19 +99,19 @@ public final class ArchiveRemoteNetworkPolicy {
     }
 
     private final InetAddress toLiteralInetAddressOrNull(String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         String str2 = str;
         boolean matches = IPV4_LITERAL.matches(str2);
         boolean contains$default = StringsKt.contains$default((CharSequence) str2, (char) AbstractJsonLexerKt.COLON, false, 2, (Object) null);
         if (matches || contains$default) {
             try {
                 Result.Companion companion = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(InetAddress.getByName(str));
+                m9974constructorimpl = Result.m9974constructorimpl(InetAddress.getByName(str));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
             }
-            return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+            return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
         }
         return null;
     }

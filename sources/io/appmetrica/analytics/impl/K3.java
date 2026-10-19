@@ -15,7 +15,7 @@ public final class K3 implements ProtobufConverter {
     /* renamed from: a */
     public final O3 fromModel(J3 j3) {
         O3 o3 = new O3();
-        o3.f698a = a(j3.f607a);
+        o3.f701a = a(j3.f610a);
         int size = j3.b.size();
         L3[] l3Arr = new L3[size];
         for (int i = 0; i < size; i++) {
@@ -28,7 +28,7 @@ public final class K3 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final J3 toModel(O3 o3) {
-        L3 l3 = o3.f698a;
+        L3 l3 = o3.f701a;
         if (l3 == null) {
             l3 = new L3();
         }
@@ -44,7 +44,7 @@ public final class K3 implements ProtobufConverter {
     public static L3 a(I3 i3) {
         N3 n3;
         L3 l3 = new L3();
-        Map map = i3.f589a;
+        Map map = i3.f592a;
         int i = 0;
         if (map != null) {
             n3 = new N3();
@@ -53,18 +53,18 @@ public final class K3 implements ProtobufConverter {
             for (int i2 = 0; i2 < size; i2++) {
                 m3Arr[i2] = new M3();
             }
-            n3.f678a = m3Arr;
+            n3.f681a = m3Arr;
             int i4 = 0;
             for (Map.Entry entry : map.entrySet()) {
-                M3 m3 = n3.f678a[i4];
-                m3.f659a = (String) entry.getKey();
+                M3 m3 = n3.f681a[i4];
+                m3.f662a = (String) entry.getKey();
                 m3.b = (String) entry.getValue();
                 i4++;
             }
         } else {
             n3 = null;
         }
-        l3.f641a = n3;
+        l3.f644a = n3;
         int ordinal = i3.b.ordinal();
         if (ordinal != 0) {
             if (ordinal != 1) {
@@ -85,13 +85,13 @@ public final class K3 implements ProtobufConverter {
 
     public static I3 a(L3 l3) {
         LinkedHashMap linkedHashMap;
-        EnumC0397l8 enumC0397l8;
-        N3 n3 = l3.f641a;
+        EnumC0392l8 enumC0392l8;
+        N3 n3 = l3.f644a;
         if (n3 != null) {
-            M3[] m3Arr = n3.f678a;
+            M3[] m3Arr = n3.f681a;
             linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(m3Arr.length), 16));
             for (M3 m3 : m3Arr) {
-                Pair pair = TuplesKt.to(m3.f659a, m3.b);
+                Pair pair = TuplesKt.to(m3.f662a, m3.b);
                 linkedHashMap.put(pair.getFirst(), pair.getSecond());
             }
         } else {
@@ -99,16 +99,16 @@ public final class K3 implements ProtobufConverter {
         }
         int i = l3.b;
         if (i == 0) {
-            enumC0397l8 = EnumC0397l8.c;
+            enumC0392l8 = EnumC0392l8.c;
         } else if (i == 1) {
-            enumC0397l8 = EnumC0397l8.d;
+            enumC0392l8 = EnumC0392l8.d;
         } else if (i == 2) {
-            enumC0397l8 = EnumC0397l8.e;
+            enumC0392l8 = EnumC0392l8.e;
         } else if (i != 3) {
-            enumC0397l8 = EnumC0397l8.c;
+            enumC0392l8 = EnumC0392l8.c;
         } else {
-            enumC0397l8 = EnumC0397l8.f;
+            enumC0392l8 = EnumC0392l8.f;
         }
-        return new I3(linkedHashMap, enumC0397l8);
+        return new I3(linkedHashMap, enumC0392l8);
     }
 }

@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -102,6 +101,6 @@ public final class PathOperation {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5652toStringimpl(int i) {
-        return m5650equalsimpl0(i, Difference) ? "Difference" : m5650equalsimpl0(i, Intersect) ? "Intersect" : m5650equalsimpl0(i, Union) ? "Union" : m5650equalsimpl0(i, Xor) ? "Xor" : m5650equalsimpl0(i, ReverseDifference) ? "ReverseDifference" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5650equalsimpl0(i, Difference) ? "Difference" : m5650equalsimpl0(i, Intersect) ? "Intersect" : m5650equalsimpl0(i, Union) ? "Union" : m5650equalsimpl0(i, Xor) ? "Xor" : m5650equalsimpl0(i, ReverseDifference) ? "ReverseDifference" : "Unknown";
     }
 }

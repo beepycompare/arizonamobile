@@ -14,7 +14,6 @@ import androidx.compose.ui.input.pointer.SuspendingPointerInputModifierNode;
 import androidx.compose.ui.node.CompositionLocalConsumerModifierNode;
 import androidx.compose.ui.node.DelegatingNode;
 import androidx.compose.ui.node.PointerInputModifierNode;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.List;
 import java.util.concurrent.CancellationException;
@@ -196,7 +195,7 @@ public final class TransformableNode extends DelegatingNode implements PointerIn
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* compiled from: Transformable.kt */
                 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/foundation/gestures/TransformScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-                @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1$1", f = "Transformable.kt", i = {0}, l = {DownloaderService.STATUS_PENDING}, m = "invokeSuspend", n = {"$this$transform"}, s = {"L$0"}, v = 1)
+                @DebugMetadata(c = "androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1$1", f = "Transformable.kt", i = {0}, l = {190}, m = "invokeSuspend", n = {"$this$transform"}, s = {"L$0"}, v = 1)
                 /* renamed from: androidx.compose.foundation.gestures.TransformableNode$pointerInputNode$1$1$1$1  reason: invalid class name and collision with other inner class name */
                 /* loaded from: classes.dex */
                 public static final class C00091 extends SuspendLambda implements Function2<TransformScope, Continuation<? super Unit>, Object> {

@@ -9,10 +9,10 @@ public final class Zf extends Ta {
 
     @Override // io.appmetrica.analytics.impl.Ta
     /* renamed from: a */
-    public final int b(C0131b0 c0131b0) {
-        if (c0131b0 == null) {
+    public final int b(C0126b0 c0126b0) {
+        if (c0126b0 == null) {
             return 0;
         }
-        return StringUtils.getUtf8BytesLength(c0131b0.b) + 12;
+        return StringUtils.getUtf8BytesLength(c0126b0.b) + 12;
     }
 }

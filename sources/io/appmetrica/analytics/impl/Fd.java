@@ -3,12 +3,12 @@ package io.appmetrica.analytics.impl;
 public final class Fd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0311i f547a;
-    public final C0310ho b = new C0310ho(new Ce("Context"));
-    public final C0310ho c = new C0310ho(new Ce("Session extra key"));
-    public final C0310ho d = new C0310ho(new C0337j0());
+    public final C0306i f550a;
+    public final C0305ho b = new C0305ho(new Ce("Context"));
+    public final C0305ho c = new C0305ho(new Ce("Session extra key"));
+    public final C0305ho d = new C0305ho(new C0332j0());
 
     public Fd(B0 b0) {
-        this.f547a = new C0311i(b0);
+        this.f550a = new C0306i(b0);
     }
 }

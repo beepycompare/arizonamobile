@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Utils.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0}, l = {942}, m = "getArchiveEntryBytesWithFormat", n = {"folderName", "item", "coroutineContext", "$this$withLock_u24default$iv"}, nl = {943}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.utils.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0}, l = {943}, m = "getArchiveEntryBytesWithFormat", n = {"folderName", "item", "coroutineContext", "$this$withLock_u24default$iv"}, nl = {944}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
 /* loaded from: classes6.dex */
 public final class UtilsKt$getArchiveEntryBytesWithFormat$1 extends ContinuationImpl {
     Object L$0;

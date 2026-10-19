@@ -5,18 +5,18 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class Ld extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Nd f648a;
+    public final /* synthetic */ Nd f651a;
     public final /* synthetic */ String b;
     public final /* synthetic */ byte[] c;
 
     public Ld(Nd nd, String str, byte[] bArr) {
-        this.f648a = nd;
+        this.f651a = nd;
         this.b = str;
         this.c = bArr;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        Nd.a(this.f648a).setSessionExtra(this.b, this.c);
+        Nd.a(this.f651a).setSessionExtra(this.b, this.c);
     }
 }

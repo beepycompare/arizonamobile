@@ -80,7 +80,7 @@ public final class Menu extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(findViewById11, "findViewById(...)");
         this.settingsButton = (RelativeLayout) findViewById11;
         constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         ((AppCompatImageView) constraintLayout.findViewById(R.id.closeImage)).setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.menu.Menu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

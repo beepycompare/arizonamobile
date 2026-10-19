@@ -2,6 +2,7 @@ package androidx.core.graphics;
 
 import android.graphics.Path;
 import android.util.Log;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayList;
@@ -315,8 +316,8 @@ public final class PathParser {
                 case 'L':
                 case 'M':
                 case 'T':
-                case 'l':
-                case 'm':
+                case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR /* 108 */:
+                case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY /* 109 */:
                 case 't':
                 default:
                     i2 = 2;

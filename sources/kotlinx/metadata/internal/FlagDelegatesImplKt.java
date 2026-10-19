@@ -1,6 +1,5 @@
 package kotlinx.metadata.internal;
 
-import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -23,7 +22,7 @@ import kotlinx.metadata.Visibility;
 import kotlinx.metadata.internal.metadata.ProtoBuf;
 import kotlinx.metadata.internal.metadata.deserialization.Flags;
 /* compiled from: FlagDelegatesImpl.kt */
-@Metadata(d1 = {"\u0000Z\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a(\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000\u001a\u0016\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00070\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\f\u001a\b\u0012\u0004\u0012\u00020\r0\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a.\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00100\u000f\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000\u001a.\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00120\u000f\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000\u001a\u0016\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00160\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001a0\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a.\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u001c0\u000f\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000¨\u0006\u001d"}, d2 = {"annotationsOn", "Lkotlinx/metadata/internal/BooleanFlagDelegate;", "Node", DownloaderServiceMarshaller.PARAMS_FLAGS, "Lkotlin/reflect/KMutableProperty1;", "", "classBooleanFlag", "Lkotlinx/metadata/KmClass;", "flag", "Lkotlinx/metadata/internal/FlagImpl;", "constructorBooleanFlag", "Lkotlinx/metadata/KmConstructor;", "functionBooleanFlag", "Lkotlinx/metadata/KmFunction;", "memberKindDelegate", "Lkotlinx/metadata/internal/EnumFlagDelegate;", "Lkotlinx/metadata/MemberKind;", "modalityDelegate", "Lkotlinx/metadata/Modality;", "propertyAccessorBooleanFlag", "Lkotlinx/metadata/KmPropertyAccessorAttributes;", "propertyBooleanFlag", "Lkotlinx/metadata/KmProperty;", "typeBooleanFlag", "Lkotlinx/metadata/KmType;", "valueParameterBooleanFlag", "Lkotlinx/metadata/KmValueParameter;", "visibilityDelegate", "Lkotlinx/metadata/Visibility;", "kotlinx-metadata"}, k = 2, mv = {1, 9, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a(\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000\u001a\u0016\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00070\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u000b0\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\f\u001a\b\u0012\u0004\u0012\u00020\r0\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a.\u0010\u000e\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00100\u000f\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000\u001a.\u0010\u0011\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00120\u000f\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000\u001a\u0016\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00140\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00160\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a\u0016\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001a0\u00012\u0006\u0010\b\u001a\u00020\tH\u0000\u001a.\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u001c0\u000f\"\u0004\b\u0000\u0010\u00022\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u00020\u00050\u0004H\u0000¨\u0006\u001d"}, d2 = {"annotationsOn", "Lkotlinx/metadata/internal/BooleanFlagDelegate;", "Node", "flags", "Lkotlin/reflect/KMutableProperty1;", "", "classBooleanFlag", "Lkotlinx/metadata/KmClass;", "flag", "Lkotlinx/metadata/internal/FlagImpl;", "constructorBooleanFlag", "Lkotlinx/metadata/KmConstructor;", "functionBooleanFlag", "Lkotlinx/metadata/KmFunction;", "memberKindDelegate", "Lkotlinx/metadata/internal/EnumFlagDelegate;", "Lkotlinx/metadata/MemberKind;", "modalityDelegate", "Lkotlinx/metadata/Modality;", "propertyAccessorBooleanFlag", "Lkotlinx/metadata/KmPropertyAccessorAttributes;", "propertyBooleanFlag", "Lkotlinx/metadata/KmProperty;", "typeBooleanFlag", "Lkotlinx/metadata/KmType;", "valueParameterBooleanFlag", "Lkotlinx/metadata/KmValueParameter;", "visibilityDelegate", "Lkotlinx/metadata/Visibility;", "kotlinx-metadata"}, k = 2, mv = {1, 9, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class FlagDelegatesImplKt {
     public static final <Node> EnumFlagDelegate<Node, Visibility> visibilityDelegate(KMutableProperty1<Node, Integer> flags) {
@@ -75,7 +74,7 @@ public final class FlagDelegatesImplKt {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -105,7 +104,7 @@ public final class FlagDelegatesImplKt {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -135,7 +134,7 @@ public final class FlagDelegatesImplKt {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -165,7 +164,7 @@ public final class FlagDelegatesImplKt {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -195,7 +194,7 @@ public final class FlagDelegatesImplKt {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -225,7 +224,7 @@ public final class FlagDelegatesImplKt {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference
@@ -255,7 +254,7 @@ public final class FlagDelegatesImplKt {
 
             @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
             public String getName() {
-                return DownloaderServiceMarshaller.PARAMS_FLAGS;
+                return "flags";
             }
 
             @Override // kotlin.jvm.internal.CallableReference

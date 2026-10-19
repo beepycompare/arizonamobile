@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -90,6 +89,6 @@ public final class StrokeCap {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5720toStringimpl(int i) {
-        return m5718equalsimpl0(i, Butt) ? "Butt" : m5718equalsimpl0(i, Round) ? "Round" : m5718equalsimpl0(i, Square) ? "Square" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5718equalsimpl0(i, Butt) ? "Butt" : m5718equalsimpl0(i, Round) ? "Round" : m5718equalsimpl0(i, Square) ? "Square" : "Unknown";
     }
 }

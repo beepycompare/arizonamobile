@@ -3,13 +3,49 @@
     <entry>
         <key>launcher_background
         </key>
-        <value>/assets/images/mobile_launcher/background3.webp
+        <value>/assets/images/mobile_launcher/background4.webp
         </value>
     </entry>
     <entry>
         <key>launcher_background_hash
         </key>
-        <value>2ce5de6729303a5c8d5184a5de7d3383f608b2275daa0bb4ff3a950f859af773
+        <value>e4a6b6e217cdb9170c48dff94d8a390126a64d1a50f04e6ce4f5ef134bfb06a8
+        </value>
+    </entry>
+    <entry>
+        <key>launcher_background_hash_rodina
+        </key>
+        <value>9992adeaf5ae9ade936b1e40498b741943f7cb42e4e22146f2f66360db3ac82b
+        </value>
+    </entry>
+    <entry>
+        <key>launcher_background_rodina
+        </key>
+        <value>/assets/images/mobile_launcher/background6.webp
+        </value>
+    </entry>
+    <entry>
+        <key>cdn_NEWS_AUTH_BASE_URL
+        </key>
+        <value>https://api-samp.arizona-five.com/
+        </value>
+    </entry>
+    <entry>
+        <key>main_api
+        </key>
+        <value>https://api.arizona-five.com
+        </value>
+    </entry>
+    <entry>
+        <key>reserve_resource
+        </key>
+        <value>https://resources.azgames-cdn.ru/
+        </value>
+    </entry>
+    <entry>
+        <key>reserve_hud_ping
+        </key>
+        <value>https://arz-reserve.samp-dl.com/
         </value>
     </entry>
     <entry>
@@ -19,9 +55,9 @@
         </value>
     </entry>
     <entry>
-        <key>reserve_api
+        <key>launcher_DONATE_SHOP_ARIZONA
         </key>
-        <value>https://arz-api-reserve.s-amp.com
+        <value>https://arizona-rp.com/shop
         </value>
     </entry>
     <entry>
@@ -31,9 +67,21 @@
         </value>
     </entry>
     <entry>
-        <key>main_hud_ping
+        <key>reserve_sound
         </key>
-        <value>https://arizona-ping.react.group/
+        <value>https://azgamesound-cdn.ru/
+        </value>
+    </entry>
+    <entry>
+        <key>main_sound
+        </key>
+        <value>https://cdn.azsounds.net/
+        </value>
+    </entry>
+    <entry>
+        <key>main_resource
+        </key>
+        <value>https://cdn.azresources.cloud/
         </value>
     </entry>
     <entry>
@@ -49,21 +97,9 @@
         </value>
     </entry>
     <entry>
-        <key>main_api
+        <key>launcher_DONATE_SHOP_RODINA
         </key>
-        <value>https://api.arizona-five.com
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_channel_arizona
-        </key>
-        <value>https://arz-mob.react-group.tech
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_resource
-        </key>
-        <value>https://resources.azgames-cdn.ru/
+        <value>https://rodina-rp.com/shop
         </value>
     </entry>
     <entry>
@@ -73,51 +109,9 @@
         </value>
     </entry>
     <entry>
-        <key>launcher_DONATE_SHOP_ARIZONA
+        <key>reserve_channel_arizona
         </key>
-        <value>https://arizona-rp.com/shop
-        </value>
-    </entry>
-    <entry>
-        <key>cdn_NEWS_AUTH_BASE_URL
-        </key>
-        <value>https://api-samp.arizona-five.com/
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_server_api
-        </key>
-        <value>https://server-api.azgames-cdn.ru/
-        </value>
-    </entry>
-    <entry>
-        <key>launcher_background_hash_rodina
-        </key>
-        <value>d9ccf2bb6a9000c58445e63ab0b624519c74450ecef47991dc9b6f9b99e4047b
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_hud_ping
-        </key>
-        <value>https://arz-reserve.samp-dl.com/
-        </value>
-    </entry>
-    <entry>
-        <key>main_resource
-        </key>
-        <value>https://cdn.azresources.cloud/
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_sound
-        </key>
-        <value>https://azgamesound-cdn.ru/
-        </value>
-    </entry>
-    <entry>
-        <key>launcher_DONATE_SHOP_RODINA
-        </key>
-        <value>https://rodina-rp.com/shop
+        <value>https://arz-mob.react-group.tech
         </value>
     </entry>
     <entry>
@@ -127,15 +121,21 @@
         </value>
     </entry>
     <entry>
-        <key>main_sound
+        <key>main_hud_ping
         </key>
-        <value>https://cdn.azsounds.net/
+        <value>https://arizona-ping.react.group/
         </value>
     </entry>
     <entry>
-        <key>launcher_background_rodina
+        <key>reserve_api
         </key>
-        <value>/assets/images/mobile_launcher/background5.webp
+        <value>https://arz-api-reserve.s-amp.com
+        </value>
+    </entry>
+    <entry>
+        <key>reserve_server_api
+        </key>
+        <value>https://server-api.azgames-cdn.ru/
         </value>
     </entry>
     <entry>
@@ -172,6 +172,24 @@
         <key>launcher_archive_bootstrap_brazil_enabled
         </key>
         <value>false
+        </value>
+    </entry>
+    <entry>
+        <key>launcher_resource_generation_arizona
+        </key>
+        <value>0
+        </value>
+    </entry>
+    <entry>
+        <key>launcher_resource_generation_rodina
+        </key>
+        <value>0
+        </value>
+    </entry>
+    <entry>
+        <key>launcher_resource_generation_brazil
+        </key>
+        <value>0
         </value>
     </entry>
 </defaults>

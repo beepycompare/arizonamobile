@@ -43,7 +43,7 @@ public final class CinemaEffectPage extends SAMPUIElement {
         CinemaEffectPageBinding bind = CinemaEffectPageBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.cinemaEffectPageBinding = bind;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         bind.cinemaEffectSkip.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.cinemaeffect.CinemaEffectPage$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

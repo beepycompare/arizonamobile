@@ -1,6 +1,7 @@
 package androidx.compose.ui.window;
 
 import android.os.IBinder;
+import androidx.media3.extractor.ts.PsExtractor;
 import kotlin.Deprecated;
 import kotlin.DeprecationLevel;
 import kotlin.Metadata;
@@ -94,7 +95,7 @@ public final class DialogProperties {
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Maintained for binary compatibility")
     public /* synthetic */ DialogProperties(boolean z, boolean z2, SecureFlagPolicy secureFlagPolicy, boolean z3, boolean z4) {
-        this(z, z2, SecureFlagPolicy.Inherit, z3, true, "", 0, null, 192, null);
+        this(z, z2, SecureFlagPolicy.Inherit, z3, true, "", 0, null, PsExtractor.AUDIO_STREAM, null);
     }
 
     public /* synthetic */ DialogProperties(boolean z, boolean z2, SecureFlagPolicy secureFlagPolicy, int i, DefaultConstructorMarker defaultConstructorMarker) {

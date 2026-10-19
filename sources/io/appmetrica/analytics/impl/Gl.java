@@ -9,15 +9,15 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Gl extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0327ig f567a;
+    public final C0322ig f570a;
     public final Dj b;
-    public final InterfaceC0630u8 c;
+    public final InterfaceC0625u8 c;
 
     public Gl(ECommerceProduct eCommerceProduct, ECommerceScreen eCommerceScreen) {
-        this(new C0327ig(eCommerceProduct), new Dj(eCommerceScreen), new Hl());
+        this(new C0322ig(eCommerceProduct), new Dj(eCommerceScreen), new Hl());
     }
 
-    public final InterfaceC0630u8 a() {
+    public final InterfaceC0625u8 a() {
         return this.c;
     }
 
@@ -26,18 +26,18 @@ public final class Gl extends ECommerceEvent {
         return "shown product card info";
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0405lg
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0400lg
     public final List<Xi> toProto() {
         return (List) this.c.fromModel(this);
     }
 
     public final String toString() {
-        return "ShownProductCardInfoEvent{product=" + this.f567a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ShownProductCardInfoEvent{product=" + this.f570a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Gl(C0327ig c0327ig, Dj dj, InterfaceC0630u8 interfaceC0630u8) {
-        this.f567a = c0327ig;
+    public Gl(C0322ig c0322ig, Dj dj, InterfaceC0625u8 interfaceC0625u8) {
+        this.f570a = c0322ig;
         this.b = dj;
-        this.c = interfaceC0630u8;
+        this.c = interfaceC0625u8;
     }
 }

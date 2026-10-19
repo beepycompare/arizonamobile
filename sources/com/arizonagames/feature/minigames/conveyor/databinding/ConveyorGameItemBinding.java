@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.conveyor.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ConveyorGameItemBinding implements ViewBinding {
     public final ImageView ivItem;
     private final FrameLayout rootView;

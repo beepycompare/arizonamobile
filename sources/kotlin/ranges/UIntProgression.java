@@ -1,7 +1,6 @@
 package kotlin.ranges;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.facebook.internal.NativeProtocol;
 import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.UInt;
@@ -9,7 +8,7 @@ import kotlin.internal.UProgressionUtilKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.markers.KMappedMarker;
 /* compiled from: UIntRange.kt */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010(\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0017\u0018\u0000 \u001a2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u001aB!\b@\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00020\u0011H\u0086\u0082\u0004J\n\u0010\u0012\u001a\u00020\u0013H\u0096\u0080\u0004J\u0014\u0010\u0014\u001a\u00020\u00132\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0096\u0082\u0004J\n\u0010\u0017\u001a\u00020\u0006H\u0096\u0080\u0004J\n\u0010\u0018\u001a\u00020\u0019H\u0096\u0080\u0004R\u0017\u0010\t\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0017\u0010\r\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000e\u0010\u000bR\u0015\u0010\u0005\u001a\u00020\u0006X\u0086\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000bÊ\u0001\f\b\u001c\u0012\b\b\u001d\u0012\u0004\b\b(\u001e¨\u0006\u001b"}, d2 = {"Lkotlin/ranges/UIntProgression;", "", "Lkotlin/UInt;", TtmlNode.START, "endInclusive", "step", "", "<init>", "(IIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "first", "getFirst-pVg5ArA", "()I", "I", "last", "getLast-pVg5ArA", "getStep", "iterator", "", "isEmpty", "", "equals", "other", "", "hashCode", "toString", "", "Companion", "kotlin-stdlib", "Lkotlin/SinceKotlin;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "1.5"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\n\n\u0002\u0010(\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0017\u0018\u0000 \u001a2\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u001aB!\b@\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00020\u0011H\u0086\u0082\u0004J\n\u0010\u0012\u001a\u00020\u0013H\u0096\u0080\u0004J\u0014\u0010\u0014\u001a\u00020\u00132\b\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0096\u0082\u0004J\n\u0010\u0017\u001a\u00020\u0006H\u0096\u0080\u0004J\n\u0010\u0018\u001a\u00020\u0019H\u0096\u0080\u0004R\u0017\u0010\t\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\n\u0010\u000bR\u0017\u0010\r\u001a\u00020\u0002X\u0086\u0084\b¢\u0006\n\n\u0002\u0010\f\u001a\u0004\b\u000e\u0010\u000bR\u0015\u0010\u0005\u001a\u00020\u0006X\u0086\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000bÊ\u0001\f\b\u001c\u0012\b\b\u001d\u0012\u0004\b\b(\u001e¨\u0006\u001b"}, d2 = {"Lkotlin/ranges/UIntProgression;", "", "Lkotlin/UInt;", TtmlNode.START, "endInclusive", "step", "", "<init>", "(IIILkotlin/jvm/internal/DefaultConstructorMarker;)V", "first", "getFirst-pVg5ArA", "()I", "I", "last", "getLast-pVg5ArA", "getStep", "iterator", "", "isEmpty", "", "equals", "other", "", "hashCode", "toString", "", "Companion", "kotlin-stdlib", "Lkotlin/SinceKotlin;", "version", "1.5"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public class UIntProgression implements Iterable<UInt>, KMappedMarker {
     public static final Companion Companion = new Companion(null);
@@ -29,17 +28,17 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.first = i;
-        this.last = UProgressionUtilKt.m11167getProgressionLastElementNkh28Cs(i, i2, i3);
+        this.last = UProgressionUtilKt.m11220getProgressionLastElementNkh28Cs(i, i2, i3);
         this.step = i3;
     }
 
     /* renamed from: getFirst-pVg5ArA  reason: not valid java name */
-    public final int m11185getFirstpVg5ArA() {
+    public final int m11238getFirstpVg5ArA() {
         return this.first;
     }
 
     /* renamed from: getLast-pVg5ArA  reason: not valid java name */
-    public final int m11186getLastpVg5ArA() {
+    public final int m11239getLastpVg5ArA() {
         return this.last;
     }
 
@@ -90,10 +89,10 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         int i2 = this.step;
         int i3 = this.first;
         if (i2 > 0) {
-            append = new StringBuilder().append((Object) UInt.m10068toStringimpl(i3)).append("..").append((Object) UInt.m10068toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) UInt.m10121toStringimpl(i3)).append("..").append((Object) UInt.m10121toStringimpl(this.last)).append(" step ");
             i = this.step;
         } else {
-            append = new StringBuilder().append((Object) UInt.m10068toStringimpl(i3)).append(" downTo ").append((Object) UInt.m10068toStringimpl(this.last)).append(" step ");
+            append = new StringBuilder().append((Object) UInt.m10121toStringimpl(i3)).append(" downTo ").append((Object) UInt.m10121toStringimpl(this.last)).append(" step ");
             i = -this.step;
         }
         return append.append(i).toString();
@@ -111,7 +110,7 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
         }
 
         /* renamed from: fromClosedRange-Nkh28Cs  reason: not valid java name */
-        public final UIntProgression m11187fromClosedRangeNkh28Cs(int i, int i2, int i3) {
+        public final UIntProgression m11240fromClosedRangeNkh28Cs(int i, int i2, int i3) {
             return new UIntProgression(i, i2, i3, null);
         }
     }

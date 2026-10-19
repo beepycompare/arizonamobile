@@ -3,7 +3,6 @@ package com.miami.game.core.settings.game_test;
 import androidx.autofill.HintConstants;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.miami.game.core.settings.game_test.GameTestStep;
@@ -717,7 +716,7 @@ public final class GameTestScriptParser {
     private final String normalizeAction(String str) {
         String lowerCase = str.toLowerCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
-        return StringsKt.replace$default(StringsKt.replace$default(lowerCase, Constants.FILENAME_SEQUENCE_SEPARATOR, "_", false, 4, (Object) null), " ", "_", false, 4, (Object) null);
+        return StringsKt.replace$default(StringsKt.replace$default(lowerCase, "-", "_", false, 4, (Object) null), " ", "_", false, 4, (Object) null);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x001d, code lost:
@@ -818,7 +817,7 @@ public final class GameTestScriptParser {
         String str5;
         String optString3;
         String str6;
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         BackendMessageMatcher backendMessageMatcher;
         JSONObject optJSONObject = jSONObject.optJSONObject("match");
         if (optJSONObject != null || (optJSONObject = jSONObject.optJSONObject("matcher")) != null) {
@@ -869,17 +868,17 @@ public final class GameTestScriptParser {
             if (str6 != null) {
                 try {
                     Result.Companion companion = Result.Companion;
-                    m9921constructorimpl = Result.m9921constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
+                    m9974constructorimpl = Result.m9974constructorimpl(new Regex(str6, optBoolean ? SetsKt.setOf(RegexOption.IGNORE_CASE) : SetsKt.emptySet()));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                    m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
                 }
-                Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-                if (m9924exceptionOrNullimpl == null) {
-                    Regex regex = (Regex) m9921constructorimpl;
+                Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+                if (m9977exceptionOrNullimpl == null) {
+                    Regex regex = (Regex) m9974constructorimpl;
                 } else {
                     int i2 = i + 1;
-                    String message = m9924exceptionOrNullimpl.getMessage();
+                    String message = m9977exceptionOrNullimpl.getMessage();
                     if (message == null) {
                         message = "";
                     }

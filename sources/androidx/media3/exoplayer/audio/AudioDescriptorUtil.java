@@ -5,6 +5,7 @@ import android.os.Build;
 import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
+import androidx.media3.extractor.ts.PsExtractor;
 import com.arizona.launcher.MessagingService;
 import com.google.android.material.internal.ViewUtils;
 import com.google.common.base.Ascii;
@@ -93,7 +94,7 @@ public final class AudioDescriptorUtil {
                 r2 |= 16;
             }
             if ((b & 8) != 0) {
-                r2 |= 192;
+                r2 |= PsExtractor.AUDIO_STREAM;
             }
             if ((b & Ascii.DLE) != 0) {
                 r2 |= 1024;

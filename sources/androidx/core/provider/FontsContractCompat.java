@@ -13,6 +13,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.core.graphics.TypefaceCompat;
 import androidx.core.graphics.TypefaceCompatUtil;
 import androidx.core.util.Preconditions;
+import com.adjust.sdk.Constants;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.nio.ByteBuffer;
@@ -161,7 +162,7 @@ public class FontsContractCompat {
         public FontInfo(String str, String str2) {
             this.mUri = new Uri.Builder().scheme("systemfont").authority(str).build();
             this.mTtcIndex = 0;
-            this.mWeight = 400;
+            this.mWeight = Constants.MINIMAL_ERROR_STATUS_CODE;
             this.mItalic = false;
             this.mVariationSettings = str2;
             this.mResultCode = 0;

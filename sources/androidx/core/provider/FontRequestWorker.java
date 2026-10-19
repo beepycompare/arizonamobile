@@ -10,7 +10,6 @@ import androidx.core.graphics.TypefaceCompat;
 import androidx.core.provider.FontsContractCompat;
 import androidx.core.util.Consumer;
 import androidx.tracing.Trace;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -133,7 +132,7 @@ public class FontRequestWorker {
     private static String createCacheId(List<FontRequest> list, int i) {
         StringBuilder sb = new StringBuilder();
         for (int i2 = 0; i2 < list.size(); i2++) {
-            sb.append(list.get(i2).getId()).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(i);
+            sb.append(list.get(i2).getId()).append("-").append(i);
             if (i2 < list.size() - 1) {
                 sb.append(";");
             }

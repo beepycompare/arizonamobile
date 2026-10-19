@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.conveyor.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ConveyorGameScreenBinding implements ViewBinding {
     public final ImageView ageLabel;
     public final FrameLayout ageLocker;

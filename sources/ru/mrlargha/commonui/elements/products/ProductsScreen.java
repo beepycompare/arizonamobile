@@ -41,7 +41,7 @@ public final class ProductsScreen extends SAMPUIElement {
         this.binding = bind;
         ProductsAdapter productsAdapter = new ProductsAdapter();
         this.productsAdapter = productsAdapter;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         bind.rodinaAuthBtnClose2.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.products.ProductsScreen$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

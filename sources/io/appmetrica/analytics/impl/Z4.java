@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,13 +12,13 @@ import java.util.Iterator;
 public final class Z4 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f868a = "sessions";
+    public final String f871a = "sessions";
     public final int b = 200;
     public final String c = TtmlNode.ATTR_ID;
     public final String d = "start_time";
     public final String e = "report_request_parameters";
     public final String f = "server_time_offset";
-    public final String g = "type";
+    public final String g = ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY;
     public final String h = "obtained_before_first_sync";
     public final K7 i = new K7(null, 1, null);
 
@@ -65,11 +66,11 @@ public final class Z4 extends DatabaseScript {
             sQLiteDatabase2 = sQLiteDatabase;
         }
         try {
-            cursor = sQLiteDatabase2.query(this.f868a, null, null, null, null, null, null, String.valueOf(this.b));
+            cursor = sQLiteDatabase2.query(this.f871a, null, null, null, null, null, null, String.valueOf(this.b));
             while (cursor.moveToNext()) {
                 try {
                     J7 a2 = a(cursor);
-                    if (a2 != null && (l = a2.f610a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f592a) != null && l2.longValue() > 0) {
+                    if (a2 != null && (l = a2.f613a) != null && l.longValue() >= 0 && a2.b != null && (str = a2.c) != null && str.length() != 0 && (l2 = a2.d.f595a) != null && l2.longValue() > 0) {
                         arrayList.add(this.i.fromModel(a2));
                     }
                 } catch (Throwable unused2) {
@@ -79,7 +80,7 @@ public final class Z4 extends DatabaseScript {
             cursor = null;
         }
         cursor.close();
-        sQLiteDatabase2.execSQL("DROP TABLE IF EXISTS " + this.f868a);
+        sQLiteDatabase2.execSQL("DROP TABLE IF EXISTS " + this.f871a);
         sQLiteDatabase2.execSQL("CREATE TABLE IF NOT EXISTS sessions (id INTEGER,type INTEGER,report_request_parameters TEXT,session_description BLOB )");
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {

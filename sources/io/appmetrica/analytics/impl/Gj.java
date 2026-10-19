@@ -11,7 +11,7 @@ public abstract class Gj {
 
     public static String a() {
         StringBuilder sb = new StringBuilder(BuildConfig.SDK_BUILD_FLAVOR);
-        if (!TextUtils.isEmpty("binary")) {
+        if (!TextUtils.isEmpty(BuildConfig.SDK_DEPENDENCY)) {
             sb.append("_binary");
         }
         if (!TextUtils.isEmpty("")) {

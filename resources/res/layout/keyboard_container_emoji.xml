@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+    <Space android:layout_width="0dp" android:layout_height="@dimen/_1sdp" android:layout_weight="1"/>
+    <androidx.recyclerview.widget.RecyclerView android:scrollbarThumbVertical="@color/orange_accent" android:orientation="vertical" android:id="@+id/emoji_list" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="10" android:fadeScrollbars="false" android:overScrollMode="never" android:paddingEnd="@dimen/_4sdp" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" app:spanCount="12"/>
+    <Space android:layout_width="0dp" android:layout_height="@dimen/_1sdp" android:layout_weight="1"/>
+</LinearLayout>

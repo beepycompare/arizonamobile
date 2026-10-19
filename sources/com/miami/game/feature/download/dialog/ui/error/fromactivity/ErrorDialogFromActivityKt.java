@@ -208,12 +208,12 @@ public final class ErrorDialogFromActivityKt {
             }
             final long j = Color;
             composer2 = startRestartGroup;
-            DialogFrameKt.DialogFrame(num2, onClose, ComposableLambdaKt.rememberComposableLambda(-210437023, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda6
+            DialogFrameKt.DialogFrame(num2, onClose, null, ComposableLambdaKt.rememberComposableLambda(2001978914, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda6
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return ErrorDialogFromActivityKt.ErrorDialogFromActivityScreen$lambda$0(ErrorDialogExternalUiState.this, j, onDismiss, onConfirm, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), composer2, ((i3 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            }, startRestartGroup, 54), composer2, ((i3 >> 6) & 112) | 3072, 4);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -235,7 +235,7 @@ public final class ErrorDialogFromActivityKt {
         ComposerKt.sourceInformation(composer, "C74@2689L10,74@2662L114,96@3414L54,94@3394L186,103@3589L42,104@3640L710:ErrorDialogFromActivity.kt#11d4x");
         if (composer.shouldExecute((i & 3) != 2, i & 1)) {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-210437023, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous> (ErrorDialogFromActivity.kt:74)");
+                ComposerKt.traceEventStart(2001978914, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous> (ErrorDialogFromActivity.kt:74)");
             }
             TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getTitle(), null, j, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 0, 0, 131066);
             int i3 = WhenMappings.$EnumSwitchMapping$0[errorDialogExternalUiState.getType().ordinal()];
@@ -279,14 +279,14 @@ public final class ErrorDialogFromActivityKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, -2001654796, "C:ErrorDialogFromActivity.kt#11d4x");
+            ComposerKt.sourceInformationMarkerStart(composer, 1808367251, "C:ErrorDialogFromActivity.kt#11d4x");
             if (errorDialogExternalUiState.getNegativeText().length() == 0) {
-                composer.startReplaceGroup(-2001344611);
+                composer.startReplaceGroup(1808677436);
                 composer.endReplaceGroup();
             } else {
-                composer.startReplaceGroup(-2001630028);
+                composer.startReplaceGroup(1808392019);
                 ComposerKt.sourceInformation(composer, "106@3738L51,108@3791L187,106@3713L265");
-                ComposerKt.sourceInformationMarkerStart(composer, 628169080, "CC(remember):ErrorDialogFromActivity.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, 751073017, "CC(remember):ErrorDialogFromActivity.kt#9igjgp");
                 boolean changed = composer.changed(function0);
                 Object rememberedValue = composer.rememberedValue();
                 if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -301,7 +301,7 @@ public final class ErrorDialogFromActivityKt {
                     composer.updateRememberedValue(rememberedValue);
                 }
                 ComposerKt.sourceInformationMarkerEnd(composer);
-                DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableLambdaKt.rememberComposableLambda(-1469251392, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda3
+                DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableLambdaKt.rememberComposableLambda(743164545, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda3
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
                         Unit ErrorDialogFromActivityScreen$lambda$0$0$1;
@@ -312,12 +312,12 @@ public final class ErrorDialogFromActivityKt {
                 composer.endReplaceGroup();
             }
             if (errorDialogExternalUiState.getPositiveText().length() == 0) {
-                composer.startReplaceGroup(-2000999395);
+                composer.startReplaceGroup(1809022652);
                 composer.endReplaceGroup();
             } else {
-                composer.startReplaceGroup(-2001285773);
+                composer.startReplaceGroup(1808736274);
                 ComposerKt.sourceInformation(composer, "116@4086L51,118@4139L187,116@4060L266");
-                ComposerKt.sourceInformationMarkerStart(composer, 628180216, "CC(remember):ErrorDialogFromActivity.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(composer, 751084153, "CC(remember):ErrorDialogFromActivity.kt#9igjgp");
                 boolean changed2 = composer.changed(function02);
                 Object rememberedValue2 = composer.rememberedValue();
                 if (changed2 || rememberedValue2 == Composer.Companion.getEmpty()) {
@@ -332,7 +332,7 @@ public final class ErrorDialogFromActivityKt {
                     composer.updateRememberedValue(rememberedValue2);
                 }
                 ComposerKt.sourceInformationMarkerEnd(composer);
-                DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableLambdaKt.rememberComposableLambda(1442369824, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda5
+                DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableLambdaKt.rememberComposableLambda(-640181535, true, new Function3() { // from class: com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityKt$$ExternalSyntheticLambda5
                     @Override // kotlin.jvm.functions.Function3
                     public final Object invoke(Object obj, Object obj2, Object obj3) {
                         Unit ErrorDialogFromActivityScreen$lambda$0$0$3;
@@ -371,7 +371,7 @@ public final class ErrorDialogFromActivityKt {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-1469251392, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:109)");
+                ComposerKt.traceEventStart(743164545, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:109)");
             }
             TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getNegativeText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {
@@ -395,7 +395,7 @@ public final class ErrorDialogFromActivityKt {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1442369824, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:119)");
+                ComposerKt.traceEventStart(-640181535, i, -1, "com.miami.game.feature.download.dialog.ui.error.fromactivity.ErrorDialogFromActivityScreen.<anonymous>.<anonymous>.<anonymous> (ErrorDialogFromActivity.kt:119)");
             }
             TextKt.m3157TextNvy7gAk(errorDialogExternalUiState.getPositiveText(), null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodySmall(), composer, 0, 0, 131070);
             if (ComposerKt.isTraceInProgress()) {

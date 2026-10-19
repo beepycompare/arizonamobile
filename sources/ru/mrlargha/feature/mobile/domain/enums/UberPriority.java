@@ -1,6 +1,7 @@
 package ru.mrlargha.feature.mobile.domain.enums;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.Metadata;
@@ -62,7 +63,7 @@ public final class UberPriority {
     }
 
     /* compiled from: UberPriority.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\b\u001a\u0004\u0018\u00010\u00072\u0006\u0010\t\u001a\u00020\u0006R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lru/mrlargha/feature/mobile/domain/enums/UberPriority$Companion;", "", "<init>", "()V", "map", "", "", "Lru/mrlargha/feature/mobile/domain/enums/UberPriority;", "fromInt", "type", "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\b\u001a\u0004\u0018\u00010\u00072\u0006\u0010\t\u001a\u00020\u0006R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lru/mrlargha/feature/mobile/domain/enums/UberPriority$Companion;", "", "<init>", "()V", "map", "", "", "Lru/mrlargha/feature/mobile/domain/enums/UberPriority;", "fromInt", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "mobile"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

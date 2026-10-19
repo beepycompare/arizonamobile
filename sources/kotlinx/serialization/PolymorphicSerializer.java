@@ -1,6 +1,7 @@
 package kotlinx.serialization;
 
 import androidx.exifinterface.media.ExifInterface;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import kotlin.Lazy;
@@ -74,7 +75,7 @@ public final class PolymorphicSerializer<T> extends AbstractPolymorphicSerialize
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit descriptor_delegate$lambda$0$0(PolymorphicSerializer polymorphicSerializer, ClassSerialDescriptorBuilder buildSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildSerialDescriptor, "$this$buildSerialDescriptor");
-        ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, "type", BuiltinSerializersKt.serializer(StringCompanionObject.INSTANCE).getDescriptor(), null, false, 12, null);
+        ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, BuiltinSerializersKt.serializer(StringCompanionObject.INSTANCE).getDescriptor(), null, false, 12, null);
         ClassSerialDescriptorBuilder.element$default(buildSerialDescriptor, "value", SerialDescriptorsKt.buildSerialDescriptor$default("kotlinx.serialization.Polymorphic<" + polymorphicSerializer.getBaseClass().getSimpleName() + Typography.greater, SerialKind.CONTEXTUAL.INSTANCE, new SerialDescriptor[0], null, 8, null), null, false, 12, null);
         buildSerialDescriptor.setAnnotations(polymorphicSerializer._annotations);
         return Unit.INSTANCE;

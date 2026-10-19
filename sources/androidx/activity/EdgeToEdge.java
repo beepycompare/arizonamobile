@@ -1,5 +1,6 @@
 package androidx.activity;
 
+import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -97,7 +98,8 @@ public final class EdgeToEdge {
                     break;
                 }
             } else {
-                ?? r8 = new View(viewGroup.getContext()) { // from class: androidx.activity.EdgeToEdge$enableEdgeToEdge$1$2
+                final Context context = viewGroup.getContext();
+                ?? r8 = new View(context) { // from class: androidx.activity.EdgeToEdge$enableEdgeToEdge$1$2
                     @Override // android.view.View
                     protected void onConfigurationChanged(Configuration newConfig) {
                         Intrinsics.checkNotNullParameter(newConfig, "newConfig");
@@ -117,6 +119,7 @@ public final class EdgeToEdge {
         edgeToEdgeImpl2.adjustLayoutInDisplayCutoutMode(window);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     public static final void enableEdgeToEdge$lambda$1(EdgeToEdgeImpl edgeToEdgeImpl, SystemBarStyle systemBarStyle, SystemBarStyle systemBarStyle2, ComponentActivity componentActivity, View view) {
         Window window = componentActivity.getWindow();
         Intrinsics.checkNotNullExpressionValue(window, "getWindow(...)");

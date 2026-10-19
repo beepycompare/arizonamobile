@@ -1,7 +1,7 @@
 package com.google.firebase.heartbeatinfo;
 
 import com.google.firebase.components.Component;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class HeartBeatConsumerComponent {
     private HeartBeatConsumerComponent() {
     }

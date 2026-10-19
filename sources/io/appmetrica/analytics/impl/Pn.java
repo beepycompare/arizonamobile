@@ -6,16 +6,16 @@ import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 public final class Pn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rn f724a;
+    public final Rn f727a;
     public final Rn b;
 
     public Pn(Context context) {
         if (new SafePackageManager().hasSystemFeature(context, "android.hardware.telephony")) {
-            this.f724a = new Y2(new Sl(context));
-            this.b = new Y2(new C0428md(context));
+            this.f727a = new Y2(new Sl(context));
+            this.b = new Y2(new C0423md(context));
             return;
         }
-        this.f724a = new C0552r8();
-        this.b = new C0552r8();
+        this.f727a = new C0547r8();
+        this.b = new C0547r8();
     }
 }

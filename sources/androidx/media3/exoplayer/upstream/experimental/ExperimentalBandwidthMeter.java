@@ -2,6 +2,7 @@ package androidx.media3.exoplayer.upstream.experimental;
 
 import android.content.Context;
 import android.os.Handler;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
@@ -22,12 +23,13 @@ import androidx.media3.extractor.ts.PsExtractor;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.arizona.launcher.updater.archive.download.ArchiveResumableHttpEngine;
 import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
+import com.google.android.gms.location.LocationRequest;
 import com.google.common.base.Ascii;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import com.miami.game.feature.home.ui.HomeComponent;
 import java.util.HashMap;
 import java.util.Map;
@@ -1757,7 +1759,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case '?':
             case 162:
             case 186:
-            case DownloaderService.STATUS_PENDING /* 190 */:
+            case 190:
                 return new int[]{4, 2, 2, 2, 2, 2};
             case '\t':
                 return new int[]{2, 2, 2, 2, 1, 2};
@@ -1780,13 +1782,13 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
             case 'y':
             case 144:
             case TsExtractor.TS_STREAM_TYPE_AC4 /* 172 */:
-            case DownloaderService.STATUS_WAITING_FOR_NETWORK /* 195 */:
+            case 195:
             case 224:
                 return new int[]{0, 2, 2, 2, 2, 2};
             case 15:
             case ConstraintLayout.LayoutParams.Table.LAYOUT_GONE_MARGIN_BASELINE /* 55 */:
             case 128:
-            case DownloaderService.STATUS_WAITING_TO_RETRY /* 194 */:
+            case 194:
                 return new int[]{4, 2, 3, 3, 2, 2};
             case 16:
             case 'j':
@@ -1899,7 +1901,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{3, 2, 2, 3, 2, 2};
             case 'D':
             case 155:
-            case 192:
+            case PsExtractor.AUDIO_STREAM /* 192 */:
                 return new int[]{3, 2, 2, 2, 2, 2};
             case 'E':
                 return new int[]{4, 2, 4, 0, 2, 2};
@@ -1935,7 +1937,7 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{3, 4, 4, 2, 2, 2};
             case 'S':
                 return new int[]{2, 1, 1, 3, 2, 2};
-            case 'U':
+            case SettingsMenuDefaults.DEFAULT_VIDEO_RENDER_SCALE /* 85 */:
                 return new int[]{1, 0, 0, 0, 1, 2};
             case 'V':
                 return new int[]{2, 1, 2, 1, 2, 2};
@@ -1966,13 +1968,13 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{4, 2, 3, 3, 4, 3};
             case 'g':
                 return new int[]{0, 1, 1, 2, 1, 2};
-            case 'i':
+            case LocationRequest.PRIORITY_NO_POWER /* 105 */:
                 return new int[]{2, 4, 3, 1, 2, 2};
             case 'k':
                 return new int[]{0, 3, 2, 3, 4, 2};
-            case 'l':
+            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR /* 108 */:
                 return new int[]{3, 2, 1, 1, 1, 2};
-            case 'm':
+            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY /* 109 */:
                 return new int[]{2, 1, 1, 2, 2, 2};
             case 'n':
                 return new int[]{1, 0, 4, 2, 2, 2};
@@ -2085,11 +2087,11 @@ public final class ExperimentalBandwidthMeter implements BandwidthMeter, Transfe
                 return new int[]{4, 2, 4, 3, 2, 2};
             case PsExtractor.PRIVATE_STREAM_1 /* 189 */:
                 return new int[]{2, 3, 3, 3, 1, 1};
-            case DownloaderService.STATUS_PAUSED_BY_APP /* 193 */:
+            case 193:
                 return new int[]{0, 1, 1, 1, 2, 2};
-            case DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION /* 196 */:
+            case 196:
                 return new int[]{4, 4, 3, 2, 2, 2};
-            case DownloaderService.STATUS_QUEUED_FOR_WIFI /* 197 */:
+            case 197:
                 return new int[]{2, 2, 3, 4, 4, 2};
             case 198:
                 return new int[]{2, 4, 4, 1, 2, 2};

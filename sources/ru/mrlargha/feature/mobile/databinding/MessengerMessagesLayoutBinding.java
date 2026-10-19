@@ -3,12 +3,12 @@ package ru.mrlargha.feature.mobile.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.feature.mobile.R;
 /* loaded from: classes6.dex */
 public final class MessengerMessagesLayoutBinding implements ViewBinding {
@@ -18,16 +18,16 @@ public final class MessengerMessagesLayoutBinding implements ViewBinding {
     public final LinearLayout messengerSearchContainer;
     public final TextView resultSearchTitle;
     private final LinearLayout rootView;
-    public final EditText searchEditText;
+    public final KeyboardEditText searchEditText;
 
-    private MessengerMessagesLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, RecyclerView recyclerView, LinearLayout linearLayout3, LinearLayout linearLayout4, TextView textView, EditText editText) {
+    private MessengerMessagesLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, RecyclerView recyclerView, LinearLayout linearLayout3, LinearLayout linearLayout4, TextView textView, KeyboardEditText keyboardEditText) {
         this.rootView = linearLayout;
         this.emptySearchContainer = linearLayout2;
         this.listMessages = recyclerView;
         this.loaderContainer = linearLayout3;
         this.messengerSearchContainer = linearLayout4;
         this.resultSearchTitle = textView;
-        this.searchEditText = editText;
+        this.searchEditText = keyboardEditText;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -64,9 +64,9 @@ public final class MessengerMessagesLayoutBinding implements ViewBinding {
                         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView != null) {
                             i = R.id.search_edit_text;
-                            EditText editText = (EditText) ViewBindings.findChildViewById(view, i);
-                            if (editText != null) {
-                                return new MessengerMessagesLayoutBinding((LinearLayout) view, linearLayout, recyclerView, linearLayout2, linearLayout3, textView, editText);
+                            KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(view, i);
+                            if (keyboardEditText != null) {
+                                return new MessengerMessagesLayoutBinding((LinearLayout) view, linearLayout, recyclerView, linearLayout2, linearLayout3, textView, keyboardEditText);
                             }
                         }
                     }

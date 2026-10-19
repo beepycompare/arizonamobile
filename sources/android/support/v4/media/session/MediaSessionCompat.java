@@ -43,6 +43,7 @@ import androidx.media.VolumeProviderCompat;
 import androidx.media.session.MediaButtonReceiver;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.extractor.ts.TsExtractor;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
@@ -2377,7 +2378,7 @@ public class MediaSessionCompat {
                         return;
                     } else {
                         switch (keyCode) {
-                            case 85:
+                            case SettingsMenuDefaults.DEFAULT_VIDEO_RENDER_SCALE /* 85 */:
                                 break;
                             case 86:
                                 if ((1 & actions) != 0) {

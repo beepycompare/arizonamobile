@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public final class Ff implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rf f548a;
+    public final Rf f551a;
     public final Af b;
 
     public Ff() {
@@ -17,7 +17,7 @@ public final class Ff implements ProtobufConverter {
     /* renamed from: a */
     public final Nf fromModel(Df df) {
         Nf nf = new Nf();
-        nf.f687a = this.f548a.fromModel(df.f515a);
+        nf.f690a = this.f551a.fromModel(df.f518a);
         nf.b = new Mf[df.b.size()];
         int i = 0;
         for (Cf cf : df.b) {
@@ -28,7 +28,7 @@ public final class Ff implements ProtobufConverter {
     }
 
     public Ff(Rf rf, Af af) {
-        this.f548a = rf;
+        this.f551a = rf;
         this.b = af;
     }
 
@@ -40,8 +40,8 @@ public final class Ff implements ProtobufConverter {
         for (Mf mf : nf.b) {
             arrayList.add(this.b.toModel(mf));
         }
-        Lf lf = nf.f687a;
-        Rf rf = this.f548a;
+        Lf lf = nf.f690a;
+        Rf rf = this.f551a;
         if (lf == null) {
             model = rf.toModel(new Lf());
         } else {

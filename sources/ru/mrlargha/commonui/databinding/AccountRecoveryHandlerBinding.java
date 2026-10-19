@@ -3,13 +3,13 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class AccountRecoveryHandlerBinding implements ViewBinding {
     public final TextView accountRecoveryDescription;
@@ -31,11 +31,11 @@ public final class AccountRecoveryHandlerBinding implements ViewBinding {
     public final TextView accountRecoveryHandlerUpdateButtonTxt;
     public final AppCompatImageView accountRecoveryMethodMailIcon;
     public final TextView accountRecoveryMethodTitle;
-    public final EditText accountRecoveryTypePlaceholder;
+    public final KeyboardEditText accountRecoveryTypePlaceholder;
     public final ConstraintLayout authBackground;
     private final ConstraintLayout rootView;
 
-    private AccountRecoveryHandlerBinding(ConstraintLayout rootView, TextView accountRecoveryDescription, ConstraintLayout accountRecoveryHandler, AppCompatImageView accountRecoveryHandlerArrow, ConstraintLayout accountRecoveryHandlerContainer, ConstraintLayout accountRecoveryHandlerErrorContainer, TextView accountRecoveryHandlerErrorDescription, TextView accountRecoveryHandlerExistButton, ConstraintLayout accountRecoveryHandlerExistContainer, ConstraintLayout accountRecoveryHandlerInfoContainer, ConstraintLayout accountRecoveryHandlerInput, TextView accountRecoveryHandlerIsExist, AppCompatImageView accountRecoveryHandlerIsExistIcon, ConstraintLayout accountRecoveryHandlerMethod, AppCompatImageView accountRecoveryHandlerMethodIcon, TextView accountRecoveryHandlerPlaceholder, ConstraintLayout accountRecoveryHandlerUpdateButton, TextView accountRecoveryHandlerUpdateButtonTxt, AppCompatImageView accountRecoveryMethodMailIcon, TextView accountRecoveryMethodTitle, EditText accountRecoveryTypePlaceholder, ConstraintLayout authBackground) {
+    private AccountRecoveryHandlerBinding(ConstraintLayout rootView, TextView accountRecoveryDescription, ConstraintLayout accountRecoveryHandler, AppCompatImageView accountRecoveryHandlerArrow, ConstraintLayout accountRecoveryHandlerContainer, ConstraintLayout accountRecoveryHandlerErrorContainer, TextView accountRecoveryHandlerErrorDescription, TextView accountRecoveryHandlerExistButton, ConstraintLayout accountRecoveryHandlerExistContainer, ConstraintLayout accountRecoveryHandlerInfoContainer, ConstraintLayout accountRecoveryHandlerInput, TextView accountRecoveryHandlerIsExist, AppCompatImageView accountRecoveryHandlerIsExistIcon, ConstraintLayout accountRecoveryHandlerMethod, AppCompatImageView accountRecoveryHandlerMethodIcon, TextView accountRecoveryHandlerPlaceholder, ConstraintLayout accountRecoveryHandlerUpdateButton, TextView accountRecoveryHandlerUpdateButtonTxt, AppCompatImageView accountRecoveryMethodMailIcon, TextView accountRecoveryMethodTitle, KeyboardEditText accountRecoveryTypePlaceholder, ConstraintLayout authBackground) {
         this.rootView = rootView;
         this.accountRecoveryDescription = accountRecoveryDescription;
         this.accountRecoveryHandler = accountRecoveryHandler;
@@ -134,12 +134,12 @@ public final class AccountRecoveryHandlerBinding implements ViewBinding {
                                                                             TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                                                             if (textView7 != null) {
                                                                                 i = R.id.account_recovery_type_placeholder;
-                                                                                EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                                                if (editText != null) {
+                                                                                KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                if (keyboardEditText != null) {
                                                                                     i = R.id.auth_background;
                                                                                     ConstraintLayout constraintLayout9 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                     if (constraintLayout9 != null) {
-                                                                                        return new AccountRecoveryHandlerBinding(constraintLayout, textView, constraintLayout, appCompatImageView, constraintLayout2, constraintLayout3, textView2, textView3, constraintLayout4, constraintLayout5, constraintLayout6, textView4, appCompatImageView2, constraintLayout7, appCompatImageView3, textView5, constraintLayout8, textView6, appCompatImageView4, textView7, editText, constraintLayout9);
+                                                                                        return new AccountRecoveryHandlerBinding(constraintLayout, textView, constraintLayout, appCompatImageView, constraintLayout2, constraintLayout3, textView2, textView3, constraintLayout4, constraintLayout5, constraintLayout6, textView4, appCompatImageView2, constraintLayout7, appCompatImageView3, textView5, constraintLayout8, textView6, appCompatImageView4, textView7, keyboardEditText, constraintLayout9);
                                                                                     }
                                                                                 }
                                                                             }

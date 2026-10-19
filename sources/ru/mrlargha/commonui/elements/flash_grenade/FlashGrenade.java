@@ -32,7 +32,7 @@ public final class FlashGrenade extends SAMPUIElement {
         FlashGrenadeBinding bind = FlashGrenadeBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.flashGrenadeBinding = bind;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
     }
 
     public final void animateFlash(int i) {

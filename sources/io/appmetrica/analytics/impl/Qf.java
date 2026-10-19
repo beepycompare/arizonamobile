@@ -5,25 +5,25 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Qf implements InterfaceC0423m8 {
+public final class Qf implements InterfaceC0418m8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f735a;
+    public final String f738a;
     public final JSONObject b;
     public final boolean c;
     public final boolean d;
-    public final EnumC0397l8 e;
+    public final EnumC0392l8 e;
 
-    public Qf(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0397l8 enumC0397l8) {
-        this.f735a = str;
+    public Qf(String str, JSONObject jSONObject, boolean z, boolean z2, EnumC0392l8 enumC0392l8) {
+        this.f738a = str;
         this.b = jSONObject;
         this.c = z;
         this.d = z2;
-        this.e = enumC0397l8;
+        this.e = enumC0392l8;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0423m8
-    public final EnumC0397l8 a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0418m8
+    public final EnumC0392l8 a() {
         return this.e;
     }
 
@@ -31,7 +31,7 @@ public final class Qf implements InterfaceC0423m8 {
         if (this.c) {
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("trackingId", this.f735a);
+                jSONObject.put("trackingId", this.f738a);
                 if (this.b.length() > 0) {
                     jSONObject.put("additionalParams", this.b);
                 }
@@ -45,45 +45,45 @@ public final class Qf implements InterfaceC0423m8 {
     public final JSONObject c() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("trackingId", this.f735a);
+            jSONObject.put("trackingId", this.f738a);
             jSONObject.put("additionalParams", this.b);
             jSONObject.put("wasSet", this.c);
             jSONObject.put("autoTracking", this.d);
-            jSONObject.put("source", this.e.f1078a);
+            jSONObject.put("source", this.e.f1081a);
         } catch (Throwable unused) {
         }
         return jSONObject;
     }
 
     public final String toString() {
-        return "PreloadInfoState{trackingId='" + this.f735a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "PreloadInfoState{trackingId='" + this.f738a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 
     public static Qf a(JSONObject jSONObject) {
-        EnumC0397l8 enumC0397l8;
+        EnumC0392l8 enumC0392l8;
         String optStringOrNull = JsonUtils.optStringOrNull(jSONObject, "trackingId");
         JSONObject optJsonObjectOrDefault = JsonUtils.optJsonObjectOrDefault(jSONObject, "additionalParams", new JSONObject());
         int i = 0;
         boolean optBooleanOrDefault = JsonUtils.optBooleanOrDefault(jSONObject, "wasSet", false);
         boolean optBooleanOrDefault2 = JsonUtils.optBooleanOrDefault(jSONObject, "autoTracking", false);
         String optStringOrNull2 = JsonUtils.optStringOrNull(jSONObject, "source");
-        EnumC0397l8.b.getClass();
-        EnumC0397l8[] values = EnumC0397l8.values();
+        EnumC0392l8.b.getClass();
+        EnumC0392l8[] values = EnumC0392l8.values();
         int length = values.length;
         while (true) {
             if (i >= length) {
-                enumC0397l8 = null;
+                enumC0392l8 = null;
                 break;
             }
-            enumC0397l8 = values[i];
-            if (Intrinsics.areEqual(enumC0397l8.f1078a, optStringOrNull2)) {
+            enumC0392l8 = values[i];
+            if (Intrinsics.areEqual(enumC0392l8.f1081a, optStringOrNull2)) {
                 break;
             }
             i++;
         }
-        if (enumC0397l8 == null) {
-            enumC0397l8 = EnumC0397l8.c;
+        if (enumC0392l8 == null) {
+            enumC0392l8 = EnumC0392l8.c;
         }
-        return new Qf(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, enumC0397l8);
+        return new Qf(optStringOrNull, optJsonObjectOrDefault, optBooleanOrDefault, optBooleanOrDefault2, enumC0392l8);
     }
 }

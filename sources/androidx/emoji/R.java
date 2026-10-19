@@ -5,7 +5,7 @@ public final class R {
     /* loaded from: classes2.dex */
     public static final class attr {
         public static int emojiReplaceStrategy = 0x7f040232;
-        public static int maxEmojiCount = 0x7f040483;
+        public static int maxEmojiCount = 0x7f040489;
 
         private attr() {
         }
@@ -13,11 +13,11 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class id {
-        public static int all = 0x7f0a00d7;
-        public static int defaultStrategy = 0x7f0a05a2;
-        public static int inputExtractAccessories = 0x7f0a0911;
-        public static int inputExtractAction = 0x7f0a0912;
-        public static int nonExistent = 0x7f0a0c1e;
+        public static int all = 0x7f0a00d9;
+        public static int defaultStrategy = 0x7f0a05b9;
+        public static int inputExtractAccessories = 0x7f0a0949;
+        public static int inputExtractAction = 0x7f0a094a;
+        public static int nonExistent = 0x7f0a0c78;
 
         private id() {
         }
@@ -25,7 +25,7 @@ public final class R {
 
     /* loaded from: classes2.dex */
     public static final class layout {
-        public static int input_method_extract_view = 0x7f0d0198;
+        public static int input_method_extract_view = 0x7f0d0199;
 
         private layout() {
         }

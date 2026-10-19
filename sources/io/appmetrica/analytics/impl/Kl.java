@@ -8,14 +8,14 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Kl extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dj f634a;
-    public final InterfaceC0630u8 b;
+    public final Dj f637a;
+    public final InterfaceC0625u8 b;
 
     public Kl(ECommerceScreen eCommerceScreen) {
         this(new Dj(eCommerceScreen), new Ll());
     }
 
-    public final InterfaceC0630u8 a() {
+    public final InterfaceC0625u8 a() {
         return this.b;
     }
 
@@ -24,17 +24,17 @@ public final class Kl extends ECommerceEvent {
         return "shown screen info";
     }
 
-    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0405lg
+    @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent, io.appmetrica.analytics.impl.InterfaceC0400lg
     public final List<Xi> toProto() {
         return (List) this.b.fromModel(this);
     }
 
     public final String toString() {
-        return "ShownScreenInfoEvent{screen=" + this.f634a + ", converter=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ShownScreenInfoEvent{screen=" + this.f637a + ", converter=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public Kl(Dj dj, InterfaceC0630u8 interfaceC0630u8) {
-        this.f634a = dj;
-        this.b = interfaceC0630u8;
+    public Kl(Dj dj, InterfaceC0625u8 interfaceC0625u8) {
+        this.f637a = dj;
+        this.b = interfaceC0625u8;
     }
 }

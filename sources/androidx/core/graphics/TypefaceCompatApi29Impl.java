@@ -14,6 +14,7 @@ import android.util.Log;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.content.res.FontResourcesParserCompat;
 import androidx.core.provider.FontsContractCompat;
+import com.adjust.sdk.Constants;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -26,7 +27,7 @@ public class TypefaceCompatApi29Impl extends TypefaceCompatBaseImpl {
     }
 
     private Font findBaseFont(FontFamily fontFamily, int i) {
-        FontStyle fontStyle = new FontStyle((i & 1) != 0 ? TypedValues.TransitionType.TYPE_DURATION : 400, (i & 2) != 0 ? 1 : 0);
+        FontStyle fontStyle = new FontStyle((i & 1) != 0 ? TypedValues.TransitionType.TYPE_DURATION : Constants.MINIMAL_ERROR_STATUS_CODE, (i & 2) != 0 ? 1 : 0);
         Font font = fontFamily.getFont(0);
         int matchScore = getMatchScore(fontStyle, font.getStyle());
         for (int i2 = 1; i2 < fontFamily.getSize(); i2++) {

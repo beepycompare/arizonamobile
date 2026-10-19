@@ -56,7 +56,7 @@ public final class ArizonaImageViewerScreen extends SAMPUIElement {
         arizonaImageViewerView.setId(View.generateViewId());
         this.imageViewer = arizonaImageViewerView;
         prepareOpeningAnimationState();
-        addViewToConstraintLayout(arizonaImageViewerView, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, arizonaImageViewerView, -1, -1, false, 8, null);
         super.setVisibility(false);
     }
 

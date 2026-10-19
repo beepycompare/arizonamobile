@@ -3,6 +3,7 @@ package io.appmetrica.analytics.impl;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 import io.appmetrica.analytics.coreutils.internal.buffering.BatchProcessor;
 import io.appmetrica.analytics.coreutils.internal.buffering.DeferredBatchExecutor;
@@ -24,11 +25,11 @@ import kotlin.io.CloseableKt;
 import kotlin.jvm.internal.ArrayIteratorKt;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Ub implements InterfaceC0348jb, Closeable {
+public final class Ub implements InterfaceC0343jb, Closeable {
     public static final Tb g = new Tb();
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f791a;
+    public final String f794a;
     public final Q6 b;
     public final LinkedHashMap c = new LinkedHashMap();
     public final Object d = new Object();
@@ -36,7 +37,7 @@ public final class Ub implements InterfaceC0348jb, Closeable {
     public final DeferredBatchExecutor f;
 
     public Ub(String str, Q6 q6, IHandlerExecutor iHandlerExecutor) {
-        this.f791a = str;
+        this.f794a = str;
         this.b = q6;
         this.f = new DeferredBatchExecutor(iHandlerExecutor, new MapMergingBuffer(), new BatchProcessor() { // from class: io.appmetrica.analytics.impl.Ub$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreutils.internal.buffering.BatchProcessor
@@ -65,19 +66,19 @@ public final class Ub implements InterfaceC0348jb, Closeable {
                 contentValues.putNull("value");
             } else if (value instanceof String) {
                 contentValues.put("value", (String) value);
-                contentValues.put("type", (Integer) 4);
+                contentValues.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, (Integer) 4);
             } else if (value instanceof Long) {
                 contentValues.put("value", (Long) value);
-                contentValues.put("type", (Integer) 3);
+                contentValues.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, (Integer) 3);
             } else if (value instanceof Integer) {
                 contentValues.put("value", (Integer) value);
-                contentValues.put("type", (Integer) 2);
+                contentValues.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, (Integer) 2);
             } else if (value instanceof Boolean) {
                 contentValues.put("value", String.valueOf(((Boolean) value).booleanValue()));
-                contentValues.put("type", (Integer) 1);
+                contentValues.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, (Integer) 1);
             } else if (value instanceof Float) {
                 contentValues.put("value", (Float) value);
-                contentValues.put("type", (Integer) 5);
+                contentValues.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, (Integer) 5);
             }
             arrayList.add(contentValues);
         }
@@ -95,9 +96,9 @@ public final class Ub implements InterfaceC0348jb, Closeable {
                     while (it.hasNext()) {
                         ContentValues contentValues2 = (ContentValues) it.next();
                         if (contentValues2.getAsString("value") == null) {
-                            sQLiteDatabase.delete(ub.f791a, "key = ?", new String[]{contentValues2.getAsString("key")});
+                            sQLiteDatabase.delete(ub.f794a, "key = ?", new String[]{contentValues2.getAsString("key")});
                         } else {
-                            sQLiteDatabase.insertWithOnConflict(ub.f791a, null, contentValues2, 5);
+                            sQLiteDatabase.insertWithOnConflict(ub.f794a, null, contentValues2, 5);
                         }
                     }
                     sQLiteDatabase.setTransactionSuccessful();
@@ -119,8 +120,8 @@ public final class Ub implements InterfaceC0348jb, Closeable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0084 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0028 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0087 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x002a A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r8v10, types: [java.lang.Long] */
     /* JADX WARN: Type inference failed for: r8v11, types: [java.lang.Float] */
     /* JADX WARN: Type inference failed for: r8v5, types: [java.lang.Boolean] */
@@ -137,12 +138,12 @@ public final class Ub implements InterfaceC0348jb, Closeable {
             sQLiteDatabase = this.b.a();
             if (sQLiteDatabase != null) {
                 try {
-                    Cursor query = sQLiteDatabase.query(this.f791a, new String[]{"key", "value", "type"}, null, null, null, null, null);
+                    Cursor query = sQLiteDatabase.query(this.f794a, new String[]{"key", "value", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY}, null, null, null, null, null);
                     if (query != null) {
                         while (query.moveToNext()) {
                             String string = query.getString(query.getColumnIndexOrThrow("key"));
                             String string2 = query.getString(query.getColumnIndexOrThrow("value"));
-                            int i = query.getInt(query.getColumnIndexOrThrow("type"));
+                            int i = query.getInt(query.getColumnIndexOrThrow(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY));
                             if (string != null && string.length() != 0) {
                                 if (i != 1) {
                                     if (i == 2) {
@@ -202,37 +203,37 @@ public final class Ub implements InterfaceC0348jb, Closeable {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final void flushAsync() {
         this.f.flushAsync();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final boolean getBoolean(String str, boolean z) {
         Object b = b(str);
         return b instanceof Boolean ? ((Boolean) b).booleanValue() : z;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final int getInt(String str, int i) {
         Object b = b(str);
         return b instanceof Integer ? ((Number) b).intValue() : i;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final long getLong(String str, long j) {
         Object b = b(str);
         return b instanceof Long ? ((Number) b).longValue() : j;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final String getString(String str, String str2) {
         Object b = b(str);
         return b instanceof String ? (String) b : str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
-    public final InterfaceC0348jb remove(String str) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
+    public final InterfaceC0343jb remove(String str) {
         synchronized (this.d) {
             d();
             this.c.remove(str);
@@ -241,7 +242,7 @@ public final class Ub implements InterfaceC0348jb, Closeable {
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final Set<String> b() {
         HashSet hashSet;
         synchronized (this.d) {
@@ -270,42 +271,42 @@ public final class Ub implements InterfaceC0348jb, Closeable {
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final void a() {
         this.f.flush();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
-    public final InterfaceC0348jb a(String str, String str2) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
+    public final InterfaceC0343jb a(String str, String str2) {
         a(str, (Object) str2);
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
-    public final InterfaceC0348jb a(String str, long j) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
+    public final InterfaceC0343jb a(String str, long j) {
         a(str, Long.valueOf(j));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
-    public final InterfaceC0348jb a(String str, int i) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
+    public final InterfaceC0343jb a(String str, int i) {
         a(str, Integer.valueOf(i));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
-    public final InterfaceC0348jb a(String str, boolean z) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
+    public final InterfaceC0343jb a(String str, boolean z) {
         a(str, Boolean.valueOf(z));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
-    public final InterfaceC0348jb a(String str, float f) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
+    public final InterfaceC0343jb a(String str, float f) {
         a(str, Float.valueOf(f));
         return this;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0348jb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0343jb
     public final boolean a(String str) {
         boolean containsKey;
         synchronized (this.d) {

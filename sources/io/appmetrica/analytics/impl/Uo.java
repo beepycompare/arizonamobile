@@ -10,7 +10,7 @@ public final class Uo implements Vo {
         LinkedList linkedList = new LinkedList();
         boolean z = true;
         for (To to : list) {
-            if (!to.f784a) {
+            if (!to.f787a) {
                 linkedList.add(to.b);
                 z = false;
             }

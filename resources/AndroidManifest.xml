@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1753" android:versionName="v17.5.3" android:installLocation="auto" android:compileSdkVersion="37" android:compileSdkVersionCodename="17" package="com.arizona21.game" platformBuildVersionCode="37" platformBuildVersionName="17">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1788" android:versionName="v17.8.8" android:installLocation="auto" android:compileSdkVersion="37" android:compileSdkVersionCodename="17" package="com.arizona21.game" platformBuildVersionCode="37" platformBuildVersionName="17">
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="37"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -24,9 +24,6 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <queries>
         <intent>
-            <action android:name="ru.vk.store.provider.appupdate.RemoteAppUpdateFlowProvider"/>
-        </intent>
-        <intent>
             <action android:name="ru.vk.store.sdk.install.referrer.InstallReferrerProvider"/>
         </intent>
         <intent>
@@ -34,19 +31,6 @@
         </intent>
         <intent>
             <action android:name="com.google.android.apps.play.billingtestcompanion.BillingOverrideService.BIND"/>
-        </intent>
-        <intent>
-            <action android:name="ru.vk.store.provider.analytics.AnalyticsProvider"/>
-        </intent>
-        <package android:name="ru.vk.store"/>
-        <package android:name="ru.vk.store.qa"/>
-        <intent>
-            <action android:name="android.intent.action.VIEW"/>
-            <category android:name="android.intent.category.BROWSABLE"/>
-            <data android:scheme="https"/>
-        </intent>
-        <intent>
-            <action android:name="ru.vk.store.RequestIgnoreBatteryOptimizations"/>
         </intent>
     </queries>
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
@@ -57,7 +41,7 @@
     <uses-permission android:name="com.android.vending.BILLING"/>
     <permission android:name="com.arizona21.game.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
     <uses-permission android:name="com.arizona21.game.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
-    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="com.arizona.launcher.ArizonaApplication" android:hardwareAccelerated="true" android:supportsRtl="true" android:banner="@mipmap/ic_launcher" android:isGame="true" android:extractNativeLibs="true" android:usesCleartextTraffic="true" android:networkSecurityConfig="@xml/network_security_config" android:roundIcon="@mipmap/ic_launcher_round" android:appCategory="game" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+    <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:name="com.arizona.launcher.ArizonaApplication" android:hardwareAccelerated="true" android:largeHeap="true" android:supportsRtl="true" android:banner="@mipmap/ic_launcher" android:isGame="true" android:extractNativeLibs="true" android:usesCleartextTraffic="true" android:networkSecurityConfig="@xml/network_security_config" android:roundIcon="@mipmap/ic_launcher_round" android:appCategory="game" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
         <meta-data android:name="io.sentry.dsn" android:value="https://49fe0b067f2743b68f62e19f664c1d21@o1230595.ingest.sentry.io/6377389"/>
         <meta-data android:name="io.sentry.traces.sample-rate" android:value="1"/>
         <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="com.arizona21.game.fileprovider" android:grantUriPermissions="true">
@@ -71,25 +55,21 @@
             </intent-filter>
         </service>
         <receiver android:name="com.wardrumstudios.utils.WarAlarmReceiver"/>
-        <activity android:theme="@style/AppTheme" android:name="com.arizona.launcher.UpdateActivity" android:screenOrientation="landscape" android:configChanges="screenSize|orientation"/>
-        <activity android:theme="@style/Theme.Arizona.Splash" android:name="com.arizona.launcher.MainEntrench" android:exported="true" android:screenOrientation="landscape" android:configChanges="screenSize|orientation">
+        <activity android:theme="@style/AppTheme" android:name="com.arizona.launcher.UpdateActivity" android:screenOrientation="sensorLandscape" android:configChanges="screenSize|orientation"/>
+        <activity android:theme="@style/Theme.Arizona.Splash" android:name="com.arizona.launcher.MainEntrench" android:exported="true" android:screenOrientation="sensorLandscape" android:configChanges="screenSize|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <service android:name="com.arizona.launcher.UpdateService" android:enabled="true" android:exported="false" android:stopWithTask="false" android:foregroundServiceType="dataSync"/>
-        <activity android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" android:name="com.arizona.game.GTASA" android:exported="true" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard" android:fitsSystemWindows="false" android:windowSoftInputMode="adjustResize" android:hardwareAccelerated="true" android:largeHeap="true"/>
-        <receiver android:name="com.AdX.tag.AdXAppTracker" android:exported="true">
-            <intent-filter>
-                <action android:name="com.android.vending.INSTALL_REFERRER"/>
-            </intent-filter>
-        </receiver>
+        <activity android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" android:name="com.arizona.game.GTASA" android:exported="true" android:launchMode="singleTask" android:screenOrientation="sensorLandscape" android:configChanges="colorMode|density|smallestScreenSize|screenSize|uiMode|screenLayout|orientation|keyboardHidden|keyboard" android:fitsSystemWindows="false" android:windowSoftInputMode="adjustResize" android:hardwareAccelerated="true" android:resizeableActivity="true" android:enableOnBackInvokedCallback="true"/>
         <meta-data android:name="APP_NAME" android:value="com.arizona.game"/>
         <meta-data android:name="ADX_CLIENT_ID" android:value="rockst4r1002814dw"/>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
         <meta-data android:name="android.game_mode_config" android:resource="@xml/game_mode_config"/>
+        <activity android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.arizona.game.diagnostics.ProcessRestartActivity" android:exported="false" android:process=":reporting_restart" android:excludeFromRecents="true" android:screenOrientation="sensorLandscape"/>
         <service android:name="com.miami.game.core.foreground.service.DownloadService" android:exported="false" android:foregroundServiceType="dataSync"/>
         <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
             <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.ndk.CrashlyticsNdkRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
@@ -139,8 +119,6 @@
         <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.android.billingclient.api.ProxyBillingActivity" android:exported="false" android:configChanges="screenSize|screenLayout|orientation|keyboardHidden|keyboard"/>
         <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.android.billingclient.api.ProxyBillingActivityV2" android:exported="false" android:configChanges="screenSize|screenLayout|orientation|keyboardHidden|keyboard"/>
         <service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false" android:directBootAware="true"/>
-        <activity android:theme="@style/Theme.ActivityLauncher.Transparent" android:name="ru.rustore.sdk.activitylauncher.RuStoreActivityLauncher" android:exported="false"/>
-        <service android:label="SendMetricsEventJobService" android:name="ru.rustore.sdk.metrics.internal.presentation.SendMetricsEventJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
         <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
         <uses-library android:name="androidx.window.extensions" android:required="false"/>
         <uses-library android:name="androidx.window.sidecar" android:required="false"/>

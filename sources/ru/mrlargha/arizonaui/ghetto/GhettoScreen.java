@@ -112,7 +112,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         this.client = arizonaRetrofit;
         this.api = (GhettoApi) ArizonaRetrofit.create$default(arizonaRetrofit, GhettoApi.class, false, null, null, 14, null);
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         bind.war.menuItemsRv.setAdapter(warsAdapter);
         navigateTo(Navigation.War);
         setupNavigation();
@@ -424,7 +424,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     */
     private final int parseBusinessColor(String str) {
         String str2;
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         if (str != null && (str2 = StringsKt.trim((CharSequence) str).toString()) != null) {
             if (str2.length() <= 0) {
                 str2 = null;
@@ -437,12 +437,12 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
                     try {
                         Result.Companion companion = Result.Companion;
                         GhettoScreen ghettoScreen = this;
-                        m9921constructorimpl = Result.m9921constructorimpl(Integer.valueOf(Color.parseColor(str2)));
+                        m9974constructorimpl = Result.m9974constructorimpl(Integer.valueOf(Color.parseColor(str2)));
                     } catch (Throwable th) {
                         Result.Companion companion2 = Result.Companion;
-                        m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                        m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
                     }
-                    Integer num = Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+                    Integer num = Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
                     if (num != null) {
                         return num.intValue();
                     }

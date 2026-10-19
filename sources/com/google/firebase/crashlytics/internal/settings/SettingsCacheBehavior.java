@@ -1,5 +1,5 @@
 package com.google.firebase.crashlytics.internal.settings;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 enum SettingsCacheBehavior {
     USE_CACHE,
     SKIP_CACHE_LOOKUP,

@@ -11,6 +11,7 @@ import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.container.OpusUtil;
 import androidx.window.core.layout.WindowSizeClass;
+import com.adjust.sdk.Constants;
 import com.google.common.primitives.SignedBytes;
 import java.nio.ByteBuffer;
 /* loaded from: classes3.dex */
@@ -37,7 +38,7 @@ public final class Ac4Util {
     private static final int CHANNEL_MODE_UNKNOWN = -1;
     public static final int HEADER_SIZE_FOR_PARSER = 16;
     public static final int MAX_RATE_BYTES_PER_SECOND = 336000;
-    private static final int[] SAMPLE_COUNT = {PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT, 2000, 1920, 1601, WindowSizeClass.WIDTH_DP_EXTRA_LARGE_LOWER_BOUND, 1001, 1000, 960, 800, 800, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, 400, 400, 2048};
+    private static final int[] SAMPLE_COUNT = {PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT, 2000, 1920, 1601, WindowSizeClass.WIDTH_DP_EXTRA_LARGE_LOWER_BOUND, 1001, 1000, 960, 800, 800, WindowSizeClass.HEIGHT_DP_MEDIUM_LOWER_BOUND, Constants.MINIMAL_ERROR_STATUS_CODE, Constants.MINIMAL_ERROR_STATUS_CODE, 2048};
     public static final int SAMPLE_HEADER_SIZE = 7;
     private static final String TAG = "Ac4Util";
 

@@ -151,7 +151,7 @@ public final class DialogBuyCrypto extends AbstractDialog {
                     }
                 };
                 logIncomingPayload(i, i2, caption, infoData, leftButtonText, rightButtonText, hintInput);
-                addViewToConstraintLayout(this.dialogLayout, -2, -2);
+                SAMPUIElement.addViewToConstraintLayout$default(this, this.dialogLayout, -2, -2, false, 8, null);
                 setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
                 setupUi();
                 setVisibility(true);
@@ -173,7 +173,7 @@ public final class DialogBuyCrypto extends AbstractDialog {
             }
         };
         logIncomingPayload(i, i2, caption, infoData, leftButtonText, rightButtonText, hintInput);
-        addViewToConstraintLayout(this.dialogLayout, -2, -2);
+        SAMPUIElement.addViewToConstraintLayout$default(this, this.dialogLayout, -2, -2, false, 8, null);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
         setupUi();
         setVisibility(true);
@@ -848,7 +848,7 @@ public final class DialogBuyCrypto extends AbstractDialog {
     }
 
     private final long applyCommission(long j, int i) {
-        Long m9921constructorimpl;
+        Long m9974constructorimpl;
         if (j <= 0 || i <= 0) {
             return RangesKt.coerceAtLeast(j, 0L);
         }
@@ -856,15 +856,15 @@ public final class DialogBuyCrypto extends AbstractDialog {
         try {
             Result.Companion companion = Result.Companion;
             DialogBuyCrypto dialogBuyCrypto = this;
-            m9921constructorimpl = Result.m9921constructorimpl(Long.valueOf(Math.multiplyExact(j, j2) / 100));
+            m9974constructorimpl = Result.m9974constructorimpl(Long.valueOf(Math.multiplyExact(j, j2) / 100));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = Long.MAX_VALUE;
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = Long.MAX_VALUE;
         }
-        return ((Number) m9921constructorimpl).longValue();
+        return ((Number) m9974constructorimpl).longValue();
     }
 
     private final Long firstMoneyValue(List<Regex> list, String str) {

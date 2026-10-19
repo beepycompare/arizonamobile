@@ -38,6 +38,7 @@ import ru.mrlargha.commonui.utils.InventoryIconRequest;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: MainInventoryViewHolder.kt */
 @Metadata(d1 = {"\u0000m\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002*\u0001\u0013\u0018\u0000 -2\u00020\u0001:\u0001-B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fJ\u0006\u0010 \u001a\u00020\u001bJ\u0010\u0010!\u001a\u00020\u001b2\u0006\u0010\"\u001a\u00020\u001fH\u0002J \u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\t2\u0006\u0010&\u001a\u00020\t2\u0006\u0010'\u001a\u00020\tH\u0002J\u0018\u0010(\u001a\u00020\t2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020,H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u000e\u001a\u00020\u000f¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0010\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0014R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006."}, d2 = {"Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemInventoryBinding;", "params", "Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemInventoryBinding;Lru/mrlargha/commonui/elements/inventory/presentation/adapter/MainInventoryAdapter$Params;)V", "scrollSpeed", "", "edgeHeight", "scrollDirection", "countDownTimer", "Landroid/os/CountDownTimer;", "scrollHandler", "Landroid/os/Handler;", "getScrollHandler", "()Landroid/os/Handler;", "scrollRunnable", "ru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder$scrollRunnable$1", "Lru/mrlargha/commonui/elements/inventory/presentation/viewHolder/MainInventoryViewHolder$scrollRunnable$1;", "loadImageJob", "Lkotlinx/coroutines/Job;", "imageRequestGeneration", "", "effectLoadJob", "bind", "", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "isWalletVisible", "", "recycle", "clearAsyncResources", "clearEffects", "formatHMS", "", "hours", "minutes", "seconds", "getDragPageEdgeDirection", "view", "Landroid/view/View;", "dragEvent", "Landroid/view/DragEvent;", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -89,7 +90,7 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
         return this.scrollHandler;
     }
 
-    /* JADX WARN: Type inference failed for: r0v41, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$5] */
+    /* JADX WARN: Type inference failed for: r0v45, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$5] */
     public final void bind(final InventoryItem itemVal, final boolean z) {
         final InventoryItem inventoryItem;
         Job launch$default;
@@ -244,6 +245,14 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
         ProgressBar progressBar = itemProgressBar;
         Boolean loading2 = inventoryItem.getLoading();
         progressBar.setVisibility(loading2 != null ? loading2.booleanValue() : false ? 0 : 8);
+        Boolean hold = inventoryItem.getHold();
+        boolean booleanValue = hold != null ? hold.booleanValue() : false;
+        ImageView ivHoldPin = itemInventoryBinding.ivHoldPin;
+        Intrinsics.checkNotNullExpressionValue(ivHoldPin, "ivHoldPin");
+        ivHoldPin.setVisibility(booleanValue ? 0 : 8);
+        CustomCardView holdBorder = itemInventoryBinding.holdBorder;
+        Intrinsics.checkNotNullExpressionValue(holdBorder, "holdBorder");
+        holdBorder.setVisibility(booleanValue ? 0 : 8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -361,6 +370,12 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
         this.countDownTimer = null;
         this.scrollHandler.removeCallbacks(this.scrollRunnable);
         itemInventoryBinding.ivItemImage.setImageDrawable(null);
+        ImageView ivHoldPin = itemInventoryBinding.ivHoldPin;
+        Intrinsics.checkNotNullExpressionValue(ivHoldPin, "ivHoldPin");
+        ivHoldPin.setVisibility(8);
+        CustomCardView holdBorder = itemInventoryBinding.holdBorder;
+        Intrinsics.checkNotNullExpressionValue(holdBorder, "holdBorder");
+        holdBorder.setVisibility(8);
         if (z) {
             UtilKt.clearInventoryItemEffect(itemInventoryBinding);
         }

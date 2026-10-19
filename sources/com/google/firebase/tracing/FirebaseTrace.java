@@ -1,7 +1,7 @@
 package com.google.firebase.tracing;
 
 import android.os.Trace;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class FirebaseTrace {
     private FirebaseTrace() {
     }

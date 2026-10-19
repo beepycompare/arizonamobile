@@ -81,11 +81,11 @@ public final class InventorySlotHighlightKt {
                 int slot = inventoryItem.getSlot();
                 if (num2 != null && slot == num2.intValue()) {
                     z2 = true;
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, 133693439, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, null, 267911167, null));
                 }
             }
             z2 = false;
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, 133693439, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, null, 267911167, null));
         }
         return arrayList;
     }
@@ -146,11 +146,11 @@ public final class InventorySlotHighlightKt {
                 int slot = inventoryItem.getSlot();
                 if (num2 != null && slot == num2.intValue()) {
                     z2 = true;
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, 133693439, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, null, 267911167, null));
                 }
             }
             z2 = false;
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, 133693439, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, null, 267911167, null));
         }
         return arrayList;
     }
@@ -185,11 +185,11 @@ public final class InventorySlotHighlightKt {
                 int inventoryType = inventoryItem.getInventoryType();
                 if (resolveArizonaVehicleBlockType != null && inventoryType == resolveArizonaVehicleBlockType.intValue()) {
                     z2 = true;
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, 133693439, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, null, 267911167, null));
                 }
             }
             z2 = false;
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, 133693439, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z2, false, null, null, null, null, null, null, null, 267911167, null));
         }
         return arrayList;
     }

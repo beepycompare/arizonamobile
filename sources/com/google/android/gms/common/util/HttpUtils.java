@@ -1,6 +1,5 @@
 package com.google.android.gms.common.util;
 
-import com.android.internal.http.multipart.FilePart;
 import com.google.android.gms.internal.common.zzp;
 import com.google.android.gms.internal.common.zzw;
 import java.io.UnsupportedEncodingException;
@@ -42,7 +41,7 @@ public class HttpUtils {
 
     private static String zza(String str, String str2) {
         if (str2 == null) {
-            str2 = FilePart.DEFAULT_CHARSET;
+            str2 = "ISO-8859-1";
         }
         try {
             return URLDecoder.decode(str, str2);

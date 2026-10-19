@@ -1,5 +1,6 @@
 package androidx.compose.ui.graphics.vector;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.compose.ui.graphics.vector.PathNode;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.extractor.text.ttml.TtmlNode;
@@ -137,7 +138,7 @@ public final class PathNodeKt {
                     i2++;
                 }
                 return;
-            case 'l':
+            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR /* 108 */:
                 ArrayList<PathNode> arrayList13 = arrayList;
                 int i16 = i - 2;
                 while (i2 <= i16) {
@@ -145,7 +146,7 @@ public final class PathNodeKt {
                     i2 += 2;
                 }
                 return;
-            case 'm':
+            case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY /* 109 */:
                 pathRelativeMoveNodeFromArgs(arrayList, fArr, i);
                 return;
             case 'q':

@@ -1,12 +1,10 @@
 package com.google.android.gms.internal.measurement;
-
-import com.google.android.vending.expansion.downloader.Constants;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public enum zzyz {
     STRING('s', zzzb.GENERAL, "-#", true),
-    BOOLEAN('b', zzzb.BOOLEAN, Constants.FILENAME_SEQUENCE_SEPARATOR, true),
-    CHAR('c', zzzb.CHARACTER, Constants.FILENAME_SEQUENCE_SEPARATOR, true),
+    BOOLEAN('b', zzzb.BOOLEAN, "-", true),
+    CHAR('c', zzzb.CHARACTER, "-", true),
     DECIMAL('d', zzzb.INTEGRAL, "-0+ ,(", false),
     OCTAL('o', zzzb.INTEGRAL, "-#0(", false),
     HEX('x', zzzb.INTEGRAL, "-#0(", true),

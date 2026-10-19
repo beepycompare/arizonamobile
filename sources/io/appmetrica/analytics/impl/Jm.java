@@ -10,12 +10,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Jm implements Mm {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile Hm f620a;
+    public volatile Hm f623a;
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
 
     @Override // io.appmetrica.analytics.impl.Mm
     public final void a(Hm hm) {
-        this.f620a = hm;
+        this.f623a = hm;
         for (Mm mm : this.b) {
             mm.a(hm);
         }
@@ -26,7 +26,7 @@ public final class Jm implements Mm {
     }
 
     public final Hm a() {
-        Hm hm = this.f620a;
+        Hm hm = this.f623a;
         if (hm == null) {
             Intrinsics.throwUninitializedPropertyAccessException("startupState");
             return null;
@@ -36,8 +36,8 @@ public final class Jm implements Mm {
 
     public final void a(Mm mm) {
         this.b.add(mm);
-        if (this.f620a != null) {
-            Hm hm = this.f620a;
+        if (this.f623a != null) {
+            Hm hm = this.f623a;
             if (hm == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("startupState");
                 hm = null;
@@ -48,10 +48,10 @@ public final class Jm implements Mm {
 
     public final void a(Context context) {
         String optStringOrNull;
-        ProtobufStateStorage<Object> create = ((AbstractC0619tn) C0567rn.a(Lm.class)).create(context);
+        ProtobufStateStorage<Object> create = ((AbstractC0614tn) C0562rn.a(Lm.class)).create(context);
         Zo a2 = Na.k().D().a();
         synchronized (a2) {
-            optStringOrNull = JsonUtils.optStringOrNull(a2.f878a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
+            optStringOrNull = JsonUtils.optStringOrNull(a2.f881a.a(), NotificationStatsPayloadFactory.KEY_DEVICE_ID);
         }
         a(new Hm(optStringOrNull, a2.a(), (Lm) create.read()));
     }

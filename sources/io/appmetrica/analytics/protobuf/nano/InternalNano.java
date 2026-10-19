@@ -1,6 +1,5 @@
 package io.appmetrica.analytics.protobuf.nano;
 
-import com.android.internal.http.multipart.FilePart;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import io.appmetrica.analytics.protobuf.nano.MapFactories;
 import java.io.IOException;
@@ -28,7 +27,7 @@ public final class InternalNano {
     public static final int TYPE_UINT32 = 13;
     public static final int TYPE_UINT64 = 4;
     static final Charset UTF_8 = Charset.forName("UTF-8");
-    static final Charset ISO_8859_1 = Charset.forName(FilePart.DEFAULT_CHARSET);
+    static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
     public static final Object LAZY_INIT_LOCK = new Object();
 
     private InternalNano() {
@@ -41,7 +40,7 @@ public final class InternalNano {
     public static void cloneUnknownFieldData(ExtendableMessageNano extendableMessageNano, ExtendableMessageNano extendableMessageNano2) {
         FieldArray fieldArray = extendableMessageNano.unknownFieldData;
         if (fieldArray != null) {
-            extendableMessageNano2.unknownFieldData = fieldArray.m9913clone();
+            extendableMessageNano2.unknownFieldData = fieldArray.m9966clone();
         }
     }
 

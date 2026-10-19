@@ -1,6 +1,7 @@
 package com.miami.game.core.server;
 
 import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
+import com.google.android.gms.location.LocationRequest;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.miami.game.core.api.model.response.servers.ServersApiModelItem;
@@ -236,7 +237,7 @@ public final class ServersInteractor {
                     arrayList2.add(copy$default2);
                 }
             }
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(serversState, null, CollectionsKt.toList(arrayList), CollectionsKt.toList(arrayList3), null, CollectionsKt.toList(arrayList2), null, false, getDonateMultiple(arrayList2), 105, null)));
+        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(serversState, null, CollectionsKt.toList(arrayList), CollectionsKt.toList(arrayList3), null, CollectionsKt.toList(arrayList2), null, false, getDonateMultiple(arrayList2), LocationRequest.PRIORITY_NO_POWER, null)));
     }
 
     private final int getDonateMultiple(List<ServerModel> list) {

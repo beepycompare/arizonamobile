@@ -1,5 +1,6 @@
 package androidx.constraintlayout.compose;
 
+import androidx.media3.extractor.ts.PsExtractor;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* compiled from: TransitionScope.kt */
@@ -121,7 +122,7 @@ public final class SwipeMode {
         }
 
         public final SwipeMode spring(float f, float f2, float f3, float f4, SpringBoundary springBoundary) {
-            return new SwipeMode("spring", f, f2, f3, f4, springBoundary, 0.0f, 0.0f, 192, null);
+            return new SwipeMode("spring", f, f2, f3, f4, springBoundary, 0.0f, 0.0f, PsExtractor.AUDIO_STREAM, null);
         }
     }
 

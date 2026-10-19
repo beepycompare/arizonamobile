@@ -14,6 +14,6 @@ import kotlin.annotation.AnnotationTarget;
 @Retention(RetentionPolicy.SOURCE)
 @kotlin.annotation.Retention(AnnotationRetention.SOURCE)
 @Experimental
-/* loaded from: classes6.dex */
+/* loaded from: classes5.dex */
 public @interface DataClass {
 }

@@ -1,5 +1,6 @@
 package androidx.paging;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.paging.LoadState;
 import androidx.paging.PageFetcherSnapshotState;
@@ -304,7 +305,7 @@ public final class PageFetcherSnapshot$pageEventFlow$1<Value> extends SuspendLam
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: PageFetcherSnapshot.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$3", f = "PageFetcherSnapshot.kt", i = {}, l = {108}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @DebugMetadata(c = "androidx.paging.PageFetcherSnapshot$pageEventFlow$1$3", f = "PageFetcherSnapshot.kt", i = {}, l = {AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.paging.PageFetcherSnapshot$pageEventFlow$1$3  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.fishing.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FishingLayoutBinding implements ViewBinding {
     public final TextView description;
     public final ImageView exitButton;

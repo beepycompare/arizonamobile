@@ -1,5 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
+import androidx.media3.extractor.ts.PsExtractor;
 import androidx.window.core.layout.WindowSizeClass;
 import com.google.common.base.Ascii;
 import java.nio.ByteBuffer;
@@ -455,7 +456,7 @@ public final class Utf8 {
                 } else if (charAt2 < 2048) {
                     int i2 = position + 1;
                     try {
-                        out.put(position, (byte) ((charAt2 >>> 6) | 192));
+                        out.put(position, (byte) ((charAt2 >>> 6) | PsExtractor.AUDIO_STREAM));
                         out.put(i2, (byte) ((charAt2 & '?') | 128));
                         position = i2;
                     } catch (IndexOutOfBoundsException unused2) {

@@ -1,6 +1,5 @@
 package com.google.firebase.sessions;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.Locale;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -35,7 +34,7 @@ public final class SessionGenerator {
     private final String generateSessionId() {
         String uuid = this.uuidGenerator.next().toString();
         Intrinsics.checkNotNullExpressionValue(uuid, "toString(...)");
-        String lowerCase = StringsKt.replace$default(uuid, Constants.FILENAME_SEQUENCE_SEPARATOR, "", false, 4, (Object) null).toLowerCase(Locale.ROOT);
+        String lowerCase = StringsKt.replace$default(uuid, "-", "", false, 4, (Object) null).toLowerCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(lowerCase, "toLowerCase(...)");
         return lowerCase;
     }

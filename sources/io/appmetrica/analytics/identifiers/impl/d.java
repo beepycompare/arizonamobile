@@ -8,10 +8,10 @@ import kotlin.collections.MapsKt;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f403a;
+    public final Map f406a;
 
     public d(Map map) {
-        this.f403a = map;
+        this.f406a = map;
     }
 
     public /* synthetic */ d() {

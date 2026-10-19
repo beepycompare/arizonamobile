@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 public final class Og implements H {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f705a;
+    public final String f708a;
     public final Pg b;
 
     public Og(String str) {
@@ -21,13 +21,13 @@ public final class Og implements H {
 
     @Override // io.appmetrica.analytics.impl.H
     public final AdTrackingInfoResult a(Context context) {
-        return a(context, new C0740ye());
+        return a(context, new C0735ye());
     }
 
     public final AdTrackingInfoResult b(Context context) {
         Method method = Class.forName("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider").getMethod("requestIdentifiers", Context.class, Bundle.class);
         Bundle bundle = new Bundle();
-        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f705a);
+        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f708a);
         Pg pg = this.b;
         Object[] objArr = {context, bundle};
         AdTrackingInfo adTrackingInfo = null;
@@ -36,7 +36,7 @@ public final class Og implements H {
         if (bundle2 != null) {
             Bundle bundle3 = bundle2.getBundle("io.appmetrica.analytics.identifiers.extra.TRACKING_INFO");
             if (bundle3 != null) {
-                Object obj = L5.f643a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
+                Object obj = L5.f646a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
                 if (obj != null) {
                     adTrackingInfo = new AdTrackingInfo((AdTrackingInfo.Provider) obj, bundle3.getString("io.appmetrica.analytics.identifiers.extra.ID"), bundle3.containsKey("io.appmetrica.analytics.identifiers.extra.LIMITED") ? Boolean.valueOf(bundle3.getBoolean("io.appmetrica.analytics.identifiers.extra.LIMITED")) : null);
                 } else {
@@ -49,32 +49,32 @@ public final class Og implements H {
     }
 
     public Og(String str, Pg pg) {
-        this.f705a = str;
+        this.f708a = str;
         this.b = pg;
     }
 
     @Override // io.appmetrica.analytics.impl.H
-    public final AdTrackingInfoResult a(Context context, InterfaceC0150bj interfaceC0150bj) {
+    public final AdTrackingInfoResult a(Context context, InterfaceC0145bj interfaceC0145bj) {
         AdTrackingInfoResult adTrackingInfoResult;
         AdTrackingInfoResult adTrackingInfoResult2;
         if (ReflectionUtils.detectClassExists("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider")) {
-            C0439mo c0439mo = (C0439mo) interfaceC0150bj;
-            c0439mo.c = 0;
+            C0434mo c0434mo = (C0434mo) interfaceC0145bj;
+            c0434mo.c = 0;
             adTrackingInfoResult = null;
-            while (c0439mo.b()) {
+            while (c0434mo.b()) {
                 try {
                     return this.b(context);
                 } catch (InvocationTargetException e) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f705a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f708a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
                     adTrackingInfoResult = adTrackingInfoResult2;
                     try {
-                        Thread.sleep(((C0439mo) interfaceC0150bj).b);
+                        Thread.sleep(((C0434mo) interfaceC0145bj).b);
                     } catch (InterruptedException unused) {
                     }
                 } catch (Throwable th) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f705a + " adv_id: " + th.getMessage());
+                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f708a + " adv_id: " + th.getMessage());
                     adTrackingInfoResult = adTrackingInfoResult2;
-                    Thread.sleep(((C0439mo) interfaceC0150bj).b);
+                    Thread.sleep(((C0434mo) interfaceC0145bj).b);
                 }
             }
         } else {

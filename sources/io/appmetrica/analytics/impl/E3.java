@@ -11,13 +11,13 @@ public final class E3 implements Do {
     public final List<I3> invoke(List<I3> list, I3 i3) {
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (I3 i32 : list) {
-                EnumC0397l8 enumC0397l8 = i32.b;
-                EnumC0397l8 enumC0397l82 = i3.b;
-                if (enumC0397l8 == enumC0397l82) {
-                    if (enumC0397l82 == EnumC0397l8.d) {
+                EnumC0392l8 enumC0392l8 = i32.b;
+                EnumC0392l8 enumC0392l82 = i3.b;
+                if (enumC0392l8 == enumC0392l82) {
+                    if (enumC0392l82 == EnumC0392l8.d) {
                         ArrayList arrayList = new ArrayList();
                         for (Object obj : list) {
-                            if (((I3) obj).b != EnumC0397l8.d) {
+                            if (((I3) obj).b != EnumC0392l8.d) {
                                 arrayList.add(obj);
                             }
                         }

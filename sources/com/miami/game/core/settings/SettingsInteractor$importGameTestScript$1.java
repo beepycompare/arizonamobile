@@ -48,7 +48,7 @@ public final class SettingsInteractor$importGameTestScript$1 extends SuspendLamb
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         LocalRepository localRepository;
         MutableStateFlow mutableStateFlow;
         LocalRepository localRepository2;
@@ -68,17 +68,17 @@ public final class SettingsInteractor$importGameTestScript$1 extends SuspendLamb
             String displayName = importScript.getDisplayName();
             String fileName = importScript.getFileName();
             localRepository2 = settingsInteractor.localRepository;
-            settingsInteractor.saveSettings(SettingState.copy$default((SettingState) mutableStateFlow.getValue(), 0.0f, 0, false, false, false, false, false, false, false, false, false, true, displayName, fileName, GameTestScriptStorage.listImportedScripts(localRepository2.getContext()), null, false, false, null, null, 1017855, null));
+            settingsInteractor.saveSettings(SettingState.copy$default((SettingState) mutableStateFlow.getValue(), 0, 0, false, false, false, false, false, false, false, false, false, true, displayName, fileName, GameTestScriptStorage.listImportedScripts(localRepository2.getContext()), null, false, false, null, null, 1017855, null));
             settingsInteractor.showToast("Тестовый сценарий импортирован", 0);
-            m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
+            m9974constructorimpl = Result.m9974constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
         SettingsInteractor settingsInteractor2 = this.this$0;
-        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-        if (m9924exceptionOrNullimpl != null) {
-            String message = m9924exceptionOrNullimpl.getMessage();
+        Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+        if (m9977exceptionOrNullimpl != null) {
+            String message = m9977exceptionOrNullimpl.getMessage();
             if (message == null) {
                 message = "Не удалось импортировать сценарий";
             }

@@ -16,6 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Charsets;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
+import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.TableDialogBinding;
 import ru.mrlargha.commonui.elements.dialogs.AbstractDialog;
 import ru.mrlargha.commonui.elements.dialogs.IAutocompleteStateProvider;
@@ -54,7 +55,7 @@ public final class TableDialog extends AbstractDialog {
         this.binding = bind;
         this.adapter = new DialogTableAdapter(tableData, z, targetActivity, null, null, null, 56, null);
         Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
-        addViewToConstraintLayout(dialogLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, dialogLayout, -1, -1, false, 8, null);
         bind.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.table.TableDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

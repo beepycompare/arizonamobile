@@ -50,7 +50,7 @@ public final class CaseRouletteScreen extends SAMPUIElement {
         this.rouletteAwardsAdapter = rouletteAwardsAdapter;
         caseLayout.setClickable(true);
         Intrinsics.checkNotNullExpressionValue(caseLayout, "caseLayout");
-        addViewToConstraintLayout(caseLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, caseLayout, -1, -1, false, 8, null);
         this.isNeedInstantOpen = false;
         bind.possibleAwardsRc.setAdapter(this.possibleAwardsAdapter);
         bind.caseRouletteRc.setAdapter(rouletteAwardsAdapter);

@@ -19,7 +19,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int image_viewer_previous = 0x7f080c50;
+        public static int image_viewer_previous = 0x7f080c6b;
 
         private drawable() {
         }
@@ -27,14 +27,14 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int close_button = 0x7f0a051c;
-        public static int content_loader = 0x7f0a055a;
-        public static int content_pager = 0x7f0a055b;
-        public static int image = 0x7f0a08c0;
-        public static int loader = 0x7f0a0a68;
-        public static int next_button = 0x7f0a0c16;
-        public static int page_indicator = 0x7f0a0c71;
-        public static int previous_button = 0x7f0a0d1f;
+        public static int close_button = 0x7f0a052d;
+        public static int content_loader = 0x7f0a056d;
+        public static int content_pager = 0x7f0a056e;
+        public static int image = 0x7f0a08f8;
+        public static int loader = 0x7f0a0ab4;
+        public static int next_button = 0x7f0a0c6e;
+        public static int page_indicator = 0x7f0a0cd1;
+        public static int previous_button = 0x7f0a0d82;
 
         private id() {
         }
@@ -51,10 +51,10 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class string {
-        public static int image_viewer_close = 0x7f12041a;
-        public static int image_viewer_content = 0x7f12041b;
-        public static int image_viewer_next = 0x7f12041c;
-        public static int image_viewer_previous = 0x7f12041d;
+        public static int image_viewer_close = 0x7f12041b;
+        public static int image_viewer_content = 0x7f12041c;
+        public static int image_viewer_next = 0x7f12041d;
+        public static int image_viewer_previous = 0x7f12041e;
 
         private string() {
         }

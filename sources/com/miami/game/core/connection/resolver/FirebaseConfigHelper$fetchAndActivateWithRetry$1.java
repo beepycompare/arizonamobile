@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FirebaseServerHandler.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.connection.resolver.FirebaseConfigHelper", f = "FirebaseServerHandler.kt", i = {0, 0}, l = {288}, m = "fetchAndActivateWithRetry", n = {"attempt", "fetched"}, nl = {290}, s = {"I$2", "I$3"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.connection.resolver.FirebaseConfigHelper", f = "FirebaseServerHandler.kt", i = {0, 0}, l = {291}, m = "fetchAndActivateWithRetry", n = {"attempt", "fetched"}, nl = {293}, s = {"I$2", "I$3"}, v = 2)
 /* loaded from: classes5.dex */
 public final class FirebaseConfigHelper$fetchAndActivateWithRetry$1 extends ContinuationImpl {
     int I$0;

@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -90,6 +89,6 @@ public final class VertexMode {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5768toStringimpl(int i) {
-        return m5766equalsimpl0(i, Triangles) ? "Triangles" : m5766equalsimpl0(i, TriangleStrip) ? "TriangleStrip" : m5766equalsimpl0(i, TriangleFan) ? "TriangleFan" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5766equalsimpl0(i, Triangles) ? "Triangles" : m5766equalsimpl0(i, TriangleStrip) ? "TriangleStrip" : m5766equalsimpl0(i, TriangleFan) ? "TriangleFan" : "Unknown";
     }
 }

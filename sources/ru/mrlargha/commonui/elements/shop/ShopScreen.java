@@ -67,7 +67,7 @@ public final class ShopScreen extends SAMPUIElement implements InterfaceControll
         this.pagingList = new ArrayList();
         this.handler = new Handler();
         constraintLayout.isClickable();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         bind.btnBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.shop.ShopScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -168,7 +168,7 @@ public final class ShopScreen extends SAMPUIElement implements InterfaceControll
         List<InventoryItem> list2 = list;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
         for (InventoryItem inventoryItem : list2) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, this.currentItemsType, null, null, false, false, null, null, null, null, null, null, 134152191, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, this.currentItemsType, null, null, false, false, null, null, null, null, null, null, null, 268369919, null));
         }
         this.pagingList.addAll(arrayList);
         this.shopAdapter.submitList(this.pagingList);

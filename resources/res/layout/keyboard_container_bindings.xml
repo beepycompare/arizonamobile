@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent">
+    <Space android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1.5"/>
+    <androidx.recyclerview.widget.RecyclerView android:scrollbarThumbVertical="@color/orange_accent" android:orientation="vertical" android:id="@+id/binders_list" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="9dp" android:layout_marginBottom="8dp" android:layout_weight="0.5" android:overScrollMode="never" app:layoutManager="androidx.recyclerview.widget.GridLayoutManager" app:spanCount="4"/>
+    <Space android:layout_width="5dp" android:layout_height="match_parent"/>
+    <com.arizona.common.ui.KeyboardButton android:id="@+id/settingsButton" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="9dp" android:layout_marginBottom="8dp" android:layout_weight="1.3" app:hasBackground="true" app:imageKey="@drawable/settings_icon" app:tint="#b8b8b8"/>
+    <Space android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1.5"/>
+</LinearLayout>

@@ -3,6 +3,7 @@ package androidx.media3.exoplayer.image;
 import android.graphics.Bitmap;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
+import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.TraceUtil;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.BaseRenderer;
@@ -99,7 +100,7 @@ public class ImageRenderer extends BaseRenderer {
                 }
                 TraceUtil.endSection();
             } catch (ImageDecoderException e) {
-                throw createRendererException(e, null, 4003);
+                throw createRendererException(e, null, PlaybackException.ERROR_CODE_DECODING_FAILED);
             }
         }
     }
@@ -363,7 +364,7 @@ public class ImageRenderer extends BaseRenderer {
                     this.codecNeedsInitialization = false;
                     return true;
                 }
-                throw createRendererException(new ImageDecoderException("Provided decoder factory can't create decoder for format."), this.inputFormat, 4005);
+                throw createRendererException(new ImageDecoderException("Provided decoder factory can't create decoder for format."), this.inputFormat, PlaybackException.ERROR_CODE_DECODING_FORMAT_UNSUPPORTED);
             }
             return true;
         }

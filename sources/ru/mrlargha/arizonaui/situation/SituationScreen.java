@@ -57,7 +57,7 @@ public final class SituationScreen extends SAMPUIElement {
         StatsAdapter statsAdapter = new StatsAdapter();
         this.statsAdapter = statsAdapter;
         constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         bind.situationRc.setAdapter(rolesAdapter);
         bind.statsRc.setAdapter(statsAdapter);
         rolesAdapter.setOnRoleClickListener(new RolesAdapter.OnRoleClickListener() { // from class: ru.mrlargha.arizonaui.situation.SituationScreen$1$1

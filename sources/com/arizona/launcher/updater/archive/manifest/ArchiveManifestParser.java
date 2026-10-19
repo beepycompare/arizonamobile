@@ -2,11 +2,13 @@ package com.arizona.launcher.updater.archive.manifest;
 
 import androidx.collection.SieveCacheKt;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.arizona.launcher.updater.archive.model.ArchiveEntryMetadata;
 import com.arizona.launcher.updater.archive.model.ArchiveGpu;
 import com.arizona.launcher.updater.archive.model.ArchiveManifest;
 import com.arizona.launcher.updater.archive.model.ArchivePackage;
 import com.arizona.launcher.updater.archive.model.ArchivePackageType;
+import com.google.android.gms.common.internal.ImagesContract;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -124,12 +126,12 @@ public final class ArchiveManifestParser {
             String str2 = "archiveUpdater.packageSets." + str + "[" + i + "]";
             Intrinsics.checkNotNull(jsonElement2);
             JsonObject requireObject = requireObject(jsonElement2, str2);
-            ArchivePackageType fromWireName = ArchivePackageType.Companion.fromWireName(requiredString(requireObject, "type"));
+            ArchivePackageType fromWireName = ArchivePackageType.Companion.fromWireName(requiredString(requireObject, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY));
             if (fromWireName == null) {
                 fail(str2 + ".type", "unsupported package type");
                 throw new KotlinNothingValueException();
             }
-            arrayList.add(new ArchivePackage(requiredString(requireObject, TtmlNode.ATTR_ID), fromWireName, requiredString(requireObject, "url"), requiredWholeLong(requireObject, "archiveSize"), requiredWholeLong(requireObject, "installedSize"), requiredWholeLong(requireObject, "crc32"), requireObject.has(RemoteConfigConstants.ResponseFieldKey.ENTRIES) ? parseEntries(requiredArray(requireObject, RemoteConfigConstants.ResponseFieldKey.ENTRIES), str2) : null, true, null, null, null, 1792, null));
+            arrayList.add(new ArchivePackage(requiredString(requireObject, TtmlNode.ATTR_ID), fromWireName, requiredString(requireObject, ImagesContract.URL), requiredWholeLong(requireObject, "archiveSize"), requiredWholeLong(requireObject, "installedSize"), requiredWholeLong(requireObject, "crc32"), requireObject.has(RemoteConfigConstants.ResponseFieldKey.ENTRIES) ? parseEntries(requiredArray(requireObject, RemoteConfigConstants.ResponseFieldKey.ENTRIES), str2) : null, true, null, null, null, 1792, null));
             i = i2;
         }
         return arrayList;

@@ -99,13 +99,13 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
         @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
         /* renamed from: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes6.dex */
-        public static final class C00791<T> implements FlowCollector {
+        public static final class C00751<T> implements FlowCollector {
             final /* synthetic */ long $currentSessionGeneration;
             final /* synthetic */ DonateStates $sessionStates;
             final /* synthetic */ DonateScreenBinding $this_with;
             final /* synthetic */ DonateScreen this$0;
 
-            C00791(DonateScreen donateScreen, DonateStates donateStates, long j, DonateScreenBinding donateScreenBinding) {
+            C00751(DonateScreen donateScreen, DonateStates donateStates, long j, DonateScreenBinding donateScreenBinding) {
                 this.this$0 = donateScreen;
                 this.$sessionStates = donateStates;
                 this.$currentSessionGeneration = j;
@@ -161,7 +161,7 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                         Iterable<DonateCategoryModelUi> iterable = (Iterable) successful.getData();
                         if (!(iterable instanceof Collection) || !((Collection) iterable).isEmpty()) {
                             for (DonateCategoryModelUi donateCategoryModelUi : iterable) {
-                                if (donateCategoryModelUi.getVisible() && donateCategoryModelUi.m11869getGridTemplateType() == GridTemplateType.PAYPASS) {
+                                if (donateCategoryModelUi.getVisible() && donateCategoryModelUi.m11922getGridTemplateType() == GridTemplateType.PAYPASS) {
                                     z = true;
                                     break;
                                 }
@@ -182,7 +182,7 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
                         donateCategoryAdapter.submitList(arrayList, new Runnable() { // from class: ru.mrlargha.commonui.elements.donate.presentation.DonateScreen$setupCollectors$1$1$1$1$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                DonateScreen$setupCollectors$1$1.AnonymousClass1.C00791.emit$lambda$2(DonateScreen.this, donateStates, j);
+                                DonateScreen$setupCollectors$1$1.AnonymousClass1.C00751.emit$lambda$2(DonateScreen.this, donateStates, j);
                             }
                         });
                         isCurrentSession2 = this.this$0.isCurrentSession(this.$sessionStates, this.$currentSessionGeneration);
@@ -255,7 +255,7 @@ public final class DonateScreen$setupCollectors$1$1 extends SuspendLambda implem
             if (i == 0) {
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
-                if (this.$sessionStates.getCategoriesState().collect(new C00791(this.this$0, this.$sessionStates, this.$currentSessionGeneration, this.$this_with), this) == coroutine_suspended) {
+                if (this.$sessionStates.getCategoriesState().collect(new C00751(this.this$0, this.$sessionStates, this.$currentSessionGeneration, this.$this_with), this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

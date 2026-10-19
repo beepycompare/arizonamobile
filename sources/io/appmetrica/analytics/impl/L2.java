@@ -5,15 +5,15 @@ import android.content.Context;
 public final class L2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f640a;
-    public final C0495p2 b;
+    public final Context f643a;
+    public final C0490p2 b;
 
     public L2(Context context) {
-        this(context, new C0495p2());
+        this(context, new C0490p2());
     }
 
-    public L2(Context context, C0495p2 c0495p2) {
-        this.f640a = context;
-        this.b = c0495p2;
+    public L2(Context context, C0490p2 c0490p2) {
+        this.f643a = context;
+        this.b = c0490p2;
     }
 }

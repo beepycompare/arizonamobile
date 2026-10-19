@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
+import com.google.android.gms.common.internal.ImagesContract;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveBootstrapPrefetcher.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveBootstrapPrefetcher", f = "ArchiveBootstrapPrefetcher.kt", i = {0, 0, 0, 0, 0}, l = {50}, m = "prefetch", n = {"packages", "serverBaseUrl", "archivePackage", "url", "identity"}, nl = {49}, s = {"L$0", "L$1", "L$3", "L$4", "L$5"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveBootstrapPrefetcher", f = "ArchiveBootstrapPrefetcher.kt", i = {0, 0, 0, 0, 0}, l = {50}, m = "prefetch", n = {"packages", "serverBaseUrl", "archivePackage", ImagesContract.URL, "identity"}, nl = {49}, s = {"L$0", "L$1", "L$3", "L$4", "L$5"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveBootstrapPrefetcher$prefetch$1 extends ContinuationImpl {
     Object L$0;

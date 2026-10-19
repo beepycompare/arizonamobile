@@ -34,12 +34,13 @@ public final class MobileRentAccessoryAddBinding implements ViewBinding {
     public final MobileRentAccessoryElementItemBinding thirdContainer;
     public final TextView tvCategoryName;
     public final TextView tvChooseItem;
+    public final TextView tvCostCurrency;
     public final TextView tvDescOutOf;
     public final TextView tvItem;
     public final TextView tvItemOutOf;
     public final TextView tvSet;
 
-    private MobileRentAccessoryAddBinding(ScrollView scrollView, CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, EditText editText, CustomEditText customEditText, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding3, ImageView imageView, ImageView imageView2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding4, LinearLayout linearLayout, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding5, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding6, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6) {
+    private MobileRentAccessoryAddBinding(ScrollView scrollView, CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, EditText editText, CustomEditText customEditText, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding3, ImageView imageView, ImageView imageView2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding4, LinearLayout linearLayout, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding5, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding6, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7) {
         this.rootView = scrollView;
         this.btnCreateAdd = customCardView;
         this.btnItem = customCardView2;
@@ -59,10 +60,11 @@ public final class MobileRentAccessoryAddBinding implements ViewBinding {
         this.thirdContainer = mobileRentAccessoryElementItemBinding6;
         this.tvCategoryName = textView;
         this.tvChooseItem = textView2;
-        this.tvDescOutOf = textView3;
-        this.tvItem = textView4;
-        this.tvItemOutOf = textView5;
-        this.tvSet = textView6;
+        this.tvCostCurrency = textView3;
+        this.tvDescOutOf = textView4;
+        this.tvItem = textView5;
+        this.tvItemOutOf = textView6;
+        this.tvSet = textView7;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -137,19 +139,23 @@ public final class MobileRentAccessoryAddBinding implements ViewBinding {
                                                                 i = R.id.tv_choose_item;
                                                                 TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                 if (textView2 != null) {
-                                                                    i = R.id.tv_desc_out_of;
+                                                                    i = R.id.tv_cost_currency;
                                                                     TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                     if (textView3 != null) {
-                                                                        i = R.id.tv_item;
+                                                                        i = R.id.tv_desc_out_of;
                                                                         TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                         if (textView4 != null) {
-                                                                            i = R.id.tv_item_out_of;
+                                                                            i = R.id.tv_item;
                                                                             TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                             if (textView5 != null) {
-                                                                                i = R.id.tv_set;
+                                                                                i = R.id.tv_item_out_of;
                                                                                 TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                 if (textView6 != null) {
-                                                                                    return new MobileRentAccessoryAddBinding((ScrollView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, editText, customEditText, bind, bind2, bind3, imageView, imageView2, bind4, linearLayout, bind5, bind6, textView, textView2, textView3, textView4, textView5, textView6);
+                                                                                    i = R.id.tv_set;
+                                                                                    TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                    if (textView7 != null) {
+                                                                                        return new MobileRentAccessoryAddBinding((ScrollView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, editText, customEditText, bind, bind2, bind3, imageView, imageView2, bind4, linearLayout, bind5, bind6, textView, textView2, textView3, textView4, textView5, textView6, textView7);
+                                                                                    }
                                                                                 }
                                                                             }
                                                                         }

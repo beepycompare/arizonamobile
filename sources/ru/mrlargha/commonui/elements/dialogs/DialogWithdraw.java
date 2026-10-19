@@ -96,7 +96,7 @@ public final class DialogWithdraw extends AbstractDialog {
         }
         this.limits = (DialogWithdrawLimit) obj;
         Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
-        addViewToConstraintLayout(dialogLayout, -2, -2);
+        SAMPUIElement.addViewToConstraintLayout$default(this, dialogLayout, -2, -2, false, 8, null);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
         bind.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.DialogWithdraw$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

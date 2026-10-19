@@ -56,7 +56,7 @@ public final class AzVoiceUserSettings extends SAMPUIElement {
             }
         });
         this.sliderAdapter = sliderVoiceAdapter;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         recyclerView.setLayoutManager(new GridLayoutManager(targetActivity, 2));
         recyclerView.setAdapter(sliderVoiceAdapter);
         appCompatImageView.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceUserSettings$$ExternalSyntheticLambda3

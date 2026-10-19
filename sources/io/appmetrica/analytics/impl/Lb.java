@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public final class Lb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f646a;
+    public final byte[] f649a;
     public final String b;
     public final int c;
     public final HashMap d;
@@ -29,7 +29,7 @@ public final class Lb {
     public Lb(String str, long j) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
         JSONObject jSONObject2 = jSONObject.getJSONObject("event");
-        this.f646a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
+        this.f649a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
         this.b = jSONObject2.getString("name");
         this.c = jSONObject2.getInt("bytes_truncated");
         this.j = JsonUtils.optStringOrNull(jSONObject2, "environment");
@@ -40,7 +40,7 @@ public final class Lb {
                 HashMap c = Ib.c(optString);
                 if (c != null) {
                     for (Map.Entry entry : c.entrySet()) {
-                        this.d.put(EnumC0161c4.valueOf((String) entry.getKey()), Integer.valueOf(Integer.parseInt((String) entry.getValue())));
+                        this.d.put(EnumC0156c4.valueOf((String) entry.getKey()), Integer.valueOf(Integer.parseInt((String) entry.getValue())));
                     }
                 }
             } catch (Throwable unused) {
@@ -65,7 +65,7 @@ public final class Lb {
     }
 
     public final byte[] c() {
-        return this.f646a;
+        return this.f649a;
     }
 
     public final String d() {
@@ -96,16 +96,16 @@ public final class Lb {
         return this.i;
     }
 
-    public final HashMap<EnumC0161c4, Integer> k() {
+    public final HashMap<EnumC0156c4, Integer> k() {
         return this.d;
     }
 
     public final String l() throws JSONException {
         HashMap hashMap = new HashMap();
         for (Map.Entry entry : this.d.entrySet()) {
-            hashMap.put(((EnumC0161c4) entry.getKey()).name(), (Integer) entry.getValue());
+            hashMap.put(((EnumC0156c4) entry.getKey()).name(), (Integer) entry.getValue());
         }
-        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put("event", new JSONObject().put("jvm_crash", Base64.encodeToString(this.f646a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Ib.b(hashMap)).putOpt("environment", this.j)).toString();
+        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put(NotificationStatsPayloadFactory.KEY_PACKAGE_NAME, this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put("event", new JSONObject().put("jvm_crash", Base64.encodeToString(this.f649a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", Ib.b(hashMap)).putOpt("environment", this.j)).toString();
     }
 
     public final String toString() {
@@ -119,23 +119,23 @@ public final class Lb {
         return CounterConfigurationReporterType.MAIN;
     }
 
-    public Lb(C0240f6 c0240f6, Y3 y3, HashMap<EnumC0161c4, Integer> hashMap) {
-        this.f646a = c0240f6.getValueBytes();
-        this.b = c0240f6.getName();
-        this.c = c0240f6.getBytesTruncated();
+    public Lb(C0235f6 c0235f6, Y3 y3, HashMap<EnumC0156c4, Integer> hashMap) {
+        this.f649a = c0235f6.getValueBytes();
+        this.b = c0235f6.getName();
+        this.c = c0235f6.getBytesTruncated();
         if (hashMap != null) {
             this.d = hashMap;
         } else {
             this.d = new HashMap();
         }
-        C0173cg a2 = y3.a();
+        C0168cg a2 = y3.a();
         this.e = a2.e();
         this.f = a2.f();
         this.g = a2.g();
         CounterConfiguration b = y3.b();
         this.h = b.getApiKey();
         this.i = b.getReporterType();
-        this.j = c0240f6.f();
+        this.j = c0235f6.f();
         this.k = 0L;
     }
 }

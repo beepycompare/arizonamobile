@@ -10,7 +10,6 @@ import androidx.compose.ui.semantics.CustomAccessibilityAction;
 import androidx.compose.ui.semantics.SemanticsModifierKt;
 import androidx.compose.ui.semantics.SemanticsPropertiesKt;
 import androidx.compose.ui.semantics.SemanticsPropertyReceiver;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -52,7 +51,7 @@ final class DateRangePickerKt$VerticalMonthsList$1$2$1$1$1$1 implements Function
         }
         String formatMonthYear = this.$dateFormatter.formatMonthYear(Long.valueOf(this.$month.getStartUtcTimeMillis()), this.$calendarModel.getLocale());
         if (formatMonthYear == null) {
-            formatMonthYear = Constants.FILENAME_SEQUENCE_SEPARATOR;
+            formatMonthYear = "-";
         }
         Modifier padding = PaddingKt.padding(Modifier.Companion, DateRangePickerKt.getCalendarMonthSubheadPadding());
         ComposerKt.sourceInformationMarkerStart(composer, -476444640, "CC(remember):DateRangePicker.kt#9igjgp");

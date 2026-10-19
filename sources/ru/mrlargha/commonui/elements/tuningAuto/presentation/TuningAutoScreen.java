@@ -123,7 +123,7 @@ public final class TuningAutoScreen extends SAMPUIElement implements InterfaceCo
         this.categoriesList = CollectionsKt.emptyList();
         this.handler = new Handler();
         this.unselectTintColorList = new ArrayList();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         bind.tvClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

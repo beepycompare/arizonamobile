@@ -13,4 +13,6 @@
     </LinearLayout>
     <ImageView android:id="@+id/iv_effect_foreground" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/_1sdp"/>
     <View android:layout_gravity="center" android:id="@+id/viewCenter" android:background="@color/black_type1" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0"/>
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/holdBorder" android:focusable="false" android:visibility="gone" android:clickable="false" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="@android:color/transparent" app:borderMainColor="#fd0e42" app:borderTransparency="30" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_10sdp"/>
+    <ImageView android:layout_gravity="start|top" android:id="@+id/ivHoldPin" android:visibility="gone" android:layout_width="@dimen/_11sdp" android:layout_height="@dimen/_11sdp" android:layout_marginTop="@dimen/_8sdp" android:src="@drawable/ic_inventory_hold_pin" android:contentDescription="@null" android:importantForAccessibility="no" android:layout_marginStart="@dimen/_8sdp"/>
 </androidx.cardview.widget.CardView>

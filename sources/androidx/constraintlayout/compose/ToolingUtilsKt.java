@@ -10,7 +10,7 @@ import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import androidx.constraintlayout.core.widgets.ConstraintWidgetContainer;
 import androidx.constraintlayout.core.widgets.HelperWidget;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.facebook.internal.NativeProtocol;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.ArrayList;
@@ -160,7 +160,7 @@ public final class ToolingUtilsKt {
     }
 
     private static final String createDesignInfoJson(JSONObject jSONObject) {
-        return new JSONObject().put("type", "CONSTRAINTS").put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, 1).put(FirebaseAnalytics.Param.CONTENT, jSONObject).toString();
+        return new JSONObject().put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "CONSTRAINTS").put("version", 1).put(FirebaseAnalytics.Param.CONTENT, jSONObject).toString();
     }
 
     private static final JSONObject boundsToJson(ConstraintWidget constraintWidget, int i, int i2) {

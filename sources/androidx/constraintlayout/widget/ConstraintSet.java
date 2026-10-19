@@ -215,7 +215,7 @@ public class ConstraintSet {
         sMapToConstant.append(R.styleable.Constraint_layout_constraintGuide_begin, 17);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintGuide_end, 18);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintGuide_percent, 19);
-        sMapToConstant.append(R.styleable.Constraint_guidelineUseRtl, 99);
+        sMapToConstant.append(R.styleable.Constraint_guidelineUseRtl, GUIDELINE_USE_RTL);
         sMapToConstant.append(R.styleable.Constraint_android_orientation, 27);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintStart_toEndOf, 32);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintStart_toStartOf, 33);
@@ -280,7 +280,7 @@ public class ConstraintSet {
         sMapToConstant.append(R.styleable.Constraint_motionProgress, PROGRESS);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintWidth_percent, WIDTH_PERCENT);
         sMapToConstant.append(R.styleable.Constraint_layout_constraintHeight_percent, HEIGHT_PERCENT);
-        sMapToConstant.append(R.styleable.Constraint_layout_wrapBehaviorInParent, 97);
+        sMapToConstant.append(R.styleable.Constraint_layout_wrapBehaviorInParent, LAYOUT_WRAP_BEHAVIOR);
         sMapToConstant.append(R.styleable.Constraint_chainUseRtl, 71);
         sMapToConstant.append(R.styleable.Constraint_barrierDirection, BARRIER_DIRECTION);
         sMapToConstant.append(R.styleable.Constraint_barrierMargin, BARRIER_MARGIN);
@@ -294,7 +294,7 @@ public class ConstraintSet {
         sMapToConstant.append(R.styleable.Constraint_polarRelativeTo, ANIMATE_CIRCLE_ANGLE_TO);
         sMapToConstant.append(R.styleable.Constraint_transformPivotTarget, TRANSFORM_PIVOT_TARGET);
         sMapToConstant.append(R.styleable.Constraint_quantizeMotionSteps, QUANTIZE_MOTION_STEPS);
-        sMapToConstant.append(R.styleable.Constraint_quantizeMotionPhase, QUANTIZE_MOTION_PHASE);
+        sMapToConstant.append(R.styleable.Constraint_quantizeMotionPhase, 85);
         sMapToConstant.append(R.styleable.Constraint_quantizeMotionInterpolator, QUANTIZE_MOTION_INTERPOLATOR);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_editor_absoluteY, 6);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_editor_absoluteY, 7);
@@ -371,9 +371,9 @@ public class ConstraintSet {
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_polarRelativeTo, ANIMATE_CIRCLE_ANGLE_TO);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_transformPivotTarget, TRANSFORM_PIVOT_TARGET);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_quantizeMotionSteps, QUANTIZE_MOTION_STEPS);
-        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_quantizeMotionPhase, QUANTIZE_MOTION_PHASE);
+        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_quantizeMotionPhase, 85);
         sOverrideMapToConstant.append(R.styleable.ConstraintOverride_quantizeMotionInterpolator, QUANTIZE_MOTION_INTERPOLATOR);
-        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_wrapBehaviorInParent, 97);
+        sOverrideMapToConstant.append(R.styleable.ConstraintOverride_layout_wrapBehaviorInParent, LAYOUT_WRAP_BEHAVIOR);
     }
 
     public HashMap<String, ConstraintAttribute> getCustomAttributeSet() {
@@ -1046,7 +1046,7 @@ public class ConstraintSet {
             sMapToConstant.append(R.styleable.Layout_layout_constraintWidth_max, WIDTH_MAX);
             sMapToConstant.append(R.styleable.Layout_layout_constraintWidth_min, WIDTH_MIN);
             sMapToConstant.append(R.styleable.Layout_layout_constraintWidth_max, HEIGHT_MAX);
-            sMapToConstant.append(R.styleable.Layout_layout_constraintHeight_min, HEIGHT_MIN);
+            sMapToConstant.append(R.styleable.Layout_layout_constraintHeight_min, 85);
             sMapToConstant.append(R.styleable.Layout_layout_constraintWidth, CONSTRAINED_WIDTH);
             sMapToConstant.append(R.styleable.Layout_layout_constraintHeight, CONSTRAINED_HEIGHT);
             sMapToConstant.append(R.styleable.ConstraintLayout_Layout_layout_constraintTag, 89);
@@ -1248,7 +1248,7 @@ public class ConstraintSet {
                                     case WIDTH_MAX /* 84 */:
                                         this.widthMax = obtainStyledAttributes.getDimensionPixelSize(index, this.widthMax);
                                         continue;
-                                    case HEIGHT_MIN /* 85 */:
+                                    case 85:
                                         this.heightMin = obtainStyledAttributes.getDimensionPixelSize(index, this.heightMin);
                                         continue;
                                     case WIDTH_MIN /* 86 */:
@@ -3628,8 +3628,8 @@ public class ConstraintSet {
                 case QUANTIZE_MOTION_STEPS /* 84 */:
                     delta.add(QUANTIZE_MOTION_STEPS, typedArray.getInteger(index, constraint.motion.mQuantizeMotionSteps));
                     break;
-                case QUANTIZE_MOTION_PHASE /* 85 */:
-                    delta.add(QUANTIZE_MOTION_PHASE, typedArray.getFloat(index, constraint.motion.mQuantizeMotionPhase));
+                case 85:
+                    delta.add(85, typedArray.getFloat(index, constraint.motion.mQuantizeMotionPhase));
                     break;
                 case QUANTIZE_MOTION_INTERPOLATOR /* 86 */:
                     TypedValue peekValue = typedArray.peekValue(index);
@@ -3677,8 +3677,8 @@ public class ConstraintSet {
                 case 96:
                     parseDimensionConstraints(delta, typedArray, index, 1);
                     break;
-                case 97:
-                    delta.add(97, typedArray.getInt(index, constraint.layout.mWrapBehavior));
+                case LAYOUT_WRAP_BEHAVIOR /* 97 */:
+                    delta.add(LAYOUT_WRAP_BEHAVIOR, typedArray.getInt(index, constraint.layout.mWrapBehavior));
                     break;
                 case MOTION_TARGET /* 98 */:
                     if (MotionLayout.IS_IN_EDIT_MODE) {
@@ -3696,8 +3696,8 @@ public class ConstraintSet {
                         constraint.mViewId = typedArray.getResourceId(index, constraint.mViewId);
                         break;
                     }
-                case 99:
-                    delta.add(99, typedArray.getBoolean(index, constraint.layout.guidelineUseRtl));
+                case GUIDELINE_USE_RTL /* 99 */:
+                    delta.add(GUIDELINE_USE_RTL, typedArray.getBoolean(index, constraint.layout.guidelineUseRtl));
                     break;
             }
         }
@@ -3717,7 +3717,7 @@ public class ConstraintSet {
             constraint.layout.circleAngle = f;
         } else if (i == MOTION_STAGGER) {
             constraint.motion.mMotionStagger = f;
-        } else if (i == QUANTIZE_MOTION_PHASE) {
+        } else if (i == 85) {
             constraint.motion.mQuantizeMotionPhase = f;
         } else if (i != UNUSED) {
             if (i == 39) {
@@ -3861,7 +3861,7 @@ public class ConstraintSet {
                 case GONE_BASELINE_MARGIN /* 94 */:
                     constraint.layout.goneBaselineMargin = i2;
                     return;
-                case 97:
+                case LAYOUT_WRAP_BEHAVIOR /* 97 */:
                     constraint.layout.mWrapBehavior = i2;
                     return;
                 default:
@@ -4243,7 +4243,7 @@ public class ConstraintSet {
                 case QUANTIZE_MOTION_STEPS /* 84 */:
                     constraint.motion.mQuantizeMotionSteps = typedArray.getInteger(index, constraint.motion.mQuantizeMotionSteps);
                     break;
-                case QUANTIZE_MOTION_PHASE /* 85 */:
+                case 85:
                     constraint.motion.mQuantizeMotionPhase = typedArray.getFloat(index, constraint.motion.mQuantizeMotionPhase);
                     break;
                 case QUANTIZE_MOTION_INTERPOLATOR /* 86 */:
@@ -4297,7 +4297,7 @@ public class ConstraintSet {
                 case 96:
                     parseDimensionConstraints(constraint.layout, typedArray, index, 1);
                     break;
-                case 97:
+                case LAYOUT_WRAP_BEHAVIOR /* 97 */:
                     constraint.layout.mWrapBehavior = typedArray.getInt(index, constraint.layout.mWrapBehavior);
                     break;
             }

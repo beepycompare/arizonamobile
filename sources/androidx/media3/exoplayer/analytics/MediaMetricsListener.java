@@ -48,7 +48,6 @@ import androidx.media3.exoplayer.mediacodec.MediaCodecRenderer;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.source.MediaSource;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
@@ -552,7 +551,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     }
 
     private static Pair<String, String> getLanguageAndRegion(String str) {
-        String[] split = Util.split(str, Constants.FILENAME_SEQUENCE_SEPARATOR);
+        String[] split = Util.split(str, "-");
         return Pair.create(split[0], split.length >= 2 ? split[1] : null);
     }
 

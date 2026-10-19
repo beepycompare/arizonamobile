@@ -1,7 +1,7 @@
 package com.google.firebase.crashlytics.internal.stacktrace;
 
 import java.util.HashMap;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class RemoveRepeatsStrategy implements StackTraceTrimmingStrategy {
     private final int maxRepetitions;
 

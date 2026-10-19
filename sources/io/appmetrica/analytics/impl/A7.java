@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class A7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Me f455a;
+    public final Me f458a;
 
     public A7() {
         this(null, 1, null);
@@ -15,45 +15,45 @@ public final class A7 implements Converter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final E7 fromModel(C0759z7 c0759z7) {
+    public final E7 fromModel(C0754z7 c0754z7) {
         E7 e7 = new E7();
-        Boolean bool = c0759z7.f1311a;
+        Boolean bool = c0754z7.f1314a;
         if (bool != null) {
-            e7.f525a = this.f455a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
+            e7.f528a = this.f458a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
-        Double d = c0759z7.c;
+        Double d = c0754z7.c;
         if (d != null) {
             e7.c = d.doubleValue();
         }
-        Double d2 = c0759z7.b;
+        Double d2 = c0754z7.b;
         if (d2 != null) {
             e7.b = d2.doubleValue();
         }
-        Long l = c0759z7.h;
+        Long l = c0754z7.h;
         if (l != null) {
             e7.h = l.longValue();
         }
-        Integer num = c0759z7.f;
+        Integer num = c0754z7.f;
         if (num != null) {
             e7.f = num.intValue();
         }
-        Integer num2 = c0759z7.e;
+        Integer num2 = c0754z7.e;
         if (num2 != null) {
             e7.e = num2.intValue();
         }
-        Integer num3 = c0759z7.g;
+        Integer num3 = c0754z7.g;
         if (num3 != null) {
             e7.g = num3.intValue();
         }
-        Integer num4 = c0759z7.d;
+        Integer num4 = c0754z7.d;
         if (num4 != null) {
             e7.d = num4.intValue();
         }
-        String str = c0759z7.i;
+        String str = c0754z7.i;
         if (str != null) {
             e7.i = str;
         }
-        String str2 = c0759z7.j;
+        String str2 = c0754z7.j;
         if (str2 != null) {
             e7.j = str2;
         }
@@ -61,7 +61,7 @@ public final class A7 implements Converter {
     }
 
     public A7(Me me2) {
-        this.f455a = me2;
+        this.f458a = me2;
     }
 
     public /* synthetic */ A7(Me me2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -70,12 +70,12 @@ public final class A7 implements Converter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0759z7 toModel(E7 e7) {
+    public final C0754z7 toModel(E7 e7) {
         if (e7 == null) {
-            return new C0759z7(null, null, null, null, null, null, null, null, null, null);
+            return new C0754z7(null, null, null, null, null, null, null, null, null, null);
         }
         E7 e72 = new E7();
-        Boolean a2 = this.f455a.a(e7.f525a);
+        Boolean a2 = this.f458a.a(e7.f528a);
         Double valueOf = Double.valueOf(e7.c);
         if (valueOf.doubleValue() == e72.c) {
             valueOf = null;
@@ -95,6 +95,6 @@ public final class A7 implements Converter {
         String str = e7.i;
         String str2 = !Intrinsics.areEqual(str, e72.i) ? str : null;
         String str3 = e7.j;
-        return new C0759z7(a2, d, valueOf, num4, num2, num, num3, l, str2, !Intrinsics.areEqual(str3, e72.j) ? str3 : null);
+        return new C0754z7(a2, d, valueOf, num4, num2, num, num3, l, str2, !Intrinsics.areEqual(str3, e72.j) ? str3 : null);
     }
 }

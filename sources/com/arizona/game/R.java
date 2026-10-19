@@ -16,6 +16,14 @@ public final class R {
         }
     }
 
+    /* loaded from: classes3.dex */
+    public static final class bool {
+        public static int resource_hot_reload_capable = 0x7f050006;
+
+        private bool() {
+        }
+    }
+
     /* loaded from: classes6.dex */
     public static final class color {
         public static int arizona_accent = 0x7f060022;
@@ -58,7 +66,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_launcher_background = 0x7f080b8e;
+        public static int ic_launcher_background = 0x7f080ba9;
 
         private drawable() {
         }
@@ -109,14 +117,14 @@ public final class R {
         public static int current_android_version = 0x7f1201fb;
         public static int current_version = 0x7f1201fc;
         public static int debug = 0x7f1201fe;
-        public static int default_ping = 0x7f120203;
-        public static int default_server_address = 0x7f120205;
-        public static int default_server_mode = 0x7f120206;
-        public static int default_server_name = 0x7f120207;
-        public static int default_server_player_count = 0x7f120208;
-        public static int default_update_percent = 0x7f120209;
-        public static int default_web_client_id = 0x7f12020b;
-        public static int description = 0x7f12020e;
+        public static int default_ping = 0x7f120202;
+        public static int default_server_address = 0x7f120204;
+        public static int default_server_mode = 0x7f120205;
+        public static int default_server_name = 0x7f120206;
+        public static int default_server_player_count = 0x7f120207;
+        public static int default_update_percent = 0x7f120208;
+        public static int default_web_client_id = 0x7f12020a;
+        public static int description = 0x7f12020d;
         public static int error = 0x7f12027f;
         public static int exit = 0x7f1202b1;
         public static int files_not_corrupted = 0x7f12039c;
@@ -130,92 +138,93 @@ public final class R {
         public static int google_crash_reporting_api_key = 0x7f1203df;
         public static int google_storage_bucket = 0x7f1203e0;
         public static int hello_blank_fragment = 0x7f1203e2;
-        public static int info_ip_default = 0x7f120420;
-        public static int info_ip_title = 0x7f120421;
-        public static int info_language_default = 0x7f120422;
-        public static int info_language_title = 0x7f120423;
-        public static int info_mode_default = 0x7f120424;
-        public static int info_mode_title = 0x7f120425;
-        public static int info_ping_default = 0x7f120426;
-        public static int info_ping_title = 0x7f120427;
-        public static int info_players_default = 0x7f120428;
-        public static int info_players_max_default = 0x7f120429;
-        public static int info_players_title = 0x7f12042a;
-        public static int info_port_default = 0x7f12042b;
-        public static int info_port_title = 0x7f12042c;
-        public static int info_server_default = 0x7f12042d;
-        public static int info_server_title = 0x7f12042e;
-        public static int information = 0x7f12042f;
-        public static int keyboar_type_change = 0x7f120449;
-        public static int keyboard_change = 0x7f12044a;
-        public static int launcher_apk_install = 0x7f12044f;
-        public static int launcher_apk_install_ready_description = 0x7f120450;
-        public static int launcher_apk_install_ready_title = 0x7f120451;
-        public static int launcher_apk_insufficient_storage_description = 0x7f120452;
-        public static int launcher_apk_insufficient_storage_title = 0x7f120453;
-        public static int launcher_apk_invalid_package_description = 0x7f120454;
-        public static int launcher_apk_invalid_package_title = 0x7f120455;
-        public static int launcher_apk_storage_unavailable_description = 0x7f120456;
-        public static int launcher_apk_storage_unavailable_title = 0x7f120457;
-        public static int left_time = 0x7f120459;
-        public static int left_time_default = 0x7f12045a;
-        public static int need = 0x7f120596;
-        public static int need_app_update = 0x7f120597;
-        public static int need_free_space = 0x7f120598;
-        public static int need_free_space_split = 0x7f120599;
-        public static int need_free_space_title = 0x7f12059a;
-        public static int need_restart = 0x7f12059b;
-        public static int nick_name = 0x7f1205a1;
-        public static int no = 0x7f1205a3;
-        public static int no_internet = 0x7f1205a4;
-        public static int official_site = 0x7f1205be;
-        public static int ok = 0x7f1205bf;
-        public static int open_website = 0x7f1205c5;
-        public static int pass = 0x7f1205cc;
-        public static int permissions_not_granted = 0x7f1205ea;
-        public static int prepare_data = 0x7f120608;
-        public static int project_id = 0x7f12060d;
-        public static int public_debug = 0x7f120638;
-        public static int rcon_password = 0x7f120656;
-        public static int release = 0x7f12066b;
-        public static int release_hw = 0x7f12066c;
-        public static int release_old = 0x7f12066d;
-        public static int release_ru = 0x7f12066e;
-        public static int release_web = 0x7f12066f;
-        public static int repeat = 0x7f120674;
-        public static int report = 0x7f120677;
-        public static int report_an_error = 0x7f120678;
-        public static int samp_mobile = 0x7f120681;
-        public static int save = 0x7f120682;
-        public static int separator = 0x7f12068e;
-        public static int server_info_title = 0x7f12068f;
-        public static int server_list = 0x7f120690;
-        public static int server_password = 0x7f120691;
-        public static int server_unreachable = 0x7f120692;
-        public static int settings = 0x7f120695;
-        public static int speed_update_default = 0x7f1206b8;
-        public static int staging = 0x7f1206ba;
-        public static int storage_inspection_failed_description = 0x7f1206c7;
-        public static int storage_inspection_failed_title = 0x7f1206c8;
-        public static int string_count_in_chat = 0x7f1206c9;
-        public static int test_server = 0x7f1206da;
-        public static int unknown = 0x7f120717;
-        public static int unsupported_native_abi = 0x7f120719;
-        public static int unsupported_version = 0x7f12071a;
-        public static int unsupported_version_info = 0x7f12071b;
-        public static int update = 0x7f12071d;
-        public static int update_btn = 0x7f12071e;
-        public static int update_data = 0x7f12071f;
-        public static int update_game = 0x7f120720;
-        public static int update_game_data = 0x7f120721;
-        public static int update_game_error = 0x7f120722;
-        public static int update_server_connection_refused = 0x7f120723;
-        public static int update_server_error = 0x7f120724;
-        public static int update_server_error_description = 0x7f120725;
-        public static int waiting = 0x7f120731;
-        public static int warning_title = 0x7f120745;
-        public static int welcome_text = 0x7f120748;
-        public static int you_have_installed = 0x7f120769;
+        public static int hwasan = 0x7f120413;
+        public static int info_ip_default = 0x7f120421;
+        public static int info_ip_title = 0x7f120422;
+        public static int info_language_default = 0x7f120423;
+        public static int info_language_title = 0x7f120424;
+        public static int info_mode_default = 0x7f120425;
+        public static int info_mode_title = 0x7f120426;
+        public static int info_ping_default = 0x7f120427;
+        public static int info_ping_title = 0x7f120428;
+        public static int info_players_default = 0x7f120429;
+        public static int info_players_max_default = 0x7f12042a;
+        public static int info_players_title = 0x7f12042b;
+        public static int info_port_default = 0x7f12042c;
+        public static int info_port_title = 0x7f12042d;
+        public static int info_server_default = 0x7f12042e;
+        public static int info_server_title = 0x7f12042f;
+        public static int information = 0x7f120430;
+        public static int keyboar_type_change = 0x7f12044a;
+        public static int keyboard_change = 0x7f12044b;
+        public static int launcher_apk_install = 0x7f120450;
+        public static int launcher_apk_install_ready_description = 0x7f120451;
+        public static int launcher_apk_install_ready_title = 0x7f120452;
+        public static int launcher_apk_insufficient_storage_description = 0x7f120453;
+        public static int launcher_apk_insufficient_storage_title = 0x7f120454;
+        public static int launcher_apk_invalid_package_description = 0x7f120455;
+        public static int launcher_apk_invalid_package_title = 0x7f120456;
+        public static int launcher_apk_storage_unavailable_description = 0x7f120457;
+        public static int launcher_apk_storage_unavailable_title = 0x7f120458;
+        public static int left_time = 0x7f12045a;
+        public static int left_time_default = 0x7f12045b;
+        public static int need = 0x7f1205c7;
+        public static int need_app_update = 0x7f1205c8;
+        public static int need_free_space = 0x7f1205c9;
+        public static int need_free_space_split = 0x7f1205ca;
+        public static int need_free_space_title = 0x7f1205cb;
+        public static int need_restart = 0x7f1205cc;
+        public static int nick_name = 0x7f1205d2;
+        public static int no = 0x7f1205d4;
+        public static int no_internet = 0x7f1205d5;
+        public static int official_site = 0x7f1205ef;
+        public static int ok = 0x7f1205f0;
+        public static int open_website = 0x7f1205f6;
+        public static int pass = 0x7f1205fd;
+        public static int permissions_not_granted = 0x7f12061b;
+        public static int prepare_data = 0x7f120639;
+        public static int project_id = 0x7f12063e;
+        public static int public_debug = 0x7f120669;
+        public static int rcon_password = 0x7f120687;
+        public static int release = 0x7f12069c;
+        public static int release_hw = 0x7f12069d;
+        public static int release_old = 0x7f12069e;
+        public static int release_ru = 0x7f12069f;
+        public static int release_web = 0x7f1206a0;
+        public static int repeat = 0x7f1206a5;
+        public static int report = 0x7f1206a8;
+        public static int report_an_error = 0x7f1206a9;
+        public static int samp_mobile = 0x7f1206b2;
+        public static int save = 0x7f1206b3;
+        public static int separator = 0x7f1206bf;
+        public static int server_info_title = 0x7f1206c0;
+        public static int server_list = 0x7f1206c1;
+        public static int server_password = 0x7f1206c2;
+        public static int server_unreachable = 0x7f1206c3;
+        public static int settings = 0x7f1206c6;
+        public static int speed_update_default = 0x7f1206f0;
+        public static int staging = 0x7f1206f2;
+        public static int storage_inspection_failed_description = 0x7f1206ff;
+        public static int storage_inspection_failed_title = 0x7f120700;
+        public static int string_count_in_chat = 0x7f120701;
+        public static int test_server = 0x7f120712;
+        public static int unknown = 0x7f12074f;
+        public static int unsupported_native_abi = 0x7f120751;
+        public static int unsupported_version = 0x7f120752;
+        public static int unsupported_version_info = 0x7f120753;
+        public static int update = 0x7f120755;
+        public static int update_btn = 0x7f120756;
+        public static int update_data = 0x7f120757;
+        public static int update_game = 0x7f120758;
+        public static int update_game_data = 0x7f120759;
+        public static int update_game_error = 0x7f12075a;
+        public static int update_server_connection_refused = 0x7f12075b;
+        public static int update_server_error = 0x7f12075c;
+        public static int update_server_error_description = 0x7f12075d;
+        public static int waiting = 0x7f12076d;
+        public static int warning_title = 0x7f120781;
+        public static int welcome_text = 0x7f120784;
+        public static int you_have_installed = 0x7f1207a5;
 
         private string() {
         }
@@ -232,17 +241,17 @@ public final class R {
         public static int SAMPlot = 0x7f1301e6;
         public static int ShapeAppearanceOverlay_WindowRounded = 0x7f130248;
         public static int TabServerText = 0x7f130271;
-        public static int ThemeOverlay_App_Card = 0x7f1303d6;
-        public static int Theme_AppCompat_Light_NoActionBar_FullScreen = 0x7f130324;
-        public static int Theme_AppCompat_Translucent = 0x7f130326;
-        public static int Theme_Arizona_Splash = 0x7f130327;
-        public static int Theme_Rodina_Splash = 0x7f1303d2;
-        public static int TransparentBackgroundDialog = 0x7f13047b;
-        public static int Widget_App_CardView = 0x7f13047c;
-        public static int Widget_App_TextView = 0x7f13047d;
-        public static int black_button = 0x7f130677;
-        public static int dialog_header = 0x7f130679;
-        public static int rounded_card = 0x7f130684;
+        public static int ThemeOverlay_App_Card = 0x7f1303d5;
+        public static int Theme_AppCompat_Light_NoActionBar_FullScreen = 0x7f130323;
+        public static int Theme_AppCompat_Translucent = 0x7f130325;
+        public static int Theme_Arizona_Splash = 0x7f130326;
+        public static int Theme_Rodina_Splash = 0x7f1303d1;
+        public static int TransparentBackgroundDialog = 0x7f13047a;
+        public static int Widget_App_CardView = 0x7f13047b;
+        public static int Widget_App_TextView = 0x7f13047c;
+        public static int black_button = 0x7f130676;
+        public static int dialog_header = 0x7f130678;
+        public static int rounded_card = 0x7f130683;
         public static int users_table_header = 0x7f130687;
 
         private style() {

@@ -1,6 +1,7 @@
 package androidx.media3.extractor.text.ttml;
 
 import android.text.Layout;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.media3.common.C;
 import androidx.media3.common.util.ColorParser;
 import androidx.media3.common.util.Consumer;
@@ -1044,7 +1045,7 @@ public final class TtmlParser implements SubtitleParser {
                     }
                     c = 65535;
                     break;
-                case 109:
+                case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY /* 109 */:
                     if (str2.equals(CmcdData.OBJECT_TYPE_MANIFEST)) {
                         c = 2;
                         break;

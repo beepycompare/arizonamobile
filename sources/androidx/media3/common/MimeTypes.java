@@ -1,8 +1,10 @@
 package androidx.media3.common;
 
 import android.text.TextUtils;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ts.TsExtractor;
+import com.google.android.gms.location.LocationRequest;
 import com.google.common.base.Ascii;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.SignedBytes;
@@ -542,12 +544,12 @@ public final class MimeTypes {
                                                 case 103:
                                                 case 104:
                                                     return AUDIO_AAC;
-                                                case 105:
+                                                case LocationRequest.PRIORITY_NO_POWER /* 105 */:
                                                 case 107:
                                                     return AUDIO_MPEG;
                                                 case 106:
                                                     return VIDEO_MPEG;
-                                                case 108:
+                                                case AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR /* 108 */:
                                                     return "image/jpeg";
                                                 default:
                                                     switch (i) {

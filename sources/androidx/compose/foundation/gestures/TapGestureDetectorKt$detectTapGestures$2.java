@@ -3,6 +3,7 @@ package androidx.compose.foundation.gestures;
 import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerInputScope;
+import com.google.android.gms.location.LocationRequest;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -76,7 +77,7 @@ public final class TapGestureDetectorKt$detectTapGestures$2 extends SuspendLambd
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: TapGestureDetector.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1", f = "TapGestureDetector.kt", i = {}, l = {105}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @DebugMetadata(c = "androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1", f = "TapGestureDetector.kt", i = {}, l = {LocationRequest.PRIORITY_NO_POWER}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: androidx.compose.foundation.gestures.TapGestureDetectorKt$detectTapGestures$2$1  reason: invalid class name */
     /* loaded from: classes.dex */
     public static final class AnonymousClass1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super Unit>, Object> {

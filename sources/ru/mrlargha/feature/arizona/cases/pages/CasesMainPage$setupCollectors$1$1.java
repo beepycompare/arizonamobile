@@ -82,14 +82,14 @@ public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda imple
         @DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1$1", f = "CasesMainPage.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
         /* renamed from: ru.mrlargha.feature.arizona.cases.pages.CasesMainPage$setupCollectors$1$1$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: classes6.dex */
-        public static final class C00851 extends SuspendLambda implements Function2<CasesInfoModel, Continuation<? super Unit>, Object> {
+        public static final class C00811 extends SuspendLambda implements Function2<CasesInfoModel, Continuation<? super Unit>, Object> {
             final /* synthetic */ ArizonaCasesMainPageBinding $this_with;
             /* synthetic */ Object L$0;
             int label;
             final /* synthetic */ CasesMainPage this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C00851(ArizonaCasesMainPageBinding arizonaCasesMainPageBinding, CasesMainPage casesMainPage, Continuation<? super C00851> continuation) {
+            C00811(ArizonaCasesMainPageBinding arizonaCasesMainPageBinding, CasesMainPage casesMainPage, Continuation<? super C00811> continuation) {
                 super(2, continuation);
                 this.$this_with = arizonaCasesMainPageBinding;
                 this.this$0 = casesMainPage;
@@ -97,14 +97,14 @@ public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda imple
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                C00851 c00851 = new C00851(this.$this_with, this.this$0, continuation);
-                c00851.L$0 = obj;
-                return c00851;
+                C00811 c00811 = new C00811(this.$this_with, this.this$0, continuation);
+                c00811.L$0 = obj;
+                return c00811;
             }
 
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(CasesInfoModel casesInfoModel, Continuation<? super Unit> continuation) {
-                return ((C00851) create(casesInfoModel, continuation)).invokeSuspend(Unit.INSTANCE);
+                return ((C00811) create(casesInfoModel, continuation)).invokeSuspend(Unit.INSTANCE);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -141,7 +141,7 @@ public final class CasesMainPage$setupCollectors$1$1 extends SuspendLambda imple
                 ResultKt.throwOnFailure(obj);
                 mutableStateFlow = this.this$0.modelState;
                 this.label = 1;
-                if (FlowKt.collectLatest((Flow) mutableStateFlow, (Function2) new C00851(this.$this_with, this.this$0, null), (Continuation<? super Unit>) this) == coroutine_suspended) {
+                if (FlowKt.collectLatest((Flow) mutableStateFlow, (Function2) new C00811(this.$this_with, this.this$0, null), (Continuation<? super Unit>) this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {

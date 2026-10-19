@@ -4,13 +4,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class InputPopupBinding implements ViewBinding {
     public final ConstraintLayout layout;
@@ -18,9 +18,9 @@ public final class InputPopupBinding implements ViewBinding {
     public final MaterialButton okButton;
     public final AppCompatImageButton passwordToggle;
     private final ConstraintLayout rootView;
-    public final AppCompatEditText textInput;
+    public final KeyboardEditText textInput;
 
-    private InputPopupBinding(ConstraintLayout rootView, ConstraintLayout layout, LinearLayout mainInput, MaterialButton okButton, AppCompatImageButton passwordToggle, AppCompatEditText textInput) {
+    private InputPopupBinding(ConstraintLayout rootView, ConstraintLayout layout, LinearLayout mainInput, MaterialButton okButton, AppCompatImageButton passwordToggle, KeyboardEditText textInput) {
         this.rootView = rootView;
         this.layout = layout;
         this.mainInput = mainInput;
@@ -58,9 +58,9 @@ public final class InputPopupBinding implements ViewBinding {
                 AppCompatImageButton appCompatImageButton = (AppCompatImageButton) ViewBindings.findChildViewById(rootView, i);
                 if (appCompatImageButton != null) {
                     i = R.id.text_input;
-                    AppCompatEditText appCompatEditText = (AppCompatEditText) ViewBindings.findChildViewById(rootView, i);
-                    if (appCompatEditText != null) {
-                        return new InputPopupBinding(constraintLayout, constraintLayout, linearLayout, materialButton, appCompatImageButton, appCompatEditText);
+                    KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                    if (keyboardEditText != null) {
+                        return new InputPopupBinding(constraintLayout, constraintLayout, linearLayout, materialButton, appCompatImageButton, keyboardEditText);
                     }
                 }
             }

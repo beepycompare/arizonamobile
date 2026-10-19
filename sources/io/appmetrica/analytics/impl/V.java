@@ -7,23 +7,23 @@ import kotlin.jvm.internal.Lambda;
 public final class V extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ W f802a;
-    public final /* synthetic */ InterfaceC0150bj b;
+    public final /* synthetic */ W f805a;
+    public final /* synthetic */ InterfaceC0145bj b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public V(W w, C0439mo c0439mo) {
+    public V(W w, C0434mo c0434mo) {
         super(0);
-        this.f802a = w;
-        this.b = c0439mo;
+        this.f805a = w;
+        this.b = c0434mo;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        W w = this.f802a;
+        W w = this.f805a;
         K k = w.h;
-        Context context = w.f817a;
-        InterfaceC0150bj interfaceC0150bj = this.b;
+        Context context = w.f820a;
+        InterfaceC0145bj interfaceC0145bj = this.b;
         k.getClass();
-        return K.a(new J(k, context, interfaceC0150bj));
+        return K.a(new J(k, context, interfaceC0145bj));
     }
 }

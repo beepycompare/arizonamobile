@@ -18,6 +18,7 @@ import com.google.common.collect.Multimaps;
 import com.google.common.collect.UnmodifiableIterator;
 import com.google.errorprone.annotations.Immutable;
 import com.google.errorprone.annotations.concurrent.LazyInit;
+import io.appmetrica.analytics.BuildConfig;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
@@ -115,7 +116,7 @@ public final class MediaType {
     public static final MediaType EPUB = createConstant("application", "epub+zip");
     public static final MediaType FORM_DATA = createConstant("application", "x-www-form-urlencoded");
     public static final MediaType KEY_ARCHIVE = createConstant("application", "pkcs12");
-    public static final MediaType APPLICATION_BINARY = createConstant("application", "binary");
+    public static final MediaType APPLICATION_BINARY = createConstant("application", BuildConfig.SDK_DEPENDENCY);
     public static final MediaType GEO_JSON = createConstant("application", "geo+json");
     public static final MediaType GZIP = createConstant("application", "x-gzip");
     public static final MediaType HAL_JSON = createConstant("application", "hal+json");

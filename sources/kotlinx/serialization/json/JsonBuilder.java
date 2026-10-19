@@ -1,5 +1,6 @@
 package kotlinx.serialization.json;
 
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.serialization.ExperimentalSerializationApi;
@@ -221,7 +222,7 @@ public final class JsonBuilder {
 
     public final JsonConfiguration build$kotlinx_serialization_json() {
         if (this.useArrayPolymorphism) {
-            if (!Intrinsics.areEqual(this.classDiscriminator, "type")) {
+            if (!Intrinsics.areEqual(this.classDiscriminator, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY)) {
                 throw new IllegalArgumentException("Class discriminator should not be specified when array polymorphism is specified".toString());
             }
             if (this.classDiscriminatorMode != ClassDiscriminatorMode.POLYMORPHIC) {

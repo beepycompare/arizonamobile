@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Ic {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Jc f595a;
+    public final /* synthetic */ Jc f598a;
 
     public Ic(Jc jc) {
-        this.f595a = jc;
+        this.f598a = jc;
     }
 }

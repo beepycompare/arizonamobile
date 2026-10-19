@@ -21,14 +21,13 @@ import coil3.request.ImageRequest;
 import coil3.request.ImageRequestsKt;
 import coil3.transform.Transformation;
 import coil3.util.UtilsKt;
-import com.facebook.internal.NativeProtocol;
 import com.miami.game.core.design.system.component.coil.blur.CoilBlurTransformation;
 import java.io.File;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 /* compiled from: main_background.kt */
-@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aK\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u0003H\u0007b\u0002\b\fb\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f¢\u0006\u0002\u0010\u000b¨\u0006\u0010"}, d2 = {"BackgroundImage", "", "default", "", "isBlur", "", "imageBitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", UtilsKt.SCHEME_FILE, "Ljava/io/File;", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "(IZLandroidx/compose/ui/graphics/ImageBitmap;Ljava/io/File;ILandroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "design-system"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001aK\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u00072\b\u0010\b\u001a\u0004\u0018\u00010\t2\u0006\u0010\n\u001a\u00020\u0003H\u0007b\u0002\b\fb\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f¢\u0006\u0002\u0010\u000b¨\u0006\u0010"}, d2 = {"BackgroundImage", "", "default", "", "isBlur", "", "imageBitmap", "Landroidx/compose/ui/graphics/ImageBitmap;", UtilsKt.SCHEME_FILE, "Ljava/io/File;", "version", "(IZLandroidx/compose/ui/graphics/ImageBitmap;Ljava/io/File;ILandroidx/compose/runtime/Composer;I)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "design-system"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Main_backgroundKt {
     /* JADX INFO: Access modifiers changed from: package-private */

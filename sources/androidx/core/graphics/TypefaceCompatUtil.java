@@ -9,7 +9,6 @@ import android.os.Process;
 import android.os.StrictMode;
 import android.util.Log;
 import androidx.core.provider.FontsContractCompat;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,7 +34,7 @@ public class TypefaceCompatUtil {
         if (cacheDir == null) {
             return null;
         }
-        String str = CACHE_FILE_PREFIX + Process.myPid() + Constants.FILENAME_SEQUENCE_SEPARATOR + Process.myTid() + Constants.FILENAME_SEQUENCE_SEPARATOR;
+        String str = CACHE_FILE_PREFIX + Process.myPid() + "-" + Process.myTid() + "-";
         for (int i = 0; i < 100; i++) {
             File file = new File(cacheDir, str + i);
             if (file.createNewFile()) {

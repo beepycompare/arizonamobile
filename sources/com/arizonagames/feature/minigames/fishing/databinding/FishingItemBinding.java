@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.fishing.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FishingItemBinding implements ViewBinding {
     public final ImageView acceptMask;
     public final ConstraintLayout fishingItem;

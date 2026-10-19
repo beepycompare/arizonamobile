@@ -1,14 +1,13 @@
 package androidx.window;
 
 import androidx.window.core.ExtensionsUtil;
-import com.facebook.internal.NativeProtocol;
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.IntRange;
 /* compiled from: WindowSdkExtensions.kt */
-@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b&\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\t\b\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0017\u0010\b\u001a\u00020\t2\b\b\u0001\u0010\n\u001a\u00020\u0005H\u0000¢\u0006\u0002\b\u000bJ\u0015\u0010\b\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\rH\u0000¢\u0006\u0002\b\u000bR\u0016\u0010\u0004\u001a\u00020\u00058WX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u000f"}, d2 = {"Landroidx/window/WindowSdkExtensions;", "", "<init>", "()V", "extensionVersion", "", "getExtensionVersion", "()I", "requireExtensionVersion", "", NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, "requireExtensionVersion$window_release", "range", "Lkotlin/ranges/IntRange;", "Companion", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+@Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\b&\u0018\u0000 \u000e2\u00020\u0001:\u0001\u000eB\t\b\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0017\u0010\b\u001a\u00020\t2\b\b\u0001\u0010\n\u001a\u00020\u0005H\u0000¢\u0006\u0002\b\u000bJ\u0015\u0010\b\u001a\u00020\t2\u0006\u0010\f\u001a\u00020\rH\u0000¢\u0006\u0002\b\u000bR\u0016\u0010\u0004\u001a\u00020\u00058WX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u000f"}, d2 = {"Landroidx/window/WindowSdkExtensions;", "", "<init>", "()V", "extensionVersion", "", "getExtensionVersion", "()I", "requireExtensionVersion", "", "version", "requireExtensionVersion$window_release", "range", "Lkotlin/ranges/IntRange;", "Companion", "window_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public abstract class WindowSdkExtensions {
     public static final Companion Companion = new Companion(null);

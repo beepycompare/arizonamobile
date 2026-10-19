@@ -9,30 +9,30 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class Y3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0173cg f852a;
+    public final C0168cg f855a;
     public final CounterConfiguration b;
 
-    public Y3(C0173cg c0173cg, CounterConfiguration counterConfiguration) {
-        this.f852a = c0173cg;
+    public Y3(C0168cg c0168cg, CounterConfiguration counterConfiguration) {
+        this.f855a = c0168cg;
         this.b = counterConfiguration;
     }
 
     public static Y3 a(Context context, Bundle bundle) {
-        C0173cg c0173cg;
+        C0168cg c0168cg;
         CounterConfiguration fromBundle;
-        String str = C0173cg.c;
+        String str = C0168cg.c;
         if (bundle != null) {
             try {
-                c0173cg = (C0173cg) bundle.getParcelable("PROCESS_CFG_OBJ");
+                c0168cg = (C0168cg) bundle.getParcelable("PROCESS_CFG_OBJ");
             } catch (Throwable unused) {
             }
             fromBundle = CounterConfiguration.fromBundle(bundle);
-            if (fromBundle == null && c0173cg != null && context.getPackageName().equals(c0173cg.f930a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && c0173cg.f930a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
-                return new Y3(c0173cg, fromBundle);
+            if (fromBundle == null && c0168cg != null && context.getPackageName().equals(c0168cg.f933a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && c0168cg.f933a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
+                return new Y3(c0168cg, fromBundle);
             }
             return null;
         }
-        c0173cg = null;
+        c0168cg = null;
         fromBundle = CounterConfiguration.fromBundle(bundle);
         if (fromBundle == null) {
         }
@@ -44,10 +44,10 @@ public class Y3 {
     }
 
     public final String toString() {
-        return "ClientConfiguration{mProcessConfiguration=" + this.f852a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ClientConfiguration{mProcessConfiguration=" + this.f855a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
-    public final C0173cg a() {
-        return this.f852a;
+    public final C0168cg a() {
+        return this.f855a;
     }
 }

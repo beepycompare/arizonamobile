@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.2.0 */
 /* loaded from: classes4.dex */
 public class zzxi<API extends zzyi<API>> {
@@ -18,7 +17,7 @@ public class zzxi<API extends zzyi<API>> {
 
     private static void zzd(String str, zzzd zzzdVar) {
         StringBuilder sb = new StringBuilder();
-        sb.append(new SimpleDateFormat(AppUpdateInfo.Factory.UPDATED_FORMAT).format(new Date(TimeUnit.NANOSECONDS.toMillis(zzzdVar.zzf()))));
+        sb.append(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date(TimeUnit.NANOSECONDS.toMillis(zzzdVar.zzf()))));
         sb.append(": logging error [");
         zzze.zza(1, zzzdVar.zzg(), sb);
         sb.append("]: ");

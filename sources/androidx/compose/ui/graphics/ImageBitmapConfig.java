@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -106,6 +105,6 @@ public final class ImageBitmapConfig {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5576toStringimpl(int i) {
-        return m5574equalsimpl0(i, Argb8888) ? "Argb8888" : m5574equalsimpl0(i, Alpha8) ? "Alpha8" : m5574equalsimpl0(i, Rgb565) ? "Rgb565" : m5574equalsimpl0(i, F16) ? "F16" : m5574equalsimpl0(i, Gpu) ? "Gpu" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5574equalsimpl0(i, Argb8888) ? "Argb8888" : m5574equalsimpl0(i, Alpha8) ? "Alpha8" : m5574equalsimpl0(i, Rgb565) ? "Rgb565" : m5574equalsimpl0(i, F16) ? "F16" : m5574equalsimpl0(i, Gpu) ? "Gpu" : "Unknown";
     }
 }

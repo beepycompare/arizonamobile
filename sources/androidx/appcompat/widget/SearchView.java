@@ -47,6 +47,7 @@ import androidx.compose.runtime.composer.linkbuffer.GroupFlagsKt;
 import androidx.core.view.ViewCompat;
 import androidx.cursoradapter.widget.CursorAdapter;
 import androidx.customview.view.AbsSavedState;
+import androidx.media3.extractor.ts.PsExtractor;
 import com.google.android.gms.actions.SearchIntents;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
@@ -1324,13 +1325,7 @@ public class SearchView extends LinearLayoutCompat implements CollapsibleActionV
             int i = configuration.screenWidthDp;
             int i2 = configuration.screenHeightDp;
             if (i < 960 || i2 < 720 || configuration.orientation != 2) {
-                if (i < 600) {
-                    if (i < 640 || i2 < 480) {
-                        return RodinaTrainSpeedGaugeView.MAX_SPEED_KMH;
-                    }
-                    return 192;
-                }
-                return 192;
+                return i < 600 ? (i < 640 || i2 < 480) ? RodinaTrainSpeedGaugeView.MAX_SPEED_KMH : PsExtractor.AUDIO_STREAM : PsExtractor.AUDIO_STREAM;
             }
             return 256;
         }

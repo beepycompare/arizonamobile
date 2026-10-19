@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import androidx.media3.common.MimeTypes;
+import coil3.network.internal.UtilsKt;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -27,7 +28,7 @@ public final class ExternalNavigationActivityExtensionsKt {
         Intrinsics.checkNotNullParameter(text, "text");
         Intent intent = new Intent("android.intent.action.SEND");
         intent.putExtra("android.intent.extra.TEXT", text);
-        intent.setType("text/plain");
+        intent.setType(UtilsKt.MIME_TYPE_TEXT_PLAIN);
         try {
             activity.startActivity(intent);
         } catch (ActivityNotFoundException e) {

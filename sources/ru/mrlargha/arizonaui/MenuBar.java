@@ -27,7 +27,7 @@ public final class MenuBar extends SAMPUIElement {
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout");
         ConstraintLayout constraintLayout = (ConstraintLayout) inflate;
         this.menuLayout = constraintLayout;
-        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, 0, 0, 6, null);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, 0, 0, false, 14, null);
         setPosition(SAMPUIElement.PositionType.LEFT_TOP, 300, 100);
         ((MaterialButton) constraintLayout.findViewById(R.id.menu)).setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.arizonaui.MenuBar$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

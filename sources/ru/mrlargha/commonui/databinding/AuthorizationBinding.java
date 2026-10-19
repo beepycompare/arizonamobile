@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
@@ -12,6 +11,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class AuthorizationBinding implements ViewBinding {
     public final ConstraintLayout auth;
@@ -27,7 +27,7 @@ public final class AuthorizationBinding implements ViewBinding {
     public final TextView authLoginText;
     public final TextView authOnlineCount;
     public final ConstraintLayout authPasswordContainer;
-    public final EditText authPasswordEdit;
+    public final KeyboardEditText authPasswordEdit;
     public final AppCompatImageView authPasswordError;
     public final AppCompatImageView authPasswordIcon;
     public final ConstraintLayout authRememberCheckbox;
@@ -38,11 +38,11 @@ public final class AuthorizationBinding implements ViewBinding {
     public final TextView authServerName;
     public final AppCompatImageView authServerTooltip;
     public final ConstraintLayout authSurnameContainer;
-    public final EditText authSurnameEdit;
+    public final KeyboardEditText authSurnameEdit;
     public final AppCompatImageView authSurnameError;
     public final TextView authTitle;
     public final ConstraintLayout authUsernameContainer;
-    public final EditText authUsernameEdit;
+    public final KeyboardEditText authUsernameEdit;
     public final AppCompatImageView authUsernameError;
     public final Guideline centerLine;
     public final Guideline headerGuidelineH;
@@ -51,7 +51,7 @@ public final class AuthorizationBinding implements ViewBinding {
     public final TextView loaderTitle;
     private final ConstraintLayout rootView;
 
-    private AuthorizationBinding(ConstraintLayout rootView, ConstraintLayout auth, ConstraintLayout authAccountExistContainer, TextView authAccountIsExist, TextView authAccountRegistrationButton, ConstraintLayout authBackground, TextView authForgotPassword, ConstraintLayout authHeaderContainer, ConstraintLayout authHelpContainer, ConstraintLayout authInputsContainer, ConstraintLayout authLoginButton, TextView authLoginText, TextView authOnlineCount, ConstraintLayout authPasswordContainer, EditText authPasswordEdit, AppCompatImageView authPasswordError, AppCompatImageView authPasswordIcon, ConstraintLayout authRememberCheckbox, AppCompatImageView authRememberCheckboxMark, TextView authRememberText, ConstraintLayout authServerInfoContainer, AppCompatImageView authServerLogotype, TextView authServerName, AppCompatImageView authServerTooltip, ConstraintLayout authSurnameContainer, EditText authSurnameEdit, AppCompatImageView authSurnameError, TextView authTitle, ConstraintLayout authUsernameContainer, EditText authUsernameEdit, AppCompatImageView authUsernameError, Guideline centerLine, Guideline headerGuidelineH, ProgressBar loaderBar, ConstraintLayout loaderContainer, TextView loaderTitle) {
+    private AuthorizationBinding(ConstraintLayout rootView, ConstraintLayout auth, ConstraintLayout authAccountExistContainer, TextView authAccountIsExist, TextView authAccountRegistrationButton, ConstraintLayout authBackground, TextView authForgotPassword, ConstraintLayout authHeaderContainer, ConstraintLayout authHelpContainer, ConstraintLayout authInputsContainer, ConstraintLayout authLoginButton, TextView authLoginText, TextView authOnlineCount, ConstraintLayout authPasswordContainer, KeyboardEditText authPasswordEdit, AppCompatImageView authPasswordError, AppCompatImageView authPasswordIcon, ConstraintLayout authRememberCheckbox, AppCompatImageView authRememberCheckboxMark, TextView authRememberText, ConstraintLayout authServerInfoContainer, AppCompatImageView authServerLogotype, TextView authServerName, AppCompatImageView authServerTooltip, ConstraintLayout authSurnameContainer, KeyboardEditText authSurnameEdit, AppCompatImageView authSurnameError, TextView authTitle, ConstraintLayout authUsernameContainer, KeyboardEditText authUsernameEdit, AppCompatImageView authUsernameError, Guideline centerLine, Guideline headerGuidelineH, ProgressBar loaderBar, ConstraintLayout loaderContainer, TextView loaderTitle) {
         this.rootView = rootView;
         this.auth = auth;
         this.authAccountExistContainer = authAccountExistContainer;
@@ -146,8 +146,8 @@ public final class AuthorizationBinding implements ViewBinding {
                                                     ConstraintLayout constraintLayout8 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
                                                     if (constraintLayout8 != null) {
                                                         i = R.id.auth_password_edit;
-                                                        EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                        if (editText != null) {
+                                                        KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                        if (keyboardEditText != null) {
                                                             i = R.id.auth_password_error;
                                                             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
                                                             if (appCompatImageView != null) {
@@ -179,8 +179,8 @@ public final class AuthorizationBinding implements ViewBinding {
                                                                                                 ConstraintLayout constraintLayout11 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                                 if (constraintLayout11 != null) {
                                                                                                     i = R.id.auth_surname_edit;
-                                                                                                    EditText editText2 = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                                                                    if (editText2 != null) {
+                                                                                                    KeyboardEditText keyboardEditText2 = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                                    if (keyboardEditText2 != null) {
                                                                                                         i = R.id.auth_surname_error;
                                                                                                         AppCompatImageView appCompatImageView6 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
                                                                                                         if (appCompatImageView6 != null) {
@@ -191,8 +191,8 @@ public final class AuthorizationBinding implements ViewBinding {
                                                                                                                 ConstraintLayout constraintLayout12 = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
                                                                                                                 if (constraintLayout12 != null) {
                                                                                                                     i = R.id.auth_username_edit;
-                                                                                                                    EditText editText3 = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                    if (editText3 != null) {
+                                                                                                                    KeyboardEditText keyboardEditText3 = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                    if (keyboardEditText3 != null) {
                                                                                                                         i = R.id.auth_username_error;
                                                                                                                         AppCompatImageView appCompatImageView7 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
                                                                                                                         if (appCompatImageView7 != null) {
@@ -211,7 +211,7 @@ public final class AuthorizationBinding implements ViewBinding {
                                                                                                                                             i = R.id.loader_title;
                                                                                                                                             TextView textView9 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                                                                                                                             if (textView9 != null) {
-                                                                                                                                                return new AuthorizationBinding(constraintLayout, constraintLayout, constraintLayout2, textView, textView2, constraintLayout3, textView3, constraintLayout4, constraintLayout5, constraintLayout6, constraintLayout7, textView4, textView5, constraintLayout8, editText, appCompatImageView, appCompatImageView2, constraintLayout9, appCompatImageView3, textView6, constraintLayout10, appCompatImageView4, textView7, appCompatImageView5, constraintLayout11, editText2, appCompatImageView6, textView8, constraintLayout12, editText3, appCompatImageView7, guideline, guideline2, progressBar, constraintLayout13, textView9);
+                                                                                                                                                return new AuthorizationBinding(constraintLayout, constraintLayout, constraintLayout2, textView, textView2, constraintLayout3, textView3, constraintLayout4, constraintLayout5, constraintLayout6, constraintLayout7, textView4, textView5, constraintLayout8, keyboardEditText, appCompatImageView, appCompatImageView2, constraintLayout9, appCompatImageView3, textView6, constraintLayout10, appCompatImageView4, textView7, appCompatImageView5, constraintLayout11, keyboardEditText2, appCompatImageView6, textView8, constraintLayout12, keyboardEditText3, appCompatImageView7, guideline, guideline2, progressBar, constraintLayout13, textView9);
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                     }

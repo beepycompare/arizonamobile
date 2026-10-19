@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import androidx.collection.ArrayMap;
-import com.android.vending.expansion.zipfile.APEZProvider;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.dynamic.ObjectWrapper;
@@ -503,7 +502,7 @@ public class AppMeasurementDynamiteService extends com.google.android.gms.intern
                 }
             }
         });
-        zzj.zzK(null, APEZProvider.FILEID, str, true, j);
+        zzj.zzK(null, "_id", str, true, j);
     }
 
     @Override // com.google.android.gms.internal.measurement.zzcp

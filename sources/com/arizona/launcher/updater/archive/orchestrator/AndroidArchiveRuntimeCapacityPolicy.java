@@ -30,7 +30,7 @@ public final class AndroidArchiveRuntimeCapacityPolicy implements ArchiveRuntime
         Intrinsics.checkNotNullParameter(plan, "plan");
         Intrinsics.checkNotNullParameter(state, "state");
         try {
-            ArchiveStorageRequirements storageRequirements = ArchiveStorageEstimator.INSTANCE.storageRequirements(plan, state, ArchiveStagingUsage.INSTANCE.bytesByPackage(this.gameRoot, plan.getPackages()), ArchiveDownloadUsage.INSTANCE.allocatedBytesByPackage(this.downloadRoot, plan.getPackages()));
+            ArchiveStorageRequirements storageRequirements = ArchiveStorageEstimator.INSTANCE.storageRequirements(plan, state, ArchiveStagingUsage.bytesByPackage$default(ArchiveStagingUsage.INSTANCE, this.gameRoot, plan.getPackages(), null, 4, null), ArchiveDownloadUsage.INSTANCE.allocatedBytesByPackage(this.downloadRoot, plan.getPackages()));
             File existingStorageAnchor = existingStorageAnchor(this.gameRoot);
             if (existingStorageAnchor == null) {
                 return unavailableStorageRoot("game", storageRequirements.getCombinedBytes());

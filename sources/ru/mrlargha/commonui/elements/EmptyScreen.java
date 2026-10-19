@@ -37,7 +37,7 @@ public final class EmptyScreen extends SAMPUIElement implements InterfaceControl
         EmptyScreenBinding bind = EmptyScreenBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setVisible(false);
     }
 

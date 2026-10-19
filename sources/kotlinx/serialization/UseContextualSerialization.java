@@ -12,7 +12,7 @@ import kotlin.annotation.AnnotationTarget;
 @kotlin.annotation.Target(allowedTargets = {AnnotationTarget.FILE})
 @Retention(RetentionPolicy.CLASS)
 @kotlin.annotation.Retention(AnnotationRetention.BINARY)
-/* loaded from: classes6.dex */
+/* loaded from: classes4.dex */
 public @interface UseContextualSerialization {
     Class<?>[] forClasses();
 }

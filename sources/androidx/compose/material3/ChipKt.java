@@ -53,6 +53,7 @@ import androidx.compose.ui.unit.Dp;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
+import androidx.media3.extractor.ts.PsExtractor;
 import androidx.profileinstaller.ProfileVerifier;
 import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.google.firebase.messaging.Constants;
@@ -4725,7 +4726,7 @@ public final class ChipKt {
                     }
                     composer3.skipToGroupEnd();
                 }
-            }, composer2, 54), composer2, (i6 & 14) | ((i6 >> 3) & 112) | (i6 & 7168) | ((i6 >> 15) & 57344) | ((i5 << 21) & C.ENCODING_PCM_DOUBLE), 48, 192);
+            }, composer2, 54), composer2, (i6 & 14) | ((i6 >> 3) & 112) | (i6 & 7168) | ((i6 >> 15) & 57344) | ((i5 << 21) & C.ENCODING_PCM_DOUBLE), 48, (int) PsExtractor.AUDIO_STREAM);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }

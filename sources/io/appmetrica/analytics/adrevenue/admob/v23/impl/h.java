@@ -15,7 +15,7 @@ public final class h extends e {
     public final boolean process(Object... objArr) {
         if (ReflectionUtils.isArgumentsOfClasses(objArr, AdValue.class, RewardedAd.class)) {
             RewardedAd rewardedAd = (RewardedAd) objArr[1];
-            this.f227a.getClass();
+            this.f230a.getClass();
             a(b.a((AdValue) objArr[0], ModuleAdType.REWARDED, "rewardedAd", rewardedAd.getResponseInfo(), rewardedAd.getAdUnitId()));
             return true;
         }

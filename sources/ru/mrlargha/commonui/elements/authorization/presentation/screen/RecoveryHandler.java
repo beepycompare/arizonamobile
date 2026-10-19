@@ -1,6 +1,7 @@
 package ru.mrlargha.commonui.elements.authorization.presentation.screen;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,7 +9,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.EditText;
 import android.widget.Toast;
 import androidx.autofill.HintConstants;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.miami.game.core.settings.SettingsMenuDefaults;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
@@ -33,20 +34,23 @@ import ru.mrlargha.commonui.elements.authorization.domain.recovery.SetRecoveryCo
 import ru.mrlargha.commonui.elements.authorization.domain.recovery.SetRecoveryInfo;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.ConverterKt;
 import ru.mrlargha.commonui.utils.StringKt;
 /* compiled from: RecoveryHandler.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u0018J\u000e\u0010\u001e\u001a\u00020\u001c2\u0006\u0010\u0016\u001a\u00020\u0018J\u000e\u0010\u001f\u001a\u00020\u001c2\u0006\u0010\u0017\u001a\u00020\u0018J\b\u0010 \u001a\u00020\u001cH\u0002J\b\u0010!\u001a\u00020\u001cH\u0002J\b\u0010\"\u001a\u00020\u001cH\u0002J\b\u0010#\u001a\u00020\u001cH\u0002J\b\u0010$\u001a\u00020%H\u0002J\b\u0010&\u001a\u00020\u001cH\u0002J\b\u0010'\u001a\u00020\u001cH\u0002J\b\u0010(\u001a\u00020\u001cH\u0002J\b\u0010)\u001a\u00020\u001cH\u0002J\u0010\u0010*\u001a\u00020\u001c2\u0006\u0010+\u001a\u00020,H\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006-"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RecoveryHandler;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "recoveryHandler", "Landroidx/constraintlayout/widget/ConstraintLayout;", "recoveryHandlerBinding", "Lru/mrlargha/commonui/databinding/AccountRecoveryHandlerBinding;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "requestState", "Lru/mrlargha/commonui/elements/authorization/domain/RequestState;", "recoveryMethod", HintConstants.AUTOFILL_HINT_USERNAME, "", "inputText", "inputCode", "onServerRecoveryResponse", "", "data", "selectRecoveryMethod", "setUsername", "enableError", "disableError", "disableUpdateButton", "enableUpdateButton", "getRecoveryMethodType", "Lru/mrlargha/commonui/elements/authorization/domain/recovery/RecoveryMethodType;", "getInputText", "sendRecoveryCode", "resetRecoveryHandler", "sendRecoveryInfo", "setVisible", "visible", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\\\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0007\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u0018J\u000e\u0010\"\u001a\u00020 2\u0006\u0010\u0016\u001a\u00020\u0018J\u000e\u0010#\u001a\u00020 2\u0006\u0010\u0017\u001a\u00020\u0018J\b\u0010$\u001a\u00020 H\u0002J\b\u0010%\u001a\u00020 H\u0002J\b\u0010&\u001a\u00020 H\u0002J\b\u0010'\u001a\u00020 H\u0002J\b\u0010(\u001a\u00020)H\u0002J\b\u0010*\u001a\u00020 H\u0002J\b\u0010+\u001a\u00020 H\u0002J\b\u0010,\u001a\u00020 H\u0002J\b\u0010-\u001a\u00020 H\u0002J\u0010\u0010.\u001a\u00020 2\u0006\u0010/\u001a\u00020\u001eH\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u00060"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RecoveryHandler;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "recoveryHandler", "Landroidx/constraintlayout/widget/ConstraintLayout;", "recoveryHandlerBinding", "Lru/mrlargha/commonui/databinding/AccountRecoveryHandlerBinding;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "requestState", "Lru/mrlargha/commonui/elements/authorization/domain/RequestState;", "recoveryMethod", HintConstants.AUTOFILL_HINT_USERNAME, "", "inputText", "inputCode", "storage", "Landroid/content/SharedPreferences;", "isInGameKeyboard", "", "onServerRecoveryResponse", "", "data", "selectRecoveryMethod", "setUsername", "enableError", "disableError", "disableUpdateButton", "enableUpdateButton", "getRecoveryMethodType", "Lru/mrlargha/commonui/elements/authorization/domain/recovery/RecoveryMethodType;", "getInputText", "sendRecoveryCode", "resetRecoveryHandler", "sendRecoveryInfo", "setVisible", "visible", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RecoveryHandler implements InterfaceController {
     private final int backendID;
     private String inputCode;
     private String inputText;
+    private final boolean isInGameKeyboard;
     private final IBackendNotifier notifier;
     private final ConstraintLayout recoveryHandler;
     private final AccountRecoveryHandlerBinding recoveryHandlerBinding;
     private int recoveryMethod;
     private RequestState requestState;
+    private SharedPreferences storage;
     private final Activity targetActivity;
     private String username;
     private final BackgroundVideoBinding videoBinding;
@@ -119,6 +123,9 @@ public final class RecoveryHandler implements InterfaceController {
         this.recoveryMethod = -1;
         this.inputText = "";
         this.inputCode = "";
+        SharedPreferences prefs = SettingsMenuDefaults.prefs(targetActivity);
+        this.storage = prefs;
+        this.isInGameKeyboard = prefs.getInt(SettingsMenuDefaults.KEY_KEYBOARD_TYPE, 0) != 0;
         mainBinding.video.addView(bind.accountRecoveryHandler, -1, -1);
         ConstraintSet constraintSet = new ConstraintSet();
         constraintSet.clone(mainBinding.video);
@@ -132,14 +139,14 @@ public final class RecoveryHandler implements InterfaceController {
                 RecoveryHandler._init_$lambda$0(RecoveryHandler.this, view);
             }
         });
-        final EditText editText = bind.accountRecoveryTypePlaceholder;
-        editText.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda2
+        final KeyboardEditText keyboardEditText = bind.accountRecoveryTypePlaceholder;
+        keyboardEditText.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$$ExternalSyntheticLambda2
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
-                RecoveryHandler.lambda$1$0(RecoveryHandler.this, editText);
+                RecoveryHandler.lambda$1$0(RecoveryHandler.this, keyboardEditText);
             }
         });
-        EditText accountRecoveryTypePlaceholder = bind.accountRecoveryTypePlaceholder;
+        KeyboardEditText accountRecoveryTypePlaceholder = bind.accountRecoveryTypePlaceholder;
         Intrinsics.checkNotNullExpressionValue(accountRecoveryTypePlaceholder, "accountRecoveryTypePlaceholder");
         accountRecoveryTypePlaceholder.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$special$$inlined$addTextChangedListener$default$1
             @Override // android.text.TextWatcher
@@ -157,11 +164,11 @@ public final class RecoveryHandler implements InterfaceController {
                 int i2;
                 RequestState requestState;
                 accountRecoveryHandlerBinding = RecoveryHandler.this.recoveryHandlerBinding;
-                String obj = accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder.getText().toString();
-                if (Intrinsics.areEqual(obj, "")) {
+                String valueOf = String.valueOf(accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder.getText());
+                if (Intrinsics.areEqual(valueOf, "")) {
                     return;
                 }
-                String str = obj;
+                String str = valueOf;
                 if (str.length() <= 0 || StringsKt.isBlank(str)) {
                     RecoveryHandler.this.disableUpdateButton();
                     RecoveryHandler.this.enableError();
@@ -246,20 +253,20 @@ public final class RecoveryHandler implements InterfaceController {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void lambda$1$0(RecoveryHandler recoveryHandler, EditText editText) {
+    public static final void lambda$1$0(RecoveryHandler recoveryHandler, KeyboardEditText keyboardEditText) {
         Insets insets;
         WindowInsetsCompat rootWindowInsets = ViewCompat.getRootWindowInsets(recoveryHandler.targetActivity.getWindow().getDecorView());
         Integer valueOf = (rootWindowInsets == null || (insets = rootWindowInsets.getInsets(WindowInsetsCompat.Type.ime())) == null) ? null : Integer.valueOf(insets.bottom);
         int[] iArr = new int[2];
         ConstraintLayout accountRecoveryHandler = recoveryHandler.recoveryHandlerBinding.accountRecoveryHandler;
         Intrinsics.checkNotNullExpressionValue(accountRecoveryHandler, "accountRecoveryHandler");
-        editText.getLocationOnScreen(iArr);
+        keyboardEditText.getLocationOnScreen(iArr);
         if (valueOf != null) {
             int height = accountRecoveryHandler.getHeight() - valueOf.intValue();
             if (valueOf.intValue() == 0) {
                 accountRecoveryHandler.setTranslationY(ConverterKt.pxToDp(0.0f, recoveryHandler.targetActivity));
-            } else if ((iArr[1] + editText.getHeight()) - height > 0) {
-                accountRecoveryHandler.setTranslationY(ConverterKt.pxToDp(-((iArr[1] + editText.getHeight()) - height), recoveryHandler.targetActivity));
+            } else if ((iArr[1] + keyboardEditText.getHeight()) - height > 0) {
+                accountRecoveryHandler.setTranslationY(ConverterKt.pxToDp(-((iArr[1] + keyboardEditText.getHeight()) - height), recoveryHandler.targetActivity));
             }
         }
     }
@@ -369,7 +376,7 @@ public final class RecoveryHandler implements InterfaceController {
                             RecoveryHandler.onServerRecoveryResponse$lambda$0$1(RecoveryHandler.this, view);
                         }
                     });
-                    EditText accountRecoveryTypePlaceholder = accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder;
+                    KeyboardEditText accountRecoveryTypePlaceholder = accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder;
                     Intrinsics.checkNotNullExpressionValue(accountRecoveryTypePlaceholder, "accountRecoveryTypePlaceholder");
                     accountRecoveryTypePlaceholder.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$onServerRecoveryResponse$lambda$0$$inlined$addTextChangedListener$default$1
                         @Override // android.text.TextWatcher
@@ -384,9 +391,9 @@ public final class RecoveryHandler implements InterfaceController {
                         public void afterTextChanged(Editable editable) {
                             AccountRecoveryHandlerBinding accountRecoveryHandlerBinding2;
                             accountRecoveryHandlerBinding2 = RecoveryHandler.this.recoveryHandlerBinding;
-                            String obj = accountRecoveryHandlerBinding2.accountRecoveryTypePlaceholder.getText().toString();
-                            RecoveryHandler.this.inputCode = obj;
-                            String str = obj;
+                            String valueOf = String.valueOf(accountRecoveryHandlerBinding2.accountRecoveryTypePlaceholder.getText());
+                            RecoveryHandler.this.inputCode = valueOf;
+                            String str = valueOf;
                             if (str.length() <= 0 || StringsKt.isBlank(str)) {
                                 RecoveryHandler.this.enableError();
                                 RecoveryHandler.this.disableUpdateButton();
@@ -446,7 +453,7 @@ public final class RecoveryHandler implements InterfaceController {
             this.recoveryHandlerBinding.accountRecoveryHandlerMethodIcon.setImageResource(R.drawable.ic_telegram);
             this.recoveryMethod = RecoveryMethodType.TELEGRAM.getId();
         }
-        EditText accountRecoveryTypePlaceholder = this.recoveryHandlerBinding.accountRecoveryTypePlaceholder;
+        KeyboardEditText accountRecoveryTypePlaceholder = this.recoveryHandlerBinding.accountRecoveryTypePlaceholder;
         Intrinsics.checkNotNullExpressionValue(accountRecoveryTypePlaceholder, "accountRecoveryTypePlaceholder");
         accountRecoveryTypePlaceholder.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RecoveryHandler$selectRecoveryMethod$$inlined$addTextChangedListener$default$1
             @Override // android.text.TextWatcher
@@ -465,10 +472,10 @@ public final class RecoveryHandler implements InterfaceController {
                 int i;
                 RequestState requestState;
                 accountRecoveryHandlerBinding = RecoveryHandler.this.recoveryHandlerBinding;
-                String obj = accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder.getText().toString();
+                String valueOf = String.valueOf(accountRecoveryHandlerBinding.accountRecoveryTypePlaceholder.getText());
                 str = RecoveryHandler.this.inputText;
-                if (!Intrinsics.areEqual(str, obj)) {
-                    String str2 = obj;
+                if (!Intrinsics.areEqual(str, valueOf)) {
+                    String str2 = valueOf;
                     if (str2.length() > 0 && !StringsKt.isBlank(str2)) {
                         accountRecoveryHandlerBinding2 = RecoveryHandler.this.recoveryHandlerBinding;
                         accountRecoveryHandlerBinding2.accountRecoveryHandlerErrorContainer.setVisibility(8);
@@ -539,7 +546,7 @@ public final class RecoveryHandler implements InterfaceController {
     }
 
     private final void getInputText() {
-        this.inputText = this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.getText().toString();
+        this.inputText = String.valueOf(this.recoveryHandlerBinding.accountRecoveryTypePlaceholder.getText());
     }
 
     private final void sendRecoveryCode() {

@@ -8,18 +8,18 @@ import org.json.JSONObject;
 public final class S1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0684wa f757a;
+    public final C0679wa f760a;
     public boolean b;
 
     public S1() {
-        this(new C0684wa());
+        this(new C0679wa());
     }
 
     public final synchronized long a(Context context) {
         String a2;
         try {
-            this.f757a.getClass();
-            a2 = AbstractC0400lb.a(FileUtils.getFileFromAppStorage(context, "metrica_service_settings.dat"));
+            this.f760a.getClass();
+            a2 = AbstractC0395lb.a(FileUtils.getFileFromAppStorage(context, "metrica_service_settings.dat"));
         } catch (Throwable unused) {
         }
         return TextUtils.isEmpty(a2) ? 0L : new JSONObject(a2).optLong("delay");
@@ -41,8 +41,8 @@ public final class S1 {
         this.b = true;
     }
 
-    public S1(C0684wa c0684wa) {
+    public S1(C0679wa c0679wa) {
         this.b = false;
-        this.f757a = c0684wa;
+        this.f760a = c0679wa;
     }
 }

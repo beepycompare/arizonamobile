@@ -1,5 +1,6 @@
 package com.miami.game.core.api.network;
 
+import com.google.android.gms.common.internal.ImagesContract;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,7 +8,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NetworkDataSourceImpl.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {1, 1, 2, 2, 2}, l = {113, 118, 124}, m = "getNews", n = {"url", "channel", "url", "e", "channel"}, nl = {115, 119, 117}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {1, 1, 2, 2, 2}, l = {113, 118, 124}, m = "getNews", n = {ImagesContract.URL, "channel", ImagesContract.URL, "e", "channel"}, nl = {115, 119, 117}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
 /* loaded from: classes5.dex */
 public final class NetworkDataSourceImpl$getNews$1 extends ContinuationImpl {
     int I$0;

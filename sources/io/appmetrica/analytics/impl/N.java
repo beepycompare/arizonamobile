@@ -5,16 +5,16 @@ import io.appmetrica.analytics.coreapi.internal.data.Savable;
 public final class N implements Savable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ O f674a;
+    public final /* synthetic */ O f677a;
 
     public N(O o) {
-        this.f674a = o;
+        this.f677a = o;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Savable
     /* renamed from: a */
     public final Boolean getValue() {
-        return Boolean.valueOf(this.f674a.f694a.a(false));
+        return Boolean.valueOf(this.f677a.f697a.a(false));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Savable
@@ -23,6 +23,6 @@ public final class N implements Savable {
     }
 
     public final void a(boolean z) {
-        this.f674a.f694a.e(z);
+        this.f677a.f697a.e(z);
     }
 }

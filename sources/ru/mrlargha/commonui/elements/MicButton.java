@@ -93,7 +93,7 @@ public final class MicButton extends SAMPUIElement {
                 }
             }
         });
-        addViewToConstraintLayout(frameLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, frameLayout, -1, -1, false, 8, null);
         setButtonPosition(getSharedPreferences().getFloat(X_MIC_STATUS_POS, NumberKt.toPx((Number) 20)), getSharedPreferences().getFloat(Y_MIC_STATUS_POS, (frameLayout.getHeight() / 2) - (appCompatImageView.getWidth() / 2)));
         frameLayout.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.MicButton$$ExternalSyntheticLambda0
             @Override // android.view.View.OnTouchListener

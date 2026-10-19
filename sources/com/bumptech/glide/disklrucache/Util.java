@@ -1,6 +1,5 @@
 package com.bumptech.glide.disklrucache;
 
-import com.android.internal.http.multipart.StringPart;
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +8,7 @@ import java.io.StringWriter;
 import java.nio.charset.Charset;
 /* loaded from: classes4.dex */
 final class Util {
-    static final Charset US_ASCII = Charset.forName(StringPart.DEFAULT_CHARSET);
+    static final Charset US_ASCII = Charset.forName("US-ASCII");
     static final Charset UTF_8 = Charset.forName("UTF-8");
 
     private Util() {

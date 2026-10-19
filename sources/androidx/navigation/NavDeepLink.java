@@ -7,6 +7,7 @@ import androidx.exifinterface.media.ExifInterface;
 import androidx.navigation.serialization.RouteSerializerKt;
 import androidx.savedstate.SavedStateReader;
 import androidx.savedstate.SavedStateWriter;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -489,7 +490,7 @@ public final class NavDeepLink {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: NavDeepLink.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u000f\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\b\n\u0002\b\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0011\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0000H\u0096\u0002R\u001a\u0010\u0006\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\u0005R\u001a\u0010\n\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\b\"\u0004\b\f\u0010\u0005¨\u0006\u0010"}, d2 = {"Landroidx/navigation/NavDeepLink$MimeType;", "", "mimeType", "", "<init>", "(Ljava/lang/String;)V", "type", "getType", "()Ljava/lang/String;", "setType", "subType", "getSubType", "setSubType", "compareTo", "", "other", "navigation-common_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u000f\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\b\n\u0002\b\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0011\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u0000H\u0096\u0002R\u001a\u0010\u0006\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\u0005R\u001a\u0010\n\u001a\u00020\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\b\"\u0004\b\f\u0010\u0005¨\u0006\u0010"}, d2 = {"Landroidx/navigation/NavDeepLink$MimeType;", "", "mimeType", "", "<init>", "(Ljava/lang/String;)V", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "getType", "()Ljava/lang/String;", "setType", "subType", "getSubType", "setSubType", "compareTo", "", "other", "navigation-common_release"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class MimeType implements Comparable<MimeType> {
         private String subType;

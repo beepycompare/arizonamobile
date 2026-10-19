@@ -3,8 +3,9 @@ package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.money;
 import android.graphics.Color;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import com.google.android.vending.expansion.downloader.Constants;
+import android.widget.TextView;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.concurrent.CancellationException;
 import kotlin.Metadata;
@@ -21,9 +22,11 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.HudElementMoneyBinding;
 import ru.mrlargha.commonui.databinding.HudElementMoneyItemBinding;
+import ru.mrlargha.commonui.utils.TokenManagerKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 /* compiled from: MoneyElement.kt */
-@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 '2\u00020\u0001:\u0001'B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\u000e\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\b\u0010\u0015\u001a\u00020\u0011H\u0002J\u0010\u0010\u0016\u001a\u00020\u00112\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J\u0018\u0010\u0019\u001a\u00020\u00112\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J\u0010\u0010\u001c\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u001eH\u0002J\u0010\u0010\u001f\u001a\u00020\u00112\u0006\u0010\u001d\u001a\u00020\u001eH\u0002J\u0010\u0010 \u001a\u00020\u00112\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\u0010\u0010!\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020\u0018H\u0002J\u0010\u0010#\u001a\u00020\u00132\u0006\u0010\u0017\u001a\u00020\u0018H\u0002J\u0010\u0010$\u001a\u00020\u00182\u0006\u0010\"\u001a\u00020\u0013H\u0002J\f\u0010%\u001a\u00020\u0018*\u00020\u0018H\u0002J\b\u0010&\u001a\u00020\u0011H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006("}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/money/MoneyElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementMoneyBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementMoneyBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementMoneyBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "uiScope", "Lkotlinx/coroutines/CoroutineScope;", "hideDeltaJob", "Lkotlinx/coroutines/Job;", "setValue", "", "data", "", "setDelta", "setupStaticUi", "showDelta", "delta", "", "bindDelta", "item", "Lru/mrlargha/commonui/databinding/HudElementMoneyItemBinding;", "animateDelta", "view", "Landroid/view/View;", "hideDeltaAnimated", "clearDelta", "formatValue", "value", "formatDeltaAmount", "parseMoney", "absSafe", "ensureScope", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000J\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 )2\u00020\u0001:\u0001)B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\u000e\u0010\u0014\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u0013J\b\u0010\u0015\u001a\u00020\u0011H\u0002J\b\u0010\u0016\u001a\u00020\u0011H\u0002J\b\u0010\u0017\u001a\u00020\u0011H\u0002J\u0010\u0010\u0018\u001a\u00020\u00112\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0018\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0010\u0010\u001e\u001a\u00020\u00112\u0006\u0010\u001f\u001a\u00020 H\u0002J\u0010\u0010!\u001a\u00020\u00112\u0006\u0010\u001f\u001a\u00020 H\u0002J\u0010\u0010\"\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010#\u001a\u00020\u00132\u0006\u0010$\u001a\u00020\u001aH\u0002J\u0010\u0010%\u001a\u00020\u00132\u0006\u0010\u0019\u001a\u00020\u001aH\u0002J\u0010\u0010&\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u0013H\u0002J\f\u0010'\u001a\u00020\u001a*\u00020\u001aH\u0002J\b\u0010(\u001a\u00020\u0011H\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/money/MoneyElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementMoneyBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementMoneyBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementMoneyBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "uiScope", "Lkotlinx/coroutines/CoroutineScope;", "hideDeltaJob", "Lkotlinx/coroutines/Job;", "setValue", "", "data", "", "setDelta", "setupStaticUi", "applyBalanceCurrency", "applyDeltaCurrency", "showDelta", "delta", "", "bindDelta", "item", "Lru/mrlargha/commonui/databinding/HudElementMoneyItemBinding;", "animateDelta", "view", "Landroid/view/View;", "hideDeltaAnimated", "clearDelta", "formatValue", "value", "formatDeltaAmount", "parseMoney", "absSafe", "ensureScope", "Companion", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MoneyElement {
     private static final long ANIM_DURATION = 220;
@@ -67,10 +70,19 @@ public final class MoneyElement {
     }
 
     public final void setValue(String data) {
+        String formatValue;
         Intrinsics.checkNotNullParameter(data, "data");
         ensureScope();
         this.binding.root.setVisibility(0);
-        this.binding.blockMoney.tvValue.setText(formatValue(parseMoney(data)));
+        long parseMoney = parseMoney(data);
+        applyBalanceCurrency();
+        TextView textView = this.binding.blockMoney.tvValue;
+        if (TokenManagerKt.isViceCity()) {
+            formatValue = MoneyElementKt.toMoneyFormattedSpannable$default(parseMoney, false, null, null, null, 15, null);
+        } else {
+            formatValue = formatValue(parseMoney);
+        }
+        textView.setText(formatValue);
         this.binding.root.requestLayout();
     }
 
@@ -82,10 +94,29 @@ public final class MoneyElement {
     }
 
     private final void setupStaticUi() {
-        HudElementMoneyItemBinding hudElementMoneyItemBinding = this.binding.blockMoney;
-        hudElementMoneyItemBinding.tvPrefix.setImageResource(R.drawable.arizona_dollar);
-        hudElementMoneyItemBinding.tvPrefixDelta.setImageResource(R.drawable.arizona_dollar);
-        hudElementMoneyItemBinding.deltaRow.setVisibility(4);
+        applyBalanceCurrency();
+        applyDeltaCurrency();
+        this.binding.blockMoney.deltaRow.setVisibility(4);
+    }
+
+    private final void applyBalanceCurrency() {
+        ImageView tvPrefix = this.binding.blockMoney.tvPrefix;
+        Intrinsics.checkNotNullExpressionValue(tvPrefix, "tvPrefix");
+        tvPrefix.setVisibility(!TokenManagerKt.isViceCity() ? 0 : 8);
+        if (TokenManagerKt.isViceCity()) {
+            return;
+        }
+        this.binding.blockMoney.tvPrefix.setImageResource(R.drawable.arizona_dollar);
+    }
+
+    private final void applyDeltaCurrency() {
+        ImageView tvPrefixDelta = this.binding.blockMoney.tvPrefixDelta;
+        Intrinsics.checkNotNullExpressionValue(tvPrefixDelta, "tvPrefixDelta");
+        tvPrefixDelta.setVisibility(!TokenManagerKt.isViceCity() ? 0 : 8);
+        if (TokenManagerKt.isViceCity()) {
+            return;
+        }
+        this.binding.blockMoney.tvPrefixDelta.setImageResource(R.drawable.arizona_dollar);
     }
 
     private final void showDelta(long j) {
@@ -105,15 +136,23 @@ public final class MoneyElement {
     }
 
     private final void bindDelta(HudElementMoneyItemBinding hudElementMoneyItemBinding, long j) {
+        String formatDeltaAmount;
         int i = (j > 0L ? 1 : (j == 0L ? 0 : -1));
         if (i == 0) {
             clearDelta(hudElementMoneyItemBinding);
             return;
         }
         int i2 = i > 0 ? COLOR_DELTA_PLUS : COLOR_DELTA_MINUS;
+        applyDeltaCurrency();
         hudElementMoneyItemBinding.deltaRow.setVisibility(0);
-        hudElementMoneyItemBinding.tvDeltaSign.setText(i > 0 ? "+" : Constants.FILENAME_SEQUENCE_SEPARATOR);
-        hudElementMoneyItemBinding.tvDelta.setText(formatDeltaAmount(j));
+        hudElementMoneyItemBinding.tvDeltaSign.setText(i > 0 ? "+" : "-");
+        TextView textView = hudElementMoneyItemBinding.tvDelta;
+        if (TokenManagerKt.isViceCity()) {
+            formatDeltaAmount = MoneyElementKt.toMoneyFormattedSpannable$default(absSafe(j), false, null, null, null, 15, null);
+        } else {
+            formatDeltaAmount = formatDeltaAmount(j);
+        }
+        textView.setText(formatDeltaAmount);
         hudElementMoneyItemBinding.tvDeltaSign.setTextColor(i2);
         hudElementMoneyItemBinding.tvDelta.setTextColor(i2);
         if (i < 0) {

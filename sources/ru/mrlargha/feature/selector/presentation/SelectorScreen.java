@@ -71,7 +71,7 @@ public final class SelectorScreen extends SAMPUIElement {
         this.scopeJob = SupervisorJob$default;
         this.scope = CoroutineScopeKt.CoroutineScope(SupervisorJob$default.plus(Dispatchers.getIO()));
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         initialize();
     }
 

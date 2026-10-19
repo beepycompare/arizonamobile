@@ -8,7 +8,6 @@ import androidx.media3.datasource.DataSpec;
 import androidx.media3.exoplayer.drm.ExoMediaDrm;
 import androidx.media3.exoplayer.drm.MediaDrmCallback;
 import coil3.util.UtilsKt;
-import com.android.internal.http.multipart.FilePart;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.net.HttpHeaders;
@@ -78,7 +77,7 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
         if (C.PLAYREADY_UUID.equals(uuid)) {
             str = UtilsKt.MIME_TYPE_XML;
         } else {
-            str = C.CLEARKEY_UUID.equals(uuid) ? "application/json" : FilePart.DEFAULT_CONTENT_TYPE;
+            str = C.CLEARKEY_UUID.equals(uuid) ? "application/json" : "application/octet-stream";
         }
         hashMap.put("Content-Type", str);
         if (C.PLAYREADY_UUID.equals(uuid)) {

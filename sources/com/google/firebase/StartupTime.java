@@ -1,7 +1,7 @@
 package com.google.firebase;
 
 import android.os.SystemClock;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public abstract class StartupTime {
     public abstract long getElapsedRealtime();
 

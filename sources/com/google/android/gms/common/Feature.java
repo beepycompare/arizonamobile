@@ -2,7 +2,6 @@ package com.google.android.gms.common;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.facebook.internal.NativeProtocol;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
@@ -61,7 +60,7 @@ public class Feature extends AbstractSafeParcelable {
     public final String toString() {
         Objects.ToStringHelper stringHelper = Objects.toStringHelper(this);
         stringHelper.add("name", getName());
-        stringHelper.add(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, Long.valueOf(getVersion()));
+        stringHelper.add("version", Long.valueOf(getVersion()));
         stringHelper.add("is_fully_rolled_out", Boolean.valueOf(getIsFullyRolledOut()));
         return stringHelper.toString();
     }

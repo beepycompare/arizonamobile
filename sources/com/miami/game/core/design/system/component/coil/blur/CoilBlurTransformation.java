@@ -6,7 +6,6 @@ import android.graphics.Paint;
 import androidx.core.view.MotionEventCompat;
 import coil3.size.Size;
 import coil3.transform.Transformation;
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -27,7 +26,7 @@ public final class CoilBlurTransformation extends Transformation {
     public CoilBlurTransformation(int i, int i2) {
         this.radius = i;
         this.sampling = i2;
-        this.cacheKey = "coil-blur-" + i + Constants.FILENAME_SEQUENCE_SEPARATOR + i2;
+        this.cacheKey = "coil-blur-" + i + "-" + i2;
     }
 
     public /* synthetic */ CoilBlurTransformation(int i, int i2, int i3, DefaultConstructorMarker defaultConstructorMarker) {

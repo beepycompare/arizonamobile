@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -96,6 +95,6 @@ public final class TileMode {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5741toStringimpl(int i) {
-        return m5739equalsimpl0(i, Clamp) ? "Clamp" : m5739equalsimpl0(i, Repeated) ? "Repeated" : m5739equalsimpl0(i, Mirror) ? "Mirror" : m5739equalsimpl0(i, Decal) ? "Decal" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5739equalsimpl0(i, Clamp) ? "Clamp" : m5739equalsimpl0(i, Repeated) ? "Repeated" : m5739equalsimpl0(i, Mirror) ? "Mirror" : m5739equalsimpl0(i, Decal) ? "Decal" : "Unknown";
     }
 }

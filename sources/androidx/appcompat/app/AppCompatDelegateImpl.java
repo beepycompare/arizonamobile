@@ -88,6 +88,7 @@ import androidx.core.widget.PopupWindowCompat;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.media3.common.MimeTypes;
+import androidx.media3.extractor.ts.PsExtractor;
 import java.lang.Thread;
 import java.util.List;
 import java.util.Locale;
@@ -231,7 +232,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                     AppCompatDelegateImpl.this.doInvalidatePanelMenu(0);
                 }
                 if ((AppCompatDelegateImpl.this.mInvalidatePanelMenuFeatures & 4096) != 0) {
-                    AppCompatDelegateImpl.this.doInvalidatePanelMenu(108);
+                    AppCompatDelegateImpl.this.doInvalidatePanelMenu(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR);
                 }
                 AppCompatDelegateImpl.this.mInvalidatePanelMenuPosted = false;
                 AppCompatDelegateImpl.this.mInvalidatePanelMenuFeatures = 0;
@@ -622,7 +623,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             return;
         }
         if (panelState == null || panelState.menu == null) {
-            invalidatePanelMenu(108);
+            invalidatePanelMenu(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR);
         }
     }
 
@@ -637,10 +638,10 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         if (obtainStyledAttributes.getBoolean(R.styleable.AppCompatTheme_windowNoTitle, false)) {
             requestWindowFeature(1);
         } else if (obtainStyledAttributes.getBoolean(R.styleable.AppCompatTheme_windowActionBar, false)) {
-            requestWindowFeature(108);
+            requestWindowFeature(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR);
         }
         if (obtainStyledAttributes.getBoolean(R.styleable.AppCompatTheme_windowActionBarOverlay, false)) {
-            requestWindowFeature(109);
+            requestWindowFeature(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY);
         }
         if (obtainStyledAttributes.getBoolean(R.styleable.AppCompatTheme_windowActionModeOverlay, false)) {
             requestWindowFeature(10);
@@ -668,7 +669,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                 this.mDecorContentParent = decorContentParent;
                 decorContentParent.setWindowCallback(getWindowCallback());
                 if (this.mOverlayActionBar) {
-                    this.mDecorContentParent.initFeature(109);
+                    this.mDecorContentParent.initFeature(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY);
                 }
                 if (this.mFeatureProgress) {
                     this.mDecorContentParent.initFeature(2);
@@ -1360,7 +1361,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
                 if (panelState.menu == null || panelState.refreshMenuContent || !windowCallback.onPreparePanel(0, panelState.createdPanelView, panelState.menu)) {
                     return;
                 }
-                windowCallback.onMenuOpened(108, panelState.menu);
+                windowCallback.onMenuOpened(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, panelState.menu);
                 this.mDecorContentParent.showOverflowMenu();
                 return;
             }
@@ -1368,7 +1369,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             if (this.mDestroyed) {
                 return;
             }
-            windowCallback.onPanelClosed(108, getPanelState(0, true).menu);
+            windowCallback.onPanelClosed(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, getPanelState(0, true).menu);
             return;
         }
         PanelFeatureState panelState2 = getPanelState(0, true);
@@ -1500,7 +1501,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         this.mDecorContentParent.dismissPopups();
         Window.Callback windowCallback = getWindowCallback();
         if (windowCallback != null && !this.mDestroyed) {
-            windowCallback.onPanelClosed(108, menuBuilder);
+            windowCallback.onPanelClosed(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, menuBuilder);
         }
         this.mClosingActionMenu = false;
     }
@@ -1794,10 +1795,10 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     private int sanitizeWindowFeatureId(int i) {
         if (i == 8) {
             Log.i("AppCompatDelegate", "You should now use the AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR id when requesting this feature.");
-            return 108;
+            return AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR;
         } else if (i == 9) {
             Log.i("AppCompatDelegate", "You should now use the AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY id when requesting this feature.");
-            return 109;
+            return AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY;
         } else {
             return i;
         }
@@ -2196,7 +2197,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             if (menuBuilder != menuBuilder.getRootMenu() || !AppCompatDelegateImpl.this.mHasActionBar || (windowCallback = AppCompatDelegateImpl.this.getWindowCallback()) == null || AppCompatDelegateImpl.this.mDestroyed) {
                 return true;
             }
-            windowCallback.onMenuOpened(108, menuBuilder);
+            windowCallback.onMenuOpened(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, menuBuilder);
             return true;
         }
     }
@@ -2211,7 +2212,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
         public boolean onOpenSubMenu(MenuBuilder menuBuilder) {
             Window.Callback windowCallback = AppCompatDelegateImpl.this.getWindowCallback();
             if (windowCallback != null) {
-                windowCallback.onMenuOpened(108, menuBuilder);
+                windowCallback.onMenuOpened(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, menuBuilder);
                 return true;
             }
             return true;
@@ -2771,8 +2772,8 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             if ((configuration.screenLayout & 15) != (configuration2.screenLayout & 15)) {
                 configuration3.screenLayout |= configuration2.screenLayout & 15;
             }
-            if ((configuration.screenLayout & 192) != (configuration2.screenLayout & 192)) {
-                configuration3.screenLayout |= configuration2.screenLayout & 192;
+            if ((configuration.screenLayout & PsExtractor.AUDIO_STREAM) != (configuration2.screenLayout & PsExtractor.AUDIO_STREAM)) {
+                configuration3.screenLayout |= configuration2.screenLayout & PsExtractor.AUDIO_STREAM;
             }
             if ((configuration.screenLayout & 48) != (configuration2.screenLayout & 48)) {
                 configuration3.screenLayout |= configuration2.screenLayout & 48;

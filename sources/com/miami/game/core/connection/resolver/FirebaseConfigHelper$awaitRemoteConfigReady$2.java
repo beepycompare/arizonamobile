@@ -1,7 +1,6 @@
 package com.miami.game.core.connection.resolver;
 
 import android.util.Log;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
@@ -23,7 +22,7 @@ import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FirebaseServerHandler.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.connection.resolver.FirebaseConfigHelper$awaitRemoteConfigReady$2", f = "FirebaseServerHandler.kt", i = {0, 1, 1}, l = {419, 224}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv", "$this$withLock_u24default$iv", "settings"}, nl = {TypedValues.CycleType.TYPE_EASING, 225}, s = {"L$0", "L$0", "L$1"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.connection.resolver.FirebaseConfigHelper$awaitRemoteConfigReady$2", f = "FirebaseServerHandler.kt", i = {0, 1, 1}, l = {436, 227}, m = "invokeSuspend", n = {"$this$withLock_u24default$iv", "$this$withLock_u24default$iv", "settings"}, nl = {437, 228}, s = {"L$0", "L$0", "L$1"}, v = 2)
 /* loaded from: classes5.dex */
 public final class FirebaseConfigHelper$awaitRemoteConfigReady$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
     Object L$0;

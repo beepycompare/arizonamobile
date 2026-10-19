@@ -81,7 +81,6 @@ import androidx.compose.ui.unit.IntSize;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.profileinstaller.ProfileVerifier;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.util.ArrayList;
@@ -1376,7 +1375,7 @@ public final class DatePickerKt {
             boolean DatePickerContent$lambda$26 = DatePickerContent$lambda$26(mutableState);
             String formatMonthYear = datePickerFormatter.formatMonthYear(Long.valueOf(j), calendarModel.getLocale());
             if (formatMonthYear == null) {
-                formatMonthYear = Constants.FILENAME_SEQUENCE_SEPARATOR;
+                formatMonthYear = "-";
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1125150321, "CC(remember):DatePicker.kt#9igjgp");
             boolean changedInstance = startRestartGroup.changedInstance(coroutineScope) | startRestartGroup.changed(rememberLazyListState);
@@ -1834,7 +1833,7 @@ public final class DatePickerKt {
     }
 
     /* JADX WARN: Type inference failed for: r8v0 */
-    /* JADX WARN: Type inference failed for: r8v1, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r8v1, types: [int, boolean] */
     /* JADX WARN: Type inference failed for: r8v13 */
     public static final void WeekDays(final DatePickerColors datePickerColors, final CalendarModel calendarModel, Composer composer, final int i) {
         Composer composer2;

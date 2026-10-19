@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.atm.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 import ru.mrlargha.commonui.utils.ui.StrokeTextView;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class AtmScreenChickenBinding implements ViewBinding {
     public final ImageView atmImage;
     public final ImageView backgroundImage;

@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.blueprint.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class BlueprintHalloweenItemBinding implements ViewBinding {
     public final ImageView image;
     private final FrameLayout rootView;

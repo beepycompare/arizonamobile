@@ -8,11 +8,11 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdReve
 public abstract class e implements ModuleAdRevenueProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final b f227a;
+    protected final b f230a;
     public final ClientContext b;
 
     public e(b bVar, ClientContext clientContext) {
-        this.f227a = bVar;
+        this.f230a = bVar;
         this.b = clientContext;
     }
 

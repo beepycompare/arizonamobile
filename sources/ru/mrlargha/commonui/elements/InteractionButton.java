@@ -28,7 +28,7 @@ public final class InteractionButton extends SAMPUIElement {
         Intrinsics.checkNotNull(inflate, "null cannot be cast to non-null type com.google.android.material.button.MaterialButton");
         MaterialButton materialButton = (MaterialButton) inflate;
         this.button = materialButton;
-        addViewToConstraintLayout(materialButton, (int) TypedValue.applyDimension(1, 175.0f, targetActivity.getResources().getDisplayMetrics()), (int) TypedValue.applyDimension(1, 50.0f, targetActivity.getResources().getDisplayMetrics()));
+        SAMPUIElement.addViewToConstraintLayout$default(this, materialButton, (int) TypedValue.applyDimension(1, 175.0f, targetActivity.getResources().getDisplayMetrics()), (int) TypedValue.applyDimension(1, 50.0f, targetActivity.getResources().getDisplayMetrics()), false, 8, null);
         setPosition(SAMPUIElement.PositionType.CENTER_BOTTOM, 30, 50);
         setVisibility(false);
         materialButton.setOnTouchListener(new View.OnTouchListener() { // from class: ru.mrlargha.commonui.elements.InteractionButton$$ExternalSyntheticLambda0

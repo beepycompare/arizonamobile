@@ -7,18 +7,18 @@ import kotlin.jvm.internal.Lambda;
 public final class g extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f343a;
+    public final /* synthetic */ Context f346a;
     public final /* synthetic */ String b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public g(Context context, String str) {
         super(0);
-        this.f343a = context;
+        this.f346a = context;
         this.b = str;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return Boolean.valueOf(this.f343a.getPackageManager().hasSystemFeature(this.b));
+        return Boolean.valueOf(this.f346a.getPackageManager().hasSystemFeature(this.b));
     }
 }

@@ -20,15 +20,15 @@ import kotlin.ranges.RangesKt;
 public final class Fj implements SdkEnvironmentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f552a;
-    public final C0375kc b = new C0375kc();
+    public final Context f555a;
+    public final C0370kc b = new C0370kc();
     public final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
     public SdkEnvironment d;
     public String e;
 
     public Fj(Context context) {
-        this.f552a = context;
-        this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("8.2.0", "50163623", Gj.a()), "phone", C0375kc.a(context.getResources().getConfiguration()));
+        this.f555a = context;
+        this.d = new SdkEnvironment(new AppVersionInfo(PackageManagerUtils.getAppVersionName(context), PackageManagerUtils.getAppVersionCodeString(context)), FrameworkDetector.framework(), new ScreenInfo(0, 0, 0, 0.0f), new SdkInfo("8.2.0", "50163623", Gj.a()), "phone", C0370kc.a(context.getResources().getConfiguration()));
     }
 
     public final synchronized void a(ScreenInfo screenInfo) {
@@ -37,9 +37,9 @@ public final class Fj implements SdkEnvironmentProvider {
             if (!Intrinsics.areEqual(screenInfo, getSdkEnvironment().getScreenInfo())) {
                 String str = this.e;
                 if (str == null) {
-                    Context context = this.f552a;
+                    Context context = this.f555a;
                     Point point = new Point(screenInfo.getWidth(), screenInfo.getHeight());
-                    SafePackageManager safePackageManager = AbstractC0242f8.f978a;
+                    SafePackageManager safePackageManager = AbstractC0237f8.f981a;
                     try {
                         f = context.getResources().getDisplayMetrics().density;
                     } catch (Throwable unused) {
@@ -48,7 +48,7 @@ public final class Fj implements SdkEnvironmentProvider {
                     if (!Float.isNaN(f) && f != 0.0f) {
                         int i = point.x;
                         int i2 = point.y;
-                        if (AbstractC0242f8.a(context)) {
+                        if (AbstractC0237f8.a(context)) {
                             str = "tv";
                         } else {
                             float f2 = 160.0f * f;
@@ -126,7 +126,7 @@ public final class Fj implements SdkEnvironmentProvider {
 
     public final synchronized void a(Configuration configuration) {
         this.b.getClass();
-        List a2 = C0375kc.a(configuration);
+        List a2 = C0370kc.a(configuration);
         if (!Intrinsics.areEqual(getSdkEnvironment().getLocales(), a2)) {
             this.d = SdkEnvironment.copy$default(getSdkEnvironment(), null, null, null, null, null, a2, 31, null);
             Iterator it = this.c.iterator();

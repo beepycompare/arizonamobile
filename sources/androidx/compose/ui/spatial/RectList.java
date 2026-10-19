@@ -3,6 +3,7 @@ package androidx.compose.ui.spatial;
 import androidx.compose.ui.geometry.InlineClassHelperKt;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.media3.extractor.ts.PsExtractor;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.Arrays;
 import kotlin.Metadata;
@@ -22,8 +23,8 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class RectList {
     public static final int $stable = 8;
     public int itemsSize;
-    public long[] items = new long[192];
-    public long[] stack = new long[192];
+    public long[] items = new long[PsExtractor.AUDIO_STREAM];
+    public long[] stack = new long[PsExtractor.AUDIO_STREAM];
 
     public final int getSize() {
         return this.itemsSize / 3;

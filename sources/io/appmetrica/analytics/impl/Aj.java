@@ -4,7 +4,7 @@ import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class Aj implements FunctionWithThrowable {
     @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
     public final Object apply(Object obj) {

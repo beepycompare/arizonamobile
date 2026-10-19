@@ -7,13 +7,13 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 public final class E2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LocationManager f522a;
+    public final LocationManager f525a;
 
     public E2(Context context) {
         this((LocationManager) context.getSystemService(FirebaseAnalytics.Param.LOCATION));
     }
 
     public E2(LocationManager locationManager) {
-        this.f522a = locationManager;
+        this.f525a = locationManager;
     }
 }

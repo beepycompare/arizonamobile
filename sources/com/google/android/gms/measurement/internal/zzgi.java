@@ -3,7 +3,6 @@ package com.google.android.gms.measurement.internal;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
-import com.facebook.internal.AnalyticsEvents;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.wrappers.InstantApps;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -82,7 +81,7 @@ public final class zzgi extends zzg {
         PackageManager packageManager = zzicVar.zzaZ().getPackageManager();
         String str4 = "";
         int i = Integer.MIN_VALUE;
-        String str5 = AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        String str5 = "Unknown";
         String str6 = "unknown";
         if (packageManager == null) {
             zzicVar.zzaW().zzb().zzb("PackageManager is null, app identity information might be inaccurate. appId", zzgu.zzl(packageName));
@@ -100,11 +99,11 @@ public final class zzgi extends zzg {
             try {
                 packageInfo = packageManager.getPackageInfo(this.zzu.zzaZ().getPackageName(), 0);
             } catch (PackageManager.NameNotFoundException unused2) {
-                str = AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+                str = "Unknown";
             }
             if (packageInfo != null) {
                 CharSequence applicationLabel = packageManager.getApplicationLabel(packageInfo.applicationInfo);
-                str2 = !TextUtils.isEmpty(applicationLabel) ? applicationLabel.toString() : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+                str2 = !TextUtils.isEmpty(applicationLabel) ? applicationLabel.toString() : "Unknown";
                 try {
                     str5 = packageInfo.versionName;
                     i = packageInfo.versionCode;
@@ -213,7 +212,7 @@ public final class zzgi extends zzg {
                 }
             }
         }
-        str2 = AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        str2 = "Unknown";
         this.zza = packageName;
         this.zzd = str6;
         this.zzb = str5;

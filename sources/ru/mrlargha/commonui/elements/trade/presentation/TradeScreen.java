@@ -2,6 +2,8 @@ package ru.mrlargha.commonui.elements.trade.presentation;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.Group;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.gson.JsonParseException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -56,11 +59,14 @@ import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.RodinaBlockType;
 import ru.mrlargha.commonui.utils.StringKt;
+import ru.mrlargha.commonui.utils.TokenManagerKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
+import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.IconAndSize;
 import ru.mrlargha.commonui.utils.ui.textWithIcons.TextWithIconsKt;
 /* compiled from: TradeScreen.kt */
-@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0002EFB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u001fH\u0016J\b\u0010'\u001a\u00020%H\u0002J\u001a\u0010(\u001a\u00020%*\u00020)2\f\b\u0001\u0010*\u001a\u00020\u0006:\u0002\b+H\u0002J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0006H\u0002J\b\u0010/\u001a\u00020%H\u0002J\b\u00100\u001a\u00020%H\u0002J\b\u00101\u001a\u00020%H\u0002J\u0018\u00102\u001a\u00020%2\u0006\u00103\u001a\u00020\u00062\u0006\u00104\u001a\u00020\u0006H\u0002J\u0018\u00105\u001a\u00020%2\u0006\u00106\u001a\u0002072\u0006\u00108\u001a\u00020\u0006H\u0016J\u0018\u00109\u001a\u00020%2\u0006\u0010:\u001a\u00020\u00192\u0006\u0010;\u001a\u00020\u0019H\u0002J\u0010\u0010<\u001a\u00020%2\u0006\u0010=\u001a\u00020>H\u0002J\u0010\u0010?\u001a\u00020%2\u0006\u0010@\u001a\u00020AH\u0002J\u0018\u0010B\u001a\u00020%2\u0006\u00108\u001a\u00020\u00062\u0006\u00106\u001a\u000207H\u0002J\b\u0010C\u001a\u00020%H\u0002J\b\u0010D\u001a\u00020%H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u00188BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006G"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "tradeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TradeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "topMoneyController", "Lru/mrlargha/commonui/elements/trade/presentation/TradeEditText;", "bottomMoneyController", "tradeInventoryAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/TradeInventoryAdapter;", "sendItemsAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/SendItemsAdapter;", "getItemsAdapter", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "sendItemsList", "getItemsList", "isConfirmedClicked", "", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryItemList", "selectedInventoryItem", "setVisible", "", "visible", "initCurrencyOptionIcons", "setCurrencyIcon", "Landroid/widget/TextView;", "iconResId", "Landroidx/annotation/DrawableRes;", "setButtonText", "", "type", "defaultScreenState", "initAdapters", "initObservers", "createEmptyLists", "trade", "forTrade", "onBackendMessageHandled", "data", "", "subId", "sendDataFromDrop", "curItem", "toItem", "editValueCostUi", "response", "Lru/mrlargha/commonui/elements/trade/domain/TradeValueResponse;", "editUi", "tradeResp", "Lru/mrlargha/commonui/elements/trade/domain/TradeResponse;", "sendData", "addLockedItems", "closeScreen", "Spawner", "ShowDialogInfo", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\b\u000b\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u00012\u00020\u0002:\u0002GHB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u001fH\u0016J\b\u0010'\u001a\u00020%H\u0002J\u001a\u0010(\u001a\u00020%*\u00020)2\f\b\u0001\u0010*\u001a\u00020\u0006:\u0002\b+H\u0002J\u0010\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0006H\u0002J\b\u0010/\u001a\u00020-H\u0002J\b\u00100\u001a\u00020-H\u0002J\b\u00101\u001a\u00020%H\u0002J\b\u00102\u001a\u00020%H\u0002J\b\u00103\u001a\u00020%H\u0002J\u0018\u00104\u001a\u00020%2\u0006\u00105\u001a\u00020\u00062\u0006\u00106\u001a\u00020\u0006H\u0002J\u0018\u00107\u001a\u00020%2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u0006H\u0016J\u0018\u0010;\u001a\u00020%2\u0006\u0010<\u001a\u00020\u00192\u0006\u0010=\u001a\u00020\u0019H\u0002J\u0010\u0010>\u001a\u00020%2\u0006\u0010?\u001a\u00020@H\u0002J\u0010\u0010A\u001a\u00020%2\u0006\u0010B\u001a\u00020CH\u0002J\u0018\u0010D\u001a\u00020%2\u0006\u0010:\u001a\u00020\u00062\u0006\u00108\u001a\u000209H\u0002J\b\u0010E\u001a\u00020%H\u0002J\b\u0010F\u001a\u00020%H\u0002R\u000e\u0010\t\u001a\u00020\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u00188BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010#\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006I"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "tradeScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/TradeScreenBinding;", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "topMoneyController", "Lru/mrlargha/commonui/elements/trade/presentation/TradeEditText;", "bottomMoneyController", "tradeInventoryAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/TradeInventoryAdapter;", "sendItemsAdapter", "Lru/mrlargha/commonui/elements/trade/presentation/adapter/SendItemsAdapter;", "getItemsAdapter", "inventoryList", "", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "getInventoryList", "()Ljava/util/List;", "sendItemsList", "getItemsList", "isConfirmedClicked", "", "db", "Lru/mrlargha/commonui/domain/db/AppDatabase;", "inventoryItemList", "selectedInventoryItem", "setVisible", "", "visible", "initCurrencyOptionIcons", "setCurrencyIcon", "Landroid/widget/TextView;", "iconResId", "Landroidx/annotation/DrawableRes;", "setButtonText", "", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "cashTradeLabel", "cashCurrencyIcon", "defaultScreenState", "initAdapters", "initObservers", "createEmptyLists", "trade", "forTrade", "onBackendMessageHandled", "data", "", "subId", "sendDataFromDrop", "curItem", "toItem", "editValueCostUi", "response", "Lru/mrlargha/commonui/elements/trade/domain/TradeValueResponse;", "editUi", "tradeResp", "Lru/mrlargha/commonui/elements/trade/domain/TradeResponse;", "sendData", "addLockedItems", "closeScreen", "Spawner", "ShowDialogInfo", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class TradeScreen extends SAMPUIElement implements InterfaceController {
     private final TradeScreenBinding binding;
@@ -143,7 +149,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         this.db = AppDatabase.Companion.invoke(activity);
         this.inventoryItemList = new ArrayList();
         constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         UtilsKt.checkItemsName$default(activity, UtilsKt.isArizonaType(), null, 4, null);
         initAdapters();
         bind.btnAccept.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.trade.presentation.TradeScreen$$ExternalSyntheticLambda7
@@ -164,7 +170,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                 TradeScreen.this.closeScreen();
             }
         });
-        bind.btnSendItemText.setText(TextWithIconsKt.toTextWithIcons("<ic>1<ic> " + targetActivity.getString(R.string.trade_money) + " <ic>2<ic>", activity, new IconAndSize(R.drawable.arizona_dollar, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp)));
+        bind.btnSendItemText.setText(cashTradeLabel());
         tradeEditText.setType(0);
         tradeEditText2.setType(0);
         if (UtilsKt.isArizonaType()) {
@@ -376,9 +382,21 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void initCurrencyOptionIcons() {
-        TextView currencyOptionCash = this.binding.currencyOptionCash;
-        Intrinsics.checkNotNullExpressionValue(currencyOptionCash, "currencyOptionCash");
-        setCurrencyIcon(currencyOptionCash, R.drawable.arizona_dollar);
+        boolean isViceCity = TokenManagerKt.isViceCity();
+        TradeScreenBinding tradeScreenBinding = this.binding;
+        if (isViceCity) {
+            tradeScreenBinding.currencyOptionCash.setCompoundDrawablesRelative(null, null, null, null);
+            TextView textView = this.binding.currencyOptionCash;
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+            spannableStringBuilder.append(cashCurrencyIcon());
+            spannableStringBuilder.append((CharSequence) " ");
+            spannableStringBuilder.append((CharSequence) getTargetActivity().getString(R.string.virtual_money));
+            textView.setText(spannableStringBuilder);
+        } else {
+            TextView currencyOptionCash = tradeScreenBinding.currencyOptionCash;
+            Intrinsics.checkNotNullExpressionValue(currencyOptionCash, "currencyOptionCash");
+            setCurrencyIcon(currencyOptionCash, R.drawable.arizona_dollar);
+        }
         TextView currencyOptionBitcoin = this.binding.currencyOptionBitcoin;
         Intrinsics.checkNotNullExpressionValue(currencyOptionBitcoin, "currencyOptionBitcoin");
         setCurrencyIcon(currencyOptionBitcoin, R.drawable.trade_bitcoin_ic);
@@ -404,19 +422,40 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final CharSequence setButtonText(int i) {
-        if (i == 0) {
-            return TextWithIconsKt.toTextWithIcons("<ic>1<ic> " + getTargetActivity().getString(R.string.trade_money) + " <ic>2<ic>", getTargetActivity(), new IconAndSize(R.drawable.arizona_dollar, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp));
-        } else if (i == 1) {
-            return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.arizona_currency) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.currency_ic_arizona, R.dimen._8sdp, R.dimen._8sdp));
-        } else if (i == 2) {
-            return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.bitcoin) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_bitcoin_ic, R.dimen._8sdp, R.dimen._8sdp));
-        } else if (i == 3) {
-            return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.asc) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_asc_ic, R.dimen._8sdp, R.dimen._8sdp));
-        } else if (i == 4) {
-            return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.sp_500) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.bank_currency_ic_sp_500, R.dimen._8sdp, R.dimen._8sdp));
-        } else {
-            return "";
+        if (i != 0) {
+            if (i == 1) {
+                return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.arizona_currency) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.currency_ic_arizona, R.dimen._8sdp, R.dimen._8sdp));
+            } else if (i == 2) {
+                return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.bitcoin) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_bitcoin_ic, R.dimen._8sdp, R.dimen._8sdp));
+            } else if (i == 3) {
+                return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.asc) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.trade_asc_ic, R.dimen._8sdp, R.dimen._8sdp));
+            } else if (i == 4) {
+                return TextWithIconsKt.toTextWithIcons("<ic>2<ic> " + getTargetActivity().getString(R.string.sp_500) + " <ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.bank_currency_ic_sp_500, R.dimen._8sdp, R.dimen._8sdp));
+            } else {
+                return "";
+            }
         }
+        return cashTradeLabel();
+    }
+
+    private final CharSequence cashTradeLabel() {
+        String string = getTargetActivity().getString(R.string.trade_money);
+        Intrinsics.checkNotNullExpressionValue(string, "getString(...)");
+        if (!TokenManagerKt.isViceCity()) {
+            return TextWithIconsKt.toTextWithIcons("<ic>1<ic> " + string + " <ic>2<ic>", getTargetActivity(), new IconAndSize(R.drawable.arizona_dollar, R.dimen._8sdp, R.dimen._8sdp), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp));
+        }
+        SpannableString textWithIcons = TextWithIconsKt.toTextWithIcons("<ic>1<ic>", getTargetActivity(), new IconAndSize(R.drawable.hud_capt_arrow_down_ic, R.dimen._8sdp, R.dimen._8sdp));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        spannableStringBuilder.append(cashCurrencyIcon());
+        spannableStringBuilder.append((CharSequence) " ");
+        spannableStringBuilder.append((CharSequence) string);
+        spannableStringBuilder.append((CharSequence) " ");
+        spannableStringBuilder.append((CharSequence) textWithIcons);
+        return spannableStringBuilder;
+    }
+
+    private final CharSequence cashCurrencyIcon() {
+        return ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, StringsKt.trimEnd((CharSequence) StringsKt.substringBefore$default(MoneyFormatter.format$default(MoneyFormatter.INSTANCE, 0L, false, null, null, 14, null), MoneyFormatter.INSTANCE.formatPlain(0L), (String) null, 2, (Object) null)).toString(), 0.8f, null, 2, null);
     }
 
     private final void defaultScreenState() {
@@ -466,10 +505,10 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
 
     private final void createEmptyLists(int i, int i2) {
         for (int i3 = 0; i3 < 10; i3++) {
-            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, null, null, null, 134152190, null));
+            this.sendItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i3, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i, null, null, false, false, null, null, null, null, null, null, null, 268369918, null));
         }
         for (int i4 = 0; i4 < 10; i4++) {
-            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, null, null, null, null, null, null, 134152190, null));
+            this.getItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), i4, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, i2, null, null, false, false, null, null, null, null, null, null, null, 268369918, null));
         }
     }
 
@@ -498,7 +537,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             List<InventoryItem> items = inventoryResponse.getItems();
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
             for (InventoryItem inventoryItem : items) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, null, null, null, 134152191, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, null, null, null, null, null, 268369919, null));
             }
             InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList, 0, 4, null);
             int type2 = inventoryResponse2.getType();
@@ -551,7 +590,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                 ShowDialogInfo showDialogInfo = (ShowDialogInfo) MapperKt.getGson().fromJson(data, (Class<Object>) ShowDialogInfo.class);
                 InventoryItem inventoryItem4 = this.selectedInventoryItem;
                 if (inventoryItem4 != null) {
-                    new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134217471, null), 0);
+                    new SelectorDialog(getTargetActivity(), 52, InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, null, 268435199, null), 0);
                     return;
                 }
                 return;
@@ -575,7 +614,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
                             ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
                             for (InventoryItem inventoryItem6 : list) {
                                 if (inventoryItem6.getSlot() == inventoryItem5.getSlot()) {
-                                    inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134217215, null);
+                                    inventoryItem6 = InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, null, null, null, null, null, inventoryItem5.getAvailable(), null, null, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, null, 268434943, null);
                                 }
                                 arrayList2.add(inventoryItem6);
                             }
@@ -658,7 +697,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
             int i = 1;
             while (true) {
                 InventoryItem inventoryItem = (InventoryItem) CollectionsKt.lastOrNull((List<? extends Object>) getInventoryList());
-                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, null, 133169150, null));
+                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), inventoryItem != null ? inventoryItem.getSlot() + 1 : 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, null, null, null, null, 267386878, null));
                 if (i == nextMultipleOfFive) {
                     break;
                 }
@@ -668,7 +707,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
         List<InventoryItem> list = this.inventoryItemList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134215167, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, null, 268432895, null));
         }
         List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList);
         this.inventoryItemList = mutableList;
@@ -701,7 +740,7 @@ public final class TradeScreen extends SAMPUIElement implements InterfaceControl
     }
 
     /* compiled from: TradeScreen.kt */
-    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000e\u001a\u00020\u0003HÆ\u0003J'\u0010\u000f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0015HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\t¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen$ShowDialogInfo;", "", "type", "", "slot", "bits", "<init>", "(III)V", "getType", "()I", "getSlot", "getBits", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "toString", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\t\u0010\r\u001a\u00020\u0003HÆ\u0003J\t\u0010\u000e\u001a\u00020\u0003HÆ\u0003J'\u0010\u000f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0015HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\t¨\u0006\u0016"}, d2 = {"Lru/mrlargha/commonui/elements/trade/presentation/TradeScreen$ShowDialogInfo;", "", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "", "slot", "bits", "<init>", "(III)V", "getType", "()I", "getSlot", "getBits", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "toString", "", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class ShowDialogInfo {
         private final int bits;

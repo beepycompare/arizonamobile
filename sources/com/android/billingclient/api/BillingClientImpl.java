@@ -21,13 +21,13 @@ import android.text.TextUtils;
 import android.view.View;
 import androidx.core.app.BundleCompat;
 import androidx.media3.common.C;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.android.billingclient.BuildConfig;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
 import com.android.billingclient.api.QueryProductDetailsParams;
 import com.arizona.launcher.updater.archive.download.ArchiveNetworkMonitorKt;
-import com.google.android.billing.IabHelper;
 import com.google.android.gms.internal.play_billing.zzhu;
 import com.google.android.gms.internal.play_billing.zzhx;
 import com.google.android.gms.internal.play_billing.zzio;
@@ -826,7 +826,7 @@ public class BillingClientImpl extends BillingClient {
                     com.google.android.gms.internal.play_billing.zzc.zzc(bundle, str2, str3, longValue);
                 }
                 Bundle zze = zzapVar.zze(9, packageName, purchaseToken, bundle);
-                zza = zze.getInt(IabHelper.RESPONSE_CODE);
+                zza = zze.getInt("RESPONSE_CODE");
                 str = com.google.android.gms.internal.play_billing.zzc.zzk(zze, "BillingClient");
             } else {
                 zza = zzapVar.zza(3, context.getPackageName(), purchaseToken);
@@ -1399,10 +1399,10 @@ public class BillingClientImpl extends BillingClient {
                         if (zzb != 0) {
                             com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", String.format("%s failed. Response code: %s", "getPurchase()", Integer.valueOf(zzb)));
                             zzjdVar = zzjd.BILLING_RESULT_RECEIVED_FROM_PHONESKY;
-                        } else if (zzi.containsKey(IabHelper.RESPONSE_INAPP_ITEM_LIST) && zzi.containsKey(IabHelper.RESPONSE_INAPP_PURCHASE_DATA_LIST) && zzi.containsKey(IabHelper.RESPONSE_INAPP_SIGNATURE_LIST)) {
-                            ArrayList<String> stringArrayList = zzi.getStringArrayList(IabHelper.RESPONSE_INAPP_ITEM_LIST);
-                            ArrayList<String> stringArrayList2 = zzi.getStringArrayList(IabHelper.RESPONSE_INAPP_PURCHASE_DATA_LIST);
-                            ArrayList<String> stringArrayList3 = zzi.getStringArrayList(IabHelper.RESPONSE_INAPP_SIGNATURE_LIST);
+                        } else if (zzi.containsKey("INAPP_PURCHASE_ITEM_LIST") && zzi.containsKey("INAPP_PURCHASE_DATA_LIST") && zzi.containsKey("INAPP_DATA_SIGNATURE_LIST")) {
+                            ArrayList<String> stringArrayList = zzi.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+                            ArrayList<String> stringArrayList2 = zzi.getStringArrayList("INAPP_PURCHASE_DATA_LIST");
+                            ArrayList<String> stringArrayList3 = zzi.getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
                             if (stringArrayList == null) {
                                 com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", String.format("Bundle returned from %s contains null SKUs list.", "getPurchase()"));
                                 zzjdVar = zzjd.NULL_SKUS_LIST;
@@ -1421,9 +1421,9 @@ public class BillingClientImpl extends BillingClient {
                             zzjdVar = zzjd.MISSING_REQUIRED_PURCHASE_KEY;
                         }
                         if (build != zzdc.zzi) {
-                            ArrayList<String> stringArrayList4 = zzi.getStringArrayList(IabHelper.RESPONSE_INAPP_ITEM_LIST);
-                            ArrayList<String> stringArrayList5 = zzi.getStringArrayList(IabHelper.RESPONSE_INAPP_PURCHASE_DATA_LIST);
-                            ArrayList<String> stringArrayList6 = zzi.getStringArrayList(IabHelper.RESPONSE_INAPP_SIGNATURE_LIST);
+                            ArrayList<String> stringArrayList4 = zzi.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+                            ArrayList<String> stringArrayList5 = zzi.getStringArrayList("INAPP_PURCHASE_DATA_LIST");
+                            ArrayList<String> stringArrayList6 = zzi.getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
                             boolean z4 = false;
                             for (int i4 = 0; i4 < stringArrayList5.size(); i4++) {
                                 String str3 = stringArrayList5.get(i4);
@@ -1444,7 +1444,7 @@ public class BillingClientImpl extends BillingClient {
                             if (z4) {
                                 billingClientImpl.zzbs(zzjd.EMPTY_PURCHASE_TOKEN, 9, billingResult);
                             }
-                            str2 = zzi.getString(IabHelper.INAPP_CONTINUATION_TOKEN);
+                            str2 = zzi.getString("INAPP_CONTINUATION_TOKEN");
                             com.google.android.gms.internal.play_billing.zzc.zzn("BillingClient", "Continuation token: ".concat(String.valueOf(str2)));
                         } else {
                             return billingClientImpl.zzbp(9, build, zzjdVar, "Purchase bundle invalid", null);
@@ -2360,7 +2360,7 @@ public class BillingClientImpl extends BillingClient {
                                 }
                             }
                             Intent intent2 = new Intent(activity2, ProxyBillingActivity.class);
-                            intent2.putExtra(IabHelper.RESPONSE_BUY_INTENT, (PendingIntent) bundle.getParcelable(IabHelper.RESPONSE_BUY_INTENT));
+                            intent2.putExtra("BUY_INTENT", (PendingIntent) bundle.getParcelable("BUY_INTENT"));
                             intent2.putExtra("billingClientTransactionId", j3);
                             intent2.putExtra("wasServiceAutoReconnected", z);
                             activity2.startActivity(intent2);
@@ -2527,7 +2527,7 @@ public class BillingClientImpl extends BillingClient {
                 arrayList4.add(((QueryProductDetailsParams.Product) arrayList3.get(i3)).zza());
             }
             Bundle bundle = new Bundle();
-            bundle.putStringArrayList(IabHelper.GET_SKU_DETAILS_ITEM_LIST, arrayList4);
+            bundle.putStringArrayList("ITEM_ID_LIST", arrayList4);
             String str = this.zzc;
             bundle.putString("playBillingLibraryVersion", str);
             try {
@@ -2542,8 +2542,8 @@ public class BillingClientImpl extends BillingClient {
                     zzaD(queryProductDetailsParams);
                     Bundle zzj = zzapVar.zzj(true != this.zzx ? 17 : 20, this.zzg.getPackageName(), zzb, bundle, com.google.android.gms.internal.play_billing.zzc.zzg(str, this.zzd, arrayList3, null, null, com.google.android.gms.internal.play_billing.zza.zza(z, true, true, true, false, true), this.zzJ.longValue()));
                     if (zzj != null) {
-                        if (zzj.containsKey(IabHelper.RESPONSE_GET_SKU_DETAILS_LIST)) {
-                            ArrayList<String> stringArrayList = zzj.getStringArrayList(IabHelper.RESPONSE_GET_SKU_DETAILS_LIST);
+                        if (zzj.containsKey("DETAILS_LIST")) {
+                            ArrayList<String> stringArrayList = zzj.getStringArrayList("DETAILS_LIST");
                             if (stringArrayList != null) {
                                 ArrayList arrayList5 = new ArrayList();
                                 int size3 = stringArrayList.size();
@@ -2575,7 +2575,7 @@ public class BillingClientImpl extends BillingClient {
                                                     if (!product.zza().equals(productDetails2.getProductId()) || !product.zzb().equals(productDetails2.getProductType())) {
                                                     }
                                                 } else {
-                                                    arrayList6.add(new UnfetchedProduct(new JSONObject().put("productId", product.zza()).put("type", product.zzb()).put("statusCode", 0).toString()));
+                                                    arrayList6.add(new UnfetchedProduct(new JSONObject().put("productId", product.zza()).put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, product.zzb()).put("statusCode", 0).toString()));
                                                     break;
                                                 }
                                             }

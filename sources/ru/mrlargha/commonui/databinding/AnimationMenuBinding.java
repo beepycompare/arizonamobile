@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class AnimationMenuBinding implements ViewBinding {
     public final TextView amCategoryTittle;
@@ -20,7 +20,7 @@ public final class AnimationMenuBinding implements ViewBinding {
     public final LinearLayout animationListContainer;
     public final TextView animationListTittle;
     public final ConstraintLayout animationMenu;
-    public final EditText animationSearch;
+    public final KeyboardEditText animationSearch;
     public final RecyclerView categoryList;
     public final LinearLayout categoryListContainer;
     public final Guideline categoryListHz;
@@ -29,7 +29,7 @@ public final class AnimationMenuBinding implements ViewBinding {
     public final Guideline exitButtonVc;
     private final ConstraintLayout rootView;
 
-    private AnimationMenuBinding(ConstraintLayout rootView, TextView amCategoryTittle, LinearLayout amExitButton, RecyclerView animationList, LinearLayout animationListContainer, TextView animationListTittle, ConstraintLayout animationMenu, EditText animationSearch, RecyclerView categoryList, LinearLayout categoryListContainer, Guideline categoryListHz, Guideline categoryTittleHz, Guideline categoryTittleVc, Guideline exitButtonVc) {
+    private AnimationMenuBinding(ConstraintLayout rootView, TextView amCategoryTittle, LinearLayout amExitButton, RecyclerView animationList, LinearLayout animationListContainer, TextView animationListTittle, ConstraintLayout animationMenu, KeyboardEditText animationSearch, RecyclerView categoryList, LinearLayout categoryListContainer, Guideline categoryListHz, Guideline categoryTittleHz, Guideline categoryTittleVc, Guideline exitButtonVc) {
         this.rootView = rootView;
         this.amCategoryTittle = amCategoryTittle;
         this.amExitButton = amExitButton;
@@ -81,8 +81,8 @@ public final class AnimationMenuBinding implements ViewBinding {
                         if (textView2 != null) {
                             ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
                             i = R.id.animation_search;
-                            EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
-                            if (editText != null) {
+                            KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                            if (keyboardEditText != null) {
                                 i = R.id.category_list;
                                 RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
                                 if (recyclerView2 != null) {
@@ -101,7 +101,7 @@ public final class AnimationMenuBinding implements ViewBinding {
                                                     i = R.id.exit_button_vc;
                                                     Guideline guideline4 = (Guideline) ViewBindings.findChildViewById(rootView, i);
                                                     if (guideline4 != null) {
-                                                        return new AnimationMenuBinding(constraintLayout, textView, linearLayout, recyclerView, linearLayout2, textView2, constraintLayout, editText, recyclerView2, linearLayout3, guideline, guideline2, guideline3, guideline4);
+                                                        return new AnimationMenuBinding(constraintLayout, textView, linearLayout, recyclerView, linearLayout2, textView2, constraintLayout, keyboardEditText, recyclerView2, linearLayout3, guideline, guideline2, guideline3, guideline4);
                                                     }
                                                 }
                                             }

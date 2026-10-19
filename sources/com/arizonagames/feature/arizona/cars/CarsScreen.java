@@ -104,7 +104,7 @@ public final class CarsScreen extends SAMPUIElement {
         this.qualityTypeList = CollectionsKt.emptyList();
         this.bonusType = CollectionsKt.emptyList();
         this.bonuses = CollectionsKt.emptyList();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         loadData();
         bind.mainPageCarsRc.setAdapter(carInfoListAdapter);
         carInfoListAdapter.setOnCarInfoClickListener(new CarInfoListAdapter.OnCarInfoClickListener() { // from class: com.arizonagames.feature.arizona.cars.CarsScreen$1$1

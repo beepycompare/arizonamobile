@@ -3,7 +3,7 @@ package com.miami.game.core.firebase.notification;
 import com.miami.game.core.firebase.notification.data.MessagingRepository;
 import dagger.MembersInjector;
 import dagger.internal.Provider;
-/* loaded from: classes5.dex */
+/* loaded from: classes3.dex */
 public final class MessagingService_MembersInjector implements MembersInjector<MessagingService> {
     private final Provider<MessagingRepository> messagingRepositoryProvider;
 

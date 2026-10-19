@@ -11,6 +11,7 @@ import androidx.constraintlayout.core.parser.CLNumber;
 import androidx.constraintlayout.core.parser.CLObject;
 import androidx.constraintlayout.core.parser.CLParsingException;
 import androidx.constraintlayout.core.state.Transition;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.arizona.launcher.UpdateActivity;
 import io.reactivex.annotations.SchedulerSupport;
 import java.lang.reflect.Array;
@@ -209,7 +210,7 @@ public class TransitionParser {
         String stringOrNull = cLObject.getStringOrNull(TypedValues.TransitionType.S_PATH_MOTION_ARC);
         String stringOrNull2 = cLObject.getStringOrNull("transitionEasing");
         String stringOrNull3 = cLObject.getStringOrNull("curveFit");
-        String stringOrNull4 = cLObject.getStringOrNull("type");
+        String stringOrNull4 = cLObject.getStringOrNull(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
         if (stringOrNull4 == null) {
             stringOrNull4 = "parentRelative";
         }
@@ -406,7 +407,7 @@ public class TransitionParser {
         CLArray array2 = cLObject.getArray("frames");
         String stringOrNull = cLObject.getStringOrNull("transitionEasing");
         String[] strArr = {"scaleX", "scaleY", "translationX", "translationY", "translationZ", "rotationX", "rotationY", "rotationZ", "alpha", TypedValues.CycleType.S_WAVE_PERIOD, TypedValues.CycleType.S_WAVE_OFFSET, TypedValues.CycleType.S_WAVE_PHASE};
-        int[] iArr = {311, 312, 304, 305, 306, 308, 309, 310, 403, TypedValues.CycleType.TYPE_WAVE_PERIOD, TypedValues.CycleType.TYPE_WAVE_OFFSET, TypedValues.CycleType.TYPE_WAVE_PHASE};
+        int[] iArr = {311, 312, 304, 305, 306, 308, 309, 310, TypedValues.CycleType.TYPE_ALPHA, TypedValues.CycleType.TYPE_WAVE_PERIOD, TypedValues.CycleType.TYPE_WAVE_OFFSET, TypedValues.CycleType.TYPE_WAVE_PHASE};
         int[] iArr2 = {0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 2, 0};
         int size = array2.size();
         TypedBundle[] typedBundleArr = new TypedBundle[size];

@@ -1,5 +1,5 @@
 package com.google.firebase.encoders.proto;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public interface ProtoEnum {
     int getNumber();
 }

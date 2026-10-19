@@ -2,7 +2,7 @@ package androidx.core.os;
 
 import android.os.Environment;
 import java.io.File;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class EnvironmentCompat {
     @Deprecated
     public static final String MEDIA_UNKNOWN = "unknown";

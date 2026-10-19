@@ -1,6 +1,7 @@
 package com.android.billingclient.api;
 
 import android.text.TextUtils;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -440,7 +441,7 @@ public final class ProductDetails {
         this.zzb = jSONObject;
         String optString = jSONObject.optString("productId");
         this.zzc = optString;
-        String optString2 = jSONObject.optString("type");
+        String optString2 = jSONObject.optString(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
         this.zzd = optString2;
         if (TextUtils.isEmpty(optString)) {
             throw new IllegalArgumentException("Product id cannot be empty.");

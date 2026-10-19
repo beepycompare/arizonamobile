@@ -1,7 +1,6 @@
 package coil3.util;
 
 import androidx.media3.common.MimeTypes;
-import com.android.internal.http.multipart.FilePart;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import java.util.Map;
 import kotlin.Metadata;
@@ -14,7 +13,7 @@ public final class MimeTypesKt {
 
     static {
         Map createMapBuilder = MapsKt.createMapBuilder();
-        createMapBuilder.put("bin", FilePart.DEFAULT_CONTENT_TYPE);
+        createMapBuilder.put("bin", "application/octet-stream");
         createMapBuilder.put("gz", "application/gzip");
         createMapBuilder.put("json", "application/json");
         createMapBuilder.put("pdf", "application/pdf");
@@ -104,7 +103,7 @@ public final class MimeTypesKt {
         createMapBuilder.put("js", "text/javascript");
         createMapBuilder.put("mjs", "text/javascript");
         createMapBuilder.put("md", "text/markdown");
-        createMapBuilder.put("txt", "text/plain");
+        createMapBuilder.put("txt", coil3.network.internal.UtilsKt.MIME_TYPE_TEXT_PLAIN);
         createMapBuilder.put("xml", UtilsKt.MIME_TYPE_XML);
         createMapBuilder.put("3gp", MimeTypes.VIDEO_H263);
         createMapBuilder.put("3g2", "video/3gpp2");

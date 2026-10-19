@@ -1,5 +1,5 @@
 package com.google.firebase;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 final class AutoValue_StartupTime extends StartupTime {
     private final long elapsedRealtime;
     private final long epochMillis;

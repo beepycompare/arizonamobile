@@ -6,16 +6,16 @@ import java.util.LinkedHashMap;
 public final class dp {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f953a;
+    public final Context f956a;
     public final LinkedHashMap b = new LinkedHashMap();
     public final Zo c;
     public final Zo d;
 
     public dp(Context context) {
-        this.f953a = context;
-        C0736ya c0736ya = new C0736ya(context, "appmetrica_vital.dat", Na.k().w().e(), 0L, 8, null);
-        this.c = new Zo(Na.k().y(), c0736ya);
-        this.d = new Zo(new C0767zf(Na.k().B().e(context)), c0736ya);
+        this.f956a = context;
+        C0731ya c0731ya = new C0731ya(context, "appmetrica_vital.dat", Na.k().w().e(), 0L, 8, null);
+        this.c = new Zo(Na.k().y(), c0731ya);
+        this.d = new Zo(new C0762zf(Na.k().B().e(context)), c0731ya);
     }
 
     public final Zo a() {

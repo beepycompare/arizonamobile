@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.arizona.common.utils.EasyAnimation;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -121,7 +122,7 @@ public final class DailyRewardsScreen extends SAMPUIElement {
         this.binding = dailyRewardsLayoutBinding;
         RewardsAdapter rewardsAdapter = new RewardsAdapter(UtilsKt.isArizonaType());
         this.rewardsAdapter = rewardsAdapter;
-        addViewToConstraintLayout(this.screenLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, this.screenLayout, -1, -1, false, 8, null);
         if (dailyRewardsLayoutBinding != null) {
             dailyRewardsLayoutBinding.rewardsRc.setAdapter(rewardsAdapter);
             EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
@@ -881,7 +882,7 @@ public final class DailyRewardsScreen extends SAMPUIElement {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: DailyRewardsScreen.kt */
-    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000e\b\u0086\u0081\u0002\u0018\u0000 \u00102\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u0010B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000f¨\u0006\u0011"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "", "type", "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "DAILY_REWARD", "NEW_YEAR", "MAY_REWARD", "AUTUMN_REWARD", "WELCOME", "RODINA_CAR_1", "RODINA_CAR_2", "OCTOBER_STREET", "Companion", "calendar"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\u000e\b\u0086\u0081\u0002\u0018\u0000 \u00102\b\u0012\u0004\u0012\u00020\u00000\u0001:\u0001\u0010B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\fj\u0002\b\rj\u0002\b\u000ej\u0002\b\u000f¨\u0006\u0011"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "DAILY_REWARD", "NEW_YEAR", "MAY_REWARD", "AUTUMN_REWARD", "WELCOME", "RODINA_CAR_1", "RODINA_CAR_2", "OCTOBER_STREET", "Companion", "calendar"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public static final class BackgroundType {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -929,7 +930,7 @@ public final class DailyRewardsScreen extends SAMPUIElement {
         }
 
         /* compiled from: DailyRewardsScreen.kt */
-        @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType$Companion;", "", "<init>", "()V", "fromType", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", "type", "", "calendar"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007¨\u0006\b"}, d2 = {"Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType$Companion;", "", "<init>", "()V", "fromType", "Lru/mrlargha/feature/calendar/DailyRewardsScreen$BackgroundType;", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "", "calendar"}, k = 1, mv = {2, 4, 0}, xi = 48)
         /* loaded from: classes6.dex */
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

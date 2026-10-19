@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.ResultReceiver;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
 import io.appmetrica.analytics.internal.CounterConfiguration;
@@ -19,15 +20,15 @@ import org.json.JSONObject;
 public final class Z6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CounterConfigurationReporterType f869a;
+    public final CounterConfigurationReporterType f872a;
 
     public Z6(CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f869a = counterConfigurationReporterType;
+        this.f872a = counterConfigurationReporterType;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(12:1|(2:2|3)|(3:64|65|(10:67|(2:70|68)|71|6|7|8|9|(2:16|(8:19|83|27|28|(4:31|(5:35|36|(1:38)(1:42)|39|40)|41|29)|45|46|(2:50|51)))|60|61))|5|6|7|8|9|(4:11|13|16|(2:19|83))|60|61|(1:(0))) */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:70:0x0084 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Can't wrap try/catch for region: R(12:1|(2:2|3)|(3:64|65|(10:67|(2:70|68)|71|6|7|8|9|(2:16|(8:19|84|27|28|(4:31|(5:35|36|(1:38)(1:42)|39|40)|41|29)|45|46|(2:50|51)))|60|61))|5|6|7|8|9|(4:11|13|16|(2:19|84))|60|61|(1:(0))) */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0085 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -36,11 +37,11 @@ public final class Z6 {
         ArrayList<ContentValues> arrayList;
         Mj mj;
         Kj kj;
-        C0187d4 c0187d4;
+        C0182d4 c0182d4;
         Integer num;
         int i2 = 0;
         try {
-            cursor = sQLiteDatabase.query(NotificationStatsStore.KEY_EVENTS, new String[]{"global_number", "type", "event_description"}, str, strArr, null, null, null);
+            cursor = sQLiteDatabase.query(NotificationStatsStore.KEY_EVENTS, new String[]{"global_number", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "event_description"}, str, strArr, null, null, null);
         } catch (Throwable th) {
             th = th;
             cursor = null;
@@ -50,9 +51,9 @@ public final class Z6 {
             } catch (Throwable th2) {
                 th = th2;
                 try {
-                    C0539qk c0539qk = Oj.f708a;
-                    c0539qk.getClass();
-                    c0539qk.a(new Pj("select_rows_to_delete_exception", th));
+                    C0534qk c0534qk = Oj.f711a;
+                    c0534qk.getClass();
+                    c0534qk.a(new Pj("select_rows_to_delete_exception", th));
                     Oo.a(cursor);
                     arrayList = null;
                     i2 = sQLiteDatabase.delete(NotificationStatsStore.KEY_EVENTS, str, strArr);
@@ -74,11 +75,11 @@ public final class Z6 {
                 if (arrayList != null && arrayList.size() != 0 && i2 == arrayList.size() && z) {
                     mj = Na.I.f;
                     if (str2 != null && mj != null) {
-                        CounterConfigurationReporterType counterConfigurationReporterType = this.f869a;
+                        CounterConfigurationReporterType counterConfigurationReporterType = this.f872a;
                         synchronized (mj) {
                             kj = (Kj) mj.c.get(str2);
                             if (kj == null) {
-                                kj = new Kj(str2, mj.b, counterConfigurationReporterType, mj.f669a);
+                                kj = new Kj(str2, mj.b, counterConfigurationReporterType, mj.f672a);
                                 mj.c.put(str2, kj);
                             }
                         }
@@ -88,15 +89,15 @@ public final class Z6 {
                             JSONArray jSONArray2 = new JSONArray();
                             for (ContentValues contentValues2 : arrayList) {
                                 Integer asInteger = contentValues2.getAsInteger("global_number");
-                                Integer asInteger2 = contentValues2.getAsInteger("type");
+                                Integer asInteger2 = contentValues2.getAsInteger(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
                                 if (asInteger != null && asInteger2 != null) {
                                     jSONArray.put(asInteger);
                                     Db a2 = Db.a(asInteger2.intValue());
                                     if (a2 == null) {
-                                        Map map = AbstractC0535qg.f1166a;
+                                        Map map = AbstractC0530qg.f1169a;
                                         num = null;
                                     } else {
-                                        num = (Integer) AbstractC0535qg.c.get(a2);
+                                        num = (Integer) AbstractC0530qg.c.get(a2);
                                     }
                                     jSONArray2.put(num);
                                 }
@@ -105,17 +106,17 @@ public final class Z6 {
                             JSONObject put = new JSONObject().put("details", new JSONObject().put("reason", Y6.a(i)).put("cleared", jSONObject).put("actual_deleted_number", i2));
                             PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str2);
                             String jSONObject2 = put.toString();
-                            Set set = Q9.f730a;
+                            Set set = Q9.f733a;
                             Db db = Db.EVENT_TYPE_UNDEFINED;
-                            c0187d4 = new C0187d4(jSONObject2, "", 12290, 0, orCreatePublicLogger);
+                            c0182d4 = new C0182d4(jSONObject2, "", 12290, 0, orCreatePublicLogger);
                         } catch (Throwable unused) {
-                            c0187d4 = null;
+                            c0182d4 = null;
                         }
-                        if (c0187d4 != null && kj.c != null) {
+                        if (c0182d4 != null && kj.c != null) {
                             try {
-                                CounterConfiguration counterConfiguration = new CounterConfiguration(kj.f632a);
+                                CounterConfiguration counterConfiguration = new CounterConfiguration(kj.f635a);
                                 counterConfiguration.setReporterType(kj.c);
-                                kj.d.f690a.reportData(1, c0187d4.d(new Zh(new C0173cg(kj.b, (ResultReceiver) null), counterConfiguration, new W8(new Wl(LoggerStorage.getOrCreatePublicLogger(kj.f632a), "Crash Environment")), null).c()));
+                                kj.d.f693a.reportData(1, c0182d4.d(new Zh(new C0168cg(kj.b, (ResultReceiver) null), counterConfiguration, new W8(new Wl(LoggerStorage.getOrCreatePublicLogger(kj.f635a), "Crash Environment")), null).c()));
                             } catch (Throwable unused2) {
                             }
                         }
@@ -129,7 +130,7 @@ public final class Z6 {
         if (arrayList != null) {
             mj = Na.I.f;
             if (str2 != null) {
-                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f869a;
+                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f872a;
                 synchronized (mj) {
                 }
             }

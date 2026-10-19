@@ -16,6 +16,7 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.core.widgets.ConstraintWidget;
 import androidx.constraintlayout.core.widgets.ConstraintWidgetContainer;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.adjust.sdk.Constants;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +51,7 @@ public class Transition implements TypedValues {
     private String mDefaultInterpolatorString = null;
     private Easing mEasing = null;
     private int mAutoTransition = 0;
-    private int mDuration = 400;
+    private int mDuration = Constants.MINIMAL_ERROR_STATUS_CODE;
     private float mStagger = 0.0f;
     private OnSwipe mOnSwipe = null;
 

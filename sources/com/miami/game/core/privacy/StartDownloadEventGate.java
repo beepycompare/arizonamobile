@@ -26,11 +26,11 @@ public final class StartDownloadEventGate {
         this.reported = true;
         Function0<Boolean> function0 = this.persistClaim;
         Result.Companion companion = Result.Companion;
-        Object m9921constructorimpl = Result.m9921constructorimpl(function0.invoke());
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = false;
+        Object m9974constructorimpl = Result.m9974constructorimpl(function0.invoke());
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = false;
         }
-        if (!((Boolean) m9921constructorimpl).booleanValue()) {
+        if (!((Boolean) m9974constructorimpl).booleanValue()) {
             this.reported = false;
             return StartDownloadClaimResult.PERSISTENCE_FAILED;
         }

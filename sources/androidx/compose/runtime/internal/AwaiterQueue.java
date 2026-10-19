@@ -6,7 +6,6 @@ import androidx.compose.runtime.OneShotCancellationHandle;
 import androidx.compose.runtime.internal.AwaiterQueue;
 import androidx.compose.runtime.internal.AwaiterQueue.Awaiter;
 import androidx.exifinterface.media.ExifInterface;
-import com.facebook.widget.FacebookDialog;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
@@ -24,7 +23,7 @@ public final class AwaiterQueue<A extends Awaiter> {
     private MutableObjectList<A> spareList = new MutableObjectList<>(0, 1, null);
 
     /* compiled from: AwaiterQueue.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0003\n\u0000\b'\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\bH&¨\u0006\t"}, d2 = {"Landroidx/compose/runtime/internal/AwaiterQueue$Awaiter;", "", "<init>", "()V", FacebookDialog.COMPLETION_GESTURE_CANCEL, "", "resumeWithException", "exception", "", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u0003\n\u0000\b'\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\bH&¨\u0006\t"}, d2 = {"Landroidx/compose/runtime/internal/AwaiterQueue$Awaiter;", "", "<init>", "()V", "cancel", "", "resumeWithException", "exception", "", "runtime"}, k = 1, mv = {2, 1, 0}, xi = 48)
     /* loaded from: classes.dex */
     public static abstract class Awaiter {
         public static final int $stable = 0;

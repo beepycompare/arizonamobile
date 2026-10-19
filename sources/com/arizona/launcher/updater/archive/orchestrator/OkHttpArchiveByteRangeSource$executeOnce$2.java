@@ -83,7 +83,7 @@ public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLam
         boolean z;
         OkHttpClient okHttpClient;
         Object obj2;
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         boolean z2;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -120,13 +120,13 @@ public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLam
                 try {
                 } catch (Throwable th) {
                     Result.Companion companion = Result.Companion;
-                    obj2 = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                    obj2 = Result.m9974constructorimpl(ResultKt.createFailure(th));
                 }
                 Result.Companion companion2 = Result.Companion;
-                obj2 = Result.m9921constructorimpl(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).resolve(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getLocation()).toString());
-                boolean m9927isFailureimpl = Result.m9927isFailureimpl(obj2);
+                obj2 = Result.m9974constructorimpl(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).resolve(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getLocation()).toString());
+                boolean m9980isFailureimpl = Result.m9980isFailureimpl(obj2);
                 Object obj3 = obj2;
-                if (m9927isFailureimpl) {
+                if (m9980isFailureimpl) {
                     obj3 = null;
                 }
                 url = (String) obj3;
@@ -136,14 +136,14 @@ public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLam
                 try {
                 } catch (Throwable th2) {
                     Result.Companion companion3 = Result.Companion;
-                    m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th2));
+                    m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th2));
                 }
                 Result.Companion companion4 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(Boxing.boxBoolean(StringsKt.equals(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(url).getScheme(), Constants.SCHEME, true)));
+                m9974constructorimpl = Result.m9974constructorimpl(Boxing.boxBoolean(StringsKt.equals(new URI(((OkHttpArchiveByteRangeSource.ArchiveHttpHop.Redirect) archiveHttpHop).getFromUrl()).getScheme(), Constants.SCHEME, true) && !StringsKt.equals(new URI(url).getScheme(), Constants.SCHEME, true)));
                 Boolean boxBoolean = Boxing.boxBoolean(true);
-                boolean m9927isFailureimpl2 = Result.m9927isFailureimpl(m9921constructorimpl);
-                Boolean bool = m9921constructorimpl;
-                if (m9927isFailureimpl2) {
+                boolean m9980isFailureimpl2 = Result.m9980isFailureimpl(m9974constructorimpl);
+                Boolean bool = m9974constructorimpl;
+                if (m9980isFailureimpl2) {
                     bool = boxBoolean;
                 }
                 if (!((Boolean) bool).booleanValue()) {
@@ -164,7 +164,7 @@ public final class OkHttpArchiveByteRangeSource$executeOnce$2 extends SuspendLam
                 if (!archiveRemoteNetworkPolicy2.isAllowedUrl(url, z)) {
                     return new ArchiveByteRangeResult.Failure(ArchiveByteRangeErrorCode.EFFECTIVE_URL_UNSAFE, null, "unsafe or malformed request URL", 2, null);
                 }
-                Request.Builder header = new Request.Builder().url(url).header("Range", "bytes=" + this.$request.getStartInclusive() + com.google.android.vending.expansion.downloader.Constants.FILENAME_SEQUENCE_SEPARATOR + this.$request.getEndInclusive()).header("Accept-Encoding", "identity");
+                Request.Builder header = new Request.Builder().url(url).header("Range", "bytes=" + this.$request.getStartInclusive() + "-" + this.$request.getEndInclusive()).header("Accept-Encoding", "identity");
                 StrongEtag ifRange = this.$request.getIfRange();
                 if (ifRange != null) {
                     header.header("If-Range", ifRange.getHeaderValue());

@@ -12,7 +12,6 @@ import android.widget.Filter;
 import android.widget.FilterQueryProvider;
 import android.widget.Filterable;
 import androidx.cursoradapter.widget.CursorFilter;
-import com.android.vending.expansion.zipfile.APEZProvider;
 /* loaded from: classes2.dex */
 public abstract class CursorAdapter extends BaseAdapter implements Filterable, CursorFilter.CursorFilterClient {
     @Deprecated
@@ -66,7 +65,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         this.mCursor = cursor;
         this.mDataValid = z;
         this.mContext = context;
-        this.mRowIDColumn = z ? cursor.getColumnIndexOrThrow(APEZProvider.FILEID) : -1;
+        this.mRowIDColumn = z ? cursor.getColumnIndexOrThrow("_id") : -1;
         if ((i & 2) == 2) {
             this.mChangeObserver = new ChangeObserver();
             this.mDataSetObserver = new MyDataSetObserver();
@@ -183,7 +182,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
             if (dataSetObserver2 != null) {
                 cursor.registerDataSetObserver(dataSetObserver2);
             }
-            this.mRowIDColumn = cursor.getColumnIndexOrThrow(APEZProvider.FILEID);
+            this.mRowIDColumn = cursor.getColumnIndexOrThrow("_id");
             this.mDataValid = true;
             notifyDataSetChanged();
             return cursor2;

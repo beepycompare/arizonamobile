@@ -7,12 +7,12 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public final class C6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Qi f491a;
+    public final Qi f494a;
     public final Zh b;
 
-    public C6(C0173cg c0173cg, W8 w8, Qi qi, AppMetricaConfig appMetricaConfig) {
-        this.f491a = qi;
-        this.b = new Zh(c0173cg, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), w8, appMetricaConfig.userProfileID);
+    public C6(C0168cg c0168cg, W8 w8, Qi qi, AppMetricaConfig appMetricaConfig) {
+        this.f494a = qi;
+        this.b = new Zh(c0168cg, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), w8, appMetricaConfig.userProfileID);
     }
 
     public final Zh a() {

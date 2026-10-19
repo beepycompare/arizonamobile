@@ -10,16 +10,16 @@ public class Zh extends Y3 {
     public boolean e;
     public String f;
 
-    public Zh(C0173cg c0173cg, CounterConfiguration counterConfiguration, W8 w8) {
-        this(c0173cg, counterConfiguration, w8, null);
+    public Zh(C0168cg c0168cg, CounterConfiguration counterConfiguration, W8 w8) {
+        this(c0168cg, counterConfiguration, w8, null);
     }
 
     public final Bundle c() {
         Bundle bundle = new Bundle();
         this.b.toBundle(bundle);
-        C0173cg c0173cg = this.f852a;
-        synchronized (c0173cg) {
-            bundle.putParcelable("PROCESS_CFG_OBJ", c0173cg);
+        C0168cg c0168cg = this.f855a;
+        synchronized (c0168cg) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", c0168cg);
         }
         return bundle;
     }
@@ -27,7 +27,7 @@ public class Zh extends Y3 {
     public final synchronized String d() {
         W8 w8;
         w8 = this.c;
-        return w8.f824a.isEmpty() ? null : new JSONObject(w8.f824a).toString();
+        return w8.f827a.isEmpty() ? null : new JSONObject(w8.f827a).toString();
     }
 
     public final synchronized String e() {
@@ -38,8 +38,8 @@ public class Zh extends Y3 {
         return this.e;
     }
 
-    public Zh(C0173cg c0173cg, CounterConfiguration counterConfiguration, W8 w8, String str) {
-        super(c0173cg, counterConfiguration);
+    public Zh(C0168cg c0168cg, CounterConfiguration counterConfiguration, W8 w8, String str) {
+        super(c0168cg, counterConfiguration);
         this.e = true;
         this.f = str;
         this.c = w8;

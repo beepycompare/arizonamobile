@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 public final class Ig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SafePackageManager f598a;
+    public final SafePackageManager f601a;
 
     public Ig(SafePackageManager safePackageManager) {
-        this.f598a = safePackageManager;
+        this.f601a = safePackageManager;
     }
 
     public final T9 a(Context context) {
@@ -18,24 +18,24 @@ public final class Ig {
         Na na = Na.I;
         IHandlerExecutor g = na.d.g();
         Zo zo = na.D().c;
-        String installerPackageName = this.f598a.getInstallerPackageName(context, context.getPackageName());
+        String installerPackageName = this.f601a.getInstallerPackageName(context, context.getPackageName());
         if (installerPackageName != null) {
             int hashCode = installerPackageName.hashCode();
             if (hashCode != -1637701853) {
                 if (hashCode != -1046965711) {
                     if (hashCode == -356280397 && installerPackageName.equals("ru.vk.store")) {
-                        ee = new C0382kj(context);
+                        ee = new C0377kj(context);
                     }
                 } else if (installerPackageName.equals("com.android.vending")) {
                     ee = new Qa(context, g);
                 }
             } else if (installerPackageName.equals("com.huawei.appmarket")) {
-                ee = new C0142bb(context);
+                ee = new C0137bb(context);
             }
-            return new T9(new C0538qj(new C0703x3(ee, new fp(zo))), g);
+            return new T9(new C0533qj(new C0698x3(ee, new fp(zo))), g);
         }
         ee = new Ee(installerPackageName);
-        return new T9(new C0538qj(new C0703x3(ee, new fp(zo))), g);
+        return new T9(new C0533qj(new C0698x3(ee, new fp(zo))), g);
     }
 
     public /* synthetic */ Ig() {

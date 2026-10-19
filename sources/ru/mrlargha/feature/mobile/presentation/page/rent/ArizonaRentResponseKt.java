@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -142,10 +141,10 @@ public final class ArizonaRentResponseKt {
                 return ArizonaRentResponseKt.onChangeListeners$lambda$0(CustomEditText.this, etContainer, tvError, booleanRef, afterTextChanged, textView, i3, keyEvent);
             }
         });
-        customEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentResponseKt$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnFocusChangeListener
-            public final void onFocusChange(View view, boolean z2) {
-                ArizonaRentResponseKt.onChangeListeners$lambda$1(Ref.BooleanRef.this, customEditText, view, z2);
+        customEditText.setOnFocusChangeListener(new Function1() { // from class: ru.mrlargha.feature.mobile.presentation.page.rent.ArizonaRentResponseKt$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                return ArizonaRentResponseKt.onChangeListeners$lambda$1(Ref.BooleanRef.this, customEditText, ((Boolean) obj).booleanValue());
             }
         });
     }
@@ -178,11 +177,11 @@ public final class ArizonaRentResponseKt {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final void onChangeListeners$lambda$1(Ref.BooleanRef booleanRef, CustomEditText customEditText, View view, boolean z) {
-        if (z || booleanRef.element) {
-            return;
+    public static final Unit onChangeListeners$lambda$1(Ref.BooleanRef booleanRef, CustomEditText customEditText, boolean z) {
+        if (!z && !booleanRef.element) {
+            customEditText.setText("");
         }
-        customEditText.setText("");
+        return Unit.INSTANCE;
     }
 
     public static final void checkValidate(CustomEditText customEditText, CustomCardView etContainer, TextView tvError, Function1<? super Editable, Unit> afterTextChanged) {

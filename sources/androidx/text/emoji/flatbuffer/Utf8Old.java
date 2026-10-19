@@ -9,7 +9,7 @@ import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
 import java.nio.charset.StandardCharsets;
 import java.util.function.Supplier;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class Utf8Old extends Utf8 {
     private static final ThreadLocal<Cache> CACHE = new Utf8Old$$ExternalSyntheticThreadLocal1(new Supplier() { // from class: androidx.text.emoji.flatbuffer.Utf8Old$$ExternalSyntheticLambda0
         @Override // java.util.function.Supplier
@@ -19,7 +19,7 @@ public class Utf8Old extends Utf8 {
     });
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class Cache {
         CharSequence lastInput = null;
         ByteBuffer lastOutput = null;

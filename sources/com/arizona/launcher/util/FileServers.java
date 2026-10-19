@@ -106,7 +106,7 @@ public final class FileServers {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final String[] buildLauncherServers() {
-        return (String[]) routes().getChannelRoots().toArray(new String[0]);
+        return (String[]) routes().getLauncherRoots().toArray(new String[0]);
     }
 
     public final String[] getGame_servers() {

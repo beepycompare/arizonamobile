@@ -124,7 +124,7 @@ public final class CasesScreen extends SAMPUIElement {
         Context applicationContext = targetActivity.getApplicationContext();
         Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
         CasesResponseKt.setAppContext(applicationContext);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setupListeners();
     }
 

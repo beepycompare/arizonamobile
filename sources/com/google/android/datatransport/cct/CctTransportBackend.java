@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
+import com.adjust.sdk.Constants;
 import com.google.android.datatransport.Encoding;
 import com.google.android.datatransport.cct.CctTransportBackend;
 import com.google.android.datatransport.cct.internal.AndroidClientInfo;
@@ -286,7 +287,7 @@ public final class CctTransportBackend implements TransportBackend {
         } catch (EncodingException e) {
             e = e;
             Logging.e(LOG_TAG, "Couldn't encode request, returning with 400", e);
-            return new HttpResponse(400, null, 0L);
+            return new HttpResponse(Constants.MINIMAL_ERROR_STATUS_CODE, null, 0L);
         } catch (ConnectException e2) {
             e = e2;
             Logging.e(LOG_TAG, "Couldn't open connection, returning with 500", e);
@@ -298,7 +299,7 @@ public final class CctTransportBackend implements TransportBackend {
         } catch (IOException e4) {
             e = e4;
             Logging.e(LOG_TAG, "Couldn't encode request, returning with 400", e);
-            return new HttpResponse(400, null, 0L);
+            return new HttpResponse(Constants.MINIMAL_ERROR_STATUS_CODE, null, 0L);
         }
     }
 

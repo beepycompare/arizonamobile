@@ -204,12 +204,12 @@ public final class RepairGameErrorKt {
                 ComposerKt.traceEventStart(776871890, i2, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorDialogContent (RepairGameError.kt:67)");
             }
             function0 = onDismiss;
-            DialogFrameKt.DialogFrame(null, function0, ComposableLambdaKt.rememberComposableLambda(2140470458, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorKt$$ExternalSyntheticLambda3
+            DialogFrameKt.DialogFrame(null, function0, null, ComposableLambdaKt.rememberComposableLambda(1437874619, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorKt$$ExternalSyntheticLambda3
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return RepairGameErrorKt.RepairGameErrorDialogContent$lambda$0(Function0.this, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), startRestartGroup, (i2 & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 1);
+            }, startRestartGroup, 54), startRestartGroup, (i2 & 112) | 3072, 5);
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
             }
@@ -232,7 +232,7 @@ public final class RepairGameErrorKt {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(2140470458, i, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorDialogContent.<anonymous> (RepairGameError.kt:69)");
+                ComposerKt.traceEventStart(1437874619, i, -1, "com.miami.game.feature.download.dialog.ui.repair.RepairGameErrorDialogContent.<anonymous> (RepairGameError.kt:69)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_check_files_error, composer, 0), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(100.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
             TextKt.m3157TextNvy7gAk("ОШИБКА", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 6, 0, 131070);
@@ -262,8 +262,8 @@ public final class RepairGameErrorKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 174424043, "C81@2972L43,81@2947L186:RepairGameError.kt#wxnm6r");
-            ComposerKt.sourceInformationMarkerStart(composer, -2072582743, "CC(remember):RepairGameError.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, -1482582198, "C81@2972L43,81@2947L186:RepairGameError.kt#wxnm6r");
+            ComposerKt.sourceInformationMarkerStart(composer, 1337648746, "CC(remember):RepairGameError.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -278,7 +278,7 @@ public final class RepairGameErrorKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameErrorKt.INSTANCE.getLambda$2144985598$dialogs(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$RepairGameErrorKt.INSTANCE.getLambda$1442389759$dialogs(), composer, 48);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

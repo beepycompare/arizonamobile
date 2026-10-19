@@ -1,7 +1,6 @@
 package ru.mrlargha.feature.mobile.domain.obj;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -361,25 +360,16 @@ public final class ContactInfo {
     }
 
     public final String getIdText() {
-        MessageStatus messageStatus = this.status;
-        MessageStatus messageStatus2 = MessageStatus.ONLINE;
-        Object obj = Constants.FILENAME_SEQUENCE_SEPARATOR;
-        if (messageStatus == messageStatus2) {
-            Object obj2 = this.onlineId;
-            if (obj2 != null) {
-                obj = obj2;
-            }
-            return "id: " + obj;
+        if (this.status == MessageStatus.ONLINE) {
+            Object obj = this.onlineId;
+            return "id: " + (obj != null ? obj : "-");
         }
         String str = this.formattedLastLogin;
-        if (str.length() != 0) {
-            obj = str;
-        }
-        return (String) obj;
+        return (String) (str.length() != 0 ? str : "-");
     }
 
     /* renamed from: isBlocked  reason: collision with other method in class */
-    public final boolean m11958isBlocked() {
+    public final boolean m12024isBlocked() {
         return isBlockedByMe() || isMeBlocked();
     }
 

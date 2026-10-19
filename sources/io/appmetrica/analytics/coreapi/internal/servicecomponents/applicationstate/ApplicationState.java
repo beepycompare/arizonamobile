@@ -9,17 +9,17 @@ public enum ApplicationState {
     
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f334a;
+    private final String f337a;
 
     ApplicationState(String str) {
-        this.f334a = str;
+        this.f337a = str;
     }
 
     public static ApplicationState fromString(String str) {
         ApplicationState[] values;
         ApplicationState applicationState = UNKNOWN;
         for (ApplicationState applicationState2 : values()) {
-            if (applicationState2.f334a.equals(str)) {
+            if (applicationState2.f337a.equals(str)) {
                 return applicationState2;
             }
         }
@@ -27,6 +27,6 @@ public enum ApplicationState {
     }
 
     public String getStringValue() {
-        return this.f334a;
+        return this.f337a;
     }
 }

@@ -1,5 +1,6 @@
 package okhttp3.internal.ws;
 
+import androidx.media3.extractor.ts.PsExtractor;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.Random;
@@ -129,7 +130,7 @@ public final class WebSocketWriter implements Closeable {
                 this.messageDeflater = messageDeflater;
             }
             messageDeflater.deflate(this.messageBuffer);
-            i2 = i | 192;
+            i2 = i | PsExtractor.AUDIO_STREAM;
         }
         long size = this.messageBuffer.size();
         this.sinkBuffer.writeByte(i2);

@@ -5,10 +5,10 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class Ca implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ne f495a;
+    public final Ne f498a;
 
     public Ca() {
-        this(new C0644um());
+        this(new C0639um());
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -16,16 +16,16 @@ public final class Ca implements ProtobufConverter {
     public final Tm fromModel(C4 c4) {
         Tm tm = new Tm();
         tm.b = c4.b;
-        tm.f783a = c4.f489a;
+        tm.f786a = c4.f492a;
         tm.c = c4.c;
         tm.d = c4.d;
         tm.e = c4.e;
-        tm.f = this.f495a.a(c4.f);
+        tm.f = this.f498a.a(c4.f);
         return tm;
     }
 
-    public Ca(C0644um c0644um) {
-        this.f495a = c0644um;
+    public Ca(C0639um c0639um) {
+        this.f498a = c0639um;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -35,9 +35,9 @@ public final class Ca implements ProtobufConverter {
         a4.d = tm.d;
         a4.c = tm.c;
         a4.b = tm.b;
-        a4.f452a = tm.f783a;
+        a4.f455a = tm.f786a;
         a4.e = tm.e;
-        a4.f = this.f495a.a(tm.f);
+        a4.f = this.f498a.a(tm.f);
         return new C4(a4);
     }
 }

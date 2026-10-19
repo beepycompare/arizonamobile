@@ -41,7 +41,7 @@ public final class CurrentContainerRewards extends SAMPUIElement {
         ContainerGetPrizeBinding bind = ContainerGetPrizeBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setVisibility(false);
         bind.cgpExitButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.current_container.presentation.CurrentContainerRewards$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

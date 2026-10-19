@@ -134,7 +134,7 @@ public class HttpHeaderParser {
     }
 
     public static String parseCharset(Map<String, String> map) {
-        return parseCharset(map, "ISO-8859-1");
+        return parseCharset(map, DEFAULT_CONTENT_CHARSET);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

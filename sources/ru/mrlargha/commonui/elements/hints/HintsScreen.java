@@ -44,7 +44,7 @@ public final class HintsScreen extends SAMPUIElement {
         HintsScreenBinding bind = HintsScreenBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ImageView rightHintCloseButton = bind.rightHintCloseButton;
         Intrinsics.checkNotNullExpressionValue(rightHintCloseButton, "rightHintCloseButton");

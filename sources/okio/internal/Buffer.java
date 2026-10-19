@@ -5,6 +5,7 @@ import androidx.collection.SieveCacheKt;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.upstream.CmcdData;
+import androidx.media3.extractor.ts.PsExtractor;
 import com.google.common.base.Ascii;
 import java.io.EOFException;
 import kotlin.Metadata;
@@ -14,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.Typography;
 import okio.Buffer;
 import okio.ByteString;
-import okio.C0777SegmentedByteString;
+import okio.C0772SegmentedByteString;
 import okio.Options;
 import okio.Segment;
 import okio.SegmentPool;
@@ -978,7 +979,7 @@ public final class Buffer {
                     } else {
                         if (charAt2 < 2048) {
                             Segment writableSegment$okio2 = buffer.writableSegment$okio(2);
-                            writableSegment$okio2.data[writableSegment$okio2.limit] = (byte) ((charAt2 >> 6) | 192);
+                            writableSegment$okio2.data[writableSegment$okio2.limit] = (byte) ((charAt2 >> 6) | PsExtractor.AUDIO_STREAM);
                             writableSegment$okio2.data[writableSegment$okio2.limit + 1] = (byte) ((charAt2 & '?') | 128);
                             writableSegment$okio2.limit += 2;
                             buffer.setSize$okio(buffer.size() + 2);
@@ -1024,7 +1025,7 @@ public final class Buffer {
             return buffer;
         } else if (i < 2048) {
             Segment writableSegment$okio = buffer.writableSegment$okio(2);
-            writableSegment$okio.data[writableSegment$okio.limit] = (byte) ((i >> 6) | 192);
+            writableSegment$okio.data[writableSegment$okio.limit] = (byte) ((i >> 6) | PsExtractor.AUDIO_STREAM);
             writableSegment$okio.data[writableSegment$okio.limit + 1] = (byte) ((i & 63) | 128);
             writableSegment$okio.limit += 2;
             buffer.setSize$okio(buffer.size() + 2);
@@ -1512,7 +1513,7 @@ public final class Buffer {
             i5++;
             segment2 = segment2.next;
         }
-        return new C0777SegmentedByteString(bArr, iArr);
+        return new C0772SegmentedByteString(bArr, iArr);
     }
 
     public static final Buffer.UnsafeCursor commonReadUnsafe(okio.Buffer buffer, Buffer.UnsafeCursor unsafeCursor) {

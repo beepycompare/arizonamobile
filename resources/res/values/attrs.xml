@@ -1898,6 +1898,12 @@
     </attr>
     <attr name="handleNetworkEvents" format="boolean">
     </attr>
+    <attr name="hasBackground" format="boolean">
+    </attr>
+    <attr name="hasBinderKeysBackground" format="boolean">
+    </attr>
+    <attr name="hasSymbolBackground" format="boolean">
+    </attr>
     <attr name="headerLayout" format="reference">
     </attr>
     <attr name="headerMarginBottom" format="dimension">
@@ -2003,11 +2009,15 @@
     </attr>
     <attr name="imageButtonStyle" format="reference">
     </attr>
+    <attr name="imageKey" format="reference">
+    </attr>
     <attr name="imagePanX" format="float">
     </attr>
     <attr name="imagePanY" format="float">
     </attr>
     <attr name="imageRotate" format="float">
+    </attr>
+    <attr name="imageTint" format="color">
     </attr>
     <attr name="imageZoom" format="float">
     </attr>
@@ -2058,6 +2068,8 @@
     <attr name="isDraggingToFullscreenAllowed" format="boolean">
     </attr>
     <attr name="isLightTheme" format="boolean">
+    </attr>
+    <attr name="isMainBinderKey" format="boolean">
     </attr>
     <attr name="isMaterial3DynamicColorApplied" format="boolean">
     </attr>
@@ -2894,6 +2906,8 @@
     </attr>
     <attr name="maxHeight" format="dimension">
     </attr>
+    <attr name="maxHeightDp" format="dimension">
+    </attr>
     <attr name="maxImageSize" format="dimension">
     </attr>
     <attr name="maxLine" format="integer">
@@ -3701,6 +3715,10 @@
         <flag name="middle" value="2" />
         <flag name="end" value="4" />
     </attr>
+    <attr name="showInput">
+        <flag name="no" value="0" />
+        <flag name="yes" value="1" />
+    </attr>
     <attr name="showMarker" format="boolean">
     </attr>
     <attr name="showMotionSpec" format="reference">
@@ -4219,6 +4237,8 @@
     </attr>
     <attr name="textInputStyle" format="reference">
     </attr>
+    <attr name="textKey" format="string">
+    </attr>
     <attr name="textLocale" format="string">
     </attr>
     <attr name="textOutlineColor" format="color">
@@ -4228,6 +4248,8 @@
     <attr name="textPanX" format="float">
     </attr>
     <attr name="textPanY" format="float">
+    </attr>
+    <attr name="textSize" format="dimension">
     </attr>
     <attr name="textStartPadding" format="dimension">
     </attr>

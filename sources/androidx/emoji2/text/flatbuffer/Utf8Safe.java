@@ -1,6 +1,7 @@
 package androidx.emoji2.text.flatbuffer;
 
 import androidx.emoji2.text.flatbuffer.Utf8;
+import androidx.media3.extractor.ts.PsExtractor;
 import androidx.window.core.layout.WindowSizeClass;
 import java.nio.ByteBuffer;
 /* loaded from: classes2.dex */
@@ -217,7 +218,7 @@ public final class Utf8Safe extends Utf8 {
             } else if (charAt2 < 2048) {
                 int i2 = position + 1;
                 try {
-                    byteBuffer.put(position, (byte) ((charAt2 >>> 6) | 192));
+                    byteBuffer.put(position, (byte) ((charAt2 >>> 6) | PsExtractor.AUDIO_STREAM));
                     byteBuffer.put(i2, (byte) ((charAt2 & '?') | 128));
                     position = i2;
                 } catch (IndexOutOfBoundsException unused2) {

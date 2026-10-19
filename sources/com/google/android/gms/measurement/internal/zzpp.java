@@ -16,7 +16,6 @@ import android.os.RemoteException;
 import android.os.ext.SdkExtensions;
 import android.text.TextUtils;
 import androidx.privacysandbox.ads.adservices.java.measurement.MeasurementManagerFutures;
-import com.android.vending.expansion.zipfile.APEZProvider;
 import com.google.android.gms.common.GoogleApiAvailabilityLight;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.internal.Preconditions;
@@ -25,6 +24,7 @@ import com.google.android.gms.common.wrappers.Wrappers;
 import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.ByteArrayInputStream;
 import java.math.BigInteger;
 import java.net.MalformedURLException;
@@ -174,7 +174,7 @@ public final class zzpp extends zzjf {
         if ("_ldl".equals(str)) {
             this.zzu.zzc();
             return 2048;
-        } else if (APEZProvider.FILEID.equals(str)) {
+        } else if ("_id".equals(str)) {
             this.zzu.zzc();
             return 256;
         } else if (!"_lgclid".equals(str)) {
@@ -221,7 +221,7 @@ public final class zzpp extends zzjf {
         while (it.hasNext()) {
             zzah zzahVar = (zzah) it.next();
             Bundle bundle = new Bundle();
-            bundle.putString("app_id", zzahVar.zza);
+            bundle.putString(CommonUrlParts.APP_ID, zzahVar.zza);
             bundle.putString("origin", zzahVar.zzb);
             bundle.putLong(AppMeasurementSdk.ConditionalUserProperty.CREATION_TIMESTAMP, zzahVar.zzd);
             bundle.putString("name", zzahVar.zzc.zzb);

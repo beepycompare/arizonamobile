@@ -105,7 +105,7 @@ public final class UtilsKt {
 
     public static final void closeQuietly(AutoCloseable autoCloseable) {
         try {
-            UByte$$ExternalSyntheticBackport0.m9994m((Object) autoCloseable);
+            UByte$$ExternalSyntheticBackport0.m10047m((Object) autoCloseable);
         } catch (RuntimeException e) {
             throw e;
         } catch (Exception unused) {

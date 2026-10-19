@@ -28,7 +28,7 @@ class GpsStatusWrapper extends GnssStatusCompat {
             if (i < 33 || i > 64) {
                 if (i <= 64 || i > 88) {
                     if (i <= 200 || i > 235) {
-                        return (i < 193 || i > 200) ? 0 : 4;
+                        return (i < QZSS_SVID_MIN || i > 200) ? 0 : 4;
                     }
                     return 5;
                 }

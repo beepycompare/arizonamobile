@@ -41,7 +41,7 @@ public final class SaveLogToDownloadsKt {
         if (Build.VERSION.SDK_INT >= 29) {
             ContentValues contentValues = new ContentValues();
             contentValues.put("_display_name", displayName);
-            contentValues.put("mime_type", "text/plain");
+            contentValues.put("mime_type", coil3.network.internal.UtilsKt.MIME_TYPE_TEXT_PLAIN);
             contentValues.put("is_pending", (Integer) 1);
             ContentResolver contentResolver = context.getContentResolver();
             Uri contentUri = MediaStore.Downloads.getContentUri("external_primary");
@@ -68,12 +68,12 @@ public final class SaveLogToDownloadsKt {
                     return null;
                 } catch (Exception unused) {
                     Result.Companion companion = Result.Companion;
-                    Result.m9921constructorimpl(Integer.valueOf(contentResolver.delete(insert, null, null)));
+                    Result.m9974constructorimpl(Integer.valueOf(contentResolver.delete(insert, null, null)));
                     return null;
                 }
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                Result.m9921constructorimpl(ResultKt.createFailure(th));
+                Result.m9974constructorimpl(ResultKt.createFailure(th));
                 return null;
             }
         }

@@ -6,26 +6,26 @@ import org.json.JSONObject;
 public final class Xo implements Wo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final V8 f847a;
+    public final V8 f850a;
 
     public Xo() {
         this(new V8());
     }
 
     @Override // io.appmetrica.analytics.impl.Wo
-    public final byte[] a(C0295h9 c0295h9, Eh eh) {
-        if (!((C0446n5) eh.l).B() && !TextUtils.isEmpty(c0295h9.b)) {
+    public final byte[] a(C0290h9 c0290h9, Eh eh) {
+        if (!((C0441n5) eh.l).B() && !TextUtils.isEmpty(c0290h9.b)) {
             try {
-                JSONObject jSONObject = new JSONObject(c0295h9.b);
+                JSONObject jSONObject = new JSONObject(c0290h9.b);
                 jSONObject.remove("preloadInfo");
-                c0295h9.b = jSONObject.toString();
+                c0290h9.b = jSONObject.toString();
             } catch (Throwable unused) {
             }
         }
-        return this.f847a.a(c0295h9, eh);
+        return this.f850a.a(c0290h9, eh);
     }
 
     public Xo(V8 v8) {
-        this.f847a = v8;
+        this.f850a = v8;
     }
 }

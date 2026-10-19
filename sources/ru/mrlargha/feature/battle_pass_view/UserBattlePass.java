@@ -95,21 +95,21 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
         AppCompatImageView appCompatImageView = UtilsKt.isArizonaType() ? bind.ivMainImage : bind2.ivMainImage;
         Intrinsics.checkNotNull(appCompatImageView);
         this.ivMainImage = appCompatImageView;
-        inflate = UtilsKt.isArizonaType() ? inflate : inflate2;
-        Log.d(getCLASS_TAG(), ":currentScreen: " + inflate + " ");
-        Intrinsics.checkNotNull(inflate);
-        addViewToConstraintLayout(inflate, -1, -1);
+        View view = UtilsKt.isArizonaType() ? inflate : inflate2;
+        Log.d(getCLASS_TAG(), ":currentScreen: " + view + " ");
+        Intrinsics.checkNotNull(view);
+        SAMPUIElement.addViewToConstraintLayout$default(this, view, -1, -1, false, 8, null);
         recyclerView.setAdapter(rewardItemAdapter);
         recyclerView2.setAdapter(rewardItemAdapter);
         bind.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battle_pass_view.UserBattlePass$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
+            public final void onClick(View view2) {
                 UserBattlePass.this.closeScreen();
             }
         });
         bind2.btnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battle_pass_view.UserBattlePass$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
+            public final void onClick(View view2) {
                 UserBattlePass.this.closeScreen();
             }
         });

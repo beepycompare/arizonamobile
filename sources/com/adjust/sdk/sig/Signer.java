@@ -13,12 +13,11 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
-import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 /* loaded from: classes3.dex */
 public class Signer {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f202a = false;
+    public boolean f205a = false;
     public d b;
     public a c;
     public c d;
@@ -28,13 +27,13 @@ public class Signer {
     }
 
     public final synchronized void a() {
-        if (this.f202a) {
+        if (this.f205a) {
             return;
         }
         this.b = new d();
         this.d = new c(Build.VERSION.SDK_INT);
         this.c = new NativeLibHelper();
-        this.f202a = true;
+        this.f205a = true;
     }
 
     public synchronized void onResume() {
@@ -42,7 +41,7 @@ public class Signer {
         d dVar = this.b;
         a aVar = this.c;
         dVar.getClass();
-        if (!d.f204a) {
+        if (!d.f207a) {
             ((NativeLibHelper) aVar).a();
         }
     }
@@ -63,7 +62,7 @@ public class Signer {
         a aVar = this.c;
         dVar.getClass();
         if (map != null && !map.isEmpty() && map2 != null && map3 != null) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppUpdateInfo.Factory.UPDATED_FORMAT, Locale.US);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
             boolean equals = AdjustConfig.ENVIRONMENT_SANDBOX.equals(map.get("environment"));
             if (equals) {
                 Log.v("SignerInstance", "SDKv5 Signing all the parameters begin: " + simpleDateFormat.format(new Date(System.currentTimeMillis())));

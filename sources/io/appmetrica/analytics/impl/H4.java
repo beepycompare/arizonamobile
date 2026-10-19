@@ -7,13 +7,13 @@ public final class H4 extends I4 {
         super(li);
     }
 
-    public final void a(Db db, List<AbstractC0303hh> list) {
+    public final void a(Db db, List<AbstractC0298hh> list) {
         if (!Q9.h.contains(db)) {
-            list.add(this.f590a.s);
+            list.add(this.f593a.s);
         }
         if (Q9.b.contains(db)) {
             return;
         }
-        list.add(this.f590a.c);
+        list.add(this.f593a.c);
     }
 }

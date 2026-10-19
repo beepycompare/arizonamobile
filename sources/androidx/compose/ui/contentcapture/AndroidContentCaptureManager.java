@@ -101,7 +101,7 @@ public final class AndroidContentCaptureManager implements DefaultLifecycleObser
 
     /* compiled from: AndroidContentCaptureManager.android.kt */
     @Metadata(k = 3, mv = {2, 1, 0}, xi = 48)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 

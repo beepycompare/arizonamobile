@@ -3,6 +3,7 @@ package com.arizonagames.feature.arizona.bank.pages;
 import android.graphics.Color;
 import android.net.Uri;
 import com.arizonagames.feature.arizona.bank.R;
+import com.google.android.gms.common.internal.ImagesContract;
 import java.util.Locale;
 import kotlin.Metadata;
 import kotlin.Result;
@@ -13,7 +14,7 @@ import kotlin.text.RegexOption;
 import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: BankLotteryPageController.kt */
-@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u0014\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0002\u001a\u0010\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0002\u001a\u0010\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0004H\u0002\u001a\u0017\u0010\n\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u000b\u001a\u00020\u0004H\u0002¢\u0006\u0002\u0010\f\u001a\u0012\u0010\u0011\u001a\u0004\u0018\u00010\u00122\u0006\u0010\u0013\u001a\u00020\u0004H\u0002\u001a\u0014\u0010\u0014\u001a\u00020\u0015*\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u0004H\u0002\"\u000e\u0010\r\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"bindBankLotteryRewardGlow", "", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "colorValue", "", "bankLotteryPlaceBadgeColor", "", "position", "fallbackRewardIcon", "title", "parseColorOrNull", "value", "(Ljava/lang/String;)Ljava/lang/Integer;", "DEFAULT_REWARD_GLOW_COLOR", "REWARD_GLOW_ALPHA", "LOTTERY_TASK_PLATFORM_TOKEN_REGEX", "Lkotlin/text/Regex;", "resolveStreamPlatform", "Lcom/arizonagames/feature/arizona/bank/pages/BankLotteryStreamPlatform;", "url", "matchesDomain", "", "domain", "bank"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\u001a\u0014\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0002\u001a\u0010\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u0006H\u0002\u001a\u0010\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u0004H\u0002\u001a\u0017\u0010\n\u001a\u0004\u0018\u00010\u00062\u0006\u0010\u000b\u001a\u00020\u0004H\u0002¢\u0006\u0002\u0010\f\u001a\u0012\u0010\u0011\u001a\u0004\u0018\u00010\u00122\u0006\u0010\u0013\u001a\u00020\u0004H\u0002\u001a\u0014\u0010\u0014\u001a\u00020\u0015*\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u0004H\u0002\"\u000e\u0010\r\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010\u000e\u001a\u00020\u0006X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"bindBankLotteryRewardGlow", "", "Lru/mrlargha/commonui/utils/ui/CustomCardView;", "colorValue", "", "bankLotteryPlaceBadgeColor", "", "position", "fallbackRewardIcon", "title", "parseColorOrNull", "value", "(Ljava/lang/String;)Ljava/lang/Integer;", "DEFAULT_REWARD_GLOW_COLOR", "REWARD_GLOW_ALPHA", "LOTTERY_TASK_PLATFORM_TOKEN_REGEX", "Lkotlin/text/Regex;", "resolveStreamPlatform", "Lcom/arizonagames/feature/arizona/bank/pages/BankLotteryStreamPlatform;", ImagesContract.URL, "matchesDomain", "", "domain", "bank"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class BankLotteryPageControllerKt {
     private static final int DEFAULT_REWARD_GLOW_COLOR = Color.parseColor("#7C6AFF");
@@ -52,18 +53,18 @@ public final class BankLotteryPageControllerKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Integer parseColorOrNull(String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(Integer.valueOf(Color.parseColor(str)));
+            m9974constructorimpl = Result.m9974constructorimpl(Integer.valueOf(Color.parseColor(str)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = null;
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = null;
         }
-        return (Integer) m9921constructorimpl;
+        return (Integer) m9974constructorimpl;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

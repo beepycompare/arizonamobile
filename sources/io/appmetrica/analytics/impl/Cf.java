@@ -6,17 +6,17 @@ import org.json.JSONObject;
 public final class Cf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f499a;
+    public final String f502a;
     public final JSONObject b;
-    public final EnumC0397l8 c;
+    public final EnumC0392l8 c;
 
-    public Cf(String str, JSONObject jSONObject, EnumC0397l8 enumC0397l8) {
-        this.f499a = str;
+    public Cf(String str, JSONObject jSONObject, EnumC0392l8 enumC0392l8) {
+        this.f502a = str;
         this.b = jSONObject;
-        this.c = enumC0397l8;
+        this.c = enumC0392l8;
     }
 
     public final String toString() {
-        return "Candidate{trackingId='" + this.f499a + "', additionalParams=" + this.b + ", source=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "Candidate{trackingId='" + this.f502a + "', additionalParams=" + this.b + ", source=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 }

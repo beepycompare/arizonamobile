@@ -2,7 +2,6 @@ package androidx.core.provider;
 
 import android.util.Base64;
 import androidx.core.util.Preconditions;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.util.List;
 import kotlin.UByte$$ExternalSyntheticBackport0;
 /* loaded from: classes2.dex */
@@ -57,8 +56,8 @@ public final class FontRequest {
 
     private String createIdentifier(String str, String str2, String str3, String str4, String str5) {
         StringBuilder sb = new StringBuilder();
-        sb.append(str).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str2).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str3).append(Constants.FILENAME_SEQUENCE_SEPARATOR).append(str4);
-        if (str5 != null && !UByte$$ExternalSyntheticBackport0.m9995m(str5)) {
+        sb.append(str).append("-").append(str2).append("-").append(str3).append("-").append(str4);
+        if (str5 != null && !UByte$$ExternalSyntheticBackport0.m10048m(str5)) {
             sb.append("-VF");
         }
         return sb.toString();

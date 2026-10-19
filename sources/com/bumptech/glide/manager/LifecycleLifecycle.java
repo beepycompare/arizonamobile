@@ -7,7 +7,7 @@ import androidx.lifecycle.OnLifecycleEvent;
 import com.bumptech.glide.util.Util;
 import java.util.HashSet;
 import java.util.Set;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 final class LifecycleLifecycle implements Lifecycle, LifecycleObserver {
     private final androidx.lifecycle.Lifecycle lifecycle;
     private final Set<LifecycleListener> lifecycleListeners = new HashSet();

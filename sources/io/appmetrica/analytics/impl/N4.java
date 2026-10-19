@@ -8,23 +8,23 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 /* loaded from: classes5.dex */
-public final class N4 implements InterfaceC0271gb, InterfaceC0592sm, InterfaceC0323ib {
+public final class N4 implements InterfaceC0266gb, InterfaceC0587sm, InterfaceC0318ib {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f679a;
-    public final C0265g5 b;
-    public final C0180cn c;
+    public final Context f682a;
+    public final C0260g5 b;
+    public final C0175cn c;
     public final Th d;
     public final U4 e;
     public final Mn f;
     public ArrayList g;
-    public final C0291h5 h;
-    public final C0367k4 i;
+    public final C0286h5 h;
+    public final C0362k4 i;
     public final Fg j;
     public final Object k;
 
-    public N4(Context context, C0359jm c0359jm, C0265g5 c0265g5, G4 g4) {
-        this(context, c0359jm, c0265g5, g4, new Th(g4.b), new C0291h5(), new P4());
+    public N4(Context context, C0354jm c0354jm, C0260g5 c0260g5, G4 g4) {
+        this(context, c0354jm, c0260g5, g4, new Th(g4.b), new C0286h5(), new P4());
     }
 
     public static void b(G4 g4) {
@@ -32,101 +32,101 @@ public final class N4 implements InterfaceC0271gb, InterfaceC0592sm, InterfaceC0
         Na.I.c().b(!Boolean.FALSE.equals(bool));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0271gb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0266gb
     public final void a(F4 f4) {
         Th th = this.d;
-        th.f781a = th.f781a.mergeFrom(f4);
+        th.f784a = th.f784a.mergeFrom(f4);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0271gb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0266gb
     public final void c() {
     }
 
-    public final C0367k4 d() {
+    public final C0362k4 d() {
         return this.i;
     }
 
     public final F4 e() {
-        return this.d.f781a;
+        return this.d.f784a;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0271gb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0266gb
     public final Context getContext() {
-        return this.f679a;
+        return this.f682a;
     }
 
-    public N4(Context context, C0359jm c0359jm, C0265g5 c0265g5, G4 g4, Th th, C0291h5 c0291h5, P4 p4) {
+    public N4(Context context, C0354jm c0354jm, C0260g5 c0260g5, G4 g4, Th th, C0286h5 c0286h5, P4 p4) {
         this.g = new ArrayList();
         this.k = new Object();
         Context applicationContext = context.getApplicationContext();
-        this.f679a = applicationContext;
-        this.b = c0265g5;
+        this.f682a = applicationContext;
+        this.b = c0260g5;
         this.d = th;
-        this.h = c0291h5;
+        this.h = c0286h5;
         this.e = P4.a(this);
         b(g4);
-        C0180cn a2 = c0359jm.a(applicationContext, c0265g5, g4.f559a);
+        C0175cn a2 = c0354jm.a(applicationContext, c0260g5, g4.f562a);
         this.c = a2;
-        this.i = AbstractC0393l4.a(a2, Na.k().c());
+        this.i = AbstractC0388l4.a(a2, Na.k().c());
         this.f = p4.a(this, a2);
         Fg u = Na.k().u();
         this.j = u;
         u.a();
-        c0359jm.a(c0265g5, this);
+        c0354jm.a(c0260g5, this);
     }
 
     public final synchronized void a(L4 l4) {
-        this.h.f1009a.add(l4);
-        T6.a(l4.c, this.i.a(AbstractC0309hn.a(this.c.e().l)));
+        this.h.f1012a.add(l4);
+        T6.a(l4.c, this.i.a(AbstractC0304hn.a(this.c.e().l)));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0271gb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0266gb
     public final CounterConfigurationReporterType b() {
         return CounterConfigurationReporterType.COMMUTATION;
     }
 
     public final synchronized void b(L4 l4) {
-        this.h.f1009a.remove(l4);
+        this.h.f1012a.remove(l4);
     }
 
-    public final void a(C0240f6 c0240f6, L4 l4) {
+    public final void a(C0235f6 c0235f6, L4 l4) {
         U4 u4 = this.e;
         u4.getClass();
-        u4.a(c0240f6, new T4(l4));
+        u4.a(c0235f6, new T4(l4));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0271gb
-    public final C0265g5 a() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0266gb
+    public final C0260g5 a() {
         return this.b;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0592sm
-    public final void a(EnumC0411lm enumC0411lm, Hm hm) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0587sm
+    public final void a(EnumC0406lm enumC0406lm, Hm hm) {
         synchronized (this.k) {
             Iterator it = this.g.iterator();
             while (it.hasNext()) {
-                C0685wb c0685wb = (C0685wb) it.next();
-                T6.a(c0685wb.f1265a, enumC0411lm, this.i.a(c0685wb.c));
+                C0680wb c0680wb = (C0680wb) it.next();
+                T6.a(c0680wb.f1268a, enumC0406lm, this.i.a(c0680wb.c));
             }
             this.g.clear();
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0592sm
+    @Override // io.appmetrica.analytics.impl.InterfaceC0587sm
     public final void a(Hm hm) {
         synchronized (this.k) {
-            Iterator it = this.h.f1009a.iterator();
+            Iterator it = this.h.f1012a.iterator();
             while (it.hasNext()) {
-                T6.a(((L4) it.next()).c, this.i.a(AbstractC0309hn.a(hm.l)));
+                T6.a(((L4) it.next()).c, this.i.a(AbstractC0304hn.a(hm.l)));
             }
             ArrayList arrayList = new ArrayList();
             Iterator it2 = this.g.iterator();
             while (it2.hasNext()) {
-                C0685wb c0685wb = (C0685wb) it2.next();
-                if (Em.a(hm, c0685wb.b, c0685wb.c, new C0633ub())) {
-                    T6.a(c0685wb.f1265a, this.i.a(c0685wb.c));
+                C0680wb c0680wb = (C0680wb) it2.next();
+                if (Em.a(hm, c0680wb.b, c0680wb.c, new C0628ub())) {
+                    T6.a(c0680wb.f1268a, this.i.a(c0680wb.c));
                 } else {
-                    arrayList.add(c0685wb);
+                    arrayList.add(c0680wb);
                 }
             }
             this.g = new ArrayList(arrayList);
@@ -137,15 +137,15 @@ public final class N4 implements InterfaceC0271gb, InterfaceC0592sm, InterfaceC0
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void a(C0685wb c0685wb) {
+    public final void a(C0680wb c0680wb) {
         ResultReceiver resultReceiver;
         HashMap hashMap;
         List list;
         HashMap hashMap2 = new HashMap();
-        if (c0685wb != null) {
-            list = c0685wb.b;
-            resultReceiver = c0685wb.f1265a;
-            hashMap = c0685wb.c;
+        if (c0680wb != null) {
+            list = c0680wb.b;
+            resultReceiver = c0680wb.f1268a;
+            hashMap = c0680wb.c;
         } else {
             resultReceiver = null;
             hashMap = hashMap2;
@@ -163,8 +163,8 @@ public final class N4 implements InterfaceC0271gb, InterfaceC0592sm, InterfaceC0
             return;
         }
         synchronized (this.k) {
-            if (a2 && c0685wb != null) {
-                this.g.add(c0685wb);
+            if (a2 && c0680wb != null) {
+                this.g.add(c0680wb);
             }
         }
         this.f.c();
@@ -179,12 +179,12 @@ public final class N4 implements InterfaceC0271gb, InterfaceC0592sm, InterfaceC0
             }
         };
         fg.getClass();
-        fg.f549a.a(new C0512pj(dg));
+        fg.f552a.a(new C0507pj(dg));
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0323ib
+    @Override // io.appmetrica.analytics.impl.InterfaceC0318ib
     public final void a(G4 g4) {
-        this.c.a(g4.f559a);
+        this.c.a(g4.f562a);
         a(g4.b);
     }
 }

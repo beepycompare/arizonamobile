@@ -51,7 +51,6 @@ import com.arizona.launcher.updater.archive.transaction.ArchiveOwnershipDiffPlan
 import com.arizona.launcher.updater.archive.transaction.ArchiveOwnershipException;
 import com.arizona.launcher.updater.archive.transaction.ArchiveTrashCleanupResult;
 import com.arizona.launcher.util.FlavorUtilKt;
-import com.facebook.internal.AnalyticsEvents;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
@@ -271,25 +270,6 @@ public final class ArchivePackageUpdater {
         this.selectiveInstaller = archiveSelectivePackageInstaller;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    /* compiled from: ArchivePackageUpdater.kt */
-    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    /* renamed from: com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$1  reason: invalid class name */
-    /* loaded from: classes3.dex */
-    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function0<Long> {
-        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
-
-        AnonymousClass1() {
-            super(0, System.class, "currentTimeMillis", "currentTimeMillis()J", 0);
-        }
-
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // kotlin.jvm.functions.Function0
-        public final Long invoke() {
-            return Long.valueOf(System.currentTimeMillis());
-        }
-    }
-
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -301,7 +281,7 @@ public final class ArchivePackageUpdater {
         AnonymousClass2 anonymousClass2;
         ArchiveRetirementClient archiveRetirementClient3;
         if ((i & 256) != 0) {
-            archiveRetirementClient3 = ArchivePackageUpdaterKt.archiveRetirementClient(file);
+            archiveRetirementClient3 = ArchivePackageUpdaterKt.archiveRetirementClient(file, file3);
             archiveRetirementClient2 = archiveRetirementClient3;
         } else {
             archiveRetirementClient2 = archiveRetirementClient;
@@ -318,6 +298,25 @@ public final class ArchivePackageUpdater {
         } else {
             durableArchiveStateStore2 = durableArchiveStateStore;
             anonymousClass2 = function1;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* compiled from: ArchivePackageUpdater.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    /* renamed from: com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$1  reason: invalid class name */
+    /* loaded from: classes3.dex */
+    public static final /* synthetic */ class AnonymousClass1 extends FunctionReferenceImpl implements Function0<Long> {
+        public static final AnonymousClass1 INSTANCE = new AnonymousClass1();
+
+        AnonymousClass1() {
+            super(0, System.class, "currentTimeMillis", "currentTimeMillis()J", 0);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // kotlin.jvm.functions.Function0
+        public final Long invoke() {
+            return Long.valueOf(System.currentTimeMillis());
         }
     }
 
@@ -913,7 +912,7 @@ public final class ArchivePackageUpdater {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: ArchivePackageUpdater.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\br\u0018\u00002\u00020\u0001:\u0003\u0002\u0003\u0004\u0082\u0001\u0003\u0005\u0006\u0007¨\u0006\bÀ\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck;", "", "Success", "PayloadMismatch", AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_FAILED, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck$Failed;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck$PayloadMismatch;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck$Success;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\br\u0018\u00002\u00020\u0001:\u0003\u0002\u0003\u0004\u0082\u0001\u0003\u0005\u0006\u0007¨\u0006\bÀ\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck;", "", "Success", "PayloadMismatch", "Failed", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck$Failed;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck$PayloadMismatch;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$CommittedPackageCheck$Success;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public interface CommittedPackageCheck {
 
@@ -1083,7 +1082,7 @@ public final class ArchivePackageUpdater {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: ArchivePackageUpdater.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\br\u0018\u00002\u00020\u0001:\u0002\u0002\u0003\u0082\u0001\u0002\u0004\u0005¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$PreparedState;", "", "Ready", AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_FAILED, "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$PreparedState$Failed;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$PreparedState$Ready;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\br\u0018\u00002\u00020\u0001:\u0002\u0002\u0003\u0082\u0001\u0002\u0004\u0005¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$PreparedState;", "", "Ready", "Failed", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$PreparedState$Failed;", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$PreparedState$Ready;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public interface PreparedState {
 
@@ -1185,7 +1184,7 @@ public final class ArchivePackageUpdater {
     }
 
     /* compiled from: ArchivePackageUpdater.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tR\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$Companion;", "", "<init>", "()V", "create", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater;", "context", "Landroid/content/Context;", "retryEnabled", "", ArchivePackageUpdater.DISCARDED_AFTER_INSUFFICIENT_STORAGE, "", ArchivePackageUpdater.STAGING_CLEANUP_FAILED, ArchivePackageUpdater.COMMITTED_ARTIFACT_CLEANUP_FAILED, ArchivePackageUpdater.STATE_SAVE_NO_SPACE_LEFT, ArchivePackageUpdater.DOWNLOAD_ARTIFACT_CLEANUP_FAILED, ArchivePackageUpdater.DOWNLOAD_STATE_SAVE_FAILED, ArchivePackageUpdater.RECOVERY_STATE_SAVE_FAILED, ArchivePackageUpdater.STAGING_INCOMPLETE_AFTER_EXTRACTION, ArchivePackageUpdater.INTERRUPTED_SELECTIVE_INSTALL, "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J.\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u000b2\b\b\u0002\u0010\f\u001a\u00020\rR\u000e\u0010\u000e\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$Companion;", "", "<init>", "()V", "create", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater;", "context", "Landroid/content/Context;", "retryEnabled", "", "storageRoots", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterStorageRoots;", "storageScope", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveUpdaterStorageScope;", ArchivePackageUpdater.DISCARDED_AFTER_INSUFFICIENT_STORAGE, "", ArchivePackageUpdater.STAGING_CLEANUP_FAILED, ArchivePackageUpdater.COMMITTED_ARTIFACT_CLEANUP_FAILED, ArchivePackageUpdater.STATE_SAVE_NO_SPACE_LEFT, ArchivePackageUpdater.DOWNLOAD_ARTIFACT_CLEANUP_FAILED, ArchivePackageUpdater.DOWNLOAD_STATE_SAVE_FAILED, ArchivePackageUpdater.RECOVERY_STATE_SAVE_FAILED, ArchivePackageUpdater.STAGING_INCOMPLETE_AFTER_EXTRACTION, ArchivePackageUpdater.INTERRUPTED_SELECTIVE_INSTALL, "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -1195,22 +1194,40 @@ public final class ArchivePackageUpdater {
         private Companion() {
         }
 
-        public final ArchivePackageUpdater create(Context context, boolean z) {
-            File resolve;
+        public static /* synthetic */ ArchivePackageUpdater create$default(Companion companion, Context context, boolean z, ArchiveUpdaterStorageRoots archiveUpdaterStorageRoots, ArchiveUpdaterStorageScope archiveUpdaterStorageScope, int i, Object obj) {
+            if ((i & 4) != 0) {
+                archiveUpdaterStorageRoots = null;
+            }
+            if ((i & 8) != 0) {
+                archiveUpdaterStorageScope = ArchiveUpdaterStorageScope.BASE;
+            }
+            return companion.create(context, z, archiveUpdaterStorageRoots, archiveUpdaterStorageScope);
+        }
+
+        public final ArchivePackageUpdater create(Context context, boolean z, ArchiveUpdaterStorageRoots archiveUpdaterStorageRoots, ArchiveUpdaterStorageScope storageScope) {
+            ArchiveUpdaterStorageRoots archiveUpdaterStorageRoots2;
             ArchivePackageUpdater$Companion$create$committer$1 archivePackageUpdater$Companion$create$committer$1;
             ArchiveRetirementClient archiveRetirementClient;
             Intrinsics.checkNotNullParameter(context, "context");
-            File externalFilesDir = context.getExternalFilesDir(null);
-            if (externalFilesDir == null || (resolve = ArchiveDownloadRootResolver.Companion.getProcess().resolve(context)) == null) {
-                return null;
+            Intrinsics.checkNotNullParameter(storageScope, "storageScope");
+            if (archiveUpdaterStorageRoots == null) {
+                archiveUpdaterStorageRoots2 = ArchiveDownloadRootResolver.Companion.getProcess().resolve(context, storageScope);
+                if (archiveUpdaterStorageRoots2 == null) {
+                    return null;
+                }
+            } else {
+                archiveUpdaterStorageRoots2 = archiveUpdaterStorageRoots;
             }
-            File file = new File(externalFilesDir, ".archive-installing");
-            DurableArchiveStateStore forAndroid = DurableArchiveStateStore.Companion.forAndroid(new File(context.getNoBackupFilesDir(), "archive-updater"));
+            File gameRoot = archiveUpdaterStorageRoots2.getGameRoot();
+            File downloadRoot = archiveUpdaterStorageRoots2.getDownloadRoot();
+            File workRoot = archiveUpdaterStorageRoots2.getWorkRoot();
+            DurableArchiveStateStore forAndroid = DurableArchiveStateStore.Companion.forAndroid(archiveUpdaterStorageRoots2.getStateRoot());
             FileArchiveDownloadResumeStore forAndroid2 = FileArchiveDownloadResumeStore.Companion.forAndroid();
             AndroidArchiveNetworkMonitor androidArchiveNetworkMonitor = new AndroidArchiveNetworkMonitor(context);
-            OkHttpArchiveByteRangeSource okHttpArchiveByteRangeSource = new OkHttpArchiveByteRangeSource(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor, null, null, false, 0L, 44, null);
+            AndroidArchiveNetworkMonitor androidArchiveNetworkMonitor2 = androidArchiveNetworkMonitor;
+            OkHttpArchiveByteRangeSource okHttpArchiveByteRangeSource = new OkHttpArchiveByteRangeSource(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor2, null, null, false, 0L, 44, null);
             FileArchiveDownloadResumeStore fileArchiveDownloadResumeStore = forAndroid2;
-            ArchivePackageDownloader archivePackageDownloader = new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor, 0L, null, false, fileArchiveDownloadResumeStore, null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, ComposerKt.providerMapsKey, null);
+            ArchivePackageDownloader archivePackageDownloader = new ArchivePackageDownloader(new DownloadRetryPolicy(new DownloadRetryConfig(z, 0, 0L, 0L, 14, null), null, 2, null), androidArchiveNetworkMonitor2, 0L, null, false, fileArchiveDownloadResumeStore, null, 0L, AndroidArchiveDirectoryCreator.INSTANCE, ComposerKt.providerMapsKey, null);
             AndroidArchiveDirectoryCreator androidArchiveDirectoryCreator = AndroidArchiveDirectoryCreator.INSTANCE;
             if (FlavorUtilKt.isDebug() || FlavorUtilKt.isStaging()) {
                 archivePackageUpdater$Companion$create$committer$1 = new ArchivePackageUpdater$Companion$create$committer$1(AndroidArchiveLivePayloadAccess.INSTANCE);
@@ -1222,17 +1239,18 @@ public final class ArchivePackageUpdater {
                     }
                 };
             }
-            ArchivePackageCommitter archivePackageCommitter = new ArchivePackageCommitter(externalFilesDir, file, null, null, androidArchiveDirectoryCreator, archivePackageUpdater$Companion$create$committer$1, 12, null);
+            ArchivePackageCommitter archivePackageCommitter = new ArchivePackageCommitter(gameRoot, workRoot, null, null, androidArchiveDirectoryCreator, archivePackageUpdater$Companion$create$committer$1, 12, null);
             final SafeZipLimits safeZipLimits = new SafeZipLimits(0, 0L, 0L, FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE, 15, null);
             ArchiveExtractor archiveExtractor = new ArchiveExtractor() { // from class: com.arizona.launcher.updater.archive.orchestrator.ArchivePackageUpdater$Companion$$ExternalSyntheticLambda1
                 @Override // com.arizona.launcher.updater.archive.orchestrator.ArchiveExtractor
-                public final SafeZipExtractionResult extract(File file2, File file3, long j) {
-                    return ArchivePackageUpdater.Companion.create$lambda$1(SafeZipLimits.this, file2, file3, j);
+                public final SafeZipExtractionResult extract(File file, File file2, long j) {
+                    return ArchivePackageUpdater.Companion.create$lambda$1(SafeZipLimits.this, file, file2, j);
                 }
             };
             ArchivePackageUpdater$Companion$create$4 archivePackageUpdater$Companion$create$4 = new ArchivePackageUpdater$Companion$create$4(archivePackageCommitter);
-            archiveRetirementClient = ArchivePackageUpdaterKt.archiveRetirementClient(externalFilesDir);
-            return new ArchivePackageUpdater(externalFilesDir, resolve, file, forAndroid, new ArchivePackageUpdater$Companion$create$1(archivePackageDownloader), new ArchivePackageUpdater$Companion$create$2(WholeFileCrc32Verifier.INSTANCE), archiveExtractor, archivePackageUpdater$Companion$create$4, archiveRetirementClient, null, false, new AndroidArchiveRuntimeCapacityPolicy(externalFilesDir, resolve), new AndroidArchiveDownloadAheadPolicy(externalFilesDir, resolve), null, fileArchiveDownloadResumeStore, null, okHttpArchiveByteRangeSource, okHttpArchiveByteRangeSource.asStreamer(), ArchiveLivePathSafety.Companion.forAndroid(), AndroidArchiveDirectoryCreator.INSTANCE, 41472, null);
+            archiveRetirementClient = ArchivePackageUpdaterKt.archiveRetirementClient(gameRoot, workRoot);
+            AndroidArchiveRuntimeCapacityPolicy androidArchiveRuntimeCapacityPolicy = new AndroidArchiveRuntimeCapacityPolicy(gameRoot, downloadRoot);
+            return new ArchivePackageUpdater(gameRoot, downloadRoot, workRoot, forAndroid, new ArchivePackageUpdater$Companion$create$1(archivePackageDownloader), new ArchivePackageUpdater$Companion$create$2(WholeFileCrc32Verifier.INSTANCE), archiveExtractor, archivePackageUpdater$Companion$create$4, archiveRetirementClient, null, false, androidArchiveRuntimeCapacityPolicy, new AndroidArchiveDownloadAheadPolicy(gameRoot, downloadRoot), null, fileArchiveDownloadResumeStore, null, okHttpArchiveByteRangeSource, okHttpArchiveByteRangeSource.asStreamer(), ArchiveLivePathSafety.Companion.forAndroid(), AndroidArchiveDirectoryCreator.INSTANCE, 41472, null);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -1338,7 +1356,7 @@ public final class ArchivePackageUpdater {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: ArchivePackageUpdater.kt */
-    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\b\u0018\u00002\u00020\u0001B\u001b\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u001f\u0010\u000e\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005HÆ\u0001J\u0014\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0012\u001a\u00020\u0013HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0005HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0015"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$StoragePressureCleanup;", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "detail", "", "<init>", "(Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;Ljava/lang/String;)V", "getState", "()Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "getDetail", "()Ljava/lang/String;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\b\u0018\u00002\u00020\u0001B\u001b\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\t\u0010\f\u001a\u00020\u0003HÆ\u0003J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u001f\u0010\u000e\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005HÆ\u0001J\u0014\u0010\u000f\u001a\u00020\u00102\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0012\u001a\u00020\u0013HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0005HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000b¨\u0006\u0015"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchivePackageUpdater$StoragePressureCleanup;", "", RemoteConfigConstants.ResponseFieldKey.STATE, "Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", UpdateServiceContract.BundleKey.DETAIL, "", "<init>", "(Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;Ljava/lang/String;)V", "getState", "()Lcom/arizona/launcher/updater/archive/state/ArchiveUpdaterState;", "getDetail", "()Ljava/lang/String;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class StoragePressureCleanup {
         private final String detail;

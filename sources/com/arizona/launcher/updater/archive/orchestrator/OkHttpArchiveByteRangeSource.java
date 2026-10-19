@@ -895,12 +895,12 @@ public final class OkHttpArchiveByteRangeSource implements ArchiveByteRangeSourc
             CloseableKt.closeFinally(execute, null);
             if (cancellableContinuationImpl2.isActive()) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(invoke));
+                cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(invoke));
             }
         } catch (Throwable th) {
             if (cancellableContinuationImpl2.isActive()) {
                 Result.Companion companion2 = Result.Companion;
-                cancellableContinuationImpl2.resumeWith(Result.m9921constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuationImpl2.resumeWith(Result.m9974constructorimpl(ResultKt.createFailure(th)));
             }
         }
         Object result = cancellableContinuationImpl.getResult();

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/one_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="1"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/two_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="2"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/three_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="3"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/four_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="4"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/five_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="5"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/six_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="6"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/seven_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="7"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/eight_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="8"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/nine_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="9"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/zero_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="0"/>
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/and_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="&amp;"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/hashtag_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="#"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/dollar_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="$"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/percent_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="%"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/underline_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="_"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/minus_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="-"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/plus_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="+"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/left_bracket_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="("/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/right_bracket_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey=")"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/splash_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="/"/>
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/other_symbols_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:textKey="#+="/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/at_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="@"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/multiply_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="*"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/double_quot_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="&quot;"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/quot_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="&apos;"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/colon_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey=":"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/semicolon_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey=";"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/exclamation_point_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="!"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/question_mark_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasBackground="true" app:textKey="?"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/backspace_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:imageKey="@drawable/ic_keyboard_backspace"/>
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:layout_weight="1">
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/slash_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:textKey="/"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/abc_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:textKey="ABC"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/globus_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:imageKey="@drawable/ic_keyboard_globus"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/space_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="0.72" app:hasBackground="true" app:textKey="пробел"/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/comma_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:textKey=","/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/dot_button_key" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:textKey="."/>
+        <Space android:layout_gravity="center" android:layout_width="7dp" android:layout_height="1dp"/>
+        <com.arizona.common.ui.KeyboardButton android:id="@+id/send_button_key" android:padding="6dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:hasSymbolBackground="true" app:imageKey="@drawable/ic_keyboard_send" app:imageTint="#3d81ff"/>
+        <Space android:layout_gravity="center" android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

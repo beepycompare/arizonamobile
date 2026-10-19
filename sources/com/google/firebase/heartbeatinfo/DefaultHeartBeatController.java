@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.Base64OutputStream;
 import androidx.core.os.UserManagerCompat;
 import androidx.exifinterface.media.ExifInterface;
-import com.facebook.internal.NativeProtocol;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.FirebaseApp;
@@ -27,7 +26,7 @@ import java.util.concurrent.Executor;
 import java.util.zip.GZIPOutputStream;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class DefaultHeartBeatController implements HeartBeatController, HeartBeatInfo {
     private final Context applicationContext;
     private final Executor backgroundExecutor;
@@ -45,14 +44,14 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda3
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DefaultHeartBeatController.this.m9737x734756b4();
+                return DefaultHeartBeatController.this.m9778x734756b4();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$registerHeartBeat$0$com-google-firebase-heartbeatinfo-DefaultHeartBeatController  reason: not valid java name */
-    public /* synthetic */ Void m9737x734756b4() throws Exception {
+    public /* synthetic */ Void m9778x734756b4() throws Exception {
         synchronized (this) {
             this.storageProvider.get().storeHeartBeat(System.currentTimeMillis(), this.userAgentProvider.get().getUserAgent());
         }
@@ -67,14 +66,14 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
         return Tasks.call(this.backgroundExecutor, new Callable() { // from class: com.google.firebase.heartbeatinfo.DefaultHeartBeatController$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                return DefaultHeartBeatController.this.m9736x341e14f2();
+                return DefaultHeartBeatController.this.m9777x341e14f2();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$getHeartBeatsHeader$1$com-google-firebase-heartbeatinfo-DefaultHeartBeatController  reason: not valid java name */
-    public /* synthetic */ String m9736x341e14f2() throws Exception {
+    public /* synthetic */ String m9777x341e14f2() throws Exception {
         String byteArrayOutputStream;
         synchronized (this) {
             HeartBeatInfoStorage heartBeatInfoStorage = this.storageProvider.get();
@@ -90,7 +89,7 @@ public class DefaultHeartBeatController implements HeartBeatController, HeartBea
             }
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("heartbeats", jSONArray);
-            jSONObject2.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, ExifInterface.GPS_MEASUREMENT_2D);
+            jSONObject2.put("version", ExifInterface.GPS_MEASUREMENT_2D);
             ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
             Base64OutputStream base64OutputStream = new Base64OutputStream(byteArrayOutputStream2, 11);
             GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(base64OutputStream);

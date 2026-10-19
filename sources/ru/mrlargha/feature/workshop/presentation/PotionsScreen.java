@@ -133,7 +133,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
         this.leftItemIndex = -1;
         this.centerItemIndex = -1;
         this.rightItemIndex = -1;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         UtilsKt.checkItemsName$default(activity, UtilsKt.isArizonaType(), null, 4, null);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(activity, 5);
         gridLayoutManager.setItemPrefetchEnabled(false);
@@ -779,7 +779,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
             }
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list2, 10));
             for (InventoryItem inventoryItem2 : list2) {
-                arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, Integer.valueOf(!CollectionsKt.contains(this.availableList, inventoryItem2.getItem()) ? 1 : 0), null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, 134215679, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, Integer.valueOf(!CollectionsKt.contains(this.availableList, inventoryItem2.getItem()) ? 1 : 0), null, null, null, null, 0, null, null, false, false, null, null, null, null, null, null, null, 268433407, null));
             }
             this.inventoryItemList = CollectionsKt.toMutableList((Collection) arrayList);
         }
@@ -943,7 +943,7 @@ public final class PotionsScreen extends SAMPUIElement implements InterfaceContr
                         }
                     }
                     ItemsInfo itemsInfo2 = (ItemsInfo) obj3;
-                    arrayList.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, null, null, null, 134021103, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, null, null, null, null, 268238831, null));
                 }
                 InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList, 0, 4, null);
                 if (inventoryResponse2.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {

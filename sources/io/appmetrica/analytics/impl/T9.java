@@ -6,17 +6,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class T9 implements Hg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hg f776a;
+    public final Hg f779a;
     public final ICommonExecutor b;
 
     public T9(Hg hg, ICommonExecutor iCommonExecutor) {
-        this.f776a = hg;
+        this.f779a = hg;
         this.b = iCommonExecutor;
     }
 
     @Override // io.appmetrica.analytics.impl.Hg
     public final String a() {
-        return this.f776a.a();
+        return this.f779a.a();
     }
 
     @Override // io.appmetrica.analytics.impl.Hg
@@ -31,7 +31,7 @@ public final class T9 implements Hg {
 
     public static final void a(final T9 t9, final Dg dg) {
         final Thread currentThread = Thread.currentThread();
-        t9.f776a.a(new Dg() { // from class: io.appmetrica.analytics.impl.T9$$ExternalSyntheticLambda1
+        t9.f779a.a(new Dg() { // from class: io.appmetrica.analytics.impl.T9$$ExternalSyntheticLambda1
             @Override // io.appmetrica.analytics.impl.Dg
             public final void a(Lg lg) {
                 T9.a(currentThread, dg, t9, lg);

@@ -50,7 +50,7 @@ public final class DiceScreen extends SAMPUIElement {
         this.diceChatAdapter = diceChatAdapter;
         this.dec = new DecimalFormat("###,###,###,###,###", new DecimalFormatSymbols(Locale.ENGLISH));
         Intrinsics.checkNotNullExpressionValue(diceGame, "diceGame");
-        addViewToConstraintLayout(diceGame, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, diceGame, -1, -1, false, 8, null);
         bind.gamerRecycler.setAdapter(dicePlayerAdapter);
         Activity activity = targetActivity;
         bind.gamerRecycler.setLayoutManager(new LinearLayoutManager(activity, 1, false));
@@ -59,7 +59,7 @@ public final class DiceScreen extends SAMPUIElement {
         bind.sendButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                DiceScreen.this.notifyClick(1, -1, bind.enterMessage.getText().toString());
+                DiceScreen.this.notifyClick(1, -1, String.valueOf(bind.enterMessage.getText()));
             }
         });
         bind.exitButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dice.DiceScreen$$ExternalSyntheticLambda7
@@ -226,7 +226,7 @@ public final class DiceScreen extends SAMPUIElement {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void makeBet$lambda$0$0$4(DiceScreen diceScreen, DiceGameBinding diceGameBinding, View view) {
-        diceScreen.notifyClick(2, -1, diceGameBinding.enterBet.getText().toString());
+        diceScreen.notifyClick(2, -1, String.valueOf(diceGameBinding.enterBet.getText()));
         diceGameBinding.diceBetScreen.setVisibility(8);
     }
 

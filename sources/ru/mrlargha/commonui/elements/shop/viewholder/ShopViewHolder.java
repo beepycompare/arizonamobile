@@ -1,7 +1,9 @@
 package ru.mrlargha.commonui.elements.shop.viewholder;
 
 import android.content.Context;
+import android.text.SpannableString;
 import android.view.View;
+import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Iterator;
@@ -17,8 +19,10 @@ import kotlinx.coroutines.Job;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.databinding.ItemShopBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
+import ru.mrlargha.commonui.elements.shop.ShopMoneyFormatterKt;
 import ru.mrlargha.commonui.utils.ItemsInfo;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: ShopViewHolder.kt */
 @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B+\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\u000e\u0010\u000e\u001a\u00020\u00072\u0006\u0010\u000f\u001a\u00020\u0006R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0010"}, d2 = {"Lru/mrlargha/commonui/elements/shop/viewholder/ShopViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lru/mrlargha/commonui/databinding/ItemShopBinding;", "onItemClicked", "Lkotlin/Function1;", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "context", "Landroid/content/Context;", "<init>", "(Lru/mrlargha/commonui/databinding/ItemShopBinding;Lkotlin/jvm/functions/Function1;Landroid/content/Context;)V", "loadImageJob", "Lkotlinx/coroutines/Job;", "bind", "itemVal", "CommonUI"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -42,6 +46,7 @@ public final class ShopViewHolder extends RecyclerView.ViewHolder {
 
     public final void bind(final InventoryItem itemVal) {
         Job launch$default;
+        Long amount;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
         ItemShopBinding itemShopBinding = this.binding;
         itemShopBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.shop.viewholder.ShopViewHolder$$ExternalSyntheticLambda0
@@ -58,7 +63,17 @@ public final class ShopViewHolder extends RecyclerView.ViewHolder {
         }
         if (itemVal.getItem() != null) {
             itemShopBinding.tvTitleText.setText(itemVal.getText());
-            launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new ShopViewHolder$bind$1$2(itemShopBinding, this, itemVal, null), 3, null);
+            if (UtilsKt.isArizonaType() && Intrinsics.areEqual(itemVal.getText(), "$") && (amount = itemVal.getAmount()) != null) {
+                SpannableString shopMoneyFormattedSpannable = ShopMoneyFormatterKt.toShopMoneyFormattedSpannable(amount.longValue());
+                TextView textView = itemShopBinding.tvTitleText;
+                int length = shopMoneyFormattedSpannable.length();
+                SpannableString spannableString = shopMoneyFormattedSpannable;
+                if (length > 8) {
+                    spannableString = MoneyElementKt.resize(spannableString, 0.9f);
+                }
+                textView.setText(spannableString);
+            }
+            launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new ShopViewHolder$bind$1$3(itemShopBinding, this, itemVal, null), 3, null);
             this.loadImageJob = launch$default;
         } else {
             itemShopBinding.tvTitleText.setText("");

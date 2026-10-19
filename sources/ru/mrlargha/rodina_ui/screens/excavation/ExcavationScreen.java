@@ -38,7 +38,7 @@ public final class ExcavationScreen extends SAMPUIElement {
         Activity activity = targetActivity;
         this.progressColors = CollectionsKt.listOf((Object[]) new Drawable[]{ContextCompat.getDrawable(activity, R.drawable.progress_circle_red), ContextCompat.getDrawable(activity, R.drawable.progress_circle_green)});
         Intrinsics.checkNotNullExpressionValue(excavationScreen, "excavationScreen");
-        addViewToConstraintLayout(excavationScreen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, excavationScreen, -1, -1, false, 8, null);
         bind.rodinaExcavationProgressButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.rodina_ui.screens.excavation.ExcavationScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

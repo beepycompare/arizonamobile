@@ -99,9 +99,8 @@ public class CursorLoader extends AsyncTaskLoader<Cursor> {
         this.mSortOrder = str2;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.loader.content.Loader
-    public void onStartLoading() {
+    protected void onStartLoading() {
         Cursor cursor = this.mCursor;
         if (cursor != null) {
             deliverResult(cursor);

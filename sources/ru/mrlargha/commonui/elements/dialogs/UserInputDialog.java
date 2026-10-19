@@ -15,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.autofill.HintConstants;
@@ -26,7 +25,9 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.Result;
 import kotlin.ResultKt;
+import kotlin.Unit;
 import kotlin.collections.ArraysKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
@@ -36,6 +37,7 @@ import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.databinding.InputDialogBinding;
 import ru.mrlargha.commonui.elements.dialogs.UserInputDialogResponseCodec;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.money.MoneyElementKt;
 /* compiled from: UserInputDialog.kt */
@@ -87,7 +89,7 @@ public final class UserInputDialog extends AbstractDialog {
             }
         };
         Intrinsics.checkNotNullExpressionValue(dialogLayout, "dialogLayout");
-        addViewToConstraintLayout(dialogLayout, -2, -2);
+        SAMPUIElement.addViewToConstraintLayout$default(this, dialogLayout, -2, -2, false, 8, null);
         setPosition(SAMPUIElement.PositionType.CENTER, 0, 0);
         bind.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -146,10 +148,22 @@ public final class UserInputDialog extends AbstractDialog {
                 return UserInputDialog.lambda$0$4(InputDialogBinding.this, textView, i3, keyEvent);
             }
         });
-        bind.userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda6
+        bind.findPlayerInput.setOnDone(new Function0() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda6
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return UserInputDialog.lambda$0$5(InputDialogBinding.this);
+            }
+        });
+        bind.userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda7
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i3, KeyEvent keyEvent) {
-                return UserInputDialog.lambda$0$5(targetActivity, bind, textView, i3, keyEvent);
+                return UserInputDialog.lambda$0$6(targetActivity, bind, textView, i3, keyEvent);
+            }
+        });
+        bind.userInput.setOnDone(new Function0() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$$ExternalSyntheticLambda8
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return UserInputDialog.lambda$0$7(targetActivity, bind);
             }
         });
         setupHintInput(hintInput);
@@ -197,7 +211,7 @@ public final class UserInputDialog extends AbstractDialog {
         userInputDialog.getNotifier().onDialogResponseWrapper(i, 1, userInputDialog.getResponseListItemId(), StringsKt.encodeToByteArray(userInputDialog.getResponseInput()));
         userInputDialog.getNotifier().destroyDialog();
         if (userInputDialog.passwordMode) {
-            userInputDialog.savePassword(inputDialogBinding.userInput.getText().toString());
+            userInputDialog.savePassword(String.valueOf(inputDialogBinding.userInput.getText()));
         }
     }
 
@@ -218,7 +232,13 @@ public final class UserInputDialog extends AbstractDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean lambda$0$5(Activity activity, InputDialogBinding inputDialogBinding, TextView textView, int i, KeyEvent keyEvent) {
+    public static final Unit lambda$0$5(InputDialogBinding inputDialogBinding) {
+        inputDialogBinding.userInput.requestFocus();
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final boolean lambda$0$6(Activity activity, InputDialogBinding inputDialogBinding, TextView textView, int i, KeyEvent keyEvent) {
         if (i == 5 || i == 6) {
             SAMPUIElement.Companion.hideKeyboard(activity);
             inputDialogBinding.buttons.button1.requestFocus();
@@ -226,6 +246,14 @@ public final class UserInputDialog extends AbstractDialog {
             return true;
         }
         return true;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final Unit lambda$0$7(Activity activity, InputDialogBinding inputDialogBinding) {
+        SAMPUIElement.Companion.hideKeyboard(activity);
+        inputDialogBinding.buttons.button1.requestFocus();
+        inputDialogBinding.buttons.button1.performClick();
+        return Unit.INSTANCE;
     }
 
     private final TextWatcher setupHintInput(String str) {
@@ -257,17 +285,17 @@ public final class UserInputDialog extends AbstractDialog {
             DialogPlaceholderModel dialogPlaceholderModel3 = this.placeholderModel;
             if ((dialogPlaceholderModel3 != null ? dialogPlaceholderModel3.getLimits() : null) != null || !StringsKt.isBlank(str3)) {
                 inputDialogBinding.userInput.setInputType(2);
-                EditText editText = inputDialogBinding.userInput;
+                KeyboardEditText keyboardEditText = inputDialogBinding.userInput;
                 InputFilter[] filters = inputDialogBinding.userInput.getFilters();
                 Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
                 InputFilter[] inputFilterArr = filters;
                 DialogPlaceholderModel dialogPlaceholderModel4 = this.placeholderModel;
-                editText.setFilters((InputFilter[]) ArraysKt.plus((Object[]) inputFilterArr, (Object[]) buildMoneyInputFilters(dialogPlaceholderModel4 != null ? dialogPlaceholderModel4.getLimits() : null)));
+                keyboardEditText.setFilters((InputFilter[]) ArraysKt.plus((Object[]) inputFilterArr, (Object[]) buildMoneyInputFilters(dialogPlaceholderModel4 != null ? dialogPlaceholderModel4.getLimits() : null)));
             }
         }
         bindHeaderInfo();
         updateTransferCommission();
-        EditText userInput = inputDialogBinding.userInput;
+        KeyboardEditText userInput = inputDialogBinding.userInput;
         Intrinsics.checkNotNullExpressionValue(userInput, "userInput");
         TextWatcher textWatcher = new TextWatcher() { // from class: ru.mrlargha.commonui.elements.dialogs.UserInputDialog$setupHintInput$lambda$0$$inlined$addTextChangedListener$default$1
             @Override // android.text.TextWatcher
@@ -384,24 +412,24 @@ public final class UserInputDialog extends AbstractDialog {
     }
 
     private final void updateKeyboardOffset(int i) {
-        EditText editText;
+        KeyboardEditText keyboardEditText;
         boolean hasFocus = this.binding.findPlayerInput.hasFocus();
         InputDialogBinding inputDialogBinding = this.binding;
         if (hasFocus) {
-            editText = inputDialogBinding.findPlayerInput;
+            keyboardEditText = inputDialogBinding.findPlayerInput;
         } else {
             boolean hasFocus2 = inputDialogBinding.userInput.hasFocus();
             InputDialogBinding inputDialogBinding2 = this.binding;
             if (hasFocus2) {
-                editText = inputDialogBinding2.userInput;
+                keyboardEditText = inputDialogBinding2.userInput;
             } else {
-                editText = inputDialogBinding2.userInput;
+                keyboardEditText = inputDialogBinding2.userInput;
             }
         }
-        Intrinsics.checkNotNull(editText);
+        Intrinsics.checkNotNull(keyboardEditText);
         int[] iArr = new int[2];
-        editText.getLocationOnScreen(iArr);
-        float translationY = ((iArr[1] - this.dialogLayout.getTranslationY()) + editText.getHeight()) - i;
+        keyboardEditText.getLocationOnScreen(iArr);
+        float translationY = ((iArr[1] - this.dialogLayout.getTranslationY()) + keyboardEditText.getHeight()) - i;
         this.dialogLayout.setTranslationY(translationY > 0.0f ? -translationY : 0.0f);
     }
 
@@ -449,7 +477,7 @@ public final class UserInputDialog extends AbstractDialog {
     private final void applyDecodedInput(UserInputDialogResponseCodec.DecodedInput decodedInput) {
         String findPlayerInput = decodedInput.getFindPlayerInput();
         if (findPlayerInput != null) {
-            EditText findPlayerInput2 = this.binding.findPlayerInput;
+            KeyboardEditText findPlayerInput2 = this.binding.findPlayerInput;
             Intrinsics.checkNotNullExpressionValue(findPlayerInput2, "findPlayerInput");
             findPlayerInput2.setText(findPlayerInput);
         }
@@ -555,22 +583,22 @@ public final class UserInputDialog extends AbstractDialog {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public final DialogPlaceholderModel toModelOrNull(String str) {
-            Object m9921constructorimpl;
+            Object m9974constructorimpl;
             Object obj;
             try {
                 Result.Companion companion = Result.Companion;
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
             }
             if (MapperKt.isJsonValid(str) && !Intrinsics.areEqual(str, AbstractJsonLexerKt.NULL) && !Intrinsics.areEqual(str, "{}") && str.length() != 0) {
                 obj = MapperKt.getGson().fromJson(str, (Class<Object>) DialogPlaceholderModel.class);
-                m9921constructorimpl = Result.m9921constructorimpl((DialogPlaceholderModel) obj);
-                return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+                m9974constructorimpl = Result.m9974constructorimpl((DialogPlaceholderModel) obj);
+                return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
             }
             obj = null;
-            m9921constructorimpl = Result.m9921constructorimpl((DialogPlaceholderModel) obj);
-            return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+            m9974constructorimpl = Result.m9974constructorimpl((DialogPlaceholderModel) obj);
+            return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -628,22 +656,22 @@ public final class UserInputDialog extends AbstractDialog {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final long calculateCommission(long j, int i) {
-            Long m9921constructorimpl;
+            Long m9974constructorimpl;
             if (j <= 0 || i <= 0) {
                 return 0L;
             }
             try {
                 Result.Companion companion = Result.Companion;
                 Companion companion2 = this;
-                m9921constructorimpl = Result.m9921constructorimpl(Long.valueOf(Math.multiplyExact(j, i) / 100));
+                m9974constructorimpl = Result.m9974constructorimpl(Long.valueOf(Math.multiplyExact(j, i) / 100));
             } catch (Throwable th) {
                 Result.Companion companion3 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-                m9921constructorimpl = Long.MAX_VALUE;
+            if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+                m9974constructorimpl = Long.MAX_VALUE;
             }
-            return ((Number) m9921constructorimpl).longValue();
+            return ((Number) m9974constructorimpl).longValue();
         }
     }
 }

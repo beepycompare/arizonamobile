@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -192,7 +193,7 @@ public final class LocalBroadcastManager {
                                 } else if (match == -2) {
                                     str = "data";
                                 } else if (match == -1) {
-                                    str = "type";
+                                    str = ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY;
                                 } else {
                                     str = "unknown reason";
                                 }

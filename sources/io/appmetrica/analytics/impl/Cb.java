@@ -17,18 +17,18 @@ import kotlin.collections.MapsKt;
 public final class Cb implements InternalClientModuleFacade {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0506pd f496a = new C0506pd();
+    public final C0501pd f499a = new C0501pd();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade
     public final void reportAdRevenue(ModuleAdRevenue moduleAdRevenue) {
         AdType adType;
         Map<String, String> linkedHashMap;
-        C0506pd c0506pd = this.f496a;
-        c0506pd.getClass();
+        C0501pd c0501pd = this.f499a;
+        c0501pd.getClass();
         AdRevenue.Builder newBuilder = AdRevenue.newBuilder(moduleAdRevenue.getAdRevenue(), moduleAdRevenue.getCurrency());
         ModuleAdType adType2 = moduleAdRevenue.getAdType();
         ModuleAdType.values();
-        switch (adType2 == null ? -1 : AbstractC0480od.f1132a[adType2.ordinal()]) {
+        switch (adType2 == null ? -1 : AbstractC0475od.f1135a[adType2.ordinal()]) {
             case -1:
                 adType = null;
                 break;
@@ -62,7 +62,7 @@ public final class Cb implements InternalClientModuleFacade {
         if (payload == null || (linkedHashMap = MapsKt.toMutableMap(payload)) == null) {
             linkedHashMap = new LinkedHashMap<>();
         }
-        c0506pd.f1148a.getClass();
+        c0501pd.f1151a.getClass();
         linkedHashMap.put(AdRevenueConstants.LAYER_KEY, "native");
         ModulesFacade.reportAdRevenue(withPrecision.withPayload(linkedHashMap).build(), Boolean.valueOf(moduleAdRevenue.getAutoCollected()));
     }
@@ -77,7 +77,7 @@ public final class Cb implements InternalClientModuleFacade {
         }
         InternalModuleEvent.Category category2 = internalModuleEvent.getCategory();
         if (category2 != null) {
-            int i = Bb.f476a[category2.ordinal()];
+            int i = Bb.f479a[category2.ordinal()];
             if (i != 1) {
                 category = i != 2 ? null : ModuleEvent.Category.GENERAL;
             } else {

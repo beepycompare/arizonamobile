@@ -12,7 +12,7 @@ public final class Lm {
     public final W9 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f653a;
+    public final String f656a;
     public final List b;
     public final String c;
     public final String d;
@@ -29,26 +29,26 @@ public final class Lm {
     public final boolean o;
     public final boolean p;
     public final String q;
-    public final C0334in r;
+    public final C0329in r;
     public final Ye s;
     public final RetryPolicyConfig t;
     public final long u;
     public final long v;
     public final boolean w;
-    public final C0599t3 x;
-    public final C0754z2 y;
-    public final C0231en z;
+    public final C0594t3 x;
+    public final C0749z2 y;
+    public final C0226en z;
 
     public Lm(Km km) {
         String str;
         long j;
         long j2;
-        C0231en c0231en;
-        C0231en c0231en2;
+        C0226en c0226en;
+        C0226en c0226en2;
         Map map;
         Map map2;
         W9 w9;
-        this.f653a = km.f635a;
+        this.f656a = km.f638a;
         List list = km.b;
         this.b = list == null ? null : CollectionUtils.unmodifiableListCopy(list);
         this.c = km.c;
@@ -87,13 +87,13 @@ public final class Lm {
         }
         this.x = km.x;
         this.y = km.y;
-        c0231en = km.z;
-        if (c0231en != null) {
-            c0231en2 = km.z;
+        c0226en = km.z;
+        if (c0226en != null) {
+            c0226en2 = km.z;
         } else {
-            c0231en2 = new C0231en(AbstractC0113a8.b.f833a);
+            c0226en2 = new C0226en(AbstractC0108a8.b.f836a);
         }
-        this.z = c0231en2;
+        this.z = c0226en2;
         map = km.A;
         if (map != null) {
             map2 = km.A;
@@ -107,7 +107,7 @@ public final class Lm {
 
     public final Km a(C4 c4) {
         Km km = new Km(c4);
-        km.f635a = this.f653a;
+        km.f638a = this.f656a;
         km.f = this.f;
         km.g = this.g;
         km.j = this.j;
@@ -138,6 +138,6 @@ public final class Lm {
     }
 
     public final String toString() {
-        return "StartupStateModel{uuid='" + this.f653a + "', reportUrls=" + this.b + ", getAdUrl='" + this.c + "', reportAdUrl='" + this.d + "', certificateUrl='" + this.e + "', hostUrlsFromStartup=" + this.f + ", hostUrlsFromClient=" + this.g + ", diagnosticUrls=" + this.h + ", customSdkHosts=" + this.i + ", encodedClidsFromResponse='" + this.j + "', lastClientClidsForStartupRequest='" + this.k + "', lastChosenForRequestClids='" + this.l + "', collectingFlags=" + this.m + ", obtainTime=" + this.n + ", hadFirstStartup=" + this.o + ", startupDidNotOverrideClids=" + this.p + ", countryInit='" + this.q + "', statSending=" + this.r + ", permissionsCollectingConfig=" + this.s + ", retryPolicyConfig=" + this.t + ", obtainServerTime=" + this.u + ", firstStartupServerTime=" + this.v + ", outdated=" + this.w + ", cacheControl=" + this.x + ", attributionConfig=" + this.y + ", startupUpdateConfig=" + this.z + ", modulesRemoteConfigs=" + this.A + ", externalAttributionConfig=" + this.B + AbstractJsonLexerKt.END_OBJ;
+        return "StartupStateModel{uuid='" + this.f656a + "', reportUrls=" + this.b + ", getAdUrl='" + this.c + "', reportAdUrl='" + this.d + "', certificateUrl='" + this.e + "', hostUrlsFromStartup=" + this.f + ", hostUrlsFromClient=" + this.g + ", diagnosticUrls=" + this.h + ", customSdkHosts=" + this.i + ", encodedClidsFromResponse='" + this.j + "', lastClientClidsForStartupRequest='" + this.k + "', lastChosenForRequestClids='" + this.l + "', collectingFlags=" + this.m + ", obtainTime=" + this.n + ", hadFirstStartup=" + this.o + ", startupDidNotOverrideClids=" + this.p + ", countryInit='" + this.q + "', statSending=" + this.r + ", permissionsCollectingConfig=" + this.s + ", retryPolicyConfig=" + this.t + ", obtainServerTime=" + this.u + ", firstStartupServerTime=" + this.v + ", outdated=" + this.w + ", cacheControl=" + this.x + ", attributionConfig=" + this.y + ", startupUpdateConfig=" + this.z + ", modulesRemoteConfigs=" + this.A + ", externalAttributionConfig=" + this.B + AbstractJsonLexerKt.END_OBJ;
     }
 }

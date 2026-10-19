@@ -42,7 +42,7 @@ public final class LinkingScreen extends SAMPUIElement {
         LinkingLayoutBinding bind = LinkingLayoutBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         ImageView exitButton = bind.exitButton;
         Intrinsics.checkNotNullExpressionValue(exitButton, "exitButton");

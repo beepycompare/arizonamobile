@@ -10,19 +10,19 @@ import java.util.Iterator;
 public abstract class BaseImportantLogger {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f1352a;
+    private final c f1355a;
 
     public BaseImportantLogger(String str) {
-        this.f1352a = new c(new d(str), new a(), new b());
+        this.f1355a = new c(new d(str), new a(), new b());
     }
 
     public void info(String str, String str2, Object... objArr) {
-        c cVar = this.f1352a;
+        c cVar = this.f1355a;
         cVar.b.getClass();
         Iterator it = cVar.c.a(a.a(str, str2, objArr)).iterator();
         while (it.hasNext()) {
             String str3 = (String) it.next();
-            String str4 = cVar.f1355a.f1356a;
+            String str4 = cVar.f1358a.f1359a;
             if (str3 == null) {
                 str3 = "";
             }

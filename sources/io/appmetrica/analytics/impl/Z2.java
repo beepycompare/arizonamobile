@@ -2,15 +2,15 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public abstract class Z2 implements InterfaceC0491oo {
+public abstract class Z2 implements InterfaceC0486oo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f867a;
+    public final int f870a;
     public final String b;
     protected final PublicLogger c;
 
     public Z2(int i, String str, PublicLogger publicLogger) {
-        this.f867a = i;
+        this.f870a = i;
         this.b = str;
         this.c = publicLogger;
     }

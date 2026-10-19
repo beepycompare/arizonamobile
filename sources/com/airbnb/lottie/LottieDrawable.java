@@ -37,7 +37,6 @@ import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.LottieFrameInfo;
 import com.airbnb.lottie.value.LottieValueCallback;
 import com.airbnb.lottie.value.SimpleLottieValueCallback;
-import com.google.android.vending.expansion.downloader.Constants;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -1314,7 +1313,7 @@ public class LottieDrawable extends Drawable implements Drawable.Callback, Anima
             if (map.containsKey(name)) {
                 return map.get(name);
             }
-            String str = font.getFamily() + Constants.FILENAME_SEQUENCE_SEPARATOR + font.getStyle();
+            String str = font.getFamily() + "-" + font.getStyle();
             if (map.containsKey(str)) {
                 return map.get(str);
             }

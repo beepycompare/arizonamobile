@@ -65,7 +65,7 @@ public final class CatalogScreen extends SAMPUIElement {
         this.catalogItemList = CollectionsKt.emptyList();
         catalogScreen.setClickable(true);
         Intrinsics.checkNotNullExpressionValue(catalogScreen, "catalogScreen");
-        addViewToConstraintLayout(catalogScreen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, catalogScreen, -1, -1, false, 8, null);
         bind.catalogBtnClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.catalog.CatalogScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

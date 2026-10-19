@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
 import android.util.Log;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.media3.exoplayer.offline.DefaultDownloaderFactory$$ExternalSyntheticLambda0;
 import com.google.android.gms.common.util.PlatformVersion;
 import com.google.android.gms.tasks.Continuation;
@@ -12,7 +13,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class FcmBroadcastProcessor {
     private static final String EXTRA_BINARY_DATA = "rawData";
     private static final String EXTRA_BINARY_DATA_BASE_64 = "gcm.rawData64";
@@ -66,14 +67,11 @@ public class FcmBroadcastProcessor {
         return (PlatformVersion.isAtLeastO() && ((Integer) task.getResult()).intValue() == 402) ? bindToMessagingService(context, intent, z).continueWith(new DefaultDownloaderFactory$$ExternalSyntheticLambda0(), new Continuation() { // from class: com.google.firebase.messaging.FcmBroadcastProcessor$$ExternalSyntheticLambda0
             @Override // com.google.android.gms.tasks.Continuation
             public final Object then(Task task2) {
-                return FcmBroadcastProcessor.lambda$startMessagingService$1(task2);
+                Integer valueOf;
+                valueOf = Integer.valueOf((int) TypedValues.CycleType.TYPE_ALPHA);
+                return valueOf;
             }
         }) : task;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ Integer lambda$startMessagingService$1(Task task) throws Exception {
-        return 403;
     }
 
     private static Task<Integer> bindToMessagingService(Context context, Intent intent, boolean z) {

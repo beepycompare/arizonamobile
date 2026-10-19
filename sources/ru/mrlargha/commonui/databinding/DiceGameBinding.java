@@ -3,7 +3,6 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -12,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 /* loaded from: classes6.dex */
 public final class DiceGameBinding implements ViewBinding {
     public final ConstraintLayout bet100kButton;
@@ -42,8 +42,8 @@ public final class DiceGameBinding implements ViewBinding {
     public final ConstraintLayout diceBetScreen;
     public final ConstraintLayout diceGame;
     public final Guideline downBorderLine;
-    public final EditText enterBet;
-    public final EditText enterMessage;
+    public final KeyboardEditText enterBet;
+    public final KeyboardEditText enterMessage;
     public final AppCompatImageView exitButton;
     public final RecyclerView gamerRecycler;
     public final TextView gamerTurn;
@@ -66,7 +66,7 @@ public final class DiceGameBinding implements ViewBinding {
     public final TextView timer;
     public final TextView turnTitle;
 
-    private DiceGameBinding(ConstraintLayout rootView, ConstraintLayout bet100kButton, TextView bet100kButtonText, ConstraintLayout bet1kkButton, TextView bet1kkButtonText, ConstraintLayout bet500kButton, TextView bet500kButtonText, ConstraintLayout bet50kButton, TextView bet50kButtonText, ConstraintLayout betButton, ConstraintLayout betGroupContainer, ConstraintLayout betSumInputContainer, TextView betTitle, ConstraintLayout betWhiteButton, ConstraintLayout bidInfo, Guideline bodyTopLine, ConstraintLayout chatContainer, ConstraintLayout chatHistoryContainer, ConstraintLayout chatInputTextContainer, RecyclerView chatRecycler, Guideline chatRightLine, TextView chatTitle, AppCompatImageView clockIcon, TextView currentBet, TextView currentBetHeader, ConstraintLayout diceBetContainer, ConstraintLayout diceBetScreen, ConstraintLayout diceGame, Guideline downBorderLine, EditText enterBet, EditText enterMessage, AppCompatImageView exitButton, RecyclerView gamerRecycler, TextView gamerTurn, Guideline gamersBottomLine, ConstraintLayout gamersContainer, Guideline gamersLeftLine, TextView gamersTitle, ConstraintLayout headerContainer, Guideline headerLeftLine, Guideline headerRightLine, TextView headerTitle, Guideline headerTopLine, AppCompatImageView leftDice, TextView makeBidText, AppCompatImageView rightDice, AppCompatImageView sendButton, TextView sumOfBet, TextView sumOfBetHeader, TextView timer, TextView turnTitle) {
+    private DiceGameBinding(ConstraintLayout rootView, ConstraintLayout bet100kButton, TextView bet100kButtonText, ConstraintLayout bet1kkButton, TextView bet1kkButtonText, ConstraintLayout bet500kButton, TextView bet500kButtonText, ConstraintLayout bet50kButton, TextView bet50kButtonText, ConstraintLayout betButton, ConstraintLayout betGroupContainer, ConstraintLayout betSumInputContainer, TextView betTitle, ConstraintLayout betWhiteButton, ConstraintLayout bidInfo, Guideline bodyTopLine, ConstraintLayout chatContainer, ConstraintLayout chatHistoryContainer, ConstraintLayout chatInputTextContainer, RecyclerView chatRecycler, Guideline chatRightLine, TextView chatTitle, AppCompatImageView clockIcon, TextView currentBet, TextView currentBetHeader, ConstraintLayout diceBetContainer, ConstraintLayout diceBetScreen, ConstraintLayout diceGame, Guideline downBorderLine, KeyboardEditText enterBet, KeyboardEditText enterMessage, AppCompatImageView exitButton, RecyclerView gamerRecycler, TextView gamerTurn, Guideline gamersBottomLine, ConstraintLayout gamersContainer, Guideline gamersLeftLine, TextView gamersTitle, ConstraintLayout headerContainer, Guideline headerLeftLine, Guideline headerRightLine, TextView headerTitle, Guideline headerTopLine, AppCompatImageView leftDice, TextView makeBidText, AppCompatImageView rightDice, AppCompatImageView sendButton, TextView sumOfBet, TextView sumOfBetHeader, TextView timer, TextView turnTitle) {
         this.rootView = rootView;
         this.bet100kButton = bet100kButton;
         this.bet100kButtonText = bet100kButtonText;
@@ -221,11 +221,11 @@ public final class DiceGameBinding implements ViewBinding {
                                                                                                                 Guideline guideline3 = (Guideline) ViewBindings.findChildViewById(rootView, i);
                                                                                                                 if (guideline3 != null) {
                                                                                                                     i = R.id.enter_bet;
-                                                                                                                    EditText editText = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                    if (editText != null) {
+                                                                                                                    KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                    if (keyboardEditText != null) {
                                                                                                                         i = R.id.enter_message;
-                                                                                                                        EditText editText2 = (EditText) ViewBindings.findChildViewById(rootView, i);
-                                                                                                                        if (editText2 != null) {
+                                                                                                                        KeyboardEditText keyboardEditText2 = (KeyboardEditText) ViewBindings.findChildViewById(rootView, i);
+                                                                                                                        if (keyboardEditText2 != null) {
                                                                                                                             i = R.id.exit_button;
                                                                                                                             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
                                                                                                                             if (appCompatImageView2 != null) {
@@ -286,7 +286,7 @@ public final class DiceGameBinding implements ViewBinding {
                                                                                                                                                                                                         i = R.id.turn_title;
                                                                                                                                                                                                         TextView textView16 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                                                                                                                                                                                         if (textView16 != null) {
-                                                                                                                                                                                                            return new DiceGameBinding(constraintLayout15, constraintLayout, textView, constraintLayout2, textView2, constraintLayout3, textView3, constraintLayout4, textView4, constraintLayout5, constraintLayout6, constraintLayout7, textView5, constraintLayout8, constraintLayout9, guideline, constraintLayout10, constraintLayout11, constraintLayout12, recyclerView, guideline2, textView6, appCompatImageView, textView7, textView8, constraintLayout13, constraintLayout14, constraintLayout15, guideline3, editText, editText2, appCompatImageView2, recyclerView2, textView9, guideline4, constraintLayout16, guideline5, textView10, constraintLayout17, guideline6, guideline7, textView11, guideline8, appCompatImageView3, textView12, appCompatImageView4, appCompatImageView5, textView13, textView14, textView15, textView16);
+                                                                                                                                                                                                            return new DiceGameBinding(constraintLayout15, constraintLayout, textView, constraintLayout2, textView2, constraintLayout3, textView3, constraintLayout4, textView4, constraintLayout5, constraintLayout6, constraintLayout7, textView5, constraintLayout8, constraintLayout9, guideline, constraintLayout10, constraintLayout11, constraintLayout12, recyclerView, guideline2, textView6, appCompatImageView, textView7, textView8, constraintLayout13, constraintLayout14, constraintLayout15, guideline3, keyboardEditText, keyboardEditText2, appCompatImageView2, recyclerView2, textView9, guideline4, constraintLayout16, guideline5, textView10, constraintLayout17, guideline6, guideline7, textView11, guideline8, appCompatImageView3, textView12, appCompatImageView4, appCompatImageView5, textView13, textView14, textView15, textView16);
                                                                                                                                                                                                         }
                                                                                                                                                                                                     }
                                                                                                                                                                                                 }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.location.Location;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import io.appmetrica.analytics.AnrListener;
 import io.appmetrica.analytics.AppMetricaConfig;
 import io.appmetrica.analytics.ExternalAttribution;
@@ -24,7 +25,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
-public final class Jc extends V2 implements InterfaceC0374kb {
+public final class Jc extends V2 implements InterfaceC0369kb {
     public static final Long r = Long.valueOf(TimeUnit.SECONDS.toMillis(1));
     public final Tc p;
     public final Kc q;
@@ -36,11 +37,11 @@ public final class Jc extends V2 implements InterfaceC0374kb {
         l();
     }
 
-    public final void a(AppMetricaConfig appMetricaConfig, C0441n0 c0441n0) {
-        if (c0441n0.b) {
+    public final void a(AppMetricaConfig appMetricaConfig, C0436n0 c0436n0) {
+        if (c0436n0.b) {
             clearAppEnvironment();
         }
-        List<String> list = c0441n0.f1106a;
+        List<String> list = c0436n0.f1109a;
         if (!CollectionUtils.isNullOrEmpty(list)) {
             this.b.b.addAutoCollectedDataSubscribers(list);
         }
@@ -49,16 +50,16 @@ public final class Jc extends V2 implements InterfaceC0374kb {
         boolean booleanValue = ((Boolean) WrapUtils.getOrDefault(appMetricaConfig.nativeCrashReporting, Boolean.TRUE)).booleanValue();
         this.c.info("native crash reporting enabled: %b", Boolean.valueOf(booleanValue));
         if (booleanValue) {
-            C0145be c0145be = this.p.c;
-            Context context = this.f804a;
-            c0145be.d = new J0(this.b.b.getApiKey(), c0145be.f909a.f930a.getAsString("PROCESS_CFG_PACKAGE_NAME"), CounterConfigurationReporterType.MAIN, c0145be.f909a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID").intValue(), c0145be.f909a.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), this.b.d());
+            C0140be c0140be = this.p.c;
+            Context context = this.f807a;
+            c0140be.d = new J0(this.b.b.getApiKey(), c0140be.f912a.f933a.getAsString("PROCESS_CFG_PACKAGE_NAME"), CounterConfigurationReporterType.MAIN, c0140be.f912a.f933a.getAsInteger("PROCESS_CFG_PROCESS_ID").intValue(), c0140be.f912a.f933a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), this.b.d());
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context);
             J0 j0 = null;
             String absolutePath = nativeCrashDirectory != null ? nativeCrashDirectory.getAbsolutePath() : null;
             if (absolutePath != null) {
-                NativeCrashClientModule nativeCrashClientModule = c0145be.b;
-                K0 k0 = c0145be.c;
-                J0 j02 = c0145be.d;
+                NativeCrashClientModule nativeCrashClientModule = c0140be.b;
+                K0 k0 = c0140be.c;
+                J0 j02 = c0140be.d;
                 if (j02 == null) {
                     Intrinsics.throwUninitializedPropertyAccessException("nativeCrashMetadata");
                 } else {
@@ -71,48 +72,48 @@ public final class Jc extends V2 implements InterfaceC0374kb {
         Kc kc = this.q;
         synchronized (kc) {
             Integer num = appMetricaConfig.anrMonitoringTimeout;
-            kc.f629a = num != null ? num.intValue() : 5;
+            kc.f632a = num != null ? num.intValue() : 5;
             Boolean bool = appMetricaConfig.anrMonitoring;
             if (bool == null) {
                 bool = Boolean.FALSE;
             }
             if (bool.booleanValue()) {
-                kc.b.a(kc.f629a);
+                kc.b.a(kc.f632a);
             } else {
                 kc.b.b();
             }
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final void b(Activity activity) {
-        if (this.p.i.a(activity, EnumC0492p.PAUSED)) {
+        if (this.p.i.a(activity, EnumC0487p.PAUSED)) {
             this.c.info("Pause session", new Object[0]);
             c(activity != null ? activity.getClass().getSimpleName() : null);
-            C0546r2 c0546r2 = this.p.g;
-            synchronized (c0546r2) {
-                c0546r2.getClass();
-                for (C0521q2 c0521q2 : c0546r2.f1177a) {
-                    if (!c0521q2.d) {
-                        c0521q2.d = true;
-                        c0521q2.b.executeDelayed(c0521q2.e, c0521q2.c);
+            C0541r2 c0541r2 = this.p.g;
+            synchronized (c0541r2) {
+                c0541r2.getClass();
+                for (C0516q2 c0516q2 : c0541r2.f1180a) {
+                    if (!c0516q2.d) {
+                        c0516q2.d = true;
+                        c0516q2.b.executeDelayed(c0516q2.e, c0516q2.c);
                     }
                 }
             }
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final void c() {
         Kc kc = this.q;
         synchronized (kc) {
-            kc.b.a(kc.f629a);
+            kc.b.a(kc.f632a);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final List<String> f() {
-        return this.b.f852a.b();
+        return this.b.f855a.b();
     }
 
     @Override // io.appmetrica.analytics.impl.V2
@@ -123,132 +124,132 @@ public final class Jc extends V2 implements InterfaceC0374kb {
     @Override // io.appmetrica.analytics.impl.V2
     public final void k() {
         super.k();
-        C0574s4.l().m().c();
+        C0569s4.l().m().c();
     }
 
     public final void l() {
         Qi qi = this.h;
-        qi.c.a(this.b.f852a);
-        C0546r2 c0546r2 = this.p.g;
+        qi.c.a(this.b.f855a);
+        C0541r2 c0541r2 = this.p.g;
         Ic ic = new Ic(this);
         long longValue = r.longValue();
-        synchronized (c0546r2) {
-            c0546r2.a(ic, longValue);
+        synchronized (c0541r2) {
+            c0541r2.a(ic, longValue);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final void a(String str, boolean z) {
         this.c.info("App opened via deeplink: " + WrapUtils.wrapToTag(str), new Object[0]);
         Qi qi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f730a;
+        Set set = Q9.f733a;
         HashMap hashMap = new HashMap();
-        hashMap.put("type", TtmlNode.TEXT_EMPHASIS_MARK_OPEN);
+        hashMap.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, TtmlNode.TEXT_EMPHASIS_MARK_OPEN);
         hashMap.put("link", str);
         hashMap.put("auto", Boolean.valueOf(z));
         String b = Ib.b(hashMap);
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0187d4 c0187d4 = new C0187d4(b, "", 8208, 0, publicLogger);
+        C0182d4 c0182d4 = new C0182d4(b, "", 8208, 0, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0187d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0182d4, zh), zh, 1, (Map) null);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
-    public final void a(EnumC0440n enumC0440n) {
-        if (enumC0440n == EnumC0440n.b) {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
+    public final void a(EnumC0435n enumC0435n) {
+        if (enumC0435n == EnumC0435n.b) {
             this.c.info("Enable activity auto tracking", new Object[0]);
         } else {
-            this.c.warning("Could not enable activity auto tracking. " + enumC0440n.f1105a, new Object[0]);
+            this.c.warning("Could not enable activity auto tracking. " + enumC0435n.f1108a, new Object[0]);
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final void a(Activity activity) {
-        if (this.p.i.a(activity, EnumC0492p.RESUMED)) {
+        if (this.p.i.a(activity, EnumC0487p.RESUMED)) {
             this.c.info("Resume session", new Object[0]);
             d(activity != null ? activity.getClass().getSimpleName() : null);
-            C0546r2 c0546r2 = this.p.g;
-            synchronized (c0546r2) {
-                c0546r2.getClass();
-                for (C0521q2 c0521q2 : c0546r2.f1177a) {
-                    if (c0521q2.d) {
-                        c0521q2.d = false;
-                        c0521q2.b.remove(c0521q2.e);
-                        Jc jc = c0521q2.f1159a.f595a;
-                        jc.h.c.b(jc.b.f852a);
+            C0541r2 c0541r2 = this.p.g;
+            synchronized (c0541r2) {
+                c0541r2.getClass();
+                for (C0516q2 c0516q2 : c0541r2.f1180a) {
+                    if (c0516q2.d) {
+                        c0516q2.d = false;
+                        c0516q2.b.remove(c0516q2.e);
+                        Jc jc = c0516q2.f1162a.f598a;
+                        jc.h.c.b(jc.b.f855a);
                     }
                 }
             }
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(Location location) {
         this.b.b.setManualLocation(location);
         this.c.info("Set location: %s", location);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(boolean z) {
         this.b.b.setLocationTracking(z);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(boolean z, boolean z2) {
         this.c.info("Set advIdentifiersTracking to %s", Boolean.valueOf(z));
         this.b.b.setAdvIdentifiersTracking(z, z2);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final void a(lp lpVar) {
         PublicLogger publicLogger = this.c;
         synchronized (lpVar) {
             lpVar.b = publicLogger;
         }
-        Iterator it = lpVar.f1087a.iterator();
+        Iterator it = lpVar.f1090a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(publicLogger);
         }
-        lpVar.f1087a.clear();
+        lpVar.f1090a.clear();
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final void a(AnrListener anrListener) {
         this.q.a(anrListener);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb
     public final void a(ExternalAttribution externalAttribution) {
         this.c.info("External attribution received: %s", externalAttribution);
         Qi qi = this.h;
         byte[] bytes = externalAttribution.toBytes();
         PublicLogger publicLogger = this.c;
-        Set set = Q9.f730a;
+        Set set = Q9.f733a;
         Db db = Db.EVENT_TYPE_UNDEFINED;
-        C0187d4 c0187d4 = new C0187d4(bytes, "", 42, publicLogger);
+        C0182d4 c0182d4 = new C0182d4(bytes, "", 42, publicLogger);
         Zh zh = this.b;
         qi.getClass();
-        qi.a(Qi.a(c0187d4, zh), zh, 1, (Map) null);
+        qi.a(Qi.a(c0182d4, zh), zh, 1, (Map) null);
     }
 
-    @Override // io.appmetrica.analytics.impl.V2, io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.V2, io.appmetrica.analytics.impl.InterfaceC0369kb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(String str, String str2) {
         super.a(str, str2);
-        C0145be c0145be = this.p.c;
+        C0140be c0140be = this.p.c;
         String d = this.b.d();
-        J0 j0 = c0145be.d;
+        J0 j0 = c0140be.d;
         if (j0 != null) {
-            J0 j02 = new J0(j0.f604a, j0.b, j0.c, j0.d, j0.e, d);
-            c0145be.d = j02;
-            NativeCrashClientModule nativeCrashClientModule = c0145be.b;
-            c0145be.c.getClass();
+            J0 j02 = new J0(j0.f607a, j0.b, j0.c, j0.d, j0.e, d);
+            c0140be.d = j02;
+            NativeCrashClientModule nativeCrashClientModule = c0140be.b;
+            c0140be.c.getClass();
             nativeCrashClientModule.updateAppMetricaMetadata(K0.a(j02));
         }
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0374kb, io.appmetrica.analytics.impl.InterfaceC0325id
+    @Override // io.appmetrica.analytics.impl.InterfaceC0369kb, io.appmetrica.analytics.impl.InterfaceC0320id
     public final void a(String str) {
         this.c.info("Add auto collected data subscriber: %s", str);
         this.b.b.addAutoCollectedDataSubscriber(str);

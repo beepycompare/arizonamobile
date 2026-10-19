@@ -3,10 +3,11 @@ package androidx.compose.material3.tokens;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.GapComposerKt;
 import androidx.compose.ui.graphics.ColorKt;
+import androidx.media3.extractor.ts.PsExtractor;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.arizona.launcher.updater.archive.download.ArchiveResumableHttpEngine;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
+import com.google.android.gms.location.LocationRequest;
 import kotlin.Metadata;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 import okhttp3.internal.ws.WebSocketProtocol;
@@ -25,7 +26,7 @@ public final class PaletteTokens {
     private static final long Error30 = ColorKt.Color$default(TrainSpeedGaugeView.MAX_SPEED_KMH, 29, 24, 0, 8, null);
     private static final long Error40 = ColorKt.Color$default(179, 38, 30, 0, 8, null);
     private static final long Error50 = ColorKt.Color$default(220, 54, 46, 0, 8, null);
-    private static final long Error60 = ColorKt.Color$default(228, 105, 98, 0, 8, null);
+    private static final long Error60 = ColorKt.Color$default(228, LocationRequest.PRIORITY_NO_POWER, 98, 0, 8, null);
     private static final long Error70 = ColorKt.Color$default(236, 146, 142, 0, 8, null);
     private static final long Error80 = ColorKt.Color$default(242, 184, 181, 0, 8, null);
     private static final long Error90 = ColorKt.Color$default(249, 222, 220, 0, 8, null);
@@ -46,7 +47,7 @@ public final class PaletteTokens {
     private static final long Neutral6 = ColorKt.Color$default(20, 18, 24, 0, 8, null);
     private static final long Neutral60 = ColorKt.Color$default(147, 143, 150, 0, 8, null);
     private static final long Neutral70 = ColorKt.Color$default(174, 169, 177, 0, 8, null);
-    private static final long Neutral80 = ColorKt.Color$default(ComposerKt.compositionLocalMapKey, DownloaderService.STATUS_QUEUED_FOR_WIFI, ArchiveResumableHttpEngine.HTTP_RESET_CONTENT, 0, 8, null);
+    private static final long Neutral80 = ColorKt.Color$default(ComposerKt.compositionLocalMapKey, 197, ArchiveResumableHttpEngine.HTTP_RESET_CONTENT, 0, 8, null);
     private static final long Neutral87 = ColorKt.Color$default(222, 216, 225, 0, 8, null);
     private static final long Neutral90 = ColorKt.Color$default(230, 224, 233, 0, 8, null);
     private static final long Neutral92 = ColorKt.Color$default(236, 230, 240, 0, 8, null);
@@ -64,7 +65,7 @@ public final class PaletteTokens {
     private static final long NeutralVariant50 = ColorKt.Color$default(121, 116, WebSocketProtocol.PAYLOAD_SHORT, 0, 8, null);
     private static final long NeutralVariant60 = ColorKt.Color$default(147, 143, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER, 0, 8, null);
     private static final long NeutralVariant70 = ColorKt.Color$default(174, 169, 180, 0, 8, null);
-    private static final long NeutralVariant80 = ColorKt.Color$default(ComposerKt.compositionLocalMapKey, DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION, 208, 0, 8, null);
+    private static final long NeutralVariant80 = ColorKt.Color$default(ComposerKt.compositionLocalMapKey, 196, 208, 0, 8, null);
     private static final long NeutralVariant90 = ColorKt.Color$default(231, 224, 236, 0, 8, null);
     private static final long NeutralVariant95 = ColorKt.Color$default(245, 238, 250, 0, 8, null);
     private static final long NeutralVariant99 = ColorKt.Color$default(255, 251, LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_MASK, 0, 8, null);
@@ -74,7 +75,7 @@ public final class PaletteTokens {
     private static final long Primary20 = ColorKt.Color$default(56, 30, 114, 0, 8, null);
     private static final long Primary30 = ColorKt.Color$default(79, 55, TsExtractor.TS_STREAM_TYPE_DTS_UHD, 0, 8, null);
     private static final long Primary40 = ColorKt.Color$default(103, 80, 164, 0, 8, null);
-    private static final long Primary50 = ColorKt.Color$default(127, 103, DownloaderService.STATUS_PENDING, 0, 8, null);
+    private static final long Primary50 = ColorKt.Color$default(127, 103, 190, 0, 8, null);
     private static final long Primary60 = ColorKt.Color$default(154, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, 219, 0, 8, null);
     private static final long Primary70 = ColorKt.Color$default(182, 157, 248, 0, 8, null);
     private static final long Primary80 = ColorKt.Color$default(208, TsExtractor.TS_PACKET_SIZE, 255, 0, 8, null);
@@ -89,8 +90,8 @@ public final class PaletteTokens {
     private static final long Secondary40 = ColorKt.Color$default(98, 91, 113, 0, 8, null);
     private static final long Secondary50 = ColorKt.Color$default(122, 114, 137, 0, 8, null);
     private static final long Secondary60 = ColorKt.Color$default(149, 141, 165, 0, 8, null);
-    private static final long Secondary70 = ColorKt.Color$default(176, 167, 192, 0, 8, null);
-    private static final long Secondary80 = ColorKt.Color$default(ComposerKt.providerMapsKey, DownloaderService.STATUS_WAITING_TO_RETRY, 220, 0, 8, null);
+    private static final long Secondary70 = ColorKt.Color$default(176, 167, PsExtractor.AUDIO_STREAM, 0, 8, null);
+    private static final long Secondary80 = ColorKt.Color$default(ComposerKt.providerMapsKey, 194, 220, 0, 8, null);
     private static final long Secondary90 = ColorKt.Color$default(232, 222, 248, 0, 8, null);
     private static final long Secondary95 = ColorKt.Color$default(246, 237, 255, 0, 8, null);
     private static final long Secondary99 = ColorKt.Color$default(255, 251, LauncherApkNetworkPolicy.IPV6_UNIQUE_LOCAL_MASK, 0, 8, null);
@@ -100,7 +101,7 @@ public final class PaletteTokens {
     private static final long Tertiary20 = ColorKt.Color$default(73, 37, 50, 0, 8, null);
     private static final long Tertiary30 = ColorKt.Color$default(99, 59, 72, 0, 8, null);
     private static final long Tertiary40 = ColorKt.Color$default(GapComposerKt.nodeKey, 82, 96, 0, 8, null);
-    private static final long Tertiary50 = ColorKt.Color$default(BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, 105, 119, 0, 8, null);
+    private static final long Tertiary50 = ColorKt.Color$default(BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, LocationRequest.PRIORITY_NO_POWER, 119, 0, 8, null);
     private static final long Tertiary60 = ColorKt.Color$default(181, 131, 146, 0, 8, null);
     private static final long Tertiary70 = ColorKt.Color$default(210, 157, TsExtractor.TS_STREAM_TYPE_AC4, 0, 8, null);
     private static final long Tertiary80 = ColorKt.Color$default(239, 184, 200, 0, 8, null);

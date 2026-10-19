@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/setting_item" android:background="@drawable/settings_rc_item_bg" android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginBottom="@dimen/_6sdp">
+    <TextView android:textSize="10sp" android:textColor="@color/white" android:id="@+id/setting_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Время в чате" android:fontFamily="@font/pfdindisplaypro_bold" android:layout_marginStart="10dp"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+    <androidx.appcompat.widget.SwitchCompat android:gravity="center_horizontal" android:id="@+id/switch_setting" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="20dp" android:checked="true" android:layout_marginEnd="10dp" app:thumbTint="@drawable/selector_setting_switch_thumb" app:trackTint="#80000000" style="@style/setting_switch"/>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@+id/slider_setting_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="30dp" android:layout_marginEnd="10dp">
+        <com.google.android.material.slider.Slider android:value="55" android:layout_gravity="center" android:id="@+id/slider_setting" android:layout_width="180dp" android:layout_height="30dp" android:valueFrom="0" android:layout_marginEnd="5dp" app:haloRadius="12dp" app:labelBehavior="gone" app:thumbColor="#3e8bff" app:thumbElevation="5dp" app:thumbHeight="15dp" app:thumbWidth="15dp" app:trackColor="#80000000" app:trackHeight="15dp"/>
+        <TextView android:textSize="14sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/slider_setting_text" android:layout_width="35dp" android:layout_height="match_parent" android:text="55%" android:fontFamily="@font/pfdindisplaypro_medium"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:id="@+id/selector_setting_group" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="30dp" android:layout_marginEnd="10dp">
+        <RelativeLayout android:gravity="center" android:id="@+id/setting_selector_1" android:background="@drawable/setting_chip_disabled" android:layout_width="50dp" android:layout_height="20dp">
+            <TextView android:textSize="10sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/setting_selector_1_txt" android:layout_width="match_parent" android:layout_height="match_parent" android:text="1.0" android:layout_centerInParent="true" android:fontFamily="@font/pfdindisplaypro_medium"/>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:id="@+id/setting_selector_15" android:background="@drawable/setting_chip_disabled" android:layout_width="50dp" android:layout_height="20dp" android:layout_marginStart="4dp">
+            <TextView android:textSize="10sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/setting_selector_15_txt" android:layout_width="match_parent" android:layout_height="match_parent" android:text="1.5" android:layout_centerInParent="true" android:fontFamily="@font/pfdindisplaypro_medium"/>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:id="@+id/setting_selector_25" android:background="@drawable/setting_chip_disabled" android:layout_width="50dp" android:layout_height="20dp" android:layout_marginStart="4dp">
+            <TextView android:textSize="10sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/setting_selector_25_txt" android:layout_width="match_parent" android:layout_height="match_parent" android:text="2.5" android:layout_centerInParent="true" android:fontFamily="@font/pfdindisplaypro_medium"/>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:id="@+id/setting_selector_30" android:background="@drawable/setting_chip_disabled" android:layout_width="50dp" android:layout_height="20dp" android:layout_marginStart="4dp">
+            <TextView android:textSize="10sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/setting_selector_30_txt" android:layout_width="match_parent" android:layout_height="match_parent" android:text="3.0" android:layout_centerInParent="true" android:fontFamily="@font/pfdindisplaypro_medium"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/switch_text_setting_container" android:background="@drawable/bg_setting_text_switcher" android:visibility="gone" android:layout_width="150dp" android:layout_height="30dp" android:layout_marginEnd="10dp">
+        <ImageView android:id="@+id/switch_text_setting_back" android:padding="5dp" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_back_button" android:layout_marginStart="10dp"/>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <TextView android:textSize="12sp" android:textColor="@color/white" android:id="@+id/switch_text_setting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Отключено" android:fontFamily="@font/pfdindisplaypro_medium"/>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_weight="1"/>
+        <ImageView android:id="@+id/switch_text_setting_forward" android:padding="5dp" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_forward_button" android:layout_marginEnd="10dp"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/link_text_setting_container" android:background="@drawable/bg_setting_text_switcher" android:visibility="visible" android:layout_width="150dp" android:layout_height="30dp" android:layout_marginEnd="10dp">
+        <TextView android:textSize="15dp" android:textColor="@color/white" android:id="@+id/link_text_setting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Изменить" android:fontFamily="@font/pfdindisplaypro_medium"/>
+        <View android:background="@color/white" android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginLeft="@dimen/_34sdp" android:layout_marginRight="@dimen/_34sdp" android:layout_marginHorizontal="@dimen/_34sdp"/>
+    </LinearLayout>
+</LinearLayout>

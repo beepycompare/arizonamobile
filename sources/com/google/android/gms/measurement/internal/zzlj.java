@@ -26,6 +26,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.Constants;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -934,12 +935,12 @@ public final class zzlj extends zzg {
     public final void zzZ(Bundle bundle, long j) {
         Preconditions.checkNotNull(bundle);
         Bundle bundle2 = new Bundle(bundle);
-        if (!TextUtils.isEmpty(bundle2.getString("app_id"))) {
+        if (!TextUtils.isEmpty(bundle2.getString(CommonUrlParts.APP_ID))) {
             this.zzu.zzaW().zze().zza("Package name should be null when calling setConditionalUserProperty");
         }
-        bundle2.remove("app_id");
+        bundle2.remove(CommonUrlParts.APP_ID);
         Preconditions.checkNotNull(bundle2);
-        zzjh.zzb(bundle2, "app_id", String.class, null);
+        zzjh.zzb(bundle2, CommonUrlParts.APP_ID, String.class, null);
         zzjh.zzb(bundle2, "origin", String.class, null);
         zzjh.zzb(bundle2, "name", String.class, null);
         zzjh.zzb(bundle2, "value", Object.class, null);

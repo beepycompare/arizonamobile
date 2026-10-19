@@ -6,7 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import androidx.media3.common.MediaLibraryInfo;
 import androidx.media3.common.util.Util;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class VersionTable {
     private static final String COLUMN_FEATURE = "feature";
     private static final String COLUMN_INSTANCE_UID = "instance_uid";
@@ -34,7 +34,7 @@ public final class VersionTable {
             ContentValues contentValues = new ContentValues();
             contentValues.put(COLUMN_FEATURE, Integer.valueOf(i));
             contentValues.put(COLUMN_INSTANCE_UID, str);
-            contentValues.put("version", Integer.valueOf(i2));
+            contentValues.put(COLUMN_VERSION, Integer.valueOf(i2));
             sQLiteDatabase.replaceOrThrow(TABLE_NAME, null, contentValues);
         } catch (SQLException e) {
             throw new DatabaseIOException(e);
@@ -54,7 +54,7 @@ public final class VersionTable {
     public static int getVersion(SQLiteDatabase sQLiteDatabase, int i, String str) throws DatabaseIOException {
         try {
             if (Util.tableExists(sQLiteDatabase, TABLE_NAME)) {
-                Cursor query = sQLiteDatabase.query(TABLE_NAME, new String[]{"version"}, WHERE_FEATURE_AND_INSTANCE_UID_EQUALS, featureAndInstanceUidArguments(i, str), null, null, null);
+                Cursor query = sQLiteDatabase.query(TABLE_NAME, new String[]{COLUMN_VERSION}, WHERE_FEATURE_AND_INSTANCE_UID_EQUALS, featureAndInstanceUidArguments(i, str), null, null, null);
                 if (query.getCount() == 0) {
                     if (query != null) {
                         query.close();

@@ -2,7 +2,6 @@ package com.google.android.gms.common;
 
 import android.os.RemoteException;
 import android.util.Log;
-import com.android.internal.http.multipart.FilePart;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.dynamic.IObjectWrapper;
 import com.google.android.gms.dynamic.ObjectWrapper;
@@ -23,7 +22,7 @@ public abstract class zzj extends com.google.android.gms.common.internal.zzw {
     /* JADX INFO: Access modifiers changed from: protected */
     public static byte[] zzf(String str) {
         try {
-            return str.getBytes(FilePart.DEFAULT_CHARSET);
+            return str.getBytes("ISO-8859-1");
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

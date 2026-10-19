@@ -1,6 +1,5 @@
 package androidx.compose.ui.graphics;
 
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -90,6 +89,6 @@ public final class StrokeJoin {
 
     /* renamed from: toString-impl  reason: not valid java name */
     public static String m5730toStringimpl(int i) {
-        return m5728equalsimpl0(i, Miter) ? "Miter" : m5728equalsimpl0(i, Round) ? "Round" : m5728equalsimpl0(i, Bevel) ? "Bevel" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+        return m5728equalsimpl0(i, Miter) ? "Miter" : m5728equalsimpl0(i, Round) ? "Round" : m5728equalsimpl0(i, Bevel) ? "Bevel" : "Unknown";
     }
 }

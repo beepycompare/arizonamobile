@@ -96,7 +96,7 @@ final class DialogBankTaxPaymentAdapter extends RecyclerView.Adapter<ViewHolder>
             ChatEmoji chatEmoji = ChatEmoji.INSTANCE;
             String name = item.getName();
             if (StringsKt.isBlank(name)) {
-                name = "-";
+                name = EMPTY_CELL;
             }
             textView.setText(ChatEmoji.toSpannable$default(chatEmoji, name, 0.0f, null, 3, null));
             dialogBankTaxPaymentItemBinding.bankTaxPaymentItemAmount.setText(DialogBankTaxPaymentKt.access$toDialogBankTaxPaymentMoneyText(item.getTax()));

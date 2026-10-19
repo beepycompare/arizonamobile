@@ -134,7 +134,7 @@ public abstract class BaseRoomConnectionManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void configureDatabase(SQLiteConnection sQLiteConnection) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         configureBusyTimeout(sQLiteConnection);
         configureJournalMode(sQLiteConnection);
         configureSynchronousFlag(sQLiteConnection);
@@ -155,19 +155,19 @@ public abstract class BaseRoomConnectionManager {
                         onMigrate(sQLiteConnection, i, getOpenDelegate().getVersion());
                     }
                     SQLite.execSQL(sQLiteConnection, "PRAGMA user_version = " + getOpenDelegate().getVersion());
-                    m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
+                    m9974constructorimpl = Result.m9974constructorimpl(Unit.INSTANCE);
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                    m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
                 }
-                if (Result.m9928isSuccessimpl(m9921constructorimpl)) {
-                    Unit unit = (Unit) m9921constructorimpl;
+                if (Result.m9981isSuccessimpl(m9974constructorimpl)) {
+                    Unit unit = (Unit) m9974constructorimpl;
                     SQLite.execSQL(sQLiteConnection, "END TRANSACTION");
                 }
-                Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-                if (m9924exceptionOrNullimpl != null) {
+                Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+                if (m9977exceptionOrNullimpl != null) {
                     SQLite.execSQL(sQLiteConnection, "ROLLBACK TRANSACTION");
-                    throw m9924exceptionOrNullimpl;
+                    throw m9977exceptionOrNullimpl;
                 }
             }
             onOpen(sQLiteConnection);
@@ -322,7 +322,7 @@ public abstract class BaseRoomConnectionManager {
     }
 
     private final void checkIdentity(SQLiteConnection sQLiteConnection) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         RoomOpenDelegate.ValidationResult onValidateSchema;
         if (hasRoomMasterTable(sQLiteConnection)) {
             SQLiteStatement prepare = sQLiteConnection.prepare(RoomMasterTable.READ_QUERY);
@@ -350,24 +350,24 @@ public abstract class BaseRoomConnectionManager {
             onValidateSchema = getOpenDelegate().onValidateSchema(sQLiteConnection);
         } catch (Throwable th3) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th3));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th3));
         }
         if (!onValidateSchema.isValid) {
             throw new IllegalStateException(("Pre-packaged database has an invalid schema: " + onValidateSchema.expectedFoundMsg).toString());
         }
         getOpenDelegate().onPostMigrate(sQLiteConnection);
         updateIdentity(sQLiteConnection);
-        m9921constructorimpl = Result.m9921constructorimpl(Unit.INSTANCE);
-        if (Result.m9928isSuccessimpl(m9921constructorimpl)) {
-            Unit unit = (Unit) m9921constructorimpl;
+        m9974constructorimpl = Result.m9974constructorimpl(Unit.INSTANCE);
+        if (Result.m9981isSuccessimpl(m9974constructorimpl)) {
+            Unit unit = (Unit) m9974constructorimpl;
             SQLite.execSQL(sQLiteConnection, "END TRANSACTION");
         }
-        Throwable m9924exceptionOrNullimpl = Result.m9924exceptionOrNullimpl(m9921constructorimpl);
-        if (m9924exceptionOrNullimpl != null) {
+        Throwable m9977exceptionOrNullimpl = Result.m9977exceptionOrNullimpl(m9974constructorimpl);
+        if (m9977exceptionOrNullimpl != null) {
             SQLite.execSQL(sQLiteConnection, "ROLLBACK TRANSACTION");
-            throw m9924exceptionOrNullimpl;
+            throw m9977exceptionOrNullimpl;
         } else {
-            Result.m9920boximpl(m9921constructorimpl);
+            Result.m9973boximpl(m9974constructorimpl);
         }
     }
 

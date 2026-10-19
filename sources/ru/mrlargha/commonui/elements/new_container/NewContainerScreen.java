@@ -62,7 +62,7 @@ public final class NewContainerScreen extends SAMPUIElement {
         }
         this.imageCdnPath = str;
         constraintLayout.setClickable(true);
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         bind.listAwardsPremium.setAdapter(newContainerAwardsAdapter);
         EasyAnimation easyAnimation = EasyAnimation.INSTANCE;
         CardView actionButton = bind.actionButton;

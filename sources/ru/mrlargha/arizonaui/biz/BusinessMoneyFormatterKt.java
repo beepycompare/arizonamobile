@@ -1,17 +1,17 @@
 package ru.mrlargha.arizonaui.biz;
 
 import android.text.SpannableString;
-import com.google.android.vending.expansion.downloader.Constants;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 /* compiled from: BusinessMoneyFormatter.kt */
-@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\r\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\u001a\f\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0000\u001a\f\u0010\u0007\u001a\u00020\u0005*\u00020\bH\u0000\u001a\f\u0010\t\u001a\u00020\n*\u00020\bH\u0000\u001a\u0010\u0010\u000b\u001a\u00020\n2\u0006\u0010\f\u001a\u00020\nH\u0002\u001a\f\u0010\r\u001a\u00020\n*\u00020\nH\u0002\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"NON_BREAKING_SPACE", "", "MONEY_PATTERN", "Lkotlin/text/Regex;", "toBusinessMoneySpannable", "Landroid/text/SpannableString;", "", "toBusinessCashSpannable", "", "toBusinessMoneyAmount", "", "normalizeBusinessMoneyText", "text", "withNonBreakingSpaces", "business"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0000\n\u0002\u0010\f\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\r\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\u001a\f\u0010\u0004\u001a\u00020\u0005*\u00020\u0006H\u0000\u001a\f\u0010\u0007\u001a\u00020\u0005*\u00020\bH\u0000\u001a\f\u0010\t\u001a\u00020\n*\u00020\bH\u0000\u001a\u0010\u0010\u000b\u001a\u00020\n2\u0006\u0010\f\u001a\u00020\nH\u0002\u001a\u0018\u0010\r\u001a\u00020\n2\u0006\u0010\u000e\u001a\u00020\n2\u0006\u0010\u000f\u001a\u00020\bH\u0002\u001a\f\u0010\u0010\u001a\u00020\n*\u00020\nH\u0002\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"NON_BREAKING_SPACE", "", "MONEY_PATTERN", "Lkotlin/text/Regex;", "toBusinessMoneySpannable", "Landroid/text/SpannableString;", "", "toBusinessCashSpannable", "", "toBusinessMoneyAmount", "", "normalizeBusinessMoneyText", "text", "formatRecognizedBusinessAmount", "sign", "amount", "withNonBreakingSpaces", "business"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class BusinessMoneyFormatterKt {
     private static final Regex MONEY_PATTERN = new Regex("(?i)(:cash:|\\$)\\s*([+-]?[0-9](?:[0-9.,\\s]*[0-9])?)");
@@ -23,12 +23,12 @@ public final class BusinessMoneyFormatterKt {
     }
 
     public static final SpannableString toBusinessCashSpannable(long j) {
-        return ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, ":cash: " + toBusinessMoneyAmount(j), 0.8f, null, 2, null);
+        return ChatEmoji.toSpannable$default(ChatEmoji.INSTANCE, formatRecognizedBusinessAmount(j < 0 ? "-" : "", j == Long.MIN_VALUE ? Long.MAX_VALUE : Math.abs(j)), 0.8f, null, 2, null);
     }
 
     public static final String toBusinessMoneyAmount(long j) {
         long abs = j == Long.MIN_VALUE ? Long.MAX_VALUE : Math.abs(j);
-        return (j < 0 ? Constants.FILENAME_SEQUENCE_SEPARATOR : "") + withNonBreakingSpaces(MoneyFormatter.INSTANCE.formatPlain(abs));
+        return (j < 0 ? "-" : "") + withNonBreakingSpaces(MoneyFormatter.INSTANCE.formatPlain(abs));
     }
 
     private static final String normalizeBusinessMoneyText(String str) {
@@ -42,7 +42,6 @@ public final class BusinessMoneyFormatterKt {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final CharSequence normalizeBusinessMoneyText$lambda$0(MatchResult result) {
-        Long longOrNull;
         Intrinsics.checkNotNullParameter(result, "result");
         String obj = StringsKt.trim((CharSequence) result.getGroupValues().get(2)).toString();
         Character firstOrNull = StringsKt.firstOrNull(obj);
@@ -67,10 +66,26 @@ public final class BusinessMoneyFormatterKt {
                 sb.append(charAt);
             }
         }
-        if (StringsKt.toLongOrNull(sb.toString()) == null) {
+        Long longOrNull = StringsKt.toLongOrNull(sb.toString());
+        if (longOrNull == null) {
             return result.getValue();
         }
-        return ":cash: " + str + withNonBreakingSpaces(MoneyFormatter.INSTANCE.formatPlain(longOrNull.longValue()));
+        return formatRecognizedBusinessAmount(str, longOrNull.longValue());
+    }
+
+    private static final String formatRecognizedBusinessAmount(String str, long j) {
+        String str2;
+        if (!UtilsKt.isArizonaType()) {
+            return ":cash: " + str + withNonBreakingSpaces(MoneyFormatter.INSTANCE.formatPlain(j));
+        }
+        String str3 = "-";
+        long j2 = (!Intrinsics.areEqual(str, "-") || j == 0) ? j : -j;
+        if (Intrinsics.areEqual(str, "+")) {
+            str2 = "+";
+        } else {
+            str2 = (Intrinsics.areEqual(str, "-") && j == 0) ? "" : "";
+        }
+        return StringsKt.replace$default(MoneyFormatter.format$default(MoneyFormatter.INSTANCE, j2, false, str2, null, 10, null), ' ', (char) 160, false, 4, (Object) null);
     }
 
     private static final String withNonBreakingSpaces(String str) {

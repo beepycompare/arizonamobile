@@ -13,7 +13,6 @@ import androidx.compose.ui.graphics.Color;
 import androidx.compose.ui.graphics.Shape;
 import androidx.compose.ui.unit.Dp;
 import androidx.compose.ui.unit.DpKt;
-import com.facebook.internal.AnalyticsEvents;
 import kotlin.Metadata;
 import kotlin.jvm.JvmInline;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -975,7 +974,7 @@ public final class IconButtonDefaults {
 
         /* renamed from: toString-impl  reason: not valid java name */
         public static String m2598toStringimpl(int i) {
-            return m2596equalsimpl0(i, Narrow) ? "Narrow" : m2596equalsimpl0(i, Uniform) ? "Uniform" : m2596equalsimpl0(i, Wide) ? "Wide" : AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+            return m2596equalsimpl0(i, Narrow) ? "Narrow" : m2596equalsimpl0(i, Uniform) ? "Uniform" : m2596equalsimpl0(i, Wide) ? "Wide" : "Unknown";
         }
     }
 }

@@ -17,7 +17,7 @@ import androidx.constraintlayout.core.state.helpers.FlowReference;
 import androidx.constraintlayout.core.state.helpers.GridReference;
 import androidx.constraintlayout.core.state.helpers.GuidelineReference;
 import androidx.media3.extractor.text.ttml.TtmlNode;
-import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.reactivex.annotations.SchedulerSupport;
 import java.util.ArrayList;
@@ -638,7 +638,7 @@ public class ConstraintSetParser {
                     String str3 = names2.get(i);
                     CLObject cLObject2 = (CLObject) cLObject.get(str3);
                     System.out.printf("element found " + str3 + "", new Object[0]);
-                    String stringOrNull = cLObject2.getStringOrNull("type");
+                    String stringOrNull = cLObject2.getStringOrNull(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
                     if (stringOrNull != null) {
                         HashMap hashMap = new HashMap();
                         int size = cLObject2.size();
@@ -1064,7 +1064,7 @@ public class ConstraintSetParser {
                     }
                     break;
                 case 97513095:
-                    if (next.equals(DownloaderServiceMarshaller.PARAMS_FLAGS)) {
+                    if (next.equals("flags")) {
                         c = 6;
                         break;
                     }
@@ -1339,7 +1339,7 @@ public class ConstraintSetParser {
                     c = 65535;
                     break;
                 case 3575610:
-                    if (next.equals("type")) {
+                    if (next.equals(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY)) {
                         c = '\n';
                         break;
                     }
@@ -2993,8 +2993,8 @@ public class ConstraintSetParser {
     static String lookForType(CLObject cLObject) throws CLParsingException {
         Iterator<String> it = cLObject.names().iterator();
         while (it.hasNext()) {
-            if (it.next().equals("type")) {
-                return cLObject.getString("type");
+            if (it.next().equals(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY)) {
+                return cLObject.getString(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
             }
         }
         return null;

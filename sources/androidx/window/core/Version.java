@@ -1,6 +1,5 @@
 package androidx.window.core;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.math.BigInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -78,7 +77,7 @@ public final class Version implements Comparable<Version> {
     public String toString() {
         String str;
         if (!StringsKt.isBlank(this.description)) {
-            str = Constants.FILENAME_SEQUENCE_SEPARATOR + this.description;
+            str = "-" + this.description;
         } else {
             str = "";
         }

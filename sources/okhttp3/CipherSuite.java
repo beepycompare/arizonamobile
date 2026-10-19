@@ -1,5 +1,6 @@
 package okhttp3;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.media3.extractor.ts.TsExtractor;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -155,7 +156,7 @@ public final class CipherSuite {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "javaName", imports = {}))
     /* renamed from: -deprecated_javaName  reason: not valid java name */
-    public final String m11673deprecated_javaName() {
+    public final String m11726deprecated_javaName() {
         return this.javaName;
     }
 
@@ -289,8 +290,8 @@ public final class CipherSuite {
         TLS_DHE_RSA_WITH_AES_128_CBC_SHA256 = companion.init("TLS_DHE_RSA_WITH_AES_128_CBC_SHA256", 103);
         TLS_DHE_DSS_WITH_AES_256_CBC_SHA256 = companion.init("TLS_DHE_DSS_WITH_AES_256_CBC_SHA256", 106);
         TLS_DHE_RSA_WITH_AES_256_CBC_SHA256 = companion.init("TLS_DHE_RSA_WITH_AES_256_CBC_SHA256", 107);
-        TLS_DH_anon_WITH_AES_128_CBC_SHA256 = companion.init("TLS_DH_anon_WITH_AES_128_CBC_SHA256", 108);
-        TLS_DH_anon_WITH_AES_256_CBC_SHA256 = companion.init("TLS_DH_anon_WITH_AES_256_CBC_SHA256", 109);
+        TLS_DH_anon_WITH_AES_128_CBC_SHA256 = companion.init("TLS_DH_anon_WITH_AES_128_CBC_SHA256", AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR);
+        TLS_DH_anon_WITH_AES_256_CBC_SHA256 = companion.init("TLS_DH_anon_WITH_AES_256_CBC_SHA256", AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY);
         TLS_RSA_WITH_CAMELLIA_256_CBC_SHA = companion.init("TLS_RSA_WITH_CAMELLIA_256_CBC_SHA", 132);
         TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA = companion.init("TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA", TsExtractor.TS_STREAM_TYPE_E_AC3);
         TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA = companion.init("TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA", TsExtractor.TS_STREAM_TYPE_DTS_HD);

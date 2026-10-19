@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.arizonagames.feature.minigames.atm.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ItemAtmSlotBinding implements ViewBinding {
     public final FrameLayout billsContainer;
     private final FrameLayout rootView;

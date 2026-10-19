@@ -22,7 +22,7 @@ import kotlin.UByte$$ExternalSyntheticBackport0;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class HeartBeatInfoStorage {
     private static final String HEARTBEAT_PREFERENCES_NAME = "FirebaseHeartBeat";
     private static final int HEART_BEAT_COUNT_LIMIT = 30;
@@ -50,23 +50,23 @@ public class HeartBeatInfoStorage {
         this.firebaseDataStore.editSync(new Function1() { // from class: com.google.firebase.heartbeatinfo.HeartBeatInfoStorage$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HeartBeatInfoStorage.this.m9738xe97e9b5a((MutablePreferences) obj);
+                return HeartBeatInfoStorage.this.m9779xe97e9b5a((MutablePreferences) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$deleteAllHeartBeats$0$com-google-firebase-heartbeatinfo-HeartBeatInfoStorage  reason: not valid java name */
-    public /* synthetic */ Unit m9738xe97e9b5a(MutablePreferences mutablePreferences) {
-        Set m9993m;
+    public /* synthetic */ Unit m9779xe97e9b5a(MutablePreferences mutablePreferences) {
+        Set m10046m;
         long j = 0;
         for (Map.Entry<Preferences.Key<?>, Object> entry : mutablePreferences.asMap().entrySet()) {
             if (entry.getValue() instanceof Set) {
                 Preferences.Key<?> key = entry.getKey();
                 String formattedDate = getFormattedDate(System.currentTimeMillis());
                 if (((Set) entry.getValue()).contains(formattedDate)) {
-                    m9993m = UByte$$ExternalSyntheticBackport0.m9993m(new Object[]{formattedDate});
-                    mutablePreferences.set(key, m9993m);
+                    m10046m = UByte$$ExternalSyntheticBackport0.m10046m(new Object[]{formattedDate});
+                    mutablePreferences.set(key, m10046m);
                     j++;
                 } else {
                     mutablePreferences.remove(key);
@@ -140,14 +140,14 @@ public class HeartBeatInfoStorage {
         this.firebaseDataStore.editSync(new Function1() { // from class: com.google.firebase.heartbeatinfo.HeartBeatInfoStorage$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HeartBeatInfoStorage.this.m9739x44e9f764(formattedDate, (MutablePreferences) obj);
+                return HeartBeatInfoStorage.this.m9780x44e9f764(formattedDate, (MutablePreferences) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$postHeartBeatCleanUp$1$com-google-firebase-heartbeatinfo-HeartBeatInfoStorage  reason: not valid java name */
-    public /* synthetic */ Unit m9739x44e9f764(String str, MutablePreferences mutablePreferences) {
+    public /* synthetic */ Unit m9780x44e9f764(String str, MutablePreferences mutablePreferences) {
         mutablePreferences.set(LAST_STORED_DATE, str);
         removeStoredDate(mutablePreferences, str);
         return null;
@@ -167,14 +167,14 @@ public class HeartBeatInfoStorage {
         this.firebaseDataStore.editSync(new Function1() { // from class: com.google.firebase.heartbeatinfo.HeartBeatInfoStorage$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
-                return HeartBeatInfoStorage.this.m9740x76ccc570(formattedDate, str, stringSetKey, (MutablePreferences) obj);
+                return HeartBeatInfoStorage.this.m9781x76ccc570(formattedDate, str, stringSetKey, (MutablePreferences) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$storeHeartBeat$2$com-google-firebase-heartbeatinfo-HeartBeatInfoStorage  reason: not valid java name */
-    public /* synthetic */ Unit m9740x76ccc570(String str, String str2, Preferences.Key key, MutablePreferences mutablePreferences) {
+    public /* synthetic */ Unit m9781x76ccc570(String str, String str2, Preferences.Key key, MutablePreferences mutablePreferences) {
         Preferences.Key<String> key2 = LAST_STORED_DATE;
         if (((String) JavaDataStorageKt.getOrDefault(mutablePreferences, key2, "")).equals(str)) {
             Preferences.Key<Set<String>> storedUserAgentString = getStoredUserAgentString(mutablePreferences, str);

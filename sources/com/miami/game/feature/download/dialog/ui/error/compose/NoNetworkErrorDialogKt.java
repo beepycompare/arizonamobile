@@ -152,12 +152,12 @@ public final class NoNetworkErrorDialogKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(-970643010, i2, -1, "com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogScreen (NoNetworkErrorDialog.kt:57)");
             }
-            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_no_network_background_icon), onDismiss, ComposableLambdaKt.rememberComposableLambda(1984279206, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogKt$$ExternalSyntheticLambda1
+            DialogFrameKt.DialogFrame(Integer.valueOf(R.drawable.dialog_frame_no_network_background_icon), onDismiss, null, ComposableLambdaKt.rememberComposableLambda(-101563609, true, new Function2() { // from class: com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     return NoNetworkErrorDialogKt.NoNetworkErrorDialogScreen$lambda$0(Function0.this, (Composer) obj, ((Integer) obj2).intValue());
                 }
-            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | RendererCapabilities.DECODER_SUPPORT_MASK, 0);
+            }, startRestartGroup, 54), startRestartGroup, ((i2 >> 6) & 112) | 3072, 4);
             function0 = onDismiss;
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventEnd();
@@ -181,7 +181,7 @@ public final class NoNetworkErrorDialogKt {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1984279206, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogScreen.<anonymous> (NoNetworkErrorDialog.kt:59)");
+                ComposerKt.traceEventStart(-101563609, i, -1, "com.miami.game.feature.download.dialog.ui.error.compose.NoNetworkErrorDialogScreen.<anonymous> (NoNetworkErrorDialog.kt:59)");
             }
             TextKt.m3157TextNvy7gAk("ОТСУТСТВИЕ СЕТИ", null, 0L, null, 0L, null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer, 6).getBodyMedium(), composer, 6, 0, 131070);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.dialog_frame_no_network_icon, composer, 0), (String) null, SizeKt.m1117size3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(100.0f)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, composer, Painter.$stable | 432, 120);
@@ -211,8 +211,8 @@ public final class NoNetworkErrorDialogKt {
             Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1499075866, "C71@2698L43,71@2672L191:NoNetworkErrorDialog.kt#d3gn1w");
-            ComposerKt.sourceInformationMarkerStart(composer, -921473355, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1742612729, "C71@2698L43,71@2672L191:NoNetworkErrorDialog.kt#d3gn1w");
+            ComposerKt.sourceInformationMarkerStart(composer, 333308662, "CC(remember):NoNetworkErrorDialog.kt#9igjgp");
             boolean changed = composer.changed(function0);
             Object rememberedValue = composer.rememberedValue();
             if (changed || rememberedValue == Composer.Companion.getEmpty()) {
@@ -227,7 +227,7 @@ public final class NoNetworkErrorDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue, false, ComposableSingletons$NoNetworkErrorDialogKt.INSTANCE.getLambda$286452819$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue, false, ComposableSingletons$NoNetworkErrorDialogKt.INSTANCE.m9851getLambda$1799389996$dialogs(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

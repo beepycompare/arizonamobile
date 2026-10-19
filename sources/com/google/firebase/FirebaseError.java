@@ -1,5 +1,5 @@
 package com.google.firebase;
-/* loaded from: classes4.dex */
+/* loaded from: classes5.dex */
 public class FirebaseError {
     public static final int ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL = 17012;
     public static final int ERROR_APP_NOT_AUTHORIZED = 17028;

@@ -2,6 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.ContentValues;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -9,7 +10,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class K7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H7 f627a;
+    public final H7 f630a;
 
     public K7() {
         this(null, 1, null);
@@ -19,25 +20,25 @@ public final class K7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(J7 j7) {
         ContentValues contentValues = new ContentValues();
-        Long l = j7.f610a;
+        Long l = j7.f613a;
         if (l != null) {
             contentValues.put(TtmlNode.ATTR_ID, Long.valueOf(l.longValue()));
         }
         Al al = j7.b;
         if (al != null) {
-            contentValues.put("type", Integer.valueOf(al.f465a));
+            contentValues.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, Integer.valueOf(al.f468a));
         }
         String str = j7.c;
         if (str != null) {
             contentValues.put("report_request_parameters", str);
         }
-        H7 h7 = this.f627a;
-        contentValues.put("session_description", MessageNano.toByteArray(h7.f576a.fromModel(j7.d)));
+        H7 h7 = this.f630a;
+        contentValues.put("session_description", MessageNano.toByteArray(h7.f579a.fromModel(j7.d)));
         return contentValues;
     }
 
     public K7(H7 h7) {
-        this.f627a = h7;
+        this.f630a = h7;
     }
 
     public /* synthetic */ K7(H7 h7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -50,7 +51,7 @@ public final class K7 implements Converter {
         Al al;
         int intValue;
         Long asLong = contentValues.getAsLong(TtmlNode.ATTR_ID);
-        Integer asInteger = contentValues.getAsInteger("type");
+        Integer asInteger = contentValues.getAsInteger(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
         if (asInteger != null) {
             Integer valueOf = Integer.valueOf(asInteger.intValue());
             al = Al.FOREGROUND;
@@ -60,6 +61,6 @@ public final class K7 implements Converter {
         } else {
             al = null;
         }
-        return new J7(asLong, al, contentValues.getAsString("report_request_parameters"), this.f627a.toModel(contentValues.getAsByteArray("session_description")));
+        return new J7(asLong, al, contentValues.getAsString("report_request_parameters"), this.f630a.toModel(contentValues.getAsByteArray("session_description")));
     }
 }

@@ -1,6 +1,7 @@
 package com.android.billingclient.api;
 
 import android.text.TextUtils;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import org.json.JSONException;
@@ -29,7 +30,7 @@ public final class UnfetchedProduct {
         this.jsonString = str;
         JSONObject jSONObject = new JSONObject(str);
         this.productId = jSONObject.optString("productId");
-        String optString = jSONObject.optString("type");
+        String optString = jSONObject.optString(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
         this.productType = optString;
         this.statusCode = jSONObject.has("statusCode") ? jSONObject.optInt("statusCode") : 0;
         if (TextUtils.isEmpty(optString)) {

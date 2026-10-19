@@ -5,21 +5,21 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class N5 implements Z8, InterfaceC0424m9 {
+public final class N5 implements Z8, InterfaceC0419m9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0164c7 f680a;
+    public final C0159c7 f683a;
     public final AtomicLong b;
 
-    public N5(C0164c7 c0164c7) {
-        this.f680a = c0164c7;
-        this.b = new AtomicLong(c0164c7.a(Eo.a()));
-        c0164c7.a(this);
+    public N5(C0159c7 c0159c7) {
+        this.f683a = c0159c7;
+        this.b = new AtomicLong(c0159c7.a(Eo.a()));
+        c0159c7.a(this);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0424m9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0419m9
     public final void a() {
-        this.b.set(this.f680a.a(Eo.f536a));
+        this.b.set(this.f683a.a(Eo.f539a));
     }
 
     @Override // io.appmetrica.analytics.impl.Z8
@@ -27,12 +27,12 @@ public final class N5 implements Z8, InterfaceC0424m9 {
         return this.b.get() > 0;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0424m9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0419m9
     public final void b(List<Integer> list) {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (Number number : list) {
-                if (Eo.f536a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
+                if (Eo.f539a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
                     CollectionsKt.throwCountOverflow();
                 }
             }
@@ -40,12 +40,12 @@ public final class N5 implements Z8, InterfaceC0424m9 {
         this.b.addAndGet(-i);
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0424m9
+    @Override // io.appmetrica.analytics.impl.InterfaceC0419m9
     public final void a(List<Integer> list) {
         int i = 0;
         if (!(list instanceof Collection) || !list.isEmpty()) {
             for (Number number : list) {
-                if (Eo.f536a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
+                if (Eo.f539a.contains(Integer.valueOf(number.intValue())) && (i = i + 1) < 0) {
                     CollectionsKt.throwCountOverflow();
                 }
             }

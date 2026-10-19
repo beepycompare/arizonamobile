@@ -8,17 +8,17 @@ import kotlin.Metadata;
 public final class FeatureConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Set f1430a;
+    private final Set f1433a;
 
     public FeatureConfig(Set<String> set) {
-        this.f1430a = set;
+        this.f1433a = set;
     }
 
     public final Set<String> getPermittedPermissions() {
-        return this.f1430a;
+        return this.f1433a;
     }
 
     public String toString() {
-        return "FeatureConfig(permittedPermissions=" + this.f1430a + ')';
+        return "FeatureConfig(permittedPermissions=" + this.f1433a + ')';
     }
 }

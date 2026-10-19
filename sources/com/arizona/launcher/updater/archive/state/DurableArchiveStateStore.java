@@ -7,7 +7,6 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import coil3.util.UtilsKt;
 import com.arizona.launcher.updater.archive.io.AndroidArchiveDirectoryCreator;
 import com.arizona.launcher.updater.archive.state.ArchiveStateLoadResult;
-import com.facebook.internal.AnalyticsEvents;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -350,7 +349,7 @@ public final class DurableArchiveStateStore {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: DurableArchiveStateStore.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b2\u0018\u00002\u00020\u0001:\u0002\u0004\u0005B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\u0002\u0006\u0007¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore$ParseOutcome;", "", "<init>", "()V", "Ok", AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_FAILED, "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore$ParseOutcome$Failed;", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore$ParseOutcome$Ok;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\b2\u0018\u00002\u00020\u0001:\u0002\u0004\u0005B\t\b\u0004¢\u0006\u0004\b\u0002\u0010\u0003\u0082\u0001\u0002\u0006\u0007¨\u0006\b"}, d2 = {"Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore$ParseOutcome;", "", "<init>", "()V", "Ok", "Failed", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore$ParseOutcome$Failed;", "Lcom/arizona/launcher/updater/archive/state/DurableArchiveStateStore$ParseOutcome$Ok;", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static abstract class ParseOutcome {
         public /* synthetic */ ParseOutcome(DefaultConstructorMarker defaultConstructorMarker) {

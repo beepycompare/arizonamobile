@@ -1,5 +1,6 @@
 package androidx.paging;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.paging.PageFetcher;
 import androidx.paging.PagingSource;
@@ -176,7 +177,7 @@ public final class PageFetcher$flow$1<Value> extends SuspendLambda implements Fu
     /* JADX INFO: Add missing generic type declarations: [Key] */
     /* compiled from: PageFetcher.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0003\u0018\u00010\u0001\"\b\b\u0000\u0010\u0002*\u00020\u0004\"\b\b\u0001\u0010\u0003*\u00020\u00042\u0014\u0010\u0005\u001a\u0010\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u0003\u0018\u00010\u00012\u0006\u0010\u0006\u001a\u00020\u0007H\n"}, d2 = {"<anonymous>", "Landroidx/paging/PageFetcher$GenerationInfo;", "Key", "Value", "", "currentGeneration", "loadRequest", "Landroidx/paging/PageFetcher$LoadRequest;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-    @DebugMetadata(c = "androidx.paging.PageFetcher$flow$1$2", f = "PageFetcher.kt", i = {1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5}, l = {90, 108, 112, 162, 168, 211}, m = "invokeSuspend", n = {"currentGeneration", "loadRequest", "currentGeneration", "loadRequest", "newPagingSource", "currentPagingState", "currentGeneration", "newPagingSource", "currentPagingState", "item", "currentGeneration", "newPagingSource", "currentPagingState", "currentGeneration"}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$0"}, v = 1)
+    @DebugMetadata(c = "androidx.paging.PageFetcher$flow$1$2", f = "PageFetcher.kt", i = {1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5}, l = {90, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, 112, 162, 168, 211}, m = "invokeSuspend", n = {"currentGeneration", "loadRequest", "currentGeneration", "loadRequest", "newPagingSource", "currentPagingState", "currentGeneration", "newPagingSource", "currentPagingState", "item", "currentGeneration", "newPagingSource", "currentPagingState", "currentGeneration"}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$0"}, v = 1)
     /* renamed from: androidx.paging.PageFetcher$flow$1$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2<Key> extends SuspendLambda implements Function3<PageFetcher.GenerationInfo<Key, Value>, PageFetcher.LoadRequest, Continuation<? super PageFetcher.GenerationInfo<Key, Value>>, Object> {

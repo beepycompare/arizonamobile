@@ -24,31 +24,31 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
 public final class Ek implements ServiceContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ModuleServiceLifecycleController f533a;
-    public final C0610te b = new C0610te(getContext());
-    public final C0765zd c = new C0765zd();
-    public final C0229el d = new C0229el(getContext(), new C0204dl(new Z1()));
-    public final C0152bl e = new C0152bl(getContext(), Na.k().y(), Na.k().B().f(getContext()));
+    public final ModuleServiceLifecycleController f536a;
+    public final C0605te b = new C0605te(getContext());
+    public final C0760zd c = new C0760zd();
+    public final C0224el d = new C0224el(getContext(), new C0199dl(new Z1()));
+    public final C0147bl e = new C0147bl(getContext(), Na.k().y(), Na.k().B().f(getContext()));
     public final S9 f = new S9();
     public final H6 g = new H6();
 
     public Ek(ModuleServiceLifecycleController moduleServiceLifecycleController) {
-        this.f533a = moduleServiceLifecycleController;
+        this.f536a = moduleServiceLifecycleController;
     }
 
-    public final C0610te a() {
+    public final C0605te a() {
         return this.b;
     }
 
-    public final C0765zd b() {
+    public final C0760zd b() {
         return this.c;
     }
 
-    public final C0152bl c() {
+    public final C0147bl c() {
         return this.e;
     }
 
-    public final C0229el d() {
+    public final C0224el d() {
         return this.d;
     }
 
@@ -69,25 +69,25 @@ public final class Ek implements ServiceContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
     public final ChargeTypeProvider getChargeTypeProvider() {
-        C0211e3 c0211e3;
+        C0206e3 c0206e3;
         Na na = Na.I;
-        C0211e3 c0211e32 = na.e;
-        if (c0211e32 == null) {
+        C0206e3 c0206e32 = na.e;
+        if (c0206e32 == null) {
             synchronized (na) {
-                c0211e3 = na.e;
-                if (c0211e3 == null) {
-                    c0211e3 = new C0211e3(na.d.a(), na.l().f1014a);
-                    na.e = c0211e3;
+                c0206e3 = na.e;
+                if (c0206e3 == null) {
+                    c0206e3 = new C0206e3(na.d.a(), na.l().f1017a);
+                    na.e = c0206e3;
                 }
             }
-            return c0211e3;
+            return c0206e3;
         }
-        return c0211e32;
+        return c0206e32;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
     public final Context getContext() {
-        return Na.I.f683a;
+        return Na.I.f686a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
@@ -117,7 +117,7 @@ public final class Ek implements ServiceContext {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext
     public final ModuleServiceLifecycleController getModuleServiceLifecycleController() {
-        return this.f533a;
+        return this.f536a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceContext

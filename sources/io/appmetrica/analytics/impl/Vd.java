@@ -8,18 +8,18 @@ import io.appmetrica.analytics.internal.IdentifiersResult;
 public final class Vd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f811a;
-    public final InterfaceC0426mb b;
+    public final Context f814a;
+    public final InterfaceC0421mb b;
     public final R9 c;
-    public final C0146bf d;
+    public final C0141bf d;
     public final So e;
     public volatile IdentifiersResult f;
 
-    public Vd(Context context, InterfaceC0426mb interfaceC0426mb) {
-        this(context, interfaceC0426mb, Wd.a(context), new C0146bf(context), new So());
+    public Vd(Context context, InterfaceC0421mb interfaceC0421mb) {
+        this(context, interfaceC0421mb, Wd.a(context), new C0141bf(context), new So());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0089  */
     /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -36,7 +36,7 @@ public final class Vd {
         }
         try {
             R9 r9 = this.c;
-            r9.f744a.lock();
+            r9.f747a.lock();
             r9.b.a();
             identifiersResult = this.f;
         } catch (Throwable unused) {
@@ -48,14 +48,14 @@ public final class Vd {
             if (So.a(str2)) {
                 R9 r92 = this.c;
                 r92.b.b();
-                r92.f744a.unlock();
+                r92.f747a.unlock();
                 return identifiersResult == null ? identifiersResult : new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "Uuid must be obtained via async API AppMetrica#requestStartupParams(Context, StartupParamsCallback, List<String>)");
             }
         }
-        String a2 = AbstractC0400lb.a(FileUtils.getFileFromSdkStorage(this.d.f910a, "uuid.dat"));
+        String a2 = AbstractC0395lb.a(FileUtils.getFileFromSdkStorage(this.d.f913a, "uuid.dat"));
         this.e.getClass();
         if (!So.a(a2)) {
-            a2 = this.d.a(this.b.a(this.f811a));
+            a2 = this.d.a(this.b.a(this.f814a));
         }
         this.e.getClass();
         if (So.a(a2)) {
@@ -68,20 +68,20 @@ public final class Vd {
         }
         R9 r922 = this.c;
         r922.b.b();
-        r922.f744a.unlock();
+        r922.f747a.unlock();
         if (identifiersResult == null) {
         }
     }
 
-    public Vd(Context context, InterfaceC0426mb interfaceC0426mb, R9 r9, C0146bf c0146bf, So so) {
-        this.f811a = context;
-        this.b = interfaceC0426mb;
+    public Vd(Context context, InterfaceC0421mb interfaceC0421mb, R9 r9, C0141bf c0141bf, So so) {
+        this.f814a = context;
+        this.b = interfaceC0421mb;
         this.c = r9;
-        this.d = c0146bf;
+        this.d = c0141bf;
         this.e = so;
         try {
             r9.a();
-            c0146bf.a();
+            c0141bf.a();
             r9.b();
         } catch (Throwable unused) {
             this.c.b();

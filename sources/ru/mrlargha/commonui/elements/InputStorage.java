@@ -96,9 +96,9 @@ public final class InputStorage {
     public final String GetKeyboardHistoryText(int i) {
         try {
             String str = this.arrayHistory.get(i);
-            Intrinsics.checkNotNull(str);
+            Intrinsics.checkNotNullExpressionValue(str, "get(...)");
             return str;
-        } catch (ArrayIndexOutOfBoundsException unused) {
+        } catch (Exception unused) {
             return "";
         }
     }

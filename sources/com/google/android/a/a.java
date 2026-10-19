@@ -9,12 +9,12 @@ import android.os.RemoteException;
 public class a implements IInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IBinder f206a;
+    private final IBinder f208a;
     private final String b = "com.google.android.finsky.externalreferrer.IGetInstallReferrerService";
 
     /* JADX INFO: Access modifiers changed from: protected */
     public a(IBinder iBinder) {
-        this.f206a = iBinder;
+        this.f208a = iBinder;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -26,7 +26,7 @@ public class a implements IInterface {
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f206a;
+        return this.f208a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -34,7 +34,7 @@ public class a implements IInterface {
         Parcel obtain = Parcel.obtain();
         try {
             try {
-                this.f206a.transact(1, parcel, obtain, 0);
+                this.f208a.transact(1, parcel, obtain, 0);
                 obtain.readException();
                 return obtain;
             } catch (RuntimeException e) {

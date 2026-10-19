@@ -16,10 +16,8 @@ import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.view.InputDeviceCompat;
 import androidx.exifinterface.media.ExifInterfaceUtils;
 import androidx.media3.common.MimeTypes;
-import com.android.internal.http.multipart.StringPart;
 import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
-import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.Ascii;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
@@ -595,7 +593,7 @@ public class ExifInterface {
         sExifTagMapsForWriting = new HashMap[exifTagArr11.length];
         RATIONAL_TAGS_HANDLED_AS_DECIMALS_FOR_COMPATIBILITY = Collections.unmodifiableSet(new HashSet(Arrays.asList(TAG_F_NUMBER, TAG_DIGITAL_ZOOM_RATIO, TAG_EXPOSURE_TIME, TAG_SUBJECT_DISTANCE)));
         sExifPointerTagMap = new HashMap<>();
-        Charset forName = Charset.forName(StringPart.DEFAULT_CHARSET);
+        Charset forName = Charset.forName("US-ASCII");
         ASCII = forName;
         IDENTIFIER_EXIF_APP1 = "Exif\u0000\u0000".getBytes(forName);
         IDENTIFIER_XMP_APP1 = "http://ns.adobe.com/xap/1.0/\u0000".getBytes(forName);
@@ -1511,7 +1509,7 @@ public class ExifInterface {
                     Log.w(TAG, "Invalid value for " + str3 + " : " + str4);
                     return;
                 } else if (find2) {
-                    str4 = str4.replaceAll(Constants.FILENAME_SEQUENCE_SEPARATOR, StringUtils.PROCESS_POSTFIX_DELIMITER);
+                    str4 = str4.replaceAll("-", StringUtils.PROCESS_POSTFIX_DELIMITER);
                 }
             }
         }
@@ -2419,9 +2417,9 @@ public class ExifInterface {
                     String substring = str3.substring(0, 1);
                     int parseInt = Integer.parseInt(str3.substring(1, 3));
                     int parseInt2 = Integer.parseInt(str3.substring(4, 6));
-                    if (("+".equals(substring) || Constants.FILENAME_SEQUENCE_SEPARATOR.equals(substring)) && StringUtils.PROCESS_POSTFIX_DELIMITER.equals(str3.substring(3, 4)) && parseInt <= 14) {
+                    if (("+".equals(substring) || "-".equals(substring)) && StringUtils.PROCESS_POSTFIX_DELIMITER.equals(str3.substring(3, 4)) && parseInt <= 14) {
                         int i2 = ((parseInt * 60) + parseInt2) * 60000;
-                        if (!Constants.FILENAME_SEQUENCE_SEPARATOR.equals(substring)) {
+                        if (!"-".equals(substring)) {
                             i = -1;
                         }
                         time += i2 * i;

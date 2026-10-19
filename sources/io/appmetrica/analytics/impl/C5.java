@@ -5,6 +5,6 @@ import java.util.ArrayList;
 public final class C5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Object f490a;
+    public Object f493a;
     public final ArrayList b = new ArrayList();
 }

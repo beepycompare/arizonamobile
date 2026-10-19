@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Fg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hg f549a;
+    public final Hg f552a;
     public volatile Lg b;
 
     public Fg(T9 t9) {
-        this.f549a = t9;
+        this.f552a = t9;
     }
 
     public final void a() {
-        this.f549a.a(new Eg(this));
+        this.f552a.a(new Eg(this));
     }
 }

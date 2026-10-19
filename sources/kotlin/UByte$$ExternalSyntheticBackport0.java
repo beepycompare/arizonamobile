@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 /* compiled from: D8$$SyntheticClass */
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     public static /* synthetic */ int m(byte b) {
         return b & 255;
@@ -24,7 +24,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ long m9990m(long j, long j2) {
+    public static /* synthetic */ long m10043m(long j, long j2) {
         if (j2 < 0) {
             return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? 0L : 1L;
         } else if (j >= 0) {
@@ -36,7 +36,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ String m9991m(int i, int i2) {
+    public static /* synthetic */ String m10044m(int i, int i2) {
         return Long.toString(i & 4294967295L, i2);
     }
 
@@ -60,14 +60,14 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
                 j >>>= numberOfTrailingZeros;
             } while (j != 0);
         } else {
-            long m9990m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : m9990m(j, i);
+            long m10043m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : m10043m(j, i);
             long j2 = i;
-            cArr[63] = Character.forDigit((int) (j - (m9990m * j2)), i);
+            cArr[63] = Character.forDigit((int) (j - (m10043m * j2)), i);
             i3 = 63;
-            while (m9990m > 0) {
+            while (m10043m > 0) {
                 i3--;
-                cArr[i3] = Character.forDigit((int) (m9990m % j2), i);
-                m9990m /= j2;
+                cArr[i3] = Character.forDigit((int) (m10043m % j2), i);
+                m10043m /= j2;
             }
         }
         return new String(cArr, i3, 64 - i3);
@@ -94,7 +94,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ Set m9993m(Object[] objArr) {
+    public static /* synthetic */ Set m10046m(Object[] objArr) {
         HashSet hashSet = new HashSet(objArr.length);
         for (Object obj : objArr) {
             if (!hashSet.add(Objects.requireNonNull(obj))) {
@@ -105,7 +105,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ void m9994m(Object obj) {
+    public static /* synthetic */ void m10047m(Object obj) {
         if (obj instanceof AutoCloseable) {
             ((AutoCloseable) obj).close();
         } else if (obj instanceof ExecutorService) {
@@ -144,7 +144,7 @@ public final /* synthetic */ class UByte$$ExternalSyntheticBackport0 {
     }
 
     /* renamed from: m  reason: collision with other method in class */
-    public static /* synthetic */ boolean m9995m(String str) {
+    public static /* synthetic */ boolean m10048m(String str) {
         int length = str.length();
         int i = 0;
         while (i < length) {

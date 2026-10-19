@@ -22,6 +22,7 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
     public final MobileRentAccessoryElementItemBinding firstItem;
     public final MobileRentAccessoryElementItemBinding fourthItem;
     public final ImageView ivCategory;
+    public final ImageView ivCostCurrency;
     public final CustomCardView locationContainer;
     public final CustomCardView onlineContainer;
     public final LinearLayout passContainer;
@@ -41,7 +42,7 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
     public final TextView tvRent;
     public final TextView tvTime;
 
-    private MobileRentAccessoryItemBinding(CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, CustomCardView customCardView6, CustomCardView customCardView7, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding3, ImageView imageView, CustomCardView customCardView8, CustomCardView customCardView9, LinearLayout linearLayout, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding4, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding5, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding6, CustomCardView customCardView10, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10) {
+    private MobileRentAccessoryItemBinding(CustomCardView customCardView, CustomCardView customCardView2, CustomCardView customCardView3, CustomCardView customCardView4, CustomCardView customCardView5, CustomCardView customCardView6, CustomCardView customCardView7, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding2, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding3, ImageView imageView, ImageView imageView2, CustomCardView customCardView8, CustomCardView customCardView9, LinearLayout linearLayout, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding4, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding5, MobileRentAccessoryElementItemBinding mobileRentAccessoryElementItemBinding6, CustomCardView customCardView10, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10) {
         this.rootView = customCardView;
         this.bizPercentContainer = customCardView2;
         this.btnDeleteThree = customCardView3;
@@ -53,6 +54,7 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
         this.firstItem = mobileRentAccessoryElementItemBinding2;
         this.fourthItem = mobileRentAccessoryElementItemBinding3;
         this.ivCategory = imageView;
+        this.ivCostCurrency = imageView2;
         this.locationContainer = customCardView8;
         this.onlineContainer = customCardView9;
         this.passContainer = linearLayout;
@@ -122,58 +124,62 @@ public final class MobileRentAccessoryItemBinding implements ViewBinding {
                                         i = R.id.iv_category;
                                         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
                                         if (imageView != null) {
-                                            i = R.id.location_container;
-                                            CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                            if (customCardView7 != null) {
-                                                i = R.id.online_container;
-                                                CustomCardView customCardView8 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                if (customCardView8 != null) {
-                                                    i = R.id.pass_container;
-                                                    LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
-                                                    if (linearLayout != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = R.id.second_item))) != null) {
-                                                        MobileRentAccessoryElementItemBinding bind4 = MobileRentAccessoryElementItemBinding.bind(findChildViewById2);
-                                                        i = R.id.sixth_item;
-                                                        View findChildViewById5 = ViewBindings.findChildViewById(view, i);
-                                                        if (findChildViewById5 != null) {
-                                                            MobileRentAccessoryElementItemBinding bind5 = MobileRentAccessoryElementItemBinding.bind(findChildViewById5);
-                                                            i = R.id.third_item;
-                                                            View findChildViewById6 = ViewBindings.findChildViewById(view, i);
-                                                            if (findChildViewById6 != null) {
-                                                                MobileRentAccessoryElementItemBinding bind6 = MobileRentAccessoryElementItemBinding.bind(findChildViewById6);
-                                                                i = R.id.time_container;
-                                                                CustomCardView customCardView9 = (CustomCardView) ViewBindings.findChildViewById(view, i);
-                                                                if (customCardView9 != null) {
-                                                                    i = R.id.tv_biz_percent;
-                                                                    TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                    if (textView != null) {
-                                                                        i = R.id.tv_category;
-                                                                        TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                        if (textView2 != null) {
-                                                                            i = R.id.tv_cost;
-                                                                            TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                            if (textView3 != null) {
-                                                                                i = R.id.tv_desc;
-                                                                                TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                if (textView4 != null) {
-                                                                                    i = R.id.tv_location;
-                                                                                    TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                    if (textView5 != null) {
-                                                                                        i = R.id.tv_nick_name;
-                                                                                        TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                        if (textView6 != null) {
-                                                                                            i = R.id.tv_number;
-                                                                                            TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                            if (textView7 != null) {
-                                                                                                i = R.id.tv_pass;
-                                                                                                TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                if (textView8 != null) {
-                                                                                                    i = R.id.tv_rent;
-                                                                                                    TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                    if (textView9 != null) {
-                                                                                                        i = R.id.tv_time;
-                                                                                                        TextView textView10 = (TextView) ViewBindings.findChildViewById(view, i);
-                                                                                                        if (textView10 != null) {
-                                                                                                            return new MobileRentAccessoryItemBinding((CustomCardView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, customCardView6, bind, bind2, bind3, imageView, customCardView7, customCardView8, linearLayout, bind4, bind5, bind6, customCardView9, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10);
+                                            i = R.id.iv_cost_currency;
+                                            ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
+                                            if (imageView2 != null) {
+                                                i = R.id.location_container;
+                                                CustomCardView customCardView7 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                if (customCardView7 != null) {
+                                                    i = R.id.online_container;
+                                                    CustomCardView customCardView8 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                    if (customCardView8 != null) {
+                                                        i = R.id.pass_container;
+                                                        LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
+                                                        if (linearLayout != null && (findChildViewById2 = ViewBindings.findChildViewById(view, (i = R.id.second_item))) != null) {
+                                                            MobileRentAccessoryElementItemBinding bind4 = MobileRentAccessoryElementItemBinding.bind(findChildViewById2);
+                                                            i = R.id.sixth_item;
+                                                            View findChildViewById5 = ViewBindings.findChildViewById(view, i);
+                                                            if (findChildViewById5 != null) {
+                                                                MobileRentAccessoryElementItemBinding bind5 = MobileRentAccessoryElementItemBinding.bind(findChildViewById5);
+                                                                i = R.id.third_item;
+                                                                View findChildViewById6 = ViewBindings.findChildViewById(view, i);
+                                                                if (findChildViewById6 != null) {
+                                                                    MobileRentAccessoryElementItemBinding bind6 = MobileRentAccessoryElementItemBinding.bind(findChildViewById6);
+                                                                    i = R.id.time_container;
+                                                                    CustomCardView customCardView9 = (CustomCardView) ViewBindings.findChildViewById(view, i);
+                                                                    if (customCardView9 != null) {
+                                                                        i = R.id.tv_biz_percent;
+                                                                        TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                        if (textView != null) {
+                                                                            i = R.id.tv_category;
+                                                                            TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                            if (textView2 != null) {
+                                                                                i = R.id.tv_cost;
+                                                                                TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                if (textView3 != null) {
+                                                                                    i = R.id.tv_desc;
+                                                                                    TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                    if (textView4 != null) {
+                                                                                        i = R.id.tv_location;
+                                                                                        TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                        if (textView5 != null) {
+                                                                                            i = R.id.tv_nick_name;
+                                                                                            TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                            if (textView6 != null) {
+                                                                                                i = R.id.tv_number;
+                                                                                                TextView textView7 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                if (textView7 != null) {
+                                                                                                    i = R.id.tv_pass;
+                                                                                                    TextView textView8 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                    if (textView8 != null) {
+                                                                                                        i = R.id.tv_rent;
+                                                                                                        TextView textView9 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                        if (textView9 != null) {
+                                                                                                            i = R.id.tv_time;
+                                                                                                            TextView textView10 = (TextView) ViewBindings.findChildViewById(view, i);
+                                                                                                            if (textView10 != null) {
+                                                                                                                return new MobileRentAccessoryItemBinding((CustomCardView) view, customCardView, customCardView2, customCardView3, customCardView4, customCardView5, customCardView6, bind, bind2, bind3, imageView, imageView2, customCardView7, customCardView8, linearLayout, bind4, bind5, bind6, customCardView9, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10);
+                                                                                                            }
                                                                                                         }
                                                                                                     }
                                                                                                 }

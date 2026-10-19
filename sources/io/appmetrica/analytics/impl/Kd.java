@@ -5,16 +5,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class Kd extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Nd f630a;
+    public final /* synthetic */ Nd f633a;
     public final /* synthetic */ boolean b;
 
     public Kd(Nd nd, boolean z) {
-        this.f630a = nd;
+        this.f633a = nd;
         this.b = z;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        Nd.a(this.f630a).a(this.b, false);
+        Nd.a(this.f633a).a(this.b, false);
     }
 }

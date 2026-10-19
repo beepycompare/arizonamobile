@@ -3,6 +3,7 @@ package com.google.android.gms.common.images;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.google.android.gms.common.internal.ImagesContract;
 import com.google.android.gms.common.internal.Objects;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
@@ -58,7 +59,7 @@ public final class WebImage extends AbstractSafeParcelable {
     public JSONObject toJson() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("url", this.zab.toString());
+            jSONObject.put(ImagesContract.URL, this.zab.toString());
             jSONObject.put("width", this.zac);
             jSONObject.put("height", this.zad);
         } catch (JSONException unused) {
@@ -102,9 +103,9 @@ public final class WebImage extends AbstractSafeParcelable {
     public WebImage(JSONObject jSONObject) throws IllegalArgumentException {
         this(r0, jSONObject.optInt("width", 0), jSONObject.optInt("height", 0));
         Uri uri = Uri.EMPTY;
-        if (jSONObject.has("url")) {
+        if (jSONObject.has(ImagesContract.URL)) {
             try {
-                uri = Uri.parse(jSONObject.getString("url"));
+                uri = Uri.parse(jSONObject.getString(ImagesContract.URL));
             } catch (JSONException unused) {
             }
         }

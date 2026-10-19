@@ -1,5 +1,5 @@
 package com.google.firebase.platforminfo;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public interface UserAgentPublisher {
     String getUserAgent();
 }

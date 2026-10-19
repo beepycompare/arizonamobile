@@ -507,7 +507,7 @@ class ToolbarActionBar extends ActionBar {
 
         @Override // androidx.appcompat.view.menu.MenuPresenter.Callback
         public boolean onOpenSubMenu(MenuBuilder menuBuilder) {
-            ToolbarActionBar.this.mWindowCallback.onMenuOpened(108, menuBuilder);
+            ToolbarActionBar.this.mWindowCallback.onMenuOpened(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, menuBuilder);
             return true;
         }
 
@@ -518,7 +518,7 @@ class ToolbarActionBar extends ActionBar {
             }
             this.mClosingActionMenu = true;
             ToolbarActionBar.this.mDecorToolbar.dismissPopupMenus();
-            ToolbarActionBar.this.mWindowCallback.onPanelClosed(108, menuBuilder);
+            ToolbarActionBar.this.mWindowCallback.onPanelClosed(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, menuBuilder);
             this.mClosingActionMenu = false;
         }
     }
@@ -539,9 +539,9 @@ class ToolbarActionBar extends ActionBar {
             boolean isOverflowMenuShowing = ToolbarActionBar.this.mDecorToolbar.isOverflowMenuShowing();
             ToolbarActionBar toolbarActionBar = ToolbarActionBar.this;
             if (isOverflowMenuShowing) {
-                toolbarActionBar.mWindowCallback.onPanelClosed(108, menuBuilder);
+                toolbarActionBar.mWindowCallback.onPanelClosed(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, menuBuilder);
             } else if (toolbarActionBar.mWindowCallback.onPreparePanel(0, null, menuBuilder)) {
-                ToolbarActionBar.this.mWindowCallback.onMenuOpened(108, menuBuilder);
+                ToolbarActionBar.this.mWindowCallback.onMenuOpened(AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, menuBuilder);
             }
         }
     }

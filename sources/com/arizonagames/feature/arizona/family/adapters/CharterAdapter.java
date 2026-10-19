@@ -241,7 +241,7 @@ public final class CharterAdapter extends RecyclerView.Adapter<CharterItemViewHo
 
     private final CharSequence moneyRange(int i, int i2) {
         ChatEmoji chatEmoji = ChatEmoji.INSTANCE;
-        String formatPlain = MoneyFormatter.INSTANCE.formatPlain(i);
-        return ChatEmoji.toSpannable$default(chatEmoji, ":cash: " + formatPlain + " / " + MoneyFormatter.INSTANCE.formatPlain(i2), 0.0f, null, 3, null);
+        String format$default = MoneyFormatter.format$default(MoneyFormatter.INSTANCE, i, false, null, null, 14, null);
+        return ChatEmoji.toSpannable$default(chatEmoji, format$default + " / " + MoneyFormatter.INSTANCE.formatPlain(i2), 0.0f, null, 3, null);
     }
 }

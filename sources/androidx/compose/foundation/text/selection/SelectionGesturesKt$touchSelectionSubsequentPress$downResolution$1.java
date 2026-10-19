@@ -6,7 +6,6 @@ import androidx.compose.ui.geometry.Offset;
 import androidx.compose.ui.input.pointer.AwaitPointerEventScope;
 import androidx.compose.ui.input.pointer.PointerEventKt;
 import androidx.compose.ui.input.pointer.PointerInputChange;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -20,7 +19,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Ref;
 /* compiled from: SelectionGestures.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroidx/compose/foundation/text/selection/DownResolution;", "Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1", f = "SelectionGestures.kt", i = {0}, l = {DownloaderService.STATUS_WAITING_FOR_NETWORK}, m = "invokeSuspend", n = {"$this$withTimeoutOrNull"}, s = {"L$0"}, v = 1)
+@DebugMetadata(c = "androidx.compose.foundation.text.selection.SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1", f = "SelectionGestures.kt", i = {0}, l = {195}, m = "invokeSuspend", n = {"$this$withTimeoutOrNull"}, s = {"L$0"}, v = 1)
 /* loaded from: classes.dex */
 final class SelectionGesturesKt$touchSelectionSubsequentPress$downResolution$1 extends RestrictedSuspendLambda implements Function2<AwaitPointerEventScope, Continuation<? super DownResolution>, Object> {
     final /* synthetic */ Ref.LongRef $overSlop;

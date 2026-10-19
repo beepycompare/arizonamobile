@@ -435,7 +435,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.arizonaMissionsState = new ArizonaMissionsState();
         this.arizonaMissionEpochTracker = new ArizonaMissionEpochTracker();
         this.project = UtilsKt.isArizonaType() ? BuildConfig.FLAVOR : "rodina";
-        addViewToConstraintLayout(host, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, host, -1, -1, false, 8, null);
         create.prepare();
         binding.battlepass2023Container.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -1912,15 +1912,15 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
     }
 
     private final Integer toColorOrNull(String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(Integer.valueOf(Color.parseColor(str != null ? StringsKt.trim((CharSequence) str).toString() : null)));
+            m9974constructorimpl = Result.m9974constructorimpl(Integer.valueOf(Color.parseColor(str != null ? StringsKt.trim((CharSequence) str).toString() : null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        return Result.m9927isFailureimpl(m9921constructorimpl) ? null : m9921constructorimpl;
+        return Result.m9980isFailureimpl(m9974constructorimpl) ? null : m9974constructorimpl;
     }
 
     private final void openModalWindow(BpModalWindowModel bpModalWindowModel) {

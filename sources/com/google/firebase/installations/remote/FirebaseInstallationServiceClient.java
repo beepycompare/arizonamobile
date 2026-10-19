@@ -32,7 +32,7 @@ import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 public class FirebaseInstallationServiceClient {
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String API_KEY_HEADER = "x-goog-api-key";

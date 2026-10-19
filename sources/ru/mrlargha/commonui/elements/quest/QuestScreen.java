@@ -55,7 +55,7 @@ public final class QuestScreen extends SAMPUIElement {
         this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
         quest.setClickable(true);
         Intrinsics.checkNotNullExpressionValue(quest, "quest");
-        addViewToConstraintLayout(quest, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, quest, -1, -1, false, 8, null);
         bind.rodinaQuests.setLayoutManager(new GridLayoutManager((Context) targetActivity, 1, 0, false));
         bind.rodinaQuests.setAdapter(this.questAdapter);
         bind.rodinaExitButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.quest.QuestScreen$$ExternalSyntheticLambda0

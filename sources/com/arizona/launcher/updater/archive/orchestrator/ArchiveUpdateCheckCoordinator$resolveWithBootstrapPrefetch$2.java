@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
+import com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter;
 import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestDescriptor;
 import com.arizona.launcher.updater.archive.manifest.OriginalTzArchivePackageDescriptor;
 import com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestResolutionResult;
@@ -27,11 +28,10 @@ import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.JobKt;
 import kotlinx.coroutines.NonCancellable;
-import ru.mrlargha.feature.battlepassWinter2025.roulette.RouletteView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ArchiveUpdateCheckCoordinator.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveManifestResolutionResult;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 2, 2, 2}, l = {352, 358, 358}, m = "invokeSuspend", n = {"$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution"}, nl = {353, 361, 361}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
+@DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {0, 0, 0, 1, 1, 1, 2, 2, 2}, l = {455, 461, 461}, m = "invokeSuspend", n = {"$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution", "$this$coroutineScope", "prefetch", "resolution"}, nl = {456, 464, 464}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes3.dex */
 public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ArchiveManifestResolutionResult>, Object> {
     final /* synthetic */ ArchiveBootstrapPrefetcher $bootstrapPrefetcher;
@@ -71,7 +71,7 @@ public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x00cf  */
-    /* JADX WARN: Type inference failed for: r5v11, types: [T, com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestResolutionResult] */
+    /* JADX WARN: Type inference failed for: r5v7, types: [T, com.arizona.launcher.updater.archive.orchestrator.ArchiveManifestResolutionResult] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -82,16 +82,20 @@ public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 
         ArchivePackageArtifactCleaner archivePackageArtifactCleaner;
         File file2;
         File file3;
+        File file4;
+        File file5;
         Job launch$default;
         Ref.ObjectRef objectRef2;
         ArchiveManifestResolver archiveManifestResolver;
         Object resolve;
         ArchiveManifestResolutionResult archiveManifestResolutionResult;
         Ref.ObjectRef objectRef3;
-        File file4;
-        ArchivePackageArtifactCleaner archivePackageArtifactCleaner2;
-        File file5;
         File file6;
+        ArchivePackageArtifactCleaner archivePackageArtifactCleaner2;
+        File file7;
+        File file8;
+        File file9;
+        File file10;
         CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
@@ -127,19 +131,25 @@ public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 
                 Job job = (Job) this.L$1;
                 ResultKt.throwOnFailure(obj);
                 if (objectRef3.element instanceof ArchiveManifestResolutionResult.Failure) {
-                    file4 = this.this$0.downloadRoot;
-                    if (file4 != null) {
+                    file6 = this.this$0.downloadRoot;
+                    if (file6 != null) {
                         try {
                             archivePackageArtifactCleaner2 = this.this$0.artifactCleaner;
-                            file5 = this.this$0.gameRoot;
-                            if (file5 != null) {
-                                file6 = this.this$0.downloadRoot;
+                            file7 = this.this$0.gameRoot;
+                            if (file7 != null) {
+                                file8 = this.this$0.downloadRoot;
                                 List<OriginalTzArchivePackageDescriptor> packages = this.$descriptor.getPackages();
                                 ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(packages, 10));
                                 for (OriginalTzArchivePackageDescriptor originalTzArchivePackageDescriptor : packages) {
                                     arrayList.add(new ArchivePackageIdentity(originalTzArchivePackageDescriptor.getId(), originalTzArchivePackageDescriptor.getArchiveSize(), originalTzArchivePackageDescriptor.getCrc32()));
                                 }
-                                archivePackageArtifactCleaner2.cleanup(file5, file6, arrayList);
+                                ArrayList arrayList2 = arrayList;
+                                file9 = this.this$0.workRoot;
+                                if (file9 == null) {
+                                    file10 = this.this$0.gameRoot;
+                                    file9 = new File(file10, ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY);
+                                }
+                                ArchivePackageArtifactCleaner.cleanup$default(archivePackageArtifactCleaner2, file7, file8, arrayList2, file9, null, 16, null);
                                 return archiveManifestResolutionResult;
                             }
                             throw new IllegalStateException("Required value was null.".toString());
@@ -165,11 +175,17 @@ public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 
                             }
                             file3 = this.this$0.downloadRoot;
                             List<OriginalTzArchivePackageDescriptor> packages2 = this.$descriptor.getPackages();
-                            ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(packages2, 10));
+                            ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(packages2, 10));
                             for (OriginalTzArchivePackageDescriptor originalTzArchivePackageDescriptor2 : packages2) {
-                                arrayList2.add(new ArchivePackageIdentity(originalTzArchivePackageDescriptor2.getId(), originalTzArchivePackageDescriptor2.getArchiveSize(), originalTzArchivePackageDescriptor2.getCrc32()));
+                                arrayList3.add(new ArchivePackageIdentity(originalTzArchivePackageDescriptor2.getId(), originalTzArchivePackageDescriptor2.getArchiveSize(), originalTzArchivePackageDescriptor2.getCrc32()));
                             }
-                            archivePackageArtifactCleaner.cleanup(file2, file3, arrayList2);
+                            ArrayList arrayList4 = arrayList3;
+                            file4 = this.this$0.workRoot;
+                            if (file4 == null) {
+                                file5 = this.this$0.gameRoot;
+                                file4 = new File(file5, ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY);
+                            }
+                            ArchivePackageArtifactCleaner.cleanup$default(archivePackageArtifactCleaner, file2, file3, arrayList4, file4, null, 16, null);
                         } catch (Exception e2) {
                             throw new ArchiveUpdateCheckCoordinator.ArchiveBootstrapPrefetchCleanupException(e2);
                         }
@@ -204,7 +220,7 @@ public final class ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ArchiveUpdateCheckCoordinator.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {}, l = {359}, m = "invokeSuspend", n = {}, nl = {RouletteView.PREMIUM_ROULETTE_WIDTH}, s = {}, v = 2)
+    @DebugMetadata(c = "com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2$2", f = "ArchiveUpdateCheckCoordinator.kt", i = {}, l = {462}, m = "invokeSuspend", n = {}, nl = {463}, s = {}, v = 2)
     /* renamed from: com.arizona.launcher.updater.archive.orchestrator.ArchiveUpdateCheckCoordinator$resolveWithBootstrapPrefetch$2$2  reason: invalid class name */
     /* loaded from: classes3.dex */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

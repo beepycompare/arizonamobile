@@ -1,5 +1,6 @@
 package ru.mrlargha.commonui.elements.donate.domain.usecases;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -64,7 +65,7 @@ public final class DonateGetItemUseCase {
 
     /* compiled from: DonateGetItemUseCase.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 1, 2, 2, 3, 3, 3, 3, 3, 3}, l = {35, 108, 37, 43}, m = "invokeSuspend", n = {"items", "$this$withLock_u24default$iv", "items", "$this$withLock_u24default$iv", "items", "$this$withLock_u24default$iv", "pendingUpdates", "$this$forEach$iv", "element$iv", "updatedModel"}, nl = {36, 109, 39, 44}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$3", "L$4", "L$6", "L$7"}, v = 2)
+    @DebugMetadata(c = "ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1", f = "DonateGetItemUseCase.kt", i = {1, 1, 2, 2, 3, 3, 3, 3, 3, 3}, l = {35, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR, 37, 43}, m = "invokeSuspend", n = {"items", "$this$withLock_u24default$iv", "items", "$this$withLock_u24default$iv", "items", "$this$withLock_u24default$iv", "pendingUpdates", "$this$forEach$iv", "element$iv", "updatedModel"}, nl = {36, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY, 39, 44}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$3", "L$4", "L$6", "L$7"}, v = 2)
     /* renamed from: ru.mrlargha.commonui.elements.donate.domain.usecases.DonateGetItemUseCase$1  reason: invalid class name */
     /* loaded from: classes6.dex */
     static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

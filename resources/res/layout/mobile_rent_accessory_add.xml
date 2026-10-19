@@ -45,7 +45,7 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/_22sdp" android:layout_marginTop="@dimen/_2sdp">
             <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#33ffffff" app:backgroundSecondColor="#0dffffff" app:borderMainColor="#0dffffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_4sdp" app:gradientAngle="45">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
-                    <ImageView android:layout_gravity="center" android:layout_width="@dimen/_8sdp" android:layout_height="@dimen/_8sdp" android:src="@drawable/arizona_dollar" android:scaleType="fitCenter" android:layout_marginStart="@dimen/_6sdp"/>
+                    <TextView android:textSize="@dimen/_8sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_cost_currency" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/heading_now_66_bold" android:layout_marginStart="@dimen/_6sdp"/>
                     <EditText android:textSize="@dimen/_5sdp" android:textColor="@color/white" android:gravity="start|center_vertical" android:layout_gravity="center" android:id="@+id/et_cost" android:background="@color/transparent100" android:layout_width="0dp" android:layout_height="match_parent" android:maxLength="13" android:layout_weight="1" android:inputType="number" android:imeOptions="actionDone" android:alpha="0.7" android:fontFamily="@font/heading_now_65" android:paddingStart="@dimen/_4sdp"/>
                 </LinearLayout>
             </ru.mrlargha.commonui.utils.ui.CustomCardView>

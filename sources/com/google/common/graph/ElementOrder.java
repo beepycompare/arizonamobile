@@ -1,5 +1,6 @@
 package com.google.common.graph;
 
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -85,7 +86,7 @@ public final class ElementOrder<T> {
     }
 
     public String toString() {
-        MoreObjects.ToStringHelper add = MoreObjects.toStringHelper(this).add("type", this.type);
+        MoreObjects.ToStringHelper add = MoreObjects.toStringHelper(this).add(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, this.type);
         Comparator<T> comparator = this.comparator;
         if (comparator != null) {
             add.add("comparator", comparator);

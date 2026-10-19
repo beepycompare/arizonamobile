@@ -297,7 +297,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         this.client = arizonaRetrofit;
         this.api = (FamilyApi) ArizonaRetrofit.create$default(arizonaRetrofit, FamilyApi.class, false, null, null, 14, null);
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         setupNavigation();
         setupCreateClanPage();
         setupAdapters();
@@ -457,13 +457,19 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     private final void setCreateInfo(FamilyCreateData familyCreateData) {
         this.createInfo = familyCreateData;
         FamilyCreateClanBinding familyCreateClanBinding = this.binding.create;
-        familyCreateClanBinding.familyNameEdit.getText().clear();
+        Editable text = familyCreateClanBinding.familyNameEdit.getText();
+        if (text != null) {
+            text.clear();
+        }
         Drawable drawable = ContextCompat.getDrawable(getTargetActivity(), R.drawable.family_create_pen_ic);
         familyCreateClanBinding.familyNameEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, drawable, (Drawable) null);
         familyCreateClanBinding.familyNameEdit.setBackgroundResource(R.drawable.family_create_edit_stroke);
         familyCreateClanBinding.titleHint.setText(getTargetActivity().getString(R.string.family_max_15_characters));
         familyCreateClanBinding.titleHint.setTextColor(Color.parseColor("#ABABAB"));
-        familyCreateClanBinding.familySloganEdit.getText().clear();
+        Editable text2 = familyCreateClanBinding.familySloganEdit.getText();
+        if (text2 != null) {
+            text2.clear();
+        }
         familyCreateClanBinding.familySloganEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, drawable, (Drawable) null);
         familyCreateClanBinding.familySloganEdit.setBackgroundResource(R.drawable.family_create_edit_stroke);
         familyCreateClanBinding.sloganHint.setText(getTargetActivity().getString(R.string.family_max_40_characters));
@@ -512,7 +518,6 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     private final void setFamilyInfo(FamilyData familyData) {
-        String str;
         long j;
         this.familyData = familyData;
         this.membersAdapter.setManager(familyData.getManagement() == 1);
@@ -553,12 +558,12 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyHomePageBinding.expProgressBar.setMax(100);
         }
         TextView textView = familyHomePageBinding.textFlag;
-        if (familyData.getFlag().length() == 0) {
-            str = getTargetActivity().getString(R.string.family_absent);
-        } else {
-            str = familyData.getFlag().toString();
+        String flag = familyData.getFlag();
+        if (flag.length() == 0) {
+            flag = getTargetActivity().getString(R.string.family_absent);
+            Intrinsics.checkNotNullExpressionValue(flag, "getString(...)");
         }
-        textView.setText(str);
+        textView.setText(flag);
         if (familyData.getBg() != -1) {
             familyHomePageBinding.idCard.setVisibility(0);
             familyHomePageBinding.idText.setText(getTargetActivity().getString(R.string.family_id_value, new Object[]{Integer.valueOf(familyData.getBg())}));
@@ -712,88 +717,88 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     private final void setupNavigation() {
-        this.binding.familyOverlay.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda20
+        this.binding.familyOverlay.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda19
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$0(view);
             }
         });
         FamilyHomePageBinding familyHomePageBinding = this.binding.home;
-        familyHomePageBinding.buttonPayday.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda26
+        familyHomePageBinding.buttonPayday.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda25
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$1$0(FamilyScreen.this, view);
             }
         });
-        familyHomePageBinding.buttonAlliance.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda27
+        familyHomePageBinding.buttonAlliance.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda26
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$1$1(FamilyScreen.this, view);
             }
         });
-        familyHomePageBinding.buttonCopyDisc.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda28
+        familyHomePageBinding.buttonCopyDisc.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda27
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$1$2(FamilyScreen.this, view);
             }
         });
         FamilyTopbarBinding familyTopbarBinding = this.binding.topbar;
-        familyTopbarBinding.closeButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda29
+        familyTopbarBinding.closeButton.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda28
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$2$0(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonRep.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda30
+        familyTopbarBinding.buttonRep.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda29
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$2$1(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonMoney.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda31
+        familyTopbarBinding.buttonMoney.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda30
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$2$2(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.buttonCoins.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda32
+        familyTopbarBinding.buttonCoins.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda31
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$2$3(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.inviteBtn.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda34
+        familyTopbarBinding.inviteBtn.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda32
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$2$4(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.kickBtn.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda35
+        familyTopbarBinding.kickBtn.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda34
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$2$5(FamilyScreen.this, view);
             }
         });
-        familyTopbarBinding.ratingBtn.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda21
+        familyTopbarBinding.ratingBtn.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda20
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$2$6(FamilyScreen.this, view);
             }
         });
         FamilyMainBinding familyMainBinding = this.binding;
-        familyMainBinding.frameMap.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda23
+        familyMainBinding.frameMap.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda21
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$3$0(FamilyScreen.this, view);
             }
         });
-        familyMainBinding.frameMember.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda24
+        familyMainBinding.frameMember.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda23
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$3$1(FamilyScreen.this, view);
             }
         });
-        familyMainBinding.frameCharter.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda25
+        familyMainBinding.frameCharter.buttonClose.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda24
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FamilyScreen.setupNavigation$lambda$3$2(FamilyScreen.this, view);
@@ -950,7 +955,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         final Ref.FloatRef floatRef = new Ref.FloatRef();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         final int scaledTouchSlop = ViewConfiguration.get(subsamplingScaleImageView.getContext()).getScaledTouchSlop();
-        subsamplingScaleImageView.setOnTouchListener(new View.OnTouchListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda19
+        subsamplingScaleImageView.setOnTouchListener(new View.OnTouchListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda18
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 boolean map$lambda$0$0;
@@ -1229,16 +1234,20 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
                 return z;
             }
         });
-        familyCreateClanBinding.familyNameEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda66
-            @Override // android.view.View.OnFocusChangeListener
-            public final void onFocusChange(View view, boolean z) {
-                FamilyScreen.setupCreateClanPage$lambda$0$6(FamilyCreateClanBinding.this, this, view, z);
+        familyCreateClanBinding.familyNameEdit.setOnFocusChangeListener(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda66
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit unit;
+                unit = FamilyScreen.setupCreateClanPage$lambda$0$6(FamilyCreateClanBinding.this, this, ((Boolean) obj).booleanValue());
+                return unit;
             }
         });
-        familyCreateClanBinding.familySloganEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda69
-            @Override // android.view.View.OnFocusChangeListener
-            public final void onFocusChange(View view, boolean z) {
-                FamilyScreen.setupCreateClanPage$lambda$0$7(FamilyCreateClanBinding.this, this, view, z);
+        familyCreateClanBinding.familySloganEdit.setOnFocusChangeListener(new Function1() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda69
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
+                Unit unit;
+                unit = FamilyScreen.setupCreateClanPage$lambda$0$7(FamilyCreateClanBinding.this, this, ((Boolean) obj).booleanValue());
+                return unit;
             }
         });
     }
@@ -1290,37 +1299,41 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$0$6(FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, View view, boolean z) {
-        if (z) {
-            return;
-        }
-        String replace = new Regex("[^A-Za-zА-Яа-я]").replace(familyCreateClanBinding.familyNameEdit.getText().toString(), "");
-        familyCreateClanBinding.familyNameEdit.setText(replace);
-        familyCreateClanBinding.familyNameEdit.setSelection(replace.length());
-        Editable text = familyCreateClanBinding.familyNameEdit.getText();
-        Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
-        if (text.length() > 0 && familyCreateClanBinding.familyNameEdit.getText().length() >= 5) {
-            familyCreateClanBinding.familyNameEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_done_ic), (Drawable) null);
-            familyCreateClanBinding.familyNameEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_done);
-            familyCreateClanBinding.titleHint.setText(familyScreen.getTargetActivity().getString(R.string.family_title_available));
-            familyCreateClanBinding.titleHint.setTextColor(Color.parseColor("#C1FF3D"));
-            familyScreen.createIsTitleDone = true;
-        } else {
+    public static final Unit setupCreateClanPage$lambda$0$6(FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, boolean z) {
+        if (!z) {
+            String replace = new Regex("[^A-Za-zА-Яа-я]").replace(String.valueOf(familyCreateClanBinding.familyNameEdit.getText()), "");
+            familyCreateClanBinding.familyNameEdit.setText(replace);
+            familyCreateClanBinding.familyNameEdit.setSelection(replace.length());
+            Editable text = familyCreateClanBinding.familyNameEdit.getText();
+            if (text != null && text.length() > 0) {
+                Editable text2 = familyCreateClanBinding.familyNameEdit.getText();
+                Integer valueOf = text2 != null ? Integer.valueOf(text2.length()) : null;
+                Intrinsics.checkNotNull(valueOf);
+                if (valueOf.intValue() >= 5) {
+                    familyCreateClanBinding.familyNameEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_done_ic), (Drawable) null);
+                    familyCreateClanBinding.familyNameEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_done);
+                    familyCreateClanBinding.titleHint.setText(familyScreen.getTargetActivity().getString(R.string.family_title_available));
+                    familyCreateClanBinding.titleHint.setTextColor(Color.parseColor("#C1FF3D"));
+                    familyScreen.createIsTitleDone = true;
+                    familyScreen.checkCreateBntState();
+                }
+            }
             familyCreateClanBinding.familyNameEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_pen_ic), (Drawable) null);
             familyCreateClanBinding.familyNameEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_dont);
             familyCreateClanBinding.titleHint.setText(familyScreen.getTargetActivity().getString(R.string.family_title_min_5));
             familyCreateClanBinding.titleHint.setTextColor(Color.parseColor("#FE5B3B"));
             familyScreen.createIsTitleDone = false;
+            familyScreen.checkCreateBntState();
         }
-        familyScreen.checkCreateBntState();
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupCreateClanPage$lambda$0$7(final FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, View view, boolean z) {
-        familyCreateClanBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda17
+    public static final Unit setupCreateClanPage$lambda$0$7(final FamilyCreateClanBinding familyCreateClanBinding, FamilyScreen familyScreen, boolean z) {
+        familyCreateClanBinding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda35
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                FamilyScreen.setupCreateClanPage$lambda$0$7$0(FamilyCreateClanBinding.this, view2);
+            public final void onClick(View view) {
+                FamilyScreen.setupCreateClanPage$lambda$0$7$0(FamilyCreateClanBinding.this, view);
             }
         });
         if (z) {
@@ -1329,32 +1342,36 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyCreateClanBinding.nameView.setVisibility(8);
             familyCreateClanBinding.familyNameEdit.setVisibility(8);
         }
-        if (z) {
-            return;
-        }
-        String replace = new Regex("[^A-Za-zА-Яа-я0-9 ]").replace(familyCreateClanBinding.familySloganEdit.getText().toString(), "");
-        familyCreateClanBinding.familySloganEdit.setText(replace);
-        familyCreateClanBinding.familySloganEdit.setSelection(replace.length());
-        familyCreateClanBinding.titleHint.setVisibility(0);
-        familyCreateClanBinding.nameTitle.setVisibility(0);
-        familyCreateClanBinding.nameView.setVisibility(0);
-        familyCreateClanBinding.familyNameEdit.setVisibility(0);
-        Editable text = familyCreateClanBinding.familySloganEdit.getText();
-        Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
-        if (text.length() > 0 && familyCreateClanBinding.familySloganEdit.getText().length() >= 15) {
-            familyCreateClanBinding.familySloganEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_done_ic), (Drawable) null);
-            familyCreateClanBinding.familySloganEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_done);
-            familyCreateClanBinding.sloganHint.setText(familyScreen.getTargetActivity().getString(R.string.family_slogan_ok));
-            familyCreateClanBinding.sloganHint.setTextColor(Color.parseColor("#C1FF3D"));
-            familyScreen.createIsSloganDone = true;
-        } else {
+        if (!z) {
+            String replace = new Regex("[^A-Za-zА-Яа-я0-9 ]").replace(String.valueOf(familyCreateClanBinding.familySloganEdit.getText()), "");
+            familyCreateClanBinding.familySloganEdit.setText(replace);
+            familyCreateClanBinding.familySloganEdit.setSelection(replace.length());
+            familyCreateClanBinding.titleHint.setVisibility(0);
+            familyCreateClanBinding.nameTitle.setVisibility(0);
+            familyCreateClanBinding.nameView.setVisibility(0);
+            familyCreateClanBinding.familyNameEdit.setVisibility(0);
+            Editable text = familyCreateClanBinding.familySloganEdit.getText();
+            if (text != null && text.length() > 0) {
+                Editable text2 = familyCreateClanBinding.familySloganEdit.getText();
+                Integer valueOf = text2 != null ? Integer.valueOf(text2.length()) : null;
+                Intrinsics.checkNotNull(valueOf);
+                if (valueOf.intValue() >= 15) {
+                    familyCreateClanBinding.familySloganEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_done_ic), (Drawable) null);
+                    familyCreateClanBinding.familySloganEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_done);
+                    familyCreateClanBinding.sloganHint.setText(familyScreen.getTargetActivity().getString(R.string.family_slogan_ok));
+                    familyCreateClanBinding.sloganHint.setTextColor(Color.parseColor("#C1FF3D"));
+                    familyScreen.createIsSloganDone = true;
+                    familyScreen.checkCreateBntState();
+                }
+            }
             familyCreateClanBinding.familySloganEdit.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, ContextCompat.getDrawable(familyScreen.getTargetActivity(), R.drawable.family_create_pen_ic), (Drawable) null);
             familyCreateClanBinding.familySloganEdit.setBackgroundResource(R.drawable.family_create_edit_stroke_dont);
             familyCreateClanBinding.sloganHint.setText(familyScreen.getTargetActivity().getString(R.string.family_slogan_min_15));
             familyCreateClanBinding.sloganHint.setTextColor(Color.parseColor("#FE5B3B"));
             familyScreen.createIsSloganDone = false;
+            familyScreen.checkCreateBntState();
         }
-        familyScreen.checkCreateBntState();
+        return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1387,7 +1404,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
             familyCreateClanBinding.buttonTitle.setText(getTargetActivity().getString(R.string.family_create_family));
             familyCreateClanBinding.loaderBar.setVisibility(8);
             familyCreateClanBinding.buttonCreateFamily.setAlpha(1.0f);
-            familyCreateClanBinding.buttonCreateFamily.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda18
+            familyCreateClanBinding.buttonCreateFamily.setOnClickListener(new View.OnClickListener() { // from class: com.arizonagames.feature.arizona.family.FamilyScreen$$ExternalSyntheticLambda17
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FamilyScreen.checkCreateBntState$lambda$0$0(FamilyScreen.this, view);
@@ -2099,7 +2116,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyMembersBinding.loaderBar.setVisibility(0);
         familyMembersBinding.empty.setVisibility(8);
         familyTopbarBinding.editText.clearFocus();
-        String obj = StringsKt.trim((CharSequence) familyTopbarBinding.editText.getText().toString()).toString();
+        String obj = StringsKt.trim((CharSequence) String.valueOf(familyTopbarBinding.editText.getText())).toString();
         if (obj.length() == 0) {
             familyScreen.requestMembers(1);
         } else {
@@ -2129,7 +2146,7 @@ public final class FamilyScreen extends SAMPUIElement implements InterfaceContro
         familyCharterMembersBinding.loaderBar.setVisibility(0);
         familyCharterMembersBinding.empty.setVisibility(8);
         familyTopbarBinding.editText.clearFocus();
-        String obj = StringsKt.trim((CharSequence) familyTopbarBinding.editText.getText().toString()).toString();
+        String obj = StringsKt.trim((CharSequence) String.valueOf(familyTopbarBinding.editText.getText())).toString();
         if (obj.length() == 0) {
             familyScreen.requestCharterMembers(1);
         } else {

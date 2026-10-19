@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
+import android.text.Editable;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -534,7 +535,10 @@ public final class SpotifyPage implements MobileController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void spotifyState$lambda$1$1(MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding, View view) {
-        mobilePhoneSpotifyPageBinding.mpSpotifySearchInput.getText().clear();
+        Editable text = mobilePhoneSpotifyPageBinding.mpSpotifySearchInput.getText();
+        if (text != null) {
+            text.clear();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */

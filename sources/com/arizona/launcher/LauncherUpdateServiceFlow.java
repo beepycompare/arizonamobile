@@ -20,6 +20,7 @@ import com.arizona.launcher.updater.apk.LauncherUpdateControllerCallbacks;
 import com.arizona.launcher.updater.apk.LauncherUpdatePhase;
 import com.arizona.launcher.updater.http.UpdateMetadataFetcher;
 import com.arizona.launcher.updater.http.UpdateMetadataHttpResult;
+import com.google.android.gms.common.internal.ImagesContract;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.io.IOException;
 import java.util.Set;
@@ -40,32 +41,25 @@ import kotlin.text.StringsKt;
 import kotlinx.coroutines.CoroutineScope;
 import okhttp3.HttpUrl;
 /* compiled from: LauncherUpdateServiceFlow.kt */
-@Metadata(d1 = {"\u0000â\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 e2\u00020\u0001:\u0002deBü\u0001\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012!\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\n\u0012\u0018\u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\n\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007\u0012\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007\u00126\u0010\u0014\u001a2\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0016\u0012\u0013\u0012\u00110\u0013¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u00020\u000e0\u0015\u0012B\u0010\u0018\u001a>\u0012\u001f\u0012\u001d\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u00130\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001a\u0012\u0013\u0012\u00110\u001b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001c\u0012\u0004\u0012\u00020\u001d0\u0015¢\u0006\u0004\b\u001e\u0010\u001fB¤\u0001\b\u0016\u0012\u0006\u0010 \u001a\u00020!\u0012\u0006\u0010\"\u001a\u00020#\u0012\u0006\u0010$\u001a\u00020%\u0012\u0006\u0010&\u001a\u00020'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012!\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\n\u0012\u0018\u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\n\u0012\u000e\b\u0002\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007\u0012\u000e\b\u0002\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007¢\u0006\u0004\b\u001e\u0010(Bê\u0001\b\u0010\u0012\u0006\u0010 \u001a\u00020!\u0012\"\u0010)\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\b\u0012\n\u0012\b\u0012\u0004\u0012\u00020+0*\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u0015\u0012(\u0010,\u001a$\b\u0001\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020/\u0012\n\u0012\b\u0012\u0004\u0012\u0002000*\u0012\u0006\u0012\u0004\u0018\u00010\u00010-\u0012\u0006\u0010&\u001a\u00020'\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012!\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\n\u0012\u0018\u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\n\u0012\u000e\b\u0002\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007\u0012\u000e\b\u0002\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007\u0012\u0006\u00101\u001a\u00020\u000e¢\u0006\u0004\b\u001e\u00102J\u0006\u0010A\u001a\u00020\u000eJ\u0006\u0010B\u001a\u00020\u000eJ\u0006\u0010C\u001a\u00020\u0013J\b\u0010\u001c\u001a\u00020\u001bH\u0002J\u0018\u0010D\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u00192\u0006\u0010F\u001a\u00020GH\u0002J8\u0010H\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u00192\u0006\u0010I\u001a\u00020J2\n\b\u0002\u0010K\u001a\u0004\u0018\u00010+2\b\b\u0002\u0010L\u001a\u00020\u00132\b\b\u0002\u0010M\u001a\u00020\bH\u0002J\u001a\u0010N\u001a\u00020\u000e2\b\u0010O\u001a\u0004\u0018\u0001052\u0006\u0010F\u001a\u00020GH\u0002J\u0018\u0010P\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u00192\u0006\u0010F\u001a\u00020QH\u0002J\u0018\u0010R\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u00192\u0006\u0010S\u001a\u00020TH\u0002J \u0010U\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u00192\u0006\u0010S\u001a\u00020T2\u0006\u0010I\u001a\u00020VH\u0002J\u0010\u0010W\u001a\u00020\u00132\u0006\u0010E\u001a\u00020\u0019H\u0002J\u0018\u0010X\u001a\u00020\u00132\u0006\u0010I\u001a\u00020Y2\u0006\u0010Z\u001a\u00020[H\u0002J\u0010\u0010\\\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u0019H\u0002J\u0018\u0010]\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u00192\u0006\u0010^\u001a\u00020;H\u0002J\u0010\u0010_\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u0019H\u0002J\u0010\u0010`\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u0019H\u0002J\u0010\u0010a\u001a\u00020\u000e2\u0006\u0010E\u001a\u00020\u0019H\u0002J\b\u0010b\u001a\u00020\u000eH\u0002J\u0010\u0010c\u001a\u00020\b2\u0006\u0010I\u001a\u00020YH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R)\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\nX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R>\u0010\u0014\u001a2\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0016\u0012\u0013\u0012\u00110\u0013¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u00020\u000e0\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00103\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020504X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00106\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\b04X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u0012\u00108\u001a\u0004\u0018\u00010\u0019X\u0082\u000e¢\u0006\u0004\n\u0002\u00109R\u0010\u0010:\u001a\u0004\u0018\u00010;X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010<\u001a\u0004\u0018\u00010;X\u0082\u000e¢\u0006\u0002\n\u0000R\u0012\u0010=\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0004\n\u0002\u0010>R\u000e\u0010?\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\bg\u0012\b\bh\u0012\u0004\b\u0003\u0010\u0000¨\u0006f"}, d2 = {"Lcom/arizona/launcher/LauncherUpdateServiceFlow;", "", "analyticsReporter", "Lcom/arizona/launcher/UpdateAnalyticsReporter;", "host", "Lcom/arizona/launcher/LauncherUpdateServiceHost;", "currentServer", "Lkotlin/Function0;", "", "markCurrentServerUnreachable", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "failedServer", "", "postToMain", "mirrorCount", "", "hasValidatedNetwork", "", "logMetadataAttempt", "Lkotlin/Function2;", "message", FirebaseAnalytics.Param.SUCCESS, "controllerFactory", "", "isCurrent", "Lcom/arizona/launcher/updater/apk/LauncherUpdateControllerCallbacks;", "callbacks", "Lcom/arizona/launcher/updater/apk/LauncherUpdateController;", "<init>", "(Lcom/arizona/launcher/UpdateAnalyticsReporter;Lcom/arizona/launcher/LauncherUpdateServiceHost;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "metadataFetcher", "Lcom/arizona/launcher/updater/http/UpdateMetadataFetcher;", "launcherApkDownloader", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader;", "config", "Lcom/arizona/launcher/updater/apk/LauncherUpdateConfig;", "(Lkotlinx/coroutines/CoroutineScope;Lcom/arizona/launcher/updater/http/UpdateMetadataFetcher;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader;Lcom/arizona/launcher/updater/apk/LauncherUpdateConfig;Lcom/arizona/launcher/UpdateAnalyticsReporter;Lcom/arizona/launcher/LauncherUpdateServiceHost;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V", "metadataRequest", "Lkotlin/coroutines/Continuation;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", "apkDownload", "Lkotlin/Function3;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadRequest;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadResult;", "testSeam", "(Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lcom/arizona/launcher/updater/apk/LauncherUpdateConfig;Lcom/arizona/launcher/UpdateAnalyticsReporter;Lcom/arizona/launcher/LauncherUpdateServiceHost;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/Unit;)V", "checkServers", "Ljava/util/concurrent/ConcurrentHashMap;", "Lcom/arizona/launcher/LauncherUpdateServiceFlow$LauncherCheckAttempt;", "apkServers", "progressLock", "progressOperationToken", "Ljava/lang/Long;", "latestProgress", "Lcom/arizona/launcher/updater/apk/LauncherApkProgress;", "lastPublishedProgress", "lastAcceptedAttempt", "Ljava/lang/Integer;", "lastAcceptedAtMs", "controller", "requestCheck", "requestApkDownload", "cancelApkDownload", "handleCheckOutcome", "token", "outcome", "Lcom/arizona/launcher/updater/apk/LauncherUpdateCheckOutcome;", "failLauncherCheck", "error", "Lcom/arizona/launcher/UpdateAnalyticsErrorEvent;", "result", "allowFallback", "failureSubtype", "logLauncherMetadataAttempt", "context", "handleApkOutcome", "Lcom/arizona/launcher/updater/apk/LauncherApkOutcome;", "handleCancellation", TypedValues.CycleType.S_WAVE_PHASE, "Lcom/arizona/launcher/updater/apk/LauncherUpdatePhase;", "handleUnexpectedFailure", "", "isCurrentControllerOperation", "shouldMarkLauncherServerUnreachable", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadError;", "classification", "Lcom/arizona/launcher/updater/apk/LauncherApkFailureClassification;", "resetProgressGate", "offerProgress", "progress", "consumeAcceptedProgress", "flushAndFenceProgress", "fenceProgress", "fenceProgressLocked", "describeFailureCause", "LauncherCheckAttempt", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ì\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0001\u0018\u0000 ]2\u00020\u0001:\u0002\\]B\u008a\u0002\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012!\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\n\u0012\u0018\u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\n\u0012\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007\u0012\f\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007\u00126\u0010\u0014\u001a2\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0016\u0012\u0013\u0012\u00110\u0013¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u00020\u000e0\u0015\u0012\f\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00190\u0007\u0012B\u0010\u001a\u001a>\u0012\u001f\u0012\u001d\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u00130\n¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001b\u0012\u0013\u0012\u00110\u001c¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u001d\u0012\u0004\u0012\u00020\u001e0\u0015¢\u0006\u0004\b\u001f\u0010 B¤\u0001\b\u0016\u0012\u0006\u0010!\u001a\u00020\"\u0012\u0006\u0010#\u001a\u00020$\u0012\u0006\u0010%\u001a\u00020&\u0012\u0006\u0010'\u001a\u00020(\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012!\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\n\u0012\u0018\u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\n\u0012\u000e\b\u0002\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007\u0012\u000e\b\u0002\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007¢\u0006\u0004\b\u001f\u0010)Bú\u0001\b\u0010\u0012\u0006\u0010!\u001a\u00020\"\u0012\"\u0010*\u001a\u001e\b\u0001\u0012\u0004\u0012\u00020\b\u0012\n\u0012\b\u0012\u0004\u0012\u00020,0+\u0012\u0006\u0012\u0004\u0018\u00010\u00010\u0015\u0012(\u0010-\u001a$\b\u0001\u0012\u0004\u0012\u00020/\u0012\u0004\u0012\u000200\u0012\n\u0012\b\u0012\u0004\u0012\u0002010+\u0012\u0006\u0012\u0004\u0018\u00010\u00010.\u0012\u0006\u0010'\u001a\u00020(\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007\u0012!\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\n\u0012\u0018\u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\n\u0012\u000e\b\u0002\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007\u0012\u000e\b\u0002\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007\u0012\u0006\u00102\u001a\u00020\u000e\u0012\u000e\b\u0002\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u00190\u0007¢\u0006\u0004\b\u001f\u00103J\u0006\u0010;\u001a\u00020\u000eJ\u0006\u0010<\u001a\u00020\u000eJ\u0006\u0010=\u001a\u00020\u0013J\u0006\u0010>\u001a\u00020\u0013J\b\u0010\u001d\u001a\u00020\u001cH\u0002J\u001a\u0010?\u001a\u00020\u000e2\u0006\u0010@\u001a\u00020\u00192\b\u0010A\u001a\u0004\u0018\u00010BH\u0002J\u0010\u0010C\u001a\u00020\u000e2\u0006\u0010A\u001a\u00020BH\u0002J\u0018\u0010D\u001a\u00020\u000e2\u0006\u0010@\u001a\u00020\u00192\u0006\u0010E\u001a\u00020FH\u0002J8\u0010G\u001a\u00020\u000e2\u0006\u0010@\u001a\u00020\u00192\u0006\u0010H\u001a\u00020I2\n\b\u0002\u0010J\u001a\u0004\u0018\u00010,2\b\b\u0002\u0010K\u001a\u00020\u00132\b\b\u0002\u0010L\u001a\u00020\bH\u0002J\u001a\u0010M\u001a\u00020\u000e2\b\u0010N\u001a\u0004\u0018\u0001062\u0006\u0010E\u001a\u00020FH\u0002J\u0018\u0010O\u001a\u00020\u000e2\u0006\u0010@\u001a\u00020\u00192\u0006\u0010E\u001a\u00020PH\u0002J\u0018\u0010Q\u001a\u00020\u000e2\u0006\u0010@\u001a\u00020\u00192\u0006\u0010R\u001a\u00020SH\u0002J \u0010T\u001a\u00020\u000e2\u0006\u0010@\u001a\u00020\u00192\u0006\u0010R\u001a\u00020S2\u0006\u0010H\u001a\u00020UH\u0002J\u0010\u0010V\u001a\u00020\u00132\u0006\u0010@\u001a\u00020\u0019H\u0002J\u0018\u0010W\u001a\u00020\u00132\u0006\u0010H\u001a\u00020X2\u0006\u0010Y\u001a\u00020ZH\u0002J\u0010\u0010[\u001a\u00020\b2\u0006\u0010H\u001a\u00020XH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R)\u0010\t\u001a\u001d\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\r\u0012\u0004\u0012\u00020\u000e0\nX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u000f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000e0\u0007\u0012\u0004\u0012\u00020\u000e0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00110\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R>\u0010\u0014\u001a2\u0012\u0013\u0012\u00110\b¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0016\u0012\u0013\u0012\u00110\u0013¢\u0006\f\b\u000b\u0012\b\b\f\u0012\u0004\b\b(\u0017\u0012\u0004\u0012\u00020\u000e0\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00104\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020605X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00107\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\b05X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u000209X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010:\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000Ê\u0001\f\b_\u0012\b\b`\u0012\u0004\b\u0003\u0010\u0000¨\u0006^"}, d2 = {"Lcom/arizona/launcher/LauncherUpdateServiceFlow;", "", "analyticsReporter", "Lcom/arizona/launcher/UpdateAnalyticsReporter;", "host", "Lcom/arizona/launcher/LauncherUpdateServiceHost;", "currentServer", "Lkotlin/Function0;", "", "markCurrentServerUnreachable", "Lkotlin/Function1;", "Lkotlin/ParameterName;", "name", "failedServer", "", "postToMain", "mirrorCount", "", "hasValidatedNetwork", "", "logMetadataAttempt", "Lkotlin/Function2;", "message", FirebaseAnalytics.Param.SUCCESS, "progressClockMillis", "", "controllerFactory", "isCurrent", "Lcom/arizona/launcher/updater/apk/LauncherUpdateControllerCallbacks;", "callbacks", "Lcom/arizona/launcher/updater/apk/LauncherUpdateController;", "<init>", "(Lcom/arizona/launcher/UpdateAnalyticsReporter;Lcom/arizona/launcher/LauncherUpdateServiceHost;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function2;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "metadataFetcher", "Lcom/arizona/launcher/updater/http/UpdateMetadataFetcher;", "launcherApkDownloader", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloader;", "config", "Lcom/arizona/launcher/updater/apk/LauncherUpdateConfig;", "(Lkotlinx/coroutines/CoroutineScope;Lcom/arizona/launcher/updater/http/UpdateMetadataFetcher;Lcom/arizona/launcher/updater/apk/LauncherApkDownloader;Lcom/arizona/launcher/updater/apk/LauncherUpdateConfig;Lcom/arizona/launcher/UpdateAnalyticsReporter;Lcom/arizona/launcher/LauncherUpdateServiceHost;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V", "metadataRequest", "Lkotlin/coroutines/Continuation;", "Lcom/arizona/launcher/updater/http/UpdateMetadataHttpResult;", "apkDownload", "Lkotlin/Function3;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadRequest;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadObserver;", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadResult;", "testSeam", "(Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lcom/arizona/launcher/updater/apk/LauncherUpdateConfig;Lcom/arizona/launcher/UpdateAnalyticsReporter;Lcom/arizona/launcher/LauncherUpdateServiceHost;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/Unit;Lkotlin/jvm/functions/Function0;)V", "checkServers", "Ljava/util/concurrent/ConcurrentHashMap;", "Lcom/arizona/launcher/LauncherUpdateServiceFlow$LauncherCheckAttempt;", "apkServers", "apkProgressCoalescer", "Lcom/arizona/launcher/LauncherProgressPublicationCoalescer;", "controller", "requestCheck", "requestApkDownload", "cancelApkDownload", "replayLatestApkProgress", "publishApkProgressIfCurrent", "token", "progress", "Lcom/arizona/launcher/updater/apk/LauncherApkProgress;", "publishApkProgress", "handleCheckOutcome", "outcome", "Lcom/arizona/launcher/updater/apk/LauncherUpdateCheckOutcome;", "failLauncherCheck", "error", "Lcom/arizona/launcher/UpdateAnalyticsErrorEvent;", "result", "allowFallback", "failureSubtype", "logLauncherMetadataAttempt", "context", "handleApkOutcome", "Lcom/arizona/launcher/updater/apk/LauncherApkOutcome;", "handleCancellation", TypedValues.CycleType.S_WAVE_PHASE, "Lcom/arizona/launcher/updater/apk/LauncherUpdatePhase;", "handleUnexpectedFailure", "", "isCurrentControllerOperation", "shouldMarkLauncherServerUnreachable", "Lcom/arizona/launcher/updater/apk/LauncherApkDownloadError;", "classification", "Lcom/arizona/launcher/updater/apk/LauncherApkFailureClassification;", "describeFailureCause", "LauncherCheckAttempt", "Companion", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class LauncherUpdateServiceFlow {
     @Deprecated
     public static final String JSON_INVALID_SUBTYPE = "JSON_INVALID";
     @Deprecated
-    public static final long PROGRESS_INTERVAL_MS = 200;
-    @Deprecated
     public static final String TAG = "LAUNCHER_UPDATE_FLOW";
     private final UpdateAnalyticsReporter analyticsReporter;
+    private final LauncherProgressPublicationCoalescer apkProgressCoalescer;
     private final ConcurrentHashMap<Long, String> apkServers;
     private final ConcurrentHashMap<Long, LauncherCheckAttempt> checkServers;
     private final LauncherUpdateController controller;
     private final Function0<String> currentServer;
     private final Function0<Boolean> hasValidatedNetwork;
     private final LauncherUpdateServiceHost host;
-    private long lastAcceptedAtMs;
-    private Integer lastAcceptedAttempt;
-    private LauncherApkProgress lastPublishedProgress;
-    private LauncherApkProgress latestProgress;
     private final Function2<String, Boolean, Unit> logMetadataAttempt;
     private final Function1<String, Unit> markCurrentServerUnreachable;
     private final Function0<Integer> mirrorCount;
     private final Function1<Function0<Unit>, Unit> postToMain;
-    private final Object progressLock;
-    private Long progressOperationToken;
     private static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
 
@@ -100,17 +94,17 @@ public final class LauncherUpdateServiceFlow {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final int _init_$lambda$4() {
+    public static final int _init_$lambda$5() {
         return 1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final boolean _init_$lambda$5() {
+    public static final boolean _init_$lambda$6() {
         return true;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    private LauncherUpdateServiceFlow(UpdateAnalyticsReporter updateAnalyticsReporter, LauncherUpdateServiceHost launcherUpdateServiceHost, Function0<String> function0, Function1<? super String, Unit> function1, Function1<? super Function0<Unit>, Unit> function12, Function0<Integer> function02, Function0<Boolean> function03, Function2<? super String, ? super Boolean, Unit> function2, Function2<? super Function1<? super Long, Boolean>, ? super LauncherUpdateControllerCallbacks, LauncherUpdateController> function22) {
+    private LauncherUpdateServiceFlow(UpdateAnalyticsReporter updateAnalyticsReporter, LauncherUpdateServiceHost launcherUpdateServiceHost, Function0<String> function0, Function1<? super String, Unit> function1, Function1<? super Function0<Unit>, Unit> function12, Function0<Integer> function02, Function0<Boolean> function03, Function2<? super String, ? super Boolean, Unit> function2, Function0<Long> function04, Function2<? super Function1<? super Long, Boolean>, ? super LauncherUpdateControllerCallbacks, LauncherUpdateController> function22) {
         this.analyticsReporter = updateAnalyticsReporter;
         this.host = launcherUpdateServiceHost;
         this.currentServer = function0;
@@ -121,17 +115,17 @@ public final class LauncherUpdateServiceFlow {
         this.logMetadataAttempt = function2;
         this.checkServers = new ConcurrentHashMap<>();
         this.apkServers = new ConcurrentHashMap<>();
-        this.progressLock = new Object();
+        this.apkProgressCoalescer = new LauncherProgressPublicationCoalescer(0L, function04, 1, null);
         this.controller = function22.invoke(new LauncherUpdateServiceFlow$controller$1(this), callbacks());
     }
 
     public /* synthetic */ LauncherUpdateServiceFlow(CoroutineScope coroutineScope, UpdateMetadataFetcher updateMetadataFetcher, LauncherApkDownloader launcherApkDownloader, LauncherUpdateConfig launcherUpdateConfig, UpdateAnalyticsReporter updateAnalyticsReporter, LauncherUpdateServiceHost launcherUpdateServiceHost, Function0 function0, Function1 function1, Function1 function12, Function0 function02, Function0 function03, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(coroutineScope, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, updateAnalyticsReporter, launcherUpdateServiceHost, function0, function1, function12, (i & 512) != 0 ? new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda7
+        this(coroutineScope, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, updateAnalyticsReporter, launcherUpdateServiceHost, function0, function1, function12, (i & 512) != 0 ? new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda8
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return Integer.valueOf(LauncherUpdateServiceFlow._init_$lambda$0());
             }
-        } : function02, (i & 1024) != 0 ? new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda8
+        } : function02, (i & 1024) != 0 ? new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda9
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 return Boolean.valueOf(LauncherUpdateServiceFlow._init_$lambda$1());
@@ -141,15 +135,20 @@ public final class LauncherUpdateServiceFlow {
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LauncherUpdateServiceFlow(final CoroutineScope scope, final UpdateMetadataFetcher metadataFetcher, final LauncherApkDownloader launcherApkDownloader, final LauncherUpdateConfig config, UpdateAnalyticsReporter analyticsReporter, LauncherUpdateServiceHost host, Function0<String> currentServer, Function1<? super String, Unit> markCurrentServerUnreachable, Function1<? super Function0<Unit>, Unit> postToMain, Function0<Integer> mirrorCount, Function0<Boolean> hasValidatedNetwork) {
-        this(analyticsReporter, host, currentServer, markCurrentServerUnreachable, postToMain, mirrorCount, hasValidatedNetwork, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda5
+        this(analyticsReporter, host, currentServer, markCurrentServerUnreachable, postToMain, mirrorCount, hasValidatedNetwork, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 return LauncherUpdateServiceFlow._init_$lambda$2((String) obj, ((Boolean) obj2).booleanValue());
             }
-        }, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda6
+        }, new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return Long.valueOf(LauncherUpdateServiceFlow._init_$lambda$3());
+            }
+        }, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda5
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return LauncherUpdateServiceFlow._init_$lambda$3(CoroutineScope.this, metadataFetcher, launcherApkDownloader, config, (Function1) obj, (LauncherUpdateControllerCallbacks) obj2);
+                return LauncherUpdateServiceFlow._init_$lambda$4(CoroutineScope.this, metadataFetcher, launcherApkDownloader, config, (Function1) obj, (LauncherUpdateControllerCallbacks) obj2);
             }
         });
         Intrinsics.checkNotNullParameter(scope, "scope");
@@ -177,37 +176,52 @@ public final class LauncherUpdateServiceFlow {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final LauncherUpdateController _init_$lambda$3(CoroutineScope coroutineScope, UpdateMetadataFetcher updateMetadataFetcher, LauncherApkDownloader launcherApkDownloader, LauncherUpdateConfig launcherUpdateConfig, Function1 isCurrent, LauncherUpdateControllerCallbacks callbacks) {
+    public static final long _init_$lambda$3() {
+        return System.nanoTime() / 1000000;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final LauncherUpdateController _init_$lambda$4(CoroutineScope coroutineScope, UpdateMetadataFetcher updateMetadataFetcher, LauncherApkDownloader launcherApkDownloader, LauncherUpdateConfig launcherUpdateConfig, Function1 isCurrent, LauncherUpdateControllerCallbacks callbacks) {
         Intrinsics.checkNotNullParameter(isCurrent, "isCurrent");
         Intrinsics.checkNotNullParameter(callbacks, "callbacks");
         return new LauncherUpdateController(coroutineScope, updateMetadataFetcher, launcherApkDownloader, launcherUpdateConfig, isCurrent, callbacks);
     }
 
-    public /* synthetic */ LauncherUpdateServiceFlow(CoroutineScope coroutineScope, Function2 function2, Function3 function3, LauncherUpdateConfig launcherUpdateConfig, UpdateAnalyticsReporter updateAnalyticsReporter, LauncherUpdateServiceHost launcherUpdateServiceHost, Function0 function0, Function1 function1, Function1 function12, Function0 function02, Function0 function03, Unit unit, int i, DefaultConstructorMarker defaultConstructorMarker) {
+    public /* synthetic */ LauncherUpdateServiceFlow(CoroutineScope coroutineScope, Function2 function2, Function3 function3, LauncherUpdateConfig launcherUpdateConfig, UpdateAnalyticsReporter updateAnalyticsReporter, LauncherUpdateServiceHost launcherUpdateServiceHost, Function0 function0, Function1 function1, Function1 function12, Function0 function02, Function0 function03, Unit unit, Function0 function04, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this(coroutineScope, function2, function3, launcherUpdateConfig, updateAnalyticsReporter, launcherUpdateServiceHost, function0, function1, function12, (i & 512) != 0 ? new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return Integer.valueOf(LauncherUpdateServiceFlow._init_$lambda$4());
+                return Integer.valueOf(LauncherUpdateServiceFlow._init_$lambda$5());
             }
         } : function02, (i & 1024) != 0 ? new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
-                return Boolean.valueOf(LauncherUpdateServiceFlow._init_$lambda$5());
+                return Boolean.valueOf(LauncherUpdateServiceFlow._init_$lambda$6());
             }
-        } : function03, unit);
+        } : function03, unit, (i & 4096) != 0 ? new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                return Long.valueOf(LauncherUpdateServiceFlow._init_$lambda$7());
+            }
+        } : function04);
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static final long _init_$lambda$7() {
+        return System.nanoTime() / 1000000;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public LauncherUpdateServiceFlow(final CoroutineScope scope, final Function2<? super String, ? super Continuation<? super UpdateMetadataHttpResult>, ? extends Object> metadataRequest, final Function3<? super LauncherApkDownloadRequest, ? super LauncherApkDownloadObserver, ? super Continuation<? super LauncherApkDownloadResult>, ? extends Object> apkDownload, final LauncherUpdateConfig config, UpdateAnalyticsReporter analyticsReporter, LauncherUpdateServiceHost host, Function0<String> currentServer, Function1<? super String, Unit> markCurrentServerUnreachable, Function1<? super Function0<Unit>, Unit> postToMain, Function0<Integer> mirrorCount, Function0<Boolean> hasValidatedNetwork, Unit testSeam) {
-        this(analyticsReporter, host, currentServer, markCurrentServerUnreachable, postToMain, mirrorCount, hasValidatedNetwork, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda2
+    public LauncherUpdateServiceFlow(final CoroutineScope scope, final Function2<? super String, ? super Continuation<? super UpdateMetadataHttpResult>, ? extends Object> metadataRequest, final Function3<? super LauncherApkDownloadRequest, ? super LauncherApkDownloadObserver, ? super Continuation<? super LauncherApkDownloadResult>, ? extends Object> apkDownload, final LauncherUpdateConfig config, UpdateAnalyticsReporter analyticsReporter, LauncherUpdateServiceHost host, Function0<String> currentServer, Function1<? super String, Unit> markCurrentServerUnreachable, Function1<? super Function0<Unit>, Unit> postToMain, Function0<Integer> mirrorCount, Function0<Boolean> hasValidatedNetwork, Unit testSeam, Function0<Long> progressClockMillis) {
+        this(analyticsReporter, host, currentServer, markCurrentServerUnreachable, postToMain, mirrorCount, hasValidatedNetwork, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda6
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return LauncherUpdateServiceFlow._init_$lambda$6((String) obj, ((Boolean) obj2).booleanValue());
+                return LauncherUpdateServiceFlow._init_$lambda$8((String) obj, ((Boolean) obj2).booleanValue());
             }
-        }, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda3
+        }, progressClockMillis, new Function2() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda7
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
-                return LauncherUpdateServiceFlow._init_$lambda$7(CoroutineScope.this, metadataRequest, apkDownload, config, (Function1) obj, (LauncherUpdateControllerCallbacks) obj2);
+                return LauncherUpdateServiceFlow._init_$lambda$9(CoroutineScope.this, metadataRequest, apkDownload, config, (Function1) obj, (LauncherUpdateControllerCallbacks) obj2);
             }
         });
         Intrinsics.checkNotNullParameter(scope, "scope");
@@ -222,16 +236,17 @@ public final class LauncherUpdateServiceFlow {
         Intrinsics.checkNotNullParameter(mirrorCount, "mirrorCount");
         Intrinsics.checkNotNullParameter(hasValidatedNetwork, "hasValidatedNetwork");
         Intrinsics.checkNotNullParameter(testSeam, "testSeam");
+        Intrinsics.checkNotNullParameter(progressClockMillis, "progressClockMillis");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit _init_$lambda$6(String str, boolean z) {
+    public static final Unit _init_$lambda$8(String str, boolean z) {
         Intrinsics.checkNotNullParameter(str, "<unused var>");
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final LauncherUpdateController _init_$lambda$7(CoroutineScope coroutineScope, Function2 function2, Function3 function3, LauncherUpdateConfig launcherUpdateConfig, Function1 isCurrent, LauncherUpdateControllerCallbacks callbacks) {
+    public static final LauncherUpdateController _init_$lambda$9(CoroutineScope coroutineScope, Function2 function2, Function3 function3, LauncherUpdateConfig launcherUpdateConfig, Function1 isCurrent, LauncherUpdateControllerCallbacks callbacks) {
         Intrinsics.checkNotNullParameter(isCurrent, "isCurrent");
         Intrinsics.checkNotNullParameter(callbacks, "callbacks");
         return new LauncherUpdateController(coroutineScope, function2, function3, launcherUpdateConfig, isCurrent, callbacks, Unit.INSTANCE);
@@ -253,7 +268,6 @@ public final class LauncherUpdateServiceFlow {
         Long beginLauncherApkOperation = this.host.beginLauncherApkOperation();
         if (beginLauncherApkOperation != null) {
             long longValue = beginLauncherApkOperation.longValue();
-            resetProgressGate(longValue);
             String invoke = this.currentServer.invoke();
             this.apkServers.put(Long.valueOf(longValue), invoke);
             LauncherApkPreparation prepareLauncherApkDownload = this.controller.prepareLauncherApkDownload(invoke, this.host.externalFilesRoot());
@@ -266,7 +280,6 @@ public final class LauncherUpdateServiceFlow {
                     updateAnalyticsErrorEvent = UpdateAnalyticsErrorEvent.LAUNCHER_APK_DOWNLOAD_FAILED;
                 }
                 UpdateAnalyticsReporter.reportError$default(updateAnalyticsReporter, updateAnalyticsErrorEvent, null, invoke, null, 10, null);
-                fenceProgress(longValue);
                 this.host.completeLauncherApk(longValue, false, false, false, invoke, areEqual ? null : LauncherApkLocalStorageFailure.UNAVAILABLE);
                 this.apkServers.remove(Long.valueOf(longValue));
             } else if (!(prepareLauncherApkDownload instanceof LauncherApkPreparation.Ready)) {
@@ -274,13 +287,13 @@ public final class LauncherUpdateServiceFlow {
             } else {
                 if (!this.host.promoteLauncherForeground()) {
                     UpdateAnalyticsReporter.reportError$default(this.analyticsReporter, UpdateAnalyticsErrorEvent.LAUNCHER_APK_DOWNLOAD_FAILED, null, invoke, null, 10, null);
-                    fenceProgress(longValue);
                     this.host.completeLauncherApk(longValue, false, false, false, invoke, null);
                     this.apkServers.remove(Long.valueOf(longValue));
                     return;
                 }
                 this.host.setLauncherOperationHealthy();
                 this.host.beginLauncherProgress();
+                this.apkProgressCoalescer.begin(longValue);
                 this.controller.startLauncherApkDownload(longValue, (LauncherApkPreparation.Ready) prepareLauncherApkDownload);
             }
         }
@@ -290,8 +303,29 @@ public final class LauncherUpdateServiceFlow {
         return this.controller.cancelLauncherApkDownload();
     }
 
+    public final boolean replayLatestApkProgress() {
+        LauncherProgressDispatch replayLatest = this.apkProgressCoalescer.replayLatest();
+        if (replayLatest != null && this.host.isCurrentLauncherApkOperation(replayLatest.getToken())) {
+            publishApkProgress(replayLatest.getProgress());
+            return true;
+        }
+        return false;
+    }
+
     private final LauncherUpdateControllerCallbacks callbacks() {
         return new LauncherUpdateServiceFlow$callbacks$1(this);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public final void publishApkProgressIfCurrent(long j, LauncherApkProgress launcherApkProgress) {
+        if (launcherApkProgress == null || !this.host.isCurrentLauncherApkOperation(j)) {
+            return;
+        }
+        publishApkProgress(launcherApkProgress);
+    }
+
+    private final void publishApkProgress(LauncherApkProgress launcherApkProgress) {
+        this.host.updateLauncherProgress(launcherApkProgress.getDownloadedBytes(), launcherApkProgress.getTotalBytes(), launcherApkProgress.getAttempt(), launcherApkProgress.getResumed());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -410,7 +444,6 @@ public final class LauncherUpdateServiceFlow {
         ConcurrentHashMap<Long, String> concurrentHashMap = this.apkServers;
         if (!isCurrentLauncherApkOperation) {
             concurrentHashMap.remove(Long.valueOf(j));
-            fenceProgress(j);
             return;
         }
         String remove = concurrentHashMap.remove(Long.valueOf(j));
@@ -420,7 +453,6 @@ public final class LauncherUpdateServiceFlow {
         String str = remove;
         if (launcherApkOutcome instanceof LauncherApkOutcome.Success) {
             LauncherApkDownloadResult.Success result = ((LauncherApkOutcome.Success) launcherApkOutcome).getResult();
-            flushAndFenceProgress(j);
             this.host.completeLauncherProgress(result.getTotalBytes());
             this.host.completeLauncherApk(j, true, false, true, null, null);
             long totalBytes = result.getTotalBytes();
@@ -431,9 +463,7 @@ public final class LauncherUpdateServiceFlow {
         } else {
             UpdateAnalyticsReporter.reportError$default(this.analyticsReporter, UpdateAnalyticsErrorEvent.LAUNCHER_APK_DOWNLOAD_FAILED, null, str, null, 10, null);
             LauncherApkOutcome.Failure failure = (LauncherApkOutcome.Failure) launcherApkOutcome;
-            LauncherApkLocalStorageFailure localStorageFailure = LauncherApkFailurePolicy.INSTANCE.localStorageFailure(failure.getResult().getError());
-            fenceProgress(j);
-            this.host.completeLauncherApk(j, false, shouldMarkLauncherServerUnreachable(failure.getResult().getError(), failure.getClassification()), true, str, localStorageFailure);
+            this.host.completeLauncherApk(j, false, shouldMarkLauncherServerUnreachable(failure.getResult().getError(), failure.getClassification()), true, str, LauncherApkFailurePolicy.INSTANCE.localStorageFailure(failure.getResult().getError()));
             String label = failure.getClassification().getLabel();
             int attempts2 = failure.getResult().getAttempts();
             Log.e(TAG, "Launcher APK download failed: " + label + ", attempts=" + attempts2 + describeFailureCause(failure.getResult().getError()));
@@ -464,7 +494,6 @@ public final class LauncherUpdateServiceFlow {
             }
             String str = remove;
             UpdateAnalyticsReporter.reportError$default(this.analyticsReporter, UpdateAnalyticsErrorEvent.LAUNCHER_APK_DOWNLOAD_CANCELED, null, str, null, 10, null);
-            fenceProgress(j);
             this.host.completeLauncherApk(j, false, false, true, str, null);
         }
     }
@@ -505,7 +534,6 @@ public final class LauncherUpdateServiceFlow {
             }
             String str = remove;
             UpdateAnalyticsReporter.reportError$default(this.analyticsReporter, UpdateAnalyticsErrorEvent.LAUNCHER_APK_DOWNLOAD_FAILED, null, str, null, 10, null);
-            fenceProgress(j);
             this.host.completeLauncherApk(j, false, true, true, str, null);
         }
         Log.e(TAG, "Unexpected launcher " + launcherUpdatePhase + " failure", th);
@@ -524,108 +552,6 @@ public final class LauncherUpdateServiceFlow {
             return true;
         }
         return false;
-    }
-
-    private final void resetProgressGate(long j) {
-        synchronized (this.progressLock) {
-            this.progressOperationToken = Long.valueOf(j);
-            this.latestProgress = null;
-            this.lastPublishedProgress = null;
-            this.lastAcceptedAttempt = null;
-            this.lastAcceptedAtMs = 0L;
-            Unit unit = Unit.INSTANCE;
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void offerProgress(final long j, LauncherApkProgress launcherApkProgress) {
-        synchronized (this.progressLock) {
-            Long l = this.progressOperationToken;
-            if (l != null && l.longValue() == j) {
-                if (this.host.isCurrentLauncherApkOperation(j)) {
-                    this.latestProgress = launcherApkProgress;
-                    Integer num = this.lastAcceptedAttempt;
-                    boolean z = true;
-                    boolean z2 = num == null;
-                    int attempt = launcherApkProgress.getAttempt();
-                    if (num != null && num.intValue() == attempt) {
-                        z = false;
-                    }
-                    long progressClockMs = Companion.progressClockMs();
-                    long coerceAtLeast = RangesKt.coerceAtLeast(progressClockMs - this.lastAcceptedAtMs, 0L);
-                    if (z2 || z || coerceAtLeast >= 200) {
-                        this.lastAcceptedAttempt = Integer.valueOf(launcherApkProgress.getAttempt());
-                        this.lastAcceptedAtMs = progressClockMs;
-                        this.postToMain.invoke(new Function0() { // from class: com.arizona.launcher.LauncherUpdateServiceFlow$$ExternalSyntheticLambda4
-                            @Override // kotlin.jvm.functions.Function0
-                            public final Object invoke() {
-                                return LauncherUpdateServiceFlow.offerProgress$lambda$1(LauncherUpdateServiceFlow.this, j);
-                            }
-                        });
-                    }
-                }
-            }
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit offerProgress$lambda$1(LauncherUpdateServiceFlow launcherUpdateServiceFlow, long j) {
-        launcherUpdateServiceFlow.consumeAcceptedProgress(j);
-        return Unit.INSTANCE;
-    }
-
-    private final void consumeAcceptedProgress(long j) {
-        synchronized (this.progressLock) {
-            Long l = this.progressOperationToken;
-            if (l != null && l.longValue() == j) {
-                if (this.host.isCurrentLauncherApkOperation(j)) {
-                    LauncherApkProgress launcherApkProgress = this.latestProgress;
-                    if (launcherApkProgress == null) {
-                        return;
-                    }
-                    if (Intrinsics.areEqual(launcherApkProgress, this.lastPublishedProgress)) {
-                        return;
-                    }
-                    this.lastPublishedProgress = launcherApkProgress;
-                    this.host.updateLauncherProgress(launcherApkProgress.getDownloadedBytes(), launcherApkProgress.getTotalBytes(), launcherApkProgress.getAttempt(), launcherApkProgress.getResumed());
-                }
-            }
-        }
-    }
-
-    private final void flushAndFenceProgress(long j) {
-        synchronized (this.progressLock) {
-            Long l = this.progressOperationToken;
-            if (l != null && l.longValue() == j) {
-                LauncherApkProgress launcherApkProgress = this.latestProgress;
-                if (launcherApkProgress == null || Intrinsics.areEqual(launcherApkProgress, this.lastPublishedProgress)) {
-                    launcherApkProgress = null;
-                }
-                fenceProgressLocked();
-                if (launcherApkProgress == null || !this.host.isCurrentLauncherApkOperation(j)) {
-                    return;
-                }
-                this.host.updateLauncherProgress(launcherApkProgress.getDownloadedBytes(), launcherApkProgress.getTotalBytes(), launcherApkProgress.getAttempt(), launcherApkProgress.getResumed());
-            }
-        }
-    }
-
-    private final void fenceProgress(long j) {
-        synchronized (this.progressLock) {
-            Long l = this.progressOperationToken;
-            if (l != null && l.longValue() == j) {
-                fenceProgressLocked();
-            }
-            Unit unit = Unit.INSTANCE;
-        }
-    }
-
-    private final void fenceProgressLocked() {
-        this.progressOperationToken = null;
-        this.latestProgress = null;
-        this.lastPublishedProgress = null;
-        this.lastAcceptedAttempt = null;
-        this.lastAcceptedAtMs = 0L;
     }
 
     private final String describeFailureCause(LauncherApkDownloadError launcherApkDownloadError) {
@@ -736,7 +662,7 @@ public final class LauncherUpdateServiceFlow {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: LauncherUpdateServiceFlow.kt */
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0004\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\t\u001a\u00020\u00052\b\u0010\n\u001a\u0004\u0018\u00010\u0005J\u0006\u0010\u000b\u001a\u00020\bR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/arizona/launcher/LauncherUpdateServiceFlow$Companion;", "", "<init>", "()V", "TAG", "", "JSON_INVALID_SUBTYPE", "PROGRESS_INTERVAL_MS", "", "launcherMetadataHost", "url", "progressClockMs", "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0082\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0007\u001a\u00020\u00052\b\u0010\b\u001a\u0004\u0018\u00010\u0005R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"Lcom/arizona/launcher/LauncherUpdateServiceFlow$Companion;", "", "<init>", "()V", "TAG", "", "JSON_INVALID_SUBTYPE", "launcherMetadataHost", ImagesContract.URL, "app"}, k = 1, mv = {2, 4, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -750,10 +676,6 @@ public final class LauncherUpdateServiceFlow {
             HttpUrl parse;
             String host = (str == null || (parse = HttpUrl.Companion.parse(str)) == null) ? null : parse.host();
             return host == null ? "" : host;
-        }
-
-        public final long progressClockMs() {
-            return System.nanoTime() / 1000000;
         }
     }
 }

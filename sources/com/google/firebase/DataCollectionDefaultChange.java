@@ -1,5 +1,5 @@
 package com.google.firebase;
-/* loaded from: classes2.dex */
+/* loaded from: classes4.dex */
 public final class DataCollectionDefaultChange {
     public final boolean enabled;
 

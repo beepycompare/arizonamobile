@@ -3,7 +3,6 @@ package ru.mrlargha.feature.mobile.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -11,6 +10,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.feature.mobile.R;
 /* loaded from: classes6.dex */
 public final class MessengerInputFieldLayoutBinding implements ViewBinding {
@@ -21,13 +21,13 @@ public final class MessengerInputFieldLayoutBinding implements ViewBinding {
     public final RecyclerView emojiBar;
     public final AppCompatImageView emojiBtn;
     public final LinearLayout inputContainer;
-    public final EditText messageEditText;
+    public final KeyboardEditText messageEditText;
     public final TextView messageLimitText;
     public final LinearLayout messengeContainer;
     private final LinearLayout rootView;
     public final RelativeLayout sendBtn;
 
-    private MessengerInputFieldLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, TextView textView2, View view, RecyclerView recyclerView, AppCompatImageView appCompatImageView, LinearLayout linearLayout3, EditText editText, TextView textView3, LinearLayout linearLayout4, RelativeLayout relativeLayout) {
+    private MessengerInputFieldLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, TextView textView2, View view, RecyclerView recyclerView, AppCompatImageView appCompatImageView, LinearLayout linearLayout3, KeyboardEditText keyboardEditText, TextView textView3, LinearLayout linearLayout4, RelativeLayout relativeLayout) {
         this.rootView = linearLayout;
         this.blockUserContainer = linearLayout2;
         this.blockUserDescription = textView;
@@ -36,7 +36,7 @@ public final class MessengerInputFieldLayoutBinding implements ViewBinding {
         this.emojiBar = recyclerView;
         this.emojiBtn = appCompatImageView;
         this.inputContainer = linearLayout3;
-        this.messageEditText = editText;
+        this.messageEditText = keyboardEditText;
         this.messageLimitText = textView3;
         this.messengeContainer = linearLayout4;
         this.sendBtn = relativeLayout;
@@ -80,8 +80,8 @@ public final class MessengerInputFieldLayoutBinding implements ViewBinding {
                             LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                             if (linearLayout2 != null) {
                                 i = R.id.message_edit_text;
-                                EditText editText = (EditText) ViewBindings.findChildViewById(view, i);
-                                if (editText != null) {
+                                KeyboardEditText keyboardEditText = (KeyboardEditText) ViewBindings.findChildViewById(view, i);
+                                if (keyboardEditText != null) {
                                     i = R.id.message_limit_text;
                                     TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView3 != null) {
@@ -91,7 +91,7 @@ public final class MessengerInputFieldLayoutBinding implements ViewBinding {
                                             i = R.id.send_btn;
                                             RelativeLayout relativeLayout = (RelativeLayout) ViewBindings.findChildViewById(view, i);
                                             if (relativeLayout != null) {
-                                                return new MessengerInputFieldLayoutBinding((LinearLayout) view, linearLayout, textView, textView2, findChildViewById, recyclerView, appCompatImageView, linearLayout2, editText, textView3, linearLayout3, relativeLayout);
+                                                return new MessengerInputFieldLayoutBinding((LinearLayout) view, linearLayout, textView, textView2, findChildViewById, recyclerView, appCompatImageView, linearLayout2, keyboardEditText, textView3, linearLayout3, relativeLayout);
                                             }
                                         }
                                     }

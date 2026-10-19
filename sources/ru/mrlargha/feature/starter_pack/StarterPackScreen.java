@@ -48,7 +48,7 @@ public final class StarterPackScreen extends SAMPUIElement implements InterfaceC
         this.newbieAdapter = new StarterPackAdapter();
         this.richAdapter = new StarterPackAdapter();
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         initialize();
         setupAdapters();
         setupNavigation();

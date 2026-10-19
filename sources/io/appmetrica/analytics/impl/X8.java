@@ -2,6 +2,7 @@ package io.appmetrica.analytics.impl;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.miami.game.core.firebase.notification.NotificationStatsStore;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import java.util.ArrayList;
@@ -17,16 +18,16 @@ import kotlin.jvm.internal.StringCompanionObject;
 public final class X8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0500p7 f840a;
-    public final C0446n5 b;
+    public final C0495p7 f843a;
+    public final C0441n5 b;
     public final AtomicLong c;
     public final List d;
     public final Z6 e;
     public final ReentrantReadWriteLock.WriteLock f;
 
-    public X8(C0500p7 c0500p7, C0446n5 c0446n5, AtomicLong atomicLong, ArrayList arrayList, Z6 z6, ReentrantReadWriteLock reentrantReadWriteLock) {
-        this.f840a = c0500p7;
-        this.b = c0446n5;
+    public X8(C0495p7 c0495p7, C0441n5 c0441n5, AtomicLong atomicLong, ArrayList arrayList, Z6 z6, ReentrantReadWriteLock reentrantReadWriteLock) {
+        this.f843a = c0495p7;
+        this.b = c0441n5;
         this.c = atomicLong;
         this.d = arrayList;
         this.e = z6;
@@ -38,9 +39,9 @@ public final class X8 {
             StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
             return this.e.a(sQLiteDatabase, String.format("id IN (SELECT id FROM events ORDER BY CASE WHEN type IN (%1$s) THEN 2 WHEN type IN (%2$s) THEN 1 ELSE 0 END, id LIMIT (SELECT count() FROM events) / %3$s)", Arrays.copyOf(new Object[]{CollectionsKt.joinToString$default(Q9.i, ", ", null, null, 0, null, null, 62, null), CollectionsKt.joinToString$default(Q9.j, ", ", null, null, 0, null, null, 62, null), 10}, 3)), null, 2, this.b.b.b, true).b;
         } catch (Throwable th) {
-            C0539qk c0539qk = Oj.f708a;
-            c0539qk.getClass();
-            c0539qk.a(new Pj("deleteExcessiveReports exception", th));
+            C0534qk c0534qk = Oj.f711a;
+            c0534qk.getClass();
+            c0534qk.a(new Pj("deleteExcessiveReports exception", th));
             return 0;
         }
     }
@@ -56,7 +57,7 @@ public final class X8 {
         SQLiteDatabase sQLiteDatabase = null;
         try {
             try {
-                SQLiteDatabase writableDatabase = this.f840a.getWritableDatabase();
+                SQLiteDatabase writableDatabase = this.f843a.getWritableDatabase();
                 if (writableDatabase != null) {
                     try {
                         writableDatabase.beginTransaction();
@@ -75,8 +76,8 @@ public final class X8 {
                         }
                         writableDatabase.setTransactionSuccessful();
                         if (i != 0) {
-                            for (InterfaceC0424m9 interfaceC0424m9 : this.d) {
-                                interfaceC0424m9.a();
+                            for (InterfaceC0419m9 interfaceC0419m9 : this.d) {
+                                interfaceC0419m9.a();
                             }
                         }
                         Unit unit = Unit.INSTANCE;
@@ -95,13 +96,13 @@ public final class X8 {
     }
 
     public final void a(ContentValues contentValues) {
-        Integer asInteger = contentValues.getAsInteger("type");
+        Integer asInteger = contentValues.getAsInteger(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
         if (Q9.d.contains(Db.a(asInteger != null ? asInteger.intValue() : -1))) {
-            C0655v7 model = new C0681w7(null, 1, null).toModel(contentValues);
+            C0650v7 model = new C0676w7(null, 1, null).toModel(contentValues);
             PublicLogger publicLogger = this.b.m;
             Db db = model.d;
-            C0629u7 c0629u7 = model.g;
-            publicLogger.info(AbstractC0560rg.a("Event saved to db", db, c0629u7.b, c0629u7.c), new Object[0]);
+            C0624u7 c0624u7 = model.g;
+            publicLogger.info(AbstractC0555rg.a("Event saved to db", db, c0624u7.b, c0624u7.c), new Object[0]);
         }
     }
 
@@ -109,11 +110,11 @@ public final class X8 {
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            Integer asInteger = ((ContentValues) it.next()).getAsInteger("type");
+            Integer asInteger = ((ContentValues) it.next()).getAsInteger(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
             arrayList.add(Integer.valueOf(asInteger != null ? asInteger.intValue() : -1));
         }
-        for (InterfaceC0424m9 interfaceC0424m9 : this.d) {
-            interfaceC0424m9.a(arrayList);
+        for (InterfaceC0419m9 interfaceC0419m9 : this.d) {
+            interfaceC0419m9.a(arrayList);
         }
         ((A5) this.b.p).e();
     }

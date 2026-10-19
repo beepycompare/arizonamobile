@@ -1,12 +1,11 @@
 package com.google.common.base;
 
-import com.google.android.vending.expansion.downloader.Constants;
 import java.io.Serializable;
 import javax.annotation.CheckForNull;
 @ElementTypesAreNonnullByDefault
 /* loaded from: classes4.dex */
 public enum CaseFormat {
-    LOWER_HYPHEN(CharMatcher.is('-'), Constants.FILENAME_SEQUENCE_SEPARATOR) { // from class: com.google.common.base.CaseFormat.1
+    LOWER_HYPHEN(CharMatcher.is('-'), "-") { // from class: com.google.common.base.CaseFormat.1
         @Override // com.google.common.base.CaseFormat
         String normalizeWord(String word) {
             return Ascii.toLowerCase(word);

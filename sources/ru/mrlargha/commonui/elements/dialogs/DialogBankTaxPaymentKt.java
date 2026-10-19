@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.dialogs;
 
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.navigation.compose.DialogNavigator;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.crashlytics.internal.metadata.UserMetadata;
 import com.google.gson.Gson;
@@ -33,7 +34,7 @@ import ru.mrlargha.commonui.elements.bank.BankTaxVisualTypeKt;
 import ru.mrlargha.commonui.utils.emoji.ChatEmoji;
 import ru.mrlargha.commonui.utils.ui.money.MoneyFormatter;
 /* compiled from: DialogBankTaxPayment.kt */
-@Metadata(d1 = {"\u0000b\n\u0000\n\u0002\u0010\r\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\"\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0002\u001a*\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\b\b\u0002\u0010\t\u001a\u00020\u0006H\u0000\u001a\u001e\u0010\n\u001a\u0004\u0018\u00010\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u000b2\b\u0010\r\u001a\u0004\u0018\u00010\u000bH\u0002\u001a\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000fH\u0000\u001a\u0010\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u000fH\u0000\u001a$\u0010\u0012\u001a\u00020\u00062\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u000f0\u0017H\u0000\u001a\u000e\u0010\u0018\u001a\u0004\u0018\u00010\u0019*\u00020\u0006H\u0002\u001a\u000e\u0010\u001a\u001a\u0004\u0018\u00010\u000b*\u00020\u0019H\u0002\u001a\f\u0010\u001b\u001a\u00020\u001c*\u00020\u000bH\u0002\u001a\u0012\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014*\u00020\u000bH\u0002\u001a\u0012\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00190\u0014*\u00020\u0019H\u0002\u001a'\u0010\u001f\u001a\u0004\u0018\u00010\u0006*\u00020\u000b2\u0012\u0010 \u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00060!\"\u00020\u0006H\u0002¢\u0006\u0002\u0010\"\u001a'\u0010#\u001a\u0004\u0018\u00010\u000f*\u00020\u000b2\u0012\u0010 \u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00060!\"\u00020\u0006H\u0002¢\u0006\u0002\u0010$\u001a'\u0010%\u001a\u0004\u0018\u00010\u0002*\u00020\u000b2\u0012\u0010 \u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00060!\"\u00020\u0006H\u0002¢\u0006\u0002\u0010&\u001a\f\u0010'\u001a\u00020\u0006*\u00020\u0006H\u0002\"\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010*\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010-\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000¨\u0006."}, d2 = {"toDialogBankTaxPaymentMoneyText", "", "", "parseDialogBankTaxPaymentModel", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentModel;", "caption", "", "infoData", "leftButtonText", "hintInput", "mergeTaxPaymentPayloadObjects", "Lcom/google/gson/JsonObject;", "primary", "fallback", "resolveDialogBankTaxPaymentTitleRes", "", "type", "resolveTaxPaymentImageUrl", "buildDialogBankTaxPaymentSelectedIdsPayload", "taxList", "", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentInfo;", "selectedIds", "", "parseJsonElement", "Lcom/google/gson/JsonElement;", "resolveTaxPaymentPayloadObject", "hasTaxPaymentFields", "", "taxListValue", "taxListElements", "stringValue", UserMetadata.KEYDATA_FILENAME, "", "(Lcom/google/gson/JsonObject;[Ljava/lang/String;)Ljava/lang/String;", "intValue", "(Lcom/google/gson/JsonObject;[Ljava/lang/String;)Ljava/lang/Integer;", "longValue", "(Lcom/google/gson/JsonObject;[Ljava/lang/String;)Ljava/lang/Long;", "normalizeTaxPaymentMoneyTokens", "LEGACY_TAX_MONEY_TOKEN_REGEX", "Lkotlin/text/Regex;", "TAX_INFO_TOKEN_REGEX", "TAX_PAYMENT_GSON", "Lcom/google/gson/Gson;", "TAX_TYPE_LEGAL_FINE", "CommonUI"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000b\n\u0000\n\u0002\u0010\r\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\"\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0002\u001a*\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\b\b\u0002\u0010\t\u001a\u00020\u0006H\u0000\u001a\u001e\u0010\n\u001a\u0004\u0018\u00010\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u000b2\b\u0010\r\u001a\u0004\u0018\u00010\u000bH\u0002\u001a\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000fH\u0000\u001a\u0010\u0010\u0011\u001a\u00020\u00062\u0006\u0010\u0010\u001a\u00020\u000fH\u0000\u001a$\u0010\u0012\u001a\u00020\u00062\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u00142\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u000f0\u0017H\u0000\u001a\u000e\u0010\u0018\u001a\u0004\u0018\u00010\u0019*\u00020\u0006H\u0002\u001a\u000e\u0010\u001a\u001a\u0004\u0018\u00010\u000b*\u00020\u0019H\u0002\u001a\f\u0010\u001b\u001a\u00020\u001c*\u00020\u000bH\u0002\u001a\u0012\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014*\u00020\u000bH\u0002\u001a\u0012\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020\u00190\u0014*\u00020\u0019H\u0002\u001a'\u0010\u001f\u001a\u0004\u0018\u00010\u0006*\u00020\u000b2\u0012\u0010 \u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00060!\"\u00020\u0006H\u0002¢\u0006\u0002\u0010\"\u001a'\u0010#\u001a\u0004\u0018\u00010\u000f*\u00020\u000b2\u0012\u0010 \u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00060!\"\u00020\u0006H\u0002¢\u0006\u0002\u0010$\u001a'\u0010%\u001a\u0004\u0018\u00010\u0002*\u00020\u000b2\u0012\u0010 \u001a\n\u0012\u0006\b\u0001\u0012\u00020\u00060!\"\u00020\u0006H\u0002¢\u0006\u0002\u0010&\u001a\f\u0010'\u001a\u00020\u0006*\u00020\u0006H\u0002\"\u000e\u0010(\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010*\u001a\u00020)X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000\"\u000e\u0010-\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000¨\u0006."}, d2 = {"toDialogBankTaxPaymentMoneyText", "", "", "parseDialogBankTaxPaymentModel", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentModel;", "caption", "", "infoData", "leftButtonText", "hintInput", "mergeTaxPaymentPayloadObjects", "Lcom/google/gson/JsonObject;", "primary", "fallback", "resolveDialogBankTaxPaymentTitleRes", "", ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, "resolveTaxPaymentImageUrl", "buildDialogBankTaxPaymentSelectedIdsPayload", "taxList", "", "Lru/mrlargha/commonui/elements/dialogs/DialogBankTaxPaymentInfo;", "selectedIds", "", "parseJsonElement", "Lcom/google/gson/JsonElement;", "resolveTaxPaymentPayloadObject", "hasTaxPaymentFields", "", "taxListValue", "taxListElements", "stringValue", UserMetadata.KEYDATA_FILENAME, "", "(Lcom/google/gson/JsonObject;[Ljava/lang/String;)Ljava/lang/String;", "intValue", "(Lcom/google/gson/JsonObject;[Ljava/lang/String;)Ljava/lang/Integer;", "longValue", "(Lcom/google/gson/JsonObject;[Ljava/lang/String;)Ljava/lang/Long;", "normalizeTaxPaymentMoneyTokens", "LEGACY_TAX_MONEY_TOKEN_REGEX", "Lkotlin/text/Regex;", "TAX_INFO_TOKEN_REGEX", "TAX_PAYMENT_GSON", "Lcom/google/gson/Gson;", "TAX_TYPE_LEGAL_FINE", "CommonUI"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class DialogBankTaxPaymentKt {
     private static final Regex LEGACY_TAX_MONEY_TOKEN_REGEX = new Regex(":(?:m|kk|k):", RegexOption.IGNORE_CASE);
@@ -120,7 +121,7 @@ public final class DialogBankTaxPaymentKt {
         if (mergeTaxPaymentPayloadObjects == null) {
             return new DialogBankTaxPaymentModel(0, caption, 0, null, infoData, leftButtonText, null, 77, null);
         }
-        Integer intValue = intValue(mergeTaxPaymentPayloadObjects, "type");
+        Integer intValue = intValue(mergeTaxPaymentPayloadObjects, ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
         int intValue2 = intValue != null ? intValue.intValue() : 9;
         String stringValue = stringValue(mergeTaxPaymentPayloadObjects, "header");
         if (stringValue == null) {
@@ -241,18 +242,18 @@ public final class DialogBankTaxPaymentKt {
     }
 
     private static final JsonElement parseJsonElement(String str) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(JsonParser.parseString(str));
+            m9974constructorimpl = Result.m9974constructorimpl(JsonParser.parseString(str));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+            m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-            m9921constructorimpl = null;
+        if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+            m9974constructorimpl = null;
         }
-        return (JsonElement) m9921constructorimpl;
+        return (JsonElement) m9974constructorimpl;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -384,12 +385,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            str2 = Result.m9921constructorimpl(jsonElement.getAsString());
+                            str2 = Result.m9974constructorimpl(jsonElement.getAsString());
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            str2 = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                            str2 = Result.m9974constructorimpl(ResultKt.createFailure(th));
                         }
-                        str = Result.m9927isFailureimpl(str2) ? null : str2;
+                        str = Result.m9980isFailureimpl(str2) ? null : str2;
                     }
                 }
                 if (str != null) {
@@ -419,12 +420,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            num2 = Result.m9921constructorimpl(Integer.valueOf(jsonElement.getAsInt()));
+                            num2 = Result.m9974constructorimpl(Integer.valueOf(jsonElement.getAsInt()));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            num2 = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                            num2 = Result.m9974constructorimpl(ResultKt.createFailure(th));
                         }
-                        num = Result.m9927isFailureimpl(num2) ? null : num2;
+                        num = Result.m9980isFailureimpl(num2) ? null : num2;
                     }
                 }
                 if (num != null) {
@@ -454,12 +455,12 @@ public final class DialogBankTaxPaymentKt {
                     if (jsonElement != null) {
                         try {
                             Result.Companion companion = Result.Companion;
-                            l2 = Result.m9921constructorimpl(Long.valueOf(jsonElement.getAsLong()));
+                            l2 = Result.m9974constructorimpl(Long.valueOf(jsonElement.getAsLong()));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            l2 = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                            l2 = Result.m9974constructorimpl(ResultKt.createFailure(th));
                         }
-                        l = Result.m9927isFailureimpl(l2) ? null : l2;
+                        l = Result.m9980isFailureimpl(l2) ? null : l2;
                     }
                 }
                 if (l != null) {

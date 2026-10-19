@@ -1,7 +1,7 @@
 package com.google.firebase.platforminfo;
 
 import javax.annotation.Nonnull;
-/* loaded from: classes5.dex */
+/* loaded from: classes4.dex */
 final class AutoValue_LibraryVersion extends LibraryVersion {
     private final String libraryName;
     private final String version;

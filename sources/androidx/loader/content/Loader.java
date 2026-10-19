@@ -43,8 +43,7 @@ public class Loader<D> {
     public void onReset() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void onStartLoading() {
+    protected void onStartLoading() {
     }
 
     protected void onStopLoading() {

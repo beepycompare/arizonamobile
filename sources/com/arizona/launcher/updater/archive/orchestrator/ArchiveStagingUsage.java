@@ -1,5 +1,6 @@
 package com.arizona.launcher.updater.archive.orchestrator;
 
+import com.arizona.launcher.updater.archive.commit.ArchivePackageCommitter;
 import com.arizona.launcher.updater.archive.model.ArchivePackage;
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 import kotlin.text.StringsKt;
 /* compiled from: ArchivePackagePaths.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010#\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J(\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u00052\u0006\u0010\b\u001a\u00020\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000bJ&\u0010\r\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u00020\t2\u0006\u0010\u000f\u001a\u00020\t2\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00060\u0011H\u0002J\u0018\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\t2\u0006\u0010\u0015\u001a\u00020\tH\u0002Ê\u0001\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u0016"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStagingUsage;", "", "<init>", "()V", "bytesByPackage", "", "", "", "gameRoot", "Ljava/io/File;", "packages", "", "Lcom/arizona/launcher/updater/archive/model/ArchivePackage;", "measuredBytes", "node", "allowedRoot", "visitedDirectories", "", "isStrictChild", "", "candidate", "root", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010#\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\bÁ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J2\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u00052\u0006\u0010\b\u001a\u00020\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\f0\u000b2\b\b\u0002\u0010\r\u001a\u00020\tJ&\u0010\u000e\u001a\u00020\u00072\u0006\u0010\u000f\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00020\t2\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00060\u0012H\u0002J\u0018\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\t2\u0006\u0010\u0016\u001a\u00020\tH\u0002Ê\u0001\f\b\u0018\u0012\b\b\u0019\u0012\u0004\b\u0003\u0010\u0002¨\u0006\u0017"}, d2 = {"Lcom/arizona/launcher/updater/archive/orchestrator/ArchiveStagingUsage;", "", "<init>", "()V", "bytesByPackage", "", "", "", "gameRoot", "Ljava/io/File;", "packages", "", "Lcom/arizona/launcher/updater/archive/model/ArchivePackage;", "workRoot", "measuredBytes", "node", "allowedRoot", "visitedDirectories", "", "isStrictChild", "", "candidate", "root", "app", "Landroidx/compose/runtime/internal/StabilityInferred;", "parameters"}, k = 1, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ArchiveStagingUsage {
     public static final int $stable = 0;
@@ -26,11 +27,19 @@ public final class ArchiveStagingUsage {
     private ArchiveStagingUsage() {
     }
 
-    public final Map<String, Long> bytesByPackage(File gameRoot, List<ArchivePackage> packages) {
+    public static /* synthetic */ Map bytesByPackage$default(ArchiveStagingUsage archiveStagingUsage, File file, List list, File file2, int i, Object obj) {
+        if ((i & 4) != 0) {
+            file2 = new File(file.getCanonicalFile(), ArchivePackageCommitter.DEFAULT_WORK_DIRECTORY);
+        }
+        return archiveStagingUsage.bytesByPackage(file, list, file2);
+    }
+
+    public final Map<String, Long> bytesByPackage(File gameRoot, List<ArchivePackage> packages, File workRoot) {
         Intrinsics.checkNotNullParameter(gameRoot, "gameRoot");
         Intrinsics.checkNotNullParameter(packages, "packages");
+        Intrinsics.checkNotNullParameter(workRoot, "workRoot");
         File canonicalFile = gameRoot.getCanonicalFile();
-        File canonicalFile2 = new File(canonicalFile, ".archive-installing").getCanonicalFile();
+        File canonicalFile2 = workRoot.getCanonicalFile();
         Intrinsics.checkNotNull(canonicalFile2);
         Intrinsics.checkNotNull(canonicalFile);
         if (!isStrictChild(canonicalFile2, canonicalFile)) {

@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ResultReceiver;
-import com.google.android.billing.IabHelper;
 import com.google.android.gms.internal.play_billing.zzjd;
 import java.lang.ref.WeakReference;
 import java.util.Objects;
@@ -32,7 +31,7 @@ public final class zzcc extends com.google.android.gms.internal.play_billing.zza
             com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", "Response bundle is null.");
             BillingClientImpl.zzas(this.zzc, zzjd.NULL_BUNDLE_RETURNED_BY_PHONESKY, 37, zzdc.zzh);
             this.zzb.send(6, null);
-        } else if (!bundle.containsKey(IabHelper.RESPONSE_CODE)) {
+        } else if (!bundle.containsKey("RESPONSE_CODE")) {
             com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", "Response bundle doesn't contain a response code.");
             BillingClientImpl.zzas(this.zzc, zzjd.MISSING_RESPONSE_CODE_IN_PHONESKY_BUNDLE, 37, zzdc.zzh);
             this.zzb.send(6, bundle);
@@ -47,7 +46,7 @@ public final class zzcc extends com.google.android.gms.internal.play_billing.zza
             if (pendingIntent == null) {
                 com.google.android.gms.internal.play_billing.zzc.zzo("BillingClient", "Pending intent not found in response bundle.");
                 Bundle bundle2 = new Bundle();
-                bundle2.putInt(IabHelper.RESPONSE_CODE, 6);
+                bundle2.putInt("RESPONSE_CODE", 6);
                 bundle2.putString("DEBUG_MESSAGE", "An internal error occurred.");
                 this.zzb.send(6, bundle);
                 return;
@@ -61,7 +60,7 @@ public final class zzcc extends com.google.android.gms.internal.play_billing.zza
             } catch (RuntimeException e) {
                 com.google.android.gms.internal.play_billing.zzc.zzp("BillingClient", "Runtime error while launching intent for launch external link dialog.", e);
                 Bundle bundle3 = new Bundle();
-                bundle3.putInt(IabHelper.RESPONSE_CODE, 6);
+                bundle3.putInt("RESPONSE_CODE", 6);
                 bundle3.putString("DEBUG_MESSAGE", "An internal error occurred.");
                 bundle3.putInt("INTERNAL_LOG_ERROR_REASON", zzjd.RUNTIME_EXCEPTION_ON_LAUNCH_EXTERNAL_LINK_INTENT.zza());
                 bundle3.putString("INTERNAL_LOG_ERROR_ADDITIONAL_DETAILS", String.format("%s: %s", e.getClass().getName(), com.google.android.gms.internal.play_billing.zzbm.zzc(e.getMessage())));

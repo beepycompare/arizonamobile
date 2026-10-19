@@ -6,12 +6,12 @@ import kotlin.text.Charsets;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
 public final class Je {
-    public static final V9 a(Je je, EnumC0218ea enumC0218ea, Object obj) {
+    public static final V9 a(Je je, EnumC0213ea enumC0213ea, Object obj) {
         int i;
         Field[] fields;
         je.getClass();
         V9 v9 = new V9();
-        switch (enumC0218ea.ordinal()) {
+        switch (enumC0213ea.ordinal()) {
             case 0:
                 i = 0;
                 break;
@@ -36,7 +36,7 @@ public final class Je {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        v9.f809a = i;
+        v9.f812a = i;
         Ke.b.getClass();
         JSONObject jSONObject = new JSONObject();
         for (Field field : obj.getClass().getFields()) {

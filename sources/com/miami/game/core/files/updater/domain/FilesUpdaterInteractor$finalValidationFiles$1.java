@@ -4,7 +4,6 @@ import androidx.compose.runtime.ComposerKt;
 import androidx.media3.extractor.ts.PsExtractor;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.arizona.launcher.updater.archive.manifest.OriginalTzArchiveManifestParser;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -12,7 +11,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FilesUpdaterInteractor.kt */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.files.updater.domain.FilesUpdaterInteractor", f = "FilesUpdaterInteractor.kt", i = {2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4}, l = {178, 179, TsExtractor.TS_PACKET_SIZE, PsExtractor.PRIVATE_STREAM_1, ComposerKt.reuseKey}, m = "finalValidationFiles", n = {OriginalTzArchiveManifestParser.FILES_ROOT, "setFiles", "$this$forEach$iv", "element$iv", "it", OriginalTzArchiveManifestParser.FILES_ROOT, "setFiles", "$this$forEach$iv", "element$iv", "it", "destinationUri", OriginalTzArchiveManifestParser.FILES_ROOT, "setFiles", "filesToDelete"}, nl = {179, 180, PsExtractor.PRIVATE_STREAM_1, DownloaderService.STATUS_PENDING, 209}, s = {"L$0", "L$1", "L$2", "L$4", "L$5", "L$0", "L$1", "L$2", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2"}, v = 2)
+@DebugMetadata(c = "com.miami.game.core.files.updater.domain.FilesUpdaterInteractor", f = "FilesUpdaterInteractor.kt", i = {2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4}, l = {178, 179, TsExtractor.TS_PACKET_SIZE, PsExtractor.PRIVATE_STREAM_1, ComposerKt.reuseKey}, m = "finalValidationFiles", n = {OriginalTzArchiveManifestParser.FILES_ROOT, "setFiles", "$this$forEach$iv", "element$iv", "it", OriginalTzArchiveManifestParser.FILES_ROOT, "setFiles", "$this$forEach$iv", "element$iv", "it", "destinationUri", OriginalTzArchiveManifestParser.FILES_ROOT, "setFiles", "filesToDelete"}, nl = {179, 180, PsExtractor.PRIVATE_STREAM_1, 190, 209}, s = {"L$0", "L$1", "L$2", "L$4", "L$5", "L$0", "L$1", "L$2", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2"}, v = 2)
 /* loaded from: classes5.dex */
 public final class FilesUpdaterInteractor$finalValidationFiles$1 extends ContinuationImpl {
     Object L$0;

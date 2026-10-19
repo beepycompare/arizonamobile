@@ -5,12 +5,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class E {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f418a;
+    public final String f421a;
     public final long b;
     public final A c;
 
     public E(String str, long j, A a2) {
-        this.f418a = str;
+        this.f421a = str;
         this.b = j;
         this.c = a2;
     }
@@ -21,17 +21,17 @@ public final class E {
         }
         if (obj instanceof E) {
             E e = (E) obj;
-            return Intrinsics.areEqual(this.f418a, e.f418a) && this.b == e.b && this.c == e.c;
+            return Intrinsics.areEqual(this.f421a, e.f421a) && this.b == e.b && this.c == e.c;
         }
         return false;
     }
 
     public final int hashCode() {
         int hashCode = Long.hashCode(this.b);
-        return this.c.hashCode() + ((hashCode + (this.f418a.hashCode() * 31)) * 31);
+        return this.c.hashCode() + ((hashCode + (this.f421a.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "RequestState(type=" + this.f418a + ", lastAttempt=" + this.b + ", lastAttemptResult=" + this.c + ')';
+        return "RequestState(type=" + this.f421a + ", lastAttempt=" + this.b + ", lastAttemptResult=" + this.c + ')';
     }
 }

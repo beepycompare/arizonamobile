@@ -219,7 +219,7 @@ public final class BankScreen extends SAMPUIElement {
         prepareOpeningAnimationState();
         View screen = this.screen;
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
-        addViewToConstraintLayout(screen, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, screen, -1, -1, false, 8, null);
         setupTabs();
         bankNavigator.setVisibleTopTabs(visibleTopTabs(new BankScreenPayload(null, null, null, null, null, null, null, null, null, 0L, null, null, null, null, null, null, null, null, null, null, null, null, 4194303, null)));
         CustomCardView buttonClose = this.binding.buttonClose;
@@ -619,7 +619,7 @@ public final class BankScreen extends SAMPUIElement {
     }
 
     private final boolean applyWrappedPartialPayload(String str, String str2) {
-        Object m9921constructorimpl;
+        Object m9974constructorimpl;
         String json;
         String obj = StringsKt.trim((CharSequence) str2).toString();
         int hashCode = obj.hashCode();
@@ -629,15 +629,15 @@ public final class BankScreen extends SAMPUIElement {
             try {
                 Result.Companion companion = Result.Companion;
                 BankScreen bankScreen = this;
-                m9921constructorimpl = Result.m9921constructorimpl((JsonObject) MapperKt.getGson().fromJson(str2, (Class<Object>) JsonObject.class));
+                m9974constructorimpl = Result.m9974constructorimpl((JsonObject) MapperKt.getGson().fromJson(str2, (Class<Object>) JsonObject.class));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m9921constructorimpl = Result.m9921constructorimpl(ResultKt.createFailure(th));
+                m9974constructorimpl = Result.m9974constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m9927isFailureimpl(m9921constructorimpl)) {
-                m9921constructorimpl = null;
+            if (Result.m9980isFailureimpl(m9974constructorimpl)) {
+                m9974constructorimpl = null;
             }
-            JsonObject jsonObject = (JsonObject) m9921constructorimpl;
+            JsonObject jsonObject = (JsonObject) m9974constructorimpl;
             if (jsonObject == null) {
                 return false;
             }

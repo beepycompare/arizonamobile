@@ -1,7 +1,6 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import com.google.android.vending.expansion.downloader.Constants;
 import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
 import java.io.BufferedOutputStream;
 import java.io.Closeable;
@@ -12,13 +11,13 @@ import java.io.PrintWriter;
 public final class E6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0684wa f524a;
-    public final C0654v6 b;
+    public final C0679wa f527a;
+    public final C0649v6 b;
     public final Context c;
-    public final C0658va d;
+    public final C0653va d;
 
     public E6(Context context) {
-        this(context, new C0684wa(), new C0654v6(), C0658va.a(context));
+        this(context, new C0679wa(), new C0649v6(), C0653va.a(context));
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(6:3|(5:(10:5|(2:7|(1:9)(1:13))|14|15|16|18|19|20|9b|25)(1:34)|18|19|20|9b)|(1:11)|14|15|16) */
@@ -31,11 +30,11 @@ public final class E6 {
     */
     public final void a(Ph ph) {
         boolean mkdir;
-        C0173cg c0173cg;
+        C0168cg c0168cg;
         String str;
         R9 b;
         PrintWriter printWriter;
-        C0658va c0658va;
+        C0653va c0653va;
         File crashesDirectory = FileUtils.getCrashesDirectory(this.c);
         this.b.getClass();
         if (crashesDirectory == null) {
@@ -49,27 +48,27 @@ public final class E6 {
                     }
                     mkdir = crashesDirectory.mkdir();
                 }
-                str = ph.e.f852a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0173cg.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+                str = ph.e.f855a.f933a.getAsInteger("PROCESS_CFG_PROCESS_ID") + "-" + c0168cg.f933a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
                 b = this.d.b(str);
-                b.f744a.lock();
+                b.f747a.lock();
                 b.b.a();
-                this.f524a.getClass();
+                this.f527a.getClass();
                 printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
-                printWriter.write(new Lb(ph.f720a, ph.e, ph.d).l());
+                printWriter.write(new Lb(ph.f723a, ph.e, ph.d).l());
                 Oo.a((Closeable) printWriter);
                 b.c();
-                c0658va = this.d;
-                synchronized (c0658va) {
-                    c0658va.b.remove(str);
+                c0653va = this.d;
+                synchronized (c0653va) {
+                    c0653va.b.remove(str);
                 }
                 return;
             }
             mkdir = crashesDirectory.mkdir();
-            printWriter.write(new Lb(ph.f720a, ph.e, ph.d).l());
+            printWriter.write(new Lb(ph.f723a, ph.e, ph.d).l());
             Oo.a((Closeable) printWriter);
             b.c();
-            c0658va = this.d;
-            synchronized (c0658va) {
+            c0653va = this.d;
+            synchronized (c0653va) {
             }
         } catch (Throwable unused) {
             Oo.a((Closeable) printWriter);
@@ -80,18 +79,18 @@ public final class E6 {
         if (!mkdir) {
             return;
         }
-        str = ph.e.f852a.f930a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + c0173cg.f930a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+        str = ph.e.f855a.f933a.getAsInteger("PROCESS_CFG_PROCESS_ID") + "-" + c0168cg.f933a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
         b = this.d.b(str);
-        b.f744a.lock();
+        b.f747a.lock();
         b.b.a();
-        this.f524a.getClass();
+        this.f527a.getClass();
         printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
     }
 
-    public E6(Context context, C0684wa c0684wa, C0654v6 c0654v6, C0658va c0658va) {
+    public E6(Context context, C0679wa c0679wa, C0649v6 c0649v6, C0653va c0653va) {
         this.c = context;
-        this.f524a = c0684wa;
-        this.b = c0654v6;
-        this.d = c0658va;
+        this.f527a = c0679wa;
+        this.b = c0649v6;
+        this.d = c0653va;
     }
 }

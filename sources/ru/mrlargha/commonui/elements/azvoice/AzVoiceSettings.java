@@ -38,7 +38,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
     private List<SoundSliderData> sliderList;
 
     /* renamed from: switch  reason: not valid java name */
-    private final SwitchCompat f83switch;
+    private final SwitchCompat f86switch;
     private final TextView switchText;
     private final TextView userVoiceSettingsButton;
 
@@ -53,7 +53,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
         View findViewById = constraintLayout.findViewById(R.id.micro_switch);
         Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById(...)");
         SwitchCompat switchCompat = (SwitchCompat) findViewById;
-        this.f83switch = switchCompat;
+        this.f86switch = switchCompat;
         View findViewById2 = constraintLayout.findViewById(R.id.micro_state_text);
         Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById(...)");
         this.switchText = (TextView) findViewById2;
@@ -77,7 +77,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
         });
         this.sliderAdapter = sliderVoiceAdapter;
         this.sliderList = new ArrayList();
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: ru.mrlargha.commonui.elements.azvoice.AzVoiceSettings$$ExternalSyntheticLambda3
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator;
 public final class Z3 implements ModuleClientActivator {
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientActivator
     public final void activate(Context context) {
-        C0183d0 b = C0574s4.l().b();
-        b.c.a().executeDelayed(new C0157c0(b, context), b.d);
+        C0178d0 b = C0569s4.l().b();
+        b.c.a().executeDelayed(new C0152c0(b, context), b.d);
     }
 }

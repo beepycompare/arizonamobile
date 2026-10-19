@@ -80,7 +80,7 @@ public final class ArizonaSnackbar extends SAMPUIElement {
         if (!Intrinsics.areEqual(data, "")) {
             showSnackbar(data);
         }
-        addViewToConstraintLayout(constraintLayout, -1, -1);
+        SAMPUIElement.addViewToConstraintLayout$default(this, constraintLayout, -1, -1, false, 8, null);
         setVisibility(true);
     }
 

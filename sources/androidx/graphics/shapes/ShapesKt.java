@@ -3,6 +3,7 @@ package androidx.graphics.shapes;
 import androidx.collection.FloatFloatPair;
 import androidx.graphics.shapes.RoundedPolygon;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import androidx.media3.extractor.ts.PsExtractor;
 import com.arizona.launcher.updater.apk.LauncherApkNetworkPolicy;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -152,7 +153,7 @@ public final class ShapesKt {
     public static final RoundedPolygon star(RoundedPolygon.Companion companion, int i, float f, float f2, CornerRounding rounding, CornerRounding cornerRounding, List<CornerRounding> list) {
         Intrinsics.checkNotNullParameter(companion, "<this>");
         Intrinsics.checkNotNullParameter(rounding, "rounding");
-        return star$default(companion, i, f, f2, rounding, cornerRounding, list, 0.0f, 0.0f, 192, null);
+        return star$default(companion, i, f, f2, rounding, cornerRounding, list, 0.0f, 0.0f, PsExtractor.AUDIO_STREAM, null);
     }
 
     public static final RoundedPolygon star(RoundedPolygon.Companion companion, int i, float f, float f2, CornerRounding rounding, CornerRounding cornerRounding, List<CornerRounding> list, float f3) {

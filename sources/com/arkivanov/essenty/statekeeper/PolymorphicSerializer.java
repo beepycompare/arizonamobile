@@ -1,6 +1,7 @@
 package com.arkivanov.essenty.statekeeper;
 
 import androidx.exifinterface.media.ExifInterface;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.lang.annotation.Annotation;
 import java.util.List;
@@ -183,7 +184,7 @@ final class PolymorphicSerializer<T> implements KSerializer<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final Unit descriptor$lambda$0(ClassSerialDescriptorBuilder buildClassSerialDescriptor) {
         Intrinsics.checkNotNullParameter(buildClassSerialDescriptor, "$this$buildClassSerialDescriptor");
-        buildClassSerialDescriptor.element("type", StringSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);
+        buildClassSerialDescriptor.element(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, StringSerializer.INSTANCE.getDescriptor(), CollectionsKt.emptyList(), false);
         ClassSerialDescriptorBuilder.element$default(buildClassSerialDescriptor, "value", ContextualSerialDescriptor.INSTANCE, null, false, 12, null);
         return Unit.INSTANCE;
     }

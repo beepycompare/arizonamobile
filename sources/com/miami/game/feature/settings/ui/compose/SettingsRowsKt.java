@@ -1,5 +1,6 @@
 package com.miami.game.feature.settings.ui.compose;
 
+import android.content.SharedPreferences;
 import androidx.compose.foundation.layout.Arrangement;
 import androidx.compose.foundation.layout.OffsetKt;
 import androidx.compose.foundation.layout.RowKt;
@@ -11,6 +12,7 @@ import androidx.compose.runtime.ComposablesKt;
 import androidx.compose.runtime.Composer;
 import androidx.compose.runtime.ComposerKt;
 import androidx.compose.runtime.CompositionLocalMap;
+import androidx.compose.runtime.MutableState;
 import androidx.compose.runtime.RecomposeScopeImplKt;
 import androidx.compose.runtime.ScopeUpdateScope;
 import androidx.compose.runtime.Updater;
@@ -26,73 +28,79 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsRows.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0007\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\u001aE\u0010\u0000\u001a\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00010\u00032\u0006\u0010\u0005\u001a\u00020\u00042\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\tb\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f¢\u0006\u0002\u0010\b\u001aE\u0010\r\u001a\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u000e\u0012\u0004\u0012\u00020\u00010\u00032\u0006\u0010\u000f\u001a\u00020\u000e2\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\tb\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f¢\u0006\u0002\u0010\u0010\u001a?\u0010\u0011\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00122\u0006\u0010\u0013\u001a\u00020\u00142\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\tb\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f¢\u0006\u0002\u0010\u0015\u001a?\u0010\u0016\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00122\u0006\u0010\u0013\u001a\u00020\u00142\b\b\u0002\u0010\u0006\u001a\u00020\u0007H\u0007b\u0002\b\tb\f\b\n\u0012\b\b\u000b\u0012\u0004\b\b(\f¢\u0006\u0002\u0010\u0015¨\u0006\u0017"}, d2 = {"ChatFontSize", "", "onClick", "Lkotlin/Function1;", "", "currentFont", "modifier", "Landroidx/compose/ui/Modifier;", "(Lkotlin/jvm/functions/Function1;FLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "FontsCount", "", "currentCount", "(Lkotlin/jvm/functions/Function1;ILandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "KeyboardSwitch", "Lkotlin/Function0;", "isActive", "", "(Lkotlin/jvm/functions/Function0;ZLandroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "StreamerSwitch", "settings"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000.\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u001ae\u0010\u0000\u001a\u00020\u00012$\u0010\u0002\u001a \u0012\u0004\u0012\u00020\u0004\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\b\u001a\u00020\u00042\b\b\u0002\u0010\t\u001a\u00020\nH\u0007b\u0002\b\fb\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f¢\u0006\u0002\u0010\u000b\u001ae\u0010\u0010\u001a\u00020\u00012$\u0010\u0002\u001a \u0012\u0004\u0012\u00020\u0004\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\b\u001a\u00020\u00042\b\b\u0002\u0010\t\u001a\u00020\nH\u0007b\u0002\b\fb\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f¢\u0006\u0002\u0010\u000b\u001ae\u0010\u0012\u001a\u00020\u00012$\u0010\u0002\u001a \u0012\u0004\u0012\u00020\u0004\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\b\u001a\u00020\u00042\b\b\u0002\u0010\t\u001a\u00020\nH\u0007b\u0002\b\fb\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f¢\u0006\u0002\u0010\u000b\u001ae\u0010\u0014\u001a\u00020\u00012$\u0010\u0002\u001a \u0012\u0004\u0012\u00020\u0004\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00060\u0005\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00060\u00052\u0006\u0010\b\u001a\u00020\u00042\b\b\u0002\u0010\t\u001a\u00020\nH\u0007b\u0002\b\fb\f\b\r\u0012\b\b\u000e\u0012\u0004\b\b(\u000f¢\u0006\u0002\u0010\u000b¨\u0006\u0015"}, d2 = {"ChatFontSize", "", "onClick", "Lkotlin/Function3;", "Landroid/content/SharedPreferences;", "Landroidx/compose/runtime/MutableState;", "", "currentFont", "prefs", "modifier", "Landroidx/compose/ui/Modifier;", "(Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/MutableState;Landroid/content/SharedPreferences;Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;II)V", "Landroidx/compose/runtime/Composable;", "Landroidx/compose/runtime/ComposableTarget;", "applier", "androidx.compose.ui.UiComposable", "FontsCount", "currentPage", "KeyboardSwitch", "currentState", "StreamerSwitch", "settings"}, k = 2, mv = {2, 4, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class SettingsRowsKt {
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit ChatFontSize$lambda$1(Function1 function1, float f, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        ChatFontSize(function1, f, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+    public static final Unit ChatFontSize$lambda$1(Function3 function3, MutableState mutableState, SharedPreferences sharedPreferences, Modifier modifier, int i, int i2, Composer composer, int i3) {
+        ChatFontSize(function3, mutableState, sharedPreferences, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit FontsCount$lambda$1(Function1 function1, int i, Modifier modifier, int i2, int i3, Composer composer, int i4) {
-        FontsCount(function1, i, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i2 | 1), i3);
+    public static final Unit FontsCount$lambda$1(Function3 function3, MutableState mutableState, SharedPreferences sharedPreferences, Modifier modifier, int i, int i2, Composer composer, int i3) {
+        FontsCount(function3, mutableState, sharedPreferences, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit KeyboardSwitch$lambda$1(Function0 function0, boolean z, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        KeyboardSwitch(function0, z, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+    public static final Unit KeyboardSwitch$lambda$1(Function3 function3, MutableState mutableState, SharedPreferences sharedPreferences, Modifier modifier, int i, int i2, Composer composer, int i3) {
+        KeyboardSwitch(function3, mutableState, sharedPreferences, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static final Unit StreamerSwitch$lambda$1(Function0 function0, boolean z, Modifier modifier, int i, int i2, Composer composer, int i3) {
-        StreamerSwitch(function0, z, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
+    public static final Unit StreamerSwitch$lambda$1(Function3 function3, MutableState mutableState, SharedPreferences sharedPreferences, Modifier modifier, int i, int i2, Composer composer, int i3) {
+        StreamerSwitch(function3, mutableState, sharedPreferences, modifier, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1), i2);
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:116:0x03a5  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x03af  */
-    /* JADX WARN: Removed duplicated region for block: B:121:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x040d  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0417  */
+    /* JADX WARN: Removed duplicated region for block: B:144:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0084  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void ChatFontSize(final Function1<? super Float, Unit> onClick, final float f, Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void ChatFontSize(final Function3<? super SharedPreferences, ? super MutableState<Integer>, ? super Integer, Unit> onClick, final MutableState<Integer> currentFont, final SharedPreferences prefs, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         Modifier.Companion companion;
         ScopeUpdateScope endRestartGroup;
         Intrinsics.checkNotNullParameter(onClick, "onClick");
-        Composer startRestartGroup = composer.startRestartGroup(-1816129311);
-        ComposerKt.sourceInformation(startRestartGroup, "C(ChatFontSize)N(onClick,currentFont,modifier)20@845L701:SettingsRows.kt#1gr92h");
+        Intrinsics.checkNotNullParameter(currentFont, "currentFont");
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Composer startRestartGroup = composer.startRestartGroup(-1480123201);
+        ComposerKt.sourceInformation(startRestartGroup, "C(ChatFontSize)N(onClick,currentFont,prefs,modifier)30@1076L787:SettingsRows.kt#1gr92h");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changedInstance(onClick) ? 4 : 2) | i;
         } else {
             i3 = i;
         }
         if ((i & 48) == 0) {
-            i3 |= startRestartGroup.changed(f) ? 32 : 16;
+            i3 |= startRestartGroup.changed(currentFont) ? 32 : 16;
         }
-        int i4 = i2 & 4;
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= startRestartGroup.changedInstance(prefs) ? 256 : 128;
+        }
+        int i4 = i2 & 8;
         if (i4 != 0) {
-            i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-        } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= 3072;
+        } else if ((i & 3072) == 0) {
             obj = modifier;
-            i3 |= startRestartGroup.changed(obj) ? 256 : 128;
-            if (startRestartGroup.shouldExecute((i3 & 147) == 146, i3 & 1)) {
+            i3 |= startRestartGroup.changed(obj) ? 2048 : 1024;
+            if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
                 startRestartGroup.skipToGroupEnd();
                 companion = obj;
             } else {
                 companion = i4 != 0 ? Modifier.Companion : obj;
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-1816129311, i3, -1, "com.miami.game.feature.settings.ui.compose.ChatFontSize (SettingsRows.kt:19)");
+                    ComposerKt.traceEventStart(-1480123201, i3, -1, "com.miami.game.feature.settings.ui.compose.ChatFontSize (SettingsRows.kt:28)");
                 }
                 Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null);
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
@@ -121,7 +129,7 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -761271178, "C26@980L141,30@1130L410:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -276620806, "C36@1211L141,40@1361L496:SettingsRows.kt#1gr92h");
                 Modifier m1122width3ABfNKs = SizeKt.m1122width3ABfNKs(companion, Dp.m8160constructorimpl(180.0f));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
@@ -148,7 +156,7 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 987266641, "C27@1022L36,28@1071L40:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 786891555, "C37@1253L36,38@1302L40:SettingsRows.kt#1gr92h");
                 TextSettingsKt.TextSettings("РАЗМЕР ШРИФТА В ЧАТЕ", null, startRestartGroup, 6, 2);
                 SpacerKt.Spacer(SizeKt.m1122width3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -158,7 +166,7 @@ public final class SettingsRowsKt {
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(-Dp.m8160constructorimpl(28.0f))), Alignment.Companion.getTop(), startRestartGroup, 6);
+                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(-28.0f)), Alignment.Companion.getTop(), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
                 int hashCode3 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
                 CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
@@ -182,17 +190,18 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1311272847, "C33@1255L17,33@1224L70,34@1334L17,34@1307L66,35@1415L15,35@1386L64,36@1491L17,36@1463L67:SettingsRows.kt#1gr92h");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 42299827, "CC(remember):SettingsRows.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1767684993, "C43@1488L34,43@1457L90,44@1587L34,44@1560L86,45@1688L34,45@1659L88,46@1788L34,46@1760L87:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 635715200, "CC(remember):SettingsRows.kt#9igjgp");
                 int i5 = i3 & 14;
-                boolean z = i5 == 4;
+                int i6 = i3 & 112;
+                boolean changedInstance = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue = startRestartGroup.rememberedValue();
-                if (z || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda2
+                if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+                    rememberedValue = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda9
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             Unit ChatFontSize$lambda$0$1$0$0;
-                            ChatFontSize$lambda$0$1$0$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$0$0(Function1.this, (String) obj2);
+                            ChatFontSize$lambda$0$1$0$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$0$0(Function3.this, prefs, currentFont, (String) obj2);
                             return ChatFontSize$lambda$0$1$0$0;
                         }
                     };
@@ -200,16 +209,16 @@ public final class SettingsRowsKt {
                 }
                 Function1 function1 = (Function1) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButtonText("Оч. Мелкий", function1, f == 0.5f, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 42302355, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z2 = i5 == 4;
+                NumberButtonKt.NumberButtonText("Оч. Мелкий", function1, currentFont.getValue().intValue() == 0, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 635718368, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance2 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue2 = startRestartGroup.rememberedValue();
-                if (z2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                    rememberedValue2 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda3
+                if (changedInstance2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                    rememberedValue2 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda10
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             Unit ChatFontSize$lambda$0$1$1$0;
-                            ChatFontSize$lambda$0$1$1$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$1$0(Function1.this, (String) obj2);
+                            ChatFontSize$lambda$0$1$1$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$1$0(Function3.this, prefs, currentFont, (String) obj2);
                             return ChatFontSize$lambda$0$1$1$0;
                         }
                     };
@@ -217,16 +226,16 @@ public final class SettingsRowsKt {
                 }
                 Function1 function12 = (Function1) rememberedValue2;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButtonText("Мелкий", function12, f == 0.8f, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 42304945, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z3 = i5 == 4;
+                NumberButtonKt.NumberButtonText("Мелкий", function12, currentFont.getValue().intValue() == 1, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 635721600, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance3 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue3 = startRestartGroup.rememberedValue();
-                if (z3 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                    rememberedValue3 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda4
+                if (changedInstance3 || rememberedValue3 == Composer.Companion.getEmpty()) {
+                    rememberedValue3 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda11
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             Unit ChatFontSize$lambda$0$1$2$0;
-                            ChatFontSize$lambda$0$1$2$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$2$0(Function1.this, (String) obj2);
+                            ChatFontSize$lambda$0$1$2$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$2$0(Function3.this, prefs, currentFont, (String) obj2);
                             return ChatFontSize$lambda$0$1$2$0;
                         }
                     };
@@ -234,16 +243,16 @@ public final class SettingsRowsKt {
                 }
                 Function1 function13 = (Function1) rememberedValue3;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButtonText("Стандарт", function13, f == 1.0f, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 42307379, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z4 = i5 == 4;
+                NumberButtonKt.NumberButtonText("Стандарт", function13, currentFont.getValue().intValue() == 2, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 635724800, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance4 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue4 = startRestartGroup.rememberedValue();
-                if (z4 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                    rememberedValue4 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda5
+                if (changedInstance4 || rememberedValue4 == Composer.Companion.getEmpty()) {
+                    rememberedValue4 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda12
                         @Override // kotlin.jvm.functions.Function1
                         public final Object invoke(Object obj2) {
                             Unit ChatFontSize$lambda$0$1$3$0;
-                            ChatFontSize$lambda$0$1$3$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$3$0(Function1.this, (String) obj2);
+                            ChatFontSize$lambda$0$1$3$0 = SettingsRowsKt.ChatFontSize$lambda$0$1$3$0(Function3.this, prefs, currentFont, (String) obj2);
                             return ChatFontSize$lambda$0$1$3$0;
                         }
                     };
@@ -251,7 +260,275 @@ public final class SettingsRowsKt {
                 }
                 Function1 function14 = (Function1) rememberedValue4;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButtonText("Большой", function14, f == 1.5f, startRestartGroup, 6);
+                NumberButtonKt.NumberButtonText("Большой", function14, currentFont.getValue().intValue() == 3, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                startRestartGroup.endNode();
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                startRestartGroup.endNode();
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                if (ComposerKt.isTraceInProgress()) {
+                    ComposerKt.traceEventEnd();
+                }
+            }
+            endRestartGroup = startRestartGroup.endRestartGroup();
+            if (endRestartGroup == null) {
+                final Modifier modifier2 = companion;
+                endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda13
+                    @Override // kotlin.jvm.functions.Function2
+                    public final Object invoke(Object obj2, Object obj3) {
+                        return SettingsRowsKt.ChatFontSize$lambda$1(Function3.this, currentFont, prefs, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                    }
+                });
+                return;
+            }
+            return;
+        }
+        obj = modifier;
+        if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
+        }
+        endRestartGroup = startRestartGroup.endRestartGroup();
+        if (endRestartGroup == null) {
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ChatFontSize$lambda$0$1$0$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        function3.invoke(sharedPreferences, mutableState, 0);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ChatFontSize$lambda$0$1$1$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        function3.invoke(sharedPreferences, mutableState, 1);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ChatFontSize$lambda$0$1$2$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        function3.invoke(sharedPreferences, mutableState, 2);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit ChatFontSize$lambda$0$1$3$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
+        Intrinsics.checkNotNullParameter(it, "it");
+        function3.invoke(sharedPreferences, mutableState, 3);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:139:0x040d  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0417  */
+    /* JADX WARN: Removed duplicated region for block: B:144:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0084  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final void FontsCount(final Function3<? super SharedPreferences, ? super MutableState<Integer>, ? super Integer, Unit> onClick, final MutableState<Integer> currentPage, final SharedPreferences prefs, Modifier modifier, Composer composer, final int i, final int i2) {
+        int i3;
+        Object obj;
+        Modifier.Companion companion;
+        ScopeUpdateScope endRestartGroup;
+        Intrinsics.checkNotNullParameter(onClick, "onClick");
+        Intrinsics.checkNotNullParameter(currentPage, "currentPage");
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Composer startRestartGroup = composer.startRestartGroup(2064838236);
+        ComposerKt.sourceInformation(startRestartGroup, "C(FontsCount)N(onClick,currentPage,prefs,modifier)57@2096L753:SettingsRows.kt#1gr92h");
+        if ((i & 6) == 0) {
+            i3 = (startRestartGroup.changedInstance(onClick) ? 4 : 2) | i;
+        } else {
+            i3 = i;
+        }
+        if ((i & 48) == 0) {
+            i3 |= startRestartGroup.changed(currentPage) ? 32 : 16;
+        }
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= startRestartGroup.changedInstance(prefs) ? 256 : 128;
+        }
+        int i4 = i2 & 8;
+        if (i4 != 0) {
+            i3 |= 3072;
+        } else if ((i & 3072) == 0) {
+            obj = modifier;
+            i3 |= startRestartGroup.changed(obj) ? 2048 : 1024;
+            if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
+                startRestartGroup.skipToGroupEnd();
+                companion = obj;
+            } else {
+                companion = i4 != 0 ? Modifier.Companion : obj;
+                if (ComposerKt.isTraceInProgress()) {
+                    ComposerKt.traceEventStart(2064838236, i3, -1, "com.miami.game.feature.settings.ui.compose.FontsCount (SettingsRows.kt:56)");
+                }
+                Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null);
+                Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
+                MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), centerVertically, startRestartGroup, 48);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
+                int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
+                CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
+                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, fillMaxWidth$default);
+                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
+                if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                    ComposablesKt.invalidApplier();
+                }
+                startRestartGroup.startReusableNode();
+                if (startRestartGroup.getInserting()) {
+                    startRestartGroup.createNode(constructor);
+                } else {
+                    startRestartGroup.useNode();
+                }
+                Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
+                Updater.m4475setimpl(m4467constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
+                RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1407048254, "C62@2230L148,67@2387L456:SettingsRows.kt#1gr92h");
+                Modifier m1122width3ABfNKs = SizeKt.m1122width3ABfNKs(companion, Dp.m8160constructorimpl(180.0f));
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
+                MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
+                int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
+                CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
+                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m1122width3ABfNKs);
+                Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
+                if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                    ComposablesKt.invalidApplier();
+                }
+                startRestartGroup.startReusableNode();
+                if (startRestartGroup.getInserting()) {
+                    startRestartGroup.createNode(constructor2);
+                } else {
+                    startRestartGroup.useNode();
+                }
+                Composer m4467constructorimpl2 = Updater.m4467constructorimpl(startRestartGroup);
+                Updater.m4475setimpl(m4467constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4475setimpl(m4467constructorimpl2, Integer.valueOf(hashCode2), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4473reconcileimpl(m4467constructorimpl2, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
+                RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1063362753, "C63@2272L43,65@2328L40:SettingsRows.kt#1gr92h");
+                TextSettingsKt.TextSettings("СТРОК ЧАТА", null, startRestartGroup, 6, 2);
+                SpacerKt.Spacer(SizeKt.m1122width3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                startRestartGroup.endNode();
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
+                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(-28.0f)), Alignment.Companion.getTop(), startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
+                int hashCode3 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
+                CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
+                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, Modifier.Companion);
+                Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
+                if (!(startRestartGroup.getApplier() instanceof Applier)) {
+                    ComposablesKt.invalidApplier();
+                }
+                startRestartGroup.startReusableNode();
+                if (startRestartGroup.getInserting()) {
+                    startRestartGroup.createNode(constructor3);
+                } else {
+                    startRestartGroup.useNode();
+                }
+                Composer m4467constructorimpl3 = Updater.m4467constructorimpl(startRestartGroup);
+                Updater.m4475setimpl(m4467constructorimpl3, rowMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
+                Updater.m4475setimpl(m4467constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
+                Updater.m4475setimpl(m4467constructorimpl3, Integer.valueOf(hashCode3), ComposeUiNode.Companion.getSetCompositeKeyHash());
+                Updater.m4473reconcileimpl(m4467constructorimpl3, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
+                Updater.m4475setimpl(m4467constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
+                RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -681656053, "C70@2502L34,70@2484L77,71@2592L34,71@2574L77,72@2683L34,72@2664L78,73@2774L34,73@2755L78:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1086390013, "CC(remember):SettingsRows.kt#9igjgp");
+                int i5 = i3 & 14;
+                int i6 = i3 & 112;
+                boolean changedInstance = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
+                Object rememberedValue = startRestartGroup.rememberedValue();
+                if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+                    rememberedValue = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda2
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj2) {
+                            Unit FontsCount$lambda$0$1$0$0;
+                            FontsCount$lambda$0$1$0$0 = SettingsRowsKt.FontsCount$lambda$0$1$0$0(Function3.this, prefs, currentPage, (String) obj2);
+                            return FontsCount$lambda$0$1$0$0;
+                        }
+                    };
+                    startRestartGroup.updateRememberedValue(rememberedValue);
+                }
+                Function1 function1 = (Function1) rememberedValue;
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                NumberButtonKt.NumberButton("5", function1, currentPage.getValue().intValue() == 0, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1086392893, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance2 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
+                Object rememberedValue2 = startRestartGroup.rememberedValue();
+                if (changedInstance2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                    rememberedValue2 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda3
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj2) {
+                            Unit FontsCount$lambda$0$1$1$0;
+                            FontsCount$lambda$0$1$1$0 = SettingsRowsKt.FontsCount$lambda$0$1$1$0(Function3.this, prefs, currentPage, (String) obj2);
+                            return FontsCount$lambda$0$1$1$0;
+                        }
+                    };
+                    startRestartGroup.updateRememberedValue(rememberedValue2);
+                }
+                Function1 function12 = (Function1) rememberedValue2;
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                NumberButtonKt.NumberButton("8", function12, currentPage.getValue().intValue() == 1, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1086395805, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance3 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
+                Object rememberedValue3 = startRestartGroup.rememberedValue();
+                if (changedInstance3 || rememberedValue3 == Composer.Companion.getEmpty()) {
+                    rememberedValue3 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda4
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj2) {
+                            Unit FontsCount$lambda$0$1$2$0;
+                            FontsCount$lambda$0$1$2$0 = SettingsRowsKt.FontsCount$lambda$0$1$2$0(Function3.this, prefs, currentPage, (String) obj2);
+                            return FontsCount$lambda$0$1$2$0;
+                        }
+                    };
+                    startRestartGroup.updateRememberedValue(rememberedValue3);
+                }
+                Function1 function13 = (Function1) rememberedValue3;
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                NumberButtonKt.NumberButton("10", function13, currentPage.getValue().intValue() == 2, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1086398717, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance4 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
+                Object rememberedValue4 = startRestartGroup.rememberedValue();
+                if (changedInstance4 || rememberedValue4 == Composer.Companion.getEmpty()) {
+                    rememberedValue4 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda5
+                        @Override // kotlin.jvm.functions.Function1
+                        public final Object invoke(Object obj2) {
+                            Unit FontsCount$lambda$0$1$3$0;
+                            FontsCount$lambda$0$1$3$0 = SettingsRowsKt.FontsCount$lambda$0$1$3$0(Function3.this, prefs, currentPage, (String) obj2);
+                            return FontsCount$lambda$0$1$3$0;
+                        }
+                    };
+                    startRestartGroup.updateRememberedValue(rememberedValue4);
+                }
+                Function1 function14 = (Function1) rememberedValue4;
+                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
+                NumberButtonKt.NumberButton("12", function14, currentPage.getValue().intValue() == 3, startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -274,7 +551,7 @@ public final class SettingsRowsKt {
                 endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda6
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        return SettingsRowsKt.ChatFontSize$lambda$1(Function1.this, f, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return SettingsRowsKt.FontsCount$lambda$1(Function3.this, currentPage, prefs, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -282,7 +559,7 @@ public final class SettingsRowsKt {
             return;
         }
         obj = modifier;
-        if (startRestartGroup.shouldExecute((i3 & 147) == 146, i3 & 1)) {
+        if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
         }
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
@@ -290,71 +567,76 @@ public final class SettingsRowsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$0$1$0$0(Function1 function1, String it) {
+    public static final Unit FontsCount$lambda$0$1$0$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(Float.valueOf(0.5f));
+        function3.invoke(sharedPreferences, mutableState, 0);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$0$1$1$0(Function1 function1, String it) {
+    public static final Unit FontsCount$lambda$0$1$1$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(Float.valueOf(0.8f));
+        function3.invoke(sharedPreferences, mutableState, 1);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$0$1$2$0(Function1 function1, String it) {
+    public static final Unit FontsCount$lambda$0$1$2$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(Float.valueOf(1.0f));
+        function3.invoke(sharedPreferences, mutableState, 2);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit ChatFontSize$lambda$0$1$3$0(Function1 function1, String it) {
+    public static final Unit FontsCount$lambda$0$1$3$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState, String it) {
         Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(Float.valueOf(1.5f));
+        function3.invoke(sharedPreferences, mutableState, 3);
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:119:0x03a0  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x03aa  */
-    /* JADX WARN: Removed duplicated region for block: B:124:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0390  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x039a  */
+    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0084  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void FontsCount(final Function1<? super Integer, Unit> onClick, final int i, Modifier modifier, Composer composer, final int i2, final int i3) {
-        int i4;
+    public static final void KeyboardSwitch(final Function3<? super SharedPreferences, ? super MutableState<Integer>, ? super Integer, Unit> onClick, final MutableState<Integer> currentState, final SharedPreferences prefs, Modifier modifier, Composer composer, final int i, final int i2) {
+        int i3;
         Object obj;
         Modifier.Companion companion;
         ScopeUpdateScope endRestartGroup;
         Intrinsics.checkNotNullParameter(onClick, "onClick");
-        Composer startRestartGroup = composer.startRestartGroup(-1841430793);
-        ComposerKt.sourceInformation(startRestartGroup, "C(FontsCount)N(onClick,currentCount,modifier)44@1655L686:SettingsRows.kt#1gr92h");
-        if ((i2 & 6) == 0) {
-            i4 = (startRestartGroup.changedInstance(onClick) ? 4 : 2) | i2;
+        Intrinsics.checkNotNullParameter(currentState, "currentState");
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Composer startRestartGroup = composer.startRestartGroup(565719756);
+        ComposerKt.sourceInformation(startRestartGroup, "C(KeyboardSwitch)N(onClick,currentState,prefs,modifier)84@3097L642:SettingsRows.kt#1gr92h");
+        if ((i & 6) == 0) {
+            i3 = (startRestartGroup.changedInstance(onClick) ? 4 : 2) | i;
         } else {
-            i4 = i2;
+            i3 = i;
         }
-        if ((i2 & 48) == 0) {
-            i4 |= startRestartGroup.changed(i) ? 32 : 16;
+        if ((i & 48) == 0) {
+            i3 |= startRestartGroup.changed(currentState) ? 32 : 16;
         }
-        int i5 = i3 & 4;
-        if (i5 != 0) {
-            i4 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-        } else if ((i2 & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= startRestartGroup.changedInstance(prefs) ? 256 : 128;
+        }
+        int i4 = i2 & 8;
+        if (i4 != 0) {
+            i3 |= 3072;
+        } else if ((i & 3072) == 0) {
             obj = modifier;
-            i4 |= startRestartGroup.changed(obj) ? 256 : 128;
-            if (startRestartGroup.shouldExecute((i4 & 147) == 146, i4 & 1)) {
+            i3 |= startRestartGroup.changed(obj) ? 2048 : 1024;
+            if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
                 startRestartGroup.skipToGroupEnd();
                 companion = obj;
             } else {
-                companion = i5 != 0 ? Modifier.Companion : obj;
+                companion = i4 != 0 ? Modifier.Companion : obj;
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(-1841430793, i4, -1, "com.miami.game.feature.settings.ui.compose.FontsCount (SettingsRows.kt:43)");
+                    ComposerKt.traceEventStart(565719756, i3, -1, "com.miami.game.feature.settings.ui.compose.KeyboardSwitch (SettingsRows.kt:83)");
                 }
                 Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null);
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
@@ -383,8 +665,8 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 321523159, "C50@1798L148,55@1955L380:SettingsRows.kt#1gr92h");
-                Modifier m1122width3ABfNKs = SizeKt.m1122width3ABfNKs(companion, Dp.m8160constructorimpl(180.0f));
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -376109987, "C89@3231L148,94@3388L345:SettingsRows.kt#1gr92h");
+                Modifier m1122width3ABfNKs = SizeKt.m1122width3ABfNKs(companion, Dp.m8160constructorimpl(190.0f));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
@@ -410,269 +692,7 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1907357012, "C51@1840L43,53@1896L40:SettingsRows.kt#1gr92h");
-                TextSettingsKt.TextSettings("СТРОК ЧАТА", null, startRestartGroup, 6, 2);
-                SpacerKt.Spacer(SizeKt.m1122width3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                startRestartGroup.endNode();
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy3 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m742spacedBy0680j_4(Dp.m8160constructorimpl(-Dp.m8160constructorimpl(28.0f))), Alignment.Companion.getTop(), startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
-                int hashCode3 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-                CompositionLocalMap currentCompositionLocalMap3 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier3 = ComposedModifierKt.materializeModifier(startRestartGroup, Modifier.Companion);
-                Function0<ComposeUiNode> constructor3 = ComposeUiNode.Companion.getConstructor();
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
-                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                    ComposablesKt.invalidApplier();
-                }
-                startRestartGroup.startReusableNode();
-                if (startRestartGroup.getInserting()) {
-                    startRestartGroup.createNode(constructor3);
-                } else {
-                    startRestartGroup.useNode();
-                }
-                Composer m4467constructorimpl3 = Updater.m4467constructorimpl(startRestartGroup);
-                Updater.m4475setimpl(m4467constructorimpl3, rowMeasurePolicy3, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4475setimpl(m4467constructorimpl3, currentCompositionLocalMap3, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4475setimpl(m4467constructorimpl3, Integer.valueOf(hashCode3), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4473reconcileimpl(m4467constructorimpl3, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4475setimpl(m4467constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
-                RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1484256632, "C58@2068L14,58@2050L52,59@2133L14,59@2115L52,60@2199L15,60@2180L55,61@2267L15,61@2248L77:SettingsRows.kt#1gr92h");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1017710886, "CC(remember):SettingsRows.kt#9igjgp");
-                int i6 = i4 & 14;
-                boolean z = i6 == 4;
-                Object rememberedValue = startRestartGroup.rememberedValue();
-                if (z || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda0
-                        @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj2) {
-                            Unit FontsCount$lambda$0$1$0$0;
-                            FontsCount$lambda$0$1$0$0 = SettingsRowsKt.FontsCount$lambda$0$1$0$0(Function1.this, (String) obj2);
-                            return FontsCount$lambda$0$1$0$0;
-                        }
-                    };
-                    startRestartGroup.updateRememberedValue(rememberedValue);
-                }
-                Function1 function1 = (Function1) rememberedValue;
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButton("5", function1, i == 5, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1017712966, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z2 = i6 == 4;
-                Object rememberedValue2 = startRestartGroup.rememberedValue();
-                if (z2 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                    rememberedValue2 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda7
-                        @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj2) {
-                            Unit FontsCount$lambda$0$1$1$0;
-                            FontsCount$lambda$0$1$1$0 = SettingsRowsKt.FontsCount$lambda$0$1$1$0(Function1.this, (String) obj2);
-                            return FontsCount$lambda$0$1$1$0;
-                        }
-                    };
-                    startRestartGroup.updateRememberedValue(rememberedValue2);
-                }
-                Function1 function12 = (Function1) rememberedValue2;
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButton("8", function12, i == 8, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1017715079, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z3 = i6 == 4;
-                Object rememberedValue3 = startRestartGroup.rememberedValue();
-                if (z3 || rememberedValue3 == Composer.Companion.getEmpty()) {
-                    rememberedValue3 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda8
-                        @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj2) {
-                            Unit FontsCount$lambda$0$1$2$0;
-                            FontsCount$lambda$0$1$2$0 = SettingsRowsKt.FontsCount$lambda$0$1$2$0(Function1.this, (String) obj2);
-                            return FontsCount$lambda$0$1$2$0;
-                        }
-                    };
-                    startRestartGroup.updateRememberedValue(rememberedValue3);
-                }
-                Function1 function13 = (Function1) rememberedValue3;
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButton("10", function13, i == 10, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1017717255, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z4 = i6 == 4;
-                Object rememberedValue4 = startRestartGroup.rememberedValue();
-                if (z4 || rememberedValue4 == Composer.Companion.getEmpty()) {
-                    rememberedValue4 = new Function1() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda9
-                        @Override // kotlin.jvm.functions.Function1
-                        public final Object invoke(Object obj2) {
-                            Unit FontsCount$lambda$0$1$3$0;
-                            FontsCount$lambda$0$1$3$0 = SettingsRowsKt.FontsCount$lambda$0$1$3$0(Function1.this, (String) obj2);
-                            return FontsCount$lambda$0$1$3$0;
-                        }
-                    };
-                    startRestartGroup.updateRememberedValue(rememberedValue4);
-                }
-                Function1 function14 = (Function1) rememberedValue4;
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.NumberButton("12", function14, i == 12 || i == 15, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                startRestartGroup.endNode();
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                startRestartGroup.endNode();
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventEnd();
-                }
-            }
-            endRestartGroup = startRestartGroup.endRestartGroup();
-            if (endRestartGroup == null) {
-                final Modifier modifier2 = companion;
-                endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda10
-                    @Override // kotlin.jvm.functions.Function2
-                    public final Object invoke(Object obj2, Object obj3) {
-                        return SettingsRowsKt.FontsCount$lambda$1(Function1.this, i, modifier2, i2, i3, (Composer) obj2, ((Integer) obj3).intValue());
-                    }
-                });
-                return;
-            }
-            return;
-        }
-        obj = modifier;
-        if (startRestartGroup.shouldExecute((i4 & 147) == 146, i4 & 1)) {
-        }
-        endRestartGroup = startRestartGroup.endRestartGroup();
-        if (endRestartGroup == null) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$0$1$0$0(Function1 function1, String it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(5);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$0$1$1$0(Function1 function1, String it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(8);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$0$1$2$0(Function1 function1, String it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(10);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit FontsCount$lambda$0$1$3$0(Function1 function1, String it) {
-        Intrinsics.checkNotNullParameter(it, "it");
-        function1.invoke(12);
-        return Unit.INSTANCE;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0344  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x034e  */
-    /* JADX WARN: Removed duplicated region for block: B:87:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final void KeyboardSwitch(final Function0<Unit> onClick, final boolean z, Modifier modifier, Composer composer, final int i, final int i2) {
-        int i3;
-        Object obj;
-        Modifier.Companion companion;
-        ScopeUpdateScope endRestartGroup;
-        Intrinsics.checkNotNullParameter(onClick, "onClick");
-        Composer startRestartGroup = composer.startRestartGroup(1039663295);
-        ComposerKt.sourceInformation(startRestartGroup, "C(KeyboardSwitch)N(onClick,isActive,modifier)69@2451L628:SettingsRows.kt#1gr92h");
-        if ((i & 6) == 0) {
-            i3 = (startRestartGroup.changedInstance(onClick) ? 4 : 2) | i;
-        } else {
-            i3 = i;
-        }
-        if ((i & 48) == 0) {
-            i3 |= startRestartGroup.changed(z) ? 32 : 16;
-        }
-        int i4 = i2 & 4;
-        if (i4 != 0) {
-            i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-        } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
-            obj = modifier;
-            i3 |= startRestartGroup.changed(obj) ? 256 : 128;
-            if (startRestartGroup.shouldExecute((i3 & 147) == 146, i3 & 1)) {
-                startRestartGroup.skipToGroupEnd();
-                companion = obj;
-            } else {
-                companion = i4 != 0 ? Modifier.Companion : obj;
-                if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(1039663295, i3, -1, "com.miami.game.feature.settings.ui.compose.KeyboardSwitch (SettingsRows.kt:68)");
-                }
-                Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null);
-                Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getSpaceBetween(), centerVertically, startRestartGroup, 54);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
-                int hashCode = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-                CompositionLocalMap currentCompositionLocalMap = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier = ComposedModifierKt.materializeModifier(startRestartGroup, fillMaxWidth$default);
-                Function0<ComposeUiNode> constructor = ComposeUiNode.Companion.getConstructor();
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
-                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                    ComposablesKt.invalidApplier();
-                }
-                startRestartGroup.startReusableNode();
-                if (startRestartGroup.getInserting()) {
-                    startRestartGroup.createNode(constructor);
-                } else {
-                    startRestartGroup.useNode();
-                }
-                Composer m4467constructorimpl = Updater.m4467constructorimpl(startRestartGroup);
-                Updater.m4475setimpl(m4467constructorimpl, rowMeasurePolicy, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4475setimpl(m4467constructorimpl, currentCompositionLocalMap, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4475setimpl(m4467constructorimpl, Integer.valueOf(hashCode), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4473reconcileimpl(m4467constructorimpl, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
-                RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -589388231, "C75@2642L148,80@2799L274:SettingsRows.kt#1gr92h");
-                Modifier m1122width3ABfNKs = SizeKt.m1122width3ABfNKs(companion, Dp.m8160constructorimpl(180.0f));
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
-                MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1159599143, "CC(Layout)N(content,modifier,measurePolicy)81@3355L27,84@3521L415:Layout.kt#80mrfh");
-                int hashCode2 = Long.hashCode(ComposablesKt.getCurrentCompositeKeyHashCode(startRestartGroup, 0));
-                CompositionLocalMap currentCompositionLocalMap2 = startRestartGroup.getCurrentCompositionLocalMap();
-                Modifier materializeModifier2 = ComposedModifierKt.materializeModifier(startRestartGroup, m1122width3ABfNKs);
-                Function0<ComposeUiNode> constructor2 = ComposeUiNode.Companion.getConstructor();
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -553112988, "CC(ReusableComposeNode)N(factory,update,content)410@16187L9:Composables.kt#9igjgp");
-                if (!(startRestartGroup.getApplier() instanceof Applier)) {
-                    ComposablesKt.invalidApplier();
-                }
-                startRestartGroup.startReusableNode();
-                if (startRestartGroup.getInserting()) {
-                    startRestartGroup.createNode(constructor2);
-                } else {
-                    startRestartGroup.useNode();
-                }
-                Composer m4467constructorimpl2 = Updater.m4467constructorimpl(startRestartGroup);
-                Updater.m4475setimpl(m4467constructorimpl2, rowMeasurePolicy2, ComposeUiNode.Companion.getSetMeasurePolicy());
-                Updater.m4475setimpl(m4467constructorimpl2, currentCompositionLocalMap2, ComposeUiNode.Companion.getSetResolvedCompositionLocals());
-                Updater.m4475setimpl(m4467constructorimpl2, Integer.valueOf(hashCode2), ComposeUiNode.Companion.getSetCompositeKeyHash());
-                Updater.m4473reconcileimpl(m4467constructorimpl2, ComposeUiNode.Companion.getApplyOnDeactivatedNodeAssertion());
-                Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
-                RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1178405236, "C76@2684L43,78@2740L40:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -530175793, "C90@3273L43,92@3329L40:SettingsRows.kt#1gr92h");
                 TextSettingsKt.TextSettings("КЛАВИАТУРА", null, startRestartGroup, 6, 2);
                 SpacerKt.Spacer(SizeKt.m1122width3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -708,40 +728,43 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1657830573, "C84@2973L13,84@2945L53,85@3039L13,85@3011L52:SettingsRows.kt#1gr92h");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 607668525, "CC(remember):SettingsRows.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1234090683, "C98@3562L35,98@3534L89,99@3662L35,99@3636L87:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -791473874, "CC(remember):SettingsRows.kt#9igjgp");
                 int i5 = i3 & 14;
-                boolean z2 = i5 == 4;
+                int i6 = i3 & 112;
+                boolean changedInstance = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue = startRestartGroup.rememberedValue();
-                if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda11
+                if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+                    rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda14
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
                             Unit KeyboardSwitch$lambda$0$1$0$0;
-                            KeyboardSwitch$lambda$0$1$0$0 = SettingsRowsKt.KeyboardSwitch$lambda$0$1$0$0(Function0.this);
+                            KeyboardSwitch$lambda$0$1$0$0 = SettingsRowsKt.KeyboardSwitch$lambda$0$1$0$0(Function3.this, prefs, currentState);
                             return KeyboardSwitch$lambda$0$1$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                 }
+                Function0 function0 = (Function0) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.KeyboardButton("Системная", (Function0) rememberedValue, !z, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 607670637, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z3 = i5 == 4;
+                NumberButtonKt.KeyboardButton("СИСТЕМНАЯ", function0, currentState.getValue().intValue() == 0, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -791470674, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance2 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue2 = startRestartGroup.rememberedValue();
-                if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                    rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda12
+                if (changedInstance2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                    rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda15
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
                             Unit KeyboardSwitch$lambda$0$1$1$0;
-                            KeyboardSwitch$lambda$0$1$1$0 = SettingsRowsKt.KeyboardSwitch$lambda$0$1$1$0(Function0.this);
+                            KeyboardSwitch$lambda$0$1$1$0 = SettingsRowsKt.KeyboardSwitch$lambda$0$1$1$0(Function3.this, prefs, currentState);
                             return KeyboardSwitch$lambda$0$1$1$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                 }
+                Function0 function02 = (Function0) rememberedValue2;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.KeyboardButton("Кастомная", (Function0) rememberedValue2, z, startRestartGroup, ((i3 << 3) & 896) | 6);
+                NumberButtonKt.KeyboardButton("ИГРОВАЯ", function02, currentState.getValue().intValue() != 0, startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -761,10 +784,10 @@ public final class SettingsRowsKt {
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
                 final Modifier modifier2 = companion;
-                endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda13
+                endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda1
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        return SettingsRowsKt.KeyboardSwitch$lambda$1(Function0.this, z, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return SettingsRowsKt.KeyboardSwitch$lambda$1(Function3.this, currentState, prefs, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -772,7 +795,7 @@ public final class SettingsRowsKt {
             return;
         }
         obj = modifier;
-        if (startRestartGroup.shouldExecute((i3 & 147) == 146, i3 & 1)) {
+        if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
         }
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
@@ -780,55 +803,60 @@ public final class SettingsRowsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardSwitch$lambda$0$1$0$0(Function0 function0) {
-        function0.invoke();
+    public static final Unit KeyboardSwitch$lambda$0$1$0$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState) {
+        function3.invoke(sharedPreferences, mutableState, 0);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit KeyboardSwitch$lambda$0$1$1$0(Function0 function0) {
-        function0.invoke();
+    public static final Unit KeyboardSwitch$lambda$0$1$1$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState) {
+        function3.invoke(sharedPreferences, mutableState, 1);
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0342  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x034c  */
-    /* JADX WARN: Removed duplicated region for block: B:87:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0390  */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x039a  */
+    /* JADX WARN: Removed duplicated region for block: B:109:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0084  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final void StreamerSwitch(final Function0<Unit> onClick, final boolean z, Modifier modifier, Composer composer, final int i, final int i2) {
+    public static final void StreamerSwitch(final Function3<? super SharedPreferences, ? super MutableState<Integer>, ? super Integer, Unit> onClick, final MutableState<Integer> currentState, final SharedPreferences prefs, Modifier modifier, Composer composer, final int i, final int i2) {
         int i3;
         Object obj;
         Modifier.Companion companion;
         ScopeUpdateScope endRestartGroup;
         Intrinsics.checkNotNullParameter(onClick, "onClick");
-        Composer startRestartGroup = composer.startRestartGroup(778183045);
-        ComposerKt.sourceInformation(startRestartGroup, "C(StreamerSwitch)N(onClick,isActive,modifier)91@3187L562:SettingsRows.kt#1gr92h");
+        Intrinsics.checkNotNullParameter(currentState, "currentState");
+        Intrinsics.checkNotNullParameter(prefs, "prefs");
+        Composer startRestartGroup = composer.startRestartGroup(1964938054);
+        ComposerKt.sourceInformation(startRestartGroup, "C(StreamerSwitch)N(onClick,currentState,prefs,modifier)108@3985L635:SettingsRows.kt#1gr92h");
         if ((i & 6) == 0) {
             i3 = (startRestartGroup.changedInstance(onClick) ? 4 : 2) | i;
         } else {
             i3 = i;
         }
         if ((i & 48) == 0) {
-            i3 |= startRestartGroup.changed(z) ? 32 : 16;
+            i3 |= startRestartGroup.changed(currentState) ? 32 : 16;
         }
-        int i4 = i2 & 4;
+        if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= startRestartGroup.changedInstance(prefs) ? 256 : 128;
+        }
+        int i4 = i2 & 8;
         if (i4 != 0) {
-            i3 |= RendererCapabilities.DECODER_SUPPORT_MASK;
-        } else if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
+            i3 |= 3072;
+        } else if ((i & 3072) == 0) {
             obj = modifier;
-            i3 |= startRestartGroup.changed(obj) ? 256 : 128;
-            if (startRestartGroup.shouldExecute((i3 & 147) == 146, i3 & 1)) {
+            i3 |= startRestartGroup.changed(obj) ? 2048 : 1024;
+            if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
                 startRestartGroup.skipToGroupEnd();
                 companion = obj;
             } else {
                 companion = i4 != 0 ? Modifier.Companion : obj;
                 if (ComposerKt.isTraceInProgress()) {
-                    ComposerKt.traceEventStart(778183045, i3, -1, "com.miami.game.feature.settings.ui.compose.StreamerSwitch (SettingsRows.kt:90)");
+                    ComposerKt.traceEventStart(1964938054, i3, -1, "com.miami.game.feature.settings.ui.compose.StreamerSwitch (SettingsRows.kt:107)");
                 }
                 Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(companion, 0.0f, 1, null);
                 Alignment.Vertical centerVertically = Alignment.Companion.getCenterVertically();
@@ -857,7 +885,7 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 723158684, "C96@3321L143,101@3473L270:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1078597834, "C113@4119L143,118@4271L343:SettingsRows.kt#1gr92h");
                 Modifier m1122width3ABfNKs = SizeKt.m1122width3ABfNKs(companion, Dp.m8160constructorimpl(190.0f));
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
                 MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getStart(), Alignment.Companion.getTop(), startRestartGroup, 0);
@@ -884,7 +912,7 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 134141803, "C97@3363L38,99@3414L40:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, 924532090, "C114@4161L38,116@4212L40:SettingsRows.kt#1gr92h");
                 TextSettingsKt.TextSettings("РЕЖИМ", null, startRestartGroup, 6, 2);
                 SpacerKt.Spacer(SizeKt.m1122width3ABfNKs(Modifier.Companion, Dp.m8160constructorimpl(12.0f)), startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -920,40 +948,43 @@ public final class SettingsRowsKt {
                 Updater.m4475setimpl(m4467constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
                 RowScopeInstance rowScopeInstance3 = RowScopeInstance.INSTANCE;
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1324589653, "C105@3645L13,105@3619L51,106@3709L13,106@3683L50:SettingsRows.kt#1gr92h");
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1566748621, "CC(remember):SettingsRows.kt#9igjgp");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1606168637, "C122@4443L35,122@4417L87,123@4543L35,123@4517L87:SettingsRows.kt#1gr92h");
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -467453208, "CC(remember):SettingsRows.kt#9igjgp");
                 int i5 = i3 & 14;
-                boolean z2 = i5 == 4;
+                int i6 = i3 & 112;
+                boolean changedInstance = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue = startRestartGroup.rememberedValue();
-                if (z2 || rememberedValue == Composer.Companion.getEmpty()) {
-                    rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda14
+                if (changedInstance || rememberedValue == Composer.Companion.getEmpty()) {
+                    rememberedValue = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda0
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
                             Unit StreamerSwitch$lambda$0$1$0$0;
-                            StreamerSwitch$lambda$0$1$0$0 = SettingsRowsKt.StreamerSwitch$lambda$0$1$0$0(Function0.this);
+                            StreamerSwitch$lambda$0$1$0$0 = SettingsRowsKt.StreamerSwitch$lambda$0$1$0$0(Function3.this, prefs, currentState);
                             return StreamerSwitch$lambda$0$1$0$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue);
                 }
+                Function0 function0 = (Function0) rememberedValue;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.KeyboardButton("ОБЫЧНЫЙ", (Function0) rememberedValue, !z, startRestartGroup, 6);
-                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1566746573, "CC(remember):SettingsRows.kt#9igjgp");
-                boolean z3 = i5 == 4;
+                NumberButtonKt.KeyboardButton("ОБЫЧНЫЙ", function0, currentState.getValue().intValue() == 0, startRestartGroup, 6);
+                ComposerKt.sourceInformationMarkerStart(startRestartGroup, -467450008, "CC(remember):SettingsRows.kt#9igjgp");
+                boolean changedInstance2 = (i5 == 4) | startRestartGroup.changedInstance(prefs) | (i6 == 32);
                 Object rememberedValue2 = startRestartGroup.rememberedValue();
-                if (z3 || rememberedValue2 == Composer.Companion.getEmpty()) {
-                    rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda15
+                if (changedInstance2 || rememberedValue2 == Composer.Companion.getEmpty()) {
+                    rememberedValue2 = new Function0() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda7
                         @Override // kotlin.jvm.functions.Function0
                         public final Object invoke() {
                             Unit StreamerSwitch$lambda$0$1$1$0;
-                            StreamerSwitch$lambda$0$1$1$0 = SettingsRowsKt.StreamerSwitch$lambda$0$1$1$0(Function0.this);
+                            StreamerSwitch$lambda$0$1$1$0 = SettingsRowsKt.StreamerSwitch$lambda$0$1$1$0(Function3.this, prefs, currentState);
                             return StreamerSwitch$lambda$0$1$1$0;
                         }
                     };
                     startRestartGroup.updateRememberedValue(rememberedValue2);
                 }
+                Function0 function02 = (Function0) rememberedValue2;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-                NumberButtonKt.KeyboardButton("СТРИМЕР", (Function0) rememberedValue2, z, startRestartGroup, ((i3 << 3) & 896) | 6);
+                NumberButtonKt.KeyboardButton("СТРИМЕР", function02, currentState.getValue().intValue() != 0, startRestartGroup, 6);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 startRestartGroup.endNode();
@@ -973,10 +1004,10 @@ public final class SettingsRowsKt {
             endRestartGroup = startRestartGroup.endRestartGroup();
             if (endRestartGroup == null) {
                 final Modifier modifier2 = companion;
-                endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda1
+                endRestartGroup.updateScope(new Function2() { // from class: com.miami.game.feature.settings.ui.compose.SettingsRowsKt$$ExternalSyntheticLambda8
                     @Override // kotlin.jvm.functions.Function2
                     public final Object invoke(Object obj2, Object obj3) {
-                        return SettingsRowsKt.StreamerSwitch$lambda$1(Function0.this, z, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
+                        return SettingsRowsKt.StreamerSwitch$lambda$1(Function3.this, currentState, prefs, modifier2, i, i2, (Composer) obj2, ((Integer) obj3).intValue());
                     }
                 });
                 return;
@@ -984,7 +1015,7 @@ public final class SettingsRowsKt {
             return;
         }
         obj = modifier;
-        if (startRestartGroup.shouldExecute((i3 & 147) == 146, i3 & 1)) {
+        if (startRestartGroup.shouldExecute((i3 & 1171) == 1170, i3 & 1)) {
         }
         endRestartGroup = startRestartGroup.endRestartGroup();
         if (endRestartGroup == null) {
@@ -992,14 +1023,14 @@ public final class SettingsRowsKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit StreamerSwitch$lambda$0$1$0$0(Function0 function0) {
-        function0.invoke();
+    public static final Unit StreamerSwitch$lambda$0$1$0$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState) {
+        function3.invoke(sharedPreferences, mutableState, 0);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit StreamerSwitch$lambda$0$1$1$0(Function0 function0) {
-        function0.invoke();
+    public static final Unit StreamerSwitch$lambda$0$1$1$0(Function3 function3, SharedPreferences sharedPreferences, MutableState mutableState) {
+        function3.invoke(sharedPreferences, mutableState, 1);
         return Unit.INSTANCE;
     }
 }

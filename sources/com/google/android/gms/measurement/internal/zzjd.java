@@ -13,6 +13,7 @@ import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.util.UidVerifier;
 import com.google.android.gms.internal.measurement.zzaeh;
 import com.google.firebase.messaging.Constants;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -234,7 +235,7 @@ public final class zzjd extends zzga {
         zzic zzicVar = zzj2.zzu;
         zzicVar.zzaW().zzk().zzc("Saving default event parameters, appId, data size", str, Integer.valueOf(zzcd.length));
         ContentValues contentValues = new ContentValues();
-        contentValues.put("app_id", str);
+        contentValues.put(CommonUrlParts.APP_ID, str);
         contentValues.put("parameters", zzcd);
         try {
             if (zzj2.zze().insertWithOnConflict("default_event_params", null, contentValues, 5) == -1) {

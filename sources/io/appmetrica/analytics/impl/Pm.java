@@ -12,7 +12,7 @@ public final class Pm extends MessageNano {
     public static volatile Pm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public Om[] f723a;
+    public Om[] f726a;
 
     public Pm() {
         a();
@@ -30,7 +30,7 @@ public final class Pm extends MessageNano {
     }
 
     public final Pm a() {
-        this.f723a = Om.b();
+        this.f726a = Om.b();
         this.cachedSize = -1;
         return this;
     }
@@ -38,11 +38,11 @@ public final class Pm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        Om[] omArr = this.f723a;
+        Om[] omArr = this.f726a;
         if (omArr != null && omArr.length > 0) {
             int i = 0;
             while (true) {
-                Om[] omArr2 = this.f723a;
+                Om[] omArr2 = this.f726a;
                 if (i >= omArr2.length) {
                     break;
                 }
@@ -58,11 +58,11 @@ public final class Pm extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        Om[] omArr = this.f723a;
+        Om[] omArr = this.f726a;
         if (omArr != null && omArr.length > 0) {
             int i = 0;
             while (true) {
-                Om[] omArr2 = this.f723a;
+                Om[] omArr2 = this.f726a;
                 if (i >= omArr2.length) {
                     break;
                 }
@@ -89,7 +89,7 @@ public final class Pm extends MessageNano {
                 }
             } else {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                Om[] omArr = this.f723a;
+                Om[] omArr = this.f726a;
                 int length = omArr == null ? 0 : omArr.length;
                 int i = repeatedFieldArrayLength + length;
                 Om[] omArr2 = new Om[i];
@@ -106,7 +106,7 @@ public final class Pm extends MessageNano {
                 Om om2 = new Om();
                 omArr2[length] = om2;
                 codedInputByteBufferNano.readMessage(om2);
-                this.f723a = omArr2;
+                this.f726a = omArr2;
             }
         }
         return this;

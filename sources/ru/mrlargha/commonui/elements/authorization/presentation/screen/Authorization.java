@@ -46,6 +46,7 @@ import ru.mrlargha.commonui.elements.authorization.domain.controller.Registratio
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager;
 import ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount;
+import ru.mrlargha.commonui.elements.keyboard.customKeyboard.KeyboardEditText;
 import ru.mrlargha.commonui.utils.PicassoLoadSafeKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
@@ -109,7 +110,7 @@ public final class Authorization implements InterfaceController {
         RegistrationAccount.ContainerData userAuthData = getUserAuthData();
         this.rememberMe = userAuthData != null && userAuthData.getRememberMe();
         this.arizonaServers = MapsKt.mapOf(TuplesKt.to(1, "Phoenix"), TuplesKt.to(2, "Tucson"), TuplesKt.to(3, "Scottdale"), TuplesKt.to(4, "Chandler"), TuplesKt.to(5, "Brainburg"), TuplesKt.to(6, "Saint-Rose"), TuplesKt.to(7, "Mesa"), TuplesKt.to(8, "Red-Rock"), TuplesKt.to(9, "Yuma"), TuplesKt.to(10, "Surprise"), TuplesKt.to(11, "Prescott"), TuplesKt.to(12, "Glendale"), TuplesKt.to(13, "Kingman"), TuplesKt.to(14, "Winslow"), TuplesKt.to(15, "Payson"), TuplesKt.to(16, "Gilbert"), TuplesKt.to(17, "Show-Low"), TuplesKt.to(18, "Casa-Grande"), TuplesKt.to(19, "Page"), TuplesKt.to(20, "Sun-City"), TuplesKt.to(21, "Queen-Creek"), TuplesKt.to(22, "Sedona"), TuplesKt.to(23, "Holiday"), TuplesKt.to(24, "Wednesday"), TuplesKt.to(25, "Yava"), TuplesKt.to(26, "Faraway"), TuplesKt.to(27, "Bumble Bee"), TuplesKt.to(28, "Christmas"), TuplesKt.to(29, "Mirage"), TuplesKt.to(30, "Love"), TuplesKt.to(31, "Drake"), TuplesKt.to(32, "Space"), TuplesKt.to(101, "Mobile 1"), TuplesKt.to(102, "Mobile 2"), TuplesKt.to(103, "Mobile 3"));
-        this.rodinaServers = MapsKt.mapOf(TuplesKt.to(0, "Тестовы"), TuplesKt.to(1, "Центральный"), TuplesKt.to(2, "Южный"), TuplesKt.to(3, "Северный"), TuplesKt.to(4, "Восточный"), TuplesKt.to(5, "Западный"), TuplesKt.to(6, "Приморский"), TuplesKt.to(7, "Федеральный"), TuplesKt.to(101, "Москва"), TuplesKt.to(102, "Санкт-Петербург"), TuplesKt.to(103, "Екатеринбург"));
+        this.rodinaServers = MapsKt.mapOf(TuplesKt.to(0, "Тестовый"), TuplesKt.to(1, "Центральный"), TuplesKt.to(2, "Южный"), TuplesKt.to(3, "Северный"), TuplesKt.to(4, "Восточный"), TuplesKt.to(5, "Западный"), TuplesKt.to(6, "Приморский"), TuplesKt.to(7, "Федеральный"), TuplesKt.to(101, "Москва"), TuplesKt.to(102, "Санкт-Петербург"), TuplesKt.to(103, "Екатеринбург"));
         this.recoveryHandlerId = RegistrationInterfaceType.RECOVERY_HANDLER.getId();
         this.videoBinding.video.addView(bind.auth, -1, -1);
         bind.authForgotPassword.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
@@ -133,13 +134,13 @@ public final class Authorization implements InterfaceController {
                 Authorization.this.loginAction();
             }
         });
-        EditText authSurnameEdit = bind.authSurnameEdit;
+        KeyboardEditText authSurnameEdit = bind.authSurnameEdit;
         Intrinsics.checkNotNullExpressionValue(authSurnameEdit, "authSurnameEdit");
         checkRaisingContent(authSurnameEdit);
-        EditText authUsernameEdit = bind.authUsernameEdit;
+        KeyboardEditText authUsernameEdit = bind.authUsernameEdit;
         Intrinsics.checkNotNullExpressionValue(authUsernameEdit, "authUsernameEdit");
         checkRaisingContent(authUsernameEdit);
-        EditText authPasswordEdit = bind.authPasswordEdit;
+        KeyboardEditText authPasswordEdit = bind.authPasswordEdit;
         Intrinsics.checkNotNullExpressionValue(authPasswordEdit, "authPasswordEdit");
         checkRaisingContent(authPasswordEdit);
         bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda10
@@ -148,7 +149,7 @@ public final class Authorization implements InterfaceController {
                 Authorization._init_$lambda$4(Authorization.this);
             }
         });
-        EditText authPasswordEdit2 = bind.authPasswordEdit;
+        KeyboardEditText authPasswordEdit2 = bind.authPasswordEdit;
         Intrinsics.checkNotNullExpressionValue(authPasswordEdit2, "authPasswordEdit");
         authPasswordEdit2.addTextChangedListener(new TextWatcher() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$special$$inlined$addTextChangedListener$default$1
             @Override // android.text.TextWatcher
@@ -164,12 +165,10 @@ public final class Authorization implements InterfaceController {
                 AuthorizationBinding authorizationBinding;
                 authorizationBinding = Authorization.this.authorizationBinding;
                 Editable text = authorizationBinding.authPasswordEdit.getText();
-                Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
-                if (StringsKt.isBlank(text)) {
-                    return;
+                if (text != null ? !StringsKt.isBlank(text) : false) {
+                    Authorization.this.disableError();
+                    Authorization.this.enableLoginButton();
                 }
-                Authorization.this.disableError();
-                Authorization.this.enableLoginButton();
             }
         });
         bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda1
@@ -227,22 +226,16 @@ public final class Authorization implements InterfaceController {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static final void _init_$lambda$4(Authorization authorization) {
         String obj;
-        EditText authUsernameEdit = authorization.authorizationBinding.authUsernameEdit;
+        Editable text;
+        Editable text2;
+        KeyboardEditText authUsernameEdit = authorization.authorizationBinding.authUsernameEdit;
         Intrinsics.checkNotNullExpressionValue(authUsernameEdit, "authUsernameEdit");
-        if (authorization.authorizationBinding.authSurnameEdit.getText().toString().length() > 0) {
-            Editable text = authorization.authorizationBinding.authUsernameEdit.getText();
-            obj = ((Object) text) + "_" + ((Object) authorization.authorizationBinding.authSurnameEdit.getText());
+        if (String.valueOf(authorization.authorizationBinding.authSurnameEdit.getText()).length() > 0) {
+            obj = ((Object) authorization.authorizationBinding.authUsernameEdit.getText()) + "_" + ((Object) authorization.authorizationBinding.authSurnameEdit.getText());
         } else {
-            obj = StringsKt.trim((CharSequence) authorization.authorizationBinding.authUsernameEdit.getText().toString()).toString();
+            obj = StringsKt.trim((CharSequence) String.valueOf(authorization.authorizationBinding.authUsernameEdit.getText())).toString();
         }
-        Editable text2 = authUsernameEdit.getText();
-        Intrinsics.checkNotNullExpressionValue(text2, "getText(...)");
-        if (StringsKt.isBlank(text2)) {
-            return;
-        }
-        Editable text3 = authUsernameEdit.getText();
-        Intrinsics.checkNotNullExpressionValue(text3, "getText(...)");
-        if (StringsKt.isBlank(text3) || Intrinsics.areEqual(authorization.getLocalUsername(), obj)) {
+        if (authUsernameEdit.getText() == null || !(!StringsKt.isBlank(text)) || (text2 = authUsernameEdit.getText()) == null || !(!StringsKt.isBlank(text2)) || Intrinsics.areEqual(authorization.getLocalUsername(), obj)) {
             return;
         }
         if (authorization.timer != null) {
@@ -275,10 +268,10 @@ public final class Authorization implements InterfaceController {
 
     private final void setFilter() {
         AuthorizationBinding authorizationBinding = this.authorizationBinding;
-        EditText editText = authorizationBinding.authUsernameEdit;
-        InputFilter[] filters = editText.getFilters();
+        KeyboardEditText keyboardEditText = authorizationBinding.authUsernameEdit;
+        InputFilter[] filters = keyboardEditText.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
-        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda2
+        keyboardEditText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$0;
@@ -286,10 +279,10 @@ public final class Authorization implements InterfaceController {
                 return filter$lambda$0$0;
             }
         })));
-        EditText editText2 = authorizationBinding.authSurnameEdit;
-        InputFilter[] filters2 = editText2.getFilters();
+        KeyboardEditText keyboardEditText2 = authorizationBinding.authSurnameEdit;
+        InputFilter[] filters2 = keyboardEditText2.getFilters();
         Intrinsics.checkNotNullExpressionValue(filters2, "getFilters(...)");
-        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda3
+        keyboardEditText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit filter$lambda$0$1;
@@ -378,6 +371,7 @@ public final class Authorization implements InterfaceController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void loginAction() {
+        Editable text;
         if (this.timer != null) {
             resetLoginText();
             CountDownTimer countDownTimer = this.timer;
@@ -391,17 +385,15 @@ public final class Authorization implements InterfaceController {
         if (this.isLoginError) {
             return;
         }
-        int length = authorizationBinding.authSurnameEdit.getText().toString().length();
+        int length = String.valueOf(authorizationBinding.authSurnameEdit.getText()).length();
         AuthorizationBinding authorizationBinding2 = this.authorizationBinding;
         if (length > 0) {
-            Editable text = authorizationBinding2.authUsernameEdit.getText();
-            Intrinsics.checkNotNullExpressionValue(text, "getText(...)");
-            setLocalUsername(StringsKt.trim((CharSequence) (((Object) StringsKt.trim(text)) + "_" + ((Object) this.authorizationBinding.authSurnameEdit.getText()))).toString());
+            setLocalUsername(StringsKt.trim((CharSequence) (((Object) (authorizationBinding2.authUsernameEdit.getText() != null ? StringsKt.trim(text) : null)) + "_" + ((Object) this.authorizationBinding.authSurnameEdit.getText()))).toString());
         } else {
-            setLocalUsername(StringsKt.trim((CharSequence) authorizationBinding2.authUsernameEdit.getText().toString()).toString());
+            setLocalUsername(StringsKt.trim((CharSequence) String.valueOf(authorizationBinding2.authUsernameEdit.getText())).toString());
         }
         String localUsername = getLocalUsername();
-        setLocalPassword(this.authorizationBinding.authPasswordEdit.getText().toString());
+        setLocalPassword(String.valueOf(this.authorizationBinding.authPasswordEdit.getText()));
         String localPassword = getLocalPassword();
         if (localUsername == null) {
             disableLoginButton();
@@ -412,7 +404,7 @@ public final class Authorization implements InterfaceController {
             Regex regex = new Regex("^[A-Za-z0-9]{2,17}");
             int length2 = localPassword.length();
             boolean z = 6 <= length2 && length2 < 33;
-            if (!regex.matches(StringsKt.trim((CharSequence) this.authorizationBinding.authUsernameEdit.getText().toString()).toString())) {
+            if (!regex.matches(StringsKt.trim((CharSequence) String.valueOf(this.authorizationBinding.authUsernameEdit.getText())).toString())) {
                 Activity activity = this.targetActivity;
                 Toast.makeText(activity, activity.getString(R.string.auth_username_length_error), 1).show();
                 disableLoginButton();
@@ -545,14 +537,14 @@ public final class Authorization implements InterfaceController {
                             Authorization.onServerMessage$lambda$1(Authorization.this, view);
                         }
                     });
-                    int length = this.authorizationBinding.authSurnameEdit.getText().toString().length();
+                    int length = String.valueOf(this.authorizationBinding.authSurnameEdit.getText()).length();
                     AuthorizationBinding authorizationBinding = this.authorizationBinding;
                     if (length > 0) {
                         obj2 = StringsKt.trim((CharSequence) (((Object) authorizationBinding.authUsernameEdit.getText()) + "_" + ((Object) this.authorizationBinding.authSurnameEdit.getText()))).toString();
                     } else {
-                        obj2 = StringsKt.trim((CharSequence) authorizationBinding.authUsernameEdit.getText().toString()).toString();
+                        obj2 = StringsKt.trim((CharSequence) String.valueOf(authorizationBinding.authUsernameEdit.getText())).toString();
                     }
-                    addRegData(obj2, this.authorizationBinding.authPasswordEdit.getText().toString(), this.rememberMe);
+                    addRegData(obj2, String.valueOf(this.authorizationBinding.authPasswordEdit.getText()), this.rememberMe);
                 }
                 if (Intrinsics.areEqual(data, "spawn")) {
                     if (this.timer != null) {
@@ -583,23 +575,23 @@ public final class Authorization implements InterfaceController {
                     }
                     disableLoading();
                     disableError();
-                    int length2 = this.authorizationBinding.authSurnameEdit.getText().toString().length();
+                    int length2 = String.valueOf(this.authorizationBinding.authSurnameEdit.getText()).length();
                     AuthorizationBinding authorizationBinding2 = this.authorizationBinding;
                     if (length2 > 0) {
                         obj = StringsKt.trim((CharSequence) (((Object) authorizationBinding2.authUsernameEdit.getText()) + "_" + ((Object) this.authorizationBinding.authSurnameEdit.getText()))).toString();
                     } else {
-                        obj = StringsKt.trim((CharSequence) authorizationBinding2.authUsernameEdit.getText().toString()).toString();
+                        obj = StringsKt.trim((CharSequence) String.valueOf(authorizationBinding2.authUsernameEdit.getText())).toString();
                     }
-                    String obj3 = this.authorizationBinding.authPasswordEdit.getText().toString();
-                    if (obj.length() == 0 || obj3.length() == 0) {
+                    String valueOf = String.valueOf(this.authorizationBinding.authPasswordEdit.getText());
+                    if (obj.length() == 0 || valueOf.length() == 0) {
                         RegistrationAccount.ContainerData userAuthData = getUserAuthData();
                         obj = String.valueOf(userAuthData != null ? userAuthData.getUsername() : null);
                         RegistrationAccount.ContainerData userAuthData2 = getUserAuthData();
-                        obj3 = String.valueOf(userAuthData2 != null ? userAuthData2.getPassword() : null);
+                        valueOf = String.valueOf(userAuthData2 != null ? userAuthData2.getPassword() : null);
                     }
                     RegistrationAccount.ContainerData userAuthData3 = getUserAuthData();
                     if (!Intrinsics.areEqual(obj, String.valueOf(userAuthData3 != null ? userAuthData3.getUsername() : null)) && !getRegisteredState()) {
-                        addRegData(obj, obj3, this.rememberMe);
+                        addRegData(obj, valueOf, this.rememberMe);
                     }
                     InterfaceController orCreateInterface2 = InterfaceManager.Companion.getOrCreateInterface(RegistrationInterfaceType.VIDEO_BACKGROUND.getId(), this.targetActivity, this.backendID);
                     Intrinsics.checkNotNull(orCreateInterface2, "null cannot be cast to non-null type ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationVideoBackground");

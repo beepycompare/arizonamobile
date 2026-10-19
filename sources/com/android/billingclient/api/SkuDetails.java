@@ -1,6 +1,7 @@
 package com.android.billingclient.api;
 
 import android.text.TextUtils;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import org.json.JSONException;
@@ -19,7 +20,7 @@ public class SkuDetails {
         if (TextUtils.isEmpty(jSONObject.optString("productId"))) {
             throw new IllegalArgumentException("SKU cannot be empty.");
         }
-        if (TextUtils.isEmpty(jSONObject.optString("type"))) {
+        if (TextUtils.isEmpty(jSONObject.optString(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY))) {
             throw new IllegalArgumentException("SkuType cannot be empty.");
         }
     }
@@ -107,7 +108,7 @@ public class SkuDetails {
     }
 
     public String getType() {
-        return this.zzb.optString("type");
+        return this.zzb.optString(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY);
     }
 
     public int hashCode() {

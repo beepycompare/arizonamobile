@@ -2,6 +2,7 @@ package ru.mrlargha.commonui.elements.hud.presentation.hud_screens.money;
 
 import android.widget.LinearLayout;
 import androidx.media3.common.C;
+import androidx.media3.extractor.ts.TsExtractor;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -16,7 +17,7 @@ import kotlinx.coroutines.DelayKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MoneyElement.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.money.MoneyElement$showDelta$1", f = "MoneyElement.kt", i = {}, l = {67}, m = "invokeSuspend", n = {}, nl = {68}, s = {}, v = 2)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.hud.presentation.hud_screens.money.MoneyElement$showDelta$1", f = "MoneyElement.kt", i = {}, l = {88}, m = "invokeSuspend", n = {}, nl = {TsExtractor.TS_STREAM_TYPE_DVBSUBS}, s = {}, v = 2)
 /* loaded from: classes6.dex */
 public final class MoneyElement$showDelta$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;

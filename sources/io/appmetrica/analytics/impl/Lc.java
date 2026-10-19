@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class Lc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0374kb f647a;
+    public final InterfaceC0369kb f650a;
     public final Q7 b;
 
-    public Lc(InterfaceC0374kb interfaceC0374kb, Q7 q7) {
-        this.f647a = interfaceC0374kb;
+    public Lc(InterfaceC0369kb interfaceC0369kb, Q7 q7) {
+        this.f650a = interfaceC0369kb;
         this.b = q7;
     }
 }

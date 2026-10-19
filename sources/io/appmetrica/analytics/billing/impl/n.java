@@ -6,7 +6,7 @@ import io.appmetrica.analytics.billinginterface.internal.ProductType;
 public abstract /* synthetic */ class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f270a;
+    public static final /* synthetic */ int[] f273a;
     public static final /* synthetic */ int[] b;
 
     static {
@@ -19,7 +19,7 @@ public abstract /* synthetic */ class n {
             iArr[ProductType.SUBS.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
-        f270a = iArr;
+        f273a = iArr;
         int[] iArr2 = new int[Period.TimeUnit.values().length];
         try {
             iArr2[Period.TimeUnit.DAY.ordinal()] = 1;

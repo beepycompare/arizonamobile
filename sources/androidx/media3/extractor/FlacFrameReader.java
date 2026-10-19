@@ -4,6 +4,7 @@ import androidx.media3.common.ParserException;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
+import androidx.media3.extractor.ts.PsExtractor;
 import java.io.IOException;
 import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes3.dex */
@@ -61,7 +62,7 @@ public final class FlacFrameReader {
     public static int readFrameBlockSizeSamplesFromKey(ParsableByteArray parsableByteArray, int i) {
         switch (i) {
             case 1:
-                return 192;
+                return PsExtractor.AUDIO_STREAM;
             case 2:
             case 3:
             case 4:

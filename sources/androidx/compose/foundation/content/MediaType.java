@@ -1,5 +1,6 @@
 package androidx.compose.foundation.content;
 
+import coil3.network.internal.UtilsKt;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
@@ -11,7 +12,7 @@ public final class MediaType {
     private final String representation;
     public static final Companion Companion = new Companion(null);
     private static final MediaType Text = new MediaType("text/*");
-    private static final MediaType PlainText = new MediaType("text/plain");
+    private static final MediaType PlainText = new MediaType(UtilsKt.MIME_TYPE_TEXT_PLAIN);
     private static final MediaType HtmlText = new MediaType("text/html");
     private static final MediaType Image = new MediaType("image/*");
     private static final MediaType All = new MediaType("*/*");

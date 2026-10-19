@@ -11,7 +11,7 @@ import com.google.firebase.components.Dependency;
 import com.google.firebase.platforminfo.LibraryVersionComponent;
 import java.util.Arrays;
 import java.util.List;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class AbtRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-abt";
 

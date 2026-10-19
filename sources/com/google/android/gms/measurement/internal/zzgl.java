@@ -11,6 +11,7 @@ import android.os.Parcel;
 import android.os.SystemClock;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
+import androidx.savedstate.serialization.ClassDiscriminatorModeKt;
 import com.google.android.gms.common.internal.safeparcel.SafeParcelReader;
 import com.miami.game.core.firebase.notification.NotificationStatsPayloadFactory;
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ public final class zzgl extends zzg {
             Cursor cursor2 = null;
             zzr zzh = zzc.zzp(null, zzfxVar) ? this.zzu.zzv().zzh(null) : null;
             ContentValues contentValues = new ContentValues();
-            contentValues.put("type", Integer.valueOf(i));
+            contentValues.put(ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY, Integer.valueOf(i));
             contentValues.put("entry", bArr);
             if (zzicVar.zzc().zzp(null, zzfxVar) && zzh != null) {
                 contentValues.put(NotificationStatsPayloadFactory.KEY_APP_VERSION, zzh.zzc);
@@ -365,7 +366,7 @@ public final class zzgl extends zzg {
         zzah zzahVar;
         zzpl zzplVar;
         String str6 = "entry";
-        String str7 = "type";
+        String str7 = ClassDiscriminatorModeKt.CLASS_DISCRIMINATOR_KEY;
         String str8 = "rowid";
         zzg();
         ?? r6 = 0;

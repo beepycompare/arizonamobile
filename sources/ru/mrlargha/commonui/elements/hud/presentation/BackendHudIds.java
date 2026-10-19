@@ -1,5 +1,7 @@
 package ru.mrlargha.commonui.elements.hud.presentation;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import com.google.android.gms.location.LocationRequest;
 import kotlin.Metadata;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
@@ -83,9 +85,9 @@ public final class BackendHudIds {
     public static final BackendHudIds LEFT_MENU_BUTTON_TYPE = new BackendHudIds("LEFT_MENU_BUTTON_TYPE", 68, 102);
     public static final BackendHudIds UPDATE_MONEY_DELTA = new BackendHudIds("UPDATE_MONEY_DELTA", 69, 103);
     public static final BackendHudIds DAMAGE_INFORMER = new BackendHudIds("DAMAGE_INFORMER", 70, 104);
-    public static final BackendHudIds SET_TARGET_TYPE = new BackendHudIds("SET_TARGET_TYPE", 71, 105);
-    public static final BackendHudIds PAYDAY_ELEMENT = new BackendHudIds("PAYDAY_ELEMENT", 72, 108);
-    public static final BackendHudIds COUNTER_TITLE = new BackendHudIds("COUNTER_TITLE", 73, 109);
+    public static final BackendHudIds SET_TARGET_TYPE = new BackendHudIds("SET_TARGET_TYPE", 71, LocationRequest.PRIORITY_NO_POWER);
+    public static final BackendHudIds PAYDAY_ELEMENT = new BackendHudIds("PAYDAY_ELEMENT", 72, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR);
+    public static final BackendHudIds COUNTER_TITLE = new BackendHudIds("COUNTER_TITLE", 73, AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY);
     public static final BackendHudIds FOOTBALL = new BackendHudIds("FOOTBALL", 74, 110);
     public static final BackendHudIds NOTICE_WARNING = new BackendHudIds("NOTICE_WARNING", 75, 111);
     public static final BackendHudIds MISSIONS_SHOW = new BackendHudIds("MISSIONS_SHOW", 76, 112);
